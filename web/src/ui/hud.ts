@@ -9,6 +9,7 @@
 import type { ClustersDataset, FictionData, HiiDataset, StarsDataset } from '../data/manifest';
 import { DEFAULT_OPACITY as DEFAULT_CLUSTER_OPACITY } from '../layers/clusterField';
 import { DEFAULT_OPACITY as DEFAULT_HII_OPACITY } from '../layers/hiiField';
+import { DEFAULT_MAX_LABELS } from './labels';
 import { type DistanceUnit, DEFAULT_UNIT, type Parsecs, formatDistance } from '../units';
 
 export interface HudCallbacks {
@@ -19,6 +20,8 @@ export interface HudCallbacks {
   onHiiVisible(value: boolean): void;
   onHiiOpacity(value: number): void;
   onHiiKinematic(enabled: boolean): void;
+  onLabelsVisible(value: boolean): void;
+  onLabelDensity(value: number): void;
   onPolityMode(enabled: boolean): void;
   onFocusPolity(polityId: string): void;
   onJump(target: JumpTarget): void;
@@ -70,6 +73,12 @@ function el<K extends keyof HTMLElementTagNameMap>(
 
 export class Hud {
   private unit: DistanceUnit = DEFAULT_UNIT;
+
+  /** The unit everything user-facing is currently shown in. */
+  get currentUnit(): DistanceUnit {
+    return this.unit;
+  }
+
   private readonly distanceValue: HTMLElement;
   private readonly fpsValue: HTMLElement;
   private readonly unitButtons: HTMLButtonElement[] = [];
@@ -142,6 +151,14 @@ export class Hud {
       this.callbacks.onExposure(v);
       return `${v.toFixed(2)}x`;
     }));
+
+    panel.appendChild(this.countRow('Labels', null, (on) => this.callbacks.onLabelsVisible(on)));
+    panel.appendChild(
+      this.slider('Label density', 0, 160, DEFAULT_MAX_LABELS, 5, (v) => {
+        this.callbacks.onLabelDensity(v);
+        return v === 0 ? 'off' : `${v}`;
+      }),
+    );
 
     if (clusters) {
       panel.appendChild(
@@ -276,12 +293,16 @@ export class Hud {
     root.appendChild(panel);
   }
 
-  /** A "<label>  <count>  [show/hide]" row, one per optional catalog layer. */
-  private countRow(label: string, count: number, onToggle: (visible: boolean) => void): HTMLElement {
+  /** A "<label>  <count>  [show/hide]" row, one per toggleable layer. */
+  private countRow(
+    label: string,
+    count: number | null,
+    onToggle: (visible: boolean) => void,
+  ): HTMLElement {
     const row = el('div', 'row');
     row.appendChild(el('span', 'label', label));
     const right = el('span', 'group');
-    right.appendChild(el('span', 'value', count.toLocaleString('en-US')));
+    if (count !== null) right.appendChild(el('span', 'value', count.toLocaleString('en-US')));
     const toggle = el('button', 'toggle active', 'show');
     toggle.addEventListener('click', () => {
       const on = toggle.classList.toggle('active');

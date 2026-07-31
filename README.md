@@ -61,6 +61,7 @@ uv run pytest
 cd ../web
 npm install
 npm run dev
+npm test                   # screen-space projection, picking and label layout
 ```
 
 ## Data sources

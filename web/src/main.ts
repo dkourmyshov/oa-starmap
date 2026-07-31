@@ -8,8 +8,11 @@ import { type StarData, loadAll } from './data/manifest';
 import { ClusterField } from './layers/clusterField';
 import { HiiField } from './layers/hiiField';
 import { StarField } from './layers/starField';
+import { ObjectIndex } from './scene/objects';
 import { Viewer } from './scene/viewer';
+import { DetailPanel } from './ui/detail';
 import { Hud, type JumpTarget } from './ui/hud';
+import { LabelOverlay } from './ui/labels';
 import { pc } from './units';
 
 /** Find a star's index by its proper name. */
@@ -86,6 +89,24 @@ async function main(): Promise<void> {
     clusterField.setPolityMode(true);
     viewer.scene.add(clusterField.points);
   }
+
+  // Labelling and picking both need to know what is currently drawn, because
+  // neither should ever offer an object the renderer is not showing.
+  const view = {
+    magnitudeLimit: 7.5,
+    visible: { star: true, cluster: Boolean(clusterField), hii: Boolean(hiiField) },
+  };
+
+  const objects = new ObjectIndex(data, loaded.clusters, loaded.hii, loaded.fiction);
+
+  const detail = new DetailPanel(
+    overlay,
+    { stars: data, clusters: loaded.clusters, hii: loaded.hii, fiction: loaded.fiction, objects },
+    (x, y, z, standoff) => viewer.focusOn(new THREE.Vector3(x, y, z), standoff),
+  );
+
+  const select = (id: number): void => detail.show(id, hud.currentUnit);
+  const labels = new LabelOverlay(document.body, objects, select);
 
   const handleJump = (target: JumpTarget): void => {
     if (target.starName) {
@@ -182,18 +203,21 @@ async function main(): Promise<void> {
     {
       onMagnitudeLimit: (value) => {
         starField.magnitudeLimit = value;
+        view.magnitudeLimit = value;
       },
       onExposure: (value) => {
         starField.exposure = value;
       },
       onClustersVisible: (value) => {
         if (clusterField) clusterField.visible = value;
+        view.visible.cluster = value;
       },
       onClusterOpacity: (value) => {
         if (clusterField) clusterField.opacity = value;
       },
       onHiiVisible: (value) => {
         if (hiiField) hiiField.visible = value;
+        view.visible.hii = value;
       },
       onHiiOpacity: (value) => {
         if (hiiField) hiiField.opacity = value;
@@ -201,17 +225,48 @@ async function main(): Promise<void> {
       onHiiKinematic: (enabled) => {
         hiiField?.setShowKinematic(enabled);
       },
+      onLabelsVisible: (value) => {
+        labels.visible = value;
+      },
+      onLabelDensity: (value) => {
+        labels.maxLabels = value;
+      },
       onPolityMode: (enabled) => {
         clusterField?.setPolityMode(enabled);
         hiiField?.setPolityMode(enabled);
       },
       onFocusPolity: focusPolity,
       onJump: handleJump,
-      onUnitChange: () => {
-        /* HUD re-renders distances on the next frame. */
+      onUnitChange: (unit) => {
+        // The HUD readout re-renders on the next frame, but the detail panel is
+        // static once drawn, so it has to be told.
+        detail.refresh(unit);
       },
     },
   );
+
+  // Click to select, but only if the pointer did not travel — otherwise every
+  // orbit drag that happens to end over a star would select it.
+  let pressX = 0;
+  let pressY = 0;
+  canvas.addEventListener('pointerdown', (event) => {
+    pressX = event.clientX;
+    pressY = event.clientY;
+  });
+  canvas.addEventListener('pointerup', (event) => {
+    if (Math.hypot(event.clientX - pressX, event.clientY - pressY) > 4) return;
+
+    const rect = canvas.getBoundingClientRect();
+    const id = objects.pick(viewer.camera, event.clientX - rect.left, event.clientY - rect.top, {
+      width: rect.width,
+      height: rect.height,
+      magnitudeLimit: view.magnitudeLimit,
+      visible: view.visible,
+    });
+
+    if (id === null) detail.clear();
+    else select(id);
+  });
 
   viewer.addFrameCallback((dt) => {
     // Both volumetric layers project a true angular size, so they depend on
@@ -219,6 +274,17 @@ async function main(): Promise<void> {
     const height = viewer.renderer.domElement.height;
     clusterField?.setViewportHeight(height);
     hiiField?.setViewportHeight(height);
+
+    const rect = canvas.getBoundingClientRect();
+    labels.update(
+      viewer.camera,
+      rect.width,
+      rect.height,
+      view.magnitudeLimit,
+      view.visible,
+      performance.now(),
+    );
+
     hud.update(viewer.distanceFromSol, dt);
   });
 
