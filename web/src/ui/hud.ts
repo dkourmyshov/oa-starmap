@@ -1,0 +1,343 @@
+/**
+ * On-screen readout and controls.
+ *
+ * Every distance shown here goes through `formatDistance`, so nothing reaches the
+ * screen without its unit attached. The unit toggle defaults to light years,
+ * matching Orion's Arm usage, but the underlying values are always parsecs.
+ */
+
+import type { ClustersDataset, FictionData, HiiDataset, StarsDataset } from '../data/manifest';
+import { DEFAULT_OPACITY as DEFAULT_CLUSTER_OPACITY } from '../layers/clusterField';
+import { DEFAULT_OPACITY as DEFAULT_HII_OPACITY } from '../layers/hiiField';
+import { type DistanceUnit, DEFAULT_UNIT, type Parsecs, formatDistance } from '../units';
+
+export interface HudCallbacks {
+  onMagnitudeLimit(value: number): void;
+  onExposure(value: number): void;
+  onClustersVisible(value: boolean): void;
+  onClusterOpacity(value: number): void;
+  onHiiVisible(value: boolean): void;
+  onHiiOpacity(value: number): void;
+  onHiiKinematic(enabled: boolean): void;
+  onPolityMode(enabled: boolean): void;
+  onFocusPolity(polityId: string): void;
+  onJump(target: JumpTarget): void;
+  onUnitChange(unit: DistanceUnit): void;
+}
+
+export interface JumpTarget {
+  label: string;
+  /** Star proper name to look up. */
+  starName?: string;
+  /** Cluster primary name to look up. */
+  clusterName?: string;
+  /** HII region Sharpless designation to look up. */
+  hiiName?: string;
+  /** Otherwise, pull back this far from Sol along the current view direction. */
+  distancePc?: number;
+}
+
+/**
+ * Preset viewpoints. The far ones exist to make the no-edge requirement easy to
+ * check by eye: pull back to 7000 ly and beyond and look for a sphere surface.
+ */
+export const JUMP_TARGETS: JumpTarget[] = [
+  { label: 'Sol', starName: 'Sol' },
+  { label: 'Vega', starName: 'Vega' },
+  { label: 'Wezen', starName: 'Wezen' },
+  { label: 'Deneb', starName: 'Deneb' },
+  { label: 'Hyades', clusterName: 'Melotte_25' },
+  { label: 'Pleiades', clusterName: 'Melotte_22' },
+  { label: 'Praesepe', clusterName: 'NGC_2632' },
+  { label: 'Double Cluster', clusterName: 'NGC_869' },
+  // The zeta Ophiuchi HII region: the nearest Sharpless region on the map, and
+  // the one whose kinematic distance is most spectacularly wrong.
+  { label: 'S27 (ζ Oph)', hiiName: 'S27' },
+  { label: '1 000 ly out', distancePc: 1000 / 3.261563777 },
+  { label: '7 000 ly out', distancePc: 7000 / 3.261563777 },
+];
+
+function el<K extends keyof HTMLElementTagNameMap>(
+  tag: K,
+  className?: string,
+  text?: string,
+): HTMLElementTagNameMap[K] {
+  const node = document.createElement(tag);
+  if (className) node.className = className;
+  if (text !== undefined) node.textContent = text;
+  return node;
+}
+
+export class Hud {
+  private unit: DistanceUnit = DEFAULT_UNIT;
+  private readonly distanceValue: HTMLElement;
+  private readonly fpsValue: HTMLElement;
+  private readonly unitButtons: HTMLButtonElement[] = [];
+
+  private frameCount = 0;
+  private frameTime = 0;
+
+  constructor(
+    root: HTMLElement,
+    dataset: StarsDataset,
+    clusters: ClustersDataset | null,
+    hii: HiiDataset | null,
+    fiction: FictionData | null,
+    private readonly callbacks: HudCallbacks,
+  ) {
+    const panel = el('div', 'panel panel-stats');
+
+    const title = el('div', 'title', 'OA Starmap');
+    panel.appendChild(title);
+
+    const starLine = el('div', 'row');
+    starLine.appendChild(el('span', 'label', 'Stars'));
+    starLine.appendChild(el('span', 'value', dataset.count.toLocaleString('en-US')));
+    panel.appendChild(starLine);
+
+    if (clusters) {
+      panel.appendChild(
+        this.countRow('Clusters', clusters.count, (on) => this.callbacks.onClustersVisible(on)),
+      );
+    }
+
+    if (hii) {
+      panel.appendChild(
+        this.countRow('HII regions', hii.count, (on) => this.callbacks.onHiiVisible(on)),
+      );
+    }
+
+    const distanceRow = el('div', 'row');
+    distanceRow.appendChild(el('span', 'label', 'Camera from Sol'));
+    this.distanceValue = el('span', 'value', '—');
+    distanceRow.appendChild(this.distanceValue);
+    panel.appendChild(distanceRow);
+
+    const fpsRow = el('div', 'row');
+    fpsRow.appendChild(el('span', 'label', 'FPS'));
+    this.fpsValue = el('span', 'value', '—');
+    fpsRow.appendChild(this.fpsValue);
+    panel.appendChild(fpsRow);
+
+    // Units
+    const unitRow = el('div', 'row');
+    unitRow.appendChild(el('span', 'label', 'Units'));
+    const unitGroup = el('span', 'group');
+    for (const unit of ['ly', 'pc'] as DistanceUnit[]) {
+      const button = el('button', 'toggle', unit);
+      button.addEventListener('click', () => this.setUnit(unit));
+      if (unit === this.unit) button.classList.add('active');
+      this.unitButtons.push(button);
+      unitGroup.appendChild(button);
+    }
+    unitRow.appendChild(unitGroup);
+    panel.appendChild(unitRow);
+
+    panel.appendChild(this.slider('Magnitude limit', 3, 16, 7.5, 0.1, (v) => {
+      this.callbacks.onMagnitudeLimit(v);
+      return v.toFixed(1);
+    }));
+
+    panel.appendChild(this.slider('Exposure', 0.1, 4, 1, 0.05, (v) => {
+      this.callbacks.onExposure(v);
+      return `${v.toFixed(2)}x`;
+    }));
+
+    if (clusters) {
+      panel.appendChild(
+        this.slider('Cluster opacity', 0, 1, DEFAULT_CLUSTER_OPACITY, 0.02, (v) => {
+          this.callbacks.onClusterOpacity(v);
+          return v === 0 ? 'off' : `${Math.round(v * 100)}%`;
+        }),
+      );
+    }
+
+    if (hii) {
+      panel.appendChild(
+        this.slider('HII opacity', 0, 1, DEFAULT_HII_OPACITY, 0.02, (v) => {
+          this.callbacks.onHiiOpacity(v);
+          return v === 0 ? 'off' : `${Math.round(v * 100)}%`;
+        }),
+      );
+
+      // Kinematic distances are the weak half of this catalog, so let them be
+      // switched off rather than only warned about. The counts come straight from
+      // the build, so the button states how much of the layer it would remove.
+      const kinematic = hii.stats.methods.kinematic ?? 0;
+      const stellar = hii.stats.methods.stellar ?? 0;
+      const row = el('div', 'row');
+      row.appendChild(el('span', 'label', 'Kinematic distances'));
+      const group = el('span', 'group');
+      group.appendChild(el('span', 'value', `${kinematic}`));
+      const toggle = el('button', 'toggle active', 'show');
+      toggle.addEventListener('click', () => {
+        const on = toggle.classList.toggle('active');
+        toggle.textContent = on ? 'show' : 'hide';
+        this.callbacks.onHiiKinematic(on);
+      });
+      group.appendChild(toggle);
+      row.appendChild(group);
+      panel.appendChild(row);
+      panel.appendChild(
+        el(
+          'div',
+          'note-line note-warn',
+          `${stellar} regions placed by stellar distance, ${kinematic} kinematic — ` +
+            `the latter are unreliable toward the galactic centre and anticentre.`,
+        ),
+      );
+    }
+
+    // Provenance — the map mixes measured data with derived quantities, so say so.
+    const note = el('div', 'note');
+    note.appendChild(el('div', 'note-line', dataset.selection.rule));
+    note.appendChild(el('div', 'note-line', dataset.source.citation));
+    if (clusters) note.appendChild(el('div', 'note-line', clusters.source.citation));
+    if (hii) note.appendChild(el('div', 'note-line', hii.source.citation));
+    note.appendChild(
+      el(
+        'div',
+        'note-line note-warn',
+        `Distances beyond ${Math.round(
+          dataset.selection.reliability.unreliable_beyond_pc * 3.261563777,
+        ).toLocaleString('en-US')} ly are indicative only.`,
+      ),
+    );
+    panel.appendChild(note);
+
+    root.appendChild(panel);
+
+    if (fiction) this.buildPolityPanel(root, fiction);
+
+    // Jump targets
+    const jumpPanel = el('div', 'panel panel-jump');
+    jumpPanel.appendChild(el('div', 'title', 'Jump to'));
+    const jumpGrid = el('div', 'jump-grid');
+    for (const target of JUMP_TARGETS) {
+      const button = el('button', 'jump', target.label);
+      button.addEventListener('click', () => this.callbacks.onJump(target));
+      jumpGrid.appendChild(button);
+    }
+    jumpPanel.appendChild(jumpGrid);
+    root.appendChild(jumpPanel);
+  }
+
+  /**
+   * The polity legend.
+   *
+   * Also states how many landmarks are still unbound. That number is the honest
+   * status of the fictional layer, and burying it would let the map imply more
+   * coverage than it has.
+   */
+  private buildPolityPanel(root: HTMLElement, fiction: FictionData): void {
+    const panel = el('div', 'panel panel-polity');
+
+    const head = el('div', 'row');
+    head.appendChild(el('span', 'title', "Orion's Arm"));
+    const modeToggle = el('button', 'toggle active', 'polity');
+    modeToggle.addEventListener('click', () => {
+      const on = modeToggle.classList.toggle('active');
+      modeToggle.textContent = on ? 'polity' : 'type';
+      this.callbacks.onPolityMode(on);
+    });
+    head.appendChild(modeToggle);
+    panel.appendChild(head);
+
+    const list = el('div', 'legend');
+    for (const polity of fiction.polities) {
+      if (polity.resolved_count === 0) continue;
+      const row = el('button', 'legend-row');
+      const swatch = el('span', 'swatch');
+      swatch.style.background = polity.color;
+      row.appendChild(swatch);
+      row.appendChild(el('span', 'legend-name', polity.name));
+      row.appendChild(
+        el('span', 'legend-count', `${polity.resolved_count}/${polity.landmark_count}`),
+      );
+      row.addEventListener('click', () => this.callbacks.onFocusPolity(polity.id));
+      list.appendChild(row);
+    }
+    panel.appendChild(list);
+
+    const pending = fiction.pending.length;
+    if (pending > 0) {
+      const note = el('div', 'note');
+      note.appendChild(
+        el(
+          'div',
+          'note-line note-warn',
+          `${pending} landmarks not yet bound — planetary nebulae, legacy open ` +
+            `clusters, SNRs and dark clouds are not loaded yet.`,
+        ),
+      );
+      panel.appendChild(note);
+    }
+
+    root.appendChild(panel);
+  }
+
+  /** A "<label>  <count>  [show/hide]" row, one per optional catalog layer. */
+  private countRow(label: string, count: number, onToggle: (visible: boolean) => void): HTMLElement {
+    const row = el('div', 'row');
+    row.appendChild(el('span', 'label', label));
+    const right = el('span', 'group');
+    right.appendChild(el('span', 'value', count.toLocaleString('en-US')));
+    const toggle = el('button', 'toggle active', 'show');
+    toggle.addEventListener('click', () => {
+      const on = toggle.classList.toggle('active');
+      toggle.textContent = on ? 'show' : 'hide';
+      onToggle(on);
+    });
+    right.appendChild(toggle);
+    row.appendChild(right);
+    return row;
+  }
+
+  private slider(
+    label: string,
+    min: number,
+    max: number,
+    initial: number,
+    step: number,
+    onInput: (value: number) => string,
+  ): HTMLElement {
+    const wrapper = el('div', 'slider-row');
+    const head = el('div', 'row');
+    head.appendChild(el('span', 'label', label));
+    const readout = el('span', 'value', onInput(initial));
+    head.appendChild(readout);
+    wrapper.appendChild(head);
+
+    const input = el('input', 'slider');
+    input.type = 'range';
+    input.min = String(min);
+    input.max = String(max);
+    input.step = String(step);
+    input.value = String(initial);
+    input.addEventListener('input', () => {
+      readout.textContent = onInput(Number(input.value));
+    });
+    wrapper.appendChild(input);
+    return wrapper;
+  }
+
+  private setUnit(unit: DistanceUnit): void {
+    this.unit = unit;
+    for (const button of this.unitButtons) {
+      button.classList.toggle('active', button.textContent === unit);
+    }
+    this.callbacks.onUnitChange(unit);
+  }
+
+  update(distanceFromSol: Parsecs, dt: number): void {
+    this.distanceValue.textContent = formatDistance(distanceFromSol, this.unit);
+
+    this.frameCount += 1;
+    this.frameTime += dt;
+    if (this.frameTime >= 0.5) {
+      this.fpsValue.textContent = (this.frameCount / this.frameTime).toFixed(0);
+      this.frameCount = 0;
+      this.frameTime = 0;
+    }
+  }
+}

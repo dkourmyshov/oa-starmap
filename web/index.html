@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OA Starmap</title>
+    <style>
+      :root {
+        --bg: #03040a;
+        --panel: rgba(10, 14, 26, 0.82);
+        --border: rgba(120, 150, 210, 0.22);
+        --text: #d6dcec;
+        --muted: #7b87a6;
+        --accent: #8fb4ff;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        height: 100%;
+        background: var(--bg);
+        color: var(--text);
+        font: 13px/1.45 ui-sans-serif, system-ui, "Segoe UI", sans-serif;
+        overflow: hidden;
+      }
+
+      #scene {
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+
+      #overlay {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        padding: 14px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      .panel {
+        pointer-events: auto;
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 12px 14px;
+        min-width: 268px;
+        max-width: 320px;
+        backdrop-filter: blur(9px);
+      }
+
+      .panel-error {
+        margin: auto;
+        max-width: 460px;
+      }
+
+      .title {
+        font-weight: 600;
+        letter-spacing: 0.02em;
+        margin-bottom: 9px;
+        color: #fff;
+      }
+
+      .row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        padding: 2px 0;
+      }
+
+      .label {
+        color: var(--muted);
+      }
+
+      .value {
+        font-variant-numeric: tabular-nums;
+        color: var(--text);
+      }
+
+      .group {
+        display: inline-flex;
+        gap: 4px;
+      }
+
+      .toggle,
+      .jump {
+        pointer-events: auto;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid var(--border);
+        color: var(--text);
+        border-radius: 6px;
+        padding: 3px 9px;
+        font: inherit;
+        cursor: pointer;
+      }
+
+      .toggle:hover,
+      .jump:hover {
+        background: rgba(143, 180, 255, 0.16);
+      }
+
+      .toggle.active {
+        background: rgba(143, 180, 255, 0.26);
+        border-color: var(--accent);
+        color: #fff;
+      }
+
+      .slider-row {
+        margin-top: 8px;
+      }
+
+      .slider {
+        width: 100%;
+        accent-color: var(--accent);
+      }
+
+      .note {
+        margin-top: 11px;
+        padding-top: 9px;
+        border-top: 1px solid var(--border);
+      }
+
+      .note-line {
+        color: var(--muted);
+        font-size: 11.5px;
+        margin-bottom: 3px;
+      }
+
+      .note-warn {
+        color: #c9a978;
+      }
+
+      .jump-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5px;
+      }
+
+      #overlay {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: flex-start;
+      }
+
+      .panel-stats {
+        order: 1;
+      }
+
+      .panel-polity {
+        order: 2;
+        margin-left: auto;
+        max-height: calc(100vh - 28px);
+        overflow-y: auto;
+      }
+
+      .panel-jump {
+        order: 3;
+        align-self: flex-end;
+        margin-top: auto;
+      }
+
+      .legend {
+        display: flex;
+        flex-direction: column;
+        gap: 1px;
+        margin-top: 4px;
+      }
+
+      .legend-row {
+        pointer-events: auto;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        width: 100%;
+        background: none;
+        border: 0;
+        border-radius: 5px;
+        padding: 3px 5px;
+        color: var(--text);
+        font: inherit;
+        text-align: left;
+        cursor: pointer;
+      }
+
+      .legend-row:hover {
+        background: rgba(143, 180, 255, 0.14);
+      }
+
+      .swatch {
+        width: 10px;
+        height: 10px;
+        border-radius: 2px;
+        flex: 0 0 auto;
+      }
+
+      .legend-name {
+        flex: 1 1 auto;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .legend-count {
+        color: var(--muted);
+        font-variant-numeric: tabular-nums;
+        font-size: 11px;
+      }
+
+      #loading {
+        position: fixed;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        color: var(--muted);
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="scene"></canvas>
+    <div id="overlay">
+      <div id="loading">Loading star catalog…</div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

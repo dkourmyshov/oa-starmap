@@ -1,0 +1,179 @@
+"""Binding fictional landmark names to real catalog objects.
+
+Name matching is the whole difficulty. People write "NGC 0225", "ngc225" and
+"NGC_225" for the same object, refer to clusters by Messier number when the
+catalog only carries NGC numbers, and use proper names ("Ptolemy's Cluster") that
+appear in no catalog at all. Normalisation handles the mechanical variation;
+``fiction/aliases.yaml`` handles the rest, and is user-editable precisely because
+that mapping is a matter of judgement rather than syntax.
+"""
+
+from __future__ import annotations
+
+import re
+from dataclasses import dataclass, field
+from typing import Any
+
+CATALOG_PREFIXES = (
+    "ngc",
+    "ic",
+    "messier",
+    "collinder",
+    "melotte",
+    "berkeley",
+    "ruprecht",
+    "trumpler",
+    "stock",
+    "basel",
+    "bochum",
+    "lynga",
+    "pismis",
+    "czernik",
+    "turner",
+    "roslund",
+    "hogg",
+    "blanco",
+    "alessi",
+    "upgren",
+    "markarian",
+    "stephenson",
+    "iskudarian",
+)
+
+
+def normalise(name: str) -> str:
+    """Reduce a designation to a comparable key.
+
+    Case, punctuation, separator style and leading zeros in catalog numbers all
+    vary between sources and none of them carry meaning.
+    """
+    # U+2019 is the curly apostrophe; "Ptolemy's Cluster" gets typed both ways.
+    text = name.strip().lower().replace("'", "").replace("\u2019", "")
+    text = text.replace("-", "_").replace("+", "_plus_")
+    text = re.sub(r"[\s_]+", "_", text)
+    # "NGC 0225" and "NGC 225" denote the same object.
+    text = re.sub(r"_0+(\d)", r"_\1", text)
+    # "NGC225" -> "ngc_225", so bare and separated forms agree.
+    for prefix in CATALOG_PREFIXES:
+        text = re.sub(rf"^{prefix}(\d)", rf"{prefix}_\1", text)
+    return text
+
+
+@dataclass
+class Binding:
+    """One landmark, and what it resolved to."""
+
+    landmark: str
+    polities: list[str]
+    kind: str | None = None  # "cluster" | "star" | None
+    index: int | None = None
+    matched_name: str | None = None
+    via_alias: str | None = None
+
+    @property
+    def resolved(self) -> bool:
+        return self.index is not None
+
+    def as_dict(self) -> dict[str, Any]:
+        return {
+            "landmark": self.landmark,
+            "polities": self.polities,
+            "resolved": self.resolved,
+            "kind": self.kind,
+            "index": self.index,
+            "matched_name": self.matched_name,
+            "via_alias": self.via_alias,
+        }
+
+
+@dataclass
+class ResolutionReport:
+    bindings: list[Binding] = field(default_factory=list)
+
+    @property
+    def resolved(self) -> list[Binding]:
+        return [b for b in self.bindings if b.resolved]
+
+    @property
+    def unresolved(self) -> list[Binding]:
+        return [b for b in self.bindings if not b.resolved]
+
+    def as_dict(self) -> dict[str, Any]:
+        return {
+            "total": len(self.bindings),
+            "resolved": len(self.resolved),
+            "unresolved": len(self.unresolved),
+            "pending": sorted(
+                {b.landmark for b in self.unresolved},
+                key=str.lower,
+            ),
+        }
+
+
+class Resolver:
+    """Matches landmark names against the built real catalogs."""
+
+    def __init__(
+        self,
+        cluster_names: list[dict[str, Any]],
+        star_names: dict[str, dict[str, str]],
+        aliases: dict[str, str],
+        hii_names: list[dict[str, Any]] | None = None,
+    ) -> None:
+        self._aliases = {normalise(k): v for k, v in aliases.items()}
+
+        self._clusters = self._index_named(cluster_names)
+        self._hii = self._index_named(hii_names or [])
+
+        self._stars: dict[str, int] = {}
+        for index_str, entry in star_names.items():
+            for field_name in ("proper", "bayer", "bf"):
+                value = entry.get(field_name, "")
+                key = normalise(value) if value else ""
+                if key and key not in self._stars:
+                    self._stars[key] = int(index_str)
+
+    @staticmethod
+    def _index_named(entries: list[dict[str, Any]]) -> dict[str, int]:
+        """Index a catalog by name, primary names taking precedence over aliases.
+
+        Two passes, not one: every primary name is claimed before any alias is
+        considered. Catalogs cross-reference each other freely, so an object that
+        merely *lists* another's designation among its aliases must not be able to
+        shadow the object that designation actually belongs to. Within each pass
+        the first writer wins.
+        """
+        index: dict[str, int] = {}
+        for position, entry in enumerate(entries):
+            key = normalise(str(entry.get("name", "")))
+            if key and key not in index:
+                index[key] = position
+        for position, entry in enumerate(entries):
+            for candidate in str(entry.get("aliases", "")).split(","):
+                key = normalise(candidate)
+                if key and key not in index:
+                    index[key] = position
+        return index
+
+    def resolve(self, landmark: str, polities: list[str]) -> Binding:
+        binding = Binding(landmark=landmark, polities=polities)
+
+        key = normalise(landmark)
+        alias_target = self._aliases.get(key)
+        keys = [key]
+        if alias_target:
+            keys.append(normalise(alias_target))
+
+        # Most specific catalog first: a Sharpless or cluster designation names one
+        # object, whereas a star's Bayer letter is only unique within a
+        # constellation.
+        catalogs = (("cluster", self._clusters), ("hii", self._hii), ("star", self._stars))
+        for attempt, lookup_key in enumerate(keys):
+            for kind, index in catalogs:
+                if lookup_key in index:
+                    binding.kind = kind
+                    binding.index = index[lookup_key]
+                    binding.via_alias = alias_target if attempt else None
+                    return binding
+
+        return binding

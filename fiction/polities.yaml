@@ -1,0 +1,132 @@
+# Orion's Arm meta-empires and the real cosmic landmarks associated with them.
+#
+# These are rough associations, not borders. OA's polity volumes are diffuse and
+# heavily interpenetrating: a landmark listed under two polities is a genuine
+# shared presence, not a mistake, and the pipeline preserves multiple membership
+# rather than forcing a single owner.
+#
+# Landmark names are resolved against the real catalogs at build time. Names that
+# cannot be resolved are reported loudly and kept as pending, so they bind
+# automatically once the catalog that contains them is added. See
+# `fiction/aliases.yaml` for common-name to catalog-designation mappings.
+
+polities:
+  - id: cygexpa
+    name: Cygexpa
+    color: "#4FC3F7"
+    landmarks:
+      [S126, S119, Trumpler 37, S155, S171, Turner 1, North America Nebula,
+       S129, Roslund 5, Aquila Rift, NGC 7092, Dumbbell Nebula, Collinder 428,
+       NGC 6885, NGC 6996, NGC 0225, NGC 0189, Czernik 8, Cat Eye Nebula,
+       NGC 7160, NGC 7762]
+
+  - id: keter-dominion
+    name: Keter Dominion
+    color: "#FFD54F"
+    landmarks:
+      [Ptolemy's Cluster, S67, M25, NGC 6589, Butterfly Cluster, Berkeley 42,
+       IC 4665, G64.3+5.7, NGC 6709]
+
+  - id: mutual-progress-association
+    name: Mutual Progress Association
+    color: "#66BB6A"
+    landmarks:
+      [NGC 6994, NGC 6716, Collinder 394, NGC 6802, Berkeley 82, IC 4756,
+       NGC 6633, M23, NGC 6494, NGC 6281, Rho Ophiuchi Complex, S27,
+       Collinder 359, Collinder 399]
+
+  - id: sagittarius-transcultural-cooperation
+    name: Sagittarius Transcultural Cooperation
+    color: "#AB47BC"
+    landmarks: [IC 4651, Bochum 14, S31, Basel 5, NGC 4625, NGC 6416]
+
+  - id: negentropy-alliance
+    name: Negentropy Alliance
+    color: "#26C6DA"
+    landmarks:
+      [NGC 6124, NGC 5823, NGC 5662, Ruprecht 108, NGC 6178, NGC 6134, Lynga 7,
+       NGC 6250, NGC 5822]
+
+  - id: disarchy
+    name: Disarchy
+    color: "#8D6E63"
+    landmarks: [Lynga 2, Hogg 18]
+
+  - id: paradigm
+    name: Efficiency Maximization Paradigm
+    color: "#EC407A"
+    # User flagged the polity attribution here as uncertain.
+    uncertain: true
+    landmarks: [NGC 5460]
+
+  - id: nocozo
+    name: Non-Coercive Zone
+    color: "#FF7043"
+    landmarks:
+      [NGC 6025, NGC 6087, Blanco 1, Helix Nebula, NGC 4337, NGC 3532,
+       NGC 3228, Hogg 14, Pismis 5, Bochum 4, Ruprecht 98, vdB-Hagen 99,
+       Pismis 4, Collinder 173, NGC 2546, NGC 3680, Jupiter Nebula,
+       Ruprecht 46, NGC 2438]
+
+  - id: vela
+    name: Vela
+    color: "#EF5350"
+    landmarks: [Vela Supernova Remnant]
+
+  - id: emple-dokcetics
+    name: Emple-Dokcetics
+    color: "#7E57C2"
+    landmarks: [NGC 2353, NGC 2374, M50, NGC 2343, NGC 2301]
+
+  - id: sophic-league
+    name: Sophic League
+    color: "#5C6BC0"
+    landmarks:
+      [Collinder 173, Collinder 132, NGC 2516, NGC 1901, NGC 2547,
+       Collinder 121, M41, NGC 2422, M47, NGC 2527, NGC 2423,
+       Theta Carinae Cluster, Omicron Velorum Cluster, NGC 2451, Collinder 135,
+       Collinder 140, Eagle Nebula, M48, M67, NGC 2548, NGC 2395]
+
+  - id: communion-of-worlds
+    name: Communion of Worlds
+    color: "#F8BBD0"
+    landmarks: [S245]
+
+  - id: orion-federation
+    name: Orion Federation
+    color: "#FFA726"
+    landmarks: [S263, M78, Collinder 69, Collinder 70, Cone Nebula]
+
+  - id: metasoft
+    name: Metasoft Version Tree
+    color: "#9CCC65"
+    landmarks:
+      [NGC 1746, NGC 1647, NGC 1750, NGC 1758, NGC 2169, NGC 2112,
+       Collinder 96, NGC 2215, M35, Monkey Nebula, Christmas Tree Cluster,
+       S232, Hubble Variable Nebula, Lambda Ori Nebula, NGC 2232, Collinder 97,
+       Basel 11, Floating Star Nebula, IC 405, S238, S239, Pleiades,
+       Eskimo Nebula, Praesepe, Upgren 1, Melotte 111, NGC 2281]
+
+  - id: solar-dominion
+    name: Solar Dominion
+    color: "#FFEE58"
+    landmarks:
+      [NGC 246, NGC 0752, M34, California Nebula, NGC 1342, NGC 1579, IC 0361,
+       Markarian 6, Geminga, Collinder 463, NGC 1027, IC 1848, IC 1805, S202,
+       S205, NGC 559, Alpha Persei Cluster, Gamma Cas, M39, Stock 2, IC 417,
+       NGC 1513, NGC 1528, NGC 1545, Stock 7, NGC 1444, NGC 1498, S27,
+       Owl Nebula, Iskudarian 1, Stephenson 1, S138, NGC 1502, S232]
+
+  - id: ulysses-network
+    name: Ulysses Network
+    color: "#4DB6AC"
+    landmarks: [NGC 2126]
+
+# Landmarks whose polity attribution spans a border, recorded so the ambiguity
+# is not lost when the data is read back.
+notes:
+  S138: "On the border between Solar Dominion and Cygexpa."
+  Collinder 173: "Shared between the Non-Coercive Zone and the Sophic League."
+  S27: "Shared between the Mutual Progress Association and the Solar Dominion."
+  S232: "Shared between Metasoft and the Solar Dominion."
+  North America Nebula: "With Collinder 428, both known as Hosoko."

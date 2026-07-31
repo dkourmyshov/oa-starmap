@@ -1,0 +1,58 @@
+# Common names and Messier numbers mapped to the designations used by the real
+# catalogs. Extend this freely — it is the seam between how people name things
+# and how catalogs do.
+#
+# Keys are matched case- and punctuation-insensitively, and leading zeros in
+# catalog numbers are ignored (NGC 0225 matches NGC_225).
+#
+# A mapping here is a *claim about identity*. Where a common name refers to a
+# nebula and its embedded cluster jointly (the Cone Nebula and the Christmas Tree
+# Cluster are both NGC 2264), the mapping points at whichever object the
+# catalogue actually contains, and the distinction is noted.
+
+aliases:
+  # Messier objects. The open cluster catalogue carries NGC/IC numbers but not
+  # Messier numbers, so these are needed for nearly every M-designated landmark.
+  M23: NGC 6494
+  M25: IC 4725
+  M34: NGC 1039
+  M35: NGC 2168
+  M39: NGC 7092
+  M41: NGC 2287
+  M47: NGC 2422
+  M48: NGC 2548
+  M50: NGC 2323
+  M67: NGC 2682
+  M78: NGC 2068
+
+  # Proper names for clusters.
+  Ptolemy's Cluster: NGC 6475
+  Butterfly Cluster: NGC 6405
+  Pleiades: Melotte 22
+  Praesepe: NGC 2632
+  Alpha Persei Cluster: Melotte 20
+  Theta Carinae Cluster: IC 2602
+  Omicron Velorum Cluster: IC 2391
+
+  # NGC 2264 is a single complex: the Cone Nebula is the dark intrusion, the
+  # Christmas Tree Cluster the young stars lighting it. The catalogue holds the
+  # cluster, so both names resolve to it.
+  Christmas Tree Cluster: NGC 2264
+  Cone Nebula: NGC 2264
+
+  # Nebulae. These mostly do NOT resolve yet — they need the HII region,
+  # planetary nebula and molecular cloud catalogues. Listed so that they bind
+  # automatically once those land, rather than needing to be revisited.
+  Eagle Nebula: NGC 6611
+  Monkey Nebula: NGC 2175
+  North America Nebula: NGC 7000
+  California Nebula: NGC 1499
+  Helix Nebula: NGC 7293
+  Dumbbell Nebula: NGC 6853
+  Owl Nebula: NGC 3587
+  Eskimo Nebula: NGC 2392
+  Cat Eye Nebula: NGC 6543
+  Jupiter Nebula: NGC 3242
+  Hubble Variable Nebula: NGC 2261
+  Lambda Ori Nebula: Collinder 69
+  Floating Star Nebula: IC 405
