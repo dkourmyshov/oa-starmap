@@ -246,6 +246,9 @@ export class DetailPanel {
       { label: 'Position', value: 'asserted by the setting', warn: true },
       { label: 'Absolute magnitude', value: absMag.toFixed(2) },
     ];
+    // The designation is the title only when there is nothing better; when the
+    // system name took that slot, the designation still has to be findable.
+    if (entry.system) rows.push({ label: 'Designation', value: entry.name });
     if (entry.spectral_type) {
       rows.push({ label: 'Spectral type', value: entry.spectral_type });
     }
@@ -256,9 +259,9 @@ export class DetailPanel {
     if (entry.source_file) rows.push({ label: 'Add-on file', value: entry.source_file });
 
     return {
-      title: entry.name,
-      subtitle: entry.oa_designation
-        ? "Orion's Arm star · OA designation"
+      title: entry.system || entry.name,
+      subtitle: entry.system
+        ? `Orion's Arm · sun of ${entry.system}`
         : "Orion's Arm star",
       rows,
       polities: [],

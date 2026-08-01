@@ -29,21 +29,38 @@ export const DEFAULT_OPACITY = 0.95;
 /** Marker diameter in device pixels. */
 export const DEFAULT_SIZE_PX = 9.0;
 
+/**
+ * Opacity for entries carrying only a designation.
+ *
+ * A judgement about the *source*, not about the object: it means the add-on
+ * says nothing beyond the number. JD 518791 is dimmed here yet appears in the
+ * Encyclopaedia Galactica, so this must stay a display weighting and never
+ * become a filter.
+ */
+export const BARE_DIM = 0.42;
+
 const VERTEX_SHADER = /* glsl */ `
   #include <common>
   #include <logdepthbuf_pars_vertex>
 
   attribute vec3 aColor;
+  attribute float aBare;
 
   uniform float uSize;
+  uniform float uBareDim;
 
   varying vec3 vColor;
+  varying float vGain;
 
   void main() {
     vec4 viewPos = modelViewMatrix * vec4(position, 1.0);
     gl_Position = projectionMatrix * viewPos;
 
     vColor = aColor;
+
+    // Entries the add-on gives nothing but a designation recede, so the ones
+    // it actually says something about stand out.
+    vGain = mix(1.0, uBareDim, aBare);
 
     // Constant screen size: a marker, not a luminosity. Big enough that the
     // hollow centre reads as a diamond rather than smearing into a dot.
@@ -60,6 +77,7 @@ const FRAGMENT_SHADER = /* glsl */ `
   uniform float uOpacity;
 
   varying vec3 vColor;
+  varying float vGain;
 
   void main() {
     vec2 offset = gl_PointCoord * 2.0 - 1.0;
@@ -74,7 +92,7 @@ const FRAGMENT_SHADER = /* glsl */ `
     float core = 1.0 - smoothstep(0.0, 0.46, d);
     float ring = clamp(edge - core, 0.0, 1.0);
 
-    float alpha = ring * uOpacity;
+    float alpha = ring * uOpacity * vGain;
     if (alpha < 0.004) discard;
 
     #include <logdepthbuf_fragment>
@@ -94,6 +112,7 @@ export class OAStarField {
 
     const positions = new Float32Array(data.count * 3);
     const colors = new Float32Array(data.count * 3);
+    const bare = new Float32Array(data.count);
 
     const lut = data.colorLut;
     const lutSize = lut.length / 3;
@@ -104,6 +123,10 @@ export class OAStarField {
       positions[i * 3] = data.positions[base];
       positions[i * 3 + 1] = data.positions[base + 1];
       positions[i * 3 + 2] = data.positions[base + 2];
+
+      // Nothing but a JD/YTS number: no system, no comment, nothing to read.
+      const entry = data.names[i];
+      bare[i] = entry && !entry.system && !entry.comment && entry.oa_designation ? 1 : 0;
 
       const ci = data.positions[base + 4];
       if (ci <= unknown + 1 || lutSize === 0) {
@@ -124,12 +147,14 @@ export class OAStarField {
     const geometry = new THREE.BufferGeometry();
     geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
     geometry.setAttribute('aColor', new THREE.BufferAttribute(colors, 3));
+    geometry.setAttribute('aBare', new THREE.BufferAttribute(bare, 1));
     geometry.boundingSphere = new THREE.Sphere(new THREE.Vector3(), Infinity);
 
     this.material = new THREE.ShaderMaterial({
       uniforms: {
         uSize: { value: DEFAULT_SIZE_PX },
         uOpacity: { value: DEFAULT_OPACITY },
+        uBareDim: { value: BARE_DIM },
       },
       vertexShader: VERTEX_SHADER,
       fragmentShader: FRAGMENT_SHADER,

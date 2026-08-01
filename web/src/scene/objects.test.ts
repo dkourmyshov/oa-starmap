@@ -97,7 +97,9 @@ function makeHii(entries: { xyz: [number, number, number]; radius: number; name:
   } as HiiData;
 }
 
-function makeOAStars(entries: { xyz: [number, number, number]; name: string }[]): OAStarData {
+function makeOAStars(
+  entries: { xyz: [number, number, number]; name: string; system?: string }[],
+): OAStarData {
   const positions = new Float32Array(entries.length * 5);
   entries.forEach((entry, i) => {
     positions[i * 5] = entry.xyz[0];
@@ -114,7 +116,8 @@ function makeOAStars(entries: { xyz: [number, number, number]; name: string }[])
       comment: '',
       spectral_type: 'G2V',
       distance_pc: 0,
-      oa_designation: e.name.startsWith('JD '),
+      oa_designation: e.name.startsWith('JD ') || e.name.startsWith('YTS '),
+      system: e.system ?? '',
       source_file: 'x.stc',
     })),
     colorLut: new Float32Array(3),
@@ -470,5 +473,66 @@ describe('Orion\u2019s Arm stars', () => {
       visible: ALL_VISIBLE,
     });
     expect(placed[0].text).toBe('Cantor');
+  });
+});
+
+describe('Orion\u2019s Arm system names', () => {
+  const layoutAt = (index: ObjectIndex) =>
+    index.layout(camera(), {
+      width: WIDTH,
+      height: HEIGHT,
+      magnitudeLimit: 20,
+      maxLabels: 10,
+      visible: ALL_VISIBLE,
+    });
+
+  it('labels a star by the system it is the sun of', () => {
+    // "JD 836901" names nothing; its comment says it is the sun of Wurm.
+    const index = new ObjectIndex(
+      makeStars([]),
+      null,
+      null,
+      null,
+      makeOAStars([{ xyz: [0, 0, -100], name: 'JD 836901', system: 'Wurm' }]),
+    );
+    expect(layoutAt(index)[0].text).toBe('Wurm');
+  });
+
+  it('ranks a star with a system alongside a named one', () => {
+    const index = new ObjectIndex(
+      makeStars([]),
+      null,
+      null,
+      null,
+      makeOAStars([
+        { xyz: [0, 0, -100], name: 'JD 836901', system: 'Wurm' },
+        { xyz: [40, 0, -100], name: 'JD 518774' },
+      ]),
+    );
+    const placed = layoutAt(index);
+    expect(placed[0].text).toBe('Wurm');
+  });
+
+  it('still labels a bare designation rather than hiding it', () => {
+    // An unlabelled marker is a dot that cannot be looked up.
+    const index = new ObjectIndex(
+      makeStars([]),
+      null,
+      null,
+      null,
+      makeOAStars([{ xyz: [0, 0, -100], name: 'JD 518774' }]),
+    );
+    expect(layoutAt(index).map((p) => p.text)).toEqual(['JD 518774']);
+  });
+
+  it('falls back to the designation when no system is given', () => {
+    const index = new ObjectIndex(
+      makeStars([]),
+      null,
+      null,
+      null,
+      makeOAStars([{ xyz: [0, 0, -100], name: 'Cantor' }]),
+    );
+    expect(layoutAt(index)[0].text).toBe('Cantor');
   });
 });

@@ -57,6 +57,29 @@ _HEADER = re.compile(
 )
 _FIELD = re.compile(r"^\s*(RA|Dec|Distance|SpectralType|AbsMag)\s+(\S+)", re.M)
 
+_SYSTEM_FOR = re.compile(r"\bstars?\s+for\s+(?:the\s+)?(?:system\s+containing\s+)?(.+)$", re.I)
+"""What the add-on's comments say a star is *for*.
+
+The designations are opaque — "JD 836901" names nothing — but the comments
+attached to them are not: "G3 star for Wurm" means this star is the sun of Wurm,
+and Wurm is what the system is known for. Where a comment says so, that name is
+carried through and used as the label, because it is the only human-meaningful
+identifier the source offers.
+"""
+
+
+def system_name(comment: str) -> str:
+    """The system a star is the sun of, from its comment, or an empty string.
+
+    Only the "star for X" phrasing is read. Comments like "Star in cluster
+    NGC 6633" or "Brown Dwarf in the Stellar Umma Region" describe where the star
+    is rather than what it serves, and naming a star after its cluster would put
+    fifty identical labels on the map.
+    """
+    matched = _SYSTEM_FOR.search(comment or "")
+    return matched.group(1).strip() if matched else ""
+
+
 _OA_DESIGNATION = re.compile(r"^\s*(JD|YTS)\b", re.I)
 """Orion's Arm's own numbering for stars it invented.
 
@@ -83,6 +106,7 @@ class OAStar:
     spectral_class: int
     distance: float
     oa_designation: bool
+    system: str
     source_file: str
 
 
@@ -219,6 +243,7 @@ def read_archive(archive_path: Path, stats: OAStarStats) -> list[OAStar]:
                 spectral_class=parse_spectral_class(spectral),
                 distance=float(distance_pc[i]),
                 oa_designation=bool(_OA_DESIGNATION.match(record["name"])),
+                system=system_name(record["comment"]),
                 source_file=record["source_file"],
             )
         )
@@ -258,6 +283,7 @@ def build_oastars(archive_path: Path | None = None, out_dir: Path | None = None)
                 "spectral_type": star.spectral_type,
                 "distance_pc": round(star.distance, 3),
                 "oa_designation": star.oa_designation,
+                "system": star.system,
                 "source_file": star.source_file,
             }
         )

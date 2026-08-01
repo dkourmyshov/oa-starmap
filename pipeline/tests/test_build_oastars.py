@@ -199,3 +199,53 @@ class TestBuild:
     def test_source_records_the_distance_unit(self, built):
         """The trap is worth stating in the output, not only in the code."""
         assert "light year" in built["manifest"]["source"]["distance_unit"]
+
+
+class TestSystemNames:
+    """The designations name nothing; the comments attached to them do."""
+
+    @pytest.mark.parametrize(
+        ("comment", "expected"),
+        [
+            ("Star for Harmonic Resonance", "Harmonic Resonance"),
+            ("star for Blue", "Blue"),
+            ("Star for system containing Redunin", "Redunin"),
+            ("G3  star for Wurm", "Wurm"),
+            ("F1  star for Pluton", "Pluton"),
+        ],
+    )
+    def test_extracts_the_system(self, comment, expected):
+        from oastarmap.build.oastars import system_name
+
+        assert system_name(comment) == expected
+
+    @pytest.mark.parametrize(
+        "comment",
+        [
+            "Star in cluster NGC 6633",  # where it is, not what it serves
+            "Brown Dwarf in the Stellar Umma Region",
+            "",
+        ],
+    )
+    def test_ignores_comments_that_are_not_about_a_system(self, comment):
+        from oastarmap.build.oastars import system_name
+
+        assert system_name(comment) == ""
+
+    def test_the_known_systems_are_recovered(self, built):
+        systems = {e["system"] for e in built["names"] if e["system"]}
+        assert systems == {
+            "Blue",
+            "Harmonic Resonance",
+            "Heimat",
+            "Muuhhome",
+            "Niuearth",
+            "Pluton",
+            "Wurm",
+        }
+
+    def test_cluster_members_get_no_system(self, built):
+        """Fifty stars labelled "NGC 6633" would be worse than none."""
+        for entry in built["names"]:
+            if "cluster" in entry["comment"].lower():
+                assert entry["system"] == ""

@@ -164,6 +164,8 @@ export interface OAStarName {
   distance_pc: number;
   /** True only for OA's own JD/YTS numbering. False is not a claim of reality. */
   oa_designation: boolean;
+  /** System the star is the sun of, where the add-on's comment says so. */
+  system: string;
   source_file: string;
 }
 

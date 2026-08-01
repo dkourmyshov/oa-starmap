@@ -66,10 +66,11 @@ const BASE_IMPORTANCE = {
   clusterClassical: 0.7,
   clusterSurvey: 0.1,
   hii: 0.65,
-  // A named OA system is a landmark of the setting; the JD/YTS filler that
-  // populates NGC 6633 is not, and 53 labels in one cluster would bury it.
+  // A named OA system is a landmark of the setting. A bare JD designation is
+  // not, but it still has to be labellable: an unlabelled marker is a dot you
+  // cannot look up. It ranks low so that 53 of them cannot bury NGC 6633.
   oaStarNamed: 0.9,
-  oaStarNumbered: 0.05,
+  oaStarNumbered: 0.32,
 };
 
 /** Added when an object carries an Orion's Arm association — the map's anchors. */
@@ -273,11 +274,14 @@ export class ObjectIndex {
         this.kind[at] = KIND_OASTAR;
         this.srcIndex[at] = i;
 
+        // "JD 836901" names nothing; its comment says it is the sun of Wurm,
+        // and Wurm is what the system is actually known for.
         const entry = oaStars.names[i];
-        this.labels[at] = entry?.name ?? '';
-        this.importance[at] = entry?.oa_designation
-          ? BASE_IMPORTANCE.oaStarNumbered
-          : BASE_IMPORTANCE.oaStarNamed;
+        this.labels[at] = entry?.system || entry?.name || '';
+        this.importance[at] =
+          entry?.oa_designation && !entry?.system
+            ? BASE_IMPORTANCE.oaStarNumbered
+            : BASE_IMPORTANCE.oaStarNamed;
         if (this.labels[at]) labelled.push(at);
         at++;
       }
