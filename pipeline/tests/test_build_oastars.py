@@ -356,7 +356,7 @@ class TestCuration:
         curated = {e["label"]: e for e in built["names"] if e["affiliation"]}
         assert curated["H'tat'sa'thoss"]["affiliation"] == "caretaker-gods"
         assert curated["Wadai"]["affiliation"] == "sophic-league"
-        assert curated["Muuhome"]["affiliation"] == "muuh"
+        assert curated["Muuhome"]["affiliation"] == "xenosophont"
         assert len(curated) == 18  # 19 curated, Enigma deliberately unassigned
 
     def test_the_naming_rule_prefers_a_named_primary(self, built):
@@ -409,4 +409,4 @@ class TestCuration:
         known = {p.id for p in FictionFile.load(STARS.with_name("polities.yaml")).polities}
         used = {e["affiliation"] for e in built["names"] if e["affiliation"]}
         assert used <= known
-        assert {"caretaker-gods", "muuh", "stellar-umma"} <= used
+        assert {"caretaker-gods", "xenosophont", "stellar-umma"} <= used

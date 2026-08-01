@@ -169,6 +169,19 @@ polities:
   # Below here: affiliations reached through individual system articles rather
   # than the 8000 A.T. political map, so they carry no landmarks of their own.
   # Their members are named in `oa_systems.yaml`. Colours are provisional.
+  #
+  # How a system is classified, for the two entries that are not ordinary
+  # polities:
+  #
+  #   Protected by a Caretaker God -> Caretaker Gods, whatever is actually there:
+  #   pre-spaceflight xenosophonts, a wildlife preserve, or a pretty rock. The
+  #   classification follows the protection, not the contents.
+  #
+  #   Controlled by xenosophonts, with no or only nominal terragen presence ->
+  #   Xenosophont.
+  #
+  # The two do not overlap, because a protected system takes the first rule even
+  # when xenosophonts live there.
 
   - id: caretaker-gods
     name: Caretaker Gods
@@ -206,16 +219,18 @@ polities:
     # Really two, the Umma of the Core and the Umma of the Shell, recorded as one
     # until the distinction matters here.
 
-  - id: muuh
-    name: Muuh
+  - id: xenosophont
+    name: Xenosophont
     color: "#BCAAA4"
     kind: xenosophont
     source: eg-system-articles
-    # Not a terragen meta-empire, and not a protectorate either: the Muuh have
-    # their own System of Response and need no terragen protection, which is
-    # exactly what distinguishes them from the To'ul'h at H'tat'sa'thoss. Named
-    # "Muuh" rather than "Xenosophont" because that is a category, and the
-    # category already holds that second, unrelated member.
+    # Systems under xenosophont control with no or only nominal terragen
+    # presence. A category rather than a polity, and deliberately undivided for
+    # now; it may split by clade once there is more than one member.
+    #
+    # It does not collect every xenosophont system. H'tat'sa'thoss holds the
+    # To'ul'h and is classified with the Caretaker Gods instead, because the
+    # protection rule takes precedence over what lives there.
 
 # Landmarks whose odd position has been checked against the source and is
 # correct. The build's placement check is a proofreading aid for mis-transcribed
