@@ -13,7 +13,14 @@
 
 import * as THREE from 'three';
 
-import type { ClusterData, FictionData, HiiData, OAStarData, StarData } from '../data/manifest';
+import type {
+  ClusterData,
+  Colony,
+  FictionData,
+  HiiData,
+  OAStarData,
+  StarData,
+} from '../data/manifest';
 
 export const KIND_STAR = 0;
 export const KIND_CLUSTER = 1;
@@ -80,6 +87,15 @@ const BASE_IMPORTANCE = {
   clusterClassical: 0.7,
   clusterSurvey: 0.1,
   hii: 0.65,
+
+  /**
+   * A real star Orion's Arm has given a colony name.
+   *
+   * Above every catalogue designation, because inside 100 ly the colony name
+   * is what the map is for — but below the named OA systems, since there are
+   * 855 of these and only 16 of those.
+   */
+  starColony: 1.7,
 
   /**
    * Named Orion's Arm systems, above everything else that can be scored.
@@ -192,6 +208,7 @@ export class ObjectIndex {
     hii: HiiData | null,
     fiction: FictionData | null,
     oaStars: OAStarData | null = null,
+    colonies: Map<number, Colony> | null = null,
   ) {
     const clusterCount = clusters?.count ?? 0;
     const hiiCount = hii?.count ?? 0;
@@ -229,8 +246,16 @@ export class ObjectIndex {
       this.kind[at] = KIND_STAR;
       this.srcIndex[at] = i;
 
+      // What Orion's Arm calls the system takes precedence over what the sky
+      // calls the star: inside the Inner Sphere that is the point of the map.
+      const colony = colonies?.get(i);
+      if (colony?.colony) {
+        this.labels[at] = colony.colony;
+        this.importance[at] = BASE_IMPORTANCE.starColony;
+      }
+
       const names = stars.names[String(i)];
-      if (names) {
+      if (names && !this.labels[at]) {
         const constellation = constellations[stars.constellation[i]] ?? '';
         if (names.proper) {
           this.labels[at] = names.proper;

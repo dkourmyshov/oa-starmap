@@ -72,6 +72,7 @@ npm test                   # screen-space projection, picking and label layout
 | Open clusters | Hunt & Reffert 2023 (Gaia DR3) | built |
 | HII regions | Sharpless 1959 positions + Russeil 2003 distances | built |
 | Orion's Arm stars | OA Celestia add-on (OAAddons1) | built |
+| Inner Sphere colonies | EG, The Stars of the Inner Sphere | built |
 | Nearby faint stars | Gaia Catalogue of Nearby Stars (GCNS), 100 pc volume-complete | planned |
 | Supernova remnants | Green 2024/2025 | planned |
 | Molecular clouds | Miville-Deschênes+ 2017 | planned |
@@ -101,8 +102,12 @@ hand-downloaded 2008 file, so the same scheme would have meant a clean clone
 could not build the layer at all, and there would be nowhere to correct the
 extraction by hand.
 
+`fiction/inner_sphere.yaml` holds the Encyclopaedia Galactica's Inner Sphere
+tables the same way: 1,122 colony rows and 281 wormhole rows.
+
 ```sh
-uv run oastarmap import-oastars   # rewrites fiction/oa_stars.yaml from the archive
+uv run oastarmap import-oastars       # fiction/oa_stars.yaml     <- OAAddons1.zip
+uv run oastarmap import-inner-sphere  # fiction/inner_sphere.yaml <- inner_sphere.html
 ```
 
 Re-importing overwrites hand edits, so review the diff before committing.

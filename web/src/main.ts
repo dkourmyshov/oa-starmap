@@ -117,6 +117,7 @@ async function main(): Promise<void> {
     loaded.hii,
     loaded.fiction,
     loaded.oaStars,
+    loaded.innerSphere?.byStar ?? null,
   );
 
   const detail = new DetailPanel(
@@ -126,6 +127,7 @@ async function main(): Promise<void> {
       clusters: loaded.clusters,
       hii: loaded.hii,
       oaStars: loaded.oaStars,
+      innerSphere: loaded.innerSphere,
       fiction: loaded.fiction,
       objects,
     },

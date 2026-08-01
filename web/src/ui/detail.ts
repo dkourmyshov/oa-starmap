@@ -9,7 +9,14 @@
  * optional extra.
  */
 
-import type { ClusterData, FictionData, HiiData, OAStarData, StarData } from '../data/manifest';
+import type {
+  ClusterData,
+  FictionData,
+  HiiData,
+  InnerSphereData,
+  OAStarData,
+  StarData,
+} from '../data/manifest';
 import {
   KIND_CLUSTER,
   KIND_HII,
@@ -45,6 +52,7 @@ export interface DetailSources {
   clusters: ClusterData | null;
   hii: HiiData | null;
   oaStars: OAStarData | null;
+  innerSphere: InnerSphereData | null;
   fiction: FictionData | null;
   objects: ObjectIndex;
 }
@@ -319,6 +327,8 @@ export class DetailPanel {
       hd !== absentId ? `HD ${hd}` : null,
     ].filter(Boolean);
 
+    const colony = this.sources.innerSphere?.byStar.get(index);
+
     const rows: Row[] = [
       { label: 'Distance from Sol', value: formatDistance(pc(distance), unit) },
       { label: 'Absolute magnitude', value: absMag.toFixed(2) },
@@ -343,9 +353,21 @@ export class DetailPanel {
       });
     }
 
+    if (colony?.distance_disagrees) {
+      rows.push({
+        label: "Orion's Arm distance",
+        value: `${colony.distance_ly.toFixed(1)} ly stated`,
+        warn: true,
+      });
+    }
+
     return {
-      title,
-      subtitle: designations.length ? designations.join(' · ') : 'star',
+      title: colony?.colony || title,
+      subtitle: colony?.colony
+        ? [`Orion's Arm system`, title, ...designations].filter(Boolean).join(' · ')
+        : designations.length
+          ? designations.join(' · ')
+          : 'star',
       rows,
       polities: this.politiesFor('star', index),
       associationSource: this.sourceLineFor('star', index),

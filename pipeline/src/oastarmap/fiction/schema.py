@@ -245,6 +245,52 @@ class OASystemFile(BaseModel):
         return cls.model_validate(raw)
 
 
+class InnerSphereSystem(BaseModel):
+    """One row of the Inner Sphere star table."""
+
+    star: str
+    """Real designation, resolved against the star catalogue at build time."""
+
+    distance_ly: str = ""
+    """The source's own figure, kept as text because some rows are not numeric.
+
+    Used to check that name resolution landed on the right star: a wrong match on
+    a plausible name almost always lands at the wrong distance.
+    """
+
+    colony: str = ""
+    spectral_type: str = ""
+    mass_sol: str = ""
+    luminosity_sol: str = ""
+
+
+class InnerSphereWormhole(BaseModel):
+    """One row of the wormhole nexus table."""
+
+    star: str
+    system: str = ""
+    wormhole: str = ""
+    gauge_m: str = ""
+    nearby_unconnected: str = ""
+    notes: str = ""
+
+
+class InnerSphereFile(BaseModel):
+    """The top level of ``fiction/inner_sphere.yaml``."""
+
+    systems: list[InnerSphereSystem] = Field(default_factory=list)
+    wormholes: list[InnerSphereWormhole] = Field(default_factory=list)
+
+    @classmethod
+    def load(cls, path: Path) -> InnerSphereFile:
+        if not path.exists():
+            return cls()
+        raw: Any = yaml.safe_load(path.read_text(encoding="utf-8"))
+        if not isinstance(raw, dict):
+            raise ValueError(f"{path} must contain a mapping at the top level")
+        return cls.model_validate(raw)
+
+
 class AliasFile(BaseModel):
     """The top level of ``fiction/aliases.yaml``."""
 

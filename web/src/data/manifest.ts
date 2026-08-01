@@ -189,6 +189,41 @@ export interface OAStarData {
   dataset: OAStarsDataset;
 }
 
+export interface InnerSphereDataset {
+  count: number;
+  files: { colonies: { file: string; bytes: number } };
+  selection: { rule: string; note: string };
+  stats: {
+    total_rows: number;
+    resolved: number;
+    methods: Record<string, number>;
+    unresolved: string[];
+    absent_catalogue: string[];
+  };
+  wormholes: { count: number; note: string };
+  source: { description: string; citation: string; url: string };
+}
+
+export interface Colony {
+  /** Index into the star dataset. */
+  star_index: number;
+  star: string;
+  colony: string;
+  spectral_type: string;
+  mass_sol: string;
+  luminosity_sol: string;
+  distance_ly: number;
+  method: string;
+  /** Source and catalogue disagree on distance by 15-50%. */
+  distance_disagrees: boolean;
+}
+
+export interface InnerSphereData {
+  /** Keyed by star index, so a star can be labelled by what OA calls it. */
+  byStar: Map<number, Colony>;
+  dataset: InnerSphereDataset;
+}
+
 export interface FictionDataset {
   count: number;
   polity_count: number;
@@ -225,6 +260,7 @@ export interface Manifest {
     clusters?: ClustersDataset;
     hii?: HiiDataset;
     oastars?: OAStarsDataset;
+    inner_sphere?: InnerSphereDataset;
     fiction?: FictionDataset;
   };
 }
@@ -352,6 +388,7 @@ export interface LoadedData {
   clusters: ClusterData | null;
   hii: HiiData | null;
   oaStars: OAStarData | null;
+  innerSphere: InnerSphereData | null;
   fiction: FictionData | null;
 }
 
@@ -370,9 +407,23 @@ export async function loadAll(): Promise<LoadedData> {
   const oaStars = manifest.datasets.oastars
     ? await loadOAStars(manifest.datasets.oastars, stars.colorLut)
     : null;
+  const innerSphere = manifest.datasets.inner_sphere
+    ? await loadInnerSphere(manifest.datasets.inner_sphere)
+    : null;
   const fiction = manifest.datasets.fiction ? await loadFiction(manifest.datasets.fiction) : null;
 
-  return { stars, clusters, hii, oaStars, fiction };
+  return { stars, clusters, hii, oaStars, innerSphere, fiction };
+}
+
+async function loadInnerSphere(dataset: InnerSphereDataset): Promise<InnerSphereData> {
+  const colonies = await fetchJson<Colony[]>(dataset.files.colonies.file);
+  const byStar = new Map<number, Colony>();
+  for (const colony of colonies) {
+    // First writer wins: the file is sorted by distance, so where two rows
+    // resolve to the same star the nearer, better-determined one is kept.
+    if (!byStar.has(colony.star_index)) byStar.set(colony.star_index, colony);
+  }
+  return { byStar, dataset };
 }
 
 async function loadOAStars(
