@@ -57,6 +57,17 @@ class FictionFile(BaseModel):
     polities: list[Polity]
     notes: dict[str, str] = Field(default_factory=dict)
 
+    confirmed_placements: list[str] = Field(default_factory=list)
+    """Landmarks whose surprising position has been checked against the source.
+
+    The placement check is a proofreading aid for transcription errors, not a
+    model of polity shape, and it has no standing against the fiction. Naming a
+    landmark here settles the matter permanently: the check stops reporting it,
+    and it stays reported nowhere. Without this, a confirmed-correct landmark
+    would be re-flagged on every build forever, which is how a report becomes
+    noise and then becomes ignored.
+    """
+
     @field_validator("polities")
     @classmethod
     def _unique_ids(cls, value: list[Polity]) -> list[Polity]:

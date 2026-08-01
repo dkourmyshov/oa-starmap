@@ -43,7 +43,9 @@ aliases:
   # Nebulae. These mostly do NOT resolve yet — they need the HII region,
   # planetary nebula and molecular cloud catalogues. Listed so that they bind
   # automatically once those land, rather than needing to be revisited.
-  Eagle Nebula: NGC 6611
+  # Sh2-296 is the wings of the Seagull; Sh2-292 (= IC 2177) is only its head, a
+  # 3 pc knot. The wings are what the name evokes and what reads as a landmark.
+  Seagull Nebula: S296
   Monkey Nebula: NGC 2175
   North America Nebula: NGC 7000
   California Nebula: NGC 1499

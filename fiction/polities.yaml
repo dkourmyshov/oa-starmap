@@ -85,7 +85,7 @@ polities:
       [Collinder 173, Collinder 132, NGC 2516, NGC 1901, NGC 2547,
        Collinder 121, M41, NGC 2422, M47, NGC 2527, NGC 2423,
        Theta Carinae Cluster, Omicron Velorum Cluster, NGC 2451, Collinder 135,
-       Collinder 140, Eagle Nebula, M48, M67, NGC 2548, NGC 2395]
+       Collinder 140, Seagull Nebula, M48, M67, NGC 2548, NGC 2395]
 
   - id: communion-of-worlds
     name: Communion of Worlds
@@ -122,6 +122,12 @@ polities:
     color: "#4DB6AC"
     landmarks: [NGC 2126]
 
+# Landmarks whose odd position has been checked against the source and is
+# correct. The build's placement check is a proofreading aid for mis-transcribed
+# names — it is not a model of polity shape and does not overrule the fiction.
+# Naming a landmark here stops it being reported, permanently.
+confirmed_placements: []
+
 # Landmarks whose polity attribution spans a border, recorded so the ambiguity
 # is not lost when the data is read back.
 notes:
@@ -130,3 +136,9 @@ notes:
   S27: "Shared between the Mutual Progress Association and the Solar Dominion."
   S232: "Shared between Metasoft and the Solar Dominion."
   North America Nebula: "With Collinder 428, both known as Hosoko."
+  Seagull Nebula: >-
+    Read as "Eagle Nebula" when this list was first transcribed, which bound it
+    to NGC 6611 in Serpens at l=17 deg — some 200 degrees away from every other
+    Sophic landmark, all of which lie between l=216 and l=290. The Seagull
+    (Sh2-296, l=224 deg, 1000 pc) sits between M48 and M47, matching the source
+    map's placement.

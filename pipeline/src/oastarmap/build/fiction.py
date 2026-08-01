@@ -13,6 +13,7 @@ every astronomical catalog exists.
 from __future__ import annotations
 
 import json
+import math
 from collections import defaultdict
 from pathlib import Path
 from typing import Any
@@ -54,6 +55,117 @@ FRONTIER_PC = TERRAGEN_FRONTIER_LY / PC_TO_LY
 # Column holding heliocentric distance in each catalog's geometry array, and the
 # stride of that array. Stars carry no distance column; theirs is |xyz|.
 _DISTANCE_COLUMN = {"cluster": (8, 5), "hii": (7, 4)}
+
+
+OUTLIER_DIRECTION_DEG = 90.0
+OUTLIER_SPREAD_RATIO = 3.0
+MIN_LANDMARKS_FOR_OUTLIERS = 4
+
+"""Thresholds for :func:`_placement_outliers`; both must be exceeded."""
+
+
+def _placement_outliers(
+    bindings: list[Binding],
+    positions: dict[str, np.ndarray],
+    confirmed: set[str] | None = None,
+) -> list[dict[str, Any]]:
+    """Landmarks that sit nowhere near the rest of their polity.
+
+    This exists to catch a *name* mistake, not a geographic one. "Eagle Nebula"
+    was transcribed for "Seagull Nebula" and duly bound to NGC 6611 in Serpens —
+    a correct resolution of a wrong name, 200 degrees from every other Sophic
+    landmark. It was caught by eye, which will not scale.
+
+    Two independent criteria must both fire, because either alone is noisy:
+
+    *Direction* — the angle from the polity's mean direction. Nearby objects
+    subtend wide angles from Sol without being anywhere unusual, which is why
+    S27, at 200 pc, sits 126 degrees from the Solar Dominion's mean and means
+    nothing by it.
+
+    *Distance from the polity's centre*, in units of that polity's own median
+    spread. Alone this mostly re-finds the beyond-frontier landmarks, which are
+    already reported and are not name errors.
+
+    The centre is a per-axis median, not a mean. Two names slipping to the same
+    wrong region would drag a mean far enough toward themselves to mask each
+    other; a median barely moves.
+
+    A wrong name usually lands the object somewhere else entirely, so it trips
+    both. Advisory only: a slip and a genuinely remote holding are
+    indistinguishable from here, and only the author can tell them apart — which
+    is what ``confirmed_placements`` in the fiction file is for. Anything named
+    there is the author's ruling and is not second-guessed.
+    """
+    confirmed = confirmed or set()
+
+    by_polity: dict[str, list[tuple[Binding, np.ndarray]]] = defaultdict(list)
+    for binding in bindings:
+        table = positions.get(binding.kind or "")
+        if table is None or binding.index is None or binding.index >= len(table):
+            continue
+        vector = np.asarray(table[binding.index], dtype=np.float64)
+        if float(np.linalg.norm(vector)) <= 0:
+            continue
+        for polity in binding.polities:
+            by_polity[polity].append((binding, vector))
+
+    found: list[dict[str, Any]] = []
+    for polity, members in sorted(by_polity.items()):
+        if len(members) < MIN_LANDMARKS_FOR_OUTLIERS:
+            continue
+
+        points = np.array([vector for _, vector in members])
+        units = points / np.linalg.norm(points, axis=1, keepdims=True)
+
+        mean_direction = units.mean(axis=0)
+        mean_norm = float(np.linalg.norm(mean_direction))
+        if mean_norm <= 1e-9:
+            continue
+        mean_direction /= mean_norm
+
+        centre = np.median(points, axis=0)
+        offsets = np.linalg.norm(points - centre, axis=1)
+        spread = float(np.median(offsets))
+        if spread <= 0:
+            continue
+
+        for (binding, _), unit, offset in zip(members, units, offsets, strict=True):
+            degrees = math.degrees(
+                math.acos(float(np.clip(np.dot(unit, mean_direction), -1.0, 1.0)))
+            )
+            ratio = offset / spread
+            if degrees <= OUTLIER_DIRECTION_DEG or ratio <= OUTLIER_SPREAD_RATIO:
+                continue
+            # Suppressed from the report, but deliberately still counted in the
+            # centroid and spread above: a confirmed landmark is part of the
+            # polity's shape, and dropping it would bias the test for its peers.
+            if binding.landmark in confirmed:
+                continue
+            found.append(
+                {
+                    "landmark": binding.landmark,
+                    "matched_name": binding.matched_name,
+                    "polity": polity,
+                    "degrees_from_polity_mean": round(degrees, 1),
+                    "spread_ratio": round(ratio, 2),
+                }
+            )
+
+    return sorted(found, key=lambda item: -item["degrees_from_polity_mean"])
+
+
+def _load_positions(out_dir: Path) -> dict[str, np.ndarray]:
+    """Heliocentric xyz per catalog, indexed exactly as bindings are."""
+    positions: dict[str, np.ndarray] = {}
+    for kind, (stride, _) in _DISTANCE_COLUMN.items():
+        path = out_dir / f"{'clusters' if kind == 'cluster' else kind}.bin"
+        if path.exists():
+            positions[kind] = np.fromfile(path, dtype="<f4").reshape(-1, stride)[:, :3]
+    stars = out_dir / "stars.bin"
+    if stars.exists():
+        positions["star"] = np.fromfile(stars, dtype="<f4").reshape(-1, 5)[:, :3]
+    return positions
 
 
 def _load_distances(out_dir: Path) -> dict[str, np.ndarray]:
@@ -169,6 +281,9 @@ def build_fiction(
         ),
     }
 
+    outliers = _placement_outliers(
+        report.bindings, _load_positions(out_dir), set(fiction.confirmed_placements)
+    )
     shared = [b.landmark for b in report.bindings if len(b.polities) > 1]
     beyond = sorted(
         (b for b in report.bindings if b.beyond_frontier),
@@ -216,6 +331,20 @@ def build_fiction(
         },
         "resolution": report.as_dict(),
         "shared_landmarks": sorted(shared, key=str.lower),
+        "placement_outliers": {
+            "threshold_deg": OUTLIER_DIRECTION_DEG,
+            "threshold_spread_ratio": OUTLIER_SPREAD_RATIO,
+            "note": (
+                "Landmarks both pointing away from their polity's mean direction "
+                "and lying far outside its own spread — the signature of a "
+                "mis-transcribed name rather than a remote holding. A proofreading "
+                "aid for name errors, not a model of polity shape, and it has no "
+                "standing against the fiction: list a landmark under "
+                "confirmed_placements to settle it permanently."
+            ),
+            "confirmed": sorted(fiction.confirmed_placements),
+            "found": outliers,
+        },
         "source": {
             "description": (
                 "Hand-authored Orion's Arm polity associations. Rough associations "
@@ -233,6 +362,17 @@ def format_report(entry: dict[str, Any]) -> str:
         f"  fiction    {res['resolved']}/{res['total']} landmarks bound "
         f"across {entry['polity_count']} polities"
     ]
+    outliers = entry["placement_outliers"]["found"]
+    if outliers:
+        lines.append(f"             {len(outliers)} misplaced — check for a wrong name:")
+        for item in outliers:
+            lines.append(
+                f"               {item['landmark']} is "
+                f"{item['degrees_from_polity_mean']:.0f} deg and "
+                f"{item['spread_ratio']:.1f}x the spread from {item['polity']}"
+            )
+        lines.append("               (if correct, add to confirmed_placements to silence)")
+
     flagged = entry["frontier"]["flagged"]
     if flagged:
         lines.append(
