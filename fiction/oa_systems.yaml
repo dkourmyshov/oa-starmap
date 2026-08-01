@@ -1,0 +1,135 @@
+# Curation of the imported Orion's Arm stars.
+#
+# Hand-authored, and deliberately separate from `oa_stars.yaml`, which is
+# machine-owned and rewritten wholesale by `oastarmap import-oastars`. Nothing
+# here is ever overwritten by an import.
+#
+# `star` matches a `name` in oa_stars.yaml — the add-on's own designation, which
+# is the only stable key it offers.
+#
+# Naming rule: if the system or its primary has a notable name of its own, use
+# that (Sol, H'tat'sa'thoss, Hiederia); otherwise use the name of its most
+# notable world (Wurm). The add-on's comments are not a reliable guide to this —
+# they name whichever the contributor happened to think of, so JD 870135 is
+# commented "To'ul'h", which is the species, not the system.
+
+# Entries the add-on says nothing about beyond where they sit. Drawn but not
+# labelled, and excluded from the OA star layer, since 52 unlabelled markers
+# stacked inside one cluster obscure the cluster itself.
+hide_comment_matching:
+  - Star in cluster NGC 6633
+
+systems:
+  - star: Arkab Prior B
+    label: Arkab Prior B
+    affiliation: mutual-progress-association
+    article: https://www.orionsarm.com/eg-article/48f4bc90174b8
+
+  - star: Cantor
+    label: Cantor
+    affiliation: caretaker-gods
+    uncertain: true
+    article: https://www.orionsarm.com/eg-article/48fe1da7a2205
+
+  - star: EG 471
+    label: Wadai
+    affiliation: sophic-league
+    article: https://www.orionsarm.com/eg-article/4910e5c60edcc
+
+  - star: Enigma
+    label: Enigma
+    article: https://www.orionsarm.com/eg-article/491aecf1478f9
+    note: >-
+      Left unassigned. The Enigma Cluster is NGC 6755, but the add-on places this
+      star at l=242 b=-32, 1410 pc — in Columba, 3478 pc from NGC 6755 and
+      roughly opposite it on the sky. No star in the add-on comes within 1549 pc
+      of that cluster. Either this is a different object or its coordinates are
+      wrong, and a Keter Dominion assignment would rest on the contradiction.
+
+  - star: Geminga
+    label: Geminga
+    affiliation: metasoft
+    article: https://www.orionsarm.com/eg-article/464e8a1ed988a
+
+  - star: Hiederia
+    label: Hiederia
+    affiliation: solar-dominion
+    article: https://www.orionsarm.com/eg-article/48fb58d65ae1e
+    note: >-
+      The add-on comments this "star for system containing Redunin", but the
+      primary has a name of its own, so the naming rule prefers Hiederia.
+
+  - star: JD 10012
+    label: Muuhome
+    affiliation: muuh
+    article: https://www.orionsarm.com/eg-article/47bb872326fa1
+    note: Spelled Muuhome, against the add-on's "Muuhhome".
+
+  - star: JD 10013
+    label: Harmonic-Resonance
+    affiliation: sophic-league
+    article: https://www.orionsarm.com/eg-article/466c8fefdbfc5
+
+  - star: JD 140582223
+    label: Pluton
+    affiliation: perseus-principalities
+    article: https://www.orionsarm.com/eg-article/4910ed34571fd
+
+  - star: JD 3227227
+    label: Heimat
+    affiliation: metasoft
+    article: https://www.orionsarm.com/eg-article/48fc9bfb6b8ff
+    note: The only Baseline Preserve named there without a page of its own.
+
+  - star: JD 76601
+    label: Guanche
+    affiliation: cygexpa
+    article: https://www.orionsarm.com/eg-article/48f7fcd30db8c
+
+  - star: JD 836901
+    label: Wurm
+    affiliation: metasoft
+    article: https://www.orionsarm.com/eg-article/5058816aa9afb
+
+  - star: JD 836902
+    label: Niuearth
+    affiliation: metasoft
+    article: https://www.orionsarm.com/eg-article/52b993102478a
+
+  - star: JD 870135
+    label: H'tat'sa'thoss
+    affiliation: caretaker-gods
+    article: https://www.orionsarm.com/eg-article/5eefcc060d4c4
+    note: >-
+      H'tat'sa'thoss is the system, Tohul the planet, and To'ul'h the
+      xenosophonts who live there. The add-on labels the star "To'ul'h", which is
+      the species — the equivalent of calling Sol System "Humans".
+
+  - star: JD 9802-8
+    label: Oshiq
+    affiliation: solar-dominion
+    article: https://www.orionsarm.com/eg-article/48f8fcd3d44a0
+
+  - star: JD 98738
+    label: Panthalassa
+    affiliation: zoeific-biopolity
+    article: https://www.orionsarm.com/eg-article/48eca0a49a694
+
+  - star: Pen-y-Ghent
+    label: Pen-y-Ghent
+    affiliation: mutual-progress-association
+    article: https://www.orionsarm.com/eg-article/48f74e750e04f
+
+  - star: YTS 453 09440 3
+    label: Stellar Umma brown dwarf
+    affiliation: stellar-umma
+    article: https://www.orionsarm.com/eg-article/484494c1bddf1
+    note: >-
+      The add-on gives no name, only "Brown Dwarf in the Stellar Umma Region".
+      The Umma is really two polities, of the Core and of the Shell; recorded as
+      one for now.
+
+  - star: YTS 9267-9531885
+    label: Blue
+    affiliation: the-seams
+    article: https://www.orionsarm.com/eg-article/48ac8c3a3979d

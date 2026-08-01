@@ -27,6 +27,17 @@ sources:
       some 2,600 years before the setting's present, so the volumes it draws are
       smaller than the current ones.
 
+  eg-system-articles:
+    title: "Encyclopaedia Galactica system articles"
+    page: "Orion's Arm Encyclopaedia Galactica"
+    url: https://www.orionsarm.com/
+    note: >-
+      Individual system articles, each cited per entry in `oa_systems.yaml`.
+      Unlike the political map, these name an affiliation for one system
+      directly, so they carry no epoch of their own and no border is implied.
+
+# `kind` distinguishes what an entry actually is. Most are meta-empires, the
+# default. Some are smaller polities, and one is not a political body at all.
 polities:
   - id: cygexpa
     name: Cygexpa
@@ -154,6 +165,53 @@ polities:
     color: "#4DB6AC"
     source: political-maps-8000at
     landmarks: [NGC 2126]
+
+  # Below here: affiliations reached through individual system articles rather
+  # than the 8000 A.T. political map, so they carry no landmarks of their own.
+  # Their members are named in `oa_systems.yaml`. Colours are provisional.
+
+  - id: caretaker-gods
+    name: Caretaker Gods
+    color: "#B39DDB"
+    kind: polity
+    source: eg-system-articles
+
+  - id: perseus-principalities
+    name: Perseus Principalities
+    color: "#F06292"
+    kind: polity
+    source: eg-system-articles
+
+  - id: zoeific-biopolity
+    name: Zoeific Biopolity
+    color: "#AED581"
+    source: eg-system-articles
+
+  - id: the-seams
+    name: The Seams
+    color: "#FFB74D"
+    kind: polity
+    source: eg-system-articles
+
+  - id: stellar-umma
+    name: Stellar Umma
+    color: "#4DD0E1"
+    kind: polity
+    source: eg-system-articles
+    # Really two, the Umma of the Core and the Umma of the Shell, recorded as one
+    # until the distinction matters here.
+
+  - id: muuh
+    name: Muuh
+    color: "#BCAAA4"
+    kind: xenosophont
+    uncertain: true
+    source: eg-system-articles
+    # Not a polity. Whether the Muuh organise into anything answering to a
+    # terragen meta-empire is unsettled, so this records the species rather than
+    # asserting a political structure. Named "Muuh" rather than "Xenosophont"
+    # because that is a category, and the category already holds a second,
+    # unrelated member — the To'ul'h at H'tat'sa'thoss, who are Caretaker Gods.
 
 # Landmarks whose odd position has been checked against the source and is
 # correct. The build's placement check is a proofreading aid for mis-transcribed

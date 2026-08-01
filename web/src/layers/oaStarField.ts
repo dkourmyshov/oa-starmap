@@ -22,7 +22,7 @@
 
 import * as THREE from 'three';
 
-import type { OAStarData } from '../data/manifest';
+import type { FictionData, OAStarData } from '../data/manifest';
 
 export const DEFAULT_OPACITY = 0.95;
 
@@ -106,49 +106,81 @@ export class OAStarField {
   readonly count: number;
 
   private readonly material: THREE.ShaderMaterial;
+  private readonly spectralColors: Float32Array;
+  private readonly affiliationColors: Float32Array;
+  private readonly colorAttribute: THREE.BufferAttribute;
 
-  constructor(data: OAStarData) {
-    this.count = data.count;
+  constructor(data: OAStarData, fiction: FictionData | null = null) {
+    // Hidden entries are dropped from the geometry, not merely faded: they are
+    // the 52 the add-on says nothing about beyond sitting in NGC 6633, and
+    // stacked markers obscure the cluster they are meant to populate.
+    const shown: number[] = [];
+    for (let i = 0; i < data.count; i++) {
+      if (!data.names[i]?.hidden) shown.push(i);
+    }
+    this.count = shown.length;
 
-    const positions = new Float32Array(data.count * 3);
-    const colors = new Float32Array(data.count * 3);
-    const bare = new Float32Array(data.count);
+    const positions = new Float32Array(this.count * 3);
+    const colors = new Float32Array(this.count * 3);
+    const emission = new Float32Array(this.count * 3);
+    const bare = new Float32Array(this.count);
+
+    const polityColor = new Map<string, THREE.Color>();
+    for (const polity of fiction?.polities ?? []) {
+      polityColor.set(polity.id, new THREE.Color(polity.color));
+    }
 
     const lut = data.colorLut;
     const lutSize = lut.length / 3;
     const { ci_unknown_sentinel: unknown } = data.dataset.layout.positions;
 
-    for (let i = 0; i < data.count; i++) {
+    for (let out = 0; out < shown.length; out++) {
+      const i = shown[out];
       const base = i * 5;
-      positions[i * 3] = data.positions[base];
-      positions[i * 3 + 1] = data.positions[base + 1];
-      positions[i * 3 + 2] = data.positions[base + 2];
+      positions[out * 3] = data.positions[base];
+      positions[out * 3 + 1] = data.positions[base + 1];
+      positions[out * 3 + 2] = data.positions[base + 2];
 
-      // Nothing but a JD/YTS number: no system, no comment, nothing to read.
+      // Nothing but a JD/YTS number: no system, no curation, nothing to read.
       const entry = data.names[i];
-      bare[i] = entry && !entry.system && !entry.comment && entry.oa_designation ? 1 : 0;
+      bare[out] =
+        entry && entry.oa_designation && !entry.system && !entry.affiliation ? 1 : 0;
 
       const ci = data.positions[base + 4];
       if (ci <= unknown + 1 || lutSize === 0) {
         // Unknown colour renders white, the same neutral the real field uses.
-        colors[i * 3] = 1;
-        colors[i * 3 + 1] = 1;
-        colors[i * 3 + 2] = 1;
+        emission[out * 3] = 1;
+        emission[out * 3 + 1] = 1;
+        emission[out * 3 + 2] = 1;
       } else {
         // The LUT spans B-V -0.4 .. 2.0, matching the pipeline's build_color_lut.
         const t = Math.min(Math.max((ci + 0.4) / 2.4, 0), 1);
         const slot = Math.min(Math.round(t * (lutSize - 1)), lutSize - 1) * 3;
-        colors[i * 3] = lut[slot];
-        colors[i * 3 + 1] = lut[slot + 1];
-        colors[i * 3 + 2] = lut[slot + 2];
+        emission[out * 3] = lut[slot];
+        emission[out * 3 + 1] = lut[slot + 1];
+        emission[out * 3 + 2] = lut[slot + 2];
       }
+
+      const affiliated = entry?.affiliation ? polityColor.get(entry.affiliation) : undefined;
+      const chosen = affiliated ?? {
+        r: emission[out * 3],
+        g: emission[out * 3 + 1],
+        b: emission[out * 3 + 2],
+      };
+      colors[out * 3] = chosen.r;
+      colors[out * 3 + 1] = chosen.g;
+      colors[out * 3 + 2] = chosen.b;
     }
+
+    this.spectralColors = emission;
+    this.affiliationColors = colors.slice();
 
     const geometry = new THREE.BufferGeometry();
     geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
     geometry.setAttribute('aColor', new THREE.BufferAttribute(colors, 3));
     geometry.setAttribute('aBare', new THREE.BufferAttribute(bare, 1));
     geometry.boundingSphere = new THREE.Sphere(new THREE.Vector3(), Infinity);
+    this.colorAttribute = geometry.getAttribute('aColor') as THREE.BufferAttribute;
 
     this.material = new THREE.ShaderMaterial({
       uniforms: {
@@ -168,6 +200,13 @@ export class OAStarField {
     this.points.frustumCulled = false;
     // Draw over the real field so a marker is never hidden inside a star cloud.
     this.points.renderOrder = 2;
+  }
+
+  /** Colour by Orion's Arm affiliation, or by spectral type. */
+  setPolityMode(enabled: boolean): void {
+    const source = enabled ? this.affiliationColors : this.spectralColors;
+    (this.colorAttribute.array as Float32Array).set(source);
+    this.colorAttribute.needsUpdate = true;
   }
 
   set opacity(value: number) {

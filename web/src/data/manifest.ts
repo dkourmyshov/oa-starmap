@@ -159,13 +159,23 @@ export interface OAStarsDataset {
 
 export interface OAStarName {
   name: string;
+  /** Curated display name, from fiction/oa_systems.yaml. */
+  label: string;
   comment: string;
   spectral_type: string;
   distance_pc: number;
   /** True only for OA's own JD/YTS numbering. False is not a claim of reality. */
   oa_designation: boolean;
-  /** System the star is the sun of, where the add-on's comment says so. */
+  /** System the star is the sun of, as the add-on's comment has it. */
   system: string;
+  /** Polity id, or empty where the affiliation is unsettled. */
+  affiliation: string;
+  /** The affiliation is recorded but not asserted. */
+  uncertain: boolean;
+  article: string;
+  note: string;
+  /** The add-on says nothing about this beyond where it sits. */
+  hidden: boolean;
   source_file: string;
 }
 

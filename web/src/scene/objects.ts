@@ -196,8 +196,9 @@ export class ObjectIndex {
     const clusterCount = clusters?.count ?? 0;
     const hiiCount = hii?.count ?? 0;
     const oaCount = oaStars?.count ?? 0;
+    // Upper bound: hidden Orion's Arm entries are skipped, so the arrays are
+    // allocated for the worst case and `count` is trimmed to what was filled.
     const total = stars.count + clusterCount + hiiCount + oaCount;
-    this.count = total;
 
     this.px = new Float32Array(total);
     this.py = new Float32Array(total);
@@ -293,6 +294,10 @@ export class ObjectIndex {
 
     if (oaStars) {
       for (let i = 0; i < oaStars.count; i++) {
+        // Entries the add-on says nothing about beyond their cluster are not
+        // indexed at all: unlabellable and unclickable, matching what is drawn.
+        if (oaStars.names[i]?.hidden) continue;
+
         const base = i * 5;
         this.px[at] = oaStars.positions[base];
         this.py[at] = oaStars.positions[base + 1];
@@ -301,14 +306,19 @@ export class ObjectIndex {
         this.kind[at] = KIND_OASTAR;
         this.srcIndex[at] = i;
 
-        // "JD 836901" names nothing; its comment says it is the sun of Wurm,
-        // and Wurm is what the system is actually known for.
+        // The label is curated: the add-on's own comments name whichever of
+        // the system, its primary or its inhabitants a contributor thought of.
         const entry = oaStars.names[i];
-        this.labels[at] = entry?.system || entry?.name || '';
-        this.importance[at] =
-          entry?.oa_designation && !entry?.system
-            ? BASE_IMPORTANCE.oaStarNumbered
-            : BASE_IMPORTANCE.oaStarNamed;
+        this.labels[at] = entry?.label || entry?.name || '';
+        // Anything but a bare JD/YTS number counts as named: a designation the
+        // add-on chose (Cantor), a system its comment gives, or curation we
+        // added. Only the unadorned catalogue numbers rank low.
+        const named =
+          !entry?.oa_designation ||
+          Boolean(entry?.affiliation || entry?.article || entry?.system);
+        this.importance[at] = named
+          ? BASE_IMPORTANCE.oaStarNamed
+          : BASE_IMPORTANCE.oaStarNumbered;
         if (this.labels[at]) labelled.push(at);
         at++;
       }
@@ -316,8 +326,11 @@ export class ObjectIndex {
 
     this.labelled = Int32Array.from(labelled);
 
-    this.everything = new Int32Array(total);
-    for (let i = 0; i < total; i++) this.everything[i] = i;
+    // Trailing slots were never filled. Leaving them in would make the pick pass
+    // scan zeroed entries, which read as stars sitting exactly on Sol.
+    this.count = at;
+    this.everything = new Int32Array(at);
+    for (let i = 0; i < at; i++) this.everything[i] = i;
   }
 
   ref(id: number): ObjectRef {

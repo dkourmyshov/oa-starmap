@@ -33,7 +33,13 @@ import astropy.units as u
 import numpy as np
 
 from oastarmap.build.writer import CI_UNKNOWN, write_array, write_json
-from oastarmap.fiction.schema import OAStarEntry, OAStarFile
+from oastarmap.fiction.schema import (
+    FictionFile,
+    OAStarEntry,
+    OAStarFile,
+    OASystem,
+    OASystemFile,
+)
 from oastarmap.paths import DATA_OUT_DIR, FICTION_DIR
 from oastarmap.transform.frame import (
     GALACTIC_AXES,
@@ -44,6 +50,8 @@ from oastarmap.transform.frame import (
 from oastarmap.transform.photometry import parse_spectral_class, spectral_type_to_bv
 
 STARS_FILE = "oa_stars.yaml"
+SYSTEMS_FILE = "oa_systems.yaml"
+POLITIES_FILE = "polities.yaml"
 
 SOURCE_URL = "http://www.orionsarm.com/fm_store/OAAddons1.zip"
 SOURCE_PAGE = "https://www.orionsarm.com/xcms.php?r=oa-page&page=gen_OACelestia2"
@@ -76,6 +84,8 @@ class OAStarStats:
     excluded: Counter = field(default_factory=Counter)
     spectral: Counter = field(default_factory=Counter)
     name_collisions: list[str] = field(default_factory=list)
+    hidden: int = 0
+    curated: int = 0
 
     def as_dict(self) -> dict[str, Any]:
         return {
@@ -84,11 +94,24 @@ class OAStarStats:
             "excluded": dict(sorted(self.excluded.items())),
             "spectral_types": dict(sorted(self.spectral.items())),
             "name_collisions": self.name_collisions,
+            "hidden": self.hidden,
+            "curated": self.curated,
         }
 
 
-def _place(entries: list[OAStarEntry], stats: OAStarStats) -> list[dict[str, Any]]:
-    """Turn imported entries into positioned records."""
+def _place(
+    entries: list[OAStarEntry],
+    curation: OASystemFile,
+    stats: OAStarStats,
+) -> list[dict[str, Any]]:
+    """Turn imported entries into positioned records, applying curation."""
+    by_star: dict[str, OASystem] = {s.star: s for s in curation.systems}
+    unmatched = sorted(set(by_star) - {e.name for e in entries})
+    if unmatched:
+        # Curation keyed to a designation the import no longer contains is
+        # silent data loss: the label and affiliation simply never appear.
+        raise ValueError(f"oa_systems.yaml curates stars absent from oa_stars.yaml: {unmatched}")
+
     kept: list[OAStarEntry] = []
     for entry in entries:
         stats.total_entries += 1
@@ -123,11 +146,22 @@ def _place(entries: list[OAStarEntry], stats: OAStarStats) -> list[dict[str, Any
             stats.excluded["absmag_defaulted"] += 1
 
         stats.spectral[entry.spectral_type or "(none)"] += 1
+        curated = by_star.get(entry.name)
+        hidden = any(rule in entry.comment for rule in curation.hide_comment_matching)
+        if hidden:
+            stats.hidden += 1
+
         records.append(
             {
                 "name": entry.name,
                 "comment": entry.comment,
                 "system": entry.system,
+                "label": (curated.label if curated else "") or entry.system or entry.name,
+                "affiliation": curated.affiliation if curated else "",
+                "uncertain": bool(curated and curated.uncertain),
+                "article": curated.article if curated else "",
+                "note": curated.note if curated else "",
+                "hidden": hidden,
                 "spectral_type": entry.spectral_type,
                 "spectral_class": parse_spectral_class(entry.spectral_type),
                 "oa_designation": bool(_OA_DESIGNATION.match(entry.name)),
@@ -145,6 +179,7 @@ def _place(entries: list[OAStarEntry], stats: OAStarStats) -> list[dict[str, Any
     # 617 pc and 157 pc away on opposite sides of the plane. Both are kept —
     # dropping either would discard a position the source asserts — but the
     # collision is recorded so a duplicate label is explained rather than a bug.
+    stats.curated = sum(1 for r in records if r["affiliation"] or r["article"])
     seen = Counter(r["name"] for r in records)
     stats.name_collisions = sorted(name for name, n in seen.items() if n > 1)
     stats.accepted = len(records)
@@ -158,7 +193,14 @@ def build_oastars(stars_path: Path | None = None, out_dir: Path | None = None) -
     out_dir.mkdir(parents=True, exist_ok=True)
 
     stats = OAStarStats()
-    records = _place(OAStarFile.load(stars_path).stars, stats)
+    curation = OASystemFile.load(stars_path.with_name(SYSTEMS_FILE))
+    records = _place(OAStarFile.load(stars_path).stars, curation, stats)
+
+    known = {p.id for p in FictionFile.load(stars_path.with_name(POLITIES_FILE)).polities}
+    unknown = sorted({r["affiliation"] for r in records if r["affiliation"]} - known)
+    if unknown:
+        raise ValueError(f"oa_systems.yaml cites unknown affiliations: {unknown}")
+
     n = len(records)
 
     # Same five-component layout as the real star dataset, so the renderer can
@@ -177,8 +219,14 @@ def build_oastars(stars_path: Path | None = None, out_dir: Path | None = None) -
         names.append(
             {
                 "name": record["name"],
+                "label": record["label"],
                 "comment": record["comment"],
                 "system": record["system"],
+                "affiliation": record["affiliation"],
+                "uncertain": record["uncertain"],
+                "article": record["article"],
+                "note": record["note"],
+                "hidden": record["hidden"],
                 "spectral_type": record["spectral_type"],
                 "distance_pc": round(record["distance"], 3),
                 "oa_designation": record["oa_designation"],

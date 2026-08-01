@@ -16,7 +16,7 @@ import math
 import numpy as np
 import pytest
 
-from oastarmap.build.oastars import STARS_FILE, build_oastars
+from oastarmap.build.oastars import STARS_FILE, OAStarStats, _place, build_oastars
 from oastarmap.fiction.schema import OAStarFile
 from oastarmap.importers.celestia import parse_stc, system_name
 from oastarmap.paths import DATA_OUT_DIR, FICTION_DIR
@@ -347,3 +347,66 @@ class TestTrackedImport:
             OAStarFile.model_validate(
                 {"stars": [{"name": "X", "ra_deg": 1, "dec_deg": 2, "distance_ly": 0}]}
             )
+
+
+class TestCuration:
+    """fiction/oa_systems.yaml is hand-authored and never overwritten by import."""
+
+    def test_every_assignment_lands(self, built):
+        curated = {e["label"]: e for e in built["names"] if e["affiliation"]}
+        assert curated["H'tat'sa'thoss"]["affiliation"] == "caretaker-gods"
+        assert curated["Wadai"]["affiliation"] == "sophic-league"
+        assert curated["Muuhome"]["affiliation"] == "muuh"
+        assert len(curated) == 18  # 19 curated, Enigma deliberately unassigned
+
+    def test_the_naming_rule_prefers_a_named_primary(self, built):
+        """Hiederia over Redunin: the primary has a name of its own."""
+        entry = next(e for e in built["names"] if e["name"] == "Hiederia")
+        assert entry["label"] == "Hiederia"
+        assert entry["system"] == "Redunin"
+
+    def test_the_naming_rule_falls_back_to_the_notable_world(self, built):
+        entry = next(e for e in built["names"] if e["name"] == "JD 836901")
+        assert entry["label"] == "Wurm"
+
+    def test_a_curated_label_overrides_the_add_on_comment(self, built):
+        """The comment says To'ul'h, which is the species, not the system."""
+        entry = next(e for e in built["names"] if e["name"] == "JD 870135")
+        assert entry["label"] == "H'tat'sa'thoss"
+        assert entry["system"] == "To'ul'h"
+
+    def test_enigma_is_left_unassigned(self, built):
+        """Its position contradicts membership of NGC 6755; see the note."""
+        entry = next(e for e in built["names"] if e["name"] == "Enigma")
+        assert entry["affiliation"] == ""
+        assert "NGC 6755" in entry["note"]
+
+    def test_uncertainty_is_carried_through(self, built):
+        entry = next(e for e in built["names"] if e["name"] == "Cantor")
+        assert entry["uncertain"] is True
+
+    def test_cluster_filler_is_hidden(self, built):
+        hidden = [e for e in built["names"] if e["hidden"]]
+        assert len(hidden) == 52
+        assert all("NGC 6633" in e["comment"] for e in hidden)
+        assert all(not e["affiliation"] for e in hidden)
+
+    def test_curating_an_absent_star_fails_the_build(self, tmp_path):
+        """Otherwise a designation typo silently loses the whole assignment."""
+        from oastarmap.fiction.schema import OAStarFile, OASystemFile
+
+        stars = OAStarFile.model_validate(
+            {"stars": [{"name": "A", "ra_deg": 1, "dec_deg": 2, "distance_ly": 10}]}
+        )
+        curation = OASystemFile.model_validate({"systems": [{"star": "B", "label": "B"}]})
+        with pytest.raises(ValueError, match=r"absent from oa_stars\.yaml"):
+            _place(stars.stars, curation, OAStarStats())
+
+    def test_every_cited_affiliation_exists(self, built):
+        """A typo in an affiliation id would silently drop the colour."""
+        from oastarmap.fiction.schema import FictionFile
+
+        known = {p.id for p in FictionFile.load(STARS.with_name("polities.yaml")).polities}
+        used = {e["affiliation"] for e in built["names"] if e["affiliation"]}
+        assert used <= known
+        assert {"caretaker-gods", "muuh", "stellar-umma"} <= used

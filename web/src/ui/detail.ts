@@ -246,10 +246,15 @@ export class DetailPanel {
       { label: 'Position', value: 'asserted by the setting', warn: true },
       { label: 'Absolute magnitude', value: absMag.toFixed(2) },
     ];
-    // The system name takes the title, so the star's own identifier still has to
-    // be findable — "Hiederia" is a name the add-on chose, not a catalogue number.
-    if (entry.system) {
+    // The curated name takes the title, so the add-on's own identifier still
+    // has to be findable — "Hiederia" is a name it chose, not a catalogue number.
+    if (entry.label && entry.label !== entry.name) {
       rows.push({ label: entry.oa_designation ? 'Designation' : 'Star', value: entry.name });
+    }
+    if (entry.system && entry.system !== entry.label) {
+      // What the add-on's comment called it, which is often the planet or the
+      // species rather than the system.
+      rows.push({ label: 'Add-on calls it', value: entry.system });
     }
     if (entry.spectral_type) {
       rows.push({ label: 'Spectral type', value: entry.spectral_type });
@@ -260,14 +265,20 @@ export class DetailPanel {
     // apart in the panel.
     if (entry.source_file) rows.push({ label: 'Add-on file', value: entry.source_file });
 
+    const affiliation = this.sources.fiction?.polities.find(
+      (p) => p.id === entry.affiliation,
+    );
+
+    if (entry.note) rows.push({ label: 'Note', value: entry.note });
+
     return {
-      title: entry.system || entry.name,
-      subtitle: entry.system
-        ? `Orion's Arm · sun of ${entry.system}`
-        : "Orion's Arm star",
+      title: entry.label || entry.name,
+      subtitle: "Orion's Arm system",
       rows,
-      polities: [],
-      associationSource: null,
+      polities: affiliation
+        ? [entry.uncertain ? `${affiliation.name} (uncertain)` : affiliation.name]
+        : [],
+      associationSource: entry.article || null,
       citation: oaStars.dataset.source.citation,
       distancePc: distance,
       focus: { x, y, z, standoff: pc(Math.max(distance * 0.12, 2)) },

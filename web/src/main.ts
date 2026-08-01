@@ -88,7 +88,8 @@ async function main(): Promise<void> {
 
   // After the real field so an asserted star is never buried inside it.
   if (loaded.oaStars) {
-    oaStarField = new OAStarField(loaded.oaStars);
+    oaStarField = new OAStarField(loaded.oaStars, loaded.fiction);
+    oaStarField.setPolityMode(true);
     viewer.scene.add(oaStarField.points);
   }
 
@@ -265,6 +266,7 @@ async function main(): Promise<void> {
       onPolityMode: (enabled) => {
         clusterField?.setPolityMode(enabled);
         hiiField?.setPolityMode(enabled);
+        oaStarField?.setPolityMode(enabled);
       },
       onFocusPolity: focusPolity,
       onJump: handleJump,

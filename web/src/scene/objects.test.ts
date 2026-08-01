@@ -98,7 +98,13 @@ function makeHii(entries: { xyz: [number, number, number]; radius: number; name:
 }
 
 function makeOAStars(
-  entries: { xyz: [number, number, number]; name: string; system?: string }[],
+  entries: {
+    xyz: [number, number, number];
+    name: string;
+    system?: string;
+    label?: string;
+    hidden?: boolean;
+  }[],
 ): OAStarData {
   const positions = new Float32Array(entries.length * 5);
   entries.forEach((entry, i) => {
@@ -118,6 +124,12 @@ function makeOAStars(
       distance_pc: 0,
       oa_designation: e.name.startsWith('JD ') || e.name.startsWith('YTS '),
       system: e.system ?? '',
+      label: e.label ?? e.system ?? e.name,
+      affiliation: '',
+      uncertain: false,
+      article: '',
+      note: '',
+      hidden: e.hidden ?? false,
       source_file: 'x.stc',
     })),
     colorLut: new Float32Array(3),
