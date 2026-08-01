@@ -175,6 +175,11 @@ polities:
     color: "#B39DDB"
     kind: polity
     source: eg-system-articles
+    # Where a xenosophont system is listed under this, the relationship is
+    # protection rather than membership: a Caretaker God shields the system so it
+    # is left alone and not absorbed by some other terragen empire. H'tat'sa'thoss
+    # is such a case — the To'ul'h are not Caretaker Gods, they are protected by
+    # one.
 
   - id: perseus-principalities
     name: Perseus Principalities
@@ -205,13 +210,12 @@ polities:
     name: Muuh
     color: "#BCAAA4"
     kind: xenosophont
-    uncertain: true
     source: eg-system-articles
-    # Not a polity. Whether the Muuh organise into anything answering to a
-    # terragen meta-empire is unsettled, so this records the species rather than
-    # asserting a political structure. Named "Muuh" rather than "Xenosophont"
-    # because that is a category, and the category already holds a second,
-    # unrelated member — the To'ul'h at H'tat'sa'thoss, who are Caretaker Gods.
+    # Not a terragen meta-empire, and not a protectorate either: the Muuh have
+    # their own System of Response and need no terragen protection, which is
+    # exactly what distinguishes them from the To'ul'h at H'tat'sa'thoss. Named
+    # "Muuh" rather than "Xenosophont" because that is a category, and the
+    # category already holds that second, unrelated member.
 
 # Landmarks whose odd position has been checked against the source and is
 # correct. The build's placement check is a proofreading aid for mis-transcribed

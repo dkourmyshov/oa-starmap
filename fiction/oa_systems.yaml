@@ -63,7 +63,10 @@ systems:
     label: Muuhome
     affiliation: muuh
     article: https://www.orionsarm.com/eg-article/47bb872326fa1
-    note: Spelled Muuhome, against the add-on's "Muuhhome".
+    note: >-
+      Spelled Muuhome, against the add-on's "Muuhhome". The Muuh are independent
+      rather than protected — they have their own System of Response — which is
+      what separates them from the To'ul'h at H'tat'sa'thoss.
 
   - star: JD 10013
     label: Harmonic-Resonance
@@ -103,7 +106,9 @@ systems:
     note: >-
       H'tat'sa'thoss is the system, Tohul the planet, and To'ul'h the
       xenosophonts who live there. The add-on labels the star "To'ul'h", which is
-      the species — the equivalent of calling Sol System "Humans".
+      the species — the equivalent of calling Sol System "Humans". The Caretaker
+      Gods affiliation is protection, not membership: the system is shielded so
+      the To'ul'h are left alone rather than absorbed by another terragen empire.
 
   - star: JD 9802-8
     label: Oshiq
