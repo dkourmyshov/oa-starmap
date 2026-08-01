@@ -12,7 +12,7 @@
 import * as THREE from 'three';
 import { describe, expect, it } from 'vitest';
 
-import type { ClusterData, HiiData, OAStarData, StarData } from '../data/manifest';
+import type { ClusterData, FictionData, HiiData, OAStarData, StarData } from '../data/manifest';
 import { KIND_CLUSTER, KIND_HII, KIND_OASTAR, KIND_STAR, ObjectIndex, bayerLabel } from './objects';
 
 const WIDTH = 800;
@@ -534,5 +534,58 @@ describe('Orion\u2019s Arm system names', () => {
       makeOAStars([{ xyz: [0, 0, -100], name: 'Cantor' }]),
     );
     expect(layoutAt(index)[0].text).toBe('Cantor');
+  });
+});
+
+describe('label priority', () => {
+  const layoutOne = (index: ObjectIndex, maxLabels: number) =>
+    index.layout(camera(), {
+      width: WIDTH,
+      height: HEIGHT,
+      magnitudeLimit: 20,
+      maxLabels,
+      visible: ALL_VISIBLE,
+    });
+
+  it('labels a named OA system ahead of a screen-filling polity cluster', () => {
+    // The regression: only extended objects earn the size bonus, so a cluster
+    // large on screen scored 2.8 while a named OA system scored 0.9 and never
+    // appeared while clusters were on.
+    const clusters = makeClusters([{ xyz: [20, 0, -100], radius: 60, name: 'NGC_1' }]);
+    const fiction = {
+      polities: [{ index: 1, id: 'p', name: 'P' }],
+      bindings: [{ kind: 'cluster', index: 0, polities: ['p'] }],
+    } as unknown as FictionData;
+
+    const index = new ObjectIndex(
+      makeStars([]),
+      clusters,
+      null,
+      fiction,
+      makeOAStars([{ xyz: [-20, 0, -100], name: 'JD 1', system: 'Wurm' }]),
+    );
+    expect(layoutOne(index, 1)[0].text).toBe('Wurm');
+  });
+
+  it('labels a named OA system ahead of a proper-named real star', () => {
+    const index = new ObjectIndex(
+      makeStars([[20, 0, -100]], { '0': { proper: 'Vega' } }),
+      null,
+      null,
+      null,
+      makeOAStars([{ xyz: [-20, 0, -100], name: 'Cantor' }]),
+    );
+    expect(layoutOne(index, 1)[0].text).toBe('Cantor');
+  });
+
+  it('still ranks a bare designation below an ordinary cluster', () => {
+    const index = new ObjectIndex(
+      makeStars([]),
+      makeClusters([{ xyz: [20, 0, -100], radius: 1, name: 'NGC_1' }]),
+      null,
+      null,
+      makeOAStars([{ xyz: [-20, 0, -100], name: 'JD 518774' }]),
+    );
+    expect(layoutOne(index, 1)[0].text).toBe('NGC 1');
   });
 });

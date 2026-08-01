@@ -58,6 +58,20 @@ export function bayerLabel(bayer: string, constellation: string): string {
   return constellation ? `${greek}${suffix} ${constellation}` : `${greek}${suffix}`;
 }
 
+/**
+ * Most a label can gain from its object being large on screen.
+ *
+ * Worth reading alongside the base weights below, because the two are not
+ * independent: only *extended* objects can earn this. A star or an OA marker has
+ * no radius, so it scores zero here forever, and a base weight has to be
+ * compared against another kind's base **plus** this. That asymmetry is what
+ * made named OA systems invisible — at 0.9 they lost to every cluster on screen.
+ */
+const MAX_SIZE_BONUS = 1.5;
+
+/** Added when an object carries an Orion's Arm association — the map's anchors. */
+const POLITY_BONUS = 0.6;
+
 /** Importance before anything about the current view is known. */
 const BASE_IMPORTANCE = {
   starProper: 1.0,
@@ -66,15 +80,28 @@ const BASE_IMPORTANCE = {
   clusterClassical: 0.7,
   clusterSurvey: 0.1,
   hii: 0.65,
-  // A named OA system is a landmark of the setting. A bare JD designation is
-  // not, but it still has to be labellable: an unlabelled marker is a dot you
-  // cannot look up. It ranks low so that 53 of them cannot bury NGC 6633.
-  oaStarNamed: 0.9,
+
+  /**
+   * Named Orion's Arm systems, above everything else that can be scored.
+   *
+   * The ceiling for any other kind is a polity-bound cluster filling the view:
+   * 0.7 + 0.6 + 1.5 = 2.8. This sits above it deliberately, so a named system is
+   * labelled whenever it is on screen rather than competing with 459
+   * proper-named stars and every cluster for 45 slots.
+   *
+   * Affordable because there are only 16 of them. This is a map of Orion's Arm;
+   * the systems the setting names are the thing it is for.
+   */
+  oaStarNamed: 3.0,
+
+  /**
+   * A bare JD or YTS designation, which names nothing.
+   *
+   * Low, so that the 53 filling NGC 6633 cannot bury the cluster itself — but
+   * not zero, because an unlabelled marker is a dot that cannot be looked up.
+   */
   oaStarNumbered: 0.32,
 };
-
-/** Added when an object carries an Orion's Arm association — the map's anchors. */
-const POLITY_BONUS = 0.6;
 
 export interface ObjectRef {
   kind: number;
@@ -448,7 +475,7 @@ export class ObjectIndex {
       if (!this.onScreen[id]) continue;
       // On-screen size earns a label its place: an object filling the view is
       // worth naming even when it is intrinsically dull, and vice versa.
-      const size = Math.min(this.screenR[id] / 40, 1.5);
+      const size = Math.min(this.screenR[id] / 40, MAX_SIZE_BONUS);
       candidates.push({ id, priority: this.importance[id] + size });
     }
     candidates.sort((a, b) => b.priority - a.priority);
