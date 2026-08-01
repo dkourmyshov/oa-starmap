@@ -14,9 +14,33 @@ from pathlib import Path
 from typing import Any
 
 import yaml
-from pydantic import BaseModel, Field, field_validator
+from pydantic import BaseModel, Field, field_validator, model_validator
 
 HEX_COLOR = re.compile(r"^#[0-9a-fA-F]{6}$")
+
+
+class Source(BaseModel):
+    """Where a piece of fictional data was read from.
+
+    Recorded because the fiction is not uniform in kind. A political map drawn
+    for one epoch, a table of colony names and a Celestia add-on say different
+    things with different authority, and a reader who cannot tell which is which
+    cannot judge any of it.
+    """
+
+    title: str
+    url: str
+    page: str = ""
+    epoch_at: int | None = None
+    """Setting year the source depicts, in years After Tranquility, where it says."""
+    note: str = ""
+
+    @field_validator("url")
+    @classmethod
+    def _http(cls, value: str) -> str:
+        if not value.startswith(("http://", "https://")):
+            raise ValueError(f"source url must be absolute, got {value!r}")
+        return value
 
 
 class Polity(BaseModel):
@@ -27,6 +51,8 @@ class Polity(BaseModel):
     color: str
     landmarks: list[str] = Field(default_factory=list)
     uncertain: bool = False
+    source: str = ""
+    """Key into :attr:`FictionFile.sources` for where these landmarks came from."""
 
     @field_validator("id")
     @classmethod
@@ -55,6 +81,7 @@ class FictionFile(BaseModel):
     """The top level of ``fiction/polities.yaml``."""
 
     polities: list[Polity]
+    sources: dict[str, Source] = Field(default_factory=dict)
     notes: dict[str, str] = Field(default_factory=dict)
 
     confirmed_placements: list[str] = Field(default_factory=list)
@@ -77,6 +104,21 @@ class FictionFile(BaseModel):
                 raise ValueError(f"duplicate polity id {polity.id!r}")
             seen.add(polity.id)
         return value
+
+    @model_validator(mode="after")
+    def _sources_exist(self) -> FictionFile:
+        """A dangling source key means provenance was lost, so it fails the build.
+
+        Unlike an unresolved landmark, this cannot come right on its own later:
+        nothing downstream will ever supply the missing entry.
+        """
+        for polity in self.polities:
+            if polity.source and polity.source not in self.sources:
+                raise ValueError(
+                    f"polity {polity.id!r} cites unknown source {polity.source!r}; "
+                    f"known sources: {sorted(self.sources)}"
+                )
+        return self
 
     @classmethod
     def load(cls, path: Path) -> FictionFile:

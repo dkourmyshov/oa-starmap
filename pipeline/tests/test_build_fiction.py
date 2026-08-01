@@ -245,6 +245,50 @@ class TestSeagullCorrection:
         assert all(b["matched_name"] != "NGC_6611" for b in built["bindings"])
 
 
+class TestProvenance:
+    """A polity colour is a reading of one map at one epoch, not a measurement."""
+
+    def test_every_polity_cites_a_source(self, built):
+        for polity in built["polities"]:
+            assert polity["source"], f"{polity['id']} has no source"
+
+    def test_cited_sources_are_defined(self, built):
+        payload = json.loads((built["dir"] / "fiction.json").read_text(encoding="utf-8"))
+        for polity in built["polities"]:
+            assert polity["source"] in payload["sources"]
+
+    def test_the_source_records_its_epoch(self, built):
+        """8000 A.T. is 2,600 years before the setting's present; that matters."""
+        payload = json.loads((built["dir"] / "fiction.json").read_text(encoding="utf-8"))
+        source = payload["sources"]["political-maps-8000at"]
+        assert source["epoch_at"] == 8000
+        assert source["url"].startswith("https://www.orionsarm.com/")
+        assert source["title"]
+
+    def test_a_dangling_source_key_fails_the_build(self):
+        """Provenance cannot come right later, so this is fatal, unlike a binding."""
+        from oastarmap.fiction.schema import FictionFile
+
+        with pytest.raises(ValueError, match="unknown source"):
+            FictionFile.model_validate(
+                {
+                    "polities": [{"id": "x", "name": "X", "color": "#112233", "source": "nope"}],
+                    "sources": {},
+                }
+            )
+
+    def test_a_source_needs_an_absolute_url(self):
+        from oastarmap.fiction.schema import FictionFile
+
+        with pytest.raises(ValueError, match="absolute"):
+            FictionFile.model_validate(
+                {
+                    "polities": [],
+                    "sources": {"s": {"title": "T", "url": "/eg-topic/49c787abb28fd"}},
+                }
+            )
+
+
 class TestBindings:
     def test_resolved_bindings_report_what_they_hit(self, built):
         """Berkeley 42 resolving to NGC 6749 is correct but not self-evident."""

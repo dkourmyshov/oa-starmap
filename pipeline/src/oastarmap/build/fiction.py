@@ -267,6 +267,7 @@ def build_fiction(
                         "name": p.name,
                         "color": p.color,
                         "uncertain": p.uncertain,
+                        "source": p.source,
                         "landmark_count": len(p.landmarks),
                         "resolved_count": sum(1 for b in report.resolved if p.id in b.polities),
                         "beyond_frontier_count": sum(
@@ -276,6 +277,9 @@ def build_fiction(
                     for p in fiction.polities
                 ],
                 "bindings": [b.as_dict() for b in report.bindings],
+                "sources": {
+                    key: source.model_dump() for key, source in sorted(fiction.sources.items())
+                },
                 "notes": fiction.notes,
             },
         ),
@@ -348,9 +352,11 @@ def build_fiction(
         "source": {
             "description": (
                 "Hand-authored Orion's Arm polity associations. Rough associations "
-                "with diffuse, interpenetrating volumes — not borders."
+                "with diffuse, interpenetrating volumes — not borders. Each polity "
+                "cites the source its landmark list was read from."
             ),
             "citation": "Orion's Arm Universe Project (https://www.orionsarm.com/).",
+            "cited": sorted({p.source for p in fiction.polities if p.source}),
         },
     }
 

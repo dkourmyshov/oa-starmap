@@ -252,6 +252,17 @@ export interface PolityInfo {
   landmark_count: number;
   resolved_count: number;
   beyond_frontier_count: number;
+  /** Key into `FictionData.sources` for where this landmark list was read from. */
+  source: string;
+}
+
+export interface FictionSource {
+  title: string;
+  url: string;
+  page: string;
+  /** Setting year depicted, in years After Tranquility, where the source says. */
+  epoch_at: number | null;
+  note: string;
 }
 
 export interface FictionBinding {
@@ -269,6 +280,7 @@ export interface FictionBinding {
 export interface FictionData {
   polities: PolityInfo[];
   bindings: FictionBinding[];
+  sources: Record<string, FictionSource>;
   notes: Record<string, string>;
   /** One byte per cluster; 0 = unassigned, else a 1-based polity index. */
   clusterPolity: Uint8Array;
@@ -309,6 +321,7 @@ async function loadFiction(dataset: FictionDataset): Promise<FictionData> {
     fetchJson<{
       polities: PolityInfo[];
       bindings: FictionBinding[];
+      sources: Record<string, FictionSource>;
       notes: Record<string, string>;
     }>(dataset.files.bindings.file),
     fetchBinary(dataset.files.cluster_polity.file),
@@ -318,6 +331,7 @@ async function loadFiction(dataset: FictionDataset): Promise<FictionData> {
   return {
     polities: payload.polities,
     bindings: payload.bindings,
+    sources: payload.sources ?? {},
     notes: payload.notes,
     clusterPolity: new Uint8Array(polityBuf),
     hiiPolity: hiiPolityBuf ? new Uint8Array(hiiPolityBuf) : null,

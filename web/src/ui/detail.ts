@@ -24,6 +24,8 @@ interface Detail {
   subtitle: string;
   rows: Row[];
   polities: string[];
+  /** Which OA source the polity association was read from, if any. */
+  associationSource: string | null;
   citation: string;
   /** Distance from Sol in pc, for the frontier check. */
   distancePc: number;
@@ -123,6 +125,9 @@ export class DetailPanel {
       note.appendChild(el('div', 'note-line', "Orion's Arm"));
       if (detail.polities.length > 0) {
         note.appendChild(el('div', 'note-line note-polity', detail.polities.join(', ')));
+        if (detail.associationSource) {
+          note.appendChild(el('div', 'note-line', `after ${detail.associationSource}`));
+        }
       }
       if (beyond && fiction) {
         // Stated on the panel rather than only implied by the missing colour,
@@ -166,6 +171,36 @@ export class DetailPanel {
       for (const id of binding.polities) out.push(names.get(id) ?? id);
     }
     return out;
+  }
+
+  /**
+   * Where the polity associations for this object were read from.
+   *
+   * The association is a reading of a particular map at a particular epoch, not
+   * a fact about the object, so the panel says which map — otherwise a colour
+   * and a catalogue measurement read as equally authoritative.
+   */
+  private sourceLineFor(kind: string, index: number): string | null {
+    const fiction = this.sources.fiction;
+    if (!fiction) return null;
+
+    const byId = new Map(fiction.polities.map((p) => [p.id, p]));
+    const keys = new Set<string>();
+    for (const binding of fiction.bindings) {
+      if (binding.kind !== kind || binding.index !== index) continue;
+      for (const id of binding.polities) {
+        const key = byId.get(id)?.source;
+        if (key) keys.add(key);
+      }
+    }
+
+    const parts: string[] = [];
+    for (const key of [...keys].sort()) {
+      const source = fiction.sources[key];
+      if (!source) continue;
+      parts.push(source.epoch_at ? `${source.title} (${source.epoch_at} A.T.)` : source.title);
+    }
+    return parts.length ? parts.join('; ') : null;
   }
 
   private describe(id: number, unit: DistanceUnit): Detail | null {
@@ -232,6 +267,7 @@ export class DetailPanel {
       subtitle: designations.length ? designations.join(' · ') : 'star',
       rows,
       polities: this.politiesFor('star', index),
+      associationSource: this.sourceLineFor('star', index),
       citation: stars.dataset.source.citation,
       distancePc: distance,
       focus: { x, y, z, standoff: pc(Math.max(distance * 0.12, 2)) },
@@ -284,6 +320,7 @@ export class DetailPanel {
       subtitle: [typeLabel, ...aliases.slice(0, 3).map((a) => a.replace(/_/g, ' '))].join(' · '),
       rows,
       polities: this.politiesFor('cluster', index),
+      associationSource: this.sourceLineFor('cluster', index),
       citation: clusters.dataset.source.citation,
       distancePc: distance,
       focus: { x, y, z, standoff: pc(Math.max(radiusTotal * 4.5, 5)) },
@@ -324,6 +361,7 @@ export class DetailPanel {
       subtitle: ['HII region', ...entry.aliases.split(',').slice(0, 1)].join(' · '),
       rows,
       polities: this.politiesFor('hii', index),
+      associationSource: this.sourceLineFor('hii', index),
       citation: hii.dataset.source.citation,
       distancePc: distance,
       focus: { x, y, z, standoff: pc(Math.max(radius * 4.5, 5)) },
