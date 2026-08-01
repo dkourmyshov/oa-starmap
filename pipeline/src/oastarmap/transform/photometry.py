@@ -7,6 +7,8 @@ approximations used here are documented and bounded; neither is exact physics.
 
 from __future__ import annotations
 
+import re
+
 import numpy as np
 
 SPECTRAL_CLASSES = ("O", "B", "A", "F", "G", "K", "M", "?")
@@ -47,6 +49,52 @@ def parse_spectral_class(spect: str) -> int:
             return SPECTRAL_INDEX[ch]
 
     return UNKNOWN_CLASS
+
+
+# Main-sequence B-V against a numeric spectral position, where O0=0, B0=10,
+# A0=20 ... M0=60. Interpolated between these anchors.
+_BV_ANCHORS = (
+    (5.0, -0.32),  # O5
+    (10.0, -0.30),  # B0
+    (15.0, -0.16),  # B5
+    (20.0, 0.00),  # A0
+    (25.0, 0.15),  # A5
+    (30.0, 0.30),  # F0
+    (35.0, 0.44),  # F5
+    (40.0, 0.58),  # G0
+    (45.0, 0.68),  # G5
+    (50.0, 0.81),  # K0
+    (55.0, 1.15),  # K5
+    (60.0, 1.40),  # M0
+    (65.0, 1.64),  # M5
+    (69.0, 2.00),  # M9
+)
+
+_SPECTRAL_POSITION = {"O": 0, "B": 10, "A": 20, "F": 30, "G": 40, "K": 50, "M": 60}
+
+_SPECTRAL_TYPE = re.compile(r"^\s*(?:sd|esd|d)?([OBAFGKM])\s*(\d(?:\.\d)?)?")
+
+
+def spectral_type_to_bv(spect: str) -> float:
+    """Approximate B-V from a spectral type string such as ``"G2V"``.
+
+    Needed because the Orion's Arm Celestia catalogue gives spectral types where
+    the real catalogues give measured photometry. This is therefore a *derived*
+    colour, not an observed one, and it is deliberately cruder than the B-V path:
+    it interpolates main-sequence values and ignores luminosity class, so a K0III
+    giant is coloured as a K0V dwarf. That is acceptable for hue on a star map and
+    would not be acceptable for anything quantitative.
+
+    Returns NaN for types off the OBAFGKM sequence — white dwarfs, brown dwarfs,
+    the ``Q`` Celestia uses for neutron stars — which the renderer draws white.
+    """
+    matched = _SPECTRAL_TYPE.match(spect or "")
+    if not matched:
+        return float("nan")
+
+    position = _SPECTRAL_POSITION[matched.group(1)] + float(matched.group(2) or 0.0)
+    points = np.array(_BV_ANCHORS)
+    return float(np.interp(position, points[:, 0], points[:, 1]))
 
 
 def bv_to_temperature(bv: np.ndarray) -> np.ndarray:

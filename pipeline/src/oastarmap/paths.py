@@ -15,6 +15,15 @@ RAW_DIR = REPO_ROOT / "raw"
 FICTION_DIR = REPO_ROOT / "fiction"
 """Hand-authored Orion's Arm data. Committed — this is content, not generated."""
 
+SOURCES_DIR = REPO_ROOT / "sources"
+"""Orion's Arm source material, downloaded by hand rather than by `fetch`.
+
+Gitignored and not redistributed: the OAAddons archive is covered by the terms at
+https://www.orionsarm.com/Terms_Copyright_and_Submissions.html rather than the
+Creative Commons licence earlier OA releases carried. Builds that need a file
+from here degrade gracefully when it is absent.
+"""
+
 DATA_OUT_DIR = REPO_ROOT / "web" / "public" / "data"
 """Generated datasets consumed by the renderer. Gitignored."""
 

@@ -15,7 +15,14 @@
 
 import type * as THREE from 'three';
 
-import { KIND_CLUSTER, KIND_HII, KIND_STAR, type ObjectIndex } from '../scene/objects';
+import {
+  KIND_CLUSTER,
+  KIND_HII,
+  KIND_OASTAR,
+  KIND_STAR,
+  type LayerVisibility,
+  type ObjectIndex,
+} from '../scene/objects';
 
 export const DEFAULT_MAX_LABELS = 45;
 
@@ -26,6 +33,7 @@ const KIND_CLASS: Record<number, string> = {
   [KIND_STAR]: 'map-label-star',
   [KIND_CLUSTER]: 'map-label-cluster',
   [KIND_HII]: 'map-label-hii',
+  [KIND_OASTAR]: 'map-label-oastar',
 };
 
 export class LabelOverlay {
@@ -61,7 +69,7 @@ export class LabelOverlay {
     width: number,
     height: number,
     magnitudeLimit: number,
-    visibleLayers: { star: boolean; cluster: boolean; hii: boolean },
+    visibleLayers: LayerVisibility,
     now: number,
   ): void {
     if (!this.enabled) return;

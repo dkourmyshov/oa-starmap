@@ -6,7 +6,13 @@
  * matching Orion's Arm usage, but the underlying values are always parsecs.
  */
 
-import type { ClustersDataset, FictionData, HiiDataset, StarsDataset } from '../data/manifest';
+import type {
+  ClustersDataset,
+  FictionData,
+  HiiDataset,
+  OAStarsDataset,
+  StarsDataset,
+} from '../data/manifest';
 import { DEFAULT_OPACITY as DEFAULT_CLUSTER_OPACITY } from '../layers/clusterField';
 import { DEFAULT_OPACITY as DEFAULT_HII_OPACITY } from '../layers/hiiField';
 import { DEFAULT_MAX_LABELS } from './labels';
@@ -20,6 +26,7 @@ export interface HudCallbacks {
   onHiiVisible(value: boolean): void;
   onHiiOpacity(value: number): void;
   onHiiKinematic(enabled: boolean): void;
+  onOAStarsVisible(value: boolean): void;
   onLabelsVisible(value: boolean): void;
   onLabelDensity(value: number): void;
   onPolityMode(enabled: boolean): void;
@@ -91,6 +98,7 @@ export class Hud {
     dataset: StarsDataset,
     clusters: ClustersDataset | null,
     hii: HiiDataset | null,
+    oaStars: OAStarsDataset | null,
     fiction: FictionData | null,
     private readonly callbacks: HudCallbacks,
   ) {
@@ -113,6 +121,12 @@ export class Hud {
     if (hii) {
       panel.appendChild(
         this.countRow('HII regions', hii.count, (on) => this.callbacks.onHiiVisible(on)),
+      );
+    }
+
+    if (oaStars) {
+      panel.appendChild(
+        this.countRow("OA stars", oaStars.count, (on) => this.callbacks.onOAStarsVisible(on)),
       );
     }
 
@@ -211,6 +225,18 @@ export class Hud {
     note.appendChild(el('div', 'note-line', dataset.source.citation));
     if (clusters) note.appendChild(el('div', 'note-line', clusters.source.citation));
     if (hii) note.appendChild(el('div', 'note-line', hii.source.citation));
+    if (oaStars) {
+      // The one layer whose positions are not measurements; say so where the
+      // other provenance lines are, not somewhere it can be missed.
+      note.appendChild(
+        el(
+          'div',
+          'note-line note-warn',
+          `${oaStars.count} OA stars are placed by the setting, not observed — ` +
+            `drawn as open diamonds.`,
+        ),
+      );
+    }
     note.appendChild(
       el(
         'div',

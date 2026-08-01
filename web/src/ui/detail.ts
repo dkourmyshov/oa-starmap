@@ -9,8 +9,14 @@
  * optional extra.
  */
 
-import type { ClusterData, FictionData, HiiData, StarData } from '../data/manifest';
-import { KIND_CLUSTER, KIND_HII, KIND_STAR, type ObjectIndex } from '../scene/objects';
+import type { ClusterData, FictionData, HiiData, OAStarData, StarData } from '../data/manifest';
+import {
+  KIND_CLUSTER,
+  KIND_HII,
+  KIND_OASTAR,
+  KIND_STAR,
+  type ObjectIndex,
+} from '../scene/objects';
 import { type DistanceUnit, type Parsecs, formatDistance, pc } from '../units';
 
 interface Row {
@@ -37,6 +43,7 @@ export interface DetailSources {
   stars: StarData;
   clusters: ClusterData | null;
   hii: HiiData | null;
+  oaStars: OAStarData | null;
   fiction: FictionData | null;
   objects: ObjectIndex;
 }
@@ -208,7 +215,57 @@ export class DetailPanel {
     if (kind === KIND_STAR) return this.describeStar(index, unit);
     if (kind === KIND_CLUSTER) return this.describeCluster(index, unit);
     if (kind === KIND_HII) return this.describeHii(index, unit);
+    if (kind === KIND_OASTAR) return this.describeOAStar(index, unit);
     return null;
+  }
+
+  /**
+   * An Orion's Arm star.
+   *
+   * The panel leads with the fact that this position is asserted rather than
+   * measured, because that is the one thing distinguishing it from every other
+   * object the map draws.
+   */
+  private describeOAStar(index: number, unit: DistanceUnit): Detail | null {
+    const oaStars = this.sources.oaStars;
+    if (!oaStars) return null;
+
+    const base = index * 5;
+    const [x, y, z] = [
+      oaStars.positions[base],
+      oaStars.positions[base + 1],
+      oaStars.positions[base + 2],
+    ];
+    const absMag = oaStars.positions[base + 3];
+    const entry = oaStars.names[index];
+    const distance = Math.sqrt(x * x + y * y + z * z);
+
+    const rows: Row[] = [
+      { label: 'Distance from Sol', value: formatDistance(pc(distance), unit) },
+      { label: 'Position', value: 'asserted by the setting', warn: true },
+      { label: 'Absolute magnitude', value: absMag.toFixed(2) },
+    ];
+    if (entry.spectral_type) {
+      rows.push({ label: 'Spectral type', value: entry.spectral_type });
+    }
+    if (entry.comment) rows.push({ label: 'Note', value: entry.comment });
+    // Which add-on file it came from. Ordinarily incidental, but the add-on
+    // reuses "JD 518791" for two different stars, and this is what tells them
+    // apart in the panel.
+    if (entry.source_file) rows.push({ label: 'Add-on file', value: entry.source_file });
+
+    return {
+      title: entry.name,
+      subtitle: entry.oa_designation
+        ? "Orion's Arm star · OA designation"
+        : "Orion's Arm star",
+      rows,
+      polities: [],
+      associationSource: null,
+      citation: oaStars.dataset.source.citation,
+      distancePc: distance,
+      focus: { x, y, z, standoff: pc(Math.max(distance * 0.12, 2)) },
+    };
   }
 
   private describeStar(index: number, unit: DistanceUnit): Detail {

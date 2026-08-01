@@ -13,13 +13,14 @@
 
 import * as THREE from 'three';
 
-import type { ClusterData, FictionData, HiiData, StarData } from '../data/manifest';
+import type { ClusterData, FictionData, HiiData, OAStarData, StarData } from '../data/manifest';
 
 export const KIND_STAR = 0;
 export const KIND_CLUSTER = 1;
 export const KIND_HII = 2;
+export const KIND_OASTAR = 3;
 
-export const KIND_NAMES = ['star', 'cluster', 'HII region'] as const;
+export const KIND_NAMES = ['star', 'cluster', 'HII region', "Orion's Arm star"] as const;
 
 /**
  * Gaia-era cluster searches name their finds after the survey. There are 5,396 of
@@ -37,6 +38,10 @@ const BASE_IMPORTANCE = {
   clusterClassical: 0.7,
   clusterSurvey: 0.1,
   hii: 0.65,
+  // A named OA system is a landmark of the setting; the JD/YTS filler that
+  // populates NGC 6633 is not, and 53 labels in one cluster would bury it.
+  oaStarNamed: 0.9,
+  oaStarNumbered: 0.05,
 };
 
 /** Added when an object carries an Orion's Arm association — the map's anchors. */
@@ -56,20 +61,41 @@ export interface PlacedLabel {
   importance: number;
 }
 
+export interface LayerVisibility {
+  star: boolean;
+  cluster: boolean;
+  hii: boolean;
+  oastar: boolean;
+}
+
 export interface LayoutOptions {
   width: number;
   height: number;
   magnitudeLimit: number;
   maxLabels: number;
-  visible: { star: boolean; cluster: boolean; hii: boolean };
+  visible: LayerVisibility;
 }
 
 export interface PickOptions {
   width: number;
   height: number;
   magnitudeLimit: number;
-  visible: { star: boolean; cluster: boolean; hii: boolean };
+  visible: LayerVisibility;
 }
+
+/**
+ * Which kind wins when several are under the cursor. Lower takes precedence.
+ *
+ * Stated separately from the kind constants so that adding a layer cannot
+ * silently reorder picking: point-like objects must beat the extended ones they
+ * sit inside, whatever order the kinds happen to be numbered in.
+ */
+const PICK_PRIORITY: Record<number, number> = {
+  [KIND_STAR]: 0,
+  [KIND_OASTAR]: 0,
+  [KIND_CLUSTER]: 1,
+  [KIND_HII]: 2,
+};
 
 /** Half-width of the label box, in pixels per character. Cheap but close enough. */
 const CHAR_WIDTH = 6.2;
@@ -109,10 +135,12 @@ export class ObjectIndex {
     clusters: ClusterData | null,
     hii: HiiData | null,
     fiction: FictionData | null,
+    oaStars: OAStarData | null = null,
   ) {
     const clusterCount = clusters?.count ?? 0;
     const hiiCount = hii?.count ?? 0;
-    const total = stars.count + clusterCount + hiiCount;
+    const oaCount = oaStars?.count ?? 0;
+    const total = stars.count + clusterCount + hiiCount + oaCount;
     this.count = total;
 
     this.px = new Float32Array(total);
@@ -201,6 +229,26 @@ export class ObjectIndex {
       }
     }
 
+    if (oaStars) {
+      for (let i = 0; i < oaStars.count; i++) {
+        const base = i * 5;
+        this.px[at] = oaStars.positions[base];
+        this.py[at] = oaStars.positions[base + 1];
+        this.pz[at] = oaStars.positions[base + 2];
+        this.absMag[at] = oaStars.positions[base + 3];
+        this.kind[at] = KIND_OASTAR;
+        this.srcIndex[at] = i;
+
+        const entry = oaStars.names[i];
+        this.labels[at] = entry?.name ?? '';
+        this.importance[at] = entry?.oa_designation
+          ? BASE_IMPORTANCE.oaStarNumbered
+          : BASE_IMPORTANCE.oaStarNamed;
+        if (this.labels[at]) labelled.push(at);
+        at++;
+      }
+    }
+
     this.labelled = Int32Array.from(labelled);
 
     this.everything = new Int32Array(total);
@@ -243,6 +291,7 @@ export class ObjectIndex {
       if (kind === KIND_STAR && !visible.star) continue;
       if (kind === KIND_CLUSTER && !visible.cluster) continue;
       if (kind === KIND_HII && !visible.hii) continue;
+      if (kind === KIND_OASTAR && !visible.oastar) continue;
 
       const x = this.px[id];
       const y = this.py[id];
@@ -260,8 +309,8 @@ export class ObjectIndex {
       const dz = z - cam.z;
       const distance = Math.sqrt(dx * dx + dy * dy + dz * dz);
 
-      if (kind === KIND_STAR) {
-        // Same magnitude test the star shader applies, so what is clickable is
+      if (kind === KIND_STAR || kind === KIND_OASTAR) {
+        // Same magnitude test the star shaders apply, so what is clickable is
         // exactly what is drawn.
         const apparent = this.absMag[id] + 5 * Math.log10(Math.max(distance, 1e-6) / 10);
         if (apparent > magnitudeLimit) continue;
@@ -312,7 +361,7 @@ export class ObjectIndex {
       const kind = this.kind[id];
 
       let score: number;
-      if (kind === KIND_STAR) {
+      if (kind === KIND_STAR || kind === KIND_OASTAR) {
         if (distance > tolerance) continue;
         score = distance;
       } else if (kind === KIND_CLUSTER) {
@@ -329,9 +378,10 @@ export class ObjectIndex {
         score = distance;
       }
 
-      if (kind < bestKind || (kind === bestKind && score < bestScore)) {
+      const priority = PICK_PRIORITY[kind] ?? 99;
+      if (priority < bestKind || (priority === bestKind && score < bestScore)) {
         best = id;
-        bestKind = kind;
+        bestKind = priority;
         bestScore = score;
       }
     }

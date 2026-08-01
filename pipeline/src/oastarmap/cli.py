@@ -11,13 +11,14 @@ from oastarmap import __version__
 from oastarmap.build.clusters import build_clusters
 from oastarmap.build.fiction import build_fiction, format_report
 from oastarmap.build.hii import build_hii
+from oastarmap.build.oastars import ARCHIVE_NAME, build_oastars
 from oastarmap.build.stars import build_stars
 from oastarmap.build.writer import write_json
 from oastarmap.fetch import fetch_source
 from oastarmap.fetch.clusters import SOURCES as CLUSTER_SOURCES
 from oastarmap.fetch.hii import SOURCES as HII_SOURCES
 from oastarmap.fetch.hyg import SOURCES as HYG_SOURCES
-from oastarmap.paths import DATA_OUT_DIR, RAW_DIR, ensure_dirs
+from oastarmap.paths import DATA_OUT_DIR, RAW_DIR, SOURCES_DIR, ensure_dirs
 from oastarmap.transform.frame import PC_TO_LY
 
 ALL_SOURCES = [*HYG_SOURCES, *CLUSTER_SOURCES, *HII_SOURCES]
@@ -49,6 +50,15 @@ def cmd_build(args: argparse.Namespace) -> int:
         "clusters": build_clusters(),
         "hii": build_hii(),
     }
+
+    # Hand-downloaded rather than fetched, and not redistributable, so its
+    # absence must not break the build for someone who only cloned the repo.
+    archive = SOURCES_DIR / ARCHIVE_NAME
+    if archive.exists():
+        datasets["oastars"] = build_oastars(archive)
+    else:
+        print(f"  oastars    skipped — {archive} not present")
+
     datasets["fiction"] = build_fiction()
 
     # No timestamp: the build must be byte-reproducible so that a changed output

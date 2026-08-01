@@ -7,6 +7,7 @@ import * as THREE from 'three';
 import { type StarData, loadAll } from './data/manifest';
 import { ClusterField } from './layers/clusterField';
 import { HiiField } from './layers/hiiField';
+import { OAStarField } from './layers/oaStarField';
 import { StarField } from './layers/starField';
 import { ObjectIndex } from './scene/objects';
 import { Viewer } from './scene/viewer';
@@ -61,6 +62,7 @@ async function main(): Promise<void> {
   let data: StarData;
   let clusterField: ClusterField | null = null;
   let hiiField: HiiField | null = null;
+  let oaStarField: OAStarField | null = null;
   let loaded;
   try {
     loaded = await loadAll();
@@ -84,6 +86,12 @@ async function main(): Promise<void> {
     viewer.scene.add(hiiField.points);
   }
 
+  // After the real field so an asserted star is never buried inside it.
+  if (loaded.oaStars) {
+    oaStarField = new OAStarField(loaded.oaStars);
+    viewer.scene.add(oaStarField.points);
+  }
+
   if (loaded.clusters) {
     clusterField = new ClusterField(loaded.clusters, loaded.fiction);
     clusterField.setPolityMode(true);
@@ -94,14 +102,32 @@ async function main(): Promise<void> {
   // neither should ever offer an object the renderer is not showing.
   const view = {
     magnitudeLimit: 7.5,
-    visible: { star: true, cluster: Boolean(clusterField), hii: Boolean(hiiField) },
+    visible: {
+      star: true,
+      cluster: Boolean(clusterField),
+      hii: Boolean(hiiField),
+      oastar: Boolean(oaStarField),
+    },
   };
 
-  const objects = new ObjectIndex(data, loaded.clusters, loaded.hii, loaded.fiction);
+  const objects = new ObjectIndex(
+    data,
+    loaded.clusters,
+    loaded.hii,
+    loaded.fiction,
+    loaded.oaStars,
+  );
 
   const detail = new DetailPanel(
     overlay,
-    { stars: data, clusters: loaded.clusters, hii: loaded.hii, fiction: loaded.fiction, objects },
+    {
+      stars: data,
+      clusters: loaded.clusters,
+      hii: loaded.hii,
+      oaStars: loaded.oaStars,
+      fiction: loaded.fiction,
+      objects,
+    },
     (x, y, z, standoff) => viewer.focusOn(new THREE.Vector3(x, y, z), standoff),
   );
 
@@ -199,14 +225,17 @@ async function main(): Promise<void> {
     data.dataset,
     loaded.clusters?.dataset ?? null,
     loaded.hii?.dataset ?? null,
+    loaded.oaStars?.dataset ?? null,
     loaded.fiction,
     {
       onMagnitudeLimit: (value) => {
         starField.magnitudeLimit = value;
+        if (oaStarField) oaStarField.magnitudeLimit = value;
         view.magnitudeLimit = value;
       },
       onExposure: (value) => {
         starField.exposure = value;
+        if (oaStarField) oaStarField.exposure = value;
       },
       onClustersVisible: (value) => {
         if (clusterField) clusterField.visible = value;
@@ -224,6 +253,10 @@ async function main(): Promise<void> {
       },
       onHiiKinematic: (enabled) => {
         hiiField?.setShowKinematic(enabled);
+      },
+      onOAStarsVisible: (value) => {
+        if (oaStarField) oaStarField.visible = value;
+        view.visible.oastar = value;
       },
       onLabelsVisible: (value) => {
         labels.visible = value;

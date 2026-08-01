@@ -136,6 +136,47 @@ export interface HiiData {
   dataset: HiiDataset;
 }
 
+export interface OAStarsDataset {
+  count: number;
+  frame: { name: string; unit: string; axes: Record<string, string>; origin: string };
+  layout: {
+    positions: { components: string[]; units: string[]; ci_unknown_sentinel: number; note: string };
+  };
+  files: {
+    positions: ArrayFile;
+    names: { file: string; bytes: number };
+  };
+  selection: { rule: string; note: string };
+  stats: { total_entries: number; accepted: number; excluded: Record<string, number> };
+  source: {
+    description: string;
+    citation: string;
+    url: string;
+    sha256: string;
+    distance_unit: string;
+  };
+}
+
+export interface OAStarName {
+  name: string;
+  comment: string;
+  spectral_type: string;
+  distance_pc: number;
+  /** True only for OA's own JD/YTS numbering. False is not a claim of reality. */
+  oa_designation: boolean;
+  source_file: string;
+}
+
+export interface OAStarData {
+  count: number;
+  /** Interleaved [x, y, z, absmag, ci] per star — same layout as the real field. */
+  positions: Float32Array;
+  names: OAStarName[];
+  /** Shared with the real star field; colour must not diverge between them. */
+  colorLut: Float32Array;
+  dataset: OAStarsDataset;
+}
+
 export interface FictionDataset {
   count: number;
   polity_count: number;
@@ -171,6 +212,7 @@ export interface Manifest {
     stars: StarsDataset;
     clusters?: ClustersDataset;
     hii?: HiiDataset;
+    oastars?: OAStarsDataset;
     fiction?: FictionDataset;
   };
 }
@@ -297,6 +339,7 @@ export interface LoadedData {
   stars: StarData;
   clusters: ClusterData | null;
   hii: HiiData | null;
+  oaStars: OAStarData | null;
   fiction: FictionData | null;
 }
 
@@ -310,9 +353,39 @@ export async function loadAll(): Promise<LoadedData> {
     ? await loadClusters(manifest.datasets.clusters)
     : null;
   const hii = manifest.datasets.hii ? await loadHii(manifest.datasets.hii) : null;
+  // Built from hand-downloaded, non-redistributable source material, so a clone
+  // without it is a normal state rather than an error.
+  const oaStars = manifest.datasets.oastars
+    ? await loadOAStars(manifest.datasets.oastars, stars.colorLut)
+    : null;
   const fiction = manifest.datasets.fiction ? await loadFiction(manifest.datasets.fiction) : null;
 
-  return { stars, clusters, hii, fiction };
+  return { stars, clusters, hii, oaStars, fiction };
+}
+
+async function loadOAStars(
+  dataset: OAStarsDataset,
+  colorLut: Float32Array,
+): Promise<OAStarData> {
+  if (dataset.frame.unit !== 'pc') {
+    throw new Error(`OA star positions are in "${dataset.frame.unit}", expected parsecs.`);
+  }
+
+  const [positionsBuf, names] = await Promise.all([
+    fetchBinary(dataset.files.positions.file),
+    fetchJson<OAStarName[]>(dataset.files.names.file),
+  ]);
+
+  const positions = new Float32Array(positionsBuf);
+  const expected = dataset.count * 5;
+  if (positions.length !== expected) {
+    throw new Error(
+      `oastars.bin has ${positions.length} floats, expected ${expected} ` +
+        `(${dataset.count} stars x 5 components).`,
+    );
+  }
+
+  return { count: dataset.count, positions, names, colorLut, dataset };
 }
 
 async function loadFiction(dataset: FictionDataset): Promise<FictionData> {

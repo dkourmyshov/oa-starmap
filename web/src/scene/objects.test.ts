@@ -18,7 +18,7 @@ import { KIND_CLUSTER, KIND_HII, KIND_STAR, ObjectIndex } from './objects';
 const WIDTH = 800;
 const HEIGHT = 600;
 
-const ALL_VISIBLE = { star: true, cluster: true, hii: true };
+const ALL_VISIBLE = { star: true, cluster: true, hii: true, oastar: true };
 
 function camera(): THREE.PerspectiveCamera {
   const cam = new THREE.PerspectiveCamera(60, WIDTH / HEIGHT, 0.1, 1e6);
@@ -237,7 +237,7 @@ describe('picking', () => {
       null,
       null,
     );
-    const hidden = { ...pickOptions, visible: { star: false, cluster: true, hii: true } };
+    const hidden = { ...pickOptions, visible: { star: false, cluster: true, hii: true, oastar: true } };
     const id = index.pick(cam, WIDTH / 2, HEIGHT / 2, hidden, 20);
     expect(index.ref(id as number).kind).toBe(KIND_CLUSTER);
   });
@@ -336,7 +336,7 @@ describe('label layout', () => {
       null,
       null,
     );
-    const hidden = { ...layoutOptions, visible: { star: false, cluster: true, hii: true } };
+    const hidden = { ...layoutOptions, visible: { star: false, cluster: true, hii: true, oastar: true } };
     expect(index.layout(cam, hidden)).toHaveLength(0);
   });
 
