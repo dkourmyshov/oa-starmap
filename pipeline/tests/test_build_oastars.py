@@ -236,16 +236,58 @@ class TestSystemNames:
         systems = {e["system"] for e in built["names"] if e["system"]}
         assert systems == {
             "Blue",
+            "Guanche",
             "Harmonic Resonance",
             "Heimat",
             "Muuhhome",
             "Niuearth",
+            "Oshiq",
+            "Panthalassa",
             "Pluton",
+            "Redunin",
+            "To'ul'h",
             "Wurm",
         }
+
+    def test_the_toulh_home_system_is_present(self, built):
+        """The To'ul'h home system, annotated inside the braces rather than on
+        the header line — which is how five systems went missing."""
+        entry = next(e for e in built["names"] if e["system"] == "To'ul'h")
+        assert entry["name"] == "JD 870135"
+        assert 370 < entry["distance_pc"] < 390
+
+    def test_the_ngc_6633_population_is_annotated(self, built):
+        """52 stars clumped in one cluster look unexplained without this."""
+        members = [e for e in built["names"] if "NGC 6633" in e["comment"]]
+        assert len(members) == 52
 
     def test_cluster_members_get_no_system(self, built):
         """Fifty stars labelled "NGC 6633" would be worse than none."""
         for entry in built["names"]:
             if "cluster" in entry["comment"].lower():
                 assert entry["system"] == ""
+
+
+class TestInBodyComments:
+    """Comments sit on the header line in some entries and inside the braces in
+    others. Reading only the header dropped the To'ul'h home system, four more
+    named systems, and the 52 notes marking the NGC 6633 population."""
+
+    def test_reads_a_comment_from_inside_the_braces(self):
+        text = (
+            '1 "JD 870135"\n{\n'
+            " RA 277.352  # Star for system containing To'ul'h\n"
+            " Dec 6.542\n Distance 1235.51\n}"
+        )
+        assert parse_stc(text)[0]["comment"] == "Star for system containing To'ul'h"
+
+    def test_keeps_both_header_and_body_comments(self):
+        text = '1 "X" # header note\n{\n RA 1  # body note\n Dec 2\n Distance 3\n}'
+        assert parse_stc(text)[0]["comment"] == "header note; body note"
+
+    def test_does_not_repeat_an_identical_comment(self):
+        text = '1 "X" # same\n{\n RA 1  # same\n Dec 2\n Distance 3\n}'
+        assert parse_stc(text)[0]["comment"] == "same"
+
+    def test_no_comment_stays_empty(self):
+        assert parse_stc('1 "X"\n{\n RA 1\n Dec 2\n Distance 3\n}')[0]["comment"] == ""

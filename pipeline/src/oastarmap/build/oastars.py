@@ -56,6 +56,7 @@ _HEADER = re.compile(
     re.M,
 )
 _FIELD = re.compile(r"^\s*(RA|Dec|Distance|SpectralType|AbsMag)\s+(\S+)", re.M)
+_COMMENT = re.compile(r"#(.*)$", re.M)
 
 _SYSTEM_FOR = re.compile(r"\bstars?\s+for\s+(?:the\s+)?(?:system\s+containing\s+)?(.+)$", re.I)
 """What the add-on's comments say a star is *for*.
@@ -157,12 +158,25 @@ def parse_stc(text: str, source_file: str = "") -> list[dict[str, Any]]:
         if closing < 0:
             continue
 
-        fields = {key: value.strip('"') for key, value in _FIELD.findall(text[opening:closing])}
+        body = text[opening:closing]
+        fields = {key: value.strip('"') for key, value in _FIELD.findall(body)}
+
+        # Comments sit on the header line for some entries and inside the braces
+        # for others — the To'ul'h home system is annotated on its RA line, and
+        # reading only the header lost it along with four other named systems and
+        # the 52 notes marking the NGC 6633 population.
+        comments = [(header.group(3) or "").strip()]
+        comments += [c.strip() for c in _COMMENT.findall(body)]
+        seen: list[str] = []
+        for comment in comments:
+            if comment and comment not in seen:
+                seen.append(comment)
+
         records.append(
             {
                 "catalogue_number": header.group(1) or "",
                 "name": header.group(2).strip(),
-                "comment": (header.group(3) or "").strip(),
+                "comment": "; ".join(seen),
                 "source_file": source_file,
                 **fields,
             }

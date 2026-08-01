@@ -246,9 +246,11 @@ export class DetailPanel {
       { label: 'Position', value: 'asserted by the setting', warn: true },
       { label: 'Absolute magnitude', value: absMag.toFixed(2) },
     ];
-    // The designation is the title only when there is nothing better; when the
-    // system name took that slot, the designation still has to be findable.
-    if (entry.system) rows.push({ label: 'Designation', value: entry.name });
+    // The system name takes the title, so the star's own identifier still has to
+    // be findable — "Hiederia" is a name the add-on chose, not a catalogue number.
+    if (entry.system) {
+      rows.push({ label: entry.oa_designation ? 'Designation' : 'Star', value: entry.name });
+    }
     if (entry.spectral_type) {
       rows.push({ label: 'Spectral type', value: entry.spectral_type });
     }
