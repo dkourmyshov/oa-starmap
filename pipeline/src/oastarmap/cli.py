@@ -18,6 +18,7 @@ from oastarmap.fetch.clusters import SOURCES as CLUSTER_SOURCES
 from oastarmap.fetch.hii import SOURCES as HII_SOURCES
 from oastarmap.fetch.hyg import SOURCES as HYG_SOURCES
 from oastarmap.paths import DATA_OUT_DIR, RAW_DIR, ensure_dirs
+from oastarmap.transform.frame import PC_TO_LY
 
 ALL_SOURCES = [*HYG_SOURCES, *CLUSTER_SOURCES, *HII_SOURCES]
 
@@ -57,7 +58,7 @@ def cmd_build(args: argparse.Namespace) -> int:
         "units": {
             "storage": "pc",
             "display_default": "ly",
-            "pc_to_ly": 3.261563777,
+            "pc_to_ly": PC_TO_LY,
             "note": (
                 "All stored distances are parsecs. The UI displays light years by "
                 "default, matching Orion's Arm convention."

@@ -146,6 +146,17 @@ export interface FictionDataset {
   };
   resolution: { total: number; resolved: number; unresolved: number; pending: string[] };
   shared_landmarks: string[];
+  frontier: {
+    ly: number;
+    pc: number;
+    note: string;
+    flagged: {
+      landmark: string;
+      matched_name: string | null;
+      distance_ly: number;
+      polities: string[];
+    }[];
+  };
   source: { description: string; citation: string };
 }
 
@@ -240,6 +251,7 @@ export interface PolityInfo {
   uncertain: boolean;
   landmark_count: number;
   resolved_count: number;
+  beyond_frontier_count: number;
 }
 
 export interface FictionBinding {
@@ -249,6 +261,9 @@ export interface FictionBinding {
   kind: string | null;
   index: number | null;
   matched_name: string | null;
+  distance_pc: number | null;
+  /** Past the canonical Terragen frontier; kept, but not polity-coloured. */
+  beyond_frontier: boolean;
 }
 
 export interface FictionData {
@@ -260,6 +275,10 @@ export interface FictionData {
   /** Same, per HII region. Absent when the fiction build predates that catalog. */
   hiiPolity: Uint8Array | null;
   pending: string[];
+  /** Distance in pc past which the setting makes no territorial claim. */
+  frontierPc: number;
+  frontierLy: number;
+  frontierFlagged: number;
 }
 
 export interface LoadedData {
@@ -303,6 +322,9 @@ async function loadFiction(dataset: FictionDataset): Promise<FictionData> {
     clusterPolity: new Uint8Array(polityBuf),
     hiiPolity: hiiPolityBuf ? new Uint8Array(hiiPolityBuf) : null,
     pending: dataset.resolution.pending,
+    frontierPc: dataset.frontier.pc,
+    frontierLy: dataset.frontier.ly,
+    frontierFlagged: dataset.frontier.flagged.length,
   };
 }
 

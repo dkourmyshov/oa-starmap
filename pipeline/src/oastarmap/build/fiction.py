@@ -23,6 +23,7 @@ from oastarmap.build.writer import write_array, write_json
 from oastarmap.fiction.resolve import Binding, ResolutionReport, Resolver
 from oastarmap.fiction.schema import AliasFile, FictionFile
 from oastarmap.paths import DATA_OUT_DIR, FICTION_DIR
+from oastarmap.transform.frame import PC_TO_LY
 
 NO_POLITY = 0
 """Value in the per-cluster polity array meaning "no polity assigned".
@@ -30,6 +31,50 @@ NO_POLITY = 0
 Polity indices in that array are therefore 1-based, leaving 0 free as the
 unassigned marker without needing a parallel mask.
 """
+
+TERRAGEN_FRONTIER_LY = 7000.0
+"""How far the Terragen Sphere canonically reaches.
+
+The published frontier after Tranquility is roughly 5,000-7,000 ly depending on
+direction, so anything past 7,000 ly cannot literally be inside a polity's
+volume. Several landmarks are past it anyway — Berkeley 42 at ~10,600 ly, and
+Collinder 97, which the source map draws much closer to the Inner Sphere,
+apparently on an older distance estimate.
+
+Those associations are not errors in the fiction; the source is a schematic
+sketch that places some landmarks in a polity's general *direction* rather than
+inside its territory. So the binding is kept and flagged rather than dropped: the
+object still resolves and still appears in the panel, but it is not painted in a
+polity's colour, because doing so would assert a territorial claim the setting
+does not make.
+"""
+
+FRONTIER_PC = TERRAGEN_FRONTIER_LY / PC_TO_LY
+
+# Column holding heliocentric distance in each catalog's geometry array, and the
+# stride of that array. Stars carry no distance column; theirs is |xyz|.
+_DISTANCE_COLUMN = {"cluster": (8, 5), "hii": (7, 4)}
+
+
+def _load_distances(out_dir: Path) -> dict[str, np.ndarray]:
+    """Heliocentric distance in pc per catalog, indexed exactly as bindings are.
+
+    Read back from the published binaries rather than recomputed, so the flag is
+    derived from the same numbers the renderer draws.
+    """
+    distances: dict[str, np.ndarray] = {}
+
+    for kind, (stride, column) in _DISTANCE_COLUMN.items():
+        path = out_dir / f"{'clusters' if kind == 'cluster' else kind}.bin"
+        if path.exists():
+            distances[kind] = np.fromfile(path, dtype="<f4").reshape(-1, stride)[:, column]
+
+    stars = out_dir / "stars.bin"
+    if stars.exists():
+        xyz = np.fromfile(stars, dtype="<f4").reshape(-1, 5)[:, :3]
+        distances["star"] = np.linalg.norm(xyz, axis=1)
+
+    return distances
 
 
 def build_fiction(
@@ -73,16 +118,29 @@ def build_fiction(
     for landmark in order:
         report.bindings.append(resolver.resolve(landmark, landmark_polities[landmark]))
 
+    distances = _load_distances(out_dir)
+    for binding in report.bindings:
+        table = distances.get(binding.kind or "")
+        if table is None or binding.index is None or binding.index >= len(table):
+            continue
+        binding.distance_pc = round(float(table[binding.index]), 3)
+        binding.beyond_frontier = binding.distance_pc > FRONTIER_PC
+
     polity_index = {polity.id: i + 1 for i, polity in enumerate(fiction.polities)}
 
     # Per-object primary polity, for the renderer to colour by without a lookup.
+    # Beyond-frontier landmarks are deliberately left unassigned here: the colour
+    # is a territorial claim, and the setting does not make one that far out.
     cluster_polity = np.zeros(len(cluster_names), dtype=np.uint8)
     hii_polity = np.zeros(len(hii_names), dtype=np.uint8)
     by_kind = {"cluster": cluster_polity, "hii": hii_polity}
     for binding in report.bindings:
         target = by_kind.get(binding.kind or "")
-        if target is not None and binding.index is not None and binding.polities:
-            target[binding.index] = polity_index[binding.polities[0]]
+        if target is None or binding.index is None or not binding.polities:
+            continue
+        if binding.beyond_frontier:
+            continue
+        target[binding.index] = polity_index[binding.polities[0]]
 
     files = {
         "cluster_polity": write_array(out_dir / "fiction.clusterpolity.bin", cluster_polity),
@@ -99,6 +157,9 @@ def build_fiction(
                         "uncertain": p.uncertain,
                         "landmark_count": len(p.landmarks),
                         "resolved_count": sum(1 for b in report.resolved if p.id in b.polities),
+                        "beyond_frontier_count": sum(
+                            1 for b in report.resolved if p.id in b.polities and b.beyond_frontier
+                        ),
                     }
                     for p in fiction.polities
                 ],
@@ -109,10 +170,33 @@ def build_fiction(
     }
 
     shared = [b.landmark for b in report.bindings if len(b.polities) > 1]
+    beyond = sorted(
+        (b for b in report.bindings if b.beyond_frontier),
+        key=lambda b: -(b.distance_pc or 0),
+    )
 
     return {
         "count": len(report.bindings),
         "polity_count": len(fiction.polities),
+        "frontier": {
+            "ly": TERRAGEN_FRONTIER_LY,
+            "pc": round(FRONTIER_PC, 3),
+            "note": (
+                "Canonical reach of the Terragen Sphere. Landmarks past it keep "
+                "their association but are not painted in a polity colour: the "
+                "source map places some of them in a polity's general direction "
+                "rather than inside its volume."
+            ),
+            "flagged": [
+                {
+                    "landmark": b.landmark,
+                    "matched_name": b.matched_name,
+                    "distance_ly": round((b.distance_pc or 0) * PC_TO_LY),
+                    "polities": b.polities,
+                }
+                for b in beyond
+            ],
+        },
         "files": files,
         "layout": {
             "cluster_polity": {
@@ -149,6 +233,19 @@ def format_report(entry: dict[str, Any]) -> str:
         f"  fiction    {res['resolved']}/{res['total']} landmarks bound "
         f"across {entry['polity_count']} polities"
     ]
+    flagged = entry["frontier"]["flagged"]
+    if flagged:
+        lines.append(
+            f"             {len(flagged)} past the {entry['frontier']['ly']:,.0f} ly "
+            f"frontier — bound, but not polity-coloured:"
+        )
+        for item in flagged:
+            matched = (item["matched_name"] or "").replace("_", " ")
+            # Only worth showing when the catalog knows the object by another
+            # name — "Berkeley 42 (= NGC 6749)" is information, "Czernik 8
+            # (= Czernik 8)" is noise.
+            via = f" (= {matched})" if matched and matched != item["landmark"] else ""
+            lines.append(f"               {item['landmark']}{via} at {item['distance_ly']:,} ly")
     if res["unresolved"]:
         lines.append(f"             {res['unresolved']} pending — catalog not yet loaded:")
         pending = res["pending"]

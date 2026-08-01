@@ -80,6 +80,26 @@ class TestCatalogPrecedence:
         assert binding.index is None
 
 
+class TestMatchedName:
+    """A binding must say what it actually hit, not merely that it hit something."""
+
+    def test_reports_the_catalog_name_behind_an_alias(self):
+        clusters = [{"name": "NGC_6749", "aliases": "Berkeley_42,GCL_107"}]
+        binding = Resolver(clusters, {}, {}).resolve("Berkeley 42", ["x"])
+        assert binding.matched_name == "NGC_6749"
+
+    def test_reports_the_hii_designation(self):
+        hii = [{"name": "S27", "aliases": "Sh2-27"}]
+        assert Resolver([], {}, {}, hii).resolve("Sh2-27", ["x"]).matched_name == "S27"
+
+    def test_reports_the_star_name(self):
+        stars = {"7": {"proper": "Vega"}}
+        assert Resolver([], stars, {}).resolve("Vega", ["x"]).matched_name == "Vega"
+
+    def test_unresolved_binding_has_none(self):
+        assert Resolver([], {}, {}).resolve("Aquila Rift", ["x"]).matched_name is None
+
+
 class TestAliases:
     def test_alias_file_redirects_to_a_real_object(self):
         clusters = [{"name": "NGC_6405", "aliases": ""}]

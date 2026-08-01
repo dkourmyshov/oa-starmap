@@ -23,9 +23,9 @@ export const DEFAULT_MAX_LABELS = 45;
 const LAYOUT_INTERVAL_MS = 70;
 
 const KIND_CLASS: Record<number, string> = {
-  [KIND_STAR]: 'label-star',
-  [KIND_CLUSTER]: 'label-cluster',
-  [KIND_HII]: 'label-hii',
+  [KIND_STAR]: 'map-label-star',
+  [KIND_CLUSTER]: 'map-label-cluster',
+  [KIND_HII]: 'map-label-hii',
 };
 
 export class LabelOverlay {
@@ -42,7 +42,7 @@ export class LabelOverlay {
     private readonly onSelect: (id: number) => void,
   ) {
     this.root = document.createElement('div');
-    this.root.className = 'labels';
+    this.root.className = 'map-labels';
     parent.appendChild(this.root);
   }
 
@@ -82,7 +82,7 @@ export class LabelOverlay {
       const kind = this.objects.ref(label.id).kind;
 
       node.textContent = label.text;
-      node.className = `label ${KIND_CLASS[kind] ?? ''}`;
+      node.className = `map-label ${KIND_CLASS[kind] ?? ''}`;
       node.style.transform = `translate3d(${label.x}px, ${label.y}px, 0) translate(-50%, -50%)`;
       // Faint labels stay legible but recede, so the eye lands on the anchors.
       node.style.opacity = String(Math.min(0.45 + label.importance * 0.4, 1));
@@ -97,7 +97,7 @@ export class LabelOverlay {
     let node = this.pool[i];
     if (!node) {
       node = document.createElement('button');
-      node.className = 'label';
+      node.className = 'map-label';
       node.addEventListener('click', (event) => {
         event.stopPropagation();
         const id = Number(node.dataset.id);

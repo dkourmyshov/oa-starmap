@@ -21,6 +21,15 @@ import numpy as np
 from astropy.coordinates import ICRS, Distance, Galactic
 
 STORAGE_UNIT = u.pc
+
+PC_TO_LY = 3.261563777
+"""Parsecs to light years.
+
+Orion's Arm works in light years and astronomy in parsecs, so this number is the
+single point where the two meet. It is written out rather than derived so that the
+renderer can assert the exact same literal and fail loudly if the halves drift; a
+test checks it against astropy.
+"""
 """Unit for everything written to disk. Declared in each output file's header.
 
 Parsecs rather than light years because the source catalogs and the parallax

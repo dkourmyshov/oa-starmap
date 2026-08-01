@@ -277,16 +277,30 @@ export class Hud {
     panel.appendChild(list);
 
     const pending = fiction.pending.length;
-    if (pending > 0) {
+    if (pending > 0 || fiction.frontierFlagged > 0) {
       const note = el('div', 'note');
-      note.appendChild(
-        el(
-          'div',
-          'note-line note-warn',
-          `${pending} landmarks not yet bound — planetary nebulae, legacy open ` +
-            `clusters, SNRs and dark clouds are not loaded yet.`,
-        ),
-      );
+      if (fiction.frontierFlagged > 0) {
+        note.appendChild(
+          el(
+            'div',
+            'note-line note-warn',
+            `${fiction.frontierFlagged} landmarks lie past the ` +
+              `${fiction.frontierLy.toLocaleString('en-US')} ly Terragen frontier and are ` +
+              `left uncoloured — the source places them in a polity's direction, not its ` +
+              `volume.`,
+          ),
+        );
+      }
+      if (pending > 0) {
+        note.appendChild(
+          el(
+            'div',
+            'note-line note-warn',
+            `${pending} landmarks not yet bound — planetary nebulae, legacy open ` +
+              `clusters, SNRs and dark clouds are not loaded yet.`,
+          ),
+        );
+      }
       panel.appendChild(note);
     }
 

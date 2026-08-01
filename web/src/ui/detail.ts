@@ -25,6 +25,8 @@ interface Detail {
   rows: Row[];
   polities: string[];
   citation: string;
+  /** Distance from Sol in pc, for the frontier check. */
+  distancePc: number;
   /** Where to fly to, and how far to stand off. */
   focus: { x: number; y: number; z: number; standoff: Parsecs };
 }
@@ -113,10 +115,33 @@ export class DetailPanel {
       this.panel.appendChild(line);
     }
 
-    if (detail.polities.length > 0) {
+    const fiction = this.sources.fiction;
+    const beyond = fiction ? detail.distancePc > fiction.frontierPc : false;
+
+    if (detail.polities.length > 0 || beyond) {
       const note = el('div', 'note');
       note.appendChild(el('div', 'note-line', "Orion's Arm"));
-      note.appendChild(el('div', 'note-line note-polity', detail.polities.join(', ')));
+      if (detail.polities.length > 0) {
+        note.appendChild(el('div', 'note-line note-polity', detail.polities.join(', ')));
+      }
+      if (beyond && fiction) {
+        // Stated on the panel rather than only implied by the missing colour,
+        // because "no polity colour" and "beyond the frontier" look identical
+        // on the map otherwise.
+        note.appendChild(
+          el(
+            'div',
+            'note-line note-warn',
+            `Beyond the ${fiction.frontierLy.toLocaleString('en-US')} ly Terragen ` +
+              `frontier${
+                detail.polities.length > 0
+                  ? ' — the association marks a direction, not a territorial claim, ' +
+                    'so no polity colour is drawn.'
+                  : '.'
+              }`,
+          ),
+        );
+      }
       this.panel.appendChild(note);
     }
 
@@ -208,6 +233,7 @@ export class DetailPanel {
       rows,
       polities: this.politiesFor('star', index),
       citation: stars.dataset.source.citation,
+      distancePc: distance,
       focus: { x, y, z, standoff: pc(Math.max(distance * 0.12, 2)) },
     };
   }
@@ -259,6 +285,7 @@ export class DetailPanel {
       rows,
       polities: this.politiesFor('cluster', index),
       citation: clusters.dataset.source.citation,
+      distancePc: distance,
       focus: { x, y, z, standoff: pc(Math.max(radiusTotal * 4.5, 5)) },
     };
   }
@@ -298,6 +325,7 @@ export class DetailPanel {
       rows,
       polities: this.politiesFor('hii', index),
       citation: hii.dataset.source.citation,
+      distancePc: distance,
       focus: { x, y, z, standoff: pc(Math.max(radius * 4.5, 5)) },
     };
   }

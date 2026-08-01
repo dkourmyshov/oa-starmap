@@ -65,10 +65,13 @@ class Binding:
 
     landmark: str
     polities: list[str]
-    kind: str | None = None  # "cluster" | "star" | None
+    kind: str | None = None  # "cluster" | "hii" | "star" | None
     index: int | None = None
     matched_name: str | None = None
     via_alias: str | None = None
+    distance_pc: float | None = None
+    beyond_frontier: bool = False
+    """Sits outside the canonical Terragen volume; see ``build/fiction.py``."""
 
     @property
     def resolved(self) -> bool:
@@ -83,6 +86,8 @@ class Binding:
             "index": self.index,
             "matched_name": self.matched_name,
             "via_alias": self.via_alias,
+            "distance_pc": self.distance_pc,
+            "beyond_frontier": self.beyond_frontier,
         }
 
 
@@ -125,13 +130,23 @@ class Resolver:
         self._clusters = self._index_named(cluster_names)
         self._hii = self._index_named(hii_names or [])
 
+        # What each catalog calls the object, so a binding can report what it
+        # actually hit. "Berkeley 42" resolving to NGC 6749 is correct but not
+        # obvious, and a binding that says only "resolved" hides that.
+        self._primary: dict[str, list[str]] = {
+            "cluster": [str(e.get("name", "")) for e in cluster_names],
+            "hii": [str(e.get("name", "")) for e in (hii_names or [])],
+        }
+
         self._stars: dict[str, int] = {}
+        self._star_names: dict[int, str] = {}
         for index_str, entry in star_names.items():
             for field_name in ("proper", "bayer", "bf"):
                 value = entry.get(field_name, "")
                 key = normalise(value) if value else ""
                 if key and key not in self._stars:
                     self._stars[key] = int(index_str)
+                    self._star_names.setdefault(int(index_str), value)
 
     @staticmethod
     def _index_named(entries: list[dict[str, Any]]) -> dict[str, int]:
@@ -174,6 +189,13 @@ class Resolver:
                     binding.kind = kind
                     binding.index = index[lookup_key]
                     binding.via_alias = alias_target if attempt else None
+                    binding.matched_name = self._primary_name(kind, binding.index)
                     return binding
 
         return binding
+
+    def _primary_name(self, kind: str, index: int) -> str | None:
+        if kind == "star":
+            return self._star_names.get(index)
+        names = self._primary.get(kind, [])
+        return names[index] if index < len(names) else None

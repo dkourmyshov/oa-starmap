@@ -36,15 +36,21 @@
         display: block;
       }
 
+      /*
+       * Four corners, stated explicitly. The previous arrangement was a wrapping
+       * flex row steered by `order` and auto margins, which left the polity
+       * legend floating well short of the right edge as soon as the panel widths
+       * changed. A grid pins each panel to a corner regardless of its size.
+       */
       #overlay {
         position: fixed;
         inset: 0;
         pointer-events: none;
         padding: 14px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: flex-start;
+        z-index: 2;
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        grid-template-rows: auto 1fr auto;
         gap: 12px;
       }
 
@@ -147,27 +153,40 @@
         gap: 5px;
       }
 
-      #overlay {
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-content: flex-start;
-      }
-
       .panel-stats {
-        order: 1;
+        grid-column: 1;
+        grid-row: 1 / span 2;
+        align-self: start;
+        /* Leaves the jump panel its corner even when every control is present. */
+        max-height: calc(100vh - 140px);
+        overflow-y: auto;
       }
 
       .panel-polity {
-        order: 2;
-        margin-left: auto;
+        grid-column: 3;
+        grid-row: 1;
+        justify-self: end;
         max-height: calc(100vh - 28px);
         overflow-y: auto;
       }
 
       .panel-jump {
-        order: 3;
-        align-self: flex-end;
-        margin-top: auto;
+        grid-column: 1;
+        grid-row: 3;
+        align-self: end;
+      }
+
+      .panel-detail {
+        grid-column: 3;
+        grid-row: 2 / span 2;
+        align-self: end;
+        justify-self: end;
+        max-height: calc(100vh - 28px);
+        overflow-y: auto;
+      }
+
+      .panel-detail .title {
+        margin-bottom: 0;
       }
 
       .legend {
@@ -225,8 +244,13 @@
         color: var(--muted);
       }
 
-      /* Labels sit in their own layer beneath the panels but above the canvas. */
-      .labels {
+      /*
+       * Map labels sit in their own layer beneath the panels but above the
+       * canvas. The class is `map-label`, deliberately not `label`: the HUD uses
+       * `.label` for every row caption, and sharing the name absolutely
+       * positioned all of them into the top-left corner.
+       */
+      .map-labels {
         position: fixed;
         inset: 0;
         pointer-events: none;
@@ -234,7 +258,7 @@
         z-index: 1;
       }
 
-      .label {
+      .map-label {
         position: absolute;
         top: 0;
         left: 0;
@@ -254,32 +278,20 @@
         will-change: transform;
       }
 
-      .label:hover {
+      .map-label:hover {
         text-decoration: underline;
       }
 
-      .label-star {
+      .map-label-star {
         color: #e8edfb;
       }
 
-      .label-cluster {
+      .map-label-cluster {
         color: #9fe4ec;
       }
 
-      .label-hii {
+      .map-label-hii {
         color: #ff9aa6;
-      }
-
-      .panel-detail {
-        order: 4;
-        align-self: flex-end;
-        margin-left: auto;
-        margin-top: auto;
-        z-index: 2;
-      }
-
-      .panel-detail .title {
-        margin-bottom: 0;
       }
 
       .value-warn {
@@ -288,10 +300,6 @@
 
       .note-polity {
         color: var(--accent);
-      }
-
-      #overlay {
-        z-index: 2;
       }
     </style>
   </head>
