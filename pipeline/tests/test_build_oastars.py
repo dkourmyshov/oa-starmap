@@ -16,20 +16,22 @@ import math
 import numpy as np
 import pytest
 
-from oastarmap.build.oastars import ARCHIVE_NAME, build_oastars, parse_stc
-from oastarmap.paths import DATA_OUT_DIR, SOURCES_DIR
+from oastarmap.build.oastars import STARS_FILE, build_oastars
+from oastarmap.fiction.schema import OAStarFile
+from oastarmap.importers.celestia import parse_stc, system_name
+from oastarmap.paths import DATA_OUT_DIR, FICTION_DIR
 from oastarmap.transform.photometry import spectral_type_to_bv
 
-ARCHIVE = SOURCES_DIR / ARCHIVE_NAME
+STARS = FICTION_DIR / STARS_FILE
 
 
 @pytest.fixture(scope="session")
 def built(tmp_path_factory):
-    if not ARCHIVE.exists():
-        pytest.skip(f"{ARCHIVE} not present; it is downloaded by hand")
+    if not STARS.exists():
+        pytest.skip(f"{STARS} not present; run `oastarmap import-oastars`")
 
     out = tmp_path_factory.mktemp("oastars")
-    manifest = build_oastars(ARCHIVE, out_dir=out)
+    manifest = build_oastars(STARS, out_dir=out)
     positions = np.fromfile(out / "oastars.bin", dtype="<f4").reshape(-1, 5)
     names = json.loads((out / "oastars.names.json").read_text(encoding="utf-8"))
     return {
@@ -185,7 +187,7 @@ class TestContent:
 
 class TestBuild:
     def test_rebuild_is_byte_identical(self, built, tmp_path):
-        again = build_oastars(ARCHIVE, out_dir=tmp_path)
+        again = build_oastars(STARS, out_dir=tmp_path)
         for key, entry in built["manifest"]["files"].items():
             first = (built["dir"] / entry["file"]).read_bytes()
             second = (tmp_path / again["files"][key]["file"]).read_bytes()
@@ -215,8 +217,6 @@ class TestSystemNames:
         ],
     )
     def test_extracts_the_system(self, comment, expected):
-        from oastarmap.build.oastars import system_name
-
         assert system_name(comment) == expected
 
     @pytest.mark.parametrize(
@@ -228,8 +228,6 @@ class TestSystemNames:
         ],
     )
     def test_ignores_comments_that_are_not_about_a_system(self, comment):
-        from oastarmap.build.oastars import system_name
-
         assert system_name(comment) == ""
 
     def test_the_known_systems_are_recovered(self, built):
@@ -291,3 +289,61 @@ class TestInBodyComments:
 
     def test_no_comment_stays_empty(self):
         assert parse_stc('1 "X"\n{\n RA 1\n Dec 2\n Distance 3\n}')[0]["comment"] == ""
+
+
+class TestTrackedImport:
+    """The star file is tracked, so the build must not need the archive."""
+
+    def test_the_source_file_is_tracked(self):
+        import subprocess
+
+        listed = subprocess.run(
+            ["git", "ls-files", "fiction/oa_stars.yaml"],
+            capture_output=True,
+            text=True,
+            cwd=STARS.parents[1],
+            check=False,
+        ).stdout.strip()
+        assert listed == "fiction/oa_stars.yaml", (
+            "fiction/oa_stars.yaml is not tracked; a clean clone could not build "
+            "the Orion's Arm star layer"
+        )
+
+    def test_the_file_carries_its_provenance(self):
+        """Attribution travels with the data, not only in the pipeline."""
+        header = STARS.read_text(encoding="utf-8")[:2000]
+        assert "OAAddons1" in header
+        assert "orionsarm.com" in header
+        assert "Terms_Copyright" in header
+        assert "light years" in header
+
+    def test_import_round_trips_the_archive_exactly(self):
+        """A %g format silently turned RA 290.6596 into 290.66."""
+        import zipfile
+
+        from oastarmap.importers.celestia import read_archive
+        from oastarmap.paths import SOURCES_DIR
+
+        archive = SOURCES_DIR / "OAAddons1.zip"
+        if not archive.exists():
+            pytest.skip("archive not present; it is downloaded by hand")
+
+        imported = {(s.name, s.source_file): s for s in OAStarFile.load(STARS).stars}
+        checked = 0
+        with zipfile.ZipFile(archive) as handle:
+            for record in read_archive(archive):
+                entry = imported[(record["name"], record["source_file"])]
+                assert entry.ra_deg == record["ra_deg"]
+                assert entry.dec_deg == record["dec_deg"]
+                assert entry.distance_ly == record["distance_ly"]
+                checked += 1
+            assert handle  # archive stayed readable throughout
+        assert checked == 103
+
+    def test_a_non_positive_distance_is_rejected(self):
+        from pydantic import ValidationError
+
+        with pytest.raises(ValidationError, match="must be positive"):
+            OAStarFile.model_validate(
+                {"stars": [{"name": "X", "ra_deg": 1, "dec_deg": 2, "distance_ly": 0}]}
+            )

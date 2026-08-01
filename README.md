@@ -71,6 +71,7 @@ npm test                   # screen-space projection, picking and label layout
 | Bright / named stars | HYG v4.1 (Hipparcos + Yale BSC + Gliese) | built |
 | Open clusters | Hunt & Reffert 2023 (Gaia DR3) | built |
 | HII regions | Sharpless 1959 positions + Russeil 2003 distances | built |
+| Orion's Arm stars | OA Celestia add-on (OAAddons1) | built |
 | Nearby faint stars | Gaia Catalogue of Nearby Stars (GCNS), 100 pc volume-complete | planned |
 | Supernova remnants | Green 2024/2025 | planned |
 | Molecular clouds | Miville-Deschênes+ 2017 | planned |
@@ -87,3 +88,21 @@ complexes supply the distances and list their members by Sharpless number, so th
 two join. Russeil publishes both a kinematic and a stellar distance per complex —
 the stellar one is preferred, because kinematic distances are ill-conditioned
 toward l≈0 and l≈180 and place S27 (a few hundred parsecs away) at 21.6 kpc.
+
+## Imported source material
+
+`fiction/oa_stars.yaml` holds 103 Orion's Arm stars extracted from the project's
+Celestia add-on, with the source, archive URL and terms recorded in the file
+itself. It is **tracked and hand-editable**, and the build reads only that file.
+
+This differs deliberately from `raw/`, which is gitignored because
+`oastarmap fetch` reproduces it from VizieR on demand. The add-on archive is a
+hand-downloaded 2008 file, so the same scheme would have meant a clean clone
+could not build the layer at all, and there would be nowhere to correct the
+extraction by hand.
+
+```sh
+uv run oastarmap import-oastars   # rewrites fiction/oa_stars.yaml from the archive
+```
+
+Re-importing overwrites hand edits, so review the diff before committing.

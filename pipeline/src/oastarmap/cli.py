@@ -5,20 +5,22 @@ from __future__ import annotations
 import argparse
 import json
 import sys
+from pathlib import Path
 from typing import Any
 
 from oastarmap import __version__
 from oastarmap.build.clusters import build_clusters
 from oastarmap.build.fiction import build_fiction, format_report
 from oastarmap.build.hii import build_hii
-from oastarmap.build.oastars import ARCHIVE_NAME, build_oastars
+from oastarmap.build.oastars import SOURCE_URL, STARS_FILE, build_oastars
 from oastarmap.build.stars import build_stars
 from oastarmap.build.writer import write_json
 from oastarmap.fetch import fetch_source
 from oastarmap.fetch.clusters import SOURCES as CLUSTER_SOURCES
 from oastarmap.fetch.hii import SOURCES as HII_SOURCES
 from oastarmap.fetch.hyg import SOURCES as HYG_SOURCES
-from oastarmap.paths import DATA_OUT_DIR, RAW_DIR, SOURCES_DIR, ensure_dirs
+from oastarmap.importers.celestia import import_oastars
+from oastarmap.paths import DATA_OUT_DIR, FICTION_DIR, RAW_DIR, SOURCES_DIR, ensure_dirs
 from oastarmap.transform.frame import PC_TO_LY
 
 ALL_SOURCES = [*HYG_SOURCES, *CLUSTER_SOURCES, *HII_SOURCES]
@@ -31,6 +33,25 @@ def cmd_fetch(args: argparse.Namespace) -> int:
         size_mb = path.stat().st_size / 1e6
         print(f"  {source.key:<10} {path.name}  ({size_mb:.1f} MB)")
     print(f"\nSources are in {RAW_DIR}")
+    return 0
+
+
+def cmd_import_oastars(args: argparse.Namespace) -> int:
+    """Rewrite the tracked star file from the add-on archive.
+
+    Deliberately separate from `build`: this reads source material that is not in
+    the repository, and its output is committed. Re-running it overwrites hand
+    edits, which is what makes reviewing the diff part of the job.
+    """
+    if not args.archive.exists():
+        print(f"Archive not found: {args.archive}", file=sys.stderr)
+        print(f"Download it from {SOURCE_URL}", file=sys.stderr)
+        return 1
+
+    dest = FICTION_DIR / STARS_FILE
+    count = import_oastars(args.archive, dest)
+    print(f"  imported {count} stars into {dest}")
+    print("  review the diff before committing — this overwrites hand edits")
     return 0
 
 
@@ -51,13 +72,13 @@ def cmd_build(args: argparse.Namespace) -> int:
         "hii": build_hii(),
     }
 
-    # Hand-downloaded rather than fetched, and not redistributable, so its
-    # absence must not break the build for someone who only cloned the repo.
-    archive = SOURCES_DIR / ARCHIVE_NAME
-    if archive.exists():
-        datasets["oastars"] = build_oastars(archive)
+    # Read from the tracked import, never from the archive, so a clean clone
+    # builds this layer like any other.
+    stars_file = FICTION_DIR / STARS_FILE
+    if stars_file.exists():
+        datasets["oastars"] = build_oastars(stars_file)
     else:
-        print(f"  oastars    skipped — {archive} not present")
+        print(f"  oastars    skipped — {stars_file} not present; run `oastarmap import-oastars`")
 
     datasets["fiction"] = build_fiction()
 
@@ -101,6 +122,18 @@ def main(argv: list[str] | None = None) -> int:
     p_fetch = sub.add_parser("fetch", help="download source catalogs into raw/")
     p_fetch.add_argument("--force", action="store_true", help="re-download even if cached")
     p_fetch.set_defaults(func=cmd_fetch)
+
+    p_import = sub.add_parser(
+        "import-oastars",
+        help="re-import fiction/oa_stars.yaml from the Celestia add-on archive",
+    )
+    p_import.add_argument(
+        "--archive",
+        type=Path,
+        default=SOURCES_DIR / "OAAddons1.zip",
+        help="path to OAAddons1.zip",
+    )
+    p_import.set_defaults(func=cmd_import_oastars)
 
     p_build = sub.add_parser("build", help="emit renderer datasets into web/public/data/")
     p_build.add_argument("--print-manifest", action="store_true")

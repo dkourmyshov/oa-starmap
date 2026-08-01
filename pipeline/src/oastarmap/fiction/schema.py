@@ -128,6 +128,44 @@ class FictionFile(BaseModel):
         return cls.model_validate(raw)
 
 
+class OAStarEntry(BaseModel):
+    """One star from the Orion's Arm Celestia add-on.
+
+    Field names carry their units, because the one way to get this dataset badly
+    wrong is to read ``distance_ly`` as parsecs.
+    """
+
+    name: str
+    ra_deg: float
+    dec_deg: float
+    distance_ly: float
+    spectral_type: str = ""
+    abs_mag: float | None = None
+    system: str = ""
+    comment: str = ""
+    source_file: str = ""
+
+    @field_validator("distance_ly")
+    @classmethod
+    def _positive(cls, value: float) -> float:
+        if value <= 0:
+            raise ValueError(f"distance_ly must be positive, got {value}")
+        return value
+
+
+class OAStarFile(BaseModel):
+    """The top level of ``fiction/oa_stars.yaml``."""
+
+    stars: list[OAStarEntry] = Field(default_factory=list)
+
+    @classmethod
+    def load(cls, path: Path) -> OAStarFile:
+        raw: Any = yaml.safe_load(path.read_text(encoding="utf-8"))
+        if not isinstance(raw, dict):
+            raise ValueError(f"{path} must contain a mapping at the top level")
+        return cls.model_validate(raw)
+
+
 class AliasFile(BaseModel):
     """The top level of ``fiction/aliases.yaml``."""
 

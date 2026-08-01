@@ -1,0 +1,951 @@
+# Orion's Arm stars, imported from the project's Celestia add-on.
+#
+#   Source:  Orion's Arm Celestia add-on (OAAddons1)
+#   Archive: http://www.orionsarm.com/fm_store/OAAddons1.zip
+#   Page:    https://www.orionsarm.com/xcms.php?r=oa-page&page=gen_OACelestia2
+#   Terms:   https://www.orionsarm.com/Terms_Copyright_and_Submissions.html
+#
+# These are stars the setting asserts but the sky does not have: the suns of
+# named OA systems, and the populations OA gives to real clusters. Their
+# positions come from the fiction, not from an observation.
+#
+# `distance_ly` is light years, as Celestia's .stc format declares. It is named
+# for its unit because reading it as parsecs would move every star 3.26x further
+# out while still looking plausible.
+#
+# `system` is what the add-on's comment says the star is for, and is the name the
+# map labels it with. It is extracted from `comment` on import, and may be
+# corrected by hand where the source knows a system by a name its comment does
+# not use.
+#
+# Regenerate with `uv run oastarmap import-oastars`, which rewrites this file
+# from the archive. Re-importing discards hand edits, so review the diff.
+
+stars:
+  - name: 'Arkab Prior B'
+    ra_deg: 290.6596
+    dec_deg: -44.45887
+    distance_ly: 378.335
+    spectral_type: 'A5V'
+    abs_mag: 1.4
+    system: ""
+    comment: ""
+    source_file: 'oastars2-2.stc'
+  - name: 'Cantor'
+    ra_deg: 112.654
+    dec_deg: -54.842
+    distance_ly: 2735.51
+    spectral_type: 'K0V'
+    abs_mag: 4.67
+    system: ""
+    comment: ""
+    source_file: 'cantor.stc'
+  - name: 'EG 471'
+    ra_deg: 37.5625
+    dec_deg: -14.408
+    distance_ly: 50.521
+    spectral_type: 'DA2'
+    abs_mag: 14.81
+    system: ""
+    comment: ""
+    source_file: 'oastars2-2.stc'
+  - name: 'Enigma'
+    ra_deg: 81.7007
+    dec_deg: -37.5155
+    distance_ly: 4597.86
+    spectral_type: 'G0v'
+    abs_mag: 5.08
+    system: ""
+    comment: ""
+    source_file: 'oastars4.stc'
+  - name: 'Geminga'
+    ra_deg: 98.47563
+    dec_deg: 17.7703
+    distance_ly: 552.0
+    spectral_type: 'Q'
+    abs_mag: 11.0
+    system: ""
+    comment: ""
+    source_file: 'geminga.stc'
+  - name: 'HD 169959'
+    ra_deg: 276.7065
+    dec_deg: 6.4226
+    distance_ly: 1226.3
+    spectral_type: 'A0II'
+    abs_mag: 0.92
+    system: ""
+    comment: 'Star in cluster NGC 6633'
+    source_file: 'oastars6.stc'
+  - name: 'HD 170094'
+    ra_deg: 276.87
+    dec_deg: 6.58
+    distance_ly: 1224.791
+    spectral_type: 'A2V'
+    abs_mag: 0.8
+    system: ""
+    comment: 'Star in cluster NGC 6633'
+    source_file: 'oastars6.stc'
+  - name: 'Hiederia'
+    ra_deg: 71.4508
+    dec_deg: 42.4255
+    distance_ly: 3618.0
+    spectral_type: 'M0V'
+    abs_mag: 8.3
+    system: 'Redunin'
+    comment: 'Star for system containing Redunin'
+    source_file: 'oastars2-2.stc'
+  - name: 'JD 10012'
+    ra_deg: 309.92
+    dec_deg: 37.556
+    distance_ly: 3967.0
+    spectral_type: 'G3'
+    abs_mag: 4.87
+    system: 'Muuhhome'
+    comment: 'Star for Muuhhome'
+    source_file: 'oastars2-2.stc'
+  - name: 'JD 10013'
+    ra_deg: 133.35
+    dec_deg: -7.998
+    distance_ly: 767.98
+    spectral_type: 'G2V'
+    abs_mag: 4.75
+    system: 'Harmonic Resonance'
+    comment: 'Star for Harmonic Resonance'
+    source_file: 'oastars2-2.stc'
+  - name: 'JD 140582223'
+    ra_deg: 51.342
+    dec_deg: 43.23905
+    distance_ly: 5130.8
+    spectral_type: 'F1'
+    abs_mag: 3.43
+    system: 'Pluton'
+    comment: 'F1  star for Pluton'
+    source_file: 'oastars2-2.stc'
+  - name: 'JD 169137'
+    ra_deg: 276.5418
+    dec_deg: 6.55122
+    distance_ly: 1224.97
+    spectral_type: 'K2V'
+    abs_mag: 4.42
+    system: ""
+    comment: 'Star in cluster NGC 6633'
+    source_file: 'oastars6.stc'
+  - name: 'JD 169362'
+    ra_deg: 275.995
+    dec_deg: 6.8304
+    distance_ly: 1226.89
+    spectral_type: 'A2V'
+    abs_mag: 2.9
+    system: ""
+    comment: 'Star in cluster NGC 6633'
+    source_file: 'oastars6.stc'
+  - name: 'JD 169512'
+    ra_deg: 276.1885
+    dec_deg: 7.23125
+    distance_ly: 1223.807
+    spectral_type: 'B2IV'
+    abs_mag: 0.1
+    system: ""
+    comment: 'Star in cluster NGC 6633'
+    source_file: 'oastars6.stc'
+  - name: 'JD 169577'
+    ra_deg: 276.276
+    dec_deg: 5.9985
+    distance_ly: 1225.2
+    spectral_type: 'F2V'
+    abs_mag: 3.42
+    system: ""
+    comment: 'Star in cluster NGC 6633'
+    source_file: 'oastars6.stc'
+  - name: 'JD 169597'
+    ra_deg: 276.275
+    dec_deg: 7.119
+    distance_ly: 1224.13
+    spectral_type: 'A2V'
+    abs_mag: 2.9
+    system: ""
+    comment: 'Star in cluster NGC 6633'
+    source_file: 'oastars6.stc'
+  - name: 'JD 169629'
+    ra_deg: 276.3406
+    dec_deg: 6.194
+    distance_ly: 1226.816
+    spectral_type: 'A2V'
+    abs_mag: 2.8
+    system: ""
+    comment: 'Star in cluster NGC 6633'
+    source_file: 'oastars6.stc'
+  - name: 'JD 169721'
+    ra_deg: 276.459
+    dec_deg: 6.541
+    distance_ly: 1225.61
+    spectral_type: 'F5V'
+    abs_mag: 3.3
+    system: ""
+    comment: 'Star in cluster NGC 6633'
+    source_file: 'oastars6.stc'
+  - name: 'JD 169842'
+    ra_deg: 276.5929
+    dec_deg: 6.857
+    distance_ly: 1227.01
+    spectral_type: 'A5V'
+    abs_mag: 2.81
+    system: ""
+    comment: 'Star in cluster NGC 6633'
+    source_file: 'oastars6.stc'
+  - name: 'JD 169912'
+    ra_deg: 276.658
+    dec_deg: 6.541
+    distance_ly: 1225.61
+    spectral_type: 'A2IV'
+    abs_mag: 2.9
+    system: ""
+    comment: 'Star in cluster NGC 6633'
+    source_file: 'oastars6.stc'
+  - name: 'JD 169958'
+    ra_deg: 276.7254
+    dec_deg: 6.4844
+    distance_ly: 1222.6
+    spectral_type: 'K5V'
+    abs_mag: 2.0
+    system: ""
+    comment: 'Star in cluster NGC 6633'
+    source_file: 'oastars6.stc'
+  - name: 'JD 170031'
+    ra_deg: 276.751
+    dec_deg: 6.417
+    distance_ly: 1223.5
+    spectral_type: 'K5V'
+    abs_mag: 2.0
+    system: ""
+    comment: 'Star in cluster NGC 6633'
+    source_file: 'oastars6.stc'
+  - name: 'JD 170053'
+    ra_deg: 276.75
+    dec_deg: 7.005
+    distance_ly: 1225.21
+    spectral_type: 'K2V'
+    abs_mag: 1.8
+    system: ""
+    comment: 'Star in cluster NGC 6633'
+    source_file: 'oastars6.stc'
+  - name: 'JD 170054'
+    ra_deg: 276.81
+    dec_deg: 6.5186
+    distance_ly: 1227.871
+    spectral_type: 'B6IV'
+    abs_mag: -0.01
+    system: ""
+    comment: 'Star in cluster NGC 6633'
+    source_file: 'oastars6.stc'
+  - name: 'JD 170079'
+    ra_deg: 276.85
+    dec_deg: 6.143
+    distance_ly: 1228.01
+    spectral_type: 'A5V'
+    abs_mag: 2.9
+    system: ""
+    comment: 'Star in cluster NGC 6633'
+    source_file: 'oastars6.stc'
+  - name: 'JD 170119'
+    ra_deg: 277.1625
+    dec_deg: 6.468
+    distance_ly: 1225.9
+    spectral_type: 'G4V'
+    abs_mag: 4.42
+    system: ""
+    comment: 'Star in cluster NGC 6633'
+    source_file: 'oastars6.stc'
+  - name: 'JD 170133'
+    ra_deg: 276.452
+    dec_deg: 6.502
+    distance_ly: 1224.21
+    spectral_type: 'K2V'
+    abs_mag: 5.8
+    system: ""
+    comment: 'Star in cluster NGC 6633'
+    source_file: 'oastars6.stc'
+  - name: 'JD 170136'
+    ra_deg: 276.7151
+    dec_deg: 6.481
+    distance_ly: 1225.721
+    spectral_type: 'G2V'
+    abs_mag: 4.9
+    system: ""
+    comment: 'Star in cluster NGC 6633'
+    source_file: 'oastars6.stc'
+  - name: 'JD 170158'
+    ra_deg: 276.948
+    dec_deg: 6.456
+    distance_ly: 1224.2
+    spectral_type: 'G8V'
+    abs_mag: 4.42
+    system: ""
+    comment: 'Star in cluster NGC 6633'
+    source_file: 'oastars6.stc'
+  - name: 'JD 170174'
+    ra_deg: 276.978
+    dec_deg: 5.76
+    distance_ly: 1223.329
+    spectral_type: 'A2V'
+    abs_mag: 3.9
+    system: ""
+    comment: 'Star in cluster NGC 6633'
+    source_file: 'oastars6.stc'
+  - name: 'JD 170200'
+    ra_deg: 276.995
+    dec_deg: 6.194
+    distance_ly: 1224.81
+    spectral_type: 'A5II'
+    abs_mag: 1.8
+    system: ""
+    comment: 'Star in cluster NGC 6633'
+    source_file: 'oastars6.stc'
+  - name: 'JD 170291'
+    ra_deg: 277.272
+    dec_deg: 6.47
+    distance_ly: 1224.21
+    spectral_type: 'F5V'
+    abs_mag: 1.8
+    system: ""
+    comment: 'Star in cluster NGC 6633'
+    source_file: 'oastars6.stc'
+  - name: 'JD 170292'
+    ra_deg: 277.096
+    dec_deg: 6.708
+    distance_ly: 1226.421
+    spectral_type: 'K2V'
+    abs_mag: 1.2
+    system: ""
+    comment: 'Star in cluster NGC 6633'
+    source_file: 'oastars6.stc'
+  - name: 'JD 170293'
+    ra_deg: 277.096
+    dec_deg: 6.4139
+    distance_ly: 1227.13
+    spectral_type: 'A5V'
+    abs_mag: 2.9
+    system: ""
+    comment: 'Star in cluster NGC 6633'
+    source_file: 'oastars6.stc'
+  - name: 'JD 170346'
+    ra_deg: 277.0918
+    dec_deg: 6.7896
+    distance_ly: 1224.28
+    spectral_type: 'A2V'
+    abs_mag: 2.8
+    system: ""
+    comment: 'Star in cluster NGC 6633'
+    source_file: 'oastars6.stc'
+  - name: 'JD 170472'
+    ra_deg: 277.3325
+    dec_deg: 6.8514
+    distance_ly: 1225.971
+    spectral_type: 'A2V'
+    abs_mag: 2.8
+    system: ""
+    comment: 'Star in cluster NGC 6633'
+    source_file: 'oastars6.stc'
+  - name: 'JD 170512'
+    ra_deg: 277.365
+    dec_deg: 7.359
+    distance_ly: 1225.03
+    spectral_type: 'G8V'
+    abs_mag: 3.9
+    system: ""
+    comment: 'Star in cluster NGC 6633'
+    source_file: 'oastars6.stc'
+  - name: 'JD 170563'
+    ra_deg: 277.454
+    dec_deg: 6.763
+    distance_ly: 1224.98
+    spectral_type: 'A2V'
+    abs_mag: 2.9
+    system: ""
+    comment: 'Star in cluster NGC 6633'
+    source_file: 'oastars6.stc'
+  - name: 'JD 170881'
+    ra_deg: 277.86
+    dec_deg: 6.489
+    distance_ly: 1224.07
+    spectral_type: 'B2V'
+    abs_mag: 0.9
+    system: ""
+    comment: 'Star in cluster NGC 6633'
+    source_file: 'oastars6.stc'
+  - name: 'JD 171135'
+    ra_deg: 276.9125
+    dec_deg: 6.5321
+    distance_ly: 1223.807
+    spectral_type: 'A4IV'
+    abs_mag: 2.6
+    system: ""
+    comment: 'Star in cluster NGC 6633'
+    source_file: 'oastars6.stc'
+  - name: 'JD 179958'
+    ra_deg: 276.74
+    dec_deg: 6.47
+    distance_ly: 1222.4
+    spectral_type: 'K2V'
+    abs_mag: 4.9
+    system: ""
+    comment: 'Star in cluster NGC 6633'
+    source_file: 'oastars6.stc'
+  - name: 'JD 180123'
+    ra_deg: 276.5327
+    dec_deg: 6.502
+    distance_ly: 1224.631
+    spectral_type: 'K2V'
+    abs_mag: 5.8
+    system: ""
+    comment: 'Star in cluster NGC 6633'
+    source_file: 'oastars6.stc'
+  - name: 'JD 180124'
+    ra_deg: 277.127
+    dec_deg: 6.502
+    distance_ly: 1226.41
+    spectral_type: 'K2V'
+    abs_mag: 5.7
+    system: ""
+    comment: 'Star in cluster NGC 6633'
+    source_file: 'oastars6.stc'
+  - name: 'JD 180126'
+    ra_deg: 276.641
+    dec_deg: 6.5981
+    distance_ly: 1223.12
+    spectral_type: 'G2V'
+    abs_mag: 4.3
+    system: ""
+    comment: 'Star in cluster NGC 6633'
+    source_file: 'oastars6.stc'
+  - name: 'JD 180128'
+    ra_deg: 276.981
+    dec_deg: 6.431
+    distance_ly: 1226.12
+    spectral_type: 'G2V'
+    abs_mag: 4.3
+    system: ""
+    comment: 'Star in cluster NGC 6633'
+    source_file: 'oastars6.stc'
+  - name: 'JD 180133'
+    ra_deg: 276.327
+    dec_deg: 6.602
+    distance_ly: 1225.31
+    spectral_type: 'K2V'
+    abs_mag: 5.7
+    system: ""
+    comment: 'Star in cluster NGC 6633'
+    source_file: 'oastars6.stc'
+  - name: 'JD 180134'
+    ra_deg: 276.127
+    dec_deg: 6.402
+    distance_ly: 1226.41
+    spectral_type: 'K2V'
+    abs_mag: 5.7
+    system: ""
+    comment: 'Star in cluster NGC 6633'
+    source_file: 'oastars6.stc'
+  - name: 'JD 180136'
+    ra_deg: 276.041
+    dec_deg: 6.581
+    distance_ly: 1225.12
+    spectral_type: 'G2V'
+    abs_mag: 4.7
+    system: ""
+    comment: 'Star in cluster NGC 6633'
+    source_file: 'oastars6.stc'
+  - name: 'JD 180138'
+    ra_deg: 276.5471
+    dec_deg: 6.581
+    distance_ly: 1224.912
+    spectral_type: 'G2V'
+    abs_mag: 4.1
+    system: ""
+    comment: 'Star in cluster NGC 6633'
+    source_file: 'oastars6.stc'
+  - name: 'JD 189127'
+    ra_deg: 276.308
+    dec_deg: 6.4582
+    distance_ly: 1225.721
+    spectral_type: 'K2V'
+    abs_mag: 4.82
+    system: ""
+    comment: 'Star in cluster NGC 6633'
+    source_file: 'oastars6.stc'
+  - name: 'JD 189129'
+    ra_deg: 277.228
+    dec_deg: 6.5482
+    distance_ly: 1223.921
+    spectral_type: 'K2V'
+    abs_mag: 4.52
+    system: ""
+    comment: 'Star in cluster NGC 6633'
+    source_file: 'oastars6.stc'
+  - name: 'JD 189137'
+    ra_deg: 276.9338
+    dec_deg: 6.582
+    distance_ly: 1224.121
+    spectral_type: 'K2V'
+    abs_mag: 4.42
+    system: ""
+    comment: 'Star in cluster NGC 6633'
+    source_file: 'oastars6.stc'
+  - name: 'JD 189139'
+    ra_deg: 277.298
+    dec_deg: 6.2482
+    distance_ly: 1225.721
+    spectral_type: 'K2V'
+    abs_mag: 4.92
+    system: ""
+    comment: 'Star in cluster NGC 6633'
+    source_file: 'oastars6.stc'
+  - name: 'JD 189952'
+    ra_deg: 276.63
+    dec_deg: 6.51
+    distance_ly: 1222.64
+    spectral_type: 'K5V'
+    abs_mag: 5.2
+    system: ""
+    comment: 'Star in cluster NGC 6633'
+    source_file: 'oastars6.stc'
+  - name: 'JD 189961'
+    ra_deg: 276.91
+    dec_deg: 6.494
+    distance_ly: 1223.38
+    spectral_type: 'G3V'
+    abs_mag: 4.2
+    system: ""
+    comment: 'Star in cluster NGC 6633'
+    source_file: 'oastars6.stc'
+  - name: 'JD 189962'
+    ra_deg: 276.73
+    dec_deg: 6.481
+    distance_ly: 1222.62
+    spectral_type: 'K5V'
+    abs_mag: 5.0
+    system: ""
+    comment: 'Star in cluster NGC 6633'
+    source_file: 'oastars6.stc'
+  - name: 'JD 189970'
+    ra_deg: 276.728
+    dec_deg: 6.439
+    distance_ly: 1222.58
+    spectral_type: 'G2V'
+    abs_mag: 4.89
+    system: ""
+    comment: 'Star in cluster NGC 6633'
+    source_file: 'oastars6.stc'
+  - name: 'JD 189971'
+    ra_deg: 276.71
+    dec_deg: 6.544
+    distance_ly: 1222.3
+    spectral_type: 'G3V'
+    abs_mag: 4.7
+    system: ""
+    comment: 'Star in cluster NGC 6633'
+    source_file: 'oastars6.stc'
+  - name: 'JD 3227227'
+    ra_deg: 107.3145
+    dec_deg: 18.862
+    distance_ly: 1770.1
+    spectral_type: 'G2V'
+    abs_mag: 4.77
+    system: 'Heimat'
+    comment: 'star for Heimat'
+    source_file: 'morefictionalstars.stc'
+  - name: 'JD 518718'
+    ra_deg: 276.85
+    dec_deg: -38.66
+    distance_ly: 2615.0
+    spectral_type: 'G2V'
+    abs_mag: 4.65
+    system: ""
+    comment: ""
+    source_file: 'alottafictionalstars.stc'
+  - name: 'JD 518722'
+    ra_deg: 277.14
+    dec_deg: 78.87
+    distance_ly: 2622.0
+    spectral_type: 'G2V'
+    abs_mag: 4.65
+    system: ""
+    comment: ""
+    source_file: 'alottafictionalstars.stc'
+  - name: 'JD 518731'
+    ra_deg: 95.22
+    dec_deg: -31.82
+    distance_ly: 2577.0
+    spectral_type: 'G2V'
+    abs_mag: 4.85
+    system: ""
+    comment: ""
+    source_file: 'alottafictionalstars.stc'
+  - name: 'JD 518734'
+    ra_deg: 322.1
+    dec_deg: 38.11
+    distance_ly: 2412.0
+    spectral_type: 'G2V'
+    abs_mag: 4.29
+    system: ""
+    comment: ""
+    source_file: 'alottafictionalstars.stc'
+  - name: 'JD 518736'
+    ra_deg: 114.77
+    dec_deg: 20.28
+    distance_ly: 2042.0
+    spectral_type: 'G2V'
+    abs_mag: 4.75
+    system: ""
+    comment: ""
+    source_file: 'alottafictionalstars.stc'
+  - name: 'JD 518771'
+    ra_deg: 125.98
+    dec_deg: 44.2
+    distance_ly: 578.0
+    spectral_type: 'G2V'
+    abs_mag: 4.65
+    system: ""
+    comment: ""
+    source_file: 'oastars7.stc'
+  - name: 'JD 518774'
+    ra_deg: 131.11
+    dec_deg: 28.48
+    distance_ly: 1219.0
+    spectral_type: 'G2V'
+    abs_mag: 4.65
+    system: ""
+    comment: ""
+    source_file: 'alottafictionalstars.stc'
+  - name: 'JD 518775'
+    ra_deg: 115.05
+    dec_deg: 51.08
+    distance_ly: 1713.0
+    spectral_type: 'G2V'
+    abs_mag: 4.78
+    system: ""
+    comment: ""
+    source_file: 'alottafictionalstars.stc'
+  - name: 'JD 518776'
+    ra_deg: 71.29
+    dec_deg: -18.08
+    distance_ly: 1622.0
+    spectral_type: 'G2V'
+    abs_mag: 4.72
+    system: ""
+    comment: ""
+    source_file: 'alottafictionalstars.stc'
+  - name: 'JD 518777'
+    ra_deg: 95.02
+    dec_deg: -53.2
+    distance_ly: 1766.0
+    spectral_type: 'G2V'
+    abs_mag: 4.85
+    system: ""
+    comment: ""
+    source_file: 'alottafictionalstars.stc'
+  - name: 'JD 518778'
+    ra_deg: 231.41
+    dec_deg: -48.48
+    distance_ly: 2119.0
+    spectral_type: 'G2V'
+    abs_mag: 4.95
+    system: ""
+    comment: ""
+    source_file: 'alottafictionalstars.stc'
+  - name: 'JD 518779'
+    ra_deg: 225.35
+    dec_deg: 49.18
+    distance_ly: 2113.0
+    spectral_type: 'G2V'
+    abs_mag: 4.85
+    system: ""
+    comment: ""
+    source_file: 'alottafictionalstars.stc'
+  - name: 'JD 518780'
+    ra_deg: 271.15
+    dec_deg: -17.28
+    distance_ly: 2615.0
+    spectral_type: 'G2V'
+    abs_mag: 4.65
+    system: ""
+    comment: ""
+    source_file: 'alottafictionalstars.stc'
+  - name: 'JD 518781'
+    ra_deg: 291.15
+    dec_deg: -53.43
+    distance_ly: 2871.0
+    spectral_type: 'G2V'
+    abs_mag: 4.65
+    system: ""
+    comment: ""
+    source_file: 'alottafictionalstars.stc'
+  - name: 'JD 518782'
+    ra_deg: 211.67
+    dec_deg: -58.12
+    distance_ly: 2319.0
+    spectral_type: 'G2V'
+    abs_mag: 4.65
+    system: ""
+    comment: ""
+    source_file: 'alottafictionalstars.stc'
+  - name: 'JD 518783'
+    ra_deg: 15.05
+    dec_deg: -21.76
+    distance_ly: 2713.0
+    spectral_type: 'G2V'
+    abs_mag: 4.65
+    system: ""
+    comment: ""
+    source_file: 'alottafictionalstars.stc'
+  - name: 'JD 518784'
+    ra_deg: 311.99
+    dec_deg: 8.08
+    distance_ly: 2612.0
+    spectral_type: 'G2V'
+    abs_mag: 4.65
+    system: ""
+    comment: ""
+    source_file: 'alottafictionalstars.stc'
+  - name: 'JD 518785'
+    ra_deg: 295.87
+    dec_deg: 33.72
+    distance_ly: 2526.0
+    spectral_type: 'G2V'
+    abs_mag: 4.65
+    system: ""
+    comment: ""
+    source_file: 'alottafictionalstars.stc'
+  - name: 'JD 518786'
+    ra_deg: 211.71
+    dec_deg: -28.88
+    distance_ly: 2919.0
+    spectral_type: 'G2V'
+    abs_mag: 4.65
+    system: ""
+    comment: ""
+    source_file: 'alottafictionalstars.stc'
+  - name: 'JD 518787'
+    ra_deg: 74.43
+    dec_deg: -28.23
+    distance_ly: 2513.0
+    spectral_type: 'G2V'
+    abs_mag: 4.65
+    system: ""
+    comment: ""
+    source_file: 'alottafictionalstars.stc'
+  - name: 'JD 518789'
+    ra_deg: 5.75
+    dec_deg: -11.39
+    distance_ly: 2180.0
+    spectral_type: 'G2V'
+    abs_mag: 4.65
+    system: ""
+    comment: ""
+    source_file: 'alottafictionalstars.stc'
+  - name: 'JD 518790'
+    ra_deg: 231.08
+    dec_deg: -78.18
+    distance_ly: 2299.0
+    spectral_type: 'G2V'
+    abs_mag: 4.75
+    system: ""
+    comment: ""
+    source_file: 'alottafictionalstars.stc'
+  - name: 'JD 518791'
+    ra_deg: 19.85
+    dec_deg: -21.33
+    distance_ly: 2013.0
+    spectral_type: 'G2V'
+    abs_mag: 4.65
+    system: ""
+    comment: ""
+    source_file: 'alottafictionalstars.stc'
+  - name: 'JD 518791'
+    ra_deg: 155.55
+    dec_deg: 48.08
+    distance_ly: 513.0
+    spectral_type: 'G2V'
+    abs_mag: 4.65
+    system: ""
+    comment: ""
+    source_file: 'oastars7.stc'
+  - name: 'JD 518793'
+    ra_deg: 191.42
+    dec_deg: 13.7
+    distance_ly: 1326.0
+    spectral_type: 'G2V'
+    abs_mag: 4.65
+    system: ""
+    comment: ""
+    source_file: 'alottafictionalstars.stc'
+  - name: 'JD 518794'
+    ra_deg: 39.51
+    dec_deg: 8.78
+    distance_ly: 1099.0
+    spectral_type: 'G2V'
+    abs_mag: 4.77
+    system: ""
+    comment: ""
+    source_file: 'alottafictionalstars.stc'
+  - name: 'JD 518795'
+    ra_deg: 305.35
+    dec_deg: -29.48
+    distance_ly: 1813.0
+    spectral_type: 'G2V'
+    abs_mag: 4.86
+    system: ""
+    comment: ""
+    source_file: 'alottafictionalstars.stc'
+  - name: 'JD 518796'
+    ra_deg: 111.82
+    dec_deg: 31.55
+    distance_ly: 1915.0
+    spectral_type: 'G2V'
+    abs_mag: 4.59
+    system: ""
+    comment: ""
+    source_file: 'alottafictionalstars.stc'
+  - name: 'JD 518797'
+    ra_deg: 97.66
+    dec_deg: 3.43
+    distance_ly: 1771.0
+    spectral_type: 'G2V'
+    abs_mag: 4.76
+    system: ""
+    comment: ""
+    source_file: 'alottafictionalstars.stc'
+  - name: 'JD 518798'
+    ra_deg: 317.22
+    dec_deg: 28.23
+    distance_ly: 2789.0
+    spectral_type: 'G2V'
+    abs_mag: 4.99
+    system: ""
+    comment: ""
+    source_file: 'alottafictionalstars.stc'
+  - name: 'JD 518799'
+    ra_deg: 152.05
+    dec_deg: 31.66
+    distance_ly: 2412.0
+    spectral_type: 'G2V'
+    abs_mag: 4.65
+    system: ""
+    comment: ""
+    source_file: 'alottafictionalstars.stc'
+  - name: 'JD 76601'
+    ra_deg: 298.2012
+    dec_deg: 43.5641
+    distance_ly: 2899.0
+    spectral_type: 'G2V'
+    abs_mag: 4.1
+    system: 'Guanche'
+    comment: 'Star for system containing Guanche'
+    source_file: 'oastars2.stc'
+  - name: 'JD 788901101'
+    ra_deg: 123.754
+    dec_deg: -35.265
+    distance_ly: 2100.51
+    spectral_type: 'G8'
+    abs_mag: 4.99
+    system: ""
+    comment: ""
+    source_file: 'aoia.stc'
+  - name: 'JD 836901'
+    ra_deg: 96.165
+    dec_deg: 26.934
+    distance_ly: 1067.86
+    spectral_type: 'G3'
+    abs_mag: 4.87
+    system: 'Wurm'
+    comment: 'G3  star for Wurm'
+    source_file: 'oastars2-2.stc'
+  - name: 'JD 836902'
+    ra_deg: 52.62495
+    dec_deg: 29.871
+    distance_ly: 786.9
+    spectral_type: 'G1'
+    abs_mag: 4.43
+    system: 'Niuearth'
+    comment: 'G3  star for Niuearth'
+    source_file: 'oastars2-2.stc'
+  - name: 'JD 870135'
+    ra_deg: 277.352
+    dec_deg: 6.542
+    distance_ly: 1235.51
+    spectral_type: 'G2V'
+    abs_mag: 4.2
+    system: 'To''ul''h'
+    comment: 'Star for system containing To''ul''h'
+    source_file: 'oastars6.stc'
+  - name: 'JD 890135'
+    ra_deg: 277.13
+    dec_deg: 6.442
+    distance_ly: 1230.51
+    spectral_type: 'G2V'
+    abs_mag: 4.2
+    system: ""
+    comment: 'Star in cluster NGC 6633'
+    source_file: 'oastars6.stc'
+  - name: 'JD 890136'
+    ra_deg: 277.043
+    dec_deg: 6.42
+    distance_ly: 1229.2
+    spectral_type: 'G2V'
+    abs_mag: 4.8
+    system: ""
+    comment: 'Star in cluster NGC 6633'
+    source_file: 'oastars6.stc'
+  - name: 'JD 890137'
+    ra_deg: 277.11
+    dec_deg: 6.49
+    distance_ly: 1228.1
+    spectral_type: 'G2V'
+    abs_mag: 4.7
+    system: ""
+    comment: 'Star in cluster NGC 6633'
+    source_file: 'oastars6.stc'
+  - name: 'JD 9802-8'
+    ra_deg: 52.9541
+    dec_deg: 51.2142
+    distance_ly: 3210.0
+    spectral_type: 'G2V'
+    abs_mag: 4.3
+    system: 'Oshiq'
+    comment: 'Star for system containing Oshiq'
+    source_file: 'oastars2.stc'
+  - name: 'JD 98738'
+    ra_deg: 301.059
+    dec_deg: 20.142
+    distance_ly: 862.51
+    spectral_type: 'K2V'
+    abs_mag: 3.92
+    system: 'Panthalassa'
+    comment: 'Star for system containing Panthalassa'
+    source_file: 'oastars1.stc'
+  - name: 'Pen-y-Ghent'
+    ra_deg: 262.35
+    dec_deg: -40.5155
+    distance_ly: 789.86
+    spectral_type: 'F1v'
+    abs_mag: 4.08
+    system: ""
+    comment: ""
+    source_file: 'oastars4.stc'
+  - name: 'YTS 453 09440 3'
+    ra_deg: 96.304
+    dec_deg: -41.25
+    distance_ly: 543.6
+    spectral_type: 'T1V'
+    abs_mag: 26.0
+    system: ""
+    comment: 'Brown Dwarf in the Stellar Umma Region; SpectralType "M9.0V" #for Celestia 1.3.1; accepted by Celestia 1.3.1pre4 and above'
+    source_file: 'oastars6.stc'
+  - name: 'YTS 9267-9531885'
+    ra_deg: 242.5
+    dec_deg: -62.6333
+    distance_ly: 1280.0
+    spectral_type: 'G2V'
+    abs_mag: 4.76
+    system: 'Blue'
+    comment: 'star for Blue'
+    source_file: 'morefictionalstars.stc'

@@ -1,11 +1,9 @@
 # Downloaded source catalogs — rebuild with `uv run oastarmap fetch`
 raw/
 
-# Orion's Arm source material, downloaded by hand. Not redistributed: the
-# OAAddons archive is covered by the terms at
-# https://www.orionsarm.com/Terms_Copyright_and_Submissions.html rather than by
-# the Creative Commons licence earlier OA releases carried. Original URLs are
-# recorded in the pipeline so the files can be fetched again.
+# Orion's Arm source material, downloaded by hand. Untracked for the same reason
+# as raw/ above: it is bulk upstream material the repo does not need to carry.
+# Original URLs are recorded in the pipeline so the files can be fetched again.
 sources/
 
 # Generated datasets — rebuild with `uv run oastarmap build`
