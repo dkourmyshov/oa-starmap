@@ -12,8 +12,8 @@
 import * as THREE from 'three';
 import { describe, expect, it } from 'vitest';
 
-import type { ClusterData, HiiData, StarData } from '../data/manifest';
-import { KIND_CLUSTER, KIND_HII, KIND_STAR, ObjectIndex } from './objects';
+import type { ClusterData, HiiData, OAStarData, StarData } from '../data/manifest';
+import { KIND_CLUSTER, KIND_HII, KIND_OASTAR, KIND_STAR, ObjectIndex, bayerLabel } from './objects';
 
 const WIDTH = 800;
 const HEIGHT = 600;
@@ -95,6 +95,31 @@ function makeHii(entries: { xyz: [number, number, number]; radius: number; name:
     })),
     dataset: {} as HiiData['dataset'],
   } as HiiData;
+}
+
+function makeOAStars(entries: { xyz: [number, number, number]; name: string }[]): OAStarData {
+  const positions = new Float32Array(entries.length * 5);
+  entries.forEach((entry, i) => {
+    positions[i * 5] = entry.xyz[0];
+    positions[i * 5 + 1] = entry.xyz[1];
+    positions[i * 5 + 2] = entry.xyz[2];
+    positions[i * 5 + 3] = 4.7; // typical for these; apparent mag 12+ at any range
+    positions[i * 5 + 4] = -99;
+  });
+  return {
+    count: entries.length,
+    positions,
+    names: entries.map((e) => ({
+      name: e.name,
+      comment: '',
+      spectral_type: 'G2V',
+      distance_pc: 0,
+      oa_designation: e.name.startsWith('JD '),
+      source_file: 'x.stc',
+    })),
+    colorLut: new Float32Array(3),
+    dataset: { layout: { positions: { ci_unknown_sentinel: -99 } } } as OAStarData['dataset'],
+  };
 }
 
 const pickOptions = { width: WIDTH, height: HEIGHT, magnitudeLimit: 20, visible: ALL_VISIBLE };
@@ -349,5 +374,101 @@ describe('label layout', () => {
       null,
     );
     expect(index.layout(cam, layoutOptions)[0].text).toBe('Melotte 25');
+  });
+});
+
+describe('Bayer designations', () => {
+  it('joins the Greek letter to its constellation', () => {
+    // HYG's `bayer` field is "Alp" alone. On its own it names 88 different stars.
+    expect(bayerLabel('Alp', 'And')).toBe('α And');
+    expect(bayerLabel('Bet', 'Cap')).toBe('β Cap');
+  });
+
+  it('renders the component index as a superscript', () => {
+    expect(bayerLabel('Alp-1', 'Cap')).toBe('α¹ Cap');
+    expect(bayerLabel('Kap-2', 'Sgr')).toBe('κ² Sgr');
+  });
+
+  it('keeps an unrecognised abbreviation rather than dropping it', () => {
+    expect(bayerLabel('Zzz', 'Ori')).toBe('Zzz Ori');
+  });
+
+  it('survives a missing constellation', () => {
+    expect(bayerLabel('Alp', '')).toBe('α');
+  });
+
+  it('is what the label layout actually emits', () => {
+    const cam = camera();
+    const stars = makeStars([[0, 0, -100]], { '0': { bayer: 'Alp-1' } });
+    stars.constellation = new Uint8Array([1]);
+    stars.dataset = {
+      layout: { constellations: { values: ['', 'Cap'] } },
+    } as StarData['dataset'];
+    const placed = new ObjectIndex(stars, null, null, null).layout(cam, {
+      width: WIDTH,
+      height: HEIGHT,
+      magnitudeLimit: 20,
+      maxLabels: 10,
+      visible: ALL_VISIBLE,
+    });
+    expect(placed[0].text).toBe('α¹ Cap');
+  });
+});
+
+describe('Orion\u2019s Arm stars', () => {
+  it('stays pickable below the magnitude limit', () => {
+    // Drawn as constant-size markers, so the star magnitude limit must not gate
+    // them. At 100 pc with M=4.7 the apparent magnitude is ~9.7; a limit of 7.5
+    // would hide a real star and previously hid these too.
+    const cam = camera();
+    const index = new ObjectIndex(
+      makeStars([]),
+      null,
+      null,
+      null,
+      makeOAStars([{ xyz: [0, 0, -100], name: 'Cantor' }]),
+    );
+    const at = { ...pickOptions, magnitudeLimit: 7.5 };
+    const id = index.pick(cam, WIDTH / 2, HEIGHT / 2, at, 10);
+    expect(id).not.toBeNull();
+    expect(index.ref(id as number).kind).toBe(KIND_OASTAR);
+  });
+
+  it('is hidden when its layer is off', () => {
+    const cam = camera();
+    const index = new ObjectIndex(
+      makeStars([]),
+      null,
+      null,
+      null,
+      makeOAStars([{ xyz: [0, 0, -100], name: 'Cantor' }]),
+    );
+    const hidden = {
+      ...pickOptions,
+      visible: { star: true, cluster: true, hii: true, oastar: false },
+    };
+    expect(index.pick(cam, WIDTH / 2, HEIGHT / 2, hidden, 10)).toBeNull();
+  });
+
+  it('ranks a named system above JD filler', () => {
+    const cam = camera();
+    const index = new ObjectIndex(
+      makeStars([]),
+      null,
+      null,
+      null,
+      makeOAStars([
+        { xyz: [30, 0, -100], name: 'JD 518774' },
+        { xyz: [0, 0, -100], name: 'Cantor' },
+      ]),
+    );
+    const placed = index.layout(cam, {
+      width: WIDTH,
+      height: HEIGHT,
+      magnitudeLimit: 20,
+      maxLabels: 10,
+      visible: ALL_VISIBLE,
+    });
+    expect(placed[0].text).toBe('Cantor');
   });
 });

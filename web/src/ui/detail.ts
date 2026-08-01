@@ -16,6 +16,7 @@ import {
   KIND_OASTAR,
   KIND_STAR,
   type ObjectIndex,
+  bayerLabel,
 } from '../scene/objects';
 import { type DistanceUnit, type Parsecs, formatDistance, pc } from '../units';
 
@@ -279,13 +280,20 @@ export class DetailPanel {
     const distance = Math.sqrt(x * x + y * y + z * z);
 
     const names = stars.names[String(index)] ?? {};
-    const designations = [names.bayer, names.flam, names.gl, names.bf].filter(Boolean);
-    const title = names.proper || designations[0] || `Star #${index}`;
-
     const classes = stars.dataset.layout.classes.values;
     const constellations = stars.dataset.layout.constellations.values;
     const spectral = classes[stars.spectralClass[index]] ?? '';
     const constellation = constellations[stars.constellation[index]] ?? '';
+
+    // A bare "Alp" names nothing — there are 88 of them. Same reconstruction the
+    // labels use, so the panel and the map agree on what a star is called.
+    const designations = [
+      names.bayer ? bayerLabel(names.bayer, constellation) : '',
+      names.flam ? `${names.flam} ${constellation}`.trim() : '',
+      names.gl,
+      names.bf,
+    ].filter(Boolean);
+    const title = names.proper || designations[0] || `Star #${index}`;
 
     const hip = stars.ids[index * 2];
     const hd = stars.ids[index * 2 + 1];

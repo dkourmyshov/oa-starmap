@@ -230,12 +230,10 @@ async function main(): Promise<void> {
     {
       onMagnitudeLimit: (value) => {
         starField.magnitudeLimit = value;
-        if (oaStarField) oaStarField.magnitudeLimit = value;
         view.magnitudeLimit = value;
       },
       onExposure: (value) => {
         starField.exposure = value;
-        if (oaStarField) oaStarField.exposure = value;
       },
       onClustersVisible: (value) => {
         if (clusterField) clusterField.visible = value;

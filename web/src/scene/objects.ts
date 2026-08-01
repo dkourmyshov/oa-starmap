@@ -30,6 +30,34 @@ export const KIND_NAMES = ['star', 'cluster', 'HII region', "Orion's Arm star"] 
 const SURVEY_PREFIX =
   /^(CWNU|HSC|Theia|UPK|UBC|LISC|OCSN|HXHWL|PHOC|FoF|COIN|Casado|Ryu|SAI|Gulliver|OC)[\s_-]?\d/i;
 
+/**
+ * HYG's three-letter Greek abbreviations, as they appear in its `bayer` field.
+ *
+ * That field holds only the letter — "Alp", "Kap-1" — with no constellation, so
+ * using it as a label produces "Alp", which names nothing: there are 88 of them.
+ * The constellation lives in a separate packed array, and the two have to be put
+ * back together here.
+ */
+const GREEK: Record<string, string> = {
+  Alp: 'α', Bet: 'β', Gam: 'γ', Del: 'δ', Eps: 'ε', Zet: 'ζ',
+  Eta: 'η', The: 'θ', Iot: 'ι', Kap: 'κ', Lam: 'λ', Mu: 'μ',
+  Nu: 'ν', Xi: 'ξ', Omi: 'ο', Pi: 'π', Rho: 'ρ', Sig: 'σ',
+  Tau: 'τ', Ups: 'υ', Phi: 'φ', Chi: 'χ', Psi: 'ψ', Ome: 'ω',
+};
+
+const SUPERSCRIPT = ['⁰', '¹', '²', '³', '⁴', '⁵', '⁶', '⁷', '⁸', '⁹'];
+
+/**
+ * "Alp-1" + "Cap" -> "α¹ Cap". Falls back to the raw abbreviation for anything
+ * not on the Greek list, which is better than dropping the constellation.
+ */
+export function bayerLabel(bayer: string, constellation: string): string {
+  const [letter, index] = bayer.split('-');
+  const greek = GREEK[letter] ?? letter;
+  const suffix = index && /^\d$/.test(index) ? SUPERSCRIPT[Number(index)] : (index ?? '');
+  return constellation ? `${greek}${suffix} ${constellation}` : `${greek}${suffix}`;
+}
+
 /** Importance before anything about the current view is known. */
 const BASE_IMPORTANCE = {
   starProper: 1.0,
@@ -159,6 +187,7 @@ export class ObjectIndex {
     this.onScreen = new Uint8Array(total);
 
     const polityByKind = buildPolityLookup(fiction);
+    const constellations = stars.dataset?.layout?.constellations?.values ?? [];
     const labelled: number[] = [];
     let at = 0;
 
@@ -173,14 +202,19 @@ export class ObjectIndex {
 
       const names = stars.names[String(i)];
       if (names) {
+        const constellation = constellations[stars.constellation[i]] ?? '';
         if (names.proper) {
           this.labels[at] = names.proper;
           this.importance[at] = BASE_IMPORTANCE.starProper;
         } else if (names.bayer) {
-          this.labels[at] = names.bayer;
+          this.labels[at] = bayerLabel(names.bayer, constellation);
           this.importance[at] = BASE_IMPORTANCE.starBayer;
-        } else if (names.bf || names.gl) {
-          this.labels[at] = names.bf || names.gl;
+        } else if (names.flam) {
+          // Flamsteed number, which is likewise meaningless without one.
+          this.labels[at] = constellation ? `${names.flam} ${constellation}` : names.flam;
+          this.importance[at] = BASE_IMPORTANCE.starDesignation;
+        } else if (names.gl) {
+          this.labels[at] = names.gl;
           this.importance[at] = BASE_IMPORTANCE.starDesignation;
         }
       }
@@ -309,11 +343,15 @@ export class ObjectIndex {
       const dz = z - cam.z;
       const distance = Math.sqrt(dx * dx + dy * dy + dz * dz);
 
-      if (kind === KIND_STAR || kind === KIND_OASTAR) {
-        // Same magnitude test the star shaders apply, so what is clickable is
+      if (kind === KIND_STAR) {
+        // Same magnitude test the star shader applies, so what is clickable is
         // exactly what is drawn.
         const apparent = this.absMag[id] + 5 * Math.log10(Math.max(distance, 1e-6) / 10);
         if (apparent > magnitudeLimit) continue;
+        this.screenR[id] = 0;
+      } else if (kind === KIND_OASTAR) {
+        // Drawn as constant-size markers regardless of the magnitude limit, so
+        // gating them on it here would make visible markers unclickable.
         this.screenR[id] = 0;
       } else {
         this.screenR[id] = (this.radius[id] * focal * halfHeight) / Math.max(distance, 1e-4);
