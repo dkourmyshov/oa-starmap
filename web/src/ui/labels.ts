@@ -94,6 +94,9 @@ export class LabelOverlay {
       node.style.transform = `translate3d(${label.x}px, ${label.y}px, 0) translate(-50%, -50%)`;
       // Faint labels stay legible but recede, so the eye lands on the anchors.
       node.style.opacity = String(Math.min(0.45 + label.importance * 0.4, 1));
+      // The polity colour rides on the label rather than on the object, so a
+      // star keeps the colour its photometry actually measured.
+      node.style.color = label.color ?? '';
       node.style.display = '';
       node.dataset.id = String(label.id);
     }

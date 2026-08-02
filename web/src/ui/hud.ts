@@ -27,6 +27,7 @@ export interface HudCallbacks {
   onHiiOpacity(value: number): void;
   onHiiKinematic(enabled: boolean): void;
   onOAStarsVisible(value: boolean): void;
+  onOnlyOA(enabled: boolean): void;
   onLabelsVisible(value: boolean): void;
   onLabelDensity(value: number): void;
   onPolityMode(enabled: boolean): void;
@@ -165,6 +166,19 @@ export class Hud {
       this.callbacks.onExposure(v);
       return `${v.toFixed(2)}x`;
     }));
+
+    // Reduces the sky to what the setting has claimed: settled systems, OA
+    // stars, and the clusters and regions carrying an association.
+    const onlyRow = el('div', 'row');
+    onlyRow.appendChild(el('span', 'label', "Orion's Arm only"));
+    const onlyToggle = el('button', 'toggle', 'off');
+    onlyToggle.addEventListener('click', () => {
+      const on = onlyToggle.classList.toggle('active');
+      onlyToggle.textContent = on ? 'on' : 'off';
+      this.callbacks.onOnlyOA(on);
+    });
+    onlyRow.appendChild(onlyToggle);
+    panel.appendChild(onlyRow);
 
     panel.appendChild(this.countRow('Labels', null, (on) => this.callbacks.onLabelsVisible(on)));
     panel.appendChild(

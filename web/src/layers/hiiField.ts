@@ -41,6 +41,7 @@ const VERTEX_SHADER = /* glsl */ `
   uniform float uMaxSize;
   uniform float uShowKinematic;
   uniform float uUnassignedDim;
+  uniform float uOnlyOA;
 
   varying vec3 vColor;
   varying float vFade;
@@ -60,6 +61,12 @@ const VERTEX_SHADER = /* glsl */ `
     vColor = aColor;
 
     vGain = mix(uUnassignedDim, 1.0, aAssigned);
+
+    // Orion's Arm-only mode: keep just what the setting has claimed.
+    if (uOnlyOA > 0.5 && aAssigned < 0.5) {
+      gl_PointSize = 0.0;
+      vGain = 0.0;
+    }
 
     // Culling in the vertex stage: collapsing the point to zero size is the
     // cheapest way to remove it without rebuilding the buffers.
@@ -174,6 +181,7 @@ export class HiiField {
         uOpacity: { value: DEFAULT_OPACITY },
         uShowKinematic: { value: 1.0 },
         uUnassignedDim: { value: 1.0 },
+        uOnlyOA: { value: 0.0 },
       },
       vertexShader: VERTEX_SHADER,
       fragmentShader: FRAGMENT_SHADER,
@@ -206,6 +214,11 @@ export class HiiField {
     (this.colorAttribute.array as Float32Array).set(source);
     this.colorAttribute.needsUpdate = true;
     this.material.uniforms.uUnassignedDim.value = enabled ? 0.3 : 1.0;
+  }
+
+  /** Draw only the objects carrying an Orion's Arm association. */
+  setOnlyOA(enabled: boolean): void {
+    this.material.uniforms.uOnlyOA.value = enabled ? 1.0 : 0.0;
   }
 
   set visible(value: boolean) {

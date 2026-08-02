@@ -131,6 +131,8 @@ export interface PlacedLabel {
   x: number;
   y: number;
   importance: number;
+  /** Polity colour, where the object has one. The marker carries it too. */
+  color?: string;
 }
 
 export interface LayerVisibility {
@@ -138,6 +140,8 @@ export interface LayerVisibility {
   cluster: boolean;
   hii: boolean;
   oastar: boolean;
+  /** Show only objects Orion's Arm has claimed. */
+  oaOnly?: boolean;
 }
 
 export interface LayoutOptions {
@@ -188,6 +192,9 @@ export class ObjectIndex {
   private readonly srcIndex: Int32Array;
   private readonly importance: Float32Array;
   private readonly labels: (string | undefined)[];
+  /** 1 where the object carries Orion's Arm content of any kind. */
+  private readonly isOA: Uint8Array;
+  private readonly labelColor: (string | undefined)[];
 
   /** Ids that carry a label, so layout never walks the unlabelled majority. */
   private readonly labelled: Int32Array;
@@ -226,6 +233,8 @@ export class ObjectIndex {
     this.srcIndex = new Int32Array(total);
     this.importance = new Float32Array(total);
     this.labels = new Array(total);
+    this.isOA = new Uint8Array(total);
+    this.labelColor = new Array(total);
 
     this.screenX = new Float32Array(total);
     this.screenY = new Float32Array(total);
@@ -233,6 +242,12 @@ export class ObjectIndex {
     this.onScreen = new Uint8Array(total);
 
     const polityByKind = buildPolityLookup(fiction);
+    const polityColor = new Map<string, string>(
+      (fiction?.polities ?? []).map((p) => [p.id, p.color]),
+    );
+    const polityColorByIndex = new Map<number, string>(
+      (fiction?.polities ?? []).map((p) => [p.index, p.color]),
+    );
     const constellations = stars.dataset?.layout?.constellations?.values ?? [];
     const labelled: number[] = [];
     let at = 0;
@@ -255,6 +270,8 @@ export class ObjectIndex {
         // the same claim on attention and was losing to clusters without it.
         this.importance[at] =
           BASE_IMPORTANCE.starColony + (colony.affiliations.length ? POLITY_BONUS : 0);
+        this.isOA[at] = 1;
+        this.labelColor[at] = polityColor.get(colony.affiliations[0] ?? '');
       }
 
       const names = stars.names[String(i)];
@@ -275,7 +292,10 @@ export class ObjectIndex {
           this.importance[at] = BASE_IMPORTANCE.starDesignation;
         }
       }
-      if (polityByKind.star.has(i)) this.importance[at] += POLITY_BONUS;
+      if (polityByKind.star.has(i)) {
+        this.importance[at] += POLITY_BONUS;
+        this.isOA[at] = 1;
+      }
       if (this.labels[at]) labelled.push(at);
       at++;
     }
@@ -296,7 +316,11 @@ export class ObjectIndex {
         this.importance[at] = SURVEY_PREFIX.test(name)
           ? BASE_IMPORTANCE.clusterSurvey
           : BASE_IMPORTANCE.clusterClassical;
-        if (polityByKind.cluster.has(i)) this.importance[at] += POLITY_BONUS;
+        if (polityByKind.cluster.has(i)) {
+          this.importance[at] += POLITY_BONUS;
+          this.isOA[at] = 1;
+          this.labelColor[at] = polityColorByIndex.get(fiction?.clusterPolity?.[i] ?? 0);
+        }
         if (this.labels[at]) labelled.push(at);
         at++;
       }
@@ -314,7 +338,11 @@ export class ObjectIndex {
         this.srcIndex[at] = i;
         this.labels[at] = hii.names[i]?.name ?? '';
         this.importance[at] = BASE_IMPORTANCE.hii;
-        if (polityByKind.hii.has(i)) this.importance[at] += POLITY_BONUS;
+        if (polityByKind.hii.has(i)) {
+          this.importance[at] += POLITY_BONUS;
+          this.isOA[at] = 1;
+          this.labelColor[at] = polityColorByIndex.get(fiction?.hiiPolity?.[i] ?? 0);
+        }
         if (this.labels[at]) labelled.push(at);
         at++;
       }
@@ -333,6 +361,7 @@ export class ObjectIndex {
         this.absMag[at] = oaStars.positions[base + 3];
         this.kind[at] = KIND_OASTAR;
         this.srcIndex[at] = i;
+        this.isOA[at] = 1;
 
         // The label is curated: the add-on's own comments name whichever of
         // the system, its primary or its inhabitants a contributor thought of.
@@ -347,6 +376,7 @@ export class ObjectIndex {
         this.importance[at] = named
           ? BASE_IMPORTANCE.oaStarNamed
           : BASE_IMPORTANCE.oaStarNumbered;
+        if (entry?.affiliation) this.labelColor[at] = polityColor.get(entry.affiliation);
         if (this.labels[at]) labelled.push(at);
         at++;
       }
@@ -398,6 +428,7 @@ export class ObjectIndex {
       if (kind === KIND_CLUSTER && !visible.cluster) continue;
       if (kind === KIND_HII && !visible.hii) continue;
       if (kind === KIND_OASTAR && !visible.oastar) continue;
+      if (visible.oaOnly && !this.isOA[id]) continue;
 
       const x = this.px[id];
       const y = this.py[id];
@@ -549,7 +580,14 @@ export class ObjectIndex {
       if (collides) continue;
 
       boxes.push([left, top, right, bottom]);
-      placed.push({ id, text, x: cx, y: cy, importance: candidate.priority });
+      placed.push({
+        id,
+        text,
+        x: cx,
+        y: cy,
+        importance: candidate.priority,
+        color: this.labelColor[id],
+      });
     }
 
     return placed;

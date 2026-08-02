@@ -676,3 +676,88 @@ describe('settled systems', () => {
     expect(layoutOne(index, 1)[0].text).toBe('Akela');
   });
 });
+
+describe("Orion's Arm only mode", () => {
+  const settled = (index: number) =>
+    new Map([
+      [
+        index,
+        {
+          star_index: index,
+          star: 'x',
+          colony: 'Akela',
+          spectral_type: '',
+          mass_sol: '',
+          luminosity_sol: '',
+          distance_ly: 10,
+          method: 'name',
+          distance_disagrees: false,
+          affiliations: ['nocozo'],
+          status: '',
+          note: '',
+        },
+      ],
+    ]);
+
+  const build = () =>
+    new ObjectIndex(
+      makeStars(
+        [
+          [0, 0, -100],
+          [40, 0, -100],
+        ],
+        { '0': { proper: 'Wolf 359' }, '1': { proper: 'Vega' } },
+      ),
+      null,
+      null,
+      null,
+      null,
+      settled(0),
+    );
+
+  const layout = (index: ObjectIndex, oaOnly: boolean) =>
+    index.layout(camera(), {
+      width: WIDTH,
+      height: HEIGHT,
+      magnitudeLimit: 20,
+      maxLabels: 10,
+      visible: { ...ALL_VISIBLE, oaOnly },
+    });
+
+  it('keeps everything when off', () => {
+    expect(layout(build(), false).map((p) => p.text).sort()).toEqual(['Akela', 'Vega']);
+  });
+
+  it('drops a star with no Orion\u2019s Arm content', () => {
+    expect(layout(build(), true).map((p) => p.text)).toEqual(['Akela']);
+  });
+
+  it('makes an unclaimed star unpickable too', () => {
+    // Otherwise a hidden star stays clickable, which reads as a ghost.
+    const index = build();
+    const vega = new THREE.Vector3(40, 0, -100).project(camera());
+    const x = (vega.x * 0.5 + 0.5) * WIDTH;
+    const y = (-vega.y * 0.5 + 0.5) * HEIGHT;
+    const opts = { width: WIDTH, height: HEIGHT, magnitudeLimit: 20 };
+    expect(index.pick(camera(), x, y, { ...opts, visible: ALL_VISIBLE }, 8)).toBe(1);
+    expect(
+      index.pick(camera(), x, y, { ...opts, visible: { ...ALL_VISIBLE, oaOnly: true } }, 8),
+    ).toBeNull();
+  });
+
+  it('carries the polity colour on the label', () => {
+    const fiction = {
+      polities: [{ index: 1, id: 'nocozo', name: 'NoCoZo', color: '#FF7043' }],
+      bindings: [],
+    } as unknown as FictionData;
+    const index = new ObjectIndex(
+      makeStars([[0, 0, -100]], { '0': { proper: 'Wolf 359' } }),
+      null,
+      null,
+      fiction,
+      null,
+      settled(0),
+    );
+    expect(layout(index, false)[0].color).toBe('#FF7043');
+  });
+});

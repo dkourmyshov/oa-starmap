@@ -36,6 +36,7 @@ const VERTEX_SHADER = /* glsl */ `
   uniform float uMinSize;
   uniform float uMaxSize;
   uniform float uUnassignedDim;
+  uniform float uOnlyOA;
 
   varying vec3 vColor;
   varying float vFade;
@@ -63,6 +64,12 @@ const VERTEX_SHADER = /* glsl */ `
     // Clusters carrying an Orion's Arm association are the ones being navigated
     // by, so the other ~7000 recede rather than competing with them.
     vGain = mix(uUnassignedDim, 1.0, aAssigned);
+
+    // Orion's Arm-only mode: keep just what the setting has claimed.
+    if (uOnlyOA > 0.5 && aAssigned < 0.5) {
+      gl_PointSize = 0.0;
+      vGain = 0.0;
+    }
 
     #include <logdepthbuf_vertex>
   }
@@ -171,6 +178,7 @@ export class ClusterField {
         uOpacity: { value: DEFAULT_OPACITY },
         uRingWidthPx: { value: 1.6 },
         uUnassignedDim: { value: 1.0 },
+        uOnlyOA: { value: 0.0 },
       },
       vertexShader: VERTEX_SHADER,
       fragmentShader: FRAGMENT_SHADER,
@@ -207,6 +215,11 @@ export class ClusterField {
     (this.colorAttribute.array as Float32Array).set(source);
     this.colorAttribute.needsUpdate = true;
     this.material.uniforms.uUnassignedDim.value = enabled ? 0.22 : 1.0;
+  }
+
+  /** Draw only the objects carrying an Orion's Arm association. */
+  setOnlyOA(enabled: boolean): void {
+    this.material.uniforms.uOnlyOA.value = enabled ? 1.0 : 0.0;
   }
 
   set visible(value: boolean) {

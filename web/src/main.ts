@@ -8,6 +8,7 @@ import { type StarData, loadAll } from './data/manifest';
 import { ClusterField } from './layers/clusterField';
 import { HiiField } from './layers/hiiField';
 import { OAStarField } from './layers/oaStarField';
+import { SettledField } from './layers/settledField';
 import { StarField } from './layers/starField';
 import { ObjectIndex } from './scene/objects';
 import { Viewer } from './scene/viewer';
@@ -63,6 +64,7 @@ async function main(): Promise<void> {
   let clusterField: ClusterField | null = null;
   let hiiField: HiiField | null = null;
   let oaStarField: OAStarField | null = null;
+  let settledField: SettledField | null = null;
   let loaded;
   try {
     loaded = await loadAll();
@@ -76,13 +78,15 @@ async function main(): Promise<void> {
   loading?.remove();
 
   const viewer = new Viewer(canvas);
-  const starField = new StarField(
-    data,
-    {},
-    loaded.innerSphere?.byStar ?? null,
-    loaded.fiction,
-  );
+  const starField = new StarField(data, {}, loaded.innerSphere?.byStar ?? null);
   viewer.scene.add(starField.points);
+
+  // Polity rings around the settled systems. The star inside keeps its own
+  // measured colour; the ring is the annotation.
+  if (loaded.innerSphere) {
+    settledField = new SettledField(data, loaded.innerSphere.byStar, loaded.fiction);
+    viewer.scene.add(settledField.points);
+  }
 
   // HII regions go in before clusters so the cluster rings draw over the glow.
   if (loaded.hii) {
@@ -113,6 +117,7 @@ async function main(): Promise<void> {
       cluster: Boolean(clusterField),
       hii: Boolean(hiiField),
       oastar: Boolean(oaStarField),
+      oaOnly: false,
     },
   };
 
@@ -260,6 +265,12 @@ async function main(): Promise<void> {
       onHiiKinematic: (enabled) => {
         hiiField?.setShowKinematic(enabled);
       },
+      onOnlyOA: (enabled) => {
+        view.visible.oaOnly = enabled;
+        starField.setOnlyOA(enabled);
+        clusterField?.setOnlyOA(enabled);
+        hiiField?.setOnlyOA(enabled);
+      },
       onOAStarsVisible: (value) => {
         if (oaStarField) oaStarField.visible = value;
         view.visible.oastar = value;
@@ -271,7 +282,6 @@ async function main(): Promise<void> {
         labels.maxLabels = value;
       },
       onPolityMode: (enabled) => {
-        starField.setPolityMode(enabled);
         clusterField?.setPolityMode(enabled);
         hiiField?.setPolityMode(enabled);
         oaStarField?.setPolityMode(enabled);
