@@ -216,8 +216,14 @@ class TestColonyAssignments:
     def test_absent_assignments_are_reported_apart_from_unresolved_stars(self, built):
         """Two different failures: no such colony, versus its star did not resolve."""
         stats = built["manifest"]["stats"]
-        assert stats["assignments_absent"] == ["Euchong"]
+        assert stats["assignments_absent"] == []
         assert len(stats["assignments_awaiting_star"]) > 10
+
+    def test_eunchong_resolves(self, built):
+        """Spelled Euchong at first, which matched nothing; it is Gliese 832."""
+        entry = next(c for c in built["colonies"] if c["colony"] == "Eunchong")
+        assert entry["affiliations"] == ["zoeific-biopolity"]
+        assert entry["star"] == "Gliese 832"
 
     def test_most_assignments_land(self, built):
         assert built["manifest"]["stats"]["assigned"] > 140

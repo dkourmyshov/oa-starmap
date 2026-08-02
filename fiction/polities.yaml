@@ -272,7 +272,10 @@ polities:
     color: "#4DD0E1"
     kind: polity
     source: eg-system-articles
-    # Distinct from the Orion Federation above, which came off the political map.
+    # A completely distinct polity from the Orion Federation above, confirmed
+    # rather than assumed. The names are similar and the two arrived here by
+    # different routes — Orion off the 8000 A.T. political map, Terragen from
+    # the system articles — so the resemblance invites exactly the wrong merge.
 
   - id: utopia-sphere
     name: Utopia Sphere

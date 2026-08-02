@@ -258,9 +258,9 @@ colonies:
     affiliations: [utopia-sphere]
   - colony: 'Rajand'
     affiliations: [zoeific-biopolity]
-  - colony: 'Euchong'
+  - colony: 'Eunchong'
     affiliations: [zoeific-biopolity]
-    note: 'Majority but not all. Absent from the Inner Sphere table entirely, so it resolves to nothing and is recorded here for when a source supplies it.'
+    note: 'Majority but not all.'
   - colony: 'Neo-Helix'
     affiliations: [zoeific-biopolity]
   - colony: 'Chloris'
