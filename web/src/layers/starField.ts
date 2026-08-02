@@ -18,7 +18,7 @@
 
 import * as THREE from 'three';
 
-import type { StarData } from '../data/manifest';
+import type { Colony, FictionData, StarData } from '../data/manifest';
 
 const LOG10 = Math.LN10;
 
@@ -45,6 +45,8 @@ const VERTEX_SHADER = /* glsl */ `
 
   attribute float aAbsMag;
   attribute float aCi;
+  attribute vec3 aPolity;
+  attribute float aSettled;
 
   uniform float uPixelRatio;
   uniform float uMagLimit;
@@ -55,6 +57,9 @@ const VERTEX_SHADER = /* glsl */ `
   uniform float uBvMin;
   uniform float uBvMax;
   uniform sampler2D uColorLut;
+  uniform float uPolityMode;
+  uniform float uSettledBoost;
+  uniform float uSettledFloor;
 
   varying vec3 vColor;
   varying float vAlpha;
@@ -78,8 +83,15 @@ const VERTEX_SHADER = /* glsl */ `
     // Smooth fade to nothing. No threshold, no pop.
     vAlpha = clamp(flux, 0.0, 1.0);
 
+    // A star Orion's Arm has settled is the point of the map, and most of them
+    // are dim red dwarfs that the magnitude law alone renders nearly invisible.
+    // Given a floor and a size boost they stay legible without the exposure
+    // having to be wound up until everything else blows out.
+    float settled = aSettled * uSettledBoost;
+    vAlpha = max(vAlpha, aSettled * uSettledFloor);
+
     // Bright stars grow; faint ones stay minimal and fade out via alpha.
-    float size = uMinSize * sqrt(max(flux, 1.0));
+    float size = uMinSize * sqrt(max(flux, 1.0)) + settled;
     gl_PointSize = clamp(size, uMinSize, uMaxSize) * uPixelRatio;
 
     if (aCi < uCiUnknown + 1.0) {
@@ -88,6 +100,13 @@ const VERTEX_SHADER = /* glsl */ `
     } else {
       float t = clamp((aCi - uBvMin) / (uBvMax - uBvMin), 0.0, 1.0);
       vColor = texture2D(uColorLut, vec2(t, 0.5)).rgb;
+    }
+
+    // In polity mode a settled star takes its polity's colour. Its real colour
+    // is still what the catalogue measured, so this is a mode rather than a
+    // correction, and the toggle puts the photometry back.
+    if (uPolityMode > 0.5 && aSettled > 0.5) {
+      vColor = aPolity;
     }
 
     #include <logdepthbuf_vertex>
@@ -124,7 +143,12 @@ export class StarField {
 
   private readonly material: THREE.ShaderMaterial;
 
-  constructor(data: StarData, options: StarFieldOptions = {}) {
+  constructor(
+    data: StarData,
+    options: StarFieldOptions = {},
+    colonies: Map<number, Colony> | null = null,
+    fiction: FictionData | null = null,
+  ) {
     const {
       magnitudeLimit = 7.5,
       exposure = 1.0,
@@ -137,6 +161,17 @@ export class StarField {
     const positions = new Float32Array(data.count * 3);
     const absMag = new Float32Array(data.count);
     const colorIndex = new Float32Array(data.count);
+    const polity = new Float32Array(data.count * 3);
+    const settled = new Float32Array(data.count);
+
+    const polityColor = new Map<string, THREE.Color>();
+    for (const entry of fiction?.polities ?? []) {
+      polityColor.set(entry.id, new THREE.Color(entry.color));
+    }
+    // Colonies with a status but no polity — abandoned, blight, independent —
+    // are still Orion's Arm content and still deserve prominence; they simply
+    // have no colour to take.
+    const STATUS_COLOR = new THREE.Color(0x9aa4bb);
 
     for (let i = 0; i < data.count; i++) {
       const src = i * 5;
@@ -145,12 +180,22 @@ export class StarField {
       positions[i * 3 + 2] = data.positions[src + 2];
       absMag[i] = data.positions[src + 3];
       colorIndex[i] = data.positions[src + 4];
+
+      const colony = colonies?.get(i);
+      if (!colony) continue;
+      settled[i] = 1;
+      const chosen = polityColor.get(colony.affiliations[0] ?? '') ?? STATUS_COLOR;
+      polity[i * 3] = chosen.r;
+      polity[i * 3 + 1] = chosen.g;
+      polity[i * 3 + 2] = chosen.b;
     }
 
     const geometry = new THREE.BufferGeometry();
     geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
     geometry.setAttribute('aAbsMag', new THREE.BufferAttribute(absMag, 1));
     geometry.setAttribute('aCi', new THREE.BufferAttribute(colorIndex, 1));
+    geometry.setAttribute('aPolity', new THREE.BufferAttribute(polity, 3));
+    geometry.setAttribute('aSettled', new THREE.BufferAttribute(settled, 1));
 
     // Frustum culling is disabled: the bounding sphere spans tens of kiloparsecs,
     // so it is never a useful rejection test, and computing it costs a full pass.
@@ -194,6 +239,9 @@ export class StarField {
         uCiUnknown: { value: data.dataset.layout.positions.ci_unknown_sentinel },
         uBvMin: { value: lutMeta.bv_min ?? -0.4 },
         uBvMax: { value: lutMeta.bv_max ?? 2.0 },
+        uPolityMode: { value: 1.0 },
+        uSettledBoost: { value: 2.2 },
+        uSettledFloor: { value: 0.55 },
         uColorLut: { value: lut },
       },
       vertexShader: VERTEX_SHADER,
@@ -206,6 +254,11 @@ export class StarField {
 
     this.points = new THREE.Points(geometry, this.material);
     this.points.frustumCulled = false;
+  }
+
+  /** Colour settled stars by polity, or by their measured photometry. */
+  setPolityMode(enabled: boolean): void {
+    this.material.uniforms.uPolityMode.value = enabled ? 1.0 : 0.0;
   }
 
   set magnitudeLimit(value: number) {

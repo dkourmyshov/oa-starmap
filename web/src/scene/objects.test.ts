@@ -601,3 +601,78 @@ describe('label priority', () => {
     expect(layoutOne(index, 1)[0].text).toBe('NGC 1');
   });
 });
+
+describe('settled systems', () => {
+  const withColony = (index: number, name: string, affiliations: string[] = []) =>
+    new Map([
+      [
+        index,
+        {
+          star_index: index,
+          star: 'x',
+          colony: name,
+          spectral_type: '',
+          mass_sol: '',
+          luminosity_sol: '',
+          distance_ly: 10,
+          method: 'name',
+          distance_disagrees: false,
+          affiliations,
+          status: '',
+          note: '',
+        },
+      ],
+    ]);
+
+  const layoutOne = (index: ObjectIndex, maxLabels: number) =>
+    index.layout(camera(), {
+      width: WIDTH,
+      height: HEIGHT,
+      magnitudeLimit: 20,
+      maxLabels,
+      visible: ALL_VISIBLE,
+    });
+
+  it('labels a star by its colony rather than its catalogue name', () => {
+    const index = new ObjectIndex(
+      makeStars([[0, 0, -100]], { '0': { proper: 'Wolf 359' } }),
+      null,
+      null,
+      null,
+      null,
+      withColony(0, 'Akela'),
+    );
+    expect(layoutOne(index, 5)[0].text).toBe('Akela');
+  });
+
+  it('ranks a settled system above a plain named star', () => {
+    const index = new ObjectIndex(
+      makeStars(
+        [
+          [0, 0, -100],
+          [40, 0, -100],
+        ],
+        { '0': { proper: 'Wolf 359' }, '1': { proper: 'Vega' } },
+      ),
+      null,
+      null,
+      null,
+      null,
+      withColony(0, 'Akela', ['nocozo']),
+    );
+    expect(layoutOne(index, 1)[0].text).toBe('Akela');
+  });
+
+  it('ranks an affiliated system above a screen-filling cluster', () => {
+    const clusters = makeClusters([{ xyz: [40, 0, -100], radius: 60, name: 'NGC_1' }]);
+    const index = new ObjectIndex(
+      makeStars([[0, 0, -100]], { '0': { proper: 'Wolf 359' } }),
+      clusters,
+      null,
+      null,
+      null,
+      withColony(0, 'Akela', ['nocozo']),
+    );
+    expect(layoutOne(index, 1)[0].text).toBe('Akela');
+  });
+});

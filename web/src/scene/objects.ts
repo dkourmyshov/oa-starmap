@@ -251,7 +251,10 @@ export class ObjectIndex {
       const colony = colonies?.get(i);
       if (colony?.colony) {
         this.labels[at] = colony.colony;
-        this.importance[at] = BASE_IMPORTANCE.starColony;
+        // The polity bonus is what a bound cluster gets; a settled system has
+        // the same claim on attention and was losing to clusters without it.
+        this.importance[at] =
+          BASE_IMPORTANCE.starColony + (colony.affiliations.length ? POLITY_BONUS : 0);
       }
 
       const names = stars.names[String(i)];

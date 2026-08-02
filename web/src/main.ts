@@ -76,7 +76,12 @@ async function main(): Promise<void> {
   loading?.remove();
 
   const viewer = new Viewer(canvas);
-  const starField = new StarField(data);
+  const starField = new StarField(
+    data,
+    {},
+    loaded.innerSphere?.byStar ?? null,
+    loaded.fiction,
+  );
   viewer.scene.add(starField.points);
 
   // HII regions go in before clusters so the cluster rings draw over the glow.
@@ -266,6 +271,7 @@ async function main(): Promise<void> {
         labels.maxLabels = value;
       },
       onPolityMode: (enabled) => {
+        starField.setPolityMode(enabled);
         clusterField?.setPolityMode(enabled);
         hiiField?.setPolityMode(enabled);
         oaStarField?.setPolityMode(enabled);
