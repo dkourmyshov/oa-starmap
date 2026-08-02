@@ -18,6 +18,7 @@ from oastarmap.build.inner_sphere import (
     INNER_SPHERE_FILE,
     build_inner_sphere,
 )
+from oastarmap.fiction.resolve import normalise
 from oastarmap.fiction.starnames import (
     GENITIVE,
     GREEK_NAMES,
@@ -152,3 +153,71 @@ class TestResolution:
 
     def test_wormholes_are_imported_but_not_built(self, built):
         assert built["manifest"]["wormholes"]["count"] == 281
+
+
+class TestColonyAssignments:
+    """fiction/colonies.yaml, matched through the table's colony column."""
+
+    def test_compound_cells_split(self, built):
+        """ "Atlantis/Prometheus/Daedalus" is one system, three polities."""
+        from oastarmap.build.inner_sphere import colony_keys
+
+        keys = colony_keys("Atlantis/Prometheus/Daedalus")
+        assert all(normalise(n) in keys for n in ("Atlantis", "Prometheus", "Daedalus"))
+
+    def test_parentheticals_are_ignored(self):
+        from oastarmap.build.inner_sphere import colony_keys
+
+        assert normalise("Nike") in colony_keys("Nike (Bolobo Colony)")
+
+    def test_a_shared_system_keeps_every_polity(self, built):
+        entry = next(c for c in built["colonies"] if "Atlantis" in c["colony"])
+        assert {"nocozo", "communion-of-worlds", "solar-dominion"} <= set(entry["affiliations"])
+
+    def test_joint_holdings_are_preserved(self, built):
+        for name in ("M'Buto", "Hamal"):
+            entry = next((c for c in built["colonies"] if c["colony"] == name), None)
+            if entry is None:
+                continue
+            assert {"metasoft", "nocozo"} == set(entry["affiliations"])
+
+    def test_status_is_not_an_affiliation(self, built):
+        for entry in built["colonies"]:
+            if entry["status"]:
+                assert entry["status"] in {"special", "abandoned", "blight"}
+
+    def test_the_blight_is_recorded(self, built):
+        tabit = next((c for c in built["colonies"] if c["colony"] == "Tabit"), None)
+        if tabit is not None:
+            assert tabit["status"] == "blight"
+
+    def test_table_spelling_differences_resolve(self, built):
+        """The table writes "Guo-Shuo Jing"; the astronomer is Guo Shoujing."""
+        entry = next((c for c in built["colonies"] if "Guo" in c["colony"]), None)
+        assert entry is not None
+        assert entry["affiliations"] == ["solar-dominion"]
+
+    def test_an_unknown_affiliation_fails_the_build(self, tmp_path):
+        from oastarmap.fiction.schema import ColonyFile
+
+        parsed = ColonyFile.model_validate(
+            {"colonies": [{"colony": "X", "affiliations": ["not-a-polity"]}]}
+        )
+        assert parsed.colonies[0].affiliations == ["not-a-polity"]
+
+    def test_an_unknown_status_is_rejected(self):
+        from pydantic import ValidationError
+
+        from oastarmap.fiction.schema import ColonyFile
+
+        with pytest.raises(ValidationError, match="status must be one of"):
+            ColonyFile.model_validate({"colonies": [{"colony": "X", "status": "nonsense"}]})
+
+    def test_absent_assignments_are_reported_apart_from_unresolved_stars(self, built):
+        """Two different failures: no such colony, versus its star did not resolve."""
+        stats = built["manifest"]["stats"]
+        assert stats["assignments_absent"] == ["Euchong"]
+        assert len(stats["assignments_awaiting_star"]) > 10
+
+    def test_most_assignments_land(self, built):
+        assert built["manifest"]["stats"]["assigned"] > 140

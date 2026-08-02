@@ -353,6 +353,10 @@ export class DetailPanel {
       });
     }
 
+    if (colony?.status) {
+      rows.push({ label: 'Status', value: colony.status, warn: colony.status !== 'special' });
+    }
+    if (colony?.note) rows.push({ label: 'Note', value: colony.note });
     if (colony?.distance_disagrees) {
       rows.push({
         label: "Orion's Arm distance",
@@ -369,8 +373,15 @@ export class DetailPanel {
           ? designations.join(' · ')
           : 'star',
       rows,
-      polities: this.politiesFor('star', index),
-      associationSource: this.sourceLineFor('star', index),
+      polities: [
+        ...this.politiesFor('star', index),
+        ...(colony?.affiliations ?? []).map(
+          (id) => this.sources.fiction?.polities.find((p) => p.id === id)?.name ?? id,
+        ),
+      ],
+      associationSource:
+        this.sourceLineFor('star', index) ??
+        (colony?.affiliations.length ? this.sources.innerSphere?.dataset.source.citation ?? null : null),
       citation: stars.dataset.source.citation,
       distancePc: distance,
       focus: { x, y, z, standoff: pc(Math.max(distance * 0.12, 2)) },

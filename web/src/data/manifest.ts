@@ -216,6 +216,11 @@ export interface Colony {
   method: string;
   /** Source and catalogue disagree on distance by 15-50%. */
   distance_disagrees: boolean;
+  /** Polity ids; more than one is a genuine shared presence. */
+  affiliations: string[];
+  /** "special", "abandoned" or "blight" — none of which is an affiliation. */
+  status: string;
+  note: string;
 }
 
 export interface InnerSphereData {

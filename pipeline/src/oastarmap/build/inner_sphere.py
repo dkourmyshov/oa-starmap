@@ -20,6 +20,7 @@ will fix them.
 from __future__ import annotations
 
 import math
+import re
 from collections import Counter
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -28,12 +29,34 @@ from typing import Any
 import numpy as np
 
 from oastarmap.build.writer import write_json
-from oastarmap.fiction.schema import InnerSphereFile
+from oastarmap.fiction.resolve import normalise
+from oastarmap.fiction.schema import ColonyFile, FictionFile, InnerSphereFile
 from oastarmap.fiction.starnames import StarResolver, is_absent_catalogue, verify_distance
 from oastarmap.paths import DATA_OUT_DIR, FICTION_DIR
 from oastarmap.transform.frame import PC_TO_LY
 
 INNER_SPHERE_FILE = "inner_sphere.yaml"
+COLONIES_FILE = "colonies.yaml"
+POLITIES_FILE = "polities.yaml"
+
+_SPLIT_NAMES = re.compile(r"\s*[/&]\s*")
+_PARENTHETICAL = re.compile(r"\s*\([^)]*\)")
+
+
+def colony_keys(name: str) -> list[str]:
+    """Every form of a colony name worth matching on.
+
+    The table packs several names into one cell —
+    "Atlantis/Prometheus/Daedalus" is one system holding three named entities
+    belonging to three different polities — and qualifies others
+    parenthetically, as in "Nike (Bolobo Colony)". Both the whole cell and each
+    component are indexed, so an assignment can name either.
+    """
+    cleaned = _PARENTHETICAL.sub("", name).strip()
+    forms = [name.strip(), cleaned]
+    forms += [piece.strip() for piece in _SPLIT_NAMES.split(cleaned)]
+    return [normalise(f) for f in forms if f]
+
 
 SOURCE_URL = "https://www.orionsarm.com/eg-topic/45bcbcab90032"
 SOURCE_TITLE = "The Stars of the Inner Sphere"
@@ -60,6 +83,9 @@ class InnerSphereStats:
     distance_disagreement: list[dict[str, Any]] = field(default_factory=list)
     unresolved: list[str] = field(default_factory=list)
     absent_catalogue: list[str] = field(default_factory=list)
+    assigned: int = 0
+    assignments_awaiting_star: list[str] = field(default_factory=list)
+    assignments_absent: list[str] = field(default_factory=list)
 
     def as_dict(self) -> dict[str, Any]:
         return {
@@ -70,6 +96,9 @@ class InnerSphereStats:
             "distance_disagreement": self.distance_disagreement,
             "unresolved": sorted(self.unresolved),
             "absent_catalogue": sorted(self.absent_catalogue),
+            "assigned": self.assigned,
+            "assignments_awaiting_star": sorted(self.assignments_awaiting_star),
+            "assignments_absent": sorted(self.assignments_absent),
         }
 
 
@@ -113,6 +142,24 @@ def build_inner_sphere(
 
     stats = InnerSphereStats()
     source = InnerSphereFile.load(source_path)
+
+    assignments = ColonyFile.load(source_path.with_name(COLONIES_FILE))
+    known_polities = {p.id for p in FictionFile.load(source_path.with_name(POLITIES_FILE)).polities}
+    unknown = sorted(
+        {a for entry in assignments.colonies for a in entry.affiliations} - known_polities
+    )
+    if unknown:
+        raise ValueError(f"colonies.yaml cites unknown affiliations: {unknown}")
+
+    # Index the assignments by every form of their colony name, so a name given
+    # as one component of a compound cell still finds its row.
+    by_key: dict[str, Any] = {}
+    for entry in assignments.colonies:
+        for name in [entry.colony, *entry.also]:
+            for key in colony_keys(name):
+                by_key.setdefault(key, entry)
+    used: set[str] = set()
+
     colonies: list[dict[str, Any]] = []
 
     for row in source.systems:
@@ -146,6 +193,28 @@ def build_inner_sphere(
             # Kept, but the two sources genuinely disagree about where it is.
             stats.distance_disagreement.append(report)
 
+        # A cell may name several entities; each can carry its own assignment.
+        assigned = []
+        for key in colony_keys(row.colony) + colony_keys(row.star):
+            entry = by_key.get(key)
+            if entry is not None and entry.colony not in {a.colony for a in assigned}:
+                assigned.append(entry)
+                used.add(entry.colony)
+
+        affiliations: list[str] = []
+        statuses: list[str] = []
+        notes: list[str] = []
+        for entry in assigned:
+            for affiliation in entry.affiliations:
+                if affiliation not in affiliations:
+                    affiliations.append(affiliation)
+            if entry.status and entry.status not in statuses:
+                statuses.append(entry.status)
+            if entry.note:
+                notes.append(entry.note)
+        if affiliations or statuses:
+            stats.assigned += 1
+
         stats.methods[match.method] += 1
         stats.resolved += 1
         colonies.append(
@@ -153,6 +222,9 @@ def build_inner_sphere(
                 "star_index": match.index,
                 "star": row.star,
                 "colony": row.colony,
+                "affiliations": affiliations,
+                "status": statuses[0] if statuses else "",
+                "note": " ".join(notes),
                 "spectral_type": row.spectral_type,
                 "mass_sol": row.mass_sol,
                 "luminosity_sol": row.luminosity_sol,
@@ -161,6 +233,24 @@ def build_inner_sphere(
                 "distance_disagrees": disagreement > DISTANCE_AGREES,
             }
         )
+
+    # An assignment that reached no star is silent data loss, but it has two
+    # quite different causes and they need separating. Either the table has no
+    # such colony at all, or it has the row and the star name failed to resolve —
+    # the second is a gap in resolution, not in the fiction.
+    in_table: set[str] = set()
+    for row in source.systems:
+        in_table.update(colony_keys(row.colony))
+        in_table.update(colony_keys(row.star))
+
+    for entry in assignments.colonies:
+        if entry.colony in used:
+            continue
+        keys = [k for name in [entry.colony, *entry.also] for k in colony_keys(name)]
+        if any(key in in_table for key in keys):
+            stats.assignments_awaiting_star.append(entry.colony)
+        else:
+            stats.assignments_absent.append(entry.colony)
 
     colonies.sort(key=lambda c: (c["distance_ly"], c["star"]))
 
@@ -241,4 +331,15 @@ def format_report(entry: dict[str, Any]) -> str:
         )
     if stats["unresolved"]:
         lines.append(f"             {len(stats['unresolved'])} unresolved by name")
+    lines.append(f"             {stats['assigned']} carry a polity assignment")
+    if stats["assignments_awaiting_star"]:
+        lines.append(
+            f"             {len(stats['assignments_awaiting_star'])} assignments wait on "
+            f"a star that did not resolve"
+        )
+    if stats["assignments_absent"]:
+        lines.append(
+            f"             {len(stats['assignments_absent'])} assignments name no row in "
+            f"the table: {', '.join(stats['assignments_absent'])}"
+        )
     return "\n".join(lines)

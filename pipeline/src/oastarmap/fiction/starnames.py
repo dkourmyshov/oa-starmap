@@ -146,7 +146,10 @@ _COMPONENT = re.compile(r"\s+([A-D])[a-d]?$")
 _HD = re.compile(r"HD\s*(\d+)", re.I)
 _HIP = re.compile(r"HIP\s*(\d+)", re.I)
 _GLIESE = re.compile(r"(?:Gliese|Gl|GJ)\s*([\d.]+)\s*([A-D])?$", re.I)
-_TWO_PART = re.compile(r"([A-Za-z]+|\d+)\s+(.+)")
+# "Zeta1 Reticuli", "Alpha Centauri", "61 Cygni". The optional trailing digit on
+# a Greek name is a component number written inline: Zeta1 is the catalogue's
+# "Zet-1". Without this, Zeta1 Reticuli resolves to nothing.
+_TWO_PART = re.compile(r"([A-Za-z]+|\d+)\s*(\d+)?\s+(.+)")
 
 # Alpha Centauri A is "Alp-1 Cen" in the catalogue, B is "Alp-2". The component
 # letter becomes a numeric suffix on the Bayer letter for multiple systems.
@@ -193,14 +196,16 @@ class StarResolver:
                 if value:
                     self._by_designation.setdefault(normalise(f"{value} {constellation}"), index)
 
-    def _designation(self, head: str, tail: str, component: str) -> int | None:
+    def _designation(self, head: str, tail: str, component: str, inline: str = "") -> int | None:
         """ "Alpha Centauri" + "A" -> "Alp-1 Cen"; "61 Cygni" -> "61 Cyg"."""
         abbreviation = GENITIVE.get(tail.lower())
         if not abbreviation:
             return None
 
         lead = GREEK_NAMES.get(head.lower(), head)
-        suffix = _COMPONENT_SUFFIX.get(component, "")
+        # An inline digit is already the component number; a trailing letter
+        # has to be translated into one.
+        suffix = inline or _COMPONENT_SUFFIX.get(component, "")
         attempts = [f"{lead} {abbreviation}"]
         if suffix:
             # Try the suffixed form first: for a double star the plain Bayer
@@ -251,7 +256,9 @@ class StarResolver:
 
         two_part = _TWO_PART.fullmatch(base)
         if two_part:
-            found = self._designation(two_part.group(1), two_part.group(2), component)
+            found = self._designation(
+                two_part.group(1), two_part.group(3), component, two_part.group(2) or ""
+            )
             if found is not None:
                 return StarMatch(found, "bayer/flamsteed")
 

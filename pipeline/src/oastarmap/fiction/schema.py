@@ -291,6 +291,64 @@ class InnerSphereFile(BaseModel):
         return cls.model_validate(raw)
 
 
+COLONY_STATUSES = frozenset({"", "special", "abandoned", "blight"})
+
+
+class ColonyAssignment(BaseModel):
+    """One Inner Sphere colony and what it belongs to."""
+
+    colony: str
+    """Matched against the colony column of ``inner_sphere.yaml``."""
+
+    affiliations: list[str] = Field(default_factory=list)
+    """Polity ids. More than one is a genuine shared presence, not a mistake."""
+
+    also: list[str] = Field(default_factory=list)
+    """Spellings the Inner Sphere table uses for the same colony.
+
+    `colony` holds the name as the source article gives it; where the table
+    disagrees, the difference is recorded here rather than by silently adopting
+    the table's spelling. The astronomer is Guo Shoujing, so "Guo-Shuo Jing" is
+    the table's error and "Guo-Shou Jing" stays the name.
+    """
+
+    status: str = ""
+    """What is not an affiliation: special, abandoned or blight."""
+
+    note: str = ""
+
+    @field_validator("status")
+    @classmethod
+    def _known_status(cls, value: str) -> str:
+        if value not in COLONY_STATUSES:
+            raise ValueError(f"status must be one of {sorted(COLONY_STATUSES)}, got {value!r}")
+        return value
+
+
+class ColonyFile(BaseModel):
+    """The top level of ``fiction/colonies.yaml``."""
+
+    colonies: list[ColonyAssignment] = Field(default_factory=list)
+
+    @model_validator(mode="after")
+    def _unique(self) -> ColonyFile:
+        seen: set[str] = set()
+        for entry in self.colonies:
+            if entry.colony in seen:
+                raise ValueError(f"duplicate colony assignment {entry.colony!r}")
+            seen.add(entry.colony)
+        return self
+
+    @classmethod
+    def load(cls, path: Path) -> ColonyFile:
+        if not path.exists():
+            return cls()
+        raw: Any = yaml.safe_load(path.read_text(encoding="utf-8"))
+        if not isinstance(raw, dict):
+            raise ValueError(f"{path} must contain a mapping at the top level")
+        return cls.model_validate(raw)
+
+
 class AliasFile(BaseModel):
     """The top level of ``fiction/aliases.yaml``."""
 

@@ -219,6 +219,66 @@ polities:
     # Really two, the Umma of the Core and the Umma of the Shell, recorded as one
     # until the distinction matters here.
 
+  - id: cyberian-network
+    name: Cyberian Network
+    color: "#64B5F6"
+    kind: polity
+    source: eg-system-articles
+
+  - id: deeper-covenant
+    name: Deeper Covenant
+    color: "#9575CD"
+    kind: polity
+    source: eg-system-articles
+
+  - id: diamond-network
+    name: Diamond Network
+    color: "#4FC3F7"
+    kind: polity
+    source: eg-system-articles
+
+  - id: fomalhaut-acquisition-society
+    name: Fomalhaut Acquisition Society
+    color: "#FF8A65"
+    kind: polity
+    source: eg-system-articles
+
+  - id: silicon-generation
+    name: Silicon Generation
+    color: "#90A4AE"
+    kind: polity
+    source: eg-system-articles
+
+  - id: solipsist-panvirtuality
+    name: Solipsist Panvirtuality
+    color: "#7986CB"
+    kind: polity
+    source: eg-system-articles
+
+  - id: solsys-organization
+    name: Solsys Organization
+    color: "#FFF176"
+    kind: polity
+    source: eg-system-articles
+
+  - id: technorapture-hypernation
+    name: Technorapture Hypernation
+    color: "#BA68C8"
+    kind: polity
+    source: eg-system-articles
+
+  - id: terragen-federation
+    name: Terragen Federation
+    color: "#4DD0E1"
+    kind: polity
+    source: eg-system-articles
+    # Distinct from the Orion Federation above, which came off the political map.
+
+  - id: utopia-sphere
+    name: Utopia Sphere
+    color: "#F48FB1"
+    source: eg-system-articles
+
   - id: xenosophont
     name: Xenosophont
     color: "#BCAAA4"

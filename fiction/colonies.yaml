@@ -1,0 +1,347 @@
+# Orion's Arm polity assignments for the Inner Sphere colonies.
+#
+# Hand-authored. `colony` is matched against the `colony` column of
+# `inner_sphere.yaml`, and through it to a real star. That column often carries
+# several names for one system — "Atlantis/Prometheus/Daedalus" is one system
+# holding three named entities belonging to three different polities — so
+# matching splits on "/" and "&" and ignores parentheticals, and a star may end
+# up with more than one affiliation. That is a real shared presence, not a
+# mistake, and is preserved rather than collapsed.
+#
+# Where the table's spelling differs from the name used here, `colony` gives the
+# name as the source article uses it and the note records the discrepancy.
+#
+# `status` marks what is not a polity affiliation at all:
+#   special    - a minor polity, an independent, several polities at once, or
+#                otherwise a case that does not reduce to one owner
+#   abandoned  - abandoned or destroyed
+#   blight     - lost to a blight
+
+colonies:
+  - colony: 'Rachel/New Gaia'
+    affiliations: [caretaker-gods]
+    note: 'Two names for the one system, as the table has it.'
+  - colony: 'Othelia'
+    affiliations: [caretaker-gods]
+    note: 'With some Non-Coercive Zone presence.'
+  - colony: 'Forest of Life'
+    affiliations: [caretaker-gods]
+  - colony: 'Prometheus'
+    affiliations: [communion-of-worlds]
+  - colony: 'Dionysos'
+    affiliations: [communion-of-worlds]
+  - colony: 'Goldilocks'
+    affiliations: [communion-of-worlds]
+    note: 'Not the Solar Dominion''s Goldilocks ISO.'
+  - colony: 'Procyon'
+    affiliations: [cyberian-network]
+  - colony: 'Arcturus'
+    affiliations: [cyberian-network]
+  - colony: 'Orinoco'
+    affiliations: [cyberian-network]
+  - colony: 'Mithras'
+    affiliations: [cyberian-network]
+  - colony: 'Yin-Yang'
+    affiliations: [deeper-covenant]
+  - colony: 'Praxis-Gnosis'
+    affiliations: [deeper-covenant]
+  - colony: 'Midnight Pearl'
+    affiliations: [deeper-covenant]
+  - colony: 'MyuvYin'
+    affiliations: [deeper-covenant]
+  - colony: 'The Violets'
+    affiliations: [diamond-network]
+  - colony: 'Red Dwarf Kings'
+    affiliations: [diamond-network]
+  - colony: 'Luyten'
+    affiliations: [diamond-network]
+  - colony: 'Kaggen'
+    affiliations: [diamond-network]
+  - colony: 'Altair'
+    affiliations: [diamond-network]
+  - colony: 'Tjetvir'
+    affiliations: [diamond-network]
+  - colony: 'Mokupuni'
+    affiliations: [diamond-network]
+  - colony: 'Wachowski Prime'
+    affiliations: [diamond-network]
+  - colony: 'Fomalhaut'
+    affiliations: [fomalhaut-acquisition-society]
+  - colony: 'Barawatten'
+    affiliations: [keter-dominion]
+  - colony: 'Lam Wai-Chun'
+    affiliations: [keter-dominion]
+  - colony: 'Ain Soph Aur'
+    affiliations: [keter-dominion]
+  - colony: 'Branswerg'
+    affiliations: [keter-dominion]
+  - colony: 'Barboro'
+    affiliations: [keter-dominion]
+  - colony: 'Ceres Mater'
+    affiliations: [keter-dominion]
+    note: 'Also the birthplace of Utopia.'
+  - colony: 'Pme chemu fus'
+    affiliations: [keter-dominion]
+  - colony: 'M''Buto'
+    affiliations: [metasoft, nocozo]
+    note: 'Joint.'
+  - colony: 'NewRoot'
+    affiliations: [metasoft]
+  - colony: 'Monostheria'
+    affiliations: [metasoft]
+  - colony: 'Anahita'
+    affiliations: [metasoft]
+  - colony: 'Beta Pictoris'
+    affiliations: [metasoft]
+  - colony: 'Hamal'
+    affiliations: [metasoft, nocozo]
+    note: 'Joint.'
+  - colony: 'Landau'
+    affiliations: [metasoft]
+  - colony: 'Brin'
+    affiliations: [metasoft]
+  - colony: 'Byrdis & Ka Yvanti'
+    affiliations: [mutual-progress-association]
+  - colony: 'Halcyon'
+    affiliations: [mutual-progress-association]
+  - colony: 'Rolf''s Donut'
+    affiliations: [mutual-progress-association]
+  - colony: 'Ridgewell'
+    affiliations: [mutual-progress-association]
+  - colony: 'Oikoumene'
+    affiliations: [mutual-progress-association]
+  - colony: 'Karol Ring'
+    affiliations: [mutual-progress-association]
+  - colony: 'Kiyoshi'
+    affiliations: [mutual-progress-association]
+  - colony: 'Ixeway'
+    affiliations: [mutual-progress-association]
+  - colony: 'Daffy'
+    affiliations: [negentropy-alliance]
+  - colony: 'The Seat of Judgement'
+    affiliations: [negentropy-alliance]
+  - colony: 'Gatlida'
+    affiliations: [nocozo]
+  - colony: 'Nova'
+    affiliations: [nocozo]
+  - colony: 'Keid'
+    affiliations: [nocozo]
+    note: 'The planet Twilight.'
+  - colony: 'Terranova'
+    affiliations: [nocozo]
+  - colony: 'Hamashta'
+    affiliations: [nocozo]
+  - colony: 'Sesharia'
+    affiliations: [nocozo]
+  - colony: 'Zarathustra'
+    affiliations: [nocozo]
+  - colony: 'Lombardo'
+    affiliations: [nocozo]
+  - colony: 'Merrion'
+    affiliations: [nocozo]
+  - colony: 'Frei'
+    affiliations: [nocozo]
+  - colony: 'Atlantis'
+    affiliations: [nocozo]
+  - colony: 'New Mars'
+    affiliations: [nocozo]
+  - colony: 'Audubon'
+    affiliations: [nocozo]
+  - colony: 'Bolobo'
+    affiliations: [nocozo]
+  - colony: 'Nike'
+    affiliations: [nocozo]
+    note: 'The table calls it ''Nike (Bolobo Colony)''.'
+  - colony: 'Alpamis'
+    affiliations: [nocozo]
+  - colony: 'Hammerstein'
+    affiliations: [nocozo]
+  - colony: 'Rufus'
+    affiliations: [nocozo]
+  - colony: 'Noyce'
+    affiliations: [nocozo]
+  - colony: 'Wega'
+    affiliations: [nocozo]
+  - colony: 'Gacrux'
+    affiliations: [nocozo]
+    note: 'Loosely; close links with the Disarchy.'
+  - colony: 'Nadia'
+    affiliations: [nocozo]
+  - colony: 'Cog'
+    affiliations: [silicon-generation]
+  - colony: 'Shamash'
+    affiliations: [solar-dominion]
+  - colony: 'Guo-Shou Jing'
+    affiliations: [solar-dominion]
+    also: ['Guo-Shuo Jing']
+    note: 'Nominally. The table spells it ''Guo-Shuo Jing''; the astronomer is Guo Shoujing, so the source appears to have transposed the vowels.'
+  - colony: 'Pandya'
+    affiliations: [solar-dominion]
+  - colony: 'Fons Luminis'
+    affiliations: [solar-dominion]
+  - colony: 'Eden'
+    affiliations: [solar-dominion]
+  - colony: 'Klarus'
+    affiliations: [solar-dominion]
+  - colony: 'Porrima'
+    affiliations: [solar-dominion]
+  - colony: 'Daedalus'
+    affiliations: [solar-dominion]
+  - colony: 'Goldilocks ISO'
+    affiliations: [solar-dominion]
+    note: 'Not the Communion of Worlds'' Goldilocks.'
+  - colony: 'Chalawan'
+    affiliations: [solar-dominion]
+  - colony: 'Dante'
+    affiliations: [solar-dominion]
+  - colony: 'Mizar'
+    affiliations: [solar-dominion]
+  - colony: 'Abydos'
+    affiliations: [solar-dominion]
+  - colony: 'The World of Forking Paths'
+    affiliations: [solipsist-panvirtuality]
+    note: 'Loosely.'
+  - colony: 'Panvirtuality 1'
+    affiliations: [solipsist-panvirtuality]
+  - colony: 'Alcor'
+    affiliations: [solipsist-panvirtuality]
+  - colony: 'Solsys'
+    affiliations: [solsys-organization]
+    note: 'Shared with the Caretaker God GAIA.'
+  - colony: 'Akela'
+    affiliations: [solsys-organization]
+  - colony: 'Sirius'
+    affiliations: [solsys-organization]
+  - colony: 'Rihal'
+    affiliations: [solsys-organization]
+  - colony: 'Proxima'
+    affiliations: [sophic-league]
+  - colony: 'Alsafi'
+    affiliations: [sophic-league]
+    note: 'Especially the planet Penglai.'
+  - colony: 'Hwii'
+    affiliations: [sophic-league]
+    note: 'Lukewarm.'
+  - colony: 'New Taylor'
+    affiliations: [sophic-league]
+  - colony: 'Errai'
+    affiliations: [sophic-league, utopia-sphere]
+    note: 'Joint.'
+  - colony: 'Liaris Rosette'
+    affiliations: [sophic-league]
+  - colony: 'Wadai'
+    affiliations: [sophic-league]
+    note: 'Also in the Celestia add-on, as EG 471.'
+  - colony: 'Regulus'
+    affiliations: [sophic-league]
+  - colony: 'Turing'
+    affiliations: [technorapture-hypernation]
+  - colony: 'The Gigaverse'
+    affiliations: [technorapture-hypernation]
+  - colony: 'Unon-Duuz'
+    affiliations: [terragen-federation]
+  - colony: 'Dorangloon'
+    affiliations: [terragen-federation]
+  - colony: 'Glim'
+    affiliations: [terragen-federation]
+  - colony: 'New Earth'
+    affiliations: [terragen-federation]
+  - colony: 'New Duibbiyat'
+    affiliations: [terragen-federation]
+  - colony: 'Whirlygig'
+    affiliations: [terragen-federation]
+  - colony: 'Zavijava'
+    affiliations: [utopia-sphere]
+  - colony: 'Schaiffer''s World'
+    affiliations: [utopia-sphere]
+  - colony: 'New Callisto'
+    affiliations: [utopia-sphere]
+  - colony: 'Rajand'
+    affiliations: [zoeific-biopolity]
+  - colony: 'Euchong'
+    affiliations: [zoeific-biopolity]
+    note: 'Majority but not all. Absent from the Inner Sphere table entirely, so it resolves to nothing and is recorded here for when a source supplies it.'
+  - colony: 'Neo-Helix'
+    affiliations: [zoeific-biopolity]
+  - colony: 'Chloris'
+    affiliations: [zoeific-biopolity]
+  - colony: 'Ecotopia'
+    affiliations: [zoeific-biopolity]
+  - colony: 'Frog''s Head'
+    affiliations: [zoeific-biopolity]
+    note: 'Loosely.'
+  - colony: 'Zallach-Whige'
+    affiliations: [zoeific-biopolity]
+  - colony: 'Qjellto'
+    affiliations: [zoeific-biopolity]
+    note: 'With a Utopia Sphere enclave.'
+  - colony: 'Sacredtree'
+    affiliations: [zoeific-biopolity]
+  - colony: 'Cenauri'
+    status: special
+  - colony: 'Barnard''s Star'
+    status: special
+  - colony: 'Ran'
+    status: special
+  - colony: 'Tiwa'
+    status: special
+  - colony: 'Piazzi & Bessel'
+    status: special
+    note: 'Two colonies, listed together by the source.'
+  - colony: 'Jinvanco'
+    status: special
+  - colony: 'Howling Sky'
+    status: special
+  - colony: 'Packrat sporehome'
+    status: special
+  - colony: 'Resshuna'
+    status: special
+  - colony: 'The Organic Ascension Alliance'
+    status: special
+  - colony: 'Aolai'
+    status: special
+  - colony: 'Lux'
+    status: special
+  - colony: 'Benes'
+    status: special
+  - colony: 'Resonance'
+    status: special
+  - colony: 'Copernicus'
+    status: special
+  - colony: 'Capella'
+    status: special
+  - colony: 'Nimbus'
+    status: special
+  - colony: 'Titawin'
+    status: special
+  - colony: 'Lucida'
+    status: special
+  - colony: 'Felicidade'
+    status: special
+  - colony: 'Lilif'
+    status: special
+  - colony: 'Aldebaran'
+    status: special
+  - colony: 'Algol'
+    status: special
+  - colony: 'Ithiplumo'
+    status: abandoned
+  - colony: 'Dustbuilders'
+    also: ['Dustbuilder Colony']
+    status: abandoned
+    note: 'The table calls it ''Dustbuilder Colony''.'
+  - colony: 'Iota Persei'
+    status: abandoned
+    note: 'A star name; the table''s colony for it is ''Iota Belt''.'
+  - colony: 'Denebola'
+    status: abandoned
+  - colony: 'Mynti'
+    status: abandoned
+  - colony: 'Makintairas'
+    status: abandoned
+  - colony: 'Caph'
+    status: abandoned
+  - colony: 'Conver Ky'
+    status: abandoned
+  - colony: 'Tabit'
+    status: blight
