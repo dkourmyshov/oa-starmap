@@ -272,6 +272,7 @@ export interface Manifest {
     hii?: HiiDataset;
     oastars?: OAStarsDataset;
     inner_sphere?: InnerSphereDataset;
+    worlds?: WorldsDataset;
     fiction?: FictionDataset;
   };
 }
@@ -394,12 +395,68 @@ export interface FictionData {
   frontierFlagged: number;
 }
 
+export interface WorldEntry {
+  name: string;
+  /** planet, moon, system, megastructure, volume — descriptive. */
+  kind: string;
+  system: string;
+  primary: string;
+  also: string[];
+  affiliation: string;
+  uncertain: boolean;
+  article: string;
+  note: string;
+  /** star | oa_star | direction | constellation | none. */
+  method: string;
+  /** Set when the world binds to a catalogue star, which then carries it. */
+  star_index: number | null;
+  /** Set when it binds to a Celestia add-on star, by the add-on's designation. */
+  oa_star: string;
+  /** Present only when the world carries coordinates of its own, in parsecs. */
+  x: number | null;
+  y: number | null;
+  z: number | null;
+  distance_pc: number | null;
+  /**
+   * Half-angle of the cone the source actually allows. Zero when it gave
+   * coordinates; the constellation's enclosing radius when it gave a
+   * constellation; null when the world is not positioned here at all.
+   */
+  direction_error_deg: number | null;
+  /** The same error as a length at this distance, which is the legible form. */
+  direction_error_ly: number | null;
+  /** Half the extent, for a world that is a volume rather than a point. */
+  radius_pc: number | null;
+}
+
+export interface WorldsDataset {
+  count: number;
+  files: { worlds: { file: string; bytes: number } };
+  stats: {
+    total: number;
+    by_method: Record<string, number>;
+    unlocated: string[];
+    unresolved: string[];
+  };
+  source: { description: string; citation: string; url: string };
+}
+
+export interface WorldData {
+  worlds: WorldEntry[];
+  /** By star index, for the ones a catalogue star already carries. */
+  byStar: Map<number, WorldEntry>;
+  /** By add-on designation, likewise. */
+  byOAStar: Map<string, WorldEntry>;
+  dataset: WorldsDataset;
+}
+
 export interface LoadedData {
   stars: StarData;
   clusters: ClusterData | null;
   hii: HiiData | null;
   oaStars: OAStarData | null;
   innerSphere: InnerSphereData | null;
+  worlds: WorldData | null;
   fiction: FictionData | null;
 }
 
@@ -421,9 +478,25 @@ export async function loadAll(): Promise<LoadedData> {
   const innerSphere = manifest.datasets.inner_sphere
     ? await loadInnerSphere(manifest.datasets.inner_sphere)
     : null;
+  const worlds = manifest.datasets.worlds ? await loadWorlds(manifest.datasets.worlds) : null;
   const fiction = manifest.datasets.fiction ? await loadFiction(manifest.datasets.fiction) : null;
 
-  return { stars, clusters, hii, oaStars, innerSphere, fiction };
+  return { stars, clusters, hii, oaStars, innerSphere, worlds, fiction };
+}
+
+async function loadWorlds(dataset: WorldsDataset): Promise<WorldData> {
+  const worlds = await fetchJson<WorldEntry[]>(dataset.files.worlds.file);
+  const byStar = new Map<number, WorldEntry>();
+  const byOAStar = new Map<string, WorldEntry>();
+  for (const world of worlds) {
+    // First writer wins, and the file is sorted by name, so a second world in
+    // the same system does not displace the first. Both are still listed.
+    if (world.star_index !== null && !byStar.has(world.star_index)) {
+      byStar.set(world.star_index, world);
+    }
+    if (world.oa_star && !byOAStar.has(world.oa_star)) byOAStar.set(world.oa_star, world);
+  }
+  return { worlds, byStar, byOAStar, dataset };
 }
 
 async function loadInnerSphere(dataset: InnerSphereDataset): Promise<InnerSphereData> {

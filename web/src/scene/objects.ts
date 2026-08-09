@@ -20,14 +20,22 @@ import type {
   HiiData,
   OAStarData,
   StarData,
+  WorldData,
 } from '../data/manifest';
 
 export const KIND_STAR = 0;
 export const KIND_CLUSTER = 1;
 export const KIND_HII = 2;
 export const KIND_OASTAR = 3;
+export const KIND_WORLD = 4;
 
-export const KIND_NAMES = ['star', 'cluster', 'HII region', "Orion's Arm star"] as const;
+export const KIND_NAMES = [
+  'star',
+  'cluster',
+  'HII region',
+  "Orion's Arm star",
+  'world',
+] as const;
 
 /**
  * Gaia-era cluster searches name their finds after the survey. There are 5,396 of
@@ -117,6 +125,16 @@ const BASE_IMPORTANCE = {
    * not zero, because an unlabelled marker is a dot that cannot be looked up.
    */
   oaStarNumbered: 0.32,
+
+  /**
+   * A canonical world the Encyclopaedia Galactica names and locates.
+   *
+   * Level with the named add-on systems, and for the same reason: there are a
+   * dozen of them, each carries an article, and they are what the map is for.
+   * A world bound to a star does not use this — it raises that star's score
+   * instead, since the star is what gets drawn.
+   */
+  world: 3.0,
 };
 
 export interface ObjectRef {
@@ -140,6 +158,7 @@ export interface LayerVisibility {
   cluster: boolean;
   hii: boolean;
   oastar: boolean;
+  world: boolean;
   /** Show only objects Orion's Arm has claimed. */
   oaOnly?: boolean;
 }
@@ -169,6 +188,7 @@ export interface PickOptions {
 const PICK_PRIORITY: Record<number, number> = {
   [KIND_STAR]: 0,
   [KIND_OASTAR]: 0,
+  [KIND_WORLD]: 0,
   [KIND_CLUSTER]: 1,
   [KIND_HII]: 2,
 };
@@ -216,13 +236,15 @@ export class ObjectIndex {
     fiction: FictionData | null,
     oaStars: OAStarData | null = null,
     colonies: Map<number, Colony> | null = null,
+    worlds: WorldData | null = null,
   ) {
     const clusterCount = clusters?.count ?? 0;
     const hiiCount = hii?.count ?? 0;
     const oaCount = oaStars?.count ?? 0;
+    const worldCount = worlds?.worlds.length ?? 0;
     // Upper bound: hidden Orion's Arm entries are skipped, so the arrays are
     // allocated for the worst case and `count` is trimmed to what was filled.
-    const total = stars.count + clusterCount + hiiCount + oaCount;
+    const total = stars.count + clusterCount + hiiCount + oaCount + worldCount;
 
     this.px = new Float32Array(total);
     this.py = new Float32Array(total);
@@ -261,10 +283,21 @@ export class ObjectIndex {
       this.kind[at] = KIND_STAR;
       this.srcIndex[at] = i;
 
+      // A canonical world outranks a colony-table row, which outranks the
+      // catalogue: an Encyclopaedia article is the most specific thing said
+      // about a system, and it is what a reader is looking for.
+      const world = worlds?.byStar.get(i);
+      if (world) {
+        this.labels[at] = world.system || world.name;
+        this.importance[at] = BASE_IMPORTANCE.world;
+        this.isOA[at] = 1;
+        this.labelColor[at] = polityColor.get(world.affiliation);
+      }
+
       // What Orion's Arm calls the system takes precedence over what the sky
       // calls the star: inside the Inner Sphere that is the point of the map.
       const colony = colonies?.get(i);
-      if (colony?.colony) {
+      if (colony?.colony && !this.labels[at]) {
         this.labels[at] = colony.colony;
         // The polity bonus is what a bound cluster gets; a settled system has
         // the same claim on attention and was losing to clusters without it.
@@ -366,7 +399,8 @@ export class ObjectIndex {
         // The label is curated: the add-on's own comments name whichever of
         // the system, its primary or its inhabitants a contributor thought of.
         const entry = oaStars.names[i];
-        this.labels[at] = entry?.label || entry?.name || '';
+        const bound = entry ? worlds?.byOAStar.get(entry.name) : undefined;
+        this.labels[at] = bound?.system || bound?.name || entry?.label || entry?.name || '';
         // Anything but a bare JD/YTS number counts as named: a designation the
         // add-on chose (Cantor), a system its comment gives, or curation we
         // added. Only the unadorned catalogue numbers rank low.
@@ -377,6 +411,32 @@ export class ObjectIndex {
           ? BASE_IMPORTANCE.oaStarNamed
           : BASE_IMPORTANCE.oaStarNumbered;
         if (entry?.affiliation) this.labelColor[at] = polityColor.get(entry.affiliation);
+        if (this.labels[at]) labelled.push(at);
+        at++;
+      }
+    }
+
+    if (worlds) {
+      for (let i = 0; i < worlds.worlds.length; i++) {
+        const world = worlds.worlds[i];
+        // A world bound to a star or an add-on star is already indexed as that
+        // object, above. Indexing it again would put two clickable things where
+        // the setting describes one place.
+        if (world.x === null) continue;
+
+        this.px[at] = world.x;
+        this.py[at] = world.y as number;
+        this.pz[at] = world.z as number;
+        // A volume has a real extent; a point world's circle is only its
+        // direction error, which must not make it clickable across the sky.
+        this.radius[at] = world.radius_pc ?? 0;
+        this.absMag[at] = NaN;
+        this.kind[at] = KIND_WORLD;
+        this.srcIndex[at] = i;
+        this.isOA[at] = 1;
+        this.labels[at] = world.name;
+        this.importance[at] = BASE_IMPORTANCE.world;
+        this.labelColor[at] = polityColor.get(world.affiliation);
         if (this.labels[at]) labelled.push(at);
         at++;
       }
@@ -428,6 +488,7 @@ export class ObjectIndex {
       if (kind === KIND_CLUSTER && !visible.cluster) continue;
       if (kind === KIND_HII && !visible.hii) continue;
       if (kind === KIND_OASTAR && !visible.oastar) continue;
+      if (kind === KIND_WORLD && !visible.world) continue;
       if (visible.oaOnly && !this.isOA[id]) continue;
 
       const x = this.px[id];
@@ -452,7 +513,7 @@ export class ObjectIndex {
         const apparent = this.absMag[id] + 5 * Math.log10(Math.max(distance, 1e-6) / 10);
         if (apparent > magnitudeLimit) continue;
         this.screenR[id] = 0;
-      } else if (kind === KIND_OASTAR) {
+      } else if (kind === KIND_OASTAR || kind === KIND_WORLD) {
         // Drawn as constant-size markers regardless of the magnitude limit, so
         // gating them on it here would make visible markers unclickable.
         this.screenR[id] = 0;
@@ -502,7 +563,7 @@ export class ObjectIndex {
       const kind = this.kind[id];
 
       let score: number;
-      if (kind === KIND_STAR || kind === KIND_OASTAR) {
+      if (kind === KIND_STAR || kind === KIND_OASTAR || kind === KIND_WORLD) {
         if (distance > tolerance) continue;
         score = distance;
       } else if (kind === KIND_CLUSTER) {

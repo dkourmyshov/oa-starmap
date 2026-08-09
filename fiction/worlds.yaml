@@ -1,0 +1,187 @@
+# Canonical Orion's Arm places, and where the setting puts them.
+#
+# Hand-authored from the Encyclopaedia Galactica, one entry per article. This is
+# the file for places the EG names and locates; `oa_stars.yaml` is a machine
+# import of the Celestia add-on, and `inner_sphere.yaml` is a machine import of
+# the colony tables. Where two of them describe the same place, this file is the
+# one that carries the article.
+#
+# Locations differ in kind, and the difference is recorded rather than averaged
+# away, because it is real:
+#
+#   star:          a catalogue star. Exact in all three dimensions.
+#   oa_star:       an entry of the Celestia add-on, which asserts a position.
+#   ra_deg/dec_deg a direction taken from a named object, with `distance`
+#                  supplying the radius. Exact, but from two different sources.
+#   constellation: a region of sky, with `distance` supplying the radius. The
+#                  radius is exact and the direction is good only to the width of
+#                  the constellation — for Canis Major, fourteen degrees, which
+#                  at 800 ly is a couple of hundred light years across.
+#   (none)         the setting describes the place without locating it.
+#
+# Distances carry their unit always. Orion's Arm quotes light years and astronomy
+# quotes parsecs; the factor between them is 3.26, which is big enough to be
+# wrong and small enough to look right.
+
+worlds:
+  # ---- Caretaker Gods ----------------------------------------------------
+
+  - name: Beelzebub
+    kind: planet
+    affiliation: caretaker-gods
+    article: https://www.orionsarm.com/eg-article/461707a3ab1e3
+    location:
+      constellation: Canis Major
+      distance: 805 ly
+
+  - name: Chorus
+    kind: planet
+    system: Cantor
+    affiliation: caretaker-gods
+    article: https://www.orionsarm.com/eg-article/48fe1da7a2205
+    location:
+      oa_star: Cantor
+    note: >-
+      The add-on independently confirms the article: it places Cantor in Carina
+      at 2,736 ly against the article's Carina at 2,735 ly. Two sources agreeing
+      to four figures is worth recording, because the next entry down is a case
+      where they do not.
+
+  - name: Corambytia Protectorate
+    kind: volume
+    affiliation: caretaker-gods
+    extent: 290 ly
+    article: https://www.orionsarm.com/eg-article/46412ddb422d6
+    location:
+      constellation: Antlia
+      distance: 1500 ly
+    note: >-
+      A volume, not a point. Antlia's enclosing radius is 13 degrees, so at this
+      distance the direction is uncertain by about 350 ly — more than the
+      protectorate's own 290 ly diameter. The sphere drawn for it is the right
+      size in the wrong place, and the uncertainty circle is the honest part.
+
+  - name: Stanislaw
+    kind: planet
+    system: Enigma
+    affiliation: caretaker-gods
+    uncertain: true
+    article: https://www.orionsarm.com/eg-article/491222f681eed
+    location:
+      constellation: Canis Major
+      distance: 4598 ly
+    note: >-
+      Located by constellation despite the add-on carrying a star called Enigma,
+      because the two do not agree. The add-on puts it in Columba at 4,598 ly —
+      RA 81.7, Dec -37.5 — and the article says Canis Major, whose nearest edge
+      is some fifteen degrees away. Columba is not a boundary case for Canis
+      Major. The add-on's distance is adopted since the article gives none, but
+      its direction is not, and the entry is marked uncertain. Two other
+      positions for Enigma are in play: the Enigma Cluster is canonically NGC
+      6755, which is 3,478 pc from the add-on's star and roughly opposite it on
+      the sky. Three sources, three directions.
+
+  - name: Darwin
+    kind: planet
+    system: Delta Pavonis
+    also: [Aristotle]
+    affiliation: caretaker-gods
+    article: https://www.orionsarm.com/eg-article/48f4a40a5df0a
+    location:
+      hip: 99240
+    note: >-
+      Delta Pavonis, 19.9 ly, one of the nearest systems here. The system's own
+      article is at https://www.orionsarm.com/eg-article/4ed5b7fa7fe22.
+
+  - name: Kalii
+    kind: planet
+    system: Arctar
+    affiliation: caretaker-gods
+    article: https://www.orionsarm.com/eg-article/46478982497db
+    location:
+      hip: 9024
+    note: HIP 9024 is HD 11697, in Perseus at 354 ly.
+
+  - name: Duxed
+    kind: moon
+    system: Piaget
+    primary: Pacol
+    affiliation: caretaker-gods
+    article: https://www.orionsarm.com/eg-article/5f01de4e81446
+    location:
+      constellation: Carina
+      distance: 639 ly
+    note: Duxed is a moon of the gas giant Pacol, in the Piaget system.
+
+  - name: Earth
+    kind: planet
+    system: Sol
+    affiliation: caretaker-gods
+    article: https://www.orionsarm.com/eg-article/462eae95003f8
+    location:
+      star: Sol
+    note: >-
+      Under GAIA. Already on the map as the origin of the coordinate frame, so
+      this entry adds the article rather than a position.
+
+  - name: Evermore
+    kind: megastructure
+    affiliation: caretaker-gods
+    article: https://www.orionsarm.com/eg-article/48fbc25f56967
+    location:
+      note: >-
+        Not located. The article places it "at the edge of the Disarchy", and
+        the Disarchy is itself given by landmarks rather than coordinates: a
+        volume stretching outward from Lynga 2 toward Feinstein 1 and the SN
+        1006 nebula, with incursions Solward. Lynga 2 and Feinstein 1 are both
+        in the open cluster catalogue, so the axis could be drawn; the remnant
+        of SN 1006 is not, and "the edge" is not a point in any case.
+    note: A blend of the Caretaker Gods with the Negentropy Alliance and the NoCoZo.
+
+  - name: Hyvixnym
+    kind: planet
+    affiliation: caretaker-gods
+    article: https://www.orionsarm.com/eg-article/692a119117331
+    location:
+      constellation: Taurus
+      distance: 3876 ly
+    note: A rogue planet, bound to no star.
+
+  - name: Macrystis
+    kind: moon
+    system: Savastos
+    primary: Lontis
+    affiliation: caretaker-gods
+    article: https://www.orionsarm.com/eg-article/4edf88339f50b
+    location:
+      ra_deg: 51.3178
+      dec_deg: 60.4837
+      distance: 2050 ly
+      near: HIP 15941 / HD 20898
+    note: >-
+      The one entry here with an exact direction and an asserted distance. The
+      article gives 03h 25m 16.26s, +60d 29' 01.4", which is HIP 15941 to four
+      decimal places — but that star is at 3,300 ly and Savastos is given as
+      2,050 ly, so the system lies along the same line of sight rather than at
+      the star. Macrystis is a moon of the gas giant Lontis.
+
+  - name: Sand
+    kind: planet
+    system: Sand
+    primary: Neo Rah
+    affiliation: caretaker-gods
+    article: https://www.orionsarm.com/eg-article/49120c5060646
+    location:
+      constellation: Gemini
+      distance: 1120 ly
+
+  - name: Taln
+    kind: planet
+    affiliation: caretaker-gods
+    article: https://www.orionsarm.com/eg-article/57f2790443640
+    location:
+      hd: 27836
+    note: >-
+      The article gives 134 ly; the catalogue puts HD 27836 at 156 ly, a 17 per
+      cent difference of the size that separates a pre-Gaia parallax from a
+      modern one. Bound anyway, and the catalogue distance is the one drawn.

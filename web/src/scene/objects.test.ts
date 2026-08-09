@@ -18,7 +18,7 @@ import { KIND_CLUSTER, KIND_HII, KIND_OASTAR, KIND_STAR, ObjectIndex, bayerLabel
 const WIDTH = 800;
 const HEIGHT = 600;
 
-const ALL_VISIBLE = { star: true, cluster: true, hii: true, oastar: true };
+const ALL_VISIBLE = { star: true, cluster: true, hii: true, oastar: true, world: true };
 
 function camera(): THREE.PerspectiveCamera {
   const cam = new THREE.PerspectiveCamera(60, WIDTH / HEIGHT, 0.1, 1e6);
@@ -278,7 +278,7 @@ describe('picking', () => {
       null,
       null,
     );
-    const hidden = { ...pickOptions, visible: { star: false, cluster: true, hii: true, oastar: true } };
+    const hidden = { ...pickOptions, visible: { star: false, cluster: true, hii: true, oastar: true, world: true } };
     const id = index.pick(cam, WIDTH / 2, HEIGHT / 2, hidden, 20);
     expect(index.ref(id as number).kind).toBe(KIND_CLUSTER);
   });
@@ -377,7 +377,7 @@ describe('label layout', () => {
       null,
       null,
     );
-    const hidden = { ...layoutOptions, visible: { star: false, cluster: true, hii: true, oastar: true } };
+    const hidden = { ...layoutOptions, visible: { star: false, cluster: true, hii: true, oastar: true, world: true } };
     expect(index.layout(cam, hidden)).toHaveLength(0);
   });
 
@@ -461,7 +461,7 @@ describe('Orion\u2019s Arm stars', () => {
     );
     const hidden = {
       ...pickOptions,
-      visible: { star: true, cluster: true, hii: true, oastar: false },
+      visible: { star: true, cluster: true, hii: true, oastar: false, world: true },
     };
     expect(index.pick(cam, WIDTH / 2, HEIGHT / 2, hidden, 10)).toBeNull();
   });

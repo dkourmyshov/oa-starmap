@@ -16,16 +16,18 @@ import type {
   InnerSphereData,
   OAStarData,
   StarData,
+  WorldData,
 } from '../data/manifest';
 import {
   KIND_CLUSTER,
   KIND_HII,
   KIND_OASTAR,
   KIND_STAR,
+  KIND_WORLD,
   type ObjectIndex,
   bayerLabel,
 } from '../scene/objects';
-import { type DistanceUnit, type Parsecs, formatDistance, pc } from '../units';
+import { PC_TO_LY, type DistanceUnit, type Parsecs, formatDistance, pc } from '../units';
 
 interface Row {
   label: string;
@@ -53,6 +55,7 @@ export interface DetailSources {
   hii: HiiData | null;
   oaStars: OAStarData | null;
   innerSphere: InnerSphereData | null;
+  worlds: WorldData | null;
   fiction: FictionData | null;
   objects: ObjectIndex;
 }
@@ -225,7 +228,83 @@ export class DetailPanel {
     if (kind === KIND_CLUSTER) return this.describeCluster(index, unit);
     if (kind === KIND_HII) return this.describeHii(index, unit);
     if (kind === KIND_OASTAR) return this.describeOAStar(index, unit);
+    if (kind === KIND_WORLD) return this.describeWorld(index, unit);
     return null;
+  }
+
+  /**
+   * A canonical world, positioned from a distance and a direction.
+   *
+   * Only the ones carrying their own coordinates reach here. A world bound to a
+   * star is described by that star's panel, which is the object the reader
+   * clicked.
+   *
+   * The panel leads with how the position was arrived at, because for most of
+   * these the answer is "a distance and a constellation" and the direction is
+   * good to something like a thousand light years. A reader who takes the dot
+   * literally has been misled by the map, and this row is where the map says so.
+   */
+  private describeWorld(index: number, unit: DistanceUnit): Detail | null {
+    const worlds = this.sources.worlds;
+    const world = worlds?.worlds[index];
+    if (!worlds || !world || world.x === null) return null;
+
+    const x = world.x;
+    const y = world.y as number;
+    const z = world.z as number;
+    const distance = world.distance_pc ?? Math.sqrt(x * x + y * y + z * z);
+
+    const rows: Row[] = [
+      { label: 'Distance from Sol', value: formatDistance(pc(distance), unit) },
+    ];
+
+    if (world.method === 'constellation') {
+      rows.push({
+        label: 'Position',
+        // The distance is the precise half of it, and saying so is not a
+        // hedge — it is the more useful of the two facts.
+        value: 'distance exact, direction only to the constellation',
+        warn: true,
+      });
+      if (world.direction_error_ly !== null) {
+        rows.push({
+          label: 'Direction uncertain by',
+          value: `${formatDistance(pc(world.direction_error_ly / PC_TO_LY), unit)} across`,
+          warn: true,
+        });
+      }
+    } else if (world.method === 'direction') {
+      rows.push({ label: 'Position', value: 'direction exact, distance as given' });
+    }
+
+    if (world.kind) rows.push({ label: 'Kind', value: world.kind });
+    if (world.system && world.system !== world.name) {
+      rows.push({ label: 'System', value: world.system });
+    }
+    if (world.primary) rows.push({ label: 'Primary', value: world.primary });
+    if (world.also.length) rows.push({ label: 'Also called', value: world.also.join(', ') });
+    if (world.radius_pc) {
+      rows.push({
+        label: 'Extent',
+        value: `${formatDistance(pc(world.radius_pc * 2), unit)} across`,
+      });
+    }
+    if (world.note) rows.push({ label: 'Note', value: world.note });
+
+    const affiliation = this.sources.fiction?.polities.find((p) => p.id === world.affiliation);
+
+    return {
+      title: world.name,
+      subtitle: "Orion's Arm world",
+      rows,
+      polities: affiliation
+        ? [world.uncertain ? `${affiliation.name} (uncertain)` : affiliation.name]
+        : [],
+      associationSource: world.article || null,
+      citation: worlds.dataset.source.citation,
+      distancePc: distance,
+      focus: { x, y, z, standoff: pc(Math.max(distance * 0.12, 2)) },
+    };
   }
 
   /**

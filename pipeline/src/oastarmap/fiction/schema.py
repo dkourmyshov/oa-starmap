@@ -13,6 +13,7 @@ import re
 from pathlib import Path
 from typing import Any
 
+import astropy.units as u
 import yaml
 from pydantic import BaseModel, Field, field_validator, model_validator
 
@@ -368,6 +369,202 @@ class AliasFile(BaseModel):
 
     @classmethod
     def load(cls, path: Path) -> AliasFile:
+        if not path.exists():
+            return cls()
+        raw: Any = yaml.safe_load(path.read_text(encoding="utf-8"))
+        if not isinstance(raw, dict):
+            raise ValueError(f"{path} must contain a mapping at the top level")
+        return cls.model_validate(raw)
+
+
+class Constellation(BaseModel):
+    """One row of the generated constellation table."""
+
+    name: str
+    abbreviation: str
+    ra_deg: float
+    dec_deg: float
+    radius_deg: float
+    """Half-angle of the cone about the centre containing the whole figure."""
+    area_sq_deg: float
+
+    centroid_inside: bool = True
+    """Whether the centre of area lies within the figure.
+
+    False for Serpens, whose two halves sit either side of Ophiuchus, putting its
+    centre of area in Hercules. A world located only by such a constellation
+    cannot be placed by centroid at all.
+    """
+
+
+class ConstellationFile(BaseModel):
+    """The top level of ``fiction/constellations.yaml``."""
+
+    constellations: list[Constellation] = Field(default_factory=list)
+
+    def by_name(self) -> dict[str, Constellation]:
+        """Keyed by full name and by abbreviation, both case-folded."""
+        table: dict[str, Constellation] = {}
+        for entry in self.constellations:
+            table[entry.name.casefold()] = entry
+            table[entry.abbreviation.casefold()] = entry
+        return table
+
+    @classmethod
+    def load(cls, path: Path) -> ConstellationFile:
+        if not path.exists():
+            return cls()
+        raw: Any = yaml.safe_load(path.read_text(encoding="utf-8"))
+        if not isinstance(raw, dict):
+            raise ValueError(f"{path} must contain a mapping at the top level")
+        return cls.model_validate(raw)
+
+
+DISTANCE = re.compile(r"^\s*([-+]?\d+(?:\.\d+)?)\s*(ly|lyr|pc|kpc)\s*$", re.I)
+_DISTANCE_UNITS = {"ly": u.lyr, "lyr": u.lyr, "pc": u.pc, "kpc": u.kpc}
+
+
+def parse_distance(value: str) -> u.Quantity:
+    """Parse a distance literal, which must carry its unit.
+
+    The unit is mandatory rather than defaulted because this project mixes the
+    two conventions by design: Orion's Arm quotes light years, astronomy quotes
+    parsecs, and the two differ by a factor of 3.26 — large enough to be wrong
+    and small enough to look plausible. A bare number would let an author's
+    assumption pass silently into a coordinate.
+    """
+    match = DISTANCE.match(value)
+    if not match:
+        raise ValueError(
+            f"distance must be a number with a unit, e.g. '805 ly' or '250 pc'; got {value!r}"
+        )
+    return float(match.group(1)) * _DISTANCE_UNITS[match.group(2).lower()]
+
+
+class WorldLocation(BaseModel):
+    """How a world's position is known — and how precisely, per axis.
+
+    Orion's Arm locates places the way an observer would, and the resulting
+    positions are not uniform in quality. A world given as "805 ly, Canis Major"
+    has an exact radius and a direction good to fourteen degrees; one bound to a
+    catalogue star is exact in all three. Recording *which* is what lets the map
+    draw the difference rather than flattening both into a dot.
+
+    Exactly one of the four methods must be given, or none at all for a place the
+    setting describes without locating.
+    """
+
+    hip: int | None = None
+    hd: int | None = None
+    star: str = ""
+    """A real star, by Hipparcos number, HD number, or catalogue name."""
+
+    oa_star: str = ""
+    """An entry of ``oa_stars.yaml``, by the add-on's own designation."""
+
+    ra_deg: float | None = None
+    dec_deg: float | None = None
+    """An exact direction, with ``distance`` supplying the radius."""
+
+    constellation: str = ""
+    """A region of sky, with ``distance`` supplying the radius."""
+
+    distance: str = ""
+    """Distance from Sol, with its unit: '805 ly'. Required by the last two."""
+
+    near: str = ""
+    """What the direction was taken from, for the record. Not resolved."""
+
+    note: str = ""
+
+    @property
+    def method(self) -> str:
+        if self.hip is not None or self.hd is not None or self.star:
+            return "star"
+        if self.oa_star:
+            return "oa_star"
+        if self.ra_deg is not None and self.dec_deg is not None:
+            return "direction"
+        if self.constellation:
+            return "constellation"
+        return "none"
+
+    @model_validator(mode="after")
+    def _one_method(self) -> WorldLocation:
+        given = [
+            bool(self.hip is not None or self.hd is not None or self.star),
+            bool(self.oa_star),
+            bool(self.ra_deg is not None or self.dec_deg is not None),
+            bool(self.constellation),
+        ]
+        if sum(given) > 1:
+            raise ValueError("give only one of star / oa_star / ra+dec / constellation")
+        if (self.ra_deg is None) != (self.dec_deg is None):
+            raise ValueError("ra_deg and dec_deg must be given together")
+        if self.method in {"direction", "constellation"} and not self.distance:
+            raise ValueError(f"a {self.method} location needs a distance")
+        if self.distance:
+            parse_distance(self.distance)
+        return self
+
+
+class World(BaseModel):
+    """A canonical Orion's Arm place, and where the setting puts it."""
+
+    name: str
+    kind: str = "planet"
+    """planet, moon, system, megastructure, volume — descriptive, not structural."""
+
+    system: str = ""
+    """The system it is in, where that has a name of its own."""
+
+    primary: str = ""
+    """The system's star, where the setting names it separately."""
+
+    also: list[str] = Field(default_factory=list)
+    """Other names the setting uses for the same place."""
+
+    affiliation: str = ""
+    uncertain: bool = False
+
+    extent: str = ""
+    """Diameter, for a place that is a volume rather than a point."""
+
+    location: WorldLocation = Field(default_factory=WorldLocation)
+    article: str = ""
+    note: str = ""
+
+    @field_validator("article")
+    @classmethod
+    def _http(cls, value: str) -> str:
+        if value and not value.startswith(("http://", "https://")):
+            raise ValueError(f"article must be an absolute URL, got {value!r}")
+        return value
+
+    @field_validator("extent")
+    @classmethod
+    def _extent(cls, value: str) -> str:
+        if value:
+            parse_distance(value)
+        return value
+
+
+class WorldFile(BaseModel):
+    """The top level of ``fiction/worlds.yaml``."""
+
+    worlds: list[World] = Field(default_factory=list)
+
+    @model_validator(mode="after")
+    def _unique_names(self) -> WorldFile:
+        seen: set[str] = set()
+        for world in self.worlds:
+            if world.name in seen:
+                raise ValueError(f"duplicate world {world.name!r}")
+            seen.add(world.name)
+        return self
+
+    @classmethod
+    def load(cls, path: Path) -> WorldFile:
         if not path.exists():
             return cls()
         raw: Any = yaml.safe_load(path.read_text(encoding="utf-8"))

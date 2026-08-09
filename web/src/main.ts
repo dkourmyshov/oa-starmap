@@ -10,6 +10,7 @@ import { HiiField } from './layers/hiiField';
 import { OAStarField } from './layers/oaStarField';
 import { SettledField } from './layers/settledField';
 import { StarField } from './layers/starField';
+import { WorldField } from './layers/worldField';
 import { ObjectIndex } from './scene/objects';
 import { Viewer } from './scene/viewer';
 import { DetailPanel } from './ui/detail';
@@ -65,6 +66,7 @@ async function main(): Promise<void> {
   let hiiField: HiiField | null = null;
   let oaStarField: OAStarField | null = null;
   let settledField: SettledField | null = null;
+  let worldField: WorldField | null = null;
   let loaded;
   try {
     loaded = await loadAll();
@@ -107,6 +109,14 @@ async function main(): Promise<void> {
     viewer.scene.add(oaStarField.points);
   }
 
+  // Last of the point layers: a world the setting names should never be buried
+  // under a star it does not mention.
+  if (loaded.worlds) {
+    worldField = new WorldField(loaded.worlds, loaded.fiction);
+    viewer.scene.add(worldField.points);
+    viewer.scene.add(worldField.circles);
+  }
+
   if (loaded.clusters) {
     clusterField = new ClusterField(loaded.clusters, loaded.fiction);
     clusterField.setPolityMode(true);
@@ -122,6 +132,7 @@ async function main(): Promise<void> {
       cluster: Boolean(clusterField),
       hii: Boolean(hiiField),
       oastar: Boolean(oaStarField),
+      world: Boolean(worldField),
       oaOnly: false,
     },
   };
@@ -133,6 +144,7 @@ async function main(): Promise<void> {
     loaded.fiction,
     loaded.oaStars,
     loaded.innerSphere?.byStar ?? null,
+    loaded.worlds,
   );
 
   const detail = new DetailPanel(
@@ -143,6 +155,7 @@ async function main(): Promise<void> {
       hii: loaded.hii,
       oaStars: loaded.oaStars,
       innerSphere: loaded.innerSphere,
+      worlds: loaded.worlds,
       fiction: loaded.fiction,
       objects,
     },
@@ -279,6 +292,10 @@ async function main(): Promise<void> {
       onOAStarsVisible: (value) => {
         if (oaStarField) oaStarField.visible = value;
         view.visible.oastar = value;
+        // The canonical worlds are the same kind of statement as the add-on
+        // stars — a place the setting asserts — so they follow the same toggle.
+        if (worldField) worldField.visible = value;
+        view.visible.world = value;
       },
       onLabelsVisible: (value) => {
         labels.visible = value;
@@ -330,6 +347,7 @@ async function main(): Promise<void> {
     const height = viewer.renderer.domElement.height;
     clusterField?.setViewportHeight(height);
     hiiField?.setViewportHeight(height);
+    worldField?.setViewportHeight(height);
 
     const rect = canvas.getBoundingClientRect();
     labels.update(
