@@ -26,6 +26,7 @@ import {
   KIND_WORLD,
   type ObjectIndex,
   bayerLabel,
+  systemLabel,
 } from '../scene/objects';
 import { PC_TO_LY, type DistanceUnit, type Parsecs, formatDistance, pc } from '../units';
 
@@ -42,6 +43,14 @@ interface Detail {
   polities: string[];
   /** Which OA source the polity association was read from, if any. */
   associationSource: string | null;
+  /**
+   * Canonical worlds in this system.
+   *
+   * A list, because a system is not one world — Sol has Earth and much else. The
+   * panel names every one it holds rather than promoting the first to stand for
+   * the system.
+   */
+  worlds?: { name: string; kind: string; article: string }[];
   citation: string;
   /** Distance from Sol in pc, for the frontier check. */
   distancePc: number;
@@ -139,7 +148,7 @@ export class DetailPanel {
     const fiction = this.sources.fiction;
     const beyond = fiction ? detail.distancePc > fiction.frontierPc : false;
 
-    if (detail.polities.length > 0 || beyond) {
+    if (detail.polities.length > 0 || beyond || detail.worlds?.length) {
       const note = el('div', 'note');
       note.appendChild(el('div', 'note-line', "Orion's Arm"));
       if (detail.polities.length > 0) {
@@ -147,6 +156,13 @@ export class DetailPanel {
         if (detail.associationSource) {
           note.appendChild(el('div', 'note-line', `after ${detail.associationSource}`));
         }
+      }
+      for (const world of detail.worlds ?? []) {
+        const line = el('div', 'row');
+        line.appendChild(el('span', 'label', world.kind));
+        line.appendChild(el('span', 'value', world.name));
+        note.appendChild(line);
+        if (world.article) note.appendChild(el('div', 'note-line', world.article));
       }
       if (beyond && fiction) {
         // Stated on the panel rather than only implied by the missing colour,
@@ -281,7 +297,9 @@ export class DetailPanel {
     if (world.system && world.system !== world.name) {
       rows.push({ label: 'System', value: world.system });
     }
-    if (world.primary) rows.push({ label: 'Primary', value: world.primary });
+    if (world.parent && world.parent !== world.system) {
+      rows.push({ label: 'Orbits', value: world.parent });
+    }
     if (world.also.length) rows.push({ label: 'Also called', value: world.also.join(', ') });
     if (world.radius_pc) {
       rows.push({
@@ -360,12 +378,14 @@ export class DetailPanel {
     const affiliation = this.sources.fiction?.polities.find(
       (p) => p.id === entry.affiliation,
     );
+    const here = this.sources.worlds?.byOAStar.get(entry.name) ?? [];
 
     if (entry.note) rows.push({ label: 'Note', value: entry.note });
 
     return {
-      title: entry.label || entry.name,
+      title: (here.length ? systemLabel(here) : '') || entry.label || entry.name,
       subtitle: "Orion's Arm system",
+      worlds: here.map((w) => ({ name: w.name, kind: w.kind, article: w.article })),
       rows,
       polities: affiliation
         ? [entry.uncertain ? `${affiliation.name} (uncertain)` : affiliation.name]
@@ -412,6 +432,7 @@ export class DetailPanel {
     ].filter(Boolean);
 
     const colony = this.sources.innerSphere?.byStar.get(index);
+    const here = this.sources.worlds?.byStar.get(index) ?? [];
 
     const rows: Row[] = [
       { label: 'Distance from Sol', value: formatDistance(pc(distance), unit) },
@@ -449,20 +470,29 @@ export class DetailPanel {
       });
     }
 
+    // The system's name, never a world's: labelling Sol "Earth" would misname
+    // the system the moment a second world is recorded there.
+    const systemName = here.length ? systemLabel(here) : '';
+
     return {
-      title: colony?.colony || title,
-      subtitle: colony?.colony
-        ? [`Orion's Arm system`, title, ...designations].filter(Boolean).join(' · ')
-        : designations.length
-          ? designations.join(' · ')
-          : 'star',
+      title: systemName || colony?.colony || title,
+      subtitle:
+        systemName || colony?.colony
+          ? [`Orion's Arm system`, title, ...designations].filter(Boolean).join(' · ')
+          : designations.length
+            ? designations.join(' · ')
+            : 'star',
       rows,
       polities: [
         ...this.politiesFor('star', index),
         ...(colony?.affiliations ?? []).map(
           (id) => this.sources.fiction?.polities.find((p) => p.id === id)?.name ?? id,
         ),
-      ],
+        ...here
+          .map((w) => this.sources.fiction?.polities.find((p) => p.id === w.affiliation)?.name)
+          .filter((name): name is string => Boolean(name)),
+      ].filter((name, i, all) => all.indexOf(name) === i),
+      worlds: here.map((w) => ({ name: w.name, kind: w.kind, article: w.article })),
       associationSource:
         this.sourceLineFor('star', index) ??
         (colony?.affiliations.length ? this.sources.innerSphere?.dataset.source.citation ?? null : null),

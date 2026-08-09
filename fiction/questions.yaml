@@ -1,0 +1,199 @@
+# Questions for the Orion's Arm community.
+#
+# Hand-authored half of `questions.md`, which the build regenerates. The other
+# half is counted straight out of the datasets — unresolved names, distance
+# disagreements, landmarks past the frontier — because those change with every
+# edit and a hand-maintained list of them would be stale within a week.
+#
+# What belongs here is what the build cannot know it does not know: a
+# contradiction between two sources that both parsed fine, a reading of an
+# article that could go either way, a category question about the setting.
+#
+# Each entry should state what we hold, what the sources say, what the map does
+# in the meantime, and what would settle it. `status: open` puts it in the
+# questions list; `status: settled` moves it to the record of things checked, so
+# a question answered once is not asked again.
+
+questions:
+  - id: enigma-position
+    topic: Enigma system
+    status: open
+    severity: contradiction
+    summary: Three sources put the Enigma system in three different directions.
+    detail: >-
+      The Celestia add-on carries a star named Enigma at RA 81.7, Dec -37.5,
+      1,410 pc — that is in Columba, 4,598 ly out. The EG article for Stanislaw
+      says Canis Major, whose nearest boundary is some fifteen degrees away;
+      Columba is not a boundary case for it. Separately, the Enigma Cluster is
+      canonically NGC 6755, which sits 3,478 pc from the add-on's star and
+      roughly opposite it on the sky. No star in the add-on comes within 1,549 pc
+      of NGC 6755.
+    map_does: >-
+      Stanislaw is placed by constellation in Canis Major at the add-on's
+      distance, and marked uncertain. The add-on's direction is not used.
+    would_settle: >-
+      Which of the three is canonical, or whether the add-on's Enigma is a
+      different object that happens to share the name.
+    links:
+      - https://www.orionsarm.com/eg-article/491222f681eed
+      - https://www.orionsarm.com/eg-article/491aecf1478f9
+
+  - id: aristotle-identity
+    topic: Darwin / Aristotle
+    status: settled
+    severity: reading
+    summary: Aristotle is Orion's Arm's name for the star, not a second world.
+    detail: >-
+      Given to us as "Darwin (planet), Aristotle, Delta Pavonis (system)", which
+      read equally well as an alternate name for the planet or as a body of its
+      own. It is neither: Aristotle is what Orion's Arm calls Delta Pavonis
+      itself.
+    map_does: >-
+      The system is labelled Aristotle, by the rule that a primary with a name
+      of its own gives the system its name. Darwin is its planet, and the
+      catalogue designations stay on the star's panel.
+    would_settle: Settled.
+    links:
+      - https://www.orionsarm.com/eg-article/48f4a40a5df0a
+      - https://www.orionsarm.com/eg-article/4ed5b7fa7fe22
+
+  - id: jd-is-hd-in-ngc-6633
+    topic: Celestia add-on numbering
+    status: open
+    severity: finding
+    summary: >-
+      Some of the add-on's "JD" designations in NGC 6633 are HD numbers of real
+      stars, not Orion's Arm's own numbering.
+    detail: >-
+      A positional cross-match against the real star catalogue at one arcminute
+      finds JD 169512 sitting 0.0 arcmin from HD 169512, and the same for JD
+      169842, JD 170054, JD 170200 and JD 170293. Five exact digit matches at
+      zero separation is not coincidence. Whether the rule holds for all 52
+      entries in that cluster group is untested — most of the rest are not in our
+      catalogue at all, so there is nothing to match them against.
+    map_does: >-
+      All 52 are hidden, so nothing is drawn twice. The `oa_designation` flag
+      still treats a JD prefix as Orion's Arm numbering, which for these is
+      wrong.
+    would_settle: >-
+      Whether the add-on's NGC 6633 file was built from HD numbers throughout,
+      and whether JD elsewhere in the add-on means anything different.
+
+  - id: stellar-umma-count
+    topic: Stellar Umma
+    status: open
+    severity: category
+    summary: The Stellar Umma is really two polities, recorded here as one.
+    detail: >-
+      Noted as the Umma of the Core and the Umma of the Shell. We hold one
+      polity entry and one member system, a brown dwarf the add-on labels only
+      "Brown Dwarf in the Stellar Umma Region".
+    map_does: One polity, one colour.
+    would_settle: >-
+      Whether the two should be separate polities on the map, and which of them
+      that brown dwarf belongs to.
+    links:
+      - https://www.orionsarm.com/eg-article/484494c1bddf1
+
+  - id: muuh-polity-structure
+    topic: Muuh
+    status: open
+    severity: category
+    summary: Do the Muuh have polities in the sense terragen civilisation does?
+    detail: >-
+      Muuhome is classified as Xenosophont rather than under a named polity,
+      because the Muuh are independent — they have their own System of Response
+      and need no terragen protection — but whether they organise into anything
+      answering to an empire is not something we found stated.
+    map_does: >-
+      Recorded with kind `xenosophont` rather than `meta-empire`, so the map does
+      not assert a political structure the setting may not have.
+    would_settle: >-
+      Whether "Muuh" should name a polity, or stay a clade with no polity of its
+      own.
+    links:
+      - https://www.orionsarm.com/eg-article/47bb872326fa1
+
+  - id: corambytia-extent
+    topic: Corambytia Protectorate
+    status: open
+    severity: precision
+    summary: The direction uncertainty is larger than the protectorate itself.
+    detail: >-
+      Given as 290 ly across, 1,500 ly from Sol, in Antlia. Antlia's enclosing
+      radius is 13 degrees, so at that distance the direction is uncertain by
+      about 350 ly — more than the volume's own diameter. The sphere the map
+      draws is the right size in demonstrably the wrong place.
+    map_does: >-
+      Drawn at the constellation centre with an uncertainty circle around it, so
+      the error is visible rather than implied.
+    would_settle: Coordinates, or a nearby landmark to hang the direction on.
+    links:
+      - https://www.orionsarm.com/eg-article/46412ddb422d6
+
+  - id: evermore-location
+    topic: Evermore
+    status: open
+    severity: unlocated
+    summary: Evermore is described but not located.
+    detail: >-
+      Placed "at the edge of the Disarchy", and the Disarchy is itself given by
+      landmarks rather than coordinates — a volume stretching outward from Lynga
+      2 toward Feinstein 1 and the SN 1006 nebula, with incursions Solward. Lynga
+      2 and Feinstein 1 are both in our open cluster catalogue, so that axis
+      could be drawn; the remnant of SN 1006 is not, and "the edge" is not a
+      point in any case.
+    map_does: Recorded with no position, and not drawn.
+    would_settle: A distance and a direction, or a system to bind it to.
+    links:
+      - https://www.orionsarm.com/eg-article/48fbc25f56967
+
+  - id: wadai-catalogue-absence
+    topic: Wadai
+    status: open
+    severity: data-gap
+    summary: >-
+      Wadai's star is real but in none of our catalogues, so the Inner Sphere
+      table's row for it cannot be bound.
+    detail: >-
+      Wadai appears twice — in the Celestia add-on as EG 471 at 50.5 ly, and in
+      the Inner Sphere table as WD 0230-144 at 54.4 ly. Both are the white dwarf
+      GJ 3162. At absolute magnitude 14.8 it is in neither Hipparcos nor the
+      Bright Star Catalogue, and the nearest star we hold to its position is 26
+      arcmin away at 423 pc.
+    map_does: >-
+      Drawn at the add-on's position, marked as a real object rather than an
+      asserted one, since the add-on is acting as a catalogue of last resort.
+    would_settle: >-
+      Nothing on the fiction side. This is ours to fix by adding a white dwarf
+      catalogue.
+    links:
+      - https://www.orionsarm.com/eg-article/4910e5c60edcc
+
+  - id: guo-shoujing-spelling
+    topic: Guo Shoujing
+    status: settled
+    severity: reading
+    summary: The colony table spells the astronomer's name "Guo-Shuo Jing".
+    detail: >-
+      The article uses Guo Shoujing, which is the astronomer's name; the table's
+      form looks like a transcription slip.
+    map_does: >-
+      Article spelling is authoritative, table spelling kept as an alias so the
+      row still matches.
+    would_settle: Settled by the article.
+
+  - id: cantor-position
+    topic: Cantor
+    status: settled
+    severity: confirmation
+    summary: Two independent sources agree on Cantor to four figures.
+    detail: >-
+      The EG article gives Carina at 2,735 ly. The Celestia add-on, which was not
+      consulted when that was recorded, puts it in Carina at 2,736 ly. Worth
+      recording precisely because the neighbouring entry, Enigma, is a case where
+      the same two sources disagree completely.
+    map_does: Bound to the add-on's star.
+    would_settle: Settled.
+    links:
+      - https://www.orionsarm.com/eg-article/48fe1da7a2205

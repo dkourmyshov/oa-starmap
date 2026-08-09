@@ -15,6 +15,8 @@ from oastarmap.build.hii import build_hii
 from oastarmap.build.inner_sphere import INNER_SPHERE_FILE, build_inner_sphere
 from oastarmap.build.inner_sphere import format_report as format_inner_report
 from oastarmap.build.oastars import SOURCE_URL, STARS_FILE, build_oastars
+from oastarmap.build.questions import build_questions
+from oastarmap.build.questions import format_report as format_questions_report
 from oastarmap.build.stars import build_stars
 from oastarmap.build.worlds import WORLDS_FILE, build_worlds
 from oastarmap.build.worlds import format_report as format_worlds_report
@@ -149,6 +151,11 @@ def cmd_build(args: argparse.Namespace) -> int:
     }
     write_json(DATA_OUT_DIR / "manifest.json", manifest)
 
+    # After every dataset, because it reports on all of them. Written into the
+    # repository rather than into web/public/data: it is a document for people,
+    # not a file the renderer loads.
+    questions = build_questions(datasets)
+
     for label, dataset in datasets.items():
         if label == "fiction":
             print(format_report(dataset))
@@ -163,6 +170,7 @@ def cmd_build(args: argparse.Namespace) -> int:
         print(f"  {label:<10} {dataset['count']:,} accepted  ({total_bytes / 1e6:.2f} MB)")
         for reason, count in dataset["stats"]["excluded"].items():
             print(f"             excluded {count:,} — {reason}")
+    print(format_questions_report(questions))
     print(f"\nDatasets are in {DATA_OUT_DIR}")
 
     if args.print_manifest:

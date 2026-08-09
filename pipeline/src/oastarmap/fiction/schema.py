@@ -518,8 +518,13 @@ class World(BaseModel):
     system: str = ""
     """The system it is in, where that has a name of its own."""
 
-    primary: str = ""
-    """The system's star, where the setting names it separately."""
+    parent: str = ""
+    """The body this one orbits directly, where the setting names it separately.
+
+    A star for a planet, a gas giant for a moon. Named `parent` rather than
+    `primary` because it is not always the star: Duxed and Macrystis are moons,
+    and what they orbit is Pacol and Lontis.
+    """
 
     also: list[str] = Field(default_factory=list)
     """Other names the setting uses for the same place."""
@@ -565,6 +570,64 @@ class WorldFile(BaseModel):
 
     @classmethod
     def load(cls, path: Path) -> WorldFile:
+        if not path.exists():
+            return cls()
+        raw: Any = yaml.safe_load(path.read_text(encoding="utf-8"))
+        if not isinstance(raw, dict):
+            raise ValueError(f"{path} must contain a mapping at the top level")
+        return cls.model_validate(raw)
+
+
+QUESTION_STATUS = frozenset({"open", "settled"})
+
+
+class Question(BaseModel):
+    """One thing we cannot answer from the sources we hold."""
+
+    id: str
+    topic: str
+    summary: str
+    status: str = "open"
+    severity: str = ""
+    """Free text: contradiction, reading, category, precision, data-gap…"""
+
+    detail: str = ""
+    map_does: str = ""
+    """What the map does in the absence of an answer, so the question is fair."""
+    would_settle: str = ""
+    links: list[str] = Field(default_factory=list)
+
+    @field_validator("status")
+    @classmethod
+    def _known_status(cls, value: str) -> str:
+        if value not in QUESTION_STATUS:
+            raise ValueError(f"status must be one of {sorted(QUESTION_STATUS)}, got {value!r}")
+        return value
+
+    @field_validator("id")
+    @classmethod
+    def _slug(cls, value: str) -> str:
+        if not re.fullmatch(r"[a-z0-9]+(-[a-z0-9]+)*", value):
+            raise ValueError(f"question id must be kebab-case, got {value!r}")
+        return value
+
+
+class QuestionFile(BaseModel):
+    """The top level of ``fiction/questions.yaml``."""
+
+    questions: list[Question] = Field(default_factory=list)
+
+    @model_validator(mode="after")
+    def _unique_ids(self) -> QuestionFile:
+        seen: set[str] = set()
+        for question in self.questions:
+            if question.id in seen:
+                raise ValueError(f"duplicate question id {question.id!r}")
+            seen.add(question.id)
+        return self
+
+    @classmethod
+    def load(cls, path: Path) -> QuestionFile:
         if not path.exists():
             return cls()
         raw: Any = yaml.safe_load(path.read_text(encoding="utf-8"))

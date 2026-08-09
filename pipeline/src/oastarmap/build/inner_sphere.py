@@ -82,6 +82,7 @@ class InnerSphereStats:
     rejected_distance: list[dict[str, Any]] = field(default_factory=list)
     distance_disagreement: list[dict[str, Any]] = field(default_factory=list)
     unresolved: list[str] = field(default_factory=list)
+    empty_rows: int = 0
     absent_catalogue: list[str] = field(default_factory=list)
     assigned: int = 0
     assignments_awaiting_star: list[str] = field(default_factory=list)
@@ -95,6 +96,7 @@ class InnerSphereStats:
             "rejected_distance": self.rejected_distance,
             "distance_disagreement": self.distance_disagreement,
             "unresolved": sorted(self.unresolved),
+            "empty_rows": self.empty_rows,
             "absent_catalogue": sorted(self.absent_catalogue),
             "assigned": self.assigned,
             "assignments_awaiting_star": sorted(self.assignments_awaiting_star),
@@ -169,8 +171,13 @@ def build_inner_sphere(
         if match is None:
             if is_absent_catalogue(row.star):
                 stats.absent_catalogue.append(row.star)
-            else:
+            elif row.star.strip(". "):
                 stats.unresolved.append(row.star)
+            else:
+                # The table writes "." for an empty cell. Counting one as a star
+                # name we failed to resolve puts a row on the list of open
+                # questions that nobody can ever answer.
+                stats.empty_rows += 1
             continue
 
         source_ly = _to_float(row.distance_ly)

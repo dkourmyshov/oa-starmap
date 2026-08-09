@@ -5,20 +5,26 @@
  * a catalogue star or to an add-on star is already on the map as that star, and
  * drawing it again would put two objects where the fiction describes one.
  *
- * The layer's real job is the second mark. Orion's Arm locates most places the
- * way an observer would — a distance and a constellation — which fixes the
- * radius exactly and the direction only to the width of the constellation. At
- * Hyvixnym's 3,876 ly, Taurus is 1,800 ly across. Drawing a dot at the
- * constellation's centre and stopping there would state a position twelve
- * hundred light years more precisely than the source does, so every such world
- * gets a circle at its true angular error: the dot says where the centre of the
- * region is, and the circle says how much of the sky the source actually
- * allowed. Worlds given exact coordinates get no circle, because for them there
- * is nothing to admit.
+ * Orion's Arm locates most places the way an observer would — a distance and a
+ * constellation — which fixes the radius exactly and the direction only to the
+ * width of the constellation. At Hyvixnym's 3,876 ly, Taurus is 1,800 ly across.
+ * The map must not state a position that much more precisely than its source
+ * does, so an approximately-placed world is drawn with a **broken ring** where
+ * an exactly-placed one gets a solid one.
  *
- * The circle is drawn at a true angular size, like the cluster and HII layers,
- * rather than at a constant screen size like the markers. That is the point of
- * it: an uncertainty that did not grow as you flew toward it would not be one.
+ * An earlier version drew each one's error as a circle at its true angular size.
+ * It was accurate and unusable: the circles are hundreds of light years wide by
+ * construction, so they dominated every view they appeared in, and a reader
+ * looking at the map saw uncertainty annotations rather than the setting. The
+ * broken ring costs no space at all, and the figure itself — how many light
+ * years across the direction error is — is on the detail panel, which is where a
+ * reader goes when they want the number rather than the impression.
+ *
+ * Circles remain for one thing: a world that genuinely *is* a volume. The
+ * Corambytia Protectorate is 290 ly across because the setting says so, and that
+ * is a fact about the object rather than a confession about the position. Those
+ * are drawn at a true angular size, like the cluster and HII layers, so they
+ * grow as you approach.
  */
 
 import * as THREE from 'three';
@@ -34,30 +40,33 @@ export const DEFAULT_SIZE_PX = 11.0;
 const NEUTRAL = new THREE.Color(0x9aa4bb);
 
 /**
- * Ceiling on the uncertainty circle's on-screen radius, in pixels.
+ * Ceiling on an extent circle's on-screen radius, in pixels.
  *
- * Without it, flying inside a 1,800 ly region fills the viewport with a single
- * outline and the map becomes unreadable. Clamping distorts the very quantity
- * the circle exists to report, so it is set high enough that it only ever bites
- * when the camera is already inside the region — at which point the circle has
- * stopped being informative anyway.
+ * Only bites once the camera is inside the volume, where an outline larger than
+ * the viewport has stopped conveying a size at all.
  */
 export const MAX_CIRCLE_PX = 900.0;
+
+/** Arcs in the broken ring that marks an approximate position. */
+const DASHES = 7.0;
 
 const MARKER_VERTEX = /* glsl */ `
   #include <common>
   #include <logdepthbuf_pars_vertex>
 
   attribute vec3 aColor;
+  attribute float aApprox;
 
   uniform float uSize;
 
   varying vec3 vColor;
+  varying float vApprox;
 
   void main() {
     vec4 viewPos = modelViewMatrix * vec4(position, 1.0);
     gl_Position = projectionMatrix * viewPos;
     vColor = aColor;
+    vApprox = aApprox;
     gl_PointSize = uSize;
 
     #include <logdepthbuf_vertex>
@@ -69,8 +78,10 @@ const MARKER_FRAGMENT = /* glsl */ `
   #include <logdepthbuf_pars_fragment>
 
   uniform float uOpacity;
+  uniform float uDashes;
 
   varying vec3 vColor;
+  varying float vApprox;
 
   void main() {
     vec2 offset = gl_PointCoord * 2.0 - 1.0;
@@ -81,6 +92,13 @@ const MARKER_FRAGMENT = /* glsl */ `
     // legible against the diamonds of the add-on stars, which are hollow.
     float core = 1.0 - smoothstep(0.0, 0.34, r);
     float ring = smoothstep(0.54, 0.66, r) * (1.0 - smoothstep(0.80, 0.94, r));
+
+    // Break the ring into arcs where the position is approximate. An unclosed
+    // outline reads as "not pinned down" without taking any more space than a
+    // closed one, which is the whole reason it replaced a scale-true circle.
+    float angle = atan(offset.y, offset.x) / (2.0 * PI) + 0.5;
+    float dash = smoothstep(0.30, 0.42, abs(fract(angle * uDashes) - 0.5) * 2.0);
+    ring *= mix(1.0, dash, vApprox);
 
     float alpha = clamp(core + ring, 0.0, 1.0) * uOpacity;
     if (alpha < 0.004) discard;
@@ -178,9 +196,11 @@ export class WorldField {
 
     const positions = new Float32Array(this.count * 3);
     const colors = new Float32Array(this.count * 3);
+    const approximate = new Float32Array(this.count);
 
-    // A separate, shorter list: only the worlds whose direction is uncertain
-    // have anything to draw a circle for.
+    // A separate, much shorter list: only a world that is genuinely a volume
+    // gets a circle. A direction error is not an extent, and drawing it as one
+    // buried the map.
     const circlePositions: number[] = [];
     const circleColors: number[] = [];
     const circleRadii: number[] = [];
@@ -196,13 +216,13 @@ export class WorldField {
       colors[out * 3 + 1] = color.g;
       colors[out * 3 + 2] = color.b;
 
-      // A volume has an extent of its own; a point world's circle is purely its
-      // direction error. Both are drawn the same way because both answer the
-      // same question — how much space does this entry actually claim.
-      const error = world.direction_error_deg ?? 0;
-      const spread =
-        error > 0 ? (world.distance_pc ?? 0) * Math.tan((error * Math.PI) / 180) : 0;
-      const radius = Math.max(spread, world.radius_pc ?? 0);
+      // Broken ring where the source gave a region rather than a direction.
+      approximate[out] = (world.direction_error_deg ?? 0) > 0 ? 1 : 0;
+
+      // The extent the setting states, and only that. Corambytia is 290 ly
+      // across because the article says so — a fact about the object, unlike a
+      // direction error, which is a fact about how well we know where it is.
+      const radius = world.radius_pc ?? 0;
       if (radius > 0) {
         circlePositions.push(world.x as number, world.y as number, world.z as number);
         circleColors.push(color.r, color.g, color.b);
@@ -213,12 +233,14 @@ export class WorldField {
     const geometry = new THREE.BufferGeometry();
     geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
     geometry.setAttribute('aColor', new THREE.BufferAttribute(colors, 3));
+    geometry.setAttribute('aApprox', new THREE.BufferAttribute(approximate, 1));
     geometry.boundingSphere = new THREE.Sphere(new THREE.Vector3(), Infinity);
 
     this.markerMaterial = new THREE.ShaderMaterial({
       uniforms: {
         uSize: { value: DEFAULT_SIZE_PX },
         uOpacity: { value: DEFAULT_OPACITY },
+        uDashes: { value: DASHES },
       },
       vertexShader: MARKER_VERTEX,
       fragmentShader: MARKER_FRAGMENT,
@@ -249,7 +271,7 @@ export class WorldField {
 
     this.circleMaterial = new THREE.ShaderMaterial({
       uniforms: {
-        uOpacity: { value: 0.34 },
+        uOpacity: { value: 0.45 },
         uViewportHeight: { value: 1080 },
         uMaxPx: { value: MAX_CIRCLE_PX },
       },

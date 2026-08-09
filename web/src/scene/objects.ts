@@ -137,6 +137,22 @@ const BASE_IMPORTANCE = {
   world: 3.0,
 };
 
+/**
+ * What to call a star that hosts one or more canonical worlds.
+ *
+ * The system's name wherever a world gives one, because a system is not its
+ * best-known planet — labelling Sol "Earth" would be wrong the moment Luna or
+ * Mars is added, and the same holds for every system that grows a second entry.
+ * Only where no world names a system does the label fall back to the worlds
+ * themselves, and it names them all rather than picking one arbitrarily.
+ */
+export function systemLabel(worlds: { name: string; system: string }[]): string {
+  const named = worlds.find((w) => w.system);
+  if (named) return named.system;
+  if (worlds.length <= 2) return worlds.map((w) => w.name).join(' / ');
+  return `${worlds[0].name} +${worlds.length - 1}`;
+}
+
 export interface ObjectRef {
   kind: number;
   index: number;
@@ -286,12 +302,12 @@ export class ObjectIndex {
       // A canonical world outranks a colony-table row, which outranks the
       // catalogue: an Encyclopaedia article is the most specific thing said
       // about a system, and it is what a reader is looking for.
-      const world = worlds?.byStar.get(i);
-      if (world) {
-        this.labels[at] = world.system || world.name;
+      const here = worlds?.byStar.get(i);
+      if (here?.length) {
+        this.labels[at] = systemLabel(here);
         this.importance[at] = BASE_IMPORTANCE.world;
         this.isOA[at] = 1;
-        this.labelColor[at] = polityColor.get(world.affiliation);
+        this.labelColor[at] = polityColor.get(here[0].affiliation);
       }
 
       // What Orion's Arm calls the system takes precedence over what the sky
@@ -400,7 +416,8 @@ export class ObjectIndex {
         // the system, its primary or its inhabitants a contributor thought of.
         const entry = oaStars.names[i];
         const bound = entry ? worlds?.byOAStar.get(entry.name) : undefined;
-        this.labels[at] = bound?.system || bound?.name || entry?.label || entry?.name || '';
+        this.labels[at] =
+          (bound?.length ? systemLabel(bound) : '') || entry?.label || entry?.name || '';
         // Anything but a bare JD/YTS number counts as named: a designation the
         // add-on chose (Cantor), a system its comment gives, or curation we
         // added. Only the unadorned catalogue numbers rank low.

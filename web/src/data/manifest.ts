@@ -400,7 +400,8 @@ export interface WorldEntry {
   /** planet, moon, system, megastructure, volume — descriptive. */
   kind: string;
   system: string;
-  primary: string;
+  /** The body it orbits: a star for a planet, a gas giant for a moon. */
+  parent: string;
   also: string[];
   affiliation: string;
   uncertain: boolean;
@@ -443,10 +444,16 @@ export interface WorldsDataset {
 
 export interface WorldData {
   worlds: WorldEntry[];
-  /** By star index, for the ones a catalogue star already carries. */
-  byStar: Map<number, WorldEntry>;
+  /**
+   * By star index, for the ones a catalogue star already carries.
+   *
+   * A list rather than a single entry: a system is not one world. Sol has Earth
+   * and much else, and keeping only the first would silently drop the rest as
+   * the file grows.
+   */
+  byStar: Map<number, WorldEntry[]>;
   /** By add-on designation, likewise. */
-  byOAStar: Map<string, WorldEntry>;
+  byOAStar: Map<string, WorldEntry[]>;
   dataset: WorldsDataset;
 }
 
@@ -486,15 +493,19 @@ export async function loadAll(): Promise<LoadedData> {
 
 async function loadWorlds(dataset: WorldsDataset): Promise<WorldData> {
   const worlds = await fetchJson<WorldEntry[]>(dataset.files.worlds.file);
-  const byStar = new Map<number, WorldEntry>();
-  const byOAStar = new Map<string, WorldEntry>();
+  const byStar = new Map<number, WorldEntry[]>();
+  const byOAStar = new Map<string, WorldEntry[]>();
   for (const world of worlds) {
-    // First writer wins, and the file is sorted by name, so a second world in
-    // the same system does not displace the first. Both are still listed.
-    if (world.star_index !== null && !byStar.has(world.star_index)) {
-      byStar.set(world.star_index, world);
+    if (world.star_index !== null) {
+      const at = byStar.get(world.star_index);
+      if (at) at.push(world);
+      else byStar.set(world.star_index, [world]);
     }
-    if (world.oa_star && !byOAStar.has(world.oa_star)) byOAStar.set(world.oa_star, world);
+    if (world.oa_star) {
+      const at = byOAStar.get(world.oa_star);
+      if (at) at.push(world);
+      else byOAStar.set(world.oa_star, [world]);
+    }
   }
   return { worlds, byStar, byOAStar, dataset };
 }

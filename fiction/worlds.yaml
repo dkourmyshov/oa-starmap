@@ -83,15 +83,19 @@ worlds:
 
   - name: Darwin
     kind: planet
-    system: Delta Pavonis
-    also: [Aristotle]
+    system: Aristotle
+    parent: Aristotle
     affiliation: caretaker-gods
     article: https://www.orionsarm.com/eg-article/48f4a40a5df0a
     location:
       hip: 99240
     note: >-
-      Delta Pavonis, 19.9 ly, one of the nearest systems here. The system's own
-      article is at https://www.orionsarm.com/eg-article/4ed5b7fa7fe22.
+      Aristotle is Orion's Arm's name for the star itself, not a second world —
+      it is Delta Pavonis, 19.9 ly, one of the nearest systems here. Named as
+      the system by the usual rule: where the primary has a name of its own,
+      that is what the system is called. The catalogue designations stay on the
+      star's panel. The system's own article is at
+      https://www.orionsarm.com/eg-article/4ed5b7fa7fe22.
 
   - name: Kalii
     kind: planet
@@ -105,7 +109,7 @@ worlds:
   - name: Duxed
     kind: moon
     system: Piaget
-    primary: Pacol
+    parent: Pacol
     affiliation: caretaker-gods
     article: https://www.orionsarm.com/eg-article/5f01de4e81446
     location:
@@ -150,7 +154,7 @@ worlds:
   - name: Macrystis
     kind: moon
     system: Savastos
-    primary: Lontis
+    parent: Lontis
     affiliation: caretaker-gods
     article: https://www.orionsarm.com/eg-article/4edf88339f50b
     location:
@@ -168,7 +172,7 @@ worlds:
   - name: Sand
     kind: planet
     system: Sand
-    primary: Neo Rah
+    parent: Neo Rah
     affiliation: caretaker-gods
     article: https://www.orionsarm.com/eg-article/49120c5060646
     location:
