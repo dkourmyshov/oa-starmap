@@ -158,6 +158,7 @@ def _place(
                 "system": entry.system,
                 "label": (curated.label if curated else "") or entry.system or entry.name,
                 "affiliation": curated.affiliation if curated else "",
+                "real": curated.real if curated else "",
                 "uncertain": bool(curated and curated.uncertain),
                 "article": curated.article if curated else "",
                 "note": curated.note if curated else "",
@@ -223,6 +224,7 @@ def build_oastars(stars_path: Path | None = None, out_dir: Path | None = None) -
                 "comment": record["comment"],
                 "system": record["system"],
                 "affiliation": record["affiliation"],
+                "real": record["real"],
                 "uncertain": record["uncertain"],
                 "article": record["article"],
                 "note": record["note"],
@@ -264,13 +266,19 @@ def build_oastars(stars_path: Path | None = None, out_dir: Path | None = None) -
         "selection": {
             "rule": "every star in fiction/oa_stars.yaml",
             "note": (
-                "Positions are asserted by the fiction, not observed. Not every "
-                "entry is invented: Geminga, Arkab Prior B, EG 471 and two HD "
-                "numbers are real objects the add-on supplies because Celestia's "
-                "own catalogue omits them. The oa_designation flag marks only the "
-                "entries using OA's own JD/YTS numbering, which are certainly "
-                "invented; its absence is not a claim that an object is real. "
-                "None of them matches anything in the real star dataset."
+                "Most positions are asserted by the fiction, not observed, but "
+                "not every entry is invented: Geminga, Arkab Prior B, EG 471 and "
+                "two HD numbers are real objects the add-on supplies because "
+                "Celestia's own catalogue omits them, and for those the position "
+                "is a copied measurement. The curated `real` field marks them; "
+                "the oa_designation flag marks only entries using OA's own "
+                "JD/YTS numbering, and its absence is not a claim of reality. A "
+                "positional cross-match against the real star dataset (1 arcmin, "
+                "20 per cent in distance) finds coincidences only inside NGC "
+                "6633, where several of the add-on's `JD nnnnnn` designations are "
+                "the HD number of a star we already carry — JD 169512 sits 0.0 "
+                "arcmin from HD 169512, and likewise for 169842, 170054, 170200 "
+                "and 170293. Those entries are hidden, so nothing is drawn twice."
             ),
         },
         "stats": stats.as_dict(),

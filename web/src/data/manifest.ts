@@ -170,6 +170,12 @@ export interface OAStarName {
   system: string;
   /** Polity id, or empty where the affiliation is unsettled. */
   affiliation: string;
+  /**
+   * Catalogue designation, where this entry is a real object the add-on carries
+   * only because Celestia's catalogue omits it. Non-empty means the position is
+   * a copied measurement rather than an assertion.
+   */
+  real: string;
   /** The affiliation is recorded but not asserted. */
   uncertain: boolean;
   article: string;

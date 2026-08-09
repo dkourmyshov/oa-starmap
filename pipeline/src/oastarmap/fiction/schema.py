@@ -201,6 +201,18 @@ class OASystem(BaseModel):
     affiliation: str = ""
     """Key into the polities list, or empty where the affiliation is unsettled."""
 
+    real: str = ""
+    """The real object this entry is, where it is one — a catalogue designation.
+
+    Most add-on entries are stars the setting invented, and their positions are
+    assertions. A few are real objects the add-on carries only because Celestia's
+    own catalogue omits them, and there the position is a copied measurement, not
+    a claim. The map draws the two differently, so the distinction cannot be
+    guessed from the name: an earlier flag tried a regex over designations and
+    duly reported Geminga and Arkab Prior B as invented. Set by hand, and only
+    where the identification is known.
+    """
+
     uncertain: bool = False
     article: str = ""
     note: str = ""

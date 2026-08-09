@@ -6,6 +6,18 @@
  * omission if the two looked alike. So they are drawn as small open diamonds
  * rather than filled discs: recognisably stars, unmistakably not observations.
  *
+ * The exception is the handful the add-on carries only because Celestia's
+ * catalogue omits them — Wadai's white dwarf, Geminga, Arkab Prior B. Those are
+ * real objects at measured positions, so a diamond would state the opposite of
+ * the truth about them; they get a filled disc. The distinction comes from the
+ * curated `real` field, never from the shape of the designation.
+ *
+ * What the marker no longer carries is the polity. An affiliation is drawn the
+ * same way here as it is on a real settled star — a ring around the star and a
+ * coloured label — so that one fact has one appearance. Wadai is the case that
+ * forced it: it is in both source sets, and used to render as a coloured diamond
+ * while the identical statement about any Inner Sphere colony rendered as a ring.
+ *
  * They are drawn as *markers*, at a constant screen size and full opacity, not
  * with the camera-relative magnitude law the real field uses. An earlier version
  * did apply that law, on the reasoning that the absolute magnitudes are asserted
@@ -22,7 +34,7 @@
 
 import * as THREE from 'three';
 
-import type { FictionData, OAStarData } from '../data/manifest';
+import type { OAStarData } from '../data/manifest';
 
 export const DEFAULT_OPACITY = 0.95;
 
@@ -45,18 +57,21 @@ const VERTEX_SHADER = /* glsl */ `
 
   attribute vec3 aColor;
   attribute float aBare;
+  attribute float aReal;
 
   uniform float uSize;
   uniform float uBareDim;
 
   varying vec3 vColor;
   varying float vGain;
+  varying float vReal;
 
   void main() {
     vec4 viewPos = modelViewMatrix * vec4(position, 1.0);
     gl_Position = projectionMatrix * viewPos;
 
     vColor = aColor;
+    vReal = aReal;
 
     // Entries the add-on gives nothing but a designation recede, so the ones
     // it actually says something about stand out.
@@ -78,21 +93,27 @@ const FRAGMENT_SHADER = /* glsl */ `
 
   varying vec3 vColor;
   varying float vGain;
+  varying float vReal;
 
   void main() {
     vec2 offset = gl_PointCoord * 2.0 - 1.0;
 
+    // A real object gets a star's glyph: a soft filled disc, drawn at constant
+    // size because the magnitude law would put a 14.8-magnitude white dwarf
+    // below any usable exposure. The rest get an open diamond.
+    float disc = 1.0 - smoothstep(0.10, 0.62, length(offset));
+
     // L1 distance makes a diamond where L2 would make a circle.
     float d = abs(offset.x) + abs(offset.y);
-    if (d > 1.0) discard;
 
     // Hollow: the outline is the tell, and a filled marker at this size would be
     // indistinguishable from a star.
     float edge = 1.0 - smoothstep(0.42, 1.0, d);
     float core = 1.0 - smoothstep(0.0, 0.46, d);
-    float ring = clamp(edge - core, 0.0, 1.0);
+    float diamond = d > 1.0 ? 0.0 : clamp(edge - core, 0.0, 1.0);
 
-    float alpha = ring * uOpacity * vGain;
+    float shape = mix(diamond, disc, vReal);
+    float alpha = shape * uOpacity * vGain;
     if (alpha < 0.004) discard;
 
     #include <logdepthbuf_fragment>
@@ -106,11 +127,8 @@ export class OAStarField {
   readonly count: number;
 
   private readonly material: THREE.ShaderMaterial;
-  private readonly spectralColors: Float32Array;
-  private readonly affiliationColors: Float32Array;
-  private readonly colorAttribute: THREE.BufferAttribute;
 
-  constructor(data: OAStarData, fiction: FictionData | null = null) {
+  constructor(data: OAStarData) {
     // Hidden entries are dropped from the geometry, not merely faded: they are
     // the 52 the add-on says nothing about beyond sitting in NGC 6633, and
     // stacked markers obscure the cluster they are meant to populate.
@@ -122,13 +140,8 @@ export class OAStarField {
 
     const positions = new Float32Array(this.count * 3);
     const colors = new Float32Array(this.count * 3);
-    const emission = new Float32Array(this.count * 3);
     const bare = new Float32Array(this.count);
-
-    const polityColor = new Map<string, THREE.Color>();
-    for (const polity of fiction?.polities ?? []) {
-      polityColor.set(polity.id, new THREE.Color(polity.color));
-    }
+    const real = new Float32Array(this.count);
 
     const lut = data.colorLut;
     const lutSize = lut.length / 3;
@@ -145,42 +158,30 @@ export class OAStarField {
       const entry = data.names[i];
       bare[out] =
         entry && entry.oa_designation && !entry.system && !entry.affiliation ? 1 : 0;
+      real[out] = entry?.real ? 1 : 0;
 
       const ci = data.positions[base + 4];
       if (ci <= unknown + 1 || lutSize === 0) {
         // Unknown colour renders white, the same neutral the real field uses.
-        emission[out * 3] = 1;
-        emission[out * 3 + 1] = 1;
-        emission[out * 3 + 2] = 1;
+        colors[out * 3] = 1;
+        colors[out * 3 + 1] = 1;
+        colors[out * 3 + 2] = 1;
       } else {
         // The LUT spans B-V -0.4 .. 2.0, matching the pipeline's build_color_lut.
         const t = Math.min(Math.max((ci + 0.4) / 2.4, 0), 1);
         const slot = Math.min(Math.round(t * (lutSize - 1)), lutSize - 1) * 3;
-        emission[out * 3] = lut[slot];
-        emission[out * 3 + 1] = lut[slot + 1];
-        emission[out * 3 + 2] = lut[slot + 2];
+        colors[out * 3] = lut[slot];
+        colors[out * 3 + 1] = lut[slot + 1];
+        colors[out * 3 + 2] = lut[slot + 2];
       }
-
-      const affiliated = entry?.affiliation ? polityColor.get(entry.affiliation) : undefined;
-      const chosen = affiliated ?? {
-        r: emission[out * 3],
-        g: emission[out * 3 + 1],
-        b: emission[out * 3 + 2],
-      };
-      colors[out * 3] = chosen.r;
-      colors[out * 3 + 1] = chosen.g;
-      colors[out * 3 + 2] = chosen.b;
     }
-
-    this.spectralColors = emission;
-    this.affiliationColors = colors.slice();
 
     const geometry = new THREE.BufferGeometry();
     geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
     geometry.setAttribute('aColor', new THREE.BufferAttribute(colors, 3));
     geometry.setAttribute('aBare', new THREE.BufferAttribute(bare, 1));
+    geometry.setAttribute('aReal', new THREE.BufferAttribute(real, 1));
     geometry.boundingSphere = new THREE.Sphere(new THREE.Vector3(), Infinity);
-    this.colorAttribute = geometry.getAttribute('aColor') as THREE.BufferAttribute;
 
     this.material = new THREE.ShaderMaterial({
       uniforms: {
@@ -200,13 +201,6 @@ export class OAStarField {
     this.points.frustumCulled = false;
     // Draw over the real field so a marker is never hidden inside a star cloud.
     this.points.renderOrder = 2;
-  }
-
-  /** Colour by Orion's Arm affiliation, or by spectral type. */
-  setPolityMode(enabled: boolean): void {
-    const source = enabled ? this.affiliationColors : this.spectralColors;
-    (this.colorAttribute.array as Float32Array).set(source);
-    this.colorAttribute.needsUpdate = true;
   }
 
   set opacity(value: number) {

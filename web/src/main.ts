@@ -81,10 +81,16 @@ async function main(): Promise<void> {
   const starField = new StarField(data, {}, loaded.innerSphere?.byStar ?? null);
   viewer.scene.add(starField.points);
 
-  // Polity rings around the settled systems. The star inside keeps its own
-  // measured colour; the ring is the annotation.
-  if (loaded.innerSphere) {
-    settledField = new SettledField(data, loaded.innerSphere.byStar, loaded.fiction);
+  // Polity rings around the settled systems, from both sources: Inner Sphere
+  // colonies on real stars and the add-on's own stars. The star inside keeps its
+  // own colour; the ring is the annotation.
+  if (loaded.innerSphere || loaded.oaStars) {
+    settledField = new SettledField(
+      data,
+      loaded.innerSphere?.byStar ?? new Map(),
+      loaded.fiction,
+      loaded.oaStars,
+    );
     viewer.scene.add(settledField.points);
   }
 
@@ -97,8 +103,7 @@ async function main(): Promise<void> {
 
   // After the real field so an asserted star is never buried inside it.
   if (loaded.oaStars) {
-    oaStarField = new OAStarField(loaded.oaStars, loaded.fiction);
-    oaStarField.setPolityMode(true);
+    oaStarField = new OAStarField(loaded.oaStars);
     viewer.scene.add(oaStarField.points);
   }
 
@@ -284,7 +289,7 @@ async function main(): Promise<void> {
       onPolityMode: (enabled) => {
         clusterField?.setPolityMode(enabled);
         hiiField?.setPolityMode(enabled);
-        oaStarField?.setPolityMode(enabled);
+        settledField?.setPolityMode(enabled);
       },
       onFocusPolity: focusPolity,
       onJump: handleJump,

@@ -126,6 +126,7 @@ function makeOAStars(
       system: e.system ?? '',
       label: e.label ?? e.system ?? e.name,
       affiliation: '',
+      real: '',
       uncertain: false,
       article: '',
       note: '',

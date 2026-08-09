@@ -13,9 +13,20 @@
 # they name whichever the contributor happened to think of, so JD 870135 is
 # commented "To'ul'h", which is the species, not the system.
 
+# `real` records the catalogue designation of an entry that is a real object.
+# The add-on carries a handful of those because Celestia's own star catalogue
+# omits them, and for those the position is a copied measurement rather than an
+# assertion — so the map draws them as stars, not as fiction markers.
+#
 # Entries the add-on says nothing about beyond where they sit. Drawn but not
 # labelled, and excluded from the OA star layer, since 52 unlabelled markers
-# stacked inside one cluster obscure the cluster itself.
+# stacked inside one cluster obscure the cluster itself. A positional
+# cross-match found the further reason to hide them: several of the `JD nnnnnn`
+# designations in this group are simply the HD number of a star already in the
+# real catalogue — JD 169512 lands 0.0 arcmin from HD 169512, and the same for
+# 169842, 170054, 170200 and 170293. In this file family "JD" is not always OA's
+# own numbering. Whether that holds for all 52 is untested; only these are shown
+# by the cross-match.
 hide_comment_matching:
   - Star in cluster NGC 6633
 
@@ -23,6 +34,7 @@ systems:
   - star: Arkab Prior B
     label: Arkab Prior B
     affiliation: mutual-progress-association
+    real: Beta-1 Sagittarii B, the companion of HIP 95241
     article: https://www.orionsarm.com/eg-article/48f4bc90174b8
 
   - star: Cantor
@@ -34,7 +46,15 @@ systems:
   - star: EG 471
     label: Wadai
     affiliation: sophic-league
+    real: GJ 3162, the white dwarf WD 0230-144
     article: https://www.orionsarm.com/eg-article/4910e5c60edcc
+    note: >-
+      In both source sets: the Celestia add-on as EG 471, and the Inner Sphere
+      table as WD 0230-144 at 54.4 ly. The table's row does not resolve, because
+      no WD or GJ 3162 designation appears in HYG — a white dwarf of absolute
+      magnitude 14.8 is below Hipparcos and outside the Bright Star Catalogue.
+      So the add-on's 50.5 ly is the only position we have for it, and it is a
+      measurement rather than an assertion.
 
   - star: Enigma
     label: Enigma
@@ -49,6 +69,7 @@ systems:
   - star: Geminga
     label: Geminga
     affiliation: metasoft
+    real: Geminga, the pulsar PSR J0633+1746
     article: https://www.orionsarm.com/eg-article/464e8a1ed988a
 
   - star: Hiederia

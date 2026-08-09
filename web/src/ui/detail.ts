@@ -251,9 +251,14 @@ export class DetailPanel {
 
     const rows: Row[] = [
       { label: 'Distance from Sol', value: formatDistance(pc(distance), unit) },
-      { label: 'Position', value: 'asserted by the setting', warn: true },
+      entry.real
+        ? { label: 'Position', value: 'measured — this is a real object' }
+        : { label: 'Position', value: 'asserted by the setting', warn: true },
       { label: 'Absolute magnitude', value: absMag.toFixed(2) },
     ];
+    // Named before the add-on's own designation: for these entries the real
+    // identification is the more useful of the two.
+    if (entry.real) rows.push({ label: 'Real object', value: entry.real });
     // The curated name takes the title, so the add-on's own identifier still
     // has to be findable — "Hiederia" is a name it chose, not a catalogue number.
     if (entry.label && entry.label !== entry.name) {

@@ -8,11 +8,17 @@
  * A ring is legible because it is a different shape, not a different colour. The
  * star keeps the colour the catalogue measured; the polity is a mark drawn
  * around it, at constant screen size so it stays readable at any distance.
+ *
+ * This layer covers both places a system can come from — an Inner Sphere colony
+ * on a real star, and a star of the Celestia add-on — because "this system
+ * belongs to that polity" is one statement and should have one appearance. The
+ * two differ in whether their position was measured, and that is carried by the
+ * glyph at the centre, not by the ring.
  */
 
 import * as THREE from 'three';
 
-import type { Colony, FictionData, StarData } from '../data/manifest';
+import type { Colony, FictionData, OAStarData, StarData } from '../data/manifest';
 
 export const DEFAULT_OPACITY = 0.85;
 
@@ -84,39 +90,77 @@ export class SettledField {
   readonly count: number;
 
   private readonly material: THREE.ShaderMaterial;
+  private readonly polityColors: Float32Array;
+  private readonly neutralColors: Float32Array;
+  private readonly colorAttribute: THREE.BufferAttribute;
 
-  constructor(stars: StarData, colonies: Map<number, Colony>, fiction: FictionData | null) {
+  constructor(
+    stars: StarData,
+    colonies: Map<number, Colony>,
+    fiction: FictionData | null,
+    oaStars: OAStarData | null = null,
+  ) {
     const polityColor = new Map<string, THREE.Color>();
     for (const polity of fiction?.polities ?? []) {
       polityColor.set(polity.id, new THREE.Color(polity.color));
     }
 
-    const indices = [...colonies.keys()].filter((i) => i >= 0 && i < stars.count);
-    this.count = indices.length;
+    // One ring per settled system, from whichever source knows about it. Hidden
+    // add-on entries are skipped for the same reason the marker layer skips
+    // them: nothing is drawn there to ring.
+    const rings: { x: number; y: number; z: number; polity: string }[] = [];
+    for (const starIndex of colonies.keys()) {
+      if (starIndex < 0 || starIndex >= stars.count) continue;
+      const base = starIndex * 5;
+      rings.push({
+        x: stars.positions[base],
+        y: stars.positions[base + 1],
+        z: stars.positions[base + 2],
+        polity: colonies.get(starIndex)?.affiliations[0] ?? '',
+      });
+    }
+    for (let i = 0; i < (oaStars?.count ?? 0); i++) {
+      const entry = oaStars!.names[i];
+      if (entry?.hidden) continue;
+      const base = i * 5;
+      rings.push({
+        x: oaStars!.positions[base],
+        y: oaStars!.positions[base + 1],
+        z: oaStars!.positions[base + 2],
+        polity: entry?.affiliation ?? '',
+      });
+    }
+    this.count = rings.length;
 
     const positions = new Float32Array(this.count * 3);
     const colors = new Float32Array(this.count * 3);
+    const neutral = new Float32Array(this.count * 3);
     const affiliated = new Float32Array(this.count);
 
-    indices.forEach((starIndex, out) => {
-      const base = starIndex * 5;
-      positions[out * 3] = stars.positions[base];
-      positions[out * 3 + 1] = stars.positions[base + 1];
-      positions[out * 3 + 2] = stars.positions[base + 2];
+    rings.forEach((ring, out) => {
+      positions[out * 3] = ring.x;
+      positions[out * 3 + 1] = ring.y;
+      positions[out * 3 + 2] = ring.z;
 
-      const colony = colonies.get(starIndex);
-      affiliated[out] = colony?.affiliations.length ? 1 : 0;
-      const chosen = polityColor.get(colony?.affiliations[0] ?? '') ?? STATUS_COLOR;
+      affiliated[out] = ring.polity ? 1 : 0;
+      const chosen = polityColor.get(ring.polity) ?? STATUS_COLOR;
       colors[out * 3] = chosen.r;
       colors[out * 3 + 1] = chosen.g;
       colors[out * 3 + 2] = chosen.b;
+      neutral[out * 3] = STATUS_COLOR.r;
+      neutral[out * 3 + 1] = STATUS_COLOR.g;
+      neutral[out * 3 + 2] = STATUS_COLOR.b;
     });
+
+    this.polityColors = colors.slice();
+    this.neutralColors = neutral;
 
     const geometry = new THREE.BufferGeometry();
     geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
     geometry.setAttribute('aColor', new THREE.BufferAttribute(colors, 3));
     geometry.setAttribute('aAffiliated', new THREE.BufferAttribute(affiliated, 1));
     geometry.boundingSphere = new THREE.Sphere(new THREE.Vector3(), Infinity);
+    this.colorAttribute = geometry.getAttribute('aColor') as THREE.BufferAttribute;
 
     this.material = new THREE.ShaderMaterial({
       uniforms: {
@@ -135,6 +179,18 @@ export class SettledField {
     this.points = new THREE.Points(geometry, this.material);
     this.points.frustumCulled = false;
     this.points.renderOrder = 1;
+  }
+
+  /**
+   * Colour the rings by polity, or drop them all to neutral.
+   *
+   * With polity mode off the ring stays, because "settled" is a fact about the
+   * system independent of who holds it; only the answer to *whose* goes away.
+   */
+  setPolityMode(enabled: boolean): void {
+    const source = enabled ? this.polityColors : this.neutralColors;
+    (this.colorAttribute.array as Float32Array).set(source);
+    this.colorAttribute.needsUpdate = true;
   }
 
   set opacity(value: number) {
