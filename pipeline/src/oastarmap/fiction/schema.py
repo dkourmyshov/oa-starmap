@@ -583,7 +583,15 @@ class World(BaseModel):
     also: list[str] = Field(default_factory=list)
     """Other names the setting uses for the same place."""
 
-    affiliation: str = ""
+    affiliations: list[str] = Field(default_factory=list)
+    """Polity ids. More than one is a genuine shared presence, not indecision.
+
+    A list because the setting has them: Errai is held jointly by the Communion
+    of Worlds and the Sophic League, and recording one of the two would be a
+    quiet choice about which partner counts. Always the *present* holders,
+    whatever the events say happened on the way there.
+    """
+
     uncertain: bool = False
 
     extent: str = ""

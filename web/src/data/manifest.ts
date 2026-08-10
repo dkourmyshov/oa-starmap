@@ -413,7 +413,8 @@ export interface WorldEntry {
   /** The body it orbits: a star for a planet, a gas giant for a moon. */
   parent: string;
   also: string[];
-  affiliation: string;
+  /** Polity ids. More than one is a genuine shared presence. */
+  affiliations: string[];
   uncertain: boolean;
   article: string;
   note: string;

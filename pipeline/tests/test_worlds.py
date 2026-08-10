@@ -255,7 +255,7 @@ def test_affiliation_is_the_present_holder() -> None:
     """
     worlds = {w.name: w for w in WorldFile.load(FICTION_DIR / "worlds.yaml").worlds}
     kalii = worlds["Kalii"]
-    assert kalii.affiliation == "nocozo"
+    assert kalii.affiliations == ["nocozo"]
     assert [(e.year_at, e.kind) for e in kalii.events] == [
         (3780, "stewardship"),
         (4323, "transferred"),
@@ -270,3 +270,47 @@ def test_event_kinds_are_a_closed_vocabulary() -> None:
     assert WorldEvent(year_at=3709, kind="settled").kind == "settled"
     with pytest.raises(ValidationError, match="event kind must be one of"):
         WorldEvent(year_at=3709, kind="colonised")
+
+
+def test_a_world_can_be_held_by_several_polities() -> None:
+    """Errai is held jointly, and recording one holder would be a silent choice.
+
+    The field is a list for the same reason the colony table's is: the setting
+    has shared systems, and picking whichever partner was transcribed first
+    would look exactly like a fact.
+    """
+    worlds = {w.name: w for w in WorldFile.load(FICTION_DIR / "worlds.yaml").worlds}
+    assert worlds["Anomie"].affiliations == ["communion-of-worlds", "sophic-league"]
+
+
+def test_every_affiliation_names_a_known_polity() -> None:
+    """A typo here would silently drop a world's colour rather than failing."""
+    from oastarmap.fiction.schema import FictionFile
+
+    known = {p.id for p in FictionFile.load(FICTION_DIR / "polities.yaml").polities}
+    for world in WorldFile.load(FICTION_DIR / "worlds.yaml").worlds:
+        for affiliation in world.affiliations:
+            assert affiliation in known, f"{world.name} cites unknown polity {affiliation!r}"
+
+
+def test_worlds_bound_to_a_star_are_bound_to_a_real_one() -> None:
+    """The build reports unresolved bindings rather than raising, so check them.
+
+    A binding that silently fails leaves the world undrawn and its polity
+    uncoloured, which looks like the setting having nothing to say rather than
+    like a resolution failure.
+    """
+    import json
+
+    from oastarmap.paths import DATA_OUT_DIR
+
+    path = DATA_OUT_DIR / "worlds.json"
+    if not path.exists():
+        pytest.skip("dataset not built")
+
+    unresolved = [
+        w["name"]
+        for w in json.loads(path.read_text(encoding="utf-8"))
+        if w["method"] == "star" and w["star_index"] is None
+    ]
+    assert unresolved == [], f"star bindings that resolved to nothing: {unresolved}"

@@ -36,7 +36,7 @@ worlds:
 
   - name: Beelzebub
     kind: planet
-    affiliation: caretaker-gods
+    affiliations: [caretaker-gods]
     article: https://www.orionsarm.com/eg-article/461707a3ab1e3
     location:
       constellation: Canis Major
@@ -48,7 +48,7 @@ worlds:
   - name: Chorus
     kind: planet
     system: Cantor
-    affiliation: caretaker-gods
+    affiliations: [caretaker-gods]
     article: https://www.orionsarm.com/eg-article/48fe1da7a2205
     location:
       oa_star: Cantor
@@ -64,7 +64,7 @@ worlds:
 
   - name: Corambytia Protectorate
     kind: volume
-    affiliation: caretaker-gods
+    affiliations: [caretaker-gods]
     extent: 290 ly
     article: https://www.orionsarm.com/eg-article/46412ddb422d6
     location:
@@ -86,7 +86,7 @@ worlds:
   - name: Stanislaw
     kind: planet
     system: Enigma
-    affiliation: caretaker-gods
+    affiliations: [caretaker-gods]
     uncertain: true
     article: https://www.orionsarm.com/eg-article/491222f681eed
     location:
@@ -114,7 +114,7 @@ worlds:
     kind: planet
     system: Aristotle
     parent: Aristotle
-    affiliation: caretaker-gods
+    affiliations: [caretaker-gods]
     article: https://www.orionsarm.com/eg-article/48f4a40a5df0a
     location:
       hip: 99240
@@ -132,7 +132,7 @@ worlds:
   - name: Kalii
     kind: planet
     system: Arctar
-    affiliation: nocozo
+    affiliations: [nocozo]
     article: https://www.orionsarm.com/eg-article/46478982497db
     location:
       hip: 9024
@@ -152,7 +152,7 @@ worlds:
     kind: moon
     system: Piaget
     parent: Pacol
-    affiliation: caretaker-gods
+    affiliations: [caretaker-gods]
     article: https://www.orionsarm.com/eg-article/5f01de4e81446
     location:
       constellation: Carina
@@ -169,7 +169,7 @@ worlds:
   - name: Earth
     kind: planet
     system: Sol
-    affiliation: caretaker-gods
+    affiliations: [caretaker-gods]
     article: https://www.orionsarm.com/eg-article/462eae95003f8
     location:
       star: Sol
@@ -187,7 +187,7 @@ worlds:
   - name: Evermore
     kind: megastructure
     system: Altus Lucror
-    affiliation: caretaker-gods
+    affiliations: [caretaker-gods]
     events:
       - year_at: 4772
         kind: settled
@@ -210,7 +210,7 @@ worlds:
 
   - name: Hyvixnym
     kind: planet
-    affiliation: caretaker-gods
+    affiliations: [caretaker-gods]
     article: https://www.orionsarm.com/eg-article/692a119117331
     location:
       constellation: Taurus
@@ -228,7 +228,7 @@ worlds:
     kind: moon
     system: Savastos
     parent: Lontis
-    affiliation: caretaker-gods
+    affiliations: [caretaker-gods]
     article: https://www.orionsarm.com/eg-article/4edf88339f50b
     location:
       ra_deg: 51.3178
@@ -246,7 +246,7 @@ worlds:
     kind: planet
     system: New Gaia
     also: [Rachel]
-    affiliation: caretaker-gods
+    affiliations: [caretaker-gods]
     location:
       hip: 24813
     events:
@@ -261,7 +261,7 @@ worlds:
     kind: planet
     system: Sand
     parent: Neo Rah
-    affiliation: caretaker-gods
+    affiliations: [caretaker-gods]
     article: https://www.orionsarm.com/eg-article/49120c5060646
     location:
       constellation: Gemini
@@ -269,7 +269,7 @@ worlds:
 
   - name: Taln
     kind: planet
-    affiliation: caretaker-gods
+    affiliations: [caretaker-gods]
     article: https://www.orionsarm.com/eg-article/57f2790443640
     location:
       hd: 27836
@@ -288,7 +288,7 @@ worlds:
   - name: Tohul
     kind: planet
     system: H'tat'sa'thoss
-    affiliation: caretaker-gods
+    affiliations: [caretaker-gods]
     article: https://www.orionsarm.com/eg-article/5eefcc060d4c4
     location:
       oa_star: JD 870135
@@ -309,3 +309,226 @@ worlds:
       before the system was closed, are the whole shape of this contact and are
       not derivable from a position. Tohul is the planet, H'tat'sa'thoss the
       system, To'ul'h the species.
+
+  # ---- Communion of Worlds ------------------------------------------------
+  #
+  # Dates here are colonisation years, not the year a system joined the
+  # Communion — several were settled by somebody else first, and the two
+  # questions have different answers.
+
+  - name: Rergenar
+    kind: planet
+    affiliations: [communion-of-worlds]
+    article: https://www.orionsarm.com/eg-article/47703480bcd62
+    location:
+      hd: 3357
+    events:
+      - year_at: 2479
+        kind: settled
+
+  - name: Labeyrie
+    kind: planet
+    affiliations: [communion-of-worlds]
+    article: https://www.orionsarm.com/eg-article/46788c08a643b
+    location:
+      constellation: Sculptor
+      distance: 675 ly
+    events:
+      - year_at: 3155
+        kind: settled
+    note: >-
+      Designated JD 9492276-22, which is Orion's Arm's own numbering and matches
+      nothing in the Celestia add-on or in any real catalogue we hold — so the
+      position is the constellation and the distance, not the designation.
+
+  - name: Vistaa
+    kind: planet
+    affiliations: [communion-of-worlds]
+    article: https://www.orionsarm.com/eg-article/4754bf28c4292
+    location:
+      hd: 7867
+    events:
+      - year_at: 2509
+        kind: settled
+
+  - name: Vangelis
+    kind: system
+    system: Vangelis
+    affiliations: [communion-of-worlds]
+    article: https://www.orionsarm.com/eg-article/474e2b879d1ac
+    location:
+      hd: 10069
+    events:
+      - year_at: 3224
+        kind: settled
+    note: >-
+      WASP-18, in Phoenix. Bound by catalogue rather than by the coordinates the
+      article gives, because the two agree exactly: 01h 37m 25.03s, -45d 40'
+      40.4" is HD 10069 to four decimal places, and the catalogue's 400 ly sits
+      against the article's 404.
+
+  - name: Third Def8
+    kind: moon
+    parent: Def8
+    affiliations: [communion-of-worlds]
+    article: https://www.orionsarm.com/eg-article/47a28b116776e
+    location:
+      hd: 6235
+    events:
+      - year_at: 2431
+        kind: settled
+    note: >-
+      A moon of the gas giant Def8. Bound on the HD number, which is
+      unambiguous, but the distance does not fit: HD 6235 is at 346 ly and the
+      figure recorded with this world is 35 ly, a factor of ten apart. Every
+      other Communion world in Sculptor sits between 300 and 400 ly, so 346 is
+      the plausible one — but the discrepancy is unresolved and listed in
+      questions.md rather than quietly rounded away.
+
+  - name: Nengs
+    kind: planet
+    affiliations: [communion-of-worlds]
+    article: https://www.orionsarm.com/eg-article/46cf859e07951
+    location:
+      constellation: Sculptor
+      distance: 834 ly
+    events:
+      - year_at: 3989
+        kind: settled
+    note: >-
+      Given as TYC 6419-481-1. The Tycho catalogue is not one we carry, so the
+      star cannot be bound and the position falls back to the constellation.
+
+  - name: Webistics
+    kind: planet
+    affiliations: [communion-of-worlds]
+    article: https://www.orionsarm.com/eg-article/47000688d2cf2
+    location:
+      note: No position given.
+
+  - name: Canberra Orbital
+    kind: megastructure
+    affiliations: [communion-of-worlds]
+    article: https://www.orionsarm.com/eg-article/5300ada006f6a
+    location:
+      hip: 2254
+    events:
+      - year_at: 6449
+        kind: settled
+        note: Construction begins.
+
+  - name: Caerwactod
+    kind: system
+    system: Caerwactod
+    affiliations: [communion-of-worlds]
+    article: https://www.orionsarm.com/eg-article/668e06e2bdb02
+    location:
+      constellation: Cassiopeia
+      distance: 3200 ly
+    events:
+      - year_at: 6700
+        kind: settled
+    note: A partial Dyson sphere.
+
+  - name: Anomie
+    kind: moon
+    system: Errai
+    parent: Tadmor
+    affiliations: [communion-of-worlds, sophic-league]
+    article: https://www.orionsarm.com/eg-article/48f9ecc17d772
+    location:
+      hd: 222404
+    events:
+      - year_at: 1420
+        kind: settled
+    note: >-
+      Held jointly by the Communion of Worlds and the Sophic League. Anomie is a
+      moon of the planet Tadmor, in the Errai system — Gamma Cephei, 45 ly,
+      which is both the system's name and its primary's.
+
+  - name: Dionysos
+    kind: planet
+    affiliations: [communion-of-worlds]
+    article: https://www.orionsarm.com/eg-article/48f8b18aca613
+    location:
+      hip: 32480
+    events:
+      - year_at: 2941
+        kind: settled
+    note: Psi-5 Aurigae, 54 ly. Already in the Inner Sphere colony table.
+
+  - name: Elderman's Star
+    kind: system
+    affiliations: [communion-of-worlds]
+    location:
+      note: No position given, and no article found.
+
+  - name: Goldilock
+    kind: planet
+    also: [Goldilocks]
+    affiliations: [communion-of-worlds]
+    article: https://www.orionsarm.com/eg-article/48fa71d44bc7a
+    location:
+      hip: 65721
+    note: >-
+      70 Virginis, and the catalogue agrees with the article to two decimals at
+      59.03 ly. No colonisation date given. Not the Solar Dominion's Goldilocks
+      ISO, which is a different place.
+
+  - name: Heartland
+    kind: megastructure
+    affiliations: [communion-of-worlds]
+    article: https://www.orionsarm.com/eg-article/466c941c50d22
+    location:
+      ra_deg: 9.0732
+      dec_deg: -38.2941
+      distance: 334 ly
+      near: HIP 2863
+    events:
+      - year_at: 4312
+        kind: settled
+        note: Founded.
+    note: >-
+      In deep space rather than in a system: its nearest star is HIP 2863, 1.3
+      ly away. The direction is that star's and the distance is the article's,
+      and the two corroborate each other — HIP 2863 is itself at 334 ly.
+
+  - name: Lambda-2 Sculptoris
+    kind: system
+    system: Lambda-2 Sculptoris
+    affiliations: [communion-of-worlds]
+    article: https://www.orionsarm.com/eg-article/52fa35d455d56
+    location:
+      hip: 3456
+    note: No dates. The catalogue puts it at 331 ly against the article's 338.
+
+  - name: Prometheus
+    kind: planet
+    affiliations: [communion-of-worlds]
+    article: https://www.orionsarm.com/eg-article/48e664f348410
+    location:
+      hip: 15330
+    events:
+      - year_at: 1758
+        kind: settled
+    note: >-
+      Zeta-1 Reticuli, 39 ly. The colony table packs it into one cell with
+      Atlantis and Daedalus, three named places of three different polities in
+      the one system.
+
+  - name: Spinel
+    kind: planet
+    system: Tigris
+    affiliations: [communion-of-worlds]
+    article: https://www.orionsarm.com/eg-article/5cd1c5add2d63
+    location:
+      ra_deg: 87.2083
+      dec_deg: -14.4675
+      distance: 1880 ly
+    events:
+      - year_at: 5218
+        kind: settled
+    note: >-
+      A planet and a megastructure both. Coordinates given as 05h 48m 50s,
+      -14d 28' 03" in Lepus, so the direction is exact and only the distance is
+      asserted.

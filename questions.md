@@ -8,7 +8,7 @@ Nothing below is a complaint about the setting. Most of it is the ordinary frict
 
 ---
 
-## Open questions (8)
+## Open questions (11)
 
 ### Enigma system — Three sources put the Enigma system in three different directions.
 
@@ -103,6 +103,42 @@ Thirteen of the fifteen worlds recorded so far carry dates, spanning 621 to 9920
 
 **What would settle it.** Nothing on the fiction side — this is ours. The articles are the source and they are prose, so this is a transcription job rather than a question.
 
+### Blenke Cluster / Blanco 1 — The same open cluster is Communion of Worlds in its article and Non-Coercive Zone on the political maps.
+
+*contradiction*
+
+Blanco 1, 850 ly away in Sculptor, is named the Blenke Cluster in an article that places it in the Communion of Worlds. The political maps of the Middle Regions at 8000 A.T. put it inside the Non-Coercive Zone. The article is the more detailed source and would normally win, but the two need not be exclusive: meta-empires interpenetrate, and a cluster 850 ly across can hold presences from both without either source being wrong.
+
+**What the map does now.** Records both. Blanco 1 is a landmark of the Communion and of the NoCoZo, and the map draws it as shared. Note that the cluster carries no Orion's Arm name or article on the map itself — landmarks are matched by catalogue name and there is nowhere yet to hang "Blenke Cluster" or its URL.
+
+**What would settle it.** Whether the Communion's presence supersedes the NoCoZo's, or the two genuinely overlap there.
+
+- https://www.orionsarm.com/eg-article/460e7b5d61e04
+
+### Third Def8 — HD 6235 is at 346 ly; the world is recorded at 35 ly.
+
+*contradiction*
+
+A factor of ten. The HD number is unambiguous and the catalogue puts it in Sculptor at 346 ly, which is where every other Communion world in that direction sits — Rergenar at 367, Vistaa at 335, Canberra Orbital at 378, Heartland at 334. A genuine 35 ly star would be a naked-eye neighbour and not an HD number nobody has named.
+
+**What the map does now.** Bound on the HD number and drawn at 346 ly, since an identifier is a stronger claim than a distance and the alternative is not to draw it at all. Flagged rather than silently corrected.
+
+**What would settle it.** Whether the article says 35 ly, 350 ly, or something else again.
+
+- https://www.orionsarm.com/eg-article/47a28b116776e
+
+### Webistics and Elderman's Star — Two Communion places with nothing to place them by.
+
+*unlocated*
+
+Webistics has an article but no position of any kind in it. Elderman's Star has neither a position nor an article we have found — it is on the list of Communion locations and nothing more.
+
+**What the map does now.** Recorded and not drawn.
+
+**What would settle it.** A distance and a constellation would be enough for either.
+
+- https://www.orionsarm.com/eg-article/47000688d2cf2
+
 ## The Inner Sphere colony tables
 
 891 of 1,122 rows resolve to a star we hold. The rest break down as follows.
@@ -163,21 +199,21 @@ Named in the political maps, and real, but in a catalogue this map does not carr
 
 Aquila Rift, Basel 11, Basel 5, California Nebula, Cat Eye Nebula, Collinder 121, Collinder 173, Collinder 399, Collinder 96, Dumbbell Nebula, Eskimo Nebula, Floating Star Nebula, G64.3+5.7, Gamma Cas, Geminga, Helix Nebula, Hogg 14, Hubble Variable Nebula, IC 405, IC 417, Iskudarian 1, Jupiter Nebula, Markarian 6, NGC 1498, and 17 more
 
-## 3 landmarks claimed by more than one polity
+## 4 landmarks claimed by more than one polity
 
 Not necessarily an error — the political maps overlap, and a landmark on a boundary can legitimately fall in two volumes. Recorded in case any of these is a reading mistake.
 
-Collinder 173, S232, S27
+Blanco 1, Collinder 173, S232, S27
 
 ## Worlds located only by constellation
 
-6 of 15 canonical worlds are given as a distance and a constellation. That fixes the distance exactly and the direction only to the width of the constellation, which at these ranges is hundreds to thousands of light years. The map draws these with a broken ring rather than a solid one, and the detail panel gives the error in light years.
+9 of 32 canonical worlds are given as a distance and a constellation. That fixes the distance exactly and the direction only to the width of the constellation, which at these ranges is hundreds to thousands of light years. The map draws these with a broken ring rather than a solid one, and the detail panel gives the error in light years.
 
 Coordinates, or a nearby named star, would turn any of these from a region into a position.
 
-## 1 place described but not located
+## 3 places described but not located
 
-Evermore
+Elderman's Star, Evermore, Webistics
 
 ## 1 designation reused in the Celestia add-on
 

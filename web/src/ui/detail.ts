@@ -343,15 +343,15 @@ export class DetailPanel {
     }
     if (world.note) rows.push({ label: 'Note', value: world.note });
 
-    const affiliation = this.sources.fiction?.polities.find((p) => p.id === world.affiliation);
+    const held = (world.affiliations ?? [])
+      .map((id) => this.sources.fiction?.polities.find((p) => p.id === id)?.name ?? id)
+      .map((name) => (world.uncertain ? `${name} (uncertain)` : name));
 
     return {
       title: world.name,
       subtitle: "Orion's Arm world",
       rows,
-      polities: affiliation
-        ? [world.uncertain ? `${affiliation.name} (uncertain)` : affiliation.name]
-        : [],
+      polities: held,
       associationSource: world.article || null,
       events: world.events,
       citation: worlds.dataset.source.citation,
@@ -530,7 +530,8 @@ export class DetailPanel {
           (id) => this.sources.fiction?.polities.find((p) => p.id === id)?.name ?? id,
         ),
         ...here
-          .map((w) => this.sources.fiction?.polities.find((p) => p.id === w.affiliation)?.name)
+          .flatMap((w) => w.affiliations)
+          .map((id) => this.sources.fiction?.polities.find((p) => p.id === id)?.name)
           .filter((name): name is string => Boolean(name)),
       ].filter((name, i, all) => all.indexOf(name) === i),
       worlds: here.map((w) => ({ name: w.name, kind: w.kind, article: w.article })),

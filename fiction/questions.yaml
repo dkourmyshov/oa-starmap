@@ -237,3 +237,61 @@ questions:
     would_settle: >-
       Nothing on the fiction side — this is ours. The articles are the source and
       they are prose, so this is a transcription job rather than a question.
+
+  - id: blenke-cluster-two-empires
+    topic: Blenke Cluster / Blanco 1
+    status: open
+    severity: contradiction
+    summary: >-
+      The same open cluster is Communion of Worlds in its article and
+      Non-Coercive Zone on the political maps.
+    detail: >-
+      Blanco 1, 850 ly away in Sculptor, is named the Blenke Cluster in an
+      article that places it in the Communion of Worlds. The political maps of
+      the Middle Regions at 8000 A.T. put it inside the Non-Coercive Zone. The
+      article is the more detailed source and would normally win, but the two
+      need not be exclusive: meta-empires interpenetrate, and a cluster 850 ly
+      across can hold presences from both without either source being wrong.
+    map_does: >-
+      Records both. Blanco 1 is a landmark of the Communion and of the NoCoZo,
+      and the map draws it as shared. Note that the cluster carries no Orion's
+      Arm name or article on the map itself — landmarks are matched by catalogue
+      name and there is nowhere yet to hang "Blenke Cluster" or its URL.
+    would_settle: >-
+      Whether the Communion's presence supersedes the NoCoZo's, or the two
+      genuinely overlap there.
+    links:
+      - https://www.orionsarm.com/eg-article/460e7b5d61e04
+
+  - id: third-def8-distance
+    topic: Third Def8
+    status: open
+    severity: contradiction
+    summary: HD 6235 is at 346 ly; the world is recorded at 35 ly.
+    detail: >-
+      A factor of ten. The HD number is unambiguous and the catalogue puts it in
+      Sculptor at 346 ly, which is where every other Communion world in that
+      direction sits — Rergenar at 367, Vistaa at 335, Canberra Orbital at 378,
+      Heartland at 334. A genuine 35 ly star would be a naked-eye neighbour and
+      not an HD number nobody has named.
+    map_does: >-
+      Bound on the HD number and drawn at 346 ly, since an identifier is a
+      stronger claim than a distance and the alternative is not to draw it at
+      all. Flagged rather than silently corrected.
+    would_settle: Whether the article says 35 ly, 350 ly, or something else again.
+    links:
+      - https://www.orionsarm.com/eg-article/47a28b116776e
+
+  - id: communion-places-without-positions
+    topic: Webistics and Elderman's Star
+    status: open
+    severity: unlocated
+    summary: Two Communion places with nothing to place them by.
+    detail: >-
+      Webistics has an article but no position of any kind in it. Elderman's
+      Star has neither a position nor an article we have found — it is on the
+      list of Communion locations and nothing more.
+    map_does: Recorded and not drawn.
+    would_settle: A distance and a constellation would be enough for either.
+    links:
+      - https://www.orionsarm.com/eg-article/47000688d2cf2

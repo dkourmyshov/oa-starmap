@@ -134,7 +134,7 @@ export class SettledField {
         x: stars.positions[base],
         y: stars.positions[base + 1],
         z: stars.positions[base + 2],
-        polity: here[0]?.affiliation ?? '',
+        polity: here[0]?.affiliations[0] ?? '',
       });
     }
     for (let i = 0; i < (oaStars?.count ?? 0); i++) {

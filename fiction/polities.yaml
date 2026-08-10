@@ -130,7 +130,12 @@ polities:
     name: Communion of Worlds
     color: "#F8BBD0"
     source: political-maps-8000at
-    landmarks: [S245]
+    # Blanco 1 is also a Non-Coercive Zone landmark, and stays one. The article
+    # on the Blenke Cluster puts it in the Communion; the political maps put it
+    # in the NoCoZo. Both are recorded rather than one being chosen, because
+    # meta-empires interpenetrate and a cluster 850 ly across can hold presences
+    # from two of them without contradiction. See questions.md.
+    landmarks: [S245, Blanco 1]
 
   - id: orion-federation
     name: Orion Federation

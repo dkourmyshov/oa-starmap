@@ -356,7 +356,7 @@ export class ObjectIndex {
         this.importance[at] = BASE_IMPORTANCE.oaSystem;
         this.isOA[at] = 1;
         this.floored[at] = 1;
-        this.labelColor[at] = polityColor.get(here[0].affiliation);
+        this.labelColor[at] = polityColor.get(here[0].affiliations[0] ?? '');
       }
 
       // What Orion's Arm calls the system takes precedence over what the sky
@@ -519,7 +519,7 @@ export class ObjectIndex {
         // Everything reaching here was placed from the fiction's own numbers;
         // one bound to a catalogue star is indexed as that star instead.
         this.assertedPosition[at] = 1;
-        this.labelColor[at] = polityColor.get(world.affiliation);
+        this.labelColor[at] = polityColor.get(world.affiliations[0] ?? '');
         if (this.labels[at]) labelled.push(at);
         at++;
       }

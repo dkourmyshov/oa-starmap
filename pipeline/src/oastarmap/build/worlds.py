@@ -205,7 +205,7 @@ def build_worlds(
     known_polities = {
         p.id for p in FictionFile.load(worlds_path.with_name("polities.yaml")).polities
     }
-    unknown = sorted({w.affiliation for w in source.worlds if w.affiliation} - known_polities)
+    unknown = sorted({a for w in source.worlds for a in w.affiliations} - known_polities)
     if unknown:
         raise ValueError(f"worlds.yaml cites unknown affiliations: {unknown}")
 
@@ -249,7 +249,7 @@ def build_worlds(
             "system": world.system,
             "parent": world.parent,
             "also": world.also,
-            "affiliation": world.affiliation,
+            "affiliations": world.affiliations,
             "uncertain": world.uncertain,
             "article": world.article,
             "note": world.note,

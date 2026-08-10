@@ -211,7 +211,9 @@ export class WorldField {
       positions[out * 3 + 1] = world.y as number;
       positions[out * 3 + 2] = world.z as number;
 
-      const color = polityColor.get(world.affiliation) ?? NEUTRAL;
+      // The first of several, where a place is held jointly. One ring can
+      // only carry one colour; the panel lists them all.
+      const color = polityColor.get(world.affiliations[0] ?? '') ?? NEUTRAL;
       colors[out * 3] = color.r;
       colors[out * 3 + 1] = color.g;
       colors[out * 3 + 2] = color.b;
