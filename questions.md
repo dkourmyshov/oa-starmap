@@ -8,7 +8,7 @@ Nothing below is a complaint about the setting. Most of it is the ordinary frict
 
 ---
 
-## Open questions (7)
+## Open questions (8)
 
 ### Enigma system — Three sources put the Enigma system in three different directions.
 
@@ -93,6 +93,16 @@ Wadai appears twice — in the Celestia add-on as EG 471 at 50.5 ly, and in the 
 
 - https://www.orionsarm.com/eg-article/4910e5c60edcc
 
+### Dated history — Dates are being read out of article prose by hand, and only the Caretaker Gods have been done.
+
+*data-gap*
+
+Thirteen of the fifteen worlds recorded so far carry dates, spanning 621 to 9920 A.T. Sand and Macrystis have none because their articles give none — checked, not assumed. Every other polity's worlds are still undated, and the dates that exist were transcribed by reading the articles.
+
+**What the map does now.** Records what has been read, and derives two summary years from it: the year a place first appears at all, and the year it became inhabited. A historical view of the sphere can be built from those, but only over the worlds that have them.
+
+**What would settle it.** Nothing on the fiction side — this is ours. The articles are the source and they are prose, so this is a transcription job rather than a question.
+
 ## The Inner Sphere colony tables
 
 891 of 1,122 rows resolve to a star we hold. The rest break down as follows.
@@ -161,7 +171,7 @@ Collinder 173, S232, S27
 
 ## Worlds located only by constellation
 
-6 of 13 canonical worlds are given as a distance and a constellation. That fixes the distance exactly and the direction only to the width of the constellation, which at these ranges is hundreds to thousands of light years. The map draws these with a broken ring rather than a solid one, and the detail panel gives the error in light years.
+6 of 15 canonical worlds are given as a distance and a constellation. That fixes the distance exactly and the direction only to the width of the constellation, which at these ranges is hundreds to thousands of light years. The map draws these with a broken ring rather than a solid one, and the detail panel gives the error in light years.
 
 Coordinates, or a nearby named star, would turn any of these from a region into a position.
 
@@ -175,7 +185,7 @@ One designation, two entries, different positions. Both are kept, since dropping
 
 JD 518791
 
-## Settled (3)
+## Settled (4)
 
 Kept so a question answered once is not asked again, and so that a confirmation is on the record alongside the contradictions.
 
@@ -213,3 +223,15 @@ The EG article gives Carina at 2,735 ly. The Celestia add-on, which was not cons
 **What would settle it.** Settled.
 
 - https://www.orionsarm.com/eg-article/48fe1da7a2205
+
+### Kalii / Arctar — Kalii is a Non-Coercive Zone system, not a Caretaker one.
+
+*correction*
+
+Recorded here as Caretaker on the strength of the Caretaker takeover in 3780, which is only the middle of the story: the Caretaker sold the system to a Non-Coercive Zone business in 4323, and it has been theirs since. The initial colonisation attempts are undated.
+
+**What the map does now.** Affiliation is the present holder — the Non-Coercive Zone — with both dates kept as events, so the Caretaker period is still on the record. This is the rule for every entry: `affiliation` is who holds it now, whatever the history says happened on the way there.
+
+**What would settle it.** Settled.
+
+- https://www.orionsarm.com/eg-article/46478982497db

@@ -17,6 +17,7 @@ import type {
   OAStarData,
   StarData,
   WorldData,
+  WorldEvent,
 } from '../data/manifest';
 import {
   KIND_CLUSTER,
@@ -29,6 +30,23 @@ import {
   systemLabel,
 } from '../scene/objects';
 import { PC_TO_LY, type DistanceUnit, type Parsecs, formatDistance, pc } from '../units';
+
+/**
+ * How an event kind reads in the panel.
+ *
+ * Spelled out rather than shown raw, because the stored words are a controlled
+ * vocabulary chosen to be sortable and unambiguous, not to be read: "stewardship"
+ * on its own does not say who took the system or that it is a Caretaker thing.
+ */
+const EVENT_LABEL: Record<string, string> = {
+  visited: 'first visited',
+  settled: 'settled',
+  contact: 'first contact',
+  stewardship: 'taken into stewardship',
+  transferred: 'changed hands',
+  reported: 'discovery reported',
+  abandoned: 'abandoned',
+};
 
 interface Row {
   label: string;
@@ -43,6 +61,8 @@ interface Detail {
   polities: string[];
   /** Which OA source the polity association was read from, if any. */
   associationSource: string | null;
+  /** Dated history, earliest first. Years After Tranquility. */
+  events?: WorldEvent[];
   /**
    * Canonical worlds in this system.
    *
@@ -153,7 +173,7 @@ export class DetailPanel {
     const fiction = this.sources.fiction;
     const beyond = fiction ? detail.distancePc > fiction.frontierPc : false;
 
-    if (detail.polities.length > 0 || beyond || detail.worlds?.length) {
+    if (detail.polities.length > 0 || beyond || detail.worlds?.length || detail.events?.length) {
       const note = el('div', 'note');
       note.appendChild(el('div', 'note-line', "Orion's Arm"));
       if (detail.polities.length > 0) {
@@ -161,6 +181,15 @@ export class DetailPanel {
         if (detail.associationSource) {
           note.appendChild(el('div', 'note-line', `after ${detail.associationSource}`));
         }
+      }
+      for (const event of detail.events ?? []) {
+        const line = el('div', 'row');
+        // The year leads. It is what the reader came to this block for, and
+        // what a run of them has to be scannable by.
+        line.appendChild(el('span', 'label', `${event.year_at} A.T.`));
+        line.appendChild(el('span', 'value', EVENT_LABEL[event.kind] ?? event.kind));
+        note.appendChild(line);
+        if (event.note) note.appendChild(el('div', 'note-line', event.note));
       }
       for (const world of detail.worlds ?? []) {
         const line = el('div', 'row');
@@ -324,6 +353,7 @@ export class DetailPanel {
         ? [world.uncertain ? `${affiliation.name} (uncertain)` : affiliation.name]
         : [],
       associationSource: world.article || null,
+      events: world.events,
       citation: worlds.dataset.source.citation,
       distancePc: distance,
       focus: { x, y, z, standoff: pc(Math.max(distance * 0.12, 2)) },
@@ -391,6 +421,12 @@ export class DetailPanel {
       title: (here.length ? systemLabel(here) : '') || entry.label || entry.name,
       subtitle: "Orion's Arm system",
       worlds: here.map((w) => ({ name: w.name, kind: w.kind, article: w.article })),
+      // Merged across every world in the system and re-sorted: the history of a
+      // system is one sequence, even where two of its worlds each contribute to
+      // it, and interleaving by year is the only way it reads as one.
+      events: here
+        .flatMap((w) => w.events)
+        .sort((a, b) => a.year_at - b.year_at || a.kind.localeCompare(b.kind)),
       rows,
       polities: affiliation
         ? [entry.uncertain ? `${affiliation.name} (uncertain)` : affiliation.name]
@@ -498,6 +534,11 @@ export class DetailPanel {
           .filter((name): name is string => Boolean(name)),
       ].filter((name, i, all) => all.indexOf(name) === i),
       worlds: here.map((w) => ({ name: w.name, kind: w.kind, article: w.article })),
+      // Merged across every world in the system and re-sorted: a system's
+      // history is one sequence even where two of its worlds contribute to it.
+      events: here
+        .flatMap((w) => w.events)
+        .sort((a, b) => a.year_at - b.year_at || a.kind.localeCompare(b.kind)),
       associationSource:
         this.sourceLineFor('star', index) ??
         (colony?.affiliations.length ? this.sources.innerSphere?.dataset.source.citation ?? null : null),

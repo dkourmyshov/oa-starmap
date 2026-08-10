@@ -22,6 +22,14 @@
 # Distances carry their unit always. Orion's Arm quotes light years and astronomy
 # quotes parsecs; the factor between them is 3.26, which is big enough to be
 # wrong and small enough to look right.
+#
+# `events` records dated history. Years are After Tranquility — the setting's own
+# epoch, counted from the 1969 Moon landing — and are stored as given, never
+# converted. `visited` and `settled` are the two that a map of the sphere at a
+# given year is drawn from; the other kinds exist because the sources draw
+# distinctions that collapsing to those two would throw away. `affiliation` is
+# always the *present* holder, at 10600-odd AT, whatever the events say happened
+# on the way there.
 
 worlds:
   # ---- Caretaker Gods ----------------------------------------------------
@@ -33,6 +41,9 @@ worlds:
     location:
       constellation: Canis Major
       distance: 805 ly
+    events:
+      - year_at: 3709
+        kind: settled
 
   - name: Chorus
     kind: planet
@@ -41,6 +52,10 @@ worlds:
     article: https://www.orionsarm.com/eg-article/48fe1da7a2205
     location:
       oa_star: Cantor
+    events:
+      - year_at: 7953
+        kind: visited
+        note: Explorers entered the system.
     note: >-
       The add-on independently confirms the article: it places Cantor in Carina
       at 2,736 ly against the article's Carina at 2,735 ly. Two sources agreeing
@@ -55,6 +70,13 @@ worlds:
     location:
       constellation: Antlia
       distance: 1500 ly
+    events:
+      - year_at: 4678
+        kind: settled
+        note: First colonised by a Non-Coercive Zone house.
+      - year_at: 4679
+        kind: stewardship
+        note: The Caretaker God revealed emself, a year after the house arrived.
     note: >-
       A volume, not a point. Antlia's enclosing radius is 13 degrees, so at this
       distance the direction is uncertain by about 350 ly — more than the
@@ -70,6 +92,13 @@ worlds:
     location:
       constellation: Canis Major
       distance: 4598 ly
+    events:
+      - year_at: 9920
+        kind: reported
+        note: >-
+          First public reports of the discovery. The discovery itself was
+          earlier — probably in the 9700s — so this is the date the setting
+          records rather than the date it happened.
     note: >-
       Located by constellation despite the add-on carrying a star called Enigma,
       because the two do not agree. The add-on puts it in Columba at 4,598 ly —
@@ -89,6 +118,9 @@ worlds:
     article: https://www.orionsarm.com/eg-article/48f4a40a5df0a
     location:
       hip: 99240
+    events:
+      - year_at: 691
+        kind: settled
     note: >-
       Aristotle is Orion's Arm's name for the star itself, not a second world —
       it is Delta Pavonis, 19.9 ly, one of the nearest systems here. Named as
@@ -100,11 +132,21 @@ worlds:
   - name: Kalii
     kind: planet
     system: Arctar
-    affiliation: caretaker-gods
+    affiliation: nocozo
     article: https://www.orionsarm.com/eg-article/46478982497db
     location:
       hip: 9024
-    note: HIP 9024 is HD 11697, in Perseus at 354 ly.
+    events:
+      - year_at: 3780
+        kind: stewardship
+        note: Taken over by a Caretaker God. The initial colonisation attempts are undated.
+      - year_at: 4323
+        kind: transferred
+        note: Sold to a Non-Coercive Zone business.
+    note: >-
+      Not a Caretaker system any more, whatever it was between 3780 and 4323:
+      the Caretaker sold it on, and the affiliation here is the present holder.
+      HIP 9024 is HD 11697, in Perseus at 354 ly.
 
   - name: Duxed
     kind: moon
@@ -115,6 +157,13 @@ worlds:
     location:
       constellation: Carina
       distance: 639 ly
+    events:
+      - year_at: 1813
+        kind: settled
+        note: First successful attempt at colonisation.
+      - year_at: 2917
+        kind: stewardship
+        note: Arrival of the Caretaker God, eleven centuries after the colony.
     note: Duxed is a moon of the gas giant Pacol, in the Piaget system.
 
   - name: Earth
@@ -124,13 +173,30 @@ worlds:
     article: https://www.orionsarm.com/eg-article/462eae95003f8
     location:
       star: Sol
+    events:
+      - year_at: 621
+        kind: stewardship
+        note: >-
+          The Great Expulsion by GAIA, the first Caretaker. Not a colonisation
+          date — Earth is where the colonists came from — but the year its
+          Caretaker took it, which is the same kind of event as Duxed's 2917.
     note: >-
       Under GAIA. Already on the map as the origin of the coordinate frame, so
       this entry adds the article rather than a position.
 
   - name: Evermore
     kind: megastructure
+    system: Altus Lucror
     affiliation: caretaker-gods
+    events:
+      - year_at: 4772
+        kind: settled
+        note: >-
+          Acquisition of the uninhabited Altus Lucror planetary system by a
+          Caretaker-like archailect entity.
+      - year_at: 4773
+        kind: settled
+        note: Development actually begins.
     article: https://www.orionsarm.com/eg-article/48fbc25f56967
     location:
       note: >-
@@ -149,6 +215,13 @@ worlds:
     location:
       constellation: Taurus
       distance: 3876 ly
+    events:
+      - year_at: 7950
+        kind: visited
+        note: Explored and sampled by a probe.
+      - year_at: 8002
+        kind: stewardship
+        note: A Caretaker God assumed stewardship.
     note: A rogue planet, bound to no star.
 
   - name: Macrystis
@@ -169,6 +242,21 @@ worlds:
       2,050 ly, so the system lies along the same line of sight rather than at
       the star. Macrystis is a moon of the gas giant Lontis.
 
+  - name: New Gaia
+    kind: planet
+    system: New Gaia
+    also: [Rachel]
+    affiliation: caretaker-gods
+    location:
+      hip: 24813
+    events:
+      - year_at: 1365
+        kind: settled
+    note: >-
+      Lambda Aurigae, 41 ly, already on the map through the Inner Sphere colony
+      table — which gives the system as "Rachel/New Gaia", two names for the one
+      place. This entry adds the date rather than a position.
+
   - name: Sand
     kind: planet
     system: Sand
@@ -185,7 +273,39 @@ worlds:
     article: https://www.orionsarm.com/eg-article/57f2790443640
     location:
       hd: 27836
+    events:
+      - year_at: 2143
+        kind: settled
+        note: >-
+          Settled by the Sephirotics. Already connected to the ahuman
+          Terragen-origin Taurus Nexus at the time, so somebody had been there
+          before — no date for that.
     note: >-
       The article gives 134 ly; the catalogue puts HD 27836 at 156 ly, a 17 per
       cent difference of the size that separates a pre-Gaia parallax from a
       modern one. Bound anyway, and the catalogue distance is the one drawn.
+
+  - name: Tohul
+    kind: planet
+    system: H'tat'sa'thoss
+    affiliation: caretaker-gods
+    article: https://www.orionsarm.com/eg-article/5eefcc060d4c4
+    location:
+      oa_star: JD 870135
+    events:
+      - year_at: 3831
+        kind: visited
+        note: First visit by Terragens.
+      - year_at: 4011
+        kind: contact
+        note: First contact with the To'ul'h.
+      - year_at: 4645
+        kind: stewardship
+        note: Caretaker domain declared over the system.
+    note: >-
+      The planet of the H'tat'sa'thoss system, already on the map as the
+      Celestia add-on's JD 870135. Recorded here for the dates: the two hundred
+      years between first visit and first contact, and the six hundred more
+      before the system was closed, are the whole shape of this contact and are
+      not derivable from a position. Tohul is the planet, H'tat'sa'thoss the
+      system, To'ul'h the species.

@@ -53,12 +53,31 @@ SOURCE_URL = "https://www.orionsarm.com/"
 EXACT = 0.0
 
 
+#: Event kinds that put a world on a map of the sphere at a given year.
+#:
+#: A location is on the map once somebody has been there, whether or not they
+#: stayed — an unvisited place cannot appear, but a visited one is known even if
+#: the visit was a probe that flew on.
+#:
+#: ``reported`` counts, and is the one that needs saying. It marks the date the
+#: setting *records* where the event was plainly earlier, so as a presence date
+#: it is an upper bound rather than the truth: Stanislaw is reported discovered
+#: in 9920 and was found some time in the 9700s. An upper bound is still the
+#: best answer available, and excluding it left Stanislaw off the timeline
+#: entirely, which is a worse answer than a late one.
+PRESENCE_KINDS = ("visited", "settled", "contact", "stewardship", "transferred", "reported")
+
+
 @dataclass
 class WorldStats:
     total: int = 0
     by_method: Counter = field(default_factory=Counter)
     unlocated: list[str] = field(default_factory=list)
     unresolved: list[str] = field(default_factory=list)
+    dated: int = 0
+    undated: list[str] = field(default_factory=list)
+    earliest: int | None = None
+    latest: int | None = None
 
     def as_dict(self) -> dict[str, Any]:
         return {
@@ -66,6 +85,9 @@ class WorldStats:
             "by_method": dict(sorted(self.by_method.items())),
             "unlocated": self.unlocated,
             "unresolved": self.unresolved,
+            "dated": self.dated,
+            "undated": self.undated,
+            "epoch_range_at": [self.earliest, self.latest],
         }
 
 
@@ -204,6 +226,23 @@ def build_worlds(
         method = world.location.method
         stats.by_method[method] += 1
 
+        events = [
+            {"year_at": e.year_at, "kind": e.kind, "note": e.note}
+            for e in sorted(world.events, key=lambda e: (e.year_at, e.kind))
+        ]
+        presence = [e["year_at"] for e in events if e["kind"] in PRESENCE_KINDS]
+        settled_years = [e["year_at"] for e in events if e["kind"] == "settled"]
+        known_from = min(presence) if presence else None
+        settled_at = min(settled_years) if settled_years else None
+
+        if events:
+            stats.dated += 1
+            years = [e["year_at"] for e in events]
+            stats.earliest = min(years) if stats.earliest is None else min(stats.earliest, *years)
+            stats.latest = max(years) if stats.latest is None else max(stats.latest, *years)
+        else:
+            stats.undated.append(world.name)
+
         record: dict[str, Any] = {
             "name": world.name,
             "kind": world.kind,
@@ -215,6 +254,13 @@ def build_worlds(
             "article": world.article,
             "note": world.note,
             "method": method,
+            "events": events,
+            # The year from which a map of the sphere should show this place at
+            # all, and the year it became inhabited. Derived rather than
+            # authored: an author editing a date should not also have to
+            # remember to update a summary of it.
+            "known_from_at": known_from,
+            "settled_at": settled_at,
             "star_index": None,
             "oa_star": "",
             "x": None,
@@ -299,6 +345,9 @@ def format_report(dataset: dict[str, Any]) -> str:
     """A short build report, in the style of the other fiction builds."""
     stats = dataset["stats"]
     lines = [f"  worlds     {dataset['count']:,} entries"]
+    if stats["dated"]:
+        first, last = stats["epoch_range_at"]
+        lines.append(f"             {stats['dated']} dated, {first}-{last} A.T.")
     for method, count in stats["by_method"].items():
         described = {
             "star": "bound to a catalogue star",

@@ -397,6 +397,14 @@ export interface FictionData {
   frontierFlagged: number;
 }
 
+export interface WorldEvent {
+  /** Years After Tranquility, the setting's epoch. Never converted to CE. */
+  year_at: number;
+  /** visited | settled | contact | stewardship | transferred | reported | abandoned. */
+  kind: string;
+  note: string;
+}
+
 export interface WorldEntry {
   name: string;
   /** planet, moon, system, megastructure, volume — descriptive. */
@@ -430,6 +438,15 @@ export interface WorldEntry {
   direction_error_ly: number | null;
   /** Half the extent, for a world that is a volume rather than a point. */
   radius_pc: number | null;
+  /** Dated history, earliest first. */
+  events: WorldEvent[];
+  /**
+   * The year from which a map of the sphere should show this place at all —
+   * the earliest event establishing that anyone had been there.
+   */
+  known_from_at: number | null;
+  /** The year it became inhabited, where it did. */
+  settled_at: number | null;
 }
 
 export interface WorldsDataset {

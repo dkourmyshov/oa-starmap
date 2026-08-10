@@ -186,3 +186,87 @@ def test_a_sky_location_needs_a_distance() -> None:
 
     with pytest.raises(ValidationError, match="needs a distance"):
         WorldLocation(constellation="Canis Major")
+
+
+def test_dated_history_is_ordered_and_derived() -> None:
+    """The two summary years are derived, and must agree with the events.
+
+    They are what a historical view of the sphere would be drawn from, and they
+    are computed rather than authored precisely so that editing a date cannot
+    leave a stale summary behind. This checks the derivation against the events
+    it came from, for every world.
+    """
+    import json
+
+    from oastarmap.build.worlds import PRESENCE_KINDS
+    from oastarmap.paths import DATA_OUT_DIR
+
+    path = DATA_OUT_DIR / "worlds.json"
+    if not path.exists():
+        pytest.skip("dataset not built")
+
+    for world in json.loads(path.read_text(encoding="utf-8")):
+        events = world["events"]
+        years = [e["year_at"] for e in events]
+        assert years == sorted(years), f"{world['name']} events are not in order"
+
+        presence = [e["year_at"] for e in events if e["kind"] in PRESENCE_KINDS]
+        assert world["known_from_at"] == (min(presence) if presence else None)
+
+        settled = [e["year_at"] for e in events if e["kind"] == "settled"]
+        assert world["settled_at"] == (min(settled) if settled else None)
+
+        # A place cannot be settled before anyone has been there.
+        if world["settled_at"] is not None:
+            assert world["known_from_at"] is not None
+            assert world["known_from_at"] <= world["settled_at"]
+
+
+def test_a_reported_discovery_still_dates_the_world() -> None:
+    """Stanislaw's only date is a report, and it must still place it in time.
+
+    The report is an upper bound — the discovery it reports happened in the
+    9700s — but excluding it left the world with no date at all, which is a
+    worse answer than a late one.
+    """
+    import json
+
+    from oastarmap.paths import DATA_OUT_DIR
+
+    path = DATA_OUT_DIR / "worlds.json"
+    if not path.exists():
+        pytest.skip("dataset not built")
+
+    worlds = {w["name"]: w for w in json.loads(path.read_text(encoding="utf-8"))}
+    assert worlds["Stanislaw"]["known_from_at"] == 9920
+    assert worlds["Stanislaw"]["settled_at"] is None
+
+    # And a world whose articles give no date stays undated rather than guessing.
+    assert worlds["Sand"]["known_from_at"] is None
+    assert worlds["Macrystis"]["known_from_at"] is None
+
+
+def test_affiliation_is_the_present_holder() -> None:
+    """Kalii passed from a Caretaker to the Non-Coercive Zone in 4323.
+
+    The history is kept as events; the affiliation is who holds it now. Without
+    that rule an entry would silently record whichever owner was transcribed
+    first.
+    """
+    worlds = {w.name: w for w in WorldFile.load(FICTION_DIR / "worlds.yaml").worlds}
+    kalii = worlds["Kalii"]
+    assert kalii.affiliation == "nocozo"
+    assert [(e.year_at, e.kind) for e in kalii.events] == [
+        (3780, "stewardship"),
+        (4323, "transferred"),
+    ]
+
+
+def test_event_kinds_are_a_closed_vocabulary() -> None:
+    from pydantic import ValidationError
+
+    from oastarmap.fiction.schema import WorldEvent
+
+    assert WorldEvent(year_at=3709, kind="settled").kind == "settled"
+    with pytest.raises(ValidationError, match="event kind must be one of"):
+        WorldEvent(year_at=3709, kind="colonised")

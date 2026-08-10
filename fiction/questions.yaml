@@ -197,3 +197,43 @@ questions:
     would_settle: Settled.
     links:
       - https://www.orionsarm.com/eg-article/48fe1da7a2205
+
+  - id: kalii-changed-hands
+    topic: Kalii / Arctar
+    status: settled
+    severity: correction
+    summary: Kalii is a Non-Coercive Zone system, not a Caretaker one.
+    detail: >-
+      Recorded here as Caretaker on the strength of the Caretaker takeover in
+      3780, which is only the middle of the story: the Caretaker sold the system
+      to a Non-Coercive Zone business in 4323, and it has been theirs since. The
+      initial colonisation attempts are undated.
+    map_does: >-
+      Affiliation is the present holder — the Non-Coercive Zone — with both dates
+      kept as events, so the Caretaker period is still on the record. This is the
+      rule for every entry: `affiliation` is who holds it now, whatever the
+      history says happened on the way there.
+    would_settle: Settled.
+    links:
+      - https://www.orionsarm.com/eg-article/46478982497db
+
+  - id: dates-from-article-text
+    topic: Dated history
+    status: open
+    severity: data-gap
+    summary: >-
+      Dates are being read out of article prose by hand, and only the Caretaker
+      Gods have been done.
+    detail: >-
+      Thirteen of the fifteen worlds recorded so far carry dates, spanning 621 to
+      9920 A.T. Sand and Macrystis have none because their articles give none —
+      checked, not assumed. Every other polity's worlds are still undated, and
+      the dates that exist were transcribed by reading the articles.
+    map_does: >-
+      Records what has been read, and derives two summary years from it: the
+      year a place first appears at all, and the year it became inhabited. A
+      historical view of the sphere can be built from those, but only over the
+      worlds that have them.
+    would_settle: >-
+      Nothing on the fiction side — this is ours. The articles are the source and
+      they are prose, so this is a transcription job rather than a question.

@@ -508,6 +508,60 @@ class WorldLocation(BaseModel):
         return self
 
 
+EVENT_KINDS = frozenset(
+    {
+        "visited",
+        "settled",
+        "contact",
+        "stewardship",
+        "transferred",
+        "reported",
+        "abandoned",
+    }
+)
+"""What a dated event in a world's history is.
+
+Deliberately few, and deliberately not a full historical vocabulary. Two of
+these carry the weight — ``visited`` and ``settled`` — because those are what a
+map of the sphere at a given year is drawn from: a location appears once
+somebody has been there, and reads as inhabited once somebody has stayed. The
+rest exist because collapsing them into those two would lose the distinction the
+sources actually draw. Duxed was colonised in 1813 and acquired its Caretaker in
+2917, and a model with one date per place would have to discard one of them.
+
+- ``visited``      somebody went, or a probe did. Nobody stayed.
+- ``settled``      a colony was established.
+- ``contact``      first contact with a resident xenosophont species.
+- ``stewardship``  a Caretaker God took the system under protection.
+- ``transferred``  the system changed hands between polities.
+- ``reported``     the date the setting *records*, where the event itself is
+                   known to be earlier. Stanislaw's discovery is reported in
+                   9920 and had plainly happened before that.
+- ``abandoned``    the colony ended.
+"""
+
+
+class WorldEvent(BaseModel):
+    """One dated thing that happened at a world.
+
+    Years are After Tranquility, the setting's own epoch, counted from the 1969
+    Moon landing. Stored as given rather than converted to CE: the sources quote
+    AT throughout, and a stored conversion would be a second thing to keep right
+    for no gain.
+    """
+
+    year_at: int
+    kind: str
+    note: str = ""
+
+    @field_validator("kind")
+    @classmethod
+    def _known_kind(cls, value: str) -> str:
+        if value not in EVENT_KINDS:
+            raise ValueError(f"event kind must be one of {sorted(EVENT_KINDS)}, got {value!r}")
+        return value
+
+
 class World(BaseModel):
     """A canonical Orion's Arm place, and where the setting puts it."""
 
@@ -536,6 +590,10 @@ class World(BaseModel):
     """Diameter, for a place that is a volume rather than a point."""
 
     location: WorldLocation = Field(default_factory=WorldLocation)
+
+    events: list[WorldEvent] = Field(default_factory=list)
+    """Dated history, in any order; the build sorts it."""
+
     article: str = ""
     note: str = ""
 
