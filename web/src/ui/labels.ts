@@ -20,6 +20,7 @@ import {
   KIND_HII,
   KIND_OASTAR,
   KIND_STAR,
+  KIND_WORLD,
   type LayerVisibility,
   type ObjectIndex,
 } from '../scene/objects';
@@ -34,6 +35,7 @@ const KIND_CLASS: Record<number, string> = {
   [KIND_CLUSTER]: 'map-label-cluster',
   [KIND_HII]: 'map-label-hii',
   [KIND_OASTAR]: 'map-label-oastar',
+  [KIND_WORLD]: 'map-label-world',
 };
 
 export class LabelOverlay {
@@ -90,7 +92,12 @@ export class LabelOverlay {
       const kind = this.objects.ref(label.id).kind;
 
       node.textContent = label.text;
-      node.className = `map-label ${KIND_CLASS[kind] ?? ''}`;
+      // Italic marks an asserted position, not a kind. Keyed off the object's
+      // own flag rather than which layer it came from, because the two disagree:
+      // Wadai is an entry of the Celestia add-on and a real white dwarf, and
+      // setting it in italic claimed the setting had invented its position.
+      const asserted = label.asserted ? ' map-label-asserted' : '';
+      node.className = `map-label ${KIND_CLASS[kind] ?? ''}${asserted}`;
       node.style.transform = `translate3d(${label.x}px, ${label.y}px, 0) translate(-50%, -50%)`;
       // Faint labels stay legible but recede, so the eye lands on the anchors.
       node.style.opacity = String(Math.min(0.45 + label.importance * 0.4, 1));

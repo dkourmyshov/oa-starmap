@@ -104,6 +104,7 @@ function makeOAStars(
     system?: string;
     label?: string;
     hidden?: boolean;
+    real?: string;
   }[],
 ): OAStarData {
   const positions = new Float32Array(entries.length * 5);
@@ -126,7 +127,7 @@ function makeOAStars(
       system: e.system ?? '',
       label: e.label ?? e.system ?? e.name,
       affiliation: '',
-      real: '',
+      real: e.real ?? '',
       uncertain: false,
       article: '',
       note: '',
@@ -760,5 +761,187 @@ describe("Orion's Arm only mode", () => {
       settled(0),
     );
     expect(layout(index, false)[0].color).toBe('#FF7043');
+  });
+});
+
+
+describe('label priority does not encode our own record-keeping', () => {
+  const colonyAt = (index: number, name: string, affiliations: string[] = []) => [
+    index,
+    {
+      star_index: index,
+      star: 'x',
+      colony: name,
+      spectral_type: '',
+      mass_sol: '',
+      luminosity_sol: '',
+      distance_ly: 10,
+      method: 'name',
+      distance_disagrees: false,
+      affiliations,
+      status: '',
+      note: '',
+    },
+  ] as const;
+
+  const layoutAll = (index: ObjectIndex) =>
+    index.layout(camera(), {
+      width: WIDTH,
+      height: HEIGHT,
+      magnitudeLimit: 20,
+      maxLabels: 20,
+      visible: ALL_VISIBLE,
+    });
+
+  /**
+   * Wadai is an add-on entry that happens to carry an article; the colonies
+   * around it are table rows that do not. Ranking on that made Wadai outrank
+   * the whole Inner Sphere, which reports how far our transcription has got
+   * rather than anything Orion's Arm says.
+   */
+  it('ranks an add-on system level with an Inner Sphere colony', () => {
+    const index = new ObjectIndex(
+      makeStars([[40, 0, -100]]),
+      null,
+      null,
+      null,
+      makeOAStars([{ xyz: [-40, 0, -100], name: 'EG 471', label: 'Wadai' }]),
+      new Map([colonyAt(0, 'Akela')]),
+    );
+
+    const placed = layoutAll(index);
+    const wadai = placed.find((p) => p.text === 'Wadai');
+    const akela = placed.find((p) => p.text === 'Akela');
+    expect(wadai).toBeDefined();
+    expect(akela).toBeDefined();
+    expect(wadai!.importance).toBe(akela!.importance);
+  });
+
+  it('does not rank a colony higher for having a polity', () => {
+    const index = new ObjectIndex(
+      makeStars([
+        [-40, 0, -100],
+        [40, 0, -100],
+      ]),
+      null,
+      null,
+      null,
+      null,
+      new Map([colonyAt(0, 'Assigned', ['metasoft']), colonyAt(1, 'Unassigned')]),
+    );
+
+    const placed = layoutAll(index);
+    const assigned = placed.find((p) => p.text === 'Assigned');
+    const unassigned = placed.find((p) => p.text === 'Unassigned');
+    expect(assigned!.importance).toBe(unassigned!.importance);
+  });
+});
+
+describe('italic marks an asserted position, not a source', () => {
+  const layoutAll = (index: ObjectIndex) =>
+    index.layout(camera(), {
+      width: WIDTH,
+      height: HEIGHT,
+      magnitudeLimit: 20,
+      maxLabels: 20,
+      visible: ALL_VISIBLE,
+    });
+
+  it('leaves a real object roman even though the add-on supplied it', () => {
+    const index = new ObjectIndex(
+      makeStars([[0, 0, -400]]),
+      null,
+      null,
+      null,
+      makeOAStars([
+        { xyz: [-40, 0, -100], name: 'EG 471', label: 'Wadai', real: 'GJ 3162' },
+        { xyz: [40, 0, -100], name: 'JD 836901', system: 'Wurm' },
+      ]),
+    );
+
+    const placed = layoutAll(index);
+    expect(placed.find((p) => p.text === 'Wadai')!.asserted).toBe(false);
+    expect(placed.find((p) => p.text === 'Wurm')!.asserted).toBe(true);
+  });
+});
+
+describe('picking prefers what was aimed at', () => {
+  /**
+   * The anonymous star is the one closer to the click. Nearest-wins would hand
+   * it back, which is why a named system in the Inner Sphere used to be
+   * unreachable without zooming until nothing else was in range.
+   */
+  it('takes a named system over a nearer anonymous star', () => {
+    const cam = camera();
+    const index = new ObjectIndex(
+      makeStars([
+        [0, 0, -100],
+        [1.2, 0, -100],
+      ]),
+      null,
+      null,
+      null,
+      null,
+      new Map([
+        [
+          0,
+          {
+            star_index: 0,
+            star: 'x',
+            colony: 'Akela',
+            spectral_type: '',
+            mass_sol: '',
+            luminosity_sol: '',
+            distance_ly: 10,
+            method: 'name',
+            distance_disagrees: false,
+            affiliations: [],
+            status: '',
+            note: '',
+          },
+        ],
+      ]),
+    );
+
+    // Click on the anonymous star's own position.
+    const at = new THREE.Vector3(1.2, 0, -100).project(cam);
+    const x = (at.x * 0.5 + 0.5) * WIDTH;
+    const y = (-at.y * 0.5 + 0.5) * HEIGHT;
+
+    expect(index.pick(cam, x, y, pickOptions, 20)).toBe(0);
+    expect(index.ref(index.pick(cam, x, y, pickOptions, 20) as number).kind).toBe(KIND_STAR);
+  });
+
+  it('still takes the nearer of two equals', () => {
+    const cam = camera();
+    const index = new ObjectIndex(
+      makeStars([
+        [0, 0, -100],
+        [1.2, 0, -100],
+      ]),
+      null,
+      null,
+      null,
+    );
+    const at = new THREE.Vector3(1.2, 0, -100).project(cam);
+    const x = (at.x * 0.5 + 0.5) * WIDTH;
+    const y = (-at.y * 0.5 + 0.5) * HEIGHT;
+    expect(index.pick(cam, x, y, pickOptions, 20)).toBe(1);
+  });
+
+  it('finds an object that carries no label at all', () => {
+    const cam = camera();
+    const index = new ObjectIndex(makeStars([[0, 0, -100]]), null, null, null);
+    // No names given, so nothing here is ever labelled.
+    expect(
+      index.layout(cam, {
+        width: WIDTH,
+        height: HEIGHT,
+        magnitudeLimit: 20,
+        maxLabels: 20,
+        visible: ALL_VISIBLE,
+      }),
+    ).toHaveLength(0);
+    expect(index.pick(cam, WIDTH / 2, HEIGHT / 2, pickOptions, 5)).toBe(0);
   });
 });

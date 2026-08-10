@@ -97,26 +97,20 @@ const BASE_IMPORTANCE = {
   hii: 0.65,
 
   /**
-   * A real star Orion's Arm has given a colony name.
+   * Any system Orion's Arm names, from whichever source named it.
    *
-   * Above every catalogue designation, because inside 100 ly the colony name
-   * is what the map is for — but below the named OA systems, since there are
-   * 855 of these and only 16 of those.
+   * One weight for the colony tables, the Celestia add-on and the worlds file
+   * alike. Ranking them against each other would encode how far our
+   * transcription has got rather than anything about the setting: Wadai used to
+   * outrank the whole Inner Sphere because it happens to be one of the few
+   * entries we have recorded an article URL for, not because Orion's Arm treats
+   * it as more notable than Barnard's Star.
+   *
+   * Above the ceiling any other kind can reach — a polity-bound cluster filling
+   * the view is 0.7 + 0.6 + 1.5 = 2.8 — because this is a map of Orion's Arm and
+   * a system it names should be labelled whenever it is on screen.
    */
-  starColony: 1.7,
-
-  /**
-   * Named Orion's Arm systems, above everything else that can be scored.
-   *
-   * The ceiling for any other kind is a polity-bound cluster filling the view:
-   * 0.7 + 0.6 + 1.5 = 2.8. This sits above it deliberately, so a named system is
-   * labelled whenever it is on screen rather than competing with 459
-   * proper-named stars and every cluster for 45 slots.
-   *
-   * Affordable because there are only 16 of them. This is a map of Orion's Arm;
-   * the systems the setting names are the thing it is for.
-   */
-  oaStarNamed: 3.0,
+  oaSystem: 3.0,
 
   /**
    * A bare JD or YTS designation, which names nothing.
@@ -125,16 +119,6 @@ const BASE_IMPORTANCE = {
    * not zero, because an unlabelled marker is a dot that cannot be looked up.
    */
   oaStarNumbered: 0.32,
-
-  /**
-   * A canonical world the Encyclopaedia Galactica names and locates.
-   *
-   * Level with the named add-on systems, and for the same reason: there are a
-   * dozen of them, each carries an article, and they are what the map is for.
-   * A world bound to a star does not use this — it raises that star's score
-   * instead, since the star is what gets drawn.
-   */
-  world: 3.0,
 };
 
 /**
@@ -167,6 +151,8 @@ export interface PlacedLabel {
   importance: number;
   /** Polity colour, where the object has one. The marker carries it too. */
   color?: string;
+  /** The position is asserted by the fiction, not measured. Drawn in italic. */
+  asserted?: boolean;
 }
 
 export interface LayerVisibility {
@@ -230,6 +216,8 @@ export class ObjectIndex {
   private readonly labels: (string | undefined)[];
   /** 1 where the object carries Orion's Arm content of any kind. */
   private readonly isOA: Uint8Array;
+  /** 1 where the position comes from the fiction rather than a measurement. */
+  private readonly assertedPosition: Uint8Array;
   private readonly labelColor: (string | undefined)[];
 
   /** Ids that carry a label, so layout never walks the unlabelled majority. */
@@ -272,6 +260,7 @@ export class ObjectIndex {
     this.importance = new Float32Array(total);
     this.labels = new Array(total);
     this.isOA = new Uint8Array(total);
+    this.assertedPosition = new Uint8Array(total);
     this.labelColor = new Array(total);
 
     this.screenX = new Float32Array(total);
@@ -305,7 +294,7 @@ export class ObjectIndex {
       const here = worlds?.byStar.get(i);
       if (here?.length) {
         this.labels[at] = systemLabel(here);
-        this.importance[at] = BASE_IMPORTANCE.world;
+        this.importance[at] = BASE_IMPORTANCE.oaSystem;
         this.isOA[at] = 1;
         this.labelColor[at] = polityColor.get(here[0].affiliation);
       }
@@ -315,10 +304,10 @@ export class ObjectIndex {
       const colony = colonies?.get(i);
       if (colony?.colony && !this.labels[at]) {
         this.labels[at] = colony.colony;
-        // The polity bonus is what a bound cluster gets; a settled system has
-        // the same claim on attention and was losing to clusters without it.
-        this.importance[at] =
-          BASE_IMPORTANCE.starColony + (colony.affiliations.length ? POLITY_BONUS : 0);
+        // No bonus for carrying a polity. Belonging to one does not make a
+        // system more notable, and adding it here made the assigned systems
+        // crowd their unassigned neighbours off the map.
+        this.importance[at] = BASE_IMPORTANCE.oaSystem;
         this.isOA[at] = 1;
         this.labelColor[at] = polityColor.get(colony.affiliations[0] ?? '');
       }
@@ -342,7 +331,15 @@ export class ObjectIndex {
         }
       }
       if (polityByKind.star.has(i)) {
-        this.importance[at] += POLITY_BONUS;
+        // A star named on the political maps. The bonus lifts it clear of the
+        // catalogue designations, but never past a named system: 3.0 is the top
+        // of the scale for a point object, and letting a polity association push
+        // anything above it is what made assigned systems outrank their
+        // neighbours.
+        this.importance[at] = Math.min(
+          this.importance[at] + POLITY_BONUS,
+          BASE_IMPORTANCE.oaSystem,
+        );
         this.isOA[at] = 1;
       }
       if (this.labels[at]) labelled.push(at);
@@ -425,8 +422,13 @@ export class ObjectIndex {
           !entry?.oa_designation ||
           Boolean(entry?.affiliation || entry?.article || entry?.system);
         this.importance[at] = named
-          ? BASE_IMPORTANCE.oaStarNamed
+          ? BASE_IMPORTANCE.oaSystem
           : BASE_IMPORTANCE.oaStarNumbered;
+
+        // Italic says the position is asserted rather than measured. Most
+        // add-on entries are, but a few are real objects it carries because
+        // Celestia's catalogue omits them, and those are not.
+        this.assertedPosition[at] = entry?.real ? 0 : 1;
         if (entry?.affiliation) this.labelColor[at] = polityColor.get(entry.affiliation);
         if (this.labels[at]) labelled.push(at);
         at++;
@@ -452,7 +454,10 @@ export class ObjectIndex {
         this.srcIndex[at] = i;
         this.isOA[at] = 1;
         this.labels[at] = world.name;
-        this.importance[at] = BASE_IMPORTANCE.world;
+        this.importance[at] = BASE_IMPORTANCE.oaSystem;
+        // Everything reaching here was placed from the fiction's own numbers;
+        // one bound to a catalogue star is indexed as that star instead.
+        this.assertedPosition[at] = 1;
         this.labelColor[at] = polityColor.get(world.affiliation);
         if (this.labels[at]) labelled.push(at);
         at++;
@@ -557,6 +562,18 @@ export class ObjectIndex {
    * Ordering is by kind, not by depth: a star inside a cluster's ring should
    * select the star, and a cluster in front of a nebula should select the
    * cluster.
+   *
+   * Within a kind it is by *importance* before proximity. Nearest-wins sounds
+   * neutral and is not: in the Inner Sphere a named system sits among dozens of
+   * anonymous catalogue stars, so nearest-wins hands back a dull neighbour more
+   * often than the thing being aimed at, and the only way to hit the system was
+   * to zoom in until nothing else was within range. Someone clicking within a
+   * few pixels of a named place meant the named place.
+   *
+   * None of this depends on whether a label is drawn. Every object is scanned
+   * here, labelled or not — labels come from `layout`, which walks a separate
+   * list of only the labelled ones — so an unlabelled object is clickable and
+   * always has been.
    */
   pick(
     camera: THREE.PerspectiveCamera,
@@ -569,6 +586,7 @@ export class ObjectIndex {
 
     let best: number | null = null;
     let bestKind = 99;
+    let bestRank = -Infinity;
     let bestScore = Infinity;
 
     for (let id = 0; id < this.count; id++) {
@@ -598,9 +616,17 @@ export class ObjectIndex {
       }
 
       const priority = PICK_PRIORITY[kind] ?? 99;
-      if (priority < bestKind || (priority === bestKind && score < bestScore)) {
+      // Quantised, so a hair's difference in weight cannot beat a click that was
+      // plainly aimed somewhere else.
+      const rank = Math.round(this.importance[id] * 4);
+      const better =
+        priority < bestKind ||
+        (priority === bestKind &&
+          (rank > bestRank || (rank === bestRank && score < bestScore)));
+      if (better) {
         best = id;
         bestKind = priority;
+        bestRank = rank;
         bestScore = score;
       }
     }
@@ -665,6 +691,7 @@ export class ObjectIndex {
         y: cy,
         importance: candidate.priority,
         color: this.labelColor[id],
+        asserted: this.assertedPosition[id] === 1,
       });
     }
 

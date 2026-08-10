@@ -14,7 +14,7 @@ from __future__ import annotations
 
 import json
 import math
-from collections import defaultdict
+from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Any
 
@@ -189,6 +189,39 @@ def _load_distances(out_dir: Path) -> dict[str, np.ndarray]:
     return distances
 
 
+def _member_counts(out_dir: Path) -> Counter[str]:
+    """How many objects of any kind each polity actually holds.
+
+    The legend used to hide a polity with no *landmark* bindings, which meant it
+    hid seventeen of them: a landmark is a cluster or nebula read off the
+    political maps, and most polities are represented here by colonies, add-on
+    systems and worlds instead. The Caretaker Gods held eighteen objects and did
+    not appear on the legend at all.
+
+    Counted from the published output of the other builds rather than from their
+    return values, the same way the Inner Sphere build reads the star arrays. All
+    three are written before this one runs; a missing file means that dataset was
+    skipped, which is a normal state rather than an error.
+    """
+    counts: Counter[str] = Counter()
+
+    colonies = out_dir / "innersphere.json"
+    if colonies.exists():
+        for row in json.loads(colonies.read_text(encoding="utf-8")):
+            for affiliation in row.get("affiliations", []):
+                counts[affiliation] += 1
+
+    for name, field in (("oastars.names.json", "affiliation"), ("worlds.json", "affiliation")):
+        path = out_dir / name
+        if not path.exists():
+            continue
+        for row in json.loads(path.read_text(encoding="utf-8")):
+            if row.get(field):
+                counts[row[field]] += 1
+
+    return counts
+
+
 def build_fiction(
     fiction_dir: Path | None = None,
     out_dir: Path | None = None,
@@ -254,6 +287,12 @@ def build_fiction(
             continue
         target[binding.index] = polity_index[binding.polities[0]]
 
+    # Landmarks plus every other kind of member, so the legend can show a polity
+    # that holds only colonies.
+    members = _member_counts(out_dir)
+    for polity in fiction.polities:
+        members[polity.id] += sum(1 for b in report.resolved if polity.id in b.polities)
+
     files = {
         "cluster_polity": write_array(out_dir / "fiction.clusterpolity.bin", cluster_polity),
         "hii_polity": write_array(out_dir / "fiction.hiipolity.bin", hii_polity),
@@ -270,6 +309,7 @@ def build_fiction(
                         "source": p.source,
                         "landmark_count": len(p.landmarks),
                         "resolved_count": sum(1 for b in report.resolved if p.id in b.polities),
+                        "member_count": members.get(p.id, 0),
                         "beyond_frontier_count": sum(
                             1 for b in report.resolved if p.id in b.polities and b.beyond_frontier
                         ),

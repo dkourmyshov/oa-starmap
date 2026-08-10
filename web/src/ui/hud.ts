@@ -302,15 +302,24 @@ export class Hud {
 
     const list = el('div', 'legend');
     for (const polity of fiction.polities) {
-      if (polity.resolved_count === 0) continue;
+      // Every polity that holds anything at all. Filtering on resolved_count
+      // hid seventeen of them, because that counts only landmarks read off the
+      // political maps — most polities are here through colonies, add-on
+      // systems and worlds instead, and the Caretaker Gods held eighteen
+      // objects without appearing at all.
+      if (polity.member_count === 0) continue;
       const row = el('button', 'legend-row');
       const swatch = el('span', 'swatch');
       swatch.style.background = polity.color;
       row.appendChild(swatch);
       row.appendChild(el('span', 'legend-name', polity.name));
-      row.appendChild(
-        el('span', 'legend-count', `${polity.resolved_count}/${polity.landmark_count}`),
-      );
+      // Landmarks are shown as a fraction because the denominator is knowable:
+      // the political maps name a fixed list. Everything else has no total to
+      // count against, so the member tally stands alone.
+      const count = polity.landmark_count
+        ? `${polity.resolved_count}/${polity.landmark_count}`
+        : String(polity.member_count);
+      row.appendChild(el('span', 'legend-count', count));
       row.addEventListener('click', () => this.callbacks.onFocusPolity(polity.id));
       list.appendChild(row);
     }
