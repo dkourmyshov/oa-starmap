@@ -16,6 +16,7 @@ import type {
 import { DEFAULT_OPACITY as DEFAULT_CLUSTER_OPACITY } from '../layers/clusterField';
 import { DEFAULT_OPACITY as DEFAULT_HII_OPACITY } from '../layers/hiiField';
 import { DEFAULT_MAX_LABELS } from './labels';
+import { type Viewpoint, VIEWPOINTS } from '../scene/viewer';
 import { type DistanceUnit, DEFAULT_UNIT, type Parsecs, formatDistance } from '../units';
 
 export interface HudCallbacks {
@@ -33,6 +34,7 @@ export interface HudCallbacks {
   onPolityMode(enabled: boolean): void;
   onFocusPolity(polityId: string): void;
   onJump(target: JumpTarget): void;
+  onViewpoint(name: Viewpoint): void;
   onUnitChange(unit: DistanceUnit): void;
 }
 
@@ -266,8 +268,25 @@ export class Hud {
 
     if (fiction) this.buildPolityPanel(root, fiction);
 
-    // Jump targets
+    // Where to look from, and where to look at. Two different questions, so two
+    // rows: the viewpoints change the angle and keep the range, the jumps change
+    // the target and keep the angle.
     const jumpPanel = el('div', 'panel panel-jump');
+    jumpPanel.appendChild(el('div', 'title', 'View from'));
+    const viewGrid = el('div', 'jump-grid jump-grid-wide');
+    for (const viewpoint of VIEWPOINTS) {
+      const button = el('button', 'jump', viewpoint.label);
+      button.title = viewpoint.title;
+      button.addEventListener('click', () => {
+        for (const other of viewGrid.children) other.classList.remove('active');
+        button.classList.add('active');
+        this.callbacks.onViewpoint(viewpoint.id);
+      });
+      if (viewpoint.id === 'top') button.classList.add('active');
+      viewGrid.appendChild(button);
+    }
+    jumpPanel.appendChild(viewGrid);
+
     jumpPanel.appendChild(el('div', 'title', 'Jump to'));
     const jumpGrid = el('div', 'jump-grid');
     for (const target of JUMP_TARGETS) {

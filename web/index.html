@@ -153,12 +153,29 @@
         gap: 5px;
       }
 
+      .jump-grid-wide {
+        grid-template-columns: repeat(4, 1fr);
+        margin-bottom: 10px;
+      }
+
+      .jump.active {
+        border-color: var(--accent, #7f9cff);
+        color: #fff;
+      }
+
+      /*
+       * Heights are capped so that the two panels sharing a column always fit
+       * beside each other. A grid row sized `auto` grows to whatever is in it,
+       * so a panel allowed up to the full viewport height took the whole grid
+       * and the panel below it overflowed its own track — which on a laptop
+       * screen is two panels drawn on top of one another. The caps in each
+       * column sum to well under 100vh; each panel scrolls within its share.
+       */
       .panel-stats {
         grid-column: 1;
         grid-row: 1 / span 2;
         align-self: start;
-        /* Leaves the jump panel its corner even when every control is present. */
-        max-height: calc(100vh - 140px);
+        max-height: calc(78vh - 28px);
         overflow-y: auto;
       }
 
@@ -166,7 +183,7 @@
         grid-column: 3;
         grid-row: 1;
         justify-self: end;
-        max-height: calc(100vh - 28px);
+        max-height: calc(52vh - 28px);
         overflow-y: auto;
       }
 
@@ -174,6 +191,8 @@
         grid-column: 1;
         grid-row: 3;
         align-self: end;
+        max-height: 22vh;
+        overflow-y: auto;
       }
 
       .panel-detail {
@@ -181,8 +200,18 @@
         grid-row: 2 / span 2;
         align-self: end;
         justify-self: end;
-        max-height: calc(100vh - 28px);
+        max-height: calc(46vh - 28px);
         overflow-y: auto;
+      }
+
+      /*
+       * Whichever panel was last touched draws over the others. The caps above
+       * should keep them apart, but a long enough label or a large font can
+       * still push one past its share, and a panel that cannot be raised is
+       * unusable rather than merely untidy.
+       */
+      .panel-front {
+        z-index: 1;
       }
 
       .panel-detail .title {

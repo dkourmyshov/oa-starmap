@@ -24,6 +24,45 @@ const MIN_TARGET_DISTANCE = 1e-3;
 /** Far enough to see the whole dataset from outside. */
 const MAX_TARGET_DISTANCE = 1e5;
 
+/** Opening range, in parsecs. Wide enough to show the nearby field around Sol. */
+const DEFAULT_RANGE = 65;
+
+/**
+ * The preset viewpoints, as offsets from whatever the camera is orbiting.
+ *
+ * Expressed in the map's own frame rather than as camera angles: x is coreward,
+ * y is spinward, z is galactic north. Naming them after what they show — the
+ * plane from above, the plane edge-on, the direction of the core — keeps the
+ * buttons meaningful when the orbit target is a cluster rather than Sol.
+ */
+export type Viewpoint = 'top' | 'edge' | 'core' | 'tilted';
+
+export const VIEWPOINTS: { id: Viewpoint; label: string; title: string }[] = [
+  { id: 'top', label: 'top', title: 'From galactic north, looking down on the plane' },
+  { id: 'edge', label: 'edge', title: 'In the galactic plane, looking along it' },
+  { id: 'core', label: 'core', title: 'Looking towards the galactic centre' },
+  { id: 'tilted', label: 'tilted', title: 'Three-quarter view, so the plane reads as a plane' },
+];
+
+export function viewpointPosition(name: Viewpoint, range: number): THREE.Vector3 {
+  switch (name) {
+    case 'top':
+      // Very slightly off the pole. OrbitControls clamps the polar angle away
+      // from exactly zero, and starting there would leave the azimuth
+      // undefined — the map would snap the first time it was dragged.
+      return new THREE.Vector3(0, -1e-3, 1).normalize().multiplyScalar(range);
+    case 'edge':
+      // In the plane, looking spinward. Galactic north is up, so the disk lies
+      // across the view rather than along it.
+      return new THREE.Vector3(0, -1, 0).multiplyScalar(range);
+    case 'core':
+      // Coreward is +x, so the camera sits anticoreward of the target.
+      return new THREE.Vector3(-1, 0, 0).multiplyScalar(range);
+    case 'tilted':
+      return new THREE.Vector3(0, -60, 25).normalize().multiplyScalar(range);
+  }
+}
+
 export class Viewer {
   readonly scene: THREE.Scene;
   readonly camera: THREE.PerspectiveCamera;
@@ -51,9 +90,14 @@ export class Viewer {
     this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
     this.camera = new THREE.PerspectiveCamera(60, 1, 0.01, 1e6);
-    // Start just off Sol, looking back at it, tilted out of the galactic plane
-    // so the disk reads as a plane rather than a line.
-    this.camera.position.set(0, -60, 25);
+    // Galactic north is up. Not cosmetic: OrbitControls treats the camera's up
+    // vector as the pole it orbits about, so with the default +y the map's own
+    // z axis was just some direction, and an edge-on view — where the viewing
+    // direction lies along +y — was degenerate. With +z as the pole, orbiting
+    // means changing galactic latitude and longitude, which is what the
+    // viewpoint presets are expressed in.
+    this.camera.up.set(0, 0, 1);
+    this.camera.position.copy(viewpointPosition('top', DEFAULT_RANGE));
 
     this.controls = new OrbitControls(this.camera, canvas);
     this.controls.target.set(0, 0, 0);
@@ -69,6 +113,21 @@ export class Viewer {
 
     this.handleResize();
     window.addEventListener('resize', this.handleResize);
+  }
+
+    /**
+   * Move to a preset viewpoint, keeping the current range and orbit target.
+   *
+   * The range is preserved deliberately: these change where you are looking
+   * from, not how far away you are, so switching viewpoint while examining a
+   * cluster keeps the cluster the same size on screen.
+   */
+  setViewpoint(name: Viewpoint): void {
+    const range = this.camera.position.distanceTo(this.controls.target);
+    this.camera.position
+      .copy(this.controls.target)
+      .add(viewpointPosition(name, range || DEFAULT_RANGE));
+    this.controls.update();
   }
 
   /** Distance from the camera to whatever it is orbiting. */

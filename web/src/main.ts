@@ -163,6 +163,22 @@ async function main(): Promise<void> {
     (x, y, z, standoff) => viewer.focusOn(new THREE.Vector3(x, y, z), standoff),
   );
 
+  // Whichever panel is touched draws over its neighbours. Delegated from the
+  // overlay so it covers panels built after this runs — the detail panel is
+  // created and destroyed as the selection changes.
+  overlay.addEventListener(
+    'pointerdown',
+    (event) => {
+      const panel = (event.target as HTMLElement | null)?.closest('.panel');
+      if (!panel) return;
+      for (const other of overlay.querySelectorAll('.panel-front')) {
+        other.classList.remove('panel-front');
+      }
+      panel.classList.add('panel-front');
+    },
+    true,
+  );
+
   const select = (id: number): void => detail.show(id, hud.currentUnit);
   const labels = new LabelOverlay(document.body, objects, select);
 
@@ -311,6 +327,7 @@ async function main(): Promise<void> {
       },
       onFocusPolity: focusPolity,
       onJump: handleJump,
+      onViewpoint: (name) => viewer.setViewpoint(name),
       onUnitChange: (unit) => {
         // The HUD readout re-renders on the next frame, but the detail panel is
         // static once drawn, so it has to be told.
