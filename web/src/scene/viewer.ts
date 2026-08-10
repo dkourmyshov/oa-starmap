@@ -35,11 +35,11 @@ const DEFAULT_RANGE = 65;
  * plane from above, the plane edge-on, the direction of the core — keeps the
  * buttons meaningful when the orbit target is a cluster rather than Sol.
  */
-export type Viewpoint = 'top' | 'edge' | 'core' | 'tilted';
+export type Viewpoint = 'top' | 'spin' | 'core' | 'tilted';
 
 export const VIEWPOINTS: { id: Viewpoint; label: string; title: string }[] = [
   { id: 'top', label: 'top', title: 'From galactic north, looking down on the plane' },
-  { id: 'edge', label: 'edge', title: 'In the galactic plane, looking along it' },
+  { id: 'spin', label: 'spin', title: 'In the galactic plane, looking spinward' },
   { id: 'core', label: 'core', title: 'Looking towards the galactic centre' },
   { id: 'tilted', label: 'tilted', title: 'Three-quarter view, so the plane reads as a plane' },
 ];
@@ -51,9 +51,10 @@ export function viewpointPosition(name: Viewpoint, range: number): THREE.Vector3
       // from exactly zero, and starting there would leave the azimuth
       // undefined — the map would snap the first time it was dragged.
       return new THREE.Vector3(0, -1e-3, 1).normalize().multiplyScalar(range);
-    case 'edge':
-      // In the plane, looking spinward. Galactic north is up, so the disk lies
-      // across the view rather than along it.
+    case 'spin':
+      // In the plane, looking spinward — towards +y, which is galactic
+      // longitude 90. Named for the direction of view rather than for the disk
+      // being edge-on: the galaxy's edge is not what this points at.
       return new THREE.Vector3(0, -1, 0).multiplyScalar(range);
     case 'core':
       // Coreward is +x, so the camera sits anticoreward of the target.

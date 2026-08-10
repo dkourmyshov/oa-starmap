@@ -83,6 +83,7 @@ class InnerSphereStats:
     distance_disagreement: list[dict[str, Any]] = field(default_factory=list)
     unresolved: list[str] = field(default_factory=list)
     empty_rows: int = 0
+    settled: int = 0
     absent_catalogue: list[str] = field(default_factory=list)
     assigned: int = 0
     assignments_awaiting_star: list[str] = field(default_factory=list)
@@ -95,6 +96,7 @@ class InnerSphereStats:
             "methods": dict(sorted(self.methods.items())),
             "rejected_distance": self.rejected_distance,
             "distance_disagreement": self.distance_disagreement,
+            "settled": self.settled,
             "unresolved": sorted(self.unresolved),
             "empty_rows": self.empty_rows,
             "absent_catalogue": sorted(self.absent_catalogue),
@@ -102,6 +104,21 @@ class InnerSphereStats:
             "assignments_awaiting_star": sorted(self.assignments_awaiting_star),
             "assignments_absent": sorted(self.assignments_absent),
         }
+
+
+def cell(value: str) -> str:
+    """A table cell, with the source's empty marker turned into an empty string.
+
+    The page writes "." for a column it has nothing for, which is fine as
+    transcription and wrong as data: carried through, it made 579 ordinary stars
+    look like colonies named ".", each drawn with a polity ring, labelled with a
+    dot, and ranked as high as Sol.
+
+    Normalised here rather than in the importer, so the tracked import stays a
+    faithful copy of the page and this stays reversible.
+    """
+    text = str(value).strip()
+    return "" if text in {".", "..", "-", "?"} else text
 
 
 def _to_float(value: str) -> float:
@@ -224,17 +241,19 @@ def build_inner_sphere(
 
         stats.methods[match.method] += 1
         stats.resolved += 1
+        if cell(row.colony):
+            stats.settled += 1
         colonies.append(
             {
                 "star_index": match.index,
                 "star": row.star,
-                "colony": row.colony,
+                "colony": cell(row.colony),
                 "affiliations": affiliations,
                 "status": statuses[0] if statuses else "",
                 "note": " ".join(notes),
-                "spectral_type": row.spectral_type,
-                "mass_sol": row.mass_sol,
-                "luminosity_sol": row.luminosity_sol,
+                "spectral_type": cell(row.spectral_type),
+                "mass_sol": cell(row.mass_sol),
+                "luminosity_sol": cell(row.luminosity_sol),
                 "distance_ly": round(catalogue_ly, 3),
                 "method": match.method,
                 "distance_disagrees": disagreement > DISTANCE_AGREES,

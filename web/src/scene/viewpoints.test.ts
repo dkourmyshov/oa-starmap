@@ -39,11 +39,13 @@ describe('preset viewpoints', () => {
     expect(Math.abs(position.y)).toBeLessThan(0.5);
   });
 
-  it('lies in the galactic plane when edge-on', () => {
-    expect(viewpointPosition('edge', 65).z).toBe(0);
-    // And its view direction is in the plane too, so the disk crosses the view.
-    // Compared by magnitude: negating the offset turns the zero into -0.
-    expect(Math.abs(viewDirection('edge').z)).toBe(0);
+  it('looks spinward, along the plane', () => {
+    expect(viewpointPosition('spin', 65).z).toBe(0);
+    // Spinward is +y by the frame's own definition.
+    expect(viewDirection('spin').dot(new THREE.Vector3(0, 1, 0))).toBeCloseTo(1, 6);
+    // And the view stays in the plane, so the disk crosses it rather than
+    // running along it. Compared by magnitude: negating turns the zero into -0.
+    expect(Math.abs(viewDirection('spin').z)).toBe(0);
   });
 
   it('looks coreward from the core preset', () => {
@@ -60,7 +62,7 @@ describe('preset viewpoints', () => {
   });
 
   it('offers every preset the viewer implements', () => {
-    expect(VIEWPOINTS.map((v) => v.id).sort()).toEqual(['core', 'edge', 'tilted', 'top']);
+    expect(VIEWPOINTS.map((v) => v.id).sort()).toEqual(['core', 'spin', 'tilted', 'top']);
     for (const { label, title } of VIEWPOINTS) {
       expect(label).toBeTruthy();
       expect(title).toBeTruthy();

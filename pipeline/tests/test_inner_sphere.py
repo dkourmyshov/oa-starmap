@@ -227,3 +227,43 @@ class TestColonyAssignments:
 
     def test_most_assignments_land(self, built):
         assert built["manifest"]["stats"]["assigned"] > 140
+
+
+def test_empty_cells_do_not_become_data() -> None:
+    """The table writes "." for a column it has nothing for.
+
+    Carried through as a value, that marker made 579 ordinary stars into
+    colonies named ".": each one drawn with a polity ring, labelled with a dot
+    on the map, and ranked as important as Sol. The table lists every star
+    within 100 light years, and only the 312 rows that name a colony are
+    claiming a settled system.
+    """
+    from oastarmap.build.inner_sphere import cell
+
+    assert cell(".") == ""
+    assert cell(" . ") == ""
+    assert cell("-") == ""
+    assert cell("?") == ""
+    # Real values survive untouched, including ones that merely contain a dot.
+    assert cell("Nova Terra") == "Nova Terra"
+    assert cell(" M4.5 V ") == "M4.5 V"
+    assert cell("0.000104") == "0.000104"
+
+
+def test_built_colonies_carry_no_placeholder() -> None:
+    """Guards the whole column rather than the helper alone."""
+    import json
+
+    from oastarmap.paths import DATA_OUT_DIR
+
+    path = DATA_OUT_DIR / "innersphere.json"
+    if not path.exists():
+        pytest.skip("dataset not built")
+
+    rows = json.loads(path.read_text(encoding="utf-8"))
+    for field in ("colony", "spectral_type", "mass_sol", "luminosity_sol"):
+        placeholders = [row for row in rows if str(row[field]).strip() in {".", "-", "?"}]
+        assert placeholders == [], f"{field} still carries the table's empty marker"
+
+    named = [row for row in rows if row["colony"]]
+    assert 0 < len(named) < len(rows), "expected some rows to name a colony and some not to"

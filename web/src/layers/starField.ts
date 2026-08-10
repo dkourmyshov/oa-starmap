@@ -175,7 +175,12 @@ export class StarField {
       // Settled from either source. A star carrying a canonical world needs the
       // floor as much as one carrying a colony row — Orion's Arm names plenty of
       // systems around dim stars, and the magnitude law alone hides them.
-      if (colonies?.get(i) || worlds?.byStar.has(i)) settled[i] = 1;
+      //
+      // A colony *row* is not enough: the source table lists every star within
+      // 100 ly, and 579 of its 891 rows name no colony at all. Those are
+      // ordinary stars that happen to have been catalogued, and lifting them out
+      // of the magnitude law would claim the setting had settled them.
+      if (colonies?.get(i)?.colony || worlds?.byStar.has(i)) settled[i] = 1;
     }
 
     const geometry = new THREE.BufferGeometry();

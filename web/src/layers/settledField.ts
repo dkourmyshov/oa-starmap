@@ -110,8 +110,12 @@ export class SettledField {
     // add-on entries are skipped for the same reason the marker layer skips
     // them: nothing is drawn there to ring.
     const rings: { x: number; y: number; z: number; polity: string }[] = [];
-    for (const starIndex of colonies.keys()) {
+    for (const [starIndex, colony] of colonies) {
       if (starIndex < 0 || starIndex >= stars.count) continue;
+      // A row without a colony name is a star the table happens to list, not a
+      // system anyone has settled. Ringing all 891 rows put a polity mark on
+      // 579 ordinary stars.
+      if (!colony.colony) continue;
       const base = starIndex * 5;
       rings.push({
         x: stars.positions[base],
