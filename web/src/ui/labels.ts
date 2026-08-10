@@ -46,6 +46,9 @@ export class LabelOverlay {
 
   maxLabels = DEFAULT_MAX_LABELS;
 
+  /** The selected object, labelled whatever the declutter pass decides. */
+  selected: number | null = null;
+
   constructor(
     parent: HTMLElement,
     private readonly objects: ObjectIndex,
@@ -84,6 +87,7 @@ export class LabelOverlay {
       magnitudeLimit,
       maxLabels: this.maxLabels,
       visible: visibleLayers,
+      pinned: this.selected,
     });
 
     for (let i = 0; i < placed.length; i++) {
@@ -97,10 +101,14 @@ export class LabelOverlay {
       // Wadai is an entry of the Celestia add-on and a real white dwarf, and
       // setting it in italic claimed the setting had invented its position.
       const asserted = label.asserted ? ' map-label-asserted' : '';
-      node.className = `map-label ${KIND_CLASS[kind] ?? ''}${asserted}`;
+      const pinned = label.pinned ? ' map-label-selected' : '';
+      node.className = `map-label ${KIND_CLASS[kind] ?? ''}${asserted}${pinned}`;
       node.style.transform = `translate3d(${label.x}px, ${label.y}px, 0) translate(-50%, -50%)`;
       // Faint labels stay legible but recede, so the eye lands on the anchors.
-      node.style.opacity = String(Math.min(0.45 + label.importance * 0.4, 1));
+      // The selected one is always full strength: it was asked for.
+      node.style.opacity = label.pinned
+        ? '1'
+        : String(Math.min(0.45 + label.importance * 0.4, 1));
       // The polity colour rides on the label rather than on the object, so a
       // star keeps the colour its photometry actually measured.
       node.style.color = label.color ?? '';

@@ -108,6 +108,11 @@ export class DetailPanel {
     root.appendChild(this.panel);
   }
 
+  /** The selected object, so the map can keep its label on screen. */
+  get currentId(): number | null {
+    return this.current;
+  }
+
   /** Re-render with the same selection, e.g. after the unit toggle changes. */
   refresh(unit: DistanceUnit): void {
     if (this.current !== null) this.show(this.current, unit);

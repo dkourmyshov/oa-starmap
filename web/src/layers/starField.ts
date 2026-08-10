@@ -18,7 +18,7 @@
 
 import * as THREE from 'three';
 
-import type { Colony, StarData } from '../data/manifest';
+import type { Colony, StarData, WorldData } from '../data/manifest';
 
 const LOG10 = Math.LN10;
 
@@ -147,6 +147,7 @@ export class StarField {
     data: StarData,
     options: StarFieldOptions = {},
     colonies: Map<number, Colony> | null = null,
+    worlds: WorldData | null = null,
   ) {
     const {
       magnitudeLimit = 7.5,
@@ -171,9 +172,10 @@ export class StarField {
       absMag[i] = data.positions[src + 3];
       colorIndex[i] = data.positions[src + 4];
 
-      const colony = colonies?.get(i);
-      if (!colony) continue;
-      settled[i] = 1;
+      // Settled from either source. A star carrying a canonical world needs the
+      // floor as much as one carrying a colony row — Orion's Arm names plenty of
+      // systems around dim stars, and the magnitude law alone hides them.
+      if (colonies?.get(i) || worlds?.byStar.has(i)) settled[i] = 1;
     }
 
     const geometry = new THREE.BufferGeometry();

@@ -13,6 +13,7 @@
 
 import * as THREE from 'three';
 
+import { DEFAULT_SIZE_PX as RING_SIZE_PX } from '../layers/settledField';
 import type {
   ClusterData,
   Colony,
@@ -153,6 +154,8 @@ export interface PlacedLabel {
   color?: string;
   /** The position is asserted by the fiction, not measured. Drawn in italic. */
   asserted?: boolean;
+  /** Placed because it is selected, not because it won a slot. */
+  pinned?: boolean;
 }
 
 export interface LayerVisibility {
@@ -171,6 +174,14 @@ export interface LayoutOptions {
   magnitudeLimit: number;
   maxLabels: number;
   visible: LayerVisibility;
+  /**
+   * An object to label whatever the declutter pass decides.
+   *
+   * The selected one. Having clicked a marker and got a panel about it, the map
+   * should say which marker that was — otherwise the panel describes something
+   * the reader has to keep track of by memory and mouse position.
+   */
+  pinned?: number | null;
 }
 
 export interface PickOptions {
@@ -195,6 +206,15 @@ const PICK_PRIORITY: Record<number, number> = {
   [KIND_HII]: 2,
 };
 
+/**
+ * Pick radius for a star wearing a polity ring, in pixels.
+ *
+ * Taken from the ring layer's own size so the two cannot drift: anywhere inside
+ * the ring is part of the mark, and clicking it should select the system it is
+ * drawn around.
+ */
+const RING_PICK_RADIUS = RING_SIZE_PX / 2;
+
 /** Half-width of the label box, in pixels per character. Cheap but close enough. */
 const CHAR_WIDTH = 6.2;
 const LABEL_HEIGHT = 15;
@@ -218,6 +238,15 @@ export class ObjectIndex {
   private readonly isOA: Uint8Array;
   /** 1 where the position comes from the fiction rather than a measurement. */
   private readonly assertedPosition: Uint8Array;
+  /**
+   * 1 where a star is drawn no matter how faint it is.
+   *
+   * The star shader gives a settled system an alpha floor, because most of them
+   * are dim red dwarfs that the magnitude law renders nearly invisible. Picking
+   * applied the magnitude limit anyway, so those stars were drawn, ringed, and
+   * not clickable — which is the worst of the three states.
+   */
+  private readonly floored: Uint8Array;
   private readonly labelColor: (string | undefined)[];
 
   /** Ids that carry a label, so layout never walks the unlabelled majority. */
@@ -261,6 +290,7 @@ export class ObjectIndex {
     this.labels = new Array(total);
     this.isOA = new Uint8Array(total);
     this.assertedPosition = new Uint8Array(total);
+    this.floored = new Uint8Array(total);
     this.labelColor = new Array(total);
 
     this.screenX = new Float32Array(total);
@@ -296,6 +326,7 @@ export class ObjectIndex {
         this.labels[at] = systemLabel(here);
         this.importance[at] = BASE_IMPORTANCE.oaSystem;
         this.isOA[at] = 1;
+        this.floored[at] = 1;
         this.labelColor[at] = polityColor.get(here[0].affiliation);
       }
 
@@ -309,6 +340,7 @@ export class ObjectIndex {
         // crowd their unassigned neighbours off the map.
         this.importance[at] = BASE_IMPORTANCE.oaSystem;
         this.isOA[at] = 1;
+        this.floored[at] = 1;
         this.labelColor[at] = polityColor.get(colony.affiliations[0] ?? '');
       }
 
@@ -531,10 +563,15 @@ export class ObjectIndex {
 
       if (kind === KIND_STAR) {
         // Same magnitude test the star shader applies, so what is clickable is
-        // exactly what is drawn.
-        const apparent = this.absMag[id] + 5 * Math.log10(Math.max(distance, 1e-6) / 10);
-        if (apparent > magnitudeLimit) continue;
-        this.screenR[id] = 0;
+        // exactly what is drawn — except for the stars the shader floors, which
+        // are drawn however faint they are and must stay clickable to match.
+        if (!this.floored[id]) {
+          const apparent = this.absMag[id] + 5 * Math.log10(Math.max(distance, 1e-6) / 10);
+          if (apparent > magnitudeLimit) continue;
+        }
+        // A ringed star is a mark about 13 pixels across, not a point. Clicking
+        // anywhere on the ring should select the system it encircles.
+        this.screenR[id] = this.floored[id] ? RING_PICK_RADIUS : 0;
       } else if (kind === KIND_OASTAR || kind === KIND_WORLD) {
         // Drawn as constant-size markers regardless of the magnitude limit, so
         // gating them on it here would make visible markers unclickable.
@@ -599,7 +636,8 @@ export class ObjectIndex {
 
       let score: number;
       if (kind === KIND_STAR || kind === KIND_OASTAR || kind === KIND_WORLD) {
-        if (distance > tolerance) continue;
+        const reach = Math.max(this.screenR[id], tolerance);
+        if (distance > reach) continue;
         score = distance;
       } else if (kind === KIND_CLUSTER) {
         // Clusters are drawn as rings, so the hollow middle is not the cluster.
@@ -644,6 +682,12 @@ export class ObjectIndex {
    */
   layout(camera: THREE.PerspectiveCamera, options: LayoutOptions): PlacedLabel[] {
     this.project(camera, this.labelled, options);
+    // `labelled` omits anything without a name, and a pinned object may be one
+    // of those — its screen position would otherwise be a stale value from an
+    // earlier frame.
+    if (options.pinned != null && !this.labels[options.pinned]) {
+      this.onScreen[options.pinned] = 0;
+    }
 
     const candidates: { id: number; priority: number }[] = [];
     for (let n = 0; n < this.labelled.length; n++) {
@@ -651,7 +695,14 @@ export class ObjectIndex {
       if (!this.onScreen[id]) continue;
       // On-screen size earns a label its place: an object filling the view is
       // worth naming even when it is intrinsically dull, and vice versa.
-      const size = Math.min(this.screenR[id] / 40, MAX_SIZE_BONUS);
+      //
+      // Gated on having a real physical extent, not merely a non-zero screen
+      // radius. A ringed star carries one now so that clicks land anywhere on
+      // its ring, and without this guard that pick radius would leak in here as
+      // a priority bonus — putting settled systems back above their neighbours
+      // through the side door.
+      const size =
+        this.radius[id] > 0 ? Math.min(this.screenR[id] / 40, MAX_SIZE_BONUS) : 0;
       candidates.push({ id, priority: this.importance[id] + size });
     }
     candidates.sort((a, b) => b.priority - a.priority);
@@ -659,7 +710,31 @@ export class ObjectIndex {
     const placed: PlacedLabel[] = [];
     const boxes: number[][] = [];
 
+    // The pinned label goes down first and unconditionally: it claims its space
+    // before anything competes for it, and it is never rejected for collision,
+    // because the one label the reader has asked for should not be the one that
+    // loses. It is skipped below so it cannot be placed twice.
+    const pinned = options.pinned ?? null;
+    if (pinned !== null && this.onScreen[pinned] && this.labels[pinned]) {
+      const text = this.labels[pinned] as string;
+      const halfWidth = (text.length * CHAR_WIDTH) / 2;
+      const cx = this.screenX[pinned];
+      const cy = this.screenY[pinned] - LABEL_OFFSET - LABEL_HEIGHT / 2;
+      boxes.push([cx - halfWidth, cy - LABEL_HEIGHT / 2, cx + halfWidth, cy + LABEL_HEIGHT / 2]);
+      placed.push({
+        id: pinned,
+        text,
+        x: cx,
+        y: cy,
+        importance: this.importance[pinned],
+        color: this.labelColor[pinned],
+        asserted: this.assertedPosition[pinned] === 1,
+        pinned: true,
+      });
+    }
+
     for (const candidate of candidates) {
+      if (candidate.id === pinned) continue;
       if (placed.length >= options.maxLabels) break;
       const id = candidate.id;
       const text = this.labels[id] as string;

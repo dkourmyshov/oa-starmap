@@ -18,7 +18,7 @@
 
 import * as THREE from 'three';
 
-import type { Colony, FictionData, OAStarData, StarData } from '../data/manifest';
+import type { Colony, FictionData, OAStarData, StarData, WorldData } from '../data/manifest';
 
 export const DEFAULT_OPACITY = 0.85;
 
@@ -99,6 +99,7 @@ export class SettledField {
     colonies: Map<number, Colony>,
     fiction: FictionData | null,
     oaStars: OAStarData | null = null,
+    worlds: WorldData | null = null,
   ) {
     const polityColor = new Map<string, THREE.Color>();
     for (const polity of fiction?.polities ?? []) {
@@ -117,6 +118,19 @@ export class SettledField {
         y: stars.positions[base + 1],
         z: stars.positions[base + 2],
         polity: colonies.get(starIndex)?.affiliations[0] ?? '',
+      });
+    }
+    // A star carrying a canonical world is as settled as one carrying a colony
+    // row, and was getting no ring purely because it arrived in a different
+    // file. Skipped where a colony already put a ring there.
+    for (const [starIndex, here] of worlds?.byStar ?? []) {
+      if (starIndex < 0 || starIndex >= stars.count || colonies.has(starIndex)) continue;
+      const base = starIndex * 5;
+      rings.push({
+        x: stars.positions[base],
+        y: stars.positions[base + 1],
+        z: stars.positions[base + 2],
+        polity: here[0]?.affiliation ?? '',
       });
     }
     for (let i = 0; i < (oaStars?.count ?? 0); i++) {

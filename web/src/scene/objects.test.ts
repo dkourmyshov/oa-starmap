@@ -945,3 +945,134 @@ describe('picking prefers what was aimed at', () => {
     expect(index.pick(cam, WIDTH / 2, HEIGHT / 2, pickOptions, 5)).toBe(0);
   });
 });
+
+
+describe('a settled star is clickable wherever it is drawn', () => {
+  const colonyAt = (index: number, name: string) =>
+    new Map([
+      [
+        index,
+        {
+          star_index: index,
+          star: 'x',
+          colony: name,
+          spectral_type: '',
+          mass_sol: '',
+          luminosity_sol: '',
+          distance_ly: 10,
+          method: 'name',
+          distance_disagrees: false,
+          affiliations: [] as string[],
+          status: '',
+          note: '',
+        },
+      ],
+    ]);
+
+  /**
+   * Most settled systems are dim red dwarfs. The star shader floors their alpha
+   * so they stay visible, and the ring layer draws a ring around them — but
+   * picking applied the magnitude limit anyway, so they were drawn, ringed, and
+   * not clickable.
+   */
+  it('picks a star far below the magnitude limit when it carries a colony', () => {
+    const cam = camera();
+    // At 100 pc, m = M + 5. M = 12 gives m = 17, far below a limit of 7.5.
+    const faint = makeStars([[0, 0, -100]], {}, [12]);
+    const at = { ...pickOptions, magnitudeLimit: 7.5 };
+
+    const bare = new ObjectIndex(faint, null, null, null);
+    expect(bare.pick(cam, WIDTH / 2, HEIGHT / 2, at, 5)).toBeNull();
+
+    const settled = new ObjectIndex(faint, null, null, null, null, colonyAt(0, 'Akela'));
+    expect(settled.pick(cam, WIDTH / 2, HEIGHT / 2, at, 5)).toBe(0);
+  });
+
+  it('accepts a click anywhere inside the polity ring', () => {
+    const cam = camera();
+    const index = new ObjectIndex(
+      makeStars([[0, 0, -100]], {}, [12]),
+      null,
+      null,
+      null,
+      null,
+      colonyAt(0, 'Akela'),
+    );
+    const at = { ...pickOptions, magnitudeLimit: 7.5 };
+    // Six pixels out, inside the 13-pixel ring but outside a 1-pixel tolerance.
+    expect(index.pick(cam, WIDTH / 2 + 6, HEIGHT / 2, at, 1)).toBe(0);
+    expect(index.pick(cam, WIDTH / 2 + 40, HEIGHT / 2, at, 1)).toBeNull();
+  });
+
+  it('does not let the ring pick radius become a label bonus', () => {
+    const index = new ObjectIndex(
+      makeStars([
+        [-40, 0, -100],
+        [40, 0, -100],
+      ]),
+      null,
+      null,
+      null,
+      null,
+      new Map([...colonyAt(0, 'Ringed'), ...colonyAt(1, 'Also')]),
+    );
+    const placed = index.layout(camera(), {
+      width: WIDTH,
+      height: HEIGHT,
+      magnitudeLimit: 20,
+      maxLabels: 20,
+      visible: ALL_VISIBLE,
+    });
+    for (const label of placed) expect(label.importance).toBe(3);
+  });
+});
+
+describe('the selected object keeps its label', () => {
+  const layoutWith = (index: ObjectIndex, maxLabels: number, pinned: number | null) =>
+    index.layout(camera(), {
+      width: WIDTH,
+      height: HEIGHT,
+      magnitudeLimit: 20,
+      maxLabels,
+      visible: ALL_VISIBLE,
+      pinned,
+    });
+
+  it('places it even when the declutter pass had no room', () => {
+    // Three named stars, one slot. Without pinning the far one never wins it.
+    const index = new ObjectIndex(
+      makeStars(
+        [
+          [0, 0, -100],
+          [30, 0, -100],
+          [-30, 0, -100],
+        ],
+        { '0': { proper: 'Alpha' }, '1': { proper: 'Beta' }, '2': { proper: 'Gamma' } },
+      ),
+      null,
+      null,
+      null,
+    );
+
+    expect(layoutWith(index, 1, null).map((p) => p.text)).not.toContain('Gamma');
+
+    const pinned = layoutWith(index, 1, 2);
+    expect(pinned.map((p) => p.text)).toContain('Gamma');
+    expect(pinned.find((p) => p.text === 'Gamma')!.pinned).toBe(true);
+  });
+
+  it('places it exactly once', () => {
+    const index = new ObjectIndex(
+      makeStars([[0, 0, -100]], { '0': { proper: 'Alpha' } }),
+      null,
+      null,
+      null,
+    );
+    expect(layoutWith(index, 10, 0).filter((p) => p.text === 'Alpha')).toHaveLength(1);
+  });
+
+  it('shows nothing for an object that has no name to show', () => {
+    const index = new ObjectIndex(makeStars([[0, 0, -100]]), null, null, null);
+    expect(layoutWith(index, 10, 0)).toHaveLength(0);
+  });
+});

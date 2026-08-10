@@ -80,7 +80,7 @@ async function main(): Promise<void> {
   loading?.remove();
 
   const viewer = new Viewer(canvas);
-  const starField = new StarField(data, {}, loaded.innerSphere?.byStar ?? null);
+  const starField = new StarField(data, {}, loaded.innerSphere?.byStar ?? null, loaded.worlds);
   viewer.scene.add(starField.points);
 
   // Polity rings around the settled systems, from both sources: Inner Sphere
@@ -92,6 +92,7 @@ async function main(): Promise<void> {
       loaded.innerSphere?.byStar ?? new Map(),
       loaded.fiction,
       loaded.oaStars,
+      loaded.worlds,
     );
     viewer.scene.add(settledField.points);
   }
@@ -350,6 +351,9 @@ async function main(): Promise<void> {
     worldField?.setViewportHeight(height);
 
     const rect = canvas.getBoundingClientRect();
+    // Read each frame rather than pushed on select, so closing the panel from
+    // its own button releases the label without a callback between the two.
+    labels.selected = detail.currentId;
     labels.update(
       viewer.camera,
       rect.width,
