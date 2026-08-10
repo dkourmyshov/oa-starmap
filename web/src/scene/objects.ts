@@ -215,6 +215,32 @@ const PICK_PRIORITY: Record<number, number> = {
  */
 const RING_PICK_RADIUS = RING_SIZE_PX / 2;
 
+/**
+ * A stable, spatially meaningless ordering key for one object.
+ *
+ * Used only to break ties in the label layout. Equal-priority candidates were
+ * being placed in the order they appear in the index, which is catalogue order —
+ * and HYG is ordered by an id that tracks right ascension, so catalogue order is
+ * a sweep across the sky. The visible result was labels filling the screen in a
+ * diagonal band: raise the density and the left half fills completely before the
+ * right half gets its first label.
+ *
+ * There is no principled way to rank two objects of equal importance, so the
+ * choice is between an arbitrary order that correlates with position and one
+ * that does not. This is the second. A hash rather than a random number because
+ * it must be identical on every frame — a tiebreak that changed as the camera
+ * moved would make labels flicker in and out.
+ *
+ * The mixing constants are the usual 32-bit avalanche pair; nothing here depends
+ * on their particular values beyond scattering nearby ids far apart.
+ */
+function shuffleKey(id: number): number {
+  let x = (id + 0x9e3779b9) | 0;
+  x = Math.imul(x ^ (x >>> 16), 0x21f0aaad);
+  x = Math.imul(x ^ (x >>> 15), 0x735a2d97);
+  return (x ^ (x >>> 15)) >>> 0;
+}
+
 /** Half-width of the label box, in pixels per character. Cheap but close enough. */
 const CHAR_WIDTH = 6.2;
 const LABEL_HEIGHT = 15;
@@ -248,6 +274,9 @@ export class ObjectIndex {
    */
   private readonly floored: Uint8Array;
   private readonly labelColor: (string | undefined)[];
+
+  /** Tiebreak order for the label layout. See `shuffleKey`. */
+  private readonly shuffle: Uint32Array;
 
   /** Ids that carry a label, so layout never walks the unlabelled majority. */
   private readonly labelled: Int32Array;
@@ -498,6 +527,9 @@ export class ObjectIndex {
 
     this.labelled = Int32Array.from(labelled);
 
+    this.shuffle = new Uint32Array(at);
+    for (let id = 0; id < at; id++) this.shuffle[id] = shuffleKey(id);
+
     // Trailing slots were never filled. Leaving them in would make the pick pass
     // scan zeroed entries, which read as stars sitting exactly on Sol.
     this.count = at;
@@ -689,7 +721,7 @@ export class ObjectIndex {
       this.onScreen[options.pinned] = 0;
     }
 
-    const candidates: { id: number; priority: number }[] = [];
+    const candidates: { id: number; priority: number; tiebreak: number }[] = [];
     for (let n = 0; n < this.labelled.length; n++) {
       const id = this.labelled[n];
       if (!this.onScreen[id]) continue;
@@ -703,9 +735,11 @@ export class ObjectIndex {
       // through the side door.
       const size =
         this.radius[id] > 0 ? Math.min(this.screenR[id] / 40, MAX_SIZE_BONUS) : 0;
-      candidates.push({ id, priority: this.importance[id] + size });
+      candidates.push({ id, priority: this.importance[id] + size, tiebreak: this.shuffle[id] });
     }
-    candidates.sort((a, b) => b.priority - a.priority);
+    // Priority first, exactly; the shuffle only ever separates equals, so it
+    // cannot promote a less important label above a more important one.
+    candidates.sort((a, b) => b.priority - a.priority || a.tiebreak - b.tiebreak);
 
     const placed: PlacedLabel[] = [];
     const boxes: number[][] = [];

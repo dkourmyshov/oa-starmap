@@ -1039,7 +1039,9 @@ describe('the selected object keeps its label', () => {
     });
 
   it('places it even when the declutter pass had no room', () => {
-    // Three named stars, one slot. Without pinning the far one never wins it.
+    // Three equally important stars competing for one slot. Which one wins
+    // without pinning is deliberately not specified — ties are broken by a
+    // shuffle — so the test asks the layout itself and then pins a loser.
     const index = new ObjectIndex(
       makeStars(
         [
@@ -1054,11 +1056,14 @@ describe('the selected object keeps its label', () => {
       null,
     );
 
-    expect(layoutWith(index, 1, null).map((p) => p.text)).not.toContain('Gamma');
+    const unpinned = layoutWith(index, 1, null);
+    expect(unpinned).toHaveLength(1);
 
-    const pinned = layoutWith(index, 1, 2);
-    expect(pinned.map((p) => p.text)).toContain('Gamma');
-    expect(pinned.find((p) => p.text === 'Gamma')!.pinned).toBe(true);
+    const loser = [0, 1, 2].find((id) => id !== unpinned[0].id) as number;
+    const pinned = layoutWith(index, 1, loser);
+    const placed = pinned.find((p) => p.id === loser);
+    expect(placed).toBeDefined();
+    expect(placed!.pinned).toBe(true);
   });
 
   it('places it exactly once', () => {
@@ -1074,5 +1079,87 @@ describe('the selected object keeps its label', () => {
   it('shows nothing for an object that has no name to show', () => {
     const index = new ObjectIndex(makeStars([[0, 0, -100]]), null, null, null);
     expect(layoutWith(index, 10, 0)).toHaveLength(0);
+  });
+});
+
+
+describe('label density fills the screen evenly', () => {
+  /**
+   * A grid of equally important stars spanning the view, in an index order that
+   * marches steadily left to right — which is what the real catalogue does,
+   * since HYG is ordered by an id that tracks right ascension.
+   *
+   * With ties broken by index order the labels filled the screen as a moving
+   * band: raising the density completed the left half before the right half got
+   * its first label. The check is that both halves fill at roughly the same
+   * rate, not that any particular star wins.
+   */
+  const COLUMNS = 24;
+  const ROWS = 6;
+
+  function grid(): StarData {
+    const positions: [number, number, number][] = [];
+    const names: Record<string, Record<string, string>> = {};
+    for (let cx = 0; cx < COLUMNS; cx++) {
+      for (let cy = 0; cy < ROWS; cy++) {
+        // Marching in x with the index, exactly as catalogue order does.
+        const x = -55 + (110 * cx) / (COLUMNS - 1);
+        const y = -30 + (60 * cy) / (ROWS - 1);
+        names[String(positions.length)] = { proper: `S${positions.length}` };
+        positions.push([x, y, -100]);
+      }
+    }
+    return makeStars(positions, names);
+  }
+
+  function halves(maxLabels: number): { left: number; right: number } {
+    const index = new ObjectIndex(grid(), null, null, null);
+    const placed = index.layout(camera(), {
+      width: WIDTH,
+      height: HEIGHT,
+      magnitudeLimit: 20,
+      maxLabels,
+      visible: ALL_VISIBLE,
+    });
+    let left = 0;
+    let right = 0;
+    for (const label of placed) {
+      if (label.x < WIDTH / 2) left++;
+      else right++;
+    }
+    return { left, right };
+  }
+
+  it('starts on both halves rather than sweeping across', () => {
+    const { left, right } = halves(12);
+    expect(left).toBeGreaterThan(0);
+    expect(right).toBeGreaterThan(0);
+  });
+
+  it('keeps the two halves within a factor of two at every density', () => {
+    for (const density of [8, 16, 30, 45, 60]) {
+      const { left, right } = halves(density);
+      const total = left + right;
+      expect(total, `density ${density} placed nothing`).toBeGreaterThan(0);
+      const larger = Math.max(left, right);
+      const smaller = Math.min(left, right);
+      expect(larger, `density ${density}: ${left} left, ${right} right`).toBeLessThanOrEqual(
+        smaller * 2 + 2,
+      );
+    }
+  });
+
+  it('is stable across repeated layouts, so labels do not flicker', () => {
+    const index = new ObjectIndex(grid(), null, null, null);
+    const options = {
+      width: WIDTH,
+      height: HEIGHT,
+      magnitudeLimit: 20,
+      maxLabels: 20,
+      visible: ALL_VISIBLE,
+    };
+    const first = index.layout(camera(), options).map((p) => p.id);
+    const second = index.layout(camera(), options).map((p) => p.id);
+    expect(second).toEqual(first);
   });
 });
