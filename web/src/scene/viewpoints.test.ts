@@ -69,3 +69,35 @@ describe('preset viewpoints', () => {
     }
   });
 });
+
+describe('the canonical top view', () => {
+  /**
+   * Coreward to the right, spinward up. This is how Orion's Arm's own maps are
+   * drawn, and it falls out of the frame rather than being set anywhere — which
+   * is exactly why it needs pinning down: a change to the up vector or to the
+   * top preset's offset would rotate the whole map with nothing to say so.
+   */
+  function onScreen(name: Viewpoint, point: THREE.Vector3): THREE.Vector3 {
+    const camera = new THREE.PerspectiveCamera(60, 4 / 3, 0.01, 1e6);
+    camera.up.set(0, 0, 1);
+    camera.position.copy(viewpointPosition(name, 65));
+    camera.lookAt(0, 0, 0);
+    camera.updateMatrixWorld();
+    return point.clone().project(camera);
+  }
+
+  it('puts coreward to the right and spinward up', () => {
+    const coreward = onScreen('top', new THREE.Vector3(30, 0, 0));
+    expect(coreward.x).toBeGreaterThan(0.1);
+    expect(Math.abs(coreward.y)).toBeLessThan(0.05);
+
+    const spinward = onScreen('top', new THREE.Vector3(0, 30, 0));
+    expect(spinward.y).toBeGreaterThan(0.1);
+    expect(Math.abs(spinward.x)).toBeLessThan(0.05);
+  });
+
+  it('keeps galactic north up in the core view', () => {
+    const north = onScreen('core', new THREE.Vector3(0, 0, 30));
+    expect(north.y).toBeGreaterThan(0.1);
+  });
+});

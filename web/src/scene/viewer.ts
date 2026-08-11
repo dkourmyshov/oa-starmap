@@ -15,6 +15,7 @@
 
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+import { TrackballControls } from 'three/examples/jsm/controls/TrackballControls.js';
 
 import { type Parsecs, pc } from '../units';
 
@@ -36,6 +37,33 @@ const DEFAULT_RANGE = 65;
  * buttons meaningful when the orbit target is a cluster rather than Sol.
  */
 export type Viewpoint = 'top' | 'spin' | 'core' | 'tilted';
+
+/**
+ * How dragging moves the camera.
+ *
+ * `orbit` turns about galactic north: a horizontal drag sweeps galactic
+ * longitude and the pole stays up, which keeps the plane level and makes the
+ * viewpoint presets mean what they say. Seen from directly overhead, though,
+ * sweeping longitude *is* the map spinning, which is the least useful rotation
+ * from that angle.
+ *
+ * `trackball` turns about the screen's own axes instead: dragging left and
+ * right rotates about the screen's vertical, dragging up and down about its
+ * horizontal, with no fixed pole. That is the more direct thing when you are
+ * looking straight down at a plane and want to tip it towards you. The cost is
+ * that the horizon can roll and "up" stops meaning galactic north — which is
+ * why it is a choice rather than a replacement.
+ */
+export type ControlMode = 'orbit' | 'trackball';
+
+export const CONTROL_MODES: { id: ControlMode; label: string; title: string }[] = [
+  { id: 'orbit', label: 'orbit', title: 'Turn about galactic north; the pole stays up' },
+  {
+    id: 'trackball',
+    label: 'trackball',
+    title: "Turn about the screen's own axes; free, but the horizon can roll",
+  },
+];
 
 export const VIEWPOINTS: { id: Viewpoint; label: string; title: string }[] = [
   { id: 'top', label: 'top', title: 'From galactic north, looking down on the plane' },
@@ -69,7 +97,9 @@ export class Viewer {
   readonly camera: THREE.PerspectiveCamera;
   readonly renderer: THREE.WebGLRenderer;
   readonly controls: OrbitControls;
+  readonly trackball: TrackballControls;
 
+  private mode: ControlMode = 'orbit';
   private readonly canvas: HTMLCanvasElement;
   private readonly onFrame: Array<(dt: number) => void> = [];
   private clock = new THREE.Clock();
@@ -112,8 +142,52 @@ export class Viewer {
     // galactic plane in a way that is disorienting at large scales.
     this.controls.screenSpacePanning = true;
 
+    this.trackball = new TrackballControls(this.camera, canvas);
+    this.trackball.target.set(0, 0, 0);
+    this.trackball.rotateSpeed = 2.2;
+    this.trackball.zoomSpeed = 1.1;
+    this.trackball.panSpeed = 0.6;
+    this.trackball.dynamicDampingFactor = 0.12;
+    this.trackball.minDistance = MIN_TARGET_DISTANCE;
+    this.trackball.maxDistance = MAX_TARGET_DISTANCE;
+    this.trackball.enabled = false;
+
     this.handleResize();
     window.addEventListener('resize', this.handleResize);
+  }
+
+  /**
+   * Swap how dragging moves the camera, keeping where it is pointing.
+   *
+   * Returning to orbit restores galactic north as the up vector. A trackball
+   * drag is free to roll the camera, and OrbitControls reads up as the axis it
+   * turns about — so leaving a rolled-up in place would make the presets and
+   * the horizon disagree with everything else on screen. The snap back to level
+   * is visible, and is the honest consequence of the two modes not sharing a
+   * notion of up.
+   */
+  setControlMode(mode: ControlMode): void {
+    if (mode === this.mode) return;
+    this.mode = mode;
+
+    const from = mode === 'orbit' ? this.trackball : this.controls;
+    const to = mode === 'orbit' ? this.controls : this.trackball;
+    to.target.copy(from.target);
+
+    if (mode === 'orbit') this.camera.up.set(0, 0, 1);
+
+    from.enabled = false;
+    to.enabled = true;
+    to.update();
+  }
+
+  get controlMode(): ControlMode {
+    return this.mode;
+  }
+
+  /** Whichever control is currently driving the camera. */
+  private get active(): OrbitControls | TrackballControls {
+    return this.mode === 'orbit' ? this.controls : this.trackball;
   }
 
     /**
@@ -124,16 +198,21 @@ export class Viewer {
    * cluster keeps the cluster the same size on screen.
    */
   setViewpoint(name: Viewpoint): void {
-    const range = this.camera.position.distanceTo(this.controls.target);
+    const controls = this.active;
+    const range = this.camera.position.distanceTo(controls.target);
+    // A preset is expressed in the galactic frame, so it only means what it says
+    // with galactic north up. Trackball drags can have rolled the camera since.
+    this.camera.up.set(0, 0, 1);
     this.camera.position
-      .copy(this.controls.target)
+      .copy(controls.target)
       .add(viewpointPosition(name, range || DEFAULT_RANGE));
-    this.controls.update();
+    this.camera.lookAt(controls.target);
+    controls.update();
   }
 
   /** Distance from the camera to whatever it is orbiting. */
   get targetDistance(): Parsecs {
-    return pc(this.camera.position.distanceTo(this.controls.target));
+    return pc(this.camera.position.distanceTo(this.active.target));
   }
 
   /** Distance from the camera to Sol, which is the origin of the frame. */
@@ -150,14 +229,17 @@ export class Viewer {
    * sensible standoff distance for the new focus.
    */
   focusOn(position: THREE.Vector3, standoff: Parsecs): void {
+    const controls = this.active;
     const direction = new THREE.Vector3()
-      .subVectors(this.camera.position, this.controls.target)
+      .subVectors(this.camera.position, controls.target)
       .normalize();
     if (direction.lengthSq() === 0) direction.set(0, -1, 0.4).normalize();
 
-    this.controls.target.copy(position);
+    controls.target.copy(position);
     this.camera.position.copy(position).addScaledVector(direction, standoff as number);
-    this.controls.update();
+    // Both controls carry a target, and only the active one may be moved: the
+    // other is updated when the mode is switched.
+    controls.update();
   }
 
   private handleResize = (): void => {
@@ -167,6 +249,10 @@ export class Viewer {
     this.renderer.setSize(width, height, false);
     this.camera.aspect = width / height;
     this.camera.updateProjectionMatrix();
+    // TrackballControls caches the canvas rectangle and maps pointer motion
+    // through it, so without this a resize leaves dragging misaligned with the
+    // cursor. OrbitControls reads the rectangle per event and needs nothing.
+    this.trackball.handleResize();
   };
 
   /**
@@ -194,7 +280,7 @@ export class Viewer {
     this.running = true;
     this.renderer.setAnimationLoop(() => {
       const dt = this.clock.getDelta();
-      this.controls.update();
+      this.active.update();
       this.updateDepthRange();
       for (const callback of this.onFrame) callback(dt);
       this.renderer.render(this.scene, this.camera);
@@ -206,6 +292,7 @@ export class Viewer {
     this.renderer.setAnimationLoop(null);
     window.removeEventListener('resize', this.handleResize);
     this.controls.dispose();
+    this.trackball.dispose();
     this.renderer.dispose();
   }
 }

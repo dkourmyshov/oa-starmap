@@ -17,7 +17,7 @@ import { DEFAULT_OPACITY as DEFAULT_CLUSTER_OPACITY } from '../layers/clusterFie
 import { DEFAULT_OPACITY as DEFAULT_HII_OPACITY } from '../layers/hiiField';
 import { DEFAULT_MAX_LABELS } from './labels';
 import type { NameMode } from '../scene/objects';
-import { type Viewpoint, VIEWPOINTS } from '../scene/viewer';
+import { type ControlMode, CONTROL_MODES, type Viewpoint, VIEWPOINTS } from '../scene/viewer';
 import { type DistanceUnit, DEFAULT_UNIT, type Parsecs, formatDistance } from '../units';
 
 export interface HudCallbacks {
@@ -37,6 +37,7 @@ export interface HudCallbacks {
   onFocusPolity(polityId: string): void;
   onJump(target: JumpTarget): void;
   onViewpoint(name: Viewpoint): void;
+  onControlMode(mode: ControlMode): void;
   onUnitChange(unit: DistanceUnit): void;
 }
 
@@ -300,7 +301,9 @@ export class Hud {
     // rows: the viewpoints change the angle and keep the range, the jumps change
     // the target and keep the angle.
     const jumpPanel = el('div', 'panel panel-jump');
-    jumpPanel.appendChild(el('div', 'title', 'View from'));
+    // Not "view from": only `top` says where the camera is. `spin` and `core`
+    // name what it is pointed at, which is the useful thing about them.
+    jumpPanel.appendChild(el('div', 'title', 'Viewpoint'));
     const viewGrid = el('div', 'jump-grid jump-grid-wide');
     for (const viewpoint of VIEWPOINTS) {
       const button = el('button', 'jump', viewpoint.label);
@@ -314,6 +317,23 @@ export class Hud {
       viewGrid.appendChild(button);
     }
     jumpPanel.appendChild(viewGrid);
+
+    const dragRow = el('div', 'row');
+    dragRow.appendChild(el('span', 'label', 'Drag'));
+    const dragGroup = el('div', 'toggle-group');
+    for (const mode of CONTROL_MODES) {
+      const button = el('button', 'toggle', mode.label);
+      button.title = mode.title;
+      if (mode.id === 'orbit') button.classList.add('active');
+      button.addEventListener('click', () => {
+        for (const other of dragGroup.children) other.classList.remove('active');
+        button.classList.add('active');
+        this.callbacks.onControlMode(mode.id);
+      });
+      dragGroup.appendChild(button);
+    }
+    dragRow.appendChild(dragGroup);
+    jumpPanel.appendChild(dragRow);
 
     jumpPanel.appendChild(el('div', 'title', 'Jump to'));
     const jumpGrid = el('div', 'jump-grid');

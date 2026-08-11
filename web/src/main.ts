@@ -331,6 +331,7 @@ async function main(): Promise<void> {
       onFocusPolity: focusPolity,
       onJump: handleJump,
       onViewpoint: (name) => viewer.setViewpoint(name),
+      onControlMode: (mode) => viewer.setControlMode(mode),
       onUnitChange: (unit) => {
         // The HUD readout re-renders on the next frame, but the detail panel is
         // static once drawn, so it has to be told.
