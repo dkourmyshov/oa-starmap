@@ -12,7 +12,16 @@
 import * as THREE from 'three';
 import { describe, expect, it } from 'vitest';
 
-import type { ClusterData, FictionData, HiiData, OAStarData, StarData } from '../data/manifest';
+import type {
+  ClusterData,
+  FictionData,
+  HiiData,
+  OAStarData,
+  StarData,
+  WorldData,
+  WorldEntry,
+} from '../data/manifest';
+import { affiliationsFor } from '../data/manifest';
 import { KIND_CLUSTER, KIND_HII, KIND_OASTAR, KIND_STAR, ObjectIndex, bayerLabel } from './objects';
 
 const WIDTH = 800;
@@ -1161,5 +1170,107 @@ describe('label density fills the screen evenly', () => {
     const first = index.layout(camera(), options).map((p) => p.id);
     const second = index.layout(camera(), options).map((p) => p.id);
     expect(second).toEqual(first);
+  });
+});
+
+describe('affiliations merge across sources', () => {
+  const colony = (affiliations: string[], name = 'Felicidade') => ({
+    star_index: 0,
+    star: '18 Scorpii',
+    colony: name,
+    spectral_type: '',
+    mass_sol: '',
+    luminosity_sol: '',
+    distance_ly: 46.11,
+    method: 'name',
+    distance_disagrees: false,
+    affiliations,
+    status: '',
+    note: '',
+  });
+
+  const world = (affiliations: string[]) =>
+    ({
+      name: 'Felicidade Dyson',
+      kind: 'megastructure',
+      system: 'Felicidae',
+      parent: '',
+      also: [],
+      affiliations,
+      uncertain: false,
+      article: '',
+      note: '',
+      method: 'star',
+      star_index: 0,
+      oa_star: '',
+      x: null,
+      y: null,
+      z: null,
+      distance_pc: null,
+      direction_error_deg: null,
+      direction_error_ly: null,
+      radius_pc: null,
+      events: [],
+      known_from_at: null,
+      settled_at: null,
+    }) as WorldEntry;
+
+  /**
+   * Felicidade is in the colony table with no affiliation at all and in the
+   * worlds file held by four meta-empires. Taking the table's answer drew it as
+   * unclaimed.
+   */
+  it('takes the worlds file over an empty colony row', () => {
+    expect(affiliationsFor(colony([]), [world(['cyberian-network', 'nocozo'])])).toEqual([
+      'cyberian-network',
+      'nocozo',
+    ]);
+  });
+
+  it('unions the two without repeating a polity', () => {
+    expect(affiliationsFor(colony(['nocozo']), [world(['cyberian-network', 'nocozo'])])).toEqual([
+      'cyberian-network',
+      'nocozo',
+    ]);
+  });
+
+  it('falls back to the colony row when no world describes the system', () => {
+    expect(affiliationsFor(colony(['metasoft']), undefined)).toEqual(['metasoft']);
+    expect(affiliationsFor(undefined, undefined)).toEqual([]);
+  });
+
+  it('colours a star label by the merged answer, not the colony row alone', () => {
+    const fiction = {
+      polities: [
+        { id: 'cyberian-network', name: 'Cyberian Network', color: '#00ff00', index: 1 },
+      ],
+      bindings: [],
+      clusterPolity: new Uint8Array(1),
+      hiiPolity: null,
+    } as unknown as FictionData;
+
+    const worldsData = {
+      worlds: [world(['cyberian-network'])],
+      byStar: new Map([[0, [world(['cyberian-network'])]]]),
+      byOAStar: new Map(),
+    } as unknown as WorldData;
+
+    const index = new ObjectIndex(
+      makeStars([[0, 0, -100]]),
+      null,
+      null,
+      fiction,
+      null,
+      new Map([[0, colony([])]]),
+      worldsData,
+    );
+    const placed = index.layout(camera(), {
+      width: WIDTH,
+      height: HEIGHT,
+      magnitudeLimit: 20,
+      maxLabels: 5,
+      visible: ALL_VISIBLE,
+    });
+    expect(placed[0].color).toBe('#00ff00');
   });
 });

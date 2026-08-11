@@ -403,6 +403,10 @@ export interface WorldEvent {
   /** visited | settled | contact | stewardship | transferred | reported | abandoned. */
   kind: string;
   note: string;
+  /** Last year, for something that took time rather than happening. */
+  until_at: number | null;
+  /** The year is a rough figure the source itself hedges. */
+  approximate: boolean;
 }
 
 export interface WorldEntry {
@@ -475,6 +479,28 @@ export interface WorldData {
   /** By add-on designation, likewise. */
   byOAStar: Map<string, WorldEntry[]>;
   dataset: WorldsDataset;
+}
+
+/**
+ * Every polity holding a system, from whichever source knows about it.
+ *
+ * A system can be described twice — as a row of the colony table and as a
+ * canonical world — and the two need not agree about who holds it. Felicidade
+ * is in the table with no affiliation at all and in the worlds file held by
+ * four meta-empires; taking the table's answer would have drawn it as
+ * unclaimed. The worlds file leads because it is hand-authored from an article
+ * rather than transcribed from a column.
+ */
+export function affiliationsFor(
+  colony: Colony | undefined,
+  worlds: WorldEntry[] | undefined,
+): string[] {
+  const out: string[] = [];
+  for (const world of worlds ?? []) {
+    for (const id of world.affiliations) if (!out.includes(id)) out.push(id);
+  }
+  for (const id of colony?.affiliations ?? []) if (!out.includes(id)) out.push(id);
+  return out;
 }
 
 export interface LoadedData {

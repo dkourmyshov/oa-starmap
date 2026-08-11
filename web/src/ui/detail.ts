@@ -185,8 +185,10 @@ export class DetailPanel {
       for (const event of detail.events ?? []) {
         const line = el('div', 'row');
         // The year leads. It is what the reader came to this block for, and
-        // what a run of them has to be scannable by.
-        line.appendChild(el('span', 'label', `${event.year_at} A.T.`));
+        // what a run of them has to be scannable by. A span shows both ends,
+        // and an approximate year is hedged rather than presented as a date.
+        const span = event.until_at ? `${event.year_at}–${event.until_at}` : `${event.year_at}`;
+        line.appendChild(el('span', 'label', `${event.approximate ? 'c. ' : ''}${span} A.T.`));
         line.appendChild(el('span', 'value', EVENT_LABEL[event.kind] ?? event.kind));
         note.appendChild(line);
         if (event.note) note.appendChild(el('div', 'note-line', event.note));

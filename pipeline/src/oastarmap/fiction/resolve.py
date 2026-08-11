@@ -11,6 +11,7 @@ that mapping is a matter of judgement rather than syntax.
 from __future__ import annotations
 
 import re
+import unicodedata
 from dataclasses import dataclass, field
 from typing import Any
 
@@ -41,14 +42,28 @@ CATALOG_PREFIXES = (
 )
 
 
+def fold_diacritics(text: str) -> str:
+    """Strip accents, so "Bo\u00f6tis" and "Bootis" are the same word.
+
+    The colony tables spell the constellation genitives properly and our lookup
+    tables spell them in ASCII. Without folding, every star in Bo\u00f6tes failed to
+    resolve \u2014 Arcturus among them, along with four rows of 44 Bo\u00f6tis \u2014 because
+    "bo\u00f6tis" is simply not the key "bootis". Decompose to base characters plus
+    combining marks, then drop the marks.
+    """
+    return "".join(
+        ch for ch in unicodedata.normalize("NFKD", text) if not unicodedata.combining(ch)
+    )
+
+
 def normalise(name: str) -> str:
     """Reduce a designation to a comparable key.
 
-    Case, punctuation, separator style and leading zeros in catalog numbers all
-    vary between sources and none of them carry meaning.
+    Case, punctuation, accents, separator style and leading zeros in catalog
+    numbers all vary between sources and none of them carry meaning.
     """
     # U+2019 is the curly apostrophe; "Ptolemy's Cluster" gets typed both ways.
-    text = name.strip().lower().replace("'", "").replace("\u2019", "")
+    text = fold_diacritics(name).strip().lower().replace("'", "").replace("\u2019", "")
     text = text.replace("-", "_").replace("+", "_plus_")
     text = re.sub(r"[\s_]+", "_", text)
     # "NGC 0225" and "NGC 225" denote the same object.

@@ -532,3 +532,105 @@ worlds:
       A planet and a megastructure both. Coordinates given as 05h 48m 50s,
       -14d 28' 03" in Lepus, so the direction is exact and only the distance is
       asserted.
+
+  # ---- Cyberian Network ---------------------------------------------------
+  #
+  # Cyberia is an overlay network, and an encrypted one, so most of its
+  # presence is invisible and shares a system with whoever holds it openly.
+  # Nearly every entry here is jointly held, and that is the fact about the
+  # Network rather than an untidiness in the data. What is listed is the
+  # handful of systems Cyberian enough that concealment has stopped applying.
+
+  - name: Felicidade Dyson
+    kind: megastructure
+    system: Felicidae
+    affiliations:
+      [cyberian-network, zoeific-biopolity, negentropy-alliance,
+       mutual-progress-association]
+    article: https://www.orionsarm.com/eg-article/49024b4de8dac
+    location:
+      hd: 146233
+    events:
+      - year_at: 1704
+        kind: settled
+    note: >-
+      18 Scorpii, and the catalogue agrees with the article to two decimals at
+      46.11 ly. Held by four meta-empires at once, which is the most of any
+      place recorded here.
+
+  - name: Arcturus
+    kind: system
+    system: Arcturus
+    affiliations: [cyberian-network]
+    article: https://www.orionsarm.com/eg-article/45f973105f71c
+    location:
+      hip: 69673
+    events:
+      - year_at: 1427
+        kind: settled
+    note: >-
+      Alpha Bootis, 37 ly. The colony table has it, and until the resolver
+      learned to fold accents it could not match the table's "Alpha Boötis"
+      against an ASCII genitive.
+
+  - name: Fata Morgana
+    kind: planet
+    system: Talitha
+    affiliations: [cyberian-network]
+    article: https://www.orionsarm.com/eg-article/47b8e39c9718c
+    location:
+      hd: 76644
+    events:
+      - year_at: 4496
+        until_at: 4530
+        kind: transferred
+        note: >-
+          Infiltrated and taken over from the Solar Dominion over thirty-four
+          years. An infiltration rather than an event, which is why it carries
+          an end year.
+    note: >-
+      Iota Ursae Majoris, whose primary is Talitha; the colony table gives the
+      system as "Talitha / Mithras / Fata Morgana". No colonisation date.
+
+  - name: Orinoco
+    kind: system
+    system: Orinoco
+    affiliations: [cyberian-network]
+    article: https://www.orionsarm.com/eg-article/4910613da24b9
+    location:
+      hd: 141004
+    events:
+      - year_at: 2103
+        kind: visited
+        note: Reached.
+    note: Lambda Serpentis, 39 ly.
+
+  - name: Procyon
+    kind: system
+    system: Procyon
+    affiliations: [cyberian-network, nocozo]
+    article: https://www.orionsarm.com/eg-article/4703bd683b72b
+    location:
+      hip: 37279
+    events:
+      - year_at: 500
+        approximate: true
+        kind: settled
+        note: >-
+          First colonised by the Solipsist Panvirtuality's Ako Forward Chaining.
+          The source says "around 500", so the year is a rough figure rather
+          than a date.
+    note: >-
+      Joint Cyberian and Non-Coercive Zone after a long and strange history;
+      neither of its present holders founded it.
+
+  - name: Rengood
+    kind: planet
+    affiliations: [cyberian-network]
+    article: http://www.orionsarm.com/eg-article/591dcfb1235e6
+    location:
+      hd: 193275
+    events:
+      - year_at: 2681
+        kind: settled
+    note: In Aquila. The catalogue puts HD 193275 at 207 ly against the article's 195.

@@ -141,13 +141,13 @@ Webistics has an article but no position of any kind in it. Elderman's Star has 
 
 ## The Inner Sphere colony tables
 
-891 of 1,122 rows resolve to a star we hold. The rest break down as follows.
+909 of 1,122 rows resolve to a star we hold. The rest break down as follows.
 
-### 194 star names we cannot match
+### 176 star names we cannot match
 
 Names that are not obviously from a catalogue we lack — secondary components, variable-star designations, and forms we may simply be parsing wrong. This is the list most likely to contain our mistakes rather than the setting's.
 
-15 Leonis Minoris, 171 G. Puppis, 18 Boötis, 20 Crateris A, 20 Crateris B, 212 G. Puppis A, 212 G. Puppis B, 41 G. Arae A, 41 G. Arae B, 44 Boötis A, 44 Boötis B, 44 Boötis C, and 182 more
+15 Leonis Minoris, 171 G. Puppis, 20 Crateris A, 20 Crateris B, 212 G. Puppis A, 212 G. Puppis B, 41 G. Arae A, 41 G. Arae B, 82 G. Eridani, AB Doradus A, AB Doradus Ba, AB Doradus Bb, and 164 more
 
 ### 35 names from catalogues we do not carry
 
@@ -172,11 +172,11 @@ The name matched but the distance was out by more than half, which is too far to
 
 - **GJ 1150** — 76.81 ly stated, 230.35 ly at the star of that name
 
-### 19 polity assignments with nowhere to go
+### 17 polity assignments with nowhere to go
 
 Colonies we have been given a polity for, whose star does not resolve. The assignment is held and will apply the moment the name matches.
 
-Abydos, Algol, Arcturus, Byrdis & Ka Yvanti, Goldilocks ISO, Hammerstein, Ithiplumo, Liaris Rosette, Midnight Pearl, Monostheria, Noyce, Proxima, and 7 more
+Abydos, Algol, Byrdis & Ka Yvanti, Goldilocks ISO, Hammerstein, Ithiplumo, Liaris Rosette, Midnight Pearl, Monostheria, Noyce, Proxima, Resonance, and 5 more
 
 ## 10 landmarks past the 7,000 ly frontier
 
@@ -207,7 +207,7 @@ Blanco 1, Collinder 173, S232, S27
 
 ## Worlds located only by constellation
 
-9 of 32 canonical worlds are given as a distance and a constellation. That fixes the distance exactly and the direction only to the width of the constellation, which at these ranges is hundreds to thousands of light years. The map draws these with a broken ring rather than a solid one, and the detail panel gives the error in light years.
+9 of 38 canonical worlds are given as a distance and a constellation. That fixes the distance exactly and the direction only to the width of the constellation, which at these ranges is hundreds to thousands of light years. The map draws these with a broken ring rather than a solid one, and the detail panel gives the error in light years.
 
 Coordinates, or a nearby named star, would turn any of these from a region into a position.
 

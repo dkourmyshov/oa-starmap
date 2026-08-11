@@ -14,14 +14,15 @@
 import * as THREE from 'three';
 
 import { DEFAULT_SIZE_PX as RING_SIZE_PX } from '../layers/settledField';
-import type {
-  ClusterData,
-  Colony,
-  FictionData,
-  HiiData,
-  OAStarData,
-  StarData,
-  WorldData,
+import {
+  type ClusterData,
+  type Colony,
+  type FictionData,
+  type HiiData,
+  type OAStarData,
+  type StarData,
+  type WorldData,
+  affiliationsFor,
 } from '../data/manifest';
 
 export const KIND_STAR = 0;
@@ -356,7 +357,9 @@ export class ObjectIndex {
         this.importance[at] = BASE_IMPORTANCE.oaSystem;
         this.isOA[at] = 1;
         this.floored[at] = 1;
-        this.labelColor[at] = polityColor.get(here[0].affiliations[0] ?? '');
+        this.labelColor[at] = polityColor.get(
+          affiliationsFor(colonies?.get(i), here)[0] ?? '',
+        );
       }
 
       // What Orion's Arm calls the system takes precedence over what the sky
@@ -370,7 +373,9 @@ export class ObjectIndex {
         this.importance[at] = BASE_IMPORTANCE.oaSystem;
         this.isOA[at] = 1;
         this.floored[at] = 1;
-        this.labelColor[at] = polityColor.get(colony.affiliations[0] ?? '');
+        this.labelColor[at] = polityColor.get(
+          affiliationsFor(colony, worlds?.byStar.get(i))[0] ?? '',
+        );
       }
 
       const names = stars.names[String(i)];

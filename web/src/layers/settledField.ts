@@ -9,16 +9,31 @@
  * star keeps the colour the catalogue measured; the polity is a mark drawn
  * around it, at constant screen size so it stays readable at any distance.
  *
- * This layer covers both places a system can come from — an Inner Sphere colony
- * on a real star, and a star of the Celestia add-on — because "this system
- * belongs to that polity" is one statement and should have one appearance. The
- * two differ in whether their position was measured, and that is carried by the
- * glyph at the centre, not by the ring.
+ * The ring is **segmented** where a system is held by more than one polity, one
+ * arc per holder. That is not a rare case dressed up: Cyberia is an encrypted
+ * overlay network, so nearly everything it holds it shares, and Felicidade
+ * belongs to four meta-empires at once. Drawing only the first would make a
+ * shared system indistinguishable from a wholly owned one, and choosing which
+ * holder to show would be a silent editorial decision repeated on every such
+ * system.
+ *
+ * This layer covers every place a system can come from — an Inner Sphere colony
+ * on a real star, a canonical world, a star of the Celestia add-on — because
+ * "this system belongs to that polity" is one statement and should have one
+ * appearance. The sources differ in whether the position was measured, and that
+ * is carried by the glyph at the centre, not by the ring.
  */
 
 import * as THREE from 'three';
 
-import type { Colony, FictionData, OAStarData, StarData, WorldData } from '../data/manifest';
+import {
+  type Colony,
+  type FictionData,
+  type OAStarData,
+  type StarData,
+  type WorldData,
+  affiliationsFor,
+} from '../data/manifest';
 
 export const DEFAULT_OPACITY = 0.85;
 
@@ -31,23 +46,45 @@ const STATUS_COLOR = new THREE.Color(0x9aa4bb);
 /** How much fainter a ring is when no polity holds the system. */
 export const UNAFFILIATED_DIM = 0.25;
 
+/**
+ * Most holders a ring can show separately.
+ *
+ * Four, because Felicidade has four and nothing recorded has more. A ring cut
+ * into more arcs than this stops reading as segments at thirteen pixels across,
+ * so beyond the limit the extra holders are left to the detail panel rather
+ * than shown as a smear.
+ */
+export const MAX_SEGMENTS = 4;
+
 const VERTEX_SHADER = /* glsl */ `
   #include <common>
   #include <logdepthbuf_pars_vertex>
 
-  attribute vec3 aColor;
+  attribute vec3 aColor0;
+  attribute vec3 aColor1;
+  attribute vec3 aColor2;
+  attribute vec3 aColor3;
+  attribute float aSegments;
   attribute float aAffiliated;
 
   uniform float uSize;
   uniform float uUnaffiliatedDim;
 
-  varying vec3 vColor;
+  varying vec3 vColor0;
+  varying vec3 vColor1;
+  varying vec3 vColor2;
+  varying vec3 vColor3;
+  varying float vSegments;
   varying float vGain;
 
   void main() {
     vec4 viewPos = modelViewMatrix * vec4(position, 1.0);
     gl_Position = projectionMatrix * viewPos;
-    vColor = aColor;
+    vColor0 = aColor0;
+    vColor1 = aColor1;
+    vColor2 = aColor2;
+    vColor3 = aColor3;
+    vSegments = aSegments;
     vGain = mix(uUnaffiliatedDim, 1.0, aAffiliated);
     gl_PointSize = uSize;
 
@@ -61,7 +98,11 @@ const FRAGMENT_SHADER = /* glsl */ `
 
   uniform float uOpacity;
 
-  varying vec3 vColor;
+  varying vec3 vColor0;
+  varying vec3 vColor1;
+  varying vec3 vColor2;
+  varying vec3 vColor3;
+  varying float vSegments;
   varying float vGain;
 
   void main() {
@@ -72,27 +113,57 @@ const FRAGMENT_SHADER = /* glsl */ `
     // Thin, and hollow generously: the star this marks sits at the centre and
     // must stay visible through it.
     float ring = smoothstep(0.72, 0.82, r) * (1.0 - smoothstep(0.88, 0.98, r));
+    if (ring <= 0.0) discard;
 
-    // A system with no named polity — independent, abandoned, blighted, or
-    // shared among several — is marked much more faintly. The ring is there to
-    // say which polity holds a system, and those have no answer to give.
+    vec3 color = vColor0;
+    if (vSegments > 1.5) {
+      // Arcs run clockwise from the top, so a two-holder ring reads as left and
+      // right halves rather than as an arbitrary tilt.
+      float turn = fract(0.25 - atan(offset.y, offset.x) / (2.0 * PI));
+      float scaled = turn * vSegments;
+      float index = floor(scaled);
+
+      if (index > 2.5) color = vColor3;
+      else if (index > 1.5) color = vColor2;
+      else if (index > 0.5) color = vColor1;
+
+      // A hairline gap at each join. Without it two similar hues merge into one
+      // arc and the ring understates how many polities are present.
+      float edge = min(fract(scaled), 1.0 - fract(scaled));
+      ring *= smoothstep(0.0, 0.06, edge);
+    }
+
+    // A system with no named polity — independent, abandoned, or blighted — is
+    // marked much more faintly. The ring is there to say which polity holds a
+    // system, and those have no answer to give.
     float alpha = ring * uOpacity * vGain;
     if (alpha < 0.004) discard;
 
     #include <logdepthbuf_fragment>
 
-    gl_FragColor = vec4(vColor, alpha);
+    gl_FragColor = vec4(color, alpha);
   }
 `;
+
+/** One ring to draw: where it goes, and who holds the system. */
+interface Ring {
+  x: number;
+  y: number;
+  z: number;
+  polities: string[];
+}
 
 export class SettledField {
   readonly points: THREE.Points;
   readonly count: number;
 
+  /** How many rings show more than one holder. */
+  readonly sharedCount: number;
+
   private readonly material: THREE.ShaderMaterial;
-  private readonly polityColors: Float32Array;
-  private readonly neutralColors: Float32Array;
-  private readonly colorAttribute: THREE.BufferAttribute;
+  private readonly polityColors: Float32Array[];
+  private readonly neutralColors: Float32Array[];
+  private readonly colorAttributes: THREE.BufferAttribute[];
 
   constructor(
     stars: StarData,
@@ -106,79 +177,102 @@ export class SettledField {
       polityColor.set(polity.id, new THREE.Color(polity.color));
     }
 
-    // One ring per settled system, from whichever source knows about it. Hidden
-    // add-on entries are skipped for the same reason the marker layer skips
-    // them: nothing is drawn there to ring.
-    const rings: { x: number; y: number; z: number; polity: string }[] = [];
+    const rings: Ring[] = [];
+    const ringed = new Set<number>();
+
     for (const [starIndex, colony] of colonies) {
       if (starIndex < 0 || starIndex >= stars.count) continue;
       // A row without a colony name is a star the table happens to list, not a
-      // system anyone has settled. Ringing all 891 rows put a polity mark on
-      // 579 ordinary stars.
+      // system anyone has settled. Ringing all of them put a polity mark on 579
+      // ordinary stars.
       if (!colony.colony) continue;
       const base = starIndex * 5;
+      ringed.add(starIndex);
       rings.push({
         x: stars.positions[base],
         y: stars.positions[base + 1],
         z: stars.positions[base + 2],
-        polity: colonies.get(starIndex)?.affiliations[0] ?? '',
+        polities: affiliationsFor(colony, worlds?.byStar.get(starIndex)),
       });
     }
-    // A star carrying a canonical world is as settled as one carrying a colony
-    // row, and was getting no ring purely because it arrived in a different
-    // file. Skipped where a colony already put a ring there.
+
+    // Worlds on stars the colony table does not name. A star carrying a
+    // canonical world is as settled as one carrying a colony row, and was
+    // getting no ring purely because it arrived in a different file.
     for (const [starIndex, here] of worlds?.byStar ?? []) {
-      if (starIndex < 0 || starIndex >= stars.count || colonies.has(starIndex)) continue;
+      if (starIndex < 0 || starIndex >= stars.count || ringed.has(starIndex)) continue;
       const base = starIndex * 5;
       rings.push({
         x: stars.positions[base],
         y: stars.positions[base + 1],
         z: stars.positions[base + 2],
-        polity: here[0]?.affiliations[0] ?? '',
+        polities: affiliationsFor(undefined, here),
       });
     }
+
     for (let i = 0; i < (oaStars?.count ?? 0); i++) {
       const entry = oaStars!.names[i];
       if (entry?.hidden) continue;
       const base = i * 5;
+      const bound = entry ? worlds?.byOAStar.get(entry.name) : undefined;
+      const polities = affiliationsFor(undefined, bound);
+      if (entry?.affiliation && !polities.includes(entry.affiliation)) {
+        polities.push(entry.affiliation);
+      }
       rings.push({
         x: oaStars!.positions[base],
         y: oaStars!.positions[base + 1],
         z: oaStars!.positions[base + 2],
-        polity: entry?.affiliation ?? '',
+        polities,
       });
     }
+
     this.count = rings.length;
+    this.sharedCount = rings.filter((ring) => ring.polities.length > 1).length;
 
     const positions = new Float32Array(this.count * 3);
-    const colors = new Float32Array(this.count * 3);
-    const neutral = new Float32Array(this.count * 3);
+    const segments = new Float32Array(this.count);
     const affiliated = new Float32Array(this.count);
+    const colors = Array.from({ length: MAX_SEGMENTS }, () => new Float32Array(this.count * 3));
+    const neutral = Array.from({ length: MAX_SEGMENTS }, () => new Float32Array(this.count * 3));
 
     rings.forEach((ring, out) => {
       positions[out * 3] = ring.x;
       positions[out * 3 + 1] = ring.y;
       positions[out * 3 + 2] = ring.z;
 
-      affiliated[out] = ring.polity ? 1 : 0;
-      const chosen = polityColor.get(ring.polity) ?? STATUS_COLOR;
-      colors[out * 3] = chosen.r;
-      colors[out * 3 + 1] = chosen.g;
-      colors[out * 3 + 2] = chosen.b;
-      neutral[out * 3] = STATUS_COLOR.r;
-      neutral[out * 3 + 1] = STATUS_COLOR.g;
-      neutral[out * 3 + 2] = STATUS_COLOR.b;
+      const shown = ring.polities.slice(0, MAX_SEGMENTS);
+      affiliated[out] = shown.length ? 1 : 0;
+      segments[out] = Math.max(shown.length, 1);
+
+      for (let slot = 0; slot < MAX_SEGMENTS; slot++) {
+        // Slots past the holder count are never sampled, but are filled with
+        // the last real colour so a rounding error at an arc boundary cannot
+        // show black.
+        const id = shown[Math.min(slot, Math.max(shown.length - 1, 0))] ?? '';
+        const chosen = polityColor.get(id) ?? STATUS_COLOR;
+        colors[slot][out * 3] = chosen.r;
+        colors[slot][out * 3 + 1] = chosen.g;
+        colors[slot][out * 3 + 2] = chosen.b;
+        neutral[slot][out * 3] = STATUS_COLOR.r;
+        neutral[slot][out * 3 + 1] = STATUS_COLOR.g;
+        neutral[slot][out * 3 + 2] = STATUS_COLOR.b;
+      }
     });
 
-    this.polityColors = colors.slice();
+    this.polityColors = colors.map((array) => array.slice());
     this.neutralColors = neutral;
 
     const geometry = new THREE.BufferGeometry();
     geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-    geometry.setAttribute('aColor', new THREE.BufferAttribute(colors, 3));
+    geometry.setAttribute('aSegments', new THREE.BufferAttribute(segments, 1));
     geometry.setAttribute('aAffiliated', new THREE.BufferAttribute(affiliated, 1));
+    this.colorAttributes = colors.map((array, slot) => {
+      const attribute = new THREE.BufferAttribute(array, 3);
+      geometry.setAttribute(`aColor${slot}`, attribute);
+      return attribute;
+    });
     geometry.boundingSphere = new THREE.Sphere(new THREE.Vector3(), Infinity);
-    this.colorAttribute = geometry.getAttribute('aColor') as THREE.BufferAttribute;
 
     this.material = new THREE.ShaderMaterial({
       uniforms: {
@@ -207,8 +301,10 @@ export class SettledField {
    */
   setPolityMode(enabled: boolean): void {
     const source = enabled ? this.polityColors : this.neutralColors;
-    (this.colorAttribute.array as Float32Array).set(source);
-    this.colorAttribute.needsUpdate = true;
+    this.colorAttributes.forEach((attribute, slot) => {
+      (attribute.array as Float32Array).set(source[slot]);
+      attribute.needsUpdate = true;
+    });
   }
 
   set opacity(value: number) {

@@ -16,7 +16,7 @@ from __future__ import annotations
 import re
 from dataclasses import dataclass
 
-from oastarmap.fiction.resolve import normalise
+from oastarmap.fiction.resolve import fold_diacritics, normalise
 
 GREEK_NAMES = {
     "alpha": "Alp",
@@ -149,7 +149,7 @@ _GLIESE = re.compile(r"(?:Gliese|Gl|GJ)\s*([\d.]+)\s*([A-D])?$", re.I)
 # "Zeta1 Reticuli", "Alpha Centauri", "61 Cygni". The optional trailing digit on
 # a Greek name is a component number written inline: Zeta1 is the catalogue's
 # "Zet-1". Without this, Zeta1 Reticuli resolves to nothing.
-_TWO_PART = re.compile(r"([A-Za-z]+|\d+)\s*(\d+)?\s+(.+)")
+_TWO_PART = re.compile(r"([^\W\d_]+|\d+)\s*(\d+)?\s+(.+)")
 
 # Alpha Centauri A is "Alp-1 Cen" in the catalogue, B is "Alp-2". The component
 # letter becomes a numeric suffix on the Bayer letter for multiple systems.
@@ -198,7 +198,9 @@ class StarResolver:
 
     def _designation(self, head: str, tail: str, component: str, inline: str = "") -> int | None:
         """ "Alpha Centauri" + "A" -> "Alp-1 Cen"; "61 Cygni" -> "61 Cyg"."""
-        abbreviation = GENITIVE.get(tail.lower())
+        # Folded, because the tables write "Boötis" and the genitive table
+        # is ASCII.
+        abbreviation = GENITIVE.get(fold_diacritics(tail).lower())
         if not abbreviation:
             return None
 

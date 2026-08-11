@@ -554,6 +554,29 @@ class WorldEvent(BaseModel):
     kind: str
     note: str = ""
 
+    until_at: int | None = None
+    """Last year, for something that took time rather than happening.
+
+    Cyberia's takeover of Fata Morgana ran from 4496 to 4530 — an infiltration,
+    not an event. Recording only the start would date it as though it happened
+    in an afternoon, and recording two separate events would put one thing on
+    the timeline twice.
+    """
+
+    approximate: bool = False
+    """The year is a rough figure the source itself hedges.
+
+    Procyon's first colonisation is given as "around 500". Marked rather than
+    silently rounded, because a map that filters by year will otherwise treat a
+    guess and a date as the same kind of claim.
+    """
+
+    @model_validator(mode="after")
+    def _span_runs_forwards(self) -> WorldEvent:
+        if self.until_at is not None and self.until_at < self.year_at:
+            raise ValueError(f"until_at {self.until_at} precedes year_at {self.year_at}")
+        return self
+
     @field_validator("kind")
     @classmethod
     def _known_kind(cls, value: str) -> str:

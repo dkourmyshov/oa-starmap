@@ -227,7 +227,13 @@ def build_worlds(
         stats.by_method[method] += 1
 
         events = [
-            {"year_at": e.year_at, "kind": e.kind, "note": e.note}
+            {
+                "year_at": e.year_at,
+                "kind": e.kind,
+                "note": e.note,
+                "until_at": e.until_at,
+                "approximate": e.approximate,
+            }
             for e in sorted(world.events, key=lambda e: (e.year_at, e.kind))
         ]
         presence = [e["year_at"] for e in events if e["kind"] in PRESENCE_KINDS]
