@@ -188,12 +188,27 @@ def test_a_location_cannot_use_two_methods() -> None:
 
 
 def test_a_sky_location_needs_a_distance() -> None:
+    """A bare direction places nothing, and says so differently in each case.
+
+    Coordinates without a distance are an authoring error: nobody writes a right
+    ascension meaning "somewhere along here". A constellation without one is
+    ordinary — Orion's Arm's sectors are exactly that, the volume behind a
+    constellation seen from Earth — so it is accepted, recorded, and simply does
+    not place the world.
+    """
     from pydantic import ValidationError
 
     from oastarmap.fiction.schema import WorldLocation
 
     with pytest.raises(ValidationError, match="needs a distance"):
-        WorldLocation(constellation="Canis Major")
+        WorldLocation(ra_deg=10.0, dec_deg=-20.0)
+
+    direction_only = WorldLocation(constellation="Centaurus")
+    assert direction_only.method == "none"
+    assert direction_only.constellation == "Centaurus"
+
+    placed = WorldLocation(constellation="Centaurus", distance="2000 ly")
+    assert placed.method == "constellation"
 
 
 def test_dated_history_is_ordered_and_derived() -> None:
@@ -628,3 +643,50 @@ def test_observing_is_not_visiting() -> None:
     assert rangar["known_from_at"] == 3702
     # Observed, never settled: the map may show it, but not as inhabited.
     assert rangar["settled_at"] is None
+
+
+def test_a_direction_without_a_distance_is_still_recorded() -> None:
+    """Dashwood and Gritwald are in the Centaurus sector and nowhere more exact.
+
+    Knowing the direction is worth keeping even though nothing can be drawn from
+    it: the entry is half-ready the day a distance turns up, and the panel can
+    say which way to look.
+    """
+    import json
+
+    from oastarmap.paths import DATA_OUT_DIR
+
+    path = DATA_OUT_DIR / "worlds.json"
+    if not path.exists():
+        pytest.skip("dataset not built")
+
+    worlds = {w["name"]: w for w in json.loads(path.read_text(encoding="utf-8"))}
+    for name in ("Dashwood", "Gritwald"):
+        assert worlds[name]["constellation"] == "Centaurus"
+        assert worlds[name]["method"] == "none"
+        assert worlds[name]["x"] is None
+
+
+def test_both_arkab_prior_components_share_a_star() -> None:
+    """One wide binary, 3,290 AU across — a twentieth of a light year.
+
+    The add-on carries the secondary at its own distance, eleven light years
+    from where the catalogue puts the primary, which is the two sources
+    disagreeing about the system rather than the components being apart. Binding
+    both worlds to the catalogue star keeps the fiction in one place.
+    """
+    import json
+
+    from oastarmap.paths import DATA_OUT_DIR
+
+    path = DATA_OUT_DIR / "worlds.json"
+    if not path.exists():
+        pytest.skip("dataset not built")
+
+    worlds = {w["name"]: w for w in json.loads(path.read_text(encoding="utf-8"))}
+    a, b = worlds["Arkab Prior A"], worlds["Arkab Prior B"]
+    assert a["star_index"] is not None
+    assert a["star_index"] == b["star_index"]
+    # And they are held by different meta-empires, which is the point of keeping
+    # them as two entries rather than merging them.
+    assert set(a["affiliations"]) != set(b["affiliations"])

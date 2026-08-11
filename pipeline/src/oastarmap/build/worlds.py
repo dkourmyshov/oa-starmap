@@ -328,6 +328,7 @@ def build_worlds(
             "star_index": None,
             "oa_star": "",
             "in_world": "",
+            "constellation": world.location.constellation,
             "distance_checked": False,
             "x": None,
             "y": None,

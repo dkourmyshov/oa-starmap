@@ -310,21 +310,23 @@ questions:
       Many places are located by an Orion's Arm region name rather than by a
       direction, and this map has no table of what those regions cover.
     detail: >-
-      The Crucis Corridor, the Centaurus sector, the Centauri sector, the outer
-      volumes near the Mutual Progress Association border. Nine of the
-      Negentropy Alliance's twenty-three entries are placed this way and no
-      further, the highest proportion of any polity recorded here — Arnon Dar,
-      Dashwood, Gritwald, Ratay's World and Verity have nothing else at all,
-      while Gillbank, New Poseidon and Steelcliff have a distance from Sol but
-      no direction, which describes a shell rather than a place.
+      A "sector" is settled: it is the volume behind that constellation as seen
+      from Earth, so the Centaurus sector fixes Dashwood's and Gritwald's
+      direction. Neither gives a distance, so both remain a cone from Sol rather
+      than a point. What is still unread are the other kinds of region name —
+      the Crucis Corridor, the outer volumes near the Mutual Progress
+      Association border — which are not sectors and may not decode the same
+      way. Arnon Dar, Ratay's World and Verity rest entirely on those. Gillbank,
+      New Poseidon and Steelcliff have the opposite half: a distance from Sol
+      and no direction at all, which describes a shell rather than a place.
     map_does: >-
       Records them and does not draw them. A region name could be turned into a
       direction only by guessing which constellation it corresponds to, and a
       guess drawn as a dot is indistinguishable from a measurement.
     would_settle: >-
-      A centre and an extent for each named region — even roughly, as a
-      constellation and a distance — would place most of these at once. Failing
-      that, per-world distances and constellations.
+      Whether a "Corridor" decodes like a sector, and a distance for each of the
+      worlds that now have only a direction. Either half alone leaves them
+      undrawable; together they are ordinary constellation placements.
     links:
       - https://www.orionsarm.com/eg-article/5025ec682d4a4
       - https://www.orionsarm.com/eg-article/464e939b35f57

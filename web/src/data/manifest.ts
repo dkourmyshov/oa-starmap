@@ -448,6 +448,11 @@ export interface WorldEntry {
   oa_star: string;
   /** Set when it shares another world's position, by that world's name. */
   in_world: string;
+  /**
+   * The constellation the source names, whether or not it places the world.
+   * Without a distance it is a direction and nothing more — a cone from Sol.
+   */
+  constellation: string;
   /** Present only when the world carries coordinates of its own, in parsecs. */
   x: number | null;
   y: number | null;

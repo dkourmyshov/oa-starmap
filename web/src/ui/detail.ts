@@ -347,6 +347,7 @@ export class DetailPanel {
     } else if (world.method === 'direction') {
       rows.push({ label: 'Position', value: 'direction exact, distance as given' });
     }
+    if (world.constellation) rows.push({ label: 'Constellation', value: world.constellation });
 
     if (world.kind) rows.push({ label: 'Kind', value: world.kind });
     if (world.system && world.system !== world.name) {

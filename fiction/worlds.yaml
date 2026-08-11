@@ -874,13 +874,18 @@ worlds:
     affiliations: [mutual-progress-association]
     article: https://www.orionsarm.com/eg-article/48f4bc90174b8
     location:
-      oa_star: Arkab Prior B
+      star: Arkab Prior
+      distance: 389 ly
     events:
       - year_at: 4311
         kind: settled
     note: >-
-      A real star the Celestia add-on supplies because Celestia's own catalogue
-      omits it: the companion of Beta-1 Sagittarii, 116 ly.
+      Beta-1 Sagittarii B. Arkab Prior is one wide binary, its components some
+      3,290 AU apart — a twentieth of a light year, which is nothing at this
+      map's scale. So B is bound to the same catalogue star as A rather than to
+      the add-on's separate entry for it, which sits about eleven light years
+      away: that gap is the two sources disagreeing on the system's distance,
+      not the components being far apart.
 
   - name: Acrab
     kind: megastructure
@@ -1355,8 +1360,8 @@ worlds:
         kind: settled
     note: >-
       Beta-1 Sagittarii A. Its companion B is a Mutual Progress Association
-      system with the same colonisation year — one star, two components, two
-      meta-empires.
+      system colonised the same year — one binary, two components, two
+      meta-empires, and at 3,290 AU apart they are the same point on this map.
 
   - name: Arnon Dar
     kind: system
@@ -1371,9 +1376,12 @@ worlds:
     affiliations: [negentropy-alliance]
     article: https://www.orionsarm.com/eg-article/4637c48b18ab6
     location:
+      constellation: Centaurus
       note: >-
-        In the Centauri sector, near the borders with the Paradigm and the
-        Utopia Sphere. All three name volumes rather than directions.
+        In the Centauri sector — a sector being the volume behind that
+        constellation as seen from Earth. Near the borders with the Paradigm and
+        the Utopia Sphere, which are volumes rather than directions. No distance
+        is given, so the direction is all there is: a cone from Sol, not a point.
 
   - name: Garlin
     kind: system
@@ -1392,7 +1400,9 @@ worlds:
     affiliations: [negentropy-alliance]
     article: https://www.orionsarm.com/eg-article/46f96e1589912
     location:
-      note: In the Centaurus sector.
+      constellation: Centaurus
+      note: >-
+        In the Centaurus sector, which fixes the direction and not the distance.
     note: >-
       Held for a time by the Efficiency Maximization Paradigm. No year is given
       for either the capture or its end, so it stays prose rather than becoming

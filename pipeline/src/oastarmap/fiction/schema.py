@@ -516,7 +516,15 @@ class WorldLocation(BaseModel):
     """An exact direction, with ``distance`` supplying the radius."""
 
     constellation: str = ""
-    """A region of sky, with ``distance`` supplying the radius."""
+    """A region of sky.
+
+    With ``distance`` it places the world. Without one it still records the
+    direction, which is worth keeping even though nothing can be drawn from it:
+    a constellation alone is a cone from Sol, not a point. Orion's Arm's
+    "sectors" are these — the Centaurus sector is the volume behind the
+    constellation as seen from Earth — so several places are known to be
+    somewhere down a particular line and no further.
+    """
 
     distance: str = ""
     """Distance from Sol, with its unit: '805 ly'.
@@ -555,7 +563,9 @@ class WorldLocation(BaseModel):
             return "world"
         if self.ra_deg is not None and self.dec_deg is not None:
             return "direction"
-        if self.constellation:
+        # A constellation without a distance is a direction and nothing more, so
+        # it cannot place anything; the constellation is still recorded.
+        if self.constellation and self.distance:
             return "constellation"
         return "none"
 
@@ -579,8 +589,8 @@ class WorldLocation(BaseModel):
             raise ValueError("give only one of star / oa_star / world / ra+dec / constellation")
         if (self.ra_deg is None) != (self.dec_deg is None):
             raise ValueError("ra_deg and dec_deg must be given together")
-        if self.method in {"direction", "constellation"} and not self.distance:
-            raise ValueError(f"a {self.method} location needs a distance")
+        if self.method == "direction" and not self.distance:
+            raise ValueError("a direction location needs a distance")
         if self.distance and self.method not in {"direction", "constellation", "star"}:
             raise ValueError(f"a {self.method} location takes no distance")
         if self.distance:
