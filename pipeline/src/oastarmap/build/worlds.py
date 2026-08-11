@@ -255,6 +255,13 @@ def build_worlds(
         known_from = min(presence) if presence else None
         settled_at = min(settled_years) if settled_years else None
 
+        # When it stopped, where it did. Kept apart from the presence years
+        # rather than folded into them: Hoopworld disintegrated in 10580 and
+        # nothing records when it was built, so counting the ending as a
+        # presence date would put it on the map in the year it vanished.
+        ended = [_certain_by(e) for e in events if e["kind"] == "abandoned"]
+        ended_at = max(ended) if ended else None
+
         if events:
             stats.dated += 1
             years = [e["year_at"] for e in events]
@@ -275,14 +282,16 @@ def build_worlds(
             "note": world.note,
             "method": method,
             "events": events,
-            # The year from which a map of the sphere should show this place at
-            # all, and the year it became inhabited. Derived rather than
-            # authored: an author editing a date should not also have to
-            # remember to update a summary of it.
+            # The years a map of the sphere is drawn from: when this place
+            # first appears, when it became inhabited, and when it ended.
+            # Derived rather than authored, so that editing a date cannot leave
+            # a stale summary behind.
             "known_from_at": known_from,
             "settled_at": settled_at,
+            "ended_at": ended_at,
             "star_index": None,
             "oa_star": "",
+            "in_world": "",
             "x": None,
             "y": None,
             "z": None,
@@ -310,6 +319,8 @@ def build_worlds(
                     f"{world.location.oa_star!r}"
                 )
             record["oa_star"] = world.location.oa_star
+        elif method == "world":
+            record["in_world"] = world.location.world
         elif method == "none":
             stats.unlocated.append(world.name)
         else:
@@ -330,6 +341,26 @@ def build_worlds(
             )
 
         records.append(record)
+
+    # Second pass: a world that shares another's position copies it once both
+    # exist, so the file may name them in any order.
+    by_name = {r["name"]: r for r in records}
+    for record in records:
+        if record["method"] != "world":
+            continue
+        host = by_name.get(record["in_world"])
+        if host is None:
+            raise ValueError(
+                f"world {record['name']!r} sits in {record['in_world']!r}, "
+                "which is not in this file"
+            )
+        if host["x"] is None:
+            raise ValueError(
+                f"world {record['name']!r} sits in {record['in_world']!r}, which has no position "
+                "of its own; bind it to whatever places the host instead"
+            )
+        for key in ("x", "y", "z", "distance_pc", "direction_error_deg", "direction_error_ly"):
+            record[key] = host[key]
 
     files = {"worlds": write_json(out_dir / "worlds.json", records)}
 
@@ -373,6 +404,7 @@ def format_report(dataset: dict[str, Any]) -> str:
             "star": "bound to a catalogue star",
             "oa_star": "bound to a Celestia add-on star",
             "direction": "placed by direction and distance",
+            "world": "sharing another world's position",
             "constellation": "placed by constellation and distance",
             "none": "described but not located",
         }.get(method, method)

@@ -446,6 +446,8 @@ export interface WorldEntry {
   star_index: number | null;
   /** Set when it binds to a Celestia add-on star, by the add-on's designation. */
   oa_star: string;
+  /** Set when it shares another world's position, by that world's name. */
+  in_world: string;
   /** Present only when the world carries coordinates of its own, in parsecs. */
   x: number | null;
   y: number | null;
@@ -470,6 +472,8 @@ export interface WorldEntry {
   known_from_at: number | null;
   /** The year it became inhabited, where it did. */
   settled_at: number | null;
+  /** The year it ended, where it did. Hoopworld disintegrated in 10580. */
+  ended_at: number | null;
 }
 
 export interface WorldsDataset {
@@ -496,6 +500,14 @@ export interface WorldData {
   byStar: Map<number, WorldEntry[]>;
   /** By add-on designation, likewise. */
   byOAStar: Map<string, WorldEntry[]>;
+  /**
+   * Guests, by the name of the world whose position they share.
+   *
+   * Potato is an asteroid habitat in the Bonfire System, and the Bonfire System
+   * is placed from coordinates rather than from a catalogue star — so there is
+   * no star to group them on. The host draws the marker and carries both names.
+   */
+  byHost: Map<string, WorldEntry[]>;
   dataset: WorldsDataset;
 }
 
@@ -559,7 +571,13 @@ async function loadWorlds(dataset: WorldsDataset): Promise<WorldData> {
   const worlds = await fetchJson<WorldEntry[]>(dataset.files.worlds.file);
   const byStar = new Map<number, WorldEntry[]>();
   const byOAStar = new Map<string, WorldEntry[]>();
+  const byHost = new Map<string, WorldEntry[]>();
   for (const world of worlds) {
+    if (world.in_world) {
+      const at = byHost.get(world.in_world);
+      if (at) at.push(world);
+      else byHost.set(world.in_world, [world]);
+    }
     if (world.star_index !== null) {
       const at = byStar.get(world.star_index);
       if (at) at.push(world);
@@ -571,7 +589,7 @@ async function loadWorlds(dataset: WorldsDataset): Promise<WorldData> {
       else byOAStar.set(world.oa_star, [world]);
     }
   }
-  return { worlds, byStar, byOAStar, dataset };
+  return { worlds, byStar, byOAStar, byHost, dataset };
 }
 
 async function loadInnerSphere(dataset: InnerSphereDataset): Promise<InnerSphereData> {

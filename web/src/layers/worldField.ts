@@ -172,7 +172,11 @@ const CIRCLE_FRAGMENT = /* glsl */ `
 function positioned(data: WorldData): number[] {
   const shown: number[] = [];
   for (let i = 0; i < data.worlds.length; i++) {
-    if (data.worlds[i].x !== null) shown.push(i);
+    const world = data.worlds[i];
+    // A world sharing another's position is drawn by its host, not beside it.
+    // It carries the same coordinates, so a second marker would be one object
+    // drawn twice at one point.
+    if (world.x !== null && !world.in_world) shown.push(i);
   }
   return shown;
 }

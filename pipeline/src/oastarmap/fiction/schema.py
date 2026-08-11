@@ -476,6 +476,17 @@ class WorldLocation(BaseModel):
     oa_star: str = ""
     """An entry of ``oa_stars.yaml``, by the add-on's own designation."""
 
+    world: str = ""
+    """Another world in this file, by name, whose position this one shares.
+
+    For something inside a system the map places from coordinates rather than
+    from a catalogue star: Potato is an asteroid habitat in the Bonfire System,
+    and repeating Bonfire's coordinates would put two markers on one point and
+    let them drift apart the day one of them is corrected. Where the system is a
+    catalogue star, use that star instead — two worlds on one star already group
+    themselves.
+    """
+
     ra_deg: float | None = None
     dec_deg: float | None = None
     """An exact direction, with ``distance`` supplying the radius."""
@@ -497,6 +508,8 @@ class WorldLocation(BaseModel):
             return "star"
         if self.oa_star:
             return "oa_star"
+        if self.world:
+            return "world"
         if self.ra_deg is not None and self.dec_deg is not None:
             return "direction"
         if self.constellation:
@@ -508,11 +521,12 @@ class WorldLocation(BaseModel):
         given = [
             bool(self.hip is not None or self.hd is not None or self.star),
             bool(self.oa_star),
+            bool(self.world),
             bool(self.ra_deg is not None or self.dec_deg is not None),
             bool(self.constellation),
         ]
         if sum(given) > 1:
-            raise ValueError("give only one of star / oa_star / ra+dec / constellation")
+            raise ValueError("give only one of star / oa_star / world / ra+dec / constellation")
         if (self.ra_deg is None) != (self.dec_deg is None):
             raise ValueError("ra_deg and dec_deg must be given together")
         if self.method in {"direction", "constellation"} and not self.distance:

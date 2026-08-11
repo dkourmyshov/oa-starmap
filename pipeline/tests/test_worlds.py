@@ -377,3 +377,70 @@ def test_a_constellation_can_be_written_without_its_accent() -> None:
     table = ConstellationFile.load(FICTION_DIR / "constellations.yaml").by_name()
     assert table["bootes"].name == "Boötes"
     assert table["boötes"].name == "Boötes"
+
+
+def test_a_world_can_share_another_world_s_position() -> None:
+    """Potato is a habitat in the Bonfire System, which has no catalogue star.
+
+    Copying Bonfire's coordinates into Potato's entry would put two markers on
+    one point and let them drift apart the first time either was corrected.
+    """
+    import json
+
+    from oastarmap.paths import DATA_OUT_DIR
+
+    path = DATA_OUT_DIR / "worlds.json"
+    if not path.exists():
+        pytest.skip("dataset not built")
+
+    worlds = {w["name"]: w for w in json.loads(path.read_text(encoding="utf-8"))}
+    potato, bonfire = worlds["Potato"], worlds["The Bonfire System"]
+    assert potato["method"] == "world"
+    assert potato["in_world"] == "The Bonfire System"
+    for key in ("x", "y", "z", "distance_pc"):
+        assert potato[key] == bonfire[key], f"{key} did not follow the host"
+
+
+def test_a_shared_position_must_name_a_world_that_has_one() -> None:
+    from oastarmap.build.worlds import build_worlds
+
+    source = FICTION_DIR / "worlds.yaml"
+    text = source.read_text(encoding="utf-8")
+    broken = text + (
+        "\n  - name: Nowhere Habitat\n"
+        "    kind: habitat\n"
+        "    affiliations: []\n"
+        "    location:\n"
+        "      world: A System That Does Not Exist\n"
+    )
+    scratch = source.with_name("worlds.broken.yaml")
+    scratch.write_text(broken, encoding="utf-8")
+    try:
+        with pytest.raises(ValueError, match="which is not in this file"):
+            build_worlds(scratch)
+    finally:
+        scratch.unlink()
+
+
+def test_an_ending_is_not_a_presence_date() -> None:
+    """Hoopworld disintegrated in 10580 and nothing records when it was built.
+
+    Counting the ending as a presence year would put it on a historical map in
+    the year it vanished, which is the one year it certainly was not there.
+    """
+    import json
+
+    from oastarmap.paths import DATA_OUT_DIR
+
+    path = DATA_OUT_DIR / "worlds.json"
+    if not path.exists():
+        pytest.skip("dataset not built")
+
+    worlds = {w["name"]: w for w in json.loads(path.read_text(encoding="utf-8"))}
+    hoopworld = worlds["Hoopworld"]
+    assert hoopworld["ended_at"] == 10580
+    assert hoopworld["known_from_at"] is None
+    assert hoopworld["settled_at"] is None
+
+    # And a place that never ended carries no ending.
+    assert worlds["Halcyon"]["ended_at"] is None

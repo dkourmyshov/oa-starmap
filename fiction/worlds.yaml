@@ -824,3 +824,404 @@ worlds:
     note: >-
       Where the Gardener originated. In Aquila at 225 ly, and shares an article
       with the World Garden it later made.
+
+  # ---- Mutual Progress Association ----------------------------------------
+  #
+  # Mostly megastructures. Several are habitats or rings inside a system the
+  # map places some other way, so they sit at their host's position rather than
+  # repeating its coordinates.
+
+  - name: Djed
+    kind: megastructure
+    affiliations: [mutual-progress-association]
+    article: https://www.orionsarm.com/eg-article/464ceaad61e78
+    location:
+      hd: 167618
+    events:
+      - year_at: 1999
+        kind: settled
+    note: A planet and a megastructure both, at Eta Sagittarii B, 137 ly.
+
+  - name: Kiyoshi
+    kind: megastructure
+    affiliations: [mutual-progress-association]
+    article: https://www.orionsarm.com/eg-article/4902dd900dbc5
+    location:
+      hd: 144069
+    note: >-
+      A cluster of megastructures at Xi Scorpii, 79 ly. Bound by HD number: the
+      star has no Hipparcos entry.
+
+  - name: Arkab Prior B
+    kind: system
+    system: Arkab Prior B
+    affiliations: [mutual-progress-association]
+    article: https://www.orionsarm.com/eg-article/48f4bc90174b8
+    location:
+      oa_star: Arkab Prior B
+    events:
+      - year_at: 4311
+        kind: settled
+    note: >-
+      A real star the Celestia add-on supplies because Celestia's own catalogue
+      omits it: the companion of Beta-1 Sagittarii, 116 ly.
+
+  - name: Acrab
+    kind: megastructure
+    system: Acrab
+    affiliations: [mutual-progress-association]
+    article: https://www.orionsarm.com/eg-article/5e9b5712e4df2
+    location:
+      hd: 144217
+    note: >-
+      Beta-1 Scorpii, 404 ly, a multiple star of components Aa, Ab and B. Cited
+      as an example of a Blue Star Dyson.
+
+  - name: HIP 77858
+    kind: megastructure
+    affiliations: [mutual-progress-association]
+    article: https://www.orionsarm.com/eg-article/5e9b5712e4df2
+    location:
+      hip: 77858
+    note: >-
+      The second Blue Star Dyson cited, in Scorpius at 448 ly. The setting gives
+      it no name of its own, so it carries its catalogue designation.
+
+  - name: The Bonfire System
+    kind: system
+    system: The Bonfire System
+    affiliations: [mutual-progress-association]
+    article: https://www.orionsarm.com/eg-article/5a69ca7eef167
+    location:
+      ra_deg: 282.74375
+      dec_deg: -9.774167
+      distance: 1381 ly
+    events:
+      - year_at: 7833
+        kind: settled
+        note: Developed.
+    note: In Scutum, from coordinates given to a hundredth of a second of arc.
+
+  - name: Potato
+    kind: habitat
+    system: The Bonfire System
+    affiliations: [mutual-progress-association]
+    article: https://www.orionsarm.com/eg-article/5beadcd4bc9d1
+    location:
+      world: The Bonfire System
+    note: An asteroid habitat in the Bonfire System, sharing its position.
+
+  - name: Byrdis
+    kind: megastructure
+    system: Kaa Yvanti
+    affiliations: [mutual-progress-association]
+    article: https://www.orionsarm.com/eg-article/4611a0308412d
+    location:
+      hip: 12781
+    events:
+      - year_at: 2069
+        kind: settled
+    note: >-
+      Gliese 109, 25 ly. The colony table gives the system as "Byrdis & Ka
+      Yvanti", with one a in Ka rather than two.
+
+  - name: Cableville
+    kind: megastructure
+    system: Zhuangzi
+    affiliations: [mutual-progress-association]
+    article: https://www.orionsarm.com/eg-article/48ac37b0e82ba
+    location:
+      constellation: Scorpius
+      distance: 1543 ly
+    events:
+      - year_at: 4710
+        kind: settled
+        note: Founded.
+    note: Zhuangzi is the primary. No catalogue identifier is given for it.
+
+  - name: Galbydeia Torus
+    kind: megastructure
+    affiliations: [mutual-progress-association]
+    article: https://www.orionsarm.com/eg-article/4900e0ec7498a
+    location:
+      note: No position given.
+    events:
+      - year_at: 7830
+        kind: settled
+        note: Originally suggested.
+
+  - name: Gargamadua Stripworld
+    kind: megastructure
+    parent: Mungo
+    affiliations: [mutual-progress-association]
+    article: https://www.orionsarm.com/eg-article/564de72a02e9a
+    location:
+      hd: 154519
+    events:
+      - year_at: 2702
+        kind: settled
+    note: Wrapped around the planet Mungo. HD 154519 is in Ophiuchus at 356 ly.
+
+  - name: Gordelpus
+    kind: megastructure
+    affiliations: [mutual-progress-association]
+    article: https://www.orionsarm.com/eg-article/46f96acd05bb3
+    location:
+      note: The article gives no position.
+    events:
+      - year_at: 2700
+        kind: settled
+
+  - name: The Gurth Hexanode Repository
+    kind: megastructure
+    affiliations: [mutual-progress-association, negentropy-alliance]
+    article: https://www.orionsarm.com/eg-article/480d473472a08
+    location:
+      note: >-
+        Near NGC 6281, on the border between Mutual Progress Association and
+        Negentropy space. The cluster is on the map, but the repository's own
+        distance is not given, and placing it at NGC 6281's would assert a
+        figure the article does not.
+    events:
+      - year_at: 9423
+        until_at: 9723
+        kind: settled
+        note: Three centuries of construction, opening in 9723.
+
+  - name: Halcyon
+    kind: system
+    system: Halcyon
+    affiliations: [mutual-progress-association]
+    article: https://www.orionsarm.com/eg-article/4667386bcae2b
+    location:
+      hd: 86728
+    events:
+      - year_at: 1402
+        kind: settled
+    note: 20 Leonis Minoris, 49 ly. The name is both the system's and the star's.
+
+  - name: Hoopworld
+    kind: megastructure
+    affiliations: [mutual-progress-association]
+    article: https://www.orionsarm.com/eg-article/49142c044cba7
+    location:
+      hip: 86705
+    events:
+      - year_at: 10580
+        kind: abandoned
+        note: Disintegrated.
+    note: >-
+      In Ophiuchus at 491 ly. One of the few entries here with an end rather
+      than a beginning: it came apart twenty years before the setting's present.
+
+  - name: Ixeway
+    kind: system
+    system: Ixeway
+    affiliations: [mutual-progress-association]
+    article: https://www.orionsarm.com/eg-article/46677b508686e
+    location:
+      hip: 94595
+    note: In Sagittarius at 92 ly. No dates.
+
+  - name: The Karol Ring
+    kind: megastructure
+    affiliations: [mutual-progress-association]
+    article: https://www.orionsarm.com/eg-article/466f3c8e24df3
+    location:
+      hd: 144585
+    events:
+      - year_at: 4650
+        until_at: 5200
+        kind: settled
+        precision: between
+        note: Completed at some point in the ComEmp period.
+    note: In Scorpius at 90 ly.
+
+  - name: Kepleria
+    kind: megastructure
+    system: Johannes
+    affiliations: [mutual-progress-association]
+    article: https://www.orionsarm.com/eg-article/4670a60a449d5
+    location:
+      note: >-
+        The primary is HD 152219, which is in none of the catalogues this map
+        carries, and no distance or constellation is given to fall back on.
+    events:
+      - year_at: 6996
+        kind: settled
+        note: First shell begun.
+
+  - name: Medius
+    kind: system
+    system: Medius
+    parent: Erg
+    affiliations: [mutual-progress-association]
+    article: https://www.orionsarm.com/eg-article/4902eb14ca7bc
+    location:
+      hip: 93229
+    note: Erg is the primary. HIP 93229 is in Corona Australis at 280 ly.
+
+  - name: Tar Vara
+    kind: habitat
+    system: Medius
+    affiliations: [mutual-progress-association]
+    article: https://www.orionsarm.com/eg-article/4a0cbb76669a3
+    location:
+      hip: 93229
+    note: A habitat in the Medius system, and so on the same star.
+
+  - name: Metropolis Ring City
+    kind: megastructure
+    parent: Ho Jong Star
+    affiliations: [mutual-progress-association]
+    article: https://www.orionsarm.com/eg-article/4902f1f2c7f73
+    location:
+      ra_deg: 277.75
+      dec_deg: -18.3
+      distance: 659 ly
+    events:
+      - year_at: 4650
+        until_at: 5200
+        kind: settled
+        precision: between
+        note: Begun early in the ComEmp period.
+      - year_at: 5345
+        kind: settled
+        note: Completed.
+
+  - name: New Magnitogorsk
+    kind: planet
+    affiliations: [mutual-progress-association]
+    article: https://www.orionsarm.com/eg-article/58126824e1ea1
+    location:
+      ra_deg: 266.08333
+      dec_deg: -19.1752777
+      distance: 2063 ly
+      near: JD 109771067
+    events:
+      - year_at: 6109
+        kind: settled
+    note: >-
+      A K2V star Orion's Arm numbers JD 109771067, in Sagittarius. The source
+      also gives galactic coordinates, and they corroborate: converting the
+      right ascension, declination and distance reproduces the stated 2033.11,
+      292.82, 191.56 ly to two decimals.
+
+  - name: Magnitogorsk
+    kind: planet
+    affiliations: [mutual-progress-association]
+    article: https://www.orionsarm.com/eg-article/58126824e1ea1
+    location:
+      hd: 16895
+    events:
+      - year_at: 4482
+        kind: settled
+        precision: not_later_than
+    note: >-
+      The original, at Theta Persei, 36 ly. New Magnitogorsk two thousand light
+      years away is named after it. Colonised by 4482; no founding date is
+      given.
+
+  - name: Oikoumene Dyson
+    kind: megastructure
+    system: Oikoumene
+    affiliations: [mutual-progress-association]
+    article: https://www.orionsarm.com/eg-article/490b34ec41bb6
+    location:
+      hd: 175869
+    events:
+      - year_at: 1521
+        kind: visited
+        note: >-
+          Reached, only to find an ahuman colony already established there. A
+          first visit that was not a first arrival.
+    note: Zeta Serpentis, 1,019 ly.
+
+  - name: Pen-y-Ghent
+    kind: system
+    system: Pen-y-Ghent
+    affiliations: [mutual-progress-association]
+    article: https://www.orionsarm.com/eg-article/48f745215d5c7
+    location:
+      oa_star: Pen-y-Ghent
+    note: In Scorpius, 790 ly. Already on the map through the Celestia add-on.
+
+  - name: Ribblehead
+    kind: planet
+    system: Pen-y-Ghent
+    affiliations: [mutual-progress-association]
+    article: https://www.orionsarm.com/eg-article/48f745215d5c7
+    location:
+      oa_star: Pen-y-Ghent
+    events:
+      - year_at: 3499
+        kind: settled
+        precision: not_later_than
+        note: >-
+          Already involved in conflict by this year, so settled at some point
+          before it. No colonisation date is given.
+
+  - name: Purcell
+    kind: planet
+    system: Osmin
+    affiliations: [mutual-progress-association]
+    article: https://www.orionsarm.com/eg-article/60d0eac6b3df1
+    location:
+      constellation: Sagittarius
+      distance: 121 ly
+    events:
+      - year_at: 2188
+        kind: visited
+        note: First reached.
+    note: >-
+      Osmin is TYC 6305-2141-1, a G1V star of 0.85 solar masses and 0.55 solar
+      luminosities. The Tycho catalogue is not one this map carries, so the
+      position falls back to the constellation, which at 121 ly is a far tighter
+      constraint than the same method gives further out.
+
+  - name: Ridgewell
+    kind: planet
+    affiliations: [mutual-progress-association]
+    article: https://www.orionsarm.com/eg-article/48f7a625349a5
+    location:
+      hd: 142373
+    events:
+      - year_at: 1383
+        kind: settled
+    note: Chi Herculis, 52 ly.
+
+  - name: Sadalmelik
+    kind: system
+    system: Sadalmelik
+    affiliations: [mutual-progress-association]
+    article: https://www.orionsarm.com/eg-article/4911ce8f43ea3
+    location:
+      hd: 209750
+    events:
+      - year_at: 4101
+        kind: settled
+    note: Alpha Aquarii, 660 ly.
+
+  - name: Tawattaran
+    kind: planet
+    system: Ngeedon
+    affiliations: [mutual-progress-association, utopia-sphere]
+    article: https://www.orionsarm.com/eg-article/46d4cf7d003f8
+    location:
+      constellation: Telescopium
+      distance: 1098 ly
+    note: Shared with the Utopia Sphere. No dates.
+
+  - name: Threshold
+    kind: system
+    system: Threshold
+    affiliations: [mutual-progress-association]
+    article: https://www.orionsarm.com/eg-article/47a3e440c01a5
+    location:
+      note: >-
+        A black hole, Sco BH-76. The designation is Orion's Arm's own and
+        matches nothing this map carries; no distance or coordinates are given.
+    events:
+      - year_at: 5100
+        kind: settled
+        note: Dynamic orbital rings built close to the event horizon.

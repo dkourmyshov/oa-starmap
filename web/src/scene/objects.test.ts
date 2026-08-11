@@ -1211,6 +1211,7 @@ describe('affiliations merge across sources', () => {
       method: 'star',
       star_index: 0,
       oa_star: '',
+      in_world: '',
       x: null,
       y: null,
       z: null,
@@ -1221,6 +1222,7 @@ describe('affiliations merge across sources', () => {
       events: [],
       known_from_at: null,
       settled_at: null,
+      ended_at: null,
     }) as WorldEntry;
 
   /**
@@ -1261,6 +1263,7 @@ describe('affiliations merge across sources', () => {
       worlds: [world(['cyberian-network'])],
       byStar: new Map([[0, [world(['cyberian-network'])]]]),
       byOAStar: new Map(),
+      byHost: new Map(),
     } as unknown as WorldData;
 
     const index = new ObjectIndex(

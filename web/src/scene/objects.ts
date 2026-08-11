@@ -569,7 +569,8 @@ export class ObjectIndex {
         // A world bound to a star or an add-on star is already indexed as that
         // object, above. Indexing it again would put two clickable things where
         // the setting describes one place.
-        if (world.x === null) continue;
+        // Drawn by its host, and named on the host's label and panel.
+        if (world.x === null || world.in_world) continue;
 
         this.px[at] = world.x;
         this.py[at] = world.y as number;
@@ -581,7 +582,10 @@ export class ObjectIndex {
         this.kind[at] = KIND_WORLD;
         this.srcIndex[at] = i;
         this.isOA[at] = 1;
-        this.labels[at] = world.name;
+        const guests = worlds.byHost.get(world.name) ?? [];
+        this.labels[at] = guests.length
+          ? systemLabel([{ name: world.name, system: world.system }, ...guests])
+          : world.name;
         this.importance[at] = BASE_IMPORTANCE.oaSystem;
         // Everything reaching here was placed from the fiction's own numbers;
         // one bound to a catalogue star is indexed as that star instead.

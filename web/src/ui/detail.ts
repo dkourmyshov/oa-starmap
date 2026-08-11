@@ -372,7 +372,15 @@ export class DetailPanel {
       rows,
       polities: held,
       associationSource: world.article || null,
-      events: world.events,
+      // The host's own events and its guests', interleaved by year.
+      events: [world, ...(worlds.byHost.get(world.name) ?? [])]
+        .flatMap((w) => w.events)
+        .sort((a, b) => a.year_at - b.year_at || a.kind.localeCompare(b.kind)),
+      worlds: (worlds.byHost.get(world.name) ?? []).map((w) => ({
+        name: w.name,
+        kind: w.kind,
+        article: w.article,
+      })),
       citation: worlds.dataset.source.citation,
       distancePc: distance,
       focus: { x, y, z, standoff: pc(Math.max(distance * 0.12, 2)) },
