@@ -36,6 +36,32 @@ sources:
       Unlike the political map, these name an affiliation for one system
       directly, so they carry no epoch of their own and no border is implied.
 
+# Colours are told apart by eye alone — a thin ring around a star, a few words
+# of label — so what matters is perceptual distance, not that the hex codes
+# differ. Two pairs here were once byte-identical, four polities rendering as
+# two colours, and reading the file did not reveal it. A test now measures every
+# pair in CIEDE2000 and refuses anything indistinguishable; run it after adding
+# or changing one.
+#
+# How diffuse a polity is, and how much of it we have, are different questions.
+# The Seams is a border polity by definition and so is diffuse everywhere, but
+# only one of its systems is recorded. Cyberia is an encrypted overlay network,
+# spread through everyone else's space while owning few worlds outright. The
+# Fomalhaut Acquisition Society is largely spacefaring and settles little. So a
+# proximity measured from the objects we happen to hold understates the reach of
+# exactly those polities, and the colour test treats any polity with fewer than
+# five recorded objects as potentially adjacent to everything — the safe
+# direction, since thin data should tighten a guard rather than silence it.
+#
+# What "distinct enough" means depends on space, not on the palette. Two purple
+# polities on opposite sides of the Terragen sphere are never seen together and
+# cannot be confused; two yellows sharing the Inner Sphere are a real problem
+# whatever their separation on a colour wheel. So the test measures colour
+# distance only between polities whose objects actually interpenetrate, and
+# several pairs that look alarmingly close in the abstract — Orion Federation
+# against The Seams, the Non-Coercive Zone against the Fomalhaut Acquisition
+# Society — are left alone deliberately, being thousands of light years apart.
+
 # `kind` distinguishes what an entry actually is. Most are meta-empires, the
 # default. Some are smaller polities, and one is not a political body at all.
 polities:
@@ -51,7 +77,13 @@ polities:
 
   - id: keter-dominion
     name: Keter Dominion
-    color: "#FFD54F"
+    color: "#F8E5BC"
+    # Separated from the Solar Dominion, which sat 8.1 away and now sits 16.7.
+    # Hue had only 2.5 degrees of room between Solar above and The Seams below,
+    # so the separation is in lightness and chroma instead: a pale gold against
+    # a saturated yellow. Lightened again after the first attempt still read as
+    # the same colour in the rings, where low alpha compresses chroma but leaves
+    # lightness intact.
     source: political-maps-8000at
     landmarks:
       [Ptolemy's Cluster, S67, M25, NGC 6589, Butterfly Cluster, Berkeley 42,
@@ -145,7 +177,9 @@ polities:
 
   - id: metasoft
     name: Metasoft Version Tree
-    color: "#9CCC65"
+    color: "#75CC32"
+    # Its nearest neighbour was not the MPA but the Zoeific Biopolity, 4.2 away
+    # and within half a degree of the same hue. Now 10.3 from both.
     source: political-maps-8000at
     landmarks:
       [NGC 1746, NGC 1647, NGC 1750, NGC 1758, NGC 2169, NGC 2112,
@@ -212,13 +246,18 @@ polities:
 
   - id: the-seams
     name: The Seams
-    color: "#FFB74D"
+    color: "#C0A71B"
+    # A border polity is diffuse by definition, so it can meet anything and must
+    # be told apart from everything. It was 4.6 from the Orion Federation.
     kind: polity
     source: eg-system-articles
 
   - id: stellar-umma
     name: Stellar Umma
-    color: "#4DD0E1"
+    color: "#337B8B"
+    # Only one of its systems is recorded, so its extent cannot be measured and
+    # it is held to the same bar as a diffuse polity. It was 3.1 from the
+    # Negentropy Alliance.
     kind: polity
     source: eg-system-articles
     # Really two, the Umma of the Core and the Umma of the Shell, recorded as one
@@ -238,13 +277,17 @@ polities:
 
   - id: diamond-network
     name: Diamond Network
-    color: "#4FC3F7"
+    color: "#2A8BE9"
+    # Was byte-identical to Cygexpa.
     kind: polity
     source: eg-system-articles
 
   - id: fomalhaut-acquisition-society
     name: Fomalhaut Acquisition Society
-    color: "#FF8A65"
+    color: "#E57D19"
+    # Pushed off the Non-Coercive Zone, which it sat 5.9 from and now sits 13.3
+    # from. Kept warm rather than moved to a free part of the wheel: this is a
+    # small polity and its colour should not shout.
     kind: polity
     source: eg-system-articles
 
@@ -262,7 +305,10 @@ polities:
 
   - id: solsys-organization
     name: Solsys Organization
-    color: "#FFF176"
+    color: "#FFBD9F"
+    # Was 3.0 from the Solar Dominion, which it interpenetrates: both are in
+    # and around Sol, so the two were the one pair on this map that genuinely
+    # could not be told apart. Now 30.3.
     kind: polity
     source: eg-system-articles
 
@@ -274,7 +320,8 @@ polities:
 
   - id: terragen-federation
     name: Terragen Federation
-    color: "#4DD0E1"
+    color: "#5AEEDA"
+    # Was byte-identical to the Stellar Umma.
     kind: polity
     source: eg-system-articles
     # A completely distinct polity from the Orion Federation above, confirmed
@@ -304,6 +351,14 @@ polities:
 # correct. The build's placement check is a proofreading aid for mis-transcribed
 # names — it is not a model of polity shape and does not overrule the fiction.
 # Naming a landmark here stops it being reported, permanently.
+# Pairs the setting places on opposite sides of the Terragen sphere, and which
+# therefore never appear together whatever our data holds. Only for cases known
+# from the setting rather than measured — the measurement is exactly what this
+# compensates for, since a polity with two recorded worlds looks far from
+# everything.
+never_adjacent:
+  - [paradigm, perseus-principalities]
+
 confirmed_placements: []
 
 # Landmarks whose polity attribution spans a border, recorded so the ambiguity

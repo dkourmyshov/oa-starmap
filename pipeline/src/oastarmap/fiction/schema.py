@@ -105,6 +105,15 @@ class FictionFile(BaseModel):
     sources: dict[str, Source] = Field(default_factory=dict)
     notes: dict[str, str] = Field(default_factory=dict)
 
+    never_adjacent: list[list[str]] = Field(default_factory=list)
+    """Polity pairs the setting keeps apart, whatever our sample of them shows.
+
+    Colour separation only matters between polities that can be seen together,
+    and how close two are is measured from the objects recorded here — which is
+    a poor guide for a polity with one world. This names the cases known from
+    the setting instead, so a thin sample cannot silently excuse a collision.
+    """
+
     confirmed_placements: list[str] = Field(default_factory=list)
     """Landmarks whose surprising position has been checked against the source.
 
