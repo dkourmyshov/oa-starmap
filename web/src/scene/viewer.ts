@@ -91,6 +91,58 @@ export const VIEWPOINTS: { id: Viewpoint; label: string; title: string }[] = [
   { id: 'tilted', label: 'tilted', title: 'Three-quarter view, so the plane reads as a plane' },
 ];
 
+/**
+ * Which way is up on screen, per viewpoint — and so which axis orbiting turns
+ * about.
+ *
+ * These are the same question. OrbitControls sweeps azimuth about `camera.up`,
+ * so a horizontal drag turns the view about whatever that axis is; when up is
+ * also what points up on screen, a horizontal drag turns the map about the
+ * screen's vertical, which is what the gesture looks like it should do.
+ *
+ * It goes wrong when up lies along the line of sight, because then there is no
+ * screen direction for it to be and turning about it merely spins the image.
+ * That was the whole of the trouble: a single global up of galactic north put
+ * the pole exactly down the barrel of the top view, which is the default.
+ *
+ * So each viewpoint names an up perpendicular to its own line of sight, and
+ * every preset starts at the equator of its control sphere rather than at a
+ * pole. Galactic north wherever the view is edge-on to the plane, spinward
+ * looking down at it — which is the orientation Orion's Arm draws anyway,
+ * coreward to the right.
+ */
+const UP_REFERENCE: Record<Viewpoint, THREE.Vector3> = {
+  // Galactic north wherever the view is edge-on to the plane; spinward looking
+  // down at it, since north is then the line of sight and cannot be up as well.
+  top: new THREE.Vector3(0, 1, 0),
+  spin: new THREE.Vector3(0, 0, 1),
+  core: new THREE.Vector3(0, 0, 1),
+  tilted: new THREE.Vector3(0, 0, 1),
+};
+
+/**
+ * The up vector for a viewpoint: its reference direction with the line of sight
+ * projected out.
+ *
+ * The projection is what makes the result exactly perpendicular rather than
+ * merely close, and it is done here rather than by writing perpendicular
+ * vectors into the table so that the property cannot be lost by hand. `tilted`
+ * is the case that shows why — it looks obliquely at the plane, so plain
+ * galactic north sits 67 degrees off its line of sight, close enough to work
+ * and not close enough to be the screen's vertical.
+ */
+export function viewpointUp(name: Viewpoint): THREE.Vector3 {
+  const view = viewpointPosition(name, 1).negate().normalize();
+  const reference = UP_REFERENCE[name].clone().normalize();
+  const up = reference.sub(view.clone().multiplyScalar(reference.dot(view)));
+  if (up.lengthSq() < 1e-9) {
+    // The reference lies along the view, so there is no up to derive from it.
+    // Reaching here means a preset's reference needs choosing again.
+    throw new Error(`viewpoint ${name} has an up reference along its line of sight`);
+  }
+  return up.normalize();
+}
+
 export function viewpointPosition(name: Viewpoint, range: number): THREE.Vector3 {
   switch (name) {
     case 'top':
@@ -146,7 +198,7 @@ export class Viewer {
     // direction lies along +y — was degenerate. With +z as the pole, orbiting
     // means changing galactic latitude and longitude, which is what the
     // viewpoint presets are expressed in.
-    this.camera.up.set(0, 0, 1);
+    this.camera.up.copy(viewpointUp('top'));
     this.camera.position.copy(viewpointPosition('top', DEFAULT_RANGE));
 
     this.controls = new OrbitControls(this.camera, canvas);
@@ -193,10 +245,11 @@ export class Viewer {
     const to = mode === 'orbit' ? this.controls : this.trackball;
     to.target.copy(from.target);
 
-    // Orbit wants up to be the galactic pole, so its presets mean what they say.
-    // Trackball wants it across the line of sight, or its drag basis collapses.
-    if (mode === 'orbit') this.camera.up.set(0, 0, 1);
-    else alignUpToScreen(this.camera);
+    // Both modes want up across the line of sight — orbit so that a horizontal
+    // drag turns about the screen's vertical rather than spinning the image,
+    // trackball so its drag basis does not collapse. The camera's own screen-up
+    // satisfies both and preserves the orientation already showing.
+    alignUpToScreen(this.camera);
 
     from.enabled = false;
     to.enabled = true;
@@ -222,16 +275,13 @@ export class Viewer {
   setViewpoint(name: Viewpoint): void {
     const controls = this.active;
     const range = this.camera.position.distanceTo(controls.target);
-    // A preset is expressed in the galactic frame, so it only means what it says
-    // with galactic north up. Trackball drags can have rolled the camera since.
-    this.camera.up.set(0, 0, 1);
+    // Each preset carries its own up, chosen across its line of sight, so the
+    // view arrives correctly oriented *and* well conditioned to drag from.
+    this.camera.up.copy(viewpointUp(name));
     this.camera.position
       .copy(controls.target)
       .add(viewpointPosition(name, range || DEFAULT_RANGE));
     this.camera.lookAt(controls.target);
-    // lookAt has just used the pole as up, which is what made the orientation
-    // correct; trackball now needs it moved off the line of sight again.
-    if (this.mode === 'trackball') alignUpToScreen(this.camera);
     controls.update();
   }
 

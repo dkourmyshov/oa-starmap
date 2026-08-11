@@ -11,7 +11,7 @@
 import * as THREE from 'three';
 import { describe, expect, it } from 'vitest';
 
-import { VIEWPOINTS, type Viewpoint, viewpointPosition } from './viewer';
+import { VIEWPOINTS, type Viewpoint, viewpointPosition, viewpointUp } from './viewer';
 
 /** Unit vector from the camera towards the thing it is orbiting. */
 function viewDirection(name: Viewpoint): THREE.Vector3 {
@@ -79,7 +79,9 @@ describe('the canonical top view', () => {
    */
   function onScreen(name: Viewpoint, point: THREE.Vector3): THREE.Vector3 {
     const camera = new THREE.PerspectiveCamera(60, 4 / 3, 0.01, 1e6);
-    camera.up.set(0, 0, 1);
+    // The preset's own up, not a fixed one — that difference is the bug this
+    // whole arrangement exists to avoid.
+    camera.up.copy(viewpointUp(name));
     camera.position.copy(viewpointPosition(name, 65));
     camera.lookAt(0, 0, 0);
     camera.updateMatrixWorld();
@@ -163,5 +165,48 @@ describe('trackball drag basis', () => {
 
     expect(after.x).toBeCloseTo(before.x, 6);
     expect(after.y).toBeCloseTo(before.y, 6);
+  });
+});
+
+describe('every viewpoint is well conditioned to drag from', () => {
+  /**
+   * OrbitControls sweeps azimuth about `camera.up`, so a horizontal drag turns
+   * the view about that axis. When up lies along the line of sight there is no
+   * screen direction for it to be, and the drag merely spins the image — which
+   * is what a single global up of galactic north did to the top view, the
+   * default and the most used.
+   *
+   * The angle between up and the line of sight is the whole story: 90 degrees
+   * means up is the screen's vertical and a horizontal drag turns the map about
+   * it; 0 means the control is on its pole.
+   */
+  function poleAngleDeg(name: Viewpoint): number {
+    const view = viewpointPosition(name, 65).negate().normalize();
+    return (Math.acos(Math.abs(viewpointUp(name).dot(view))) * 180) / Math.PI;
+  }
+
+  it('puts every preset exactly on the equator of its own control sphere', () => {
+    for (const { id } of VIEWPOINTS) {
+      expect(poleAngleDeg(id), `${id} sits near the pole`).toBeCloseTo(90, 4);
+    }
+  });
+
+  it('rescues the top view, which used to sit on the pole', () => {
+    // 0.1 degrees before: the default view was the worst conditioned of the four.
+    expect(poleAngleDeg('top')).toBeCloseTo(90, 4);
+  });
+
+  it('uses an up that is genuinely a screen direction', () => {
+    for (const { id } of VIEWPOINTS) {
+      const camera = new THREE.PerspectiveCamera(60, 4 / 3, 0.01, 1e6);
+      camera.up.copy(viewpointUp(id));
+      camera.position.copy(viewpointPosition(id, 65));
+      camera.lookAt(0, 0, 0);
+      camera.updateMatrixWorld();
+      const screenUp = new THREE.Vector3(0, 1, 0).applyQuaternion(camera.quaternion).normalize();
+      // The chosen up and what actually points up on screen must agree, or the
+      // axis a drag turns about is not the one the gesture suggests.
+      expect(screenUp.dot(viewpointUp(id)), id).toBeGreaterThan(0.99);
+    }
   });
 });
