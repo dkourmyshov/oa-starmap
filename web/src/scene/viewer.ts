@@ -19,6 +19,25 @@ import { TrackballControls } from 'three/examples/jsm/controls/TrackballControls
 
 import { type Parsecs, pc } from '../units';
 
+/**
+ * Point the camera's up vector along its own screen-up.
+ *
+ * TrackballControls builds its drag basis from `camera.up`: the sideways axis is
+ * `up x eye`, and the rotation axis is `moveDirection x eye`. A cross product
+ * with `eye` discards whatever part of its argument lies along `eye` — so if
+ * `up` is parallel to the line of sight, the vertical half of a drag cancels
+ * entirely and every drag turns about one fixed axis. That is exactly the top
+ * view: the camera sits on the galactic pole and orbit mode wants `up` to *be*
+ * the pole, which leaves the two collinear.
+ *
+ * The camera's own screen-up is perpendicular to the line of sight by
+ * construction and describes the orientation already on screen, so adopting it
+ * conditions the basis without moving anything.
+ */
+function alignUpToScreen(camera: THREE.PerspectiveCamera): void {
+  camera.up.set(0, 1, 0).applyQuaternion(camera.quaternion).normalize();
+}
+
 /** Closest approach, in parsecs. Below this the camera is effectively inside a star. */
 const MIN_TARGET_DISTANCE = 1e-3;
 
@@ -174,7 +193,10 @@ export class Viewer {
     const to = mode === 'orbit' ? this.controls : this.trackball;
     to.target.copy(from.target);
 
+    // Orbit wants up to be the galactic pole, so its presets mean what they say.
+    // Trackball wants it across the line of sight, or its drag basis collapses.
     if (mode === 'orbit') this.camera.up.set(0, 0, 1);
+    else alignUpToScreen(this.camera);
 
     from.enabled = false;
     to.enabled = true;
@@ -207,6 +229,9 @@ export class Viewer {
       .copy(controls.target)
       .add(viewpointPosition(name, range || DEFAULT_RANGE));
     this.camera.lookAt(controls.target);
+    // lookAt has just used the pole as up, which is what made the orientation
+    // correct; trackball now needs it moved off the line of sight again.
+    if (this.mode === 'trackball') alignUpToScreen(this.camera);
     controls.update();
   }
 

@@ -101,3 +101,67 @@ describe('the canonical top view', () => {
     expect(north.y).toBeGreaterThan(0.1);
   });
 });
+
+describe('trackball drag basis', () => {
+  /**
+   * TrackballControls turns the camera about `moveDirection x eye`, where
+   * `moveDirection` is built from `camera.up` for the vertical component and
+   * `up x eye` for the horizontal one. A cross product with `eye` discards
+   * anything parallel to `eye`, so an `up` that lies along the line of sight
+   * cancels the vertical half of every drag: horizontal and vertical drags then
+   * turn about two fixed world axes and any diagonal collapses onto one of them.
+   *
+   * The top view is precisely that case — camera on the galactic pole, up
+   * *being* the pole — so this is not a hypothetical.
+   */
+  function axisFor(up: THREE.Vector3, eye: THREE.Vector3, dx: number, dy: number) {
+    const sideways = up.clone().normalize().cross(eye.clone().normalize()).normalize();
+    const vertical = up.clone().normalize().setLength(dy);
+    const move = vertical.add(sideways.setLength(dx));
+    return move.cross(eye);
+  }
+
+  const eye = viewpointPosition('top', 65);
+
+  it('collapses when up lies along the line of sight', () => {
+    const axis = axisFor(new THREE.Vector3(0, 0, 1), eye, 0.01, 0.01);
+    // Equal drag in both directions, yet one term swamps the other completely.
+    const dominant = Math.max(Math.abs(axis.x), Math.abs(axis.y), Math.abs(axis.z));
+    const smallest = Math.min(Math.abs(axis.x), Math.abs(axis.y));
+    expect(dominant / smallest).toBeGreaterThan(100);
+  });
+
+  it('is well conditioned once up is across the line of sight', () => {
+    const camera = new THREE.PerspectiveCamera(60, 4 / 3, 0.01, 1e6);
+    camera.up.set(0, 0, 1);
+    camera.position.copy(eye);
+    camera.lookAt(0, 0, 0);
+    camera.updateMatrixWorld();
+    const screenUp = new THREE.Vector3(0, 1, 0).applyQuaternion(camera.quaternion).normalize();
+
+    // Perpendicular to the view direction, which is the whole point.
+    expect(Math.abs(screenUp.dot(eye.clone().normalize()))).toBeLessThan(1e-6);
+
+    const axis = axisFor(screenUp, eye, 0.01, 0.01);
+    const dominant = Math.max(Math.abs(axis.x), Math.abs(axis.y), Math.abs(axis.z));
+    const smallest = Math.min(Math.abs(axis.x), Math.abs(axis.y));
+    expect(dominant / smallest).toBeLessThan(10);
+  });
+
+  it('leaves the view unmoved when it adopts the screen up', () => {
+    const camera = new THREE.PerspectiveCamera(60, 4 / 3, 0.01, 1e6);
+    camera.up.set(0, 0, 1);
+    camera.position.copy(eye);
+    camera.lookAt(0, 0, 0);
+    camera.updateMatrixWorld();
+
+    const before = new THREE.Vector3(30, 0, 0).project(camera);
+    camera.up.set(0, 1, 0).applyQuaternion(camera.quaternion).normalize();
+    camera.lookAt(0, 0, 0);
+    camera.updateMatrixWorld();
+    const after = new THREE.Vector3(30, 0, 0).project(camera);
+
+    expect(after.x).toBeCloseTo(before.x, 6);
+    expect(after.y).toBeCloseTo(before.y, 6);
+  });
+});
