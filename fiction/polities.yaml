@@ -55,7 +55,7 @@ polities:
     source: political-maps-8000at
     landmarks:
       [Ptolemy's Cluster, S67, M25, NGC 6589, Butterfly Cluster, Berkeley 42,
-       IC 4665, G64.3+5.7, NGC 6709]
+       IC 4665, G64.3+5.7, NGC 6709, Collinder 359, NGC 6755]
 
   - id: mutual-progress-association
     name: Mutual Progress Association

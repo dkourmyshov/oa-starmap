@@ -10,6 +10,8 @@
 #                   contains the whole constellation, so it is an upper
 #                   bound on how wrong the direction can be
 # area_sq_deg       for reference; the sky is 41,253 square degrees
+# source_name       present only where astropy's table misspells the
+#                   constellation and this file corrects it
 # centroid_inside   false where the centre of area falls outside the
 #                   figure itself, which makes it useless as a position.
 #                   Serpens is the only one: it is two disjoint halves
@@ -164,7 +166,8 @@ constellations:
     radius_deg: 32.69
     area_sq_deg: 1232.9
     centroid_inside: true
-  - name: Chamaleon
+  - name: Chamaeleon
+    source_name: Chamaleon
     abbreviation: Cha
     ra_deg: 159.5556
     dec_deg: -80.0205
@@ -423,7 +426,8 @@ constellations:
     radius_deg: 11.96
     area_sq_deg: 298.2
     centroid_inside: true
-  - name: Ophiucus
+  - name: Ophiuchus
+    source_name: Ophiucus
     abbreviation: Oph
     ra_deg: 259.5841
     dec_deg: -5.2366
@@ -479,7 +483,8 @@ constellations:
     radius_deg: 30.12
     area_sq_deg: 891.2
     centroid_inside: true
-  - name: Pisces Austrinus
+  - name: Piscis Austrinus
+    source_name: Pisces Austrinus
     abbreviation: PsA
     ra_deg: 334.3068
     dec_deg: -30.6935

@@ -21,19 +21,23 @@ questions:
     severity: contradiction
     summary: Three sources put the Enigma system in three different directions.
     detail: >-
-      The Celestia add-on carries a star named Enigma at RA 81.7, Dec -37.5,
-      1,410 pc — that is in Columba, 4,598 ly out. The EG article for Stanislaw
-      says Canis Major, whose nearest boundary is some fifteen degrees away;
-      Columba is not a boundary case for it. Separately, the Enigma Cluster is
-      canonically NGC 6755, which sits 3,478 pc from the add-on's star and
-      roughly opposite it on the sky. No star in the add-on comes within 1,549 pc
-      of NGC 6755.
+      The Enigma Cluster is NGC 6755 — that part is settled, and the cluster is
+      on the map under that name, colonised in 7222 and listed as Keter
+      Dominion. What remains open is the Celestia add-on's star called Enigma,
+      at RA 81.7, Dec -37.5, 1,410 pc: that is in Columba, 4,598 ly out, and
+      3,478 pc from NGC 6755, roughly opposite it on the sky. No star in the
+      add-on comes within 1,549 pc of the cluster. The EG article for Stanislaw
+      adds a third direction, Canis Major, whose nearest boundary is some
+      fifteen degrees from the add-on's position; Columba is not a boundary case
+      for it.
     map_does: >-
       Stanislaw is placed by constellation in Canis Major at the add-on's
       distance, and marked uncertain. The add-on's direction is not used.
     would_settle: >-
-      Which of the three is canonical, or whether the add-on's Enigma is a
-      different object that happens to share the name.
+      Whether the add-on's Enigma star is the Stanislaw system at all, or a
+      different object sharing the name. If it is Stanislaw's, one of its two
+      directions is wrong; if it is not, the add-on entry needs its own
+      identity.
     links:
       - https://www.orionsarm.com/eg-article/491222f681eed
       - https://www.orionsarm.com/eg-article/491aecf1478f9

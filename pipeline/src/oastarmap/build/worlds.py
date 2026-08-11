@@ -30,6 +30,7 @@ import astropy.units as u
 import numpy as np
 
 from oastarmap.build.writer import write_json
+from oastarmap.fiction.resolve import fold_diacritics
 from oastarmap.fiction.schema import (
     ConstellationFile,
     FictionFile,
@@ -102,6 +103,19 @@ def approximate_extent_ly(distance_pc: float, error_deg: float) -> float:
     return float(distance_pc * PC_TO_LY * np.tan(np.radians(error_deg)))
 
 
+def _certain_by(event: dict[str, Any]) -> int:
+    """The earliest year we can be sure the event had happened.
+
+    The safe end of whatever the source hedged. "Between 1500 and 2100" is
+    certain only by 2100; "before 1644" is certain by 1644; a span that ran from
+    4496 to 4530 had begun in 4496. Taking the optimistic end instead would put
+    places on a historical map years before the sources support.
+    """
+    if event["precision"] == "between" and event["until_at"] is not None:
+        return int(event["until_at"])
+    return int(event["year_at"])
+
+
 def _load_star_lookup(
     out_dir: Path,
     constellation_values: list[str],
@@ -168,7 +182,7 @@ def _direction(
         assert location.ra_deg is not None and location.dec_deg is not None
         return location.ra_deg, location.dec_deg, EXACT
     if location.method == "constellation":
-        entry = constellations.get(location.constellation.casefold())
+        entry = constellations.get(fold_diacritics(location.constellation).casefold())
         if entry is None:
             raise ValueError(
                 f"world {world.name!r} cites unknown constellation "
@@ -232,12 +246,12 @@ def build_worlds(
                 "kind": e.kind,
                 "note": e.note,
                 "until_at": e.until_at,
-                "approximate": e.approximate,
+                "precision": e.precision,
             }
             for e in sorted(world.events, key=lambda e: (e.year_at, e.kind))
         ]
-        presence = [e["year_at"] for e in events if e["kind"] in PRESENCE_KINDS]
-        settled_years = [e["year_at"] for e in events if e["kind"] == "settled"]
+        presence = [_certain_by(e) for e in events if e["kind"] in PRESENCE_KINDS]
+        settled_years = [_certain_by(e) for e in events if e["kind"] == "settled"]
         known_from = min(presence) if presence else None
         settled_at = min(settled_years) if settled_years else None
 

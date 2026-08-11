@@ -19,3 +19,26 @@ landmarks:
     note: >-
       Held by the Communion of Worlds in its own article and by the Non-Coercive
       Zone on the political maps. Both are recorded; see questions.md.
+
+  - catalogue: Collinder 359
+    name: Aleph Absolute
+    article: https://www.orionsarm.com/eg-article/45e78575a15a5
+    events:
+      - year_at: 3000
+        kind: settled
+        precision: circa
+    note: >-
+      Carried in the cluster catalogue as Melotte 186, with Collinder 359 among
+      its aliases; the alias table finds it either way.
+
+  - catalogue: NGC 6755
+    name: Enigma Cluster
+    article: https://www.orionsarm.com/eg-article/491aecf1478f9
+    events:
+      - year_at: 7222
+        kind: settled
+    note: >-
+      The Enigma Cluster is NGC 6755 — which settles half of a long-running
+      question, since the Celestia add-on carries a star called Enigma nowhere
+      near it. At 7,446 ly it lies past the frontier, so it is bound and named
+      but not polity-coloured.

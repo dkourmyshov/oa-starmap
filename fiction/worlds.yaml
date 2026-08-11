@@ -614,7 +614,7 @@ worlds:
       hip: 37279
     events:
       - year_at: 500
-        approximate: true
+        precision: circa
         kind: settled
         note: >-
           First colonised by the Solipsist Panvirtuality's Ako Forward Chaining.
@@ -634,3 +634,191 @@ worlds:
       - year_at: 2681
         kind: settled
     note: In Aquila. The catalogue puts HD 193275 at 207 ly against the article's 195.
+
+  # ---- Keter Dominion -----------------------------------------------------
+  #
+  # Two of Keter's places are clusters rather than worlds and live in
+  # landmarks.yaml instead: Aleph Absolute is Collinder 359, and the Enigma
+  # Cluster is NGC 6755.
+
+  - name: Ain Soph Aur
+    kind: system
+    system: Ain Soph Aur
+    affiliations: [keter-dominion]
+    article: https://www.orionsarm.com/eg-article/48ab38d970fc9
+    location:
+      hd: 207098
+    note: >-
+      Deneb Algedi, Delta Capricorni Aa, 38 ly. The colony table has the system
+      as "Deneb Algedi / Ain Soph Aur" and gives the B component separately.
+
+  - name: Barawatten
+    kind: moon
+    parent: Garell
+    affiliations: [keter-dominion]
+    article: https://www.orionsarm.com/eg-article/4609c7a409fbf
+    location:
+      hd: 165341
+    events:
+      - year_at: 1644
+        kind: settled
+        precision: not_later_than
+    note: A moon of the gas giant Garell, at 70 Ophiuchi, 17 ly.
+
+  - name: Barboro
+    kind: planet
+    affiliations: [keter-dominion]
+    article: https://www.orionsarm.com/eg-article/4609c83fbc355
+    location:
+      hd: 197692
+    events:
+      - year_at: 2245
+        kind: settled
+    note: >-
+      Psi Capricorni, 48 ly. Recorded as a planet, but the source does not make
+      clear whether Barboro names the planet, the star, the system, or all
+      three; the binding is to the star either way.
+
+  - name: Branswerg
+    kind: planet
+    system: Branswerg
+    affiliations: [keter-dominion]
+    article: https://www.orionsarm.com/eg-article/46119315a3ccf
+    location:
+      hd: 214749
+    note: Gliese 868, 43 ly. The name is both the planet's and the star's. No dates.
+
+  - name: Ceres Mater
+    kind: planet
+    affiliations: [keter-dominion]
+    article: https://www.orionsarm.com/eg-article/49add9c95f1e1
+    location:
+      hd: 160032
+    note: Lambda Arae, 68 ly. No dates.
+
+  - name: Crustuse
+    kind: planet
+    system: Kokok
+    affiliations: [keter-dominion]
+    article: https://www.orionsarm.com/eg-article/4643de1a35f57
+    location:
+      note: >-
+        No position. The Kokok system is named and nothing else about it is —
+        no catalogue star, no distance, no constellation.
+
+  - name: Henson
+    kind: planet
+    affiliations: [keter-dominion]
+    article: https://www.orionsarm.com/eg-article/5089d546a4b45
+    location:
+      hd: 142445
+    events:
+      - year_at: 2751
+        kind: settled
+    note: 4 Scorpii, 344 ly.
+
+  - name: Ivonya-Ngia
+    kind: megastructure
+    affiliations: [keter-dominion]
+    article: https://www.orionsarm.com/eg-article/544795c89bbff
+    location:
+      hd: 181853
+    events:
+      - year_at: 2609
+        kind: settled
+        note: First colonised.
+      - year_at: 4020
+        kind: settled
+        note: Recolonised, fourteen centuries after the first attempt.
+    note: HD 181853, in Aquila at 413 ly.
+
+  - name: Kaana
+    kind: system
+    system: Kaana
+    affiliations: [keter-dominion]
+    article: https://www.orionsarm.com/eg-article/666acac0358cd
+    location:
+      ra_deg: 294.8280
+      dec_deg: 14.9317
+      distance: 1930 ly
+      near: Gaia BH3 / LS II 14 13
+    events:
+      - year_at: 5510
+        kind: visited
+        note: First reached.
+    note: >-
+      A black hole — Gaia BH3, in Aquila. Placed by its coordinates rather than
+      bound to a catalogue star, because it is not a star and is not in any
+      catalogue this map carries: Gaia found it long after the sources here were
+      compiled.
+
+  - name: Lam Wai-Chun
+    kind: planet
+    affiliations: [keter-dominion]
+    article: https://www.orionsarm.com/eg-article/4b69110d20b68
+    location:
+      hd: 170153
+    events:
+      - year_at: 4450
+        kind: transferred
+        note: >-
+          Joined the Keter Dominion. Not a colonisation date — the system was
+          settled before that, and by whom is not recorded here.
+    note: The Chi Draconis binary, 26 ly.
+
+  - name: Mu Capricorni
+    kind: system
+    system: Mu Capricorni
+    affiliations: [keter-dominion]
+    article: https://www.orionsarm.com/eg-article/492312e04cd5e
+    location:
+      hip: 108036
+    events:
+      - year_at: 1500
+        until_at: 2100
+        kind: settled
+        precision: between
+        note: Colonised somewhere in this six-hundred-year window.
+    note: >-
+      87 ly. Bound by Hipparcos number: Mu Capricorni is HD 207958, and HD
+      206453 — which sits nearby in the numbering — is Kappa Capricorni, a
+      different star three times further away.
+
+  - name: Uppalavanna Complex
+    kind: megastructure
+    system: Uppalavanna
+    affiliations: [keter-dominion]
+    article: https://www.orionsarm.com/eg-article/5eb6bd9f69c02
+    location:
+      hip: 96353
+    events:
+      - year_at: 4722
+        kind: settled
+    note: In Aquila. The catalogue puts HIP 96353 at 1,315 ly against the article's 1,378.
+
+  - name: World Garden
+    kind: megastructure
+    system: Rosebud
+    affiliations: [keter-dominion]
+    article: https://www.orionsarm.com/eg-article/464dd64b8b689
+    location:
+      constellation: Ophiuchus
+      distance: 3100 ly
+    events:
+      - year_at: 7154
+        kind: settled
+    note: In the Rosebud system, within the Gardener's Domain.
+
+  - name: The Plantation
+    kind: planet
+    affiliations: [keter-dominion]
+    article: https://www.orionsarm.com/eg-article/464dd64b8b689
+    location:
+      hd: 177374
+    events:
+      - year_at: 1800
+        kind: settled
+        precision: not_later_than
+    note: >-
+      Where the Gardener originated. In Aquila at 225 ly, and shares an article
+      with the World Garden it later made.

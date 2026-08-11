@@ -17,6 +17,8 @@ import astropy.units as u
 import yaml
 from pydantic import BaseModel, Field, field_validator, model_validator
 
+from oastarmap.fiction.resolve import fold_diacritics
+
 HEX_COLOR = re.compile(r"^#[0-9a-fA-F]{6}$")
 
 POLITY_KINDS = frozenset({"meta-empire", "polity", "xenosophont"})
@@ -381,6 +383,8 @@ class Constellation(BaseModel):
     """One row of the generated constellation table."""
 
     name: str
+    source_name: str = ""
+    """astropy's spelling, where it differs from the IAU's. See CORRECTIONS."""
     abbreviation: str
     ra_deg: float
     dec_deg: float
@@ -403,11 +407,21 @@ class ConstellationFile(BaseModel):
     constellations: list[Constellation] = Field(default_factory=list)
 
     def by_name(self) -> dict[str, Constellation]:
-        """Keyed by full name and by abbreviation, both case-folded."""
+        """Keyed by name, abbreviation and astropy's spelling, all folded.
+
+        Accents are folded too, so "Bootes" finds Boötes. An author writing a
+        constellation should not have to know which of several spellings this
+        project happens to store.
+        """
         table: dict[str, Constellation] = {}
         for entry in self.constellations:
-            table[entry.name.casefold()] = entry
-            table[entry.abbreviation.casefold()] = entry
+            for key in (entry.name, entry.abbreviation, entry.source_name):
+                if not key:
+                    continue
+                # Both spellings, so a caller that does not fold its own lookup
+                # key still finds Boötes.
+                table[key.casefold()] = entry
+                table[fold_diacritics(key).casefold()] = entry
         return table
 
     @classmethod
@@ -541,6 +555,17 @@ sources actually draw. Duxed was colonised in 1813 and acquired its Caretaker in
 """
 
 
+EVENT_PRECISIONS = frozenset({"exact", "circa", "not_later_than", "not_earlier_than", "between"})
+"""How well a dated event's year is known.
+
+- ``exact``            the year as the source gives it.
+- ``circa``            "around 3000". A rough figure the source itself hedges.
+- ``not_later_than``   "before 1644". An upper bound; the event is earlier.
+- ``not_earlier_than`` a lower bound, the mirror of the above.
+- ``between``          somewhere in ``year_at``..``until_at``.
+"""
+
+
 class WorldEvent(BaseModel):
     """One dated thing that happened at a world.
 
@@ -555,27 +580,40 @@ class WorldEvent(BaseModel):
     note: str = ""
 
     until_at: int | None = None
-    """Last year, for something that took time rather than happening.
+    """The second year, where there is one. What it means depends on `precision`.
 
-    Cyberia's takeover of Fata Morgana ran from 4496 to 4530 — an infiltration,
-    not an event. Recording only the start would date it as though it happened
-    in an afternoon, and recording two separate events would put one thing on
-    the timeline twice.
+    With ``exact`` it is the end of something that took time: Cyberia's takeover
+    of Fata Morgana ran from 4496 to 4530, an infiltration rather than an event.
+    With ``between`` it is the far end of an uncertainty range instead — Mu
+    Capricorni was colonised somewhere in 1500 to 2100, which is not a
+    six-hundred-year colonisation.
     """
 
-    approximate: bool = False
-    """The year is a rough figure the source itself hedges.
+    precision: str = "exact"
+    """How well the year is known. See :data:`EVENT_PRECISIONS`.
 
-    Procyon's first colonisation is given as "around 500". Marked rather than
-    silently rounded, because a map that filters by year will otherwise treat a
-    guess and a date as the same kind of claim.
+    The sources hedge in several distinct ways and flattening them all to a bare
+    year would let a guess filter as though it were a date. Barawatten was
+    settled "before 1644", Aleph Absolute "around 3000", Mu Capricorni "within
+    1500 to 2100" — three different claims, and only one of them is a date.
     """
 
     @model_validator(mode="after")
     def _span_runs_forwards(self) -> WorldEvent:
         if self.until_at is not None and self.until_at < self.year_at:
             raise ValueError(f"until_at {self.until_at} precedes year_at {self.year_at}")
+        if self.precision == "between" and self.until_at is None:
+            raise ValueError("a 'between' event needs until_at for the far end of the range")
         return self
+
+    @field_validator("precision")
+    @classmethod
+    def _known_precision(cls, value: str) -> str:
+        if value not in EVENT_PRECISIONS:
+            raise ValueError(
+                f"precision must be one of {sorted(EVENT_PRECISIONS)}, got {value!r}"
+            )
+        return value
 
     @field_validator("kind")
     @classmethod
@@ -733,6 +771,14 @@ class Landmark(BaseModel):
 
     name: str
     """What the setting calls it."""
+
+    events: list[WorldEvent] = Field(default_factory=list)
+    """Dated history, same shape as a world's.
+
+    A cluster can be colonised too. Aleph Absolute was settled around 3000 and
+    the Enigma Cluster in 7222, and without this those years would have had
+    nowhere to go but a prose note.
+    """
 
     article: str = ""
     note: str = ""

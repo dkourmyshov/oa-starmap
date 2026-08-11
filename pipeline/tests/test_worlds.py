@@ -62,9 +62,12 @@ def test_centres_fall_inside_their_own_constellation() -> None:
     outside = []
     for entry in entries:
         found = str(get_constellation(ICRS(ra=entry.ra_deg * u.deg, dec=entry.dec_deg * u.deg)))
-        if found.strip() != entry.name:
+        # Against both spellings: astropy misspells three of the eighty-eight
+        # and this project stores the corrected form.
+        itself = {entry.name, entry.source_name} - {""}
+        if found.strip() not in itself:
             outside.append((entry.name, found.strip()))
-        assert entry.centroid_inside == (found.strip() == entry.name), (
+        assert entry.centroid_inside == (found.strip() in itself), (
             f"{entry.name} flagged centroid_inside={entry.centroid_inside} "
             f"but its centre is in {found.strip()}"
         )
@@ -124,8 +127,11 @@ def test_every_world_lands_in_the_constellation_it_names() -> None:
             np.array([distance.to_value(u.lyr)]) * u.lyr,
         )
         rep = CartesianRepresentation(x[0], y[0], z[0])
-        back = get_constellation(Galactic(rep).transform_to(ICRS()))
-        assert back == world.location.constellation, (
+        back = str(get_constellation(Galactic(rep).transform_to(ICRS()))).strip()
+        # Compared against the entry, not the written name, because three of
+        # astropy's names are misspelled and this file corrects them.
+        expected = {entry.name, entry.source_name} - {""}
+        assert back in expected, (
             f"{world.name} is said to be in {world.location.constellation} "
             f"but its built position is in {back}"
         )
@@ -198,7 +204,7 @@ def test_dated_history_is_ordered_and_derived() -> None:
     """
     import json
 
-    from oastarmap.build.worlds import PRESENCE_KINDS
+    from oastarmap.build.worlds import PRESENCE_KINDS, _certain_by
     from oastarmap.paths import DATA_OUT_DIR
 
     path = DATA_OUT_DIR / "worlds.json"
@@ -210,10 +216,12 @@ def test_dated_history_is_ordered_and_derived() -> None:
         years = [e["year_at"] for e in events]
         assert years == sorted(years), f"{world['name']} events are not in order"
 
-        presence = [e["year_at"] for e in events if e["kind"] in PRESENCE_KINDS]
+        # The safe end of each hedge, not the bare year: "between 1500 and
+        # 2100" is only certain by 2100.
+        presence = [_certain_by(e) for e in events if e["kind"] in PRESENCE_KINDS]
         assert world["known_from_at"] == (min(presence) if presence else None)
 
-        settled = [e["year_at"] for e in events if e["kind"] == "settled"]
+        settled = [_certain_by(e) for e in events if e["kind"] == "settled"]
         assert world["settled_at"] == (min(settled) if settled else None)
 
         # A place cannot be settled before anyone has been there.
@@ -314,3 +322,58 @@ def test_worlds_bound_to_a_star_are_bound_to_a_real_one() -> None:
         if w["method"] == "star" and w["star_index"] is None
     ]
     assert unresolved == [], f"star bindings that resolved to nothing: {unresolved}"
+
+
+def test_hedged_years_resolve_to_the_safe_end() -> None:
+    """A historical map must not show a place before the sources support it.
+
+    The sources hedge in several ways and they do not all mean the same thing.
+    "Between 1500 and 2100" is certain only by 2100; "before 1644" is certain by
+    1644; a span that ran 4496 to 4530 had already begun in 4496. Taking the
+    optimistic end of each would put places on the map centuries early.
+    """
+    from oastarmap.build.worlds import _certain_by
+
+    assert _certain_by({"year_at": 2245, "until_at": None, "precision": "exact"}) == 2245
+    assert _certain_by({"year_at": 3000, "until_at": None, "precision": "circa"}) == 3000
+    assert _certain_by({"year_at": 1644, "until_at": None, "precision": "not_later_than"}) == 1644
+    assert _certain_by({"year_at": 1500, "until_at": 2100, "precision": "between"}) == 2100
+    # A duration, not an uncertainty: it began in 4496.
+    assert _certain_by({"year_at": 4496, "until_at": 4530, "precision": "exact"}) == 4496
+
+
+def test_a_between_event_needs_both_ends() -> None:
+    from pydantic import ValidationError
+
+    from oastarmap.fiction.schema import WorldEvent
+
+    with pytest.raises(ValidationError, match="needs until_at"):
+        WorldEvent(year_at=1500, kind="settled", precision="between")
+    with pytest.raises(ValidationError, match="precision must be one of"):
+        WorldEvent(year_at=1500, kind="settled", precision="roughly")
+
+
+def test_constellation_misspellings_are_corrected_but_still_findable() -> None:
+    """astropy's table misspells three of the eighty-eight.
+
+    Chamaleon, Ophiucus and Pisces Austrinus, against the IAU's Chamaeleon,
+    Ophiuchus and Piscis Austrinus. An author writing the correct name should
+    not get a build failure, and a check comparing against get_constellation
+    should still match.
+    """
+    table = ConstellationFile.load(FICTION_DIR / "constellations.yaml").by_name()
+    for correct, astropy_spelling in (
+        ("Chamaeleon", "Chamaleon"),
+        ("Ophiuchus", "Ophiucus"),
+        ("Piscis Austrinus", "Pisces Austrinus"),
+    ):
+        assert correct.casefold() in table, f"{correct} not findable"
+        assert astropy_spelling.casefold() in table, f"{astropy_spelling} not findable"
+        assert table[correct.casefold()].name == correct
+        assert table[astropy_spelling.casefold()].name == correct
+
+
+def test_a_constellation_can_be_written_without_its_accent() -> None:
+    table = ConstellationFile.load(FICTION_DIR / "constellations.yaml").by_name()
+    assert table["bootes"].name == "Boötes"
+    assert table["boötes"].name == "Boötes"

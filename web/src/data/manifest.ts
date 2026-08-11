@@ -423,8 +423,8 @@ export interface WorldEvent {
   note: string;
   /** Last year, for something that took time rather than happening. */
   until_at: number | null;
-  /** The year is a rough figure the source itself hedges. */
-  approximate: boolean;
+  /** exact | circa | not_later_than | not_earlier_than | between. */
+  precision: string;
 }
 
 export interface WorldEntry {

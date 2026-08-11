@@ -48,6 +48,24 @@ const EVENT_LABEL: Record<string, string> = {
   abandoned: 'abandoned',
 };
 
+/**
+ * How a hedged year reads.
+ *
+ * The sources hedge in several distinct ways and the panel should not flatten
+ * them: "before 1644", "around 3000" and "between 1500 and 2100" are three
+ * different claims and only one of the three is a date.
+ */
+function formatYear(event: WorldEvent): string {
+  const { year_at: year, until_at: until, precision } = event;
+  if (precision === 'between' && until) return `${year}–${until} A.T.`;
+  if (precision === 'circa') return `c. ${year} A.T.`;
+  if (precision === 'not_later_than') return `by ${year} A.T.`;
+  if (precision === 'not_earlier_than') return `after ${year} A.T.`;
+  // An exact year with a second one is a span: the thing took that long.
+  if (until) return `${year}–${until} A.T.`;
+  return `${year} A.T.`;
+}
+
 interface Row {
   label: string;
   value: string;
@@ -187,8 +205,7 @@ export class DetailPanel {
         // The year leads. It is what the reader came to this block for, and
         // what a run of them has to be scannable by. A span shows both ends,
         // and an approximate year is hedged rather than presented as a date.
-        const span = event.until_at ? `${event.year_at}–${event.until_at}` : `${event.year_at}`;
-        line.appendChild(el('span', 'label', `${event.approximate ? 'c. ' : ''}${span} A.T.`));
+        line.appendChild(el('span', 'label', formatYear(event)));
         line.appendChild(el('span', 'value', EVENT_LABEL[event.kind] ?? event.kind));
         note.appendChild(line);
         if (event.note) note.appendChild(el('div', 'note-line', event.note));

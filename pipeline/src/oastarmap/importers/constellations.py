@@ -47,6 +47,20 @@ Fine enough that a centroid moves by well under a tenth of a degree if the grid
 is refined further, which is far below the precision the source data has.
 """
 
+CORRECTIONS = {
+    "Chamaleon": "Chamaeleon",
+    "Ophiucus": "Ophiuchus",
+    "Pisces Austrinus": "Piscis Austrinus",
+}
+"""Misspellings in astropy's constellation table, against the IAU's own list.
+
+Three of the eighty-eight. They are not ours to keep: a world recorded as being
+in Ophiuchus should not fail to build because the table says "Ophiucus". The
+corrected form is what the file stores and what an author writes; astropy's
+spelling is kept alongside it as ``source_name``, because that is still what
+``get_constellation`` returns and any check comparing the two needs to agree.
+"""
+
 SOURCE = (
     "IAU constellation boundaries (Delporte 1930, B1875), via "
     "astropy.coordinates.get_constellation"
@@ -99,7 +113,8 @@ def tabulate() -> list[dict[str, object]]:
 
         rows.append(
             {
-                "name": name,
+                "name": CORRECTIONS.get(name, name),
+                "source_name": name if name in CORRECTIONS else "",
                 "abbreviation": str(short[members][0]).strip(),
                 "ra_deg": round(float(point.ra.deg), 4),
                 "dec_deg": round(float(point.dec.deg), 4),
@@ -128,6 +143,8 @@ def import_constellations(dest: Path) -> int:
         "#                   contains the whole constellation, so it is an upper",
         "#                   bound on how wrong the direction can be",
         "# area_sq_deg       for reference; the sky is 41,253 square degrees",
+        "# source_name       present only where astropy's table misspells the",
+        "#                   constellation and this file corrects it",
         "# centroid_inside   false where the centre of area falls outside the",
         "#                   figure itself, which makes it useless as a position.",
         "#                   Serpens is the only one: it is two disjoint halves",
@@ -138,6 +155,8 @@ def import_constellations(dest: Path) -> int:
     ]
     for row in rows:
         lines.append(f"  - name: {row['name']}")
+        if row["source_name"]:
+            lines.append(f"    source_name: {row['source_name']}")
         lines.append(f"    abbreviation: {row['abbreviation']}")
         lines.append(f"    ra_deg: {row['ra_deg']}")
         lines.append(f"    dec_deg: {row['dec_deg']}")

@@ -316,6 +316,16 @@ def build_fiction(
                 "name": entry.name,
                 "article": entry.article,
                 "note": entry.note,
+                "events": [
+                    {
+                        "year_at": e.year_at,
+                        "kind": e.kind,
+                        "note": e.note,
+                        "until_at": e.until_at,
+                        "precision": e.precision,
+                    }
+                    for e in sorted(entry.events, key=lambda e: (e.year_at, e.kind))
+                ],
             }
         )
 

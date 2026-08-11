@@ -14,11 +14,11 @@ Nothing below is a complaint about the setting. Most of it is the ordinary frict
 
 *contradiction*
 
-The Celestia add-on carries a star named Enigma at RA 81.7, Dec -37.5, 1,410 pc — that is in Columba, 4,598 ly out. The EG article for Stanislaw says Canis Major, whose nearest boundary is some fifteen degrees away; Columba is not a boundary case for it. Separately, the Enigma Cluster is canonically NGC 6755, which sits 3,478 pc from the add-on's star and roughly opposite it on the sky. No star in the add-on comes within 1,549 pc of NGC 6755.
+The Enigma Cluster is NGC 6755 — that part is settled, and the cluster is on the map under that name, colonised in 7222 and listed as Keter Dominion. What remains open is the Celestia add-on's star called Enigma, at RA 81.7, Dec -37.5, 1,410 pc: that is in Columba, 4,598 ly out, and 3,478 pc from NGC 6755, roughly opposite it on the sky. No star in the add-on comes within 1,549 pc of the cluster. The EG article for Stanislaw adds a third direction, Canis Major, whose nearest boundary is some fifteen degrees from the add-on's position; Columba is not a boundary case for it.
 
 **What the map does now.** Stanislaw is placed by constellation in Canis Major at the add-on's distance, and marked uncertain. The add-on's direction is not used.
 
-**What would settle it.** Which of the three is canonical, or whether the add-on's Enigma is a different object that happens to share the name.
+**What would settle it.** Whether the add-on's Enigma star is the Stanislaw system at all, or a different object sharing the name. If it is Stanislaw's, one of its two directions is wrong; if it is not, the add-on entry needs its own identity.
 
 - https://www.orionsarm.com/eg-article/491222f681eed
 - https://www.orionsarm.com/eg-article/491aecf1478f9
@@ -178,7 +178,7 @@ Colonies we have been given a polity for, whose star does not resolve. The assig
 
 Abydos, Algol, Byrdis & Ka Yvanti, Goldilocks ISO, Hammerstein, Ithiplumo, Liaris Rosette, Midnight Pearl, Monostheria, Noyce, Proxima, Resonance, and 5 more
 
-## 10 landmarks past the 7,000 ly frontier
+## 11 landmarks past the 7,000 ly frontier
 
 Landmarks that fall inside a polity's area on the political maps but sit far beyond any canonical Terragen frontier. The maps are slices of the galactic plane with approximate borders, so a landmark inside a polity's outline marks a direction rather than a territorial claim. Drawn, bound, and deliberately not given a polity colour.
 
@@ -192,6 +192,7 @@ Landmarks that fall inside a polity's area on the political maps but sit far bey
 - **NGC 6802** at 9,031 ly — Mutual Progress Association
 - **Czernik 8** at 8,589 ly — Cygexpa
 - **NGC 4337** at 7,873 ly — Non-Coercive Zone
+- **NGC 6755** at 7,446 ly — Keter Dominion
 
 ## 41 landmarks waiting on a catalogue
 
@@ -199,21 +200,21 @@ Named in the political maps, and real, but in a catalogue this map does not carr
 
 Aquila Rift, Basel 11, Basel 5, California Nebula, Cat Eye Nebula, Collinder 121, Collinder 173, Collinder 399, Collinder 96, Dumbbell Nebula, Eskimo Nebula, Floating Star Nebula, G64.3+5.7, Gamma Cas, Geminga, Helix Nebula, Hogg 14, Hubble Variable Nebula, IC 405, IC 417, Iskudarian 1, Jupiter Nebula, Markarian 6, NGC 1498, and 17 more
 
-## 4 landmarks claimed by more than one polity
+## 5 landmarks claimed by more than one polity
 
 Not necessarily an error — the political maps overlap, and a landmark on a boundary can legitimately fall in two volumes. Recorded in case any of these is a reading mistake.
 
-Blanco 1, Collinder 173, S232, S27
+Blanco 1, Collinder 173, Collinder 359, S232, S27
 
 ## Worlds located only by constellation
 
-9 of 38 canonical worlds are given as a distance and a constellation. That fixes the distance exactly and the direction only to the width of the constellation, which at these ranges is hundreds to thousands of light years. The map draws these with a broken ring rather than a solid one, and the detail panel gives the error in light years.
+10 of 52 canonical worlds are given as a distance and a constellation. That fixes the distance exactly and the direction only to the width of the constellation, which at these ranges is hundreds to thousands of light years. The map draws these with a broken ring rather than a solid one, and the detail panel gives the error in light years.
 
 Coordinates, or a nearby named star, would turn any of these from a region into a position.
 
-## 3 places described but not located
+## 4 places described but not located
 
-Elderman's Star, Evermore, Webistics
+Crustuse, Elderman's Star, Evermore, Webistics
 
 ## 1 designation reused in the Celestia add-on
 
