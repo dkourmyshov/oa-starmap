@@ -73,16 +73,28 @@ export type Viewpoint = 'top' | 'spin' | 'core' | 'tilted';
  * that the horizon can roll and "up" stops meaning galactic north — which is
  * why it is a choice rather than a replacement.
  */
-export type ControlMode = 'orbit' | 'trackball';
+export type ControlMode = 'orbit' | 'galactic' | 'trackball';
 
 export const CONTROL_MODES: { id: ControlMode; label: string; title: string }[] = [
-  { id: 'orbit', label: 'orbit', title: 'Turn about galactic north; the pole stays up' },
+  {
+    id: 'orbit',
+    label: 'orbit',
+    title: "Turn about the screen's vertical, re-chosen for each viewpoint",
+  },
+  {
+    id: 'galactic',
+    label: 'galaxy',
+    title: 'Turn about galactic north always; the plane stays level',
+  },
   {
     id: 'trackball',
-    label: 'trackball',
+    label: 'free',
     title: "Turn about the screen's own axes; free, but the horizon can roll",
   },
 ];
+
+/** Galactic north, the pole the fixed-axis mode always turns about. */
+const GALACTIC_NORTH = new THREE.Vector3(0, 0, 1);
 
 export const VIEWPOINTS: { id: Viewpoint; label: string; title: string }[] = [
   { id: 'top', label: 'top', title: 'From galactic north, looking down on the plane' },
@@ -272,19 +284,22 @@ export class Viewer {
     if (mode === this.mode) return;
     this.mode = mode;
 
-    const from = mode === 'orbit' ? this.trackball : this.controls;
-    const to = mode === 'orbit' ? this.controls : this.trackball;
+    const from = mode === 'trackball' ? this.controls : this.trackball;
+    const to = mode === 'trackball' ? this.trackball : this.controls;
     to.target.copy(from.target);
 
-    // Both modes want up across the line of sight — orbit so that a horizontal
-    // drag turns about the screen's vertical rather than spinning the image,
-    // trackball so its drag basis does not collapse. The camera's own screen-up
-    // satisfies both and preserves the orientation already showing.
-    alignUpToScreen(this.camera);
-    if (mode === 'orbit') this.resyncOrbitPole();
+    // `galactic` pins the pole to north whatever is on screen, which is what
+    // keeps the plane level and is the whole point of it. The other two want up
+    // across the line of sight — orbit so a horizontal drag turns about the
+    // screen's vertical rather than spinning the image, trackball so its drag
+    // basis does not collapse. The camera's own screen-up satisfies both and
+    // preserves the orientation already showing.
+    if (mode === 'galactic') this.camera.up.copy(GALACTIC_NORTH);
+    else alignUpToScreen(this.camera);
+    if (mode !== 'trackball') this.resyncOrbitPole();
 
     this.trackball.enabled = mode === 'trackball';
-    this.controls.enabled = mode === 'orbit';
+    this.controls.enabled = mode !== 'trackball';
     this.active.update();
   }
 
@@ -294,7 +309,7 @@ export class Viewer {
 
   /** Whichever control is currently driving the camera. */
   private get active(): OrbitControls | TrackballControls {
-    return this.mode === 'orbit' ? this.controls : this.trackball;
+    return this.mode === 'trackball' ? this.trackball : this.controls;
   }
 
     /**
@@ -309,14 +324,16 @@ export class Viewer {
     const range = this.camera.position.distanceTo(controls.target);
     // Each preset carries its own up, chosen across its line of sight, so the
     // view arrives correctly oriented *and* well conditioned to drag from.
-    this.camera.up.copy(viewpointUp(name));
+    // In the fixed-axis mode the pole is north wherever you go, degenerate top
+    // view and all: that is the behaviour being asked for, not an oversight.
+    this.camera.up.copy(this.mode === 'galactic' ? GALACTIC_NORTH : viewpointUp(name));
     this.camera.position
       .copy(controls.target)
       .add(viewpointPosition(name, range || DEFAULT_RANGE));
     this.camera.lookAt(controls.target);
     // The control's pole is fixed at construction, so a changed up only reaches
     // it through a rebuild.
-    if (this.mode === 'orbit') this.resyncOrbitPole();
+    if (this.mode !== 'trackball') this.resyncOrbitPole();
     else controls.update();
   }
 

@@ -39,10 +39,12 @@ import { PC_TO_LY, type DistanceUnit, type Parsecs, formatDistance, pc } from '.
  * on its own does not say who took the system or that it is a Caretaker thing.
  */
 const EVENT_LABEL: Record<string, string> = {
+  observed: 'first observed',
   visited: 'first visited',
   settled: 'settled',
   contact: 'first contact',
   stewardship: 'taken into stewardship',
+  capital: 'became a capital',
   transferred: 'changed hands',
   reported: 'discovery reported',
   abandoned: 'abandoned',

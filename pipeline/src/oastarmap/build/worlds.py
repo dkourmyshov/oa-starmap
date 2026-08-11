@@ -74,7 +74,16 @@ DISTANCE_TOLERANCE = 0.35
 #: in 9920 and was found some time in the 9700s. An upper bound is still the
 #: best answer available, and excluding it left Stanislaw off the timeline
 #: entirely, which is a worse answer than a late one.
-PRESENCE_KINDS = ("visited", "settled", "contact", "stewardship", "transferred", "reported")
+PRESENCE_KINDS = (
+    "observed",
+    "visited",
+    "settled",
+    "contact",
+    "capital",
+    "stewardship",
+    "transferred",
+    "reported",
+)
 
 
 @dataclass

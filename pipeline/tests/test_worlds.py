@@ -601,3 +601,30 @@ def test_a_missing_constellation_table_is_an_error_not_a_silent_gap() -> None:
         # No manifest.json, and no values passed.
         with pytest.raises(ValueError, match="no constellation table"):
             build_worlds(FICTION_DIR / "worlds.yaml", out_dir=empty)
+
+
+def test_observing_is_not_visiting() -> None:
+    """Rangar was seen in 3702 and has no establishment date at all.
+
+    Recording that as a visit would put people in a system nobody is said to
+    have reached, so the two are separate kinds — and both count towards knowing
+    the place is there, which is what a historical map is drawn from.
+    """
+    import json
+
+    from oastarmap.build.worlds import PRESENCE_KINDS
+    from oastarmap.paths import DATA_OUT_DIR
+
+    assert "observed" in PRESENCE_KINDS
+    assert "visited" in PRESENCE_KINDS
+
+    path = DATA_OUT_DIR / "worlds.json"
+    if not path.exists():
+        pytest.skip("dataset not built")
+
+    worlds = {w["name"]: w for w in json.loads(path.read_text(encoding="utf-8"))}
+    rangar = worlds["Rangar"]
+    assert [e["kind"] for e in rangar["events"]] == ["observed"]
+    assert rangar["known_from_at"] == 3702
+    # Observed, never settled: the map may show it, but not as inhabited.
+    assert rangar["settled_at"] is None

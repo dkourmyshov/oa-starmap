@@ -590,9 +590,11 @@ class WorldLocation(BaseModel):
 
 EVENT_KINDS = frozenset(
     {
+        "observed",
         "visited",
         "settled",
         "contact",
+        "capital",
         "stewardship",
         "transferred",
         "reported",
@@ -609,9 +611,15 @@ rest exist because collapsing them into those two would lose the distinction the
 sources actually draw. Duxed was colonised in 1813 and acquired its Caretaker in
 2917, and a model with one date per place would have to discard one of them.
 
+- ``observed``     seen from a distance and not reached. Rangar was observed in
+                   3702 and has no establishment date at all, so calling that a
+                   visit would put people there who never went.
 - ``visited``      somebody went, or a probe did. Nobody stayed.
 - ``settled``      a colony was established.
 - ``contact``      first contact with a resident xenosophont species.
+- ``capital``      became the seat of a polity. The Seat of Judgement in 2465,
+                   Gillbank later — a dated fact about a place that is neither
+                   its settlement nor a change of owner.
 - ``stewardship``  a Caretaker God took the system under protection.
 - ``transferred``  the system changed hands between polities.
 - ``reported``     the date the setting *records*, where the event itself is

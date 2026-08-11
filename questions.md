@@ -8,7 +8,7 @@ Nothing below is a complaint about the setting. Most of it is the ordinary frict
 
 ---
 
-## Open questions (11)
+## Open questions (12)
 
 ### Enigma system — Three sources put the Enigma system in three different directions.
 
@@ -139,6 +139,19 @@ Webistics has an article but no position of any kind in it. Elderman's Star has 
 
 - https://www.orionsarm.com/eg-article/47000688d2cf2
 
+### The Crucis Corridor and other named volumes — Many places are located by an Orion's Arm region name rather than by a direction, and this map has no table of what those regions cover.
+
+*data-gap*
+
+The Crucis Corridor, the Centaurus sector, the Centauri sector, the outer volumes near the Mutual Progress Association border. Nine of the Negentropy Alliance's twenty-three entries are placed this way and no further, the highest proportion of any polity recorded here — Arnon Dar, Dashwood, Gritwald, Ratay's World and Verity have nothing else at all, while Gillbank, New Poseidon and Steelcliff have a distance from Sol but no direction, which describes a shell rather than a place.
+
+**What the map does now.** Records them and does not draw them. A region name could be turned into a direction only by guessing which constellation it corresponds to, and a guess drawn as a dot is indistinguishable from a measurement.
+
+**What would settle it.** A centre and an extent for each named region — even roughly, as a constellation and a distance — would place most of these at once. Failing that, per-world distances and constellations.
+
+- https://www.orionsarm.com/eg-article/5025ec682d4a4
+- https://www.orionsarm.com/eg-article/464e939b35f57
+
 ## The Inner Sphere colony tables
 
 909 of 1,122 rows resolve to a star we hold. The rest break down as follows.
@@ -208,13 +221,13 @@ Blanco 1, Collinder 173, Collinder 359, S232, S27
 
 ## Worlds located only by constellation
 
-13 of 83 canonical worlds are given as a distance and a constellation. That fixes the distance exactly and the direction only to the width of the constellation, which at these ranges is hundreds to thousands of light years. The map draws these with a broken ring rather than a solid one, and the detail panel gives the error in light years.
+16 of 105 canonical worlds are given as a distance and a constellation. That fixes the distance exactly and the direction only to the width of the constellation, which at these ranges is hundreds to thousands of light years. The map draws these with a broken ring rather than a solid one, and the detail panel gives the error in light years.
 
 Coordinates, or a nearby named star, would turn any of these from a region into a position.
 
-## 9 places described but not located
+## 19 places described but not located
 
-Crustuse, Elderman's Star, Evermore, Galbydeia Torus, Gordelpus, Kepleria, The Gurth Hexanode Repository, Threshold, Webistics
+Arnon Dar, Crustuse, Dashwood, Elderman's Star, Evermore, Galbydeia Torus, Garlin, Gillbank, Gordelpus, Gritwald, Kepleria, Muna Kipasi orbitals, and 7 more
 
 ## 1 designation reused in the Celestia add-on
 

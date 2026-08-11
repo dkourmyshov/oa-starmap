@@ -1249,3 +1249,279 @@ worlds:
       - year_at: 5100
         kind: settled
         note: Dynamic orbital rings built close to the event horizon.
+
+  # ---- Negentropy Alliance -------------------------------------------------
+  #
+  # Nine of these twenty-two carry no position at all, which is the highest
+  # proportion of any polity here. Most are located by Orion's Arm's own region
+  # names — the Crucis Corridor, the Centaurus sector, the Centauri sector —
+  # which name volumes of the setting rather than directions on the sky, and
+  # this map has no table of them. See questions.md.
+
+  - name: Ken Ferjik
+    kind: planet
+    affiliations: [negentropy-alliance]
+    article: https://www.orionsarm.com/eg-article/466f46ad5a941
+    location:
+      hd: 143846
+      catalogue_from_source: true
+    events:
+      - year_at: 2207
+        kind: settled
+    note: In Lupus at 137 ly.
+
+  - name: Greylag
+    kind: planet
+    affiliations: [negentropy-alliance]
+    article: https://www.orionsarm.com/eg-article/46f96df6b0a13
+    location:
+      hd: 147436
+      catalogue_from_source: true
+    events:
+      - year_at: 2397
+        kind: settled
+    note: In Norma at 192 ly.
+
+  - name: Daffy
+    kind: planet
+    affiliations: [negentropy-alliance]
+    article: https://www.orionsarm.com/eg-article/462d549553412
+    location:
+      star: Psi Serpentis
+    events:
+      - year_at: 1777
+        kind: visited
+        note: Reached.
+    note: >-
+      Psi Serpentis, 48 ly, a triple — A, Ba and Bb. Daffy orbits A, which is
+      the component the catalogue entry is.
+
+  - name: Gegton X
+    kind: planet
+    affiliations: [negentropy-alliance]
+    article: https://www.orionsarm.com/eg-article/464e89acf1f48
+    location:
+      hd: 146059
+      catalogue_from_source: true
+    events:
+      - year_at: 2512
+        kind: settled
+    note: In Norma at 231 ly.
+
+  - name: Alexandria
+    kind: planet
+    system: Tichy 44
+    affiliations: [negentropy-alliance]
+    article: https://www.orionsarm.com/eg-article/45e7873ca8b42
+    location:
+      ra_deg: 268.702
+      dec_deg: -32.115
+      distance: 801 ly
+      near: HD 162909
+    events:
+      - year_at: 3123
+        kind: settled
+        precision: not_later_than
+    note: >-
+      Given as near HD 162909 and Ptolemy's Cluster, so the direction is that
+      star's and the distance the article's. The star itself is at 658 ly, which
+      puts Alexandria further along the same line of sight rather than beside it.
+
+  - name: The Seat of Judgement
+    kind: planet
+    system: The Seat of Judgement
+    affiliations: [negentropy-alliance]
+    article: https://www.orionsarm.com/eg-article/49121338648ef
+    location:
+      star: 1 Centauri
+    events:
+      - year_at: 2465
+        kind: capital
+        note: Became the capital of the Negentropy Alliance.
+    note: >-
+      1 Centauri A and B, 63 ly, catalogued as CD -32 9603. No date for first
+      reaching it — only for what it became.
+
+  - name: Arkab Prior A
+    kind: system
+    system: Arkab Prior A
+    affiliations: [negentropy-alliance]
+    article: https://www.orionsarm.com/eg-article/48f4b90a814b0
+    location:
+      star: Arkab Prior
+      distance: 389 ly
+    events:
+      - year_at: 4311
+        kind: settled
+    note: >-
+      Beta-1 Sagittarii A. Its companion B is a Mutual Progress Association
+      system with the same colonisation year — one star, two components, two
+      meta-empires.
+
+  - name: Arnon Dar
+    kind: system
+    system: Arnon Dar
+    affiliations: [negentropy-alliance]
+    article: https://www.orionsarm.com/eg-article/5025ec682d4a4
+    location:
+      note: In the Crucis Corridor, which is a volume of the setting rather than a direction.
+
+  - name: Dashwood
+    kind: planet
+    affiliations: [negentropy-alliance]
+    article: https://www.orionsarm.com/eg-article/4637c48b18ab6
+    location:
+      note: >-
+        In the Centauri sector, near the borders with the Paradigm and the
+        Utopia Sphere. All three name volumes rather than directions.
+
+  - name: Garlin
+    kind: system
+    system: Garlin
+    affiliations: [negentropy-alliance]
+    location:
+      note: >-
+        In the vicinity of Lynga 7, which is on the map as a Negentropy
+        landmark. No distance of its own is given, and borrowing the cluster's
+        would assert a figure the source does not.
+    note: No article of its own.
+
+  - name: Gritwald
+    kind: system
+    system: Gritwald
+    affiliations: [negentropy-alliance]
+    article: https://www.orionsarm.com/eg-article/46f96e1589912
+    location:
+      note: In the Centaurus sector.
+    note: >-
+      Held for a time by the Efficiency Maximization Paradigm. No year is given
+      for either the capture or its end, so it stays prose rather than becoming
+      a date on the timeline.
+
+  - name: Gillbank
+    kind: planet
+    affiliations: [disarchy]
+    article: https://www.orionsarm.com/eg-article/464e939b35f57
+    location:
+      note: >-
+        In the Crucis Corridor at 2,520 ly. The distance alone does not place
+        it: without a direction it is a sphere, not a point.
+    events:
+      - year_at: 6210
+        kind: settled
+    note: >-
+      Capital of the Disarchy, and founded a Negentropist world. Neither the
+      year it changed hands nor the year it became a capital is given, so only
+      the founding is dated here. The affiliation is the present holder.
+
+  - name: Irrmorella
+    kind: planet
+    affiliations: [negentropy-alliance]
+    article: https://www.orionsarm.com/eg-article/466620c9274f6
+    location:
+      hd: 143638
+      catalogue_from_source: true
+    note: In Norma at 206 ly. No dates.
+
+  - name: Junna
+    kind: moon
+    system: Begum
+    parent: Begum
+    affiliations: [negentropy-alliance]
+    article: https://www.orionsarm.com/eg-article/4682fdf9a6442
+    location:
+      constellation: Sagittarius
+      distance: 680 ly
+    events:
+      - year_at: 2938
+        kind: settled
+    note: A moon of a gas giant in the Begum system.
+
+  - name: Muna Kipasi orbitals
+    kind: megastructure
+    affiliations: [negentropy-alliance]
+    article: https://www.orionsarm.com/eg-article/47bb8439173c7
+    location:
+      note: >-
+        In the Goldfish Nebula Plexus. The nebula is not in any catalogue this
+        map carries under that name, and no distance is given.
+
+  - name: New Daffy Panoparchy
+    kind: volume
+    affiliations: [negentropy-alliance]
+    article: https://www.orionsarm.com/eg-article/46d4c2fc470c7
+    location:
+      constellation: Circinus
+      distance: 2234 ly
+    events:
+      - year_at: 6230
+        kind: settled
+    note: >-
+      A superpolity of heterodox Negentropists, and a volume rather than a
+      point — but no extent is given, so it is drawn as a marker.
+
+  - name: New Poseidon
+    kind: planet
+    system: Sharp Point
+    parent: Trident Star
+    affiliations: [negentropy-alliance]
+    article: https://www.orionsarm.com/eg-article/46d4d043b4e9c
+    location:
+      note: >-
+        2,971 ly from Sol and no direction given, which is a shell rather than
+        a place. The primary is the Trident Star, in the Sharp Point system.
+
+  - name: Rangar
+    kind: planet
+    system: Etaran
+    affiliations: [negentropy-alliance]
+    article: https://www.orionsarm.com/eg-article/48f73a3693b59
+    location:
+      hd: 148071
+      catalogue_from_source: true
+    events:
+      - year_at: 3702
+        kind: observed
+        note: >-
+          First observed, not reached. No establishment date is given at all,
+          so this is the only year the system has.
+    note: In Ophiuchus at 1,074 ly.
+
+  - name: Ratay's World
+    kind: planet
+    affiliations: [negentropy-alliance]
+    location:
+      note: In the outer Crucis Corridor.
+    note: No article of its own.
+
+  - name: St. Xye
+    kind: planet
+    affiliations: [negentropy-alliance]
+    article: https://www.orionsarm.com/eg-article/47897b8e2ccb2
+    location:
+      constellation: Norma
+      distance: 623 ly
+    note: No dates.
+
+  - name: Steelcliff
+    kind: planet
+    affiliations: [negentropy-alliance, xenosophont]
+    article: https://www.orionsarm.com/eg-article/478986428e74a
+    location:
+      note: 3,246 ly from Sol, with no direction given.
+    events:
+      - year_at: 7852
+        kind: settled
+    note: >-
+      A xenosophont world of sorts, inside Negentropy volumes and under no
+      Caretaker God's custodianship — which is what separates it from
+      H'tat'sa'thoss, where the protection is the whole point. Recorded under
+      both, since neither alone says what it is.
+
+  - name: Verity
+    kind: system
+    system: Verity
+    affiliations: [negentropy-alliance]
+    location:
+      note: In the outer volumes, near the Mutual Progress Association border.
+    note: No article of its own.
