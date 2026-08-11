@@ -495,10 +495,29 @@ class WorldLocation(BaseModel):
     """A region of sky, with ``distance`` supplying the radius."""
 
     distance: str = ""
-    """Distance from Sol, with its unit: '805 ly'. Required by the last two."""
+    """Distance from Sol, with its unit: '805 ly'.
+
+    Required by the direction and constellation methods, where it supplies the
+    radius. Optional but strongly wanted on a ``star`` binding, where it is a
+    *check* rather than a position: the build compares it against the catalogue
+    and fails if the two disagree. That check exists because a wrong catalogue
+    number resolves to a real star and looks entirely correct — Oikoumene was
+    bound to HD 175869, which is 64 Serpentis at 1,019 ly, when the intended
+    star was Zeta Serpentis at 75. Nothing about the resulting dot said so.
+    """
 
     near: str = ""
     """What the direction was taken from, for the record. Not resolved."""
+
+    distance_conflict: bool = False
+    """The stated distance and the catalogue's genuinely disagree, and we know.
+
+    Set only where the identifier is unambiguous and the distance is the thing
+    in doubt, and only alongside an entry in questions.md saying so. Naming the
+    case here settles it permanently: the build stops failing on this one world
+    and keeps failing on every other, which is what a check is for. Without it
+    the only way past a known conflict is to weaken the check for everything.
+    """
 
     note: str = ""
 
@@ -531,6 +550,8 @@ class WorldLocation(BaseModel):
             raise ValueError("ra_deg and dec_deg must be given together")
         if self.method in {"direction", "constellation"} and not self.distance:
             raise ValueError(f"a {self.method} location needs a distance")
+        if self.distance and self.method not in {"direction", "constellation", "star"}:
+            raise ValueError(f"a {self.method} location takes no distance")
         if self.distance:
             parse_distance(self.distance)
         return self

@@ -281,7 +281,9 @@ questions:
     map_does: >-
       Bound on the HD number and drawn at 346 ly, since an identifier is a
       stronger claim than a distance and the alternative is not to draw it at
-      all. Flagged rather than silently corrected.
+      all. The build now checks every stated distance against the star it binds
+      to and fails on a mismatch; this is the one case named as a known
+      conflict, so the check stays live everywhere else.
     would_settle: Whether the article says 35 ly, 350 ly, or something else again.
     links:
       - https://www.orionsarm.com/eg-article/47a28b116776e

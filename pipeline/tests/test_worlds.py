@@ -444,3 +444,72 @@ def test_an_ending_is_not_a_presence_date() -> None:
 
     # And a place that never ended carries no ending.
     assert worlds["Halcyon"]["ended_at"] is None
+
+
+def test_a_stated_distance_catches_a_wrong_star() -> None:
+    """The guard that would have caught Oikoumene.
+
+    A wrong catalogue number does not fail to resolve — it resolves to a real
+    star and produces a perfectly ordinary dot. Oikoumene Dyson was bound to HD
+    175869, which is 64 Serpentis at 1,019 ly, when the system meant was Zeta
+    Serpentis at 75. Only the distance says so.
+    """
+    from oastarmap.build.worlds import build_worlds
+
+    source = FICTION_DIR / "worlds.yaml"
+    broken = source.read_text(encoding="utf-8") + (
+        "\n  - name: Wrong Star Test\n"
+        "    kind: planet\n"
+        "    affiliations: []\n"
+        "    location:\n"
+        "      hd: 175869\n"
+        "      distance: 75.7 ly\n"
+    )
+    scratch = source.with_name("worlds.wrongstar.yaml")
+    scratch.write_text(broken, encoding="utf-8")
+    try:
+        with pytest.raises(ValueError, match="it is a different star"):
+            build_worlds(scratch)
+    finally:
+        scratch.unlink()
+
+
+def test_oikoumene_is_in_the_inner_sphere() -> None:
+    """The specific fix, kept as a fact rather than a memory."""
+    import json
+
+    from oastarmap.paths import DATA_OUT_DIR
+
+    path = DATA_OUT_DIR / "worlds.json"
+    if not path.exists():
+        pytest.skip("dataset not built")
+
+    worlds = {w["name"]: w for w in json.loads(path.read_text(encoding="utf-8"))}
+    oikoumene = worlds["Oikoumene Dyson"]
+    assert oikoumene["star_index"] is not None
+    assert oikoumene["distance_checked"] is True
+
+    colonies = json.loads((DATA_OUT_DIR / "innersphere.json").read_text(encoding="utf-8"))
+    row = next(c for c in colonies if c["colony"] == "Oikoumene")
+    # The colony table resolved Zeta Serpentis by name all along; the world
+    # entry must land on the same star rather than on a similar-looking one.
+    assert oikoumene["star_index"] == row["star_index"]
+    assert row["distance_ly"] < 100
+
+
+def test_a_known_distance_conflict_is_named_rather_than_silenced() -> None:
+    """Third Def8's identifier is unambiguous and its distance is not.
+
+    Acknowledging the one case keeps the check live for the other eighty-two.
+    """
+    worlds = {w.name: w for w in WorldFile.load(FICTION_DIR / "worlds.yaml").worlds}
+    assert worlds["Third Def8"].location.distance_conflict is True
+
+    conflicting = [
+        w.name
+        for w in WorldFile.load(FICTION_DIR / "worlds.yaml").worlds
+        if w.location.distance_conflict
+    ]
+    assert conflicting == ["Third Def8"], (
+        "a new acknowledged conflict needs an entry in questions.md alongside it"
+    )

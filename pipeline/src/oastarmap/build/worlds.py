@@ -53,6 +53,14 @@ SOURCE_URL = "https://www.orionsarm.com/"
 #: Direction error to attribute to each method, before the constellation lookup.
 EXACT = 0.0
 
+#: How far a stated distance may sit from the catalogue's before it is an error.
+#:
+#: Generous, because the two are allowed to disagree: Orion's Arm quotes rounded
+#: figures from pre-Gaia sources, and gaps of a fifth are ordinary. What this
+#: catches is the other thing entirely — a catalogue number that resolved to the
+#: wrong star, where the gap is a factor of several.
+DISTANCE_TOLERANCE = 0.35
+
 
 #: Event kinds that put a world on a map of the sphere at a given year.
 #:
@@ -75,6 +83,7 @@ class WorldStats:
     by_method: Counter = field(default_factory=Counter)
     unlocated: list[str] = field(default_factory=list)
     unresolved: list[str] = field(default_factory=list)
+    distance_conflicts: list[str] = field(default_factory=list)
     dated: int = 0
     undated: list[str] = field(default_factory=list)
     earliest: int | None = None
@@ -86,6 +95,7 @@ class WorldStats:
             "by_method": dict(sorted(self.by_method.items())),
             "unlocated": self.unlocated,
             "unresolved": self.unresolved,
+            "distance_conflicts": self.distance_conflicts,
             "dated": self.dated,
             "undated": self.undated,
             "epoch_range_at": [self.earliest, self.latest],
@@ -210,6 +220,7 @@ def build_worlds(
     out_dir.mkdir(parents=True, exist_ok=True)
 
     resolver, by_hip, by_hd = _load_star_lookup(out_dir, constellation_values or [])
+    star_positions = np.fromfile(out_dir / "stars.bin", dtype="<f4").reshape(-1, 5)
 
     source = WorldFile.load(worlds_path)
     constellations = ConstellationFile.load(
@@ -292,6 +303,7 @@ def build_worlds(
             "star_index": None,
             "oa_star": "",
             "in_world": "",
+            "distance_checked": False,
             "x": None,
             "y": None,
             "z": None,
@@ -312,6 +324,19 @@ def build_worlds(
                 stats.unresolved.append(world.name)
             else:
                 record["star_index"] = int(index)
+                if world.location.distance and not world.location.distance_conflict:
+                    stated = parse_distance(world.location.distance).to_value(STORAGE_UNIT)
+                    actual = float(np.linalg.norm(star_positions[index, :3]))
+                    if abs(actual - stated) > DISTANCE_TOLERANCE * max(stated, 1e-9):
+                        raise ValueError(
+                            f"world {world.name!r} states "
+                            f"{stated * PC_TO_LY:,.1f} ly but the star it binds to is at "
+                            f"{actual * PC_TO_LY:,.1f} ly — that is not a rounding "
+                            "difference, it is a different star"
+                        )
+                    record["distance_checked"] = True
+                elif world.location.distance:
+                    stats.distance_conflicts.append(world.name)
         elif method == "oa_star":
             if oa_names and world.location.oa_star not in oa_names:
                 raise ValueError(
@@ -411,5 +436,10 @@ def format_report(dataset: dict[str, Any]) -> str:
         lines.append(f"             {count:>3} {described}")
     if stats["unresolved"]:
         lines.append(f"             unresolved bindings: {', '.join(stats['unresolved'])}")
+    if stats["distance_conflicts"]:
+        lines.append(
+            "             stated distance disagrees with the catalogue, acknowledged: "
+            + ", ".join(stats["distance_conflicts"])
+        )
     return "\n".join(lines)
 

@@ -483,13 +483,25 @@ export class DetailPanel {
 
     // A bare "Alp" names nothing — there are 88 of them. Same reconstruction the
     // labels use, so the panel and the map agree on what a star is called.
+    // Deduplicated, because HYG's fields overlap and often agree. 64 Serpentis
+    // has no Bayer letter, so its Flamsteed form and its combined
+    // Bayer-Flamsteed field are both "64 Ser", and the panel read
+    // "64 Ser · 64 Ser · 64 Ser" once the title was added to the list.
     const designations = [
-      names.bayer ? bayerLabel(names.bayer, constellation) : '',
-      names.flam ? `${names.flam} ${constellation}`.trim() : '',
-      names.gl,
-      names.bf,
-    ].filter(Boolean);
+      ...new Set(
+        [
+          names.bayer ? bayerLabel(names.bayer, constellation) : '',
+          names.flam ? `${names.flam} ${constellation}`.trim() : '',
+          names.gl,
+          // The combined field restates the other two — "57Zet Ser" for Zeta
+          // Serpentis — so it only earns its place when neither is there.
+          names.bayer || names.flam ? '' : names.bf,
+        ].filter(Boolean),
+      ),
+    ];
     const title = names.proper || designations[0] || `Star #${index}`;
+    // Whatever the title did not already use.
+    const otherNames = designations.filter((name) => name !== title);
 
     const hip = stars.ids[index * 2];
     const hd = stars.ids[index * 2 + 1];
@@ -546,7 +558,7 @@ export class DetailPanel {
       title: systemName || colony?.colony || title,
       subtitle:
         systemName || colony?.colony
-          ? [`Orion's Arm system`, title, ...designations].filter(Boolean).join(' · ')
+          ? [`Orion's Arm system`, title, ...otherNames].filter(Boolean).join(' · ')
           : designations.length
             ? designations.join(' · ')
             : 'star',

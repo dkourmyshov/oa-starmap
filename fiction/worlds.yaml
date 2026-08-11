@@ -329,6 +329,7 @@ worlds:
     article: https://www.orionsarm.com/eg-article/47703480bcd62
     location:
       hd: 3357
+      distance: 351 ly
     events:
       - year_at: 2479
         kind: settled
@@ -354,6 +355,7 @@ worlds:
     article: https://www.orionsarm.com/eg-article/4754bf28c4292
     location:
       hd: 7867
+      distance: 306 ly
     events:
       - year_at: 2509
         kind: settled
@@ -365,6 +367,7 @@ worlds:
     article: https://www.orionsarm.com/eg-article/474e2b879d1ac
     location:
       hd: 10069
+      distance: 404 ly
     events:
       - year_at: 3224
         kind: settled
@@ -381,6 +384,8 @@ worlds:
     article: https://www.orionsarm.com/eg-article/47a28b116776e
     location:
       hd: 6235
+      distance: 35 ly
+      distance_conflict: true
     events:
       - year_at: 2431
         kind: settled
@@ -418,6 +423,7 @@ worlds:
     article: https://www.orionsarm.com/eg-article/5300ada006f6a
     location:
       hip: 2254
+      distance: 348 ly
     events:
       - year_at: 6449
         kind: settled
@@ -476,6 +482,7 @@ worlds:
     article: https://www.orionsarm.com/eg-article/48fa71d44bc7a
     location:
       hip: 65721
+      distance: 59.03 ly
     note: >-
       70 Virginis, and the catalogue agrees with the article to two decimals at
       59.03 ly. No colonisation date given. Not the Solar Dominion's Goldilocks
@@ -506,6 +513,7 @@ worlds:
     article: https://www.orionsarm.com/eg-article/52fa35d455d56
     location:
       hip: 3456
+      distance: 338 ly
     note: No dates. The catalogue puts it at 331 ly against the article's 338.
 
   - name: Prometheus
@@ -556,6 +564,7 @@ worlds:
     article: https://www.orionsarm.com/eg-article/49024b4de8dac
     location:
       hd: 146233
+      distance: 46.11 ly
     events:
       - year_at: 1704
         kind: settled
@@ -632,6 +641,7 @@ worlds:
     article: http://www.orionsarm.com/eg-article/591dcfb1235e6
     location:
       hd: 193275
+      distance: 195 ly
     events:
       - year_at: 2681
         kind: settled
@@ -793,6 +803,7 @@ worlds:
     article: https://www.orionsarm.com/eg-article/5eb6bd9f69c02
     location:
       hip: 96353
+      distance: 1378 ly
     events:
       - year_at: 4722
         kind: settled
@@ -1128,14 +1139,15 @@ worlds:
     affiliations: [mutual-progress-association]
     article: https://www.orionsarm.com/eg-article/490b34ec41bb6
     location:
-      hd: 175869
+      star: Zeta Serpentis
+      distance: 75.7 ly
     events:
       - year_at: 1521
         kind: visited
         note: >-
           Reached, only to find an ahuman colony already established there. A
           first visit that was not a first arrival.
-    note: Zeta Serpentis, 1,019 ly.
+    note: Zeta Serpentis, 75 ly — an Inner Sphere system.
 
   - name: Pen-y-Ghent
     kind: system

@@ -121,7 +121,7 @@ Blanco 1, 850 ly away in Sculptor, is named the Blenke Cluster in an article tha
 
 A factor of ten. The HD number is unambiguous and the catalogue puts it in Sculptor at 346 ly, which is where every other Communion world in that direction sits — Rergenar at 367, Vistaa at 335, Canberra Orbital at 378, Heartland at 334. A genuine 35 ly star would be a naked-eye neighbour and not an HD number nobody has named.
 
-**What the map does now.** Bound on the HD number and drawn at 346 ly, since an identifier is a stronger claim than a distance and the alternative is not to draw it at all. Flagged rather than silently corrected.
+**What the map does now.** Bound on the HD number and drawn at 346 ly, since an identifier is a stronger claim than a distance and the alternative is not to draw it at all. The build now checks every stated distance against the star it binds to and fails on a mismatch; this is the one case named as a known conflict, so the check stays live everywhere else.
 
 **What would settle it.** Whether the article says 35 ly, 350 ly, or something else again.
 
