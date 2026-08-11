@@ -167,7 +167,7 @@ export class Viewer {
   readonly scene: THREE.Scene;
   readonly camera: THREE.PerspectiveCamera;
   readonly renderer: THREE.WebGLRenderer;
-  readonly controls: OrbitControls;
+  controls: OrbitControls;
   readonly trackball: TrackballControls;
 
   private mode: ControlMode = 'orbit';
@@ -192,26 +192,14 @@ export class Viewer {
     this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
     this.camera = new THREE.PerspectiveCamera(60, 1, 0.01, 1e6);
-    // Galactic north is up. Not cosmetic: OrbitControls treats the camera's up
-    // vector as the pole it orbits about, so with the default +y the map's own
-    // z axis was just some direction, and an edge-on view — where the viewing
-    // direction lies along +y — was degenerate. With +z as the pole, orbiting
-    // means changing galactic latitude and longitude, which is what the
-    // viewpoint presets are expressed in.
+    // Up comes from the viewpoint rather than being a constant of the map. It is
+    // the axis a horizontal drag turns about as well as the direction that ends
+    // up pointing up on screen, and those are only the same thing when it lies
+    // across the line of sight — see `viewpointUp`.
     this.camera.up.copy(viewpointUp('top'));
     this.camera.position.copy(viewpointPosition('top', DEFAULT_RANGE));
 
-    this.controls = new OrbitControls(this.camera, canvas);
-    this.controls.target.set(0, 0, 0);
-    this.controls.enableDamping = true;
-    this.controls.dampingFactor = 0.08;
-    this.controls.rotateSpeed = 0.55;
-    this.controls.zoomSpeed = 1.1;
-    this.controls.minDistance = MIN_TARGET_DISTANCE;
-    this.controls.maxDistance = MAX_TARGET_DISTANCE;
-    // Panning must move in world space, not screen space, or it drifts off the
-    // galactic plane in a way that is disorienting at large scales.
-    this.controls.screenSpacePanning = true;
+    this.controls = this.makeOrbitControls();
 
     this.trackball = new TrackballControls(this.camera, canvas);
     this.trackball.target.set(0, 0, 0);
@@ -225,6 +213,49 @@ export class Viewer {
 
     this.handleResize();
     window.addEventListener('resize', this.handleResize);
+  }
+
+  /**
+   * A fresh OrbitControls, reading the camera's *current* up vector.
+   *
+   * It has to be built rather than adjusted. OrbitControls converts `object.up`
+   * into an internal quaternion once, in its constructor, and `update` never
+   * looks at `object.up` again — so assigning `camera.up` afterwards changes
+   * only what `lookAt` does to the rendered image, while the control goes on
+   * turning about the axis it was born with. That split is worse than either
+   * axis alone: with the pole left at spinward and the image drawn north-up,
+   * a horizontal drag at the core view swept the camera through the x-z plane,
+   * which reads on screen as tilting up and down.
+   *
+   * Rebuilding uses only public API, where reaching into the private quaternion
+   * would work until three.js renamed it. Viewpoint changes come from button
+   * presses, so the cost is nothing.
+   */
+  private makeOrbitControls(): OrbitControls {
+    const controls = new OrbitControls(this.camera, this.canvas);
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.08;
+    controls.rotateSpeed = 0.55;
+    controls.zoomSpeed = 1.1;
+    controls.minDistance = MIN_TARGET_DISTANCE;
+    controls.maxDistance = MAX_TARGET_DISTANCE;
+    // Panning must move in world space, not screen space, or it drifts off the
+    // galactic plane in a way that is disorienting at large scales.
+    controls.screenSpacePanning = true;
+    return controls;
+  }
+
+  /** Rebuild the orbit control so its pole follows a changed `camera.up`. */
+  private resyncOrbitPole(): void {
+    const previous = this.controls;
+    const target = previous.target.clone();
+    const enabled = previous.enabled;
+    previous.dispose();
+
+    this.controls = this.makeOrbitControls();
+    this.controls.target.copy(target);
+    this.controls.enabled = enabled;
+    this.controls.update();
   }
 
   /**
@@ -250,10 +281,11 @@ export class Viewer {
     // trackball so its drag basis does not collapse. The camera's own screen-up
     // satisfies both and preserves the orientation already showing.
     alignUpToScreen(this.camera);
+    if (mode === 'orbit') this.resyncOrbitPole();
 
-    from.enabled = false;
-    to.enabled = true;
-    to.update();
+    this.trackball.enabled = mode === 'trackball';
+    this.controls.enabled = mode === 'orbit';
+    this.active.update();
   }
 
   get controlMode(): ControlMode {
@@ -282,7 +314,10 @@ export class Viewer {
       .copy(controls.target)
       .add(viewpointPosition(name, range || DEFAULT_RANGE));
     this.camera.lookAt(controls.target);
-    controls.update();
+    // The control's pole is fixed at construction, so a changed up only reaches
+    // it through a rebuild.
+    if (this.mode === 'orbit') this.resyncOrbitPole();
+    else controls.update();
   }
 
   /** Distance from the camera to whatever it is orbiting. */
