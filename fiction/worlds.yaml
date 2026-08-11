@@ -30,6 +30,14 @@
 # distinctions that collapsing to those two would throw away. `affiliation` is
 # always the *present* holder, at 10600-odd AT, whatever the events say happened
 # on the way there.
+#
+# `note` is shown to whoever clicks the object, so it is for facts about the
+# place and about the evidence for it: which source, why this position and not
+# another, where two sources disagree. It is not the place for anything about
+# how this project happens to work — what our resolver used to get wrong, what
+# a file is called, which entry comes next in this file. That belongs in a code
+# comment, a test, or questions.md, and in a note it merely spends the reader's
+# attention on us instead of on the setting.
 
 worlds:
   # ---- Caretaker Gods ----------------------------------------------------
@@ -58,9 +66,8 @@ worlds:
         note: Explorers entered the system.
     note: >-
       The add-on independently confirms the article: it places Cantor in Carina
-      at 2,736 ly against the article's Carina at 2,735 ly. Two sources agreeing
-      to four figures is worth recording, because the next entry down is a case
-      where they do not.
+      at 2,736 ly against the article's Carina at 2,735 ly — two sources
+      agreeing to four figures.
 
   - name: Corambytia Protectorate
     kind: volume
@@ -381,9 +388,8 @@ worlds:
       A moon of the gas giant Def8. Bound on the HD number, which is
       unambiguous, but the distance does not fit: HD 6235 is at 346 ly and the
       figure recorded with this world is 35 ly, a factor of ten apart. Every
-      other Communion world in Sculptor sits between 300 and 400 ly, so 346 is
-      the plausible one — but the discrepancy is unresolved and listed in
-      questions.md rather than quietly rounded away.
+      other Communion world in Sculptor sits between 300 and 400 ly. The
+      discrepancy is unresolved.
 
   - name: Nengs
     kind: planet
@@ -555,8 +561,7 @@ worlds:
         kind: settled
     note: >-
       18 Scorpii, and the catalogue agrees with the article to two decimals at
-      46.11 ly. Held by four meta-empires at once, which is the most of any
-      place recorded here.
+      46.11 ly. Held by four meta-empires at once.
 
   - name: Arcturus
     kind: system
@@ -568,10 +573,7 @@ worlds:
     events:
       - year_at: 1427
         kind: settled
-    note: >-
-      Alpha Bootis, 37 ly. The colony table has it, and until the resolver
-      learned to fold accents it could not match the table's "Alpha Boötis"
-      against an ASCII genitive.
+    note: Alpha Boötis, 37 ly. Also in the Inner Sphere colony table.
 
   - name: Fata Morgana
     kind: planet
@@ -780,9 +782,9 @@ worlds:
         precision: between
         note: Colonised somewhere in this six-hundred-year window.
     note: >-
-      87 ly. Bound by Hipparcos number: Mu Capricorni is HD 207958, and HD
-      206453 — which sits nearby in the numbering — is Kappa Capricorni, a
-      different star three times further away.
+      HIP 108036, HD 207958, 87 ly. The source names only the Bayer letter, and
+      Capricornus also has a Kappa at 305 ly, so the entry is pinned to a
+      catalogue number rather than left to a name lookup.
 
   - name: Uppalavanna Complex
     kind: megastructure
