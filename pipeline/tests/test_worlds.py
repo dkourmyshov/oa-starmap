@@ -8,6 +8,8 @@ landed in, so the check has to be made here.
 
 from __future__ import annotations
 
+from pathlib import Path
+
 import astropy.units as u
 import numpy as np
 import pytest
@@ -513,3 +515,89 @@ def test_a_known_distance_conflict_is_named_rather_than_silenced() -> None:
     assert conflicting == ["Third Def8"], (
         "a new acknowledged conflict needs an entry in questions.md alongside it"
     )
+
+
+def test_a_bare_catalogue_number_is_refused() -> None:
+    """The guard against the failure that produced Oikoumene.
+
+    Catalogue numbers are a dense, unstructured identifier space: almost any six
+    digits in range name a real star, so a wrong one resolves cleanly and draws
+    an ordinary dot. HD 175869 was invented, landed on 64 Serpentis, and its
+    resolving was taken as evidence it was right. A number therefore needs
+    something with independent content beside it.
+    """
+    from pydantic import ValidationError
+
+    from oastarmap.fiction.schema import WorldLocation
+
+    with pytest.raises(ValidationError, match="a catalogue number needs"):
+        WorldLocation(hd=175869)
+    with pytest.raises(ValidationError, match="a catalogue number needs"):
+        WorldLocation(hip=93051)
+
+    # Each of the three supports is enough on its own.
+    assert WorldLocation(hd=164259, star="Zeta Serpentis").method == "star"
+    assert WorldLocation(hd=164259, distance="75.7 ly").method == "star"
+    assert WorldLocation(hd=164259, catalogue_from_source=True).method == "star"
+
+
+def test_every_star_binding_is_supported() -> None:
+    """No entry may rest on a number alone, now or later."""
+    unsupported = [
+        world.name
+        for world in WorldFile.load(FICTION_DIR / "worlds.yaml").worlds
+        if (world.location.hip is not None or world.location.hd is not None)
+        and not (
+            world.location.star
+            or world.location.distance
+            or world.location.catalogue_from_source
+        )
+    ]
+    assert unsupported == [], f"catalogue numbers with nothing to check them: {unsupported}"
+
+
+def test_a_name_and_a_number_must_agree() -> None:
+    """Giving both is allowed and is the strongest form — if they match."""
+    from oastarmap.build.worlds import build_worlds
+
+    source = FICTION_DIR / "worlds.yaml"
+    broken = source.read_text(encoding="utf-8") + (
+        "\n  - name: Disagreeing Pair Test\n"
+        "    kind: planet\n"
+        "    affiliations: []\n"
+        "    location:\n"
+        "      star: Zeta Serpentis\n"
+        "      distance: 1019 ly\n"
+    )
+    scratch = source.with_name("worlds.pair.yaml")
+    scratch.write_text(broken, encoding="utf-8")
+    try:
+        with pytest.raises(ValueError, match="it is a different star"):
+            build_worlds(scratch)
+    finally:
+        scratch.unlink()
+
+
+def test_a_missing_constellation_table_is_an_error_not_a_silent_gap() -> None:
+    """Without one, every Bayer and Flamsteed name fails to resolve.
+
+    The build accepted an empty table and carried on, leaving twenty worlds
+    unbound in a run that otherwise looked healthy. A resolver that can resolve
+    nothing must say so rather than report each name as merely unmatched.
+    """
+    import shutil
+    import tempfile
+
+    from oastarmap.build.worlds import build_worlds
+    from oastarmap.paths import DATA_OUT_DIR
+
+    if not (DATA_OUT_DIR / "stars.names.json").exists():
+        pytest.skip("dataset not built")
+
+    with tempfile.TemporaryDirectory() as tmp:
+        empty = Path(tmp)
+        for name in ("stars.names.json", "stars.ids.bin", "stars.con.bin", "stars.bin"):
+            shutil.copy(DATA_OUT_DIR / name, empty / name)
+        # No manifest.json, and no values passed.
+        with pytest.raises(ValueError, match="no constellation table"):
+            build_worlds(FICTION_DIR / "worlds.yaml", out_dir=empty)

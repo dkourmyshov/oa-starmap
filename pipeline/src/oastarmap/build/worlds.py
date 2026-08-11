@@ -128,7 +128,7 @@ def _certain_by(event: dict[str, Any]) -> int:
 
 def _load_star_lookup(
     out_dir: Path,
-    constellation_values: list[str],
+    constellation_values: list[str] | None,
 ) -> tuple[StarResolver, dict[int, int], dict[int, int]]:
     """Rebuild the name resolver from the published star dataset.
 
@@ -141,6 +141,22 @@ def _load_star_lookup(
     star_names = json.loads((out_dir / "stars.names.json").read_text(encoding="utf-8"))
     ids = np.fromfile(out_dir / "stars.ids.bin", dtype="<i4").reshape(-1, 2)
     constellation_bytes = np.fromfile(out_dir / "stars.con.bin", dtype=np.uint8)
+
+    if not constellation_values:
+        # Fall back to the published manifest. Without a constellation table the
+        # resolver cannot index Bayer or Flamsteed designations at all, so every
+        # star named that way silently fails to resolve — twenty of them, in a
+        # build that otherwise looks healthy. Better to read a possibly-stale
+        # table than to quietly resolve nothing, and better still to say so if
+        # there is none.
+        manifest = out_dir / "manifest.json"
+        if not manifest.exists():
+            raise ValueError(
+                "no constellation table: pass constellation_values, or build the "
+                "star dataset first so the manifest carries one"
+            )
+        payload = json.loads(manifest.read_text(encoding="utf-8"))
+        constellation_values = payload["datasets"]["stars"]["layout"]["constellations"]["values"]
 
     values = constellation_values
     constellation_of = {
@@ -219,7 +235,7 @@ def build_worlds(
     out_dir = out_dir or DATA_OUT_DIR
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    resolver, by_hip, by_hd = _load_star_lookup(out_dir, constellation_values or [])
+    resolver, by_hip, by_hd = _load_star_lookup(out_dir, constellation_values)
     star_positions = np.fromfile(out_dir / "stars.bin", dtype="<f4").reshape(-1, 5)
 
     source = WorldFile.load(worlds_path)

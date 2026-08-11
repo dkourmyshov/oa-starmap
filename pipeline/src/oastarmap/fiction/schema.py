@@ -471,7 +471,31 @@ class WorldLocation(BaseModel):
     hip: int | None = None
     hd: int | None = None
     star: str = ""
-    """A real star, by Hipparcos number, HD number, or catalogue name."""
+    """A real star, by Hipparcos number, HD number, or catalogue name.
+
+    A bare number is not accepted on its own. Catalogue numbers are a dense,
+    unstructured identifier space — almost any six digits in range name a real
+    star — so a wrong one does not fail to resolve. It lands on a real star and
+    draws an ordinary dot, and nothing downstream can tell. Oikoumene spent a
+    batch at 1,019 ly because HD 175869 is 64 Serpentis and the system meant was
+    Zeta Serpentis at 75; the number had been invented rather than read from
+    anywhere, and its resolving was taken as evidence it was right.
+
+    So a number must be accompanied by something with independent content:
+    ``star`` (the name, which the resolver must agree with), ``distance`` (which
+    the build checks), or ``catalogue_from_source`` where the article itself
+    gives the number and there is nothing to cross-check it against. The
+    constellation is deliberately not enough — Zeta and 64 Serpentis are both in
+    Serpens, as are Mu and Kappa Capricorni in Capricornus.
+    """
+
+    catalogue_from_source: bool = False
+    """The source states this catalogue number itself, rather than a name.
+
+    The one honest case for a bare number: there is no name to resolve and no
+    distance given, so the number is the source's own claim and stands or falls
+    with it. Declaring it says the number was copied rather than produced.
+    """
 
     oa_star: str = ""
     """An entry of ``oa_stars.yaml``, by the add-on's own designation."""
@@ -537,6 +561,13 @@ class WorldLocation(BaseModel):
 
     @model_validator(mode="after")
     def _one_method(self) -> WorldLocation:
+        number = self.hip is not None or self.hd is not None
+        if number and not (self.star or self.distance or self.catalogue_from_source):
+            raise ValueError(
+                "a catalogue number needs a name, a distance, or "
+                "catalogue_from_source: a wrong number resolves to a real star"
+            )
+
         given = [
             bool(self.hip is not None or self.hd is not None or self.star),
             bool(self.oa_star),

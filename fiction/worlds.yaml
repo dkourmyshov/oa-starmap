@@ -124,7 +124,7 @@ worlds:
     affiliations: [caretaker-gods]
     article: https://www.orionsarm.com/eg-article/48f4a40a5df0a
     location:
-      hip: 99240
+      star: Delta Pavonis
     events:
       - year_at: 691
         kind: settled
@@ -143,6 +143,7 @@ worlds:
     article: https://www.orionsarm.com/eg-article/46478982497db
     location:
       hip: 9024
+      catalogue_from_source: true
     events:
       - year_at: 3780
         kind: stewardship
@@ -255,7 +256,7 @@ worlds:
     also: [Rachel]
     affiliations: [caretaker-gods]
     location:
-      hip: 24813
+      star: Lambda Aurigae
     events:
       - year_at: 1365
         kind: settled
@@ -280,6 +281,7 @@ worlds:
     article: https://www.orionsarm.com/eg-article/57f2790443640
     location:
       hd: 27836
+      catalogue_from_source: true
     events:
       - year_at: 2143
         kind: settled
@@ -450,6 +452,7 @@ worlds:
     article: https://www.orionsarm.com/eg-article/48f9ecc17d772
     location:
       hd: 222404
+      catalogue_from_source: true
     events:
       - year_at: 1420
         kind: settled
@@ -463,7 +466,7 @@ worlds:
     affiliations: [communion-of-worlds]
     article: https://www.orionsarm.com/eg-article/48f8b18aca613
     location:
-      hip: 32480
+      star: Psi 5 Aurigae
     events:
       - year_at: 2941
         kind: settled
@@ -521,7 +524,7 @@ worlds:
     affiliations: [communion-of-worlds]
     article: https://www.orionsarm.com/eg-article/48e664f348410
     location:
-      hip: 15330
+      star: Zeta1 Reticuli
     events:
       - year_at: 1758
         kind: settled
@@ -578,7 +581,7 @@ worlds:
     affiliations: [cyberian-network]
     article: https://www.orionsarm.com/eg-article/45f973105f71c
     location:
-      hip: 69673
+      star: Arcturus
     events:
       - year_at: 1427
         kind: settled
@@ -590,7 +593,7 @@ worlds:
     affiliations: [cyberian-network]
     article: https://www.orionsarm.com/eg-article/47b8e39c9718c
     location:
-      hd: 76644
+      star: Iota Ursae Majoris
     events:
       - year_at: 4496
         until_at: 4530
@@ -609,7 +612,7 @@ worlds:
     affiliations: [cyberian-network]
     article: https://www.orionsarm.com/eg-article/4910613da24b9
     location:
-      hd: 141004
+      star: Lambda Serpentis
     events:
       - year_at: 2103
         kind: visited
@@ -622,7 +625,7 @@ worlds:
     affiliations: [cyberian-network, nocozo]
     article: https://www.orionsarm.com/eg-article/4703bd683b72b
     location:
-      hip: 37279
+      star: Procyon
     events:
       - year_at: 500
         precision: circa
@@ -659,7 +662,7 @@ worlds:
     affiliations: [keter-dominion]
     article: https://www.orionsarm.com/eg-article/48ab38d970fc9
     location:
-      hd: 207098
+      star: Deneb Algedi
     note: >-
       Deneb Algedi, Delta Capricorni Aa, 38 ly. The colony table has the system
       as "Deneb Algedi / Ain Soph Aur" and gives the B component separately.
@@ -670,7 +673,7 @@ worlds:
     affiliations: [keter-dominion]
     article: https://www.orionsarm.com/eg-article/4609c7a409fbf
     location:
-      hd: 165341
+      star: 70 Ophiuchi
     events:
       - year_at: 1644
         kind: settled
@@ -682,7 +685,7 @@ worlds:
     affiliations: [keter-dominion]
     article: https://www.orionsarm.com/eg-article/4609c83fbc355
     location:
-      hd: 197692
+      star: Psi Capricorni
     events:
       - year_at: 2245
         kind: settled
@@ -697,7 +700,7 @@ worlds:
     affiliations: [keter-dominion]
     article: https://www.orionsarm.com/eg-article/46119315a3ccf
     location:
-      hd: 214749
+      star: Gliese 868
     note: Gliese 868, 43 ly. The name is both the planet's and the star's. No dates.
 
   - name: Ceres Mater
@@ -705,7 +708,7 @@ worlds:
     affiliations: [keter-dominion]
     article: https://www.orionsarm.com/eg-article/49add9c95f1e1
     location:
-      hd: 160032
+      star: Lambda Arae
     note: Lambda Arae, 68 ly. No dates.
 
   - name: Crustuse
@@ -723,7 +726,7 @@ worlds:
     affiliations: [keter-dominion]
     article: https://www.orionsarm.com/eg-article/5089d546a4b45
     location:
-      hd: 142445
+      star: 4 Scorpii
     events:
       - year_at: 2751
         kind: settled
@@ -735,6 +738,7 @@ worlds:
     article: https://www.orionsarm.com/eg-article/544795c89bbff
     location:
       hd: 181853
+      catalogue_from_source: true
     events:
       - year_at: 2609
         kind: settled
@@ -769,7 +773,7 @@ worlds:
     affiliations: [keter-dominion]
     article: https://www.orionsarm.com/eg-article/4b69110d20b68
     location:
-      hd: 170153
+      star: Chi Draconis
     events:
       - year_at: 4450
         kind: transferred
@@ -784,7 +788,7 @@ worlds:
     affiliations: [keter-dominion]
     article: https://www.orionsarm.com/eg-article/492312e04cd5e
     location:
-      hip: 108036
+      star: Mu Capricorni
     events:
       - year_at: 1500
         until_at: 2100
@@ -828,6 +832,7 @@ worlds:
     article: https://www.orionsarm.com/eg-article/464dd64b8b689
     location:
       hd: 177374
+      catalogue_from_source: true
     events:
       - year_at: 1800
         kind: settled
@@ -847,7 +852,7 @@ worlds:
     affiliations: [mutual-progress-association]
     article: https://www.orionsarm.com/eg-article/464ceaad61e78
     location:
-      hd: 167618
+      star: Eta Sagittarii
     events:
       - year_at: 1999
         kind: settled
@@ -858,7 +863,7 @@ worlds:
     affiliations: [mutual-progress-association]
     article: https://www.orionsarm.com/eg-article/4902dd900dbc5
     location:
-      hd: 144069
+      star: Xi Scorpii
     note: >-
       A cluster of megastructures at Xi Scorpii, 79 ly. Bound by HD number: the
       star has no Hipparcos entry.
@@ -883,7 +888,7 @@ worlds:
     affiliations: [mutual-progress-association]
     article: https://www.orionsarm.com/eg-article/5e9b5712e4df2
     location:
-      hd: 144217
+      star: Acrab
     note: >-
       Beta-1 Scorpii, 404 ly, a multiple star of components Aa, Ab and B. Cited
       as an example of a Blue Star Dyson.
@@ -894,6 +899,7 @@ worlds:
     article: https://www.orionsarm.com/eg-article/5e9b5712e4df2
     location:
       hip: 77858
+      catalogue_from_source: true
     note: >-
       The second Blue Star Dyson cited, in Scorpius at 448 ly. The setting gives
       it no name of its own, so it carries its catalogue designation.
@@ -928,7 +934,7 @@ worlds:
     affiliations: [mutual-progress-association]
     article: https://www.orionsarm.com/eg-article/4611a0308412d
     location:
-      hip: 12781
+      star: Gliese 109
     events:
       - year_at: 2069
         kind: settled
@@ -968,6 +974,7 @@ worlds:
     article: https://www.orionsarm.com/eg-article/564de72a02e9a
     location:
       hd: 154519
+      catalogue_from_source: true
     events:
       - year_at: 2702
         kind: settled
@@ -1005,7 +1012,7 @@ worlds:
     affiliations: [mutual-progress-association]
     article: https://www.orionsarm.com/eg-article/4667386bcae2b
     location:
-      hd: 86728
+      star: 20 Leonis Minoris
     events:
       - year_at: 1402
         kind: settled
@@ -1017,6 +1024,7 @@ worlds:
     article: https://www.orionsarm.com/eg-article/49142c044cba7
     location:
       hip: 86705
+      catalogue_from_source: true
     events:
       - year_at: 10580
         kind: abandoned
@@ -1032,6 +1040,7 @@ worlds:
     article: https://www.orionsarm.com/eg-article/46677b508686e
     location:
       hip: 94595
+      catalogue_from_source: true
     note: In Sagittarius at 92 ly. No dates.
 
   - name: The Karol Ring
@@ -1040,6 +1049,7 @@ worlds:
     article: https://www.orionsarm.com/eg-article/466f3c8e24df3
     location:
       hd: 144585
+      catalogue_from_source: true
     events:
       - year_at: 4650
         until_at: 5200
@@ -1070,6 +1080,7 @@ worlds:
     article: https://www.orionsarm.com/eg-article/4902eb14ca7bc
     location:
       hip: 93229
+      catalogue_from_source: true
     note: Erg is the primary. HIP 93229 is in Corona Australis at 280 ly.
 
   - name: Tar Vara
@@ -1079,6 +1090,7 @@ worlds:
     article: https://www.orionsarm.com/eg-article/4a0cbb76669a3
     location:
       hip: 93229
+      catalogue_from_source: true
     note: A habitat in the Medius system, and so on the same star.
 
   - name: Metropolis Ring City
@@ -1123,7 +1135,7 @@ worlds:
     affiliations: [mutual-progress-association]
     article: https://www.orionsarm.com/eg-article/58126824e1ea1
     location:
-      hd: 16895
+      star: Theta Persei
     events:
       - year_at: 4482
         kind: settled
@@ -1196,7 +1208,7 @@ worlds:
     affiliations: [mutual-progress-association]
     article: https://www.orionsarm.com/eg-article/48f7a625349a5
     location:
-      hd: 142373
+      star: Chi Herculis
     events:
       - year_at: 1383
         kind: settled
@@ -1208,7 +1220,7 @@ worlds:
     affiliations: [mutual-progress-association]
     article: https://www.orionsarm.com/eg-article/4911ce8f43ea3
     location:
-      hd: 209750
+      star: Alpha Aquarii
     events:
       - year_at: 4101
         kind: settled
