@@ -30,6 +30,8 @@ const VERTEX_SHADER = /* glsl */ `
 
   attribute float aRadius;
   attribute vec3 aColor;
+  attribute vec3 aColorB;
+  attribute float aShared;
   attribute float aAssigned;
 
   uniform float uViewportHeight;
@@ -39,6 +41,8 @@ const VERTEX_SHADER = /* glsl */ `
   uniform float uOnlyOA;
 
   varying vec3 vColor;
+  varying vec3 vColorB;
+  varying float vShared;
   varying float vFade;
   varying float vSize;
   varying float vGain;
@@ -60,6 +64,8 @@ const VERTEX_SHADER = /* glsl */ `
     vSize = gl_PointSize;
 
     vColor = aColor;
+    vColorB = aColorB;
+    vShared = aShared;
 
     // Clusters carrying an Orion's Arm association are the ones being navigated
     // by, so the other ~7000 recede rather than competing with them.
@@ -86,6 +92,8 @@ const FRAGMENT_SHADER = /* glsl */ `
   varying float vFade;
   varying float vSize;
   varying float vGain;
+  varying vec3 vColorB;
+  varying float vShared;
 
   void main() {
     vec2 offset = gl_PointCoord * 2.0 - 1.0;
@@ -108,9 +116,18 @@ const FRAGMENT_SHADER = /* glsl */ `
     float alpha = (ring + interior) * uOpacity * vFade * vGain;
     if (alpha < 0.004) discard;
 
+    // A cluster two polities both claim is drawn half in each colour. Blanco 1
+    // is the Communion of Worlds in its own article and the Non-Coercive Zone
+    // on the political maps, and a single colour would have to pick one.
+    vec3 color = vColor;
+    if (vShared > 0.5) {
+      float turn = fract(0.25 - atan(offset.y, offset.x) / (2.0 * PI));
+      color = turn < 0.5 ? vColor : vColorB;
+    }
+
     #include <logdepthbuf_fragment>
 
-    gl_FragColor = vec4(vColor, alpha);
+    gl_FragColor = vec4(color, alpha);
   }
 `;
 
@@ -135,8 +152,10 @@ export class ClusterField {
     const positions = new Float32Array(data.count * 3);
     const radii = new Float32Array(data.count);
     const colors = new Float32Array(data.count * 3);
+    const secondColors = new Float32Array(data.count * 3);
     const typeColors = new Float32Array(data.count * 3);
     const assigned = new Float32Array(data.count);
+    const shared = new Float32Array(data.count);
 
     for (let i = 0; i < data.count; i++) {
       const src = i * 8;
@@ -157,6 +176,17 @@ export class ClusterField {
       colors[i * 3] = chosen.r;
       colors[i * 3 + 1] = chosen.g;
       colors[i * 3 + 2] = chosen.b;
+
+      // The second holder, where there is one. Only two are shown: a cluster
+      // ring is a thin outline and cutting it finer than halves stops reading
+      // as anything. Nothing recorded has three.
+      const holders = fiction?.sharedPolities?.get(`cluster:${i}`);
+      const second = holders && holders.length > 1 ? polityColors[holders[1]] : undefined;
+      shared[i] = second ? 1 : 0;
+      const other = second ?? chosen;
+      secondColors[i * 3] = other.r;
+      secondColors[i * 3 + 1] = other.g;
+      secondColors[i * 3 + 2] = other.b;
     }
 
     this.typeColors = typeColors;
@@ -166,6 +196,8 @@ export class ClusterField {
     geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
     geometry.setAttribute('aRadius', new THREE.BufferAttribute(radii, 1));
     geometry.setAttribute('aColor', new THREE.BufferAttribute(colors, 3));
+    geometry.setAttribute('aColorB', new THREE.BufferAttribute(secondColors, 3));
+    geometry.setAttribute('aShared', new THREE.BufferAttribute(shared, 1));
     geometry.setAttribute('aAssigned', new THREE.BufferAttribute(assigned, 1));
     geometry.boundingSphere = new THREE.Sphere(new THREE.Vector3(), Infinity);
     this.colorAttribute = geometry.getAttribute('aColor') as THREE.BufferAttribute;

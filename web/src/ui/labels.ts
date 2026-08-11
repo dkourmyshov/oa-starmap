@@ -22,6 +22,7 @@ import {
   KIND_STAR,
   KIND_WORLD,
   type LayerVisibility,
+  type NameMode,
   type ObjectIndex,
 } from '../scene/objects';
 
@@ -48,6 +49,9 @@ export class LabelOverlay {
 
   /** The selected object, labelled whatever the declutter pass decides. */
   selected: number | null = null;
+
+  /** Which of an object's names to show. */
+  nameMode: NameMode = 'oa';
 
   constructor(
     parent: HTMLElement,
@@ -88,6 +92,7 @@ export class LabelOverlay {
       maxLabels: this.maxLabels,
       visible: visibleLayers,
       pinned: this.selected,
+      nameMode: this.nameMode,
     });
 
     for (let i = 0; i < placed.length; i++) {

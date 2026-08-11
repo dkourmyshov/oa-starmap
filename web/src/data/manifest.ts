@@ -381,9 +381,27 @@ export interface FictionBinding {
   beyond_frontier: boolean;
 }
 
+/** An Orion's Arm name for a real catalogued object. */
+export interface LandmarkName {
+  kind: string;
+  index: number;
+  catalogue: string;
+  name: string;
+  article: string;
+  note: string;
+}
+
 export interface FictionData {
   polities: PolityInfo[];
   bindings: FictionBinding[];
+  /** OA names for real objects, keyed "kind:index". */
+  landmarkNames: Map<string, LandmarkName>;
+  /**
+   * Every polity index holding an object, for the few objects more than one
+   * holds. Keyed "kind:index"; absent means the single-holder byte array
+   * already has the answer.
+   */
+  sharedPolities: Map<string, number[]>;
   sources: Record<string, FictionSource>;
   notes: Record<string, string>;
   /** One byte per cluster; 0 = unassigned, else a 1-based polity index. */
@@ -600,14 +618,29 @@ async function loadFiction(dataset: FictionDataset): Promise<FictionData> {
       bindings: FictionBinding[];
       sources: Record<string, FictionSource>;
       notes: Record<string, string>;
+      landmark_names?: LandmarkName[];
+      shared_polities?: Record<string, Record<string, number[]>>;
     }>(dataset.files.bindings.file),
     fetchBinary(dataset.files.cluster_polity.file),
     hiiPolityFile ? fetchBinary(hiiPolityFile) : Promise.resolve(null),
   ]);
 
+  const landmarkNames = new Map<string, LandmarkName>();
+  for (const entry of payload.landmark_names ?? []) {
+    landmarkNames.set(`${entry.kind}:${entry.index}`, entry);
+  }
+  const sharedPolities = new Map<string, number[]>();
+  for (const [kind, byIndex] of Object.entries(payload.shared_polities ?? {})) {
+    for (const [index, polities] of Object.entries(byIndex)) {
+      sharedPolities.set(`${kind}:${index}`, polities);
+    }
+  }
+
   return {
     polities: payload.polities,
     bindings: payload.bindings,
+    landmarkNames,
+    sharedPolities,
     sources: payload.sources ?? {},
     notes: payload.notes,
     clusterPolity: new Uint8Array(polityBuf),

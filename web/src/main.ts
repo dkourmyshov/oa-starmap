@@ -320,6 +320,9 @@ async function main(): Promise<void> {
       onLabelDensity: (value) => {
         labels.maxLabels = value;
       },
+      onNameMode: (mode) => {
+        labels.nameMode = mode;
+      },
       onPolityMode: (enabled) => {
         clusterField?.setPolityMode(enabled);
         hiiField?.setPolityMode(enabled);

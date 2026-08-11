@@ -1,0 +1,21 @@
+# What Orion's Arm calls real objects it has renamed.
+#
+# A cluster or nebula is on the map under its catalogue designation, because
+# that is what the astronomical data calls it and that is how a binding is
+# matched. Where the setting gives the same object a name of its own, this file
+# records it — otherwise "Blenke Cluster" appears nowhere and the article about
+# it has nothing to hang on.
+#
+# `catalogue` is resolved exactly as a polity landmark is, through the same
+# alias table, so it can be written the way a person would write it.
+#
+# This is the fictional half of a pair of names, never a replacement: the map's
+# name switch shows either, or both. A real object keeps its real designation.
+
+landmarks:
+  - catalogue: Blanco 1
+    name: Blenke Cluster
+    article: https://www.orionsarm.com/eg-article/460e7b5d61e04
+    note: >-
+      Held by the Communion of Worlds in its own article and by the Non-Coercive
+      Zone on the political maps. Both are recorded; see questions.md.

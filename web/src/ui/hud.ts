@@ -16,6 +16,7 @@ import type {
 import { DEFAULT_OPACITY as DEFAULT_CLUSTER_OPACITY } from '../layers/clusterField';
 import { DEFAULT_OPACITY as DEFAULT_HII_OPACITY } from '../layers/hiiField';
 import { DEFAULT_MAX_LABELS } from './labels';
+import type { NameMode } from '../scene/objects';
 import { type Viewpoint, VIEWPOINTS } from '../scene/viewer';
 import { type DistanceUnit, DEFAULT_UNIT, type Parsecs, formatDistance } from '../units';
 
@@ -31,6 +32,7 @@ export interface HudCallbacks {
   onOnlyOA(enabled: boolean): void;
   onLabelsVisible(value: boolean): void;
   onLabelDensity(value: number): void;
+  onNameMode(mode: NameMode): void;
   onPolityMode(enabled: boolean): void;
   onFocusPolity(polityId: string): void;
   onJump(target: JumpTarget): void;
@@ -189,6 +191,32 @@ export class Hud {
         return v === 0 ? 'off' : `${v}`;
       }),
     );
+
+    // Which of an object's two names to show. Lambda Aurigae is New Gaia and
+    // Blanco 1 is the Blenke Cluster; neither name is the true one, and which
+    // is wanted depends on whether the reader is checking the map against the
+    // sky or reading the setting.
+    const nameRow = el('div', 'row');
+    nameRow.appendChild(el('span', 'label', 'Names'));
+    const nameGroup = el('div', 'toggle-group');
+    const modes: { id: NameMode; label: string; title: string }[] = [
+      { id: 'oa', label: "OA", title: "Orion's Arm names, falling back to the catalogue" },
+      { id: 'real', label: 'real', title: 'Catalogue names, falling back to the setting' },
+      { id: 'both', label: 'both', title: "Orion's Arm name with the catalogue name after it" },
+    ];
+    for (const mode of modes) {
+      const button = el('button', 'toggle', mode.label);
+      button.title = mode.title;
+      if (mode.id === 'oa') button.classList.add('active');
+      button.addEventListener('click', () => {
+        for (const other of nameGroup.children) other.classList.remove('active');
+        button.classList.add('active');
+        this.callbacks.onNameMode(mode.id);
+      });
+      nameGroup.appendChild(button);
+    }
+    nameRow.appendChild(nameGroup);
+    panel.appendChild(nameRow);
 
     if (clusters) {
       panel.appendChild(

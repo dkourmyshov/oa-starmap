@@ -109,7 +109,7 @@ Thirteen of the fifteen worlds recorded so far carry dates, spanning 621 to 9920
 
 Blanco 1, 850 ly away in Sculptor, is named the Blenke Cluster in an article that places it in the Communion of Worlds. The political maps of the Middle Regions at 8000 A.T. put it inside the Non-Coercive Zone. The article is the more detailed source and would normally win, but the two need not be exclusive: meta-empires interpenetrate, and a cluster 850 ly across can hold presences from both without either source being wrong.
 
-**What the map does now.** Records both. Blanco 1 is a landmark of the Communion and of the NoCoZo, and the map draws it as shared. Note that the cluster carries no Orion's Arm name or article on the map itself — landmarks are matched by catalogue name and there is nowhere yet to hang "Blenke Cluster" or its URL.
+**What the map does now.** Records both, and now draws both: the cluster ring is halved between the two colours rather than picking one. The Orion's Arm name and article are on it too — it labels as the Blenke Cluster, or as Blanco 1, or as both, depending on the name switch.
 
 **What would settle it.** Whether the Communion's presence supersedes the NoCoZo's, or the two genuinely overlap there.
 

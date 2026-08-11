@@ -723,3 +723,47 @@ class QuestionFile(BaseModel):
         if not isinstance(raw, dict):
             raise ValueError(f"{path} must contain a mapping at the top level")
         return cls.model_validate(raw)
+
+
+class Landmark(BaseModel):
+    """An Orion's Arm name for a real catalogued object."""
+
+    catalogue: str
+    """The designation the astronomical data uses, resolved through the aliases."""
+
+    name: str
+    """What the setting calls it."""
+
+    article: str = ""
+    note: str = ""
+
+    @field_validator("article")
+    @classmethod
+    def _http(cls, value: str) -> str:
+        if value and not value.startswith(("http://", "https://")):
+            raise ValueError(f"article must be an absolute URL, got {value!r}")
+        return value
+
+
+class LandmarkFile(BaseModel):
+    """The top level of ``fiction/landmarks.yaml``."""
+
+    landmarks: list[Landmark] = Field(default_factory=list)
+
+    @model_validator(mode="after")
+    def _unique(self) -> LandmarkFile:
+        seen: set[str] = set()
+        for landmark in self.landmarks:
+            if landmark.catalogue in seen:
+                raise ValueError(f"duplicate landmark name for {landmark.catalogue!r}")
+            seen.add(landmark.catalogue)
+        return self
+
+    @classmethod
+    def load(cls, path: Path) -> LandmarkFile:
+        if not path.exists():
+            return cls()
+        raw: Any = yaml.safe_load(path.read_text(encoding="utf-8"))
+        if not isinstance(raw, dict):
+            raise ValueError(f"{path} must contain a mapping at the top level")
+        return cls.model_validate(raw)

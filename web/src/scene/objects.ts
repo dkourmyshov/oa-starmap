@@ -139,6 +139,33 @@ export function systemLabel(worlds: { name: string; system: string }[]): string 
   return `${worlds[0].name} +${worlds.length - 1}`;
 }
 
+/**
+ * Which of an object's two names to show.
+ *
+ * Many things on this map have both: a catalogue designation that an astronomer
+ * would recognise, and a name Orion's Arm gave the same object. Lambda Aurigae
+ * is New Gaia; Blanco 1 is the Blenke Cluster. Neither name is the true one, and
+ * which is wanted depends on what the reader is doing — checking the map against
+ * the sky, or reading the setting.
+ */
+export type NameMode = 'oa' | 'real' | 'both';
+
+/**
+ * Compose a label from whichever names an object has.
+ *
+ * `both` puts the setting's name first and the catalogue's in parentheses,
+ * because a reader who wanted the catalogue name alone would have chosen it.
+ * Where only one exists, every mode shows that one — an empty label helps
+ * nobody, and a mode is a preference rather than a filter.
+ */
+export function composeLabel(oa: string, real: string, mode: NameMode): string {
+  if (!oa) return real;
+  if (!real) return oa;
+  if (mode === 'oa') return oa;
+  if (mode === 'real') return real;
+  return `${oa} (${real})`;
+}
+
 export interface ObjectRef {
   kind: number;
   index: number;
@@ -175,6 +202,8 @@ export interface LayoutOptions {
   magnitudeLimit: number;
   maxLabels: number;
   visible: LayerVisibility;
+  /** Which of an object's names to show. Defaults to the setting's. */
+  nameMode?: NameMode;
   /**
    * An object to label whatever the declutter pass decides.
    *
@@ -260,7 +289,16 @@ export class ObjectIndex {
   private readonly kind: Uint8Array;
   private readonly srcIndex: Int32Array;
   private readonly importance: Float32Array;
+  /**
+   * The name the setting gives an object, and the name the catalogue gives it.
+   *
+   * Kept apart rather than resolved once at build time, because the choice
+   * between them is the reader's and can change every frame. `labels` holds
+   * whichever is shown when only one exists, so the label-bearing test stays a
+   * single lookup.
+   */
   private readonly labels: (string | undefined)[];
+  private readonly labelsReal: (string | undefined)[];
   /** 1 where the object carries Orion's Arm content of any kind. */
   private readonly isOA: Uint8Array;
   /** 1 where the position comes from the fiction rather than a measurement. */
@@ -318,6 +356,7 @@ export class ObjectIndex {
     this.srcIndex = new Int32Array(total);
     this.importance = new Float32Array(total);
     this.labels = new Array(total);
+    this.labelsReal = new Array(total);
     this.isOA = new Uint8Array(total);
     this.assertedPosition = new Uint8Array(total);
     this.floored = new Uint8Array(total);
@@ -378,23 +417,36 @@ export class ObjectIndex {
         );
       }
 
+      // The catalogue's name is worked out whether or not the setting has one
+      // for this star, because the reader can ask for either. Previously it was
+      // computed only as a fallback, so switching to catalogue names would have
+      // left every settled system blank.
       const names = stars.names[String(i)];
-      if (names && !this.labels[at]) {
+      let catalogue = '';
+      let catalogueWeight = 0;
+      if (names) {
         const constellation = constellations[stars.constellation[i]] ?? '';
         if (names.proper) {
-          this.labels[at] = names.proper;
-          this.importance[at] = BASE_IMPORTANCE.starProper;
+          catalogue = names.proper;
+          catalogueWeight = BASE_IMPORTANCE.starProper;
         } else if (names.bayer) {
-          this.labels[at] = bayerLabel(names.bayer, constellation);
-          this.importance[at] = BASE_IMPORTANCE.starBayer;
+          catalogue = bayerLabel(names.bayer, constellation);
+          catalogueWeight = BASE_IMPORTANCE.starBayer;
         } else if (names.flam) {
           // Flamsteed number, which is likewise meaningless without one.
-          this.labels[at] = constellation ? `${names.flam} ${constellation}` : names.flam;
-          this.importance[at] = BASE_IMPORTANCE.starDesignation;
+          catalogue = constellation ? `${names.flam} ${constellation}` : names.flam;
+          catalogueWeight = BASE_IMPORTANCE.starDesignation;
         } else if (names.gl) {
-          this.labels[at] = names.gl;
-          this.importance[at] = BASE_IMPORTANCE.starDesignation;
+          catalogue = names.gl;
+          catalogueWeight = BASE_IMPORTANCE.starDesignation;
         }
+      }
+      if (this.labels[at]) {
+        // Both names exist and differ, so the reader can be shown either.
+        if (catalogue && catalogue !== this.labels[at]) this.labelsReal[at] = catalogue;
+      } else if (catalogue) {
+        this.labels[at] = catalogue;
+        this.importance[at] = catalogueWeight;
       }
       if (polityByKind.star.has(i)) {
         // A star named on the political maps. The bonus lifts it clear of the
@@ -423,8 +475,12 @@ export class ObjectIndex {
         this.kind[at] = KIND_CLUSTER;
         this.srcIndex[at] = i;
 
-        const name = clusters.names[i]?.name ?? '';
-        this.labels[at] = name.replace(/_/g, ' ');
+        const name = (clusters.names[i]?.name ?? '').replace(/_/g, ' ');
+        // Blanco 1 is the Blenke Cluster. Where the setting has renamed a real
+        // object, its name leads and the designation stays available.
+        const renamed = fiction?.landmarkNames?.get(`cluster:${i}`);
+        this.labels[at] = renamed?.name || name;
+        if (renamed?.name) this.labelsReal[at] = name;
         this.importance[at] = SURVEY_PREFIX.test(name)
           ? BASE_IMPORTANCE.clusterSurvey
           : BASE_IMPORTANCE.clusterClassical;
@@ -448,7 +504,10 @@ export class ObjectIndex {
         this.absMag[at] = NaN;
         this.kind[at] = KIND_HII;
         this.srcIndex[at] = i;
-        this.labels[at] = hii.names[i]?.name ?? '';
+        const hiiName = hii.names[i]?.name ?? '';
+        const renamedHii = fiction?.landmarkNames?.get(`hii:${i}`);
+        this.labels[at] = renamedHii?.name || hiiName;
+        if (renamedHii?.name) this.labelsReal[at] = hiiName;
         this.importance[at] = BASE_IMPORTANCE.hii;
         if (polityByKind.hii.has(i)) {
           this.importance[at] += POLITY_BONUS;
@@ -481,6 +540,9 @@ export class ObjectIndex {
         const bound = entry ? worlds?.byOAStar.get(entry.name) : undefined;
         this.labels[at] =
           (bound?.length ? systemLabel(bound) : '') || entry?.label || entry?.name || '';
+        // For the handful that are real objects the add-on carries, the
+        // catalogue designation is the other half of the pair.
+        if (entry?.real && entry.real !== this.labels[at]) this.labelsReal[at] = entry.real;
         // Anything but a bare JD/YTS number counts as named: a designation the
         // add-on chose (Cantor), a system its comment gives, or curation we
         // added. Only the unadorned catalogue numbers rank low.
@@ -746,6 +808,10 @@ export class ObjectIndex {
     // cannot promote a less important label above a more important one.
     candidates.sort((a, b) => b.priority - a.priority || a.tiebreak - b.tiebreak);
 
+    const mode = options.nameMode ?? 'oa';
+    const textFor = (id: number): string =>
+      composeLabel(this.labels[id] ?? '', this.labelsReal[id] ?? '', mode);
+
     const placed: PlacedLabel[] = [];
     const boxes: number[][] = [];
 
@@ -755,7 +821,7 @@ export class ObjectIndex {
     // loses. It is skipped below so it cannot be placed twice.
     const pinned = options.pinned ?? null;
     if (pinned !== null && this.onScreen[pinned] && this.labels[pinned]) {
-      const text = this.labels[pinned] as string;
+      const text = textFor(pinned);
       const halfWidth = (text.length * CHAR_WIDTH) / 2;
       const cx = this.screenX[pinned];
       const cy = this.screenY[pinned] - LABEL_OFFSET - LABEL_HEIGHT / 2;
@@ -776,7 +842,7 @@ export class ObjectIndex {
       if (candidate.id === pinned) continue;
       if (placed.length >= options.maxLabels) break;
       const id = candidate.id;
-      const text = this.labels[id] as string;
+      const text = textFor(id);
 
       const halfWidth = (text.length * CHAR_WIDTH) / 2;
       const cx = this.screenX[id];

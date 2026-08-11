@@ -22,7 +22,7 @@ import numpy as np
 
 from oastarmap.build.writer import write_array, write_json
 from oastarmap.fiction.resolve import Binding, ResolutionReport, Resolver
-from oastarmap.fiction.schema import AliasFile, FictionFile
+from oastarmap.fiction.schema import AliasFile, FictionFile, LandmarkFile
 from oastarmap.paths import DATA_OUT_DIR, FICTION_DIR
 from oastarmap.transform.frame import PC_TO_LY
 
@@ -287,6 +287,38 @@ def build_fiction(
             continue
         target[binding.index] = polity_index[binding.polities[0]]
 
+    # And the full list, sparsely, for the few objects more than one polity
+    # holds. The byte array above can only carry one, so on its own it made
+    # Blanco 1 — Communion of Worlds in its article, Non-Coercive Zone on the
+    # political maps — look like an ordinary single-holder landmark.
+    shared: dict[str, dict[str, list[int]]] = {"cluster": {}, "hii": {}}
+    for binding in report.bindings:
+        if binding.kind not in shared or binding.index is None or binding.beyond_frontier:
+            continue
+        if len(binding.polities) < 2:
+            continue
+        shared[binding.kind][str(binding.index)] = [polity_index[p] for p in binding.polities]
+
+    # Orion's Arm names for real objects. Resolved through the same table as a
+    # landmark, so the file can write the designation the way a person would.
+    landmark_names: list[dict[str, Any]] = []
+    for entry in LandmarkFile.load(FICTION_DIR / "landmarks.yaml").landmarks:
+        found = resolver.resolve(entry.catalogue, [])
+        if found.index is None:
+            raise ValueError(
+                f"landmarks.yaml names {entry.catalogue!r}, which matches no catalogued object"
+            )
+        landmark_names.append(
+            {
+                "kind": found.kind,
+                "index": found.index,
+                "catalogue": found.matched_name or entry.catalogue,
+                "name": entry.name,
+                "article": entry.article,
+                "note": entry.note,
+            }
+        )
+
     # Landmarks plus every other kind of member, so the legend can show a polity
     # that holds only colonies.
     members = _member_counts(out_dir)
@@ -317,6 +349,8 @@ def build_fiction(
                     for p in fiction.polities
                 ],
                 "bindings": [b.as_dict() for b in report.bindings],
+                "shared_polities": shared,
+                "landmark_names": landmark_names,
                 "sources": {
                     key: source.model_dump() for key, source in sorted(fiction.sources.items())
                 },

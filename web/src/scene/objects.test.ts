@@ -22,7 +22,15 @@ import type {
   WorldEntry,
 } from '../data/manifest';
 import { affiliationsFor } from '../data/manifest';
-import { KIND_CLUSTER, KIND_HII, KIND_OASTAR, KIND_STAR, ObjectIndex, bayerLabel } from './objects';
+import {
+  KIND_CLUSTER,
+  KIND_HII,
+  KIND_OASTAR,
+  KIND_STAR,
+  ObjectIndex,
+  bayerLabel,
+  composeLabel,
+} from './objects';
 
 const WIDTH = 800;
 const HEIGHT = 600;
@@ -1272,5 +1280,87 @@ describe('affiliations merge across sources', () => {
       visible: ALL_VISIBLE,
     });
     expect(placed[0].color).toBe('#00ff00');
+  });
+});
+
+describe('real and Orion’s Arm names', () => {
+  it('shows whichever name exists when there is only one', () => {
+    for (const mode of ['oa', 'real', 'both'] as const) {
+      expect(composeLabel('New Gaia', '', mode)).toBe('New Gaia');
+      expect(composeLabel('', 'Vega', mode)).toBe('Vega');
+    }
+  });
+
+  it('chooses between them when both exist', () => {
+    expect(composeLabel('Blenke Cluster', 'Blanco 1', 'oa')).toBe('Blenke Cluster');
+    expect(composeLabel('Blenke Cluster', 'Blanco 1', 'real')).toBe('Blanco 1');
+    expect(composeLabel('Blenke Cluster', 'Blanco 1', 'both')).toBe('Blenke Cluster (Blanco 1)');
+  });
+
+  /**
+   * The catalogue name used to be computed only as a fallback, so a settled
+   * system had no real name recorded at all and asking for catalogue names
+   * would have blanked every one of them.
+   */
+  it('keeps a settled star’s catalogue name alongside its colony name', () => {
+    const index = new ObjectIndex(
+      makeStars([[0, 0, -100]], { '0': { proper: 'Lambda Aurigae' } }),
+      null,
+      null,
+      null,
+      null,
+      new Map([
+        [
+          0,
+          {
+            star_index: 0,
+            star: 'Lambda Aurigae',
+            colony: 'New Gaia',
+            spectral_type: '',
+            mass_sol: '',
+            luminosity_sol: '',
+            distance_ly: 41,
+            method: 'name',
+            distance_disagrees: false,
+            affiliations: [] as string[],
+            status: '',
+            note: '',
+          },
+        ],
+      ]),
+    );
+
+    const layout = (nameMode: 'oa' | 'real' | 'both') =>
+      index.layout(camera(), {
+        width: WIDTH,
+        height: HEIGHT,
+        magnitudeLimit: 20,
+        maxLabels: 5,
+        visible: ALL_VISIBLE,
+        nameMode,
+      })[0].text;
+
+    expect(layout('oa')).toBe('New Gaia');
+    expect(layout('real')).toBe('Lambda Aurigae');
+    expect(layout('both')).toBe('New Gaia (Lambda Aurigae)');
+  });
+
+  it('never renders a name twice when the two agree', () => {
+    // A star whose only name is the catalogue's must not read "Vega (Vega)".
+    const index = new ObjectIndex(
+      makeStars([[0, 0, -100]], { '0': { proper: 'Vega' } }),
+      null,
+      null,
+      null,
+    );
+    const placed = index.layout(camera(), {
+      width: WIDTH,
+      height: HEIGHT,
+      magnitudeLimit: 20,
+      maxLabels: 5,
+      visible: ALL_VISIBLE,
+      nameMode: 'both',
+    });
+    expect(placed[0].text).toBe('Vega');
   });
 });
