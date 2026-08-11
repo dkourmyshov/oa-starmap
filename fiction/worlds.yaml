@@ -160,7 +160,7 @@ worlds:
     kind: moon
     system: Piaget
     parent: Pacol
-    affiliations: [caretaker-gods]
+    affiliations: [caretaker-gods, nocozo]
     article: https://www.orionsarm.com/eg-article/5f01de4e81446
     location:
       constellation: Carina
@@ -1535,3 +1535,735 @@ worlds:
     location:
       note: In the outer volumes, near the Mutual Progress Association border.
     note: No article of its own.
+
+  # ---- Non-Coercive Zone ---------------------------------------------------
+  #
+  # The largest roster here by some distance. Many of these systems were already
+  # on the map through the Inner Sphere colony table, so the entries bind by the
+  # names that table resolved rather than by numbers, and add the article and
+  # the dates the table has no room for.
+
+  - name: Merrion
+    kind: system
+    system: Merrion
+    affiliations: [nocozo]
+    article: https://www.orionsarm.com/eg-article/48f9f31c92a0a
+    location:
+      star: Alpha Mensae
+    events:
+      - year_at: 1284
+        kind: visited
+        note: First probe.
+      - year_at: 1395
+        kind: settled
+        note: Manned mission, a century after the probe.
+
+  - name: Algol
+    kind: system
+    system: Algol
+    affiliations: [nocozo]
+    article: https://www.orionsarm.com/eg-article/45ecdfff13c09
+    location:
+      star: Algol
+    note: Beta Persei, 90 ly. The colony table holds an unresolved assignment for it.
+
+  - name: Alpamis
+    kind: system
+    system: Alpamis
+    affiliations: [nocozo]
+    article: https://www.orionsarm.com/eg-article/45e77cd829bbd
+    location:
+      star: Pi Mensae
+    events:
+      - year_at: 1831
+        kind: visited
+        note: Reached.
+
+  - name: Argelander
+    kind: planet
+    system: Argelander
+    affiliations: [nocozo]
+    article: https://www.orionsarm.com/eg-article/45f9757b533b6
+    location:
+      ra_deg: 125.5458
+      dec_deg: -58.5691
+      distance: 219 ly
+      note: >-
+        In Carina, from coordinates given to a hundredth of a second of arc.
+        Designated JD 344111-890, or TYC 8579-870-1, neither of which this map
+        carries, so the coordinates are what place it.
+    events:
+      - year_at: 2190
+        kind: settled
+
+  - name: Arkady 2
+    kind: planet
+    system: Toke
+    affiliations: [nocozo]
+    article: https://www.orionsarm.com/eg-article/48ff3802ed02e
+    location:
+      note: >-
+        In the outer Non-Coercive Zone, on the long Carina Trade of wormholes
+        towards the Carina Rush — a route rather than a position.
+
+  - name: Atlantis
+    kind: planet
+    affiliations: [nocozo]
+    article: https://www.orionsarm.com/eg-article/486ec4e68c62e
+    location:
+      star: Zeta1 Reticuli
+    events:
+      - year_at: 1636
+        kind: settled
+    note: >-
+      One cell of the colony table holds three names for this system —
+      Atlantis, Prometheus and Daedalus — belonging to three meta-empires.
+
+  - name: Audubon
+    kind: planet
+    system: Audubon
+    affiliations: [nocozo]
+    article: https://www.orionsarm.com/eg-article/45eac09bed094
+    location:
+      star: HD 211415
+    events:
+      - year_at: 1564
+        kind: settled
+    note: >-
+      Given as HR 8501A. The Bright Star numbers are not carried here, but the
+      colony table resolves the same system to HD 211415 at 46 ly.
+
+  - name: Avase
+    kind: system
+    system: Avase
+    affiliations: [nocozo]
+    article: https://www.orionsarm.com/eg-article/45ea5e51b4e1f
+    location:
+      constellation: Centaurus
+      note: In the Centauri sector, which fixes the direction and not the range.
+
+  - name: Republic of Bethsyngaria
+    kind: volume
+    affiliations: [nocozo]
+    article: https://www.orionsarm.com/eg-article/52d6a4ff29392
+    location:
+      constellation: Carina
+      distance: 790 ly
+    events:
+      - year_at: 3104
+        kind: settled
+        note: Founded.
+    note: A polity of four systems.
+
+  - name: Big Ben's World
+    kind: system
+    system: Big Ben's World
+    affiliations: [nocozo]
+    article: https://www.orionsarm.com/eg-article/57b4613e13a25
+    location:
+      hd: 217086
+      catalogue_from_source: true
+    events:
+      - year_at: 3900
+        until_at: 3999
+        kind: settled
+        precision: between
+        note: The colonisation project begins early in the 3900s.
+    note: In Cepheus at 2,758 ly.
+
+  - name: Big Bob
+    kind: planet
+    affiliations: [nocozo]
+    uncertain: true
+    article: https://www.orionsarm.com/eg-article/45f4870be3455
+    location:
+      constellation: Puppis
+      note: In Puppis, presumably not far from the Premacy. No distance given.
+    note: >-
+      A gas giant. Whether the Non-Coercive Zone has a presence here at all is
+      unsettled, so the affiliation is marked uncertain rather than asserted.
+
+  - name: Bizarro World
+    kind: planet
+    affiliations: [nocozo]
+    article: https://www.orionsarm.com/eg-article/567bf6e68730c
+    location:
+      world: Relief
+    events:
+      - year_at: 9337
+        kind: settled
+        note: The idea proposed.
+      - year_at: 9341
+        kind: settled
+        note: Funded.
+    note: >-
+      An artificial planetoid of antimatter, in deep space a twentieth of a
+      light year from Relief — the same point at this scale.
+
+  - name: Bolobo
+    kind: planet
+    affiliations: [nocozo]
+    article: https://www.orionsarm.com/eg-article/486ff0a5e72d4
+    location:
+      star: Gliese 838.6
+    events:
+      - year_at: 1822
+        kind: settled
+    note: >-
+      Given as HR 8323. The colony table has the same system as Gliese 838.6 at
+      51 ly, under the name "Nike (Bolobo Colony)".
+
+  - name: Corona
+    kind: planet
+    system: Lucida
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/48e8b382428f5
+    location:
+      star: Iota Piscium
+    events:
+      - year_at: 1465
+        kind: settled
+    note: >-
+      Not a Non-Coercive Zone system now, after a complicated history: Lucida is
+      the capital of the academic Iota Network, which has no entry in the polity
+      list here. Left unaffiliated rather than filed under a former holder. The
+      system's own article is at
+      https://www.orionsarm.com/eg-article/5c758943a42b2.
+
+  - name: Dorminy IV
+    kind: system
+    system: Dorminy IV
+    affiliations: [nocozo]
+    article: https://www.orionsarm.com/eg-article/464d0e44bc3c7
+    location:
+      constellation: Vela
+      distance: 929 ly
+    events:
+      - year_at: 7010
+        kind: settled
+    note: Near NGC 3033, which is itself at 5,636 ly and so not a close neighbour.
+
+  - name: Druidworld
+    kind: planet
+    affiliations: [nocozo]
+    article: https://www.orionsarm.com/eg-article/48ff6392ccc7e
+    location:
+      note: In the Non-Coercive Zone's Middle Regions volume.
+
+  - name: The Fiarro Twin Worlds
+    kind: planet
+    affiliations: [nocozo]
+    article: https://www.orionsarm.com/eg-article/503cd400819a6
+    location:
+      hip: 43371
+      catalogue_from_source: true
+    events:
+      - year_at: 2271
+        kind: settled
+    note: In Vela at 231 ly.
+
+  - name: Frei
+    kind: system
+    system: Frei
+    affiliations: [nocozo]
+    article: https://www.orionsarm.com/eg-article/465109370a058
+    location:
+      star: Zeta Doradus
+    note: >-
+      Zeta Doradus A, 38 ly. Already on the map through the Inner Sphere colony
+      table, which is the likeliest source of any position for it drawn earlier.
+
+  - name: Gacrux
+    kind: system
+    system: Gacrux
+    affiliations: [nocozo, disarchy]
+    article: https://www.orionsarm.com/eg-article/58737c8c90cd6
+    location:
+      star: Gamma Crucis
+    events:
+      - year_at: 1738
+        kind: visited
+        note: Reached.
+    note: >-
+      An animin presence. The local civilisation is loosely associated with the
+      Non-Coercive Zone and closely with the Disarchy, so both are recorded.
+
+  - name: Galrecon
+    kind: planet
+    affiliations: [nocozo]
+    article: https://www.orionsarm.com/eg-article/53a6cc7e2c0f4
+    location:
+      hd: 33503
+      catalogue_from_source: true
+    events:
+      - year_at: 2598
+        kind: settled
+    note: In Auriga at 245 ly.
+
+  - name: Regor
+    kind: system
+    system: Regor
+    affiliations: [nocozo]
+    article: https://www.orionsarm.com/eg-article/4bdb45052ddfe
+    location:
+      star: Gamma 2 Velorum
+    events:
+      - year_at: 4082
+        kind: visited
+        note: Reached.
+    note: >-
+      1,117 ly. Canon disagrees over whether the Regor supernova was averted;
+      nothing here depends on the answer.
+
+  - name: Gatlida
+    kind: system
+    system: Gatlida
+    affiliations: [nocozo]
+    article: https://www.orionsarm.com/eg-article/479546d8e9f5e
+    location:
+      star: Epsilon Indi
+    events:
+      - year_at: 636
+        kind: settled
+    note: 11.9 ly, one of the nearest systems recorded here.
+
+  - name: Gum Nebula
+    kind: volume
+    affiliations: [nocozo, sophic-league, diamond-network, stellar-umma]
+    article: https://www.orionsarm.com/eg-article/4da02c3e5907f
+    location:
+      note: >-
+        Not in the HII catalogue this map carries under that name, and no
+        distance is given in the article.
+    note: >-
+      Reaches from Sophic League territory into the Non-Coercive Zone, with
+      enclaves of the Diamond Network, many Stellar Umma worlds and the Vela
+      Immunity inside it — five claimants, more than any other entry here.
+
+  - name: Hamal
+    kind: system
+    system: Hamal
+    affiliations: [metasoft, nocozo]
+    article: https://www.orionsarm.com/eg-article/464dd7be05218
+    location:
+      star: Alpha Arietis
+    note: 66 ly. The colony table already records both holders.
+
+  - name: Hammerstein
+    kind: moon
+    affiliations: [nocozo]
+    article: https://www.orionsarm.com/eg-article/4ce67be2dba24
+    location:
+      hip: 1031
+      catalogue_from_source: true
+    events:
+      - year_at: 2180
+        kind: settled
+    note: >-
+      A moon of a gas giant, at HD 870 in Tucana, 67 ly. Also given as GJ 2001.
+
+  - name: Hyttinen
+    kind: planet
+    affiliations: [nocozo]
+    article: https://www.orionsarm.com/eg-article/468065b038668
+    location:
+      constellation: Carina
+      distance: 234 ly
+    events:
+      - year_at: 3110
+        kind: settled
+
+  - name: Kaumbrey
+    kind: planet
+    system: Euterbia
+    affiliations: [nocozo]
+    article: https://www.orionsarm.com/eg-article/466f440bc601a
+    location:
+      constellation: Vela
+      distance: 1598 ly
+    note: >-
+      Capital of the Olumbi region. Given as near D 80090, a designation this
+      map does not carry, so the position rests on the constellation.
+
+  - name: Olumbi
+    kind: volume
+    affiliations: [nocozo]
+    article: https://www.orionsarm.com/eg-article/4758ad8fe1752
+    location:
+      note: >-
+        One of the rimward parts of the middle Non-Coercive Zone, bordering the
+        Sophic League and lying between the Vela Nebula and Pismis 4. Both
+        landmarks are real — Pismis 4 is on the map at 2,220 ly — but a volume
+        between two things is not a point.
+    events:
+      - year_at: 3200
+        until_at: 3800
+        kind: settled
+        precision: between
+        note: Colonised in the late Consolidation Age.
+
+  - name: Locus
+    kind: planet
+    affiliations: [nocozo]
+    article: https://www.orionsarm.com/eg-article/4eb9314768886
+    location:
+      constellation: Cancer
+      distance: 2221 ly
+    events:
+      - year_at: 6207
+        kind: visited
+        note: Reached.
+
+  - name: Lombardo
+    kind: system
+    system: Lombardo
+    affiliations: [nocozo]
+    article: https://www.orionsarm.com/eg-article/46845bb30a037
+    location:
+      star: GJ 1123
+    events:
+      - year_at: 1566
+        kind: settled
+    note: 31 ly, and 8.8 ly from Merrion — the two are close neighbours.
+
+  - name: Manyanga
+    kind: planet
+    affiliations: [nocozo]
+    article: https://www.orionsarm.com/eg-article/46afd40377e48
+    location:
+      ra_deg: 161.6583
+      dec_deg: -49.4150
+      distance: 2108 ly
+    note: In Vela, from coordinates and a distance both.
+
+  - name: Mira
+    kind: system
+    system: Mira
+    affiliations: [nocozo]
+    article: https://www.orionsarm.com/eg-article/47b8e269edf24
+    location:
+      star: Omicron Ceti
+    note: Mira A, 299 ly.
+
+  - name: Nadia
+    kind: system
+    system: Nadia
+    parent: Teplo
+    affiliations: [nocozo]
+    article: https://www.orionsarm.com/eg-article/4ce67a562037c
+    location:
+      star: Gliese 13
+    events:
+      - year_at: 1845
+        kind: settled
+    note: Teplo is the primary. Also given as HD 1273 A and HIP 1349 A.
+
+  - name: Naos
+    kind: system
+    system: Naos
+    affiliations: [nocozo]
+    article: https://www.orionsarm.com/eg-article/46cce9835f77a
+    location:
+      star: Zeta Puppis
+    events:
+      - year_at: 5680
+        kind: settled
+    note: 1,084 ly.
+
+  - name: Neli-Neti
+    kind: planet
+    affiliations: [nocozo, utopia-sphere]
+    article: https://www.orionsarm.com/eg-article/5385f65c43e09
+    location:
+      hip: 63911
+      catalogue_from_source: true
+    events:
+      - year_at: 3189
+        kind: settled
+    note: >-
+      The catalogue puts HIP 63911 at 17,120 ly, far beyond any Terragen
+      frontier and hard to reconcile with a colony founded in 3189. The
+      identifier is the article's; the distance is the catalogue's and is
+      probably a poor parallax. Listed in questions.md.
+
+  - name: New Mars
+    kind: system
+    system: New Mars
+    affiliations: [nocozo]
+    article: https://www.orionsarm.com/eg-article/46d4cdaf470c9
+    location:
+      star: 36 Ursae Majoris
+    events:
+      - year_at: 1333
+        kind: visited
+        note: Reached.
+    note: 42 ly. The A and B components both.
+
+  - name: Newlife
+    kind: planet
+    affiliations: [nocozo]
+    article: https://www.orionsarm.com/eg-article/4b374d3c9d6b5
+    location:
+      note: 1,622 ly from Sol and no direction given, which is a shell rather than a place.
+
+  - name: Nivline
+    kind: system
+    system: Nivline
+    affiliations: [nocozo]
+    article: https://www.orionsarm.com/eg-article/468065756bab2
+    location:
+      constellation: Puppis
+      distance: 723 ly
+
+  - name: Nova Terra
+    kind: planet
+    system: Nova
+    affiliations: [nocozo]
+    article: https://www.orionsarm.com/eg-article/48e2e21ee6d7f
+    location:
+      star: Tau Ceti
+    events:
+      - year_at: 588
+        kind: settled
+    note: >-
+      Tau Ceti, 11.9 ly. The system's own article is at
+      https://www.orionsarm.com/eg-article/48e6233abde08.
+
+  - name: Noyce
+    kind: system
+    system: Noyce
+    affiliations: [nocozo]
+    article: https://www.orionsarm.com/eg-article/46dcc5b188fa3
+    location:
+      hip: 42601
+      catalogue_from_source: true
+    note: >-
+      In Vela at 87 ly. The star is given as Hokon's Third Purchase, probably a
+      former name. No colonisation date, beyond its being before the Version War.
+
+  - name: Oia
+    kind: planet
+    affiliations: [nocozo, sophic-league]
+    article: https://www.orionsarm.com/eg-article/48f952ba9a1f9
+    location:
+      constellation: Puppis
+      distance: 2101 ly
+    events:
+      - year_at: 5411
+        kind: settled
+    note: >-
+      Originally a Sophic League colony and possibly still tied to it, so both
+      are recorded. The name descends from a word meaning "here".
+
+  - name: Ozymandias
+    kind: planet
+    affiliations: [nocozo]
+    article: https://www.orionsarm.com/eg-article/48fa78b7c6cf1
+    location:
+      constellation: Vela
+      distance: 1897 ly
+    note: Capital of the Premacy.
+
+  - name: Pelion and Ossa
+    kind: planet
+    affiliations: [nocozo, sophic-league]
+    article: https://www.orionsarm.com/eg-article/4f5b581f9fa71
+    location:
+      constellation: Pyxis
+      distance: 3705 ly
+    events:
+      - year_at: 7988
+        kind: settled
+    note: Two planets that collided, and are now one object.
+
+  - name: Relief
+    kind: system
+    system: Relief
+    affiliations: [nocozo]
+    article: https://www.orionsarm.com/eg-article/4910f56025f46
+    location:
+      constellation: Carina
+      distance: 5009 ly
+    events:
+      - year_at: 9279
+        kind: reported
+        note: Announced publicly.
+
+  - name: Rudolph
+    kind: system
+    system: Rudolph
+    affiliations: [nocozo]
+    article: https://www.orionsarm.com/eg-article/49119e365a395
+    location:
+      note: >-
+        3,650 ly from Sol, on the edge of the old Disarchy volume and about 120
+        ly counterspinward of Lynga 2. The cluster is on the map, but an offset
+        of 120 ly from it in a named direction is not something this map can
+        yet resolve into a position.
+    events:
+      - year_at: 9654
+        kind: transferred
+        note: Became Non-Coercive Zone property.
+    note: A fiery-red brown dwarf.
+
+  - name: Rufus
+    kind: planet
+    affiliations: [nocozo]
+    article: https://www.orionsarm.com/eg-article/4a3bb4ef0f54d
+    location:
+      hd: 114853
+      catalogue_from_source: true
+    events:
+      - year_at: 1899
+        kind: visited
+        note: Reached.
+    note: In Centaurus at 82 ly.
+
+  - name: Sakvaback
+    kind: system
+    system: Sakvaback
+    affiliations: [nocozo]
+    article: https://www.orionsarm.com/eg-article/478836f1d5431
+    location:
+      note: 2,011 ly from Sol, with no direction given.
+    events:
+      - year_at: 5804
+        kind: settled
+    note: The planet is spelled Sökvabäck.
+
+  - name: Sesharia
+    kind: moon
+    parent: Thraub
+    affiliations: [nocozo]
+    article: https://www.orionsarm.com/eg-article/48f94f1a7f8db
+    location:
+      star: Gliese 54
+    events:
+      - year_at: 1102
+        kind: settled
+    note: >-
+      A moon of the gas giant Thraub. The article gives GL 86 and HR 637 while
+      the colony table resolves the same colony to Gliese 54 A at 27 ly; the two
+      designations disagree and the table's is the one bound here.
+
+  - name: Sisyphos
+    kind: planet
+    affiliations: [nocozo, metasoft]
+    article: https://www.orionsarm.com/eg-article/48ec992cac979
+    location:
+      hip: 63469
+      catalogue_from_source: true
+    events:
+      - year_at: 3321
+        kind: visited
+        note: Reached.
+    note: In Hydra at 257 ly.
+
+  - name: Tao Li
+    kind: planet
+    affiliations: [nocozo]
+    article: https://www.orionsarm.com/eg-article/47a13e4633416
+    location:
+      hd: 74733
+      catalogue_from_source: true
+    events:
+      - year_at: 2320
+        kind: settled
+    note: In Vela at 216 ly.
+
+  - name: Terranova
+    kind: planet
+    affiliations: [nocozo]
+    article: https://www.orionsarm.com/eg-article/49126e35d4891
+    location:
+      hd: 20794
+      catalogue_from_source: true
+    events:
+      - year_at: 1065
+        kind: settled
+    note: >-
+      82 Eridani IV, 19.7 ly. The catalogue carries the star under the Gould
+      designation 82 G. Eri rather than a Flamsteed number.
+
+  - name: Twilight
+    kind: planet
+    system: Keid
+    affiliations: [nocozo]
+    article: https://www.orionsarm.com/eg-article/47a683c98fd29
+    location:
+      star: Omicron2 Eridani
+    events:
+      - year_at: 789
+        kind: settled
+    note: >-
+      40 Eridani A, 16 ly. The system's own article is at
+      https://www.orionsarm.com/eg-article/45e24ae0d6d07.
+
+  - name: Varnerkaspi
+    kind: planet
+    affiliations: [nocozo]
+    article: https://www.orionsarm.com/eg-article/474e2f74abc1f
+    location:
+      constellation: Centaurus
+      note: >-
+        The outer Crucis Corridor and the outer volumes of the Centaurus sector.
+        The sector fixes a direction; the corridor is not a sector and is not
+        read here.
+    events:
+      - year_at: 8048
+        kind: abandoned
+
+  - name: Vast Endeavour
+    kind: planet
+    affiliations: [nocozo]
+    article: https://www.orionsarm.com/eg-article/474e32264c8a1
+    location:
+      constellation: Carina
+      distance: 1149 ly
+    note: The star is TYC 8627-2183-1, from a catalogue this map does not carry.
+
+  - name: Wega
+    kind: planet
+    affiliations: [nocozo]
+    article: https://www.orionsarm.com/eg-article/48ff291dd2dfc
+    location:
+      hd: 108309
+      catalogue_from_source: true
+    note: In Centaurus at 88 ly. No dates.
+
+  - name: Zarathustra
+    kind: planet
+    affiliations: [nocozo]
+    article: https://www.orionsarm.com/eg-article/46e73c1b0794b
+    location:
+      star: Gamma Pavonis
+    events:
+      - year_at: 838
+        kind: settled
+        precision: circa
+        note: >-
+          Not stated outright but computed from the expedition's departure and
+          the length of its flight, so it carries that uncertainty.
+    note: The colony table gives the system as "Oromasdes / Zarathustra".
+
+  - name: Zarauztar
+    kind: planet
+    affiliations: [nocozo]
+    article: https://www.orionsarm.com/eg-article/46e73d558b681
+    location:
+      constellation: Vela
+      distance: 1531 ly
+    events:
+      - year_at: 4815
+        kind: settled
+    note: Given as 484 ly from the Regor supernova.
+
+  - name: Zhang Qian
+    kind: planet
+    affiliations: [nocozo, sophic-league]
+    article: https://www.orionsarm.com/eg-article/4f85f3c217bbd
+    location:
+      note: 571 ly from Sol, with no direction given.
+    events:
+      - year_at: 3120
+        kind: settled

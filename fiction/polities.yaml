@@ -134,7 +134,7 @@ polities:
       [NGC 6025, NGC 6087, Blanco 1, Helix Nebula, NGC 4337, NGC 3532,
        NGC 3228, Hogg 14, Pismis 5, Bochum 4, Ruprecht 98, vdB-Hagen 99,
        Pismis 4, Collinder 173, NGC 2546, NGC 3680, Jupiter Nebula,
-       Ruprecht 46, NGC 2438]
+       Ruprecht 46, NGC 2438, NGC 2244]
 
   - id: vela
     name: Vela
@@ -313,6 +313,7 @@ polities:
     source: eg-system-articles
 
   - id: technorapture-hypernation
+    landmarks: [NGC 2244]
     name: Technorapture Hypernation
     color: "#BA68C8"
     kind: polity

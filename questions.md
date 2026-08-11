@@ -8,7 +8,7 @@ Nothing below is a complaint about the setting. Most of it is the ordinary frict
 
 ---
 
-## Open questions (12)
+## Open questions (15)
 
 ### Enigma system — Three sources put the Enigma system in three different directions.
 
@@ -152,6 +152,42 @@ A "sector" is settled: it is the volume behind that constellation as seen from E
 - https://www.orionsarm.com/eg-article/5025ec682d4a4
 - https://www.orionsarm.com/eg-article/464e939b35f57
 
+### Neli-Neti — HIP 63911 is catalogued at 17,120 ly, far outside any Terragen frontier.
+
+*contradiction*
+
+The article gives the identifier and a colonisation year of 3189. The catalogue puts that star in Musca at 17,120 light years, which is two and a half times the canonical frontier and not somewhere a colony was founded in the fourth millennium. A Hipparcos parallax at that range is barely a measurement, so the distance is the likelier error — but the map draws what the catalogue says.
+
+**What the map does now.** Bound on the identifier and drawn at 17,120 ly, well past the frontier and so without a polity colour.
+
+**What would settle it.** A distance for the system, or a different identifier for it.
+
+- https://www.orionsarm.com/eg-article/5385f65c43e09
+
+### Sesharia — The article and the colony table name different stars.
+
+*contradiction*
+
+The article gives GL 86 and HR 637 for Thraub's primary. The Inner Sphere colony table resolves the colony Sesharia to Gliese 54 A at 27 ly. Gliese 54 and Gliese 86 are different stars, so one of the two is wrong.
+
+**What the map does now.** Bound to Gliese 54, the colony table's answer, because that one resolved against the catalogue and could be checked.
+
+**What would settle it.** Which designation the article intends.
+
+- https://www.orionsarm.com/eg-article/48f94f1a7f8db
+
+### Lucida and the Iota Network — Lucida is the capital of the academic Iota Network, which has no entry in the polity list.
+
+*category*
+
+Corona's system passed out of the Non-Coercive Zone after a complicated history. Filing it under a former holder would misstate the present, and the current holder is not something this map knows about.
+
+**What the map does now.** Recorded with no affiliation at all, so it draws a neutral ring: settled, holder unstated. That is accurate and unsatisfying.
+
+**What would settle it.** Whether the Iota Network belongs in the polity list, and what else it holds if so.
+
+- https://www.orionsarm.com/eg-article/5c758943a42b2
+
 ## The Inner Sphere colony tables
 
 909 of 1,122 rows resolve to a star we hold. The rest break down as follows.
@@ -213,21 +249,21 @@ Named in the political maps, and real, but in a catalogue this map does not carr
 
 Aquila Rift, Basel 11, Basel 5, California Nebula, Cat Eye Nebula, Collinder 121, Collinder 173, Collinder 399, Collinder 96, Dumbbell Nebula, Eskimo Nebula, Floating Star Nebula, G64.3+5.7, Gamma Cas, Geminga, Helix Nebula, Hogg 14, Hubble Variable Nebula, IC 405, IC 417, Iskudarian 1, Jupiter Nebula, Markarian 6, NGC 1498, and 17 more
 
-## 5 landmarks claimed by more than one polity
+## 6 landmarks claimed by more than one polity
 
 Not necessarily an error — the political maps overlap, and a landmark on a boundary can legitimately fall in two volumes. Recorded in case any of these is a reading mistake.
 
-Blanco 1, Collinder 173, Collinder 359, S232, S27
+Blanco 1, Collinder 173, Collinder 359, NGC 2244, S232, S27
 
 ## Worlds located only by constellation
 
-16 of 105 canonical worlds are given as a distance and a constellation. That fixes the distance exactly and the direction only to the width of the constellation, which at these ranges is hundreds to thousands of light years. The map draws these with a broken ring rather than a solid one, and the detail panel gives the error in light years.
+28 of 163 canonical worlds are given as a distance and a constellation. That fixes the distance exactly and the direction only to the width of the constellation, which at these ranges is hundreds to thousands of light years. The map draws these with a broken ring rather than a solid one, and the detail panel gives the error in light years.
 
 Coordinates, or a nearby named star, would turn any of these from a region into a position.
 
-## 19 places described but not located
+## 30 places described but not located
 
-Arnon Dar, Crustuse, Dashwood, Elderman's Star, Evermore, Galbydeia Torus, Garlin, Gillbank, Gordelpus, Gritwald, Kepleria, Muna Kipasi orbitals, and 7 more
+Arkady 2, Arnon Dar, Avase, Big Bob, Crustuse, Dashwood, Druidworld, Elderman's Star, Evermore, Galbydeia Torus, Garlin, Gillbank, and 18 more
 
 ## 1 designation reused in the Celestia add-on
 

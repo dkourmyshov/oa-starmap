@@ -522,7 +522,13 @@ class WorldLocation(BaseModel):
 
     ra_deg: float | None = None
     dec_deg: float | None = None
-    """An exact direction, with ``distance`` supplying the radius."""
+    """An exact direction, with ``distance`` supplying the radius.
+
+    Both are required together. A bare constellation is how these sources
+    routinely speak and is accepted alone; a bare right ascension is not, and
+    every case that looked like one has turned out to be a distance recorded
+    elsewhere.
+    """
 
     constellation: str = ""
     """A region of sky.
@@ -600,6 +606,7 @@ class WorldLocation(BaseModel):
             raise ValueError("ra_deg and dec_deg must be given together")
         if self.method == "direction" and not self.distance:
             raise ValueError("a direction location needs a distance")
+
         if self.distance and self.method not in {"direction", "constellation", "star"}:
             raise ValueError(f"a {self.method} location takes no distance")
         if self.distance:

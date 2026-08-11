@@ -330,3 +330,58 @@ questions:
     links:
       - https://www.orionsarm.com/eg-article/5025ec682d4a4
       - https://www.orionsarm.com/eg-article/464e939b35f57
+
+  - id: neli-neti-distance
+    topic: Neli-Neti
+    status: open
+    severity: contradiction
+    summary: HIP 63911 is catalogued at 17,120 ly, far outside any Terragen frontier.
+    detail: >-
+      The article gives the identifier and a colonisation year of 3189. The
+      catalogue puts that star in Musca at 17,120 light years, which is two and
+      a half times the canonical frontier and not somewhere a colony was founded
+      in the fourth millennium. A Hipparcos parallax at that range is barely a
+      measurement, so the distance is the likelier error — but the map draws
+      what the catalogue says.
+    map_does: >-
+      Bound on the identifier and drawn at 17,120 ly, well past the frontier and
+      so without a polity colour.
+    would_settle: A distance for the system, or a different identifier for it.
+    links:
+      - https://www.orionsarm.com/eg-article/5385f65c43e09
+
+  - id: sesharia-two-designations
+    topic: Sesharia
+    status: open
+    severity: contradiction
+    summary: The article and the colony table name different stars.
+    detail: >-
+      The article gives GL 86 and HR 637 for Thraub's primary. The Inner Sphere
+      colony table resolves the colony Sesharia to Gliese 54 A at 27 ly. Gliese
+      54 and Gliese 86 are different stars, so one of the two is wrong.
+    map_does: >-
+      Bound to Gliese 54, the colony table's answer, because that one resolved
+      against the catalogue and could be checked.
+    would_settle: Which designation the article intends.
+    links:
+      - https://www.orionsarm.com/eg-article/48f94f1a7f8db
+
+  - id: iota-network-not-a-polity-here
+    topic: Lucida and the Iota Network
+    status: open
+    severity: category
+    summary: >-
+      Lucida is the capital of the academic Iota Network, which has no entry in
+      the polity list.
+    detail: >-
+      Corona's system passed out of the Non-Coercive Zone after a complicated
+      history. Filing it under a former holder would misstate the present, and
+      the current holder is not something this map knows about.
+    map_does: >-
+      Recorded with no affiliation at all, so it draws a neutral ring: settled,
+      holder unstated. That is accurate and unsatisfying.
+    would_settle: >-
+      Whether the Iota Network belongs in the polity list, and what else it
+      holds if so.
+    links:
+      - https://www.orionsarm.com/eg-article/5c758943a42b2

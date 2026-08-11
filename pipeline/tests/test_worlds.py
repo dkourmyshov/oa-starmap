@@ -202,6 +202,8 @@ def test_a_sky_location_needs_a_distance() -> None:
 
     with pytest.raises(ValidationError, match="needs a distance"):
         WorldLocation(ra_deg=10.0, dec_deg=-20.0)
+    with pytest.raises(ValidationError, match="given together"):
+        WorldLocation(ra_deg=10.0)
 
     direction_only = WorldLocation(constellation="Centaurus")
     assert direction_only.method == "none"
