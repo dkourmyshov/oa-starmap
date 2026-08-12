@@ -180,11 +180,11 @@ The article gives GL 86 and HR 637 for Thraub's primary. The Inner Sphere colony
 
 *category*
 
-Lucida is the capital of the academic Iota Network. Halsokallan fell to the Amalgamation in 8760 and Adorate a year later, so that body now holds two worlds here. Big Tor is shared with the Free Sophic. Bullseye is independent, with strong ties to the Zoeific Biopolity but not part of it. In each case a former holder is known and the present one is not represented here, and recording the former would state something false about the present.
+The Amalgamation has been added to the polity list, having taken Halsokallan in 8760 and Adorate the year after: two worlds is enough to be worth a colour. Three cases remain. Lucida is the capital of the academic Iota Network. Big Tor is shared with the Free Sophic. Bullseye is independent, with strong ties to the Zoeific Biopolity but not part of it. In each a former holder is known and the present one is not represented, and recording the former would state something false about the present.
 
 **What the map does now.** Leaves the affiliation empty, which draws the faint neutral ring the map uses for a settled system nobody named holds. Accurate and unsatisfying, since it reads the same as an unclaimed world.
 
-**What would settle it.** Whether the Iota Network, the Amalgamation and the Free Sophic belong in the polity list, and how a genuinely independent system should be distinguished from one whose holder is merely unrecorded — they are different facts and the map currently draws them alike.
+**What would settle it.** Whether the Iota Network and the Free Sophic belong in the polity list, and how a genuinely independent system should be distinguished from one whose holder is merely unrecorded — they are different facts and the map currently draws them alike.
 
 - https://www.orionsarm.com/eg-article/5c758943a42b2
 - https://www.orionsarm.com/eg-article/46674941b75a2

@@ -350,6 +350,12 @@ export class DetailPanel {
     if (world.constellation) rows.push({ label: 'Constellation', value: world.constellation });
 
     if (world.kind) rows.push({ label: 'Kind', value: world.kind });
+    // A system and a world inside it are one place, not two: Penglai is a moon
+    // of Shenjing rather than its neighbour.
+    if (world.within) rows.push({ label: 'Within', value: world.within });
+    if (world.contains.length) {
+      rows.push({ label: 'Contains', value: world.contains.join(', ') });
+    }
     if (world.system && world.system !== world.name) {
       rows.push({ label: 'System', value: world.system });
     }

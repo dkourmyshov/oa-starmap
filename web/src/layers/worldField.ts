@@ -9,16 +9,18 @@
  * constellation — which fixes the radius exactly and the direction only to the
  * width of the constellation. At Hyvixnym's 3,876 ly, Taurus is 1,800 ly across.
  * The map must not state a position that much more precisely than its source
- * does, so an approximately-placed world is drawn with a **broken ring** where
- * an exactly-placed one gets a solid one.
+ * does, so an approximately-placed world is drawn as a **soft, diffuse dot**
+ * where an exactly-placed one is crisp. A blurred mark reads as an uncertain
+ * position without needing to be explained.
  *
- * An earlier version drew each one's error as a circle at its true angular size.
- * It was accurate and unusable: the circles are hundreds of light years wide by
- * construction, so they dominated every view they appeared in, and a reader
- * looking at the map saw uncertainty annotations rather than the setting. The
- * broken ring costs no space at all, and the figure itself — how many light
- * years across the direction error is — is on the detail panel, which is where a
- * reader goes when they want the number rather than the impression.
+ * Two earlier attempts are worth recording, since both were worse. Drawing the
+ * error as a circle at its true angular size was accurate and unusable: those
+ * circles are hundreds of light years wide by construction and dominated every
+ * view they appeared in. Replacing them with a broken ring around the marker
+ * cost no space, but once the settled layer began ringing these worlds by
+ * polity there were two concentric rings a pixel apart carrying two unrelated
+ * meanings. One mark, one meaning: the dot's edge is the position's precision
+ * and the ring around it is the holder.
  *
  * Circles remain for one thing: a world that genuinely *is* a volume. The
  * Corambytia Protectorate is 290 ly across because the setting says so, and that
@@ -29,15 +31,24 @@
 
 import * as THREE from 'three';
 
-import type { FictionData, WorldData } from '../data/manifest';
+import type { WorldData } from '../data/manifest';
 
 export const DEFAULT_OPACITY = 0.9;
 
 /** Marker diameter in device pixels. */
 export const DEFAULT_SIZE_PX = 11.0;
 
-/** A world with no polity, or one whose affiliation is unsettled. */
-const NEUTRAL = new THREE.Color(0x9aa4bb);
+/**
+ * The marker's colour, for every world.
+ *
+ * Deliberately not the polity's. This glyph carries what kind of place it is and
+ * how well the source located it; who holds it is a ring, drawn by the settled
+ * layer exactly as it is for a star. A marker can only be one colour, so while
+ * it carried the affiliation a world held by two empires showed one of them —
+ * Pelion and Ossa is Non-Coercive Zone and Sophic League and drew as the former
+ * alone.
+ */
+const MARKER = new THREE.Color(0xd6dcea);
 
 /**
  * Ceiling on an extent circle's on-screen radius, in pixels.
@@ -46,9 +57,6 @@ const NEUTRAL = new THREE.Color(0x9aa4bb);
  * the viewport has stopped conveying a size at all.
  */
 export const MAX_CIRCLE_PX = 900.0;
-
-/** Arcs in the broken ring that marks an approximate position. */
-const DASHES = 7.0;
 
 const MARKER_VERTEX = /* glsl */ `
   #include <common>
@@ -78,7 +86,6 @@ const MARKER_FRAGMENT = /* glsl */ `
   #include <logdepthbuf_pars_fragment>
 
   uniform float uOpacity;
-  uniform float uDashes;
 
   varying vec3 vColor;
   varying float vApprox;
@@ -88,19 +95,16 @@ const MARKER_FRAGMENT = /* glsl */ `
     float r = length(offset);
     if (r > 1.0) discard;
 
-    // A filled centre inside a ring: a place, not a star. The ring keeps it
-    // legible against the diamonds of the add-on stars, which are hollow.
-    float core = 1.0 - smoothstep(0.0, 0.34, r);
-    float ring = smoothstep(0.54, 0.66, r) * (1.0 - smoothstep(0.80, 0.94, r));
+    // A filled dot, and nothing around it: the polity ring drawn by the settled
+    // layer needs that space. Solid where the position is exact, and softened
+    // into a diffuse smudge where it is not — the same mark, losing its edge in
+    // proportion to what the source failed to pin down.
+    float edge = mix(0.34, 0.86, vApprox);
+    float dot = 1.0 - smoothstep(0.0, edge, r);
 
-    // Break the ring into arcs where the position is approximate. An unclosed
-    // outline reads as "not pinned down" without taking any more space than a
-    // closed one, which is the whole reason it replaced a scale-true circle.
-    float angle = atan(offset.y, offset.x) / (2.0 * PI) + 0.5;
-    float dash = smoothstep(0.30, 0.42, abs(fract(angle * uDashes) - 0.5) * 2.0);
-    ring *= mix(1.0, dash, vApprox);
-
-    float alpha = clamp(core + ring, 0.0, 1.0) * uOpacity;
+    // The soft form spreads its light over a wider area, so lift it or it reads
+    // as merely fainter rather than as less certain.
+    float alpha = dot * uOpacity * mix(1.0, 1.5, vApprox);
     if (alpha < 0.004) discard;
 
     #include <logdepthbuf_fragment>
@@ -189,12 +193,7 @@ export class WorldField {
   private readonly markerMaterial: THREE.ShaderMaterial;
   private readonly circleMaterial: THREE.ShaderMaterial;
 
-  constructor(data: WorldData, fiction: FictionData | null = null) {
-    const polityColor = new Map<string, THREE.Color>();
-    for (const polity of fiction?.polities ?? []) {
-      polityColor.set(polity.id, new THREE.Color(polity.color));
-    }
-
+  constructor(data: WorldData) {
     const shown = positioned(data);
     this.count = shown.length;
 
@@ -215,9 +214,7 @@ export class WorldField {
       positions[out * 3 + 1] = world.y as number;
       positions[out * 3 + 2] = world.z as number;
 
-      // The first of several, where a place is held jointly. One ring can
-      // only carry one colour; the panel lists them all.
-      const color = polityColor.get(world.affiliations[0] ?? '') ?? NEUTRAL;
+      const color = MARKER;
       colors[out * 3] = color.r;
       colors[out * 3 + 1] = color.g;
       colors[out * 3 + 2] = color.b;
@@ -246,7 +243,6 @@ export class WorldField {
       uniforms: {
         uSize: { value: DEFAULT_SIZE_PX },
         uOpacity: { value: DEFAULT_OPACITY },
-        uDashes: { value: DASHES },
       },
       vertexShader: MARKER_VERTEX,
       fragmentShader: MARKER_FRAGMENT,

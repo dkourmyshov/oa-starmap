@@ -1212,6 +1212,8 @@ describe('affiliations merge across sources', () => {
       star_index: 0,
       oa_star: '',
       in_world: '',
+      within: '',
+      contains: [],
       constellation: '',
       x: null,
       y: null,

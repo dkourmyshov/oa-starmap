@@ -335,6 +335,15 @@ polities:
     color: "#F48FB1"
     source: eg-system-articles
 
+  - id: amalgamation
+    name: Amalgamation
+    color: "#947838"
+    kind: polity
+    source: eg-system-articles
+    # Added once it held two worlds rather than one. Halsokallan fell to it in
+    # 8760 and Adorate the year after, and until it had an entry both drew as
+    # unaffiliated — indistinguishable from a system nobody holds.
+
   - id: xenosophont
     name: Xenosophont
     color: "#BCAAA4"

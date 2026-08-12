@@ -2535,7 +2535,7 @@ worlds:
 
   - name: Halsokallan
     kind: planet
-    affiliations: []
+    affiliations: [amalgamation]
     article: https://www.orionsarm.com/eg-article/46674941b75a2
     location:
       constellation: Perseus
@@ -2545,9 +2545,7 @@ worlds:
         kind: transferred
         note: Fell to the Amalgamation.
     note: >-
-      Held by the Amalgamation, which has no entry in the polity list here, so
-      no affiliation is recorded rather than the Solar Dominion's former hold
-      being left standing.
+      Formerly of the Solar Dominion. The affiliation is the present holder.
 
   - name: Hiederia
     kind: system
@@ -2753,7 +2751,7 @@ worlds:
 
   - name: Adorate
     kind: planet
-    affiliations: []
+    affiliations: [amalgamation]
     article: https://www.orionsarm.com/eg-article/45e4e60b2bec2
     location:
       ra_deg: 34.6875
@@ -2764,9 +2762,8 @@ worlds:
         kind: transferred
         note: Fell to the Amalgamation, a year after Halsokallan.
     note: >-
-      In Perseus, from coordinates. Formerly Sophic League and now held by the
-      Amalgamation, which has no entry in the polity list, so no affiliation is
-      recorded rather than a former one left standing.
+      In Perseus, from coordinates. Formerly Sophic League; the affiliation is
+      the present holder.
 
   - name: Ararat
     kind: planet

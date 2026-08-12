@@ -448,6 +448,10 @@ export interface WorldEntry {
   oa_star: string;
   /** Set when it shares another world's position, by that world's name. */
   in_world: string;
+  /** The system entry this world sits inside, where one is recorded. */
+  within: string;
+  /** Worlds recorded inside this one, where it is a system. */
+  contains: string[];
   /**
    * The constellation the source names, whether or not it places the world.
    * Without a distance it is a direction and nothing more — a cone from Sol.

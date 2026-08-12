@@ -113,7 +113,7 @@ async function main(): Promise<void> {
   // Last of the point layers: a world the setting names should never be buried
   // under a star it does not mention.
   if (loaded.worlds) {
-    worldField = new WorldField(loaded.worlds, loaded.fiction);
+    worldField = new WorldField(loaded.worlds);
     viewer.scene.add(worldField.points);
     viewer.scene.add(worldField.circles);
   }

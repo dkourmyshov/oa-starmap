@@ -93,6 +93,7 @@ class WorldStats:
     unlocated: list[str] = field(default_factory=list)
     unresolved: list[str] = field(default_factory=list)
     distance_conflicts: list[str] = field(default_factory=list)
+    places: int = 0
     dated: int = 0
     undated: list[str] = field(default_factory=list)
     earliest: int | None = None
@@ -105,6 +106,7 @@ class WorldStats:
             "unlocated": self.unlocated,
             "unresolved": self.unresolved,
             "distance_conflicts": self.distance_conflicts,
+            "places": self.places,
             "dated": self.dated,
             "undated": self.undated,
             "epoch_range_at": [self.earliest, self.latest],
@@ -328,6 +330,8 @@ def build_worlds(
             "star_index": None,
             "oa_star": "",
             "in_world": "",
+            "within": "",
+            "contains": [],
             "constellation": world.location.constellation,
             "ra_deg": world.location.ra_deg,
             "dec_deg": world.location.dec_deg,
@@ -415,6 +419,24 @@ def build_worlds(
         for key in ("x", "y", "z", "distance_pc", "direction_error_deg", "direction_error_ly"):
             record[key] = host[key]
 
+    # A system and a world inside it are not two places. Shenjing is a system
+    # and Penglai a moon within it; both earn entries because both have
+    # articles, but counting them as neighbours sharing a star would make one
+    # place look like two sitting zero light years apart. The relation is
+    # already implicit — a world names its system — so it is derived here rather
+    # than authored, and cannot fall out of step with the field it comes from.
+    systems = {r["name"]: r for r in records if r["system"] == r["name"]}
+    for record in records:
+        host = systems.get(record["system"])
+        if host is None or host is record:
+            continue
+        record["within"] = host["name"]
+        host["contains"].append(record["name"])
+    for host in systems.values():
+        host["contains"].sort()
+
+    stats.places = len(records) - sum(1 for r in records if r["within"])
+
     files = {"worlds": write_json(out_dir / "worlds.json", records)}
 
     return {
@@ -448,7 +470,11 @@ def build_worlds(
 def format_report(dataset: dict[str, Any]) -> str:
     """A short build report, in the style of the other fiction builds."""
     stats = dataset["stats"]
-    lines = [f"  worlds     {dataset['count']:,} entries"]
+    places = stats.get("places")
+    head = f"  worlds     {dataset['count']:,} entries"
+    if places and places != dataset["count"]:
+        head += f" in {places:,} places"
+    lines = [head]
     if stats["dated"]:
         first, last = stats["epoch_range_at"]
         lines.append(f"             {stats['dated']} dated, {first}-{last} A.T.")

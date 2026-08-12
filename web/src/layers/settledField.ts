@@ -210,6 +210,21 @@ export class SettledField {
       });
     }
 
+    // Worlds placed from their own coordinates. Their marker says what kind of
+    // thing they are and how well the source located them, which leaves no room
+    // for a holder — and a marker can only be one colour anyway, so a shared
+    // world showed only its first. Pelion and Ossa is held by two and drew as
+    // one.
+    for (const world of worlds?.worlds ?? []) {
+      if (world.x === null || world.in_world) continue;
+      rings.push({
+        x: world.x,
+        y: world.y as number,
+        z: world.z as number,
+        polities: affiliationsFor(undefined, [world]),
+      });
+    }
+
     for (let i = 0; i < (oaStars?.count ?? 0); i++) {
       const entry = oaStars!.names[i];
       if (entry?.hidden) continue;
