@@ -8,7 +8,7 @@ Nothing below is a complaint about the setting. Most of it is the ordinary frict
 
 ---
 
-## Open questions (15)
+## Open questions (16)
 
 ### Enigma system — Three sources put the Enigma system in three different directions.
 
@@ -152,15 +152,15 @@ A "sector" is settled: it is the volume behind that constellation as seen from E
 - https://www.orionsarm.com/eg-article/5025ec682d4a4
 - https://www.orionsarm.com/eg-article/464e939b35f57
 
-### Neli-Neti — HIP 63911 is catalogued at 17,120 ly while the system is given as 698 ly away.
+### Neli-Neti — HIP 63911 is catalogued at 17,120 ly while the system is given as 698 ly away, and it is not yet clear which number rests on what.
 
 *contradiction*
 
 The article gives the identifier and a colonisation year of 3189. The catalogue puts that star in Musca at 17,120 light years, which is two and a half times the canonical frontier and not somewhere a colony was founded in the fourth millennium. A Hipparcos parallax at that range is barely a measurement, so the distance is the likelier error — but the map draws what the catalogue says.
 
-**What the map does now.** Placed at 698 ly in that star's direction. The system and the star are both in Musca, which localises the disagreement to the parallax rather than the identity: Hipparcos positions are good to milliarcseconds and its parallaxes at kiloparsec ranges are not measurements at all. So the direction is the catalogue's and the distance the setting's.
+**What the map does now.** Placed at 698 ly in that star's direction, and deliberately not *bound* to the star. The system and the star are both in Musca, which points at the parallax rather than the identity — Hipparcos positions are good to milliarcseconds and its parallaxes at kiloparsec ranges are not measurements at all. Borrowing only the direction means a future revision of HIP 63911's distance cannot move this world without someone deciding that it should.
 
-**What would settle it.** Whether HIP 63911 is the right star. If it is, nothing here is in doubt but the catalogue's parallax, which is a known weakness rather than a question for the setting.
+**What would settle it.** Where the 698 ly comes from. A real object's distance ought to rest on real research, and if some measurement supports 698 then that measurement is what the map should follow rather than either the article or HYG. If instead the figure is the worldbuilder's, then tying this system to HIP 63911 at all is the thing to reconsider: a fiat distance attached to a real star is a disagreement that grows every time the star is measured again. The catalogue may be weak here, but that is a reason to check both sides rather than to assume the other one is right.
 
 - https://www.orionsarm.com/eg-article/5385f65c43e09
 
@@ -187,6 +187,19 @@ Corona's system passed out of the Non-Coercive Zone after a complicated history.
 **What would settle it.** Whether the Iota Network belongs in the polity list, and what else it holds if so.
 
 - https://www.orionsarm.com/eg-article/5c758943a42b2
+
+### Fictional distances attached to real objects — When a system's stated distance disagrees with the catalogue for the star it names, the useful question is where each number came from.
+
+*policy*
+
+Three cases look alike on the map and are not alike at all. The stated figure may rest on research better than ours, in which case it is simply right and the catalogue entry here is stale. It may be a transcription slip — Third Def8's 35 ly against HD 6235's 346 has the shape of a lost digit rather than a disagreement. Or it may be the worldbuilder's own number, in which case attaching it to a real star creates a discrepancy that widens every time that star is measured again, and the setting would be better served by a position of its own than by a binding that ages badly.
+
+**What the map does now.** Flags every such conflict and refuses to average them. Where the identifier looks sound and only the distance is doubted, the entry takes the star's direction and the setting's distance without binding to the star, so a later catalogue revision cannot silently move the world.
+
+**What would settle it.** Whether Orion's Arm treats a stated distance as sourced from astronomy or as its own, and whether it would rather a system with a fiat distance keep its real-star identification or lose it.
+
+- https://www.orionsarm.com/eg-article/5385f65c43e09
+- https://www.orionsarm.com/eg-article/47a28b116776e
 
 ## The Inner Sphere colony tables
 

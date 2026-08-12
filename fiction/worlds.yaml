@@ -31,6 +31,13 @@
 # always the *present* holder, at 10600-odd AT, whatever the events say happened
 # on the way there.
 #
+# Where a stated distance and the catalogue disagree about the star a system
+# names, prefer to borrow the star's *direction* and take the distance from the
+# source, rather than binding to the star. Directions are stable — a Hipparcos
+# position is good to milliarcseconds and stays good — while distances are the
+# part that gets revised, so a binding turns a present disagreement into one
+# that widens with every new parallax. Bind only where the two already agree.
+#
 # `note` is shown to whoever clicks the object, so it is for facts about the
 # place and about the evidence for it: which source, why this position and not
 # another, where two sources disagree. It is not the place for anything about
