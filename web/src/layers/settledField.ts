@@ -20,8 +20,15 @@
  * This layer covers every place a system can come from — an Inner Sphere colony
  * on a real star, a canonical world, a star of the Celestia add-on — because
  * "this system belongs to that polity" is one statement and should have one
- * appearance. The sources differ in whether the position was measured, and that
- * is carried by the glyph at the centre, not by the ring.
+ * appearance.
+ *
+ * The ring is **dashed** where the position is only approximate, which is a
+ * second thing said by the same mark without competing with the first: its
+ * colours are who holds the place and its continuity is how well the source
+ * located it. An earlier arrangement put that on a ring of the marker's own,
+ * which landed a pixel inside this one and read as two rings meaning nothing in
+ * particular. Only worlds are ever dashed — a catalogue star is exactly where
+ * the catalogue says.
  */
 
 import * as THREE from 'three';
@@ -66,6 +73,7 @@ const VERTEX_SHADER = /* glsl */ `
   attribute vec3 aColor3;
   attribute float aSegments;
   attribute float aAffiliated;
+  attribute float aApprox;
 
   uniform float uSize;
   uniform float uUnaffiliatedDim;
@@ -76,10 +84,12 @@ const VERTEX_SHADER = /* glsl */ `
   varying vec3 vColor3;
   varying float vSegments;
   varying float vGain;
+  varying float vApprox;
 
   void main() {
     vec4 viewPos = modelViewMatrix * vec4(position, 1.0);
     gl_Position = projectionMatrix * viewPos;
+    vApprox = aApprox;
     vColor0 = aColor0;
     vColor1 = aColor1;
     vColor2 = aColor2;
@@ -104,6 +114,7 @@ const FRAGMENT_SHADER = /* glsl */ `
   varying vec3 vColor3;
   varying float vSegments;
   varying float vGain;
+  varying float vApprox;
 
   void main() {
     vec2 offset = gl_PointCoord * 2.0 - 1.0;
@@ -115,12 +126,19 @@ const FRAGMENT_SHADER = /* glsl */ `
     float ring = smoothstep(0.72, 0.82, r) * (1.0 - smoothstep(0.88, 0.98, r));
     if (ring <= 0.0) discard;
 
+    float turnAround = fract(0.25 - atan(offset.y, offset.x) / (2.0 * PI));
+
+    // Dashed where the source gave a region rather than a position. Twelve
+    // arcs, which survives being cut again by a segment boundary: a ring that
+    // is both shared and approximate still reads as both.
+    float dash = smoothstep(0.28, 0.44, abs(fract(turnAround * 12.0) - 0.5) * 2.0);
+    ring *= mix(1.0, dash, vApprox);
+
     vec3 color = vColor0;
     if (vSegments > 1.5) {
       // Arcs run clockwise from the top, so a two-holder ring reads as left and
       // right halves rather than as an arbitrary tilt.
-      float turn = fract(0.25 - atan(offset.y, offset.x) / (2.0 * PI));
-      float scaled = turn * vSegments;
+      float scaled = turnAround * vSegments;
       float index = floor(scaled);
 
       if (index > 2.5) color = vColor3;
@@ -151,6 +169,8 @@ interface Ring {
   y: number;
   z: number;
   polities: string[];
+  /** The position is only approximate, so the ring is drawn dashed. */
+  approximate?: boolean;
 }
 
 export class SettledField {
@@ -222,6 +242,7 @@ export class SettledField {
         y: world.y as number,
         z: world.z as number,
         polities: affiliationsFor(undefined, [world]),
+        approximate: (world.direction_error_deg ?? 0) > 0,
       });
     }
 
@@ -248,6 +269,7 @@ export class SettledField {
     const positions = new Float32Array(this.count * 3);
     const segments = new Float32Array(this.count);
     const affiliated = new Float32Array(this.count);
+    const approximate = new Float32Array(this.count);
     const colors = Array.from({ length: MAX_SEGMENTS }, () => new Float32Array(this.count * 3));
     const neutral = Array.from({ length: MAX_SEGMENTS }, () => new Float32Array(this.count * 3));
 
@@ -258,6 +280,7 @@ export class SettledField {
 
       const shown = ring.polities.slice(0, MAX_SEGMENTS);
       affiliated[out] = shown.length ? 1 : 0;
+      approximate[out] = ring.approximate ? 1 : 0;
       segments[out] = Math.max(shown.length, 1);
 
       for (let slot = 0; slot < MAX_SEGMENTS; slot++) {
@@ -282,6 +305,7 @@ export class SettledField {
     geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
     geometry.setAttribute('aSegments', new THREE.BufferAttribute(segments, 1));
     geometry.setAttribute('aAffiliated', new THREE.BufferAttribute(affiliated, 1));
+    geometry.setAttribute('aApprox', new THREE.BufferAttribute(approximate, 1));
     this.colorAttributes = colors.map((array, slot) => {
       const attribute = new THREE.BufferAttribute(array, 3);
       geometry.setAttribute(`aColor${slot}`, attribute);

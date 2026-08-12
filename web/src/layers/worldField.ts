@@ -9,18 +9,16 @@
  * constellation — which fixes the radius exactly and the direction only to the
  * width of the constellation. At Hyvixnym's 3,876 ly, Taurus is 1,800 ly across.
  * The map must not state a position that much more precisely than its source
- * does, so an approximately-placed world is drawn as a **soft, diffuse dot**
- * where an exactly-placed one is crisp. A blurred mark reads as an uncertain
- * position without needing to be explained.
+ * does — so that is said by the polity ring around it, which is drawn dashed
+ * where the position is approximate. This layer draws only the dot.
  *
- * Two earlier attempts are worth recording, since both were worse. Drawing the
- * error as a circle at its true angular size was accurate and unusable: those
- * circles are hundreds of light years wide by construction and dominated every
- * view they appeared in. Replacing them with a broken ring around the marker
- * cost no space, but once the settled layer began ringing these worlds by
- * polity there were two concentric rings a pixel apart carrying two unrelated
- * meanings. One mark, one meaning: the dot's edge is the position's precision
- * and the ring around it is the holder.
+ * Three arrangements were tried before that. A circle at the error's true
+ * angular size was accurate and unusable, those circles being hundreds of light
+ * years wide and dominating every view. A broken ring around the marker cost no
+ * space but landed a pixel inside the polity ring, so the two read as one
+ * confusion. Softening the dot's own edge instead was legible in principle and
+ * too quiet to notice in practice. The dash was always the clearest of them;
+ * what it needed was somewhere to live that was not already occupied.
  *
  * Circles remain for one thing: a world that genuinely *is* a volume. The
  * Corambytia Protectorate is 290 ly across because the setting says so, and that
@@ -63,18 +61,15 @@ const MARKER_VERTEX = /* glsl */ `
   #include <logdepthbuf_pars_vertex>
 
   attribute vec3 aColor;
-  attribute float aApprox;
 
   uniform float uSize;
 
   varying vec3 vColor;
-  varying float vApprox;
 
   void main() {
     vec4 viewPos = modelViewMatrix * vec4(position, 1.0);
     gl_Position = projectionMatrix * viewPos;
     vColor = aColor;
-    vApprox = aApprox;
     gl_PointSize = uSize;
 
     #include <logdepthbuf_vertex>
@@ -88,7 +83,6 @@ const MARKER_FRAGMENT = /* glsl */ `
   uniform float uOpacity;
 
   varying vec3 vColor;
-  varying float vApprox;
 
   void main() {
     vec2 offset = gl_PointCoord * 2.0 - 1.0;
@@ -104,13 +98,8 @@ const MARKER_FRAGMENT = /* glsl */ `
     // across and the ring's inner edge is at 4.7, so a fade reaching r = 0.86
     // arrives exactly there and — drawing later — paints over the polity
     // instead of sitting inside it. Ending at 0.62 leaves a clear gap.
-    float edge = mix(0.36, 0.62, vApprox);
-    float dot = 1.0 - smoothstep(0.0, edge, r);
-
-    // Softened rather than lifted: a wider fade spreads the same light thinner,
-    // and brightening it back would only make an uncertain position louder than
-    // a known one.
-    float alpha = dot * uOpacity * mix(1.0, 0.85, vApprox);
+    float dot = 1.0 - smoothstep(0.0, 0.40, r);
+    float alpha = dot * uOpacity;
     if (alpha < 0.004) discard;
 
     #include <logdepthbuf_fragment>
@@ -205,7 +194,6 @@ export class WorldField {
 
     const positions = new Float32Array(this.count * 3);
     const colors = new Float32Array(this.count * 3);
-    const approximate = new Float32Array(this.count);
 
     // A separate, much shorter list: only a world that is genuinely a volume
     // gets a circle. A direction error is not an extent, and drawing it as one
@@ -225,9 +213,6 @@ export class WorldField {
       colors[out * 3 + 1] = color.g;
       colors[out * 3 + 2] = color.b;
 
-      // Broken ring where the source gave a region rather than a direction.
-      approximate[out] = (world.direction_error_deg ?? 0) > 0 ? 1 : 0;
-
       // The extent the setting states, and only that. Corambytia is 290 ly
       // across because the article says so — a fact about the object, unlike a
       // direction error, which is a fact about how well we know where it is.
@@ -242,7 +227,6 @@ export class WorldField {
     const geometry = new THREE.BufferGeometry();
     geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
     geometry.setAttribute('aColor', new THREE.BufferAttribute(colors, 3));
-    geometry.setAttribute('aApprox', new THREE.BufferAttribute(approximate, 1));
     geometry.boundingSphere = new THREE.Sphere(new THREE.Vector3(), Infinity);
 
     this.markerMaterial = new THREE.ShaderMaterial({
