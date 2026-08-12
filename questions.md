@@ -152,15 +152,15 @@ A "sector" is settled: it is the volume behind that constellation as seen from E
 - https://www.orionsarm.com/eg-article/5025ec682d4a4
 - https://www.orionsarm.com/eg-article/464e939b35f57
 
-### Neli-Neti — HIP 63911 is catalogued at 17,120 ly, far outside any Terragen frontier.
+### Neli-Neti — HIP 63911 is catalogued at 17,120 ly while the system is given as 698 ly away.
 
 *contradiction*
 
 The article gives the identifier and a colonisation year of 3189. The catalogue puts that star in Musca at 17,120 light years, which is two and a half times the canonical frontier and not somewhere a colony was founded in the fourth millennium. A Hipparcos parallax at that range is barely a measurement, so the distance is the likelier error — but the map draws what the catalogue says.
 
-**What the map does now.** Bound on the identifier and drawn at 17,120 ly, well past the frontier and so without a polity colour.
+**What the map does now.** Placed at 698 ly in that star's direction. The system and the star are both in Musca, which localises the disagreement to the parallax rather than the identity: Hipparcos positions are good to milliarcseconds and its parallaxes at kiloparsec ranges are not measurements at all. So the direction is the catalogue's and the distance the setting's.
 
-**What would settle it.** A distance for the system, or a different identifier for it.
+**What would settle it.** Whether HIP 63911 is the right star. If it is, nothing here is in doubt but the catalogue's parallax, which is a known weakness rather than a question for the setting.
 
 - https://www.orionsarm.com/eg-article/5385f65c43e09
 

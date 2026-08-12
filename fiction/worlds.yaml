@@ -1975,16 +1975,22 @@ worlds:
     affiliations: [nocozo, utopia-sphere]
     article: https://www.orionsarm.com/eg-article/5385f65c43e09
     location:
-      hip: 63911
-      catalogue_from_source: true
+      ra_deg: 196.4508
+      dec_deg: -65.5129
+      distance: 698 ly
+      near: HIP 63911
     events:
       - year_at: 3189
         kind: settled
     note: >-
-      The catalogue puts HIP 63911 at 17,120 ly, far beyond any Terragen
-      frontier and hard to reconcile with a colony founded in 3189. The
-      identifier is the article's; the distance is the catalogue's and is
-      probably a poor parallax. Listed in questions.md.
+      Placed at 698 ly in the direction of HIP 63911, rather than at the 17,120
+      ly the catalogue gives that star. Musca is both the constellation the
+      system is said to be in and the one the star is in, which says the
+      identifier is right and only its parallax is wrong — Hipparcos measures
+      positions to milliarcseconds and measures parallaxes at kiloparsec ranges
+      barely at all. So the direction is taken from the star and the distance
+      from the source. Using the constellation alone would have thrown away a
+      good direction for a cone some 86 ly wide at this range.
 
   - name: New Mars
     kind: system
