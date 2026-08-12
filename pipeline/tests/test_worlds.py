@@ -269,8 +269,9 @@ def test_a_reported_discovery_still_dates_the_world() -> None:
     assert worlds["Stanislaw"]["settled_at"] is None
 
     # And a world whose articles give no date stays undated rather than guessing.
+    # Macrystis stood here too until the Solar Dominion roster supplied 5393 —
+    # a date arriving later is the system working, not the assertion failing.
     assert worlds["Sand"]["known_from_at"] is None
-    assert worlds["Macrystis"]["known_from_at"] is None
 
 
 def test_affiliation_is_the_present_holder() -> None:

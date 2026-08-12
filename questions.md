@@ -176,17 +176,19 @@ The article gives GL 86 and HR 637 for Thraub's primary. The Inner Sphere colony
 
 - https://www.orionsarm.com/eg-article/48f94f1a7f8db
 
-### Lucida and the Iota Network — Lucida is the capital of the academic Iota Network, which has no entry in the polity list.
+### Places held by bodies the polity list does not carry — Three worlds are drawn with no holder at all, because the body that holds them is not one this map knows.
 
 *category*
 
-Corona's system passed out of the Non-Coercive Zone after a complicated history. Filing it under a former holder would misstate the present, and the current holder is not something this map knows about.
+Lucida is the capital of the academic Iota Network. Halsokallan fell to the Amalgamation in 8760. Bullseye is independent, with strong ties to the Zoeific Biopolity but not part of it. In each case a former holder is known and the present one is not represented here, and recording the former would state something false about the present.
 
-**What the map does now.** Recorded with no affiliation at all, so it draws a neutral ring: settled, holder unstated. That is accurate and unsatisfying.
+**What the map does now.** Leaves the affiliation empty, which draws the faint neutral ring the map uses for a settled system nobody named holds. Accurate and unsatisfying, since it reads the same as an unclaimed world.
 
-**What would settle it.** Whether the Iota Network belongs in the polity list, and what else it holds if so.
+**What would settle it.** Whether the Iota Network and the Amalgamation belong in the polity list, and how a genuinely independent system should be distinguished from one whose holder is merely unrecorded — they are different facts and the map currently draws them alike.
 
 - https://www.orionsarm.com/eg-article/5c758943a42b2
+- https://www.orionsarm.com/eg-article/46674941b75a2
+- https://www.orionsarm.com/eg-article/4922e9afcd478
 
 ### Fictional distances attached to real objects — When a system's stated distance disagrees with the catalogue for the star it names, the useful question is where each number came from.
 
@@ -270,13 +272,13 @@ Blanco 1, Collinder 173, Collinder 359, NGC 2244, S232, S27
 
 ## Worlds located only by constellation
 
-28 of 163 canonical worlds are given as a distance and a constellation. That fixes the distance exactly and the direction only to the width of the constellation, which at these ranges is hundreds to thousands of light years. The map draws these with a broken ring rather than a solid one, and the detail panel gives the error in light years.
+34 of 198 canonical worlds are given as a distance and a constellation. That fixes the distance exactly and the direction only to the width of the constellation, which at these ranges is hundreds to thousands of light years. The map draws these with a broken ring rather than a solid one, and the detail panel gives the error in light years.
 
 Coordinates, or a nearby named star, would turn any of these from a region into a position.
 
-## 30 places described but not located
+## 32 places described but not located
 
-Arkady 2, Arnon Dar, Avase, Big Bob, Crustuse, Dashwood, Druidworld, Elderman's Star, Evermore, Galbydeia Torus, Garlin, Gillbank, and 18 more
+Arkady 2, Arnon Dar, Avase, Big Bob, Crustuse, Dashwood, Druidworld, Elderman's Star, Evermore, Galbydeia Torus, Garlin, Gavit, and 20 more
 
 ## 1 designation reused in the Celestia add-on
 
@@ -284,7 +286,7 @@ One designation, two entries, different positions. Both are kept, since dropping
 
 JD 518791
 
-## Settled (4)
+## Settled (5)
 
 Kept so a question answered once is not asked again, and so that a confirmation is on the record alongside the contradictions.
 
@@ -334,3 +336,15 @@ Recorded here as Caretaker on the strength of the Caretaker takeover in 3780, wh
 **What would settle it.** Settled.
 
 - https://www.orionsarm.com/eg-article/46478982497db
+
+### Lucida and the Iota Network — Lucida is the capital of the academic Iota Network, which has no entry in the polity list.
+
+*category*
+
+Corona's system passed out of the Non-Coercive Zone after a complicated history. Filing it under a former holder would misstate the present, and the current holder is not something this map knows about.
+
+**What the map does now.** Recorded with no affiliation at all, so it draws a neutral ring: settled, holder unstated. That is accurate and unsatisfying.
+
+**What would settle it.** Folded into the broader question above, which covers three such cases rather than one.
+
+- https://www.orionsarm.com/eg-article/5c758943a42b2
