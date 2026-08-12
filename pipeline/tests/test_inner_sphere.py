@@ -9,6 +9,7 @@ match that lands at the wrong distance is caught rather than trusted. See
 from __future__ import annotations
 
 import json
+import re
 
 import pytest
 
@@ -169,6 +170,61 @@ class TestColonyAssignments:
         from oastarmap.build.inner_sphere import colony_keys
 
         assert normalise("Nike") in colony_keys("Nike (Bolobo Colony)")
+
+
+class TestColonyNames:
+    """A colony cell holds names and sometimes descriptions, and the map labels
+    stars with the first kind only. Drawing "Site of a recent planet-planet
+    collision" where a name goes states that the place is called that."""
+
+    @pytest.mark.parametrize(
+        ("cell_text", "name", "described"),
+        [
+            # A slash separates names, and the parts stay joined.
+            ("Vega / Aksijaha", "Vega / Aksijaha", ""),
+            ("Talitha / Mithras / Fata Morgana", "Talitha / Mithras / Fata Morgana", ""),
+            # ... except in the two cells where it does not. This one is the
+            # reason a rule by shape will not do: the part that reads like a
+            # description here is a name in "Gaigent / The World of Forking Paths".
+            (
+                "Fomalhaut / Capital of Fomalhaut Acquisition Society",
+                "Fomalhaut",
+                "Capital of Fomalhaut Acquisition Society",
+            ),
+            ("Gaigent / The World of Forking Paths", "Gaigent / The World of Forking Paths", ""),
+            # A parenthetical always describes.
+            ("Nike (Bolobo Colony)", "Nike", "Bolobo Colony"),
+            ("Photonsurge / Photonchip Kingdom (ahuman)", "Photonsurge / Photonchip Kingdom", "ahuman"),
+            # And a cell that is nothing but one names nothing.
+            ("(Site of a recent planet-planet collision)", "", "Site of a recent planet-planet collision"),
+            ("(Ahuman)", "", "Ahuman"),
+        ],
+    )
+    def test_names_and_descriptions_separate(self, cell_text, name, described):
+        from oastarmap.build.inner_sphere import colony_name
+
+        assert colony_name(cell_text) == (name, described)
+
+    def test_no_built_label_is_a_description(self, built):
+        """The map labels a star with `colony`, so nothing in it may be prose.
+
+        A description left in that field reaches the map as a name. The tell is
+        a lowercase function word — real names here are "Fata Morgana" and "Ain
+        Soph Aur" — but three genuine names use one too, so those are listed and
+        anything else appearing is a cell nobody has looked at yet. This is a
+        tripwire for the next import rather than a check of today's data.
+        """
+        NAMES_THAT_READ_LIKE_PROSE = {
+            "Gaigent / The World of Forking Paths",
+            "Rasalhague / Forest of Life",
+            "The Seat of Judgement",
+        }
+        prose = {
+            colony["colony"]
+            for colony in built["colonies"]
+            if re.search(r"\b(?:of|for|an|the)\b", colony["colony"])
+        }
+        assert prose <= NAMES_THAT_READ_LIKE_PROSE
 
     def test_a_shared_system_keeps_every_polity(self, built):
         entry = next(c for c in built["colonies"] if "Atlantis" in c["colony"])

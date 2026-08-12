@@ -630,6 +630,7 @@ describe('settled systems', () => {
           star_index: index,
           star: 'x',
           colony: name,
+          described: '',
           spectral_type: '',
           mass_sol: '',
           luminosity_sol: '',
@@ -662,6 +663,24 @@ describe('settled systems', () => {
       withColony(0, 'Akela'),
     );
     expect(layoutOne(index, 5)[0].text).toBe('Akela');
+  });
+
+  it('keeps the catalogue name where the table describes but does not name', () => {
+    // Four rows of the colony table are a description and nothing else — the
+    // star has an Orion's Arm presence and no Orion's Arm name. Those must fall
+    // back to the catalogue, not label the star "Site of a recent planet-planet
+    // collision", which reads as a name and is not one.
+    const colonies = withColony(0, '');
+    colonies.get(0)!.described = 'Site of a recent planet-planet collision';
+    const index = new ObjectIndex(
+      makeStars([[0, 0, -100]], { '0': { proper: 'Wolf 359' } }),
+      null,
+      null,
+      null,
+      null,
+      colonies,
+    );
+    expect(layoutOne(index, 5)[0].text).toBe('Wolf 359');
   });
 
   it('ranks a settled system above a plain named star', () => {
@@ -705,6 +724,7 @@ describe("Orion's Arm only mode", () => {
           star_index: index,
           star: 'x',
           colony: 'Akela',
+          described: '',
           spectral_type: '',
           mass_sol: '',
           luminosity_sol: '',
@@ -789,6 +809,7 @@ describe('label priority does not encode our own record-keeping', () => {
       star_index: index,
       star: 'x',
       colony: name,
+      described: '',
       spectral_type: '',
       mass_sol: '',
       luminosity_sol: '',
@@ -906,6 +927,7 @@ describe('picking prefers what was aimed at', () => {
             star_index: 0,
             star: 'x',
             colony: 'Akela',
+            described: '',
             spectral_type: '',
             mass_sol: '',
             luminosity_sol: '',
@@ -973,6 +995,7 @@ describe('a settled star is clickable wherever it is drawn', () => {
           star_index: index,
           star: 'x',
           colony: name,
+          described: '',
           spectral_type: '',
           mass_sol: '',
           luminosity_sol: '',
@@ -1186,6 +1209,7 @@ describe('affiliations merge across sources', () => {
     star_index: 0,
     star: '18 Scorpii',
     colony: name,
+    described: '',
     spectral_type: '',
     mass_sol: '',
     luminosity_sol: '',
@@ -1322,6 +1346,7 @@ describe('real and Orion’s Arm names', () => {
             star_index: 0,
             star: 'Lambda Aurigae',
             colony: 'New Gaia',
+            described: '',
             spectral_type: '',
             mass_sol: '',
             luminosity_sol: '',

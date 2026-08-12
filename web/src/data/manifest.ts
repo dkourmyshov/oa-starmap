@@ -214,7 +214,15 @@ export interface Colony {
   /** Index into the star dataset. */
   star_index: number;
   star: string;
+  /** What Orion's Arm calls the system. Empty where it names no name. */
   colony: string;
+  /**
+   * What the table says the place *is*, where that is not a name: a
+   * parenthetical qualifier, or one of the two cells whose slash separates a
+   * name from a description rather than two names. Kept apart from `colony`
+   * so a description is never drawn as a label.
+   */
+  described: string;
   spectral_type: string;
   mass_sol: string;
   luminosity_sol: string;

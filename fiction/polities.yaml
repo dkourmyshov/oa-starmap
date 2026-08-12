@@ -284,10 +284,12 @@ polities:
 
   - id: fomalhaut-acquisition-society
     name: Fomalhaut Acquisition Society
-    color: "#E57D19"
-    # Pushed off the Non-Coercive Zone, which it sat 5.9 from and now sits 13.3
-    # from. Kept warm rather than moved to a free part of the wheel: this is a
-    # small polity and its colour should not shout.
+    color: "#C77B10"
+    # Pushed off the Non-Coercive Zone twice. Moving it out of red-orange only
+    # got it to 13.3, which measures as clear and does not read as clear beside
+    # a polity holding six hundred places; turning it gold and darkening it
+    # gets 19.3, and picks up Orion Federation, 12.6 away and closer than
+    # NoCoZo ever was. Still warm — a small polity's colour should not shout.
     kind: polity
     source: eg-system-articles
 

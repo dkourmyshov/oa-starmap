@@ -58,6 +58,43 @@ def colony_keys(name: str) -> list[str]:
     return [normalise(f) for f in forms if f]
 
 
+_DESCRIPTIONS = {
+    "Capital of Fomalhaut Acquisition Society",
+    "Former ISO construction site for Rachel",
+    "Home of Andromeda Kids",
+}
+"""Parts of a colony cell that describe the place rather than name it.
+
+Names by default: the table's slash usually separates two of them, "Vega /
+Aksijaha" being one system under both. These three are the exceptions, and they
+cannot be recognised by shape — "The World of Forking Paths" and "Capital of
+Fomalhaut Acquisition Society" are the same phrase to any rule worth writing,
+and the first is what a world is called. Twenty-five cells use a slash at all,
+so naming three exceptions costs less than a heuristic that would be wrong
+about Gaigent, Rasalhague and the Seat of Judgement.
+"""
+
+
+def colony_name(cell_text: str) -> tuple[str, str]:
+    """Split a colony cell into what the place is called and what it is.
+
+    A parenthetical is never part of a name — the matching above has always
+    assumed that — and four cells are nothing but one, describing a star that
+    Orion's Arm has a presence on and no name for. Those get an empty name, so
+    the map labels them with the catalogue's name and puts "site of a recent
+    planet-planet collision" where a description belongs, rather than drawing
+    that sentence where a name should be.
+    """
+    described = [m.strip("() ") for m in re.findall(r"\(([^)]*)\)", cell_text)]
+    bare = _PARENTHETICAL.sub("", cell_text).strip()
+    named = []
+    for piece in (p.strip() for p in _SPLIT_NAMES.split(bare)):
+        if not piece:
+            continue
+        (described if piece in _DESCRIPTIONS else named).append(piece)
+    return " / ".join(named), "; ".join(described)
+
+
 SOURCE_URL = "https://www.orionsarm.com/eg-topic/45bcbcab90032"
 SOURCE_TITLE = "The Stars of the Inner Sphere"
 
@@ -241,13 +278,15 @@ def build_inner_sphere(
 
         stats.methods[match.method] += 1
         stats.resolved += 1
-        if cell(row.colony):
+        name, description = colony_name(cell(row.colony))
+        if name:
             stats.settled += 1
         colonies.append(
             {
                 "star_index": match.index,
                 "star": row.star,
-                "colony": cell(row.colony),
+                "colony": name,
+                "described": description,
                 "affiliations": affiliations,
                 "status": statuses[0] if statuses else "",
                 "note": " ".join(notes),

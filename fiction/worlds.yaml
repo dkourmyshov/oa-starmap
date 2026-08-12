@@ -3245,3 +3245,53 @@ worlds:
       catalogue. Its distance from Beta Arae is given as 82 ly and the catalogue
       makes it 198; the difference is in Beta Arae's own distance, the direction
       agreeing to half a degree.
+
+  # ---- Fomalhaut Acquisition Society --------------------------------------
+  #
+  # A short roster for a reason: the Society is mostly shipborne, so its
+  # presence is largely not in places at all. Penglai, in the Shenjing system,
+  # is entered above under the Sophic League that mainly holds it.
+
+  - name: Fomalhaut
+    kind: system
+    affiliations: [fomalhaut-acquisition-society]
+    article: https://www.orionsarm.com/eg-topic/45cbd30e46c61
+    location:
+      star: Fomalhaut
+    events:
+      - year_at: 1403
+        kind: visited
+    note: >-
+      The Society's capital, 25 ly out, and the only place it is named for. The
+      Encyclopaedia gives it no article of its own — the topic entry for the
+      Society is the source for the system as well.
+
+  - name: The Remnant
+    kind: system
+    affiliations: [fomalhaut-acquisition-society]
+    article: https://www.orionsarm.com/eg-article/5a0d7670250f6
+    location:
+      hd: 205739
+      catalogue_from_source: true
+    events:
+      - year_at: 3383
+        kind: visited
+        note: Rediscovered by a Society ship.
+    note: >-
+      HD 205739, since named Samaya, 303 ly out in Piscis Austrinus — the same
+      constellation as Fomalhaut but not especially near it, 17 degrees away on
+      the sky and 279 ly away in fact.
+
+  - name: Yoruba
+    kind: planet
+    affiliations: [fomalhaut-acquisition-society]
+    article: https://www.orionsarm.com/eg-article/534feb8182fb1
+    location:
+      hd: 216008
+      catalogue_from_source: true
+    events:
+      - year_at: 1800
+        kind: settled
+        precision: circa
+        note: Reached by ahumans.
+    note: HD 216008, 169 ly out in Grus.

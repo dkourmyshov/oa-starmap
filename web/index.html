@@ -147,6 +147,23 @@
         color: #c9a978;
       }
 
+      /*
+       * Links sit inside note lines, which are already dim, so they are picked
+       * out by the accent rather than by being brighter — a link should not
+       * outweigh the note it belongs to. Wrapping is on the address so a long
+       * one cannot widen the panel.
+       */
+      .link {
+        color: var(--accent, #7f9cff);
+        text-decoration: none;
+        border-bottom: 1px solid rgba(127, 156, 255, 0.35);
+        overflow-wrap: anywhere;
+      }
+
+      .link:hover {
+        border-bottom-color: var(--accent, #7f9cff);
+      }
+
       .jump-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;

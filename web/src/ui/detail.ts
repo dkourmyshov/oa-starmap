@@ -120,6 +120,44 @@ function el<K extends keyof HTMLElementTagNameMap>(
   return node;
 }
 
+/**
+ * A line carrying a URL, with the URL itself as the link.
+ *
+ * Any leading prose stays plain text and only the address is clickable, so it
+ * is obvious what will open. Encyclopaedia article addresses end in a hash that
+ * says nothing — "eg-article/475d8f392ccca" — so the host and section are shown
+ * and the hash is elided; the full address is still in the href and in the
+ * title, which is where anyone copying it will look.
+ */
+function linkLine(className: string, url: string, prefix = ''): HTMLElement {
+  const line = el('div', className);
+  if (prefix) line.appendChild(document.createTextNode(`${prefix} `));
+  const anchor = el('a', 'link');
+  anchor.href = url;
+  anchor.target = '_blank';
+  anchor.rel = 'noopener noreferrer';
+  anchor.title = url;
+  const match = /^https?:\/\/(?:www\.)?([^/]+)\/([^/]+)\/(.+)$/.exec(url);
+  anchor.textContent = match ? `${match[1]}/${match[2]}/…` : url;
+  line.appendChild(anchor);
+  return line;
+}
+
+/** Everything in the string that looks like an address, in order. */
+const URL_PATTERN = /https?:\/\/\S+/g;
+
+/**
+ * A citation, which may be prose, a bare address, or prose ending in one.
+ * Splitting on the address rather than testing the whole string means a
+ * citation like "Table 3, https://…" still gets a working link.
+ */
+function citationLine(className: string, text: string): HTMLElement {
+  const urls = text.match(URL_PATTERN);
+  if (!urls || urls.length !== 1) return el('div', className, text);
+  const [url] = urls;
+  return linkLine(className, url, text.slice(0, text.indexOf(url)).trim());
+}
+
 /** "1 200 ly (940 – 1 500)" — the band is the honest part. */
 function distanceWithBand(
   distance: number,
@@ -199,7 +237,7 @@ export class DetailPanel {
       if (detail.polities.length > 0) {
         note.appendChild(el('div', 'note-line note-polity', detail.polities.join(', ')));
         if (detail.associationSource) {
-          note.appendChild(el('div', 'note-line', `after ${detail.associationSource}`));
+          note.appendChild(citationLine('note-line', `after ${detail.associationSource}`));
         }
       }
       for (const event of detail.events ?? []) {
@@ -217,7 +255,7 @@ export class DetailPanel {
         line.appendChild(el('span', 'label', world.kind));
         line.appendChild(el('span', 'value', world.name));
         note.appendChild(line);
-        if (world.article) note.appendChild(el('div', 'note-line', world.article));
+        if (world.article) note.appendChild(linkLine('note-line', world.article));
       }
       if (beyond && fiction) {
         // Stated on the panel rather than only implied by the missing colour,
@@ -247,7 +285,7 @@ export class DetailPanel {
       this.onFocus(x, y, z, standoff);
     });
     actions.appendChild(fly);
-    actions.appendChild(el('div', 'note-line', detail.citation));
+    actions.appendChild(citationLine('note-line', detail.citation));
     this.panel.appendChild(actions);
   }
 
@@ -550,6 +588,9 @@ export class DetailPanel {
     if (colony?.status) {
       rows.push({ label: 'Status', value: colony.status, warn: colony.status !== 'special' });
     }
+    // What the table says the place is, where it gave no name for it. Shown as
+    // a row of its own, because it is not a name and reads wrongly as one.
+    if (colony?.described) rows.push({ label: "Orion's Arm", value: colony.described });
     if (colony?.note) rows.push({ label: 'Note', value: colony.note });
     if (colony?.distance_disagrees) {
       rows.push({
