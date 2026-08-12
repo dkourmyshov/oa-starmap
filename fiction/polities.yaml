@@ -335,6 +335,16 @@ polities:
     color: "#F48FB1"
     source: eg-system-articles
 
+  - id: trhn
+    name: TRHN
+    color: "#9E3C43"
+    source: eg-system-articles
+    # The TechnoRapture HyperNation, a near-Sephirotic empire. Left as the
+    # initialism because that is what the articles write; the expansion is in
+    # questions.md and belongs to the reader who asks, not to the legend.
+    # Diffuse, so it needs a colour of its own even while it holds one world —
+    # 17.7 from its nearest, the widest margin any polity here has.
+
   - id: amalgamation
     name: Amalgamation
     color: "#947838"

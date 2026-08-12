@@ -8,7 +8,7 @@ Nothing below is a complaint about the setting. Most of it is the ordinary frict
 
 ---
 
-## Open questions (16)
+## Open questions (19)
 
 ### Enigma system — Three sources put the Enigma system in three different directions.
 
@@ -206,6 +206,44 @@ Three cases look alike on the map and are not alike at all. The stated figure ma
 - https://www.orionsarm.com/eg-article/5385f65c43e09
 - https://www.orionsarm.com/eg-article/47a28b116776e
 
+### Beta Arae and the Utopia Sphere core — Half the Utopia Sphere is measured from Beta Arae, and the star has since moved about a hundred light years further away.
+
+*contradiction*
+
+Beta Arae is the origin the Encyclopaedia quotes the Utopia Sphere's core against: Huan Gao is 19 ly from it, the Wallace swarm 44, the Wilson swarm 82, and Shangdu is in the system itself. Those figures are consistent with each other and with the stated distances from Sol only if Beta Arae is about 615 ly out. The catalogue used here puts it at 715. The directions are not in doubt — Wallace and Wilson sit 4.0 and 7.2 degrees from Beta Arae, against the 3.0 and 7.6 the article's numbers require, and the separation between the two swarms is given as 42 ly and comes out of the catalogue at 41.6. It is the radius that moved, in the star that everything else is referred to, and Beta Arae is a bright supergiant whose parallax is exactly the kind that gets revised. The consequence on the map is that a neighbourhood the setting describes as tens of light years across is drawn a couple of hundred across.
+
+**What the map does now.** Binds Beta Arae, Wallace and Wilson to their catalogue stars, since the identifications are confirmed independently by constellation and by the swarms' separation, and lets the distances be whatever the catalogue says. Huan Gao, which has no catalogue identifier, takes Beta Arae's direction and its own stated distance instead.
+
+**What would settle it.** Which distance to Beta Arae the setting means, and whether the neighbourhood's internal distances or its distances from Sol should be preserved when the two cannot both hold.
+
+- https://www.orionsarm.com/eg-article/460c3bd4ad939
+- https://www.orionsarm.com/eg-article/4ce526a25575d
+- https://www.orionsarm.com/eg-article/46f879c9c42a8
+
+### Topia — Topia's star is two degrees from Beta Arae on the sky and four times further away.
+
+*uncertainty*
+
+The article identifies Topia as HIP 85986 and gives no distance. That star is 1.87 degrees from Beta Arae in direction, which is what one would expect of a Utopia Sphere world in the core, but 2,716 ly from Sol against Beta Arae's 715 — some 2,000 ly beyond it, in the Middle Regions. Either Topia really is that far out, in which case it is much the most distant thing in this roster and nothing in the article says so, or the identifier was picked for its position on the sky near Beta Arae without its parallax being checked.
+
+**What the map does now.** Binds to HIP 85986 and draws Topia at 2,716 ly, the article having given no distance to prefer over the catalogue's.
+
+**What would settle it.** Whether Topia is intended to lie in the Utopia Sphere's core near Beta Arae, or genuinely in the Middle Regions.
+
+- https://www.orionsarm.com/eg-article/47a3ec6e06652
+
+### Tannhauser and Minnesang — One article, two system names, one distance.
+
+*uncertainty*
+
+The article names both Tannhauser and Minnesang, describes them as systems, and gives a single distance of 685 ly in Ara. Whether that is one system under two names, or two systems close enough to share a figure, changes whether the map should draw one marker or two.
+
+**What the map does now.** Draws one place, Tannhauser, with Minnesang recorded as an alternative name. Splitting it would mean inventing a separation between the two, which no source gives.
+
+**What would settle it.** Whether Tannhauser and Minnesang are one system or two.
+
+- https://www.orionsarm.com/eg-article/47a13d7c77388
+
 ## The Inner Sphere colony tables
 
 909 of 1,122 rows resolve to a star we hold. The rest break down as follows.
@@ -275,7 +313,7 @@ Blanco 1, Collinder 173, Collinder 359, NGC 2244, S232, S27
 
 ## Worlds located only by constellation
 
-36 of 216 canonical worlds are given as a distance and a constellation. That fixes the distance exactly and the direction only to the width of the constellation, which at these ranges is hundreds to thousands of light years. The map draws these with a broken ring rather than a solid one, and the detail panel gives the error in light years.
+42 of 234 canonical worlds are given as a distance and a constellation. That fixes the distance exactly and the direction only to the width of the constellation, which at these ranges is hundreds to thousands of light years. The map draws these with a broken ring rather than a solid one, and the detail panel gives the error in light years.
 
 Coordinates, or a nearby named star, would turn any of these from a region into a position.
 
@@ -289,7 +327,7 @@ One designation, two entries, different positions. Both are kept, since dropping
 
 JD 518791
 
-## Settled (5)
+## Settled (6)
 
 Kept so a question answered once is not asked again, and so that a confirmation is on the record alongside the contradictions.
 
@@ -351,3 +389,15 @@ Corona's system passed out of the Non-Coercive Zone after a complicated history.
 **What would settle it.** Folded into the broader question above, which covers three such cases rather than one.
 
 - https://www.orionsarm.com/eg-article/5c758943a42b2
+
+### TRHN — TRHN is the TechnoRapture HyperNation, and stays abbreviated.
+
+*uncertainty*
+
+Shangdu arrived as joint Utopia Sphere and TRHN, an initialism no article expands. It is the TechnoRapture HyperNation, a near-Sephirotic empire — diffuse, with canonical worlds of its own still to be entered here. That the articles use the letters and not the name is the setting's own usage rather than an omission, so the legend follows it.
+
+**What the map does now.** Lists the polity as TRHN, as the articles write it, with the expansion recorded here and in a comment beside its colour.
+
+**What would settle it.** Settled.
+
+- https://www.orionsarm.com/eg-article/4d5d92f9dcd6d

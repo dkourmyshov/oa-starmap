@@ -2990,3 +2990,258 @@ worlds:
       The white dwarf EGGR 471, also GJ 3162 and WD 0230-144. Below Hipparcos
       and outside the Bright Star Catalogue, so the Celestia add-on's position
       is the only one this map has for it.
+
+  # ---- Utopia Sphere ------------------------------------------------------
+  #
+  # The one roster whose worlds mostly share a landmark: Beta Arae, a hot
+  # supergiant in Ara, against which Cephalotopia, Eutopia, Huan Gao, Megasov,
+  # Oro Mistral and Tannhauser are all quoted at 390-720 ly in the same
+  # constellation. The catalogue puts Beta Arae at 715 ly while the
+  # Encyclopaedia's own figures imply about 615; see questions.md, which also
+  # asks about Topia.
+
+  - name: Beta Arae
+    kind: system
+    system: Beta Arae
+    affiliations: [utopia-sphere]
+    article: https://www.orionsarm.com/eg-article/460c3bd4ad939
+    location:
+      star: Beta Arae
+    events:
+      - year_at: 2975
+        kind: settled
+    note: >-
+      The landmark the Utopia Sphere's core is quoted against: half a dozen of
+      its systems are given as so many light years from Beta Arae rather than
+      from Sol. A hot supergiant, bright enough that its parallax has been
+      revised more than once — the catalogue here says 715 ly, while the
+      distances the Encyclopaedia gives its neighbours imply about 615.
+
+  - name: Shangdu
+    kind: planet
+    system: Beta Arae
+    affiliations: [utopia-sphere, trhn]
+    article: https://www.orionsarm.com/eg-article/4d5d92f9dcd6d
+    location:
+      star: Beta Arae
+    note: >-
+      In the Beta Arae system, in the Middle Regions. Held jointly by the
+      Utopia Sphere and the TRHN, the TechnoRapture HyperNation.
+
+  - name: Cephalotopia
+    kind: planet
+    affiliations: [utopia-sphere]
+    article: https://www.orionsarm.com/eg-article/4615afcd2ea49
+    location:
+      constellation: Ara
+      distance: 610 ly
+    events:
+      - year_at: 2756
+        kind: settled
+
+  - name: Eutopia
+    kind: system
+    affiliations: [utopia-sphere]
+    article: https://www.orionsarm.com/eg-article/4e48fbab1c9a5
+    location:
+      constellation: Ara
+      distance: 609 ly
+    events:
+      - year_at: 2880
+        kind: settled
+    note: >-
+      The distance is given but the constellation is not; Ara is inferred from
+      the company it keeps, every other system at this range in the Utopia
+      Sphere's core being there.
+
+  - name: Huan Gao
+    kind: system
+    affiliations: [utopia-sphere]
+    article: https://www.orionsarm.com/eg-article/4ce526a25575d
+    location:
+      ra_deg: 261.3250
+      dec_deg: -55.5299
+      distance: 634 ly
+      near: Beta Arae
+    note: >-
+      Given as 634 ly from Sol and 19 ly from Beta Arae. Nineteen light years
+      at that range is under two degrees, so Beta Arae's direction locates it
+      far better than the constellation would, and the article's own distance
+      from Sol supplies the radius.
+
+  - name: Jhairrn
+    kind: planet
+    affiliations: [utopia-sphere]
+    article: https://www.orionsarm.com/eg-article/4682f0a28416c
+    location:
+      constellation: Circinus
+      distance: 720 ly
+    events:
+      - year_at: 3444
+        kind: settled
+    note: Near the Negentropy Alliance border.
+
+  - name: Megasov
+    kind: megastructure
+    affiliations: [utopia-sphere]
+    article: https://www.orionsarm.com/eg-article/4902ed956c7a6
+    location:
+      constellation: Ara
+      distance: 709 ly
+    note: >-
+      A megastructure around Durran's Star, the system's primary, in what the
+      article calls the Arae Sector.
+
+  - name: New Callisto
+    kind: system
+    affiliations: [utopia-sphere]
+    article: https://www.orionsarm.com/eg-article/690b52618bf5a
+    location:
+      star: Gl 230
+    events:
+      - year_at: 1770
+        kind: visited
+    note: >-
+      The article gives three distances — 60.663 ly from Sol, 8.761 from Alzirr
+      and 3.790 from Paanlaansuu — and they intersect at one point, 0.19 ly from
+      Gl 230. The catalogue then agrees to three decimals on the distance from
+      Sol and to 0.004 ly on Paanlaansuu, so this is that star rather than
+      merely a place near it.
+
+  - name: Oro Mistral
+    kind: system
+    affiliations: [utopia-sphere]
+    article: http://www.orionsarm.com/eg-article/491063be8c97d
+    location:
+      constellation: Ara
+      distance: 390 ly
+    note: >-
+      The system of the star Ahag. The constellation is not stated and is taken
+      from the rest of the Utopia Sphere's core.
+
+  - name: Owen
+    kind: planet
+    affiliations: [utopia-sphere]
+    article: https://www.orionsarm.com/eg-article/475d8f392ccca
+    location:
+      ra_deg: 265.8848
+      dec_deg: -55.6290
+      distance: 387 ly
+      near: HD 160519
+    events:
+      - year_at: 4296
+        kind: settled
+    note: >-
+      Named as HD 160519, which is in Ara as the article says, but at 287 ly
+      rather than the 387 given — too wide a gap to bind across, so the star
+      supplies the direction and the article the distance. An honorary part of
+      the Archosaurian Empire while remaining Utopian.
+
+  - name: Zavijava
+    kind: system
+    system: Zavijava
+    affiliations: [utopia-sphere]
+    article: http://www.orionsarm.com/eg-article/4871893629b5e
+    location:
+      star: Beta Virginis
+    note: Beta Virginis, 36 ly.
+
+  - name: Pacifica
+    kind: planet
+    system: Zavijava
+    affiliations: [utopia-sphere]
+    article: http://www.orionsarm.com/eg-article/48735da987f1b
+    location:
+      star: Beta Virginis
+    events:
+      - year_at: 815
+        kind: visited
+        note: Reached by a Solipsist AI.
+      - year_at: 868
+        kind: visited
+        note: Reached by humans.
+
+  - name: Qjellto
+    kind: planet
+    affiliations: [utopia-sphere, zoeific-biopolity]
+    article: https://www.orionsarm.com/eg-article/46de1625d2357
+    location:
+      hd: 332518
+      catalogue_from_source: true
+    events:
+      - year_at: 2100
+        kind: settled
+        note: Paraterraformed.
+    note: >-
+      Divided rather than shared: the Utopia Sphere holds the Hrek worldhouse
+      and the Zoeific Biopolity everywhere else.
+
+  - name: Schaiffer's World
+    kind: moon
+    affiliations: [utopia-sphere]
+    article: https://www.orionsarm.com/eg-article/4782f7e4b314a
+    location:
+      star: Gl 830
+    note: >-
+      A moon of a superterrestrial planet. The article names the star four
+      ways — Gl 830, HD 204587, BD -13 5945 and HIP 106147 — and all four are
+      the same red dwarf in Capricornus, 58 ly out.
+
+  - name: Tannhauser
+    kind: system
+    also: [Minnesang]
+    affiliations: [utopia-sphere]
+    article: https://www.orionsarm.com/eg-article/47a13d7c77388
+    location:
+      constellation: Ara
+      distance: 685 ly
+    events:
+      - year_at: 3218
+        kind: visited
+    note: >-
+      The article names both Tannhauser and Minnesang and gives one distance.
+      Whether that is one system under two names or two systems near each other
+      is asked in questions.md; drawn as one place until it is answered, since
+      splitting it would mean inventing a separation.
+
+  - name: Topia
+    kind: megastructure
+    affiliations: [utopia-sphere]
+    article: https://www.orionsarm.com/eg-article/47a3ec6e06652
+    location:
+      hip: 85986
+      catalogue_from_source: true
+    events:
+      - year_at: 4800
+        kind: settled
+        precision: not_later_than
+    note: >-
+      A planet and the megastructure built over it. HIP 85986 lies within two
+      degrees of Beta Arae on the sky but four times further out, at 2,716 ly,
+      which places Topia in the Middle Regions rather than in the Utopia
+      Sphere's core. The article gives no distance to check that against.
+
+  - name: Wallace Dyson Swarm
+    kind: megastructure
+    affiliations: [utopia-sphere]
+    article: https://www.orionsarm.com/eg-article/46f879c9c42a8
+    location:
+      hip: 84507
+      catalogue_from_source: true
+    note: >-
+      Given as 644 ly from Sol, 44 from Beta Arae and 42 from the Wilson swarm.
+      The catalogue reproduces the last of those almost exactly at 41.6 ly,
+      which confirms the pair, but puts both about 14% nearer than the article.
+
+  - name: Wilson Dyson Swarm
+    kind: megastructure
+    affiliations: [utopia-sphere]
+    article: https://www.orionsarm.com/eg-article/470030cd516a2
+    location:
+      hip: 84570
+      catalogue_from_source: true
+    note: >-
+      The Wallace swarm's neighbour, 42 ly away in the article and 41.6 in the
+      catalogue. Its distance from Beta Arae is given as 82 ly and the catalogue
+      makes it 198; the difference is in Beta Arae's own distance, the direction
+      agreeing to half a degree.
