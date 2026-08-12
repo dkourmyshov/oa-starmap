@@ -180,15 +180,16 @@ The article gives GL 86 and HR 637 for Thraub's primary. The Inner Sphere colony
 
 *category*
 
-Lucida is the capital of the academic Iota Network. Halsokallan fell to the Amalgamation in 8760. Bullseye is independent, with strong ties to the Zoeific Biopolity but not part of it. In each case a former holder is known and the present one is not represented here, and recording the former would state something false about the present.
+Lucida is the capital of the academic Iota Network. Halsokallan fell to the Amalgamation in 8760 and Adorate a year later, so that body now holds two worlds here. Big Tor is shared with the Free Sophic. Bullseye is independent, with strong ties to the Zoeific Biopolity but not part of it. In each case a former holder is known and the present one is not represented here, and recording the former would state something false about the present.
 
 **What the map does now.** Leaves the affiliation empty, which draws the faint neutral ring the map uses for a settled system nobody named holds. Accurate and unsatisfying, since it reads the same as an unclaimed world.
 
-**What would settle it.** Whether the Iota Network and the Amalgamation belong in the polity list, and how a genuinely independent system should be distinguished from one whose holder is merely unrecorded — they are different facts and the map currently draws them alike.
+**What would settle it.** Whether the Iota Network, the Amalgamation and the Free Sophic belong in the polity list, and how a genuinely independent system should be distinguished from one whose holder is merely unrecorded — they are different facts and the map currently draws them alike.
 
 - https://www.orionsarm.com/eg-article/5c758943a42b2
 - https://www.orionsarm.com/eg-article/46674941b75a2
 - https://www.orionsarm.com/eg-article/4922e9afcd478
+- https://www.orionsarm.com/eg-article/45e4e60b2bec2
 
 ### Fictional distances attached to real objects — When a system's stated distance disagrees with the catalogue for the star it names, the useful question is where each number came from.
 
@@ -272,13 +273,13 @@ Blanco 1, Collinder 173, Collinder 359, NGC 2244, S232, S27
 
 ## Worlds located only by constellation
 
-34 of 198 canonical worlds are given as a distance and a constellation. That fixes the distance exactly and the direction only to the width of the constellation, which at these ranges is hundreds to thousands of light years. The map draws these with a broken ring rather than a solid one, and the detail panel gives the error in light years.
+36 of 216 canonical worlds are given as a distance and a constellation. That fixes the distance exactly and the direction only to the width of the constellation, which at these ranges is hundreds to thousands of light years. The map draws these with a broken ring rather than a solid one, and the detail panel gives the error in light years.
 
 Coordinates, or a nearby named star, would turn any of these from a region into a position.
 
-## 32 places described but not located
+## 35 places described but not located
 
-Arkady 2, Arnon Dar, Avase, Big Bob, Crustuse, Dashwood, Druidworld, Elderman's Star, Evermore, Galbydeia Torus, Garlin, Gavit, and 20 more
+Arkady 2, Arnon Dar, Avase, Big Bob, Crustuse, Dashwood, Druidworld, Elderman's Star, Evermore, Galbydeia Torus, Garlin, Gavit, and 23 more
 
 ## 1 designation reused in the Celestia add-on
 

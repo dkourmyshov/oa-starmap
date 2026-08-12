@@ -2744,3 +2744,252 @@ worlds:
       Prefecture, and Enif is in Pegasus at 690 ly — so the constellation is
       inferred from the prefecture's centre rather than stated, and the two sit
       at much the same range.
+
+  # ---- Sophic League -------------------------------------------------------
+  #
+  # A cluster of these sit in Puppis within a few hundred light years of one
+  # another — Ararat, Kelarc, New Taylor, Liaris Rosette, Satyaloka — which is
+  # the closest thing to a contiguous volume any roster here has produced.
+
+  - name: Adorate
+    kind: planet
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/45e4e60b2bec2
+    location:
+      ra_deg: 34.6875
+      dec_deg: 58.2917
+      distance: 5980 ly
+    events:
+      - year_at: 8761
+        kind: transferred
+        note: Fell to the Amalgamation, a year after Halsokallan.
+    note: >-
+      In Perseus, from coordinates. Formerly Sophic League and now held by the
+      Amalgamation, which has no entry in the polity list, so no affiliation is
+      recorded rather than a former one left standing.
+
+  - name: Ararat
+    kind: planet
+    system: Ararat
+    parent: Athos
+    affiliations: [sophic-league]
+    article: https://www.orionsarm.com/eg-article/45f7561809fd
+    location:
+      hd: 66740
+      catalogue_from_source: true
+    events:
+      - year_at: 2642
+        kind: settled
+    note: Athos is the primary. In Puppis at 183 ly.
+
+  - name: Harmonic-Resonance
+    kind: system
+    system: Harmonic-Resonance
+    affiliations: [sophic-league]
+    article: https://www.orionsarm.com/eg-article/466c8fefdbfc5
+    location:
+      oa_star: JD 10013
+    events:
+      - year_at: 2805
+        kind: settled
+        note: Terraformed.
+
+  - name: Hhrraiirah
+    kind: planet
+    system: Errhhaa
+    affiliations: [sophic-league]
+    article: https://www.orionsarm.com/eg-article/467092568689e
+    location:
+      constellation: Puppis
+      distance: 1981 ly
+    events:
+      - year_at: 5533
+        kind: settled
+
+  - name: Jensan
+    kind: planet
+    affiliations: [sophic-league]
+    article: https://www.orionsarm.com/eg-article/4681a5f4cfc46
+    location:
+      constellation: Puppis
+      distance: 1409 ly
+    events:
+      - year_at: 5309
+        kind: visited
+        note: Arrival.
+
+  - name: Kelarc
+    kind: planet
+    affiliations: [sophic-league]
+    article: https://www.orionsarm.com/eg-article/466f45b088faf
+    location:
+      hip: 39748
+      catalogue_from_source: true
+    events:
+      - year_at: 2701
+        kind: settled
+    note: HD 67578, in Puppis at 176 ly.
+
+  - name: Kuranaba
+    kind: planet
+    affiliations: [sophic-league]
+    article: https://www.orionsarm.com/eg-article/46749a8d00410
+    location:
+      note: >-
+        209 ly from Sol and no direction given. The star is TYC 5978-3659-1,
+        from a catalogue this map does not carry, so there is nothing to recover
+        the direction from either.
+    events:
+      - year_at: 2589
+        kind: settled
+
+  - name: Big Tor
+    kind: system
+    system: Big Tor
+    affiliations: [sophic-league, nocozo]
+    article: https://www.orionsarm.com/eg-article/460d8dd747055
+    location:
+      hip: 32810
+      distance: 649.7 ly
+    note: >-
+      HD 50123 in Canis Major, a B6IVe+A pair of 171 solar luminosities. The
+      catalogue puts it at 634 ly against the article's 650, which is ordinary
+      agreement. Also held by the Free Sophic, which has no entry in the polity
+      list.
+
+  - name: Liaris Rosette
+    kind: megastructure
+    parent: Tirinit
+    affiliations: [sophic-league]
+    article: https://www.orionsarm.com/eg-article/47768a8d082e7
+    location:
+      hip: 37853
+      catalogue_from_source: true
+    note: >-
+      A complex of megastructures around Tirinit — Gliese 288 A, HD 63077, in
+      Puppis at 50 ly. The colony table holds an assignment for it whose star
+      did not resolve; this entry places it.
+
+  - name: New Taylor
+    kind: planet
+    system: New Taylor
+    affiliations: [sophic-league]
+    article: https://www.orionsarm.com/eg-article/46d4d166cfc6d
+    location:
+      star: Gliese 302
+    events:
+      - year_at: 2314
+        kind: settled
+        precision: not_later_than
+    note: HD 69830, in Puppis at 41 ly.
+
+  - name: New Zaire
+    kind: planet
+    affiliations: [sophic-league]
+    article: https://www.orionsarm.com/eg-article/5620503b1c55a
+    location:
+      note: 1,620 ly from Sol, with no direction given.
+    events:
+      - year_at: 5030
+        kind: settled
+
+  - name: Penglai
+    kind: moon
+    system: Shenjing
+    parent: Qinglong
+    affiliations: [sophic-league]
+    article: https://www.orionsarm.com/eg-article/48e89a9239865
+    location:
+      star: Sigma Draconis
+    events:
+      - year_at: 678
+        kind: settled
+    note: >-
+      A moon of the gas dwarf Qinglong, in the Shenjing system. Mostly Sophic
+      League, with Zoeific, Solarist, Fomalhaut and Metasoft presences in orbit.
+
+  - name: Proxima Centauri
+    kind: system
+    system: Proxima Centauri
+    affiliations: [sophic-league]
+    article: https://www.orionsarm.com/eg-article/4ce52fdf5e9de
+    location:
+      star: Proxima Centauri
+    events:
+      - year_at: 385
+        until_at: 405
+        kind: settled
+        precision: between
+        note: First colonised somewhere in this range.
+    note: 4.2 ly — the nearest system to Sol, and among the earliest settled.
+
+  - name: Regulus
+    kind: system
+    system: Regulus
+    affiliations: [sophic-league]
+    article: https://www.orionsarm.com/eg-article/5cf90863addd8
+    location:
+      star: Regulus
+    events:
+      - year_at: 2231
+        kind: settled
+    note: Alpha Leonis, 79 ly.
+
+  - name: Sacred Heart
+    kind: planet
+    affiliations: [sophic-league]
+    article: https://www.orionsarm.com/eg-article/4911a49ba4b44
+    location:
+      constellation: Cancer
+      note: >-
+        In the Praesepe region. The cluster is on the map as NGC 2632 at 598 ly,
+        but no distance is given for this world and borrowing the cluster's
+        would assert a figure the article does not.
+    events:
+      - year_at: 3234
+        kind: transferred
+        note: Became part of the League.
+
+  - name: Satyaloka
+    kind: system
+    system: Satyaloka
+    affiliations: [sophic-league]
+    article: https://www.orionsarm.com/eg-article/4782f4d9c69a2
+    location:
+      star: Nu Puppis
+    note: 370 ly. No dates.
+
+  - name: Shenjing
+    kind: system
+    system: Shenjing
+    affiliations: [sophic-league, zoeific-biopolity, keter-dominion]
+    article: https://www.orionsarm.com/eg-article/4b996bd9cc16c
+    location:
+      star: Sigma Draconis
+    note: >-
+      Sigma Draconis, 19 ly, and the most crowded system recorded here: Sophic,
+      Zoeific and Keterist orientations are common alongside the non-aligned,
+      and every major Sephirotic empire except the Caretaker Gods holds
+      something. Its worlds divide further than this map goes — Zhuque is
+      cosmopolitan, Xuanwu is Keter's with Deeper Covenant communities in orbit,
+      Baihu is mainly Zoeific and Sophic, and the Lagrange nodes of each are
+      claimed separately again. Only the three commonest are drawn.
+
+  - name: Wadai
+    kind: planet
+    also: [Ouaddai]
+    affiliations: [sophic-league]
+    article: https://www.orionsarm.com/eg-article/4910e5c60edcc
+    location:
+      oa_star: EG 471
+    events:
+      - year_at: 1419
+        kind: visited
+        note: >-
+          The starship launched. Its journey took 262 years, which would put
+          arrival about 1681 — but the source does not say whether that figure
+          is ship time or star time, so only the departure is dated here.
+    note: >-
+      The white dwarf EGGR 471, also GJ 3162 and WD 0230-144. Below Hipparcos
+      and outside the Bright Star Catalogue, so the Celestia add-on's position
+      is the only one this map has for it.
