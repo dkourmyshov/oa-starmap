@@ -11,7 +11,7 @@ when its distance or radius is missing or non-physical.
 from __future__ import annotations
 
 import math
-from collections import Counter
+from collections import Counter, defaultdict
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
@@ -57,6 +57,10 @@ class ClusterRecord:
     log_age: float
     quality: str = ""
 
+    @property
+    def aliases(self) -> list[str]:
+        return [a for a in (part.strip() for part in self.all_names.split(",")) if a]
+
 
 @dataclass
 class ClusterStats:
@@ -64,6 +68,8 @@ class ClusterStats:
     accepted: int = 0
     excluded: Counter = field(default_factory=Counter)
     types: Counter = field(default_factory=Counter)
+    contested_aliases: int = 0
+    dropped_alias_claims: int = 0
 
     def as_dict(self) -> dict[str, Any]:
         return {
@@ -71,6 +77,8 @@ class ClusterStats:
             "accepted": self.accepted,
             "excluded": dict(sorted(self.excluded.items())),
             "types": dict(sorted(self.types.items())),
+            "contested_aliases": self.contested_aliases,
+            "dropped_alias_claims": self.dropped_alias_claims,
         }
 
 
@@ -204,7 +212,63 @@ def read_clusters(path: Path, stats: ClusterStats) -> list[ClusterRecord]:
         )
 
     stats.accepted = len(records)
+    settle_alias_collisions(records, stats)
     return records
+
+
+ALIAS_SAME_OBJECT = 2.0
+"""How far apart two clusters can be and still plausibly be one object.
+
+Distance is the discriminator because the catalogue's alias lists are built by
+cross-matching on position, and position alone cannot separate two groups on the
+same line of sight. Two entries within a factor of two of each other may well be
+one cluster catalogued twice, which is common and harmless. Beyond that they are
+different objects and one of them is wearing the other's name.
+"""
+
+
+def settle_alias_collisions(records: list[ClusterRecord], stats: ClusterStats) -> None:
+    """Take back an alias from every cluster that cannot be the object it names.
+
+    Hunt & Reffert gives CWNU_1242 the aliases Hyades, Melotte_25, Collinder_50
+    and Taurus_Moving_Cluster. It is not the Hyades. It is twenty stars at 291
+    pc lying behind the Hyades' 927 at 47, and the cross-match that built the
+    alias list matched on the sky and never checked the distance. Left alone
+    this is the worst kind of error to have in a name table: a lookup for
+    "Hyades" finds two objects, both real, and takes whichever comes first.
+
+    Where several clusters claim one alias and they are not all at the same
+    distance, the claim goes to the one that carries the alias as its own name,
+    or failing that to the one with the most members — a name follows the
+    cluster it was coined for, and that is the well-populated one. Every other
+    claimant loses it. Nothing loses its own name.
+    """
+    claims: dict[str, list[ClusterRecord]] = defaultdict(list)
+    for record in records:
+        for alias in record.aliases:
+            claims[alias].append(record)
+
+    disowned: dict[int, set[str]] = defaultdict(set)
+    for alias, claimants in claims.items():
+        if len(claimants) < 2:
+            continue
+        distances = [r.distance for r in claimants if r.distance > 0]
+        if not distances or max(distances) / min(distances) <= ALIAS_SAME_OBJECT:
+            continue
+        stats.contested_aliases += 1
+        owner = next(
+            (r for r in claimants if r.name == alias),
+            max(claimants, key=lambda r: r.n_members),
+        )
+        for record in claimants:
+            if record is not owner:
+                disowned[id(record)].add(alias)
+                stats.dropped_alias_claims += 1
+
+    for record in records:
+        lost = disowned.get(id(record))
+        if lost:
+            record.all_names = ",".join(a for a in record.aliases if a not in lost)
 
 
 def build_clusters(source_path: Path | None = None, out_dir: Path | None = None) -> dict[str, Any]:

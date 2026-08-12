@@ -124,10 +124,10 @@ function el<K extends keyof HTMLElementTagNameMap>(
  * A line carrying a URL, with the URL itself as the link.
  *
  * Any leading prose stays plain text and only the address is clickable, so it
- * is obvious what will open. Encyclopaedia article addresses end in a hash that
- * says nothing — "eg-article/475d8f392ccca" — so the host and section are shown
- * and the hash is elided; the full address is still in the href and in the
- * title, which is where anyone copying it will look.
+ * is obvious what will open. The address is shown whole: an Encyclopaedia
+ * article hash carries no meaning, but eliding it hid the one part that tells
+ * two links apart, and a reader who wants to copy or compare one should not
+ * have to hover for it. Only the scheme and any "www." come off.
  */
 function linkLine(className: string, url: string, prefix = ''): HTMLElement {
   const line = el('div', className);
@@ -136,9 +136,7 @@ function linkLine(className: string, url: string, prefix = ''): HTMLElement {
   anchor.href = url;
   anchor.target = '_blank';
   anchor.rel = 'noopener noreferrer';
-  anchor.title = url;
-  const match = /^https?:\/\/(?:www\.)?([^/]+)\/([^/]+)\/(.+)$/.exec(url);
-  anchor.textContent = match ? `${match[1]}/${match[2]}/…` : url;
+  anchor.textContent = url.replace(/^https?:\/\/(?:www\.)?/, '');
   line.appendChild(anchor);
   return line;
 }

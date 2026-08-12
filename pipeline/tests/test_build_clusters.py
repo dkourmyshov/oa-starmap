@@ -48,9 +48,10 @@ def built(tmp_path_factory):
 def _find(built, name: str) -> int:
     """Locate a cluster, preferring an exact primary-name match.
 
-    Aliases are checked only as a fallback: several unrelated clusters list the
-    same historical designation among their aliases (CWNU_1242 claims "Melotte_25"
-    alongside the real Hyades), so an alias-first search finds the wrong object.
+    Aliases are checked only as a fallback. The build now takes a contested
+    alias away from every claimant that cannot be the object it names, so the
+    fallback is far safer than it was — but a primary name is still the only
+    form guaranteed unique, and preferring it costs nothing.
     """
     for i, entry in enumerate(built["names"]):
         if entry["name"] == name:
@@ -167,6 +168,59 @@ class TestCoverage:
         """A moving group at 100 kpc is a parallax artefact, not an object."""
         moving = built["distance"][built["meta"][:, 0] == TYPE_INDEX["m"]]
         assert moving.max() < 30000
+
+
+class TestAliasCollisions:
+    """A name in this catalogue must point at one object.
+
+    Hunt & Reffert builds its alias lists by cross-matching on the sky, which
+    cannot separate two groups along one line of sight. CWNU_1242 came out of
+    that carrying Hyades, Melotte_25, Collinder_50 and Taurus_Moving_Cluster,
+    none of which it is: it is twenty stars at 291 pc behind the Hyades' 927 at
+    47. A lookup finding two real objects and taking the first is the failure
+    this guards.
+    """
+
+    def test_the_hyades_is_the_hyades(self, built):
+        for alias in ("Hyades", "Melotte_25", "Collinder_50", "Taurus_Moving_Cluster"):
+            holders = [
+                entry["name"]
+                for entry in built["names"]
+                if alias in str(entry.get("aliases", "")).split(",")
+            ]
+            assert holders == ["Melotte_25"], f"{alias} is claimed by {holders}"
+
+    def test_an_impostor_keeps_its_own_name(self, built):
+        """Losing a borrowed alias must not lose the cluster itself."""
+        entry = built["names"][_find(built, "CWNU_1242")]
+        assert entry["name"] == "CWNU_1242"
+        assert "CWNU_1242" in str(entry["aliases"]).split(",")
+
+    def test_no_alias_is_claimed_by_clusters_at_different_distances(self, built):
+        from collections import defaultdict
+
+        from oastarmap.build.clusters import ALIAS_SAME_OBJECT
+
+        claims = defaultdict(list)
+        for i, entry in enumerate(built["names"]):
+            for alias in str(entry.get("aliases", "")).split(","):
+                if alias:
+                    claims[alias].append(built["distance"][i])
+        contested = {
+            alias: sorted(ds)
+            for alias, ds in claims.items()
+            if len(ds) > 1 and min(ds) > 0 and max(ds) / min(ds) > ALIAS_SAME_OBJECT
+        }
+        assert contested == {}
+
+    def test_the_correction_is_narrow(self, built):
+        """It should touch a small part of a 7,000-cluster catalogue.
+
+        If this ever fires it means the rule has started eating real duplicate
+        entries rather than cross-match errors, and the threshold is wrong.
+        """
+        stats = built["manifest"]["stats"]
+        assert 0 < stats["dropped_alias_claims"] < len(built["names"]) // 10
 
 
 class TestDeterminism:
