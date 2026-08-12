@@ -99,12 +99,18 @@ const MARKER_FRAGMENT = /* glsl */ `
     // layer needs that space. Solid where the position is exact, and softened
     // into a diffuse smudge where it is not — the same mark, losing its edge in
     // proportion to what the source failed to pin down.
-    float edge = mix(0.34, 0.86, vApprox);
+    //
+    // The soft form has to stay well inside the ring. This sprite is 11 pixels
+    // across and the ring's inner edge is at 4.7, so a fade reaching r = 0.86
+    // arrives exactly there and — drawing later — paints over the polity
+    // instead of sitting inside it. Ending at 0.62 leaves a clear gap.
+    float edge = mix(0.36, 0.62, vApprox);
     float dot = 1.0 - smoothstep(0.0, edge, r);
 
-    // The soft form spreads its light over a wider area, so lift it or it reads
-    // as merely fainter rather than as less certain.
-    float alpha = dot * uOpacity * mix(1.0, 1.5, vApprox);
+    // Softened rather than lifted: a wider fade spreads the same light thinner,
+    // and brightening it back would only make an uncertain position louder than
+    // a known one.
+    float alpha = dot * uOpacity * mix(1.0, 0.85, vApprox);
     if (alpha < 0.004) discard;
 
     #include <logdepthbuf_fragment>

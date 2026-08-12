@@ -176,15 +176,17 @@ The article gives GL 86 and HR 637 for Thraub's primary. The Inner Sphere colony
 
 - https://www.orionsarm.com/eg-article/48f94f1a7f8db
 
-### Places held by bodies the polity list does not carry — Three worlds are drawn with no holder at all, because the body that holds them is not one this map knows.
+### Places held by bodies the polity list does not carry — Some worlds are held by bodies that are not meta-empires, and the map has no way to say so except by leaving them blank.
 
 *category*
 
-The Amalgamation has been added to the polity list, having taken Halsokallan in 8760 and Adorate the year after: two worlds is enough to be worth a colour. Three cases remain. Lucida is the capital of the academic Iota Network. Big Tor is shared with the Free Sophic. Bullseye is independent, with strong ties to the Zoeific Biopolity but not part of it. In each a former holder is known and the present one is not represented, and recording the former would state something false about the present.
+The Amalgamation has been added to the polity list, having taken Halsokallan in 8760 and Adorate the year after: two worlds is enough to be worth a colour. The three remaining cases are each a different kind of thing, and none of them is a missing meta-empire.
+Lucida belongs to the academic Iota Network, which is small and holds one world here — too little to earn a colour yet. Big Tor is shared with the Free Sophic, which is not a separate power but Sophic-League-adjacent: polities sharing most of the League's ontology and less of its politics. Bullseye is simply independent, with ties to the Zoeific Biopolity that are ties and not membership.
+So the gap is not really a list of missing polities. It is that "adjacent to a meta-empire" and "independent" are both real states with no way to be drawn, and both currently render as the faint neutral ring that also means "holder unrecorded".
 
 **What the map does now.** Leaves the affiliation empty, which draws the faint neutral ring the map uses for a settled system nobody named holds. Accurate and unsatisfying, since it reads the same as an unclaimed world.
 
-**What would settle it.** Whether the Iota Network and the Free Sophic belong in the polity list, and how a genuinely independent system should be distinguished from one whose holder is merely unrecorded — they are different facts and the map currently draws them alike.
+**What would settle it.** Nothing outstanding from the setting: the three have been identified. What is deferred is ours — a mark for meta-empire-adjacent affiliation, worth building once enough objects carry one to be worth distinguishing, and a way to say "independent" that does not look like "unknown". Neither is wanted yet at three objects.
 
 - https://www.orionsarm.com/eg-article/5c758943a42b2
 - https://www.orionsarm.com/eg-article/46674941b75a2
