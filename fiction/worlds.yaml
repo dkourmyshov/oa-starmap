@@ -3025,7 +3025,7 @@ worlds:
   - name: Shangdu
     kind: planet
     system: Beta Arae
-    affiliations: [utopia-sphere, trhn]
+    affiliations: [utopia-sphere, technorapture-hypernation]
     article: https://www.orionsarm.com/eg-article/4d5d92f9dcd6d
     location:
       star: Beta Arae
@@ -3660,6 +3660,10 @@ worlds:
   - name: Far View
     kind: system
     affiliations: [red-star-mpire]
+    article: https://www.orionsarm.com/eg-topic/6361af5b78bac
+    events:
+      - year_at: 4100
+        kind: visited
     location:
       ra_deg: 159.5217
       dec_deg: 24.6866
@@ -3688,3 +3692,55 @@ worlds:
       a stated position, so its ring is dashed and its panel says so. The
       southern arc, toward Capricornus, is not ruled out; only the word "above"
       chooses between them.
+
+  # ---- TRHN ---------------------------------------------------------------
+  #
+  # The TechnoRapture HyperNation, diffuse and lightly documented. The Rosette
+  # Cluster is its, jointly with the Non-Coercive Zone, and is entered in
+  # landmarks.yaml rather than here; Shangdu is above, in the Beta Arae system.
+
+  - name: Turing
+    kind: system
+    affiliations: [technorapture-hypernation]
+    article: https://www.orionsarm.com/eg-article/49125f5d1c049
+    location:
+      star: Castor
+    events:
+      - year_at: 2211
+        kind: settled
+    note: >-
+      Castor, 51 ly out, and named as Turing in the colony table too.
+
+  - name: The Gigaverse
+    kind: virchworld
+    affiliations: [technorapture-hypernation]
+    article: https://www.orionsarm.com/eg-article/638d2ba84b2c6
+    location:
+      star: Delta Leonis
+    events:
+      - year_at: 900
+        kind: visited
+        note: First reached by isolationist AIs.
+    note: >-
+      A collection of virchworlds at Zosma, Delta Leonis, 58 ly out — one of
+      the few entries here that is a place only in the sense that the hardware
+      hosting it is somewhere.
+
+  - name: Quint
+    kind: megastructure
+    affiliations: [technorapture-hypernation]
+    article: https://www.orionsarm.com/eg-article/569564098a31c
+    location:
+      constellation: Aquila
+      distance: 2200 ly
+      near: CoRoT-3
+    events:
+      - year_at: 5089
+        kind: settled
+        note: Construction began.
+    note: >-
+      A matrioshka brain around the star CoRoT-3, and the cybercosm running
+      inside it. Only loosely affiliated with the TRHN, which is drawn as
+      ownership here for want of anything weaker to draw. CoRoT-3 is a
+      thirteenth-magnitude star and below this map's catalogue, so the
+      constellation carries the direction.

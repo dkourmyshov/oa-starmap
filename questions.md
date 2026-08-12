@@ -333,7 +333,7 @@ Blanco 1, Collinder 173, Collinder 359, NGC 2244, S232, S27
 
 ## Worlds located only by constellation
 
-48 of 264 canonical worlds are given as a distance and a constellation. That fixes the distance exactly and the direction only to the width of the constellation, which at these ranges is hundreds to thousands of light years. The map draws these with a broken ring rather than a solid one, and the detail panel gives the error in light years.
+49 of 267 canonical worlds are given as a distance and a constellation. That fixes the distance exactly and the direction only to the width of the constellation, which at these ranges is hundreds to thousands of light years. The map draws these with a broken ring rather than a solid one, and the detail panel gives the error in light years.
 
 Coordinates, or a nearby named star, would turn any of these from a region into a position.
 
@@ -414,7 +414,7 @@ Corona's system passed out of the Non-Coercive Zone after a complicated history.
 
 *uncertainty*
 
-Shangdu arrived as joint Utopia Sphere and TRHN, an initialism no article expands. It is the TechnoRapture HyperNation, a near-Sephirotic empire — diffuse, with canonical worlds of its own still to be entered here. That the articles use the letters and not the name is the setting's own usage rather than an omission, so the legend follows it.
+Shangdu arrived as joint Utopia Sphere and TRHN, an initialism no article expands. It is the TechnoRapture HyperNation, a near-Sephirotic empire — diffuse, and holding the Rosette Cluster jointly with the Non-Coercive Zone. That the articles use the letters and not the name is the setting's own usage rather than an omission, so the legend follows it. The map had the polity already, under the full name, and briefly carried it twice.
 
 **What the map does now.** Lists the polity as TRHN, as the articles write it, with the expansion recorded here and in a comment beside its colour.
 

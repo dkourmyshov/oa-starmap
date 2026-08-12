@@ -316,10 +316,15 @@ polities:
 
   - id: technorapture-hypernation
     landmarks: [NGC 2244]
-    name: Technorapture Hypernation
-    color: "#BA68C8"
+    name: TRHN
+    color: "#9E3C43"
     kind: polity
     source: eg-system-articles
+    # The TechnoRapture HyperNation, written as the initialism because that is
+    # what the articles do; the expansion is in questions.md, for the reader
+    # who asks, rather than on the legend. Moved off purple, which sat 9.0 from
+    # both the Sagittarius Transcultural Cooperation and the Deeper Covenant —
+    # inside the floor but tight for a polity this diffuse. 16.5 now.
 
   - id: terragen-federation
     name: Terragen Federation
@@ -346,16 +351,6 @@ polities:
     # of the Sagittarius Dwarf, so it should read as a filament steeply
     # inclined to the disk rather than a sphere. Nothing is drawn for that
     # shape yet — one recorded place cannot outline it.
-
-  - id: trhn
-    name: TRHN
-    color: "#9E3C43"
-    source: eg-system-articles
-    # The TechnoRapture HyperNation, a near-Sephirotic empire. Left as the
-    # initialism because that is what the articles write; the expansion is in
-    # questions.md and belongs to the reader who asks, not to the legend.
-    # Diffuse, so it needs a colour of its own even while it holds one world —
-    # 17.7 from its nearest, the widest margin any polity here has.
 
   - id: amalgamation
     name: Amalgamation
