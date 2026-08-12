@@ -213,6 +213,59 @@ def test_a_sky_location_needs_a_distance() -> None:
     assert placed.method == "constellation"
 
 
+def test_an_estimated_position_cannot_pass_as_a_stated_one() -> None:
+    """An inference and a measurement must not reach the map as the same dot.
+
+    Every other method here means the source said so. This one means we worked
+    it out, which is a weaker claim, and the two halves of saying so are useless
+    apart: an error bar on an unmarked position reads as a measurement with
+    error, and a marked estimate with no error bar reads as a guess we are sure
+    of. So neither is allowed without the other.
+    """
+    from pydantic import ValidationError
+
+    from oastarmap.fiction.schema import WorldLocation
+
+    with pytest.raises(ValidationError, match="needs direction_error_deg"):
+        WorldLocation(ra_deg=159.5, dec_deg=24.7, distance="2400 ly", estimated="from the stream")
+    with pytest.raises(ValidationError, match="only for estimated positions"):
+        WorldLocation(ra_deg=159.5, dec_deg=24.7, distance="2400 ly", direction_error_deg=6.0)
+    with pytest.raises(ValidationError, match="needs ra_deg"):
+        WorldLocation(constellation="Leo Minor", distance="2400 ly", estimated="from the stream")
+
+    ok = WorldLocation(
+        ra_deg=159.5, dec_deg=24.7, distance="2400 ly",
+        estimated="from the stream plane and the height above the Dominion",
+        direction_error_deg=6.0,
+    )
+    assert ok.method == "direction"
+
+
+def test_only_estimates_carry_an_authored_error() -> None:
+    """Read positions stay exact; the estimate is the one that is not.
+
+    A world's direction error is zero where the source gave coordinates and the
+    constellation's radius where it gave a constellation — both computed. An
+    authored figure is allowed in exactly one case, and if a stated position
+    ever acquires one, something has started hedging a source's own number.
+    """
+    worlds = WorldFile.load(FICTION_DIR / "worlds.yaml").worlds
+
+    for world in worlds:
+        if world.location.direction_error_deg is not None:
+            assert world.location.estimated, (
+                f"{world.name} authors a direction error without being an estimate"
+            )
+
+    estimated = [w for w in worlds if w.location.estimated]
+    assert estimated, "expected at least one estimated position"
+    for world in estimated:
+        assert world.location.method == "direction"
+        assert world.location.direction_error_deg
+        # The derivation is shown to the reader, so it has to be worth reading.
+        assert len(world.location.estimated) > 80, f"{world.name} does not show its working"
+
+
 def test_dated_history_is_ordered_and_derived() -> None:
     """The two summary years are derived, and must agree with the events.
 

@@ -337,6 +337,16 @@ polities:
     color: "#F48FB1"
     source: eg-system-articles
 
+  - id: red-star-mpire
+    name: Red Star 'M'pire
+    color: "#BF3000"
+    source: eg-system-articles
+    # Deep red for a red-star empire, 16.5 from its nearest, which is TRHN.
+    # Not a volume like the others: its cells were grown along a tidal streamer
+    # of the Sagittarius Dwarf, so it should read as a filament steeply
+    # inclined to the disk rather than a sphere. Nothing is drawn for that
+    # shape yet — one recorded place cannot outline it.
+
   - id: trhn
     name: TRHN
     color: "#9E3C43"

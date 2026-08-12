@@ -3649,3 +3649,42 @@ worlds:
       - year_at: 3980
         kind: settled
     note: A distance and no direction. Recorded and not drawn.
+
+  # ---- Red Star 'M'pire ---------------------------------------------------
+  #
+  # The one polity here whose position is not in any article. Its own entry is
+  # the only estimated location in this file, and it is marked as such on the
+  # map rather than drawn like the rest; questions.md carries the derivation
+  # and what would replace it.
+
+  - name: Far View
+    kind: system
+    affiliations: [red-star-mpire]
+    location:
+      ra_deg: 159.5217
+      dec_deg: 24.6866
+      distance: 2400 ly
+      direction_error_deg: 6.0
+      estimated: >-
+        No article gives coordinates. Two constraints in the text fix it
+        instead. Far View sits on a tidal streamer of the Sagittarius Dwarf,
+        and that stream follows a great circle whose pole is at about l 274,
+        b -13.5 — a nearly polar plane, crossing the galactic plane at l 4 and
+        l 184 and passing within 13.5 degrees of the galactic poles. Separately
+        the system is put about 1,200 ly above the Solar Dominion's volume, and
+        the Maximum Air caption puts the galactic plane some 2,000 ly away as
+        seen from the Dyson's surface, which agrees if the Dominion tops out
+        near 800 ly. A point 2,000 ly north of the plane and on the stream leaves
+        two arcs, one north near l 210, b +60 and one south near l 20, b -50.
+        The northern is taken, because "above" means galactic north and because
+        the Dominion's own capital, Fons Luminis at Xi Ursae Majoris, is
+        l 195, b +69 — eleven degrees away. l 210, b +60 lies 0.6 degrees off
+        the stream plane, and at 2,400 ly it is z +2,078.
+    note: >-
+      The Red Star 'M'pire's capital: a K star with a brown dwarf companion, in
+      a thin old neighbourhood with only two stars within 10 ly and the nearest
+      F star 1,800 ly off. Drawn in Leo Minor, next to Ursa Major and to the
+      Solar Dominion's own patch of sky — but drawn from an inference, not from
+      a stated position, so its ring is dashed and its panel says so. The
+      southern arc, toward Capricornus, is not ruled out; only the word "above"
+      chooses between them.

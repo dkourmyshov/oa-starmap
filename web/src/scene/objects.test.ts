@@ -1244,6 +1244,7 @@ describe('affiliations merge across sources', () => {
       z: null,
       distance_pc: null,
       direction_error_deg: null,
+      estimated: '',
       direction_error_ly: null,
       radius_pc: null,
       events: [],

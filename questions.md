@@ -8,7 +8,7 @@ Nothing below is a complaint about the setting. Most of it is the ordinary frict
 
 ---
 
-## Open questions (19)
+## Open questions (21)
 
 ### Enigma system — Three sources put the Enigma system in three different directions.
 
@@ -244,6 +244,26 @@ The article names both Tannhauser and Minnesang, describes them as systems, and 
 
 - https://www.orionsarm.com/eg-article/47a13d7c77388
 
+### Far View and the Red Star 'M'pire — Far View's position on this map is inferred, not read, and two arcs fit the constraints equally well.
+
+*uncertainty*
+
+No article gives the Red Star 'M'pire coordinates, so the map computes them, which makes this the only estimated position it draws. The text constrains it twice over. Far View sits on a tidal streamer of the Sagittarius Dwarf, and that stream follows a great circle whose pole is at roughly l 274, b -13.5 — a nearly polar plane that crosses the galactic plane at l 4 and l 184 and passes within 13.5 degrees of the galactic poles. Separately the system is put about 1,200 ly above the Solar Dominion's volume, and the Maximum Air caption puts the galactic plane some 2,000 ly off as seen from the Dyson's outer surface — figures that agree if the Dominion's envelope tops out near 800 ly. Requiring both leaves two arcs and not one: a northern near l 210, b +60, and a southern near l 20, b -50, both lying within a degree of the stream plane. The northern is chosen on the strength of one word. "Above" in galactographic usage is galactic north, and the Dominion's own capital supports it — Fons Luminis is Xi Ursae Majoris at l 195, b +69, eleven degrees from the estimate. The southern arc would put Far View toward Capricornus instead, nearer the dwarf's own position, and nothing rules it out.
+
+**What the map does now.** Draws Far View in Leo Minor at 2,400 ly, marked as an estimate: the panel gives the derivation and the ring is dashed, the same as any place whose position the sources only bound. It is the only entry that says the position came from us rather than from Orion's Arm.
+
+**What would settle it.** Any stated position for Far View or for the 'M'pire's volume; failing that, whether "above the Solar Dominion" was meant as galactic north.
+
+### The Red Star 'M'pire's streamer — The neighbourhood the articles describe is a good deal richer than a halo streamer 2,000 ly off the plane would be.
+
+*contradiction*
+
+The 'M'pire is built on tidal debris from the Sagittarius Dwarf, which is old, metal-poor and thin. Two details sit awkwardly against that. Far View is given two stellar companions within 10 ly, which is ordinary disk density — a real stream segment at that height would be far emptier, and a star with neighbours that close is not in a stream so much as in the disk the stream is passing through. And three planetary nebulae close enough to dominate the sky is generous at 2,000 ly off the plane, where they are short-lived and thinly spread, though metal-poor Population II stars do produce them. Underneath both is a question about the real structure: whether the Sagittarius stream has appreciable debris this close to the plane and this near Sol at all, or whether the streamer that "intersects the Terragen Sphere" is the setting's own.
+
+**What the map does now.** Places Far View where the setting's numbers put it and draws no streamer, the stream not being in any catalogue this map loads. The 'M'pire's cells were grown along that streamer, so it should read as a filament inclined steeply to the disk rather than a volume, and one recorded place cannot outline that either.
+
+**What would settle it.** Whether the streamer is meant as the real Sagittarius stream or as a structure of the setting's own, and how far the 'M'pire's filament runs.
+
 ## The Inner Sphere colony tables
 
 909 of 1,122 rows resolve to a star we hold. The rest break down as follows.
@@ -313,7 +333,7 @@ Blanco 1, Collinder 173, Collinder 359, NGC 2244, S232, S27
 
 ## Worlds located only by constellation
 
-48 of 263 canonical worlds are given as a distance and a constellation. That fixes the distance exactly and the direction only to the width of the constellation, which at these ranges is hundreds to thousands of light years. The map draws these with a broken ring rather than a solid one, and the detail panel gives the error in light years.
+48 of 264 canonical worlds are given as a distance and a constellation. That fixes the distance exactly and the direction only to the width of the constellation, which at these ranges is hundreds to thousands of light years. The map draws these with a broken ring rather than a solid one, and the detail panel gives the error in light years.
 
 Coordinates, or a nearby named star, would turn any of these from a region into a position.
 

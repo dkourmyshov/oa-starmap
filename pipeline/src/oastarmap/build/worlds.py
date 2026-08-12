@@ -217,6 +217,11 @@ def _direction(
     location = world.location
     if location.method == "direction":
         assert location.ra_deg is not None and location.dec_deg is not None
+        # Coordinates off an article are exact. Coordinates this project worked
+        # out are not, and carry the width the entry claims for them.
+        if location.estimated:
+            assert location.direction_error_deg is not None
+            return location.ra_deg, location.dec_deg, location.direction_error_deg
         return location.ra_deg, location.dec_deg, EXACT
     if location.method == "constellation":
         entry = constellations.get(fold_diacritics(location.constellation).casefold())
@@ -335,6 +340,10 @@ def build_worlds(
             "constellation": world.location.constellation,
             "ra_deg": world.location.ra_deg,
             "dec_deg": world.location.dec_deg,
+            # Non-empty where this project worked the position out rather than
+            # reading it. The panel says so; the ring is dashed like any other
+            # approximate placement, which is what it is.
+            "estimated": world.location.estimated,
             "distance_checked": False,
             "x": None,
             "y": None,

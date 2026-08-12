@@ -556,6 +556,29 @@ class WorldLocation(BaseModel):
     near: str = ""
     """What the direction was taken from, for the record. Not resolved."""
 
+    estimated: str = ""
+    """How the position was worked out, where no source gives one.
+
+    Every other method here means "the source says so" — a catalogue star, a
+    constellation, coordinates off an article. This one means *we* worked it
+    out, from what the setting says about a place rather than from a position
+    it states. That is a third kind of claim and the weakest, and it has to look
+    different or it launders an inference into the same dot as a measurement.
+
+    So it is never silent. It requires ``ra_deg``/``dec_deg`` and ``distance``,
+    like any direction, and also ``direction_error_deg``, because an estimate
+    with no error bar is the dishonest form of an estimate. The text is the
+    derivation, shown to the reader: what it was inferred from, and how.
+    """
+
+    direction_error_deg: float | None = None
+    """How wide the direction is, in degrees, for an estimated position.
+
+    A constellation computes its own error from its extent and coordinates off
+    an article are exact, so this is only ever set alongside ``estimated`` —
+    there is nothing to say about the error of a number somebody published.
+    """
+
     distance_conflict: bool = False
     """The stated distance and the catalogue's genuinely disagree, and we know.
 
@@ -606,6 +629,23 @@ class WorldLocation(BaseModel):
             raise ValueError("ra_deg and dec_deg must be given together")
         if self.method == "direction" and not self.distance:
             raise ValueError("a direction location needs a distance")
+
+        # An estimate must say it is one, say how it was reached, and say how
+        # wide it is. Each half of this is useless without the other: an error
+        # bar on an unmarked position reads as a measurement with error, and a
+        # marked estimate with no error bar reads as a guess we are sure of.
+        if self.estimated and self.method != "direction":
+            raise ValueError("an estimated position needs ra_deg, dec_deg and a distance")
+        if self.estimated and self.direction_error_deg is None:
+            raise ValueError(
+                f"estimated position {self.estimated!r} needs direction_error_deg: "
+                "an estimate without an error bar is drawn as a fact"
+            )
+        if self.direction_error_deg is not None and not self.estimated:
+            raise ValueError(
+                "direction_error_deg is only for estimated positions; a "
+                "constellation computes its own and published coordinates are exact"
+            )
 
         # A distance is rejected where the method would ignore it — an oa_star
         # or a world already carries a position, so a distance beside one is

@@ -476,6 +476,13 @@ export interface WorldEntry {
    * constellation; null when the world is not positioned here at all.
    */
   direction_error_deg: number | null;
+  /**
+   * How the position was worked out, where no source states one — empty for
+   * every world whose position was read rather than inferred. This is a weaker
+   * claim than any other position here and the panel says so outright, because
+   * on the map an estimate and a measurement are the same dot.
+   */
+  estimated: string;
   /** The same error as a length at this distance, which is the legible form. */
   direction_error_ly: number | null;
   /** Half the extent, for a world that is a volume rather than a point. */

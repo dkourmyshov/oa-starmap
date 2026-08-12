@@ -405,6 +405,13 @@ export class DetailPanel {
         value: `${formatDistance(pc(world.radius_pc * 2), unit)} across`,
       });
     }
+    // Ahead of the note, and warned, because it is the one thing that
+    // distinguishes this dot from every other world drawn at coordinates:
+    // nobody published these, we worked them out.
+    if (world.estimated) {
+      rows.push({ label: 'Position', value: 'estimated, not stated by a source', warn: true });
+      rows.push({ label: 'Derivation', value: world.estimated });
+    }
     if (world.note) rows.push({ label: 'Note', value: world.note });
 
     const held = (world.affiliations ?? [])
