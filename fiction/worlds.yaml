@@ -1860,7 +1860,12 @@ worlds:
     article: https://www.orionsarm.com/eg-article/464dd7be05218
     location:
       star: Alpha Arietis
-    note: 66 ly. The colony table already records both holders.
+    note: >-
+      Alpha Arietis, and the colony table already records both holders. The
+      article's 65.81 ly is the catalogue's figure to two decimals; its 8.386 ly
+      to Sheratan comes out at 8.324 here, which is a later parallax moving
+      Sheratan rather than any doubt about which stars these are. Gatewai is a
+      world of this system.
 
   - name: Hammerstein
     kind: moon
@@ -3295,3 +3300,352 @@ worlds:
         precision: circa
         note: Reached by ahumans.
     note: HD 216008, 169 ly out in Grus.
+
+  # ---- Metasoft Version Tree ----------------------------------------------
+  #
+  # The widest spread of any roster here: 42 Tauri at 91 ly and Modular Future
+  # at 5,771, with the older colonies near Sol and the deep ones in Taurus,
+  # Orion and Gemini behind the clusters Metasoft already holds. Two places are
+  # recorded without a position, because the source locates them against an
+  # object the cluster catalogue does not contain; see questions.md.
+
+  - name: Beta Pictoris
+    kind: system
+    affiliations: [metasoft]
+    article: https://www.orionsarm.com/eg-article/5de8fb490b641
+    location:
+      star: Beta Pictoris
+    events:
+      - year_at: 912
+        until_at: 1070
+        kind: visited
+        precision: between
+    note: >-
+      64 ly out. The colony table carries this system as Vinci, giving the star
+      name as the second of the pair; both names are on the map.
+
+  - name: Brin
+    kind: planet
+    affiliations: [metasoft]
+    article: https://www.orionsarm.com/eg-article/48ac2be955c0b
+    location:
+      star: 42 Tauri
+    events:
+      - year_at: 2980
+        kind: settled
+    note: 42 Tauri, also Psi Tauri, 91 ly out.
+
+  - name: Church-Turing
+    kind: system
+    affiliations: [metasoft]
+    article: https://www.orionsarm.com/eg-article/4626d7ad72fe8
+    location:
+      ra_deg: 41.2343
+      dec_deg: 26.2349
+      distance: 102 ly
+      near: TYC 1772-592-1
+    events:
+      - year_at: 2460
+        kind: settled
+    note: >-
+      The best-specified position in this file. The article gives right
+      ascension, declination, distance, constellation and galactic coordinates
+      at once, and they agree: converting its 02h44m56.23s, +26d14'05.7" at 102
+      ly returns -78.27, 40.85, -51.08, which is the article's own xyz to every
+      digit it prints. The star, TYC 1772-592-1, is below the Tycho-2 catalogue
+      cut this map draws from, so the direction is used rather than a binding.
+
+  - name: Dilmun
+    kind: planet
+    affiliations: [metasoft]
+    article: https://www.orionsarm.com/eg-article/5492c26f88619
+    location:
+      constellation: Gemini
+      distance: 2101.8 ly
+    events:
+      - year_at: 5390
+        kind: settled
+
+  - name: Earthland
+    kind: planet
+    affiliations: [metasoft]
+    article: https://www.orionsarm.com/eg-article/50c7400a01dfc
+    location:
+      constellation: Taurus
+      distance: 732 ly
+    events:
+      - year_at: 3501
+        kind: settled
+        precision: circa
+
+  - name: FuMa
+    kind: planet
+    affiliations: [terragen-federation, metasoft]
+    article: https://www.orionsarm.com/eg-article/5b291ca5d036f
+    location:
+      constellation: Orion
+      distance: 197 ly
+      near: TYC 1323-838-12
+    events:
+      - year_at: 2855
+        kind: settled
+      - year_at: 2855
+        kind: transferred
+        precision: not_earlier_than
+        note: Passed to the Terragen Federation at some later date.
+    note: >-
+      Metasoft settled it and the Terragen Federation holds it now, with
+      Metasoft polities still present — so both are drawn. Its star, TYC
+      1323-838-12, is below this map's catalogue, leaving the constellation.
+
+  - name: Gatewai
+    kind: planet
+    system: Hamal
+    affiliations: [metasoft, nocozo]
+    article: https://www.orionsarm.com/eg-article/464dd7be05218
+    location:
+      star: Alpha Arietis
+    note: >-
+      A world of the Hamal system, entered above under both its holders.
+
+  - name: Pentagon Moons
+    kind: system
+    system: Pentagon Moons
+    affiliations: [metasoft]
+    article: https://www.orionsarm.com/eg-article/52e80a3a924b5
+    location:
+      distance: 2000 ly
+      near: NGC 1663
+    events:
+      - year_at: 6000
+        kind: settled
+        precision: circa
+    note: >-
+      In the Metasoft Outer Volumes, about 2,000 ly out and located against NGC
+      1663 — which this map's cluster catalogue does not contain, that catalogue
+      listing only groups confirmed as physical systems. With no direction and
+      no constellation given, the system is recorded and not drawn.
+
+  - name: Hawking's Not Here
+    kind: planet
+    system: Pentagon Moons
+    affiliations: [metasoft]
+    article: https://www.orionsarm.com/eg-article/52faf68bdaa6d
+    note: An artificial planet in the Pentagon Moons system.
+
+  - name: Batholithics
+    kind: system
+    affiliations: [metasoft]
+    article: https://www.orionsarm.com/eg-article/4f43b87a30aae
+    location:
+      ra_deg: 93.0796
+      dec_deg: 22.9085
+      distance: 4300 ly
+      near: 6 Geminorum
+    events:
+      - year_at: 8679
+        kind: visited
+    note: >-
+      The home of an extinct xenosophont species, given as 4,300 ly out near the
+      giant 6 Geminorum. The catalogue puts that star at 5,781 ly, so it lends
+      its direction and the article keeps its distance: the two are a third
+      apart, which is too much to bind across.
+
+  - name: Incorp
+    kind: planet
+    affiliations: [metasoft]
+    article: https://www.orionsarm.com/eg-article/465ccc8e9c7f8
+    location:
+      hd: 107793
+      distance: 307 ly
+    events:
+      - year_at: 2777
+        kind: settled
+    note: >-
+      In Melotte 111, the Coma Berenices cluster, which Metasoft also holds as a
+      landmark. The article's 307 ly and the catalogue's 284 agree well enough
+      to bind.
+
+  - name: Jafalgia
+    kind: planet
+    affiliations: [metasoft]
+    article: https://www.orionsarm.com/eg-article/4681a363693b4
+    location:
+      constellation: Monoceros
+      distance: 1032 ly
+    events:
+      - year_at: 5217
+        kind: settled
+
+  - name: KapekNow
+    kind: system
+    affiliations: [metasoft]
+    article: https://www.orionsarm.com/eg-article/466e0f4fb75a8
+    location:
+      constellation: Aquila
+      distance: 723 ly
+
+  - name: Landau
+    kind: system
+    affiliations: [metasoft]
+    article: https://www.orionsarm.com/eg-article/467897cabc3d3
+    location:
+      star: 94 Ceti
+    events:
+      - year_at: 4556
+        kind: settled
+        precision: not_later_than
+    note: 94 Ceti, 75 ly out.
+
+  - name: M'Buto
+    kind: system
+    affiliations: [metasoft, nocozo]
+    location:
+      star: Gliese 454
+    note: >-
+      Gliese 454, 42 ly out. Named in the colony table and held jointly with the
+      Non-Coercive Zone; the Encyclopaedia gives it no article of its own.
+
+  - name: Makintairas
+    kind: system
+    affiliations: [metasoft]
+    location:
+      star: 10 Tauri
+    note: >-
+      10 Tauri, 45 ly out. From the colony table; no article of its own.
+
+  - name: Modular Future
+    kind: system
+    affiliations: [metasoft]
+    article: https://www.orionsarm.com/eg-article/47b8e6bd0c7e0
+    location:
+      ra_deg: 59.4633
+      dec_deg: 40.0103
+      distance: 5771 ly
+    events:
+      - year_at: 10348
+        kind: contact
+        note: Infiltrated by the Amalgamation.
+      - year_at: 10348
+        kind: abandoned
+        note: Destroyed by Metasoft in response.
+    note: >-
+      The furthest place in this file, and the only one destroyed by the empire
+      that built it: Metasoft answered the Amalgamation's infiltration in 10348
+      by ending the system. Drawn as Metasoft's because that is who acted last
+      there, not because anything is left to hold. The article's right ascension
+      and declination put it in Perseus, as it says.
+
+  - name: Gloopy
+    kind: system
+    system: Gloopy
+    affiliations: [metasoft]
+    article: https://www.orionsarm.com/eg-article/47b8ef792becf
+    location:
+      hd: 139664
+      distance: 56 ly
+    events:
+      - year_at: 2210
+        kind: settled
+    note: >-
+      HD 139664 in Lupus. The article's own right ascension and declination fall
+      0.75 ly from the catalogue star at the distance it gives, which is as
+      close as a position quoted to arcseconds and a distance quoted to two
+      figures can come.
+
+  - name: Monostheria
+    kind: planet
+    system: Gloopy
+    affiliations: [metasoft]
+    article: https://www.orionsarm.com/eg-article/47b8ef792becf
+    location:
+      hd: 139664
+      distance: 56 ly
+    note: A gas giant of Gloopy.
+
+  - name: The Basket
+    kind: megastructure
+    system: Gloopy
+    affiliations: [metasoft]
+    article: https://www.orionsarm.com/eg-article/47b8ef792becf
+    location:
+      hd: 139664
+      distance: 56 ly
+
+  - name: NewRoot
+    kind: system
+    affiliations: [metasoft]
+    article: https://www.orionsarm.com/eg-article/49022a2c0c9be
+    location:
+      star: Nu2 Lupi
+    events:
+      - year_at: 2019
+        kind: settled
+    note: Nu-2 Lupi, 48 ly out.
+
+  - name: Niuearth
+    kind: planet
+    affiliations: [metasoft]
+    article: https://www.orionsarm.com/eg-article/52b993102478a
+    location:
+      constellation: Taurus
+      distance: 786 ly
+    events:
+      - year_at: 2998
+        kind: settled
+
+  - name: Paula
+    kind: planet
+    affiliations: [metasoft]
+    article: https://www.orionsarm.com/eg-article/47bcf69611bd9
+    location:
+      ra_deg: 94.2446
+      dec_deg: 23.7409
+      distance: 2107 ly
+      near: 9 Geminorum
+    events:
+      - year_at: 5809
+        kind: contact
+        note: The Paulans found.
+      - year_at: 5809
+        kind: stewardship
+        note: Taken under Metasoft's protection rather than a Caretaker God's.
+    note: >-
+      Home of the Paulans, and the one xenosophont species here protected by an
+      ordinary empire instead of a Caretaker God. Given as 2,107 ly out near 9
+      Geminorum; that star is at 5,966 ly, so only its direction is used.
+
+  - name: Proden
+    kind: planet
+    affiliations: [metasoft]
+    article: https://www.orionsarm.com/eg-article/4703bd784536b
+    location:
+      distance: 2200 ly
+    events:
+      - year_at: 6307
+        kind: settled
+    note: >-
+      A distance and no direction, so the article fixes how far away it is and
+      nothing else. Recorded and not drawn.
+
+  - name: Rigel
+    kind: system
+    affiliations: [metasoft]
+    article: https://www.orionsarm.com/eg-article/47713d102a5a2
+    location:
+      star: Rigel
+    events:
+      - year_at: 3808
+        kind: settled
+    note: 863 ly out, and among the most luminous stars anyone here has settled.
+
+  - name: Wurm
+    kind: planet
+    affiliations: [metasoft]
+    article: https://www.orionsarm.com/eg-article/5058816aa9afb
+    location:
+      distance: 1066 ly
+    events:
+      - year_at: 3980
+        kind: settled
+    note: A distance and no direction. Recorded and not drawn.

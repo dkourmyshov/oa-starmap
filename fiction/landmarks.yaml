@@ -49,3 +49,25 @@ landmarks:
     note: >-
       Held jointly by the Non-Coercive Zone and the TechnoRapture HyperNation,
       so the cluster ring is drawn halved between them.
+
+  - catalogue: Melotte 25
+    name: Hyades
+    article: https://www.orionsarm.com/eg-article/4675eb1f8688f
+    events:
+      - year_at: 700
+        kind: visited
+        precision: circa
+        note: First reached by ahumans.
+    note: >-
+      The Hyades sector, and one of the earliest places anyone went — at 154 ly
+      it was within reach long before most of this map. Entered as Melotte 25
+      rather than by the name the article uses: two catalogue entries carry
+      "Hyades" among their aliases, the cluster itself and CWNU_1242 at 948 ly,
+      and a name that matches both would settle on whichever came first.
+
+  # Hubble's Variable Nebula belongs here too — Metasoft's on the political
+  # maps, and the site of an important battle of the Second Vec War in 7009,
+  # https://www.orionsarm.com/eg-article/4675e45fe5bf6. It is not an entry yet
+  # because a landmark must resolve to a catalogued object and the nebula
+  # catalogue is one of the ones this build has not loaded; it is among the 41
+  # the build reports as pending. Add it when that lands.

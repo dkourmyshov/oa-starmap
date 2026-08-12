@@ -607,7 +607,14 @@ class WorldLocation(BaseModel):
         if self.method == "direction" and not self.distance:
             raise ValueError("a direction location needs a distance")
 
-        if self.distance and self.method not in {"direction", "constellation", "star"}:
+        # A distance is rejected where the method would ignore it — an oa_star
+        # or a world already carries a position, so a distance beside one is
+        # either redundant or a contradiction nobody would see. A location with
+        # no method at all is the opposite case: the distance is the only thing
+        # the source gave, and it is worth keeping for the same reason a bare
+        # constellation is. Proden is 2,200 ly out and in no stated direction;
+        # that still says the Metasoft Outer Volumes reach that far.
+        if self.distance and self.method not in {"direction", "constellation", "star", "none"}:
             raise ValueError(f"a {self.method} location takes no distance")
         if self.distance:
             parse_distance(self.distance)
