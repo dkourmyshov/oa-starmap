@@ -66,11 +66,18 @@ const MARKER = new THREE.Color(0xd6dcea);
  * lights the whole sphere and buries the places inside it. Dark red carries the
  * meaning without taking the view.
  */
-const HAZARD = new THREE.Color(0x8a1720);
+const HAZARD = new THREE.Color(0xa81f2a);
 
-/** Ring thickness in device pixels, held constant as the circle grows. */
+/**
+ * Ring thickness in device pixels, held constant as the circle grows.
+ *
+ * A hazard's line is the thinner of the two but not thinner than a pixel, which
+ * is where the first attempt went: 0.9 px dimmed to 55% of a dark red left a
+ * sub-pixel line at an alpha of 0.25, and the front vanished from the map
+ * entirely. Dark has a floor, and it is set by whether the thing can be seen.
+ */
 export const RING_PX = 1.6;
-export const HAZARD_RING_PX = 0.9;
+export const HAZARD_RING_PX = 1.4;
 
 /**
  * Ceiling on an extent circle's on-screen diameter, in pixels.
@@ -206,8 +213,12 @@ const CIRCLE_FRAGMENT = /* glsl */ `
     // sprite, which is what the cluster layer learned first: a fixed band in
     // sprite space becomes a wall as the circle grows, and at the Gehenna
     // front's size it would fill the view. This stays a hairline at any size.
-    float widthPx = mix(uRingPx, uHazardRingPx, vHazard);
-    float width = clamp(widthPx / max(vSize, 1.0), 0.0008, 0.35);
+    // Never thinner than a pixel. Sprite space is fractions of the whole
+    // sprite, so on the Gehenna front's 900-pixel circle a width of 0.001 is
+    // sub-pixel: most fragments miss the ring entirely and it disappears rather
+    // than thinning. Asking for a hairline has to mean one pixel, not less.
+    float widthPx = max(mix(uRingPx, uHazardRingPx, vHazard), 1.0);
+    float width = clamp(widthPx / max(vSize, 1.0), 0.0, 0.35);
     float ring = 1.0 - smoothstep(0.0, width, abs(r - (1.0 - width)));
 
     float alpha = ring * uOpacity * vFade * mix(1.0, uHazardDim, vHazard);
@@ -332,7 +343,7 @@ export class WorldField {
         uMaxPx: { value: MAX_CIRCLE_PX },
         uRingPx: { value: RING_PX },
         uHazardRingPx: { value: HAZARD_RING_PX },
-        uHazardDim: { value: 0.55 },
+        uHazardDim: { value: 1.0 },
       },
       vertexShader: CIRCLE_VERTEX,
       fragmentShader: CIRCLE_FRAGMENT,

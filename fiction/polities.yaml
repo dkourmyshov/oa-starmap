@@ -346,6 +346,17 @@ polities:
     color: "#F48FB1"
     source: eg-system-articles
 
+  - id: archosaurian-empire
+    name: Archosaurian Empire
+    color: "#728C23"
+    landmarks: [NGC 7092]
+    kind: polity
+    source: eg-system-articles
+    # M39 is Cygexpa's on the political maps and the Archosaurians' by article,
+    # which is not a contradiction: Cygexpa dissolved and this is who is there
+    # now. Both are recorded, so the cluster ring is drawn halved.
+    # 17.3 from its nearest, which is the Amalgamation.
+
   - id: primate-provolution-institute
     name: Primate Provolution Institute
     color: "#1C1C8C"

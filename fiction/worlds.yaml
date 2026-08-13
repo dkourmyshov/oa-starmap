@@ -4396,3 +4396,60 @@ worlds:
       between the Corambytia Protectorate and this: one is a territory and the
       other is something spreading through territory. The map draws the two
       differently on that word alone.
+
+  # ---- Archosaurian Empire ------------------------------------------------
+  #
+  # Centred on M39, which the map already carried as Cygexpa's. Two of the three
+  # places here are inside that cluster and the article gives only the cluster
+  # for both, so they take its direction and their own distances — two light
+  # years apart on a map where the cluster is 320 ly across. Owen is entered
+  # above under the Utopia Sphere, honorary in this empire rather than held by
+  # it, so it is not drawn in these colours.
+
+  - name: Giant Ring of the ArchSaur
+    kind: megastructure
+    affiliations: [archosaurian-empire]
+    article: https://www.orionsarm.com/eg-article/5f25d0ba9c60c
+    location:
+      ra_deg: 322.8301
+      dec_deg: 48.3495
+      distance: 1010 ly
+      near: M39 (NGC 7092)
+    events:
+      - year_at: 5400
+        kind: visited
+        note: First arrived.
+    note: >-
+      In M39, which the catalogue puts at 965 ly against the article's 1,010 —
+      agreeing to 5%. The cluster's centre supplies the direction; where in a
+      160 ly radius the ring actually sits is not given.
+
+  - name: The Sunhugger Dyson Sphere
+    kind: megastructure
+    affiliations: [archosaurian-empire]
+    article: https://www.orionsarm.com/eg-article/5debff7f44c6d
+    location:
+      ra_deg: 322.8301
+      dec_deg: 48.3495
+      distance: 1012 ly
+      near: M39 (NGC 7092)
+    note: >-
+      Also in M39, and located exactly as the Giant Ring is: the cluster's
+      direction and its own distance. The two therefore draw two light years
+      apart, which is an artefact of having one direction for both rather than
+      anything the setting says about how close they are.
+
+  - name: Kulshedra
+    kind: planet
+    affiliations: [archosaurian-empire]
+    article: https://www.orionsarm.com/eg-article/56f009e29ec1f
+    location:
+      constellation: Lacerta
+      distance: 2652 ly
+    events:
+      - year_at: 7209
+        kind: settled
+    note: >-
+      The one place in this roster outside M39, and the only one with no
+      landmark to hang a direction on — Lacerta at 2,652 ly, so the direction is
+      good to the width of the constellation.

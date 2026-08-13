@@ -77,6 +77,20 @@ landmarks:
       questions.md, because this catalogue's NGC 6885 is a different object
       again.
 
+  - catalogue: NGC 7092
+    name: Archaipelago
+    article: https://www.orionsarm.com/eg-article/48f8103be50fb
+    events:
+      - year_at: 4454
+        kind: settled
+        precision: not_later_than
+    note: >-
+      M39, at 965 ly in Cygnus, and the Archosaurian Empire's. Cygexpa has it on
+      the political maps and dissolved; the Archosaurians are who is there now,
+      so both are recorded and the ring is drawn halved. The catalogue carries
+      it as Theia_517, a Gaia-era name for the same group, with NGC 7092 among
+      its aliases.
+
   # Hubble's Variable Nebula belongs here too — Metasoft's on the political
   # maps, and the site of an important battle of the Second Vec War in 7009,
   # https://www.orionsarm.com/eg-article/4675e45fe5bf6. It is not an entry yet
