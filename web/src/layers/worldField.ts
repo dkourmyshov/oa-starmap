@@ -77,7 +77,7 @@ const HAZARD = new THREE.Color(0xa81f2a);
  * entirely. Dark has a floor, and it is set by whether the thing can be seen.
  */
 export const RING_PX = 1.6;
-export const HAZARD_RING_PX = 1.4;
+export const HAZARD_RING_PX = 1.8;
 
 /**
  * Ceiling on an extent circle's on-screen diameter, in pixels.

@@ -8,7 +8,7 @@ Nothing below is a complaint about the setting. Most of it is the ordinary frict
 
 ---
 
-## Open questions (23)
+## Open questions (24)
 
 ### Enigma system — Three sources put the Enigma system in three different directions.
 
@@ -234,6 +234,18 @@ The alias-collision rule added to the cluster build cannot catch this. It settle
 
 - https://www.orionsarm.com/eg-article/462d5a3507929
 
+### Pluton — Two sources put Pluton exactly a thousand light years apart, differing in one digit.
+
+*contradiction*
+
+The Celestia add-on places Pluton at 5,130.8 ly and its article gives 4,130.8. Everything after the leading digit is identical, including the tenth, which is not how two independent estimates of a distance disagree — it is how a digit gets miscopied. One of the two is a transcription of the other with a 5 for a 4 or the reverse.
+
+**What the map does now.** Draws the add-on's 5,130.8, because the entry binds to the add-on's star and that is where the star is. Either figure puts Pluton in Perseus and past the frontier, so nothing else about the map changes with the answer.
+
+**What would settle it.** Which of the two is the original. Whoever has the article open can read it off in a second, which is the whole of the work here.
+
+- https://www.orionsarm.com/eg-article/4910ed34571fd
+
 ### Cableville and Zhuangzi — The article and the Celestia add-on put Zhuangzi in different constellations, two and a half times as far apart.
 
 *contradiction*
@@ -341,7 +353,7 @@ Landmarks that fall inside a polity's area on the political maps but sit far bey
 - **Bochum 14** at 9,252 ly — Sagittarius Transcultural Cooperation
 - **NGC 559** at 9,042 ly — Solar Dominion
 - **NGC 6802** at 9,031 ly — Mutual Progress Association
-- **Czernik 8** at 8,589 ly — Cygexpa
+- **Czernik 8** at 8,589 ly — Cygexpa, Perseus Principalities
 - **NGC 4337** at 7,873 ly — Non-Coercive Zone
 - **NGC 6755** at 7,446 ly — Keter Dominion
 
@@ -351,15 +363,15 @@ Named in the political maps, and real, but in a catalogue this map does not carr
 
 Aquila Rift, Basel 11, Basel 5, California Nebula, Cat Eye Nebula, Collinder 121, Collinder 173, Collinder 399, Collinder 96, Dumbbell Nebula, Eskimo Nebula, Floating Star Nebula, G64.3+5.7, Gamma Cas, Geminga, Helix Nebula, Hogg 14, Hubble Variable Nebula, IC 405, IC 417, Iskudarian 1, Jupiter Nebula, Markarian 6, NGC 1498, and 17 more
 
-## 7 landmarks claimed by more than one polity
+## 8 landmarks claimed by more than one polity
 
 Not necessarily an error — the political maps overlap, and a landmark on a boundary can legitimately fall in two volumes. Recorded in case any of these is a reading mistake.
 
-Blanco 1, Collinder 173, Collinder 359, NGC 2244, NGC 7092, S232, S27
+Blanco 1, Collinder 173, Collinder 359, Czernik 8, NGC 2244, NGC 7092, S232, S27
 
 ## Worlds located only by constellation
 
-51 of 308 canonical worlds are given as a distance and a constellation. That fixes the distance exactly and the direction only to the width of the constellation, which at these ranges is hundreds to thousands of light years. The map draws these with a broken ring rather than a solid one, and the detail panel gives the error in light years.
+51 of 311 canonical worlds are given as a distance and a constellation. That fixes the distance exactly and the direction only to the width of the constellation, which at these ranges is hundreds to thousands of light years. The map draws these with a broken ring rather than a solid one, and the detail panel gives the error in light years.
 
 Coordinates, or a nearby named star, would turn any of these from a region into a position.
 

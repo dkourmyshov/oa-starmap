@@ -562,6 +562,29 @@ questions:
     links:
       - https://www.orionsarm.com/eg-article/462d5a3507929
 
+  - id: pluton-distance
+    topic: Pluton
+    status: open
+    severity: contradiction
+    summary: >-
+      Two sources put Pluton exactly a thousand light years apart, differing in
+      one digit.
+    detail: >-
+      The Celestia add-on places Pluton at 5,130.8 ly and its article gives
+      4,130.8. Everything after the leading digit is identical, including the
+      tenth, which is not how two independent estimates of a distance disagree —
+      it is how a digit gets miscopied. One of the two is a transcription of the
+      other with a 5 for a 4 or the reverse.
+    map_does: >-
+      Draws the add-on's 5,130.8, because the entry binds to the add-on's star
+      and that is where the star is. Either figure puts Pluton in Perseus and
+      past the frontier, so nothing else about the map changes with the answer.
+    would_settle: >-
+      Which of the two is the original. Whoever has the article open can read it
+      off in a second, which is the whole of the work here.
+    links:
+      - https://www.orionsarm.com/eg-article/4910ed34571fd
+
   - id: cableville-position
     topic: Cableville and Zhuangzi
     status: open

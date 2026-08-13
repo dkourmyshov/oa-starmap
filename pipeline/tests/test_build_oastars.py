@@ -370,7 +370,11 @@ class TestCuration:
         assert curated["H'tat'sa'thoss"]["affiliation"] == "caretaker-gods"
         assert curated["Wadai"]["affiliation"] == "sophic-league"
         assert curated["Muuhome"]["affiliation"] == "xenosophont"
-        assert len(curated) == 25  # 28 curated; Enigma and two others unaffiliated
+        # Curated entries that name a holder. Not every curated entry does:
+        # Enigma's is unsettled, the Boomerang Nebula is a real object nobody
+        # holds, and Oh-F-Star-4 briefly claimed the Non-Coercive Zone on no
+        # authority and now claims nothing.
+        assert len(curated) == 24
 
     def test_the_naming_rule_prefers_a_named_primary(self, built):
         """Hiederia over Redunin: the primary has a name of its own."""

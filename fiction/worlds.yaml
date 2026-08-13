@@ -4054,7 +4054,6 @@ worlds:
 
   - name: Oh-F-Star-4
     kind: system
-    affiliations: [nocozo]
     article: https://www.orionsarm.com/eg-article/4758a9926c452
     location:
       oa_star: Oh-F-Star-4-
@@ -4064,6 +4063,11 @@ worlds:
       keeps the star's own name. In Carina at 2,246 ly and within a twentieth of
       a degree of the galactic plane, the flattest thing in this file. The
       add-on's designation carries a trailing hyphen that the name does not.
+
+      No holder is recorded. This entry carried the Non-Coercive Zone for a
+      while on no authority at all — the add-on's file gives a position and
+      nothing else, and nothing said whose the Rush is. An empty field is the
+      honest answer until something says otherwise.
 
   - name: Boomerang Nebula
     kind: volume
@@ -4453,3 +4457,49 @@ worlds:
       The one place in this roster outside M39, and the only one with no
       landmark to hang a direction on — Lacerta at 2,652 ly, so the direction is
       good to the width of the constellation.
+
+  # ---- Perseus Principalities ---------------------------------------------
+  #
+  # Mostly landmarks rather than places: Czernik 8 and Cam OB1 are in
+  # polities.yaml and landmarks.yaml, not here. What is here is two stars named
+  # only by catalogue number, and Pluton, which the map already had.
+
+  - name: HIP 14179
+    kind: system
+    affiliations: [perseus-principalities]
+    location:
+      hip: 14179
+      catalogue_from_source: true
+    note: >-
+      Also HD 18788, in Perseus at 1,357 ly. Named only by its catalogue number,
+      which is what the roster gives it — the Encyclopaedia has no article and
+      no name for it that reached this map.
+
+  - name: HIP 16326
+    kind: system
+    affiliations: [perseus-principalities]
+    location:
+      hip: 16326
+      catalogue_from_source: true
+    note: >-
+      Also HD 21540, in Perseus at 1,224 ly, and like HIP 14179 carried under
+      its designation for want of a name.
+
+  - name: Pluton
+    kind: system
+    affiliations: [perseus-principalities]
+    article: https://www.orionsarm.com/eg-article/4910ed34571fd
+    location:
+      oa_star: JD 140582223
+    events:
+      - year_at: 8400
+        kind: settled
+        precision: not_later_than
+    note: >-
+      In Perseus, and already on the map through the Celestia add-on, which is
+      where this position comes from. The two sources give different distances
+      and differ by exactly a thousand light years: the add-on says 5,130.8 and
+      the article 4,130.8. Identical but for the leading digit, which is the
+      shape of a slipped digit rather than of two sources disagreeing. The
+      add-on's figure is drawn because the binding is to its star; see
+      questions.md.

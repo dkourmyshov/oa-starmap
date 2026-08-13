@@ -240,8 +240,14 @@ polities:
   - id: perseus-principalities
     name: Perseus Principalities
     color: "#F06292"
+    landmarks: [Czernik 8]
     kind: polity
     source: eg-system-articles
+    # Czernik 8 is Cygexpa's too, and at 8,589 ly it is past this map's 7,000 ly
+    # frontier — bound and named, but not polity-coloured, so neither claim
+    # shows. Cam OB1 belongs on this list as well and cannot go on it: an OB
+    # association is not in the open cluster catalogue, which is the only
+    # catalogue of groups this build loads.
 
   - id: zoeific-biopolity
     name: Zoeific Biopolity
