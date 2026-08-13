@@ -2447,14 +2447,18 @@ worlds:
   - name: Dorangloon
     kind: system
     system: Dorangloon
-    affiliations: [solar-dominion]
+    affiliations: [solar-dominion, terragen-federation]
     article: https://www.orionsarm.com/eg-article/464d0eddc8718
     location:
       star: Gliese 877
     events:
       - year_at: 929
         kind: settled
-    note: In Octans at 28 ly.
+    note: >-
+      Gliese 877, in Octans at 28 ly, and reached in 929 — the earliest date on
+      either roster it appears in. It came here twice, once with the Solar
+      Dominion and once with the Terragen Federation, from the one article;
+      both are drawn rather than one being chosen.
 
   - name: Eden
     kind: planet
@@ -3744,3 +3748,103 @@ worlds:
       ownership here for want of anything weaker to draw. CoRoT-3 is a
       thirteenth-magnitude star and below this map's catalogue, so the
       constellation carries the direction.
+
+  # ---- Terragen Federation ------------------------------------------------
+  #
+  # Given to us as the Terran Federation, and the same polity: FuMa came with
+  # this roster and is already here as Terragen. Every entry binds to a
+  # catalogue star, which makes this the best-identified roster in the file —
+  # and four of the eight are in Taurus, two of them 9.6 ly apart.
+
+  - name: The Magal Worldrings
+    kind: megastructure
+    affiliations: [terragen-federation]
+    article: https://www.orionsarm.com/eg-article/5491bacd3b4f8
+    location:
+      hip: 21091
+      catalogue_from_source: true
+    events:
+      - year_at: 2522
+        kind: settled
+    note: >-
+      HIP 21091, 192 ly out in Taurus, and 9.6 ly from Sinyavskaya — the two
+      nearest Federation places recorded here, and near enough that anything
+      built at one is a naked-eye object from the other.
+
+  - name: New Duibbiyat
+    kind: planet
+    affiliations: [terragen-federation]
+    article: https://www.orionsarm.com/eg-article/46d4c51616387
+    location:
+      star: 71 Orionis
+    events:
+      - year_at: 3200
+        until_at: 3800
+        kind: settled
+        precision: between
+        note: Early in the Age of Consolidation.
+    note: 71 Orionis, 71 ly out.
+
+  - name: Unon-Duuz
+    kind: system
+    affiliations: [terragen-federation]
+    article: https://www.orionsarm.com/eg-article/57699df2f2118
+    location:
+      star: GJ 1245 A
+    events:
+      - year_at: 1203
+        kind: settled
+    note: >-
+      A triple: GJ 1245 A, B and C, 15 ly out in Cygnus. Bound to the primary,
+      the map going no finer than a system.
+
+  - name: Whirlygig
+    kind: planet
+    affiliations: [terragen-federation]
+    article: https://www.orionsarm.com/eg-article/559bd77adb246
+    location:
+      hd: 35956
+      catalogue_from_source: true
+    events:
+      - year_at: 3315
+        kind: settled
+    note: >-
+      Its star is Freckles, HD 35956, 97 ly out in Orion; the colony table
+      carries the pair as "Freckles / Whirlygig".
+
+  - name: Yangko
+    kind: planet
+    affiliations: [terragen-federation]
+    article: https://www.orionsarm.com/eg-article/532b2e15251be
+    location:
+      hd: 284842
+      catalogue_from_source: true
+    events:
+      - year_at: 2957
+        kind: settled
+    note: HD 284842, 394 ly out in Taurus, and the furthest of this roster.
+
+  - name: Zikhron
+    kind: planet
+    affiliations: [terragen-federation]
+    article: https://www.orionsarm.com/eg-article/532b2a4235638
+    location:
+      hd: 30380
+      catalogue_from_source: true
+    events:
+      - year_at: 2830
+        kind: settled
+    note: HD 30380, 259 ly out in Taurus.
+
+  - name: Sinyavskaya
+    kind: planet
+    affiliations: [terragen-federation]
+    article: https://www.orionsarm.com/eg-article/478587d725792
+    location:
+      hd: 29528
+      catalogue_from_source: true
+    events:
+      - year_at: 3800
+        kind: settled
+        precision: not_later_than
+    note: HD 29528, 189 ly out in Taurus, 9.6 ly from the Magal Worldrings.
