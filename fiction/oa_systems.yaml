@@ -247,12 +247,14 @@ systems:
 
   - star: 'Gamma Leporis B:13 Lep B:HD 38392'
     label: Ao Lai
-    affiliation: mutual-progress-association
+    affiliation: primate-provolution-institute
     real: Gamma Leporis B, also 13 Leporis B and HD 38392
     article: https://www.orionsarm.com/eg-article/4871520aab6c2
     note: >-
       The Ao Lai system takes in both components of Gamma Leporis. The add-on
       carries B because the real star catalogue this map draws from has only A.
+      The .stc entry gives no comment and no affiliation, and neither does the
+      system's .ssc file; the holder is from the article.
 
   - star: 'Dschubba/HD 143275/7 Sco/SAO 184014'
     label: Dschubba

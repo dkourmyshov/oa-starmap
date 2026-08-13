@@ -4089,7 +4089,7 @@ worlds:
 
   - name: Ao Lai
     kind: system
-    affiliations: [mutual-progress-association]
+    affiliations: [primate-provolution-institute]
     article: https://www.orionsarm.com/eg-article/4871520aab6c2
     location:
       oa_star: 'Gamma Leporis B:13 Lep B:HD 38392'
@@ -4097,7 +4097,10 @@ worlds:
       The system takes in both components of Gamma Leporis, 29 ly out. Bound to
       B because that is the one the add-on carries — the real star catalogue
       here has only A — so the marker sits on the companion while the system is
-      both.
+      both. Held by the Primate Provolution Institute: small, independent, and
+      not one of the empires. The add-on's own file for this system names three
+      Earth-like worlds around B — Hope, Faith and Charity — which is finer than
+      this map goes.
 
   - name: Dschubba
     kind: system

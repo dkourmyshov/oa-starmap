@@ -346,6 +346,15 @@ polities:
     color: "#F48FB1"
     source: eg-system-articles
 
+  - id: primate-provolution-institute
+    name: Primate Provolution Institute
+    color: "#1C1C8C"
+    kind: polity
+    source: eg-system-articles
+    # Small and independent, and not a meta-empire — but it holds Ao Lai, which
+    # is not the Mutual Progress Association's whatever this file said before.
+    # 21.2 from its nearest, the widest margin of any polity here.
+
   - id: red-star-mpire
     name: Red Star 'M'pire
     color: "#BF3000"
