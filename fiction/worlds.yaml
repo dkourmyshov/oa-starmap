@@ -3218,17 +3218,22 @@ worlds:
     affiliations: [utopia-sphere]
     article: https://www.orionsarm.com/eg-article/47a3ec6e06652
     location:
-      hip: 85986
-      catalogue_from_source: true
+      ra_deg: 263.6103
+      dec_deg: -54.1986
+      distance: 609 ly
+      near: HIP 85986
     events:
       - year_at: 4800
         kind: settled
         precision: not_later_than
     note: >-
-      A planet and the megastructure built over it. HIP 85986 lies within two
-      degrees of Beta Arae on the sky but four times further out, at 2,716 ly,
-      which places Topia in the Middle Regions rather than in the Utopia
-      Sphere's core. The article gives no distance to check that against.
+      A planet and the megastructure built over it. The article names HIP 85986
+      and puts it at 609 ly; the catalogue puts that star at 2,716, four and a
+      half times further. The direction is not in doubt and the distance is not
+      reconcilable, so the star supplies the one and the article the other. At
+      609 ly Topia sits in the Utopia Sphere's core, 108 ly from Beta Arae and
+      at the same distance the article gives Eutopia — which is where a Utopian
+      megastructure belongs, and is why the article's figure is the one kept.
 
   - name: Wallace Dyson Swarm
     kind: megastructure

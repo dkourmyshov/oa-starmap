@@ -521,25 +521,29 @@ questions:
   - id: topia-distance
     topic: Topia
     status: open
-    severity: uncertainty
+    severity: contradiction
     summary: >-
-      Topia's star is two degrees from Beta Arae on the sky and four times
-      further away.
+      Topia's article names a star at 2,716 ly and places the world at 609.
     detail: >-
-      The article identifies Topia as HIP 85986 and gives no distance. That star
-      is 1.87 degrees from Beta Arae in direction, which is what one would expect
-      of a Utopia Sphere world in the core, but 2,716 ly from Sol against Beta
-      Arae's 715 — some 2,000 ly beyond it, in the Middle Regions. Either Topia
-      really is that far out, in which case it is much the most distant thing in
-      this roster and nothing in the article says so, or the identifier was
-      picked for its position on the sky near Beta Arae without its parallax
-      being checked.
+      The article identifies Topia as HIP 85986 and gives its distance as 609
+      ly. The catalogue puts that star at 2,716 — four and a half times further,
+      the widest disagreement in this file by some way, and far past the point
+      where two figures can be the same object measured twice. The direction is
+      not in question: HIP 85986 is 1.87 degrees from Beta Arae, exactly where a
+      world of the Utopia Sphere's core should be, and 609 ly is the same
+      distance the article gives Eutopia. So the article is self-consistent
+      about where Topia is and inconsistent about which star it orbits. Either
+      the identifier was chosen for its position on the sky without its parallax
+      being read, or it is a different star from the one intended.
     map_does: >-
-      Binds to HIP 85986 and draws Topia at 2,716 ly, the article having given
-      no distance to prefer over the catalogue's.
+      Takes HIP 85986's direction and the article's distance, and does not bind.
+      Topia draws in the core, 108 ly from Beta Arae, which is where it is meant
+      to be. Binding to the star would have put a Utopian megastructure 2,000 ly
+      out in the Middle Regions on the strength of a catalogue number.
     would_settle: >-
-      Whether Topia is intended to lie in the Utopia Sphere's core near Beta
-      Arae, or genuinely in the Middle Regions.
+      Only the identifier is still open — that Topia belongs in the core rather
+      than the outer volumes is not in dispute. Whether HIP 85986 is the star
+      meant, or a number that should be dropped in favour of the distance.
     links:
       - https://www.orionsarm.com/eg-article/47a3ec6e06652
 
