@@ -346,13 +346,13 @@ Blanco 1, Collinder 173, Collinder 359, NGC 2244, S232, S27
 
 ## Worlds located only by constellation
 
-49 of 291 canonical worlds are given as a distance and a constellation. That fixes the distance exactly and the direction only to the width of the constellation, which at these ranges is hundreds to thousands of light years. The map draws these with a broken ring rather than a solid one, and the detail panel gives the error in light years.
+49 of 297 canonical worlds are given as a distance and a constellation. That fixes the distance exactly and the direction only to the width of the constellation, which at these ranges is hundreds to thousands of light years. The map draws these with a broken ring rather than a solid one, and the detail panel gives the error in light years.
 
 Coordinates, or a nearby named star, would turn any of these from a region into a position.
 
-## 39 places described but not located
+## 41 places described but not located
 
-Arkady 2, Arnon Dar, Avase, Big Bob, Crustuse, Dashwood, Druidworld, Elderman's Star, Evermore, Galbydeia Torus, Garlin, Gavit, and 27 more
+Arkady 2, Arnon Dar, Avase, Big Bob, Crustuse, Dashwood, Druidworld, Elderman's Star, Evermore, Galbydeia Torus, Garlin, Gavit, and 29 more
 
 ## 1 designation reused in the Celestia add-on
 

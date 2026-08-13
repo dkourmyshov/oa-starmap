@@ -4075,7 +4075,11 @@ worlds:
       Celestia's own catalogues do not, and this map's nebula catalogue is not
       loaded either. The article puts it 5,000 ly out at the edge of Terragen
       space and the add-on at 5,080; it is colder than the cosmic background,
-      which is the article's own phrasing and the only figure it gives.
+      which is the article's own phrasing and the only figure it gives. Real
+      astronomy is more specific and worth the aside: the Boomerang's outflow
+      expands fast enough to cool below the microwave background, making it the
+      coldest natural place known — about a degree above absolute zero, colder
+      than empty space anywhere else.
 
       Nobody holds it and nobody ever did. Cold-adapted Ghauetti tweaks from
       Ihikkk meant to settle it and it was too far away, and by the time
@@ -4110,3 +4114,125 @@ worlds:
       rather than one colour for the Triumvirate itself, so the ring shows what
       it is made of. The add-on places the star at 402 ly and the catalogue at
       491, an 18% disagreement that the add-on's position is used across.
+
+  # ---- Deeper Covenant ----------------------------------------------------
+  #
+  # A close-in roster, and the best-measured one here: four of its six places
+  # are inside 20 ly, and every stated distance that could be checked agreed
+  # with the catalogue to a tenth of a percent. Two of them are brown dwarfs no
+  # catalogue this map loads carries at all, and both are still located — the
+  # articles give distances to stars that are here, which is a position written
+  # down the long way.
+
+  - name: Hightower
+    kind: system
+    affiliations: [deeper-covenant]
+    article: https://www.orionsarm.com/eg-article/46709b72c8717
+    location:
+      distance: 759 ly
+    events:
+      - year_at: 4715
+        kind: observed
+    note: >-
+      A distance and nothing else. Recorded and not drawn — no direction is
+      given here, and none is in the Celestia add-on or the Inner Sphere table
+      either.
+
+  - name: Hoshanti's Star
+    kind: system
+    system: Hoshanti's Star
+    affiliations: [deeper-covenant]
+    article: https://www.orionsarm.com/eg-article/464deafc952ed
+    location:
+      constellation: Sagittarius
+    events:
+      - year_at: 10054
+        kind: settled
+    note: >-
+      In the Outer Volumes, down the Sagittarius sector — a direction with no
+      distance, so the constellation is recorded and nothing is drawn. Settled
+      in 10054, which makes it one of the latest dates in this file. Gavit, its
+      neptunian, was already here from the Solar Dominion's roster and holds
+      both; this entry gives the system it is in a place of its own.
+
+  - name: Midnight Pearl
+    kind: system
+    affiliations: [deeper-covenant]
+    article: https://www.orionsarm.com/eg-article/6730af643e2de
+    location:
+      ra_deg: 110.4358
+      dec_deg: -5.5156
+      distance: 13.3 ly
+      direction_error_deg: 2.5
+      estimated: >-
+        The star is UGPS 0722-05, a very cool dwarf that no catalogue here
+        carries, so the article's three distances are the position: 13.3 ly from
+        Sol, 3.1 from Procyon and 2.6 from Luyten's Star. Three spheres meet in
+        at most two points, and they do — one in Monoceros and one in Gemini.
+        The article says Monoceros, which picks it. The error is what rounding
+        those three figures to a tenth of a light year allows: perturbing each
+        by half of the last digit moves the answer at most 2.5 degrees.
+    events:
+      - year_at: 1032
+        kind: settled
+        precision: circa
+    note: >-
+      Also UGPS J072227.51-054031.2, WISEPA J072227.27-054029.9 and GJ 11075.
+      Procyon and Luyten's Star are 1.1 ly apart and Midnight Pearl is a few
+      light years off both, which is what makes the three distances pin it so
+      tightly rather than leaving it anywhere on a shell.
+
+  - name: MyuvYin
+    kind: system
+    affiliations: [deeper-covenant]
+    article: https://www.orionsarm.com/eg-article/4a08dca7bbc9c
+    location:
+      star: Gliese 205
+      distance: 18.59 ly
+    events:
+      - year_at: 809
+        kind: settled
+    note: >-
+      Gliese 205, also HD 36395 and HIP 25878, in Orion. Both stated distances
+      land: 18.59 ly from Sol against the catalogue's 18.604, and 6.283 from
+      Keid against 6.286. The article also gives 19.02 ly at 10600 A.T., which
+      is this star's own proper motion over eight and a half thousand years —
+      the only place in this file where the setting moves a star rather than
+      just placing it. The map is J2000 throughout, so the earlier figure is
+      the one that matches.
+
+  - name: Praxis-Gnosis
+    kind: system
+    affiliations: [deeper-covenant]
+    article: https://www.orionsarm.com/eg-article/4703bc2ea1fdc
+    location:
+      star: Epsilon Indi
+      distance: 11.87 ly
+    note: >-
+      Epsilon Indi B, one of a pair of brown dwarfs orbiting Epsilon Indi far
+      out. Bound to the primary, which is what the catalogue carries and what
+      the map draws a system at. Both stated distances agree to a hundredth:
+      11.87 ly from Sol against 11.867, and 14.07 from Ran against 14.107.
+
+  - name: Yin-Yang
+    kind: system
+    affiliations: [deeper-covenant]
+    article: https://www.orionsarm.com/eg-article/46e9ce6bb2787
+    location:
+      ra_deg: 162.2920
+      dec_deg: -53.9096
+      distance: 6.503 ly
+      direction_error_deg: 4.0
+      estimated: >-
+        Luhman 16, a pair of brown dwarfs too cool for any catalogue here. The
+        article gives two distances rather than three — 6.503 ly from Sol and
+        3.559 from Alpha Centauri — and two spheres meet in a circle, not a
+        point: a ring of possible positions 3.3 ly in radius. The constellation
+        cuts it. Only 15.5 degrees of that circle fall in Vela, an arc 0.88 ly
+        end to end, and this is its midpoint; the error is the half-arc.
+    note: >-
+      At 6.5 ly this is the third-nearest system to Sol: the only things this
+      map's catalogue has inside it are Alpha Centauri at 4.3 and Barnard's Star
+      at 6.0. Yin-Yang itself is in none of the catalogues loaded here, which is
+      why the article has to say where it is by naming what it is near rather
+      than by giving a designation anything would resolve.
