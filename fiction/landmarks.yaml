@@ -62,6 +62,21 @@ landmarks:
       The Hyades sector, and one of the earliest places anyone went — at 154 ly
       it was within reach long before most of this map.
 
+  - catalogue: NGC 6882
+    name: Danyello M'lund Cluster
+    article: https://www.orionsarm.com/eg-article/462d5a3507929
+    events:
+      - year_at: 3150
+        kind: settled
+        precision: circa
+        note: Colonised during the 3100s.
+    note: >-
+      Cygexpa's, and left behind when Cygexpa dissolved. At 1,544 ly in
+      Vulpecula. Its neighbour NGC 6885 is on Cygexpa's landmark list too, and
+      the two have been confused with each other since Herschel — see
+      questions.md, because this catalogue's NGC 6885 is a different object
+      again.
+
   # Hubble's Variable Nebula belongs here too — Metasoft's on the political
   # maps, and the site of an important battle of the Second Vec War in 7009,
   # https://www.orionsarm.com/eg-article/4675e45fe5bf6. It is not an entry yet

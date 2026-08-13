@@ -73,7 +73,11 @@ polities:
       [S126, S119, Trumpler 37, S155, S171, Turner 1, North America Nebula,
        S129, Roslund 5, Aquila Rift, NGC 7092, Dumbbell Nebula, Collinder 428,
        NGC 6885, NGC 6996, NGC 0225, NGC 0189, Czernik 8, Cat Eye Nebula,
-       NGC 7160, NGC 7762]
+       NGC 7160, NGC 7762, NGC 6882]
+    # Dissolved, and kept anyway. Its volume is still a region with a history,
+    # and its places are tagged for it wherever nothing has claimed them since —
+    # so `affiliations` here reads "was", not "is". Where a successor does hold
+    # a place, the successor is named instead: Qjellto is Utopia's and Zoeific's.
 
   - id: keter-dominion
     name: Keter Dominion

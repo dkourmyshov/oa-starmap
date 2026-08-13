@@ -528,6 +528,40 @@ questions:
       - https://www.orionsarm.com/eg-article/4ce526a25575d
       - https://www.orionsarm.com/eg-article/46f879c9c42a8
 
+  - id: ngc-6885-identity
+    topic: NGC 6885 and NGC 6882
+    status: open
+    severity: finding
+    summary: >-
+      Cygexpa holds NGC 6885, and the object this map binds that name to is
+      almost certainly not it.
+    detail: >-
+      NGC 6882 and NGC 6885 are neighbours in Vulpecula that have been confused
+      with one another since Herschel recorded them, and modern catalogues still
+      disagree about which is which or whether both exist. In this map's cluster
+      catalogue NGC 6882 is its own record at 1,544 ly, and it is the Danyello
+      M'lund Cluster. NGC 6885 is not a record at all: the name appears only in
+      the alias list of Gulliver_18, at 5,040 ly, alongside 20 Vulpeculae,
+      Collinder 416, Collinder 417 and half a dozen more — the signature of a
+      cross-match that swept several designations onto one object. Cygexpa's
+      landmark list has NGC 6885 on it, so the polity is currently drawing a
+      claim on that 5,040 ly object.
+
+      The alias-collision rule added to the cluster build cannot catch this. It
+      settles a name claimed by *several* records in favour of the one that owns
+      it; here only one record claims NGC 6885, so there is no contest to
+      settle, and a single wrong claimant passes.
+    map_does: >-
+      Binds NGC 6885 to Gulliver_18, as the catalogue's alias says, and binds
+      NGC 6882 separately to its own record. So the two Cygexpa landmarks are
+      3,500 ly apart when the objects they name are neighbours.
+    would_settle: >-
+      Which object Orion's Arm means by NGC 6885 — and, separately, whether the
+      cluster catalogue's alias is right, which is a question for the catalogue
+      rather than for the setting.
+    links:
+      - https://www.orionsarm.com/eg-article/462d5a3507929
+
   - id: cableville-position
     topic: Cableville and Zhuangzi
     status: open

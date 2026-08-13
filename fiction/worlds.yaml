@@ -4236,3 +4236,96 @@ worlds:
       at 6.0. Yin-Yang itself is in none of the catalogues loaded here, which is
       why the article has to say where it is by naming what it is near rather
       than by giving a designation anything would resolve.
+
+  # ---- Cygexpa ------------------------------------------------------------
+  #
+  # A dissolved empire, and the only one here recorded for what it was rather
+  # than what it holds. `affiliations` is otherwise the present holder; Cygexpa
+  # has no present, so these entries mark a region with a history instead — the
+  # places it left behind, where nothing has claimed them since. Qjellto is not
+  # among them: the Utopia Sphere and the Zoeific Biopolity hold it now, and
+  # naming the empire that used to would say the wrong thing about who is there.
+
+  - name: Pardes
+    kind: system
+    affiliations: [cygexpa]
+    article: https://www.orionsarm.com/eg-article/47bcf1f1efee6
+    location:
+      star: HD 190605
+    events:
+      - year_at: 2010
+        kind: settled
+    note: HD 190605, 146 ly out in Vulpecula.
+
+  - name: 4 Vulpeculae
+    kind: system
+    affiliations: [cygexpa]
+    article: https://www.orionsarm.com/eg-article/4629822fcae28
+    location:
+      star: 4 Vulpeculae
+    events:
+      - year_at: 2010
+        kind: settled
+        precision: not_earlier_than
+        note: Became a Cygexpa tax haven during the ComEmp period.
+    note: >-
+      One of the two stars the article names in the Coathanger, which is an
+      asterism rather than a cluster — the shape is a line of sight and not a
+      group. This map's cluster catalogue lists only physical systems, so the
+      Coathanger is not in it, and the two stars bear that out: 4 Vulpeculae is
+      at 256 ly and 5 Vulpeculae at 235, 20.6 ly apart in space while appearing
+      side by side.
+
+  - name: 5 Vulpeculae
+    kind: system
+    affiliations: [cygexpa]
+    article: https://www.orionsarm.com/eg-article/4629822fcae28
+    location:
+      star: 5 Vulpeculae
+    events:
+      - year_at: 2010
+        kind: settled
+        precision: not_earlier_than
+        note: Became a Cygexpa tax haven during the ComEmp period.
+    note: The other half of the Coathanger tax haven, 235 ly out.
+
+  - name: Cygnus Loop
+    kind: volume
+    affiliations: [cygexpa]
+    article: https://www.orionsarm.com/eg-article/4648f934c38f8
+    location:
+      constellation: Cygnus
+      distance: 1470 ly
+    note: >-
+      A supernova remnant. This map loads no remnant catalogue, so unlike the
+      clusters and nebulae it cannot be bound to a real object — the
+      constellation carries the direction and the article the distance, which at
+      1,470 ly makes the direction good to a few hundred light years.
+
+  - name: Deneb Plexus
+    kind: volume
+    affiliations: [cygexpa]
+    article: https://www.orionsarm.com/eg-article/46490c433d4b1
+    location:
+      star: Deneb
+    events:
+      - year_at: 2100
+        until_at: 2600
+        kind: visited
+        precision: between
+        note: Reached by von Neumann probes in the early Age of Expansion.
+    note: >-
+      518 star systems beyond the Aquila Rift, named for the brightest of them —
+      Deneb, Alpha Cygni, at 1,412 ly. Bound to that star because it is what the
+      volume is named and reckoned from, not because the Plexus is one system;
+      the marker is a landmark for a region far larger than itself.
+
+  - name: Guanche
+    kind: system
+    affiliations: [cygexpa]
+    article: https://www.orionsarm.com/eg-article/48f7fcd30db8c
+    location:
+      oa_star: JD 76601
+    note: >-
+      2,899 ly out, on a position the Celestia add-on asserts rather than one
+      any catalogue measures.

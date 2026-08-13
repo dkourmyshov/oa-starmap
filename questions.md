@@ -8,7 +8,7 @@ Nothing below is a complaint about the setting. Most of it is the ordinary frict
 
 ---
 
-## Open questions (22)
+## Open questions (23)
 
 ### Enigma system — Three sources put the Enigma system in three different directions.
 
@@ -221,6 +221,19 @@ A second source now says the same thing independently. The Celestia add-on state
 - https://www.orionsarm.com/eg-article/4ce526a25575d
 - https://www.orionsarm.com/eg-article/46f879c9c42a8
 
+### NGC 6885 and NGC 6882 — Cygexpa holds NGC 6885, and the object this map binds that name to is almost certainly not it.
+
+*finding*
+
+NGC 6882 and NGC 6885 are neighbours in Vulpecula that have been confused with one another since Herschel recorded them, and modern catalogues still disagree about which is which or whether both exist. In this map's cluster catalogue NGC 6882 is its own record at 1,544 ly, and it is the Danyello M'lund Cluster. NGC 6885 is not a record at all: the name appears only in the alias list of Gulliver_18, at 5,040 ly, alongside 20 Vulpeculae, Collinder 416, Collinder 417 and half a dozen more — the signature of a cross-match that swept several designations onto one object. Cygexpa's landmark list has NGC 6885 on it, so the polity is currently drawing a claim on that 5,040 ly object.
+The alias-collision rule added to the cluster build cannot catch this. It settles a name claimed by *several* records in favour of the one that owns it; here only one record claims NGC 6885, so there is no contest to settle, and a single wrong claimant passes.
+
+**What the map does now.** Binds NGC 6885 to Gulliver_18, as the catalogue's alias says, and binds NGC 6882 separately to its own record. So the two Cygexpa landmarks are 3,500 ly apart when the objects they name are neighbours.
+
+**What would settle it.** Which object Orion's Arm means by NGC 6885 — and, separately, whether the cluster catalogue's alias is right, which is a question for the catalogue rather than for the setting.
+
+- https://www.orionsarm.com/eg-article/462d5a3507929
+
 ### Cableville and Zhuangzi — The article and the Celestia add-on put Zhuangzi in different constellations, two and a half times as far apart.
 
 *contradiction*
@@ -346,7 +359,7 @@ Blanco 1, Collinder 173, Collinder 359, NGC 2244, S232, S27
 
 ## Worlds located only by constellation
 
-49 of 297 canonical worlds are given as a distance and a constellation. That fixes the distance exactly and the direction only to the width of the constellation, which at these ranges is hundreds to thousands of light years. The map draws these with a broken ring rather than a solid one, and the detail panel gives the error in light years.
+50 of 303 canonical worlds are given as a distance and a constellation. That fixes the distance exactly and the direction only to the width of the constellation, which at these ranges is hundreds to thousands of light years. The map draws these with a broken ring rather than a solid one, and the detail panel gives the error in light years.
 
 Coordinates, or a nearby named star, would turn any of these from a region into a position.
 
