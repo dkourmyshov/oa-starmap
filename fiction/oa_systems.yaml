@@ -236,12 +236,14 @@ systems:
 
   - star: The Boomerang
     label: Boomerang Nebula
-    real: The Boomerang Nebula, a protoplanetary nebula in Centaurus
+    real: The Boomerang Nebula, in Centaurus
     article: https://www.orionsarm.com/eg-article/491758f9ed287
     note: >-
-      A real object the add-on carries because Celestia's own catalogues do not:
-      the coldest known place in the universe, at 5,080 ly. Drawn as a star
-      because that is the shape the add-on gives it, not because it is one.
+      A real object the add-on carries because Celestia's own catalogues do not.
+      The add-on puts it at 5,080 ly and the article at 5,000, at the edge of
+      Terragen space; the article calls it colder than the cosmic background and
+      gives no figure. Drawn as a star because that is the shape the add-on
+      gives it, not because it is one.
 
   - star: 'Gamma Leporis B:13 Lep B:HD 38392'
     label: Ao Lai

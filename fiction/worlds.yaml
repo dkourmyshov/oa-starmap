@@ -3005,8 +3005,8 @@ worlds:
 
   # ---- Utopia Sphere ------------------------------------------------------
   #
-  # The one roster whose worlds mostly share a landmark: Beta Arae, a hot
-  # supergiant in Ara, against which Cephalotopia, Eutopia, Huan Gao, Megasov,
+  # The one roster whose worlds mostly share a landmark: Beta Arae, a luminous
+  # orange star in Ara, against which Cephalotopia, Eutopia, Huan Gao, Megasov,
   # Oro Mistral and Tannhauser are all quoted at 390-720 ly in the same
   # constellation. The catalogue puts Beta Arae at 715 ly while the
   # Encyclopaedia's own figures imply about 615; see questions.md, which also
@@ -3025,9 +3025,10 @@ worlds:
     note: >-
       The landmark the Utopia Sphere's core is quoted against: half a dozen of
       its systems are given as so many light years from Beta Arae rather than
-      from Sol. A hot supergiant, bright enough that its parallax has been
-      revised more than once — the catalogue here says 715 ly, while the
-      distances the Encyclopaedia gives its neighbours imply about 615.
+      from Sol. The catalogue gives it class K, B-V 1.48 and absolute magnitude
+      -3.9: a luminous orange star, and luminous at this range means a parallax
+      small enough to be revised more than once. The catalogue here says 715 ly,
+      while the distances the Encyclopaedia gives its neighbours imply about 635.
 
   - name: Shangdu
     kind: planet
@@ -4070,10 +4071,17 @@ worlds:
     location:
       oa_star: The Boomerang
     note: >-
-      The coldest known place in the universe, at 5,080 ly in Centaurus, and a
-      real object rather than an assertion — the add-on carries it because
+      A real object rather than an assertion: the add-on carries it because
       Celestia's own catalogues do not, and this map's nebula catalogue is not
-      loaded either. No holder is recorded.
+      loaded either. The article puts it 5,000 ly out at the edge of Terragen
+      space and the add-on at 5,080; it is colder than the cosmic background,
+      which is the article's own phrasing and the only figure it gives.
+
+      Nobody holds it and nobody ever did. Cold-adapted Ghauetti tweaks from
+      Ihikkk meant to settle it and it was too far away, and by the time
+      Terragen expansion reached this far the nebula had stopped expanding and
+      was no longer visible. So it is drawn where it was rather than where it
+      is — which of everything on this map is the entry least like a place.
 
   - name: Ao Lai
     kind: system
