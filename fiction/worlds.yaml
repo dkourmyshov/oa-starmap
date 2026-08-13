@@ -3853,3 +3853,165 @@ worlds:
         kind: settled
         precision: not_later_than
     note: HD 29528, 189 ly out in Taurus, 9.6 ly from the Magal Worldrings.
+
+  # ---- Zoeific Biopolity --------------------------------------------------
+  #
+  # The first roster to arrive with distances beside its catalogue numbers, and
+  # the difference shows: four could be checked, two agreed to under a percent
+  # and two did not, and the two that did not are placed by direction instead.
+  # Qjellto is above, held with the Utopia Sphere.
+
+  - name: Sacredtree
+    kind: megastructure
+    affiliations: [zoeific-biopolity]
+    article: https://www.orionsarm.com/eg-article/53060cb28fd91
+    location:
+      star: 9 Ceti
+    events:
+      - year_at: 2802
+        kind: settled
+    note: >-
+      An orwood — a biological megastructure — at 9 Ceti, 70 ly out.
+
+  - name: Ecotopia
+    kind: system
+    affiliations: [zoeific-biopolity]
+    article: https://www.orionsarm.com/eg-article/48fca9d97f6c5
+    location:
+      star: Gliese 722
+    note: >-
+      Gliese 722 and HD 172051 are one star, 42 ly out in Sagittarius; the
+      article gives both and they agree.
+
+  - name: Chloris
+    kind: system
+    system: Chloris
+    affiliations: [zoeific-biopolity]
+    article: https://www.orionsarm.com/eg-article/501568274a6f9
+    location:
+      star: Beta Comae Berenices
+    note: Beta Comae Berenices, 30 ly out.
+
+  - name: Arcadia
+    kind: planet
+    system: Chloris
+    affiliations: [zoeific-biopolity]
+    article: https://www.orionsarm.com/eg-article/48531afcd93d4
+    location:
+      star: Beta Comae Berenices
+    events:
+      - year_at: 808
+        kind: visited
+        note: Arrived, having launched in 518 for a 290-year crossing.
+      - year_at: 812
+        kind: settled
+        note: The first domed habitats.
+    note: >-
+      One of the few places here whose travel time can be checked: 30 ly in 290
+      years is a tenth of lightspeed, which is a slowboat and reads as one.
+
+  - name: Braciola
+    kind: planet
+    affiliations: [zoeific-biopolity]
+    article: https://www.orionsarm.com/eg-article/5b2badb809b9e
+    location:
+      ra_deg: 309.5688
+      dec_deg: 14.7472
+      distance: 177 ly
+    events:
+      - year_at: 2723
+        kind: visited
+    note: >-
+      The article's coordinates fall in Delphinus, as it says. No star is named,
+      so the direction stands on its own.
+
+  - name: Frog's Head
+    kind: planet
+    affiliations: [zoeific-biopolity]
+    article: https://www.orionsarm.com/eg-article/46510b2b2c317
+    location:
+      star: Iota Horologii
+    events:
+      - year_at: 1611
+        kind: settled
+    note: >-
+      Iota Horologii, 57 ly out. Only loosely Zoeific, which is drawn as
+      ownership for want of anything weaker to draw.
+
+  - name: Harbringer Dyson
+    kind: megastructure
+    affiliations: [zoeific-biopolity]
+    article: https://www.orionsarm.com/eg-article/46674b9181a4f
+    location:
+      hd: 193080
+      distance: 363 ly
+    events:
+      - year_at: 3300
+        kind: settled
+        note: Construction began.
+    note: >-
+      HD 193080 in Sagitta. The article's 363 ly and the catalogue's 360 agree
+      to better than a percent, which is as close as this file gets.
+
+  - name: Kdregra
+    kind: planet
+    affiliations: [zoeific-biopolity]
+    article: https://www.orionsarm.com/eg-article/58d2fc237410c
+    location:
+      ra_deg: 310.3005
+      dec_deg: 18.2038
+      distance: 436 ly
+      near: HIP 102076
+    events:
+      - year_at: 4166
+        kind: settled
+    note: >-
+      HIP 102076 in Delphinus, at 360 ly against the article's 436 — an 18%
+      gap, too wide to bind across, so the star gives the direction and the
+      article the distance.
+
+  - name: The Ocean of Ys
+    kind: megastructure
+    affiliations: [zoeific-biopolity]
+    article: https://www.orionsarm.com/eg-article/591f39b037a27
+    location:
+      hd: 181144
+      distance: 119 ly
+    events:
+      - year_at: 3500
+        kind: settled
+    note: HD 181144 in Sagitta, the article's 119 ly against the catalogue's 118.
+
+  - name: Tien-schu
+    kind: planet
+    affiliations: [zoeific-biopolity]
+    article: https://www.orionsarm.com/eg-article/5ca3842fc414b
+    location:
+      ra_deg: 342.7802
+      dec_deg: 44.6816
+      distance: 744 ly
+      near: HIP 112841
+    events:
+      - year_at: 3691
+        kind: visited
+    note: >-
+      The article gives a star, coordinates, a constellation and a distance, and
+      three of the four agree exactly: its right ascension and declination are
+      HIP 112841's to twenty arcseconds, in Lacerta as stated. Only the distance
+      parts company — 744 ly against the catalogue's 537 — so the coordinates
+      place it and the binding is left off.
+
+  - name: Stevocations
+    kind: system
+    affiliations: [zoeific-biopolity, caretaker-gods]
+    article: https://www.orionsarm.com/eg-article/5eebb1dbf3f29
+    location:
+      constellation: Lyra
+      distance: 981.31 ly
+    events:
+      - year_at: 3680
+        kind: visited
+    note: >-
+      The system of the star Steve. Zoeific with Caretaker elements, so both are
+      drawn. No identifier is given, leaving the constellation to carry the
+      direction.
