@@ -190,8 +190,10 @@ systems:
     affiliation: mutual-progress-association
     note: >-
       A megastructure of Arkab Prior B, declared in the add-on as though it were
-      a star of its own and sharing that entry's position exactly. Hidden: it is
-      not a second sun, and the map goes no finer than a system.
+      a star of its own and sharing that entry's position exactly. Hidden here
+      because it is not a sun; it is recorded in worlds.yaml instead, bound with
+      the rest of the system to the real catalogue star, which is where a
+      structure orbiting a real object belongs.
 
   - star: YTS 233-091-0998
     label: Cenote
@@ -223,12 +225,14 @@ systems:
       the name; that confusion is its own entry in questions.md.
 
   - star: Oh-F-Star-4-
-    label: Carina Rush
+    label: Oh-F-Star-4
     affiliation: nocozo
     article: https://www.orionsarm.com/eg-article/4758a9926c452
     note: >-
-      The near end of an alien wormhole, and now the capital of the Carina Rush.
-      In Carina at 2,246 ly, sitting almost exactly on the galactic plane.
+      The near end of an alien wormhole, and the capital of the Carina Rush.
+      Labelled for the star and not for the Rush, which is the large volume the
+      wormhole opened rather than this one system. The add-on's designation ends
+      in a hyphen the name does not; the label drops it.
 
   - star: The Boomerang
     label: Boomerang Nebula

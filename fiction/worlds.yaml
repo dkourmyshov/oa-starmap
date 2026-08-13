@@ -4025,6 +4025,21 @@ worlds:
   # the first. Each is bound to an add-on star, so the position is asserted by
   # the setting rather than measured — which is what `oa_star` records.
 
+  - name: Arkab Prior Necklace
+    kind: megastructure
+    system: Arkab Prior B
+    affiliations: [mutual-progress-association]
+    article: https://www.orionsarm.com/eg-article/48f4bc90174b8
+    location:
+      star: Arkab Prior
+      distance: 389 ly
+    note: >-
+      The add-on declares this as though it were a star, on Arkab Prior B's
+      exact position — but it is a megastructure, so it belongs to the system
+      and the system belongs to a real catalogue star. Bound there with B and A,
+      rather than to the add-on's own entry, which sits eleven light years off
+      because the two sources disagree about how far away Arkab Prior is.
+
   - name: Enigma Four
     kind: system
     affiliations: [xenosophont]
@@ -4036,17 +4051,18 @@ worlds:
       Enigma Cluster and to the add-on's other star called Enigma, sharing only
       the word; the map keeps all three apart and questions.md says why.
 
-  - name: Carina Rush
+  - name: Oh-F-Star-4
     kind: system
     affiliations: [nocozo]
     article: https://www.orionsarm.com/eg-article/4758a9926c452
     location:
       oa_star: Oh-F-Star-4-
     note: >-
-      The near end of an alien wormhole, and the Rush's capital. In Carina at
-      2,246 ly and within a twentieth of a degree of the galactic plane — the
-      flattest thing in this file, which for a route running along the arm is
-      the shape one would want.
+      The near end of an alien wormhole, and the capital of the Carina Rush —
+      which is the volume the wormhole opened and not this system, so the marker
+      keeps the star's own name. In Carina at 2,246 ly and within a twentieth of
+      a degree of the galactic plane, the flattest thing in this file. The
+      add-on's designation carries a trailing hyphen that the name does not.
 
   - name: Boomerang Nebula
     kind: volume
