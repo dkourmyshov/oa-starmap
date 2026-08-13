@@ -4332,3 +4332,62 @@ worlds:
     note: >-
       2,899 ly out, on a position the Celestia add-on asserts rather than one
       any catalogue measures.
+
+  # ---- Emple-Dokcetics ----------------------------------------------------
+  #
+  # Two entries, and the second is not a place anyone built. The Emple-Dokcetics
+  # already hold five clusters here off the political maps; what they did not
+  # have was where they came from, or what happened at M50 in 7981.
+
+  - name: Bambata
+    kind: planet
+    affiliations: [emple-dokcetics]
+    article: https://www.orionsarm.com/eg-article/4683127661e72
+    location:
+      ra_deg: 101.4946
+      dec_deg: -20.7033
+      distance: 2200 ly
+      near: M41 (NGC 2287)
+    events:
+      - year_at: 6100
+        kind: settled
+        note: The Emple-Dokcetics civilisation founded.
+    note: >-
+      Where the Lirantiq began, and the Emple-Dokcetics out of them in 6100.
+      Given as near M41 in Canis Major at 2,200 ly; the catalogue puts M41 at
+      2,332, so the cluster lends its direction — far tighter than Canis Major,
+      which is fourteen degrees wide — and the article keeps its distance.
+
+  - name: Gehenna Incident
+    kind: volume
+    affiliations: [emple-dokcetics]
+    extent: 5240 ly
+    article: https://www.orionsarm.com/eg-article/464e89d70a038
+    location:
+      ra_deg: 105.7046
+      dec_deg: -8.3547
+      distance: 3030 ly
+      near: M50 (NGC 2323)
+    note: >-
+      Not a settlement but a front. A megascale metric engineering project of
+      the archailect Verifex, attempted in the M50 cluster in 7981 and
+      catastrophic: the blast released two hundred times the ionising radiation
+      of a Type II supernova and some fifty times that again at longer
+      wavelengths. The Hellfire expansion has spread from M50 ever since at the
+      only speed light travels — 10601 less 7981 is 2620 years, and 2620 ly is
+      exactly the radius the setting gives it now. That figure is the elapsed
+      time, so it is not a measurement to check but a clock to read, and it goes
+      stale the moment the setting's present moves.
+
+      The article puts M50 at 3,030 ly and the catalogue at 3,120, agreeing to
+      3%; the cluster lends the direction and the article keeps the distance, as
+      elsewhere here. Drawn 5,240 ly across, far the largest thing on this map,
+      and centred 3,030 ly out — so its near edge stands about 410 ly from Sol.
+      This is not a distant catastrophe but one whose leading edge is inside
+      thoroughly settled space. The Emple-Dokcetics supply shielding against it,
+      and parts of the swept volume have been resettled behind the front.
+
+      No date is recorded as an event: 7981 is neither a visit nor a settlement
+      nor an abandonment, and this file has no kind for a disaster. The year is
+      here in prose instead, where it is doing more work than usual — the radius
+      above is derived from it.
