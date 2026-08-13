@@ -57,6 +57,22 @@ export const DEFAULT_SIZE_PX = 11.0;
 const MARKER = new THREE.Color(0xd6dcea);
 
 /**
+ * The outline colour for a volume that is a hazard rather than a territory.
+ *
+ * Deliberately dark, which is the opposite of what the Gehenna front is: two
+ * hundred times the ionising output of a Type II supernova. A bright boundary
+ * would be truer to the physics and useless on the map — the circle is 5,240 ly
+ * across and reaches to within 410 ly of Sol, so anything luminous at that size
+ * lights the whole sphere and buries the places inside it. Dark red carries the
+ * meaning without taking the view.
+ */
+const HAZARD = new THREE.Color(0x8a1720);
+
+/** Ring thickness in device pixels, held constant as the circle grows. */
+export const RING_PX = 1.6;
+export const HAZARD_RING_PX = 0.9;
+
+/**
  * Ceiling on an extent circle's on-screen diameter, in pixels.
  *
  * Bites when the camera is close to a volume or inside it, where an outline
@@ -124,17 +140,21 @@ const CIRCLE_VERTEX = /* glsl */ `
 
   attribute vec3 aColor;
   attribute float aRadius;
+  attribute float aHazard;
 
   uniform float uViewportHeight;
   uniform float uMaxPx;
 
   varying vec3 vColor;
   varying float vFade;
+  varying float vSize;
+  varying float vHazard;
 
   void main() {
     vec4 viewPos = modelViewMatrix * vec4(position, 1.0);
     gl_Position = projectionMatrix * viewPos;
     vColor = aColor;
+    vHazard = aHazard;
 
     // The same angular-size projection the volumetric layers use: a physical
     // radius, foreshortened by distance.
@@ -154,6 +174,7 @@ const CIRCLE_VERTEX = /* glsl */ `
     // impossible to miss on the Gehenna front, which covered the sphere.
     // clusterField computes the same quantity and does not double it.
     gl_PointSize = clamp(pixels, 0.0, uMaxPx);
+    vSize = gl_PointSize;
 
     #include <logdepthbuf_vertex>
   }
@@ -164,9 +185,14 @@ const CIRCLE_FRAGMENT = /* glsl */ `
   #include <logdepthbuf_pars_fragment>
 
   uniform float uOpacity;
+  uniform float uRingPx;
+  uniform float uHazardRingPx;
+  uniform float uHazardDim;
 
   varying vec3 vColor;
   varying float vFade;
+  varying float vSize;
+  varying float vHazard;
 
   void main() {
     vec2 offset = gl_PointCoord * 2.0 - 1.0;
@@ -175,9 +201,16 @@ const CIRCLE_FRAGMENT = /* glsl */ `
 
     // A thin outline, and nothing inside it: the region is not an object and
     // must not read as one.
-    float ring = smoothstep(0.90, 0.96, r) * (1.0 - smoothstep(0.98, 1.0, r));
+    //
+    // Thickness is held constant in *pixels* rather than as a fraction of the
+    // sprite, which is what the cluster layer learned first: a fixed band in
+    // sprite space becomes a wall as the circle grows, and at the Gehenna
+    // front's size it would fill the view. This stays a hairline at any size.
+    float widthPx = mix(uRingPx, uHazardRingPx, vHazard);
+    float width = clamp(widthPx / max(vSize, 1.0), 0.0008, 0.35);
+    float ring = 1.0 - smoothstep(0.0, width, abs(r - (1.0 - width)));
 
-    float alpha = ring * uOpacity * vFade;
+    float alpha = ring * uOpacity * vFade * mix(1.0, uHazardDim, vHazard);
     if (alpha < 0.004) discard;
 
     #include <logdepthbuf_fragment>
@@ -220,6 +253,7 @@ export class WorldField {
     const circlePositions: number[] = [];
     const circleColors: number[] = [];
     const circleRadii: number[] = [];
+    const circleHazard: number[] = [];
 
     shown.forEach((index, out) => {
       const world = data.worlds[index];
@@ -237,9 +271,16 @@ export class WorldField {
       // direction error, which is a fact about how well we know where it is.
       const radius = world.radius_pc ?? 0;
       if (radius > 0) {
+        // A hazard is not a territory, and the setting says which is which:
+        // Corambytia is a protectorate and the Gehenna front is something
+        // spreading through what other people hold. The one word decides the
+        // colour and the weight of the line.
+        const hazard = world.kind === 'hazard';
+        const outline = hazard ? HAZARD : color;
         circlePositions.push(world.x as number, world.y as number, world.z as number);
-        circleColors.push(color.r, color.g, color.b);
+        circleColors.push(outline.r, outline.g, outline.b);
         circleRadii.push(radius);
+        circleHazard.push(hazard ? 1 : 0);
       }
     });
 
@@ -278,6 +319,10 @@ export class WorldField {
       'aRadius',
       new THREE.BufferAttribute(new Float32Array(circleRadii), 1),
     );
+    circleGeometry.setAttribute(
+      'aHazard',
+      new THREE.BufferAttribute(new Float32Array(circleHazard), 1),
+    );
     circleGeometry.boundingSphere = new THREE.Sphere(new THREE.Vector3(), Infinity);
 
     this.circleMaterial = new THREE.ShaderMaterial({
@@ -285,6 +330,9 @@ export class WorldField {
         uOpacity: { value: 0.45 },
         uViewportHeight: { value: 1080 },
         uMaxPx: { value: MAX_CIRCLE_PX },
+        uRingPx: { value: RING_PX },
+        uHazardRingPx: { value: HAZARD_RING_PX },
+        uHazardDim: { value: 0.55 },
       },
       vertexShader: CIRCLE_VERTEX,
       fragmentShader: CIRCLE_FRAGMENT,

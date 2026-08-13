@@ -4359,7 +4359,7 @@ worlds:
       which is fourteen degrees wide — and the article keeps its distance.
 
   - name: Gehenna Incident
-    kind: volume
+    kind: hazard
     affiliations: [emple-dokcetics]
     extent: 5240 ly
     article: https://www.orionsarm.com/eg-article/464e89d70a038
@@ -4391,3 +4391,8 @@ worlds:
       nor an abandonment, and this file has no kind for a disaster. The year is
       here in prose instead, where it is doing more work than usual — the radius
       above is derived from it.
+
+      Its `kind` is `hazard` rather than `volume`, which is the difference
+      between the Corambytia Protectorate and this: one is a territory and the
+      other is something spreading through territory. The map draws the two
+      differently on that word alone.
