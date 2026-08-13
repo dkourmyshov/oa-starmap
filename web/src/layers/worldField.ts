@@ -25,6 +25,14 @@
  * is a fact about the object rather than a confession about the position. Those
  * are drawn at a true angular size, like the cluster and HII layers, so they
  * grow as you approach.
+ *
+ * Two limits remain in that, and both are visible on the Gehenna front, which
+ * is 5,240 ly across and reaches to within 410 ly of Sol. The size uses
+ * `-viewPos.z`, the depth along the view axis, where the cluster layer uses the
+ * true distance — so an extent far off to the side inflates. And a billboard
+ * cannot show a volume the camera is *inside*: the correct picture there is one
+ * that surrounds the view, and a disc at the centroid is not it. Four
+ * catalogued clusters contain Sol, so that limit is not peculiar to this layer.
  */
 
 import * as THREE from 'three';
@@ -49,10 +57,12 @@ export const DEFAULT_SIZE_PX = 11.0;
 const MARKER = new THREE.Color(0xd6dcea);
 
 /**
- * Ceiling on an extent circle's on-screen radius, in pixels.
+ * Ceiling on an extent circle's on-screen diameter, in pixels.
  *
- * Only bites once the camera is inside the volume, where an outline larger than
- * the viewport has stopped conveying a size at all.
+ * Bites when the camera is close to a volume or inside it, where an outline
+ * larger than the viewport has stopped conveying a size at all. Once it bites,
+ * the outline stops growing while everything around it keeps growing, which
+ * reads as the circle shrinking — so it is a ceiling on a symptom, not a fix.
  */
 export const MAX_CIRCLE_PX = 900.0;
 
@@ -134,7 +144,16 @@ const CIRCLE_VERTEX = /* glsl */ `
     // Below a few pixels the outline degenerates into a dot indistinguishable
     // from the marker, which would read as a precision the world does not have.
     vFade = smoothstep(3.0, 7.0, pixels);
-    gl_PointSize = clamp(pixels * 2.0, 0.0, uMaxPx);
+
+    // The value above is already the projected *diameter*: a physical radius r
+    // at distance d subtends a screen radius of r * P[1][1] * height / (2d),
+    // and the expression omits the 2. gl_PointSize is a width, and the fragment
+    // draws its ring at the sprite's edge, so this is the whole of it.
+    // It used to be doubled, which drew every extent at twice its true size —
+    // invisible on Corambytia, whose 11 degrees merely looked like 22, and
+    // impossible to miss on the Gehenna front, which covered the sphere.
+    // clusterField computes the same quantity and does not double it.
+    gl_PointSize = clamp(pixels, 0.0, uMaxPx);
 
     #include <logdepthbuf_vertex>
   }
