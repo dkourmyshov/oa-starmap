@@ -226,6 +226,18 @@ class OASystem(BaseModel):
     """
 
     uncertain: bool = False
+
+    hidden: bool = False
+    """Drawn nowhere, because something already drawn is the same object.
+
+    The comment rule beside this one hides a group by what its comments say; this
+    hides one entry by name, for the case that rule cannot see. Reading every
+    archive rather than one brought in a "Proxima Centauri2" at 4.2 ly and an
+    "Arkab Prior Necklace" sharing Arkab Prior B's exact position — a real star
+    the catalogue already has, and a megastructure named as though it were a
+    second sun. Both would draw a second marker on top of a first.
+    """
+
     article: str = ""
     note: str = ""
 

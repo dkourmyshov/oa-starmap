@@ -115,9 +115,18 @@ class TestDistanceUnit:
         )
 
     def test_distances_span_the_expected_range(self, built):
-        """50 ly to ~5100 ly, i.e. about 15 pc to 1600 pc."""
+        """4.2 ly to ~5100 ly, i.e. about 1.3 pc to 1600 pc.
+
+        The floor used to be 15 pc, which was a fact about which archives had
+        been read rather than about the add-on: importing all of them brings in
+        its own Proxima Centauri at 4.2 ly, a real star it redeclares.
+
+        The ceiling is what guards the unit trap either way. Reading Distance as
+        parsecs rather than light years would put the furthest entry past
+        5,000 pc instead of at 1,600.
+        """
         distance = np.linalg.norm(built["xyz"], axis=1)
-        assert 10 < distance.min() < 30
+        assert 1.0 < distance.min() < 2.0
         assert 1500 < distance.max() < 1700
 
     def test_recorded_distance_matches_the_position(self, built):
@@ -129,7 +138,7 @@ class TestDistanceUnit:
 class TestContent:
     def test_every_entry_survives(self, built):
         stats = built["manifest"]["stats"]
-        assert stats["accepted"] == stats["total_entries"] == 103
+        assert stats["accepted"] == stats["total_entries"] == 119
 
     def test_named_systems_are_present(self, built):
         for name in ("Cantor", "Enigma", "Hiederia", "Pen-y-Ghent", "Geminga"):
@@ -234,6 +243,10 @@ class TestSystemNames:
         systems = {e["system"] for e in built["names"] if e["system"]}
         assert systems == {
             "Blue",
+            # From Cenote.zip, unread until every archive was imported. The
+            # comment names two systems sharing one sun, and is copied as it
+            # stands rather than guessed apart.
+            "Cenote and Sequence",
             "Guanche",
             "Harmonic Resonance",
             "Heimat",
@@ -357,7 +370,7 @@ class TestCuration:
         assert curated["H'tat'sa'thoss"]["affiliation"] == "caretaker-gods"
         assert curated["Wadai"]["affiliation"] == "sophic-league"
         assert curated["Muuhome"]["affiliation"] == "xenosophont"
-        assert len(curated) == 18  # 19 curated, Enigma deliberately unassigned
+        assert len(curated) == 25  # 28 curated; Enigma and two others unaffiliated
 
     def test_the_naming_rule_prefers_a_named_primary(self, built):
         """Hiederia over Redunin: the primary has a name of its own."""
@@ -386,10 +399,23 @@ class TestCuration:
         assert entry["uncertain"] is True
 
     def test_cluster_filler_is_hidden(self, built):
-        hidden = [e for e in built["names"] if e["hidden"]]
-        assert len(hidden) == 52
-        assert all("NGC 6633" in e["comment"] for e in hidden)
-        assert all(not e["affiliation"] for e in hidden)
+        """The comment rule hides a group; nothing else may fall into it."""
+        filler = [e for e in built["names"] if e["hidden"] and "NGC 6633" in e["comment"]]
+        assert len(filler) == 52
+        assert all(not e["affiliation"] for e in filler)
+
+    def test_duplicates_of_something_already_drawn_are_hidden(self, built):
+        """The other reason to hide: this entry is an object the map already has.
+
+        No comment marks these, so the group rule above cannot see them — they
+        are named one at a time in the curation file. The add-on's second Proxima
+        is a real star the catalogue already carries, and the Arkab Prior
+        Necklace is a megastructure declared as though it were its own sun,
+        sitting on Arkab Prior B's exact position.
+        """
+        hidden = {e["name"] for e in built["names"] if e["hidden"]}
+        assert {"Proxima Centauri2", "Arkab Prior Necklace"} <= hidden
+        assert len(hidden) == 54  # the 52 above, and these two
 
     def test_curating_an_absent_star_fails_the_build(self, tmp_path):
         """Otherwise a designation typo silently loses the whole assignment."""

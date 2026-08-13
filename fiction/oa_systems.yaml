@@ -172,3 +172,89 @@ systems:
     label: Blue
     affiliation: the-seams
     article: https://www.orionsarm.com/eg-article/48ac8c3a3979d
+
+  # ---- from the archives beyond OAAddons1 ---------------------------------
+  # Ten .stc files went unread until every archive was imported rather than one.
+
+  - star: Proxima Centauri2
+    label: Proxima Centauri
+    hidden: true
+    real: Proxima Centauri, already in the real star catalogue
+    note: >-
+      The add-on redeclares Proxima at 4.2 ly, where the catalogue already has
+      it. Hidden so the nearest star to Sol is not drawn twice.
+
+  - star: Arkab Prior Necklace
+    label: Arkab Prior Necklace
+    hidden: true
+    affiliation: mutual-progress-association
+    note: >-
+      A megastructure of Arkab Prior B, declared in the add-on as though it were
+      a star of its own and sharing that entry's position exactly. Hidden: it is
+      not a second sun, and the map goes no finer than a system.
+
+  - star: YTS 233-091-0998
+    label: Cenote
+    affiliation: solar-dominion
+    article: https://www.orionsarm.com/eg-article/491c2e73c4188
+    note: >-
+      The star Cenote's own article names, and now with a position rather than
+      only a constellation: the add-on puts it at 3,075 ly, the distance the
+      article gives. Five more stars of the same group sit within a degree of
+      it, one of them the sun of Sequence.
+
+  - star: Huan Gao
+    label: Huan Gao
+    affiliation: utopia-sphere
+    article: https://www.orionsarm.com/eg-article/4ce526a25575d
+    note: >-
+      The add-on states this system's own position, which the map had been
+      approximating by borrowing Beta Arae's direction. The two are 1.3 degrees
+      apart, and the add-on's is the one to keep — see questions.md, where it
+      also settles a second argument about how far away Beta Arae is.
+
+  - star: nr354-4536-566
+    label: Enigma Four
+    affiliation: xenosophont
+    article: https://www.orionsarm.com/eg-article/480d3cc3ac699
+    note: >-
+      A hive mind of unknown origin, in Aquarius at 448 ly. Nothing to do with
+      the Enigma Cluster or with the add-on's other star called Enigma, despite
+      the name; that confusion is its own entry in questions.md.
+
+  - star: Oh-F-Star-4-
+    label: Carina Rush
+    affiliation: nocozo
+    article: https://www.orionsarm.com/eg-article/4758a9926c452
+    note: >-
+      The near end of an alien wormhole, and now the capital of the Carina Rush.
+      In Carina at 2,246 ly, sitting almost exactly on the galactic plane.
+
+  - star: The Boomerang
+    label: Boomerang Nebula
+    real: The Boomerang Nebula, a protoplanetary nebula in Centaurus
+    article: https://www.orionsarm.com/eg-article/491758f9ed287
+    note: >-
+      A real object the add-on carries because Celestia's own catalogues do not:
+      the coldest known place in the universe, at 5,080 ly. Drawn as a star
+      because that is the shape the add-on gives it, not because it is one.
+
+  - star: 'Gamma Leporis B:13 Lep B:HD 38392'
+    label: Ao Lai
+    affiliation: mutual-progress-association
+    real: Gamma Leporis B, also 13 Leporis B and HD 38392
+    article: https://www.orionsarm.com/eg-article/4871520aab6c2
+    note: >-
+      The Ao Lai system takes in both components of Gamma Leporis. The add-on
+      carries B because the real star catalogue this map draws from has only A.
+
+  - star: 'Dschubba/HD 143275/7 Sco/SAO 184014'
+    label: Dschubba
+    affiliation: negentropy-alliance
+    real: Dschubba, Delta Scorpii, also HD 143275 and 7 Scorpii
+    article: https://www.orionsarm.com/eg-article/486ea9fa62cdb
+    note: >-
+      Held by the Triumvirate, a joint body of the Negentropy Alliance, the
+      Mutual Progress Association and the Fomalhaut Acquisition Society; all
+      three are recorded on the world entry so the ring shows the composition.
+      The add-on places it at 402 ly against the catalogue's 491, an 18% gap.

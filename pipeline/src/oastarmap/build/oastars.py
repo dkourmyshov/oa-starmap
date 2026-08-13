@@ -147,7 +147,11 @@ def _place(
 
         stats.spectral[entry.spectral_type or "(none)"] += 1
         curated = by_star.get(entry.name)
-        hidden = any(rule in entry.comment for rule in curation.hide_comment_matching)
+        # Two ways to be hidden: a comment rule that covers a whole group, and a
+        # flag on one entry for a duplicate no rule could recognise.
+        hidden = any(rule in entry.comment for rule in curation.hide_comment_matching) or bool(
+            curated and curated.hidden
+        )
         if hidden:
             stats.hidden += 1
 

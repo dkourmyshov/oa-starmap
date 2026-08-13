@@ -8,7 +8,7 @@ Nothing below is a complaint about the setting. Most of it is the ordinary frict
 
 ---
 
-## Open questions (21)
+## Open questions (22)
 
 ### Enigma system — Three sources put the Enigma system in three different directions.
 
@@ -211,14 +211,27 @@ Three cases look alike on the map and are not alike at all. The stated figure ma
 *contradiction*
 
 Beta Arae is the origin the Encyclopaedia quotes the Utopia Sphere's core against: Huan Gao is 19 ly from it, the Wallace swarm 44, the Wilson swarm 82, and Shangdu is in the system itself. Those figures are consistent with each other and with the stated distances from Sol only if Beta Arae is about 615 ly out. The catalogue used here puts it at 715. The directions are not in doubt — Wallace and Wilson sit 4.0 and 7.2 degrees from Beta Arae, against the 3.0 and 7.6 the article's numbers require, and the separation between the two swarms is given as 42 ly and comes out of the catalogue at 41.6. It is the radius that moved, in the star that everything else is referred to, and Beta Arae is a bright supergiant whose parallax is exactly the kind that gets revised. The consequence on the map is that a neighbourhood the setting describes as tens of light years across is drawn a couple of hundred across.
+A second source now says the same thing independently. The Celestia add-on states Huan Gao's own position, which the map had previously had to guess at, and that position is 1.3 degrees from Beta Arae's direction. For the article's 19 ly between them to hold, Beta Arae has to be about 635 ly out; at the catalogue's 715 the separation comes to 82 ly, four times what the article says. So the arithmetic of the articles and the geometry of the add-on — written by different hands, for different purposes — agree on a figure the catalogue does not.
 
-**What the map does now.** Binds Beta Arae, Wallace and Wilson to their catalogue stars, since the identifications are confirmed independently by constellation and by the swarms' separation, and lets the distances be whatever the catalogue says. Huan Gao, which has no catalogue identifier, takes Beta Arae's direction and its own stated distance instead.
+**What the map does now.** Binds Beta Arae, Wallace and Wilson to their catalogue stars, since the identifications are confirmed independently by constellation and by the swarms' separation, and lets the distances be whatever the catalogue says. Huan Gao is now placed by the add-on's assertion rather than by a borrowed direction, so it sits where the setting puts it and not where this map inferred it.
 
 **What would settle it.** Which distance to Beta Arae the setting means, and whether the neighbourhood's internal distances or its distances from Sol should be preserved when the two cannot both hold.
 
 - https://www.orionsarm.com/eg-article/460c3bd4ad939
 - https://www.orionsarm.com/eg-article/4ce526a25575d
 - https://www.orionsarm.com/eg-article/46f879c9c42a8
+
+### Cableville and Zhuangzi — The article and the Celestia add-on put Zhuangzi in different constellations, two and a half times as far apart.
+
+*contradiction*
+
+Cableville is a megastructure of the Zhuangzi system, and its article places it in Scorpius at 1,543 ly while giving no identifier for the primary. The add-on's YTS 23375-458-5 is Zhuangzi, at RA 297.96, Dec -42.887 — which is Sagittarius — and 610 ly. Neither the direction nor the distance agrees, and there is no reading on which both hold: the two positions are the better part of a thousand light years apart. This is the only case in the file where the add-on and an article disagree about where a system is rather than merely how far.
+
+**What the map does now.** Keeps the article's Scorpius at 1,543 ly and does not bind to the add-on star, the Encyclopaedia article outranking the add-on where the two conflict. The add-on's Zhuangzi is imported and drawn under its own designation, so both positions are on the map and neither is quietly dropped.
+
+**What would settle it.** Which of the two is Zhuangzi. If the add-on is right, the article's constellation and distance both need revising; if the article is right, that add-on star is some other place.
+
+- https://www.orionsarm.com/eg-article/48ac37b0e82ba
 
 ### Topia — Topia's article names a star at 2,716 ly and places the world at 609.
 
@@ -333,7 +346,7 @@ Blanco 1, Collinder 173, Collinder 359, NGC 2244, S232, S27
 
 ## Worlds located only by constellation
 
-50 of 285 canonical worlds are given as a distance and a constellation. That fixes the distance exactly and the direction only to the width of the constellation, which at these ranges is hundreds to thousands of light years. The map draws these with a broken ring rather than a solid one, and the detail panel gives the error in light years.
+49 of 290 canonical worlds are given as a distance and a constellation. That fixes the distance exactly and the direction only to the width of the constellation, which at these ranges is hundreds to thousands of light years. The map draws these with a broken ring rather than a solid one, and the detail panel gives the error in light years.
 
 Coordinates, or a nearby named star, would turn any of these from a region into a position.
 

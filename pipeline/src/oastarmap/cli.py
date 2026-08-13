@@ -189,13 +189,13 @@ def main(argv: list[str] | None = None) -> int:
 
     p_import = sub.add_parser(
         "import-oastars",
-        help="re-import fiction/oa_stars.yaml from the Celestia add-on archive",
+        help="re-import fiction/oa_stars.yaml from the Celestia add-on archives",
     )
     p_import.add_argument(
         "--archive",
         type=Path,
-        default=SOURCES_DIR / "OAAddons1.zip",
-        help="path to OAAddons1.zip",
+        default=SOURCES_DIR,
+        help="directory of add-on archives, or one .zip",
     )
     p_import.set_defaults(func=cmd_import_oastars)
 

@@ -1,9 +1,11 @@
-# Orion's Arm stars, imported from the project's Celestia add-on.
+# Orion's Arm stars, imported from the project's Celestia add-ons.
 #
-#   Source:  Orion's Arm Celestia add-on (OAAddons1)
-#   Archive: http://www.orionsarm.com/fm_store/OAAddons1.zip
+#   Source:  Orion's Arm Celestia add-on, every archive in sources/
 #   Page:    https://www.orionsarm.com/xcms.php?r=oa-page&page=gen_OACelestia2
 #   Terms:   https://www.orionsarm.com/Terms_Copyright_and_Submissions.html
+#
+# `archive` records which one each star came from. Reading only OAAddons1 left
+# ten .stc files unread, among them the one stating Huan Gao's own position.
 #
 # These are stars the setting asserts but the sky does not have: the suns of
 # named OA systems, and the populations OA gives to real clusters. Their
@@ -31,6 +33,17 @@ stars:
     system: ""
     comment: ""
     source_file: 'oastars2-2.stc'
+    archive: 'OAAddons1.zip'
+  - name: 'Arkab Prior Necklace'
+    ra_deg: 290.6596
+    dec_deg: -44.45887
+    distance_ly: 378.335
+    spectral_type: ""
+    abs_mag: null
+    system: ""
+    comment: ""
+    source_file: 'abishopring.stc'
+    archive: 'OAAddons11.zip'
   - name: 'Cantor'
     ra_deg: 112.654
     dec_deg: -54.842
@@ -40,6 +53,17 @@ stars:
     system: ""
     comment: ""
     source_file: 'cantor.stc'
+    archive: 'OAAddons1.zip'
+  - name: 'Dschubba/HD 143275/7 Sco/SAO 184014'
+    ra_deg: 240.083333
+    dec_deg: -22.621666
+    distance_ly: 401.68
+    spectral_type: 'BoIV'
+    abs_mag: null
+    system: ""
+    comment: ""
+    source_file: 'dschubba.stc'
+    archive: 'OAAddons8.zip'
   - name: 'EG 471'
     ra_deg: 37.5625
     dec_deg: -14.408
@@ -49,6 +73,7 @@ stars:
     system: ""
     comment: ""
     source_file: 'oastars2-2.stc'
+    archive: 'OAAddons1.zip'
   - name: 'Enigma'
     ra_deg: 81.7007
     dec_deg: -37.5155
@@ -58,6 +83,17 @@ stars:
     system: ""
     comment: ""
     source_file: 'oastars4.stc'
+    archive: 'OAAddons1.zip'
+  - name: 'Gamma Leporis B:13 Lep B:HD 38392'
+    ra_deg: 86.1105
+    dec_deg: -22.42175
+    distance_ly: 29.25527
+    spectral_type: 'K5V'
+    abs_mag: null
+    system: ""
+    comment: ""
+    source_file: 'gammaleporisb.stc'
+    archive: 'OAAddons5.zip'
   - name: 'Geminga'
     ra_deg: 98.47563
     dec_deg: 17.7703
@@ -67,6 +103,7 @@ stars:
     system: ""
     comment: ""
     source_file: 'geminga.stc'
+    archive: 'OAAddons1.zip'
   - name: 'HD 169959'
     ra_deg: 276.7065
     dec_deg: 6.4226
@@ -76,6 +113,7 @@ stars:
     system: ""
     comment: 'Star in cluster NGC 6633'
     source_file: 'oastars6.stc'
+    archive: 'OAAddons1.zip'
   - name: 'HD 170094'
     ra_deg: 276.87
     dec_deg: 6.58
@@ -85,6 +123,7 @@ stars:
     system: ""
     comment: 'Star in cluster NGC 6633'
     source_file: 'oastars6.stc'
+    archive: 'OAAddons1.zip'
   - name: 'Hiederia'
     ra_deg: 71.4508
     dec_deg: 42.4255
@@ -94,6 +133,17 @@ stars:
     system: 'Redunin'
     comment: 'Star for system containing Redunin'
     source_file: 'oastars2-2.stc'
+    archive: 'OAAddons1.zip'
+  - name: 'Huan Gao'
+    ra_deg: 260.5567
+    dec_deg: -54.331
+    distance_ly: 634.0
+    spectral_type: 'G2V'
+    abs_mag: 4.65
+    system: ""
+    comment: ""
+    source_file: 'somefictionalstars.stc'
+    archive: 'OAAddons12.zip'
   - name: 'JD 10012'
     ra_deg: 309.92
     dec_deg: 37.556
@@ -103,6 +153,7 @@ stars:
     system: 'Muuhhome'
     comment: 'Star for Muuhhome'
     source_file: 'oastars2-2.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 10013'
     ra_deg: 133.35
     dec_deg: -7.998
@@ -112,6 +163,7 @@ stars:
     system: 'Harmonic Resonance'
     comment: 'Star for Harmonic Resonance'
     source_file: 'oastars2-2.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 140582223'
     ra_deg: 51.342
     dec_deg: 43.23905
@@ -121,6 +173,7 @@ stars:
     system: 'Pluton'
     comment: 'F1  star for Pluton'
     source_file: 'oastars2-2.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 169137'
     ra_deg: 276.5418
     dec_deg: 6.55122
@@ -130,6 +183,7 @@ stars:
     system: ""
     comment: 'Star in cluster NGC 6633'
     source_file: 'oastars6.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 169362'
     ra_deg: 275.995
     dec_deg: 6.8304
@@ -139,6 +193,7 @@ stars:
     system: ""
     comment: 'Star in cluster NGC 6633'
     source_file: 'oastars6.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 169512'
     ra_deg: 276.1885
     dec_deg: 7.23125
@@ -148,6 +203,7 @@ stars:
     system: ""
     comment: 'Star in cluster NGC 6633'
     source_file: 'oastars6.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 169577'
     ra_deg: 276.276
     dec_deg: 5.9985
@@ -157,6 +213,7 @@ stars:
     system: ""
     comment: 'Star in cluster NGC 6633'
     source_file: 'oastars6.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 169597'
     ra_deg: 276.275
     dec_deg: 7.119
@@ -166,6 +223,7 @@ stars:
     system: ""
     comment: 'Star in cluster NGC 6633'
     source_file: 'oastars6.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 169629'
     ra_deg: 276.3406
     dec_deg: 6.194
@@ -175,6 +233,7 @@ stars:
     system: ""
     comment: 'Star in cluster NGC 6633'
     source_file: 'oastars6.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 169721'
     ra_deg: 276.459
     dec_deg: 6.541
@@ -184,6 +243,7 @@ stars:
     system: ""
     comment: 'Star in cluster NGC 6633'
     source_file: 'oastars6.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 169842'
     ra_deg: 276.5929
     dec_deg: 6.857
@@ -193,6 +253,7 @@ stars:
     system: ""
     comment: 'Star in cluster NGC 6633'
     source_file: 'oastars6.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 169912'
     ra_deg: 276.658
     dec_deg: 6.541
@@ -202,6 +263,7 @@ stars:
     system: ""
     comment: 'Star in cluster NGC 6633'
     source_file: 'oastars6.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 169958'
     ra_deg: 276.7254
     dec_deg: 6.4844
@@ -211,6 +273,7 @@ stars:
     system: ""
     comment: 'Star in cluster NGC 6633'
     source_file: 'oastars6.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 170031'
     ra_deg: 276.751
     dec_deg: 6.417
@@ -220,6 +283,7 @@ stars:
     system: ""
     comment: 'Star in cluster NGC 6633'
     source_file: 'oastars6.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 170053'
     ra_deg: 276.75
     dec_deg: 7.005
@@ -229,6 +293,7 @@ stars:
     system: ""
     comment: 'Star in cluster NGC 6633'
     source_file: 'oastars6.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 170054'
     ra_deg: 276.81
     dec_deg: 6.5186
@@ -238,6 +303,7 @@ stars:
     system: ""
     comment: 'Star in cluster NGC 6633'
     source_file: 'oastars6.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 170079'
     ra_deg: 276.85
     dec_deg: 6.143
@@ -247,6 +313,7 @@ stars:
     system: ""
     comment: 'Star in cluster NGC 6633'
     source_file: 'oastars6.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 170119'
     ra_deg: 277.1625
     dec_deg: 6.468
@@ -256,6 +323,7 @@ stars:
     system: ""
     comment: 'Star in cluster NGC 6633'
     source_file: 'oastars6.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 170133'
     ra_deg: 276.452
     dec_deg: 6.502
@@ -265,6 +333,7 @@ stars:
     system: ""
     comment: 'Star in cluster NGC 6633'
     source_file: 'oastars6.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 170136'
     ra_deg: 276.7151
     dec_deg: 6.481
@@ -274,6 +343,7 @@ stars:
     system: ""
     comment: 'Star in cluster NGC 6633'
     source_file: 'oastars6.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 170158'
     ra_deg: 276.948
     dec_deg: 6.456
@@ -283,6 +353,7 @@ stars:
     system: ""
     comment: 'Star in cluster NGC 6633'
     source_file: 'oastars6.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 170174'
     ra_deg: 276.978
     dec_deg: 5.76
@@ -292,6 +363,7 @@ stars:
     system: ""
     comment: 'Star in cluster NGC 6633'
     source_file: 'oastars6.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 170200'
     ra_deg: 276.995
     dec_deg: 6.194
@@ -301,6 +373,7 @@ stars:
     system: ""
     comment: 'Star in cluster NGC 6633'
     source_file: 'oastars6.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 170291'
     ra_deg: 277.272
     dec_deg: 6.47
@@ -310,6 +383,7 @@ stars:
     system: ""
     comment: 'Star in cluster NGC 6633'
     source_file: 'oastars6.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 170292'
     ra_deg: 277.096
     dec_deg: 6.708
@@ -319,6 +393,7 @@ stars:
     system: ""
     comment: 'Star in cluster NGC 6633'
     source_file: 'oastars6.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 170293'
     ra_deg: 277.096
     dec_deg: 6.4139
@@ -328,6 +403,7 @@ stars:
     system: ""
     comment: 'Star in cluster NGC 6633'
     source_file: 'oastars6.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 170346'
     ra_deg: 277.0918
     dec_deg: 6.7896
@@ -337,6 +413,7 @@ stars:
     system: ""
     comment: 'Star in cluster NGC 6633'
     source_file: 'oastars6.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 170472'
     ra_deg: 277.3325
     dec_deg: 6.8514
@@ -346,6 +423,7 @@ stars:
     system: ""
     comment: 'Star in cluster NGC 6633'
     source_file: 'oastars6.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 170512'
     ra_deg: 277.365
     dec_deg: 7.359
@@ -355,6 +433,7 @@ stars:
     system: ""
     comment: 'Star in cluster NGC 6633'
     source_file: 'oastars6.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 170563'
     ra_deg: 277.454
     dec_deg: 6.763
@@ -364,6 +443,7 @@ stars:
     system: ""
     comment: 'Star in cluster NGC 6633'
     source_file: 'oastars6.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 170881'
     ra_deg: 277.86
     dec_deg: 6.489
@@ -373,6 +453,7 @@ stars:
     system: ""
     comment: 'Star in cluster NGC 6633'
     source_file: 'oastars6.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 171135'
     ra_deg: 276.9125
     dec_deg: 6.5321
@@ -382,6 +463,7 @@ stars:
     system: ""
     comment: 'Star in cluster NGC 6633'
     source_file: 'oastars6.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 179958'
     ra_deg: 276.74
     dec_deg: 6.47
@@ -391,6 +473,7 @@ stars:
     system: ""
     comment: 'Star in cluster NGC 6633'
     source_file: 'oastars6.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 180123'
     ra_deg: 276.5327
     dec_deg: 6.502
@@ -400,6 +483,7 @@ stars:
     system: ""
     comment: 'Star in cluster NGC 6633'
     source_file: 'oastars6.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 180124'
     ra_deg: 277.127
     dec_deg: 6.502
@@ -409,6 +493,7 @@ stars:
     system: ""
     comment: 'Star in cluster NGC 6633'
     source_file: 'oastars6.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 180126'
     ra_deg: 276.641
     dec_deg: 6.5981
@@ -418,6 +503,7 @@ stars:
     system: ""
     comment: 'Star in cluster NGC 6633'
     source_file: 'oastars6.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 180128'
     ra_deg: 276.981
     dec_deg: 6.431
@@ -427,6 +513,7 @@ stars:
     system: ""
     comment: 'Star in cluster NGC 6633'
     source_file: 'oastars6.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 180133'
     ra_deg: 276.327
     dec_deg: 6.602
@@ -436,6 +523,7 @@ stars:
     system: ""
     comment: 'Star in cluster NGC 6633'
     source_file: 'oastars6.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 180134'
     ra_deg: 276.127
     dec_deg: 6.402
@@ -445,6 +533,7 @@ stars:
     system: ""
     comment: 'Star in cluster NGC 6633'
     source_file: 'oastars6.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 180136'
     ra_deg: 276.041
     dec_deg: 6.581
@@ -454,6 +543,7 @@ stars:
     system: ""
     comment: 'Star in cluster NGC 6633'
     source_file: 'oastars6.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 180138'
     ra_deg: 276.5471
     dec_deg: 6.581
@@ -463,6 +553,7 @@ stars:
     system: ""
     comment: 'Star in cluster NGC 6633'
     source_file: 'oastars6.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 189127'
     ra_deg: 276.308
     dec_deg: 6.4582
@@ -472,6 +563,7 @@ stars:
     system: ""
     comment: 'Star in cluster NGC 6633'
     source_file: 'oastars6.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 189129'
     ra_deg: 277.228
     dec_deg: 6.5482
@@ -481,6 +573,7 @@ stars:
     system: ""
     comment: 'Star in cluster NGC 6633'
     source_file: 'oastars6.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 189137'
     ra_deg: 276.9338
     dec_deg: 6.582
@@ -490,6 +583,7 @@ stars:
     system: ""
     comment: 'Star in cluster NGC 6633'
     source_file: 'oastars6.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 189139'
     ra_deg: 277.298
     dec_deg: 6.2482
@@ -499,6 +593,7 @@ stars:
     system: ""
     comment: 'Star in cluster NGC 6633'
     source_file: 'oastars6.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 189952'
     ra_deg: 276.63
     dec_deg: 6.51
@@ -508,6 +603,7 @@ stars:
     system: ""
     comment: 'Star in cluster NGC 6633'
     source_file: 'oastars6.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 189961'
     ra_deg: 276.91
     dec_deg: 6.494
@@ -517,6 +613,7 @@ stars:
     system: ""
     comment: 'Star in cluster NGC 6633'
     source_file: 'oastars6.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 189962'
     ra_deg: 276.73
     dec_deg: 6.481
@@ -526,6 +623,7 @@ stars:
     system: ""
     comment: 'Star in cluster NGC 6633'
     source_file: 'oastars6.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 189970'
     ra_deg: 276.728
     dec_deg: 6.439
@@ -535,6 +633,7 @@ stars:
     system: ""
     comment: 'Star in cluster NGC 6633'
     source_file: 'oastars6.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 189971'
     ra_deg: 276.71
     dec_deg: 6.544
@@ -544,6 +643,17 @@ stars:
     system: ""
     comment: 'Star in cluster NGC 6633'
     source_file: 'oastars6.stc'
+    archive: 'OAAddons1.zip'
+  - name: 'JD 30998787 White Dwarf'
+    ra_deg: 38.223
+    dec_deg: -15.09
+    distance_ly: 201.87
+    spectral_type: 'DA2'
+    abs_mag: 15.09
+    system: ""
+    comment: ""
+    source_file: 'oastardwarf.stc'
+    archive: 'OAAddons11.zip'
   - name: 'JD 3227227'
     ra_deg: 107.3145
     dec_deg: 18.862
@@ -553,6 +663,7 @@ stars:
     system: 'Heimat'
     comment: 'star for Heimat'
     source_file: 'morefictionalstars.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 518718'
     ra_deg: 276.85
     dec_deg: -38.66
@@ -562,6 +673,7 @@ stars:
     system: ""
     comment: ""
     source_file: 'alottafictionalstars.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 518722'
     ra_deg: 277.14
     dec_deg: 78.87
@@ -571,6 +683,7 @@ stars:
     system: ""
     comment: ""
     source_file: 'alottafictionalstars.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 518731'
     ra_deg: 95.22
     dec_deg: -31.82
@@ -580,6 +693,7 @@ stars:
     system: ""
     comment: ""
     source_file: 'alottafictionalstars.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 518734'
     ra_deg: 322.1
     dec_deg: 38.11
@@ -589,6 +703,7 @@ stars:
     system: ""
     comment: ""
     source_file: 'alottafictionalstars.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 518736'
     ra_deg: 114.77
     dec_deg: 20.28
@@ -598,6 +713,7 @@ stars:
     system: ""
     comment: ""
     source_file: 'alottafictionalstars.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 518771'
     ra_deg: 125.98
     dec_deg: 44.2
@@ -607,6 +723,7 @@ stars:
     system: ""
     comment: ""
     source_file: 'oastars7.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 518774'
     ra_deg: 131.11
     dec_deg: 28.48
@@ -616,6 +733,7 @@ stars:
     system: ""
     comment: ""
     source_file: 'alottafictionalstars.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 518775'
     ra_deg: 115.05
     dec_deg: 51.08
@@ -625,6 +743,7 @@ stars:
     system: ""
     comment: ""
     source_file: 'alottafictionalstars.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 518776'
     ra_deg: 71.29
     dec_deg: -18.08
@@ -634,6 +753,7 @@ stars:
     system: ""
     comment: ""
     source_file: 'alottafictionalstars.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 518777'
     ra_deg: 95.02
     dec_deg: -53.2
@@ -643,6 +763,7 @@ stars:
     system: ""
     comment: ""
     source_file: 'alottafictionalstars.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 518778'
     ra_deg: 231.41
     dec_deg: -48.48
@@ -652,6 +773,7 @@ stars:
     system: ""
     comment: ""
     source_file: 'alottafictionalstars.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 518779'
     ra_deg: 225.35
     dec_deg: 49.18
@@ -661,6 +783,7 @@ stars:
     system: ""
     comment: ""
     source_file: 'alottafictionalstars.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 518780'
     ra_deg: 271.15
     dec_deg: -17.28
@@ -670,6 +793,7 @@ stars:
     system: ""
     comment: ""
     source_file: 'alottafictionalstars.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 518781'
     ra_deg: 291.15
     dec_deg: -53.43
@@ -679,6 +803,7 @@ stars:
     system: ""
     comment: ""
     source_file: 'alottafictionalstars.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 518782'
     ra_deg: 211.67
     dec_deg: -58.12
@@ -688,6 +813,7 @@ stars:
     system: ""
     comment: ""
     source_file: 'alottafictionalstars.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 518783'
     ra_deg: 15.05
     dec_deg: -21.76
@@ -697,6 +823,7 @@ stars:
     system: ""
     comment: ""
     source_file: 'alottafictionalstars.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 518784'
     ra_deg: 311.99
     dec_deg: 8.08
@@ -706,6 +833,7 @@ stars:
     system: ""
     comment: ""
     source_file: 'alottafictionalstars.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 518785'
     ra_deg: 295.87
     dec_deg: 33.72
@@ -715,6 +843,7 @@ stars:
     system: ""
     comment: ""
     source_file: 'alottafictionalstars.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 518786'
     ra_deg: 211.71
     dec_deg: -28.88
@@ -724,6 +853,7 @@ stars:
     system: ""
     comment: ""
     source_file: 'alottafictionalstars.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 518787'
     ra_deg: 74.43
     dec_deg: -28.23
@@ -733,6 +863,7 @@ stars:
     system: ""
     comment: ""
     source_file: 'alottafictionalstars.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 518789'
     ra_deg: 5.75
     dec_deg: -11.39
@@ -742,6 +873,7 @@ stars:
     system: ""
     comment: ""
     source_file: 'alottafictionalstars.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 518790'
     ra_deg: 231.08
     dec_deg: -78.18
@@ -751,6 +883,7 @@ stars:
     system: ""
     comment: ""
     source_file: 'alottafictionalstars.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 518791'
     ra_deg: 19.85
     dec_deg: -21.33
@@ -760,6 +893,7 @@ stars:
     system: ""
     comment: ""
     source_file: 'alottafictionalstars.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 518791'
     ra_deg: 155.55
     dec_deg: 48.08
@@ -769,6 +903,7 @@ stars:
     system: ""
     comment: ""
     source_file: 'oastars7.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 518793'
     ra_deg: 191.42
     dec_deg: 13.7
@@ -778,6 +913,7 @@ stars:
     system: ""
     comment: ""
     source_file: 'alottafictionalstars.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 518794'
     ra_deg: 39.51
     dec_deg: 8.78
@@ -787,6 +923,7 @@ stars:
     system: ""
     comment: ""
     source_file: 'alottafictionalstars.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 518795'
     ra_deg: 305.35
     dec_deg: -29.48
@@ -796,6 +933,7 @@ stars:
     system: ""
     comment: ""
     source_file: 'alottafictionalstars.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 518796'
     ra_deg: 111.82
     dec_deg: 31.55
@@ -805,6 +943,7 @@ stars:
     system: ""
     comment: ""
     source_file: 'alottafictionalstars.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 518797'
     ra_deg: 97.66
     dec_deg: 3.43
@@ -814,6 +953,7 @@ stars:
     system: ""
     comment: ""
     source_file: 'alottafictionalstars.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 518798'
     ra_deg: 317.22
     dec_deg: 28.23
@@ -823,6 +963,7 @@ stars:
     system: ""
     comment: ""
     source_file: 'alottafictionalstars.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 518799'
     ra_deg: 152.05
     dec_deg: 31.66
@@ -832,6 +973,7 @@ stars:
     system: ""
     comment: ""
     source_file: 'alottafictionalstars.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 76601'
     ra_deg: 298.2012
     dec_deg: 43.5641
@@ -841,6 +983,7 @@ stars:
     system: 'Guanche'
     comment: 'Star for system containing Guanche'
     source_file: 'oastars2.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 788901101'
     ra_deg: 123.754
     dec_deg: -35.265
@@ -850,6 +993,7 @@ stars:
     system: ""
     comment: ""
     source_file: 'aoia.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 836901'
     ra_deg: 96.165
     dec_deg: 26.934
@@ -859,6 +1003,7 @@ stars:
     system: 'Wurm'
     comment: 'G3  star for Wurm'
     source_file: 'oastars2-2.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 836902'
     ra_deg: 52.62495
     dec_deg: 29.871
@@ -868,6 +1013,7 @@ stars:
     system: 'Niuearth'
     comment: 'G3  star for Niuearth'
     source_file: 'oastars2-2.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 870135'
     ra_deg: 277.352
     dec_deg: 6.542
@@ -877,6 +1023,7 @@ stars:
     system: 'To''ul''h'
     comment: 'Star for system containing To''ul''h'
     source_file: 'oastars6.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 890135'
     ra_deg: 277.13
     dec_deg: 6.442
@@ -886,6 +1033,7 @@ stars:
     system: ""
     comment: 'Star in cluster NGC 6633'
     source_file: 'oastars6.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 890136'
     ra_deg: 277.043
     dec_deg: 6.42
@@ -895,6 +1043,7 @@ stars:
     system: ""
     comment: 'Star in cluster NGC 6633'
     source_file: 'oastars6.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 890137'
     ra_deg: 277.11
     dec_deg: 6.49
@@ -904,6 +1053,7 @@ stars:
     system: ""
     comment: 'Star in cluster NGC 6633'
     source_file: 'oastars6.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 9802-8'
     ra_deg: 52.9541
     dec_deg: 51.2142
@@ -913,6 +1063,7 @@ stars:
     system: 'Oshiq'
     comment: 'Star for system containing Oshiq'
     source_file: 'oastars2.stc'
+    archive: 'OAAddons1.zip'
   - name: 'JD 98738'
     ra_deg: 301.059
     dec_deg: 20.142
@@ -922,6 +1073,17 @@ stars:
     system: 'Panthalassa'
     comment: 'Star for system containing Panthalassa'
     source_file: 'oastars1.stc'
+    archive: 'OAAddons1.zip'
+  - name: 'Oh-F-Star-4-'
+    ra_deg: 159.4083
+    dec_deg: -58.478
+    distance_ly: 2246.0
+    spectral_type: 'F4V'
+    abs_mag: 1.2
+    system: ""
+    comment: ""
+    source_file: 'oHF4star.stc'
+    archive: 'OAAddons8.zip'
   - name: 'Pen-y-Ghent'
     ra_deg: 262.35
     dec_deg: -40.5155
@@ -931,6 +1093,97 @@ stars:
     system: ""
     comment: ""
     source_file: 'oastars4.stc'
+    archive: 'OAAddons1.zip'
+  - name: 'Proxima Centauri2'
+    ra_deg: 217.429167
+    dec_deg: -62.679444
+    distance_ly: 4.221
+    spectral_type: 'M5.5V'
+    abs_mag: null
+    system: ""
+    comment: ""
+    source_file: 'nearstars.stc'
+    archive: 'OAAddons8.zip'
+  - name: 'The Boomerang'
+    ra_deg: 191.192
+    dec_deg: -54.32
+    distance_ly: 5080.0
+    spectral_type: 'O'
+    abs_mag: -7.0
+    system: ""
+    comment: ""
+    source_file: 'boomerang.stc'
+    archive: 'OAAddons5.zip'
+  - name: 'YTS 233-091-0101'
+    ra_deg: 65.721
+    dec_deg: 64.21
+    distance_ly: 3068.0
+    spectral_type: 'MV'
+    abs_mag: 9.77
+    system: ""
+    comment: 'Star near Cenote with planets'
+    source_file: 'astarsaroundCenote.stc'
+    archive: 'Cenote.zip'
+  - name: 'YTS 233-091-0102'
+    ra_deg: 65.7125
+    dec_deg: 64.17
+    distance_ly: 3079.0
+    spectral_type: 'MV'
+    abs_mag: 10.79
+    system: ""
+    comment: 'star near Cenote with planets'
+    source_file: 'astarsaroundCenote.stc'
+    archive: 'Cenote.zip'
+  - name: 'YTS 233-091-0991'
+    ra_deg: 65.709
+    dec_deg: 64.27
+    distance_ly: 3071.0
+    spectral_type: 'KV'
+    abs_mag: 6.2
+    system: ""
+    comment: 'star near Cenote with planets'
+    source_file: 'astarsaroundCenote.stc'
+    archive: 'Cenote.zip'
+  - name: 'YTS 233-091-0992'
+    ra_deg: 65.725
+    dec_deg: 65.1
+    distance_ly: 3078.0
+    spectral_type: 'KV'
+    abs_mag: 6.877
+    system: ""
+    comment: 'Star near Cenote with planets'
+    source_file: 'astarsaroundCenote.stc'
+    archive: 'Cenote.zip'
+  - name: 'YTS 233-091-0997'
+    ra_deg: 65.717
+    dec_deg: 64.2
+    distance_ly: 3070.0
+    spectral_type: 'G2V'
+    abs_mag: 4.77
+    system: ""
+    comment: 'Star near Cenote with planets'
+    source_file: 'astarsaroundCenote.stc'
+    archive: 'Cenote.zip'
+  - name: 'YTS 233-091-0998'
+    ra_deg: 65.7101
+    dec_deg: 64.101
+    distance_ly: 3075.0
+    spectral_type: 'G2V'
+    abs_mag: 4.76
+    system: 'Cenote and Sequence'
+    comment: 'star for Cenote and Sequence'
+    source_file: 'astarsaroundCenote.stc'
+    archive: 'Cenote.zip'
+  - name: 'YTS 23375-458-5'
+    ra_deg: 297.96
+    dec_deg: -42.887
+    distance_ly: 610.0
+    spectral_type: 'K0'
+    abs_mag: 4.0
+    system: ""
+    comment: ""
+    source_file: 'somefictionalstars.stc'
+    archive: 'OAAddons12.zip'
   - name: 'YTS 453 09440 3'
     ra_deg: 96.304
     dec_deg: -41.25
@@ -940,6 +1193,7 @@ stars:
     system: ""
     comment: 'Brown Dwarf in the Stellar Umma Region; SpectralType "M9.0V" #for Celestia 1.3.1; accepted by Celestia 1.3.1pre4 and above'
     source_file: 'oastars6.stc'
+    archive: 'OAAddons1.zip'
   - name: 'YTS 9267-9531885'
     ra_deg: 242.5
     dec_deg: -62.6333
@@ -949,3 +1203,14 @@ stars:
     system: 'Blue'
     comment: 'star for Blue'
     source_file: 'morefictionalstars.stc'
+    archive: 'OAAddons1.zip'
+  - name: 'nr354-4536-566'
+    ra_deg: 337.412
+    dec_deg: -20.807
+    distance_ly: 448.0
+    spectral_type: ""
+    abs_mag: null
+    system: ""
+    comment: ""
+    source_file: 'nr354-4536-566.stc'
+    archive: 'OAAddons4.zip'

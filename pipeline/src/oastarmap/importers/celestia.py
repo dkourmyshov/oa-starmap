@@ -141,13 +141,51 @@ def read_archive(archive_path: Path) -> list[dict[str, Any]]:
     return usable
 
 
+def read_archives(directory: Path) -> list[dict[str, Any]]:
+    """Every usable star across every add-on archive in a directory.
+
+    The add-on ships as eighteen archives, not one, and the later ones are not
+    merely more textures: OAAddons12 states Huan Gao's own position, where this
+    map had been borrowing Beta Arae's direction for it, and Cenote brings six
+    stars of a system group nothing else here has. Reading one archive quietly
+    left ten .stc files unread.
+
+    A star appearing in two archives is one star. Bishop-ring luminaires — the
+    artificial suns inside a megastructure — carry no position at all and drop
+    out on their own, which is right: they are inside a system, and this map does
+    not go finer than one.
+    """
+    seen: dict[tuple[str, float, float, float], dict[str, Any]] = {}
+    for archive_path in sorted(directory.glob("*.zip")):
+        for record in read_archive(archive_path):
+            record["archive"] = archive_path.name
+            key = (
+                record["name"].casefold(),
+                round(record["ra_deg"], 4),
+                round(record["dec_deg"], 4),
+                round(record["distance_ly"], 3),
+            )
+            first = seen.get(key)
+            if first is None:
+                seen[key] = record
+            elif not first["comment"] and record["comment"]:
+                # Same star, better annotated the second time.
+                seen[key] = record
+
+    stars = list(seen.values())
+    stars.sort(key=lambda r: (r["name"], r["archive"], r["source_file"]))
+    return stars
+
+
 HEADER = """\
-# Orion's Arm stars, imported from the project's Celestia add-on.
+# Orion's Arm stars, imported from the project's Celestia add-ons.
 #
-#   Source:  Orion's Arm Celestia add-on (OAAddons1)
-#   Archive: http://www.orionsarm.com/fm_store/OAAddons1.zip
+#   Source:  Orion's Arm Celestia add-on, every archive in sources/
 #   Page:    https://www.orionsarm.com/xcms.php?r=oa-page&page=gen_OACelestia2
 #   Terms:   https://www.orionsarm.com/Terms_Copyright_and_Submissions.html
+#
+# `archive` records which one each star came from. Reading only OAAddons1 left
+# ten .stc files unread, among them the one stating Huan Gao's own position.
 #
 # These are stars the setting asserts but the sky does not have: the suns of
 # named OA systems, and the populations OA gives to real clusters. Their
@@ -197,14 +235,19 @@ def write_yaml(stars: list[dict[str, Any]], dest: Path) -> int:
             "system",
             "comment",
             "source_file",
+            "archive",
         ):
-            lines.append(f"    {field}: {scalar(star[field])}")
+            lines.append(f"    {field}: {scalar(star.get(field))}")
 
     dest.parent.mkdir(parents=True, exist_ok=True)
     dest.write_text("\n".join(lines) + "\n", encoding="utf-8")
     return len(stars)
 
 
-def import_oastars(archive_path: Path, dest: Path) -> int:
-    """Read the archive and write the tracked star file. Returns the count."""
-    return write_yaml(read_archive(archive_path), dest)
+def import_oastars(source: Path, dest: Path) -> int:
+    """Read the add-on and write the tracked star file. Returns the count.
+
+    Takes a directory of archives, or a single archive for the older behaviour.
+    """
+    stars = read_archives(source) if source.is_dir() else read_archive(source)
+    return write_yaml(stars, dest)
