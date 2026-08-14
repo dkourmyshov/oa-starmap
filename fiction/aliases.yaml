@@ -47,8 +47,15 @@ aliases:
   # 3 pc knot. The wings are what the name evokes and what reads as a landmark.
   Seagull Nebula: S296
   Monkey Nebula: NGC 2175
-  North America Nebula: NGC 7000
-  California Nebula: NGC 1499
+  # These three were pointed at their NGC and IC numbers, which no catalogue
+  # here carries — but Sharpless does carry them, and the HII dataset is built
+  # from Sharpless. Checked before switching: S117 is in Cygnus at 3,262 ly with
+  # a 114 ly radius, S220 in Perseus at 1,631, S234 in Auriga, which is where
+  # and what each of these is. Aliasing to the designation that resolves rather
+  # than to the one people quote is the whole job of this file.
+  North America Nebula: S117
+  California Nebula: S220
+  IC 417: S234
   Helix Nebula: NGC 7293
   Dumbbell Nebula: NGC 6853
   Owl Nebula: NGC 3587

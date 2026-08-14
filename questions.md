@@ -357,11 +357,11 @@ Landmarks that fall inside a polity's area on the political maps but sit far bey
 - **NGC 4337** at 7,873 ly — Non-Coercive Zone
 - **NGC 6755** at 7,446 ly — Keter Dominion
 
-## 41 landmarks waiting on a catalogue
+## 38 landmarks waiting on a catalogue
 
 Named in the political maps, and real, but in a catalogue this map does not carry yet — mostly supernova remnants, planetary nebulae and reflection nebulae. Ours to fix, not the setting's.
 
-Aquila Rift, Basel 11, Basel 5, California Nebula, Cat Eye Nebula, Collinder 121, Collinder 173, Collinder 399, Collinder 96, Dumbbell Nebula, Eskimo Nebula, Floating Star Nebula, G64.3+5.7, Gamma Cas, Geminga, Helix Nebula, Hogg 14, Hubble Variable Nebula, IC 405, IC 417, Iskudarian 1, Jupiter Nebula, Markarian 6, NGC 1498, and 17 more
+Aquila Rift, Basel 11, Basel 5, Cat Eye Nebula, Collinder 121, Collinder 173, Collinder 399, Collinder 96, Dumbbell Nebula, Eskimo Nebula, Floating Star Nebula, G64.3+5.7, Gamma Cas, Geminga, Helix Nebula, Hogg 14, Hubble Variable Nebula, IC 405, Iskudarian 1, Jupiter Nebula, Markarian 6, NGC 1498, NGC 2395, NGC 2438, and 14 more
 
 ## 9 landmarks claimed by more than one polity
 
