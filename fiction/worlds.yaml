@@ -5282,3 +5282,48 @@ worlds:
       gives its position and its 255 arcminutes across but no distance. At the
       measured 287 +19/-17 pc that angular size is 69 ly, so this is drawn as a
       volume rather than a point — the only remnant on the map with an extent.
+
+  - name: Rho Ophiuchi Cloud Complex
+    kind: volume
+    extent: 44 ly
+    affiliations: [mutual-progress-association]
+    location:
+      ra_deg: 247.0250
+      dec_deg: -24.5417
+      distance: 460 ly
+    note: >-
+      A molecular cloud in Ophiuchus at 140 pc, and one of the nearest
+      star-forming regions there is. Its 4.5 by 6.5 degrees on the sky work out
+      to about 44 ly across at that distance, so it is drawn as the volume it
+      is. Position, distance and angular size are all hand-sourced: no cloud
+      catalogue is loaded here.
+
+  - name: Aquila Rift
+    kind: volume
+    extent: 311 ly
+    affiliations: [cygexpa]
+    location:
+      ra_deg: 286.7500
+      dec_deg: 1.0000
+      distance: 1182 ly
+    note: >-
+      The dark lane along the Milky Way in Aquila, and the least certain
+      distance on this map: 225 to 500 pc, which is 734 to 1,631 ly — the far
+      estimate is more than twice the near one. The midpoint is drawn and the
+      range is this note, because there is no figure to prefer. At that midpoint
+      its 20 by 10 degrees is 311 ly across, which makes it the second largest
+      volume here after the Gehenna front; at either end of the range that size
+      changes with it.
+
+  - name: NGC 2395
+    kind: volume
+    affiliations: [sophic-league]
+    location:
+      ra_deg: 112.1750
+      dec_deg: 13.5525
+      distance: 1670 ly
+    note: >-
+      An open cluster in Gemini at 512 pc, absent from the Gaia-verified
+      catalogue this map builds from. First given to us as 0.071 kpc, which
+      would have put it at 232 ly and among the nearest clusters in the sky; the
+      figure here is the corrected 512 pc.
