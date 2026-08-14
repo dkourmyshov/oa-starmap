@@ -1426,13 +1426,14 @@ worlds:
     affiliations: [disarchy]
     article: https://www.orionsarm.com/eg-article/464e939b35f57
     location:
+      constellation: Crux
       distance: 2520 ly
       note: >-
-        In the Crucis Corridor. The distance alone does not place it: without a
-        direction it is a sphere, not a point. "Crucis" is the genitive of Crux
-        and the constellation would be the obvious reading, but a corridor is a
-        route rather than a sector, and reading it as one would draw a position
-        the source does not give.
+        In the Crucis Corridor, read as the volume behind Crux the way the
+        Encyclopaedia's sectors are. A corridor is more naturally a route than a
+        sector, which is why this was left unplaced for a while; the
+        constellation is the approximation, taken deliberately, and Crux is
+        small enough that it costs less than most.
     events:
       - year_at: 6210
         kind: settled
@@ -4890,24 +4891,51 @@ worlds:
     kind: planet
     affiliations: [sagittarius-transcultural-cooperation]
     article: https://www.orionsarm.com/eg-article/49112098c57a7
+    location:
+      ra_deg: 278.2349
+      dec_deg: 5.7865
+      distance: 1554 ly
+      direction_error_deg: 1.5
+      estimated: >-
+        The article gives no coordinates but five things that amount to them:
+        galactic longitude 36 degrees, about 1,600 ly from Sol, 50 ly from the
+        Sparks, 132 from the Black Acropolis and — from Miracle City's own
+        article — 216 ly from there. Longitude and distance alone leave a
+        circle; the three hops close it. Fitting latitude and distance to all
+        three gives l 36.00, b +6.74, 1,554 ly, which returns 49.7 ly to the
+        Sparks against a stated 50, 217.4 to Miracle City against 216, and 136.7
+        to the Black Acropolis against 132. Three independent checks agreeing
+        within a few light years is what makes this a position rather than a
+        guess; the distance comes out 3% under the stated 1,600, which is inside
+        what "approximately" allows.
     note: >-
-      Recorded without a position of its own. Miracle City is given as 216 ly
-      from it and Avensis as about 158, which constrains it to a circle rather
-      than a point — two distances and no third.
+      Local space here is dominated by the Sparks, 50 ly off, and a dark cloud
+      called the Tatter. Most civilisations nearby descend from or were shaped
+      by the Gerkletoss.
 
   - name: Avensis
     kind: system
     affiliations: [sagittarius-transcultural-cooperation]
     article: https://www.orionsarm.com/eg-article/4e813a626e07b
     location:
+      ra_deg: 274.0535
+      dec_deg: 5.8096
       distance: 1655 ly
+      direction_error_deg: 2.0
+      estimated: >-
+        1,655 ly from Sol and about 158 from Sk'iiws'nnii, which is two
+        constraints and leaves a circle. The third is an assumption rather than
+        a statement: Miracle City lists 84 ly to "the Cooperative Venture", and
+        Avensis is that polity's capital, so the figure is read as being to
+        here. On that reading three spheres meet in two points, 2.5 degrees
+        apart, both in Ophiuchus and both satisfying all three distances
+        exactly. This is their midpoint and the error covers both. If the 84 ly
+        is to the Venture's nearest edge rather than its capital, the position
+        moves but not far.
     events:
       - year_at: 7609
         kind: settled
-    note: >-
-      Capital of the Cooperative Venture, 1,655 ly out and about 158 from
-      Skiiws'nnii — which is not placed either, so there is nothing to hang a
-      direction on. Recorded and not drawn.
+    note: Capital of the Cooperative Venture.
 
   # ---- the Tunh Xenohole ---------------------------------------------------
 
