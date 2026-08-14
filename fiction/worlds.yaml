@@ -1426,9 +1426,13 @@ worlds:
     affiliations: [disarchy]
     article: https://www.orionsarm.com/eg-article/464e939b35f57
     location:
+      distance: 2520 ly
       note: >-
-        In the Crucis Corridor at 2,520 ly. The distance alone does not place
-        it: without a direction it is a sphere, not a point.
+        In the Crucis Corridor. The distance alone does not place it: without a
+        direction it is a sphere, not a point. "Crucis" is the genitive of Crux
+        and the constellation would be the obvious reading, but a corridor is a
+        route rather than a sector, and reading it as one would draw a position
+        the source does not give.
     events:
       - year_at: 6210
         kind: settled
@@ -4503,3 +4507,421 @@ worlds:
       shape of a slipped digit rather than of two sources disagreeing. The
       add-on's figure is drawn because the binding is to its star; see
       questions.md.
+
+  # ---- Silicon Generation --------------------------------------------------
+
+  - name: Cog
+    kind: system
+    affiliations: [silicon-generation]
+    article: https://www.orionsarm.com/eg-article/462a6ca1b0077
+    location:
+      hd: 190470
+      distance: 72 ly
+    events:
+      - year_at: 1405
+        kind: settled
+    note: >-
+      HD 190470 in Vulpecula, 72 ly out, and already in the colony table — this
+      entry adds the article and the date the table has no column for.
+
+  # ---- Stellar Umma --------------------------------------------------------
+
+  - name: Betelgeuse Volume
+    kind: volume
+    extent: 150 ly
+    affiliations: [stellar-umma, metasoft, orion-federation, emple-dokcetics]
+    article: https://www.orionsarm.com/eg-article/460c3d55e345d
+    location:
+      star: Betelgeuse
+    note: >-
+      75 ly in radius around Betelgeuse, and the most crowded volume recorded
+      here: the Stellar Umma with Metasoft, Orion Federation traders, an
+      Emple-Dokcetic colony and Pleiadian expansionists, who have no polity
+      entry of their own. Four holders is what the ring can segment, so the
+      first four are drawn and the fifth is only in this note.
+
+  - name: Betelgeuse
+    kind: system
+    system: Betelgeuse
+    affiliations: [stellar-umma]
+    article: https://www.orionsarm.com/eg-article/460c3c2a8b657
+    location:
+      star: Betelgeuse
+    events:
+      - year_at: 3621
+        kind: visited
+      - year_at: 3621
+        kind: capital
+        precision: not_earlier_than
+        note: Capital of the Betelgeuse Volume.
+    note: >-
+      498 ly out. The article makes it the Volume's capital rather than an Umma
+      settlement, which is a distinction the map cannot draw — a ring says who
+      holds a place and not in what capacity.
+
+  - name: Medina
+    kind: planet
+    affiliations: [stellar-umma]
+    article: https://www.orionsarm.com/eg-article/4979e6aa84195
+    location:
+      hip: 39330
+      distance: 118 ly
+    events:
+      - year_at: 1639
+        kind: settled
+    note: >-
+      HIP 39330, also HD 66653, in Puppis at 118.7 ly against the article's 118.
+      Its own right ascension and declination land in Puppis too, as stated.
+
+  - name: Yathrib
+    kind: planet
+    affiliations: [stellar-umma]
+    article: https://www.orionsarm.com/eg-article/46e9d21661e71
+    location:
+      hd: 74868
+      distance: 119 ly
+    events:
+      - year_at: 1650
+        kind: settled
+    note: >-
+      HD 74868, a close binary, at 119.1 ly against the article's 119 — the
+      closest agreement in this file. The catalogue puts it in Vela.
+
+  # ---- Orion Federation ----------------------------------------------------
+
+  - name: Alnitak
+    kind: system
+    affiliations: [orion-federation]
+    article: https://www.orionsarm.com/eg-article/45eceb9d337cf
+    location:
+      star: Zeta Orionis
+    note: Zeta Orionis, 736 ly out.
+
+  - name: Elmo
+    kind: planet
+    affiliations: [orion-federation]
+    article: https://www.orionsarm.com/eg-article/4c1a786d02ac4
+    location:
+      constellation: Orion
+      distance: 1071 ly
+
+  - name: Enremdea
+    kind: moon
+    affiliations: [orion-federation]
+    article: https://www.orionsarm.com/eg-article/47953c5148ba9
+    location:
+      constellation: Monoceros
+      distance: 1608 ly
+    events:
+      - year_at: 4603
+        kind: settled
+    note: >-
+      A moon of a gas giant, given as GH4343 Monocerotis VII — a designation no
+      catalogue here carries, leaving the constellation.
+
+  - name: Horsehead Nebula
+    kind: volume
+    affiliations: [orion-federation, stellar-umma]
+    article: https://www.orionsarm.com/eg-article/4f2fbe886a8f3
+    location:
+      constellation: Orion
+      distance: 1420 ly
+    note: >-
+      Barnard 33, in the Orion Molecular Cloud complex. Explored jointly with
+      the Betelgeuse Umma. No catalogue this build loads has it — the dark
+      nebulae are not in the Sharpless HII list — so the constellation carries
+      the direction.
+
+  - name: The Lightstorm
+    kind: megastructure
+    affiliations: [orion-federation]
+    article: https://www.orionsarm.com/eg-article/483ae6b0289f5
+    location:
+      constellation: Orion
+      distance: 1420 ly
+    note: >-
+      In the Horsehead Nebula, and placed exactly as the nebula is, since the
+      article gives it no position of its own.
+
+  - name: Orion Nebula
+    kind: volume
+    affiliations: [orion-federation]
+    article: https://www.orionsarm.com/eg-article/475d6e3f3b712
+    location:
+      constellation: Orion
+    note: >-
+      The central part of the Federation, and undrawn: no distance is given
+      here, and the nebula is in none of the catalogues this build loads. The
+      direction is recorded and nothing else.
+
+  - name: Tabridgen
+    kind: system
+    affiliations: [orion-federation]
+    article: https://www.orionsarm.com/eg-article/491232472b626
+    location:
+      ra_deg: 105.7046
+      dec_deg: -8.3547
+      distance: 2870 ly
+      near: M50 (NGC 2323)
+    events:
+      - year_at: 6859
+        kind: settled
+    note: >-
+      In the Byran Plexus, rimward of the Federation, and given as 2,870 ly from
+      Sol and 180 from M50. M50 lends its direction; at the catalogue's 3,120 ly
+      for the cluster that leaves 250 ly between them along the line of sight,
+      near enough to the stated 180 to be the same claim.
+
+  - name: Valdern Megastructure
+    kind: megastructure
+    affiliations: [orion-federation]
+    article: https://www.orionsarm.com/eg-article/6929fe0e1f632
+    location:
+      ra_deg: 91.1375
+      dec_deg: -4.1194
+      distance: 1210 ly
+      near: Erythail
+    events:
+      - year_at: 4879
+        kind: visited
+    note: >-
+      Around the star Erythail. The article's coordinates fall in Monoceros, as
+      it says.
+
+  # ---- The Seams -----------------------------------------------------------
+
+  - name: Traction
+    kind: system
+    affiliations: [the-seams]
+    article: https://www.orionsarm.com/eg-article/48aca6f9717da
+    note: >-
+      Recorded without a position. Nothing here locates it — not the
+      Encyclopaedia entry we have, not any of the eighteen Celestia archives,
+      not the Inner Sphere table.
+
+  # ---- Disarchy ------------------------------------------------------------
+
+  # ---- Sagittarius Transcultural Cooperation -------------------------------
+  #
+  # The one roster where most places are located against a cluster rather than
+  # a constellation, which is a better direction by an order of magnitude: NGC
+  # 6383 is arcminutes across where Scorpius is tens of degrees.
+
+  - name: Cocac
+    kind: planet
+    affiliations: [sagittarius-transcultural-cooperation]
+    article: https://www.orionsarm.com/eg-article/462982a7dbf91
+    location:
+      ra_deg: 271.1022
+      dec_deg: -24.3707
+      distance: 4133 ly
+      near: NGC 6530
+    note: >-
+      Given as 4,133 ly and 200 ly from NGC 6530, near the outer mouth of the
+      Tunh wormhole. The cluster is at 4,010 ly, so 123 of that 200 is along the
+      line of sight and the rest is across it — consistent, and the cluster's
+      direction is what places this.
+
+  - name: Gilboa Reach
+    kind: system
+    affiliations: [sagittarius-transcultural-cooperation]
+    article: https://www.orionsarm.com/eg-article/464e931fbc3f0
+    location:
+      distance: 1606 ly
+    events:
+      - year_at: 5189
+        kind: settled
+    note: >-
+      Given as 1,606 ly in Serpens, and Serpens is the one constellation this
+      map refuses to place anything by: it is in two pieces and its centre of
+      area falls in Ophiuchus between them, so a world put there would be drawn
+      in the wrong constellation entirely. The distance is recorded and the
+      direction is not.
+
+  - name: Laurel and Hardy
+    kind: planet
+    affiliations: [sagittarius-transcultural-cooperation]
+    article: https://www.orionsarm.com/eg-article/53a6c927ecaf8
+    location:
+      ra_deg: 263.6729
+      dec_deg: -32.5772
+      distance: 3210 ly
+      near: NGC 6383
+    events:
+      - year_at: 5767
+        kind: settled
+    note: >-
+      Two planets under one name, in Scorpius near NGC 6383 and 1,090 ly from
+      the Tunh wormhole. The cluster is at 3,591 ly and supplies the direction.
+
+  - name: Rosmion
+    kind: planet
+    affiliations: [sagittarius-transcultural-cooperation]
+    article: https://www.orionsarm.com/eg-article/56d43cd536647
+    location:
+      ra_deg: 263.6729
+      dec_deg: -32.5772
+      distance: 3342 ly
+      near: NGC 6383
+    events:
+      - year_at: 5001
+        kind: settled
+    note: >-
+      Also near NGC 6383, and placed the same way as Laurel and Hardy — so the
+      two draw 132 ly apart along one line of sight, which is what having a
+      single direction for both amounts to rather than a statement about them.
+
+  - name: Muora
+    kind: system
+    affiliations: [sagittarius-transcultural-cooperation]
+    article: https://www.orionsarm.com/eg-article/662bb410d01f7
+    location:
+      ra_deg: 272.1167
+      dec_deg: -21.2531
+      distance: 5320 ly
+      near: WR 111
+    note: >-
+      A supernova. The article names WR 111 — also HD 165763, HIP 88856 and YTS
+      334-010-01 — and puts it at 5,320 ly, where the catalogue has that star at
+      4,505: a 15% gap, too wide to bind across. The article's own coordinates
+      supply the direction and land in Sagittarius as it says.
+
+  - name: The Ndiangu Mme Anwu System
+    kind: system
+    affiliations: [sagittarius-transcultural-cooperation]
+    article: https://www.orionsarm.com/eg-article/558c7c3535d87
+    location:
+      ra_deg: 259.4793
+      dec_deg: -35.2410
+      distance: 7816.0376 ly
+    note: >-
+      The furthest thing in this file, and quoted to four decimal places — a
+      ten-thousandth of a light year, at 7,816. Its declination is given as
+      +35d 14' 27.6058", which falls in Hercules; negated it falls in Scorpius,
+      which is the constellation the article states. The sign is taken as lost
+      rather than the constellation as wrong, since the rest of the figure is
+      identical either way.
+
+  - name: Paintbox Habitat
+    kind: habitat
+    affiliations: [sagittarius-transcultural-cooperation]
+    article: https://www.orionsarm.com/eg-article/649c80b928671
+    location:
+      ra_deg: 266.6505
+      dec_deg: -29.2501
+      distance: 2998 ly
+      near: Babaluma
+    events:
+      - year_at: 5208
+        kind: settled
+    note: >-
+      In the Babaluma system. The article's coordinates fall in Sagittarius, as
+      it says.
+
+  - name: Xiphias I
+    kind: system
+    affiliations: [sagittarius-transcultural-cooperation]
+    article: https://www.orionsarm.com/eg-article/47a67cbee769f
+    location:
+      hip: 87740
+      catalogue_from_source: true
+    note: HIP 87740, also HD 163334, in Ophiuchus at 1,687 ly.
+
+  # ---- the Serpens Reach, on the MPA and Cooperation border -----------------
+  #
+  # Four places within 60 ly of one another, and the only cluster of entries in
+  # this file whose separations the sources state and this map can check. From
+  # Miracle City the article gives 51 ly to Vinculum; converting both articles'
+  # own coordinates gives 59.5, which is agreement at the precision they are
+  # quoted to.
+
+  - name: Gammergan
+    kind: system
+    affiliations: [mutual-progress-association, sagittarius-transcultural-cooperation]
+    article: https://www.orionsarm.com/eg-article/464d338cc6026
+    location:
+      ra_deg: 265.9513
+      dec_deg: 5.8010
+      distance: 1702 ly
+    events:
+      - year_at: 5107
+        kind: settled
+    note: On the border, and held by both.
+
+  - name: Vinculum
+    kind: system
+    affiliations: [sagittarius-transcultural-cooperation]
+    article: https://www.orionsarm.com/eg-article/47a28ae42789b
+    location:
+      ra_deg: 275.5950
+      dec_deg: 6.5204
+      distance: 1725 ly
+      near: HD 169007
+    note: >-
+      A K2 star of 95 Sols, also TYC 444-2457-1 and HD 169007 — which is not in
+      this map's catalogue, so the article's own coordinates place it.
+
+  - name: Miracle City
+    kind: megastructure
+    affiliations: [sagittarius-transcultural-cooperation]
+    article: https://www.orionsarm.com/eg-article/49111e6284074
+    location:
+      ra_deg: 273.7500
+      dec_deg: 5.8100
+      distance: 1730 ly
+    events:
+      - year_at: 8830
+        kind: visited
+    note: >-
+      A xenosophont megastructure, and the best-cross-referenced place here: the
+      article gives its distance to five others — 216 ly to Skiiws'nnii, 51 to
+      Vinculum, 84 to the Cooperative Venture, 211 to the Sparks, 78 to the
+      nearest stargate at TYC 443-1690-1. Vinculum and the Sparks are both on
+      this map and both check out, at 59.5 and 266 ly against the stated 51 and
+      211.
+
+  - name: Sk'iiws'nnii
+    kind: planet
+    affiliations: [sagittarius-transcultural-cooperation]
+    article: https://www.orionsarm.com/eg-article/49112098c57a7
+    note: >-
+      Recorded without a position of its own. Miracle City is given as 216 ly
+      from it and Avensis as about 158, which constrains it to a circle rather
+      than a point — two distances and no third.
+
+  - name: Avensis
+    kind: system
+    affiliations: [sagittarius-transcultural-cooperation]
+    article: https://www.orionsarm.com/eg-article/4e813a626e07b
+    location:
+      distance: 1655 ly
+    events:
+      - year_at: 7609
+        kind: settled
+    note: >-
+      Capital of the Cooperative Venture, 1,655 ly out and about 158 from
+      Skiiws'nnii — which is not placed either, so there is nothing to hang a
+      direction on. Recorded and not drawn.
+
+  # ---- the Tunh Xenohole ---------------------------------------------------
+
+  - name: The Tunh Xenohole
+    kind: system
+    affiliations: [sagittarius-transcultural-cooperation]
+    article: https://www.orionsarm.com/eg-article/491418776bb70
+    location:
+      ra_deg: 253.1595
+      dec_deg: -39.5600
+      distance: 1237 ly
+      near: Neb 34786
+    events:
+      - year_at: 3965
+        kind: observed
+        note: >-
+          An artificial structure found in the system by the Lagrange Defenders.
+    note: >-
+      A T1 brown dwarf, Neb 34786, with the planet Gatto and a wormhole mouth
+      601 AU out — 7.8 km across in the current era. Its far mouth is 3,309 ly
+      from Sol in Sagittarius, which this map has no way to draw: a wormhole is
+      two places and one object, and nothing here joins them. The near mouth is
+      what is drawn, and the coordinates fall in Scorpius as the article says.
