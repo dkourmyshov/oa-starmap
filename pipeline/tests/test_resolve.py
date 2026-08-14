@@ -112,3 +112,36 @@ class TestAliases:
         clusters = [{"name": "NGC_6405", "aliases": ""}]
         resolver = Resolver(clusters, {}, {"Messier 6": "NGC 6405"})
         assert resolver.resolve("NGC 6405", ["x"]).via_alias is None
+
+
+class TestBayerForms:
+    """A Bayer designation is written one way and catalogued another.
+
+    Gamma Cassiopeiae is a Solar Dominion landmark and sits in the star
+    catalogue as "27Gam Cas": a Flamsteed number the landmark does not use, and
+    a Greek letter cut to three characters. It was on the unresolvable list for
+    both reasons at once.
+    """
+
+    def test_spells_out_the_greek_letter(self):
+        from oastarmap.fiction.resolve import bayer_forms, normalise
+
+        keys = bayer_forms("27Gam Cas")
+        assert normalise("Gamma Cas") in keys
+        assert normalise("Gam Cas") in keys
+        assert normalise("27Gam Cas") in keys
+
+    def test_keeps_a_superscript_apart(self):
+        """Alpha-1 and Alpha-2 Centauri are two stars, not one written twice."""
+        from oastarmap.fiction.resolve import bayer_forms, normalise
+
+        one = bayer_forms("Alp-1 Cen")
+        two = bayer_forms("Alp-2 Cen")
+        assert normalise("Alpha-1 Cen") in one
+        assert normalise("Alpha-1 Cen") not in two
+        assert not set(one) & set(two)
+
+    def test_leaves_a_proper_name_alone(self):
+        from oastarmap.fiction.resolve import bayer_forms, normalise
+
+        assert bayer_forms("Cih") == [normalise("Cih")]

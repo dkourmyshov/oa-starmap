@@ -74,6 +74,45 @@ def normalise(name: str) -> str:
     return text
 
 
+GREEK = {
+    "alp": "alpha", "bet": "beta", "gam": "gamma", "del": "delta", "eps": "epsilon",
+    "zet": "zeta", "eta": "eta", "the": "theta", "iot": "iota", "kap": "kappa",
+    "lam": "lambda", "mu": "mu", "nu": "nu", "xi": "xi", "omi": "omicron",
+    "pi": "pi", "rho": "rho", "sig": "sigma", "tau": "tau", "ups": "upsilon",
+    "phi": "phi", "chi": "chi", "psi": "psi", "ome": "omega",
+}
+"""The abbreviations the star catalogue uses for Bayer letters.
+
+Landmarks are written the way people say them and catalogues the way they are
+printed, and for a Bayer designation those differ twice over. Gamma Cassiopeiae
+is a landmark of the Solar Dominion and sits in the catalogue as "27Gam Cas" — a
+Flamsteed number the landmark does not use, and a Greek letter cut to three
+characters. Neither difference carries meaning, and together they were enough to
+leave a star this map has had all along on the list of things it cannot find.
+"""
+
+_BAYER = re.compile(r"^(?:\d+)?([A-Za-z]{2,3})(?:-(\d))?[\s_]+([A-Za-z]{3})$")
+
+
+def bayer_forms(value: str) -> list[str]:
+    """Every key a Bayer designation should answer to, normalised.
+
+    "27Gam Cas" gives itself, "Gam Cas" without the Flamsteed number, and
+    "Gamma Cas" with the letter spelled out. A superscript is kept — "Alp-1 Cen"
+    and "Alp-2 Cen" are two stars and must not collapse onto one key.
+    """
+    keys = [normalise(value)]
+    matched = _BAYER.match(value.strip())
+    if matched:
+        letter, superscript, constellation = matched.groups()
+        suffix = f"-{superscript}" if superscript else ""
+        keys.append(normalise(f"{letter}{suffix} {constellation}"))
+        spelled = GREEK.get(letter.lower())
+        if spelled:
+            keys.append(normalise(f"{spelled}{suffix} {constellation}"))
+    return keys
+
+
 @dataclass
 class Binding:
     """One landmark, and what it resolved to."""
@@ -158,10 +197,12 @@ class Resolver:
         for index_str, entry in star_names.items():
             for field_name in ("proper", "bayer", "bf"):
                 value = entry.get(field_name, "")
-                key = normalise(value) if value else ""
-                if key and key not in self._stars:
-                    self._stars[key] = int(index_str)
-                    self._star_names.setdefault(int(index_str), value)
+                if not value:
+                    continue
+                for key in bayer_forms(value):
+                    if key and key not in self._stars:
+                        self._stars[key] = int(index_str)
+                        self._star_names.setdefault(int(index_str), value)
 
     @staticmethod
     def _index_named(entries: list[dict[str, Any]]) -> dict[str, int]:
