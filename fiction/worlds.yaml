@@ -5164,3 +5164,121 @@ worlds:
       first three returns the last three to within a hundredth of a light year,
       with Lyra coming back either way. A K5 dwarf of a third Sol's luminosity.
       No holder is recorded.
+
+  # ---- nebulae and a remnant, placed by hand -------------------------------
+  #
+  # These are polity landmarks that no catalogue this build loads can bind:
+  # planetary nebulae and a supernova remnant. The catalogues for them exist and
+  # carry positions — the Strasbourg-ESO planetary nebula catalogue and Green's
+  # remnants — but neither carries a distance, which is the one thing this map
+  # cannot do without. So the positions are from those catalogues and the
+  # distances are hand-sourced, one object at a time.
+  #
+  # They stay on their polities' landmark lists as well. When a distance
+  # catalogue is loaded they will bind there properly and these entries should
+  # go; until then a landmark that cannot bind draws nothing at all, and these
+  # do. Each is the Cygnus Loop's arrangement, which was the first of them.
+
+  - name: Cat's Eye Nebula
+    kind: volume
+    affiliations: [cygexpa]
+    location:
+      ra_deg: 269.6390
+      dec_deg: 66.6330
+      distance: 3300 ly
+    note: >-
+      NGC 6543, in Draco. Position from the Strasbourg-ESO planetary nebula
+      catalogue, distance 3,300 +/- 900 ly from published measurement — a 27%
+      uncertainty, which is ordinary for a planetary nebula and worse than
+      anything else drawn here.
+
+  - name: Dumbbell Nebula
+    kind: volume
+    affiliations: [cygexpa]
+    location:
+      ra_deg: 299.9006
+      dec_deg: 22.7168
+      distance: 1269 ly
+    note: >-
+      NGC 6853, in Vulpecula, at 389 pc. One of the better-measured planetary
+      nebulae and the nearest thing in this group after the Helix.
+
+  - name: Eskimo Nebula
+    kind: volume
+    affiliations: [metasoft]
+    location:
+      ra_deg: 112.2945
+      dec_deg: 20.9102
+      distance: 6520 ly
+    note: NGC 2392, in Gemini, 6,520 +/- 560 ly.
+
+  - name: Helix Nebula
+    kind: volume
+    affiliations: [nocozo]
+    location:
+      ra_deg: 337.4115
+      dec_deg: -20.8374
+      distance: 650 ly
+    note: >-
+      NGC 7293, in Aquarius, at 200 +/- 1 pc — the nearest of these by a long
+      way, and the most precisely measured: half a percent, where the Cat's Eye
+      is 27%.
+
+  - name: Jupiter Nebula
+    kind: volume
+    affiliations: [nocozo]
+    location:
+      ra_deg: 156.1913
+      dec_deg: -18.6439
+      distance: 4800 ly
+    note: >-
+      NGC 3242, the Ghost of Jupiter, in Hydra at 4,800 +/- 500 ly. The
+      identification is this project's reading of the landmark name rather than
+      something a source states.
+
+  - name: Owl Nebula
+    kind: volume
+    affiliations: [solar-dominion]
+    location:
+      ra_deg: 168.6935
+      dec_deg: 55.0166
+      distance: 2025 ly
+    note: >-
+      NGC 3587, in Ursa Major. Two distances are published, 621 pc and 870 pc;
+      the nearer is drawn and the further is 2,838 ly, so which is right moves
+      this by 800 ly.
+
+  - name: NGC 2438
+    kind: volume
+    affiliations: [nocozo]
+    location:
+      ra_deg: 115.4596
+      dec_deg: -14.7356
+      distance: 1370 ly
+    note: NGC 2438, in Puppis, 420 +/- 40 pc.
+
+  - name: NGC 246
+    kind: volume
+    affiliations: [solar-dominion]
+    location:
+      ra_deg: 11.7639
+      dec_deg: -11.8719
+      distance: 3500 ly
+    note: >-
+      In Cetus, 3,500 +720/-850 ly. Not in the Strasbourg-ESO catalogue under
+      that designation, so both the position and the distance are hand-sourced
+      here rather than only the distance.
+
+  - name: Vela Supernova Remnant
+    kind: volume
+    extent: 69 ly
+    affiliations: [vela]
+    location:
+      ra_deg: 128.5000
+      dec_deg: -45.8333
+      distance: 936 ly
+    note: >-
+      G263.9-03.3 in Green's catalogue of galactic supernova remnants, which
+      gives its position and its 255 arcminutes across but no distance. At the
+      measured 287 +19/-17 pc that angular size is 69 ly, so this is drawn as a
+      volume rather than a point — the only remnant on the map with an extent.
