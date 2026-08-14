@@ -5467,3 +5467,236 @@ worlds:
       estimated: >-
         Interpolated from the sheet. No article, so this and its affiliation are
         the whole of what is known.
+
+  # ---- the rest of the sheet -----------------------------------------------
+  #
+  # Fifteen more places whose only source is the transcription of Anders
+  # Sandberg's maps. Same terms as the eight above: the position is interpolated
+  # between the anchors nearest each cell, the ring is dotted because neither
+  # the radius nor the direction is known, and the error is what checking the
+  # method against places we already hold actually gave.
+  #
+  # Those drawn beyond the anchors surrounding them carry 1,200 ly rather than
+  # 800 — an extrapolation is a weaker claim than an interpolation and should
+  # not be recorded as the same one. Several have no polity because the sheet
+  # gives them none: its grey is for the minor, neutral and unaligned, and an
+  # empty field is what that means.
+
+  - name: Syris
+    kind: system
+    location:
+      ra_deg: 285.779
+      dec_deg: 21.2797
+      distance: 844 ly
+      direction_error_deg: 20.0
+      distance_error: 800 ly
+      estimated: >-
+        Interpolated from the transcription of Anders Sandberg's maps, fitted
+        from the anchors nearest this cell rather than by one transform over the
+        whole sheet, whose rows and columns are unevenly spaced. It falls inside the anchors used, which is the better case. No
+        article gives a position for it. The sheet draws it in the colour it keeps for the minor, neutral and unaligned, so no polity is recorded rather than one guessed.
+
+  - name: Arbiter
+    kind: system
+    affiliations: [keter-dominion]
+    location:
+      ra_deg: 265.1916
+      dec_deg: 15.6984
+      distance: 1119 ly
+      direction_error_deg: 20.0
+      distance_error: 800 ly
+      estimated: >-
+        Interpolated from the transcription of Anders Sandberg's maps, fitted
+        from the anchors nearest this cell rather than by one transform over the
+        whole sheet, whose rows and columns are unevenly spaced. It falls inside the anchors used, which is the better case. No
+        article gives a position for it.
+
+  - name: Everypath
+    kind: system
+    affiliations: [keter-dominion]
+    location:
+      ra_deg: 279.6469
+      dec_deg: -11.9306
+      distance: 1364 ly
+      direction_error_deg: 20.0
+      distance_error: 800 ly
+      estimated: >-
+        Interpolated from the transcription of Anders Sandberg's maps, fitted
+        from the anchors nearest this cell rather than by one transform over the
+        whole sheet, whose rows and columns are unevenly spaced. It falls inside the anchors used, which is the better case. No
+        article gives a position for it.
+
+  - name: Fredholm
+    kind: system
+    affiliations: [keter-dominion]
+    location:
+      ra_deg: 280.7109
+      dec_deg: -9.2881
+      distance: 1525 ly
+      direction_error_deg: 20.0
+      distance_error: 800 ly
+      estimated: >-
+        Interpolated from the transcription of Anders Sandberg's maps, fitted
+        from the anchors nearest this cell rather than by one transform over the
+        whole sheet, whose rows and columns are unevenly spaced. It falls inside the anchors used, which is the better case. No
+        article gives a position for it.
+
+  - name: Restored Ambi Limis
+    kind: system
+    location:
+      ra_deg: 80.7504
+      dec_deg: 42.7662
+      distance: 1632 ly
+      direction_error_deg: 20.0
+      distance_error: 800 ly
+      estimated: >-
+        Interpolated from the transcription of Anders Sandberg's maps, fitted
+        from the anchors nearest this cell rather than by one transform over the
+        whole sheet, whose rows and columns are unevenly spaced. It falls inside the anchors used, which is the better case. No
+        article gives a position for it. Drawn in the sheet's unaligned colour.
+
+  - name: Polonius
+    kind: system
+    affiliations: [nocozo]
+    location:
+      ra_deg: 172.8822
+      dec_deg: -50.4838
+      distance: 2377 ly
+      direction_error_deg: 30.0
+      distance_error: 1200 ly
+      estimated: >-
+        Interpolated from the transcription of Anders Sandberg's maps, fitted
+        from the anchors nearest this cell rather than by one transform over the
+        whole sheet, whose rows and columns are unevenly spaced. Drawn beyond the anchors around it, so extrapolated rather than interpolated and given the wider error. No
+        article gives a position for it.
+
+  - name: Doreen
+    kind: system
+    affiliations: [keter-dominion]
+    location:
+      ra_deg: 265.5866
+      dec_deg: -32.7104
+      distance: 2577 ly
+      direction_error_deg: 20.0
+      distance_error: 800 ly
+      estimated: >-
+        Interpolated from the transcription of Anders Sandberg's maps, fitted
+        from the anchors nearest this cell rather than by one transform over the
+        whole sheet, whose rows and columns are unevenly spaced. It falls inside the anchors used, which is the better case. No
+        article gives a position for it.
+
+  - name: Velarian Confederation
+    kind: volume
+    affiliations: [disarchy]
+    location:
+      ra_deg: 155.847
+      dec_deg: -68.2656
+      distance: 2631 ly
+      direction_error_deg: 30.0
+      distance_error: 1200 ly
+      estimated: >-
+        Interpolated from the transcription of Anders Sandberg's maps, fitted
+        from the anchors nearest this cell rather than by one transform over the
+        whole sheet, whose rows and columns are unevenly spaced. Drawn beyond the anchors around it, so extrapolated rather than interpolated and given the wider error. No
+        article gives a position for it. The sheet writes "Velarian Confed", which names a polity this map has no entry for. Recorded as a volume inside the Disarchy's colour, which is where the sheet puts it, rather than as a polity of its own on the strength of a truncated label.
+
+  - name: Blackbody Cluster
+    kind: volume
+    location:
+      ra_deg: 67.307
+      dec_deg: 35.2126
+      distance: 2640 ly
+      direction_error_deg: 30.0
+      distance_error: 1200 ly
+      estimated: >-
+        Interpolated from the transcription of Anders Sandberg's maps, fitted
+        from the anchors nearest this cell rather than by one transform over the
+        whole sheet, whose rows and columns are unevenly spaced. Drawn beyond the anchors around it, so extrapolated rather than interpolated and given the wider error. No
+        article gives a position for it. Not in any cluster catalogue this build loads, and named like an Orion's Arm object rather than a catalogued one.
+
+  - name: Mutual Satisfaction
+    kind: system
+    affiliations: [nocozo]
+    location:
+      ra_deg: 163.9237
+      dec_deg: -61.0954
+      distance: 2731 ly
+      direction_error_deg: 30.0
+      distance_error: 1200 ly
+      estimated: >-
+        Interpolated from the transcription of Anders Sandberg's maps, fitted
+        from the anchors nearest this cell rather than by one transform over the
+        whole sheet, whose rows and columns are unevenly spaced. Drawn beyond the anchors around it, so extrapolated rather than interpolated and given the wider error. No
+        article gives a position for it.
+
+  - name: Mensa Federation
+    kind: volume
+    affiliations: [disarchy]
+    location:
+      ra_deg: 196.9083
+      dec_deg: -62.8136
+      distance: 2886 ly
+      direction_error_deg: 30.0
+      distance_error: 1200 ly
+      estimated: >-
+        Interpolated from the transcription of Anders Sandberg's maps, fitted
+        from the anchors nearest this cell rather than by one transform over the
+        whole sheet, whose rows and columns are unevenly spaced. Drawn beyond the anchors around it, so extrapolated rather than interpolated and given the wider error. No
+        article gives a position for it. Another polity name the map has no entry for, drawn in the Disarchy's colour and recorded the same way as the Velarian Confederation.
+
+  - name: TrueModel
+    kind: system
+    affiliations: [negentropy-alliance]
+    location:
+      ra_deg: 226.1351
+      dec_deg: -56.2329
+      distance: 3014 ly
+      direction_error_deg: 20.0
+      distance_error: 800 ly
+      estimated: >-
+        Interpolated from the transcription of Anders Sandberg's maps, fitted
+        from the anchors nearest this cell rather than by one transform over the
+        whole sheet, whose rows and columns are unevenly spaced. It falls inside the anchors used, which is the better case. No
+        article gives a position for it.
+
+  - name: Celerin Volume
+    kind: volume
+    location:
+      ra_deg: 73.1691
+      dec_deg: 47.1473
+      distance: 3017 ly
+      direction_error_deg: 30.0
+      distance_error: 1200 ly
+      estimated: >-
+        Interpolated from the transcription of Anders Sandberg's maps, fitted
+        from the anchors nearest this cell rather than by one transform over the
+        whole sheet, whose rows and columns are unevenly spaced. Drawn beyond the anchors around it, so extrapolated rather than interpolated and given the wider error. No
+        article gives a position for it. Named a volume and drawn in no polity's colour.
+
+  - name: Locality of Wolfra
+    kind: volume
+    location:
+      ra_deg: 201.1785
+      dec_deg: -60.6953
+      distance: 3114 ly
+      direction_error_deg: 30.0
+      distance_error: 1200 ly
+      estimated: >-
+        Interpolated from the transcription of Anders Sandberg's maps, fitted
+        from the anchors nearest this cell rather than by one transform over the
+        whole sheet, whose rows and columns are unevenly spaced. Drawn beyond the anchors around it, so extrapolated rather than interpolated and given the wider error. No
+        article gives a position for it.
+
+  - name: Pnas Greenen
+    kind: system
+    location:
+      ra_deg: 101.878
+      dec_deg: 5.6471
+      distance: 3502 ly
+      direction_error_deg: 30.0
+      distance_error: 1200 ly
+      estimated: >-
+        Interpolated from the transcription of Anders Sandberg's maps, fitted
+        from the anchors nearest this cell rather than by one transform over the
+        whole sheet, whose rows and columns are unevenly spaced. Drawn beyond the anchors around it, so extrapolated rather than interpolated and given the wider error. No
+        article gives a position for it.
