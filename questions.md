@@ -8,7 +8,7 @@ Nothing below is a complaint about the setting. Most of it is the ordinary frict
 
 ---
 
-## Open questions (24)
+## Open questions (25)
 
 ### Enigma system — Three sources put the Enigma system in three different directions.
 
@@ -246,6 +246,18 @@ The Celestia add-on places Pluton at 5,130.8 ly and its article gives 4,130.8. E
 
 - https://www.orionsarm.com/eg-article/4910ed34571fd
 
+### Pas Greenen — Its own article colonises it in 9001 and another describes events there in 7233.
+
+*contradiction*
+
+Seventeen hundred years separate the two, and they cannot both be a first settlement: either the colonisation date is late, or the earlier events happened somewhere the article does not think this is. Nothing in either account marks the earlier as a visit rather than a settlement, which would have reconciled them.
+
+**What the map does now.** Records 9001, the date its own article gives, and does not average the two. The place is drawn from that article's Monoceros and 4,890 ly, so the position is unaffected either way.
+
+**What would settle it.** Which of the two is the founding, and whether the 7233 events belong to this system at all.
+
+- https://www.orionsarm.com/eg-article/46fc49502ccb2
+
 ### Cableville and Zhuangzi — The article and the Celestia add-on put Zhuangzi in different constellations, two and a half times as far apart.
 
 *contradiction*
@@ -371,13 +383,13 @@ Blanco 1, Collinder 173, Collinder 359, Cone Nebula, Czernik 8, NGC 2244, NGC 70
 
 ## Worlds located only by constellation
 
-59 of 387 canonical worlds are given as a distance and a constellation. That fixes the distance exactly and the direction only to the width of the constellation, which at these ranges is hundreds to thousands of light years. The map draws these with a broken ring rather than a solid one, and the detail panel gives the error in light years.
+61 of 389 canonical worlds are given as a distance and a constellation. That fixes the distance exactly and the direction only to the width of the constellation, which at these ranges is hundreds to thousands of light years. The map draws these with a broken ring rather than a solid one, and the detail panel gives the error in light years.
 
 Coordinates, or a nearby named star, would turn any of these from a region into a position.
 
-## 42 places described but not located
+## 43 places described but not located
 
-Arkady 2, Arnon Dar, Avase, Big Bob, Crustuse, Dashwood, Druidworld, Elderman's Star, Evermore, Galbydeia Torus, Garlin, Gavit, and 30 more
+Arkady 2, Arnon Dar, Avase, Big Bob, Crustuse, Dashwood, Druidworld, Elderman's Star, Evermore, Galbydeia Torus, Garlin, Gavit, and 31 more
 
 ## 1 designation reused in the Celestia add-on
 

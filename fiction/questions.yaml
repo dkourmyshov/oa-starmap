@@ -585,6 +585,29 @@ questions:
     links:
       - https://www.orionsarm.com/eg-article/4910ed34571fd
 
+  - id: pas-greenen-dates
+    topic: Pas Greenen
+    status: open
+    severity: contradiction
+    summary: >-
+      Its own article colonises it in 9001 and another describes events there in
+      7233.
+    detail: >-
+      Seventeen hundred years separate the two, and they cannot both be a first
+      settlement: either the colonisation date is late, or the earlier events
+      happened somewhere the article does not think this is. Nothing in either
+      account marks the earlier as a visit rather than a settlement, which would
+      have reconciled them.
+    map_does: >-
+      Records 9001, the date its own article gives, and does not average the
+      two. The place is drawn from that article's Monoceros and 4,890 ly, so the
+      position is unaffected either way.
+    would_settle: >-
+      Which of the two is the founding, and whether the 7233 events belong to
+      this system at all.
+    links:
+      - https://www.orionsarm.com/eg-article/46fc49502ccb2
+
   - id: cableville-position
     topic: Cableville and Zhuangzi
     status: open

@@ -121,6 +121,11 @@ polities:
     color: "#8D6E63"
     source: political-maps-8000at
     landmarks: [Lynga 2, Hogg 18]
+    # A loose confederation rather than an empire, so `affiliations: [disarchy]`
+    # reads as membership and not as ownership — the Velarian Confederation, the
+    # Mensan Way and the Locality of Wolfra are affiliates, which for this
+    # polity is the ordinary case rather than a qualification. Elsewhere in this
+    # file an affiliation is the present holder; here it is who one is with.
 
   - id: paradigm
     name: Efficiency Maximization Paradigm
@@ -207,7 +212,7 @@ polities:
        Markarian 6, Geminga, Collinder 463, NGC 1027, IC 1848, IC 1805, S202,
        S205, NGC 559, Alpha Persei Cluster, Gamma Cas, M39, Stock 2, IC 417,
        NGC 1513, NGC 1528, NGC 1545, Stock 7, NGC 1444, NGC 1498, S27,
-       Owl Nebula, Iskudarian 1, Stephenson 1, S138, NGC 1502, S232]
+       Owl Nebula, Iskudarian 1, Stephenson 1, S138, NGC 1502, S232, NGC 1513]
 
   - id: ulysses-network
     name: Ulysses Network

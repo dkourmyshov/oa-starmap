@@ -5482,20 +5482,24 @@ worlds:
   # gives them none: its grey is for the minor, neutral and unaligned, and an
   # empty field is what that means.
 
-  - name: Syris
+  - name: Syrtis
     kind: system
+    also: [Syris]
+    article: https://www.orionsarm.com/eg-article/478c1984d5402
     location:
-      ra_deg: 285.779
+      ra_deg: 285.7790
       dec_deg: 21.2797
-      distance: 844 ly
+      distance: 1170 ly
       direction_error_deg: 20.0
-      distance_error: 800 ly
+      distance_error: 200 ly
       estimated: >-
-        Interpolated from the transcription of Anders Sandberg's maps, fitted
-        from the anchors nearest this cell rather than by one transform over the
-        whole sheet, whose rows and columns are unevenly spaced. It falls inside the anchors used, which is the better case. No
-        article gives a position for it. The sheet draws it in the colour it keeps for the minor, neutral and unaligned, so no polity is recorded rather than one guessed.
-
+        The direction is interpolated from the transcription of Anders
+        Sandberg's maps, which writes the name "Syris"; the distance is the
+        article's 1,170 ly against the sheet's 844.
+    note: >-
+      Very loosely aligned with the radical Keterists, and recorded as
+      independent — an alignment that loose is not a holder, and the sheet draws
+      it in its colour for the unaligned.
   - name: Arbiter
     kind: system
     affiliations: [keter-dominion]
@@ -5547,18 +5551,27 @@ worlds:
 
   - name: Restored Ambi Limis
     kind: system
+    article: https://www.orionsarm.com/eg-article/45f0cb71d22de
     location:
       ra_deg: 80.7504
       dec_deg: 42.7662
-      distance: 1632 ly
+      distance: 4133 ly
       direction_error_deg: 20.0
-      distance_error: 800 ly
+      distance_error: 50 ly
       estimated: >-
-        Interpolated from the transcription of Anders Sandberg's maps, fitted
-        from the anchors nearest this cell rather than by one transform over the
-        whole sheet, whose rows and columns are unevenly spaced. It falls inside the anchors used, which is the better case. No
-        article gives a position for it. Drawn in the sheet's unaligned colour.
-
+        The direction is interpolated from the transcription of Anders
+        Sandberg's maps; the distance is the article's, which gives 4,127 to
+        4,139 ly and is quoted here at the midpoint. The sheet had put it at
+        1,632 — two and a half times nearer — which is the largest disagreement
+        between the two sources yet found, and the reason the distance error
+        here is fifty light years rather than eight hundred.
+    events:
+      - year_at: 7971
+        kind: settled
+        note: Founded.
+    note: >-
+      Drawn in the sheet's colour for the minor, neutral and unaligned, so no
+      polity is recorded.
   - name: Polonius
     kind: system
     affiliations: [nocozo]
@@ -5610,23 +5623,35 @@ worlds:
         Interpolated from the transcription of Anders Sandberg's maps, and
         extrapolated beyond the anchors around it. No article gives a position.
     note: >-
-      An affiliate of the Disarchy rather than a holding of it, and a polity
-      this map has no entry for — the sheet writes only "Velarian Confed". Drawn
-      in the Disarchy's colour because that is what it is affiliated to.
+      A polity this map has no entry for — the sheet writes only "Velarian
+      Confed" — and an affiliate of the Disarchy, which is a loose
+      confederation rather than an empire, so membership is what the
+      affiliation means here.
   - name: Blackbody Cluster
     kind: volume
+    affiliations: [iota-network]
+    article: https://www.orionsarm.com/eg-article/460e786400389
     location:
-      ra_deg: 67.307
+      ra_deg: 67.3070
       dec_deg: 35.2126
       distance: 2640 ly
       direction_error_deg: 30.0
       distance_error: 1200 ly
       estimated: >-
-        Interpolated from the transcription of Anders Sandberg's maps, fitted
-        from the anchors nearest this cell rather than by one transform over the
-        whole sheet, whose rows and columns are unevenly spaced. Drawn beyond the anchors around it, so extrapolated rather than interpolated and given the wider error. No
-        article gives a position for it. Not in any cluster catalogue this build loads, and named like an Orion's Arm object rather than a catalogued one.
-
+        Interpolated from the transcription of Anders Sandberg's maps, and
+        extrapolated beyond the anchors around it. The article locates it as
+        some 3,000 ly from Corona rather than from Sol, which this map cannot
+        yet use: Corona is not among the places it holds. Two named objects and
+        a separation would place this properly, as they did Sk'iiws'nnii.
+    events:
+      - year_at: 9167
+        kind: visited
+        note: Arrived at.
+    note: >-
+      Only loosely aligned with the Iota Network, and recorded as the Network's
+      because for a polity that small the connection is most of what is known
+      about either. Better described in the Network's own article,
+      https://www.orionsarm.com/eg-article/657f880b851e1, than in its own.
   - name: Mutual Satisfaction
     kind: system
     article: ""
@@ -5674,8 +5699,9 @@ worlds:
         kind: settled
         note: Founded.
     note: >-
-      168 systems across 96 ly, and an affiliate of the Disarchy rather than a
-      holding. The sheet labels it "Mensa Federation", which is taken to be this.
+      168 systems across 96 ly, and an affiliate of the Disarchy, which is a
+      loose confederation rather than an empire. The sheet labels it "Mensa
+      Federation", which is taken to be this.
   - name: TrueModel
     kind: system
     affiliations: [negentropy-alliance]
@@ -5700,6 +5726,7 @@ worlds:
       describes it.
   - name: Celerin Volume
     kind: volume
+    article: https://www.orionsarm.com/eg-article/46131b51c1171
     location:
       ra_deg: 73.1691
       dec_deg: 47.1473
@@ -5707,13 +5734,14 @@ worlds:
       direction_error_deg: 30.0
       distance_error: 1200 ly
       estimated: >-
-        Interpolated from the transcription of Anders Sandberg's maps, fitted
-        from the anchors nearest this cell rather than by one transform over the
-        whole sheet, whose rows and columns are unevenly spaced. Drawn beyond the anchors around it, so extrapolated rather than interpolated and given the wider error. No
-        article gives a position for it. Named a volume and drawn in no polity's colour.
-
+        Interpolated from the transcription of Anders Sandberg's maps, and
+        extrapolated beyond the anchors around it, hence the wider error. The
+        article gives no position.
+    note: Independent, and recorded with no affiliation because that is what it is.
   - name: Locality of Wolfra
     kind: volume
+    affiliations: [disarchy]
+    article: https://www.orionsarm.com/eg-article/464ba71b5823e
     location:
       ra_deg: 201.1785
       dec_deg: -60.6953
@@ -5721,21 +5749,56 @@ worlds:
       direction_error_deg: 30.0
       distance_error: 1200 ly
       estimated: >-
-        Interpolated from the transcription of Anders Sandberg's maps, fitted
-        from the anchors nearest this cell rather than by one transform over the
-        whole sheet, whose rows and columns are unevenly spaced. Drawn beyond the anchors around it, so extrapolated rather than interpolated and given the wider error. No
-        article gives a position for it.
-
-  - name: Pnas Greenen
+        Interpolated from the transcription of Anders Sandberg's maps, and
+        extrapolated beyond the anchors around it. No article gives a position.
+    note: >-
+      The largest organised polity within the Disarchy, and with no article of
+      its own — the Disarchy's is what describes it.
+  - name: Pas Greenen
     kind: system
+    also: [Pnas Greenen]
+    article: https://www.orionsarm.com/eg-article/46fc49502ccb2
     location:
-      ra_deg: 101.878
-      dec_deg: 5.6471
-      distance: 3502 ly
-      direction_error_deg: 30.0
-      distance_error: 1200 ly
-      estimated: >-
-        Interpolated from the transcription of Anders Sandberg's maps, fitted
-        from the anchors nearest this cell rather than by one transform over the
-        whole sheet, whose rows and columns are unevenly spaced. Drawn beyond the anchors around it, so extrapolated rather than interpolated and given the wider error. No
-        article gives a position for it.
+      constellation: Monoceros
+      distance: 4890 ly
+    events:
+      - year_at: 9001
+        kind: settled
+    note: >-
+      In Monoceros at 4,890 ly, which the article gives — so this is placed
+      properly rather than estimated, and the sheet's contribution was only to
+      confirm the direction: its interpolated position landed in Monoceros too,
+      at 3,502 ly.
+
+      The colonisation date is not settled. Its own article says 9001 and
+      another source describes events there in 7233, which cannot both be a
+      first settlement. The earlier is recorded in questions.md rather than
+      here, since a date that is wrong by seventeen hundred years is worth
+      asking about rather than averaging.
+
+  # ---- found by re-reading the sheet ---------------------------------------
+
+  - name: Enterprise
+    kind: system
+    system: Enterprise
+    affiliations: [zoeific-biopolity]
+    article: https://www.orionsarm.com/eg-article/475d75d9d7b20
+    location:
+      constellation: Andromeda
+      distance: 594 ly
+    events:
+      - year_at: 2933
+        kind: visited
+    note: >-
+      Originally a Solar Dominion protectorate and latterly of the Zoeific
+      Biopolity, which is the present holder this file records. The
+      transcription of Anders Sandberg's maps disagrees twice over: it draws
+      this at about 200 ly and in the Non-Coercive Zone's colour, where the
+      article gives 594 ly and neither polity. The article wins on both.
+
+  - name: Outland
+    kind: planet
+    system: Enterprise
+    affiliations: [zoeific-biopolity]
+    article: https://www.orionsarm.com/eg-article/475d75d9d7b20
+    note: The world of the Enterprise system, in Andromeda at 594 ly.
