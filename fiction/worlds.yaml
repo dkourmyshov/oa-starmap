@@ -2954,11 +2954,17 @@ worlds:
     affiliations: [sophic-league]
     article: https://www.orionsarm.com/eg-article/4911a49ba4b44
     location:
-      constellation: Cancer
+      ra_deg: 130.0846
+      dec_deg: 19.6647
+      distance: 598 ly
+      near: Praesepe (NGC 2632)
       note: >-
-        In the Praesepe region. The cluster is on the map as NGC 2632 at 598 ly,
-        but no distance is given for this world and borrowing the cluster's
-        would assert a figure the article does not.
+        In Praesepe, which is a distance as well as a direction. This was left
+        unplaced for a while on the grounds that the article gives no figure and
+        the cluster's would be an assertion — but "in Praesepe" is the article's
+        own claim, and a cluster is 104 ly across rather than unbounded, so
+        taking its position states nothing the source did not. Cancer alone
+        would have been eleven degrees.
     events:
       - year_at: 3234
         kind: transferred
