@@ -113,6 +113,33 @@ def bayer_forms(value: str) -> list[str]:
     return keys
 
 
+_SPELLED = re.compile(r"^([A-Za-z]+|\d+)(?:-(\d))?[\s_]+([A-Za-z]{4,})$")
+
+
+def abbreviated_forms(landmark: str) -> list[str]:
+    """A spelled-out designation, cut down to how the catalogue writes it.
+
+    "Epsilon Geminorum" is in the star catalogue as "27Eps Gem": the Greek letter
+    abbreviated, the constellation abbreviated, and a Flamsteed number in front.
+    :func:`bayer_forms` grows the catalogue's side of that towards the landmark;
+    this shrinks the landmark's side towards the catalogue, which is the half
+    that cannot be done by table — the IAU abbreviations are not all prefixes of
+    their genitives, so "Aquarii" cannot be turned into "Aqr" by cutting.
+
+    Cutting works the way round it is used here because it only *proposes* keys.
+    A wrong one is absent from the index and costs nothing; the exact forms are
+    tried first, so this never overrides a real match.
+    """
+    matched = _SPELLED.match(landmark.strip())
+    if not matched:
+        return []
+    word, superscript, constellation = matched.groups()
+    suffix = f"-{superscript}" if superscript else ""
+    short = constellation[:3]
+    letters = {word, word[:3]} if word.isalpha() else {word}
+    return [normalise(f"{letter}{suffix} {short}") for letter in letters]
+
+
 @dataclass
 class Binding:
     """One landmark, and what it resolved to."""
@@ -234,6 +261,11 @@ class Resolver:
         keys = [key]
         if alias_target:
             keys.append(normalise(alias_target))
+        # Last, so an exact match or an alias always wins over a guessed
+        # abbreviation. These only ever add keys that may not exist.
+        keys.extend(abbreviated_forms(landmark))
+        if alias_target:
+            keys.extend(abbreviated_forms(alias_target))
 
         # Most specific catalog first: a Sharpless or cluster designation names one
         # object, whereas a star's Bayer letter is only unique within a

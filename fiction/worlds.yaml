@@ -5209,8 +5209,16 @@ worlds:
     location:
       ra_deg: 112.2945
       dec_deg: 20.9102
-      distance: 6520 ly
-    note: NGC 2392, in Gemini, 6,520 +/- 560 ly.
+      distance: 3833 ly
+    note: >-
+      NGC 2392, in Gemini. The Encyclopaedia puts it at 3,833 ly and published
+      measurement at 6,520 +/- 560 — a 41% disagreement, and the setting's own
+      figure is the one drawn. That is the opposite of this file's usual rule,
+      and deliberately: for a real star the catalogue is a measurement and the
+      article is a quotation of one, but a planetary nebula's distance is
+      uncertain enough that the Encyclopaedia's choice among the published
+      values is as good as any, and it is the value the rest of its geography is
+      built against.
 
   - name: Helix Nebula
     kind: volume

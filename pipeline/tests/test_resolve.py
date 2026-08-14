@@ -145,3 +145,36 @@ class TestBayerForms:
         from oastarmap.fiction.resolve import bayer_forms, normalise
 
         assert bayer_forms("Cih") == [normalise("Cih")]
+
+
+class TestAbbreviatedForms:
+    """Landmarks spell designations out; the star catalogue abbreviates them.
+
+    "Epsilon Geminorum" is catalogued as "27Eps Gem" — Greek letter cut,
+    constellation cut, Flamsteed number added. bayer_forms grows the
+    catalogue's side toward the landmark; this cuts the landmark's side toward
+    the catalogue, which is the half no table can do: the IAU abbreviations are
+    not all prefixes of their genitives, so Aquarii will never yield Aqr.
+    """
+
+    def test_cuts_both_words(self):
+        from oastarmap.fiction.resolve import abbreviated_forms, normalise
+
+        assert normalise("Eps Gem") in abbreviated_forms("Epsilon Geminorum")
+
+    def test_cuts_a_flamsteed_designation(self):
+        from oastarmap.fiction.resolve import abbreviated_forms, normalise
+
+        assert normalise("139 Tau") in abbreviated_forms("139 Tauri")
+
+    def test_keeps_a_superscript(self):
+        from oastarmap.fiction.resolve import abbreviated_forms, normalise
+
+        assert normalise("Alp-1 Cen") in abbreviated_forms("Alpha-1 Centauri")
+
+    def test_proposes_nothing_for_a_plain_name(self):
+        """It must not fire on names that are not designations at all."""
+        from oastarmap.fiction.resolve import abbreviated_forms
+
+        assert abbreviated_forms("Aldebaran") == []
+        assert abbreviated_forms("NGC 1662") == []
