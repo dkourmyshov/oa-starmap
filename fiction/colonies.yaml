@@ -315,7 +315,10 @@ colonies:
   - colony: 'Titawin'
     status: special
   - colony: 'Lucida'
-    status: special
+    affiliations: [iota-network]
+    note: >-
+      Capital of the academic Iota Network, which now has a polity entry — it
+      was recorded as `special` while it had none.
   - colony: 'Felicidade'
     status: special
   - colony: 'Lilif'

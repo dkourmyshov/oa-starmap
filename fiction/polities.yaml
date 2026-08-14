@@ -352,6 +352,49 @@ polities:
     color: "#F48FB1"
     source: eg-system-articles
 
+  - id: refugium-federation
+    name: Refugium Federation
+    color: "#1D855F"
+    kind: polity
+    source: eg-system-articles
+
+  - id: crystal-star-domain
+    name: Crystal Star Domain
+    color: "#851D62"
+    landmarks: [Cone Nebula, NGC 2244]
+    kind: polity
+    source: eg-system-articles
+    # Both landmarks are other polities' too — the Cone Nebula is the Orion
+    # Federation's and the Rosette is shared by the Non-Coercive Zone and the
+    # TRHN. Recorded rather than contested; the rings segment.
+
+  - id: far-edge-civilisation
+    name: Far Edge Civilisation
+    color: "#855D79"
+    kind: polity
+    source: eg-system-articles
+
+  - id: iota-network
+    name: Iota Network
+    color: "#85511D"
+    kind: polity
+    source: eg-system-articles
+    # An academic network rather than an empire. It has been on the map without
+    # an entry since Lucida arrived: that world was recorded as `special`,
+    # holder unstated, because the Network had nowhere to point. It does now.
+
+  - id: puppis-democracy
+    name: Puppis Democracy
+    color: "#ED5FED"
+    kind: polity
+    source: eg-system-articles
+
+  - id: synthetic-human-alliance
+    name: Synthetic/Human Alliance
+    color: "#1D4A85"
+    kind: polity
+    source: eg-system-articles
+
   - id: archosaurian-empire
     name: Archosaurian Empire
     color: "#728C23"

@@ -363,21 +363,21 @@ Named in the political maps, and real, but in a catalogue this map does not carr
 
 Aquila Rift, Basel 11, Basel 5, California Nebula, Cat Eye Nebula, Collinder 121, Collinder 173, Collinder 399, Collinder 96, Dumbbell Nebula, Eskimo Nebula, Floating Star Nebula, G64.3+5.7, Gamma Cas, Geminga, Helix Nebula, Hogg 14, Hubble Variable Nebula, IC 405, IC 417, Iskudarian 1, Jupiter Nebula, Markarian 6, NGC 1498, and 17 more
 
-## 8 landmarks claimed by more than one polity
+## 9 landmarks claimed by more than one polity
 
 Not necessarily an error — the political maps overlap, and a landmark on a boundary can legitimately fall in two volumes. Recorded in case any of these is a reading mistake.
 
-Blanco 1, Collinder 173, Collinder 359, Czernik 8, NGC 2244, NGC 7092, S232, S27
+Blanco 1, Collinder 173, Collinder 359, Cone Nebula, Czernik 8, NGC 2244, NGC 7092, S232, S27
 
 ## Worlds located only by constellation
 
-56 of 340 canonical worlds are given as a distance and a constellation. That fixes the distance exactly and the direction only to the width of the constellation, which at these ranges is hundreds to thousands of light years. The map draws these with a broken ring rather than a solid one, and the detail panel gives the error in light years.
+58 of 353 canonical worlds are given as a distance and a constellation. That fixes the distance exactly and the direction only to the width of the constellation, which at these ranges is hundreds to thousands of light years. The map draws these with a broken ring rather than a solid one, and the detail panel gives the error in light years.
 
 Coordinates, or a nearby named star, would turn any of these from a region into a position.
 
-## 43 places described but not located
+## 44 places described but not located
 
-Arkady 2, Arnon Dar, Avase, Big Bob, Crustuse, Dashwood, Druidworld, Elderman's Star, Evermore, Galbydeia Torus, Garlin, Gavit, and 31 more
+Arkady 2, Arnon Dar, Avase, Big Bob, Crustuse, Dashwood, Druidworld, Elderman's Star, Evermore, Galbydeia Torus, Garlin, Gavit, and 32 more
 
 ## 1 designation reused in the Celestia add-on
 

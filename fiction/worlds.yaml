@@ -4977,3 +4977,190 @@ worlds:
       Serpens Reach without being of it: 124 ly from the Sparks, 268 from
       Vinculum, 312 from Miracle City. Nobody terragen built it, so the
       affiliation records what made it rather than who holds it.
+
+  # ---- Solsys Organization -------------------------------------------------
+  #
+  # The nearest roster in the file: three systems inside 11 ly. Sol itself is
+  # already here as Earth.
+
+  - name: Akela
+    kind: system
+    affiliations: [solsys-organization]
+    article: https://www.orionsarm.com/eg-article/470033894c883
+    location:
+      star: Wolf 359
+    events:
+      - year_at: 450
+        kind: visited
+    note: Wolf 359, 7.9 ly out in Leo.
+
+  - name: Sirius
+    kind: system
+    system: Sirius
+    affiliations: [solsys-organization]
+    article: https://www.orionsarm.com/eg-article/48acb62323e17
+    location:
+      star: Sirius
+    events:
+      - year_at: 415
+        kind: visited
+    note: >-
+      8.6 ly out. The Organization holds the Twelve Solaria habitat cluster
+      here and not the system at large, which the ring cannot distinguish from
+      holding the system.
+
+  - name: Rihal
+    kind: system
+    affiliations: [solsys-organization]
+    article: https://www.orionsarm.com/eg-article/57f4e86a578dc
+    location:
+      star: Ross 248
+    events:
+      - year_at: 680
+        kind: settled
+    note: Ross 248, 10.3 ly out in Andromeda.
+
+  # ---- Refugium Federation -------------------------------------------------
+
+  - name: Refugium
+    kind: system
+    affiliations: [refugium-federation]
+    article: https://www.orionsarm.com/eg-article/476ec0a831af6
+    location:
+      constellation: Centaurus
+      distance: 2205 ly
+    events:
+      - year_at: 5740
+        kind: settled
+
+  # ---- Crystal Star Domain -------------------------------------------------
+  #
+  # Its two nebulae are in polities.yaml, both shared with earlier claimants.
+
+  - name: Portal
+    kind: system
+    affiliations: [crystal-star-domain]
+    article: https://www.orionsarm.com/eg-article/4902d86199c4d
+    location:
+      ra_deg: 91.4145
+      dec_deg: -6.0542
+      distance: 1720 ly
+      near: HIP 28864
+    events:
+      - year_at: 4980
+        kind: visited
+        note: Departed for from Enremdea.
+    note: >-
+      Named as HIP 28864 in Monoceros at 1,720 ly, where the catalogue puts that
+      star at 2,141 — a quarter out, too far to bind across, so the star gives
+      the direction and the article the distance.
+
+  # ---- Far Edge Civilisation -----------------------------------------------
+
+  - name: Far Edge
+    kind: volume
+    affiliations: [far-edge-civilisation]
+    article: https://www.orionsarm.com/eg-article/48bc8685b8223
+    location:
+      hd: 14875
+      distance: 535 ly
+    note: >-
+      An egg-shaped cluster of 42 inhabited systems near HD 14875 in Triangulum.
+      The article's 535 ly and the catalogue's 527 agree to 1.6%, so this binds
+      to the star the cluster is reckoned from. Its own extent is not given, so
+      no volume is drawn — only the point it is named against.
+
+  # ---- Iota Network --------------------------------------------------------
+
+  - name: Yosunoh
+    kind: system
+    affiliations: [iota-network]
+    location:
+      star: Iota Pegasi
+    note: Iota Pegasi, 39 ly out.
+
+  - name: Resonance
+    kind: system
+    affiliations: [iota-network]
+    article: https://www.orionsarm.com/eg-article/657c8d74d4ff6
+    events:
+      - year_at: 865
+        kind: settled
+    note: >-
+      TRAPPIST-1, which no catalogue this map loads carries — an ultracool dwarf
+      far below the magnitude any of them reach. No distance is given here
+      either, so there is nothing to place it by. Recorded and not drawn.
+
+  # ---- Puppis Democracy ----------------------------------------------------
+
+  - name: Ahadi
+    kind: system
+    affiliations: [puppis-democracy]
+    article: https://www.orionsarm.com/eg-article/4703c44b2ccb2
+    location:
+      star: Pi Puppis
+    note: Pi Puppis, 566 ly out.
+
+  # ---- the Synthetic/Human Alliance ----------------------------------------
+
+  - name: The Synthetic/Human Alliance
+    kind: system
+    affiliations: [synthetic-human-alliance]
+    article: https://www.orionsarm.com/eg-article/4887ee7944aff
+    location:
+      star: GJ 3655
+      distance: 46.5 ly
+    events:
+      - year_at: 1497
+        kind: settled
+        precision: not_earlier_than
+    note: >-
+      GJ 3655 A and B, a pair in Crater, at 46.8 ly against the article's 46.5.
+      The polity is named for what it is rather than where, and this is the one
+      place recorded for it.
+
+  # ---- independent, or holder unrecorded -----------------------------------
+
+  - name: Oquendo
+    kind: system
+    article: https://www.orionsarm.com/eg-article/58db9b4a098ed
+    location:
+      constellation: Camelopardalis
+      distance: 4642 ly
+    events:
+      - year_at: 8550
+        kind: settled
+    note: >-
+      In the Outer Volumes, down the Camelopardalis sector. No holder is
+      recorded.
+
+  - name: New Dumont
+    kind: planet
+    article: https://www.orionsarm.com/eg-article/57b4750a0d015
+    location:
+      ra_deg: 282.5200
+      dec_deg: 33.3627
+      distance: 970 ly
+      near: Beta Lyrae
+    events:
+      - year_at: 3998
+        kind: settled
+    note: >-
+      Given as 970 ly in Lyra near Beta Lyrae, which the catalogue puts at 906 —
+      so the star lends its direction, far tighter than the constellation, and
+      the article keeps its distance. No holder is recorded.
+
+  - name: Tartarus
+    kind: planet
+    article: https://www.orionsarm.com/eg-article/58b565d601a8e
+    location:
+      ra_deg: 274.7517
+      dec_deg: 34.4353
+      distance: 957 ly
+    note: >-
+      The most thoroughly specified position in this file, and the only one that
+      checks itself. The article gives right ascension, declination, a distance
+      and galactic coordinates of 421.62, 786.44, 345.83 — and converting the
+      first three returns the last three to within a hundredth of a light year,
+      with Lyra coming back either way. A K5 dwarf of a third Sol's luminosity.
+      No holder is recorded.
