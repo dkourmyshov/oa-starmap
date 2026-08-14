@@ -4802,6 +4802,12 @@ worlds:
       rather than the constellation as wrong, since the rest of the figure is
       identical either way.
 
+      It sits beyond where the Terragen sphere otherwise reaches, and that is
+      the point rather than a problem: the Tunh xenohole opens onto this part of
+      Sagittarius, so the distance is a journey through a wormhole and not one
+      across the intervening space. The Carina Rush is the same shape of thing
+      at 2,246 ly — both are far ends made near.
+
   - name: Paintbox Habitat
     kind: habitat
     affiliations: [sagittarius-transcultural-cooperation]
@@ -4925,3 +4931,21 @@ worlds:
       from Sol in Sagittarius, which this map has no way to draw: a wormhole is
       two places and one object, and nothing here joins them. The near mouth is
       what is drawn, and the coordinates fall in Scorpius as the article says.
+
+  - name: Black Acropolis
+    kind: megastructure
+    affiliations: [xenosophont]
+    article: https://www.orionsarm.com/eg-article/48000db9a9c2f
+    location:
+      ra_deg: 281.2500
+      dec_deg: 9.8000
+      distance: 1530 ly
+    events:
+      - year_at: 4701
+        kind: contact
+        note: Reached by Terragens.
+    note: >-
+      A dyson swarm of xenosophont origin, in Ophiuchus at 1,530 ly — near the
+      Serpens Reach without being of it: 124 ly from the Sparks, 268 from
+      Vinculum, 312 from Miracle City. Nobody terragen built it, so the
+      affiliation records what made it rather than who holds it.
