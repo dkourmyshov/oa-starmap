@@ -406,6 +406,36 @@ polities:
     kind: polity
     source: eg-system-articles
 
+  - id: xeon
+    name: Xeon
+    color: "#556070"
+    kind: polity
+    source: eg-system-articles
+    # Ahuman, and known by where it was noticed rather than where it is: the
+    # Perseus Quadrant of the Outer Cassiopeia Sector, a direction with no
+    # distance. Its one entry in worlds.yaml is a volume that draws nothing.
+
+  - id: arion-ascendancy
+    name: Arion Ascendancy
+    color: "#A3A072"
+    kind: polity
+    source: eg-system-articles
+    # Established 7610 and nowhere in particular: its article places it only in
+    # the "NoCoZo Periphery", which is a relation rather than a direction. No
+    # entry in worlds.yaml until something says where.
+
+  - id: the-transcend
+    name: The Transcend
+    color: "#C78E6D"
+    landmarks: [NGC 2451A]
+    kind: polity
+    source: eg-system-articles
+    # Its members are numbered rather than named — Transcend 1 is NGC 2451A,
+    # Transcend 7 is NGC 6802 — so the polity's landmarks are the clusters
+    # themselves. NGC 6802 is not on this list: the catalogue puts it at 9,031
+    # ly and the article at 3,641, so it is a world entry taking the article's
+    # distance rather than a landmark taking the catalogue's.
+
   - id: archosaurian-empire
     name: Archosaurian Empire
     color: "#728C23"

@@ -2385,9 +2385,15 @@ worlds:
     events:
       - year_at: 7866
         kind: settled
+      - year_at: 8995
+        kind: abandoned
+        precision: circa
+        note: Possibly where Xeon originated.
     note: >-
-      In the outer Cassiopeia sector. The star is TYC 3663-2842-1, from a
-      catalogue this map does not carry.
+      In the outer Cassiopeia sector, read as the volume behind the
+      constellation. The star is TYC 3663-2842-1, from a catalogue this map does
+      not carry. Re-colonised by the Solar Dominion, which is the present
+      holder; Xeon may have begun here in 8995.
 
   - name: Bullseye
     kind: planet
@@ -5802,3 +5808,289 @@ worlds:
     affiliations: [zoeific-biopolity]
     article: https://www.orionsarm.com/eg-article/475d75d9d7b20
     note: The world of the Enterprise system, in Andromeda at 594 ly.
+
+  # ---- ahuman, unaligned, and the rest ------------------------------------
+
+  - name: The Amalgamation
+    kind: volume
+    affiliations: [amalgamation]
+    article: https://www.orionsarm.com/eg-topic/45f0c580310bf
+    location:
+      ra_deg: 34.8648
+      dec_deg: 58.2944
+      distance: 6781 ly
+      near: Basel 10
+    events:
+      - year_at: 8750
+        kind: reported
+        note: First reported, near Basel 10.
+    note: >-
+      Aggressive and possibly part xenosophont. The only thing said about where
+      it is is that it was first reported near Basel 10, which is in this map's
+      cluster catalogue at 6,781 ly in Perseus — so the cluster's position is
+      the entry's, and it marks where the Amalgamation was noticed rather than
+      where it is. It holds Halsokallan and Adorate elsewhere.
+
+  # ---- Efficiency Maximization Paradigm ------------------------------------
+  #
+  # A 250 ly sphere centred on NGC 5460, which the map already carries as this
+  # polity's landmark at 2,321 ly. Its three known systems are inside a degree
+  # of one another in Centaurus and inside 40 ly of one another in depth, which
+  # for once is not an artefact of shared coordinates: each gives its own.
+
+  - name: Efficiency Maximization Paradigm
+    kind: volume
+    extent: 250 ly
+    affiliations: [paradigm]
+    article: https://www.orionsarm.com/eg-topic/46212d6e18aa1
+    location:
+      ra_deg: 211.8148
+      dec_deg: -48.2988
+      distance: 2321 ly
+      near: NGC 5460
+    events:
+      - year_at: 5285
+        kind: settled
+        precision: not_later_than
+        note: Founded.
+    note: >-
+      Originally a highly heterodox branch of the Negentropists. Its territory is
+      given as a 250 ly sphere centred on NGC 5460, so this is the cluster's
+      position and the article's extent. The three systems below sit some 500 ly
+      nearer than the cluster's catalogue distance, which is within a sphere
+      that size.
+
+  - name: Budrosa Dyson
+    kind: megastructure
+    affiliations: [paradigm]
+    article: https://www.orionsarm.com/eg-article/46119eebd7104
+    location:
+      ra_deg: 211.4130
+      dec_deg: -47.8421
+      distance: 1783 ly
+      near: Burdosa
+    note: >-
+      Around the star Burdosa. The article's coordinates fall in Centaurus, as
+      it says. The article spells the structure Budrosa and the star Burdosa;
+      both are kept as given.
+
+  - name: Nirio Dyson
+    kind: megastructure
+    affiliations: [paradigm]
+    article: https://www.orionsarm.com/eg-article/46d62d210a07e
+    location:
+      ra_deg: 211.3056
+      dec_deg: -47.4714
+      distance: 1800 ly
+      direction_error_deg: 0.1
+      distance_error: 50 ly
+      estimated: >-
+        The direction is the article's own, to arcseconds. The distance is not:
+        the article gives none. Its two neighbours do — Budrosa at 1,783 ly and
+        Jekaumeatrine at 1,818 — and this lies between them on the sky, a third
+        of a degree from one and half a degree from the other, so 1,800 ly is
+        their midpoint and the error covers both. That is an inference, and a
+        narrow one, but an inference.
+    events:
+      - year_at: 5184
+        kind: settled
+
+  - name: Jekaumeatrine
+    kind: system
+    affiliations: [deeper-covenant]
+    article: https://www.orionsarm.com/eg-article/4681a9870ee60
+    location:
+      ra_deg: 211.8897
+      dec_deg: -47.4585
+      distance: 1818 ly
+    note: >-
+      A brown dwarf and its system, and not the Paradigm's despite sitting half
+      a degree from its dysons: this is the Deeper Covenant's, and headquarters
+      of the Paradigm Containment Organisation. Being inside a volume and
+      belonging to it are different things, and here the map can show the first
+      while the note carries the second.
+
+  # ---- Xeon and Branton ----------------------------------------------------
+
+  - name: Xeon
+    kind: volume
+    affiliations: [xeon]
+    article: https://www.orionsarm.com/eg-article/4611935cb9c74
+    location:
+      constellation: Cassiopeia
+    events:
+      - year_at: 9210
+        kind: reported
+        note: First known to the Sephirotics.
+    note: >-
+      Given as the Perseus Quadrant of the Outer Cassiopeia Sector — a direction
+      and no distance, so the constellation is recorded and nothing is drawn. It
+      may have originated at Branton in 8995, which is placed; if that is right
+      this belongs at 3,305 ly, and the article does not say it is.
+
+  # ---- Diamond Network -----------------------------------------------------
+
+  - name: Altair
+    kind: system
+    affiliations: [diamond-network]
+    article: https://www.orionsarm.com/eg-article/45f0c3797f2fa
+    location:
+      star: Altair
+    events:
+      - year_at: 550
+        kind: settled
+        note: Occupied.
+    note: 17 ly out in Aquila.
+
+  - name: Kaggen
+    kind: system
+    affiliations: [diamond-network]
+    article: https://www.orionsarm.com/eg-article/486fe4873cb45
+    location:
+      star: Gliese 876
+    events:
+      - year_at: 961
+        kind: settled
+        precision: not_later_than
+    note: Gliese 876, 15 ly out in Aquarius.
+
+  - name: Mokupuni
+    kind: planet
+    affiliations: [diamond-network]
+    article: https://www.orionsarm.com/eg-article/47b8e86a2d93c
+    location:
+      hip: 101997
+      distance: 46.9 ly
+    note: >-
+      The third planet of HIP 101997 in Capricornus, at 47.9 ly against the
+      article's 46.9. Given as 1.8 ly from Eden, which is not a place this map
+      holds.
+
+  - name: The Violets
+    kind: system
+    affiliations: [diamond-network]
+    article: https://www.orionsarm.com/eg-article/671fbea784d7c
+    location:
+      constellation: Cetus
+      distance: 8.77 ly
+    events:
+      - year_at: 465
+        kind: visited
+    note: >-
+      BL and UV Ceti, a pair of flare stars also catalogued as Gliese 65, GJ 65,
+      L 726-8 and PLX 343.1. In no catalogue this map loads — they are faint
+      enough to fall below every one of them — so the constellation carries the
+      direction, which at 8.8 ly is a very small error in absolute terms.
+
+  - name: Wachowski Prime
+    kind: megastructure
+    affiliations: [diamond-network]
+    article: https://www.orionsarm.com/eg-article/46f876d71e252
+    location:
+      star: Alderamin
+    events:
+      - year_at: 3560
+        kind: settled
+        note: The first matrioshka brain ever completed.
+    note: Alpha Cephei, 49 ly out.
+
+  - name: Zeta2 Reticuli
+    kind: system
+    affiliations: [diamond-network]
+    article: https://www.orionsarm.com/eg-article/57e3d5f53ed33
+    location:
+      star: Zeta2 Reticuli
+    events:
+      - year_at: 1250
+        kind: visited
+    note: >-
+      39 ly out. Spelled without the hyphen because the article is: it is
+      titled "Zeta2 Reticuli". That is also the only form that binds here — the
+      landmark resolver learned Bayer forms this map's star binder did not, so
+      "Zeta-2" resolves in one and not the other.
+
+  # ---- Solipsist Panvirtuality ---------------------------------------------
+
+  - name: Kappa Cassiopeiae
+    kind: system
+    affiliations: [solipsist-panvirtuality]
+    location:
+      star: Kappa Cassiopeiae
+    note: 3,064 ly out — the furthest of this polity's named systems.
+
+  - name: Cygnus OB2-12
+    kind: system
+    affiliations: [solipsist-panvirtuality]
+    article: https://www.orionsarm.com/eg-article/4f55e7a94da54
+    location:
+      constellation: Cygnus
+      distance: 5102 ly
+    note: >-
+      A hypergiant of the Cygnus OB2 association, too reddened to appear in the
+      catalogues this map loads, so the constellation carries the direction.
+
+  - name: Alfirk Panvirtuality Swarm
+    kind: megastructure
+    affiliations: [solipsist-panvirtuality]
+    article: https://www.orionsarm.com/eg-article/4a2fa7ab128b7
+    location:
+      star: Beta Cephei
+      distance: 600 ly
+    note: >-
+      Alfirk, Beta Cephei A, at 685 ly against the article's 600 — a 14%
+      difference, inside what this file treats as agreement, so it binds.
+
+  - name: Normidic Machinophyle Supercluster
+    kind: volume
+    affiliations: [solipsist-panvirtuality]
+    article: https://www.orionsarm.com/eg-article/46dcc986d994d
+    location:
+      constellation: Norma
+    events:
+      - year_at: 3716
+        kind: visited
+        note: Reached by relativistic von Neumann machines.
+      - year_at: 4950
+        kind: settled
+        precision: circa
+      - year_at: 5500
+        kind: capital
+        precision: not_later_than
+        note: A large empire by this date, overlapping Negentropist, Keterist and Cooperation space.
+    note: >-
+      Around YTS 2190 751 6, in what the Encyclopaedia calls the Norma Outer
+      Sector — a designation of Orion's Arm's own that the Celestia add-on does
+      not carry, so there is nothing to bind to. The constellation is recorded
+      and no distance is given, so nothing is drawn.
+
+  # ---- the Transcend -------------------------------------------------------
+
+  - name: Transcend 1
+    kind: system
+    affiliations: [the-transcend]
+    article: https://www.orionsarm.com/eg-topic/45cfd475c5b95
+    location:
+      ra_deg: 115.9709
+      dec_deg: -38.2407
+      distance: 620 ly
+      near: NGC 2451A
+    note: >-
+      NGC 2451A in Puppis, at 620 ly. The Transcend numbers its members rather
+      than naming them.
+
+  - name: Transcend 7
+    kind: system
+    affiliations: [the-transcend]
+    article: https://www.orionsarm.com/eg-article/4e26e0f62441a
+    location:
+      ra_deg: 292.6464
+      dec_deg: 20.2583
+      distance: 3641 ly
+      near: NGC 6802
+    note: >-
+      NGC 6802, and the largest catalogue disagreement this file has recorded:
+      the article says 3,641 ly and the cluster catalogue 9,031, two and a half
+      times further. The cluster lends its direction and the article its
+      distance. NGC 6802 was independently one of the anchors the transcription
+      of Anders Sandberg's maps could not predict, which is a second source
+      doubting the same number.
