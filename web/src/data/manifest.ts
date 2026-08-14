@@ -485,6 +485,13 @@ export interface WorldEntry {
   estimated: string;
   /** The same error as a length at this distance, which is the legible form. */
   direction_error_ly: number | null;
+  /**
+   * How doubtful the radius is, where it is doubtful at all — set only for
+   * positions this project interpolated rather than read. Everything else takes
+   * its distance from a source that states one, so this is null, and the ring
+   * is dashed for an uncertain direction rather than dotted for both.
+   */
+  distance_error_ly: number | null;
   /** Half the extent, for a world that is a volume rather than a point. */
   radius_pc: number | null;
   /** Dated history, earliest first. */

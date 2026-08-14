@@ -344,6 +344,14 @@ def build_worlds(
             # reading it. The panel says so; the ring is dashed like any other
             # approximate placement, which is what it is.
             "estimated": world.location.estimated,
+            # Set where the radius is doubtful too, not only the direction. The
+            # ring is dotted rather than dashed for these: "somewhere along this
+            # line" and "somewhere in this region" are different claims.
+            "distance_error_ly": (
+                round(float(parse_distance(world.location.distance_error).to_value(u.lyr)), 1)
+                if world.location.distance_error
+                else None
+            ),
             "distance_checked": False,
             "x": None,
             "y": None,

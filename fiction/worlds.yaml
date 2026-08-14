@@ -1913,11 +1913,20 @@ worlds:
     affiliations: [nocozo]
     article: https://www.orionsarm.com/eg-article/4758ad8fe1752
     location:
-      note: >-
-        One of the rimward parts of the middle Non-Coercive Zone, bordering the
-        Sophic League and lying between the Vela Nebula and Pismis 4. Both
-        landmarks are real — Pismis 4 is on the map at 2,220 ly — but a volume
-        between two things is not a point.
+      ra_deg: 126.9532
+      dec_deg: -41.9996
+      distance: 1766 ly
+      direction_error_deg: 20.0
+      distance_error: 800 ly
+      estimated: >-
+        Interpolated from the transcription of Anders Sandberg's maps, which is
+        the only source that puts a number on this. The article constrains it
+        better and this map cannot yet use the constraint: a rimward part of
+        the middle Non-Coercive Zone, bordering the Sophic League, lying between
+        the Vela Nebula and Pismis 4 — the latter on the map at 2,220 ly, the
+        former in no catalogue loaded here. Two named objects and a betweenness
+        would place it the way Sk'iiws'nnii was placed, once the nebula is
+        available. Kaumbrey is its capital.
     events:
       - year_at: 3200
         until_at: 3800
@@ -5341,3 +5350,120 @@ worlds:
       catalogue this map builds from. First given to us as 0.071 kpc, which
       would have put it at 232 ly and among the nearest clusters in the sky; the
       figure here is the corrected 512 pc.
+
+  # ---- interpolated from the transcription of Anders Sandberg's maps --------
+  #
+  # The sheet fixes a cell, not a position. Checking it against places we hold
+  # puts it six to nine hundred light years out — Gegton X, which its article
+  # sets at 231 ly, is drawn at 820 — so every entry here carries a distance
+  # error as well as a direction error, and the map dots their rings rather
+  # than dashing them. A dash says the radius is known and the angle is not;
+  # these are neither.
+  #
+  # None of these has a position in any article. The sheet is the only source
+  # there is for where they are, and for several it is the only source that
+  # they are anywhere.
+
+  - name: The Surreal Rash
+    kind: volume
+    affiliations: [mutual-progress-association]
+    article: https://www.orionsarm.com/eg-article/48114afa516df
+    location:
+      ra_deg: 271.9853
+      dec_deg: -14.3955
+      distance: 2111 ly
+      direction_error_deg: 20.0
+      distance_error: 800 ly
+      estimated: >-
+        Interpolated from the sheet, between the anchors nearest it. A former
+        Mutual Progress Association volume left apparently deserted after a
+        transformation nobody has explained, so the polity colour records who
+        held it rather than who is there.
+
+  - name: Aries Vector
+    kind: system
+    affiliations: [metasoft]
+    article: https://www.orionsarm.com/eg-article/45f97a9777d95
+    location:
+      ra_deg: 87.4193
+      dec_deg: 21.2689
+      distance: 1119 ly
+      direction_error_deg: 20.0
+      distance_error: 800 ly
+      estimated: >-
+        Interpolated from the transcription of Anders Sandberg's maps, fitted
+        from the anchors nearest it in the sheet rather than from a transform
+        over the whole grid, since the rows and columns are not evenly spaced.
+        The error is what checking that method against places we already hold
+        gives: six to nine hundred light years. No article puts a number on
+        this system.
+
+  - name: Mekelon
+    kind: system
+    affiliations: [nocozo]
+    article: https://www.orionsarm.com/eg-article/47aa87a3ab283
+    location:
+      ra_deg: 338.0106
+      dec_deg: -42.7385
+      distance: 499 ly
+      direction_error_deg: 20.0
+      distance_error: 800 ly
+      estimated: >-
+        Interpolated from the sheet. The nearest of these, which makes the
+        eight-hundred light year uncertainty larger than the distance itself —
+        so this one says little more than the direction and the polity.
+
+  - name: Hyperion
+    kind: system
+    affiliations: [solar-dominion]
+    article: https://www.orionsarm.com/eg-article/46805c9b24e09
+    location:
+      ra_deg: 72.3787
+      dec_deg: 49.2473
+      distance: 2050 ly
+      direction_error_deg: 20.0
+      distance_error: 800 ly
+      estimated: >-
+        Interpolated from the sheet. A rebellious Solar corporation rather than
+        a Dominion holding, which the ring cannot distinguish from one.
+
+  - name: Hosoko
+    kind: volume
+    affiliations: [cygexpa]
+    location:
+      ra_deg: 311.8664
+      dec_deg: 39.9957
+      distance: 1651 ly
+      direction_error_deg: 20.0
+      distance_error: 800 ly
+      estimated: >-
+        Interpolated from the sheet, which is the only source here that places
+        it and very nearly the only one that mentions it — the Hosoko
+        Posthegemonic Management Network has no article of its own. A subset of
+        the post-Cygexpa volumes, drawn on the sheet in a colour of its own.
+
+  - name: Polyanna
+    kind: system
+    affiliations: [nocozo]
+    location:
+      ra_deg: 186.3469
+      dec_deg: -24.4323
+      distance: 696 ly
+      direction_error_deg: 20.0
+      distance_error: 800 ly
+      estimated: >-
+        Interpolated from the sheet. No article, so this and its affiliation are
+        the whole of what is known.
+
+  - name: Potala Biosphere
+    kind: system
+    affiliations: [sophic-league]
+    location:
+      ra_deg: 122.4488
+      dec_deg: -16.3212
+      distance: 657 ly
+      direction_error_deg: 20.0
+      distance_error: 800 ly
+      estimated: >-
+        Interpolated from the sheet. No article, so this and its affiliation are
+        the whole of what is known.

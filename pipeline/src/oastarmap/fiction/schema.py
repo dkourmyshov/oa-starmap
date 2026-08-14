@@ -591,6 +591,21 @@ class WorldLocation(BaseModel):
     there is nothing to say about the error of a number somebody published.
     """
 
+    distance_error: str = ""
+    """How uncertain the radius is, with its unit: '900 ly'.
+
+    Almost everything here has an exact distance and a doubtful direction —
+    that is what a constellation gives, and what the dashed ring means. A few
+    places have neither. Those interpolated from the transcription of Anders
+    Sandberg's maps are the case this exists for: the sheet fixes a cell, not a
+    position, and checking it against places we hold puts it a good six hundred
+    to nine hundred light years out in *both* coordinates.
+
+    Set only alongside ``estimated``, and the map draws such a ring dotted
+    rather than dashed, because "somewhere along this line" and "somewhere in
+    this region" are different claims and should not look alike.
+    """
+
     distance_conflict: bool = False
     """The stated distance and the catalogue's genuinely disagree, and we know.
 
@@ -658,6 +673,13 @@ class WorldLocation(BaseModel):
                 "direction_error_deg is only for estimated positions; a "
                 "constellation computes its own and published coordinates are exact"
             )
+        if self.distance_error and not self.estimated:
+            raise ValueError(
+                "distance_error is only for estimated positions; every other "
+                "method takes its radius from a source that states one"
+            )
+        if self.distance_error:
+            parse_distance(self.distance_error)
 
         # A distance is rejected where the method would ignore it — an oa_star
         # or a world already carries a position, so a distance beside one is

@@ -22,10 +22,15 @@
  * "this system belongs to that polity" is one statement and should have one
  * appearance.
  *
- * The ring is **dashed** where the position is only approximate, which is a
- * second thing said by the same mark without competing with the first: its
- * colours are who holds the place and its continuity is how well the source
- * located it. An earlier arrangement put that on a ring of the marker's own,
+ * The ring's continuity says how well the place is located, which is a second
+ * thing said by the same mark without competing with the first: its colours are
+ * who holds it. Three states, because the sources make three different claims.
+ * **Solid** is a position. **Dashed** is an exact radius and a doubtful
+ * direction, which is what a constellation gives. **Dotted** is neither exact —
+ * the handful interpolated from the transcription of Anders Sandberg's maps,
+ * where checking against places we hold puts the answer six hundred to nine
+ * hundred light years out in both coordinates. "Somewhere along this line" and
+ * "somewhere in this region" should not look alike. An earlier arrangement put that on a ring of the marker's own,
  * which landed a pixel inside this one and read as two rings meaning nothing in
  * particular. Only worlds are ever dashed — a catalogue star is exactly where
  * the catalogue says.
@@ -74,6 +79,7 @@ const VERTEX_SHADER = /* glsl */ `
   attribute float aSegments;
   attribute float aAffiliated;
   attribute float aApprox;
+  attribute float aVague;
 
   uniform float uSize;
   uniform float uUnaffiliatedDim;
@@ -85,11 +91,13 @@ const VERTEX_SHADER = /* glsl */ `
   varying float vSegments;
   varying float vGain;
   varying float vApprox;
+  varying float vVague;
 
   void main() {
     vec4 viewPos = modelViewMatrix * vec4(position, 1.0);
     gl_Position = projectionMatrix * viewPos;
     vApprox = aApprox;
+    vVague = aVague;
     vColor0 = aColor0;
     vColor1 = aColor1;
     vColor2 = aColor2;
@@ -115,6 +123,7 @@ const FRAGMENT_SHADER = /* glsl */ `
   varying float vSegments;
   varying float vGain;
   varying float vApprox;
+  varying float vVague;
 
   void main() {
     vec2 offset = gl_PointCoord * 2.0 - 1.0;
@@ -132,7 +141,10 @@ const FRAGMENT_SHADER = /* glsl */ `
     // arcs, which survives being cut again by a segment boundary: a ring that
     // is both shared and approximate still reads as both.
     float dash = smoothstep(0.28, 0.44, abs(fract(turnAround * 12.0) - 0.5) * 2.0);
-    ring *= mix(1.0, dash, vApprox);
+    // Dotted where the radius is doubtful too: more arcs and a shorter mark, so
+    // it reads as less certain than a dash rather than merely different.
+    float dot = smoothstep(0.62, 0.78, abs(fract(turnAround * 30.0) - 0.5) * 2.0);
+    ring *= mix(mix(1.0, dash, vApprox), dot, vVague);
 
     vec3 color = vColor0;
     if (vSegments > 1.5) {
@@ -169,8 +181,10 @@ interface Ring {
   y: number;
   z: number;
   polities: string[];
-  /** The position is only approximate, so the ring is drawn dashed. */
+  /** The direction is only approximate, so the ring is drawn dashed. */
   approximate?: boolean;
+  /** The radius is doubtful too, so the ring is drawn dotted instead. */
+  vague?: boolean;
 }
 
 export class SettledField {
@@ -243,6 +257,7 @@ export class SettledField {
         z: world.z as number,
         polities: affiliationsFor(undefined, [world]),
         approximate: (world.direction_error_deg ?? 0) > 0,
+        vague: (world.distance_error_ly ?? 0) > 0,
       });
     }
 
@@ -270,6 +285,7 @@ export class SettledField {
     const segments = new Float32Array(this.count);
     const affiliated = new Float32Array(this.count);
     const approximate = new Float32Array(this.count);
+    const vague = new Float32Array(this.count);
     const colors = Array.from({ length: MAX_SEGMENTS }, () => new Float32Array(this.count * 3));
     const neutral = Array.from({ length: MAX_SEGMENTS }, () => new Float32Array(this.count * 3));
 
@@ -281,6 +297,7 @@ export class SettledField {
       const shown = ring.polities.slice(0, MAX_SEGMENTS);
       affiliated[out] = shown.length ? 1 : 0;
       approximate[out] = ring.approximate ? 1 : 0;
+      vague[out] = ring.vague ? 1 : 0;
       segments[out] = Math.max(shown.length, 1);
 
       for (let slot = 0; slot < MAX_SEGMENTS; slot++) {
@@ -306,6 +323,7 @@ export class SettledField {
     geometry.setAttribute('aSegments', new THREE.BufferAttribute(segments, 1));
     geometry.setAttribute('aAffiliated', new THREE.BufferAttribute(affiliated, 1));
     geometry.setAttribute('aApprox', new THREE.BufferAttribute(approximate, 1));
+    geometry.setAttribute('aVague', new THREE.BufferAttribute(vague, 1));
     this.colorAttributes = colors.map((array, slot) => {
       const attribute = new THREE.BufferAttribute(array, 3);
       geometry.setAttribute(`aColor${slot}`, attribute);
