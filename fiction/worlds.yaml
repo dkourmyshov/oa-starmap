@@ -4166,14 +4166,22 @@ worlds:
     affiliations: [deeper-covenant]
     article: https://www.orionsarm.com/eg-article/46709b72c8717
     location:
+      ra_deg: 89.0897
+      dec_deg: 41.0893
       distance: 759 ly
+      direction_error_deg: 20.0
+      estimated: >-
+        759 ly is the article's own; it never gave a direction, and for a while
+        this was a radius with nothing to point it at. The direction is the
+        Realm of the Deeper Covenant's, which contains this world, and is worked
+        out at that entry rather than here.
     events:
       - year_at: 4715
         kind: observed
     note: >-
-      A distance and nothing else. Recorded and not drawn — no direction is
-      given here, and none is in the Celestia add-on or the Inner Sphere table
-      either.
+      The primary world of the Realm of the Deeper Covenant, 759 ly out — nine
+      light years beyond the Realm's own stated distance, which is well inside a
+      structure of that size.
 
   - name: Hoshanti's Star
     kind: system
@@ -6823,18 +6831,37 @@ worlds:
         precision: circa
     note: >-
       A rogue planet in deep space — no star of its own — carrying a Hider
-      colony, in Auriga at 820 ly. The Realm of the Deeper Covenant lies 110 ly
-      from it, which is the only thing that places either of them.
+      colony, in Auriga at 820 ly. It is what gives the Realm of the Deeper
+      Covenant a direction: the Realm lies 110 ly from here, and had nothing but
+      the word rimward to place it by.
 
   - name: Realm of the Deeper Covenant
     kind: volume
     affiliations: [deeper-covenant]
+    article: https://www.orionsarm.com/eg-article/4aaed32f4b1e3
     location:
-      constellation: Auriga
-      distance: 820 ly
+      ra_deg: 89.0897
+      dec_deg: 41.0893
+      distance: 750 ly
+      direction_error_deg: 20.0
+      estimated: >-
+        The distance is the article's: about 750 ly, rimward. The direction is
+        not, and comes from three things agreeing. Hyxuyum lies 110 ly from the
+        Realm and is in Auriga at 820 ly; with 70 ly of that separation spent on
+        the difference in radius, at most 85 ly is left across the sky, which
+        puts the Realm within six and a half degrees of Hyxuyum. Auriga's own
+        centre is used as that direction, and it sits at galactic longitude 171
+        — nine degrees off the anticentre, which is what rimward means. So the
+        constellation and the article's one word of direction point the same
+        way. The error quoted is Auriga's width, since that and not the six
+        degrees is what dominates.
+    events:
+      - year_at: 10600
+        kind: capital
+        precision: not_later_than
+        note: One of the largest centres of Deeper civilisation.
     note: >-
-      Placed only by its distance from Hyxuyum, which the source gives as 110
-      ly. That fixes it to a sphere of that radius around a point which is
-      itself known only to the width of Auriga, so this is Hyxuyum's position
-      standing in and is good to about 110 ly at best. It has no article of its
-      own here, and a direction from anything else would place it properly.
+      A major Deeper Covenant cluster about 750 ly rimward of Sol, and one of
+      the largest centres of Deeper civilisation anywhere. Hightower is its
+      primary world.
+
