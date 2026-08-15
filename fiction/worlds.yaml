@@ -6637,7 +6637,17 @@ worlds:
     affiliations: [solipsist-panvirtuality]
     article: https://www.orionsarm.com/eg-article/46f96a821bb69
     location:
-      constellation: Crux
+      ra_deg: 192.5000
+      dec_deg: -62.5000
+      distance: 587 ly
+      direction_error_deg: 3.2
+      distance_error: 33 ly
+      estimated: >-
+        The Southern Coalsack's own position, not this structure's: 12h 50m,
+        -62d 30', 180 pc. The article says only that the Virchdrome is in the
+        nebula, and the nebula is 30 to 35 ly in radius, so the errors quoted
+        are that radius — 33 ly along the line of sight, and the three degrees
+        it subtends at 587 ly across it.
     events:
       - year_at: 4800
         until_at: 4899
@@ -6645,9 +6655,9 @@ worlds:
         precision: between
     note: >-
       In the Southern Coalsack, the dark nebula in Crux — southern to
-      distinguish it from the Northern Coalsack in Cygnus. No distance is given
-      and no catalogue here carries the nebula, so there is a direction and no
-      radius, and nothing is drawn.
+      distinguish it from the Northern Coalsack in Cygnus. At 180 pc, which is
+      587 ly, and some 65 ly across; this marks the nebula's centre, because
+      where in it the Virchdrome sits is not said.
 
   - name: Grenrij
     kind: system
@@ -6686,18 +6696,22 @@ worlds:
     affiliations: []
     article: https://www.orionsarm.com/eg-article/4cfd1ab04285b
     location:
-      constellation: Puppis
+      ra_deg: 114.9208
+      dec_deg: -16.2958
       distance: 2120 ly
+      near: NGC 2430
     events:
       - year_at: 5309
         kind: settled
         note: Settled from the Adhara Trade Treaty volume.
     note: >-
-      Given as near NGC 2430 in Puppis at 2,120 ly. That cluster is in none of
-      the catalogues here, so the constellation carries the direction. Settled
-      out of the Adhara Trade Treaty volume eight centuries before the treaty
-      itself formed, which the dates say plainly and this file does not
-      reconcile.
+      Near NGC 2430 in Puppis, from the cluster's own coordinates. It is in none
+      of the catalogues this map loads, but its distance is 650 pc — 2,120 ly,
+      which is the article's figure to the light year, so both are working from
+      the same estimate and the direction can be taken with the distance rather
+      than against it. Settled out of the Adhara Trade Treaty volume eight
+      centuries before the treaty itself formed, which the dates say plainly and
+      this file does not reconcile.
 
   - name: Hekufast
     kind: system
