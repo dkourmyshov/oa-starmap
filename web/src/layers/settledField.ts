@@ -236,11 +236,32 @@ export class SettledField {
     for (const [starIndex, here] of worlds?.byStar ?? []) {
       if (starIndex < 0 || starIndex >= stars.count || ringed.has(starIndex)) continue;
       const base = starIndex * 5;
+      ringed.add(starIndex);
       rings.push({
         x: stars.positions[base],
         y: stars.positions[base + 1],
         z: stars.positions[base + 2],
         polities: affiliationsFor(undefined, here),
+      });
+    }
+
+    // Landmark stars, which are the third file to arrive carrying the same
+    // claim and the third to have been left out of it. A star a polity names
+    // among its own is as held as one carrying a colony row; without this
+    // Tianguan — Zeta Tauri, Metasoft's — drew as an ordinary white star with
+    // no mark on it at all. Beyond the frontier the binding is kept but not
+    // coloured, so those stay out.
+    for (const binding of fiction?.bindings ?? []) {
+      if (binding.kind !== 'star' || binding.index === null || binding.beyond_frontier) continue;
+      const starIndex = binding.index;
+      if (starIndex < 0 || starIndex >= stars.count || ringed.has(starIndex)) continue;
+      const base = starIndex * 5;
+      ringed.add(starIndex);
+      rings.push({
+        x: stars.positions[base],
+        y: stars.positions[base + 1],
+        z: stars.positions[base + 2],
+        polities: binding.polities,
       });
     }
 

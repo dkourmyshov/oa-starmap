@@ -417,14 +417,16 @@ class TestCuration:
         Necklace is a megastructure declared as though it were its own sun,
         sitting on Arkab Prior B's exact position.
 
-        JD 836902 is the third and a different case: not a duplicate within the
-        add-on but one across files. Niuearth is in ``worlds.yaml`` with the
-        article behind it, and once that entry binds to this star rather than to
-        a constellation the two draw the same world twice.
+        A duplicate across files is not one of these, and hiding is the wrong
+        tool for it. worlds.yaml carries Niuearth bound to JD 836902; hiding
+        that star did not merge the pair, it deleted the world, because a world
+        bound to an add-on star is drawn as that star. The binding alone dedupes
+        them — the world's name wins the label — so nothing needs hiding.
         """
         hidden = {e["name"] for e in built["names"] if e["hidden"]}
-        assert {"Proxima Centauri2", "Arkab Prior Necklace", "JD 836902"} <= hidden
-        assert len(hidden) == 55  # the 52 above, and these three
+        assert {"Proxima Centauri2", "Arkab Prior Necklace"} <= hidden
+        assert "JD 836902" not in hidden
+        assert len(hidden) == 54  # the 52 above, and these two
 
     def test_curating_an_absent_star_fails_the_build(self, tmp_path):
         """Otherwise a designation typo silently loses the whole assignment."""

@@ -4663,11 +4663,12 @@ worlds:
     affiliations: [orion-federation]
     article: https://www.orionsarm.com/eg-article/483ae6b0289f5
     location:
-      constellation: Orion
-      distance: 1420 ly
+      world: Horsehead Nebula
     note: >-
-      In the Horsehead Nebula, and placed exactly as the nebula is, since the
-      article gives it no position of its own.
+      In the Horsehead Nebula, which is where its position comes from: the
+      article gives it none of its own. Recorded as sitting in the nebula rather
+      than as repeating the nebula's coordinates, so the two are one place and
+      not two markers a hair apart.
 
   - name: Orion Nebula
     kind: volume
@@ -6589,3 +6590,251 @@ worlds:
       259 ly in Antlia. The article gives no distance of its own, so there is
       nothing to check the star against. Held jointly by the Sophic League and
       the Non-Coercive Zone.
+
+  # ---- the alphabetical sweep, G-H -----------------------------------------
+
+  - name: Gearhead
+    kind: system
+    system: Gearhead
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/5beb16f072050
+    location:
+      star: 51 Ophiuchi
+    events:
+      - year_at: 2730
+        kind: settled
+    note: >-
+      51 Ophiuchi, 410 ly out, and the catalogue agrees with the article to a
+      tenth of a light year. Home to an independent vec culture that began in
+      the Diamond Network and has since come round to the Sephirotics; no holder
+      is recorded, because independent is what the article calls it.
+
+  - name: Gomeisa
+    kind: system
+    system: Gomeisa
+    affiliations: [metasoft, sophic-league]
+    article: https://www.orionsarm.com/eg-article/59b0537bbfe08
+    location:
+      star: Gomeisa
+    events:
+      - year_at: 2734
+        kind: settled
+    note: >-
+      Beta Canis Minoris, 161 ly out. Recorded under both holders because that
+      is what the article makes of it: an important interface between Metasoft
+      and the Sophic League next door, rather than a possession of either.
+
+  - name: Googlehertz Virchdrome
+    kind: megastructure
+    affiliations: [solipsist-panvirtuality]
+    article: https://www.orionsarm.com/eg-article/46f96a821bb69
+    location:
+      constellation: Crux
+    events:
+      - year_at: 4800
+        until_at: 4899
+        kind: settled
+        precision: between
+    note: >-
+      In the Southern Coalsack, the dark nebula in Crux — southern to
+      distinguish it from the Northern Coalsack in Cygnus. No distance is given
+      and no catalogue here carries the nebula, so there is a direction and no
+      radius, and nothing is drawn.
+
+  - name: Grenrij
+    kind: system
+    system: Grenrij
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/65b6c059ea3b1
+    location:
+      constellation: Leo
+      distance: 433.788 ly
+    events:
+      - year_at: 2698
+        kind: settled
+        note: Arrived.
+    note: >-
+      CW Leonis, a carbon star wrapped in enough of its own soot that none of
+      the catalogues here carry it, so the constellation holds the direction
+      while the article's distance holds to a thousandth of a light year.
+
+  - name: Adhara Trade Treaty
+    kind: volume
+    affiliations: []
+    article: https://www.orionsarm.com/eg-topic/45e38eecd1efc
+    location:
+      star: Adhara
+    events:
+      - year_at: 6120
+        kind: capital
+        note: Formed, centred on Adhara.
+    note: >-
+      Centred on Epsilon Canis Majoris, 405 ly out, which the catalogue and the
+      article agree on to within a light year. No extent is given, so this marks
+      the centre and claims no volume.
+
+  - name: Grignard
+    kind: planet
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/4cfd1ab04285b
+    location:
+      constellation: Puppis
+      distance: 2120 ly
+    events:
+      - year_at: 5309
+        kind: settled
+        note: Settled from the Adhara Trade Treaty volume.
+    note: >-
+      Given as near NGC 2430 in Puppis at 2,120 ly. That cluster is in none of
+      the catalogues here, so the constellation carries the direction. Settled
+      out of the Adhara Trade Treaty volume eight centuries before the treaty
+      itself formed, which the dates say plainly and this file does not
+      reconcile.
+
+  - name: Hekufast
+    kind: system
+    system: Hekufast
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/466c9a62708d2
+    location:
+      ra_deg: 268.24
+      dec_deg: -28.11
+      distance: 652 ly
+    events:
+      - year_at: 3709
+        kind: settled
+    note: >-
+      The pulsar PSR B1749-28, in Sagittarius at 652 ly, from coordinates the
+      article gives.
+
+  - name: Henon
+    kind: planet
+    affiliations: [solar-dominion]
+    article: https://www.orionsarm.com/eg-article/4e49b435a8bd4
+    location:
+      ra_deg: 33.9414
+      dec_deg: 55.9963
+      distance: 4240 ly
+      near: HIP 10541
+    events:
+      - year_at: 8697
+        kind: settled
+        note: Settled from the fringes of the Solar Dominion.
+    note: >-
+      Given as 70 ly from HIP 10541 and 4,240 ly from Sol. Those cannot both
+      hold here: the catalogue puts that star at 7,887 ly, nearly twice as far,
+      so a world 70 ly from it would be nowhere near 4,240. The star lends its
+      direction in Perseus and the article keeps its distance from Sol, which is
+      the figure the setting is actually built on.
+
+  - name: Hermes
+    kind: planet
+    affiliations: [metasoft, silicon-generation]
+    article: https://www.orionsarm.com/eg-article/46707cc338668
+    location:
+      star: Beta Canum Venaticorum
+    note: >-
+      Beta Canum Venaticorum I-A — Chara, 28 ly out. Loosely aligned with
+      Metasoft and carrying Silicon Generation settlements besides, so both are
+      recorded; loosely is the article's word and neither holds it outright.
+
+  - name: Hiiiw--waan-w
+    kind: planet
+    system: Boyuduro
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/47a1402105afd
+    note: The world of Boyuduro.
+
+  - name: Boyuduro
+    kind: system
+    system: Boyuduro
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/47a1402105afd
+    location:
+      constellation: Triangulum Australe
+      distance: 3712 ly
+    events:
+      - year_at: 7632
+        kind: visited
+        note: Reached.
+    note: >-
+      In Triangulum Australe at 3,712 ly. The star's name is the setting's own
+      and matches nothing in the catalogues here, so the constellation carries
+      the direction.
+
+  - name: Himmelsschmiede
+    kind: megastructure
+    affiliations: [mutual-progress-association]
+    article: https://www.orionsarm.com/eg-article/46709da5de6be
+    events:
+      - year_at: 4736
+        kind: settled
+        note: Construction began.
+    note: >-
+      Built around what the article calls a red supergiant of forty-six solar
+      masses and eight million kilometres across, somewhere in Mutual Progress
+      Association space. Which star is not said and no direction is given, so
+      nothing is drawn.
+
+  - name: Huycau
+    kind: system
+    system: Huycau
+    affiliations: [xenosophont]
+    article: https://www.orionsarm.com/eg-article/51091900523ad
+    location:
+      ra_deg: 148.2613
+      dec_deg: 56.7818
+      distance: 2611 ly
+    events:
+      - year_at: 6802
+        kind: contact
+        precision: not_earlier_than
+        note: Reached after this year.
+    note: >-
+      Huycau and Sitr'achra, a pair the article places together in Ursa Major at
+      2,611 ly for epoch 6000 AT — the setting's own epoch rather than the
+      catalogue's, which is why the figure is quoted to a thousandth. The home
+      system of the Samaelians.
+
+  - name: Hypatia
+    kind: planet
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/54202a57b26c2
+    location:
+      star: HD 129777
+    events:
+      - year_at: 1819
+        kind: settled
+        note: Arrived.
+    note: >-
+      HD 129777 in Circinus, which the catalogue puts at 210 ly against the
+      article's 193 — nine percent, close enough to bind to the star.
+
+  - name: Hyxuyum
+    kind: planet
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/56a687306fd47
+    location:
+      constellation: Auriga
+      distance: 820 ly
+    events:
+      - year_at: 3877
+        kind: settled
+        precision: circa
+    note: >-
+      A rogue planet in deep space — no star of its own — carrying a Hider
+      colony, in Auriga at 820 ly. The Realm of the Deeper Covenant lies 110 ly
+      from it, which is the only thing that places either of them.
+
+  - name: Realm of the Deeper Covenant
+    kind: volume
+    affiliations: [deeper-covenant]
+    location:
+      constellation: Auriga
+      distance: 820 ly
+    note: >-
+      Placed only by its distance from Hyxuyum, which the source gives as 110
+      ly. That fixes it to a sphere of that radius around a point which is
+      itself known only to the width of Auriga, so this is Hyxuyum's position
+      standing in and is good to about 110 ly at best. It has no article of its
+      own here, and a direction from anything else would place it properly.
