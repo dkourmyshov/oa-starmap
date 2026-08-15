@@ -231,11 +231,16 @@ polities:
   #   pre-spaceflight xenosophonts, a wildlife preserve, or a pretty rock. The
   #   classification follows the protection, not the contents.
   #
-  #   Controlled by xenosophonts, with no or only nominal terragen presence ->
-  #   Xenosophont.
+  #   Independent and active xenosophonts -> Xenosophont. Active is the load
+  #   bearing word: a species going about its own affairs, not a dead
+  #   civilisation somebody found. Amida and Bentharis hold the remains of
+  #   extinct xenosophont civilisations and are tagged with neither — nobody is
+  #   there to hold them.
   #
-  # The two do not overlap, because a protected system takes the first rule even
-  # when xenosophonts live there.
+  # The two rarely overlap, since a protected species is usually not an
+  # independent actor. Where they do, both are recorded rather than one being
+  # made to win. Doreen is the case: a hostile xenosophont-derived AI that the
+  # Caretakers both shield and shield terragens from.
 
   - id: caretaker-gods
     name: Caretaker Gods
@@ -489,13 +494,13 @@ polities:
     color: "#BCAAA4"
     kind: xenosophont
     source: eg-system-articles
-    # Systems under xenosophont control with no or only nominal terragen
-    # presence. A category rather than a polity, and deliberately undivided for
-    # now; it may split by clade once there is more than one member.
+    # Independent, active xenosophont systems and worlds. A category rather than
+    # a polity, and deliberately undivided for now; it may split by clade once
+    # there are more members.
     #
-    # It does not collect every xenosophont system. H'tat'sa'thoss holds the
-    # To'ul'h and is classified with the Caretaker Gods instead, because the
-    # protection rule takes precedence over what lives there.
+    # It does not collect every system with xenosophonts in it. H'tat'sa'thoss
+    # holds the To'ul'h and is classified with the Caretaker Gods alone: they are
+    # protected rather than independent, which is the ordinary case.
 
 # Landmarks whose odd position has been checked against the source and is
 # correct. The build's placement check is a proofreading aid for mis-transcribed
