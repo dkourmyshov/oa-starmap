@@ -6254,19 +6254,22 @@ worlds:
     location:
       ra_deg: 164.8769
       dec_deg: -60.3325
-      distance: 7467 ly
+      distance: 3950 ly
       near: NGC 3496
     events:
       - year_at: 7480
         kind: observed
         note: Discovered.
     note: >-
-      A xenosophont species, placed where its article puts it: near NGC 3496 in
-      Carina, which this map's catalogue has at 7,467 ly. That sits awkwardly
-      beside Anaximander, whose article calls the Cthonids its nearest alien
-      neighbours at 1,050 ly while standing 3,800 ly nearer to Sol than this.
-      Either the 1,050 ly measures Cthonid holdings rather than this world, or
-      the two articles disagree; the discrepancy is recorded rather than split.
+      A xenosophont species, originating on a small low-gravity world of an
+      unstable K8 V star in the Carina Arm, 3,950 ly out. The article places it
+      near NGC 3496, and this map's catalogue has that cluster at 7,467 ly —
+      nearly twice as far — so the cluster lends its direction and the stated
+      3,950 ly the radius. That reconciles this with Anaximander, whose article
+      calls the Cthonids its nearest alien neighbours at 1,050 ly: the two
+      placements here fall 1,083 ly apart, which is a check worth having,
+      because neither position was derived from the other — one is a
+      constellation centroid and the other a cluster's direction.
 
   - name: Apogee Maximal
     kind: system
