@@ -6633,31 +6633,28 @@ worlds:
       and the Sophic League next door, rather than a possession of either.
 
   - name: Googlehertz Virchdrome
-    kind: megastructure
+    kind: volume
+    extent: 65 ly
     affiliations: [solipsist-panvirtuality]
     article: https://www.orionsarm.com/eg-article/46f96a821bb69
     location:
       ra_deg: 192.5000
       dec_deg: -62.5000
       distance: 587 ly
-      direction_error_deg: 3.2
-      distance_error: 33 ly
-      estimated: >-
-        The Southern Coalsack's own position, not this structure's: 12h 50m,
-        -62d 30', 180 pc. The article says only that the Virchdrome is in the
-        nebula, and the nebula is 30 to 35 ly in radius, so the errors quoted
-        are that radius — 33 ly along the line of sight, and the three degrees
-        it subtends at 587 ly across it.
+      near: Southern Coalsack
     events:
       - year_at: 4800
         until_at: 4899
         kind: settled
         precision: between
     note: >-
-      In the Southern Coalsack, the dark nebula in Crux — southern to
-      distinguish it from the Northern Coalsack in Cygnus. At 180 pc, which is
-      587 ly, and some 65 ly across; this marks the nebula's centre, because
-      where in it the Virchdrome sits is not said.
+      Several thousand processing megastructures in and around the Southern
+      Coalsack — the dark nebula in Crux, southern to distinguish it from the
+      Northern Coalsack in Cygnus. So this is a volume and not a point: the
+      nebula is at 12h 50m, -62d 30' and 180 pc, which is 587 ly, and 30 to 35
+      ly in radius, and the complex is drawn across the whole of it. In and
+      around is the article's phrase, so 65 ly across is the nebula's own
+      figure and may understate the reach of the thing built in it.
 
   - name: Grenrij
     kind: system
