@@ -6385,3 +6385,207 @@ worlds:
     note: >-
       HD 10783 in Pisces, which this map's catalogue puts at 552 ly against the
       article's 576 — close enough to bind to the star itself.
+
+  # ---- the alphabetical sweep, C-F -----------------------------------------
+
+  - name: Calyx
+    kind: planet
+    affiliations: [cygexpa]
+    article: https://www.orionsarm.com/eg-article/4f438057ece53
+    location:
+      constellation: Lyra
+      distance: 985 ly
+    events:
+      - year_at: 4285
+        kind: settled
+        note: Settled by a minor franchise of Cygexpa.
+    note: In Lyra at 985 ly.
+
+  - name: Chi Bootis
+    kind: system
+    system: Chi Bootis
+    affiliations: [nocozo]
+    article: https://www.orionsarm.com/eg-article/4625883bc38f7
+    location:
+      star: Chi Bootis
+    note: >-
+      Also written Chibootis, and named Kybutes in the setting. In Bootes, where
+      the catalogue gives 244 ly against the article's 226 — an eight percent
+      difference, close enough to bind to the star itself.
+
+  - name: Chi1 Orionis
+    kind: system
+    system: Chi1 Orionis
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/49fc24660c394
+    location:
+      star: Chi1 Orionis
+    note: >-
+      28.3 ly out in Orion. The article also gives its distance from Tabit as
+      9.913 ly, and the two stars stand 9.917 ly apart in this map's catalogue —
+      agreement to four thousandths of a light year, which is as close as
+      anything here has come to a stated figure.
+
+  - name: Cygnus X-1
+    kind: system
+    affiliations: [xenosophont]
+    uncertain: true
+    article: https://www.orionsarm.com/eg-article/4e49e20545cdd
+    location:
+      ra_deg: 299.5903
+      dec_deg: 35.2016
+      distance: 5984 ly
+    note: >-
+      The black hole and its blue supergiant companion, beyond the Terragen
+      sphere at 5,984 ly. The catalogue puts the star at 7,347 ly, a fifth
+      further, so the star lends its direction and the article its distance.
+      The Muuh, the Meistersingers and the Wayfarers are all believed present,
+      which is why the holding is marked uncertain: believed is what the source
+      says, and none of the three is confirmed to hold it.
+
+  - name: Cyrus
+    kind: system
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/55e84f2e1dfa4
+    location:
+      distance: 4357 ly
+    events:
+      - year_at: 9107
+        kind: settled
+    note: >-
+      4,357 ly out, and that is the whole of it: no constellation and no
+      coordinates, so there is a radius and no direction, and nothing is drawn.
+      Its beamrider links reach the Blackbody Cluster in the Perseus Rift and
+      Mollweide at 3,866 ly in Cygnus, but a route is not a direction — and the
+      Blackbody Cluster is itself only interpolated, to a thousand light years.
+
+  - name: Copernicus
+    kind: system
+    system: Copernicus
+    affiliations: [terragen-federation]
+    article: https://www.orionsarm.com/eg-article/486ebb201f514
+    location:
+      star: 55 Cancri
+    events:
+      - year_at: 1421
+        kind: settled
+        note: Arrived.
+    note: >-
+      55 Cancri, 41 ly out in Cancer. Affiliated to the Terragen Federation,
+      which is the holder recorded, though the article gives it close ties to
+      the Sophic League, Metasoft and the Solar Dominion besides.
+
+  - name: Danzig
+    kind: planet
+    system: Copernicus
+    affiliations: [terragen-federation]
+    article: https://www.orionsarm.com/eg-article/486ebb201f514
+    note: The world of Copernicus.
+
+  - name: Eganfodugbe
+    kind: planet
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/591f26a73b0e1
+    location:
+      ra_deg: 13.0684
+      dec_deg: 49.7089
+      distance: 264 ly
+    events:
+      - year_at: 2640
+        kind: settled
+        note: Reached again.
+    note: >-
+      Galactic coordinates given outright — -140, 215, -60 ly — which come to
+      264 ly in Cassiopeia. Reached a second time in 2640, the article's word
+      being that it was re-reached rather than found.
+
+  - name: Epsilon Sculptoris
+    kind: system
+    system: Epsilon Sculptoris
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/4f8e348520fa7
+    location:
+      star: Epsilon Sculptoris
+    events:
+      - year_at: 1460
+        kind: observed
+        note: The first alien artefact ever found.
+    note: >-
+      91.5 ly out against the article's 89.5. Catalogued in Sculptor and named
+      for it, but the article has it in Fornax — proper motion carries it over
+      the boundary between the epoch the catalogue uses and the setting's own.
+
+  - name: Esperis
+    kind: system
+    system: Esperis
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/690261e1768ca
+    location:
+      ra_deg: 349.0958
+      dec_deg: 50.6833
+      distance: 2101 ly
+    events:
+      - year_at: 5143
+        kind: settled
+    note: >-
+      From coordinates the article prints, which fall in Andromeda as it also
+      states, at 2,101 ly.
+
+  - name: Euripedes Mey
+    kind: planet
+    affiliations: [sophic-league, caretaker-gods]
+    article: https://www.orionsarm.com/eg-article/4799653855bdd
+    location:
+      constellation: Hydra
+      distance: 2550 ly
+    events:
+      - year_at: 6407
+        kind: visited
+    note: >-
+      In Hydra at 2,550 ly, and held jointly — a Sophic League and Caretaker
+      Gods stewardship, which is why both are recorded.
+
+  - name: Focal Point
+    kind: planet
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/464e6c641ffc7
+    location:
+      ra_deg: 322.8301
+      dec_deg: 48.3495
+      distance: 1048 ly
+      near: NGC 7092
+    events:
+      - year_at: 6400
+        kind: settled
+    note: >-
+      On the edge of M39, the cluster NGC 7092 in Cygnus, at 1,048 ly against
+      the cluster's catalogued 965 — an eight percent difference, and being on
+      the edge of a cluster rather than in it accounts for some of that. The
+      cluster lends the direction and the article the distance. Depopulated
+      since, by no date this map has.
+
+  - name: Fran Prime
+    kind: system
+    system: Fran Prime
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/4650f64b979d6
+    location:
+      constellation: Vulpecula
+      distance: 715 ly
+    note: In Vulpecula at 715 ly.
+
+  - name: Freedonia
+    kind: planet
+    affiliations: [sophic-league, nocozo]
+    article: https://www.orionsarm.com/eg-article/5f9dc012e4209
+    location:
+      star: HD 82610
+    events:
+      - year_at: 2477
+        kind: settled
+    note: >-
+      Around S Antliae — CD-28 7373, HD 82610, SAO 177619, HIP 46810, HR 3798 —
+      which this map's catalogue carries under its numbers but under no name, at
+      259 ly in Antlia. The article gives no distance of its own, so there is
+      nothing to check the star against. Held jointly by the Sophic League and
+      the Non-Coercive Zone.
