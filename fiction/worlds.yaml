@@ -6688,6 +6688,26 @@ worlds:
       article agree on to within a light year. No extent is given, so this marks
       the centre and claims no volume.
 
+  - name: NGC 2430
+    kind: system
+    affiliations: [the-transcend]
+    article: https://www.orionsarm.com/eg-article/4cfd1ab04285b
+    location:
+      ra_deg: 114.9208
+      dec_deg: -16.2958
+      distance: 2120 ly
+    note: >-
+      An outpost of the Transcend, within the cluster, in Puppis. The cluster is
+      in none of the catalogues this map loads, so its coordinates come from
+      outside them — 07h 39m 41s, -16d 17' 45", 650 pc. That is 2,120 ly, the
+      figure Grignard's article gives to the light year, so the Encyclopaedia
+      and the cluster are working from one estimate rather than two.
+
+      Grignard is drawn at the same coordinates and is not in the same place:
+      the outpost is within the cluster and Grignard is near it. How far and in
+      which direction is not recorded, so the two markers coincide here rather
+      than being pushed apart by a separation this map would have to invent.
+
   - name: Grignard
     kind: planet
     affiliations: []
@@ -6702,13 +6722,14 @@ worlds:
         kind: settled
         note: Settled from the Adhara Trade Treaty volume.
     note: >-
-      Near NGC 2430 in Puppis, from the cluster's own coordinates. It is in none
-      of the catalogues this map loads, but its distance is 650 pc — 2,120 ly,
-      which is the article's figure to the light year, so both are working from
-      the same estimate and the direction can be taken with the distance rather
-      than against it. Settled out of the Adhara Trade Treaty volume eight
-      centuries before the treaty itself formed, which the dates say plainly and
-      this file does not reconcile.
+      Near NGC 2430 in Puppis, at 2,120 ly, which is the cluster's own distance
+      to the light year. Near is as close as the article comes: how far from the
+      cluster, and in which direction, it does not say, so this takes the
+      cluster's position and does not pretend to an offset. The Transcend's
+      outpost is within the cluster and is drawn at the same coordinates for the
+      same reason. Settled out of the Adhara Trade Treaty volume eight centuries
+      before the treaty itself formed, which the dates say plainly and this file
+      does not reconcile. Grignard itself belongs to nobody.
 
   - name: Hekufast
     kind: system
