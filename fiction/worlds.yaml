@@ -6004,10 +6004,8 @@ worlds:
       - year_at: 1250
         kind: visited
     note: >-
-      39 ly out. Spelled without the hyphen because the article is: it is
-      titled "Zeta2 Reticuli". That is also the only form that binds here — the
-      landmark resolver learned Bayer forms this map's star binder did not, so
-      "Zeta-2" resolves in one and not the other.
+      39 ly out in Reticulum, and spelled without the hyphen because the article
+      is: it is titled "Zeta2 Reticuli".
 
   # ---- Solipsist Panvirtuality ---------------------------------------------
 
@@ -6094,3 +6092,289 @@ worlds:
       distance. NGC 6802 was independently one of the anchors the transcription
       of Anders Sandberg's maps could not predict, which is a second source
       doubting the same number.
+
+  # ---- the alphabetical sweep, A-B -----------------------------------------
+  #
+  # Places the Systems & Worlds index carries that no empire page links to.
+  # Several give galactic XYZ outright, which is the first time this file has
+  # had coordinates in the frame it stores; each was converted back and checked
+  # against the distance and constellation the same article states, and all
+  # three agree to a tenth of a light year.
+
+  - name: 61 Cygni
+    kind: system
+    system: 61 Cygni
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/57ab8a3c4959c
+    location:
+      star: 61 Cygni
+    events:
+      - year_at: 370
+        kind: settled
+    note: >-
+      A nearby binary of two orange dwarfs, 11.4 ly out in Cygnus, settled early
+      enough to be one of the first systems colonised outside Solsys.
+
+  - name: Trip
+    kind: planet
+    system: 61 Cygni
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/47a67ce4bf7a5
+    note: A world of 61 Cygni.
+
+  - name: "\u00c5"
+    kind: planet
+    affiliations: [negentropy-alliance]
+    article: https://www.orionsarm.com/eg-article/4e481edb4b523
+    location:
+      ra_deg: 240.6888
+      dec_deg: -51.1310
+      distance: 269 ly
+    events:
+      - year_at: 2205
+        kind: settled
+    note: >-
+      A dwarf planet, and named with the single letter A-ring. The article gives
+      galactic coordinates outright — 234.43, -131.80, 5.36 ly — which come back
+      as 269.0 ly in Norma, exactly the distance and constellation it also
+      states. A position known in all three dimensions without a catalogue star
+      behind it.
+
+  - name: Albireo
+    kind: system
+    system: Albireo
+    affiliations: [albireo-confluence]
+    article: https://www.orionsarm.com/eg-article/45e77f147567f
+    location:
+      star: Albireo
+    events:
+      - year_at: 10600
+        kind: capital
+        precision: not_later_than
+        note: Capital of the Albireo Confluence.
+    note: >-
+      Beta Cygni, 363 ly out — a gold and blue pair that is one of the finest
+      double stars in Earth's sky, and the centre of the sector named for it.
+
+  - name: Albireo Plexus
+    kind: volume
+    extent: 98 ly
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/45e77f147567f
+    location:
+      star: Albireo
+    note: >-
+      A sector rather than a polity: half a million cubic light years around
+      Albireo, holding systems affiliated to the Solar Dominion and the
+      Mutual Progress Association among others, but where most of the polities
+      owe only nominal allegiance or none at all. The article gives the volume
+      and not a radius, so the extent here is what half a million cubic light
+      years comes to as a sphere — 98 ly across. That the region is a sphere is
+      the assumption; the volume is the source's.
+
+  - name: Aldebaran
+    kind: system
+    system: Aldebaran
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/48f4938fd0487
+    location:
+      star: Aldebaran
+    note: >-
+      The eye of Taurus, 67 ly out, and independent — one of the nearer bright
+      stars to hold to no empire.
+
+  - name: Amboseli
+    kind: planet
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/4fba54934c663
+    location:
+      ra_deg: 22.3889
+      dec_deg: 63.3043
+      distance: 4089 ly
+      near: NGC 559
+    events:
+      - year_at: 8515
+        kind: settled
+        note: Settled by colonists out of the Ulysses Network.
+    note: >-
+      Given as near NGC 559 in Cassiopeia at 4,089 ly. The cluster is in this
+      map's catalogue at 9,042 ly, more than twice as far, so the cluster lends
+      its direction and the article keeps its distance. Settled from the Ulysses
+      Network but not recorded as belonging to it, so no holder is entered.
+
+  - name: Amida
+    kind: system
+    system: Amida
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/51e556cf3a54f
+    location:
+      ra_deg: 346.6575
+      dec_deg: -8.8135
+      distance: 7131 ly
+    events:
+      - year_at: 9871
+        kind: observed
+        note: An extinct xenosophont civilisation found here.
+    note: >-
+      In Aquarius at 7,131 ly, among the furthest places in this file. The
+      article's designation C2306265-085103 encodes a position a few arcminutes
+      from the coordinates it also prints; the printed coordinates are used, and
+      at this distance the difference is a handful of light years either way.
+
+  - name: Anaximander
+    kind: system
+    system: Anaximander
+    affiliations: [caretaker-gods]
+    article: https://www.orionsarm.com/eg-article/5f0b365e3a328
+    location:
+      constellation: Carina
+      distance: 3667 ly
+    events:
+      - year_at: 7882
+        kind: visited
+    note: >-
+      A Caretaker Gods protectorate out along the Carina Rush, whose near end is
+      2,246 ly away at Oh-F-Star-4 — so this is far beyond where the Terragen
+      sphere otherwise reaches, and got there through a wormhole rather than
+      across the intervening space.
+
+  - name: Kammerer
+    kind: planet
+    system: Anaximander
+    affiliations: [caretaker-gods]
+    article: https://www.orionsarm.com/eg-article/5f0b365e3a328
+    note: >-
+      The world of Anaximander, and a xenosophont biome — which is why the
+      Caretaker Gods hold it.
+
+  - name: Cthonids
+    kind: system
+    affiliations: []
+    article: https://www.orionsarm.com/eg-topic/464635ea58237
+    location:
+      ra_deg: 164.8769
+      dec_deg: -60.3325
+      distance: 7467 ly
+      near: NGC 3496
+    events:
+      - year_at: 7480
+        kind: observed
+        note: Discovered.
+    note: >-
+      A xenosophont species, placed where its article puts it: near NGC 3496 in
+      Carina, which this map's catalogue has at 7,467 ly. That sits awkwardly
+      beside Anaximander, whose article calls the Cthonids its nearest alien
+      neighbours at 1,050 ly while standing 3,800 ly nearer to Sol than this.
+      Either the 1,050 ly measures Cthonid holdings rather than this world, or
+      the two articles disagree; the discrepancy is recorded rather than split.
+
+  - name: Apogee Maximal
+    kind: system
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/45f75376867f8
+    location:
+      ra_deg: 192.8595
+      dec_deg: 27.1283
+      distance: 1120 ly
+    events:
+      - year_at: 6402
+        kind: settled
+        note: Reached.
+    note: >-
+      A lone brown dwarf about 1,120 ly straight up out of the galactic plane,
+      which is a direction rather than a constellation — it works out to Coma
+      Berenices, where the north galactic pole lies. Almost everything else in
+      this file sits within a few degrees of the plane.
+
+  - name: Arugula
+    kind: planet
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/57ea997933d9b
+    location:
+      ra_deg: 299.6274
+      dec_deg: 25.3529
+      distance: 4513 ly
+    events:
+      - year_at: 10202
+        kind: settled
+        note: Seeded from Hosoko.
+    note: >-
+      Galactic coordinates given outright — 2051, 4017, -166 ly — which return
+      4,513 ly in Vulpecula, the distance and constellation the article also
+      states. Seeded from Hosoko, which this map places only by interpolation,
+      so the seed is better located than its source.
+
+  - name: Avanola
+    kind: system
+    system: Avanola
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/5f9b29c09ab97
+    location:
+      ra_deg: 143.7356
+      dec_deg: -28.8933
+      distance: 705 ly
+    events:
+      - year_at: 3701
+        until_at: 3800
+        kind: visited
+        precision: between
+        note: Reached in the thirty-eighth century.
+    note: >-
+      In Antlia at 705 ly, from coordinates the article prints to arcseconds.
+      The date is a century rather than a year, and is stored as the century.
+
+  - name: Baryos
+    kind: system
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/4609ca397f2c4
+    location:
+      constellation: Carina
+      distance: 6514 ly
+    note: >-
+      Out along the Carina Rush at 6,514 ly, nearly three times further than the
+      wormhole mouth at its near end. The Rush is a route and not a direction,
+      so the constellation carries what direction there is.
+
+  - name: Bentharis
+    kind: system
+    system: Bentharis
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/4771382da1fb2
+    location:
+      constellation: Scutum
+      distance: 2286 ly
+    events:
+      - year_at: 3652
+        kind: visited
+        note: Reached; an extinct xenosophont civilisation found.
+    note: In Scutum at 2,286 ly. Another dead alien civilisation.
+
+  - name: Blefuscu
+    kind: planet
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/4e49327008e0e
+    location:
+      constellation: Pyxis
+      distance: 2105 ly
+    events:
+      - year_at: 6110
+        kind: visited
+    note: >-
+      In Pyxis at 2,105 ly. The article gives 2,101 ly for epoch 2000 as well;
+      the difference is the star's own motion over four thousand years, and the
+      later figure is the one used.
+
+  - name: Bothyga M'Vau
+    kind: system
+    system: Bothyga M'Vau
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/46100d8d49764
+    location:
+      star: HD 10783
+    events:
+      - year_at: 4840
+        kind: settled
+        note: Seeded.
+    note: >-
+      HD 10783 in Pisces, which this map's catalogue puts at 552 ly against the
+      article's 576 — close enough to bind to the star itself.

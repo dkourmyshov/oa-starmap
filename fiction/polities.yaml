@@ -415,6 +415,15 @@ polities:
     # Perseus Quadrant of the Outer Cassiopeia Sector, a direction with no
     # distance. Its one entry in worlds.yaml is a volume that draws nothing.
 
+  - id: albireo-confluence
+    name: Albireo Confluence
+    color: "#B06FA0"
+    kind: polity
+    source: eg-system-articles
+    # Capital at Albireo, 363 ly out, and that is the whole of what is known
+    # about where it reaches. The Albireo Plexus around it is a sector rather
+    # than this polity's territory: most of what lies there owes it nothing.
+
   - id: arion-ascendancy
     name: Arion Ascendancy
     color: "#A3A072"
