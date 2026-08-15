@@ -237,6 +237,13 @@ export class DetailPanel {
         if (detail.associationSource) {
           note.appendChild(citationLine('note-line', `after ${detail.associationSource}`));
         }
+      } else if (detail.associationSource) {
+        // A place with no holder still has an article, and for a while nothing
+        // showed it: the link hung off the polity block, so the twenty-five
+        // worlds belonging to nobody were the ones a reader could not follow up.
+        // Bare here rather than "after …", which claims the source backs an
+        // affiliation when there is none to back.
+        note.appendChild(citationLine('note-line', detail.associationSource));
       }
       for (const event of detail.events ?? []) {
         const line = el('div', 'row');

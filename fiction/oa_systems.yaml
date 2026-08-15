@@ -127,8 +127,12 @@ systems:
 
   - star: JD 836902
     label: Niuearth
+    hidden: true
     affiliation: metasoft
     article: https://www.orionsarm.com/eg-article/52b993102478a
+    note: >-
+      Hidden because worlds.yaml carries Niuearth with this same star and the
+      article behind it, so drawing this too would double the world.
 
   - star: JD 870135
     label: H'tat'sa'thoss

@@ -3627,11 +3627,15 @@ worlds:
     affiliations: [metasoft]
     article: https://www.orionsarm.com/eg-article/52b993102478a
     location:
-      constellation: Taurus
-      distance: 786 ly
+      oa_star: JD 836902
     events:
       - year_at: 2998
         kind: settled
+    note: >-
+      Around JD 836902, a G1 star the Celestia add-on places in Taurus at 786.9
+      ly — the same distance the article gives to the light year, and the same
+      constellation, but exact in direction where the article gives only the
+      region.
 
   - name: Paula
     kind: planet
@@ -4808,7 +4812,7 @@ worlds:
       4,505: a 15% gap, too wide to bind across. The article's own coordinates
       supply the direction and land in Sagittarius as it says.
 
-  - name: The Ndiangu Mme Anwu System
+  - name: Ndiangu Mme Anwu
     kind: system
     affiliations: [sagittarius-transcultural-cooperation]
     article: https://www.orionsarm.com/eg-article/558c7c3535d87
@@ -6249,7 +6253,7 @@ worlds:
 
   - name: Cthonids
     kind: system
-    affiliations: []
+    affiliations: [xenosophont]
     article: https://www.orionsarm.com/eg-topic/464635ea58237
     location:
       ra_deg: 164.8769
