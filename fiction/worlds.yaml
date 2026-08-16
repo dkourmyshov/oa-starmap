@@ -6897,3 +6897,312 @@ worlds:
       the largest centres of Deeper civilisation anywhere. Hightower is its
       primary world.
 
+
+  # ---- the alphabetical sweep, J-N -----------------------------------------
+
+  - name: Jarre
+    kind: system
+    system: Jarre
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/4902515f791e9
+    location:
+      constellation: Perseus
+      distance: 4962 ly
+    events:
+      - year_at: 8300
+        kind: settled
+        precision: not_later_than
+    note: In Perseus at 4,962 ly, out past most of what this file holds.
+
+  - name: Equinoxe
+    kind: planet
+    system: Jarre
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/4902515f791e9
+    note: The world of Jarre.
+
+  - name: Inyanaine
+    kind: system
+    system: Inyanaine
+    also: [Okerbart]
+    affiliations: [caretaker-gods]
+    article: https://www.orionsarm.com/eg-article/5f285f7cb2cae
+    location:
+      constellation: Eridanus
+      distance: 448 ly
+    events:
+      - year_at: 2828
+        kind: stewardship
+        note: Claimed by a Caretaker God.
+    note: >-
+      In Eridanus at 448 ly, and named twice — Inyanaine and Okerbart both
+      appear for the same system.
+
+  - name: Jirayaka
+    kind: planet
+    system: Inyanaine
+    affiliations: [caretaker-gods]
+    article: https://www.orionsarm.com/eg-article/5f285f7cb2cae
+    note: The world a Caretaker God took stewardship of in 2828.
+
+  - name: Jordana
+    kind: planet
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/4682f991708d7
+    location:
+      constellation: Ophiuchus
+      distance: 1081 ly
+    events:
+      - year_at: 4694
+        kind: observed
+    note: In Ophiuchus at 1,081 ly.
+
+  - name: Jupkai
+    kind: system
+    system: Jupkai
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/48fa522b098a9
+    location:
+      constellation: Carina
+      distance: 6459 ly
+    note: >-
+      In Carina at 6,459 ly, and the remains of an extinct xenosophont
+      civilisation. No holder is recorded: there is nobody left to hold it.
+
+  - name: KJEI-54-458945
+    kind: system
+    affiliations: [xenosophont]
+    article: https://www.orionsarm.com/eg-article/46735b605829e
+    location:
+      constellation: Sagittarius
+      distance: 6201 ly
+    events:
+      - year_at: 9800
+        kind: contact
+        note: Reached.
+    note: >-
+      A neutron star in the Einstein's Revenge Cluster, in Sagittarius at 6,201
+      ly, held by xenosophonts. The cluster is the setting's own name and
+      matches nothing in the catalogues here, so the constellation carries the
+      direction.
+
+  - name: Kragliath
+    kind: planet
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/467482ff7cc49
+    location:
+      ra_deg: 327.0158
+      dec_deg: 40.5258
+      distance: 536 ly
+      near: HIP 107631
+    events:
+      - year_at: 3209
+        kind: settled
+    note: >-
+      Around HIP 107631 in Cygnus, which the catalogue puts at 711 ly against
+      the article's 536 — a third further, so the star lends its direction and
+      the article keeps its distance.
+
+  - name: Minos
+    kind: system
+    system: Minos
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/46788d76422a7
+    location:
+      constellation: Perseus
+      distance: 3041 ly
+    note: In Perseus at 3,041 ly.
+
+  - name: Labyrinth
+    kind: planet
+    system: Minos
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/46788d76422a7
+    note: The world of Minos, and named for what is on it.
+
+  - name: Lilif
+    kind: planet
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/4887ee7944aff
+    location:
+      star: GJ 3655
+    note: >-
+      Gliese-Jahreiss 3655 A and B, 46.8 ly out against the article's 46.5 — a
+      binary faint enough that the Gliese-Jahreiss number is the only name any
+      catalogue here carries for it.
+
+  - name: Lin-Darwon
+    kind: system
+    affiliations: []
+    note: >-
+      BD +39 2947, which none of the catalogues here carry, and no article of
+      its own. Given as 6 ly from Ridgwell, which this map does not hold either,
+      so there is nothing to place it by and nothing is drawn. Either the star
+      under a designation this map does carry, or Ridgwell, would fix it.
+
+  - name: Morrow
+    kind: habitat
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/4a02ec19dfd93
+    location:
+      ra_deg: 173.5956
+      dec_deg: -46.9741
+      distance: 191 ly
+      near: HD 100607
+    events:
+      - year_at: 2220
+        kind: settled
+        note: Reached.
+    note: >-
+      One of a pair of habitats at HD 100607 in Centaurus. The catalogue puts
+      that star at 140 ly against the article's 191, a quarter nearer, so the
+      star lends its direction and the article its distance.
+
+  - name: Griqua
+    kind: habitat
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/4a02ec19dfd93
+    location:
+      world: Morrow
+    events:
+      - year_at: 2220
+        kind: settled
+        note: Reached.
+    note: The other habitat of the pair, sharing HD 100607 with Morrow.
+
+  - name: Mykropht
+    kind: system
+    system: Mykropht
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/47bb880ac5b8c
+    location:
+      constellation: Corona Australis
+      distance: 412 ly
+    events:
+      - year_at: 3019
+        kind: settled
+    note: >-
+      A pair: Mykropht A is an ordinary star and Mykropht B the neutron star
+      RX J1856.5-3754, which is in none of the catalogues this map loads — they
+      hold stars by their light, and this one is seen mostly in X-rays. The
+      constellation carries the direction.
+
+  - name: Mynti
+    kind: planet
+    affiliations: []
+    location:
+      star: 85 Pegasi
+    note: >-
+      85 Pegasi, 40 ly out. Destroyed, by nothing this file records; no article
+      of its own, and the star is what remains to mark it by.
+
+  - name: The Narrenschiff
+    kind: habitat
+    affiliations: [fomalhaut-acquisition-society]
+    uncertain: true
+    article: https://www.orionsarm.com/eg-article/534fee3bba72a
+    location:
+      star: Epsilon Microscopii
+    events:
+      - year_at: 2309
+        kind: settled
+        note: Arrived.
+    note: >-
+      A ship that became a habitat, at Epsilon Microscopii — 169 ly out against
+      the article's 182. The Fomalhaut Acquisition Society built the ship, which
+      is why they are recorded here, but built is not held and the holding is
+      marked uncertain.
+
+  - name: New Brooklyn
+    kind: system
+    system: New Brooklyn
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/552cf42ae3c54
+    location:
+      star: HD 4967
+    events:
+      - year_at: 1300
+        kind: settled
+    note: HD 4967 in Cetus, 50 ly out against the article's 51.
+
+  - name: New Eureka
+    kind: planet
+    system: Lucida
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/5c801d92b3de5
+    location:
+      star: Iota Piscium
+    note: >-
+      A dwarf planet of the same system as Corona — the article calls the star
+      Iota-Corona, which is Iota Piscium, 45 ly out.
+
+  - name: New Sol
+    kind: system
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/4a27163b7497d
+    location:
+      ra_deg: 284.8553
+      dec_deg: -44.1381
+      distance: 280 ly
+      near: Medius
+    note: >-
+      Near Medius, which is HIP 93229 in Corona Australis at 280 ly, and near is
+      the whole of what is said — no separation and no bearing — so this takes
+      Medius's position and the two markers fall together.
+
+  - name: Newhope
+    kind: system
+    system: Newhope
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/490b210f5bc0b
+    location:
+      star: HIP 76282
+    events:
+      - year_at: 3429
+        kind: settled
+        note: Arrived.
+    note: >-
+      HIP 76282 in Serpens, 113 ly out against the article's 120. The
+      coordinates the article prints are the star's own to the arcsecond.
+
+  - name: Niaanyo
+    kind: planet
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/5e3dc9fab9763
+    location:
+      ra_deg: 300.3458
+      dec_deg: 21.3378
+      distance: 2212 ly
+    events:
+      - year_at: 7879
+        kind: settled
+    note: >-
+      A rogue planet in deep space carrying a Hider colony, in Sagitta at 2,212
+      ly from coordinates the article gives. The Hiders are not a polity this
+      file records, and would not thank it for trying.
+
+  - name: Niu Mynti
+    kind: system
+    system: Niu Mynti
+    affiliations: []
+    location:
+      star: 39 Tauri
+    note: 39 Tauri, 55 ly out. No article of its own.
+
+  - name: Nys-eldush
+    kind: planet
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/4c8f69db1baf9
+    location:
+      constellation: Cancer
+      distance: 1712 ly
+    events:
+      - year_at: 1712
+        kind: settled
+        precision: not_earlier_than
+    note: >-
+      In Cancer at 1,712 ly. The article dates the colony only as after 1712,
+      which the distance already implies and then some: at the setting's usual
+      0.84c cruise, 1,712 ly is a journey of two thousand years, so nothing
+      leaving Sol at any date could arrive before about 2000 AT whatever the
+      article's lower bound says.
