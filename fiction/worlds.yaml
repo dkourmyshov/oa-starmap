@@ -7755,3 +7755,168 @@ worlds:
     affiliations: []
     article: https://www.orionsarm.com/eg-article/47a6854131a39
     note: The world of Triana.
+
+  # ---- the alphabetical sweep, U-Z -----------------------------------------
+
+  - name: Upali
+    kind: system
+    system: Upali
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/4648f119470cc
+    location:
+      star: HIP 60206
+    events:
+      - year_at: 2608
+        kind: visited
+        note: Reached.
+    note: >-
+      HIP 60206 in Coma Berenices, 275 ly out against the article's 239.65 — a
+      seventh further, which binds. The article also puts it near Melotte 111,
+      and the catalogue has that cluster at 278 ly, so binding to the star
+      supports the claim better than the article's own distance does.
+
+  - name: Utmig
+    kind: planet
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/531296c9de242
+    location:
+      constellation: Auriga
+      distance: 4010 ly
+    note: In Auriga at 4,010 ly.
+
+  - name: Uyuni
+    kind: planet
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/508b48d94e043
+    location:
+      ra_deg: 270.8574
+      dec_deg: -27.8855
+      distance: 4920 ly
+      near: NGC 6520
+    events:
+      - year_at: 6318
+        kind: settled
+    note: >-
+      Near NGC 6520 in Sagittarius at 4,920 ly, where the catalogue puts the
+      cluster at 5,571 — an eighth further, close enough that the two describe
+      one place.
+
+  - name: World of Meditating Idols
+    kind: planet
+    system: Sagrei
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/47aa8331028d9
+    location:
+      star: HD 117207
+    events:
+      - year_at: 1915
+        kind: observed
+        note: Surveyed.
+    note: >-
+      HD 117207 in Centaurus, 105 ly out against the article's 107. The system
+      is named Sagrei; the world is named for what was found on it.
+
+  - name: Petruchio
+    kind: planet
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/58ffb992da8cc
+    location:
+      star: HD 62549
+    note: >-
+      A neptunian of HD 62549 in Monoceros, 161 ly out against the article's
+      152. The galactic coordinates the article gives — -108.65, -103.39, 24.72
+      — return that star's own direction to a thousandth of a degree, so the
+      identification is not in doubt even where the distances differ.
+
+  - name: Xanthippe
+    kind: moon
+    parent: Petruchio
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/58ffb992da8cc
+    location:
+      star: HD 62549
+    note: A moon of Petruchio. HD 62549 in Monoceros, 161 ly out.
+
+  - name: Kate
+    kind: moon
+    parent: Petruchio
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/58ffb992da8cc
+    location:
+      star: HD 62549
+    note: The other moon of Petruchio. HD 62549 in Monoceros, 161 ly out.
+
+  - name: Xil
+    kind: habitat
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/46f1e7a6acc51
+    location:
+      star: Xi Bootis
+    note: >-
+      A habitat complex at the Lagrange points of the Xi Bootis binary, 22 ly
+      out — close enough to Sol that its own two suns are what define the place.
+
+  - name: Yanqiu
+    kind: system
+    system: Yanqiu
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/4f1569e126d8c
+    location:
+      constellation: Cepheus
+      distance: 5411 ly
+    events:
+      - year_at: 9801
+        kind: visited
+        note: Reached.
+    note: In Cepheus at 5,411 ly.
+
+  - name: Tayaksekal
+    kind: system
+    system: Tayaksekal
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/6a591b0e9ee15
+    location:
+      constellation: Sagitta
+      distance: 803 ly
+    events:
+      - year_at: 2990
+        kind: visited
+        note: Reached.
+    note: >-
+      In Sagitta at 803 ly. The system is not held; its world Zakdakha is, which
+      is a distinction the setting draws and this file can carry.
+
+  - name: Zakdakha
+    kind: planet
+    system: Tayaksekal
+    affiliations: [caretaker-gods]
+    article: https://www.orionsarm.com/eg-article/6a591b0e9ee15
+    note: >-
+      The world of Tayaksekal, and a Caretaker domain — the planet only, not the
+      system around it.
+
+  - name: Zennor
+    kind: system
+    system: Zennor
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/48f949fa9c789
+    location:
+      constellation: Libra
+      distance: 2786 ly
+    note: In Libra at 2,786 ly.
+
+  - name: Zeta1 Reticuli
+    kind: system
+    system: Zeta1 Reticuli
+    affiliations: [nocozo, solar-dominion, negentropy-alliance, communion-of-worlds,
+                   zoeific-biopolity]
+    article: https://www.orionsarm.com/eg-article/486ecd3a8e1a5
+    location:
+      star: Zeta1 Reticuli
+    note: >-
+      39.3 ly out against the article's 39.53, and the most divided system in
+      this file: five metaempires hold parts of it, with a good deal besides
+      answering to none of them. The ring can show four, so the Zoeific
+      Biopolity is listed last and appears in the panel rather than on the
+      marker. Its companion Zeta2 Reticuli is the Diamond Network's, a third of
+      a light year away.

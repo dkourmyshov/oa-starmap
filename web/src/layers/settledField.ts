@@ -61,10 +61,11 @@ export const UNAFFILIATED_DIM = 0.25;
 /**
  * Most holders a ring can show separately.
  *
- * Four, because Felicidade has four and nothing recorded has more. A ring cut
- * into more arcs than this stops reading as segments at thirteen pixels across,
- * so beyond the limit the extra holders are left to the detail panel rather
- * than shown as a smear.
+ * Four, because a ring cut into more arcs than this stops reading as segments
+ * at thirteen pixels across. Felicidade has exactly four. Zeta1 Reticuli has
+ * five, and is the case the limit was written for: its fifth holder is left to
+ * the detail panel rather than shown as a smear, which is the intended
+ * behaviour and not a loss worth widening the ring to avoid.
  */
 export const MAX_SEGMENTS = 4;
 
