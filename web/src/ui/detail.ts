@@ -141,6 +141,37 @@ function linkLine(className: string, url: string, prefix = ''): HTMLElement {
   return line;
 }
 
+/**
+ * Whether a selection has anything from Orion's Arm worth a block of its own.
+ *
+ * Pulled out as a predicate because it has been wrong twice, both times by
+ * omission. First the article link hung inside the polity branch, so a place
+ * with no holder showed no source. Then the link moved out of that branch but
+ * this gate still did not mention it, so a place with a source and nothing else
+ * — no holder, no dates, nothing inside it — opened no block at all and the
+ * link had nowhere to render. Twenty-seven entries were in that state, Utmig
+ * among them.
+ *
+ * Every reason to open the block belongs here, and nowhere else.
+ */
+export function hasOrionsArmBlock(
+  detail: {
+    polities: string[];
+    worlds?: unknown[];
+    events?: unknown[];
+    associationSource?: string | null;
+  },
+  beyondFrontier: boolean,
+): boolean {
+  return Boolean(
+    detail.polities.length > 0 ||
+      beyondFrontier ||
+      detail.worlds?.length ||
+      detail.events?.length ||
+      detail.associationSource,
+  );
+}
+
 /** Everything in the string that looks like an address, in order. */
 const URL_PATTERN = /https?:\/\/\S+/g;
 
@@ -229,7 +260,7 @@ export class DetailPanel {
     const fiction = this.sources.fiction;
     const beyond = fiction ? detail.distancePc > fiction.frontierPc : false;
 
-    if (detail.polities.length > 0 || beyond || detail.worlds?.length || detail.events?.length) {
+    if (hasOrionsArmBlock(detail, beyond)) {
       const note = el('div', 'note');
       note.appendChild(el('div', 'note-line', "Orion's Arm"));
       if (detail.polities.length > 0) {
@@ -238,11 +269,8 @@ export class DetailPanel {
           note.appendChild(citationLine('note-line', `after ${detail.associationSource}`));
         }
       } else if (detail.associationSource) {
-        // A place with no holder still has an article, and for a while nothing
-        // showed it: the link hung off the polity block, so the twenty-five
-        // worlds belonging to nobody were the ones a reader could not follow up.
-        // Bare here rather than "after …", which claims the source backs an
-        // affiliation when there is none to back.
+        // Bare rather than "after …", which would claim the source backs an
+        // affiliation when there is no affiliation to back.
         note.appendChild(citationLine('note-line', detail.associationSource));
       }
       for (const event of detail.events ?? []) {
