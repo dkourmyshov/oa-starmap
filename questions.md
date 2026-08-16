@@ -8,7 +8,21 @@ Nothing below is a complaint about the setting. Most of it is the ordinary frict
 
 ---
 
-## Open questions (25)
+## Open questions (26)
+
+### Shona — Shona's article gives its position twice, and the two directions are thirty degrees apart.
+
+*contradiction*
+
+The article states a right ascension of 18h 26m 26.4621s and a declination of -18d 05m 10.410s, a distance of 6292.929226 ly, galactic coordinates of 4207.143774, 4442.857096, -1470.347368, and the constellation Sagittarius, with the world described as near IC 4715.
+The right ascension and declination convert to galactic longitude 14.0, latitude -2.8, which is in Sagittarius and near IC 4715, agreeing with both of the article's own words. At the stated distance they give galactic coordinates of 6098, 1524, -311.
+The galactic coordinates the article prints instead give longitude 46.6, latitude -13.5 — in Aquila, thirty degrees away, and nowhere near IC 4715. Both forms return the same 6,292.9 ly, so the distance is not in question and the disagreement is entirely one of direction.
+
+**What the map does now.** Shona is placed from the right ascension and declination, in Sagittarius. Two of the article's statements support that direction and one contradicts it, and the two are the ones a reader would check.
+
+**What would settle it.** Which of the two the author intended. A galactic XYZ that does not match the stated constellation is the more likely to be a slip, but that is a guess about how the figures were produced rather than evidence.
+
+- https://www.orionsarm.com/eg-article/4cd00caab2853
 
 ### Enigma system — Three sources put the Enigma system in three different directions.
 

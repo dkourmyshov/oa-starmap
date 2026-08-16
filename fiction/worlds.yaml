@@ -7614,7 +7614,8 @@ worlds:
       Around HD 222788 in Pegasus, which the catalogue puts at 535 ly against
       the article's 796 — a third nearer, so the star lends its direction and
       the article keeps its distance. Settled by Solarists and Genen, neither of
-      which this file carries as a polity.
+      which this file carries as a polity; independent for now, which is what an
+      empty holder means here.
 
   - name: Spica
     kind: system
@@ -7652,7 +7653,7 @@ worlds:
 
   - name: Sy
     kind: planet
-    affiliations: []
+    affiliations: [cygexpa]
     article: https://www.orionsarm.com/eg-article/478c171e73982
     location:
       star: HD 196954
@@ -7660,8 +7661,12 @@ worlds:
       - year_at: 3910
         kind: settled
     note: >-
-      HD 196954 A in Cygnus, 1,191 ly out. Once Cygexpa's and no longer, so the
-      field is empty: it records the present holder, and the article names none.
+      HD 196954 A in Cygnus, 1,191 ly out. Recorded as Cygexpa's, which is the
+      one holder in this file that is not a present one: the Cygnus Expansion
+      Corporation no longer exists, and no world tagged with it answers to
+      anything by that name. The label is kept because most of what was theirs
+      joined nobody afterwards, so it still says where a world came from and
+      that it went nowhere else.
 
   - name: Tangaroa
     kind: planet
@@ -7679,8 +7684,13 @@ worlds:
       Given as near HD 186569 at 2,870 ly, and the catalogue puts that star at
       1,400 — half as far, the widest disagreement in this sweep. Near may mean
       near on the sky rather than near in space; either way the star can only
-      lend its direction here, and the article keeps the distance. Held by the
-      Ocean Fleet, which this file has no polity for.
+      lend its direction here, and the article keeps the distance.
+
+      Held by the Ocean Fleet, which has no polity entry here, so the world
+      stands as independent until it is settled whether the Fleet answers to the
+      Zoeific Biopolity or to nobody. Its other known place, Panthalassa, is on
+      this map from the Celestia add-on and is Zoeific: five degrees away on the
+      sky and 2,012 ly nearer, so the two are neighbours in direction only.
 
   - name: Tengri
     kind: system
