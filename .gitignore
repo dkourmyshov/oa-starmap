@@ -6,6 +6,12 @@ raw/
 # Original URLs are recorded in the pipeline so the files can be fetched again.
 sources/
 
+# Text pulled out of anything in sources/ for reading. Untracked for the same
+# reason as sources/ itself, and more so: an extraction is still somebody else's
+# document, and one committed by accident is the easiest kind to leave lying
+# around.
+pipeline/*.txt
+
 # Generated datasets — rebuild with `uv run oastarmap build`
 web/public/data/*
 !web/public/data/.gitkeep
