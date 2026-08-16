@@ -276,6 +276,8 @@ async function main(): Promise<void> {
   dof.register(starField.dof);
   if (oaStarField) dof.register(oaStarField.dof);
   if (settledField) dof.register(settledField.dof);
+  if (worldField) dof.register(worldField.dof);
+  if (clusterField) dof.register(clusterField.dof);
 
   const hud = new Hud(
     overlay,
@@ -366,16 +368,6 @@ async function main(): Promise<void> {
   canvas.addEventListener('pointerup', (event) => {
     if (Math.hypot(event.clientX - pressX, event.clientY - pressY) > 4) return;
 
-    // The plane held sharp is whatever the camera is orbiting, so focus follows
-    // the eye rather than being a second thing to aim. Reading it per frame
-    // means flying towards something keeps it in focus the whole way in.
-    if (dof.strength > 0) {
-      dof.focus = pc(viewer.camera.position.distanceTo(viewer.controls.target));
-      labels.depthOfField = dof;
-    } else {
-      labels.depthOfField = null;
-    }
-
     const rect = canvas.getBoundingClientRect();
     const id = objects.pick(viewer.camera, event.clientX - rect.left, event.clientY - rect.top, {
       width: rect.width,
@@ -395,6 +387,15 @@ async function main(): Promise<void> {
     clusterField?.setViewportHeight(height);
     hiiField?.setViewportHeight(height);
     worldField?.setViewportHeight(height);
+
+    // The plane held sharp is whatever the camera is orbiting, so focus follows
+    // the eye rather than being a second thing to aim, and flying towards
+    // something keeps it in focus the whole way in. This has to run every
+    // frame: it spent one commit inside the click handler, where the focus only
+    // moved when the reader happened to click and the labels never learned the
+    // settings at all.
+    dof.focus = viewer.focusDistance;
+    labels.depthOfField = dof.strength > 0 ? dof : null;
 
     const rect = canvas.getBoundingClientRect();
     // Read each frame rather than pushed on select, so closing the panel from

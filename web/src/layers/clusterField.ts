@@ -14,6 +14,7 @@ import * as THREE from 'three';
 
 import type { ClusterData, FictionData } from '../data/manifest';
 
+import { DOF_PARS, type DofUniforms, dofUniforms } from './dof';
 export const DEFAULT_OPACITY = 0.7;
 
 /** Index order must match `layout.types.order` in the manifest. */
@@ -35,6 +36,7 @@ const VERTEX_SHADER = /* glsl */ `
   attribute float aAssigned;
 
   uniform float uViewportHeight;
+  ${DOF_PARS}
   uniform float uMinSize;
   uniform float uMaxSize;
   uniform float uUnassignedDim;
@@ -45,6 +47,8 @@ const VERTEX_SHADER = /* glsl */ `
   varying float vShared;
   varying float vFade;
   varying float vSize;
+  varying float vBlur;
+  varying float vScale;
   varying float vGain;
 
   void main() {
@@ -59,9 +63,20 @@ const VERTEX_SHADER = /* glsl */ `
 
     // Below the minimum a cluster would vanish; clamping keeps distant ones as
     // small marks. Fade them instead of popping so the far field stays calm.
+    // Depth of field. The sprite grows to make room and the fragment scales its
+    // coordinate back, so the outline keeps the angular size it is there to
+    // report and only its edge softens. vSize stays the unblurred size, because
+    // the ring's thickness is derived from it and a hairline must not thin just
+    // because the thing is out of focus.
     vFade = smoothstep(0.35, 1.6, projected);
-    gl_PointSize = clamp(projected, uMinSize, uMaxSize);
-    vSize = gl_PointSize;
+    float base = clamp(projected, uMinSize, uMaxSize);
+    float blurPx = dofBlurPx(dist);
+    float grown = base + 2.0 * blurPx;
+    vScale = grown / base;
+    vBlur = min(blurPx / max(base * 0.5, 1e-4), 0.5);
+    vFade *= dofGain(base, grown);
+    gl_PointSize = grown;
+    vSize = base;
 
     vColor = aColor;
     vColorB = aColorB;
@@ -91,21 +106,23 @@ const FRAGMENT_SHADER = /* glsl */ `
   varying vec3 vColor;
   varying float vFade;
   varying float vSize;
+  varying float vBlur;
+  varying float vScale;
   varying float vGain;
   varying vec3 vColorB;
   varying float vShared;
 
   void main() {
     vec2 offset = gl_PointCoord * 2.0 - 1.0;
-    float r = length(offset);
-    if (r > 1.0) discard;
+    if (length(offset) > 1.0) discard;
+    float r = length(offset) * vScale;
 
     // Ring thickness is constant in *pixels*, not a fraction of the sprite.
     // Defining it in sprite space made a nearby moving group render as a
     // 180-pixel-thick band rather than an outline, which is what washed out the
     // inner sphere.
     float width = clamp(uRingWidthPx / max(vSize, 1.0), 0.004, 0.40);
-    float ring = 1.0 - smoothstep(0.0, width, abs(r - (1.0 - width)));
+    float ring = 1.0 - smoothstep(0.0, width + vBlur, abs(r - (1.0 - width)));
 
     // The interior tint is useful for small distant clusters, where the ring
     // alone is nearly invisible, but it must fade out as the sprite grows or a
@@ -205,6 +222,7 @@ export class ClusterField {
     this.material = new THREE.ShaderMaterial({
       uniforms: {
         uViewportHeight: { value: 1080 },
+        ...dofUniforms(),
         uMinSize: { value: 3.0 },
         uMaxSize: { value: 3000.0 },
         uOpacity: { value: DEFAULT_OPACITY },
@@ -265,5 +283,10 @@ export class ClusterField {
   dispose(): void {
     this.points.geometry.dispose();
     this.material.dispose();
+  }
+
+  /** The uniforms the shared depth-of-field settings write into. */
+  get dof(): DofUniforms {
+    return this.material.uniforms as unknown as DofUniforms;
   }
 }

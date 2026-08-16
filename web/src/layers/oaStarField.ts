@@ -108,6 +108,8 @@ const FRAGMENT_SHADER = /* glsl */ `
   varying vec3 vColor;
   varying float vGain;
   varying float vReal;
+  varying float vBlur;
+  varying float vScale;
 
   void main() {
     vec2 offset = (gl_PointCoord * 2.0 - 1.0) * vScale;

@@ -82,11 +82,13 @@ export class DepthOfField {
   private dimValue = 0.6;
   private focusValue = 100;
 
-  register(uniforms: DofUniforms): void {
-    this.targets.push(uniforms);
-    uniforms.uDofStrength.value = this.strengthValue;
-    uniforms.uDofDim.value = this.dimValue;
-    uniforms.uDofFocusPc.value = this.focusValue;
+  register(...uniforms: (DofUniforms | DofUniforms[])[]): void {
+    for (const entry of uniforms.flat()) {
+      this.targets.push(entry);
+      entry.uDofStrength.value = this.strengthValue;
+      entry.uDofDim.value = this.dimValue;
+      entry.uDofFocusPc.value = this.focusValue;
+    }
   }
 
   /** Pixels of blur radius per decade of distance from the focus. 0 is off. */

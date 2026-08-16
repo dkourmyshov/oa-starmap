@@ -39,6 +39,7 @@ import * as THREE from 'three';
 
 import type { WorldData } from '../data/manifest';
 
+import { DOF_PARS, type DofUniforms, dofUniforms } from './dof';
 export const DEFAULT_OPACITY = 0.9;
 
 /** Marker diameter in device pixels. */
@@ -96,14 +97,23 @@ const MARKER_VERTEX = /* glsl */ `
   attribute vec3 aColor;
 
   uniform float uSize;
+  ${DOF_PARS}
 
   varying vec3 vColor;
+  varying float vDim;
+  varying float vScale;
 
   void main() {
     vec4 viewPos = modelViewMatrix * vec4(position, 1.0);
     gl_Position = projectionMatrix * viewPos;
     vColor = aColor;
-    gl_PointSize = uSize;
+
+    // The marker keeps its screen size and softens, as the rings do.
+    float blurPx = dofBlurPx(max(length(viewPos.xyz), 1e-4));
+    float grown = uSize + 2.0 * blurPx;
+    vScale = grown / uSize;
+    vDim = dofGain(uSize, grown);
+    gl_PointSize = grown;
 
     #include <logdepthbuf_vertex>
   }
@@ -116,11 +126,13 @@ const MARKER_FRAGMENT = /* glsl */ `
   uniform float uOpacity;
 
   varying vec3 vColor;
+  varying float vDim;
+  varying float vScale;
 
   void main() {
     vec2 offset = gl_PointCoord * 2.0 - 1.0;
-    float r = length(offset);
-    if (r > 1.0) discard;
+    if (length(offset) > 1.0) discard;
+    float r = length(offset) * vScale;
 
     // A filled dot, and nothing around it: the polity ring drawn by the settled
     // layer needs that space. Solid where the position is exact, and softened
@@ -132,7 +144,7 @@ const MARKER_FRAGMENT = /* glsl */ `
     // arrives exactly there and — drawing later — paints over the polity
     // instead of sitting inside it. Ending at 0.62 leaves a clear gap.
     float dot = 1.0 - smoothstep(0.0, 0.40, r);
-    float alpha = dot * uOpacity;
+    float alpha = dot * uOpacity * vDim;
     if (alpha < 0.004) discard;
 
     #include <logdepthbuf_fragment>
@@ -150,11 +162,14 @@ const CIRCLE_VERTEX = /* glsl */ `
   attribute float aHazard;
 
   uniform float uViewportHeight;
+  ${DOF_PARS}
   uniform float uMaxPx;
 
   varying vec3 vColor;
   varying float vFade;
   varying float vSize;
+  varying float vBlur;
+  varying float vScale;
   varying float vHazard;
 
   void main() {
@@ -180,8 +195,19 @@ const CIRCLE_VERTEX = /* glsl */ `
     // invisible on Corambytia, whose 11 degrees merely looked like 22, and
     // impossible to miss on the Gehenna front, which covered the sphere.
     // clusterField computes the same quantity and does not double it.
-    gl_PointSize = clamp(pixels, 0.0, uMaxPx);
-    vSize = gl_PointSize;
+    // Depth of field. The sprite grows to make room and the fragment scales its
+    // coordinate back, so the outline keeps the angular size it is there to
+    // report and only its edge softens. vSize stays the unblurred size, because
+    // the ring's thickness is derived from it and a hairline must not thin just
+    // because the thing is out of focus.
+    float base = clamp(pixels, 0.0, uMaxPx);
+    float blurPx = dofBlurPx(distance);
+    float grown = base + 2.0 * blurPx;
+    vScale = base > 0.0 ? grown / base : 1.0;
+    vBlur = base > 0.0 ? min(blurPx / max(base * 0.5, 1e-4), 0.5) : 0.0;
+    vFade *= dofGain(max(base, 1e-4), max(grown, 1e-4));
+    gl_PointSize = grown;
+    vSize = base;
 
     #include <logdepthbuf_vertex>
   }
@@ -199,12 +225,14 @@ const CIRCLE_FRAGMENT = /* glsl */ `
   varying vec3 vColor;
   varying float vFade;
   varying float vSize;
+  varying float vBlur;
+  varying float vScale;
   varying float vHazard;
 
   void main() {
     vec2 offset = gl_PointCoord * 2.0 - 1.0;
-    float r = length(offset);
-    if (r > 1.0) discard;
+    if (length(offset) > 1.0) discard;
+    float r = length(offset) * vScale;
 
     // A thin outline, and nothing inside it: the region is not an object and
     // must not read as one.
@@ -219,7 +247,7 @@ const CIRCLE_FRAGMENT = /* glsl */ `
     // than thinning. Asking for a hairline has to mean one pixel, not less.
     float widthPx = max(mix(uRingPx, uHazardRingPx, vHazard), 1.0);
     float width = clamp(widthPx / max(vSize, 1.0), 0.0, 0.35);
-    float ring = 1.0 - smoothstep(0.0, width, abs(r - (1.0 - width)));
+    float ring = 1.0 - smoothstep(0.0, width + vBlur, abs(r - (1.0 - width)));
 
     float alpha = ring * uOpacity * vFade * mix(1.0, uHazardDim, vHazard);
     if (alpha < 0.004) discard;
@@ -304,6 +332,7 @@ export class WorldField {
       uniforms: {
         uSize: { value: DEFAULT_SIZE_PX },
         uOpacity: { value: DEFAULT_OPACITY },
+        ...dofUniforms(),
       },
       vertexShader: MARKER_VERTEX,
       fragmentShader: MARKER_FRAGMENT,
@@ -344,6 +373,7 @@ export class WorldField {
         uRingPx: { value: RING_PX },
         uHazardRingPx: { value: HAZARD_RING_PX },
         uHazardDim: { value: 1.0 },
+        ...dofUniforms(),
       },
       vertexShader: CIRCLE_VERTEX,
       fragmentShader: CIRCLE_FRAGMENT,
@@ -380,5 +410,19 @@ export class WorldField {
     this.circles.geometry.dispose();
     this.markerMaterial.dispose();
     this.circleMaterial.dispose();
+  }
+
+  /**
+   * The uniforms the shared depth-of-field settings write into.
+   *
+   * Two, because this layer draws with two materials — the world markers and
+   * the extent circles — and both have to agree with everything else about
+   * where the focus is.
+   */
+  get dof(): DofUniforms[] {
+    return [
+      this.markerMaterial.uniforms as unknown as DofUniforms,
+      this.circleMaterial.uniforms as unknown as DofUniforms,
+    ];
   }
 }

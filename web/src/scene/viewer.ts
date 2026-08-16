@@ -342,6 +342,17 @@ export class Viewer {
     return pc(this.camera.position.distanceTo(this.active.target));
   }
 
+  /**
+   * Distance from the camera to whatever it is orbiting.
+   *
+   * Reads the *active* controls: in trackball mode the orbit controls keep a
+   * stale target, so asking them directly holds the focus wherever the camera
+   * last was in the other mode.
+   */
+  get focusDistance(): Parsecs {
+    return pc(this.camera.position.distanceTo(this.active.target));
+  }
+
   /** Distance from the camera to Sol, which is the origin of the frame. */
   get distanceFromSol(): Parsecs {
     return pc(this.camera.position.length());

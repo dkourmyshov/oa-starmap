@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
+import { pc } from '../units';
 import { DepthOfField, dofUniforms } from './dof';
 
 /**
@@ -12,7 +13,7 @@ describe('DepthOfField', () => {
     const dof = new DepthOfField();
     dof.strength = 6;
     dof.dim = 0.25;
-    dof.focus = 400;
+    dof.focus = pc(400);
 
     const late = dofUniforms();
     dof.register(late);
@@ -29,14 +30,14 @@ describe('DepthOfField', () => {
     dof.register(stars);
     dof.register(rings);
 
-    dof.focus = 1234;
+    dof.focus = pc(1234);
     expect(stars.uDofFocusPc.value).toBe(1234);
     expect(rings.uDofFocusPc.value).toBe(1234);
   });
 
   it('keeps the focus positive, because the blur takes its logarithm', () => {
     const dof = new DepthOfField();
-    dof.focus = 0;
+    dof.focus = pc(0);
     expect(dof.focus).toBeGreaterThan(0);
   });
 
@@ -58,7 +59,7 @@ describe('DepthOfField', () => {
   it('blurs a label more the further it is from the focus, either way', () => {
     const dof = new DepthOfField();
     dof.strength = 8;
-    dof.focus = 100;
+    dof.focus = pc(100);
 
     const sharp = dof.labelStyle(100);
     const far = dof.labelStyle(10000);
@@ -82,7 +83,7 @@ describe('DepthOfField', () => {
   it('blurs text less than the shader blurs the sky', () => {
     const dof = new DepthOfField();
     dof.strength = 10;
-    dof.focus = 100;
+    dof.focus = pc(100);
     // A glyph carries its meaning in strokes a pixel or two wide; a star
     // carries none, so matching them pixel for pixel would make the names
     // unreadable while the stars behind were merely soft.
