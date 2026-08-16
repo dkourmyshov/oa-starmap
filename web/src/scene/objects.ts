@@ -184,6 +184,14 @@ export interface PlacedLabel {
   asserted?: boolean;
   /** Placed because it is selected, not because it won a slot. */
   pinned?: boolean;
+  /**
+   * Distance from the camera in parsecs.
+   *
+   * Only the depth-of-field overlay reads it. Labels are DOM nodes and cannot
+   * share the shaders' blur, so they need the same number the vertex shader
+   * gets — and it is already computed here for the magnitude test.
+   */
+  depthPc: number;
 }
 
 export interface LayerVisibility {
@@ -326,6 +334,8 @@ export class ObjectIndex {
   // Scratch, reused across every projection so the hot loops stay allocation-free.
   private readonly viewProjection = new THREE.Matrix4();
   private readonly screenX: Float32Array;
+
+  private readonly screenDepth: Float32Array;
   private readonly screenY: Float32Array;
   private readonly screenR: Float32Array;
   private readonly onScreen: Uint8Array;
@@ -363,6 +373,7 @@ export class ObjectIndex {
     this.labelColor = new Array(total);
 
     this.screenX = new Float32Array(total);
+    this.screenDepth = new Float32Array(total);
     this.screenY = new Float32Array(total);
     this.screenR = new Float32Array(total);
     this.onScreen = new Uint8Array(total);
@@ -683,6 +694,7 @@ export class ObjectIndex {
         this.screenR[id] = (this.radius[id] * focal * halfHeight) / Math.max(distance, 1e-4);
       }
 
+      this.screenDepth[id] = distance;
       this.screenX[id] = (ndcX * 0.5 + 0.5) * width;
       this.screenY[id] = (-ndcY * 0.5 + 0.5) * height;
       this.onScreen[id] = 1;
@@ -839,6 +851,7 @@ export class ObjectIndex {
         color: this.labelColor[pinned],
         asserted: this.assertedPosition[pinned] === 1,
         pinned: true,
+        depthPc: this.screenDepth[pinned],
       });
     }
 
@@ -876,6 +889,7 @@ export class ObjectIndex {
         importance: candidate.priority,
         color: this.labelColor[id],
         asserted: this.assertedPosition[id] === 1,
+        depthPc: this.screenDepth[id],
       });
     }
 

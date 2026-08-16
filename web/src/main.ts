@@ -16,6 +16,7 @@ import { Viewer } from './scene/viewer';
 import { DetailPanel } from './ui/detail';
 import { Hud, type JumpTarget } from './ui/hud';
 import { LabelOverlay } from './ui/labels';
+import { DepthOfField } from './layers/dof';
 import { pc } from './units';
 
 /** Find a star's index by its proper name. */
@@ -268,6 +269,14 @@ async function main(): Promise<void> {
     viewer.focusOn(centre, pc(Math.max(extent * 2.2, 50)));
   };
 
+  // Every layer that draws at a position shares one focus. Registering rather
+  // than being fetched by name means a new sprite layer joins with one line and
+  // cannot be left sharp by an update loop that forgot it.
+  const dof = new DepthOfField();
+  dof.register(starField.dof);
+  if (oaStarField) dof.register(oaStarField.dof);
+  if (settledField) dof.register(settledField.dof);
+
   const hud = new Hud(
     overlay,
     data.dataset,
@@ -301,7 +310,10 @@ async function main(): Promise<void> {
         hiiField?.setShowKinematic(enabled);
       },
       onDepthOfField: (strength) => {
-        starField.dofStrength = strength;
+        dof.strength = strength;
+      },
+      onDepthOfFieldDim: (amount) => {
+        dof.dim = amount;
       },
       onOnlyOA: (enabled) => {
         view.visible.oaOnly = enabled;
@@ -357,8 +369,11 @@ async function main(): Promise<void> {
     // The plane held sharp is whatever the camera is orbiting, so focus follows
     // the eye rather than being a second thing to aim. Reading it per frame
     // means flying towards something keeps it in focus the whole way in.
-    if (starField.dofStrength > 0) {
-      starField.dofFocus = pc(viewer.camera.position.distanceTo(viewer.controls.target));
+    if (dof.strength > 0) {
+      dof.focus = pc(viewer.camera.position.distanceTo(viewer.controls.target));
+      labels.depthOfField = dof;
+    } else {
+      labels.depthOfField = null;
     }
 
     const rect = canvas.getBoundingClientRect();

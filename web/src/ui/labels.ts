@@ -15,6 +15,8 @@
 
 import type * as THREE from 'three';
 
+import type { DepthOfField } from '../layers/dof';
+
 import {
   KIND_CLUSTER,
   KIND_HII,
@@ -52,6 +54,16 @@ export class LabelOverlay {
 
   /** Which of an object's names to show. */
   nameMode: NameMode = 'oa';
+
+  /**
+   * The depth-of-field settings, or null when the mode is off.
+   *
+   * Labels have to agree with the shaders about where the focus is. Blurring
+   * the sky and leaving the names crisp is worse than not blurring at all: the
+   * sharp things read as a flat plane pasted over the scene, which is the
+   * opposite of the depth the effect is for.
+   */
+  depthOfField: DepthOfField | null = null;
 
   constructor(
     parent: HTMLElement,
@@ -111,9 +123,15 @@ export class LabelOverlay {
       node.style.transform = `translate3d(${label.x}px, ${label.y}px, 0) translate(-50%, -50%)`;
       // Faint labels stay legible but recede, so the eye lands on the anchors.
       // The selected one is always full strength: it was asked for.
-      node.style.opacity = label.pinned
-        ? '1'
-        : String(Math.min(0.45 + label.importance * 0.4, 1));
+      const base = label.pinned ? 1 : Math.min(0.45 + label.importance * 0.4, 1);
+      // The selected label is never blurred: it was asked for, and an answer
+      // the reader cannot read is not an answer.
+      const dof =
+        this.depthOfField && !label.pinned
+          ? this.depthOfField.labelStyle(label.depthPc)
+          : null;
+      node.style.opacity = String(dof ? base * dof.opacity : base);
+      node.style.filter = dof && dof.blurPx > 0.05 ? `blur(${dof.blurPx.toFixed(2)}px)` : '';
       // The polity colour rides on the label rather than on the object, so a
       // star keeps the colour its photometry actually measured.
       node.style.color = label.color ?? '';

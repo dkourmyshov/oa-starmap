@@ -31,6 +31,7 @@ export interface HudCallbacks {
   onOAStarsVisible(value: boolean): void;
   onOnlyOA(enabled: boolean): void;
   onDepthOfField(strength: number): void;
+  onDepthOfFieldDim(amount: number): void;
   onLabelsVisible(value: boolean): void;
   onLabelDensity(value: number): void;
   onNameMode(mode: NameMode): void;
@@ -196,6 +197,18 @@ export class Hud {
       this.slider('Depth of field', 0, 12, 0, 0.5, (v) => {
         this.callbacks.onDepthOfField(v);
         return v === 0 ? 'off' : `${v.toFixed(1)} px/decade`;
+      }),
+    );
+
+    // How much the out-of-focus half dims as well as blurs. Separate from the
+    // blur because they do different jobs: blur says how far away a thing is,
+    // dimming decides how much of the far field is there at all. Wound up, it
+    // thins a dense view down to the shell in focus, which is the only way to
+    // see into the Inner Sphere.
+    panel.appendChild(
+      this.slider('Out-of-focus dimming', 0, 1, 0.6, 0.05, (v) => {
+        this.callbacks.onDepthOfFieldDim(v);
+        return v === 0 ? 'none' : v.toFixed(2);
       }),
     );
 

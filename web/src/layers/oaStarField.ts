@@ -35,6 +35,7 @@
 import * as THREE from 'three';
 
 import type { OAStarData } from '../data/manifest';
+import { DOF_PARS, type DofUniforms, dofUniforms } from './dof';
 
 export const DEFAULT_OPACITY = 0.95;
 
@@ -60,11 +61,14 @@ const VERTEX_SHADER = /* glsl */ `
   attribute float aReal;
 
   uniform float uSize;
+  ${DOF_PARS}
   uniform float uBareDim;
 
   varying vec3 vColor;
   varying float vGain;
   varying float vReal;
+  varying float vBlur;
+  varying float vScale;
 
   void main() {
     vec4 viewPos = modelViewMatrix * vec4(position, 1.0);
@@ -79,7 +83,17 @@ const VERTEX_SHADER = /* glsl */ `
 
     // Constant screen size: a marker, not a luminosity. Big enough that the
     // hollow centre reads as a diamond rather than smearing into a dot.
-    gl_PointSize = uSize;
+    // Depth of field. The sprite grows to make room for the blur and the
+    // fragment scales its coordinate back, so the marker keeps its screen size
+    // and only its edges soften — a ring that swelled with defocus would read
+    // as a bigger region, which is a claim about the data rather than about
+    // where the camera is looking.
+    float blurPx = dofBlurPx(max(length(viewPos.xyz), 1e-4));
+    float grown = uSize + 2.0 * blurPx;
+    vScale = grown / uSize;
+    vBlur = min(blurPx / (uSize * 0.5), 0.5);
+    vGain *= dofGain(uSize, grown);
+    gl_PointSize = grown;
 
     #include <logdepthbuf_vertex>
   }
@@ -96,20 +110,21 @@ const FRAGMENT_SHADER = /* glsl */ `
   varying float vReal;
 
   void main() {
-    vec2 offset = gl_PointCoord * 2.0 - 1.0;
+    vec2 offset = (gl_PointCoord * 2.0 - 1.0) * vScale;
+    float w = vBlur;
 
     // A real object gets a star's glyph: a soft filled disc, drawn at constant
     // size because the magnitude law would put a 14.8-magnitude white dwarf
     // below any usable exposure. The rest get an open diamond.
-    float disc = 1.0 - smoothstep(0.10, 0.62, length(offset));
+    float disc = 1.0 - smoothstep(0.10 - w, 0.62 + w, length(offset));
 
     // L1 distance makes a diamond where L2 would make a circle.
     float d = abs(offset.x) + abs(offset.y);
 
     // Hollow: the outline is the tell, and a filled marker at this size would be
     // indistinguishable from a star.
-    float edge = 1.0 - smoothstep(0.42, 1.0, d);
-    float core = 1.0 - smoothstep(0.0, 0.46, d);
+    float edge = 1.0 - smoothstep(0.42 - w, 1.0 + w, d);
+    float core = 1.0 - smoothstep(0.0, 0.46 + w, d);
     float diamond = d > 1.0 ? 0.0 : clamp(edge - core, 0.0, 1.0);
 
     float shape = mix(diamond, disc, vReal);
@@ -185,7 +200,8 @@ export class OAStarField {
 
     this.material = new THREE.ShaderMaterial({
       uniforms: {
-        uSize: { value: DEFAULT_SIZE_PX },
+        uSize: { value: DEFAULT_SIZE_PX },
+        ...dofUniforms(),
         uOpacity: { value: DEFAULT_OPACITY },
         uBareDim: { value: BARE_DIM },
       },
@@ -218,5 +234,10 @@ export class OAStarField {
   dispose(): void {
     this.points.geometry.dispose();
     this.material.dispose();
+  }
+
+  /** The uniforms the shared depth-of-field settings write into. */
+  get dof(): DofUniforms {
+    return this.material.uniforms as unknown as DofUniforms;
   }
 }

@@ -45,7 +45,9 @@ import {
   type StarData,
   type WorldData,
   affiliationsFor,
-} from '../data/manifest';
+} from '../data/manifest';
+
+import { DOF_PARS, type DofUniforms, dofUniforms } from './dof';
 
 export const DEFAULT_OPACITY = 0.85;
 
@@ -83,6 +85,7 @@ const VERTEX_SHADER = /* glsl */ `
   attribute float aVague;
 
   uniform float uSize;
+  ${DOF_PARS}
   uniform float uUnaffiliatedDim;
 
   varying vec3 vColor0;
@@ -93,6 +96,8 @@ const VERTEX_SHADER = /* glsl */ `
   varying float vGain;
   varying float vApprox;
   varying float vVague;
+  varying float vBlur;
+  varying float vScale;
 
   void main() {
     vec4 viewPos = modelViewMatrix * vec4(position, 1.0);
@@ -104,8 +109,17 @@ const VERTEX_SHADER = /* glsl */ `
     vColor2 = aColor2;
     vColor3 = aColor3;
     vSegments = aSegments;
-    vGain = mix(uUnaffiliatedDim, 1.0, aAffiliated);
-    gl_PointSize = uSize;
+    // Depth of field. The sprite grows to make room for the blur and the
+    // fragment scales its coordinate back, so the marker keeps its screen size
+    // and only its edges soften — a ring that swelled with defocus would read
+    // as a bigger region, which is a claim about the data rather than about
+    // where the camera is looking.
+    float blurPx = dofBlurPx(max(length(viewPos.xyz), 1e-4));
+    float grown = uSize + 2.0 * blurPx;
+    vScale = grown / uSize;
+    vBlur = min(blurPx / (uSize * 0.5), 0.5);
+    vGain = mix(uUnaffiliatedDim, 1.0, aAffiliated) * dofGain(uSize, grown);
+    gl_PointSize = grown;
 
     #include <logdepthbuf_vertex>
   }
@@ -125,15 +139,21 @@ const FRAGMENT_SHADER = /* glsl */ `
   varying float vGain;
   varying float vApprox;
   varying float vVague;
+  varying float vBlur;
+  varying float vScale;
 
   void main() {
     vec2 offset = gl_PointCoord * 2.0 - 1.0;
-    float r = length(offset);
-    if (r > 1.0) discard;
+    if (length(offset) > 1.0) discard;
+    // Undo the growth the vertex shader added for the blur, so the ring sits at
+    // the same screen radius whether it is in focus or not.
+    float r = length(offset) * vScale;
 
     // Thin, and hollow generously: the star this marks sits at the centre and
-    // must stay visible through it.
-    float ring = smoothstep(0.72, 0.82, r) * (1.0 - smoothstep(0.88, 0.98, r));
+    // must stay visible through it. Out of focus the bands widen into each
+    // other, which is what a blurred hairline does.
+    float w = vBlur;
+    float ring = smoothstep(0.72 - w, 0.82 + w, r) * (1.0 - smoothstep(0.88 - w, 0.98 + w, r));
     if (ring <= 0.0) discard;
 
     float turnAround = fract(0.25 - atan(offset.y, offset.x) / (2.0 * PI));
@@ -141,10 +161,10 @@ const FRAGMENT_SHADER = /* glsl */ `
     // Dashed where the source gave a region rather than a position. Twelve
     // arcs, which survives being cut again by a segment boundary: a ring that
     // is both shared and approximate still reads as both.
-    float dash = smoothstep(0.28, 0.44, abs(fract(turnAround * 12.0) - 0.5) * 2.0);
+    float dash = smoothstep(0.28 - w, 0.44 + w, abs(fract(turnAround * 12.0) - 0.5) * 2.0);
     // Dotted where the radius is doubtful too: more arcs and a shorter mark, so
     // it reads as less certain than a dash rather than merely different.
-    float dot = smoothstep(0.62, 0.78, abs(fract(turnAround * 30.0) - 0.5) * 2.0);
+    float dot = smoothstep(0.62 - w, 0.78 + w, abs(fract(turnAround * 30.0) - 0.5) * 2.0);
     ring *= mix(mix(1.0, dash, vApprox), dot, vVague);
 
     vec3 color = vColor0;
@@ -355,7 +375,8 @@ export class SettledField {
 
     this.material = new THREE.ShaderMaterial({
       uniforms: {
-        uSize: { value: DEFAULT_SIZE_PX },
+        uSize: { value: DEFAULT_SIZE_PX },
+        ...dofUniforms(),
         uOpacity: { value: DEFAULT_OPACITY },
         uUnaffiliatedDim: { value: UNAFFILIATED_DIM },
       },
@@ -401,5 +422,10 @@ export class SettledField {
   dispose(): void {
     this.points.geometry.dispose();
     this.material.dispose();
+  }
+
+  /** The uniforms the shared depth-of-field settings write into. */
+  get dof(): DofUniforms {
+    return this.material.uniforms as unknown as DofUniforms;
   }
 }
