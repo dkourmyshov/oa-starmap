@@ -7206,3 +7206,197 @@ worlds:
       0.84c cruise, 1,712 ly is a journey of two thousand years, so nothing
       leaving Sol at any date could arrive before about 2000 AT whatever the
       article's lower bound says.
+
+  # ---- the alphabetical sweep, O-P -----------------------------------------
+
+  - name: Beyniou
+    kind: system
+    system: Beyniou
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/490b3010a681a
+    location:
+      constellation: Musca
+      distance: 7122 ly
+    events:
+      - year_at: 1198
+        kind: observed
+        note: Known from this year, long before anyone went.
+      - year_at: 9462
+        kind: visited
+        note: Reached.
+    note: >-
+      In Musca at 7,122 ly, and among the furthest things this file holds. The
+      star's name is the setting's own and matches nothing in the catalogues
+      here, so the constellation carries the direction.
+
+  - name: Oceanus Ultimata
+    kind: megastructure
+    system: Beyniou
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/490b3010a681a
+    note: >-
+      A megastructure at Beyniou, most probably of xenosophont make. Probably is
+      the article's own hedge, and origin is not possession, so no holder is
+      recorded and the xenosophont tag is not used.
+
+  - name: Tyrion
+    kind: system
+    system: Tyrion
+    affiliations: [sophic-league]
+    article: https://www.orionsarm.com/eg-article/55784e51e87b3
+    location:
+      constellation: Puppis
+      distance: 214 ly
+    events:
+      - year_at: 2877
+        kind: settled
+    note: >-
+      In Puppis at 214 ly, within what the setting calls the Garden of Paradise
+      Cluster — a region of its own naming that matches no catalogue here.
+      Sophic, as most of that cluster is.
+
+  - name: Orobon
+    kind: planet
+    system: Tyrion
+    affiliations: [sophic-league]
+    article: https://www.orionsarm.com/eg-article/55784e51e87b3
+    note: The world of Tyrion.
+
+  - name: Norton
+    kind: system
+    system: Norton
+    affiliations: [cygexpa]
+    article: https://www.orionsarm.com/eg-article/49106ed3cb09b
+    location:
+      ra_deg: 302.9039
+      dec_deg: 26.5407
+      distance: 1954 ly
+      near: NGC 6885
+    events:
+      - year_at: 5502
+        kind: settled
+    note: >-
+      Near NGC 6885 in Vulpecula at 1,954 ly. That designation is one of
+      astronomy's tangled ones: this map's catalogue attaches the name to a deep
+      Gaia grouping at 5,040 ly, while carrying NGC 6882 as a separate cluster
+      at 1,544 ly — and the two sit a fifth of a degree apart on the sky. So the
+      direction is agreed by everything there and only the distance is in
+      dispute, with the article's figure falling between the catalogue's two.
+
+  - name: Orwell
+    kind: planet
+    system: Norton
+    affiliations: [cygexpa]
+    article: https://www.orionsarm.com/eg-article/49106ed3cb09b
+    note: The world of Norton.
+
+  - name: Osiris
+    kind: planet
+    affiliations: [solipsist-panvirtuality]
+    article: https://www.orionsarm.com/eg-article/4910dfd470715
+    location:
+      star: HD 209458
+    note: >-
+      HD 209458 in Pegasus, 157 ly out — the star of the first exoplanet whose
+      atmosphere was ever measured, and the Panvirtuality's now.
+
+  - name: Panvirtuality Ultima
+    kind: megastructure
+    affiliations: [solipsist-panvirtuality]
+    article: https://www.orionsarm.com/eg-article/47bcee4c91d79
+    location:
+      star: Zeta Ophiuchi
+    note: >-
+      Zeta Ophiuchi, 440 ly out against the article's 480 — a runaway O-class
+      star ploughing a bow shock through the interstellar medium, and an odd
+      place to build.
+
+  - name: Paz
+    kind: system
+    system: Paz
+    affiliations: []
+    location:
+      star: 59 Draconis
+    note: >-
+      59 Draconis, 89 ly out. No article of its own, and not the Paz of the
+      Efficiency Maximization Paradigm, which is a different world entirely and
+      is recorded here as Morpheo A.
+
+  - name: Morpheo A
+    kind: system
+    system: Morpheo A
+    affiliations: [paradigm]
+    article: https://www.orionsarm.com/eg-article/47bcf7d1a1549
+    location:
+      ra_deg: 211.8148
+      dec_deg: -48.2988
+      distance: 1990 ly
+      near: NGC 5460
+    events:
+      - year_at: 5650
+        kind: settled
+    note: >-
+      Named for its star rather than its world, because the world was called Paz
+      — a name this file already uses for a system in Draco — and because the
+      Efficiency Maximization Paradigm has since taken the planet apart. In the
+      Centaurus sector near NGC 5460 at 1,990 ly, which sits it among the
+      Paradigm's other holdings: Budrosa at 1,783, Nirio at 1,800,
+      Jekaumeatrine at 1,818.
+
+  - name: Penrose Place
+    kind: megastructure
+    affiliations: [refugium-federation]
+    article: https://www.orionsarm.com/eg-article/670fe3919c608
+    location:
+      constellation: Centaurus
+      distance: 2210 ly
+    events:
+      - year_at: 5902
+        kind: settled
+        note: Reached.
+    note: >-
+      Built around a black hole in Centaurus at 2,210 ly, and named for the
+      process that makes such a thing worth building: energy drawn from the
+      hole's rotation.
+
+  - name: Perdix
+    kind: planet
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/4ac0ad22a9c89
+    location:
+      star: HIP 30050
+    events:
+      - year_at: 3010
+        kind: settled
+    note: HIP 30050 in Dorado, 288 ly out against the article's 259.
+
+  - name: Pereira
+    kind: planet
+    affiliations: [keter-dominion, mutual-progress-association, zoeific-biopolity]
+    article: https://www.orionsarm.com/eg-article/47bf772c4ab92
+    location:
+      ra_deg: 295.1543
+      dec_deg: 7.8365
+      distance: 1433 ly
+    events:
+      - year_at: 4307
+        kind: settled
+      - year_at: 10600
+        kind: transferred
+        precision: not_later_than
+        note: Once the Biovirate's capital; now divided, with much of it unaligned.
+    note: >-
+      Galactic coordinates given outright — 995, 1016, -180 ly — which return
+      1,433 ly in Aquila, the distance and constellation the article also
+      states. Three holders are recorded because three are named, but the
+      article gives a share to none of them: a good part of the world answers to
+      nobody, and this file has no way to draw that.
+
+  - name: Puysha-Para
+    kind: volume
+    affiliations: []
+    note: >-
+      A civilisation placed only as 25 ly from Kuranaba, which this map holds
+      without a direction of its own — 209 ly out and nothing more. A separation
+      from something unplaced is not a position, so nothing is drawn. A
+      direction for Kuranaba would give both.
