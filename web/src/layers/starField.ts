@@ -19,6 +19,7 @@
 import * as THREE from 'three';
 
 import type { Colony, StarData, WorldData } from '../data/manifest';
+import type { Parsecs } from '../units';
 
 const LOG10 = Math.LN10;
 
@@ -59,11 +60,20 @@ const VERTEX_SHADER = /* glsl */ `
   uniform float uOnlyOA;
   uniform float uSettledBoost;
   uniform float uSettledFloor;
+  uniform float uDofStrength;
+  uniform float uDofFocusPc;
+  uniform float uDofMaxPx;
 
   varying vec3 vColor;
   varying float vAlpha;
+  varying float vSharp;
 
   void main() {
+    // Set before the cull below can return early: a varying left unwritten on
+    // any path is undefined on some drivers, even where the fragment is
+    // discarded anyway.
+    vSharp = 1.0;
+
     vec4 viewPos = modelViewMatrix * vec4(position, 1.0);
     gl_Position = projectionMatrix * viewPos;
 
@@ -99,7 +109,36 @@ const VERTEX_SHADER = /* glsl */ `
 
     // Bright stars grow; faint ones stay minimal and fade out via alpha.
     float size = uMinSize * sqrt(max(flux, 1.0)) + settled;
-    gl_PointSize = clamp(size, uMinSize, uMaxSize) * uPixelRatio;
+    float px = clamp(size, uMinSize, uMaxSize) * uPixelRatio;
+
+    // Depth of field, measured in decades rather than in parsecs.
+    //
+    // A real lens blurs by |1/d - 1/f|, which at these ranges is nothing at all
+    // past a few hundred parsecs: everything beyond would be equally, uselessly
+    // sharp. The map's whole span is four decades, so the circle of confusion
+    // grows with the *ratio* of distance to focus instead. Two hundred parsecs
+    // against a hundred blurs as much as four thousand against two thousand,
+    // which is what makes the cue work at every scale the camera reaches.
+    if (uDofStrength > 0.0) {
+      float decades = abs(log(distPc / uDofFocusPc) / ${LOG10.toFixed(9)});
+      float coc = min(decades * uDofStrength, uDofMaxPx) * uPixelRatio;
+      float blurred = px + 2.0 * coc;
+      // Same star, same light, spread over more pixels. Without this the
+      // out-of-focus stars would read as *brighter*, and the cue would invert.
+      //
+      // Floored, though, and this is the deliberate lie in an already
+      // unphysical effect. Conserving exactly, a faint star two decades off
+      // focus lands near a thousandth of its brightness, under the fragment
+      // shader's discard, and the far sky empties instead of softening —
+      // which destroys the depth cue rather than serving it, since a blurred
+      // star still has to be *there* to read as distant. Raise DIM_FLOOR to
+      // keep more of the background, lower it for a shallower-looking field.
+      const float DIM_FLOOR = 0.12;
+      vAlpha *= max((px * px) / (blurred * blurred), DIM_FLOOR);
+      vSharp = px / blurred;
+      px = blurred;
+    }
+    gl_PointSize = px;
 
     if (aCi < uCiUnknown + 1.0) {
       // Colour index unknown — neutral white rather than an invented colour.
@@ -119,6 +158,7 @@ const FRAGMENT_SHADER = /* glsl */ `
 
   varying vec3 vColor;
   varying float vAlpha;
+  varying float vSharp;
 
   void main() {
     // Soft round sprite: a hard-edged square point reads as a pixel artefact.
@@ -126,7 +166,12 @@ const FRAGMENT_SHADER = /* glsl */ `
     float r2 = dot(offset, offset);
     if (r2 > 1.0) discard;
 
-    float falloff = exp(-r2 * 3.0) * (1.0 - r2);
+    // In focus, the profile is sharply peaked and reads as a point of light.
+    // Out of focus it flattens towards an even disc, which is what a defocused
+    // point source actually looks like and, more to the point, is what the eye
+    // reads as "not where I am looking".
+    float peak = mix(0.35, 3.0, vSharp);
+    float falloff = exp(-r2 * peak) * (1.0 - r2);
     float alpha = vAlpha * falloff;
     if (alpha < 0.004) discard;
 
@@ -234,6 +279,9 @@ export class StarField {
         uOnlyOA: { value: 0.0 },
         uSettledBoost: { value: 2.2 },
         uSettledFloor: { value: 0.55 },
+        uDofStrength: { value: 0.0 },
+        uDofFocusPc: { value: 100.0 },
+        uDofMaxPx: { value: 14.0 },
         uColorLut: { value: lut },
       },
       vertexShader: VERTEX_SHADER,
@@ -263,6 +311,24 @@ export class StarField {
 
   set exposure(value: number) {
     this.material.uniforms.uExposure.value = value;
+  }
+
+  /**
+   * How hard the depth-of-field falls off, in pixels of blur radius per decade
+   * of distance away from the focus. Zero turns it off, which is the default:
+   * it is a reading aid, and the honest picture is the sharp one.
+   */
+  set dofStrength(value: number) {
+    this.material.uniforms.uDofStrength.value = Math.max(0, value);
+  }
+
+  get dofStrength(): number {
+    return this.material.uniforms.uDofStrength.value as number;
+  }
+
+  /** The distance held sharp, in parsecs. Guarded: the log needs it positive. */
+  set dofFocus(value: Parsecs) {
+    this.material.uniforms.uDofFocusPc.value = Math.max(value, 1e-3);
   }
 
   updatePixelRatio(ratio: number): void {

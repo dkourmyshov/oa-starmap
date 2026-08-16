@@ -30,6 +30,7 @@ export interface HudCallbacks {
   onHiiKinematic(enabled: boolean): void;
   onOAStarsVisible(value: boolean): void;
   onOnlyOA(enabled: boolean): void;
+  onDepthOfField(strength: number): void;
   onLabelsVisible(value: boolean): void;
   onLabelDensity(value: number): void;
   onNameMode(mode: NameMode): void;
@@ -184,6 +185,19 @@ export class Hud {
     });
     onlyRow.appendChild(onlyToggle);
     panel.appendChild(onlyRow);
+
+    // Depth of field. Not how a telescope behaves — every star is at infinity
+    // and all of them are equally in focus — but the flat sky is exactly the
+    // problem: a projection of four decades of depth onto a screen gives the eye
+    // no way to tell a near star from a far one. Blurring by distance from
+    // whatever the camera is looking at restores the one depth cue the medium
+    // can carry. Off by default, because it is an aid and not the data.
+    panel.appendChild(
+      this.slider('Depth of field', 0, 12, 0, 0.5, (v) => {
+        this.callbacks.onDepthOfField(v);
+        return v === 0 ? 'off' : `${v.toFixed(1)} px/decade`;
+      }),
+    );
 
     panel.appendChild(this.countRow('Labels', null, (on) => this.callbacks.onLabelsVisible(on)));
     panel.appendChild(

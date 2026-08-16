@@ -300,6 +300,9 @@ async function main(): Promise<void> {
       onHiiKinematic: (enabled) => {
         hiiField?.setShowKinematic(enabled);
       },
+      onDepthOfField: (strength) => {
+        starField.dofStrength = strength;
+      },
       onOnlyOA: (enabled) => {
         view.visible.oaOnly = enabled;
         starField.setOnlyOA(enabled);
@@ -350,6 +353,13 @@ async function main(): Promise<void> {
   });
   canvas.addEventListener('pointerup', (event) => {
     if (Math.hypot(event.clientX - pressX, event.clientY - pressY) > 4) return;
+
+    // The plane held sharp is whatever the camera is orbiting, so focus follows
+    // the eye rather than being a second thing to aim. Reading it per frame
+    // means flying towards something keeps it in focus the whole way in.
+    if (starField.dofStrength > 0) {
+      starField.dofFocus = pc(viewer.camera.position.distanceTo(viewer.controls.target));
+    }
 
     const rect = canvas.getBoundingClientRect();
     const id = objects.pick(viewer.camera, event.clientX - rect.left, event.clientY - rect.top, {
