@@ -429,6 +429,18 @@ polities:
     # about where it reaches. The Albireo Plexus around it is a sector rather
     # than this polity's territory: most of what lies there owes it nothing.
 
+  - id: laughter-hegemony
+    name: Laughter Hegemony
+    color: "#C1443A"
+    landmarks: [NGC 6357]
+    kind: polity
+    source: eg-system-articles
+    # Expansionist, and known almost entirely by nebulae rather than by stars:
+    # canon names no positioned system of its own. The landmark is the cluster
+    # this map's catalogue holds as NGC 6357, which carries Pismis 24 as an
+    # alias — so the War and Peace Nebula and the cluster inside it are one
+    # record here, and marking it marks both.
+
   - id: arion-ascendancy
     name: Arion Ascendancy
     color: "#A3A072"

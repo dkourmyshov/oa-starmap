@@ -7920,3 +7920,36 @@ worlds:
       Biopolity is listed last and appears in the panel rather than on the
       marker. Its companion Zeta2 Reticuli is the Diamond Network's, a third of
       a light year away.
+
+  # ---- the Laughter Hegemony -----------------------------------------------
+
+  - name: Pismis 24-1
+    kind: system
+    system: Pismis 24-1
+    affiliations: [laughter-hegemony]
+    location:
+      ra_deg: 261.1825
+      dec_deg: -34.2026
+      distance: 5454 ly
+      near: Pismis 24
+    events:
+      - year_at: 9880
+        kind: visited
+        note: Reached.
+    note: >-
+      A triple star in Pismis 24, the cluster embedded in the War and Peace
+      Nebula, in Scorpius at 5,454 ly. This map's cluster catalogue holds the
+      cluster and the nebula as one record under the name NGC 6357, with Pismis
+      24 as an alias, so the position here is that record's and no separate one
+      is claimed for the star.
+
+  - name: Cat's Paw Nebula
+    kind: volume
+    affiliations: [laughter-hegemony]
+    note: >-
+      Held by the Laughter Hegemony, and drawn nowhere. The nebula catalogues
+      this map loads are Sharpless numbers only, and nothing in them within six
+      degrees of the War and Peace Nebula answers to this name; no distance is
+      given either. A Sharpless or NGC designation would place it, and it is
+      near enough to the Hegemony's other holding that the two would likely
+      touch.
