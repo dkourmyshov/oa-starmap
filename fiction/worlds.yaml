@@ -7034,11 +7034,20 @@ worlds:
   - name: Lin-Darwon
     kind: system
     affiliations: []
-    note: >-
-      BD +39 2947, which none of the catalogues here carry, and no article of
-      its own. Given as 6 ly from Ridgwell, which this map does not hold either,
-      so there is nothing to place it by and nothing is drawn. Either the star
-      under a designation this map does carry, or Ridgwell, would fix it.
+    location:
+      ra_deg: 238.1689
+      dec_deg: 42.4515
+      distance: 52 ly
+      direction_error_deg: 6.6
+      distance_error: 6 ly
+      estimated: >-
+        Placed entirely by its distance from Ridgewell, which the source gives
+        as 6 ly, and Ridgewell is Chi Herculis at 51.9 ly. So this lies on a
+        sphere of 6 ly radius about a point known exactly, which at that range
+        is a wide error in direction — six and a half degrees — and a narrow one
+        in distance. Its own star, BD +39 2947, is in none of the catalogues
+        here, and finding it under a designation they do carry would replace all
+        of this with a position.
 
   - name: Morrow
     kind: habitat
