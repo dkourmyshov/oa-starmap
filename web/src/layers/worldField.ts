@@ -112,7 +112,7 @@ const MARKER_VERTEX = /* glsl */ `
     float blurPx = dofBlurPx(max(length(viewPos.xyz), 1e-4));
     float grown = uSize + 2.0 * blurPx;
     vScale = grown / uSize;
-    vDim = dofGain(uSize, grown);
+    vDim = dofGain(uSize, grown) * dofDim(max(length(viewPos.xyz), 1e-4));
     gl_PointSize = grown;
 
     #include <logdepthbuf_vertex>
@@ -205,7 +205,7 @@ const CIRCLE_VERTEX = /* glsl */ `
     float grown = base + 2.0 * blurPx;
     vScale = base > 0.0 ? grown / base : 1.0;
     vBlur = base > 0.0 ? min(blurPx / max(base * 0.5, 1e-4), 0.5) : 0.0;
-    vFade *= dofGain(max(base, 1e-4), max(grown, 1e-4));
+    vFade *= dofGain(max(base, 1e-4), max(grown, 1e-4)) * dofDim(distance);
     gl_PointSize = grown;
     vSize = base;
 

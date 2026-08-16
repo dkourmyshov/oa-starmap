@@ -124,6 +124,8 @@ const VERTEX_SHADER = /* glsl */ `
       vSharp = px / blurred;
       px = blurred;
     }
+    // Outside the blur test: dimming is its own control and works alone.
+    vAlpha *= dofDim(distPc);
     gl_PointSize = px;
 
     if (aCi < uCiUnknown + 1.0) {

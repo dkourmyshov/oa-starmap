@@ -37,18 +37,34 @@ export const DOF_PARS = /* glsl */ `
   }
 
   /**
-   * What fraction of the light survives being spread from px across to
-   * blurredPx.
+   * What survives being spread from px across to blurredPx.
    *
-   * Conserving exactly is the physical answer and it empties the far sky: a
-   * faint star two decades off focus lands near a thousandth of its brightness
-   * and falls under the fragment discard, and a blurred star still has to be
-   * *there* to read as distant. So the amount of that conservation is a knob.
-   * Zero blurs without dimming at all; one conserves exactly, which is worth
-   * having deliberately — it thins a dense field down to the shell in focus.
+   * Linear rather than the area ratio physics would give. Conserving energy
+   * exactly puts a faint star two decades off focus near a thousandth of its
+   * brightness, under the fragment discard, and a blurred star still has to be
+   * *there* to read as distant. Halving the brightness for twice the width is
+   * enough to stop defocus reading as *brighter*, which is the one thing that
+   * would invert the cue. It is not a knob: how much of the far field remains
+   * is dofDim's business, and one job per control.
    */
   float dofGain(float px, float blurredPx) {
-    return mix(1.0, (px * px) / (blurredPx * blurredPx), uDofDim);
+    return px / max(blurredPx, 1e-4);
+  }
+
+  /**
+   * How much of an object at this distance is left, by distance from focus
+   * alone.
+   *
+   * Independent of the blur, and useful without it: the Inner Sphere is dense
+   * enough that thinning it to a shell is worth having on its own, with every
+   * marker still crisp. Gaussian in log distance, so the falloff has a soft
+   * edge rather than a boundary, and steep enough at the top of the range to
+   * switch the far field off entirely rather than merely dim it.
+   */
+  float dofDim(float distPc) {
+    if (uDofDim <= 0.0) return 1.0;
+    float decades = abs(log(distPc / uDofFocusPc) / 2.302585092994046);
+    return exp(-decades * decades * uDofDim * 12.0);
   }
 `;
 
@@ -65,7 +81,7 @@ export function dofUniforms(): DofUniforms {
     uDofStrength: { value: 0.0 },
     uDofFocusPc: { value: 100.0 },
     uDofMaxPx: { value: 14.0 },
-    uDofDim: { value: 0.6 },
+    uDofDim: { value: 0.0 },
   };
 }
 
@@ -79,7 +95,7 @@ export function dofUniforms(): DofUniforms {
 export class DepthOfField {
   private readonly targets: DofUniforms[] = [];
   private strengthValue = 0;
-  private dimValue = 0.6;
+  private dimValue = 0;
   private focusValue = 100;
 
   register(...uniforms: (DofUniforms | DofUniforms[])[]): void {
@@ -122,19 +138,28 @@ export class DepthOfField {
   }
 
   /**
+   * The shader's dofDim, in TypeScript.
+   *
+   * Duplicated deliberately: labels are DOM nodes and cannot call into GLSL,
+   * and the two have to agree exactly or the names fade out of step with the
+   * sky they annotate. The test holds them to the same numbers.
+   */
+  dimAt(distPc: number): number {
+    if (this.dimValue <= 0) return 1;
+    const decades = Math.abs(Math.log10(Math.max(distPc, 1e-4) / this.focusValue));
+    return Math.exp(-decades * decades * this.dimValue * 12);
+  }
+
+  /**
    * How much a label at this distance should be blurred and faded, in CSS
    * terms. Labels are DOM nodes, so they cannot share the shader — but they
    * have to agree with it, or they float above the scene as a sharp plane.
    */
   labelStyle(distPc: number): { blurPx: number; opacity: number } {
-    if (this.strengthValue <= 0) return { blurPx: 0, opacity: 1 };
+    if (this.strengthValue <= 0) return { blurPx: 0, opacity: this.dimAt(distPc) };
     const decades = Math.abs(Math.log10(Math.max(distPc, 1e-4) / this.focusValue));
     const blurPx = Math.min(decades * this.strengthValue, 14) * LABEL_BLUR_SCALE;
-    // Text disappears into illegibility far faster than a point of light does,
-    // so it fades on a gentler curve than dofGain and never all the way out:
-    // an unreadable label is noise, but a missing one is a hole in the map.
-    const opacity = 1 - this.dimValue * (1 - 1 / (1 + decades)) * LABEL_FADE_LIMIT;
-    return { blurPx, opacity };
+    return { blurPx, opacity: this.dimAt(distPc) };
   }
 }
 
@@ -147,5 +172,3 @@ export class DepthOfField {
  */
 const LABEL_BLUR_SCALE = 0.35;
 
-/** The most a label will fade, however deep the field. */
-const LABEL_FADE_LIMIT = 0.8;

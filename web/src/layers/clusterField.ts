@@ -74,7 +74,7 @@ const VERTEX_SHADER = /* glsl */ `
     float grown = base + 2.0 * blurPx;
     vScale = grown / base;
     vBlur = min(blurPx / max(base * 0.5, 1e-4), 0.5);
-    vFade *= dofGain(base, grown);
+    vFade *= dofGain(base, grown) * dofDim(dist);
     gl_PointSize = grown;
     vSize = base;
 

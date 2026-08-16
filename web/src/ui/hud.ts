@@ -206,9 +206,13 @@ export class Hud {
     // thins a dense view down to the shell in focus, which is the only way to
     // see into the Inner Sphere.
     panel.appendChild(
-      this.slider('Out-of-focus dimming', 0, 1, 0.6, 0.05, (v) => {
+      this.slider('Out-of-focus dimming', 0, 1, 0, 0.05, (v) => {
         this.callbacks.onDepthOfFieldDim(v);
-        return v === 0 ? 'none' : v.toFixed(2);
+        if (v === 0) return 'none';
+        // What the number means in the only terms that matter at the eyepiece:
+        // how far from the focus something can be before it is gone.
+        const decades = Math.sqrt(Math.log(20) / (v * 12));
+        return `${v.toFixed(2)}  (${(10 ** decades).toFixed(1)}x)`;
       }),
     );
 

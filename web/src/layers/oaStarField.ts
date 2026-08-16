@@ -92,7 +92,7 @@ const VERTEX_SHADER = /* glsl */ `
     float grown = uSize + 2.0 * blurPx;
     vScale = grown / uSize;
     vBlur = min(blurPx / (uSize * 0.5), 0.5);
-    vGain *= dofGain(uSize, grown);
+    vGain *= dofGain(uSize, grown) * dofDim(max(length(viewPos.xyz), 1e-4));
     gl_PointSize = grown;
 
     #include <logdepthbuf_vertex>

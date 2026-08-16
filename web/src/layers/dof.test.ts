@@ -51,9 +51,31 @@ describe('DepthOfField', () => {
     expect(dof.strength).toBe(0);
   });
 
-  it('leaves labels alone when the mode is off', () => {
+  it('leaves labels alone when neither control is doing anything', () => {
     const dof = new DepthOfField();
     expect(dof.labelStyle(9000)).toEqual({ blurPx: 0, opacity: 1 });
+  });
+
+  it('dims without any blur at all, which is the decluttering case', () => {
+    const dof = new DepthOfField();
+    dof.focus = pc(100);
+    dof.dim = 0.5;
+    expect(dof.strength).toBe(0);
+    expect(dof.labelStyle(100).blurPx).toBe(0);
+    expect(dof.labelStyle(100).opacity).toBeCloseTo(1, 5);
+    // Nothing is blurred, and the far field is still thinned out.
+    expect(dof.labelStyle(3000).opacity).toBeLessThan(0.05);
+  });
+
+  it('switches the far field off entirely at the top of the range', () => {
+    const dof = new DepthOfField();
+    dof.focus = pc(100);
+    dof.dim = 1;
+    expect(dof.dimAt(1000)).toBeLessThan(1e-4);
+    // And leaves the shell in focus untouched, or it would be a brightness
+    // control rather than a depth one.
+    expect(dof.dimAt(100)).toBeCloseTo(1, 6);
+    expect(dof.dimAt(120)).toBeGreaterThan(0.9);
   });
 
   it('blurs a label more the further it is from the focus, either way', () => {
@@ -72,12 +94,16 @@ describe('DepthOfField', () => {
     expect(near.blurPx).toBeCloseTo(far.blurPx, 5);
   });
 
-  it('never fades a label all the way out', () => {
+  it('fades a label exactly as the shader fades its object', () => {
     const dof = new DepthOfField();
-    dof.strength = 12;
-    dof.dim = 1;
-    // A missing label is a hole in the map; an unreadable one is only noise.
-    expect(dof.labelStyle(1e6).opacity).toBeGreaterThan(0.1);
+    dof.focus = pc(100);
+    dof.dim = 0.4;
+    // dofDim is written twice, once in GLSL and once here, because a DOM node
+    // cannot call into a shader. They have to agree to the digit or the names
+    // thin out of step with the sky behind them.
+    for (const d of [10, 100, 250, 1000, 9000]) {
+      expect(dof.labelStyle(d).opacity).toBeCloseTo(dof.dimAt(d), 12);
+    }
   });
 
   it('blurs text less than the shader blurs the sky', () => {

@@ -395,7 +395,9 @@ async function main(): Promise<void> {
     // moved when the reader happened to click and the labels never learned the
     // settings at all.
     dof.focus = viewer.focusDistance;
-    labels.depthOfField = dof.strength > 0 ? dof : null;
+    // Handed over whenever either control is doing something: dimming works
+    // without blur, and the labels have to thin out with the sky.
+    labels.depthOfField = dof.strength > 0 || dof.dim > 0 ? dof : null;
 
     const rect = canvas.getBoundingClientRect();
     // Read each frame rather than pushed on select, so closing the panel from
