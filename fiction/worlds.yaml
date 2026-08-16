@@ -7400,3 +7400,335 @@ worlds:
       without a direction of its own — 209 ly out and nothing more. A separation
       from something unplaced is not a position, so nothing is drawn. A
       direction for Kuranaba would give both.
+
+  # ---- the alphabetical sweep, Q-T -----------------------------------------
+
+  - name: Qinglong
+    kind: planet
+    system: Shenjing
+    affiliations: [sophic-league]
+    article: https://www.orionsarm.com/eg-article/464f1e545d058
+    location:
+      star: Sigma Draconis
+    note: >-
+      A neptunian of Shenjing, at Sigma Draconis. Penglai is its moon, and has
+      named it as parent since before this entry existed.
+
+  - name: Rajasekar
+    kind: planet
+    affiliations: [stellar-umma, sophic-league, mutual-progress-association]
+    article: https://www.orionsarm.com/eg-article/4910f10364835
+    location:
+      star: Tau1 Gruis
+    events:
+      - year_at: 1748
+        kind: settled
+    note: >-
+      Tau-1 Gruis, also CD-49 13988, 108.0 ly out against the article's 108.58.
+      Three holders, which the article gives together rather than in sequence.
+
+  - name: Rak Mesba
+    kind: megastructure
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/4d029739425da
+    location:
+      ra_deg: 174.6760
+      dec_deg: -63.5333
+      distance: 6318 ly
+    events:
+      - year_at: 1322
+        kind: observed
+        note: Noticed as anomalous, six thousand years before anyone got there.
+      - year_at: 9083
+        kind: visited
+        note: Reached.
+    note: >-
+      A xenosophont megastructure at 6,318 ly, from coordinates the article
+      prints to four decimal places. Xenosophont make is not xenosophont
+      holding, and the article names no one living there, so no holder is
+      recorded.
+
+  - name: Remagar
+    kind: planet
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/477027c0787a2
+    location:
+      constellation: Taurus
+      distance: 3701 ly
+    events:
+      - year_at: 8822
+        kind: settled
+    note: In Taurus at 3,701 ly.
+
+  - name: Yechida
+    kind: system
+    system: Yechida
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/47768efc05bb3
+    location:
+      constellation: Hydra
+      distance: 892 ly
+    note: >-
+      In Hydra at 892 ly. The star's name is the setting's own and matches
+      nothing in the catalogues here.
+
+  - name: Ruach
+    kind: planet
+    system: Yechida
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/47768efc05bb3
+    note: The world of Yechida.
+
+  - name: Samael
+    kind: planet
+    system: Huycau
+    affiliations: [xenosophont]
+    article: https://www.orionsarm.com/eg-article/510948dda0620
+    note: >-
+      The Samaelians' own world, in the Huycau and Sitr'achra system in Ursa
+      Major at 2,611 ly.
+
+  - name: Savannah
+    kind: planet
+    affiliations: [caretaker-gods]
+    article: https://www.orionsarm.com/eg-article/534ba31d3b32b
+    location:
+      constellation: Monoceros
+      distance: 2958 ly
+    events:
+      - year_at: 7117
+        kind: settled
+    note: >-
+      In Monoceros at 2,958 ly. A middle-tech world under Caretaker protection,
+      which is why the Caretakers hold it and its inhabitants do not.
+
+  - name: Washington
+    kind: system
+    system: Washington
+    affiliations: [metasoft]
+    article: https://www.orionsarm.com/eg-article/56cee52ae55da
+    location:
+      constellation: Auriga
+      distance: 5133 ly
+    events:
+      - year_at: 10107
+        kind: settled
+    note: >-
+      In Auriga at 5,133 ly, and settled in 10107 — among the latest dates in
+      this file, which runs to about 10600.
+
+  - name: Seattle
+    kind: planet
+    system: Washington
+    affiliations: [metasoft]
+    article: https://www.orionsarm.com/eg-article/56cee52ae55da
+    note: The world of Washington, in the Metasoft Version Tree.
+
+  - name: Shona
+    kind: planet
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/4cd00caab2853
+    location:
+      ra_deg: 276.6103
+      dec_deg: -18.0862
+      distance: 6293 ly
+    events:
+      - year_at: 9428
+        kind: settled
+        note: Reached.
+    note: >-
+      Near IC 4715 in Sagittarius at 6,293 ly. The article gives the position
+      twice and the two disagree: its right ascension and declination fall in
+      Sagittarius, where it also says the world is and where IC 4715 is, while
+      its galactic coordinates — 4207, 4443, -1470 — fall thirty degrees away in
+      Aquila. Both return the same distance, so it is the direction alone that
+      is in dispute, and the two the article states in words are taken over the
+      one it states in numbers.
+
+  - name: Simurgh
+    kind: planet
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/4eea8e230eb7c
+    location:
+      constellation: Circinus
+      distance: 3084 ly
+    events:
+      - year_at: 7309
+        kind: observed
+        note: Surveyed by Negentropist xenologists.
+    note: >-
+      In Circinus at 3,084 ly. Watched by the Negentropy Alliance rather than
+      held by it, so the field is empty and the note carries the relationship.
+
+  - name: Skeblu
+    kind: planet
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/4f18e05693e65
+    location:
+      constellation: Canis Major
+      distance: 4001 ly
+    events:
+      - year_at: 9433
+        kind: settled
+    note: In Canis Major at 4,001 ly.
+
+  - name: Socrates 471
+    kind: system
+    system: Socrates 471
+    affiliations: [caretaker-gods]
+    article: https://www.orionsarm.com/eg-article/5f57dcfd4cc25
+    location:
+      constellation: Auriga
+      distance: 3372 ly
+    events:
+      - year_at: 8862
+        kind: contact
+        note: Reached.
+    note: In Auriga at 3,372 ly.
+
+  - name: Menexenos
+    kind: planet
+    system: Socrates 471
+    affiliations: [caretaker-gods]
+    article: https://www.orionsarm.com/eg-article/5f57dcfd4cc25
+    note: >-
+      The Menexenes' home world, under Caretaker protection — which is the
+      holder recorded, following the rule that protection outranks what lives
+      there. The xenosophont tag is for species going about their own affairs.
+
+  - name: Solaris
+    kind: planet
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/4eea898c42349
+    location:
+      ra_deg: 355.8946
+      dec_deg: 19.1298
+      distance: 796 ly
+      near: HD 222788
+    events:
+      - year_at: 3955
+        kind: settled
+        precision: not_later_than
+        note: First colonised.
+    note: >-
+      Around HD 222788 in Pegasus, which the catalogue puts at 535 ly against
+      the article's 796 — a third nearer, so the star lends its direction and
+      the article keeps its distance. Settled by Solarists and Genen, neither of
+      which this file carries as a polity.
+
+  - name: Spica
+    kind: system
+    system: Spica
+    affiliations: [solipsist-panvirtuality]
+    article: https://www.orionsarm.com/eg-article/66afb37911d15
+    location:
+      star: Spica
+    events:
+      - year_at: 6603
+        kind: settled
+        precision: not_later_than
+    note: >-
+      Alpha Virginis, 250 ly out — a blue giant pair, and the brightest star in
+      Virgo, now the Panvirtuality's.
+
+  - name: Swallowflight
+    kind: planet
+    affiliations: [vela]
+    article: https://www.orionsarm.com/eg-article/478c15c58c022
+    location:
+      ra_deg: 128.5
+      dec_deg: -45.8333
+      distance: 880 ly
+      near: Vela Supernova Remnant
+    events:
+      - year_at: 8100
+        kind: capital
+        precision: not_later_than
+        note: Capital of the Vela Immunity.
+    note: >-
+      Near the Vela supernova remnant, which this map has at 936 ly against this
+      world's stated 880 — close enough that the remnant's direction and the
+      article's distance describe one place rather than two.
+
+  - name: Sy
+    kind: planet
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/478c171e73982
+    location:
+      star: HD 196954
+    events:
+      - year_at: 3910
+        kind: settled
+    note: >-
+      HD 196954 A in Cygnus, 1,191 ly out. Once Cygexpa's and no longer, so the
+      field is empty: it records the present holder, and the article names none.
+
+  - name: Tangaroa
+    kind: planet
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/508b403b279a0
+    location:
+      ra_deg: 296.1315
+      dec_deg: 18.5886
+      distance: 2870 ly
+      near: HD 186569
+    events:
+      - year_at: 7493
+        kind: settled
+    note: >-
+      Given as near HD 186569 at 2,870 ly, and the catalogue puts that star at
+      1,400 — half as far, the widest disagreement in this sweep. Near may mean
+      near on the sky rather than near in space; either way the star can only
+      lend its direction here, and the article keeps the distance. Held by the
+      Ocean Fleet, which this file has no polity for.
+
+  - name: Tengri
+    kind: system
+    system: Tengri
+    affiliations: [cygexpa, solipsist-panvirtuality]
+    article: https://www.orionsarm.com/eg-article/5ef2688c6eb4d
+    location:
+      constellation: Lyra
+      distance: 2090 ly
+    note: >-
+      Kepler-9, in Lyra at 2,090 ly — a star known for its planets and too faint
+      for the catalogues here, so the constellation carries the direction.
+
+  - name: The Torus World
+    kind: megastructure
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/59b109574cb45
+    location:
+      ra_deg: 264.4451
+      dec_deg: -23.3894
+      distance: 510 ly
+      near: HIP 86278
+    events:
+      - year_at: 5781
+        kind: settled
+        note: The system reached.
+    note: >-
+      An artificial world at HIP 86278, which the setting calls Zeta Lagani, in
+      Ophiuchus. The catalogue gives 429 ly against the article's 510, a sixth
+      nearer, so the star lends its direction and the article its distance.
+
+  - name: Triana
+    kind: system
+    system: Triana
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/47a6854131a39
+    location:
+      constellation: Piscis Austrinus
+      distance: 762 ly
+    events:
+      - year_at: 3219
+        kind: visited
+        note: Reached.
+    note: In Piscis Austrinus at 762 ly.
+
+  - name: Tytalus
+    kind: planet
+    system: Triana
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/47a6854131a39
+    note: The world of Triana.
