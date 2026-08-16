@@ -401,9 +401,9 @@ Blanco 1, Collinder 173, Collinder 359, Cone Nebula, Czernik 8, NGC 2244, NGC 70
 
 Coordinates, or a nearby named star, would turn any of these from a region into a position.
 
-## 64 places described but not located
+## 63 places described but not located
 
-Arkady 2, Arnon Dar, Avase, Big Bob, Cat's Paw Nebula, Crustuse, Cyrus, Danzig, Dashwood, Druidworld, Elderman's Star, Equinoxe, and 52 more
+Arkady 2, Arnon Dar, Avase, Big Bob, Crustuse, Cyrus, Danzig, Dashwood, Druidworld, Elderman's Star, Equinoxe, Evermore, and 51 more
 
 ## 1 designation reused in the Celestia add-on
 
