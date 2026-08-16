@@ -7043,11 +7043,15 @@ worlds:
       estimated: >-
         Placed entirely by its distance from Ridgewell, which the source gives
         as 6 ly, and Ridgewell is Chi Herculis at 51.9 ly. So this lies on a
-        sphere of 6 ly radius about a point known exactly, which at that range
-        is a wide error in direction — six and a half degrees — and a narrow one
-        in distance. Its own star, BD +39 2947, is in none of the catalogues
-        here, and finding it under a designation they do carry would replace all
-        of this with a position.
+        sphere of 6 ly radius about a point known exactly, and the error is the
+        same 6 ly whichever way it is measured — six and a half degrees across
+        the sky at this range works out to the same six light years as along the
+        line of sight. That makes it the one entry here whose uncertainty is a
+        ball rather than a patch of shell: almost everything else estimated has
+        an exact radius and a direction blurred across degrees of sky. Its own
+        star, BD +39 2947, is in none of the catalogues here, and finding it
+        under a designation they do carry would replace all of this with a
+        position.
 
   - name: Morrow
     kind: habitat
