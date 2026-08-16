@@ -25,6 +25,7 @@ from oastarmap.fetch import fetch_source
 from oastarmap.fetch.clusters import SOURCES as CLUSTER_SOURCES
 from oastarmap.fetch.hii import SOURCES as HII_SOURCES
 from oastarmap.fetch.hyg import SOURCES as HYG_SOURCES
+from oastarmap.fiction.find import find
 from oastarmap.importers.celestia import import_oastars
 from oastarmap.importers.constellations import import_constellations
 from oastarmap.importers.inner_sphere import import_inner_sphere
@@ -178,6 +179,17 @@ def cmd_build(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_find(args: argparse.Namespace) -> int:
+    hits = find(args.name)
+    if not hits:
+        print(f"no place matching {args.name!r} in any index")
+        return 1
+    for hit in hits:
+        print(hit)
+    print(f"{len(hits)} match(es) across {len({h.source for h in hits})} index(es)")
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="oastarmap", description=__doc__)
     parser.add_argument("--version", action="version", version=f"oastarmap {__version__}")
@@ -220,6 +232,13 @@ def main(argv: list[str] | None = None) -> int:
     p_build = sub.add_parser("build", help="emit renderer datasets into web/public/data/")
     p_build.add_argument("--print-manifest", action="store_true")
     p_build.set_defaults(func=cmd_build)
+
+    p_find = sub.add_parser(
+        "find",
+        help="look a place up by name across every index that holds one",
+    )
+    p_find.add_argument("name", help="name, alias or fragment; case-insensitive")
+    p_find.set_defaults(func=cmd_find)
 
     args = parser.parse_args(argv)
     return int(args.func(args))
