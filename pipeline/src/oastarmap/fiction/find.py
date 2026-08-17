@@ -1,14 +1,16 @@
 """Find a place by name across every index that holds one.
 
-The setting's places are spread over five hand-authored files and a star
-catalogue, and which one a given place lives in is an accident of where it was
-first written down. Searching only ``worlds.yaml`` — the obvious file, and the
-largest — has twice produced a confident "not on the map" for something that was
-on the map: Panthalassa, which is an add-on system, and Tianguan, which is a
-polity landmark resolving to a catalogue star.
+Built on :mod:`oastarmap.fiction.places`, which is the union of every file, so
+this command and any analysis written against that module see the same places.
+An earlier version of this file assembled its own union and was correct; the
+lesson was that having *two* assemblies is how they drift, not that one of them
+was wrong.
 
-So the lookup is one function over all of them, and there is no partial version
-of it to reach for by mistake.
+Two things live here and not there: the built star catalogue, which is where a
+landmark's real object is, and the resolved landmark bindings, which join a
+landmark's authored name to the catalogue name it matched. Neither is a
+hand-authored place, and both are needed to answer "is X on the map?" — Tianguan
+is Zeta Tauri, and grepping fiction/ for "Tianguan" finds nothing at all.
 """
 
 from __future__ import annotations
@@ -18,8 +20,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
 
-import yaml
-
+from oastarmap.fiction.places import Place, all_places
 from oastarmap.paths import DATA_OUT_DIR, FICTION_DIR
 
 
@@ -37,13 +38,6 @@ class Hit:
         return f"{self.name}  [{self.source}]{tail}"
 
 
-def _load(path: Path) -> Any:
-    if not path.exists():
-        return None
-    with path.open(encoding="utf-8") as handle:
-        return yaml.safe_load(handle)
-
-
 def _matches(needle: str, *values: object) -> bool:
     lowered = needle.casefold()
     for value in values:
@@ -57,6 +51,26 @@ def _matches(needle: str, *values: object) -> bool:
     return False
 
 
+def _describe(place: Place) -> str:
+    record = place.record
+    if place.source == "worlds.yaml":
+        loc = record.get("location") or {}
+        where = ", ".join(f"{k}={v}" for k, v in loc.items() if k != "estimated") or "unplaced"
+        held = ",".join(record.get("affiliations") or []) or "independent"
+        return f"{record.get('kind', '?')}, {held}; {where}"
+    if place.source == "oa_systems.yaml":
+        held = record.get("affiliation") or "independent"
+        hidden = ", hidden" if record.get("hidden") else ""
+        return f"star={record.get('star')}, {held}{hidden}"
+    if place.source == "oa_stars.yaml":
+        return f"{record.get('name')}, {record.get('distance_ly', '?')} ly"
+    if place.source == "inner_sphere.yaml":
+        return f"star={record.get('star')}, {record.get('distance_ly', '?')} ly"
+    if place.source == "polities.yaml":
+        return f"landmark of {record.get('polity')}"
+    return ""
+
+
 def find(needle: str, fiction_dir: Path | None = None, data_dir: Path | None = None) -> list[Hit]:
     """Every place whose name, alias or label contains ``needle``.
 
@@ -65,51 +79,12 @@ def find(needle: str, fiction_dir: Path | None = None, data_dir: Path | None = N
     """
     fiction_dir = fiction_dir or FICTION_DIR
     data_dir = data_dir or DATA_OUT_DIR
-    hits: list[Hit] = []
 
-    worlds = _load(fiction_dir / "worlds.yaml") or {}
-    for world in worlds.get("worlds", []):
-        if _matches(needle, world.get("name"), world.get("also"), world.get("system")):
-            loc = world.get("location") or {}
-            where = ", ".join(f"{k}={v}" for k, v in loc.items() if k != "estimated") or "unplaced"
-            held = ",".join(world.get("affiliations") or []) or "independent"
-            hits.append(
-                Hit(world["name"], "worlds.yaml", f"{world.get('kind', '?')}, {held}; {where}",
-                    world)
-            )
-
-    systems = _load(fiction_dir / "oa_systems.yaml") or {}
-    for entry in systems.get("systems", []):
-        if _matches(needle, entry.get("label"), entry.get("star")):
-            hits.append(
-                Hit(entry.get("label") or entry["star"], "oa_systems.yaml",
-                    f"star={entry.get('star')}, {entry.get('affiliation') or 'independent'}"
-                    + (", hidden" if entry.get("hidden") else ""), entry)
-            )
-
-    stars = _load(fiction_dir / "oa_stars.yaml") or {}
-    for entry in stars.get("stars", []):
-        if _matches(needle, entry.get("name"), entry.get("system"), entry.get("comment")):
-            hits.append(
-                Hit(entry.get("system") or entry["name"], "oa_stars.yaml",
-                    f"{entry['name']}, {entry.get('distance_ly', '?')} ly", entry)
-            )
-
-    inner = _load(fiction_dir / "inner_sphere.yaml") or {}
-    for entry in inner.get("systems", []):
-        if _matches(needle, entry.get("colony"), entry.get("star"), entry.get("system")):
-            hits.append(
-                Hit(entry.get("colony") or entry.get("star") or "?", "inner_sphere.yaml",
-                    f"star={entry.get('star')}", entry)
-            )
-
-    polities = _load(fiction_dir / "polities.yaml") or {}
-    for entry in polities.get("polities", []):
-        for landmark in entry.get("landmarks", []) or []:
-            if _matches(needle, landmark):
-                hits.append(
-                    Hit(landmark, "polities.yaml", f"landmark of {entry['name']}", entry)
-                )
+    hits = [
+        Hit(place.name, place.source, _describe(place), place.record)
+        for place in all_places(fiction_dir)
+        if _matches(needle, *place.names)
+    ]
 
     # Resolved landmark bindings. A landmark is authored under one name and
     # matched under another — Zeta Tauri in polities.yaml, Tianguan in the
@@ -129,8 +104,6 @@ def find(needle: str, fiction_dir: Path | None = None, data_dir: Path | None = N
                         f"{held}; {binding.get('kind') or 'unresolved'}{via}", binding)
                 )
 
-    # The built star catalogue, which is where a landmark's real object lives —
-    # and the reason Tianguan could not be found by grepping fiction/ at all.
     names = data_dir / "stars.names.json"
     if names.exists():
         with names.open(encoding="utf-8") as handle:
