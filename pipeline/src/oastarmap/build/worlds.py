@@ -288,6 +288,7 @@ def build_worlds(
                 "year_at": e.year_at,
                 "kind": e.kind,
                 "note": e.note,
+                "source": e.source,
                 "until_at": e.until_at,
                 "precision": e.precision,
             }

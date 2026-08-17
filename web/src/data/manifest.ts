@@ -429,6 +429,8 @@ export interface WorldEvent {
   /** visited | settled | contact | stewardship | transferred | reported | abandoned. */
   kind: string;
   note: string;
+  /** Where the date came from, when not the entry's own article. */
+  source: string;
   /** Last year, for something that took time rather than happening. */
   until_at: number | null;
   /** exact | circa | not_later_than | not_earlier_than | between. */

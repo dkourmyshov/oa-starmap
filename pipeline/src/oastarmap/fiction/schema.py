@@ -760,6 +760,17 @@ class WorldEvent(BaseModel):
     kind: str
     note: str = ""
 
+    source: str = ""
+    """Where the date came from, when it is not the entry's own article.
+
+    Most dates here are read off the article the entry cites, and for those this
+    stays empty — the citation is already on the entry. The Encyclopaedia's
+    timeline pages are a second source that dates places their own articles
+    leave undated, and sometimes dates them differently, so a date taken from a
+    timeline says which one. Two claims about the same event can then sit side
+    by side with their provenance attached instead of one quietly winning.
+    """
+
     until_at: int | None = None
     """The second year, where there is one. What it means depends on `precision`.
 

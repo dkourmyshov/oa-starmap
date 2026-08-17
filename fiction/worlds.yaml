@@ -483,6 +483,11 @@ worlds:
     events:
       - year_at: 2941
         kind: settled
+      - year_at: 1980
+        kind: visited
+        source: "Encyclopaedia timeline, Late Federation / AI Emergence"
+        note: >-
+          Chronosians arrive at Dionysos .
     note: Psi-5 Aurigae, 54 ly. Already in the Inner Sphere colony table.
 
   - name: Elderman's Star
@@ -517,6 +522,11 @@ worlds:
       - year_at: 4312
         kind: settled
         note: Founded.
+      - year_at: 2292
+        kind: settled
+        source: "Encyclopaedia timeline, The Age of Expansion"
+        note: >-
+          Heartland colonised by empaths .
     note: >-
       In deep space rather than in a system: its nearest star is HIP 2863, 1.3
       ly away. The direction is that star's and the distance is the article's,
@@ -647,6 +657,11 @@ worlds:
           First colonised by the Solipsist Panvirtuality's Ako Forward Chaining.
           The source says "around 500", so the year is a rough figure rather
           than a date.
+      - year_at: 679
+        kind: visited
+        source: "Encyclopaedia timeline, The Sundering"
+        note: >-
+          The arkship Jubilee arrives at Procyon .
     note: >-
       Joint Cyberian and Non-Coercive Zone after a long and strange history;
       neither of its present holders founded it.
@@ -972,6 +987,11 @@ worlds:
       - year_at: 4710
         kind: settled
         note: Founded.
+      - year_at: 5136
+        kind: visited
+        source: "Encyclopaedia timeline, The ComEmp Period"
+        note: >-
+          MPA relativist ship arrives at Cableville .
     note: Zhuangzi is the primary. No catalogue identifier is given for it.
 
   - name: Galbydeia Torus
@@ -1008,6 +1028,11 @@ worlds:
       - year_at: 2700
         kind: settled
 
+      - year_at: 2790
+        kind: settled
+        source: "Encyclopaedia timeline, Age of Establishment"
+        note: >-
+          Gordelpus (MPA) colonized by the Kathelian Confederacy.
   - name: The Gurth Hexanode Repository
     kind: megastructure
     affiliations: [mutual-progress-association, negentropy-alliance]
@@ -1047,6 +1072,11 @@ worlds:
       - year_at: 10580
         kind: abandoned
         note: Disintegrated.
+      - year_at: 10565
+        kind: abandoned
+        source: "Encyclopaedia timeline, Current Era"
+        note: >-
+          The Hoopworld war ends; evacuation begins.
     note: >-
       In Ophiuchus at 491 ly. One of the few entries here with an end rather
       than a beginning: it came apart twenty years before the setting's present.
@@ -1142,6 +1172,13 @@ worlds:
     events:
       - year_at: 6109
         kind: settled
+      - year_at: 6736
+        kind: visited
+        source: "Encyclopaedia timeline, The Age of Crisis"
+        note: >-
+          Construction of Himmelsschmiede begins when the relativistic linelayer
+          Matthew Fountaine Maury arrives with a nanogauge wormhole to the New
+          Magnitogorsk hub.
     note: >-
       A K2V star Orion's Arm numbers JD 109771067, in Sagittarius. The source
       also gives galactic coordinates, and they corroborate: converting the
@@ -1158,6 +1195,13 @@ worlds:
       - year_at: 4482
         kind: settled
         precision: not_later_than
+      - year_at: 6736
+        kind: visited
+        source: "Encyclopaedia timeline, The Age of Crisis"
+        note: >-
+          Construction of Himmelsschmiede begins when the relativistic linelayer
+          Matthew Fountaine Maury arrives with a nanogauge wormhole to the New
+          Magnitogorsk hub.
     note: >-
       The original, at Theta Persei, 36 ly. New Magnitogorsk two thousand light
       years away is named after it. Colonised by 4482; no founding date is
@@ -1286,6 +1330,12 @@ worlds:
     events:
       - year_at: 2207
         kind: settled
+      - year_at: 2581
+        kind: visited
+        source: "Encyclopaedia timeline, The Age of Expansion"
+        note: >-
+          The Ken Ferjik Museum Ship reaches Irrmorella, a small system about 15 LY
+          Solward of Greylag.
     note: In Lupus at 137 ly.
 
   - name: Greylag
@@ -1298,6 +1348,12 @@ worlds:
     events:
       - year_at: 2397
         kind: settled
+      - year_at: 2581
+        kind: visited
+        source: "Encyclopaedia timeline, The Age of Expansion"
+        note: >-
+          The Ken Ferjik Museum Ship reaches Irrmorella, a small system about 15 LY
+          Solward of Greylag.
     note: In Norma at 192 ly.
 
   - name: Daffy
@@ -1310,6 +1366,12 @@ worlds:
       - year_at: 1777
         kind: visited
         note: Reached.
+      - year_at: 6230
+        kind: settled
+        source: "Encyclopaedia timeline, Age of Separate Empires"
+        note: >-
+          The planet New Daffy was colonised by heretic expansionists from the
+          Negentropy Alliance world of Greylag , becoming the New Daffy Panoparchy .
     note: >-
       Psi Serpentis, 48 ly, a triple — A, Ba and Bb. Daffy orbits A, which is
       the component the catalogue entry is.
@@ -1449,6 +1511,13 @@ worlds:
     location:
       hd: 143638
       catalogue_from_source: true
+    events:
+      - year_at: 2581
+        kind: visited
+        source: "Encyclopaedia timeline, The Age of Expansion"
+        note: >-
+          The Ken Ferjik Museum Ship reaches Irrmorella, a small system about 15 LY
+          Solward of Greylag.
     note: In Norma at 206 ly. No dates.
 
   - name: Junna
@@ -1474,6 +1543,15 @@ worlds:
         In the Goldfish Nebula Plexus. The nebula is not in any catalogue this
         map carries under that name, and no distance is given.
 
+    events:
+      - year_at: 6992
+        kind: visited
+        source: "Encyclopaedia timeline, The Age of Crisis"
+        note: >-
+          A rogue Museum Ship identifying itself as the Hume neutralises the
+          planetary defenses at Muna Kipasi orbitals (Goldfishnebula Sector,
+          Negentropy Alliance space) and abducts more than five thousand sapient and
+          subsapient bioids. By the ti...
   - name: New Daffy Panoparchy
     kind: volume
     affiliations: [negentropy-alliance]
@@ -1576,6 +1654,11 @@ worlds:
         kind: settled
         note: Manned mission, a century after the probe.
 
+      - year_at: 1395
+        kind: visited
+        source: "Encyclopaedia timeline, Middle Federation / Megacorps"
+        note: >-
+          First manned mission arrives at Merrion .
   - name: Algol
     kind: system
     system: Algol
@@ -1633,6 +1716,11 @@ worlds:
     events:
       - year_at: 1636
         kind: settled
+      - year_at: 1636
+        kind: visited
+        source: "Encyclopaedia timeline, Late Federation / AI Emergence"
+        note: >-
+          Mayflower arrives at Atlantis (Zeta1 Reticuli II).
     note: >-
       One cell of the colony table holds three names for this system —
       Atlantis, Prometheus and Daedalus — belonging to three meta-empires.
@@ -1647,6 +1735,18 @@ worlds:
     events:
       - year_at: 1564
         kind: settled
+      - year_at: 1392
+        kind: visited
+        source: "Encyclopaedia timeline, Middle Federation / Megacorps"
+        note: >-
+          The autonomous probeship Karel Tchapek arrives at HR 8501 (Audubon System)
+          .
+      - year_at: 1564
+        kind: visited
+        source: "Encyclopaedia timeline, Late Federation / AI Emergence"
+        note: >-
+          The Copy Crew arrive at Audubon , the first humans ever to be transmitted
+          over an interstellar distance (nine light years) by engenerator .
     note: >-
       Given as HR 8501A. The Bright Star numbers are not carried here, but the
       colony table resolves the same system to HD 211415 at 46 ly.
@@ -1682,12 +1782,16 @@ worlds:
       hd: 217086
       catalogue_from_source: true
     events:
-      - year_at: 3900
-        until_at: 3999
+      - year_at: 8200
         kind: settled
-        precision: between
-        note: The colonisation project begins early in the 3900s.
-    note: In Cepheus at 2,758 ly.
+        precision: not_later_than
+        note: Settled by this year, when Big Ben Janson ascended.
+    note: >-
+      In Cepheus at 2,758 ly. Early in the 3900s Big Ben Janson, then a minor
+      Non-Coercive Zone transapient, made a clade of tweaks to settle the world
+      — but that is the project beginning, not anyone arriving, and the arrival
+      is not dated. The bound recorded here is eir ascension in 8200, which the
+      colony comfortably precedes.
 
   - name: Big Bob
     kind: planet
@@ -1778,6 +1882,11 @@ worlds:
     events:
       - year_at: 2271
         kind: settled
+      - year_at: 2101
+        kind: settled
+        source: "Encyclopaedia timeline, The Age of Expansion"
+        note: >-
+          Fiarro twin worlds colonised.
     note: In Vela at 231 ly.
 
   - name: Frei
@@ -1787,6 +1896,20 @@ worlds:
     article: https://www.orionsarm.com/eg-article/465109370a058
     location:
       star: Zeta Doradus
+    events:
+      - year_at: 3344
+        kind: visited
+        source: "Encyclopaedia timeline, Age of Consolidation"
+        note: >-
+          The two AIs Botryophoros and Polygethes emigrate from the Dionysian
+          Erotocracy during its breakup. They arrive at Frei , and began seeding the
+          rings of the planet with their "starseeds".
+      - year_at: 3600
+        kind: abandoned
+        source: "Encyclopaedia timeline, Age of Consolidation"
+        note: >-
+          The entire system of Frei has now been successfully subverted: the last
+          technetes abandoned Thomaso and moved into the Makrania Orwoods .
     note: >-
       Zeta Doradus A, 38 ly. Already on the map through the Inner Sphere colony
       table, which is the likeliest source of any position for it drawn earlier.
@@ -1843,6 +1966,22 @@ worlds:
     events:
       - year_at: 636
         kind: settled
+      - year_at: 621
+        kind: visited
+        source: "Encyclopaedia timeline, The Sundering"
+        note: >-
+          The Sure arrives at Epsilon Indi ; because of a cryonics failure only six
+          colonists are successfully revived. These become House Stevens .
+      - year_at: 764
+        kind: visited
+        source: "Encyclopaedia timeline, The Sundering"
+        note: >-
+          The Starlark arrives at Epsilon Indi .
+      - year_at: 880
+        kind: visited
+        source: "Encyclopaedia timeline, The Sundering"
+        note: >-
+          Hindi Expansion vessel arrives at Epsilon Indi .
     note: 11.9 ly, one of the nearest systems recorded here.
 
   - name: Gum Nebula
@@ -1946,6 +2085,11 @@ worlds:
         kind: visited
         note: Reached.
 
+      - year_at: 6207
+        kind: settled
+        source: "Encyclopaedia timeline, Age of Separate Empires"
+        note: >-
+          Locus colonised.
   - name: Lombardo
     kind: system
     system: Lombardo
@@ -2044,6 +2188,12 @@ worlds:
     location:
       note: 1,622 ly from Sol and no direction given, which is a shell rather than a place.
 
+    events:
+      - year_at: 5603
+        kind: visited
+        source: "Encyclopaedia timeline, Age of Re-Evaluation"
+        note: >-
+          Relativistic rescue mission reaches the Newlife system.
   - name: Nivline
     kind: system
     system: Nivline
@@ -2063,6 +2213,18 @@ worlds:
     events:
       - year_at: 588
         kind: settled
+      - year_at: 595
+        kind: visited
+        source: "Encyclopaedia timeline, The Sundering"
+        note: >-
+          The first of the Shuttles, simply called " Red ", arrives at Tau Ceti /
+          Nova Terra.
+      - year_at: 772
+        kind: settled
+        source: "Encyclopaedia timeline, The Sundering"
+        note: >-
+          Unity colony founded by the Atellians in a disused space station orbiting
+          Nova Terra .
     note: >-
       Tau Ceti, 11.9 ly. The system's own article is at
       https://www.orionsarm.com/eg-article/48e6233abde08.
@@ -2219,6 +2381,11 @@ worlds:
     events:
       - year_at: 1065
         kind: settled
+      - year_at: 1885
+        kind: visited
+        source: "Encyclopaedia timeline, Late Federation / AI Emergence"
+        note: >-
+          Terranova Foundation probeship arrives at Twinkle .
     note: >-
       82 Eridani IV, 19.7 ly. The catalogue carries the star under the Gould
       designation 82 G. Eri rather than a Flamsteed number.
@@ -2233,6 +2400,11 @@ worlds:
     events:
       - year_at: 789
         kind: settled
+      - year_at: 789
+        kind: visited
+        source: "Encyclopaedia timeline, The Sundering"
+        note: >-
+          GAIA's refugee arks arrive at Twilight .
     note: >-
       40 Eridani A, 16 ly. The system's own article is at
       https://www.orionsarm.com/eg-article/45e24ae0d6d07.
@@ -2422,6 +2594,11 @@ worlds:
       - year_at: 7107
         kind: visited
         note: Reached.
+      - year_at: 7017
+        kind: settled
+        source: "Encyclopaedia timeline, The Age of Crisis"
+        note: >-
+          Cenote colonised by Solar Dominion .
     note: >-
       Designated YTS 233-091-0998, which is Orion's Arm's own numbering — and
       the add-on carries that star, so this is placed by an asserted position
@@ -2551,6 +2728,13 @@ worlds:
         until_at: 2700
         kind: settled
         precision: between
+      - year_at: 2805
+        kind: visited
+        source: "Encyclopaedia timeline, Age of Establishment"
+        note: >-
+          The Solarian scout probe Opening the Endless Light 5 arrives in the Ghane
+          III system, ending the locals' long isolation and allowing Solarist
+          missionaries and relief organisations to help the Hyl Op .
     note: In Andromeda at 163 ly.
 
   - name: Gripler
@@ -2592,6 +2776,13 @@ worlds:
         note: >-
           The Solar Dominion arrives to find the system already settled by
           Mydonian Evolution postneumanns, neither aligned nor hostile.
+      - year_at: 8746
+        kind: settled
+        source: "Encyclopaedia timeline, Age of Expansionist New Empires"
+        note: >-
+          Arrival of the linelayer Borde's Glory XXIV at Hiederia . It is found that
+          the system's jovian had been colonised by a high level postneumann
+          civilization.
     note: In the Perseus Rift, 3,618 ly.
 
   - name: Gavit
@@ -2607,6 +2798,12 @@ worlds:
         kind: visited
         note: Reached.
 
+      - year_at: 9483
+        kind: visited
+        source: "Encyclopaedia timeline, Age of Expansionist New Empires"
+        note: >-
+          The retired Dominion system development vessel and linelayer Hoshanti
+          reaches Gavit - dual administration of system (with Deeper Covenant ).
   - name: Jilunan
     kind: system
     system: Jilunan
@@ -2619,6 +2816,13 @@ worlds:
       - year_at: 8925
         kind: settled
 
+      - year_at: 8925
+        kind: visited
+        source: "Encyclopaedia timeline, Age of Expansionist New Empires"
+        note: >-
+          The Dominion system development vessel and linelayer Hoshanti reaches YTS
+          2145-098-3 (Outer Volumes - Sagittarius sector), which becomes part of the
+          Surya-Ramydos Prefecture and is renamed Jilunan .
   - name: Klarus
     kind: planet
     affiliations: [solar-dominion]
@@ -2650,6 +2854,12 @@ worlds:
     article: https://www.orionsarm.com/eg-article/48f8fcd3d44a0
     location:
       oa_star: JD 9802-8
+    events:
+      - year_at: 8744
+        kind: visited
+        source: "Encyclopaedia timeline, Age of Expansionist New Empires"
+        note: >-
+          The Solar Dominion arrives at Oshiq .
     note: >-
       In Perseus. The add-on and the article agree: 984.2 pc against 3,210 ly is
       the same figure in the two units.
@@ -2698,6 +2908,14 @@ worlds:
           A derelict alien starship found here — the first dated event the
           system has, and evidence of somebody's presence rather than of the
           Dominion's.
+      - year_at: 597
+        kind: visited
+        source: "Encyclopaedia timeline, The Sundering"
+        note: >-
+          The 61 Virginis probes of the Virginis Effort arrive within their target
+          system. Separating from the mother hull, the Virgo probe is placed within
+          an orbit that takes it within 0.32 AU of the star, and out to 0.75 AU. The
+          Spica probe ran...
     note: 39 ly.
 
   - name: Raman's World
@@ -2732,6 +2950,11 @@ worlds:
       - year_at: 1349
         kind: visited
         note: Reached.
+      - year_at: 1349
+        kind: settled
+        source: "Encyclopaedia timeline, Middle Federation / Megacorps"
+        note: >-
+          Shamash (Xi Bootis A III)colonised by Hearp Rangers.
     note: >-
       Xi Boötis, 22 ly. Shamash is the A component and Ishtar the B; the
       catalogue carries the pair as one entry.
@@ -2756,6 +2979,11 @@ worlds:
       - year_at: 3190
         kind: visited
         note: Reached.
+      - year_at: 3575
+        kind: settled
+        source: "Encyclopaedia timeline, Age of Consolidation"
+        note: >-
+          Silenus colonised by the Solar Dominion.
     note: In Cassiopeia at 391 ly.
 
   - name: Bellerophon Archipelago
@@ -2933,6 +3161,18 @@ worlds:
     events:
       - year_at: 678
         kind: settled
+      - year_at: 609
+        kind: visited
+        source: "Encyclopaedia timeline, The Sundering"
+        note: >-
+          The lead Heavenly Palaces colony ship arrive at Sigma Draconis , the
+          others at ten year intervals.
+      - year_at: 1350
+        kind: visited
+        source: "Encyclopaedia timeline, Middle Federation / Megacorps"
+        note: >-
+          Penglai ship arrives at Pandya and infects local population with pathogens
+          to which they have no immunity.
     note: >-
       A moon of the gas dwarf Qinglong, in the Shenjing system. Mostly Sophic
       League, with Zoeific, Solarist, Fomalhaut and Metasoft presences in orbit.
@@ -3019,11 +3259,11 @@ worlds:
       oa_star: EG 471
     events:
       - year_at: 1419
-        kind: visited
-        note: >-
-          The starship launched. Its journey took 262 years, which would put
-          arrival about 1681 — but the source does not say whether that figure
-          is ship time or star time, so only the departure is dated here.
+        kind: observed
+        note: The colony ship Amideen launched, on a journey of 262 years.
+      - year_at: 1681
+        kind: settled
+        note: Reached, by the colonists aboard the Amideen.
     note: >-
       The white dwarf EGGR 471, also GJ 3162 and WD 0230-144. Below Hipparcos
       and outside the Bright Star Catalogue, so the Celestia add-on's position
@@ -3140,6 +3380,14 @@ worlds:
     events:
       - year_at: 1770
         kind: visited
+      - year_at: 1931
+        kind: visited
+        source: "Encyclopaedia timeline, Late Federation / AI Emergence"
+        note: >-
+          Instruments at New Callisto , the nearest large hu-inhabited polity, cease
+          to detect information-rich signals from the Xi Geminorum AI - 1
+          Civilization; the AIs are never heard from again. After hastily running
+          through a number of simula...
     note: >-
       The article gives three distances — 60.663 ly from Sol, 8.761 from Alzirr
       and 3.790 from Paanlaansuu — and they intersect at one point, 0.19 ly from
@@ -3211,6 +3459,11 @@ worlds:
       - year_at: 2100
         kind: settled
         note: Paraterraformed.
+      - year_at: 2344
+        kind: settled
+        source: "Encyclopaedia timeline, The Age of Expansion"
+        note: >-
+          Qjellto settled by retroists and low-tech peripathetics.
     note: >-
       Divided rather than shared: the Utopia Sphere holds the Hrek worldhouse
       and the Zoeific Biopolity everywhere else.
@@ -3751,6 +4004,12 @@ worlds:
     events:
       - year_at: 2211
         kind: settled
+      - year_at: 854
+        kind: visited
+        source: "Encyclopaedia timeline, The Sundering"
+        note: >-
+          The Turing arrives at Pi3 Orionis . The Heterosemiotics name the fourth
+          planet Daedalus.
     note: >-
       Castor, 51 ly out, and named as Turing in the colony table too.
 
@@ -4064,6 +4323,13 @@ worlds:
     location:
       star: Arkab Prior
       distance: 389 ly
+    events:
+      - year_at: 4311
+        kind: settled
+        source: "Encyclopaedia timeline, The Integration"
+        note: >-
+          Arkab Prior A + B colonised; Arkab Prior A is allocated to the Negentropy
+          Alliance, Arkab Prior B to the MPA.
     note: >-
       The add-on declares this as though it were a star, on Arkab Prior B's
       exact position — but it is a megastructure, so it belongs to the system
@@ -4127,6 +4393,18 @@ worlds:
     article: https://www.orionsarm.com/eg-article/4871520aab6c2
     location:
       oa_star: 'Gamma Leporis B:13 Lep B:HD 38392'
+    events:
+      - year_at: 933
+        kind: visited
+        source: "Encyclopaedia timeline, The Early Federation Age"
+        note: >-
+          Exodus Beneficents arrive at Gamma Leporis and begin extensive development
+          in both systems.
+      - year_at: 1166
+        kind: visited
+        source: "Encyclopaedia timeline, The Early Federation Age"
+        note: >-
+          First Federation ship arrives at Gamma Leporis .
     note: >-
       The system takes in both components of Gamma Leporis, 29 ly out. Bound to
       B because that is the one the add-on carries — the real star catalogue
@@ -4237,6 +4515,11 @@ worlds:
     events:
       - year_at: 809
         kind: settled
+      - year_at: 892
+        kind: settled
+        source: "Encyclopaedia timeline, The Sundering"
+        note: >-
+          MyuvYin settled by tweak bioborg clade.
     note: >-
       Gliese 205, also HD 36395 and HIP 25878, in Orion. Both stated distances
       land: 18.59 ly from Sol against the catalogue's 18.604, and 6.283 from
@@ -4603,6 +4886,11 @@ worlds:
     events:
       - year_at: 1639
         kind: settled
+      - year_at: 1639
+        kind: visited
+        source: "Encyclopaedia timeline, Late Federation / AI Emergence"
+        note: >-
+          Islamic Unity probeship arrives at Medina .
     note: >-
       HIP 39330, also HD 66653, in Puppis at 118.7 ly against the article's 118.
       Its own right ascension and declination land in Puppis too, as stated.
@@ -5026,6 +5314,11 @@ worlds:
     events:
       - year_at: 450
         kind: visited
+      - year_at: 1150
+        kind: visited
+        source: "Encyclopaedia timeline, The Early Federation Age"
+        note: >-
+          '.....' sporeship arrives at Wolf 359 and spreads from there.
     note: Wolf 359, 7.9 ly out in Leo.
 
   - name: Sirius
@@ -5067,6 +5360,34 @@ worlds:
       - year_at: 5740
         kind: settled
 
+      - year_at: 5740
+        kind: visited
+        source: "Encyclopaedia timeline, Age of Re-Evaluation"
+        note: >-
+          The first relativistic colony ships of the Semperist Survival Fleet
+          reached Refugium , an easily terraformable terrestrial world approximately
+          2200 lightyears from Sol.
+      - year_at: 5989
+        kind: settled
+        source: "Encyclopaedia timeline, Age of Separate Empires"
+        note: >-
+          Salaam colonised by the Refugium Federation.
+      - year_at: 6000
+        kind: settled
+        source: "Encyclopaedia timeline, Age of Separate Empires"
+        note: >-
+          The Refugium Federation has expanded to a 100 lightyear sphere, including
+          20 colonised systems. Contacts are by tightbeam laser, and most
+          inhabitants believed that by now the rest of mankind would have destroyed
+          itself or transformed int...
+      - year_at: 6916
+        kind: visited
+        source: "Encyclopaedia timeline, The Age of Crisis"
+        note: >-
+          A contact fleet launched from Polonius (see Refugium Federation ) reaches
+          a nearby world, and diplomatic contact begins. The aliens turn out to be
+          Kestnerists. The Kestnerists give the Semperists the news that humankind
+          has survived. The...
   # ---- Crystal Star Domain -------------------------------------------------
   #
   # Its two nebulae are in polities.yaml, both shared with earlier claimants.
@@ -5908,6 +6229,12 @@ worlds:
       - year_at: 5184
         kind: settled
 
+      - year_at: 4384
+        kind: settled
+        source: "Encyclopaedia timeline, The Integration"
+        note: >-
+          Nirio colonised in by an AI consortium setting up a baseline reservation
+          and a local To'ul'h utopia. Becomes part of the Utopia Sphere .
   - name: Jekaumeatrine
     kind: system
     affiliations: [deeper-covenant]
@@ -6027,6 +6354,20 @@ worlds:
     affiliations: [solipsist-panvirtuality]
     location:
       star: Kappa Cassiopeiae
+    events:
+      - year_at: 7002
+        kind: visited
+        source: "Encyclopaedia timeline, The Age of Crisis"
+        note: >-
+          The secretive Solipsist Panvirtual cluster ak##~#~ arrives at Kappa
+          Cassiopeiae .
+      - year_at: 10344
+        kind: visited
+        source: "Encyclopaedia timeline, Current Era"
+        note: >-
+          A Negentropist Institute Probe of Information Conservation (the " Dewey
+          Decimal ") arrives at the Kappa Cassiopeiae Oort cloud and is informed
+          about the Mucoid Empire .
     note: 3,064 ly out — the furthest of this polity's named systems.
 
   - name: Cygnus OB2-12
@@ -6068,6 +6409,12 @@ worlds:
         kind: capital
         precision: not_later_than
         note: A large empire by this date, overlapping Negentropist, Keterist and Cooperation space.
+      - year_at: 3716
+        kind: settled
+        source: "Encyclopaedia timeline, Age of Consolidation"
+        note: >-
+          Volume around YTS 2190 751 6 [Norma Sector] settled by relativistic von
+          neuman machines [see Normidic Machinophyle Supercluster ].
     note: >-
       Around YTS 2190 751 6, in what the Encyclopaedia calls the Norma Outer
       Sector — a designation of Orion's Arm's own that the Celestia add-on does
@@ -6296,6 +6643,23 @@ worlds:
       - year_at: 6402
         kind: settled
         note: Reached.
+      - year_at: 6402
+        kind: visited
+        source: "Encyclopaedia timeline, Age of Separate Empires"
+        note: >-
+          Probe arrives at Apogee Maximal , and deploy several self-replicating
+          fusion units in the Apogeean atmosphere.
+      - year_at: 6610
+        kind: visited
+        source: "Encyclopaedia timeline, Age of Separate Empires"
+        note: >-
+          Colonists arrive at Apogee Maximal .
+      - year_at: 6756
+        kind: visited
+        source: "Encyclopaedia timeline, The Age of Crisis"
+        note: >-
+          A small (10 meter) wormhole is set up in the Apogee Maximal system and
+          visitors from the rest of the Known Worlds begin to arrive.
     note: >-
       A lone brown dwarf about 1,120 ly straight up out of the galactic plane,
       which is a direction rather than a constellation — it works out to Coma
@@ -6375,6 +6739,11 @@ worlds:
     events:
       - year_at: 6110
         kind: visited
+      - year_at: 6110
+        kind: settled
+        source: "Encyclopaedia timeline, Age of Separate Empires"
+        note: >-
+          Blefuscu colonised by a Nisse colony ship.
     note: >-
       In Pyxis at 2,105 ly. The article gives 2,101 ly for epoch 2000 as well;
       the difference is the star's own motion over four thousand years, and the
@@ -6489,6 +6858,12 @@ worlds:
     system: Copernicus
     affiliations: [terragen-federation]
     article: https://www.orionsarm.com/eg-article/486ebb201f514
+    events:
+      - year_at: 1421
+        kind: visited
+        source: "Encyclopaedia timeline, Middle Federation / Megacorps"
+        note: >-
+          The First Federation Kontore League colony ship Hanse arrives at Danzig .
     note: The world of Copernicus.
 
   - name: Eganfodugbe
@@ -6810,6 +7185,13 @@ worlds:
       - year_at: 4736
         kind: settled
         note: Construction began.
+      - year_at: 6736
+        kind: visited
+        source: "Encyclopaedia timeline, The Age of Crisis"
+        note: >-
+          Construction of Himmelsschmiede begins when the relativistic linelayer
+          Matthew Fountaine Maury arrives with a nanogauge wormhole to the New
+          Magnitogorsk hub.
     note: >-
       Built around what the article calls a red supergiant of forty-six solar
       masses and eight million kilometres across, somewhere in Mutual Progress
@@ -7066,6 +7448,13 @@ worlds:
       - year_at: 2220
         kind: settled
         note: Reached.
+      - year_at: 3541
+        until_at: 3543
+        precision: between
+        kind: abandoned
+        source: "Encyclopaedia timeline, Age of Consolidation"
+        note: >-
+          Morrow is depopulated by geneticaly modified plagues.
     note: >-
       One of a pair of habitats at HD 100607 in Centaurus. The catalogue puts
       that star at 140 ly against the article's 191, a quarter nearer, so the
@@ -7174,6 +7563,18 @@ worlds:
       - year_at: 3429
         kind: settled
         note: Arrived.
+      - year_at: 3157
+        kind: abandoned
+        source: "Encyclopaedia timeline, Age of Establishment"
+        note: >-
+          Hip 99265 , Newhope system abandoned.
+      - year_at: 3429
+        kind: visited
+        source: "Encyclopaedia timeline, Age of Consolidation"
+        note: >-
+          The nearbaseline human colony ship, the Freedom's Light, crewed by
+          followers of the utopian nearbaseline human Marus Midas Chuny, arrive at
+          Hip 99265, with 980 colonists in stasis, and rename the system Newhope .
     note: >-
       HIP 76282 in Serpens, 113 ly out against the article's 120. The
       coordinates the article prints are the star's own to the arcsecond.
@@ -7210,15 +7611,15 @@ worlds:
       constellation: Cancer
       distance: 1712 ly
     events:
-      - year_at: 1712
+      - year_at: 6299
         kind: settled
-        precision: not_earlier_than
+        precision: not_later_than
+        note: Settled by this year, when contact with the colonists had faded to nothing.
     note: >-
-      In Cancer at 1,712 ly. The article dates the colony only as after 1712,
-      which the distance already implies and then some: at the setting's usual
-      0.84c cruise, 1,712 ly is a journey of two thousand years, so nothing
-      leaving Sol at any date could arrive before about 2000 AT whatever the
-      article's lower bound says.
+      In Cancer at 1,712 ly. The article gives no date for the colony itself.
+      What it gives is 6299, by which time contact with the original settlers
+      had dwindled away — so they were there before that, and how long before is
+      not said.
 
   # ---- the alphabetical sweep, O-P -----------------------------------------
 
@@ -7247,6 +7648,13 @@ worlds:
     system: Beyniou
     affiliations: []
     article: https://www.orionsarm.com/eg-article/490b3010a681a
+    events:
+      - year_at: 8162
+        kind: visited
+        source: "Encyclopaedia timeline, Age of Expansionist New Empires"
+        note: >-
+          80Star Wormhole Authority's expensive explorer linelayer probe reaches the
+          Oceanus Ultimata system.
     note: >-
       A megastructure at Beyniou, most probably of xenosophont make. Probably is
       the article's own hedge, and origin is not possession, so no holder is
@@ -7436,6 +7844,18 @@ worlds:
     events:
       - year_at: 1748
         kind: settled
+      - year_at: 2534
+        kind: visited
+        source: "Encyclopaedia timeline, The Age of Expansion"
+        note: >-
+          Stellar Umma research vessel al Geber arrives and makes contact with
+          Rajasekar civilisation.
+      - year_at: 6450
+        kind: settled
+        source: "Encyclopaedia timeline, Age of Separate Empires"
+        note: >-
+          Rajasekar is colonised by a Sophic tweak adaptation calling themselves the
+          New Rajasekarians.
     note: >-
       Tau-1 Gruis, also CD-49 13988, 108.0 ly out against the article's 108.58.
       Three holders, which the article gives together rather than in sequence.
@@ -7913,6 +8333,12 @@ worlds:
     article: https://www.orionsarm.com/eg-article/486ecd3a8e1a5
     location:
       star: Zeta1 Reticuli
+    events:
+      - year_at: 1636
+        kind: visited
+        source: "Encyclopaedia timeline, Late Federation / AI Emergence"
+        note: >-
+          Mayflower arrives at Atlantis (Zeta1 Reticuli II).
     note: >-
       39.3 ly out against the article's 39.53, and the most divided system in
       this file: five metaempires hold parts of it, with a good deal besides
