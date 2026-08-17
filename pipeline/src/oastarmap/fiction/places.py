@@ -6,7 +6,7 @@ down. Nothing about a place tells you which file it is in, and no file is a
 superset of another:
 
     worlds.yaml        533 entries, 495 with an article URL
-    inner_sphere.yaml  1122 colony rows, none with a URL
+    inner_sphere.yaml  1122 colony rows, 266 with a URL
     oa_stars.yaml      119 add-on stars, none with a URL
     oa_systems.yaml    28 curated labels, 26 with a URL
 
@@ -105,7 +105,8 @@ def all_places(fiction_dir: Path | None = None) -> list[Place]:
         name = e.get("colony") or e.get("star") or ""
         if not name:
             continue
-        places.append(Place(name, "inner_sphere.yaml", "", [e.get("star") or ""], e))
+        places.append(Place(name, "inner_sphere.yaml", e.get("article", ""),
+                            [e.get("star") or ""], e))
 
     polities = _load(fiction_dir / "polities.yaml") or {}
     for p in polities.get("polities", []):

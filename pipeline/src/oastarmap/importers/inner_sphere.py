@@ -21,6 +21,7 @@ from typing import Any
 _ROW = re.compile(r"<tr.*?</tr>", re.S | re.I)
 _CELL = re.compile(r"<t[dh][^>]*>(.*?)</t[dh]>", re.S | re.I)
 _TAG = re.compile(r"<[^>]+>")
+_HREF = re.compile(r"""href\s*=\s*["']([^"']*(?:eg-article|eg-topic)/[0-9a-f]+)""", re.I)
 
 WORMHOLE_HEADING = "The Wormhole Nexus"
 """Splits the page: system tables above, nexus tables below."""
@@ -36,6 +37,24 @@ def _cells(row: str) -> list[str]:
     ]
 
 
+def _cell_links(row: str) -> list[str]:
+    """The Encyclopaedia article each cell links to, or "" where it links none.
+
+    The colony-name cell is a hyperlink for 390 of the 1,431 rows, and the first
+    version of this importer threw those away with the rest of the markup —
+    which left the colony table the one file with no article URLs at all, and so
+    the one file that could not be matched to the article corpus by anything but
+    its names.
+    """
+    out = []
+    for cell in _CELL.findall(row):
+        found = _HREF.search(cell)
+        out.append(
+            f"https://www.orionsarm.com/{found.group(1).lstrip('/')}" if found else ""
+        )
+    return out
+
+
 def _rows(fragment: str) -> list[list[str]]:
     return [_cells(row) for row in _ROW.findall(fragment)]
 
@@ -47,15 +66,21 @@ def parse(text: str) -> dict[str, list[dict[str, Any]]]:
         raise ValueError(f"{WORMHOLE_HEADING!r} not found; is this the right page?")
 
     systems: list[dict[str, Any]] = []
-    for row in _rows(text[:split]):
+    for raw in _ROW.findall(text[:split]):
+        row = _cells(raw)
         # Header rows repeat per distance shell, and carry the same width.
         if len(row) != 6 or row[0] in ("Star", ""):
             continue
+        links = _cell_links(raw)
+        # The colony cell carries the link; a few rows link from the star
+        # instead, so anything in the row is better than nothing.
+        article = next((u for u in ([links[2]] if len(links) > 2 else []) + links if u), "")
         systems.append(
             {
                 "star": row[0],
                 "distance_ly": row[1],
                 "colony": row[2],
+                "article": article,
                 "spectral_type": row[3],
                 "mass_sol": row[4],
                 "luminosity_sol": row[5],
@@ -110,7 +135,8 @@ def write_yaml(parsed: dict[str, list[dict[str, Any]]], dest: Path) -> dict[str,
     lines = [HEADER, "systems:"]
     for entry in parsed["systems"]:
         lines.append(f"  - star: {_scalar(entry['star'])}")
-        for field in ("distance_ly", "colony", "spectral_type", "mass_sol", "luminosity_sol"):
+        for field in ("distance_ly", "colony", "article", "spectral_type", "mass_sol",
+                      "luminosity_sol"):
             lines.append(f"    {field}: {_scalar(entry[field])}")
 
     lines.append("")

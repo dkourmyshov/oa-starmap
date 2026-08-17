@@ -295,6 +295,15 @@ class InnerSphereSystem(BaseModel):
     """
 
     colony: str = ""
+
+    article: str = ""
+    """The colony's own article, where the table links to one.
+
+    390 of the 1,431 rows hyperlink the colony name. Carrying them makes this
+    file matchable to the article corpus by URL like every other, rather than
+    by name alone.
+    """
+
     spectral_type: str = ""
     mass_sol: str = ""
     luminosity_sol: str = ""
