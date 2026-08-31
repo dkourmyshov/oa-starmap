@@ -30,6 +30,7 @@ import { eraOf, periodAt } from '../data/history';
 import type { EpochSummary } from '../layers/epoch';
 import { type DistanceUnit, formatDistance, pc } from '../units';
 import { makeDraggable } from './drag';
+import { makeFoldable } from './foldable';
 
 export interface EpochState {
   year: number;
@@ -98,7 +99,6 @@ export class HistoryPanel {
   /** Everything below the scrubber, which is what makes the panel tall. */
   private readonly details: HTMLElement;
   private readonly modeToggle: HTMLButtonElement;
-  private readonly collapseToggle: HTMLButtonElement;
 
   private enabled = false;
   private collapsed = false;
@@ -147,12 +147,6 @@ export class HistoryPanel {
 
     const head = el('div', 'row panel-grip');
     head.appendChild(el('span', 'title', 'History'));
-    this.collapseToggle = el('button', 'toggle', '▾') as HTMLButtonElement;
-    this.collapseToggle.title = 'Fold the timeline away and keep the year';
-    // Nothing to fold until history mode is on, and the body is hidden anyway.
-    this.collapseToggle.hidden = true;
-    this.collapseToggle.addEventListener('click', () => this.setCollapsed(!this.collapsed));
-    head.appendChild(this.collapseToggle);
     this.modeToggle = el('button', 'toggle', 'off') as HTMLButtonElement;
     this.modeToggle.title =
       'Show the map as it stood in one year, from the dates in each place’s own article';
@@ -284,6 +278,20 @@ export class HistoryPanel {
     this.details.appendChild(this.events);
 
     root.appendChild(this.panel);
+    // The same fold control every other panel has, pointed at the details
+    // rather than at everything: this one folds to its year and its scrubber,
+    // because a reader who has set the map to 4450 A.T. wants that number to
+    // stay in front of them while the six hundred lines of timeline go away.
+    // Not held: `collapsed` below is the state anything here needs, and the
+    // control keeps it in step through onChange.
+    makeFoldable(this.panel, {
+      body: this.details,
+      title: 'the timeline',
+      onChange: (folded) => {
+        this.collapsed = folded;
+        if (!folded) this.render();
+      },
+    });
     makeDraggable(this.panel, head);
     // Closed to begin with. It is opened from the main panel, and until then it
     // should not be taking up the bottom of the screen.
@@ -347,28 +355,11 @@ export class HistoryPanel {
     this.modeToggle.classList.toggle('active', enabled);
     this.modeToggle.textContent = enabled ? 'on' : 'off';
     this.body.hidden = !enabled;
-    this.collapseToggle.hidden = !enabled;
+    // A reader who folds the timeline, switches history off, then switches it
+    // back on has not asked for it unfolded — the fold is left exactly as they
+    // left it, and only the panel body follows the switch.
     this.emit();
     this.render();
-  }
-
-  /**
-   * Fold the panel down to its scrubber.
-   *
-   * Not the same as switching history mode off, and deliberately separate from
-   * it: the map stays set to the year, and what goes away is the six hundred
-   * lines of timeline under the slider. On a laptop the open panel is half the
-   * screen, which is a fine way to read a century and a poor way to look at a
-   * map of one.
-   */
-  private setCollapsed(collapsed: boolean): void {
-    this.collapsed = collapsed;
-    this.collapseToggle.textContent = collapsed ? '▸' : '▾';
-    this.collapseToggle.title = collapsed
-      ? 'Unfold the timeline'
-      : 'Fold the timeline away and keep the year';
-    this.details.hidden = collapsed;
-    if (!collapsed) this.render();
   }
 
   private setYear(year: number, options: { keepSelection?: boolean } = {}): void {

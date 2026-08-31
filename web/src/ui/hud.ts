@@ -21,6 +21,8 @@ import { DEFAULT_OPACITY as DEFAULT_HII_OPACITY } from '../layers/hiiField';
 import { DEFAULT_OPACITY as DEFAULT_ASSOCIATION_OPACITY } from '../layers/associationField';
 import { DEFAULT_OPACITY as DEFAULT_GRID_OPACITY } from '../layers/planeGrid';
 import { DEFAULT_MAX_LABELS } from './labels';
+import { type Foldable, makeFoldable } from './foldable';
+import { makeDraggable } from './drag';
 import type { NameMode } from '../scene/objects';
 import {
   type ControlMode,
@@ -145,6 +147,9 @@ export class Hud {
 
   /** The viewpoint and drag controls, greyed out while the plan view is up. */
   private orientationControls: HTMLElement[] = [];
+
+  /** Every panel's fold control, so they can be closed together. */
+  private readonly folds: Foldable[] = [];
 
   private zoomInput: HTMLInputElement | null = null;
   private zoomReadout: HTMLElement | null = null;
@@ -592,6 +597,7 @@ export class Hud {
     panel.appendChild(note);
 
     root.appendChild(panel);
+    this.dressPanel(panel, 'the controls');
 
     if (fiction) this.buildPolityPanel(root, fiction);
 
@@ -669,6 +675,7 @@ export class Hud {
     }
     jumpPanel.appendChild(jumpGrid);
     root.appendChild(jumpPanel);
+    this.dressPanel(jumpPanel, 'the viewpoints');
   }
 
   /**
@@ -746,6 +753,25 @@ export class Hud {
     }
 
     root.appendChild(panel);
+    this.dressPanel(panel, "the Orion's Arm legend");
+  }
+
+  /**
+   * Give a panel a fold control and a grip, once it is built.
+   *
+   * Applied after the fact rather than woven through each panel's assembly:
+   * every panel here was written without a thought for folding, and not one of
+   * them needed changing. The next one gets both for a line.
+   *
+   * Dragging comes with folding because they answer the same complaint from
+   * opposite ends — the panel is in the way. Folding is for when you want it
+   * gone; dragging is for when you want it somewhere else. Having only one of
+   * the two, on some panels, would be an odd thing to have to explain.
+   */
+  private dressPanel(panel: HTMLElement, title: string): void {
+    this.folds.push(makeFoldable(panel, { title }));
+    const header = panel.firstElementChild as HTMLElement | null;
+    if (header) makeDraggable(panel, header);
   }
 
   /**

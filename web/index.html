@@ -356,8 +356,41 @@
       }
 
       /* The title bar doubles as the grip; see ui/drag.ts. */
-      .panel-grip {
+      .panel-grip,
+      .panel > .row:first-child {
         user-select: none;
+      }
+
+      /*
+       * The fold control. Sits at the right-hand end of every panel's heading,
+       * in the same place on all of them — a caret that means one thing here
+       * and something subtly different there is worse than no caret at all.
+       *
+       * Deliberately quieter than the switches beside it: it is about the
+       * furniture rather than about the map, and it should not compete with a
+       * control that changes what is drawn.
+       */
+      .toggle-fold {
+        margin-left: 6px;
+        min-width: 20px;
+        padding: 2px 5px;
+        color: var(--muted);
+        font-size: 11px;
+        line-height: 1;
+      }
+
+      .toggle-fold:hover {
+        color: var(--text);
+      }
+
+      /*
+       * A folded panel shrinks to its heading. The min-width goes with it, or
+       * every folded panel would still be reserving 268 pixels of the screen it
+       * was folded to give back.
+       */
+      .panel-folded {
+        min-width: 0;
+        padding-bottom: 8px;
       }
 
       .history-details {

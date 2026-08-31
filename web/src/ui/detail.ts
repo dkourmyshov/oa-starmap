@@ -32,6 +32,8 @@ import {
   systemLabel,
 } from '../scene/objects';
 import { PC_TO_LY, type DistanceUnit, type Parsecs, formatDistance, pc } from '../units';
+import { type Foldable, makeFoldable } from './foldable';
+import { makeDraggable } from './drag';
 
 /**
  * How an event kind reads in the panel.
@@ -208,6 +210,8 @@ function distanceWithBand(
 
 export class DetailPanel {
   private readonly panel: HTMLElement;
+  /** Made on the first selection and re-pointed at each rebuilt body. */
+  private fold: Foldable | null = null;
   private current: number | null = null;
 
   constructor(
@@ -249,17 +253,30 @@ export class DetailPanel {
     const head = el('div', 'row');
     head.appendChild(el('span', 'title', detail.title));
     const close = el('button', 'toggle', '×');
+    close.title = 'Close, and clear the selection';
     close.addEventListener('click', () => this.clear());
     head.appendChild(close);
     this.panel.appendChild(head);
 
-    this.panel.appendChild(el('div', 'note-line', detail.subtitle));
+    // Everything below the heading, so it can be folded as one. This panel is
+    // rebuilt on every selection, so the wrapper is made here rather than by
+    // the fold control, which is then pointed at the new one — otherwise the
+    // panel would spring open again every time the reader clicked a star.
+    const body = el('div', 'panel-body');
+    this.panel.appendChild(body);
+    if (this.fold) this.fold.rebind(body);
+    else {
+      this.fold = makeFoldable(this.panel, { body, title: 'the details' });
+      makeDraggable(this.panel, head);
+    }
+
+    body.appendChild(el('div', 'note-line', detail.subtitle));
 
     for (const row of detail.rows) {
       const line = el('div', 'row');
       line.appendChild(el('span', 'label', row.label));
       line.appendChild(el('span', row.warn ? 'value value-warn' : 'value', row.value));
-      this.panel.appendChild(line);
+      body.appendChild(line);
     }
 
     const fiction = this.sources.fiction;
@@ -313,7 +330,7 @@ export class DetailPanel {
           ),
         );
       }
-      this.panel.appendChild(note);
+      body.appendChild(note);
     }
 
     const actions = el('div', 'note');
@@ -331,7 +348,7 @@ export class DetailPanel {
       actions.appendChild(el('div', 'note-line note-warn', detail.note));
     }
     actions.appendChild(citationLine('note-line', detail.citation));
-    this.panel.appendChild(actions);
+    body.appendChild(actions);
   }
 
   private politiesFor(kind: string, index: number): string[] {
