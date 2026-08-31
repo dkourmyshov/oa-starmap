@@ -153,7 +153,10 @@ def cmd_build(args: argparse.Namespace) -> int:
     # after the manifest's constellation table exists.
     inner_file = FICTION_DIR / INNER_SPHERE_FILE
     if inner_file.exists():
-        datasets["inner_sphere"] = build_inner_sphere(inner_file)
+        datasets["inner_sphere"] = build_inner_sphere(
+            inner_file,
+            constellation_values=datasets["stars"]["layout"]["constellations"]["values"],
+        )
 
     # After the star build, whose name index it resolves against, and after the
     # add-on stars, whose designations it binds to.

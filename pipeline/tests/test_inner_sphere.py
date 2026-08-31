@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import json
 import re
+import shutil
 
 import pytest
 
@@ -323,3 +324,41 @@ def test_built_colonies_carry_no_placeholder() -> None:
 
     named = [row for row in rows if row["colony"]]
     assert 0 < len(named) < len(rows), "expected some rows to name a colony and some not to"
+
+
+def test_builds_without_a_manifest_on_disk(tmp_path):
+    """A clean clone has no manifest, because the build writes it last.
+
+    This is how it failed: the constellation table was read from
+    `web/public/data/manifest.json`, which every machine that had built before
+    already had lying about from the previous run. On a fresh checkout — a new
+    contributor, or CI — the build died partway through trying to read the file
+    it had not written yet. The values come from the star build's own return
+    value now, and this is the case that proves it.
+    """
+    for name in ("stars.names.json", "stars.bin", "stars.ids.bin", "stars.con.bin"):
+        source = DATA_OUT_DIR / name
+        if not source.exists():
+            pytest.skip("Star dataset not built: run `oastarmap build`")
+        shutil.copy(source, tmp_path / name)
+    assert not (tmp_path / "manifest.json").exists()
+
+    manifest = json.loads((DATA_OUT_DIR / "manifest.json").read_text(encoding="utf-8"))
+    values = manifest["datasets"]["stars"]["layout"]["constellations"]["values"]
+
+    fragment = build_inner_sphere(SOURCE, out_dir=tmp_path, constellation_values=values)
+    assert fragment["count"] > 0
+    # Bayer and Flamsteed rows resolve only through the constellation table, so
+    # their presence is what shows the table actually arrived.
+    assert fragment["stats"]["methods"].get("bayer/flamsteed", 0) > 0
+
+
+def test_says_so_when_it_has_no_constellation_table_at_all(tmp_path):
+    for name in ("stars.names.json", "stars.bin", "stars.ids.bin", "stars.con.bin"):
+        source = DATA_OUT_DIR / name
+        if not source.exists():
+            pytest.skip("Star dataset not built: run `oastarmap build`")
+        shutil.copy(source, tmp_path / name)
+
+    with pytest.raises(FileNotFoundError, match="constellation table"):
+        build_inner_sphere(SOURCE, out_dir=tmp_path)

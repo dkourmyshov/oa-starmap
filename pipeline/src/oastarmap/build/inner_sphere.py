@@ -168,8 +168,19 @@ def _to_float(value: str) -> float:
 def build_inner_sphere(
     source_path: Path | None = None,
     out_dir: Path | None = None,
+    constellation_values: list[str] | None = None,
 ) -> dict[str, Any]:
-    """Resolve the Inner Sphere table against the star catalogue."""
+    """Resolve the Inner Sphere table against the star catalogue.
+
+    Takes the constellation table from the star build's own return value, the
+    way ``build_worlds`` does and for the same reason: it used to read the
+    manifest off disk, and the manifest is written at the *end* of a build. On
+    any machine that had built before, the previous run's file was sitting there
+    and the mistake was invisible; on a machine that had not — a fresh clone, or
+    CI — the build died before it could write the file it was trying to read.
+    Falling back to the file is kept for a standalone call, but a build that has
+    the values in hand should never take that path.
+    """
     source_path = source_path or FICTION_DIR / INNER_SPHERE_FILE
     out_dir = out_dir or DATA_OUT_DIR
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -181,8 +192,16 @@ def build_inner_sphere(
     ids = np.fromfile(out_dir / "stars.ids.bin", dtype="<i4").reshape(-1, 2)
     constellation_bytes = np.fromfile(out_dir / "stars.con.bin", dtype=np.uint8)
 
-    manifest = json.loads((out_dir / "manifest.json").read_text(encoding="utf-8"))
-    constellation_values = manifest["datasets"]["stars"]["layout"]["constellations"]["values"]
+    if constellation_values is None:
+        manifest_path = out_dir / "manifest.json"
+        if not manifest_path.exists():
+            raise FileNotFoundError(
+                f"{manifest_path} does not exist, and no constellation table was "
+                f"passed in. Call build_inner_sphere with the values from "
+                f"build_stars() rather than relying on a previous build's manifest."
+            )
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+        constellation_values = manifest["datasets"]["stars"]["layout"]["constellations"]["values"]
     constellation_of = {
         i: constellation_values[code]
         for i, code in enumerate(constellation_bytes)
