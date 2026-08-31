@@ -8,7 +8,7 @@ Nothing below is a complaint about the setting. Most of it is the ordinary frict
 
 ---
 
-## Open questions (26)
+## Open questions (27)
 
 ### Shona — Shona's article gives its position twice, and the two directions are thirty degrees apart.
 
@@ -327,6 +327,19 @@ The 'M'pire is built on tidal debris from the Sagittarius Dwarf, which is old, m
 **What the map does now.** Places Far View where the setting's numbers put it and draws no streamer, the stream not being in any catalogue this map loads. The 'M'pire's cells were grown along that streamer, so it should read as a filament inclined steeply to the disk rather than a volume, and one recorded place cannot outline that either.
 
 **What would settle it.** Whether the streamer is meant as the real Sagittarius stream or as a structure of the setting's own, and how far the 'M'pire's filament runs.
+
+### Polities — Every affiliation in this project is undated, so the historical view can say when a place existed but never who held it in that year.
+
+*data-gap*
+
+Two separate gaps, and the second is the larger. First, an affiliation here is a single present-tense fact about a place — read off a political map depicting 8000 A.T., or off an article written about the setting's present — with no record of when the allegiance began or ended. Systems changed hands constantly in the setting; the world file even carries a `transferred` event kind for it, on ten entries. Counting today's holders among the places that existed in 515 A.T. therefore reported the Sophic League a millennium and a half before the timeline first mentions it, which is why that readout was removed. Second, the polity list itself is of one epoch: it comes from a map of 8000 A.T. and from current articles, so polities that rose and fell earlier are absent entirely. The Encyclopaedia's timeline dates the Conver Ambi from its establishment in 1984 to its division in 3943 and returns to it through the Conver Wars, and this project cannot colour a single system for it, or for the Taurus Nexus, the Sagittarius Sphere or the Geminga Orthodoxy.
+
+**What the map does now.** Shows, per period, which polities that period's own timeline names, with a count of the lines naming each — a fact about the source rather than a claim about who held what. Polity colour on the map stays undated and does not change with the year, and the history panel says so outright.
+
+**What would settle it.** Founding and dissolution years for each polity, cited; and per-system allegiance with the years it held, which for most systems no source states. The timeline gives foundings outright for seven of the forty-seven polities here — Non-Coercive Zone 1498, Mutual Progress Association 1967, Crystal Star Domain 3670, Sagittarius Transcultural Cooperation 4805, Refugium Federation 5884, Laughter Hegemony 9487 — and the individual polity articles would give the rest.
+
+- https://www.orionsarm.com/eg-topic/49c787abb28fd
+- https://www.orionsarm.com/eg-topic/45b170f9e0941
 
 ## The Inner Sphere colony tables
 

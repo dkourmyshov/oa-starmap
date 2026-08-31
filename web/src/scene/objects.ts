@@ -15,6 +15,7 @@ import * as THREE from 'three';
 
 import { DEFAULT_SIZE_PX as RING_SIZE_PX } from '../layers/settledField';
 import {
+  type AssociationData,
   type ClusterData,
   type Colony,
   type FictionData,
@@ -24,12 +25,20 @@ import {
   type WorldData,
   affiliationsFor,
 } from '../data/manifest';
+import {
+  type EpochBasis,
+  NEVER_ENDS,
+  UNDATED,
+  combinedYears,
+  landmarkYears,
+} from '../data/history';
 
 export const KIND_STAR = 0;
 export const KIND_CLUSTER = 1;
 export const KIND_HII = 2;
 export const KIND_OASTAR = 3;
 export const KIND_WORLD = 4;
+export const KIND_ASSOCIATION = 5;
 
 export const KIND_NAMES = [
   'star',
@@ -37,6 +46,7 @@ export const KIND_NAMES = [
   'HII region',
   "Orion's Arm star",
   'world',
+  'OB association',
 ] as const;
 
 /**
@@ -97,6 +107,17 @@ const BASE_IMPORTANCE = {
   clusterClassical: 0.7,
   clusterSurvey: 0.1,
   hii: 0.65,
+
+  /**
+   * An OB association.
+   *
+   * Above a classical cluster, because there are 56 of them against 7,000
+   * clusters and they are the features a reader navigating by eye actually
+   * steers by — Ori OB1 and Vel OB2 are the two landmarks anyone recognises on
+   * a wide view. Still well below anything Orion's Arm names, which is what
+   * this map is for.
+   */
+  association: 0.85,
 
   /**
    * Any system Orion's Arm names, from whichever source named it.
@@ -192,12 +213,21 @@ export interface PlacedLabel {
    * gets — and it is already computed here for the magnitude test.
    */
   depthPc: number;
+  /**
+   * Height above the galactic plane in parsecs, signed: north of it is positive.
+   *
+   * The plan view prints it under the name, because flattening the map is
+   * exactly the operation that throws this number away. The depth-of-field blur
+   * reads it there too, since in that view it is the only depth left.
+   */
+  z: number;
 }
 
 export interface LayerVisibility {
   star: boolean;
   cluster: boolean;
   hii: boolean;
+  association: boolean;
   oastar: boolean;
   world: boolean;
   /** Show only objects Orion's Arm has claimed. */
@@ -210,6 +240,19 @@ export interface LayoutOptions {
   magnitudeLimit: number;
   maxLabels: number;
   visible: LayerVisibility;
+  /** See PickOptions: the map as it stood in one year. */
+  epoch?: EpochFilter;
+  /** See PickOptions: the plan view judges a star by its absolute magnitude. */
+  absoluteMagnitudes?: boolean;
+  /**
+   * Extra height per label box, in pixels, for the declutter pass.
+   *
+   * The plan view writes each object's z on a second line, which is a taller
+   * label and so a bigger claim on the space around it. Passed in rather than
+   * measured, because the boxes are laid out from constants here and the labels
+   * are not in the document until after the pass has decided.
+   */
+  extraHeight?: number;
   /** Which of an object's names to show. Defaults to the setting's. */
   nameMode?: NameMode;
   /**
@@ -222,11 +265,37 @@ export interface LayoutOptions {
   pinned?: number | null;
 }
 
+/**
+ * Showing the map as it stood in a year.
+ *
+ * Only the places the setting claims are judged by it. A star, a cluster or an
+ * HII region is a real object and was there in 2100 as surely as in 10600; what
+ * a year decides is whether anyone had reached it, which is a statement about
+ * the settlement and not about the sky.
+ */
+export interface EpochFilter {
+  year: number;
+  /** Whether to keep the places whose sources give no year at all. */
+  showUndated: boolean;
+  /** 'known' counts the first year anyone was there; 'settled', inhabitation. */
+  basis: EpochBasis;
+}
+
 export interface PickOptions {
   width: number;
   height: number;
   magnitudeLimit: number;
   visible: LayerVisibility;
+  /** Set while history mode is on; absent means every year at once. */
+  epoch?: EpochFilter;
+  /**
+   * Judge a star by absolute magnitude, ignoring where it is.
+   *
+   * What the plan view does, because an orthographic camera has no station for
+   * an apparent magnitude to be apparent from. The star shader takes the same
+   * rule — the two have to agree or what is clickable stops being what is drawn.
+   */
+  absoluteMagnitudes?: boolean;
 }
 
 /**
@@ -242,6 +311,10 @@ const PICK_PRIORITY: Record<number, number> = {
   [KIND_WORLD]: 0,
   [KIND_CLUSTER]: 1,
   [KIND_HII]: 2,
+  // Last, and by a clear margin the largest thing on screen. An OB association
+  // contains clusters, nebulae and stars, all of which the reader is more
+  // likely to be aiming at than the hundred-parsec volume around them.
+  [KIND_ASSOCIATION]: 3,
 };
 
 /**
@@ -320,6 +393,15 @@ export class ObjectIndex {
    * not clickable — which is the worst of the three states.
    */
   private readonly floored: Uint8Array;
+  /**
+   * When a claimed place enters and leaves the record, under each basis.
+   *
+   * Only the objects the setting claims carry these; everything else is left at
+   * the "always there" sentinel, which is the truth about a star.
+   */
+  private readonly knownFrom: Float32Array;
+  private readonly settledFrom: Float32Array;
+  private readonly endsAt: Float32Array;
   private readonly labelColor: (string | undefined)[];
 
   /** Tiebreak order for the label layout. See `shuffleKey`. */
@@ -348,14 +430,19 @@ export class ObjectIndex {
     oaStars: OAStarData | null = null,
     colonies: Map<number, Colony> | null = null,
     worlds: WorldData | null = null,
+    // Last, so that adding it did not renumber six existing call sites. The
+    // constructor is at the limit of what a positional list should carry.
+    associations: AssociationData | null = null,
   ) {
     const clusterCount = clusters?.count ?? 0;
     const hiiCount = hii?.count ?? 0;
     const oaCount = oaStars?.count ?? 0;
     const worldCount = worlds?.worlds.length ?? 0;
+    const associationCount = associations?.count ?? 0;
     // Upper bound: hidden Orion's Arm entries are skipped, so the arrays are
     // allocated for the worst case and `count` is trimmed to what was filled.
-    const total = stars.count + clusterCount + hiiCount + oaCount + worldCount;
+    const total =
+      stars.count + clusterCount + hiiCount + oaCount + worldCount + associationCount;
 
     this.px = new Float32Array(total);
     this.py = new Float32Array(total);
@@ -370,6 +457,12 @@ export class ObjectIndex {
     this.isOA = new Uint8Array(total);
     this.assertedPosition = new Uint8Array(total);
     this.floored = new Uint8Array(total);
+    // -Infinity means "always there", and after construction only ordinary
+    // catalogue stars still hold it: everything the setting could have named
+    // is dated below, to a year or to the undated sentinel.
+    this.knownFrom = new Float32Array(total).fill(-Infinity);
+    this.settledFrom = new Float32Array(total).fill(-Infinity);
+    this.endsAt = new Float32Array(total).fill(NEVER_ENDS);
     this.labelColor = new Array(total);
 
     this.screenX = new Float32Array(total);
@@ -403,6 +496,10 @@ export class ObjectIndex {
       // about a system, and it is what a reader is looking for.
       const here = worlds?.byStar.get(i);
       if (here?.length) {
+        const known = combinedYears(here, 'known');
+        this.knownFrom[at] = known.from;
+        this.settledFrom[at] = combinedYears(here, 'settled').from;
+        this.endsAt[at] = known.to;
         this.labels[at] = systemLabel(here);
         this.importance[at] = BASE_IMPORTANCE.oaSystem;
         this.isOA[at] = 1;
@@ -471,6 +568,13 @@ export class ObjectIndex {
         );
         this.isOA[at] = 1;
       }
+      // A star the setting claims and does not date is undated, not timeless.
+      // Relay 1 and Conver Ky are colony rows with no world behind them and no
+      // year anywhere, and while they kept the always-there sentinel a
+      // historical map went on labelling them in the Information Age.
+      if (this.isOA[at] && this.knownFrom[at] === -Infinity) {
+        this.setLandmarkYears(at, fiction, 'star', i);
+      }
       if (this.labels[at]) labelled.push(at);
       at++;
     }
@@ -485,6 +589,7 @@ export class ObjectIndex {
         this.absMag[at] = NaN;
         this.kind[at] = KIND_CLUSTER;
         this.srcIndex[at] = i;
+        this.setLandmarkYears(at, fiction, 'cluster', i);
 
         const name = (clusters.names[i]?.name ?? '').replace(/_/g, ' ');
         // Blanco 1 is the Blenke Cluster. Where the setting has renamed a real
@@ -515,6 +620,7 @@ export class ObjectIndex {
         this.absMag[at] = NaN;
         this.kind[at] = KIND_HII;
         this.srcIndex[at] = i;
+        this.setLandmarkYears(at, fiction, 'hii', i);
         const hiiName = hii.names[i]?.name ?? '';
         const renamedHii = fiction?.landmarkNames?.get(`hii:${i}`);
         this.labels[at] = renamedHii?.name || hiiName;
@@ -525,6 +631,35 @@ export class ObjectIndex {
           this.isOA[at] = 1;
           this.labelColor[at] = polityColorByIndex.get(fiction?.hiiPolity?.[i] ?? 0);
         }
+        if (this.labels[at]) labelled.push(at);
+        at++;
+      }
+    }
+
+    if (associations) {
+      for (let i = 0; i < associations.count; i++) {
+        const base = i * 7;
+        this.px[at] = associations.geometry[base];
+        this.py[at] = associations.geometry[base + 1];
+        this.pz[at] = associations.geometry[base + 2];
+        // One number where the layer draws three. The picker and the declutter
+        // pass both want "how big is this on screen", and for a target the size
+        // of an OB association the difference between the mean semi-axis and
+        // the exact projected ellipse is far inside the click tolerance.
+        this.radius[at] = (associations.geometry[base + 3] +
+          associations.geometry[base + 4] +
+          associations.geometry[base + 5]) / 3;
+        this.absMag[at] = NaN;
+        this.kind[at] = KIND_ASSOCIATION;
+        this.srcIndex[at] = i;
+        this.setLandmarkYears(at, fiction, 'association', i);
+        const entry = associations.names[i];
+        this.labels[at] = entry?.name ?? '';
+        // Sco-Cen 1 is Sco OB2a. The catalogue's own name leads and the
+        // classical designation is the other half of the pair, exactly as a
+        // renamed cluster works.
+        if (entry?.alt_name) this.labelsReal[at] = entry.alt_name;
+        this.importance[at] = BASE_IMPORTANCE.association;
         if (this.labels[at]) labelled.push(at);
         at++;
       }
@@ -549,6 +684,10 @@ export class ObjectIndex {
         // the system, its primary or its inhabitants a contributor thought of.
         const entry = oaStars.names[i];
         const bound = entry ? worlds?.byOAStar.get(entry.name) : undefined;
+        const oaKnown = combinedYears(bound, 'known');
+        this.knownFrom[at] = oaKnown.from;
+        this.settledFrom[at] = combinedYears(bound, 'settled').from;
+        this.endsAt[at] = oaKnown.to;
         this.labels[at] =
           (bound?.length ? systemLabel(bound) : '') || entry?.label || entry?.name || '';
         // For the handful that are real objects the add-on carries, the
@@ -594,6 +733,10 @@ export class ObjectIndex {
         this.srcIndex[at] = i;
         this.isOA[at] = 1;
         const guests = worlds.byHost.get(world.name) ?? [];
+        const wKnown = combinedYears([world, ...guests], 'known');
+        this.knownFrom[at] = wKnown.from;
+        this.settledFrom[at] = combinedYears([world, ...guests], 'settled').from;
+        this.endsAt[at] = wKnown.to;
         this.labels[at] = guests.length
           ? systemLabel([{ name: world.name, system: world.system }, ...guests])
           : world.name;
@@ -619,6 +762,44 @@ export class ObjectIndex {
     for (let i = 0; i < at; i++) this.everything[i] = i;
   }
 
+  /**
+   * Date a real catalogued object by whatever the setting says about it.
+   *
+   * Almost none of the cluster and HII catalogues has a year, and those keep
+   * the undated sentinel rather than the always-there one — which is the whole
+   * difference between "the setting never mentions this" and "this is a star,
+   * and stars are not settled". Only the ordinary catalogue star is exempt: it
+   * is the sky the map is drawn on, and a plan of the sphere with no stars in
+   * it is not a plan of anything.
+   */
+  private setLandmarkYears(
+    at: number,
+    fiction: FictionData | null,
+    kind: string,
+    index: number,
+  ): void {
+    const known = landmarkYears(fiction, kind, index, 'known');
+    this.knownFrom[at] = known.from;
+    this.settledFrom[at] = landmarkYears(fiction, kind, index, 'settled').from;
+    this.endsAt[at] = known.to;
+  }
+
+  /**
+   * Whether a claimed place is on the map in a given year.
+   *
+   * A star, a cluster or a nebula always is: the sentinel left in `knownFrom`
+   * for everything the setting does not claim makes that the default answer
+   * without a kind test here. What varies is the settlements, and there the
+   * three states are the ones the shaders draw — present, not yet or already
+   * ended, and no date recorded at all.
+   */
+  private existsAt(id: number, epoch: EpochFilter): boolean {
+    const from = epoch.basis === 'settled' ? this.settledFrom[id] : this.knownFrom[id];
+    if (from === -Infinity) return true;
+    if (from === UNDATED) return epoch.showUndated;
+    return epoch.year >= from && epoch.year <= this.endsAt[id];
+  }
+
   ref(id: number): ObjectRef {
     return { kind: this.kind[id], index: this.srcIndex[id] };
   }
@@ -631,11 +812,12 @@ export class ObjectIndex {
    * marked 0 and its coordinates are meaningless.
    */
   private project(
-    camera: THREE.PerspectiveCamera,
+    camera: THREE.Camera,
     ids: ArrayLike<number>,
     options: PickOptions | LayoutOptions,
   ): void {
     const { width, height, magnitudeLimit, visible } = options;
+    const absoluteMagnitudes = options.absoluteMagnitudes ?? false;
 
     camera.updateMatrixWorld();
     this.viewProjection.multiplyMatrices(camera.projectionMatrix, camera.matrixWorldInverse);
@@ -655,16 +837,40 @@ export class ObjectIndex {
       if (kind === KIND_STAR && !visible.star) continue;
       if (kind === KIND_CLUSTER && !visible.cluster) continue;
       if (kind === KIND_HII && !visible.hii) continue;
+      if (kind === KIND_ASSOCIATION && !visible.association) continue;
       if (kind === KIND_OASTAR && !visible.oastar) continue;
       if (kind === KIND_WORLD && !visible.world) continue;
-      if (visible.oaOnly && !this.isOA[id]) continue;
+      // An OB association is exempt. Its own layer does not respond to this
+      // switch either, and for the same reason: unlike a cluster or a nebula it
+      // carries no polity binding at all, so filtering on the setting's claims
+      // would hide every one of them and turn a layer the reader had just
+      // switched on into a switch that does nothing. It is a reference frame —
+      // the same job the borrowed sky maps do — and it is off until asked for.
+      if (visible.oaOnly && !this.isOA[id] && kind !== KIND_ASSOCIATION) continue;
+      // Under "Orion's Arm only" a star whose settlement the year has not
+      // reached has nothing left to be shown for. The catalogue name this
+      // falls back to below is exactly what that mode exists to leave out, and
+      // 85 Peg was being labelled on a map asked to show only the setting.
+      if (visible.oaOnly && options.epoch && !this.existsAt(id, options.epoch)) continue;
+      // Everything whose own layer collapses it. A star is not on that list:
+      // the star field draws it in every year, because it is a star, and
+      // dropping it here would leave a visible dot that nothing could select.
+      // What a year takes from a star is its Orion's Arm identity, which
+      // `layout` handles by falling back to the catalogue's name for it.
+      if (options.epoch && kind !== KIND_STAR && !this.existsAt(id, options.epoch)) continue;
 
       const x = this.px[id];
       const y = this.py[id];
       const z = this.pz[id];
 
+      // The perspective divide the projection is about to apply: depth along
+      // the view axis under a perspective camera, and a constant 1 under the
+      // orthographic one, which is why the plan view culls nothing for being
+      // behind the camera. It should not: an object below the plane is not
+      // behind anything, it is merely below, and hiding it would be the one
+      // thing that makes a plan view lie.
       const w = m[3] * x + m[7] * y + m[11] * z + m[15];
-      if (w <= 0) continue; // behind the camera
+      if (w <= 0) continue;
 
       const ndcX = (m[0] * x + m[4] * y + m[8] * z + m[12]) / w;
       const ndcY = (m[1] * x + m[5] * y + m[9] * z + m[13]) / w;
@@ -680,8 +886,10 @@ export class ObjectIndex {
         // exactly what is drawn — except for the stars the shader floors, which
         // are drawn however faint they are and must stay clickable to match.
         if (!this.floored[id]) {
-          const apparent = this.absMag[id] + 5 * Math.log10(Math.max(distance, 1e-6) / 10);
-          if (apparent > magnitudeLimit) continue;
+          const brightness = absoluteMagnitudes
+            ? this.absMag[id]
+            : this.absMag[id] + 5 * Math.log10(Math.max(distance, 1e-6) / 10);
+          if (brightness > magnitudeLimit) continue;
         }
         // A ringed star is a mark about 13 pixels across, not a point. Clicking
         // anywhere on the ring should select the system it encircles.
@@ -691,7 +899,10 @@ export class ObjectIndex {
         // gating them on it here would make visible markers unclickable.
         this.screenR[id] = 0;
       } else {
-        this.screenR[id] = (this.radius[id] * focal * halfHeight) / Math.max(distance, 1e-4);
+        // Divided by w, not by the radial distance, so this is the size the
+        // projection actually draws under either camera — see the same
+        // expression in the cluster shader, which carries the note.
+        this.screenR[id] = (this.radius[id] * focal * halfHeight) / Math.max(w, 1e-4);
       }
 
       this.screenDepth[id] = distance;
@@ -728,7 +939,7 @@ export class ObjectIndex {
    * always has been.
    */
   pick(
-    camera: THREE.PerspectiveCamera,
+    camera: THREE.Camera,
     x: number,
     y: number,
     options: PickOptions,
@@ -795,7 +1006,7 @@ export class ObjectIndex {
    * would collide with one already placed. This is what keeps a dense field from
    * turning into an unreadable pile — the important names win the space.
    */
-  layout(camera: THREE.PerspectiveCamera, options: LayoutOptions): PlacedLabel[] {
+  layout(camera: THREE.Camera, options: LayoutOptions): PlacedLabel[] {
     this.project(camera, this.labelled, options);
     // `labelled` omits anything without a name, and a pinned object may be one
     // of those — its screen position would otherwise be a stale value from an
@@ -804,10 +1015,24 @@ export class ObjectIndex {
       this.onScreen[options.pinned] = 0;
     }
 
+    const mode = options.nameMode ?? 'oa';
+    // A star whose settlement the year has not reached yet. It is still a star
+    // and still drawn, so it keeps whatever the catalogue calls it and loses
+    // the name and the colour the setting gave it — anything reaching here and
+    // failing the test is a star, because `project` dropped every other kind.
+    const unclaimed = (id: number): boolean =>
+      options.epoch !== undefined && !this.existsAt(id, options.epoch);
+    const textFor = (id: number): string =>
+      unclaimed(id)
+        ? (this.labelsReal[id] ?? '')
+        : composeLabel(this.labels[id] ?? '', this.labelsReal[id] ?? '', mode);
+
     const candidates: { id: number; priority: number; tiebreak: number }[] = [];
     for (let n = 0; n < this.labelled.length; n++) {
       const id = this.labelled[n];
       if (!this.onScreen[id]) continue;
+      // A settled system the catalogue never named has nothing left to say.
+      if (!textFor(id)) continue;
       // On-screen size earns a label its place: an object filling the view is
       // worth naming even when it is intrinsically dull, and vice versa.
       //
@@ -824,9 +1049,10 @@ export class ObjectIndex {
     // cannot promote a less important label above a more important one.
     candidates.sort((a, b) => b.priority - a.priority || a.tiebreak - b.tiebreak);
 
-    const mode = options.nameMode ?? 'oa';
-    const textFor = (id: number): string =>
-      composeLabel(this.labels[id] ?? '', this.labelsReal[id] ?? '', mode);
+    // The plan view's second line makes every box taller, and the declutter
+    // pass is the only thing that knows how much room a label will need before
+    // it exists.
+    const boxHeight = LABEL_HEIGHT + (options.extraHeight ?? 0);
 
     const placed: PlacedLabel[] = [];
     const boxes: number[][] = [];
@@ -836,22 +1062,23 @@ export class ObjectIndex {
     // because the one label the reader has asked for should not be the one that
     // loses. It is skipped below so it cannot be placed twice.
     const pinned = options.pinned ?? null;
-    if (pinned !== null && this.onScreen[pinned] && this.labels[pinned]) {
+    if (pinned !== null && this.onScreen[pinned] && textFor(pinned)) {
       const text = textFor(pinned);
       const halfWidth = (text.length * CHAR_WIDTH) / 2;
       const cx = this.screenX[pinned];
-      const cy = this.screenY[pinned] - LABEL_OFFSET - LABEL_HEIGHT / 2;
-      boxes.push([cx - halfWidth, cy - LABEL_HEIGHT / 2, cx + halfWidth, cy + LABEL_HEIGHT / 2]);
+      const cy = this.screenY[pinned] - LABEL_OFFSET - boxHeight / 2;
+      boxes.push([cx - halfWidth, cy - boxHeight / 2, cx + halfWidth, cy + boxHeight / 2]);
       placed.push({
         id: pinned,
         text,
         x: cx,
         y: cy,
         importance: this.importance[pinned],
-        color: this.labelColor[pinned],
+        color: unclaimed(pinned) ? undefined : this.labelColor[pinned],
         asserted: this.assertedPosition[pinned] === 1,
         pinned: true,
         depthPc: this.screenDepth[pinned],
+        z: this.pz[pinned],
       });
     }
 
@@ -863,11 +1090,11 @@ export class ObjectIndex {
 
       const halfWidth = (text.length * CHAR_WIDTH) / 2;
       const cx = this.screenX[id];
-      const cy = this.screenY[id] - LABEL_OFFSET - LABEL_HEIGHT / 2;
+      const cy = this.screenY[id] - LABEL_OFFSET - boxHeight / 2;
       const left = cx - halfWidth;
       const right = cx + halfWidth;
-      const top = cy - LABEL_HEIGHT / 2;
-      const bottom = cy + LABEL_HEIGHT / 2;
+      const top = cy - boxHeight / 2;
+      const bottom = cy + boxHeight / 2;
 
       if (left < 0 || right > options.width || top < 0 || bottom > options.height) continue;
 
@@ -887,9 +1114,10 @@ export class ObjectIndex {
         x: cx,
         y: cy,
         importance: candidate.priority,
-        color: this.labelColor[id],
+        color: unclaimed(id) ? undefined : this.labelColor[id],
         asserted: this.assertedPosition[id] === 1,
         depthPc: this.screenDepth[id],
+        z: this.pz[id],
       });
     }
 

@@ -55,6 +55,7 @@ def built(tmp_path_factory):
         "dir": out,
         "manifest": manifest,
         "bindings": payload["bindings"],
+        "payload": payload,
         "polities": payload["polities"],
         "cluster_polity": np.fromfile(out / "fiction.clusterpolity.bin", dtype=np.uint8),
         "hii_polity": np.fromfile(out / "fiction.hiipolity.bin", dtype=np.uint8),
@@ -313,3 +314,49 @@ class TestBindings:
             first = (built["dir"] / entry["file"]).read_bytes()
             second = (tmp_path / again["files"][key]["file"]).read_bytes()
             assert first == second, f"{key} differs between builds"
+
+
+class TestAttestedYears:
+    """The only year most landmarks have, and what it is not.
+
+    The political maps depict 8000 A.T. and say so in their own citation. A
+    landmark read off them and off nothing else is attested in 8000 — which is
+    a statement about the evidence, not about the object. Before this the
+    historical view had no year for those bindings at all, so Cih, Mebsuta and
+    Almaaz sat on the map through the Interplanetary Age, three thousand years
+    before the source that names them depicts.
+    """
+
+    def test_a_binding_from_a_dated_source_carries_that_epoch(self, built):
+        for name in ("Gamma Cas", "Epsilon Geminorum", "Epsilon Aurigae"):
+            binding = next(b for b in built["bindings"] if b["landmark"] == name)
+            assert binding["attested_at"] == 8000, name
+
+    def test_every_resolved_binding_answers_the_question(self, built):
+        # Present on all of them, null where the source states no epoch. An
+        # absent key would read as "not applicable" in the renderer, which is a
+        # different claim from "this source does not say".
+        for binding in built["bindings"]:
+            assert "attested_at" in binding
+
+    def test_a_landmarks_own_history_is_carried_beside_it(self, built):
+        """Aleph Absolute was settled around 3000, and that outranks an epoch.
+
+        Derived here by the same rule the world file uses rather than restated,
+        so a cluster the setting colonised is dated the same way a planet is.
+        """
+        aleph = next(
+            entry for entry in built["payload"]["landmark_names"]
+            if entry["name"] == "Aleph Absolute"
+        )
+        assert aleph["known_from_at"] == 3000
+        assert aleph["settled_at"] == 3000
+        assert aleph["ended_at"] is None
+
+    def test_an_undated_landmark_says_so(self, built):
+        blenke = next(
+            entry for entry in built["payload"]["landmark_names"]
+            if entry["name"] == "Blenke Cluster"
+        )
+        assert blenke["known_from_at"] is None
+        assert blenke["settled_at"] is None

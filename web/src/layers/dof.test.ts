@@ -116,3 +116,61 @@ describe('DepthOfField', () => {
     expect(dof.labelStyle(10000).blurPx).toBeLessThan(10);
   });
 });
+
+describe('the plan view moves the depth axis', () => {
+  it('measures defocus from the plane, not from the camera', () => {
+    const dof = new DepthOfField();
+    dof.focus = pc(500);
+    dof.setFlat(100, 0);
+
+    // Distance from the camera is now meaningless — every one of these is a
+    // different distance away and only their heights should matter.
+    expect(dof.decadesAt(500, 0)).toBe(0);
+    expect(dof.decadesAt(9999, 0)).toBe(0);
+    // One span above the plane and one below blur alike.
+    expect(dof.decadesAt(500, 100)).toBeCloseTo(1, 12);
+    expect(dof.decadesAt(500, -100)).toBeCloseTo(1, 12);
+  });
+
+  it('follows the plane the camera is looking at', () => {
+    const dof = new DepthOfField();
+    dof.setFlat(50, -200);
+    expect(dof.decadesAt(1, -200)).toBe(0);
+    expect(dof.decadesAt(1, -150)).toBeCloseTo(1, 12);
+  });
+
+  it('gives the axis back when the span goes to zero', () => {
+    const dof = new DepthOfField();
+    dof.focus = pc(100);
+    dof.setFlat(100, 0);
+    dof.setFlat(0, 0);
+    // Back to decades of distance, and z ignored: a perspective view blurs by
+    // how far away a thing is, whatever its height.
+    expect(dof.decadesAt(1000, 4000)).toBeCloseTo(1, 12);
+    expect(dof.flat).toBe(false);
+  });
+
+  it('tells every registered layer which axis is in use', () => {
+    const dof = new DepthOfField();
+    const stars = dofUniforms();
+    dof.register(stars);
+    dof.setFlat(80, 0);
+    expect(stars.uDofFlatSpanPc.value).toBe(80);
+
+    // And a layer built afterwards is told the same thing, which is the whole
+    // reason the settings are pushed rather than pulled.
+    const late = dofUniforms();
+    dof.register(late);
+    expect(late.uDofFlatSpanPc.value).toBe(80);
+  });
+
+  it('fades a label exactly as the shader fades its object, flat too', () => {
+    const dof = new DepthOfField();
+    dof.focus = pc(300);
+    dof.dim = 0.4;
+    dof.setFlat(100, 0);
+    for (const z of [0, 40, -90, 250]) {
+      expect(dof.labelStyle(300, z).opacity).toBeCloseTo(dof.dimAt(300, z), 12);
+    }
+  });
+});

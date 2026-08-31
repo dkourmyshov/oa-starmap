@@ -28,11 +28,33 @@ export const DOF_PARS = /* glsl */ `
   uniform float uDofFocusPc;
   uniform float uDofMaxPx;
   uniform float uDofDim;
+  uniform float uDofFlatSpanPc;
 
-  /** Blur radius in pixels for something this far from the camera. */
-  float dofBlurPx(float distPc) {
+  /**
+   * How far out of focus something is, in the units the blur is measured in.
+   *
+   * Two different depth axes, because the flat view has a different one. Under
+   * perspective, depth is distance from the camera and the measure is decades
+   * of it. On the plan view there is no perspective and distance from the
+   * camera means nothing — a star at the edge of the screen is no further away
+   * than one at the centre, it is merely elsewhere on the map. The depth that
+   * has gone missing there is z, the axis pointing at the reader, so that is
+   * what the blur is taken from: displacement from the plane through the orbit
+   * target, scaled by the span so the far field reaches full blur at a fixed
+   * multiple of the view height rather than at a fixed number of parsecs.
+   *
+   * uDofFocusPc is the camera's standoff, and -viewPos.z is depth along the
+   * view axis, so their difference is exactly the target plane's z minus this
+   * object's — no second uniform needed to carry where the plane is.
+   */
+  float dofDecades(vec4 viewPos) {
+    if (uDofFlatSpanPc > 0.0) return abs(-viewPos.z - uDofFocusPc) / uDofFlatSpanPc;
+    return abs(log(max(length(viewPos.xyz), 1e-4) / uDofFocusPc) / 2.302585092994046);
+  }
+
+  /** Blur radius in pixels for something this far out of focus. */
+  float dofBlurPx(float decades) {
     if (uDofStrength <= 0.0) return 0.0;
-    float decades = abs(log(distPc / uDofFocusPc) / 2.302585092994046);
     return min(decades * uDofStrength, uDofMaxPx);
   }
 
@@ -61,9 +83,8 @@ export const DOF_PARS = /* glsl */ `
    * edge rather than a boundary, and steep enough at the top of the range to
    * switch the far field off entirely rather than merely dim it.
    */
-  float dofDim(float distPc) {
+  float dofDim(float decades) {
     if (uDofDim <= 0.0) return 1.0;
-    float decades = abs(log(distPc / uDofFocusPc) / 2.302585092994046);
     return exp(-decades * decades * uDofDim * 12.0);
   }
 `;
@@ -73,6 +94,7 @@ export interface DofUniforms {
   uDofFocusPc: { value: number };
   uDofMaxPx: { value: number };
   uDofDim: { value: number };
+  uDofFlatSpanPc: { value: number };
   [key: string]: THREE.IUniform;
 }
 
@@ -82,6 +104,7 @@ export function dofUniforms(): DofUniforms {
     uDofFocusPc: { value: 100.0 },
     uDofMaxPx: { value: 14.0 },
     uDofDim: { value: 0.0 },
+    uDofFlatSpanPc: { value: 0.0 },
   };
 }
 
@@ -97,6 +120,8 @@ export class DepthOfField {
   private strengthValue = 0;
   private dimValue = 0;
   private focusValue = 100;
+  private flatSpanValue = 0;
+  private focusZValue = 0;
 
   register(...uniforms: (DofUniforms | DofUniforms[])[]): void {
     for (const entry of uniforms.flat()) {
@@ -104,6 +129,7 @@ export class DepthOfField {
       entry.uDofStrength.value = this.strengthValue;
       entry.uDofDim.value = this.dimValue;
       entry.uDofFocusPc.value = this.focusValue;
+      entry.uDofFlatSpanPc.value = this.flatSpanValue;
     }
   }
 
@@ -138,15 +164,46 @@ export class DepthOfField {
   }
 
   /**
+   * Switch the depth axis to z, for the plan view.
+   *
+   * `spanPc` is how far off the focus plane counts as one unit of defocus —
+   * the flat view's answer to a decade of distance — and 0 puts the axis back
+   * to distance from the camera. `focusZ` is the plane held sharp; the shader
+   * infers it from the standoff, but the labels are DOM nodes doing their own
+   * arithmetic and have to be told.
+   */
+  setFlat(spanPc: number, focusZ: number): void {
+    this.flatSpanValue = Math.max(spanPc, 0);
+    this.focusZValue = focusZ;
+    for (const u of this.targets) u.uDofFlatSpanPc.value = this.flatSpanValue;
+  }
+
+  /** True while the depth axis is z rather than distance from the camera. */
+  get flat(): boolean {
+    return this.flatSpanValue > 0;
+  }
+
+  /**
+   * The shader's dofDecades, in TypeScript.
+   *
+   * The two have to give the same number or the names blur out of step with
+   * the sky behind them; the test holds them together.
+   */
+  decadesAt(distPc: number, z: number): number {
+    if (this.flatSpanValue > 0) return Math.abs(z - this.focusZValue) / this.flatSpanValue;
+    return Math.abs(Math.log10(Math.max(distPc, 1e-4) / this.focusValue));
+  }
+
+  /**
    * The shader's dofDim, in TypeScript.
    *
    * Duplicated deliberately: labels are DOM nodes and cannot call into GLSL,
    * and the two have to agree exactly or the names fade out of step with the
    * sky they annotate. The test holds them to the same numbers.
    */
-  dimAt(distPc: number): number {
+  dimAt(distPc: number, z = 0): number {
     if (this.dimValue <= 0) return 1;
-    const decades = Math.abs(Math.log10(Math.max(distPc, 1e-4) / this.focusValue));
+    const decades = this.decadesAt(distPc, z);
     return Math.exp(-decades * decades * this.dimValue * 12);
   }
 
@@ -155,11 +212,11 @@ export class DepthOfField {
    * terms. Labels are DOM nodes, so they cannot share the shader — but they
    * have to agree with it, or they float above the scene as a sharp plane.
    */
-  labelStyle(distPc: number): { blurPx: number; opacity: number } {
-    if (this.strengthValue <= 0) return { blurPx: 0, opacity: this.dimAt(distPc) };
-    const decades = Math.abs(Math.log10(Math.max(distPc, 1e-4) / this.focusValue));
-    const blurPx = Math.min(decades * this.strengthValue, 14) * LABEL_BLUR_SCALE;
-    return { blurPx, opacity: this.dimAt(distPc) };
+  labelStyle(distPc: number, z = 0): { blurPx: number; opacity: number } {
+    if (this.strengthValue <= 0) return { blurPx: 0, opacity: this.dimAt(distPc, z) };
+    const blurPx =
+      Math.min(this.decadesAt(distPc, z) * this.strengthValue, 14) * LABEL_BLUR_SCALE;
+    return { blurPx, opacity: this.dimAt(distPc, z) };
   }
 }
 

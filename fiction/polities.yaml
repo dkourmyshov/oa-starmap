@@ -150,6 +150,10 @@ polities:
     color: "#EF5350"
     source: political-maps-8000at
     landmarks: [Vela Supernova Remnant]
+    # Also a constellation, and the first half of Neu Vela. The history scan
+    # skips it rather than reporting the Vela polity in centuries that are
+    # talking about the sky or about somewhere else entirely.
+    ambiguous_name: true
 
   - id: emple-dokcetics
     name: Emple-Dokcetics

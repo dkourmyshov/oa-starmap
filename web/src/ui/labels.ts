@@ -16,6 +16,7 @@
 import type * as THREE from 'three';
 
 import type { DepthOfField } from '../layers/dof';
+import { type DistanceUnit, DEFAULT_UNIT, formatOffset, pc } from '../units';
 
 import {
   KIND_CLUSTER,
@@ -23,12 +24,23 @@ import {
   KIND_OASTAR,
   KIND_STAR,
   KIND_WORLD,
+  type EpochFilter,
   type LayerVisibility,
   type NameMode,
   type ObjectIndex,
 } from '../scene/objects';
 
 export const DEFAULT_MAX_LABELS = 45;
+
+/**
+ * How much taller a label is once it carries its altitude, in pixels.
+ *
+ * The declutter pass lays boxes out from constants rather than from measured
+ * elements — the labels are not in the document when it runs — so this has to
+ * match the CSS. It is the second line's own line height, and the map-label-z
+ * rule is where the other half of the number lives.
+ */
+const ALTITUDE_LINE_PX = 12;
 
 /** Re-run the declutter pass at most this often. */
 const LAYOUT_INTERVAL_MS = 70;
@@ -54,6 +66,34 @@ export class LabelOverlay {
 
   /** Which of an object's names to show. */
   nameMode: NameMode = 'oa';
+
+  /**
+   * The year the map is showing, while history mode is on.
+   *
+   * A property rather than another argument to `update`, because it changes
+   * when the reader moves a slider and not once a frame — and because the label
+   * layout must never offer a name for a place the layers have stopped drawing.
+   */
+  epoch: EpochFilter | undefined = undefined;
+
+  /**
+   * Print each object's height above the galactic plane under its name.
+   *
+   * On for the plan view and off otherwise. Looking down the pole is the one
+   * projection that discards z entirely, so it is the one that has to say the
+   * number out loud; in a perspective view the reader can see it and printing
+   * it on forty labels at once would be noise.
+   */
+  showAltitude = false;
+
+  /** Which unit the altitude is written in. Follows the HUD's toggle. */
+  unit: DistanceUnit = DEFAULT_UNIT;
+
+  /**
+   * Judge a star by its absolute magnitude, as the plan view does. Passed
+   * straight through so the labels name exactly the stars that are drawn.
+   */
+  absoluteMagnitudes = false;
 
   /**
    * The depth-of-field settings, or null when the mode is off.
@@ -86,7 +126,7 @@ export class LabelOverlay {
   }
 
   update(
-    camera: THREE.PerspectiveCamera,
+    camera: THREE.Camera,
     width: number,
     height: number,
     magnitudeLimit: number,
@@ -103,8 +143,11 @@ export class LabelOverlay {
       magnitudeLimit,
       maxLabels: this.maxLabels,
       visible: visibleLayers,
+      epoch: this.epoch,
       pinned: this.selected,
       nameMode: this.nameMode,
+      absoluteMagnitudes: this.absoluteMagnitudes,
+      extraHeight: this.showAltitude ? ALTITUDE_LINE_PX : 0,
     });
 
     for (let i = 0; i < placed.length; i++) {
@@ -112,7 +155,7 @@ export class LabelOverlay {
       const node = this.nodeAt(i);
       const kind = this.objects.ref(label.id).kind;
 
-      node.textContent = label.text;
+      this.write(node, label.text, label.z);
       // Italic marks an asserted position, not a kind. Keyed off the object's
       // own flag rather than which layer it came from, because the two disagree:
       // Wadai is an entry of the Celestia add-on and a real white dwarf, and
@@ -128,7 +171,7 @@ export class LabelOverlay {
       // the reader cannot read is not an answer.
       const dof =
         this.depthOfField && !label.pinned
-          ? this.depthOfField.labelStyle(label.depthPc)
+          ? this.depthOfField.labelStyle(label.depthPc, label.z)
           : null;
       node.style.opacity = String(dof ? base * dof.opacity : base);
       node.style.filter = dof && dof.blurPx > 0.05 ? `blur(${dof.blurPx.toFixed(2)}px)` : '';
@@ -142,11 +185,30 @@ export class LabelOverlay {
     this.hideFrom(placed.length);
   }
 
+  /**
+   * Put the name, and in the plan view the altitude, into a pooled node.
+   *
+   * Two child spans rather than textContent, because the altitude is set
+   * smaller and dimmer than the name and a text node cannot be styled apart
+   * from its parent. The second is emptied rather than removed when it is not
+   * wanted, so the pool keeps its shape and no node is built per frame.
+   */
+  private write(node: HTMLElement, text: string, zPc: number): void {
+    const [name, altitude] = node.children as unknown as HTMLElement[];
+    name.textContent = text;
+    altitude.textContent = this.showAltitude ? formatOffset(pc(zPc), this.unit) : '';
+    altitude.style.display = this.showAltitude ? '' : 'none';
+  }
+
   private nodeAt(i: number): HTMLElement {
     let node = this.pool[i];
     if (!node) {
       node = document.createElement('button');
       node.className = 'map-label';
+      node.appendChild(document.createElement('span'));
+      const altitude = document.createElement('span');
+      altitude.className = 'map-label-z';
+      node.appendChild(altitude);
       node.addEventListener('click', (event) => {
         event.stopPropagation();
         const id = Number(node.dataset.id);

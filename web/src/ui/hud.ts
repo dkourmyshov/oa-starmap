@@ -6,19 +6,42 @@
  * matching Orion's Arm usage, but the underlying values are always parsecs.
  */
 
+import type { HistoryDataset } from '../data/history';
 import type {
+  AssociationsDataset,
   ClustersDataset,
   FictionData,
   HiiDataset,
   OAStarsDataset,
   StarsDataset,
+  Poster,
 } from '../data/manifest';
 import { DEFAULT_OPACITY as DEFAULT_CLUSTER_OPACITY } from '../layers/clusterField';
 import { DEFAULT_OPACITY as DEFAULT_HII_OPACITY } from '../layers/hiiField';
+import { DEFAULT_OPACITY as DEFAULT_ASSOCIATION_OPACITY } from '../layers/associationField';
 import { DEFAULT_MAX_LABELS } from './labels';
 import type { NameMode } from '../scene/objects';
-import { type ControlMode, CONTROL_MODES, type Viewpoint, VIEWPOINTS } from '../scene/viewer';
+import {
+  type ControlMode,
+  CONTROL_MODES,
+  type Projection,
+  PROJECTIONS,
+  type Viewpoint,
+  VIEWPOINTS,
+} from '../scene/viewer';
 import { type DistanceUnit, DEFAULT_UNIT, type Parsecs, formatDistance } from '../units';
+import { registrationNote } from '../layers/posterLayer';
+
+/** Enough to read the sheet, little enough that the live map stays on top. */
+export const DEFAULT_POSTER_OPACITY = 0.85;
+
+/**
+ * What the map opens as. Held here rather than in main so the switch and the
+ * thing it switches cannot start out disagreeing.
+ */
+export const DEFAULT_ONLY_OA: boolean = true;
+export const DEFAULT_ASSOCIATIONS_VISIBLE: boolean = false;
+export const DEFAULT_HISTORY_PANEL_VISIBLE: boolean = false;
 
 export interface HudCallbacks {
   onMagnitudeLimit(value: number): void;
@@ -28,6 +51,10 @@ export interface HudCallbacks {
   onHiiVisible(value: boolean): void;
   onHiiOpacity(value: number): void;
   onHiiKinematic(enabled: boolean): void;
+  onAssociationsVisible(value: boolean): void;
+  onAssociationOpacity(value: number): void;
+  /** Show or hide the history panel itself, not the year it is set to. */
+  onHistoryPanel(visible: boolean): void;
   onOAStarsVisible(value: boolean): void;
   onOnlyOA(enabled: boolean): void;
   onDepthOfField(strength: number): void;
@@ -41,6 +68,9 @@ export interface HudCallbacks {
   onViewpoint(name: Viewpoint): void;
   onControlMode(mode: ControlMode): void;
   onUnitChange(unit: DistanceUnit): void;
+  onProjection(projection: Projection): void;
+  onPoster(index: number): void;
+  onPosterOpacity(value: number): void;
 }
 
 export interface JumpTarget {
@@ -89,6 +119,12 @@ function el<K extends keyof HTMLElementTagNameMap>(
 export class Hud {
   private unit: DistanceUnit = DEFAULT_UNIT;
 
+  /** The viewpoint and drag controls, greyed out while the plan view is up. */
+  private orientationControls: HTMLElement[] = [];
+
+  /** Caption of the magnitude slider, which the plan view renames. */
+  private magnitudeLabel: HTMLElement | null = null;
+
   /** The unit everything user-facing is currently shown in. */
   get currentUnit(): DistanceUnit {
     return this.unit;
@@ -106,9 +142,12 @@ export class Hud {
     dataset: StarsDataset,
     clusters: ClustersDataset | null,
     hii: HiiDataset | null,
+    associations: AssociationsDataset | null,
+    history: HistoryDataset | null,
     oaStars: OAStarsDataset | null,
     fiction: FictionData | null,
     private readonly callbacks: HudCallbacks,
+    posters: Poster[] = [],
   ) {
     const panel = el('div', 'panel panel-stats');
 
@@ -129,6 +168,21 @@ export class Hud {
     if (hii) {
       panel.appendChild(
         this.countRow('HII regions', hii.count, (on) => this.callbacks.onHiiVisible(on)),
+      );
+    }
+
+    if (associations) {
+      panel.appendChild(
+        this.countRow(
+          'OB associations',
+          associations.count,
+          (on) => this.callbacks.onAssociationsVisible(on),
+          // Off to begin with. Fifty-six ellipsoids a hundred parsecs across,
+          // overlapping each other and everything inside them, is a great deal
+          // of ink over the part of the map most worth reading. They are a
+          // reference frame to switch on when wanted, not scenery.
+          DEFAULT_ASSOCIATIONS_VISIBLE,
+        ),
       );
     }
 
@@ -164,10 +218,16 @@ export class Hud {
     unitRow.appendChild(unitGroup);
     panel.appendChild(unitRow);
 
-    panel.appendChild(this.slider('Magnitude limit', 3, 16, 7.5, 0.1, (v) => {
+    const magnitudeRow = this.slider('Magnitude limit', 3, 16, 7.5, 0.1, (v) => {
       this.callbacks.onMagnitudeLimit(v);
       return v.toFixed(1);
-    }));
+    });
+    // Held because the same slider means two different things. In perspective
+    // it is a limit on apparent magnitude, which depends on where the camera
+    // is; on the plan view there is no camera to be apparent from, so it limits
+    // absolute magnitude and the caption has to say so.
+    this.magnitudeLabel = magnitudeRow.querySelector('.label') as HTMLElement;
+    panel.appendChild(magnitudeRow);
 
     panel.appendChild(this.slider('Exposure', 0.1, 4, 1, 0.05, (v) => {
       this.callbacks.onExposure(v);
@@ -176,9 +236,18 @@ export class Hud {
 
     // Reduces the sky to what the setting has claimed: settled systems, OA
     // stars, and the clusters and regions carrying an association.
+    //
+    // On to begin with, because this is a map of Orion's Arm before it is a map
+    // of the sky. The whole HYG catalogue underneath it is 120,000 stars the
+    // setting says nothing about, and a reader opening the map is looking for
+    // the few hundred it does.
     const onlyRow = el('div', 'row');
     onlyRow.appendChild(el('span', 'label', "Orion's Arm only"));
-    const onlyToggle = el('button', 'toggle', 'off');
+    const onlyToggle = el(
+      'button',
+      `toggle${DEFAULT_ONLY_OA ? ' active' : ''}`,
+      DEFAULT_ONLY_OA ? 'on' : 'off',
+    );
     onlyToggle.addEventListener('click', () => {
       const on = onlyToggle.classList.toggle('active');
       onlyToggle.textContent = on ? 'on' : 'off';
@@ -215,6 +284,34 @@ export class Hud {
         return `${v.toFixed(2)}  (${(10 ** decades).toFixed(1)}x)`;
       }),
     );
+
+    if (history) {
+      // Not a layer, so it sits with the switches rather than the counts: the
+      // history panel is a second window onto the same map and takes up a good
+      // deal of the screen, so it is opened rather than dismissed.
+      const historyRow = el('div', 'row');
+      const caption = el('span', 'label', 'History panel');
+      caption.title =
+        `The Encyclopaedia's timeline, and the map set to a year — ` +
+        `${history.stats.events.toLocaleString('en-US')} dated events across ` +
+        `${history.count} eras and periods`;
+      historyRow.appendChild(caption);
+      // Labelled with the state it is in, not the action it performs, because
+      // every other switch on this panel is: "show" over a hidden panel would
+      // read as an instruction beside seven captions that read as facts.
+      const historyToggle = el(
+        'button',
+        `toggle${DEFAULT_HISTORY_PANEL_VISIBLE ? ' active' : ''}`,
+        DEFAULT_HISTORY_PANEL_VISIBLE ? 'show' : 'hide',
+      );
+      historyToggle.addEventListener('click', () => {
+        const on = historyToggle.classList.toggle('active');
+        historyToggle.textContent = on ? 'show' : 'hide';
+        this.callbacks.onHistoryPanel(on);
+      });
+      historyRow.appendChild(historyToggle);
+      panel.appendChild(historyRow);
+    }
 
     panel.appendChild(this.countRow('Labels', null, (on) => this.callbacks.onLabelsVisible(on)));
     panel.appendChild(
@@ -295,12 +392,41 @@ export class Hud {
       );
     }
 
+    if (associations) {
+      panel.appendChild(
+        this.slider(
+          'OB association opacity',
+          0,
+          1,
+          DEFAULT_ASSOCIATION_OPACITY,
+          0.02,
+          (v) => {
+            this.callbacks.onAssociationOpacity(v);
+            return v === 0 ? 'off' : `${Math.round(v * 100)}%`;
+          },
+        ),
+      );
+      panel.appendChild(
+        el(
+          'div',
+          'note-line',
+          `Drawn as a broken one-sigma ellipsoid, not a boundary: an OB ` +
+            `association is unbound and has no edge, and much of it lies outside ` +
+            `the outline. The census reaches 1 kpc, so Cyg OB2 and the rest of the ` +
+            `arm are absent rather than nonexistent.`,
+        ),
+      );
+    }
+
     // Provenance — the map mixes measured data with derived quantities, so say so.
     const note = el('div', 'note');
     note.appendChild(el('div', 'note-line', dataset.selection.rule));
     note.appendChild(el('div', 'note-line', dataset.source.citation));
     if (clusters) note.appendChild(el('div', 'note-line', clusters.source.citation));
     if (hii) note.appendChild(el('div', 'note-line', hii.source.citation));
+    if (associations) {
+      note.appendChild(el('div', 'note-line', associations.source.citation));
+    }
     if (oaStars) {
       // The one layer whose positions are not measurements; say so where the
       // other provenance lines are, not somewhere it can be missed.
@@ -335,6 +461,26 @@ export class Hud {
     // Not "view from": only `top` says where the camera is. `spin` and `core`
     // name what it is pointed at, which is the useful thing about them.
     jumpPanel.appendChild(el('div', 'title', 'Viewpoint'));
+
+    // Perspective or plan, above the viewpoints because it decides whether the
+    // viewpoints mean anything: the plan view has exactly one.
+    const projectionRow = el('div', 'row');
+    projectionRow.appendChild(el('span', 'label', 'Projection'));
+    const projectionGroup = el('div', 'toggle-group');
+    for (const projection of PROJECTIONS) {
+      const button = el('button', 'toggle', projection.label);
+      button.title = projection.title;
+      if (projection.id === '3d') button.classList.add('active');
+      button.addEventListener('click', () => {
+        for (const other of projectionGroup.children) other.classList.remove('active');
+        button.classList.add('active');
+        this.setProjection(projection.id);
+      });
+      projectionGroup.appendChild(button);
+    }
+    projectionRow.appendChild(projectionGroup);
+    jumpPanel.appendChild(projectionRow);
+
     const viewGrid = el('div', 'jump-grid jump-grid-wide');
     for (const viewpoint of VIEWPOINTS) {
       const button = el('button', 'jump', viewpoint.label);
@@ -365,6 +511,13 @@ export class Hud {
     }
     dragRow.appendChild(dragGroup);
     jumpPanel.appendChild(dragRow);
+
+    if (posters.length) this.buildPosterRow(jumpPanel, posters);
+
+    // Held so the plan view can grey them out. Both answer questions it does
+    // not have — which way to look from, and which axis to turn about — and a
+    // control that silently does nothing is worse than one visibly switched off.
+    this.orientationControls = [viewGrid, dragGroup];
 
     jumpPanel.appendChild(el('div', 'title', 'Jump to'));
     const jumpGrid = el('div', 'jump-grid');
@@ -454,17 +607,24 @@ export class Hud {
     root.appendChild(panel);
   }
 
-  /** A "<label>  <count>  [show/hide]" row, one per toggleable layer. */
+  /**
+   * A "<label>  <count>  [show/hide]" row, one per toggleable layer.
+   *
+   * `initial` is the layer's starting state and must match what main.ts
+   * actually built, not what looks tidy here: a switch reading "show" over a
+   * layer that is not drawn is worse than no switch at all.
+   */
   private countRow(
     label: string,
     count: number | null,
     onToggle: (visible: boolean) => void,
+    initial = true,
   ): HTMLElement {
     const row = el('div', 'row');
     row.appendChild(el('span', 'label', label));
     const right = el('span', 'group');
     if (count !== null) right.appendChild(el('span', 'value', count.toLocaleString('en-US')));
-    const toggle = el('button', 'toggle active', 'show');
+    const toggle = el('button', `toggle${initial ? ' active' : ''}`, initial ? 'show' : 'hide');
     toggle.addEventListener('click', () => {
       const on = toggle.classList.toggle('active');
       toggle.textContent = on ? 'show' : 'hide';
@@ -509,6 +669,80 @@ export class Hud {
       button.classList.toggle('active', button.textContent === unit);
     }
     this.callbacks.onUnitChange(unit);
+  }
+
+  /**
+   * Say which magnitude the limit slider is limiting.
+   *
+   * Called by main rather than from setProjection, so that the caption follows
+   * what the star field is actually doing rather than being a second, separate
+   * claim about it.
+   */
+  setMagnitudeMeaning(absolute: boolean): void {
+    if (!this.magnitudeLabel) return;
+    this.magnitudeLabel.textContent = absolute ? 'Absolute magnitude' : 'Magnitude limit';
+    this.magnitudeLabel.title = absolute
+      ? 'Plot stars brighter than this absolute magnitude — a luminosity cut, the same wherever the map is looked at'
+      : 'Plot stars brighter than this apparent magnitude, seen from the camera';
+  }
+
+  /**
+   * Someone else's map of the same sky, laid into the plane.
+   *
+   * A dropdown rather than toggles: the series is eight nested views of one
+   * volume, so exactly one is meaningful at a time, and eight buttons would
+   * suggest otherwise. The note underneath names the author and says how well
+   * the sheet is placed, because a borrowed map is a source like any other and
+   * a registration good to a fifth of a light year at 100 pc is good to
+   * seventy at three kiloparsecs.
+   */
+  private buildPosterRow(panel: HTMLElement, posters: Poster[]): void {
+    panel.appendChild(el('div', 'title', 'Sky map'));
+
+    const row = el('div', 'row');
+    row.appendChild(el('span', 'label', 'Overlay'));
+    const select = el('select', 'select') as HTMLSelectElement;
+    const none = document.createElement('option');
+    none.value = '-1';
+    none.textContent = 'none';
+    select.appendChild(none);
+    posters.forEach((poster, index) => {
+      const option = document.createElement('option');
+      option.value = String(index);
+      option.textContent = poster.name;
+      option.title = `${poster.title ?? poster.series} — ${registrationNote(poster)}`;
+      select.appendChild(option);
+    });
+    const note = el('div', 'note-line', '');
+    select.addEventListener('change', () => {
+      const index = Number(select.value);
+      this.callbacks.onPoster(index);
+      const poster = posters[index];
+      note.textContent = poster
+        ? `${poster.credit ?? ''}${poster.licence ? `, ${poster.licence}` : ''} · ` +
+          registrationNote(poster)
+        : '';
+    });
+    row.appendChild(select);
+    panel.appendChild(row);
+    panel.appendChild(
+      this.slider('Overlay opacity', 0, 1, DEFAULT_POSTER_OPACITY, 0.02, (v) => {
+        this.callbacks.onPosterOpacity(v);
+        return v === 0 ? 'off' : `${Math.round(v * 100)}%`;
+      }),
+    );
+    panel.appendChild(note);
+  }
+
+  private setProjection(projection: Projection): void {
+    const flat = projection === '2d';
+    for (const group of this.orientationControls) {
+      for (const button of group.children) {
+        (button as HTMLButtonElement).disabled = flat;
+      }
+      group.classList.toggle('disabled', flat);
+    }
+    this.callbacks.onProjection(projection);
   }
 
   update(distanceFromSol: Parsecs, dt: number): void {

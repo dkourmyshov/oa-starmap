@@ -1,0 +1,100 @@
+# Build the map and publish it to GitHub Pages.
+#
+# The site is not in the repository. `web/public/data/` is gitignored — it is
+# eighteen megabytes of generated binaries — so this workflow reproduces it the
+# same way a person would: fetch the astronomical catalogues, run the pipeline,
+# then build the renderer around the result.
+#
+# That is the point of doing it here rather than committing a build. If the
+# published map ever disagrees with the pipeline, the pipeline is what is wrong,
+# because the published map is only ever what the pipeline just produced.
+#
+# Nothing here needs `sources/`. The Orion's Arm material the importers read is
+# not redistributed; what they write is, and it is tracked in `fiction/`.
+
+name: Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# One deployment at a time, and let a running one finish: a half-uploaded site
+# is worse than a stale one.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+
+      # ~17 MB from VizieR and the HYG mirror. Cached on the catalogue files
+      # themselves, which are versioned upstream and change rarely; a miss just
+      # means downloading them again.
+      - name: Cache catalogues
+        uses: actions/cache@v4
+        with:
+          path: raw
+          key: raw-${{ hashFiles('pipeline/src/oastarmap/fetch/*.py') }}
+
+      - name: Fetch catalogues
+        working-directory: pipeline
+        run: uv run oastarmap fetch
+
+      - name: Build datasets
+        working-directory: pipeline
+        run: uv run oastarmap build
+
+      - name: Check the pipeline
+        working-directory: pipeline
+        run: uv run pytest -q
+
+      - name: Install web dependencies
+        working-directory: web
+        run: npm ci
+
+      - name: Check the renderer
+        working-directory: web
+        run: npm test
+
+      # A project site is served from /<repo>/, and every asset path and the
+      # data root are built from this. See web/vite.config.ts.
+      - name: Build the site
+        working-directory: web
+        run: npm run build
+        env:
+          PAGES_BASE: /${{ github.event.repository.name }}/
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: web/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

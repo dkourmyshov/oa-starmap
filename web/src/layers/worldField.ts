@@ -37,9 +37,20 @@
 
 import * as THREE from 'three';
 
-import type { WorldData } from '../data/manifest';
+import type { WorldData, WorldEntry } from '../data/manifest';
+import { type EpochBasis, worldYears } from '../data/history';
 
 import { DOF_PARS, type DofUniforms, dofUniforms } from './dof';
+import {
+  DEFAULT_UNDATED_GAIN,
+  DEFAULT_UNNAMED_GAIN,
+  EPOCH_PARS,
+  type EpochPlace,
+  type EpochUniforms,
+  attachEpochAttributes,
+  epochUniforms,
+} from './epoch';
+import { EXTENT_PARS, extentGeometry, extentUniforms, instanced } from './extent';
 export const DEFAULT_OPACITY = 0.9;
 
 /** Marker diameter in device pixels. */
@@ -83,12 +94,16 @@ export const HAZARD_RING_PX = 1.8;
 /**
  * Ceiling on an extent circle's on-screen diameter, in pixels.
  *
- * Bites when the camera is close to a volume or inside it, where an outline
- * larger than the viewport has stopped conveying a size at all. Once it bites,
- * the outline stops growing while everything around it keeps growing, which
- * reads as the circle shrinking — so it is a ceiling on a symptom, not a fix.
+ * It used to be 900, and that was a ceiling on a symptom: point sprites are
+ * capped by the driver at around a thousand pixels, so past that the outline
+ * stopped growing while everything around it kept growing — which reads as the
+ * circle shrinking. Extents are instanced quads now (see layers/extent.ts) and
+ * have no such limit, so the ceiling can sit far beyond any viewport and the
+ * circle is drawn at the radius the data actually claims. What is left is a
+ * guard against a pathological radius, not a display rule: a quad larger than
+ * the screen costs nothing extra, since the rasteriser clips it.
  */
-export const MAX_CIRCLE_PX = 900.0;
+export const MAX_CIRCLE_PX = 20000.0;
 
 const MARKER_VERTEX = /* glsl */ `
   #include <common>
@@ -98,6 +113,7 @@ const MARKER_VERTEX = /* glsl */ `
 
   uniform float uSize;
   ${DOF_PARS}
+  ${EPOCH_PARS}
 
   varying vec3 vColor;
   varying float vDim;
@@ -108,11 +124,21 @@ const MARKER_VERTEX = /* glsl */ `
     gl_Position = projectionMatrix * viewPos;
     vColor = aColor;
 
+    // Not yet founded, or already ended: collapsed rather than faded, for the
+    // reason given in layers/epoch.ts.
+    float epoch = epochGain();
+    if (epoch <= 0.0) {
+      gl_PointSize = 0.0;
+      gl_Position = vec4(2.0, 2.0, 2.0, 1.0);
+      return;
+    }
+
     // The marker keeps its screen size and softens, as the rings do.
-    float blurPx = dofBlurPx(max(length(viewPos.xyz), 1e-4));
+    float defocus = dofDecades(viewPos);
+    float blurPx = dofBlurPx(defocus);
     float grown = uSize + 2.0 * blurPx;
     vScale = grown / uSize;
-    vDim = dofGain(uSize, grown) * dofDim(max(length(viewPos.xyz), 1e-4));
+    vDim = dofGain(uSize, grown) * dofDim(defocus) * epoch;
     gl_PointSize = grown;
 
     #include <logdepthbuf_vertex>
@@ -157,12 +183,14 @@ const CIRCLE_VERTEX = /* glsl */ `
   #include <common>
   #include <logdepthbuf_pars_vertex>
 
+  attribute vec3 aCentre;
   attribute vec3 aColor;
   attribute float aRadius;
   attribute float aHazard;
 
-  uniform float uViewportHeight;
+  ${EXTENT_PARS}
   ${DOF_PARS}
+  ${EPOCH_PARS}
   uniform float uMaxPx;
 
   varying vec3 vColor;
@@ -171,42 +199,51 @@ const CIRCLE_VERTEX = /* glsl */ `
   varying float vBlur;
   varying float vScale;
   varying float vHazard;
+  varying vec2 vCorner;
 
   void main() {
-    vec4 viewPos = modelViewMatrix * vec4(position, 1.0);
-    gl_Position = projectionMatrix * viewPos;
+    vec4 viewPos = modelViewMatrix * vec4(aCentre, 1.0);
+    vec4 clipCentre = projectionMatrix * viewPos;
+
+    float epoch = epochGain();
+    if (epoch <= 0.0) {
+      gl_Position = vec4(2.0, 2.0, 2.0, 1.0);
+      return;
+    }
+
+    vCorner = position.xy;
     vColor = aColor;
     vHazard = aHazard;
 
-    // The same angular-size projection the volumetric layers use: a physical
-    // radius, foreshortened by distance.
-    float distance = max(-viewPos.z, 1e-4);
-    float pixels = aRadius * projectionMatrix[1][1] * uViewportHeight / distance;
+    // The same angular-size projection the other extent layers use — see
+    // layers/extent.ts, which carries the note.
+    float pixels = extentPixels(aRadius, clipCentre.w);
 
     // Below a few pixels the outline degenerates into a dot indistinguishable
     // from the marker, which would read as a precision the world does not have.
-    vFade = smoothstep(3.0, 7.0, pixels);
+    vFade = smoothstep(3.0, 7.0, pixels) * epoch;
 
     // The value above is already the projected *diameter*: a physical radius r
     // at distance d subtends a screen radius of r * P[1][1] * height / (2d),
-    // and the expression omits the 2. gl_PointSize is a width, and the fragment
-    // draws its ring at the sprite's edge, so this is the whole of it.
+    // and the expression omits the 2. The quad is sized as a width, and the
+    // fragment draws its ring at the quad's edge, so this is the whole of it.
     // It used to be doubled, which drew every extent at twice its true size —
     // invisible on Corambytia, whose 11 degrees merely looked like 22, and
     // impossible to miss on the Gehenna front, which covered the sphere.
     // clusterField computes the same quantity and does not double it.
-    // Depth of field. The sprite grows to make room and the fragment scales its
+    // Depth of field. The quad grows to make room and the fragment scales its
     // coordinate back, so the outline keeps the angular size it is there to
     // report and only its edge softens. vSize stays the unblurred size, because
     // the ring's thickness is derived from it and a hairline must not thin just
     // because the thing is out of focus.
     float base = clamp(pixels, 0.0, uMaxPx);
-    float blurPx = dofBlurPx(distance);
+    float defocus = dofDecades(viewPos);
+    float blurPx = dofBlurPx(defocus);
     float grown = base + 2.0 * blurPx;
     vScale = base > 0.0 ? grown / base : 1.0;
     vBlur = base > 0.0 ? min(blurPx / max(base * 0.5, 1e-4), 0.5) : 0.0;
-    vFade *= dofGain(max(base, 1e-4), max(grown, 1e-4)) * dofDim(distance);
-    gl_PointSize = grown;
+    vFade *= dofGain(max(base, 1e-4), max(grown, 1e-4)) * dofDim(defocus);
+    gl_Position = extentCorner(clipCentre, grown);
     vSize = base;
 
     #include <logdepthbuf_vertex>
@@ -228,9 +265,12 @@ const CIRCLE_FRAGMENT = /* glsl */ `
   varying float vBlur;
   varying float vScale;
   varying float vHazard;
+  varying vec2 vCorner;
 
   void main() {
-    vec2 offset = gl_PointCoord * 2.0 - 1.0;
+    // The quad corner, in the same [-1, 1] gl_PointCoord gave when these were
+    // sprites, so everything below is unchanged.
+    vec2 offset = vCorner;
     if (length(offset) > 1.0) discard;
     float r = length(offset) * vScale;
 
@@ -271,13 +311,43 @@ function positioned(data: WorldData): number[] {
   return shown;
 }
 
+/** How a world's years reach the epoch shader, under one basis. */
+function epochPlaces(worlds: WorldEntry[], basis: EpochBasis): EpochPlace[] {
+  return worlds.map((world) => {
+    const years = worldYears(world, basis);
+    return {
+      from: years.from,
+      to: years.to,
+      distancePc: Math.hypot(world.x ?? 0, world.y ?? 0, world.z ?? 0),
+    };
+  });
+}
+
+function yearArray(worlds: WorldEntry[], basis: EpochBasis): Float32Array {
+  const out = new Float32Array(worlds.length * 2);
+  epochPlaces(worlds, basis).forEach((place, index) => {
+    out[index * 2] = place.from;
+    out[index * 2 + 1] = place.to;
+  });
+  return out;
+}
+
 export class WorldField {
   readonly points: THREE.Points;
-  readonly circles: THREE.Points;
+  readonly circles: THREE.Mesh;
   readonly count: number;
 
   private readonly markerMaterial: THREE.ShaderMaterial;
   private readonly circleMaterial: THREE.ShaderMaterial;
+
+  private readonly yearAttribute: THREE.BufferAttribute;
+  private readonly namedAttribute: THREE.BufferAttribute;
+  private readonly yearsByBasis: Record<EpochBasis, Float32Array>;
+  private readonly markerNames: string[];
+  private readonly circleYearAttribute: THREE.InstancedBufferAttribute;
+  private readonly circleNamedAttribute: THREE.InstancedBufferAttribute;
+  private readonly circleYearsByBasis: Record<EpochBasis, Float32Array>;
+  private readonly circleNames: string[] = [];
 
   constructor(data: WorldData) {
     const shown = positioned(data);
@@ -293,9 +363,12 @@ export class WorldField {
     const circleColors: number[] = [];
     const circleRadii: number[] = [];
     const circleHazard: number[] = [];
+    const markerWorlds: WorldEntry[] = [];
+    const circleWorlds: WorldEntry[] = [];
 
     shown.forEach((index, out) => {
       const world = data.worlds[index];
+      markerWorlds.push(world);
       positions[out * 3] = world.x as number;
       positions[out * 3 + 1] = world.y as number;
       positions[out * 3 + 2] = world.z as number;
@@ -320,12 +393,24 @@ export class WorldField {
         circleColors.push(outline.r, outline.g, outline.b);
         circleRadii.push(radius);
         circleHazard.push(hazard ? 1 : 0);
+        circleWorlds.push(world);
+        this.circleNames.push(world.name);
       }
     });
 
     const geometry = new THREE.BufferGeometry();
     geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
     geometry.setAttribute('aColor', new THREE.BufferAttribute(colors, 3));
+    // Both bases, as the rings keep them: switching between "first reached" and
+    // "settled" rewrites an attribute rather than rebuilding the layer.
+    const attached = attachEpochAttributes(geometry, epochPlaces(markerWorlds, 'known'));
+    this.yearAttribute = attached.years;
+    this.namedAttribute = attached.named;
+    this.yearsByBasis = {
+      known: (attached.years.array as Float32Array).slice(),
+      settled: yearArray(markerWorlds, 'settled'),
+    };
+    this.markerNames = markerWorlds.map((world) => world.name);
     geometry.boundingSphere = new THREE.Sphere(new THREE.Vector3(), Infinity);
 
     this.markerMaterial = new THREE.ShaderMaterial({
@@ -333,6 +418,7 @@ export class WorldField {
         uSize: { value: DEFAULT_SIZE_PX },
         uOpacity: { value: DEFAULT_OPACITY },
         ...dofUniforms(),
+        ...epochUniforms(),
       },
       vertexShader: MARKER_VERTEX,
       fragmentShader: MARKER_FRAGMENT,
@@ -346,34 +432,32 @@ export class WorldField {
     this.points.frustumCulled = false;
     this.points.renderOrder = 3;
 
-    const circleGeometry = new THREE.BufferGeometry();
-    circleGeometry.setAttribute(
-      'position',
-      new THREE.BufferAttribute(new Float32Array(circlePositions), 3),
-    );
-    circleGeometry.setAttribute(
-      'aColor',
-      new THREE.BufferAttribute(new Float32Array(circleColors), 3),
-    );
-    circleGeometry.setAttribute(
-      'aRadius',
-      new THREE.BufferAttribute(new Float32Array(circleRadii), 1),
-    );
-    circleGeometry.setAttribute(
-      'aHazard',
-      new THREE.BufferAttribute(new Float32Array(circleHazard), 1),
-    );
-    circleGeometry.boundingSphere = new THREE.Sphere(new THREE.Vector3(), Infinity);
+    const circleGeometry = extentGeometry(circleRadii.length);
+    circleGeometry.setAttribute('aCentre', instanced(new Float32Array(circlePositions), 3));
+    circleGeometry.setAttribute('aColor', instanced(new Float32Array(circleColors), 3));
+    circleGeometry.setAttribute('aRadius', instanced(new Float32Array(circleRadii), 1));
+    circleGeometry.setAttribute('aHazard', instanced(new Float32Array(circleHazard), 1));
+    // The outlines are instanced, so their copy of the year attributes has to
+    // be too — one pair of years per volume, not per corner of its quad.
+    this.circleYearsByBasis = {
+      known: yearArray(circleWorlds, 'known'),
+      settled: yearArray(circleWorlds, 'settled'),
+    };
+    this.circleYearAttribute = instanced(this.circleYearsByBasis.known.slice(), 2);
+    this.circleNamedAttribute = instanced(new Float32Array(circleWorlds.length).fill(1), 1);
+    circleGeometry.setAttribute('aYears', this.circleYearAttribute);
+    circleGeometry.setAttribute('aNamed', this.circleNamedAttribute);
 
     this.circleMaterial = new THREE.ShaderMaterial({
       uniforms: {
         uOpacity: { value: 0.45 },
-        uViewportHeight: { value: 1080 },
+        ...extentUniforms(),
         uMaxPx: { value: MAX_CIRCLE_PX },
         uRingPx: { value: RING_PX },
         uHazardRingPx: { value: HAZARD_RING_PX },
         uHazardDim: { value: 1.0 },
         ...dofUniforms(),
+        ...epochUniforms(),
       },
       vertexShader: CIRCLE_VERTEX,
       fragmentShader: CIRCLE_FRAGMENT,
@@ -383,13 +467,60 @@ export class WorldField {
       blending: THREE.NormalBlending,
     });
 
-    this.circles = new THREE.Points(circleGeometry, this.circleMaterial);
+    this.circles = new THREE.Mesh(circleGeometry, this.circleMaterial);
     this.circles.frustumCulled = false;
     this.circles.renderOrder = 3;
   }
 
-  setViewportHeight(height: number): void {
-    this.circleMaterial.uniforms.uViewportHeight.value = height;
+  /**
+   * Show the map as it stood in a year, or stop.
+   *
+   * `showUndated` reaches the shader as a gain rather than a filter, because
+   * "no date recorded" is a third state and not a kind of absence: hidden it
+   * must vanish completely, shown it must be visibly weaker than a place with
+   * a year. Wiring it only into the picker left the reader hiding the undated
+   * places and still looking at them.
+   */
+  setEpoch(year: number | null, showUndated = true): void {
+    for (const material of [this.markerMaterial, this.circleMaterial]) {
+      const uniforms = material.uniforms as unknown as EpochUniforms;
+      uniforms.uEpochOn.value = year === null ? 0 : 1;
+      uniforms.uUndatedGain.value = showUndated ? DEFAULT_UNDATED_GAIN : 0;
+      if (year !== null) uniforms.uYear.value = year;
+    }
+  }
+
+  /** Which date decides when a world appears: first reached, or settled. */
+  setEpochBasis(basis: EpochBasis): void {
+    (this.yearAttribute.array as Float32Array).set(this.yearsByBasis[basis]);
+    this.yearAttribute.needsUpdate = true;
+    (this.circleYearAttribute.array as Float32Array).set(this.circleYearsByBasis[basis]);
+    this.circleYearAttribute.needsUpdate = true;
+  }
+
+  /** Mark the worlds a period's own history names; null clears the emphasis. */
+  setNamedPlaces(names: Set<string> | null, gain = DEFAULT_UNNAMED_GAIN): void {
+    const write = (
+      attribute: THREE.BufferAttribute | THREE.InstancedBufferAttribute,
+      order: string[],
+    ): void => {
+      const array = attribute.array as Float32Array;
+      order.forEach((name, index) => {
+        array[index] = names === null || names.has(name) ? 1 : 0;
+      });
+      attribute.needsUpdate = true;
+    };
+    write(this.namedAttribute, this.markerNames);
+    write(this.circleNamedAttribute, this.circleNames);
+    for (const material of [this.markerMaterial, this.circleMaterial]) {
+      (material.uniforms as unknown as EpochUniforms).uUnnamedGain.value =
+        names === null ? 1 : gain;
+    }
+  }
+
+  /** Device pixels, both axes: the corner offsets are computed in them. */
+  setViewport(width: number, height: number): void {
+    (this.circleMaterial.uniforms.uViewport.value as THREE.Vector2).set(width, height);
   }
 
   set opacity(value: number) {

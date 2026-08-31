@@ -164,6 +164,24 @@
         border-bottom-color: var(--accent, #7f9cff);
       }
 
+      /* The sky-map chooser: one dropdown, because the posters are nested views
+         of one volume and only one is meaningful at a time. */
+      .select {
+        pointer-events: auto;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid var(--border);
+        color: var(--text);
+        border-radius: 6px;
+        padding: 2px 6px;
+        font: inherit;
+        cursor: pointer;
+      }
+
+      .select option {
+        background: #12161f;
+        color: var(--text);
+      }
+
       .jump-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -183,6 +201,24 @@
       .jump.active {
         border-color: var(--accent, #7f9cff);
         color: #fff;
+      }
+
+      /*
+       * Switched off rather than hidden. The plan view answers neither "look
+       * from where" nor "turn about what", and leaving the buttons in place
+       * greyed says so — where removing them would read as the controls having
+       * been lost.
+       */
+      .toggle:disabled,
+      .jump:disabled {
+        opacity: 0.35;
+        cursor: default;
+      }
+
+      .toggle:disabled:hover,
+      .jump:disabled:hover {
+        border-color: var(--border);
+        background: rgba(255, 255, 255, 0.05);
       }
 
       /*
@@ -287,6 +323,118 @@
         font-size: 11px;
       }
 
+      /*
+       * The history panel sits in the free middle column, along the bottom,
+       * where a timeline belongs and where it is out of the way of the two
+       * columns of controls. Wider than the others because its timeline is
+       * prose: the Encyclopaedia's own sentences, quoted, not a table of
+       * numbers that would fit in 268 pixels.
+       */
+      .panel-history {
+        grid-column: 2;
+        grid-row: 3;
+        align-self: end;
+        justify-self: center;
+        min-width: 380px;
+        max-width: 560px;
+        /*
+         * Deliberately modest. This panel folds to its scrubber and can be
+         * dragged anywhere, so its open height is a starting position rather
+         * than a claim on the screen — and the height that suits a desktop is
+         * half of a laptop.
+         */
+        max-height: calc(44vh - 28px);
+        overflow-y: auto;
+      }
+
+      /* The title bar doubles as the grip; see ui/drag.ts. */
+      .panel-grip {
+        user-select: none;
+      }
+
+      .history-details {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .history-body {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .history-year {
+        font-size: 15px;
+        font-variant-numeric: tabular-nums;
+        margin-top: 6px;
+      }
+
+      .history-polities,
+      .history-places {
+        max-height: 15vh;
+        overflow-y: auto;
+      }
+
+      /* Named by the period but nowhere on the map: listed, and not offered. */
+      .legend-row-weak {
+        color: var(--muted);
+        cursor: default;
+      }
+
+      .history-events {
+        max-height: 18vh;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        margin-top: 4px;
+      }
+
+      .history-event {
+        font-size: 11.5px;
+        line-height: 1.45;
+        color: var(--text);
+      }
+
+      /*
+       * Later than the year on the slider. Still shown — the reader is reading
+       * a century, not standing in one of its days — but visibly the part of
+       * the period that has not happened on the map yet.
+       */
+      .history-event-ahead {
+        opacity: 0.45;
+      }
+
+      .history-event-year {
+        display: inline-block;
+        min-width: 52px;
+        color: var(--muted);
+        font-variant-numeric: tabular-nums;
+      }
+
+      .history-place {
+        display: inline-block;
+        margin-left: 5px;
+        padding: 0 5px;
+        border: 1px solid var(--border);
+        border-radius: 4px;
+        background: none;
+        color: var(--text);
+        font: inherit;
+        font-size: 10.5px;
+        cursor: pointer;
+      }
+
+      .history-place:hover:not(:disabled) {
+        background: rgba(143, 180, 255, 0.16);
+      }
+
+      .history-place:disabled {
+        color: var(--muted);
+        cursor: default;
+      }
+
       #loading {
         position: fixed;
         inset: 0;
@@ -331,6 +479,27 @@
 
       .map-label:hover {
         text-decoration: underline;
+      }
+
+      /* Name and altitude stack, and the shorter line centres under the longer. */
+      .map-label > span {
+        display: block;
+        text-align: center;
+      }
+
+      /*
+       * The altitude, written only in the plan view. Looking down the pole is
+       * the projection that throws z away, so it is the one that has to print
+       * the number — smaller and dimmer than the name, because it annotates the
+       * name rather than competing with it. The 12px line height is duplicated
+       * in labels.ts, where the declutter pass has to reserve the space before
+       * any of this exists.
+       */
+      .map-label-z {
+        font-size: 9.5px;
+        line-height: 12px;
+        opacity: 0.72;
+        letter-spacing: 0.02em;
       }
 
       .map-label-star {

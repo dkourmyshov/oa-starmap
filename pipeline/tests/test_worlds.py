@@ -276,7 +276,7 @@ def test_dated_history_is_ordered_and_derived() -> None:
     """
     import json
 
-    from oastarmap.build.worlds import PRESENCE_KINDS, _certain_by
+    from oastarmap.build.worlds import PRESENCE_KINDS, certain_by
     from oastarmap.paths import DATA_OUT_DIR
 
     path = DATA_OUT_DIR / "worlds.json"
@@ -290,10 +290,10 @@ def test_dated_history_is_ordered_and_derived() -> None:
 
         # The safe end of each hedge, not the bare year: "between 1500 and
         # 2100" is only certain by 2100.
-        presence = [_certain_by(e) for e in events if e["kind"] in PRESENCE_KINDS]
+        presence = [certain_by(e) for e in events if e["kind"] in PRESENCE_KINDS]
         assert world["known_from_at"] == (min(presence) if presence else None)
 
-        settled = [_certain_by(e) for e in events if e["kind"] == "settled"]
+        settled = [certain_by(e) for e in events if e["kind"] == "settled"]
         assert world["settled_at"] == (min(settled) if settled else None)
 
         # A place cannot be settled before anyone has been there.
@@ -405,14 +405,14 @@ def test_hedged_years_resolve_to_the_safe_end() -> None:
     1644; a span that ran 4496 to 4530 had already begun in 4496. Taking the
     optimistic end of each would put places on the map centuries early.
     """
-    from oastarmap.build.worlds import _certain_by
+    from oastarmap.build.worlds import certain_by
 
-    assert _certain_by({"year_at": 2245, "until_at": None, "precision": "exact"}) == 2245
-    assert _certain_by({"year_at": 3000, "until_at": None, "precision": "circa"}) == 3000
-    assert _certain_by({"year_at": 1644, "until_at": None, "precision": "not_later_than"}) == 1644
-    assert _certain_by({"year_at": 1500, "until_at": 2100, "precision": "between"}) == 2100
+    assert certain_by({"year_at": 2245, "until_at": None, "precision": "exact"}) == 2245
+    assert certain_by({"year_at": 3000, "until_at": None, "precision": "circa"}) == 3000
+    assert certain_by({"year_at": 1644, "until_at": None, "precision": "not_later_than"}) == 1644
+    assert certain_by({"year_at": 1500, "until_at": 2100, "precision": "between"}) == 2100
     # A duration, not an uncertainty: it began in 4496.
-    assert _certain_by({"year_at": 4496, "until_at": 4530, "precision": "exact"}) == 4496
+    assert certain_by({"year_at": 4496, "until_at": 4530, "precision": "exact"}) == 4496
 
 
 def test_a_between_event_needs_both_ends() -> None:

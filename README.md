@@ -4,6 +4,8 @@ A 3D map of the galaxy from Sol out to 7000+ ly, showing real astronomical objec
 alongside fictional locations from the
 [Orion's Arm Universe Project](https://www.orionsarm.com/).
 
+**[Open the map →](https://dkourmyshov.github.io/oa-starmap/)**
+
 ## Two rules that shape everything
 
 **No distance cutoff.** A distance-limited star sample renders as a sphere with a
@@ -108,6 +110,35 @@ tables the same way: 1,122 colony rows and 281 wormhole rows.
 ```sh
 uv run oastarmap import-oastars       # fiction/oa_stars.yaml     <- OAAddons1.zip
 uv run oastarmap import-inner-sphere  # fiction/inner_sphere.yaml <- inner_sphere.html
+uv run oastarmap import-history       # fiction/history.yaml      <- sources/history/
 ```
 
 Re-importing overwrites hand edits, so review the diff before committing.
+
+## Building it yourself
+
+```sh
+cd pipeline && uv run oastarmap fetch && uv run oastarmap build
+cd ../web && npm ci && npm run dev
+```
+
+`fetch` pulls ~17 MB of catalogues from VizieR; `build` writes ~18 MB of binaries
+into `web/public/data/`. Neither directory is tracked. Nothing in either step
+needs `sources/`, which is why a clean clone can build the whole map: the
+importers read the Orion's Arm material, and what they *write* is tracked.
+
+The published site is built the same way on every push — see
+`.github/workflows/pages.yml`. If the map ever disagrees with the pipeline, the
+pipeline is what is wrong.
+
+## Licence and attribution
+
+This project's own work — the pipeline, the renderer, the analysis and the prose
+written for them — is **MIT** (see `LICENSE`).
+
+Nothing else here is. The fiction belongs to the Orion's Arm Universe Project
+under [their own terms](https://www.orionsarm.com/Terms_Copyright_and_Submissions.html),
+which are not an open licence; the sky maps in `bitmap_maps/` are Kevin
+Jardine's under CC BY 4.0; the astronomical catalogues are their authors'. Every
+one of them is named, with what was taken and where it came from, in
+[`NOTICE.md`](NOTICE.md).

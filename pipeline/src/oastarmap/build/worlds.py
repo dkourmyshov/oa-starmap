@@ -124,7 +124,7 @@ def approximate_extent_ly(distance_pc: float, error_deg: float) -> float:
     return float(distance_pc * PC_TO_LY * np.tan(np.radians(error_deg)))
 
 
-def _certain_by(event: dict[str, Any]) -> int:
+def certain_by(event: dict[str, Any]) -> int:
     """The earliest year we can be sure the event had happened.
 
     The safe end of whatever the source hedged. "Between 1500 and 2100" is
@@ -294,8 +294,8 @@ def build_worlds(
             }
             for e in sorted(world.events, key=lambda e: (e.year_at, e.kind))
         ]
-        presence = [_certain_by(e) for e in events if e["kind"] in PRESENCE_KINDS]
-        settled_years = [_certain_by(e) for e in events if e["kind"] == "settled"]
+        presence = [certain_by(e) for e in events if e["kind"] in PRESENCE_KINDS]
+        settled_years = [certain_by(e) for e in events if e["kind"] == "settled"]
         known_from = min(presence) if presence else None
         settled_at = min(settled_years) if settled_years else None
 
@@ -303,7 +303,7 @@ def build_worlds(
         # rather than folded into them: Hoopworld disintegrated in 10580 and
         # nothing records when it was built, so counting the ending as a
         # presence date would put it on the map in the year it vanished.
-        ended = [_certain_by(e) for e in events if e["kind"] == "abandoned"]
+        ended = [certain_by(e) for e in events if e["kind"] == "abandoned"]
         ended_at = max(ended) if ended else None
 
         if events:

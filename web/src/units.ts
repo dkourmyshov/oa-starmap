@@ -56,3 +56,16 @@ export function formatDistance(distance: Parsecs, unit: DistanceUnit): string {
 
   return `${text} ${unit}`;
 }
+
+/**
+ * A signed offset along one axis, for a coordinate rather than a separation.
+ *
+ * Same rules as formatDistance, plus an explicit + on positive values. The sign
+ * is the content: an altitude of 412 ly says nothing without which side of the
+ * galactic plane it is on, and an unsigned figure reads as north to anyone who
+ * has seen the map drawn north-up.
+ */
+export function formatOffset(offset: Parsecs, unit: DistanceUnit): string {
+  const text = formatDistance(offset, unit);
+  return (offset as number) > 0 ? `+${text}` : text;
+}

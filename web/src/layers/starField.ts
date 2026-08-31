@@ -23,6 +23,59 @@ import { DOF_PARS, type DofUniforms, dofUniforms } from './dof';
 
 const LOG10 = Math.LN10;
 
+/**
+ * Pixels of diameter per magnitude, for the plan view's atlas plotting.
+ *
+ * Chosen so the catalogue's whole range lands inside the size limits: at the
+ * default limit of 7.5 a supergiant at M -8 draws about 14 pixels across and a
+ * star at the limit draws the minimum, with the Sun near 3.5 in between.
+ */
+const MAG_STEP_PX = 0.8;
+
+/**
+ * The map scale at which a star lays down its full ink, as a view half-height
+ * in parsecs.
+ *
+ * Around the scale the plan view opens at, so the default is what the constants
+ * below say it is and zooming in can only brighten the field a little.
+ */
+const FLAT_INK_REFERENCE_PC = 25;
+
+/** Least a star may be dimmed by crowding, however far out the map is pulled. */
+const FLAT_INK_FLOOR = 0.01;
+
+/**
+ * How much ink one star lays down at this map scale. 1 in the perspective view,
+ * which has no such thing.
+ *
+ * A plan view has a crowding problem a perspective view does not. Flying away
+ * from a star field dims it, because the light of each star spreads over the
+ * inverse square of the distance; pulling a *map* out does not dim anything, it
+ * merely packs more stars into each pixel — and stars are drawn additively, so
+ * a hundred of them in one pixel is white whatever each one contributes. The
+ * field was legible at the opening scale and a flat sheet a few notches out.
+ *
+ * A pixel covers area, so the count inside it grows with the *square* of the
+ * scale shrinking — and the ink deliberately does not follow that square all
+ * the way back down. Two reasons. Alpha has about two and a half decades of
+ * usable range before a star falls under the fragment discard, and the map
+ * spans three decades of scale, so a square law spends the whole budget in the
+ * first zoom step and then floors, leaving everything past it to saturate as
+ * before. And full compensation is not even wanted: the Inner Sphere is
+ * thousands of times denser than the rimward field, and it should look it. So
+ * the gain is linear in the scale, which is half the square in log terms —
+ * enough to stop the sheet going white, little enough that dense regions still
+ * read as dense.
+ *
+ * Never above 1: this dims a crowded view, it does not brighten an empty one.
+ * Brightness rising as the map is magnified is what made every star swell into
+ * a disc when the reference was tied to the zoom the first time round.
+ */
+export function flatInkGain(halfHeightPc: number): number {
+  if (halfHeightPc <= 0) return 1;
+  return Math.min(Math.max(FLAT_INK_REFERENCE_PC / halfHeightPc, FLAT_INK_FLOOR), 1);
+}
+
 export interface StarFieldOptions {
   /**
    * Apparent magnitude at which a star reaches the threshold of visibility.
@@ -60,6 +113,8 @@ const VERTEX_SHADER = /* glsl */ `
   uniform float uOnlyOA;
   uniform float uSettledBoost;
   uniform float uSettledFloor;
+  uniform float uAbsoluteMags;
+  uniform float uFlatInk;
   ${DOF_PARS}
 
   varying vec3 vColor;
@@ -80,15 +135,65 @@ const VERTEX_SHADER = /* glsl */ `
     float distPc = max(length(viewPos.xyz), 1e-4);
 
     // Apparent magnitude from *this* viewpoint: m = M + 5 log10(d / 10pc).
-    float m = aAbsMag + 5.0 * (log(distPc / 10.0) / ${LOG10.toFixed(9)});
+    //
+    // The plan view has no viewpoint to compute it from. An orthographic camera
+    // has no station: it is not standing anywhere, and length(viewPos) there
+    // measures how far across the map a star is rather than how far away, so
+    // using it would darken the edges of the sheet into a vignette that means
+    // nothing. Measuring from Sol instead was no better: it puts a brightness
+    // gradient centred on the origin over the whole sheet, which says only how
+    // far from home a star is — something the map already shows by where it
+    // draws it.
+    //
+    // So the plan view drops apparent magnitude altogether and plots absolute:
+    // how luminous the star is, full stop. That is the quantity that survives
+    // being flattened, it is the quantity this map selects on in the first
+    // place, and it does not move when the view does. The magnitude limit
+    // becomes a luminosity threshold, which is what a plan view of a galaxy
+    // wants anyway — the supergiants first, and the dwarfs when asked for.
+    float m = uAbsoluteMags > 0.5
+      ? aAbsMag
+      : aAbsMag + 5.0 * (log(distPc / 10.0) / ${LOG10.toFixed(9)});
 
-    // Linear flux relative to the visibility limit; clamped before pow() so a
-    // very close star cannot overflow to infinity.
-    float rel = min(uMagLimit - m, 30.0);
-    float flux = pow(10.0, 0.4 * rel) * uExposure;
+    // How many magnitudes brighter than the limit this star is.
+    float mags = uMagLimit - m;
 
-    // Smooth fade to nothing. No threshold, no pop.
-    vAlpha = clamp(flux, 0.0, 1.0);
+    // Size and brightness, by two different laws, because the two magnitudes
+    // are distributed quite differently.
+    //
+    // Apparent magnitude from a moving camera is self-limiting: distance dims
+    // the far field, so at any moment only a handful of stars sit far above the
+    // limit and a flux law spends its range well. Absolute magnitude has no
+    // such brake. This catalogue spans roughly M -8 to +16 — twenty-four
+    // magnitudes, a flux ratio of four thousand million — so a flux law
+    // saturates about four magnitudes above the limit and every star past that
+    // is the same white disc at full alpha. The plan view washed out to a
+    // sheet: the magnitude and exposure sliders both had to go to their minimum
+    // for anything to be legible, which is the sign of a law with no headroom.
+    //
+    // So the plan view plots the way a printed atlas does: the diameter grows a
+    // fixed amount per magnitude, and the ink follows gently. That spends the
+    // whole twenty-four magnitudes instead of the first four.
+    float size;
+    if (uAbsoluteMags > 0.5) {
+      // Faint plotted stars are drawn lightly, luminous ones fully, over about
+      // six magnitudes; and the last magnitude before the limit fades out, so
+      // the threshold has no edge to it — the same rule the perspective law
+      // gets from its own smooth falloff.
+      //
+      // The levels are low because they are laid down additively and a plan
+      // view stacks far more stars per pixel than a perspective one does; how
+      // much lower still, at a given scale, is uFlatInk's business below.
+      vAlpha = clamp(mags, 0.0, 1.0) * mix(0.08, 0.55, clamp(mags / 6.0, 0.0, 1.0)) * uExposure;
+      size = uMinSize + max(mags, 0.0) * ${MAG_STEP_PX};
+    } else {
+      // Linear flux relative to the visibility limit; clamped before pow() so a
+      // very close star cannot overflow to infinity.
+      float flux = pow(10.0, 0.4 * min(mags, 30.0)) * uExposure;
+      // Smooth fade to nothing. No threshold, no pop.
+      vAlpha = clamp(flux, 0.0, 1.0);
+      size = uMinSize * sqrt(max(flux, 1.0));
+    }
 
     // In Orion's Arm-only mode the sky is reduced to what the setting names.
     if (uOnlyOA > 0.5 && aSettled < 0.5) {
@@ -102,12 +207,20 @@ const VERTEX_SHADER = /* glsl */ `
     // are dim red dwarfs that the magnitude law alone renders nearly invisible.
     // Given a floor and a size boost they stay legible without the exposure
     // having to be wound up until everything else blows out.
+    // Crowding, before the settled floor rather than after it. The catalogue is
+    // what crowds a pixel — hundreds of thousands of stars, most of them in the
+    // Inner Sphere — where the settled systems are some fifteen hundred spread
+    // over the whole map and never pile up. Dimming them with the sheet would
+    // take out the one layer the map exists for at exactly the scale where the
+    // whole Terragen sphere is in view. 1 in the perspective view; see
+    // flatInkGain.
+    vAlpha *= uFlatInk;
+
     float settled = aSettled * uSettledBoost;
     vAlpha = max(vAlpha, aSettled * uSettledFloor);
 
     // Bright stars grow; faint ones stay minimal and fade out via alpha.
-    float size = uMinSize * sqrt(max(flux, 1.0)) + settled;
-    float px = clamp(size, uMinSize, uMaxSize) * uPixelRatio;
+    float px = clamp(size + settled, uMinSize, uMaxSize) * uPixelRatio;
 
     // Depth of field, measured in decades rather than in parsecs.
     //
@@ -117,7 +230,8 @@ const VERTEX_SHADER = /* glsl */ `
     // grows with the *ratio* of distance to focus instead. Two hundred parsecs
     // against a hundred blurs as much as four thousand against two thousand,
     // which is what makes the cue work at every scale the camera reaches.
-    float blurPx = dofBlurPx(distPc) * uPixelRatio;
+    float defocus = dofDecades(viewPos);
+    float blurPx = dofBlurPx(defocus) * uPixelRatio;
     if (blurPx > 0.0) {
       float blurred = px + 2.0 * blurPx;
       vAlpha *= dofGain(px, blurred);
@@ -125,7 +239,7 @@ const VERTEX_SHADER = /* glsl */ `
       px = blurred;
     }
     // Outside the blur test: dimming is its own control and works alone.
-    vAlpha *= dofDim(distPc);
+    vAlpha *= dofDim(defocus);
     gl_PointSize = px;
 
     if (aCi < uCiUnknown + 1.0) {
@@ -267,6 +381,8 @@ export class StarField {
         uOnlyOA: { value: 0.0 },
         uSettledBoost: { value: 2.2 },
         uSettledFloor: { value: 0.55 },
+        uAbsoluteMags: { value: 0.0 },
+        uFlatInk: { value: 1.0 },
         ...dofUniforms(),
         uColorLut: { value: lut },
       },
@@ -297,6 +413,21 @@ export class StarField {
 
   set exposure(value: number) {
     this.material.uniforms.uExposure.value = value;
+  }
+
+  /**
+   * Plot stars by absolute magnitude, ignoring where anything is.
+   *
+   * For the plan view, which has no camera for an apparent magnitude to be
+   * apparent from. See the note beside the magnitude law.
+   */
+  set absoluteMagnitudes(enabled: boolean) {
+    this.material.uniforms.uAbsoluteMags.value = enabled ? 1.0 : 0.0;
+  }
+
+  /** How much ink one star lays down, for the crowding at this map scale. */
+  set flatInk(gain: number) {
+    this.material.uniforms.uFlatInk.value = gain;
   }
 
   /** The uniforms the shared depth-of-field settings write into. */

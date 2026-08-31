@@ -90,7 +90,7 @@ def fetch_page(kind: str, key: str, *, last_request: list[float]) -> Fetched:
         time.sleep(CRAWL_DELAY - waited)
 
     request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-    with urllib.request.urlopen(request, timeout=60) as response:  # noqa: S310
+    with urllib.request.urlopen(request, timeout=60) as response:
         body = response.read()
     last_request[0] = time.monotonic()
 

@@ -13,6 +13,7 @@ import * as THREE from 'three';
 import { describe, expect, it } from 'vitest';
 
 import type {
+  AssociationData,
   ClusterData,
   FictionData,
   HiiData,
@@ -23,6 +24,7 @@ import type {
 } from '../data/manifest';
 import { affiliationsFor } from '../data/manifest';
 import {
+  KIND_ASSOCIATION,
   KIND_CLUSTER,
   KIND_HII,
   KIND_OASTAR,
@@ -35,7 +37,14 @@ import {
 const WIDTH = 800;
 const HEIGHT = 600;
 
-const ALL_VISIBLE = { star: true, cluster: true, hii: true, oastar: true, world: true };
+const ALL_VISIBLE = {
+  star: true,
+  cluster: true,
+  hii: true,
+  oastar: true,
+  world: true,
+  association: true,
+};
 
 function camera(): THREE.PerspectiveCamera {
   const cam = new THREE.PerspectiveCamera(60, WIDTH / HEIGHT, 0.1, 1e6);
@@ -296,7 +305,7 @@ describe('picking', () => {
       null,
       null,
     );
-    const hidden = { ...pickOptions, visible: { star: false, cluster: true, hii: true, oastar: true, world: true } };
+    const hidden = { ...pickOptions, visible: { star: false, cluster: true, hii: true, oastar: true, world: true, association: true } };
     const id = index.pick(cam, WIDTH / 2, HEIGHT / 2, hidden, 20);
     expect(index.ref(id as number).kind).toBe(KIND_CLUSTER);
   });
@@ -395,7 +404,7 @@ describe('label layout', () => {
       null,
       null,
     );
-    const hidden = { ...layoutOptions, visible: { star: false, cluster: true, hii: true, oastar: true, world: true } };
+    const hidden = { ...layoutOptions, visible: { star: false, cluster: true, hii: true, oastar: true, world: true, association: true } };
     expect(index.layout(cam, hidden)).toHaveLength(0);
   });
 
@@ -479,7 +488,7 @@ describe('Orion\u2019s Arm stars', () => {
     );
     const hidden = {
       ...pickOptions,
-      visible: { star: true, cluster: true, hii: true, oastar: false, world: true },
+      visible: { star: true, cluster: true, hii: true, oastar: false, world: true, association: true },
     };
     expect(index.pick(cam, WIDTH / 2, HEIGHT / 2, hidden, 10)).toBeNull();
   });
@@ -586,6 +595,7 @@ describe('label priority', () => {
     const fiction = {
       polities: [{ index: 1, id: 'p', name: 'P' }],
       bindings: [{ kind: 'cluster', index: 0, polities: ['p'] }],
+      landmarkNames: new Map(),
     } as unknown as FictionData;
 
     const index = new ObjectIndex(
@@ -631,6 +641,7 @@ describe('settled systems', () => {
           star: 'x',
           colony: name,
           described: '',
+          article: '',
           spectral_type: '',
           mass_sol: '',
           luminosity_sol: '',
@@ -725,6 +736,7 @@ describe("Orion's Arm only mode", () => {
           star: 'x',
           colony: 'Akela',
           described: '',
+          article: '',
           spectral_type: '',
           mass_sol: '',
           luminosity_sol: '',
@@ -788,6 +800,7 @@ describe("Orion's Arm only mode", () => {
     const fiction = {
       polities: [{ index: 1, id: 'nocozo', name: 'NoCoZo', color: '#FF7043' }],
       bindings: [],
+      landmarkNames: new Map(),
     } as unknown as FictionData;
     const index = new ObjectIndex(
       makeStars([[0, 0, -100]], { '0': { proper: 'Wolf 359' } }),
@@ -810,6 +823,7 @@ describe('label priority does not encode our own record-keeping', () => {
       star: 'x',
       colony: name,
       described: '',
+      article: '',
       spectral_type: '',
       mass_sol: '',
       luminosity_sol: '',
@@ -928,6 +942,7 @@ describe('picking prefers what was aimed at', () => {
             star: 'x',
             colony: 'Akela',
             described: '',
+            article: '',
             spectral_type: '',
             mass_sol: '',
             luminosity_sol: '',
@@ -996,6 +1011,7 @@ describe('a settled star is clickable wherever it is drawn', () => {
           star: 'x',
           colony: name,
           described: '',
+          article: '',
           spectral_type: '',
           mass_sol: '',
           luminosity_sol: '',
@@ -1210,6 +1226,7 @@ describe('affiliations merge across sources', () => {
     star: '18 Scorpii',
     colony: name,
     described: '',
+    article: '',
     spectral_type: '',
     mass_sol: '',
     luminosity_sol: '',
@@ -1286,6 +1303,7 @@ describe('affiliations merge across sources', () => {
       bindings: [],
       clusterPolity: new Uint8Array(1),
       hiiPolity: null,
+      landmarkNames: new Map(),
     } as unknown as FictionData;
 
     const worldsData = {
@@ -1349,6 +1367,7 @@ describe('real and Orion’s Arm names', () => {
             star: 'Lambda Aurigae',
             colony: 'New Gaia',
             described: '',
+            article: '',
             spectral_type: '',
             mass_sol: '',
             luminosity_sol: '',
@@ -1395,5 +1414,251 @@ describe('real and Orion’s Arm names', () => {
       nameMode: 'both',
     });
     expect(placed[0].text).toBe('Vega');
+  });
+});
+
+describe('the map as it stood in a year', () => {
+  const dated = (name: string, knownFrom: number | null, settledAt: number | null = null) =>
+    ({
+      name,
+      kind: 'planet',
+      system: '',
+      parent: '',
+      also: [],
+      affiliations: [],
+      uncertain: false,
+      article: '',
+      note: '',
+      method: 'star',
+      star_index: 0,
+      oa_star: '',
+      in_world: '',
+      within: '',
+      contains: [],
+      constellation: '',
+      x: null,
+      y: null,
+      z: null,
+      distance_pc: null,
+      direction_error_deg: null,
+      estimated: '',
+      direction_error_ly: null,
+      distance_error_ly: null,
+      radius_pc: null,
+      events: [],
+      known_from_at: knownFrom,
+      settled_at: settledAt,
+      ended_at: null,
+    }) as unknown as WorldData['worlds'][number];
+
+  // A star the catalogue also names, so that suppressing the settlement leaves
+  // something to fall back to.
+  const CATALOGUE = { '0': { proper: '17 Cygni A' } };
+
+  const indexWith = (
+    world: WorldData['worlds'][number],
+    names: Record<string, Record<string, string>> = CATALOGUE,
+  ) =>
+    new ObjectIndex(makeStars([[0, 0, -100]], names), null, null, null, null, null, {
+      worlds: [world],
+      byStar: new Map([[0, [world]]]),
+      byOAStar: new Map(),
+      byHost: new Map(),
+    } as unknown as WorldData);
+
+  const at = (year: number, showUndated = true) => ({
+    ...pickOptions,
+    epoch: { year, showUndated, basis: 'known' as const },
+  });
+
+  const labels = (index: ObjectIndex, year: number, showUndated = true) =>
+    index
+      .layout(camera(), { ...at(year, showUndated), maxLabels: 5 })
+      .map((label) => label.text);
+
+  it('does not name a settlement before anyone reached it', () => {
+    // The star is real and is drawn in every year. What the year decides is
+    // whether the setting has a name for it yet — so before 4000 the label is
+    // the catalogue's, and only after it is the colony's.
+    const index = indexWith(dated('Nova Terra', 4000));
+    expect(labels(index, 2000)).toEqual(['17 Cygni A']);
+    expect(labels(index, 5000)).toEqual(['Nova Terra']);
+  });
+
+  it('keeps the star itself clickable whatever the year', () => {
+    // It is drawn by the star field in every year. Dropping it from the picker
+    // would leave a visible dot nothing could select.
+    const index = indexWith(dated('Nova Terra', 4000));
+    expect(index.pick(camera(), WIDTH / 2, HEIGHT / 2, at(2000), 5)).toBe(0);
+  });
+
+  it('says nothing at all where the catalogue has no name either', () => {
+    // Most settled systems are dim stars with no proper name. With the
+    // settlement suppressed there is nothing left to write.
+    const index = indexWith(dated('Nova Terra', 4000), {});
+    expect(labels(index, 2000)).toEqual([]);
+    expect(labels(index, 5000)).toEqual(['Nova Terra']);
+  });
+
+  it('drops the polity colour with the name', () => {
+    // The ring is gone from the map in that year, so a label still painted in
+    // the holder's colour would be the last thing on screen asserting it.
+    const index = indexWith(dated('Nova Terra', 4000));
+    const before = index.layout(camera(), { ...at(2000), maxLabels: 5 });
+    expect(before[0].color).toBeUndefined();
+  });
+
+  it('leaves a bare catalogue star alone whatever the year', () => {
+    // A star is a real object and was there in 2100 as surely as in 10600.
+    const index = new ObjectIndex(makeStars([[0, 0, -100]], CATALOGUE), null, null, null);
+    expect(labels(index, 0)).toEqual(['17 Cygni A']);
+  });
+
+  it('follows the basis the reader chose', () => {
+    // Reached in 2200 and never recorded as settled. Under the settlement
+    // basis it has no date at all, which is not the same as never existing.
+    const index = indexWith(dated('Surveyed', 2200, null));
+    const settledAt = (year: number, showUndated: boolean) => ({
+      ...pickOptions,
+      maxLabels: 5,
+      epoch: { year, showUndated, basis: 'settled' as const },
+    });
+    expect(labels(index, 3000)).toEqual(['Surveyed']);
+    expect(
+      index.layout(camera(), settledAt(3000, true)).map((label) => label.text),
+    ).toEqual(['Surveyed']);
+    expect(
+      index.layout(camera(), settledAt(3000, false)).map((label) => label.text),
+    ).toEqual(['17 Cygni A']);
+  });
+
+  it('treats a system the setting claims and never dates as undated', () => {
+    // Relay 1 and Conver Ky are colony rows with no world behind them and no
+    // year anywhere. While they kept the always-there sentinel a historical
+    // map went on labelling them in the Information Age.
+    const index = indexWith(dated('Undated', null));
+    expect(labels(index, 5000, true)).toEqual(['Undated']);
+    expect(labels(index, 5000, false)).toEqual(['17 Cygni A']);
+  });
+  it('offers nothing at all under "Orion’s Arm only"', () => {
+    // That mode exists to leave the catalogue out. Falling back to the
+    // catalogue's name for a settlement the year has not reached put 85 Peg on
+    // a map asked to show only what the setting claims.
+    const index = indexWith(dated('Nova Terra', 4000));
+    const oaOnly = { ...at(2000), maxLabels: 5, visible: { ...ALL_VISIBLE, oaOnly: true } };
+    expect(index.layout(camera(), oaOnly)).toEqual([]);
+    expect(index.pick(camera(), WIDTH / 2, HEIGHT / 2, oaOnly, 5)).toBeNull();
+    // And once the settlement exists, both come back.
+    const later = { ...oaOnly, epoch: { year: 5000, showUndated: true, basis: 'known' as const } };
+    expect(index.layout(camera(), later).map((l) => l.text)).toEqual(['Nova Terra']);
+  });
+});
+
+describe('OB associations', () => {
+  const layoutOptions = {
+    width: WIDTH,
+    height: HEIGHT,
+    magnitudeLimit: 20,
+    maxLabels: 50,
+    visible: ALL_VISIBLE,
+  };
+
+  const associations = (entries: { xyz: [number, number, number]; sigma: [number, number, number]; name: string; alt?: string }[]) => {
+    const geometry = new Float32Array(entries.length * 7);
+    entries.forEach((entry, i) => {
+      geometry.set([...entry.xyz, ...entry.sigma, Math.hypot(...entry.xyz)], i * 7);
+    });
+    return {
+      count: entries.length,
+      geometry,
+      names: entries.map((entry) => ({
+        name: entry.name,
+        alt_name: entry.alt ?? '',
+        members: 40,
+        glon: 0,
+        glat: 0,
+        age_max_myr: 6.7,
+        mass_sol: 2360,
+        o_stars: 4,
+        b_stars: 97,
+        extinction_av: 0.1,
+      })),
+      dataset: {} as never,
+    } as unknown as AssociationData;
+  };
+
+  const ORION = associations([
+    { xyz: [0, 0, -400], sigma: [35, 32, 23], name: 'Ori OB1b' },
+    { xyz: [60, 30, -320], sigma: [21, 23, 17], name: 'Sco-Cen 1', alt: 'Sco OB2a' },
+  ]);
+
+  const indexWith = (stars = makeStars([[0, 0, -400]])) =>
+    new ObjectIndex(stars, null, null, null, null, null, null, ORION);
+
+  it('labels an association by its name', () => {
+    const placed = indexWith().layout(camera(), { ...layoutOptions, maxLabels: 5 });
+    expect(placed.map((label) => label.text)).toContain('Ori OB1b');
+  });
+
+  it('offers the classical designation as the other name', () => {
+    // Sco-Cen 1 is Sco OB2a. A reader checking the map against the sky wants
+    // the designation the sky uses, exactly as a renamed cluster offers both.
+    const placed = indexWith().layout(camera(), {
+      ...layoutOptions,
+      maxLabels: 5,
+      nameMode: 'real',
+    });
+    expect(placed.map((label) => label.text)).toContain('Sco OB2a');
+  });
+
+  it('never wins a click from something inside it', () => {
+    // An association is a hundred parsecs across and contains everything drawn
+    // in it. Someone clicking within a few pixels of a star meant the star.
+    const stars = makeStars([[0, 0, -400]], { '0': { proper: 'Rigel' } });
+    const index = indexWith(stars);
+    const id = index.pick(camera(), WIDTH / 2, HEIGHT / 2, pickOptions, 7);
+    expect(id).not.toBeNull();
+    expect(index.ref(id as number).kind).toBe(KIND_STAR);
+  });
+
+  it('is clickable where nothing else is', () => {
+    const index = new ObjectIndex(
+      makeStars([[900, 900, 900]]),
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      ORION,
+    );
+    const id = index.pick(camera(), WIDTH / 2, HEIGHT / 2, pickOptions, 7);
+    expect(id).not.toBeNull();
+    expect(index.ref(id as number).kind).toBe(KIND_ASSOCIATION);
+  });
+
+  it('goes away with its own layer', () => {
+    const hidden = {
+      ...layoutOptions,
+      maxLabels: 5,
+      visible: { ...ALL_VISIBLE, association: false },
+    };
+    expect(indexWith().layout(camera(), hidden).map((label) => label.text)).not.toContain(
+      'Ori OB1b',
+    );
+  });
+  it('survives "Orion’s Arm only", which its own layer also ignores', () => {
+    // No OB association carries a polity binding, so filtering on the setting's
+    // claims would hide all fifty-six. The layer does not respond to that
+    // switch, and the labels must not either, or a reader would see the shapes
+    // with no names on them.
+    const onlyOA = {
+      ...layoutOptions,
+      maxLabels: 5,
+      visible: { ...ALL_VISIBLE, oaOnly: true },
+    };
+    expect(indexWith().layout(camera(), onlyOA).map((label) => label.text)).toContain(
+      'Ori OB1b',
+    );
   });
 });

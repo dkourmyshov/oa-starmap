@@ -5,17 +5,27 @@
 import * as THREE from 'three';
 
 import { type StarData, loadAll } from './data/manifest';
+import { type HistoryPlace, namedKeys } from './data/history';
+import { AssociationField } from './layers/associationField';
 import { ClusterField } from './layers/clusterField';
 import { HiiField } from './layers/hiiField';
 import { OAStarField } from './layers/oaStarField';
 import { SettledField } from './layers/settledField';
-import { StarField } from './layers/starField';
+import { PosterLayer } from './layers/posterLayer';
+import { StarField, flatInkGain } from './layers/starField';
 import { WorldField } from './layers/worldField';
-import { ObjectIndex } from './scene/objects';
+import { type EpochFilter, ObjectIndex } from './scene/objects';
 import { Viewer } from './scene/viewer';
 import { DetailPanel } from './ui/detail';
-import { Hud, type JumpTarget } from './ui/hud';
+import {
+  DEFAULT_ASSOCIATIONS_VISIBLE,
+  DEFAULT_HISTORY_PANEL_VISIBLE,
+  DEFAULT_ONLY_OA,
+  Hud,
+  type JumpTarget,
+} from './ui/hud';
 import { LabelOverlay } from './ui/labels';
+import { type EpochState, HistoryPanel } from './ui/history';
 import { DepthOfField } from './layers/dof';
 import { pc } from './units';
 
@@ -65,6 +75,10 @@ async function main(): Promise<void> {
   let data: StarData;
   let clusterField: ClusterField | null = null;
   let hiiField: HiiField | null = null;
+  let associationField: AssociationField | null = null;
+  // Declared with the layers so the HUD callback that opens it can close over
+  // it: the panel itself is built after the HUD, because it borrows its unit.
+  let historyPanel: HistoryPanel | null = null;
   let oaStarField: OAStarField | null = null;
   let settledField: SettledField | null = null;
   let worldField: WorldField | null = null;
@@ -102,12 +116,22 @@ async function main(): Promise<void> {
   if (loaded.hii) {
     hiiField = new HiiField(loaded.hii, loaded.fiction);
     hiiField.setPolityMode(true);
-    viewer.scene.add(hiiField.points);
+    viewer.scene.add(hiiField.mesh);
+  }
+
+  // Under the cluster rings and over the nebulae: an OB association is the
+  // largest thing on the map and contains most of what is drawn inside it.
+  if (loaded.associations) {
+    associationField = new AssociationField(loaded.associations, loaded.fiction);
+    // Off to begin with: fifty-six overlapping hundred-parsec ellipsoids bury
+    // the part of the map most worth reading. See the HUD row.
+    associationField.visible = DEFAULT_ASSOCIATIONS_VISIBLE;
+    viewer.scene.add(associationField.mesh);
   }
 
   // After the real field so an asserted star is never buried inside it.
   if (loaded.oaStars) {
-    oaStarField = new OAStarField(loaded.oaStars);
+    oaStarField = new OAStarField(loaded.oaStars, loaded.worlds);
     viewer.scene.add(oaStarField.points);
   }
 
@@ -119,23 +143,33 @@ async function main(): Promise<void> {
     viewer.scene.add(worldField.circles);
   }
 
+  // First into the scene, and drawn first: a borrowed sky map is the sheet the
+  // rest is laid over, not another object in it.
+  const posterLayer = new PosterLayer();
+  viewer.scene.add(posterLayer.mesh);
+
   if (loaded.clusters) {
     clusterField = new ClusterField(loaded.clusters, loaded.fiction);
     clusterField.setPolityMode(true);
-    viewer.scene.add(clusterField.points);
+    viewer.scene.add(clusterField.mesh);
   }
 
   // Labelling and picking both need to know what is currently drawn, because
   // neither should ever offer an object the renderer is not showing.
   const view = {
     magnitudeLimit: 7.5,
+    /** The plan view plots absolute magnitude; perspective, apparent. */
+    absoluteMagnitudes: false,
+    /** Set while history mode is on; see EpochFilter in scene/objects.ts. */
+    epoch: undefined as EpochFilter | undefined,
     visible: {
       star: true,
       cluster: Boolean(clusterField),
       hii: Boolean(hiiField),
+      association: Boolean(associationField) && DEFAULT_ASSOCIATIONS_VISIBLE,
       oastar: Boolean(oaStarField),
       world: Boolean(worldField),
-      oaOnly: false,
+      oaOnly: DEFAULT_ONLY_OA,
     },
   };
 
@@ -147,6 +181,7 @@ async function main(): Promise<void> {
     loaded.oaStars,
     loaded.innerSphere?.byStar ?? null,
     loaded.worlds,
+    loaded.associations,
   );
 
   const detail = new DetailPanel(
@@ -155,6 +190,7 @@ async function main(): Promise<void> {
       stars: data,
       clusters: loaded.clusters,
       hii: loaded.hii,
+      associations: loaded.associations,
       oaStars: loaded.oaStars,
       innerSphere: loaded.innerSphere,
       worlds: loaded.worlds,
@@ -218,12 +254,11 @@ async function main(): Promise<void> {
       );
       viewer.focusOn(position, pc(Math.max(hii.geometry[base + 3] * 4.5, 5)));
     } else if (target.distancePc !== undefined) {
-      // Pull back from Sol along the current viewing direction.
-      viewer.controls.target.set(0, 0, 0);
-      const direction = viewer.camera.position.clone().normalize();
-      if (direction.lengthSq() === 0) direction.set(0, -1, 0.4).normalize();
-      viewer.camera.position.copy(direction.multiplyScalar(target.distancePc));
-      viewer.controls.update();
+      // Pull back from Sol along the current viewing direction. Through focusOn
+      // rather than by moving the camera directly, because moving an
+      // orthographic camera back frames nothing differently — the plan view
+      // reframes by zoom, and focusOn is where that conversion lives.
+      viewer.focusOn(new THREE.Vector3(0, 0, 0), pc(target.distancePc));
     }
   };
 
@@ -269,6 +304,101 @@ async function main(): Promise<void> {
     viewer.focusOn(centre, pc(Math.max(extent * 2.2, 50)));
   };
 
+  /**
+   * Show the map as it stood in one year, or stop.
+   *
+   * Every layer that draws a claimed place is told the same thing, and so is
+   * the picker: a marker the reader cannot see should not be clickable, and a
+   * label for a colony three centuries early would be the one part of the map
+   * still asserting it.
+   */
+  const applyEpoch = (state: EpochState | null): void => {
+    const year = state ? state.year : null;
+    const undated = state ? state.showUndated : true;
+    settledField?.setEpoch(year, undated);
+    worldField?.setEpoch(year, undated);
+    oaStarField?.setEpoch(year, undated);
+    // The two catalogues of real objects follow too. A cluster is there in any
+    // year, but a map of the sphere in 2400 should not be strewn with seven
+    // thousand rings the setting never mentions — and the handful it does
+    // mention have dates, so they arrive when the record says.
+    clusterField?.setEpoch(year, undated);
+    hiiField?.setEpoch(year, undated);
+    associationField?.setEpoch(year, undated);
+    if (state) {
+      settledField?.setEpochBasis(state.basis);
+      worldField?.setEpochBasis(state.basis);
+      oaStarField?.setEpochBasis(state.basis);
+      clusterField?.setEpochBasis(state.basis);
+      hiiField?.setEpochBasis(state.basis);
+      associationField?.setEpochBasis(state.basis);
+      const named = state.emphasise ? namedKeys(state.period) : null;
+      settledField?.setNamedPlaces(named?.settled ?? null);
+      worldField?.setNamedPlaces(named?.worlds ?? null);
+      oaStarField?.setNamedPlaces(named?.oaStars ?? null);
+      clusterField?.setNamedPlaces(named?.settled ?? null);
+      hiiField?.setNamedPlaces(named?.settled ?? null);
+      associationField?.setNamedPlaces(named?.settled ?? null);
+    } else {
+      settledField?.setNamedPlaces(null);
+      worldField?.setNamedPlaces(null);
+      oaStarField?.setNamedPlaces(null);
+      clusterField?.setNamedPlaces(null);
+      hiiField?.setNamedPlaces(null);
+      associationField?.setNamedPlaces(null);
+    }
+    view.epoch = state
+      ? { year: state.year, showUndated: state.showUndated, basis: state.basis }
+      : undefined;
+    labels.epoch = view.epoch;
+  };
+
+  /**
+   * Fly to a place the timeline names, wherever it is recorded.
+   *
+   * The build binds a timeline line to whichever file holds that article, and
+   * the four files place a thing four different ways — so the reference says
+   * which, and this is where that is turned back into a position.
+   */
+  const focusPlace = (place: HistoryPlace): void => {
+    let position: THREE.Vector3 | null = null;
+    if (place.world) {
+      const world = loaded.worlds?.worlds.find((entry) => entry.name === place.world);
+      if (world?.x !== null && world?.x !== undefined) {
+        position = new THREE.Vector3(world.x, world.y as number, world.z as number);
+      } else if (world?.star_index !== null && world?.star_index !== undefined) {
+        position = starPosition(data, world.star_index);
+      } else if (world?.oa_star) {
+        position = oaStarPosition(world.oa_star);
+      }
+    }
+    if (!position && place.star_index !== undefined) position = starPosition(data, place.star_index);
+    if (!position && place.oa_star) position = oaStarPosition(place.oa_star);
+    if (!position && place.catalogue) {
+      const binding = loaded.fiction?.bindings.find(
+        (entry) => entry.matched_name === place.catalogue || entry.landmark === place.catalogue,
+      );
+      if (binding?.index !== null && binding?.index !== undefined) {
+        position = bindingPosition(binding.kind, binding.index);
+      }
+    }
+    if (!position) return;
+    viewer.focusOn(position, pc(Math.max(position.length() * 0.12, 2)));
+  };
+
+  const oaStarPosition = (designation: string): THREE.Vector3 | null => {
+    const stars = loaded.oaStars;
+    if (!stars) return null;
+    const index = stars.names.findIndex((entry) => entry.name === designation);
+    if (index < 0) return null;
+    const base = index * 5;
+    return new THREE.Vector3(
+      stars.positions[base],
+      stars.positions[base + 1],
+      stars.positions[base + 2],
+    );
+  };
+
   // Every layer that draws at a position shares one focus. Registering rather
   // than being fetched by name means a new sprite layer joins with one line and
   // cannot be left sharp by an update loop that forgot it.
@@ -278,12 +408,15 @@ async function main(): Promise<void> {
   if (settledField) dof.register(settledField.dof);
   if (worldField) dof.register(worldField.dof);
   if (clusterField) dof.register(clusterField.dof);
+  if (associationField) dof.register(associationField.dof);
 
   const hud = new Hud(
     overlay,
     data.dataset,
     loaded.clusters?.dataset ?? null,
     loaded.hii?.dataset ?? null,
+    loaded.associations?.dataset ?? null,
+    loaded.history?.dataset ?? null,
     loaded.oaStars?.dataset ?? null,
     loaded.fiction,
     {
@@ -310,6 +443,16 @@ async function main(): Promise<void> {
       },
       onHiiKinematic: (enabled) => {
         hiiField?.setShowKinematic(enabled);
+      },
+      onAssociationsVisible: (value) => {
+        if (associationField) associationField.visible = value;
+        view.visible.association = value;
+      },
+      onAssociationOpacity: (value) => {
+        if (associationField) associationField.opacity = value;
+      },
+      onHistoryPanel: (visible) => {
+        if (historyPanel) historyPanel.visible = visible;
       },
       onDepthOfField: (strength) => {
         dof.strength = strength;
@@ -353,9 +496,51 @@ async function main(): Promise<void> {
         // The HUD readout re-renders on the next frame, but the detail panel is
         // static once drawn, so it has to be told.
         detail.refresh(unit);
+        labels.unit = unit;
+        historyPanel?.setUnit(unit);
+      },
+      onPoster: (index) => {
+        void posterLayer.show(loaded.posters[index] ?? null);
+      },
+      onPosterOpacity: (value) => {
+        posterLayer.opacity = value;
+      },
+      onProjection: (projection) => {
+        const flat = projection === '2d';
+        viewer.setProjection(projection);
+        // The plan view discards z, so the labels print it; and it has no
+        // camera for an apparent magnitude to be apparent from, so the shader,
+        // the picker and the labels switch to absolute together. The blur's own
+        // axis is read off the viewer each frame, because the wheel changes its
+        // scale without changing the mode.
+        labels.showAltitude = flat;
+        labels.absoluteMagnitudes = flat;
+        starField.absoluteMagnitudes = flat;
+        view.absoluteMagnitudes = flat;
+        hud.setMagnitudeMeaning(flat);
       },
     },
+    loaded.posters,
   );
+
+  // The setting's own history, as a year the map can be set to. Built after
+  // the HUD so the unit toggle can reach it, and only when the pipeline has
+  // written a history file — a clone without the source pages builds every
+  // other layer as usual.
+  if (loaded.history && settledField) {
+    const rings = settledField;
+    historyPanel = new HistoryPanel(
+      overlay,
+      loaded.history,
+      () => rings.epoch,
+      {
+        onEpoch: (state) => applyEpoch(state),
+        onFocusPlace: (place) => focusPlace(place),
+        onFocusPolity: focusPolity,
+      },
+      hud.currentUnit,
+    );
+  }
 
   // Click to select, but only if the pointer did not travel — otherwise every
   // orbit drag that happens to end over a star would select it.
@@ -374,19 +559,33 @@ async function main(): Promise<void> {
       height: rect.height,
       magnitudeLimit: view.magnitudeLimit,
       visible: view.visible,
+      epoch: view.epoch,
+      absoluteMagnitudes: view.absoluteMagnitudes,
     });
 
     if (id === null) detail.clear();
     else select(id);
   });
 
+  // The layers are built before the HUD declares what the map opens as, so the
+  // one that starts filtered is told here rather than being trusted to have
+  // been constructed that way.
+  if (DEFAULT_ONLY_OA) {
+    starField.setOnlyOA(true);
+    clusterField?.setOnlyOA(true);
+    hiiField?.setOnlyOA(true);
+  }
+  if (historyPanel) historyPanel.visible = DEFAULT_HISTORY_PANEL_VISIBLE;
+
   viewer.addFrameCallback((dt) => {
-    // Both volumetric layers project a true angular size, so they depend on
-    // viewport height.
-    const height = viewer.renderer.domElement.height;
-    clusterField?.setViewportHeight(height);
-    hiiField?.setViewportHeight(height);
-    worldField?.setViewportHeight(height);
+    // The extent layers size their quads in device pixels, so they need both
+    // axes of the drawing buffer: the height sets the scale and the width
+    // converts a pixel offset into clip space.
+    const { width, height } = viewer.renderer.domElement;
+    clusterField?.setViewport(width, height);
+    hiiField?.setViewport(width, height);
+    associationField?.setViewport(width, height);
+    worldField?.setViewport(width, height);
 
     // The plane held sharp is whatever the camera is orbiting, so focus follows
     // the eye rather than being a second thing to aim, and flying towards
@@ -395,6 +594,22 @@ async function main(): Promise<void> {
     // moved when the reader happened to click and the labels never learned the
     // settings at all.
     dof.focus = viewer.focusDistance;
+
+    // Which axis is depth. Under perspective it is distance from the camera; in
+    // the plan view that number means nothing, so the blur takes z instead —
+    // see Projection in scene/viewer.ts. Read every frame rather than set at
+    // the switch, because the wheel changes the scale without changing the mode.
+    //
+    // Blur reaching full strength one screen-height off the plane. Tied to the
+    // view rather than fixed in parsecs, so zooming into the Inner Sphere
+    // separates a few parsecs of altitude the way zooming out separates
+    // hundreds. Brightness deliberately is *not*: see the star shader.
+    const halfHeight = viewer.flatHalfHeight as number;
+    dof.setFlat(halfHeight, viewer.focusTarget.z);
+    // Pulling a map out packs more stars into every pixel, and they are drawn
+    // additively, so the sheet saturates unless each one lays down less. Read
+    // each frame, from the scale rather than from the mode.
+    starField.flatInk = flatInkGain(halfHeight);
     // Handed over whenever either control is doing something: dimming works
     // without blur, and the labels have to thin out with the sky.
     labels.depthOfField = dof.strength > 0 || dof.dim > 0 ? dof : null;

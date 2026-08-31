@@ -10,6 +10,7 @@
  */
 
 import type {
+  AssociationData,
   ClusterData,
   FictionData,
   HiiData,
@@ -20,6 +21,7 @@ import type {
   WorldEvent,
 } from '../data/manifest';
 import {
+  KIND_ASSOCIATION,
   KIND_CLUSTER,
   KIND_HII,
   KIND_OASTAR,
@@ -91,6 +93,8 @@ interface Detail {
    * the system.
    */
   worlds?: { name: string; kind: string; article: string }[];
+  /** What the mark on the map means, where that needs saying in words. */
+  note?: string;
   citation: string;
   /** Distance from Sol in pc, for the frontier check. */
   distancePc: number;
@@ -102,6 +106,7 @@ export interface DetailSources {
   stars: StarData;
   clusters: ClusterData | null;
   hii: HiiData | null;
+  associations: AssociationData | null;
   oaStars: OAStarData | null;
   innerSphere: InnerSphereData | null;
   worlds: WorldData | null;
@@ -318,6 +323,13 @@ export class DetailPanel {
       this.onFocus(x, y, z, standoff);
     });
     actions.appendChild(fly);
+    // What the mark means, where the mark is not self-explanatory. Above the
+    // citation because it is about this map's drawing rather than the source's
+    // measurement — an OB association's outline is a contour and not an edge,
+    // and a reader who takes it for one has been misled by us, not by Quintana.
+    if (detail.note) {
+      actions.appendChild(el('div', 'note-line note-warn', detail.note));
+    }
     actions.appendChild(citationLine('note-line', detail.citation));
     this.panel.appendChild(actions);
   }
@@ -371,6 +383,7 @@ export class DetailPanel {
     if (kind === KIND_HII) return this.describeHii(index, unit);
     if (kind === KIND_OASTAR) return this.describeOAStar(index, unit);
     if (kind === KIND_WORLD) return this.describeWorld(index, unit);
+    if (kind === KIND_ASSOCIATION) return this.describeAssociation(index, unit);
     return null;
   }
 
@@ -728,6 +741,72 @@ export class DetailPanel {
       citation: clusters.dataset.source.citation,
       distancePc: distance,
       focus: { x, y, z, standoff: pc(Math.max(radiusTotal * 4.5, 5)) },
+    };
+  }
+
+  private describeAssociation(index: number, unit: DistanceUnit): Detail | null {
+    const associations = this.sources.associations;
+    if (!associations) return null;
+
+    const base = index * 7;
+    const x = associations.geometry[base];
+    const y = associations.geometry[base + 1];
+    const z = associations.geometry[base + 2];
+    const sigma: [number, number, number] = [
+      associations.geometry[base + 3],
+      associations.geometry[base + 4],
+      associations.geometry[base + 5],
+    ];
+    const distance = associations.geometry[base + 6];
+    const entry = associations.names[index];
+
+    const rows: Row[] = [
+      { label: 'Distance from Sol', value: distanceWithBand(distance, distance, distance, unit) },
+      {
+        label: 'Spread (x, y, z)',
+        // All three, because the shape is the point. A single figure would say
+        // the association is round, and none of them is.
+        value: sigma.map((value) => formatDistance(pc(value), unit)).join(' · '),
+      },
+      { label: 'Members', value: `${entry.members}` },
+    ];
+    if (entry.o_stars !== null || entry.b_stars !== null) {
+      rows.push({
+        label: 'O / B systems',
+        value: `${entry.o_stars ?? '—'} / ${entry.b_stars ?? '—'}`,
+      });
+    }
+    if (entry.mass_sol !== null) {
+      rows.push({
+        label: 'Initial stellar mass',
+        value: `${Math.round(entry.mass_sol).toLocaleString('en-US')} M☉`,
+      });
+    }
+    if (entry.age_max_myr !== null) {
+      rows.push({ label: 'Maximum age', value: `${entry.age_max_myr.toFixed(1)} Myr` });
+    }
+    if (entry.extinction_av !== null) {
+      rows.push({ label: 'Extinction A_V', value: `${entry.extinction_av.toFixed(1)} mag` });
+    }
+
+    return {
+      title: entry.name,
+      subtitle: ['OB association', entry.alt_name].filter(Boolean).join(' · '),
+      rows,
+      polities: [],
+      associationSource: null,
+      note:
+        'The outline is a one-sigma ellipsoid, not a boundary. An OB association ' +
+        'is unbound and dissolving; a good deal of it lies outside the line, and ' +
+        'there is no edge anywhere to draw.',
+      citation: associations.dataset.source.citation,
+      distancePc: distance,
+      focus: {
+        x,
+        y,
+        z,
+        standoff: pc(Math.max(Math.max(...sigma) * 6, 20)),
+      },
     };
   }
 

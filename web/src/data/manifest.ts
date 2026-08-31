@@ -8,6 +8,7 @@
  */
 
 import { PC_TO_LY } from '../units';
+import { type HistoryData, type HistoryDataset, type HistoryPeriod, makeHistory } from './history';
 
 export interface ArrayFile {
   file: string;
@@ -136,6 +137,45 @@ export interface HiiData {
   dataset: HiiDataset;
 }
 
+export interface AssociationsDataset {
+  count: number;
+  frame: { name: string; unit: string; axes: Record<string, string>; origin: string };
+  layout: {
+    geometry: { components: string[]; units: string[]; note: string };
+    extent: { kind: string; sigma: number; note: string };
+  };
+  files: {
+    geometry: ArrayFile;
+    names: { file: string; bytes: number };
+  };
+  selection: { rule: string; note: string };
+  stats: { total_rows: number; accepted: number; excluded: Record<string, number> };
+  source: { description: string; citation: string; url: string; sha256: string };
+}
+
+export interface AssociationName {
+  name: string;
+  /** The classical designation, where the catalogue's own name differs. */
+  alt_name: string;
+  members: number;
+  glon: number;
+  glat: number;
+  /** Maximum isochronal age, from the hottest member. */
+  age_max_myr: number | null;
+  mass_sol: number | null;
+  o_stars: number | null;
+  b_stars: number | null;
+  extinction_av: number | null;
+}
+
+export interface AssociationData {
+  count: number;
+  /** [x, y, z, sigma_x, sigma_y, sigma_z, distance] per association, in pc. */
+  geometry: Float32Array;
+  names: AssociationName[];
+  dataset: AssociationsDataset;
+}
+
 export interface OAStarsDataset {
   count: number;
   frame: { name: string; unit: string; axes: Record<string, string>; origin: string };
@@ -223,6 +263,8 @@ export interface Colony {
    * so a description is never drawn as a label.
    */
   described: string;
+  /** The colony's own Encyclopaedia article, where the table links to one. */
+  article: string;
   spectral_type: string;
   mass_sol: string;
   luminosity_sol: string;
@@ -278,10 +320,13 @@ export interface Manifest {
     stars: StarsDataset;
     clusters?: ClustersDataset;
     hii?: HiiDataset;
+    associations?: AssociationsDataset;
     oastars?: OAStarsDataset;
     inner_sphere?: InnerSphereDataset;
     worlds?: WorldsDataset;
     fiction?: FictionDataset;
+    history?: HistoryDataset;
+    posters?: { count: number };
   };
 }
 
@@ -301,7 +346,15 @@ export interface StarData {
   dataset: StarsDataset;
 }
 
-const DATA_ROOT = 'data';
+/**
+ * Where the generated datasets sit, relative to wherever the site is served.
+ *
+ * Built from Vite's own base rather than written as a bare relative path. On a
+ * GitHub Pages project site the app lives under /<repo>/, and a relative fetch
+ * happens to work there only while the URL keeps its trailing slash — which is
+ * a thin thing for eighteen megabytes of star positions to depend on.
+ */
+export const DATA_ROOT = `${import.meta.env.BASE_URL}data`;
 
 async function fetchBinary(file: string): Promise<ArrayBuffer> {
   const response = await fetch(`${DATA_ROOT}/${file}`);
@@ -387,6 +440,15 @@ export interface FictionBinding {
   distance_pc: number | null;
   /** Past the canonical Terragen frontier; kept, but not polity-coloured. */
   beyond_frontier: boolean;
+  /**
+   * The year the *evidence* for this association depicts, where it says one.
+   *
+   * Not a settlement date. The political maps draw the Middle Regions in 8000
+   * A.T.; an object known only from them is attested in 8000 and says nothing
+   * about 400. It is the only year most landmarks have, and without it they
+   * sat on a historical map through every century equally.
+   */
+  attested_at: number | null;
 }
 
 /** An Orion's Arm name for a real catalogued object. */
@@ -397,6 +459,12 @@ export interface LandmarkName {
   name: string;
   article: string;
   note: string;
+  /** Dated history, same shape as a world's: a cluster can be settled too. */
+  events: WorldEvent[];
+  /** Derived from those events by the same rule the world file uses. */
+  known_from_at: number | null;
+  settled_at: number | null;
+  ended_at: number | null;
 }
 
 export interface FictionData {
@@ -566,14 +634,55 @@ export function affiliationsFor(
   return out;
 }
 
+/**
+ * A scanned sky map, and where the pipeline measured its frame to be.
+ *
+ * `bounds_pc` is the whole image as offsets from Sol in the galactic plane,
+ * which is all the renderer needs; the registration block is carried so the
+ * reader can be told how well it is known, and by what method.
+ */
+export interface Poster {
+  name: string;
+  series: string;
+  file: string;
+  width: number;
+  height: number;
+  radius_pc: number;
+  bounds_pc: { left: number; right: number; top: number; bottom: number };
+  registration: {
+    method: string;
+    sun_px: [number, number];
+    pc_per_px: number;
+    stars_used: number;
+    rms_px: number | null;
+    rms_pc: number | null;
+    rotation_deg: number;
+    aspect: number;
+    note: string;
+  };
+  title?: string;
+  credit?: string;
+  licence?: string;
+  url?: string;
+  note?: string;
+}
+
+export interface PosterData {
+  posters: Poster[];
+}
+
 export interface LoadedData {
   stars: StarData;
   clusters: ClusterData | null;
   hii: HiiData | null;
+  associations: AssociationData | null;
   oaStars: OAStarData | null;
   innerSphere: InnerSphereData | null;
   worlds: WorldData | null;
   fiction: FictionData | null;
+  /** The Encyclopaedia's own timeline, bound to the places it names. */
+  history: HistoryData | null;
+  posters: Poster[];
 }
 
 /** Load every dataset the manifest advertises. Clusters are optional. */
@@ -586,6 +695,9 @@ export async function loadAll(): Promise<LoadedData> {
     ? await loadClusters(manifest.datasets.clusters)
     : null;
   const hii = manifest.datasets.hii ? await loadHii(manifest.datasets.hii) : null;
+  const associations = manifest.datasets.associations
+    ? await loadAssociations(manifest.datasets.associations)
+    : null;
   // Built from hand-downloaded, non-redistributable source material, so a clone
   // without it is a normal state rather than an error.
   const oaStars = manifest.datasets.oastars
@@ -596,8 +708,30 @@ export async function loadAll(): Promise<LoadedData> {
     : null;
   const worlds = manifest.datasets.worlds ? await loadWorlds(manifest.datasets.worlds) : null;
   const fiction = manifest.datasets.fiction ? await loadFiction(manifest.datasets.fiction) : null;
+  const history = manifest.datasets.history
+    ? makeHistory(
+        await fetchJson<{ periods: HistoryPeriod[] }>(manifest.datasets.history.files.history.file),
+        manifest.datasets.history,
+      )
+    : null;
+  // Only the index. The images themselves are megabytes each and are fetched
+  // when one is chosen, so a reader who never opens the layer never pays.
+  const posters = manifest.datasets.posters
+    ? (await fetchJson<PosterData>('posters.json')).posters
+    : [];
 
-  return { stars, clusters, hii, oaStars, innerSphere, worlds, fiction };
+  return {
+    stars,
+    clusters,
+    hii,
+    associations,
+    oaStars,
+    innerSphere,
+    worlds,
+    fiction,
+    history,
+    posters,
+  };
 }
 
 async function loadWorlds(dataset: WorldsDataset): Promise<WorldData> {
@@ -701,6 +835,28 @@ async function loadFiction(dataset: FictionDataset): Promise<FictionData> {
     frontierLy: dataset.frontier.ly,
     frontierFlagged: dataset.frontier.flagged.length,
   };
+}
+
+async function loadAssociations(dataset: AssociationsDataset): Promise<AssociationData> {
+  if (dataset.frame.unit !== 'pc') {
+    throw new Error(`Association positions are in "${dataset.frame.unit}", expected parsecs.`);
+  }
+
+  const [geometryBuf, names] = await Promise.all([
+    fetchBinary(dataset.files.geometry.file),
+    fetchJson<AssociationName[]>(dataset.files.names.file),
+  ]);
+
+  const geometry = new Float32Array(geometryBuf);
+  const expected = dataset.count * 7;
+  if (geometry.length !== expected) {
+    throw new Error(
+      `associations.bin has ${geometry.length} floats, expected ${expected} ` +
+        `(${dataset.count} associations x 7 components).`,
+    );
+  }
+
+  return { count: dataset.count, geometry, names, dataset };
 }
 
 async function loadHii(dataset: HiiDataset): Promise<HiiData> {

@@ -34,8 +34,17 @@
 
 import * as THREE from 'three';
 
-import type { OAStarData } from '../data/manifest';
+import type { OAStarData, WorldData, WorldEntry } from '../data/manifest';
+import { type EpochBasis, combinedYears } from '../data/history';
 import { DOF_PARS, type DofUniforms, dofUniforms } from './dof';
+import {
+  DEFAULT_UNDATED_GAIN,
+  DEFAULT_UNNAMED_GAIN,
+  EPOCH_PARS,
+  type EpochUniforms,
+  attachEpochAttributes,
+  epochUniforms,
+} from './epoch';
 
 export const DEFAULT_OPACITY = 0.95;
 
@@ -62,6 +71,7 @@ const VERTEX_SHADER = /* glsl */ `
 
   uniform float uSize;
   ${DOF_PARS}
+  ${EPOCH_PARS}
   uniform float uBareDim;
 
   varying vec3 vColor;
@@ -73,6 +83,13 @@ const VERTEX_SHADER = /* glsl */ `
   void main() {
     vec4 viewPos = modelViewMatrix * vec4(position, 1.0);
     gl_Position = projectionMatrix * viewPos;
+
+    float epoch = epochGain();
+    if (epoch <= 0.0) {
+      gl_PointSize = 0.0;
+      gl_Position = vec4(2.0, 2.0, 2.0, 1.0);
+      return;
+    }
 
     vColor = aColor;
     vReal = aReal;
@@ -88,11 +105,12 @@ const VERTEX_SHADER = /* glsl */ `
     // and only its edges soften — a ring that swelled with defocus would read
     // as a bigger region, which is a claim about the data rather than about
     // where the camera is looking.
-    float blurPx = dofBlurPx(max(length(viewPos.xyz), 1e-4));
+    float defocus = dofDecades(viewPos);
+    float blurPx = dofBlurPx(defocus);
     float grown = uSize + 2.0 * blurPx;
     vScale = grown / uSize;
     vBlur = min(blurPx / (uSize * 0.5), 0.5);
-    vGain *= dofGain(uSize, grown) * dofDim(max(length(viewPos.xyz), 1e-4));
+    vGain *= dofGain(uSize, grown) * dofDim(defocus) * epoch;
     gl_PointSize = grown;
 
     #include <logdepthbuf_vertex>
@@ -139,13 +157,28 @@ const FRAGMENT_SHADER = /* glsl */ `
   }
 `;
 
+/** Years for a run of add-on stars, each as its bound worlds have them. */
+function yearsFor(bound: (WorldEntry[] | undefined)[], basis: EpochBasis): Float32Array {
+  const out = new Float32Array(bound.length * 2);
+  bound.forEach((here, index) => {
+    const years = combinedYears(here, basis);
+    out[index * 2] = years.from;
+    out[index * 2 + 1] = years.to;
+  });
+  return out;
+}
+
 export class OAStarField {
   readonly points: THREE.Points;
   readonly count: number;
 
   private readonly material: THREE.ShaderMaterial;
+  private readonly yearAttribute: THREE.BufferAttribute;
+  private readonly namedAttribute: THREE.BufferAttribute;
+  private readonly yearsByBasis: Record<EpochBasis, Float32Array>;
+  private readonly designations: string[];
 
-  constructor(data: OAStarData) {
+  constructor(data: OAStarData, worlds: WorldData | null = null) {
     // Hidden entries are dropped from the geometry, not merely faded: they are
     // the 52 the add-on says nothing about beyond sitting in NGC 6633, and
     // stacked markers obscure the cluster they are meant to populate.
@@ -198,12 +231,32 @@ export class OAStarField {
     geometry.setAttribute('aColor', new THREE.BufferAttribute(colors, 3));
     geometry.setAttribute('aBare', new THREE.BufferAttribute(bare, 1));
     geometry.setAttribute('aReal', new THREE.BufferAttribute(real, 1));
+
+    // Only the add-on stars carrying a world are dated at all; the rest are
+    // positions the setting asserts with no year attached, and take the undated
+    // state rather than being dropped from a historical view they say nothing
+    // about either way.
+    const bound = shown.map((i) => worlds?.byOAStar.get(data.names[i]?.name ?? ''));
+    const attached = attachEpochAttributes(
+      geometry,
+      bound.map((here) => ({ ...combinedYears(here, 'known'), distancePc: 0 })),
+    );
+    this.yearAttribute = attached.years;
+    this.namedAttribute = attached.named;
+    this.yearsByBasis = {
+      known: (attached.years.array as Float32Array).slice(),
+      settled: yearsFor(bound, 'settled'),
+    };
+    this.designations = shown.map((i) => data.names[i]?.name ?? '');
+
     geometry.boundingSphere = new THREE.Sphere(new THREE.Vector3(), Infinity);
 
     this.material = new THREE.ShaderMaterial({
       uniforms: {
-        uSize: { value: DEFAULT_SIZE_PX },
+        uSize: { value: DEFAULT_SIZE_PX },
+
         ...dofUniforms(),
+        ...epochUniforms(),
         uOpacity: { value: DEFAULT_OPACITY },
         uBareDim: { value: BARE_DIM },
       },
@@ -219,6 +272,39 @@ export class OAStarField {
     this.points.frustumCulled = false;
     // Draw over the real field so a marker is never hidden inside a star cloud.
     this.points.renderOrder = 2;
+  }
+
+  /**
+   * Show the map as it stood in a year, or stop.
+   *
+   * `showUndated` reaches the shader as a gain rather than a filter, because
+   * "no date recorded" is a third state and not a kind of absence: hidden it
+   * must vanish completely, shown it must be visibly weaker than a place with
+   * a year. Wiring it only into the picker left the reader hiding the undated
+   * places and still looking at them.
+   */
+  setEpoch(year: number | null, showUndated = true): void {
+    const uniforms = this.material.uniforms as unknown as EpochUniforms;
+    uniforms.uEpochOn.value = year === null ? 0 : 1;
+    uniforms.uUndatedGain.value = showUndated ? DEFAULT_UNDATED_GAIN : 0;
+    if (year !== null) uniforms.uYear.value = year;
+  }
+
+  /** Which date decides when a star appears: first reached, or settled. */
+  setEpochBasis(basis: EpochBasis): void {
+    (this.yearAttribute.array as Float32Array).set(this.yearsByBasis[basis]);
+    this.yearAttribute.needsUpdate = true;
+  }
+
+  /** Mark the stars a period's own history names; null clears the emphasis. */
+  setNamedPlaces(designations: Set<string> | null, gain = DEFAULT_UNNAMED_GAIN): void {
+    const named = this.namedAttribute.array as Float32Array;
+    this.designations.forEach((name, index) => {
+      named[index] = designations === null || designations.has(name) ? 1 : 0;
+    });
+    this.namedAttribute.needsUpdate = true;
+    (this.material.uniforms as unknown as EpochUniforms).uUnnamedGain.value =
+      designations === null ? 1 : gain;
   }
 
   set opacity(value: number) {

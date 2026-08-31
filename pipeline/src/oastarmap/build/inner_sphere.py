@@ -287,6 +287,12 @@ def build_inner_sphere(
                 "star": row.star,
                 "colony": name,
                 "described": description,
+                # The table links 196 of its colonies to their own article, and
+                # an article URL is the one identifier shared with every other
+                # file here. Without it these rows are reachable by name alone,
+                # which is how thirty-five of them stayed invisible to the
+                # history timeline while their articles were being cited by it.
+                "article": cell(row.article),
                 "affiliations": affiliations,
                 "status": statuses[0] if statuses else "",
                 "note": " ".join(notes),

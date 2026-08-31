@@ -20,6 +20,7 @@ from typing import Any
 
 import numpy as np
 
+from oastarmap.build.worlds import PRESENCE_KINDS, certain_by
 from oastarmap.build.writer import write_array, write_json
 from oastarmap.fiction.resolve import Binding, ResolutionReport, Resolver
 from oastarmap.fiction.schema import AliasFile, FictionFile, LandmarkFile
@@ -153,6 +154,44 @@ def _placement_outliers(
             )
 
     return sorted(found, key=lambda item: -item["degrees_from_polity_mean"])
+
+
+def _derived_years(events: Any) -> dict[str, int | None]:
+    """When a landmark first appears, when it was settled, and when it ended.
+
+    The same three questions the world file answers, computed by the same rule,
+    because a cluster the setting colonised is a place with a history and the
+    historical view has to date it the same way it dates a planet.
+    """
+    dated = [
+        {"year_at": e.year_at, "kind": e.kind, "until_at": e.until_at, "precision": e.precision}
+        for e in events
+    ]
+    presence = [certain_by(e) for e in dated if e["kind"] in PRESENCE_KINDS]
+    settled = [certain_by(e) for e in dated if e["kind"] == "settled"]
+    ended = [certain_by(e) for e in dated if e["kind"] == "abandoned"]
+    return {
+        "known_from_at": min(presence) if presence else None,
+        "settled_at": min(settled) if settled else None,
+        "ended_at": max(ended) if ended else None,
+    }
+
+
+def _attested_at(polities: list[str], epoch_of: dict[str, int | None]) -> int | None:
+    """The year the *evidence* for an association depicts, where it says.
+
+    Not a settlement date and not presented as one. The political maps draw the
+    Middle Regions in 8000 A.T.; a landmark known only from them is attested in
+    8000 and says nothing whatever about 400. Before this the historical view
+    had no year for those bindings at all, so Cih, Mebsuta and Almaaz — read off
+    that map and off nothing else — sat on the map through the Interplanetary
+    Age, three thousand years before the source that names them depicts.
+
+    The earliest epoch among the polities claiming it, because that is the
+    first year any source puts the object in anyone's hands.
+    """
+    epochs = [epoch_of[p] for p in polities if epoch_of.get(p) is not None]
+    return min(epochs) if epochs else None
 
 
 def _load_positions(out_dir: Path) -> dict[str, np.ndarray]:
@@ -299,6 +338,14 @@ def build_fiction(
             continue
         shared[binding.kind][str(binding.index)] = [polity_index[p] for p in binding.polities]
 
+    # What year each polity's evidence is *of*. The political maps depict 8000
+    # A.T. and say so; the system articles carry no epoch at all.
+    epoch_of = {
+        polity.id: fiction.sources[polity.source].epoch_at
+        for polity in fiction.polities
+        if polity.source in fiction.sources
+    }
+
     # Orion's Arm names for real objects. Resolved through the same table as a
     # landmark, so the file can write the designation the way a person would.
     landmark_names: list[dict[str, Any]] = []
@@ -316,6 +363,11 @@ def build_fiction(
                 "name": entry.name,
                 "article": entry.article,
                 "note": entry.note,
+                # The same three years a world carries, by the same rule. A
+                # cluster can be settled too — Aleph Absolute around 3000, the
+                # Enigma Cluster in 7222 — and without these the historical view
+                # had no year for any of them and drew them in every century.
+                **_derived_years(entry.events),
                 "events": [
                     {
                         "year_at": e.year_at,
@@ -358,7 +410,10 @@ def build_fiction(
                     }
                     for p in fiction.polities
                 ],
-                "bindings": [b.as_dict() for b in report.bindings],
+                "bindings": [
+                    {**b.as_dict(), "attested_at": _attested_at(b.polities, epoch_of)}
+                    for b in report.bindings
+                ],
                 "shared_polities": shared,
                 "landmark_names": landmark_names,
                 "sources": {

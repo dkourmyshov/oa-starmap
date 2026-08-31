@@ -15,6 +15,19 @@ import * as THREE from 'three';
 import type { ClusterData, FictionData } from '../data/manifest';
 
 import { DOF_PARS, type DofUniforms, dofUniforms } from './dof';
+import {
+  DEFAULT_UNDATED_GAIN,
+  DEFAULT_UNNAMED_GAIN,
+  EPOCH_PARS,
+  type EpochUniforms,
+  type EpochPlace,
+  epochUniforms,
+  instancedEpochAttributes,
+  yearsArray,
+} from './epoch';
+import { type EpochBasis, landmarkYears } from '../data/history';
+
+import { EXTENT_PARS, extentGeometry, extentUniforms, instanced } from './extent';
 export const DEFAULT_OPACITY = 0.7;
 
 /** Index order must match `layout.types.order` in the manifest. */
@@ -29,14 +42,16 @@ const VERTEX_SHADER = /* glsl */ `
   #include <common>
   #include <logdepthbuf_pars_vertex>
 
+  attribute vec3 aCentre;
   attribute float aRadius;
   attribute vec3 aColor;
   attribute vec3 aColorB;
   attribute float aShared;
   attribute float aAssigned;
 
-  uniform float uViewportHeight;
+  ${EXTENT_PARS}
   ${DOF_PARS}
+  ${EPOCH_PARS}
   uniform float uMinSize;
   uniform float uMaxSize;
   uniform float uUnassignedDim;
@@ -50,32 +65,39 @@ const VERTEX_SHADER = /* glsl */ `
   varying float vBlur;
   varying float vScale;
   varying float vGain;
+  varying vec2 vCorner;
 
   void main() {
-    vec4 viewPos = modelViewMatrix * vec4(position, 1.0);
-    gl_Position = projectionMatrix * viewPos;
+    vec4 viewPos = modelViewMatrix * vec4(aCentre, 1.0);
+    vec4 clipCentre = projectionMatrix * viewPos;
+    vCorner = position.xy;
+    // Nothing the setting had reached by this year is drawn. A collapsed quad
+    // covers no fragments, which is how a mesh declines an instance.
+    float epoch = epochGain();
+    if (epoch <= 0.0) {
+      gl_Position = clipCentre;
+      return;
+    }
 
-    float dist = max(length(viewPos.xyz), 1e-4);
 
-    // Projected diameter in device pixels for a sphere of physical radius aRadius.
-    // projectionMatrix[1][1] is 1/tan(fov/2), so this is the true angular size.
-    float projected = aRadius * projectionMatrix[1][1] * uViewportHeight / dist;
+    float projected = extentPixels(aRadius, clipCentre.w);
 
     // Below the minimum a cluster would vanish; clamping keeps distant ones as
     // small marks. Fade them instead of popping so the far field stays calm.
-    // Depth of field. The sprite grows to make room and the fragment scales its
+    // Depth of field. The quad grows to make room and the fragment scales its
     // coordinate back, so the outline keeps the angular size it is there to
     // report and only its edge softens. vSize stays the unblurred size, because
     // the ring's thickness is derived from it and a hairline must not thin just
     // because the thing is out of focus.
-    vFade = smoothstep(0.35, 1.6, projected);
+    vFade = smoothstep(0.35, 1.6, projected) * epoch;
     float base = clamp(projected, uMinSize, uMaxSize);
-    float blurPx = dofBlurPx(dist);
+    float defocus = dofDecades(viewPos);
+    float blurPx = dofBlurPx(defocus);
     float grown = base + 2.0 * blurPx;
     vScale = grown / base;
     vBlur = min(blurPx / max(base * 0.5, 1e-4), 0.5);
-    vFade *= dofGain(base, grown) * dofDim(dist);
-    gl_PointSize = grown;
+    vFade *= dofGain(base, grown) * dofDim(defocus);
+    gl_Position = extentCorner(clipCentre, grown);
     vSize = base;
 
     vColor = aColor;
@@ -86,9 +108,11 @@ const VERTEX_SHADER = /* glsl */ `
     // by, so the other ~7000 recede rather than competing with them.
     vGain = mix(uUnassignedDim, 1.0, aAssigned);
 
-    // Orion's Arm-only mode: keep just what the setting has claimed.
+    // Orion's Arm-only mode: keep just what the setting has claimed. A quad
+    // collapsed onto its centre covers no fragments, which is how a mesh
+    // declines to draw one instance.
     if (uOnlyOA > 0.5 && aAssigned < 0.5) {
-      gl_PointSize = 0.0;
+      gl_Position = clipCentre;
       vGain = 0.0;
     }
 
@@ -111,9 +135,13 @@ const FRAGMENT_SHADER = /* glsl */ `
   varying float vGain;
   varying vec3 vColorB;
   varying float vShared;
+  varying vec2 vCorner;
 
   void main() {
-    vec2 offset = gl_PointCoord * 2.0 - 1.0;
+    // The quad corner, in the same [-1, 1] the point sprite's gl_PointCoord
+    // gave once this had subtracted its centre — so everything below is as it
+    // was when these were sprites.
+    vec2 offset = vCorner;
     if (length(offset) > 1.0) discard;
     float r = length(offset) * vScale;
 
@@ -149,10 +177,15 @@ const FRAGMENT_SHADER = /* glsl */ `
 `;
 
 export class ClusterField {
-  readonly points: THREE.Points;
+  readonly mesh: THREE.Mesh;
   readonly count: number;
 
   private readonly material: THREE.ShaderMaterial;
+  private readonly yearAttribute: THREE.InstancedBufferAttribute;
+  private readonly namedAttribute: THREE.InstancedBufferAttribute;
+  /** Instance slot by the catalogue designation a timeline line would use. */
+  private readonly byCatalogue = new Map<string, number>();
+  private readonly yearsByBasis: Record<EpochBasis, Float32Array>;
   private readonly typeColors: Float32Array;
   private readonly polityColorArray: Float32Array;
   private readonly colorAttribute: THREE.BufferAttribute;
@@ -209,22 +242,46 @@ export class ClusterField {
     this.typeColors = typeColors;
     this.polityColorArray = colors.slice();
 
-    const geometry = new THREE.BufferGeometry();
-    geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-    geometry.setAttribute('aRadius', new THREE.BufferAttribute(radii, 1));
-    geometry.setAttribute('aColor', new THREE.BufferAttribute(colors, 3));
-    geometry.setAttribute('aColorB', new THREE.BufferAttribute(secondColors, 3));
-    geometry.setAttribute('aShared', new THREE.BufferAttribute(shared, 1));
-    geometry.setAttribute('aAssigned', new THREE.BufferAttribute(assigned, 1));
-    geometry.boundingSphere = new THREE.Sphere(new THREE.Vector3(), Infinity);
+    const geometry = extentGeometry(data.count);
+    geometry.setAttribute('aCentre', instanced(positions, 3));
+    geometry.setAttribute('aRadius', instanced(radii, 1));
+    geometry.setAttribute('aColor', instanced(colors, 3));
+    geometry.setAttribute('aColorB', instanced(secondColors, 3));
+    geometry.setAttribute('aShared', instanced(shared, 1));
+    geometry.setAttribute('aAssigned', instanced(assigned, 1));
+    // One pair of years per cluster, not per corner of its quad. Most of the
+    // catalogue has none: these are the few the setting names, dated by their
+    // own history where they have one and by their source's epoch where the
+    // political maps are all that mention them.
+    const epochPlaces = (basis: EpochBasis): EpochPlace[] =>
+      Array.from({ length: data.count }, (_unused, index) => {
+        const years = landmarkYears(fiction, 'cluster', index, basis);
+        return { from: years.from, to: years.to, distancePc: 0 };
+      });
+    const attached = instancedEpochAttributes(geometry, epochPlaces('known'));
+    this.yearAttribute = attached.years;
+    this.namedAttribute = attached.named;
+    for (const entry of fiction?.landmarkNames.values() ?? []) {
+      if (entry.kind === 'cluster') {
+        this.byCatalogue.set(`cat:${entry.catalogue}`, entry.index);
+      }
+    }
+    this.yearsByBasis = {
+      known: attached.yearsArray,
+      settled: yearsArray(epochPlaces('settled')),
+    };
     this.colorAttribute = geometry.getAttribute('aColor') as THREE.BufferAttribute;
 
     this.material = new THREE.ShaderMaterial({
       uniforms: {
-        uViewportHeight: { value: 1080 },
+        ...extentUniforms(),
         ...dofUniforms(),
+        ...epochUniforms(),
         uMinSize: { value: 3.0 },
-        uMaxSize: { value: 3000.0 },
+        // Far beyond any viewport: with quads instead of point sprites there
+        // is no cap to work around, and a cluster drawn at anything but its own
+        // radius is a false statement about its size. See layers/extent.ts.
+        uMaxSize: { value: 20000.0 },
         uOpacity: { value: DEFAULT_OPACITY },
         uRingWidthPx: { value: 1.6 },
         uUnassignedDim: { value: 1.0 },
@@ -241,12 +298,54 @@ export class ClusterField {
       blending: THREE.NormalBlending,
     });
 
-    this.points = new THREE.Points(geometry, this.material);
-    this.points.frustumCulled = false;
+    this.mesh = new THREE.Mesh(geometry, this.material);
+    this.mesh.frustumCulled = false;
   }
 
-  setViewportHeight(pixels: number): void {
-    this.material.uniforms.uViewportHeight.value = pixels;
+  /** Device pixels, both axes: the corner offsets are computed in them. */
+  setViewport(width: number, height: number): void {
+    (this.material.uniforms.uViewport.value as THREE.Vector2).set(width, height);
+  }
+
+  /**
+   * Show the map as it stood in a year, or stop.
+   *
+   * A cluster is a real object and was there in 2100 as surely as in 10600, so
+   * a year cannot say whether it exists. What it says is whether the setting
+   * had anything to do with it yet — a landmark the Encyclopaedia dates, or one
+   * whose polity is attested by a map of a stated epoch. The rest of the
+   * catalogue is ordinary astronomy with no year at all, and takes the undated
+   * state along with everything else that has none.
+   */
+  setEpoch(year: number | null, showUndated = true): void {
+    const uniforms = this.material.uniforms as unknown as EpochUniforms;
+    uniforms.uEpochOn.value = year === null ? 0 : 1;
+    uniforms.uUndatedGain.value = showUndated ? DEFAULT_UNDATED_GAIN : 0;
+    if (year !== null) uniforms.uYear.value = year;
+  }
+
+  /**
+   * Mark the landmarks a period's own history names; null clears the emphasis.
+   *
+   * Keyed on the catalogue designation, which is the only name a cluster and a
+   * timeline line have in common — the Encyclopaedia calls Melotte 186 Aleph
+   * Absolute, and the catalogue has never heard of it.
+   */
+  setNamedPlaces(keys: Set<string> | null, gain = DEFAULT_UNNAMED_GAIN): void {
+    const named = this.namedAttribute.array as Float32Array;
+    named.fill(keys === null ? 1 : 0);
+    if (keys) {
+      for (const [key, index] of this.byCatalogue) if (keys.has(key)) named[index] = 1;
+    }
+    this.namedAttribute.needsUpdate = true;
+    (this.material.uniforms as unknown as EpochUniforms).uUnnamedGain.value =
+      keys === null ? 1 : gain;
+  }
+
+  /** Which date decides when it appears: first known, or settled. */
+  setEpochBasis(basis: EpochBasis): void {
+    (this.yearAttribute.array as Float32Array).set(this.yearsByBasis[basis]);
+    this.yearAttribute.needsUpdate = true;
   }
 
   set opacity(value: number) {
@@ -273,15 +372,15 @@ export class ClusterField {
   }
 
   set visible(value: boolean) {
-    this.points.visible = value;
+    this.mesh.visible = value;
   }
 
   get visible(): boolean {
-    return this.points.visible;
+    return this.mesh.visible;
   }
 
   dispose(): void {
-    this.points.geometry.dispose();
+    this.mesh.geometry.dispose();
     this.material.dispose();
   }
 

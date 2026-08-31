@@ -44,10 +44,31 @@ import {
   type OAStarData,
   type StarData,
   type WorldData,
+  type WorldEntry,
   affiliationsFor,
-} from '../data/manifest';
-
+} from '../data/manifest';
+import {
+  type EpochBasis,
+  NEVER_ENDS,
+  type PlaceYears,
+  UNDATED,
+  combinedYears,
+  landmarkYears,
+} from '../data/history';
+
+
+
 import { DOF_PARS, type DofUniforms, dofUniforms } from './dof';
+import {
+  DEFAULT_UNDATED_GAIN,
+  DEFAULT_UNNAMED_GAIN,
+  EPOCH_PARS,
+  type EpochPlace,
+  EpochSummary,
+  type EpochUniforms,
+  attachEpochAttributes,
+  epochUniforms,
+} from './epoch';
 
 export const DEFAULT_OPACITY = 0.85;
 
@@ -86,6 +107,7 @@ const VERTEX_SHADER = /* glsl */ `
 
   uniform float uSize;
   ${DOF_PARS}
+  ${EPOCH_PARS}
   uniform float uUnaffiliatedDim;
 
   varying vec3 vColor0;
@@ -102,6 +124,17 @@ const VERTEX_SHADER = /* glsl */ `
   void main() {
     vec4 viewPos = modelViewMatrix * vec4(position, 1.0);
     gl_Position = projectionMatrix * viewPos;
+
+    // A system that has not been reached yet is not drawn faintly, it is not
+    // drawn. Collapsing the sprite rather than discarding in the fragment
+    // shader costs nothing and keeps the whole year test in one place.
+    float epoch = epochGain();
+    if (epoch <= 0.0) {
+      gl_PointSize = 0.0;
+      gl_Position = vec4(2.0, 2.0, 2.0, 1.0);
+      return;
+    }
+
     vApprox = aApprox;
     vVague = aVague;
     vColor0 = aColor0;
@@ -114,12 +147,13 @@ const VERTEX_SHADER = /* glsl */ `
     // and only its edges soften — a ring that swelled with defocus would read
     // as a bigger region, which is a claim about the data rather than about
     // where the camera is looking.
-    float blurPx = dofBlurPx(max(length(viewPos.xyz), 1e-4));
+    float defocus = dofDecades(viewPos);
+    float blurPx = dofBlurPx(defocus);
     float grown = uSize + 2.0 * blurPx;
     vScale = grown / uSize;
     vBlur = min(blurPx / (uSize * 0.5), 0.5);
     vGain = mix(uUnaffiliatedDim, 1.0, aAffiliated) * dofGain(uSize, grown)
-      * dofDim(max(length(viewPos.xyz), 1e-4));
+      * dofDim(defocus) * epoch;
     gl_PointSize = grown;
 
     #include <logdepthbuf_vertex>
@@ -207,6 +241,65 @@ interface Ring {
   approximate?: boolean;
   /** The radius is doubtful too, so the ring is drawn dotted instead. */
   vague?: boolean;
+  /**
+   * When this system enters and leaves the record, under each basis.
+   *
+   * Both are kept rather than one chosen at construction, because they are two
+   * different questions — when anyone first reached it, and when it became
+   * inhabited — and the reader switches between them without the map being
+   * rebuilt.
+   */
+  known?: PlaceYears;
+  settled?: PlaceYears;
+  /**
+   * How the Encyclopaedia's timeline refers to this system, in every form it
+   * might: by star index, by world name, by add-on designation. A ring stands
+   * for a system and a system has several names, so matching on one of them
+   * would light up Sol and miss Earth.
+   */
+  keys?: string[];
+}
+
+/** No dates at all, for a system nothing in the sources places in time. */
+const NO_YEARS: PlaceYears = { from: UNDATED, to: NEVER_ENDS };
+
+/** How the history timeline names a place, in the forms a ring can carry. */
+export function starKey(index: number): string {
+  return `star:${index}`;
+}
+export function worldKey(name: string): string {
+  return `world:${name}`;
+}
+export function oaStarKey(designation: string): string {
+  return `oa:${designation}`;
+}
+export function catalogueKey(designation: string): string {
+  return `cat:${designation}`;
+}
+
+function worldKeys(worlds: WorldEntry[] | undefined): string[] {
+  return (worlds ?? []).map((world) => worldKey(world.name));
+}
+
+/** One ring's contribution to the epoch summary, under one basis. */
+function epochPlaces(rings: Ring[], basis: EpochBasis): EpochPlace[] {
+  return rings.map((ring) => {
+    const years = (basis === 'settled' ? ring.settled : ring.known) ?? NO_YEARS;
+    return {
+      from: years.from,
+      to: years.to,
+      distancePc: Math.hypot(ring.x, ring.y, ring.z),
+    };
+  });
+}
+
+function yearArray(rings: Ring[], basis: EpochBasis): Float32Array {
+  const out = new Float32Array(rings.length * 2);
+  epochPlaces(rings, basis).forEach((place, index) => {
+    out[index * 2] = place.from;
+    out[index * 2 + 1] = place.to;
+  });
+  return out;
 }
 
 export class SettledField {
@@ -216,7 +309,15 @@ export class SettledField {
   /** How many rings show more than one holder. */
   readonly sharedCount: number;
 
+  private readonly epochByBasis: Record<EpochBasis, EpochSummary>;
+  private basis: EpochBasis = 'known';
+
   private readonly material: THREE.ShaderMaterial;
+  private readonly yearsByBasis: Record<EpochBasis, Float32Array>;
+  private readonly yearAttribute: THREE.BufferAttribute;
+  private readonly namedAttribute: THREE.BufferAttribute;
+  /** Ring index by every name the timeline might use for it. */
+  private readonly ringsByKey = new Map<string, number[]>();
   private readonly polityColors: Float32Array[];
   private readonly neutralColors: Float32Array[];
   private readonly colorAttributes: THREE.BufferAttribute[];
@@ -244,11 +345,18 @@ export class SettledField {
       if (!colony.colony) continue;
       const base = starIndex * 5;
       ringed.add(starIndex);
+      const here = worlds?.byStar.get(starIndex);
       rings.push({
         x: stars.positions[base],
         y: stars.positions[base + 1],
         z: stars.positions[base + 2],
-        polities: affiliationsFor(colony, worlds?.byStar.get(starIndex)),
+        polities: affiliationsFor(colony, here),
+        // A colony row carries no date of its own. Where a world file entry
+        // shares the star it supplies one; where none does, the system is
+        // undated and says so rather than defaulting to the beginning of time.
+        known: combinedYears(here, 'known'),
+        settled: combinedYears(here, 'settled'),
+        keys: [starKey(starIndex), ...worldKeys(here)],
       });
     }
 
@@ -264,6 +372,9 @@ export class SettledField {
         y: stars.positions[base + 1],
         z: stars.positions[base + 2],
         polities: affiliationsFor(undefined, here),
+        known: combinedYears(here, 'known'),
+        settled: combinedYears(here, 'settled'),
+        keys: [starKey(starIndex), ...worldKeys(here)],
       });
     }
 
@@ -284,6 +395,13 @@ export class SettledField {
         y: stars.positions[base + 1],
         z: stars.positions[base + 2],
         polities: binding.polities,
+        // These have no history of their own — the political maps name them and
+        // nothing else does — so their only year is the one that map depicts.
+        // Without it Cih, Mebsuta and Almaaz sat on the map through the
+        // Interplanetary Age, three thousand years before their source.
+        known: landmarkYears(fiction, 'star', starIndex, 'known'),
+        settled: landmarkYears(fiction, 'star', starIndex, 'settled'),
+        keys: [starKey(starIndex), catalogueKey(binding.matched_name ?? binding.landmark)],
       });
     }
 
@@ -294,6 +412,7 @@ export class SettledField {
     // one.
     for (const world of worlds?.worlds ?? []) {
       if (world.x === null || world.in_world) continue;
+      const guests = worlds?.byHost.get(world.name) ?? [];
       rings.push({
         x: world.x,
         y: world.y as number,
@@ -301,6 +420,12 @@ export class SettledField {
         polities: affiliationsFor(undefined, [world]),
         approximate: (world.direction_error_deg ?? 0) > 0,
         vague: (world.distance_error_ly ?? 0) > 0,
+        // The host and everything it carries. Potato is dated by its own
+        // article and drawn by the Bonfire System's marker, so the marker has
+        // to appear when the earlier of the two does.
+        known: combinedYears([world, ...guests], 'known'),
+        settled: combinedYears([world, ...guests], 'settled'),
+        keys: [worldKey(world.name), ...worldKeys(guests)],
       });
     }
 
@@ -318,6 +443,9 @@ export class SettledField {
         y: oaStars!.positions[base + 1],
         z: oaStars!.positions[base + 2],
         polities,
+        known: combinedYears(bound, 'known'),
+        settled: combinedYears(bound, 'settled'),
+        keys: entry ? [oaStarKey(entry.name), ...worldKeys(bound)] : [],
       });
     }
 
@@ -367,6 +495,27 @@ export class SettledField {
     geometry.setAttribute('aAffiliated', new THREE.BufferAttribute(affiliated, 1));
     geometry.setAttribute('aApprox', new THREE.BufferAttribute(approximate, 1));
     geometry.setAttribute('aVague', new THREE.BufferAttribute(vague, 1));
+
+    // Both bases are computed once and kept; switching between them rewrites
+    // one attribute rather than rebuilding the layer.
+    const attached = attachEpochAttributes(geometry, epochPlaces(rings, 'known'));
+    this.yearAttribute = attached.years;
+    this.namedAttribute = attached.named;
+    this.yearsByBasis = {
+      known: (attached.years.array as Float32Array).slice(),
+      settled: yearArray(rings, 'settled'),
+    };
+    this.epochByBasis = {
+      known: new EpochSummary(epochPlaces(rings, 'known')),
+      settled: new EpochSummary(epochPlaces(rings, 'settled')),
+    };
+    rings.forEach((ring, index) => {
+      for (const key of ring.keys ?? []) {
+        const at = this.ringsByKey.get(key);
+        if (at) at.push(index);
+        else this.ringsByKey.set(key, [index]);
+      }
+    });
     this.colorAttributes = colors.map((array, slot) => {
       const attribute = new THREE.BufferAttribute(array, 3);
       geometry.setAttribute(`aColor${slot}`, attribute);
@@ -376,8 +525,10 @@ export class SettledField {
 
     this.material = new THREE.ShaderMaterial({
       uniforms: {
-        uSize: { value: DEFAULT_SIZE_PX },
+        uSize: { value: DEFAULT_SIZE_PX },
+
         ...dofUniforms(),
+        ...epochUniforms(),
         uOpacity: { value: DEFAULT_OPACITY },
         uUnaffiliatedDim: { value: UNAFFILIATED_DIM },
       },
@@ -392,6 +543,69 @@ export class SettledField {
     this.points = new THREE.Points(geometry, this.material);
     this.points.frustumCulled = false;
     this.points.renderOrder = 1;
+  }
+
+  /** What the map holds at any year, under the basis currently chosen. */
+  get epoch(): EpochSummary {
+    return this.epochByBasis[this.basis];
+  }
+
+  /**
+   * Show the map as it stood in a year, or stop.
+   *
+   * `showUndated` reaches the shader as a gain rather than a filter, because
+   * "no date recorded" is a third state and not a kind of absence: hidden it
+   * must vanish completely, shown it must be visibly weaker than a place with
+   * a year. Wiring it only into the picker left the reader hiding the undated
+   * places and still looking at them.
+   */
+  setEpoch(year: number | null, showUndated = true): void {
+    const uniforms = this.material.uniforms as unknown as EpochUniforms;
+    uniforms.uEpochOn.value = year === null ? 0 : 1;
+    uniforms.uUndatedGain.value = showUndated ? DEFAULT_UNDATED_GAIN : 0;
+    if (year !== null) uniforms.uYear.value = year;
+  }
+
+  /**
+   * Which date decides when a system appears: first reached, or settled.
+   *
+   * Rewrites one attribute. The alternative — rebuilding the layer — would
+   * throw away the polity colours and the ring styles to answer a question
+   * about dates.
+   */
+  setEpochBasis(basis: EpochBasis): void {
+    this.basis = basis;
+    (this.yearAttribute.array as Float32Array).set(this.yearsByBasis[basis]);
+    this.yearAttribute.needsUpdate = true;
+  }
+
+  /**
+   * Mark the systems a period's own history names.
+   *
+   * Passing null clears the emphasis, which is not the same as marking nothing:
+   * with no period chosen every ring is equally the subject, so they all read as
+   * named rather than all reading as ignored.
+   */
+  setNamedPlaces(keys: Set<string> | null, gain = DEFAULT_UNNAMED_GAIN): void {
+    const named = this.namedAttribute.array as Float32Array;
+    named.fill(keys === null ? 1 : 0);
+    if (keys) {
+      for (const key of keys) {
+        for (const index of this.ringsByKey.get(key) ?? []) named[index] = 1;
+      }
+    }
+    this.namedAttribute.needsUpdate = true;
+    (this.material.uniforms as unknown as EpochUniforms).uUnnamedGain.value =
+      keys === null ? 1 : gain;
+  }
+
+  /** How many rings the current period names, for the panel to state. */
+  namedCount(keys: Set<string>): number {
+    const seen = new Set<number>();
+    for (const key of keys) {
+      for (const index of this.ringsByKey.get(key) ?? []) seen.add(index);
+    }
+    return seen.size;
   }
 
   /**

@@ -59,6 +59,18 @@ class Polity(BaseModel):
     source: str = ""
     """Key into :attr:`FictionFile.sources` for where these landmarks came from."""
 
+    ambiguous_name: bool = False
+    """This polity's name is also an ordinary word or another place's name.
+
+    Set where matching the name in running prose would find the wrong thing.
+    The history timeline is scanned for polity names to say which polities each
+    period is about, and two names cannot survive that: "Vela" is a
+    constellation and half of "Neu Vela", and "Xenosophont" is a category this
+    file uses as a bucket rather than the name of anybody. Both are excluded by
+    hand rather than by a rule, because the rule that would catch them —
+    refusing a name preceded by a capital — also refuses "The Vela Immunity".
+    """
+
     kind: str = "meta-empire"
     """What this entry actually is.
 
@@ -1008,6 +1020,133 @@ class LandmarkFile(BaseModel):
 
     @classmethod
     def load(cls, path: Path) -> LandmarkFile:
+        if not path.exists():
+            return cls()
+        raw: Any = yaml.safe_load(path.read_text(encoding="utf-8"))
+        if not isinstance(raw, dict):
+            raise ValueError(f"{path} must contain a mapping at the top level")
+        return cls.model_validate(raw)
+
+
+HISTORY_KINDS = frozenset({"era", "period"})
+"""The two levels the Encyclopaedia's history has.
+
+An era is an essay covering centuries; a period is one of its subdivisions and
+is the level that carries a dated timeline. Keeping both in one list rather than
+two mirrors the source, where the only difference between them is depth in the
+breadcrumb.
+"""
+
+
+class HistoryLink(BaseModel):
+    """What one timeline line points at.
+
+    The id is the datum. A timeline line naming "Nova Terra" could mean any of
+    several places the Encyclopaedia names alike, and the link resolves that for
+    us — so the build matches on the id and the text is here for the reader.
+    """
+
+    kind: str
+    """article or topic — which of the two Encyclopaedia URL forms this is."""
+
+    id: str
+    text: str = ""
+
+
+class HistoryEvent(BaseModel):
+    """One dated line of a period's timeline, as the page gives it.
+
+    Deliberately not a :class:`WorldEvent`. A world event is a fact this project
+    asserts about a place and has to be classified as settlement or contact or
+    transfer; a history event is a sentence quoted from the Encyclopaedia, which
+    may be about a war, a treaty, a technology or nobody's location at all. The
+    two meet where a line links a place, and nowhere else.
+    """
+
+    year_at: int
+    until_at: int | None = None
+    precision: str = "exact"
+    text: str
+    links: list[HistoryLink] = Field(default_factory=list)
+
+    @field_validator("precision")
+    @classmethod
+    def _known_precision(cls, value: str) -> str:
+        if value not in EVENT_PRECISIONS:
+            raise ValueError(
+                f"precision must be one of {sorted(EVENT_PRECISIONS)}, got {value!r}"
+            )
+        return value
+
+    @model_validator(mode="after")
+    def _span_runs_forwards(self) -> HistoryEvent:
+        if self.until_at is not None and self.until_at < self.year_at:
+            raise ValueError(f"until_at {self.until_at} precedes year_at {self.year_at}")
+        return self
+
+
+class HistoryPeriod(BaseModel):
+    """One era or period of the setting's history."""
+
+    id: str
+    topic: str
+    """The Encyclopaedia's own page id, which is what its URL is built from."""
+
+    name: str
+    title: str
+    """The page's full heading, span and all, for showing the reader."""
+
+    kind: str = "period"
+    parent: str = ""
+    """The era this period belongs to, by id. Empty for an era itself."""
+
+    start_at: int | None = None
+    end_at: int | None = None
+    """Bounds in years After Tranquility, or null where the source gives none.
+
+    Null is not a missing value to be filled in later. The Preterragen Era opens
+    at the Big Bang and the Current Era has not ended, and both facts are better
+    said with an absent bound than with a number nobody wrote down.
+    """
+
+    events: list[HistoryEvent] = Field(default_factory=list)
+
+    @field_validator("kind")
+    @classmethod
+    def _known_kind(cls, value: str) -> str:
+        if value not in HISTORY_KINDS:
+            raise ValueError(f"history kind must be one of {sorted(HISTORY_KINDS)}, got {value!r}")
+        return value
+
+    @model_validator(mode="after")
+    def _span_runs_forwards(self) -> HistoryPeriod:
+        if self.start_at is not None and self.end_at is not None and self.end_at < self.start_at:
+            raise ValueError(f"{self.id}: end_at {self.end_at} precedes start_at {self.start_at}")
+        return self
+
+
+class HistoryFile(BaseModel):
+    """The top level of ``fiction/history.yaml``."""
+
+    periods: list[HistoryPeriod] = Field(default_factory=list)
+
+    @model_validator(mode="after")
+    def _hierarchy_holds(self) -> HistoryFile:
+        by_id = {period.id: period for period in self.periods}
+        if len(by_id) != len(self.periods):
+            raise ValueError("duplicate period id in history file")
+        for period in self.periods:
+            if not period.parent:
+                continue
+            parent = by_id.get(period.parent)
+            if parent is None:
+                raise ValueError(f"{period.id} names parent {period.parent!r}, which is absent")
+            if parent.kind != "era":
+                raise ValueError(f"{period.id} names {parent.id!r} as its era, but it is a period")
+        return self
+
+    @classmethod
+    def load(cls, path: Path) -> HistoryFile:
         if not path.exists():
             return cls()
         raw: Any = yaml.safe_load(path.read_text(encoding="utf-8"))
