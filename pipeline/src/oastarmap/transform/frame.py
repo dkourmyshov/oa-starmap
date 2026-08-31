@@ -32,7 +32,7 @@ test checks it against astropy.
 """
 """Unit for everything written to disk. Declared in each output file's header.
 
-Parsecs rather than light years because the source catalogs and the parallax
+Parsecs rather than light years because the source catalogues and the parallax
 relation are parsec-native, so this is the representation with no conversion
 error baked in. The UI displays light years by default regardless.
 """
@@ -158,7 +158,7 @@ def galactic_lb_to_xyz(
 ) -> tuple[u.Quantity, u.Quantity, u.Quantity]:
     """Convert galactic (l, b) + distance to galactic Cartesian.
 
-    Many extended-object catalogs (SNRs, HII regions, molecular clouds) are
+    Many extended-object catalogues (SNRs, HII regions, molecular clouds) are
     published directly in galactic coordinates, so this avoids a pointless
     round trip through ICRS.
     """

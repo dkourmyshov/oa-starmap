@@ -310,7 +310,7 @@ describe('picking', () => {
     expect(index.ref(id as number).kind).toBe(KIND_CLUSTER);
   });
 
-  it('maps ids back to per-catalog indices', () => {
+  it('maps ids back to per-catalogue indices', () => {
     const index = new ObjectIndex(
       makeStars([
         [0, 0, -1],

@@ -1,4 +1,4 @@
-"""Downloading source catalogs into ``raw/``.
+"""Downloading source catalogues into ``raw/``.
 
 Downloads are cached by filename and verified by size, so re-running ``fetch`` is
 cheap and offline builds work. Nothing here transforms data — that is

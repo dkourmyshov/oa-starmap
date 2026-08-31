@@ -11,6 +11,7 @@ import { ClusterField } from './layers/clusterField';
 import { HiiField } from './layers/hiiField';
 import { OAStarField } from './layers/oaStarField';
 import { SettledField } from './layers/settledField';
+import { DropLines } from './layers/dropLines';
 import { PlaneGrid } from './layers/planeGrid';
 import { PosterLayer } from './layers/posterLayer';
 import { StarField, flatInkGain } from './layers/starField';
@@ -79,6 +80,7 @@ async function main(): Promise<void> {
   let clusterField: ClusterField | null = null;
   let hiiField: HiiField | null = null;
   let associationField: AssociationField | null = null;
+  let dropLines: DropLines | null = null;
   // Declared with the layers so the HUD callback that opens it can close over
   // it: the panel itself is built after the HUD, because it borrows its unit.
   let historyPanel: HistoryPanel | null = null;
@@ -113,6 +115,11 @@ async function main(): Promise<void> {
       loaded.worlds,
     );
     viewer.scene.add(settledField.points);
+
+    // Built from the ring layer's own list, so the threads and the rings can
+    // never disagree about which systems the setting claims.
+    dropLines = new DropLines(settledField.placements);
+    viewer.scene.add(dropLines.lines);
   }
 
   // HII regions go in before clusters so the cluster rings draw over the glow.
@@ -273,7 +280,7 @@ async function main(): Promise<void> {
   };
 
   /**
-   * Where a binding points, whichever catalog it landed in. Each catalog packs a
+   * Where a binding points, whichever catalogue it landed in. Each catalogue packs a
    * different stride, so the position cannot be read without knowing the kind.
    */
   const bindingPosition = (kind: string | null, index: number): THREE.Vector3 | null => {
@@ -335,6 +342,7 @@ async function main(): Promise<void> {
     clusterField?.setEpoch(year, undated);
     hiiField?.setEpoch(year, undated);
     associationField?.setEpoch(year, undated);
+    dropLines?.setEpoch(year, undated);
     if (state) {
       settledField?.setEpochBasis(state.basis);
       worldField?.setEpochBasis(state.basis);
@@ -342,6 +350,7 @@ async function main(): Promise<void> {
       clusterField?.setEpochBasis(state.basis);
       hiiField?.setEpochBasis(state.basis);
       associationField?.setEpochBasis(state.basis);
+      dropLines?.setEpochBasis(state.basis);
       const named = state.emphasise ? namedKeys(state.period) : null;
       settledField?.setNamedPlaces(named?.settled ?? null);
       worldField?.setNamedPlaces(named?.worlds ?? null);
@@ -467,6 +476,12 @@ async function main(): Promise<void> {
       onGridVisible: (value) => {
         planeGrid.visible = value;
         gridLabels.visible = value;
+      },
+      onGridMeshVisible: (value) => {
+        planeGrid.meshVisible = value;
+      },
+      onDropLinesVisible: (value) => {
+        if (dropLines) dropLines.visible = value;
       },
       onGridOpacity: (value) => {
         planeGrid.opacity = value;

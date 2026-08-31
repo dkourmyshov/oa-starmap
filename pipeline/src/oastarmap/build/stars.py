@@ -1,6 +1,6 @@
 """Build the star dataset from HYG.
 
-Selection is by luminosity, never by distance: the catalog is taken whole, and a
+Selection is by luminosity, never by distance: the catalogue is taken whole, and a
 star is dropped only when the data cannot place it (no usable distance, no
 magnitude). This is what keeps the rendered field free of a spherical edge —
 see the project README.
@@ -44,7 +44,7 @@ scatter thousands of phantom objects across the far field.
 """
 
 UNRELIABLE_DISTANCE_PC = 3000.0
-"""Beyond this, distances in this catalog should be treated as indicative only.
+"""Beyond this, distances in this catalogue should be treated as indicative only.
 
 Not a filter — stars past this are kept and drawn. It is recorded in the manifest
 so the UI can mark such objects as uncertain rather than presenting a parsec-precise
@@ -170,7 +170,7 @@ def read_hyg(path: Path, stats: BuildStats) -> list[StarRecord]:
     if not kept:
         raise ValueError(f"No usable stars parsed from {path}")
 
-    # Vectorised coordinate transform — one astropy call for the whole catalog.
+    # Vectorised coordinate transform — one astropy call for the whole catalogue.
     ra = np.array([_to_float(r["ra"]) for r in kept]) * u.hourangle
     dec = np.array([_to_float(r["dec"]) for r in kept]) * u.deg
     dist = np.array([max(_to_float(r["dist"]), 0.0) for r in kept]) * u.pc
@@ -290,7 +290,7 @@ def build_stars(source_path: Path | None = None, out_dir: Path | None = None) ->
         "selection": {
             "rule": "luminosity-limited, not distance-limited",
             "note": (
-                "The whole catalog is taken; stars are dropped only when the data "
+                "The whole catalogue is taken; stars are dropped only when the data "
                 "cannot place them. No distance cutoff is applied to shape the sample."
             ),
             "quality_bounds": {

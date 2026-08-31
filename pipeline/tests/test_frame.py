@@ -57,7 +57,7 @@ class TestAxisDefinitions:
         np.testing.assert_allclose(np.cross(ex, ey), ez, atol=1e-9)
 
     def test_icrs_and_lb_paths_agree(self):
-        """The two entry points must not disagree — they feed different catalogs."""
+        """The two entry points must not disagree — they feed different catalogues."""
         ra, dec, dist = 279.23473 * u.deg, 38.78369 * u.deg, 7.68 * u.pc  # Vega
         gal = ICRS(ra=ra, dec=dec).transform_to(Galactic())
 

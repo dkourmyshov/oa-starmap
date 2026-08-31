@@ -1,7 +1,13 @@
 # Third-party material
 
 The MIT licence in `LICENSE` covers this project's own work. It covers none of
-what follows. These are other people's, on other terms, and the terms differ.
+what follows.
+
+These are other people's, on other terms, and the terms differ.
+
+(This project writes British English; see `CLAUDE.md`. *Licence* is the noun and
+*licensed* the verb, both correct together, and the file is spelt `LICENSE`
+because that is the only spelling the tooling looks for.)
 
 ## Orion's Arm Universe Project
 

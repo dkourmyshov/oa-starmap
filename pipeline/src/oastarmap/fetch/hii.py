@@ -1,12 +1,12 @@
 """HII regions — Sharpless (1959) positions, Russeil (2003) distances.
 
-No single catalog gives both. The Sharpless catalogue is the one that carries the
+No single catalogue gives both. The Sharpless catalogue is the one that carries the
 designations Orion's Arm actually uses ("S27", "S232"), but it predates any
 distance determination: it has positions and angular diameters only. Russeil's
 star-forming complexes supply the missing dimension, and list their member
 regions by Sharpless number, so the two join cleanly.
 
-The obvious modern alternative, the WISE catalog of Anderson+ (2014), was tried
+The obvious modern alternative, the WISE catalogue of Anderson+ (2014), was tried
 and rejected: it is radio-selected and inner-Galaxy weighted, and carries a
 distance for none of the sixteen Sharpless regions this map needs. The nearby,
 high-latitude, optically-discovered regions are precisely its blind spot.

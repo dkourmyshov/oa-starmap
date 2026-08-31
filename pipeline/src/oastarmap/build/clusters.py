@@ -31,7 +31,7 @@ from oastarmap.transform.frame import (
 )
 
 # Hunt & Reffert separate genuine open clusters from looser moving groups, and the
-# catalog also carries some globulars. All three are kept; the distinction is
+# catalogue also carries some globulars. All three are kept; the distinction is
 # preserved so the UI can filter and colour by it.
 CLUSTER_TYPES = {"o": "open cluster", "m": "moving group", "g": "globular cluster"}
 UNKNOWN_TYPE = "?"
@@ -141,7 +141,7 @@ def read_clusters(path: Path, stats: ClusterStats) -> list[ClusterRecord]:
             stats.excluded["no_usable_distance"] += 1
             continue
         if distance > MAX_PLAUSIBLE_DISTANCE_PC:
-            # Chiefly parallax blow-ups — the catalog contains "moving groups"
+            # Chiefly parallax blow-ups — the catalogue contains "moving groups"
             # placed past 100 kpc, which cannot be moving groups. Also drops the
             # remote halo globulars, which are outside this map's remit.
             stats.excluded["implausible_distance"] += 1
@@ -349,10 +349,10 @@ def build_clusters(source_path: Path | None = None, out_dir: Path | None = None)
         },
         "files": files,
         "selection": {
-            "rule": "complete catalog; no distance cutoff",
+            "rule": "complete catalogue; no distance cutoff",
             "note": (
                 "Clusters are excluded only for missing name, distance or position. "
-                "The catalog's own X/Y/Z columns are galactocentric and are "
+                "The catalogue's own X/Y/Z columns are galactocentric and are "
                 "deliberately not used; positions come from GLON/GLAT/dist50."
             ),
         },

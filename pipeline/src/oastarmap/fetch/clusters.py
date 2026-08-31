@@ -8,7 +8,7 @@ Fetched through VizieR's TSV service rather than the CDS FTP tree, which sits
 behind an anti-bot gate. Columns are selected explicitly so the download stays
 small and the schema this code depends on is visible here.
 
-**Trap:** the catalog's own X/Y/Z columns are *galactocentric* (the Sun sits at
+**Trap:** the catalogue's own X/Y/Z columns are *galactocentric* (the Sun sits at
 X ~ -8200 pc), not heliocentric. They are ignored; positions are recomputed from
 GLON/GLAT/dist50.
 """

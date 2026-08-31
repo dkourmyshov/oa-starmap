@@ -545,6 +545,25 @@ export class SettledField {
     this.points.renderOrder = 1;
   }
 
+  /**
+   * Where every claimed system is, and when, for the guideline layer.
+   *
+   * Handed out rather than re-derived. This class is the one place that
+   * enumerates the setting's systems from all five files it takes them from —
+   * colony rows, worlds on stars, landmark stars, worlds with coordinates of
+   * their own, add-on stars — and a second walk of those files to draw a line
+   * under each of them would be a second chance to disagree about which places
+   * exist.
+   */
+  get placements(): { positions: Float32Array; known: Float32Array; settled: Float32Array } {
+    const position = this.points.geometry.getAttribute('position');
+    return {
+      positions: (position.array as Float32Array).slice(),
+      known: this.yearsByBasis.known.slice(),
+      settled: this.yearsByBasis.settled.slice(),
+    };
+  }
+
   /** What the map holds at any year, under the basis currently chosen. */
   get epoch(): EpochSummary {
     return this.epochByBasis[this.basis];

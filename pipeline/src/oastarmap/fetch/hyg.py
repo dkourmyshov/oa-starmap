@@ -1,4 +1,4 @@
-"""The HYG star catalog — the project's "classical sky" layer.
+"""The HYG star catalogue — the project's "classical sky" layer.
 
 We use the AT-HYG derived ``hyglike`` file rather than plain HYG v4.1. Both carry
 the same historical designations, but AT-HYG updated just under 90% of distances

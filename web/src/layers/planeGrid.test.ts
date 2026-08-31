@@ -118,3 +118,24 @@ describe('the four cardinal directions', () => {
     }
   });
 });
+
+describe('the square mesh', () => {
+  it('is the same scale as the rings, drawn the other way', () => {
+    // Two grids at two spacings would read as two grids. The mesh takes the
+    // ring step, so a square is exactly the gap between two circles.
+    for (const halfHeight of [12, 250, 4000]) {
+      const step = ringStep(halfHeight);
+      const radii = ringRadii(halfHeight, 1e9);
+      const outer = radii[radii.length - 1];
+      // As many lines either side of each axis as there are rings.
+      expect(Math.round(outer / step)).toBe(radii.length);
+    }
+  });
+
+  it('squares off against the outermost ring', () => {
+    // The mesh stops where the circles do. One running past the other would
+    // read as a second, larger grid rather than the same one.
+    const radii = ringRadii(500, 1e9);
+    expect(radii[radii.length - 1]).toBe(ringStep(500) * radii.length);
+  });
+});

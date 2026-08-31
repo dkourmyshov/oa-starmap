@@ -336,7 +336,7 @@ export interface StarData {
   count: number;
   /** Interleaved [x, y, z, absmag, ci] per star, in parsecs / magnitudes. */
   positions: Float32Array;
-  /** Interleaved [hip, hd] per star; -1 means absent from that catalog. */
+  /** Interleaved [hip, hd] per star; -1 means absent from that catalogue. */
   ids: Int32Array;
   spectralClass: Uint8Array;
   constellation: Uint8Array;
@@ -482,7 +482,7 @@ export interface FictionData {
   notes: Record<string, string>;
   /** One byte per cluster; 0 = unassigned, else a 1-based polity index. */
   clusterPolity: Uint8Array;
-  /** Same, per HII region. Absent when the fiction build predates that catalog. */
+  /** Same, per HII region. Absent when the fiction build predates that catalogue. */
   hiiPolity: Uint8Array | null;
   pending: string[];
   /** Distance in pc past which the setting makes no territorial claim. */

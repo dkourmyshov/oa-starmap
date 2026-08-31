@@ -25,6 +25,13 @@
  * refusing to go below a hundred there would have meant a grid with nothing on
  * it exactly where the map is densest.
  *
+ * The square grid is the same scale drawn the other way, and toggles apart from
+ * the rings because the two answer different questions. Circles answer "how far
+ * from Sol", which is what almost every distance in this setting is measured
+ * from. A square mesh answers "how far from *there* to *there*", which is what
+ * you want when comparing two places neither of which is Sol — and it is the
+ * grid a printed atlas would have. Wanting one is no reason to be given both.
+ *
  * No depth of field. Like the borrowed sky maps this is the sheet the map is
  * drawn on rather than an object in it, and a blurred ruler is not a ruler.
  */
@@ -100,6 +107,15 @@ const MAX_RINGS = 12;
  */
 const GRID_RENDER_ORDER = -9;
 
+/**
+ * Most lines the square mesh may draw.
+ *
+ * Enough for MAX_RINGS steps either side of both axes: (2n + 1) lines in each
+ * of two directions, and the mesh is squared off against the outermost ring so
+ * the two scales agree about where the grid ends.
+ */
+const MAX_MESH_LINES = (2 * MAX_RINGS + 1) * 2;
+
 /** How far out the rings and rays are allowed to reach, in parsecs. */
 const OUTER_LIMIT_PC = 3e4;
 
@@ -125,6 +141,29 @@ const VERTEX_SHADER = /* glsl */ `
     vWeight = aWeight;
     vec3 world = position * aRadius;
     gl_Position = projectionMatrix * modelViewMatrix * vec4(world, 1.0);
+    #include <logdepthbuf_vertex>
+  }
+`;
+
+const MESH_VERTEX_SHADER = /* glsl */ `
+  #include <common>
+  #include <logdepthbuf_pars_vertex>
+
+  attribute float aRadius;
+  attribute float aWeight;
+  // How far off its own axis this line sits, and whether it has been turned a
+  // right angle to make the other half of the mesh.
+  attribute float aOffset;
+  attribute float aTurn;
+
+  varying float vWeight;
+
+  void main() {
+    vWeight = aWeight;
+    vec2 along = position.xy * aRadius + vec2(0.0, aOffset);
+    // A quarter turn, written out: (x, y) -> (-y, x).
+    vec2 turned = mix(along, vec2(-along.y, along.x), aTurn);
+    gl_Position = projectionMatrix * modelViewMatrix * vec4(turned, 0.0, 1.0);
     #include <logdepthbuf_vertex>
   }
 `;
@@ -157,6 +196,18 @@ function unitCircle(): Float32Array {
   return points;
 }
 
+/**
+ * One line of the square mesh, as a unit segment along +x.
+ *
+ * Every line in the mesh is this segment turned and shifted, so the geometry is
+ * two vertices and the rest is per-instance: `aRadius` is the half-length,
+ * `aOffset` is how far off the axis it sits, and `aTurn` swings it a right
+ * angle to make the other half of the mesh.
+ */
+function unitSpan(): Float32Array {
+  return new Float32Array([-1, 0, 0, 1, 0, 0]);
+}
+
 /** The four rays, as unit segments from Sol outwards. */
 function cardinalRays(): Float32Array {
   const points = new Float32Array(CARDINALS.length * 2 * 3);
@@ -176,6 +227,13 @@ export class PlaneGrid {
   private readonly radii: THREE.InstancedBufferAttribute;
   private readonly weights: THREE.InstancedBufferAttribute;
   private readonly rayRadius: THREE.InstancedBufferAttribute;
+
+  private readonly mesh: THREE.LineSegments;
+  private readonly meshMaterial: THREE.ShaderMaterial;
+  private readonly meshRadius: THREE.InstancedBufferAttribute;
+  private readonly meshOffset: THREE.InstancedBufferAttribute;
+  private readonly meshTurn: THREE.InstancedBufferAttribute;
+  private readonly meshWeight: THREE.InstancedBufferAttribute;
 
   /** The rings currently drawn, in the displayed unit — what the labels name. */
   private shown: number[] = [];
@@ -228,6 +286,43 @@ export class PlaneGrid {
     this.rays.frustumCulled = false;
     this.rays.renderOrder = GRID_RENDER_ORDER;
     this.group.add(this.rays);
+
+    // The square mesh. Two lines per step in each direction, plus the pair on
+    // the axes themselves, so MAX_RINGS steps out needs four times that many.
+    const meshCount = MAX_MESH_LINES;
+    const meshGeometry = new THREE.InstancedBufferGeometry();
+    meshGeometry.setAttribute('position', new THREE.BufferAttribute(unitSpan(), 3));
+    this.meshRadius = new THREE.InstancedBufferAttribute(new Float32Array(meshCount), 1);
+    this.meshOffset = new THREE.InstancedBufferAttribute(new Float32Array(meshCount), 1);
+    this.meshTurn = new THREE.InstancedBufferAttribute(new Float32Array(meshCount), 1);
+    this.meshWeight = new THREE.InstancedBufferAttribute(new Float32Array(meshCount), 1);
+    meshGeometry.setAttribute('aRadius', this.meshRadius);
+    meshGeometry.setAttribute('aOffset', this.meshOffset);
+    meshGeometry.setAttribute('aTurn', this.meshTurn);
+    meshGeometry.setAttribute('aWeight', this.meshWeight);
+    meshGeometry.instanceCount = 0;
+    meshGeometry.boundingSphere = new THREE.Sphere(new THREE.Vector3(), Infinity);
+
+    this.meshMaterial = new THREE.ShaderMaterial({
+      uniforms: {
+        uColor: { value: new THREE.Vector3(0.42, 0.55, 0.78) },
+        uOpacity: { value: DEFAULT_OPACITY },
+      },
+      vertexShader: MESH_VERTEX_SHADER,
+      fragmentShader: FRAGMENT_SHADER,
+      transparent: true,
+      depthWrite: false,
+      depthTest: false,
+    });
+
+    this.mesh = new THREE.LineSegments(meshGeometry, this.meshMaterial);
+    this.mesh.frustumCulled = false;
+    this.mesh.renderOrder = GRID_RENDER_ORDER;
+    // Off on its own: the rings answer "how far from Sol", which is what this
+    // setting measures in, and the mesh answers a question fewer readers are
+    // asking. Wanting a scale is no reason to be given two of them at once.
+    this.mesh.visible = false;
+    this.group.add(this.mesh);
   }
 
   /**
@@ -238,7 +333,7 @@ export class PlaneGrid {
    * differs from what is already drawn.
    */
   update(halfHeight: Parsecs, unit: DistanceUnit): void {
-    if (!this.group.visible) return;
+    if (!this.rings.visible && !this.mesh.visible) return;
 
     // The step is chosen in the unit on screen, so the rings land on round
     // numbers of whatever the labels are about to say.
@@ -274,6 +369,46 @@ export class PlaneGrid {
     const step = radii.length > 1 ? radiusArray[1] - radiusArray[0] : outer;
     (this.rayRadius.array as Float32Array)[0] = outer + step;
     this.rayRadius.needsUpdate = true;
+
+    this.layMesh(step, outer);
+  }
+
+  /**
+   * Re-lay the square mesh at the same step the rings use.
+   *
+   * Squared off against the outermost ring rather than run to the edge of the
+   * view: the two scales are the same scale drawn two ways, and a mesh that
+   * kept going after the circles stopped would read as a second, larger grid.
+   */
+  private layMesh(step: number, outer: number): void {
+    const radiusArray = this.meshRadius.array as Float32Array;
+    const offsetArray = this.meshOffset.array as Float32Array;
+    const turnArray = this.meshTurn.array as Float32Array;
+    const weightArray = this.meshWeight.array as Float32Array;
+
+    let at = 0;
+    if (step > 0) {
+      const lines = Math.min(Math.round(outer / step), MAX_RINGS);
+      for (let turn = 0; turn < 2; turn++) {
+        for (let n = -lines; n <= lines; n++) {
+          if (at >= MAX_MESH_LINES) break;
+          radiusArray[at] = outer;
+          offsetArray[at] = n * step;
+          turnArray[at] = turn;
+          // The two lines through Sol are the axes themselves, which the rays
+          // already draw; the mesh keeps them faint so it does not double the
+          // weight of the strongest line on screen.
+          weightArray[at] = n === 0 ? 0.25 : Math.abs(n) % 5 === 0 ? 0.8 : 0.4;
+          at++;
+        }
+      }
+    }
+
+    this.meshRadius.needsUpdate = true;
+    this.meshOffset.needsUpdate = true;
+    this.meshTurn.needsUpdate = true;
+    this.meshWeight.needsUpdate = true;
+    (this.mesh.geometry as THREE.InstancedBufferGeometry).instanceCount = at;
   }
 
   /** The rings currently drawn, in the displayed unit. Nearest first. */
@@ -289,20 +424,40 @@ export class PlaneGrid {
   set opacity(value: number) {
     this.ringMaterial.uniforms.uOpacity.value = value;
     this.rayMaterial.uniforms.uOpacity.value = value;
+    this.meshMaterial.uniforms.uOpacity.value = value;
   }
 
+  /**
+   * The rings and the rays — the polar half.
+   *
+   * Set on the two meshes rather than on the group that holds all three, or
+   * switching the circles off would take the square mesh with them and make one
+   * of the two toggles a master switch for the other.
+   */
   set visible(value: boolean) {
-    this.group.visible = value;
+    this.rings.visible = value;
+    this.rays.visible = value;
   }
 
   get visible(): boolean {
-    return this.group.visible;
+    return this.rings.visible;
+  }
+
+  /** The square mesh, which switches apart from the rings and rays. */
+  set meshVisible(value: boolean) {
+    this.mesh.visible = value;
+  }
+
+  get meshVisible(): boolean {
+    return this.mesh.visible;
   }
 
   dispose(): void {
     this.rings.geometry.dispose();
     this.rays.geometry.dispose();
+    this.mesh.geometry.dispose();
     this.ringMaterial.dispose();
     this.rayMaterial.dispose();
+    this.meshMaterial.dispose();
   }
 }

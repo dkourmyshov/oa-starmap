@@ -43,10 +43,11 @@ describe('shader sources', () => {
     // A glob that silently matched nothing would make every check below pass.
     expect(layers.length).toBeGreaterThan(4);
     expect(layers.some(({ source }) => source.includes('${DOF_PARS}'))).toBe(true);
-    // Six layers draw something a year can hide and so take the epoch helper:
-    // three of places the setting claims, three of the real objects it names. A filter
+    // Seven layers draw something a year can hide and so take the epoch helper.
+    // A filter below that matched none of them would pass while checking
+    // nothing, so the count is pinned. A filter
     // below that matched none of them would pass while checking nothing.
-    expect(layers.filter(({ source }) => source.includes('${EPOCH_PARS}')).length).toBe(6);
+    expect(layers.filter(({ source }) => source.includes('${EPOCH_PARS}')).length).toBe(7);
   });
 
   it('declares every varying each shader actually uses', () => {
@@ -188,8 +189,15 @@ describe('shader sources', () => {
     // The emphasis is set per layer, so a layer added later that took the
     // shader and not the call would stay at full brightness while the rest of
     // the map dimmed around the period's own places.
+    //
+    // The plane guidelines are the one exemption, and deliberately: they are a
+    // depth cue rather than a subject. Dimming the thread under every system a
+    // period does not mention would take the reader's only way of judging z for
+    // exactly the places the period is not about, which trades something useful
+    // for nothing.
+    const EXEMPT = new Set(['epoch.ts', 'dropLines.ts']);
     const missing = layers
-      .filter(({ name, source }) => name !== 'epoch.ts' && source.includes('${EPOCH_PARS}'))
+      .filter(({ name, source }) => !EXEMPT.has(name) && source.includes('${EPOCH_PARS}'))
       .map(({ name }) => name.replace('.ts', ''))
       .filter((layer) => !new RegExp(`${layer}\\?\\.setNamedPlaces`).test(MAIN));
     expect(missing).toEqual([]);

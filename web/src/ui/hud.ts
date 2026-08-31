@@ -44,6 +44,8 @@ export const DEFAULT_ONLY_OA: boolean = true;
 export const DEFAULT_ASSOCIATIONS_VISIBLE: boolean = false;
 export const DEFAULT_HISTORY_PANEL_VISIBLE: boolean = false;
 export const DEFAULT_GRID_VISIBLE: boolean = true;
+export const DEFAULT_GRID_MESH_VISIBLE: boolean = false;
+export const DEFAULT_DROP_LINES_VISIBLE: boolean = false;
 
 export interface HudCallbacks {
   onMagnitudeLimit(value: number): void;
@@ -59,6 +61,8 @@ export interface HudCallbacks {
   onHistoryPanel(visible: boolean): void;
   onGridVisible(value: boolean): void;
   onGridOpacity(value: number): void;
+  onGridMeshVisible(value: boolean): void;
+  onDropLinesVisible(value: boolean): void;
   onOAStarsVisible(value: boolean): void;
   onOnlyOA(enabled: boolean): void;
   onDepthOfField(strength: number): void;
@@ -174,7 +178,9 @@ export class Hud {
 
     if (hii) {
       panel.appendChild(
-        this.countRow('HII regions', hii.count, (on) => this.callbacks.onHiiVisible(on)),
+        this.countRow('H II regions', hii.count, (on) => this.callbacks.onHiiVisible(on), true,
+          'Clouds of interstellar hydrogen ionised by nearby hot young stars — ' +
+            'star-forming regions, and the brightest things in the plane'),
       );
     }
 
@@ -341,6 +347,33 @@ export class Hud {
         return v === 0 ? 'off' : `${Math.round(v * 100)}%`;
       },
     );
+    // The square mesh, apart from the rings. The two are the same scale drawn
+    // two ways and answer different questions — distance from Sol, and distance
+    // from anywhere to anywhere — so wanting one is no reason to get both.
+    panel.appendChild(
+      this.countRow(
+        'Square grid',
+        null,
+        (on) => this.callbacks.onGridMeshVisible(on),
+        DEFAULT_GRID_MESH_VISIBLE,
+        'A square mesh at the same spacing as the rings, for reading a distance ' +
+          'between two places when neither of them is Sol',
+      ),
+    );
+
+    // Threads to the plane. The oldest cure for the oldest problem with a 3D
+    // scatter: on screen a dot has two coordinates and the third is a guess.
+    panel.appendChild(
+      this.countRow(
+        'Plane guidelines',
+        null,
+        (on) => this.callbacks.onDropLinesVisible(on),
+        DEFAULT_DROP_LINES_VISIBLE,
+        'A thread from each system Orion’s Arm names down to the galactic ' +
+          'plane: the foot says where it lies, the length says how far off the plane',
+      ),
+    );
+
     this.gridControls = [gridOpacity];
     panel.appendChild(gridOpacity);
 
@@ -389,13 +422,13 @@ export class Hud {
 
     if (hii) {
       panel.appendChild(
-        this.slider('HII opacity', 0, 1, DEFAULT_HII_OPACITY, 0.02, (v) => {
+        this.slider('H II region opacity', 0, 1, DEFAULT_HII_OPACITY, 0.02, (v) => {
           this.callbacks.onHiiOpacity(v);
           return v === 0 ? 'off' : `${Math.round(v * 100)}%`;
         }),
       );
 
-      // Kinematic distances are the weak half of this catalog, so let them be
+      // Kinematic distances are the weak half of this catalogue, so let them be
       // switched off rather than only warned about. The counts come straight from
       // the build, so the button states how much of the layer it would remove.
       const kinematic = hii.stats.methods.kinematic ?? 0;
@@ -413,6 +446,32 @@ export class Hud {
       group.appendChild(toggle);
       row.appendChild(group);
       panel.appendChild(row);
+      // What the layer is, before what is wrong with it. "HII" is a hundred
+      // years of astronomical shorthand — H for hydrogen, II for singly
+      // ionised — and a reader who does not already know it is looking at a
+      // toggle for something unnamed.
+      panel.appendChild(
+        el(
+          'div',
+          'note-line',
+          'H II regions are clouds of interstellar hydrogen ionised by the hot ' +
+            'young stars inside them: nurseries, and the brightest features of ' +
+            'the plane. Orion’s Arm names sixteen of them.',
+        ),
+      );
+      // What the layer *is*, before what is wrong with it. "HII" is a century
+      // of astronomical shorthand — H for hydrogen, II for singly ionised — and
+      // a reader who does not already know it is being offered a switch for
+      // something the map never names.
+      panel.appendChild(
+        el(
+          'div',
+          'note-line',
+          'An H II region is interstellar hydrogen ionised by the hot young ' +
+            'stars within it: a star-forming cloud, and among the brightest ' +
+            "things in the plane. Orion's Arm names sixteen of them.",
+        ),
+      );
       panel.appendChild(
         el(
           'div',
@@ -650,9 +709,12 @@ export class Hud {
     count: number | null,
     onToggle: (visible: boolean) => void,
     initial = true,
+    title?: string,
   ): HTMLElement {
     const row = el('div', 'row');
-    row.appendChild(el('span', 'label', label));
+    const caption = el('span', 'label', label);
+    if (title) caption.title = title;
+    row.appendChild(caption);
     const right = el('span', 'group');
     if (count !== null) right.appendChild(el('span', 'value', count.toLocaleString('en-US')));
     const toggle = el('button', `toggle${initial ? ' active' : ''}`, initial ? 'show' : 'hide');

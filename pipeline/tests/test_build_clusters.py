@@ -22,7 +22,7 @@ PC_TO_LY = 3.261563777
 @pytest.fixture(scope="session")
 def built(tmp_path_factory):
     if not HUNT_REFFERT_2023.path.exists():
-        pytest.skip("Cluster catalog not fetched: run `oastarmap fetch`")
+        pytest.skip("Cluster catalogue not fetched: run `oastarmap fetch`")
 
     out = tmp_path_factory.mktemp("clusters")
     manifest = build_clusters(out_dir=out)
@@ -85,7 +85,7 @@ class TestPositions:
     def test_galactocentric_columns_were_not_used(self, built):
         """No cluster may sit ~8 kpc off purely because the Sun's offset leaked in.
 
-        If the catalog's own X/Y/Z had been copied, nearby clusters like the
+        If the catalogue's own X/Y/Z had been copied, nearby clusters like the
         Hyades (47 pc) would land about 8200 pc away along -x.
         """
         i = _find(built, "Melotte_25")  # Hyades
@@ -152,7 +152,7 @@ class TestCoverage:
         assert np.sum(types == TYPE_INDEX["g"]) > 10
 
     def test_no_type_falls_through_to_unknown(self, built):
-        """Every code in the catalog must be handled explicitly.
+        """Every code in the catalogue must be handled explicitly.
 
         'g' was originally missing, which silently binned every globular as
         unknown — the sort of gap that shows up as a rendering oddity, not an error.

@@ -159,7 +159,7 @@ def read_complexes(path: Path) -> dict[tuple[float, float], Complex]:
         elif math.isfinite(kinematic) and kinematic > 0:
             # Published asymmetrically, and the lower bound can run past zero where
             # the kinematic solution is degenerate. Clamped rather than dropped:
-            # the distance is still the catalog's best value, just badly bounded.
+            # the distance is still the catalogue's best value, just badly bounded.
             plus = _to_float(_cell(row, ix, "err+D"))
             minus = _to_float(_cell(row, ix, "err-D"))
             plus = abs(plus) if math.isfinite(plus) else 0.0

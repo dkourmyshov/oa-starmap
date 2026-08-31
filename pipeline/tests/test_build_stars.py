@@ -25,7 +25,7 @@ PC_TO_LY = 3.261563777
 def built(tmp_path_factory):
     """Build the dataset once into a temp dir and load it back."""
     if not HYGLIKE.path.exists():
-        pytest.skip(f"Source catalog not fetched: run `oastarmap fetch` ({HYGLIKE.filename})")
+        pytest.skip(f"Source catalogue not fetched: run `oastarmap fetch` ({HYGLIKE.filename})")
 
     out = tmp_path_factory.mktemp("data")
     manifest = build_stars(out_dir=out)

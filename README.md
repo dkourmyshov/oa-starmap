@@ -21,11 +21,11 @@ invented to make the map look fuller.
 ## Layout
 
 ```
-pipeline/   Python + uv. Fetches real catalogs, converts to galactic Cartesian,
+pipeline/   Python + uv. Fetches real catalogues, converts to galactic Cartesian,
             emits compact binaries into web/public/data/.
 web/        Vite + TypeScript + Three.js renderer.
 fiction/    Hand-authored Orion's Arm data (YAML). Committed — this is content.
-raw/        Downloaded source catalogs. Gitignored, reproducible.
+raw/        Downloaded source catalogues. Gitignored, reproducible.
 ```
 
 ## Units
@@ -55,7 +55,7 @@ translation layer is needed.
 # Data pipeline
 cd pipeline
 uv sync
-uv run oastarmap fetch     # downloads source catalogs into ../raw/
+uv run oastarmap fetch     # downloads source catalogues into ../raw/
 uv run oastarmap build     # emits ../web/public/data/
 uv run pytest
 
@@ -78,11 +78,11 @@ npm test                   # screen-space projection, picking and label layout
 | Nearby faint stars | Gaia Catalogue of Nearby Stars (GCNS), 100 pc volume-complete | planned |
 | Supernova remnants | Green 2024/2025 | planned |
 | Molecular clouds | Miville-Deschênes+ 2017 | planned |
-| Globular clusters | Harris catalog | planned |
+| Globular clusters | Harris catalogue | planned |
 | Spiral arms | Reid+ 2019 (BeSSeL) — a *model*, labelled as such | planned |
 | Dust volume | Vergely+ 2022 | planned |
 
-The WISE catalog of Anderson+ (2014) is the obvious modern choice for HII regions
+The WISE catalogue of Anderson+ (2014) is the obvious modern choice for HII regions
 and was tried first. It carries a distance for **none** of the Sharpless regions
 Orion's Arm names: it is radio-selected and weighted to the inner Galaxy, and the
 nearby, high-latitude, optically-discovered regions are its blind spot. Sharpless

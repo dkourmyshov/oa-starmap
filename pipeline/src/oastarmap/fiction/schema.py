@@ -2,9 +2,9 @@
 
 Validation is deliberately strict about structure and deliberately lenient about
 whether a landmark currently resolves. A malformed file is an authoring error and
-should fail immediately; an unresolved landmark usually just means the catalog
+should fail immediately; an unresolved landmark usually just means the catalogue
 containing it has not been added yet, and blocking the build on that would make
-the fictional layer un-startable until every catalog exists.
+the fictional layer un-startable until every catalogue exists.
 """
 
 from __future__ import annotations

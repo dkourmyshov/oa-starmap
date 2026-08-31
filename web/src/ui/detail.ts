@@ -2,7 +2,7 @@
  * The detail panel for a selected object.
  *
  * Its job is provenance as much as identification. The pipeline already records
- * which catalog every figure came from, how uncertain it is, and — for HII
+ * which catalogue every figure came from, how uncertain it is, and — for HII
  * regions — which of two incompatible methods produced the distance. Showing the
  * name and hiding the rest would let the map imply a precision it does not have,
  * so the uncertainty band and the source citation are part of the panel, not an

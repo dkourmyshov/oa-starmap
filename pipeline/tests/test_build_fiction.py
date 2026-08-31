@@ -42,7 +42,7 @@ INPUTS = (
 @pytest.fixture(scope="session")
 def built(tmp_path_factory):
     if not all((DATA_OUT_DIR / name).exists() for name in INPUTS):
-        pytest.skip("Real catalogs not built: run `oastarmap build`")
+        pytest.skip("Real catalogues not built: run `oastarmap build`")
 
     out = tmp_path_factory.mktemp("fiction")
     for name in INPUTS:

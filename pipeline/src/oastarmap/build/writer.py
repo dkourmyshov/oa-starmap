@@ -17,7 +17,7 @@ for portably in GLSL and can poison interpolation. Any value below -50 means
 """
 
 NO_CATALOG_ID = np.int32(-1)
-"""Sentinel for "this star has no ID in that catalog"."""
+"""Sentinel for "this star has no ID in that catalogue"."""
 
 
 def write_array(path: Path, array: np.ndarray) -> dict[str, Any]:

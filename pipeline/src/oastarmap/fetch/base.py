@@ -1,4 +1,4 @@
-"""Cached, resumable-enough downloading of upstream catalogs."""
+"""Cached, resumable-enough downloading of upstream catalogues."""
 
 from __future__ import annotations
 
@@ -25,7 +25,7 @@ class CatalogSource:
         url: Direct download URL.
         filename: Name to store it under.
         description: Human-readable provenance, surfaced in build metadata.
-        citation: How to credit this catalog.
+        citation: How to credit this catalogue.
     """
 
     key: str

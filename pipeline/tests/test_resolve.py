@@ -1,4 +1,4 @@
-"""Tests for binding fictional landmark names onto real catalog objects.
+"""Tests for binding fictional landmark names onto real catalogue objects.
 
 The subtle failure this guards against is *shadowing*. Catalogs cross-reference
 each other, so one object routinely lists another's designation among its
@@ -68,7 +68,7 @@ class TestCatalogPrecedence:
         assert resolver.resolve("Sh 2-27", ["x"]).index == 0
 
     def test_designation_outranks_a_star_of_the_same_name(self):
-        """A catalog designation names one object; a Bayer letter does not."""
+        """A catalogue designation names one object; a Bayer letter does not."""
         hii = [{"name": "S27", "aliases": ""}]
         stars = {"5": {"proper": "S27"}}
         assert Resolver([], stars, {}, hii).resolve("S27", ["x"]).kind == "hii"

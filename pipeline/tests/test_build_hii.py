@@ -30,7 +30,7 @@ SOURCES = (SHARPLESS_1959, RUSSEIL_2003_MEMBERS, RUSSEIL_2003_COMPLEXES)
 @pytest.fixture(scope="session")
 def built(tmp_path_factory):
     if not all(source.path.exists() for source in SOURCES):
-        pytest.skip("HII catalogs not fetched: run `oastarmap fetch`")
+        pytest.skip("HII catalogues not fetched: run `oastarmap fetch`")
 
     out = tmp_path_factory.mktemp("hii")
     manifest = build_hii(out_dir=out)
@@ -152,7 +152,7 @@ class TestDesignations:
         assert "Sh2-27" in built["names"][i]["aliases"].split(",")
 
     def test_expected_landmarks_are_present(self, built):
-        """The Orion's Arm landmarks this catalog was added to bind."""
+        """The Orion's Arm landmarks this catalogue was added to bind."""
         for name in ("S27", "S31", "S67", "S119", "S126", "S155", "S171", "S202", "S232"):
             _find(built, name)
 

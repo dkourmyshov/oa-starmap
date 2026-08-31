@@ -128,7 +128,7 @@ def cmd_build(args: argparse.Namespace) -> int:
         return 1
 
     # Order matters: fiction binds against the published output of the real
-    # catalogs, so they must exist first.
+    # catalogues, so they must exist first.
     datasets: dict[str, Any] = {
         "stars": build_stars(),
         "clusters": build_clusters(),
@@ -253,7 +253,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--version", action="version", version=f"oastarmap {__version__}")
     sub = parser.add_subparsers(dest="command", required=True)
 
-    p_fetch = sub.add_parser("fetch", help="download source catalogs into raw/")
+    p_fetch = sub.add_parser("fetch", help="download source catalogues into raw/")
     p_fetch.add_argument("--force", action="store_true", help="re-download even if cached")
     p_fetch.set_defaults(func=cmd_fetch)
 

@@ -1,13 +1,13 @@
 """Build the Orion's Arm fictional layer.
 
-Runs after the real catalogs, because it binds against their published output
+Runs after the real catalogues, because it binds against their published output
 rather than their internals — the same contract the renderer consumes.
 
 Unresolved landmarks do not fail the build. They are reported loudly, listed in
-the manifest as pending, and bind automatically once the catalog containing them
+the manifest as pending, and bind automatically once the catalogue containing them
 is added. The project's rule is that nothing may be dropped *silently*; a visible
 pending list satisfies that without making the fictional layer unusable until
-every astronomical catalog exists.
+every astronomical catalogue exists.
 """
 
 from __future__ import annotations
@@ -53,7 +53,7 @@ does not make.
 
 FRONTIER_PC = TERRAGEN_FRONTIER_LY / PC_TO_LY
 
-# Column holding heliocentric distance in each catalog's geometry array, and the
+# Column holding heliocentric distance in each catalogue's geometry array, and the
 # stride of that array. Stars carry no distance column; theirs is |xyz|.
 _DISTANCE_COLUMN = {"cluster": (8, 5), "hii": (7, 4)}
 
@@ -195,7 +195,7 @@ def _attested_at(polities: list[str], epoch_of: dict[str, int | None]) -> int | 
 
 
 def _load_positions(out_dir: Path) -> dict[str, np.ndarray]:
-    """Heliocentric xyz per catalog, indexed exactly as bindings are."""
+    """Heliocentric xyz per catalogue, indexed exactly as bindings are."""
     positions: dict[str, np.ndarray] = {}
     for kind, (stride, _) in _DISTANCE_COLUMN.items():
         path = out_dir / f"{'clusters' if kind == 'cluster' else kind}.bin"
@@ -208,7 +208,7 @@ def _load_positions(out_dir: Path) -> dict[str, np.ndarray]:
 
 
 def _load_distances(out_dir: Path) -> dict[str, np.ndarray]:
-    """Heliocentric distance in pc per catalog, indexed exactly as bindings are.
+    """Heliocentric distance in pc per catalogue, indexed exactly as bindings are.
 
     Read back from the published binaries rather than recomputed, so the flag is
     derived from the same numbers the renderer draws.
@@ -280,7 +280,7 @@ def build_fiction(
     cluster_names = json.loads(cluster_names_path.read_text(encoding="utf-8"))
     star_names = json.loads((out_dir / "stars.names.json").read_text(encoding="utf-8"))
 
-    # HII regions are optional so the fictional layer still builds if that catalog
+    # HII regions are optional so the fictional layer still builds if that catalogue
     # has not been produced yet; the landmarks simply stay pending.
     hii_path = out_dir / "hii.names.json"
     hii_names = json.loads(hii_path.read_text(encoding="utf-8")) if hii_path.exists() else []
@@ -526,13 +526,13 @@ def format_report(entry: dict[str, Any]) -> str:
         )
         for item in flagged:
             matched = (item["matched_name"] or "").replace("_", " ")
-            # Only worth showing when the catalog knows the object by another
+            # Only worth showing when the catalogue knows the object by another
             # name — "Berkeley 42 (= NGC 6749)" is information, "Czernik 8
             # (= Czernik 8)" is noise.
             via = f" (= {matched})" if matched and matched != item["landmark"] else ""
             lines.append(f"               {item['landmark']}{via} at {item['distance_ly']:,} ly")
     if res["unresolved"]:
-        lines.append(f"             {res['unresolved']} pending — catalog not yet loaded:")
+        lines.append(f"             {res['unresolved']} pending — catalogue not yet loaded:")
         pending = res["pending"]
         for i in range(0, len(pending), 6):
             lines.append("               " + ", ".join(pending[i : i + 6]))

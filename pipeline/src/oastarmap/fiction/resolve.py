@@ -1,9 +1,9 @@
-"""Binding fictional landmark names to real catalog objects.
+"""Binding fictional landmark names to real catalogue objects.
 
 Name matching is the whole difficulty. People write "NGC 0225", "ngc225" and
 "NGC_225" for the same object, refer to clusters by Messier number when the
-catalog only carries NGC numbers, and use proper names ("Ptolemy's Cluster") that
-appear in no catalog at all. Normalisation handles the mechanical variation;
+catalogue only carries NGC numbers, and use proper names ("Ptolemy's Cluster") that
+appear in no catalogue at all. Normalisation handles the mechanical variation;
 ``fiction/aliases.yaml`` handles the rest, and is user-editable precisely because
 that mapping is a matter of judgement rather than syntax.
 """
@@ -59,7 +59,7 @@ def fold_diacritics(text: str) -> str:
 def normalise(name: str) -> str:
     """Reduce a designation to a comparable key.
 
-    Case, punctuation, accents, separator style and leading zeros in catalog
+    Case, punctuation, accents, separator style and leading zeros in catalogue
     numbers all vary between sources and none of them carry meaning.
     """
     # U+2019 is the curly apostrophe; "Ptolemy's Cluster" gets typed both ways.
@@ -197,7 +197,7 @@ class ResolutionReport:
 
 
 class Resolver:
-    """Matches landmark names against the built real catalogs."""
+    """Matches landmark names against the built real catalogues."""
 
     def __init__(
         self,
@@ -211,7 +211,7 @@ class Resolver:
         self._clusters = self._index_named(cluster_names)
         self._hii = self._index_named(hii_names or [])
 
-        # What each catalog calls the object, so a binding can report what it
+        # What each catalogue calls the object, so a binding can report what it
         # actually hit. "Berkeley 42" resolving to NGC 6749 is correct but not
         # obvious, and a binding that says only "resolved" hides that.
         self._primary: dict[str, list[str]] = {
@@ -233,7 +233,7 @@ class Resolver:
 
     @staticmethod
     def _index_named(entries: list[dict[str, Any]]) -> dict[str, int]:
-        """Index a catalog by name, primary names taking precedence over aliases.
+        """Index a catalogue by name, primary names taking precedence over aliases.
 
         Two passes, not one: every primary name is claimed before any alias is
         considered. Catalogs cross-reference each other freely, so an object that
@@ -267,12 +267,12 @@ class Resolver:
         if alias_target:
             keys.extend(abbreviated_forms(alias_target))
 
-        # Most specific catalog first: a Sharpless or cluster designation names one
+        # Most specific catalogue first: a Sharpless or cluster designation names one
         # object, whereas a star's Bayer letter is only unique within a
         # constellation.
-        catalogs = (("cluster", self._clusters), ("hii", self._hii), ("star", self._stars))
+        catalogues = (("cluster", self._clusters), ("hii", self._hii), ("star", self._stars))
         for attempt, lookup_key in enumerate(keys):
-            for kind, index in catalogs:
+            for kind, index in catalogues:
                 if lookup_key in index:
                     binding.kind = kind
                     binding.index = index[lookup_key]

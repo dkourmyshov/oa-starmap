@@ -3,7 +3,7 @@
  *
  * Two decisions here do the real work:
  *
- * **Brightness is computed from the camera, not from Earth.** The catalog stores
+ * **Brightness is computed from the camera, not from Earth.** The catalogue stores
  * absolute magnitude; apparent magnitude is derived per frame from the distance
  * between each star and the current camera position. Flying towards a star makes
  * it brighten, exactly as it should, and no star is privileged by having been
@@ -11,7 +11,7 @@
  *
  * **Faint stars fade rather than vanish.** Alpha follows linear flux, so a star
  * approaching the visibility limit dims smoothly to nothing. This is what keeps
- * the catalog's own sampling boundary invisible: stars drop out of view at the
+ * the catalogue's own sampling boundary invisible: stars drop out of view at the
  * point where they were already too dim to see, instead of popping out at a
  * radius and drawing a sphere in the sky.
  */

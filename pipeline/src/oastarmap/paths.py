@@ -10,7 +10,7 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parents[3]
 
 RAW_DIR = REPO_ROOT / "raw"
-"""Downloaded source catalogs. Gitignored; reproducible via `oastarmap fetch`."""
+"""Downloaded source catalogues. Gitignored; reproducible via `oastarmap fetch`."""
 
 FICTION_DIR = REPO_ROOT / "fiction"
 """Hand-authored Orion's Arm data. Committed — this is content, not generated."""
