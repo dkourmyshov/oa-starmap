@@ -17,6 +17,7 @@ import { PosterLayer } from './layers/posterLayer';
 import { StarField, flatInkGain } from './layers/starField';
 import { WorldField } from './layers/worldField';
 import { type EpochFilter, ObjectIndex } from './scene/objects';
+import { captureZoomGestures } from './scene/gestures';
 import { Viewer } from './scene/viewer';
 import { DetailPanel } from './ui/detail';
 import {
@@ -100,6 +101,9 @@ async function main(): Promise<void> {
   loading?.remove();
 
   const viewer = new Viewer(canvas);
+  // Before anything else takes a wheel event. See scene/gestures.ts: without
+  // this a pinch over a HUD panel zooms the browser instead of the map.
+  captureZoomGestures(viewer);
   const starField = new StarField(data, {}, loaded.innerSphere?.byStar ?? null, loaded.worlds);
   viewer.scene.add(starField.points);
 
@@ -483,6 +487,9 @@ async function main(): Promise<void> {
       onDropLinesVisible: (value) => {
         if (dropLines) dropLines.visible = value;
       },
+      onZoom: (rangePc) => {
+        viewer.range = pc(rangePc);
+      },
       onGridOpacity: (value) => {
         planeGrid.opacity = value;
         // The numbers go with the lines. A grid faded to nothing that still
@@ -683,6 +690,10 @@ async function main(): Promise<void> {
       view.visible,
       performance.now(),
     );
+
+    // The slider follows the wheel. Pushed rather than polled by the HUD so
+    // that dragging the slider does not fight the frame that reads it back.
+    hud.setZoom(viewer.range);
 
     hud.update(viewer.distanceFromSol, dt);
   });

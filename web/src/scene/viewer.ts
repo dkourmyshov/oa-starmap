@@ -39,13 +39,13 @@ function alignUpToScreen(camera: THREE.Camera): void {
 }
 
 /** Closest approach, in parsecs. Below this the camera is effectively inside a star. */
-const MIN_TARGET_DISTANCE = 1e-3;
+export const MIN_TARGET_DISTANCE = 1e-3;
 
 /** Far enough to see the whole dataset from outside. */
-const MAX_TARGET_DISTANCE = 1e5;
+export const MAX_TARGET_DISTANCE = 1e5;
 
 /** Opening range, in parsecs. Wide enough to show the nearby field around Sol. */
-const DEFAULT_RANGE = 65;
+export const DEFAULT_RANGE = 65;
 
 /**
  * How much of the depth axis the plan view keeps, in parsecs either side.
@@ -542,6 +542,44 @@ export class Viewer {
   get viewHalfHeight(): Parsecs {
     if (this.projection === '2d') return this.flatHalfHeight;
     return pc((this.focusDistance as number) * HALF_HEIGHT_AT_UNIT_DISTANCE);
+  }
+
+  /**
+   * How far the camera stands off what it is looking at, in parsecs.
+   *
+   * The one number that means "zoom" under both projections, and the one a
+   * slider can be pointed at. Under perspective it is literally the distance to
+   * the target; under the orthographic camera nothing moves when you zoom, so
+   * it is the standoff that *would* frame the same amount of map — which is why
+   * `focusOn` spends a standoff on the ortho zoom as well.
+   */
+  get range(): Parsecs {
+    if (this.projection === '2d') {
+      return pc(1 / (this.ortho.zoom * HALF_HEIGHT_AT_UNIT_DISTANCE));
+    }
+    return this.focusDistance;
+  }
+
+  set range(value: Parsecs) {
+    // The same bounds the wheel is held to, so a slider and a scroll cannot
+    // disagree about how far in or out the map is allowed to go.
+    const clamped = Math.min(
+      Math.max(value as number, MIN_TARGET_DISTANCE),
+      MAX_TARGET_DISTANCE,
+    );
+    this.focusOn(this.focusTarget.clone(), pc(clamped));
+  }
+
+  /**
+   * Zoom in or out by a factor, about whatever is being looked at.
+   *
+   * Multiplicative, like the wheel: a step covers a light year among nearby
+   * stars and hundreds when looking across the arm, so the gesture feels the
+   * same at every scale. Used by the pinch handler, which has to do the work
+   * itself because the browser will not let the controls see the event.
+   */
+  zoomBy(factor: number): void {
+    this.range = pc((this.range as number) * factor);
   }
 
   /** What the camera is orbiting, from whichever control is driving it. */

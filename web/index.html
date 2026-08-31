@@ -34,6 +34,14 @@
         width: 100%;
         height: 100%;
         display: block;
+        /*
+         * Every touch on the map is the map's. Without this a two-finger pinch
+         * is handed to the browser as page zoom before the controls ever see
+         * it, and the reader gets a magnified interface instead of a closer
+         * star. The wheel and trackpad equivalent is handled in
+         * scene/gestures.ts; this is the same refusal for touch.
+         */
+        touch-action: none;
       }
 
       /*

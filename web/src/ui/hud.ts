@@ -30,7 +30,7 @@ import {
   type Viewpoint,
   VIEWPOINTS,
 } from '../scene/viewer';
-import { type DistanceUnit, DEFAULT_UNIT, type Parsecs, formatDistance } from '../units';
+import { type DistanceUnit, DEFAULT_UNIT, type Parsecs, formatDistance, pc } from '../units';
 import { registrationNote } from '../layers/posterLayer';
 
 /** Enough to read the sheet, little enough that the live map stays on top. */
@@ -44,6 +44,20 @@ export const DEFAULT_ONLY_OA: boolean = true;
 export const DEFAULT_ASSOCIATIONS_VISIBLE: boolean = false;
 export const DEFAULT_HISTORY_PANEL_VISIBLE: boolean = false;
 export const DEFAULT_GRID_VISIBLE: boolean = true;
+
+/**
+ * What the zoom slider spans, in parsecs of standoff.
+ *
+ * The same bounds the wheel is held to in scene/viewer.ts. Stated again here
+ * rather than imported because they are the *slider's* ends and want to be
+ * readable next to it, and a test pins them to the viewer's so the two cannot
+ * drift into disagreeing about how far out the map goes.
+ */
+export const ZOOM_MIN_PC = 1e-3;
+export const ZOOM_MAX_PC = 1e5;
+
+/** Where the map opens. Matches DEFAULT_RANGE in scene/viewer.ts. */
+export const DEFAULT_RANGE_PC = 65;
 export const DEFAULT_GRID_MESH_VISIBLE: boolean = false;
 export const DEFAULT_DROP_LINES_VISIBLE: boolean = false;
 
@@ -59,6 +73,8 @@ export interface HudCallbacks {
   onAssociationOpacity(value: number): void;
   /** Show or hide the history panel itself, not the year it is set to. */
   onHistoryPanel(visible: boolean): void;
+  /** Frame this much map: the standoff in parsecs. See Viewer.range. */
+  onZoom(rangePc: number): void;
   onGridVisible(value: boolean): void;
   onGridOpacity(value: number): void;
   onGridMeshVisible(value: boolean): void;
@@ -129,6 +145,11 @@ export class Hud {
 
   /** The viewpoint and drag controls, greyed out while the plan view is up. */
   private orientationControls: HTMLElement[] = [];
+
+  private zoomInput: HTMLInputElement | null = null;
+  private zoomReadout: HTMLElement | null = null;
+  /** True while the reader has hold of the zoom slider; see setZoom. */
+  private zoomDragging = false;
 
   /** Greyed out while the grid is off, being about a thing that is not drawn. */
   private gridControls: HTMLElement[] = [];
@@ -230,6 +251,36 @@ export class Hud {
     }
     unitRow.appendChild(unitGroup);
     panel.appendChild(unitRow);
+
+    // Zoom, as a control rather than only a gesture. Asked for directly, and
+    // it is also the accessible way in: a trackpad pinch is not available to
+    // everyone, and on a mouse without a wheel there was no way to zoom at all.
+    //
+    // Logarithmic, because the map spans five orders of magnitude and a linear
+    // slider would spend nine tenths of its travel outside the galaxy. Left is
+    // close in, right is far out — reading as a range rather than a zoom
+    // factor, so the number beside it is a distance the reader can check
+    // against the rings on the plane grid.
+    const zoomRow = this.slider(
+      'Zoom',
+      Math.log10(ZOOM_MIN_PC),
+      Math.log10(ZOOM_MAX_PC),
+      Math.log10(DEFAULT_RANGE_PC),
+      0.01,
+      (v) => {
+        const range = 10 ** v;
+        this.callbacks.onZoom(range);
+        return formatDistance(pc(range), this.unit);
+      },
+    );
+    this.zoomInput = zoomRow.querySelector('.slider') as HTMLInputElement;
+    this.zoomReadout = zoomRow.querySelector('.value') as HTMLElement;
+    // Held so the wheel can move the slider without the slider answering back.
+    this.zoomInput.addEventListener('pointerdown', () => (this.zoomDragging = true));
+    for (const event of ['pointerup', 'pointercancel', 'blur'] as const) {
+      this.zoomInput.addEventListener(event, () => (this.zoomDragging = false));
+    }
+    panel.appendChild(zoomRow);
 
     const magnitudeRow = this.slider('Magnitude limit', 3, 16, 7.5, 0.1, (v) => {
       this.callbacks.onMagnitudeLimit(v);
@@ -836,6 +887,25 @@ export class Hud {
       group.classList.toggle('disabled', flat);
     }
     this.callbacks.onProjection(projection);
+  }
+
+  /**
+   * Move the zoom slider to where the map actually is.
+   *
+   * Called every frame, because the wheel, the viewpoint buttons and every
+   * "fly to" all change the range without going through the slider, and a
+   * control that shows a stale number is worse than no control.
+   *
+   * Not while it is being dragged, though: writing the value back under the
+   * reader's finger is how a slider comes to fight the hand holding it.
+   */
+  setZoom(range: Parsecs): void {
+    if (!this.zoomInput || this.zoomDragging) return;
+    const value = Math.log10(
+      Math.min(Math.max(range as number, ZOOM_MIN_PC), ZOOM_MAX_PC),
+    );
+    this.zoomInput.value = String(value);
+    if (this.zoomReadout) this.zoomReadout.textContent = formatDistance(range, this.unit);
   }
 
   update(distanceFromSol: Parsecs, dt: number): void {
