@@ -527,6 +527,23 @@ export class Viewer {
     return pc(this.camera.position.distanceTo(this.active.target));
   }
 
+  /**
+   * Half the height of what is on screen, in parsecs, under either projection.
+   *
+   * `flatHalfHeight` answers this only for the plan view, where the answer is
+   * exact and the same everywhere. Under perspective there is no one number —
+   * the view is a frustum, and what fits on screen depends how far down it you
+   * look — so this reports it at the plane the camera is orbiting, which is
+   * where the reader is looking and where the depth of field already holds
+   * focus. It is what the coordinate grid picks its spacing from: a scale bar
+   * needs one number for "how much map am I seeing", and this is the least
+   * arbitrary one available.
+   */
+  get viewHalfHeight(): Parsecs {
+    if (this.projection === '2d') return this.flatHalfHeight;
+    return pc((this.focusDistance as number) * HALF_HEIGHT_AT_UNIT_DISTANCE);
+  }
+
   /** What the camera is orbiting, from whichever control is driving it. */
   get focusTarget(): THREE.Vector3 {
     return this.active.target;

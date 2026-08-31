@@ -11,6 +11,7 @@ import { ClusterField } from './layers/clusterField';
 import { HiiField } from './layers/hiiField';
 import { OAStarField } from './layers/oaStarField';
 import { SettledField } from './layers/settledField';
+import { PlaneGrid } from './layers/planeGrid';
 import { PosterLayer } from './layers/posterLayer';
 import { StarField, flatInkGain } from './layers/starField';
 import { WorldField } from './layers/worldField';
@@ -19,11 +20,13 @@ import { Viewer } from './scene/viewer';
 import { DetailPanel } from './ui/detail';
 import {
   DEFAULT_ASSOCIATIONS_VISIBLE,
+  DEFAULT_GRID_VISIBLE,
   DEFAULT_HISTORY_PANEL_VISIBLE,
   DEFAULT_ONLY_OA,
   Hud,
   type JumpTarget,
 } from './ui/hud';
+import { GridLabels } from './ui/gridLabels';
 import { LabelOverlay } from './ui/labels';
 import { type EpochState, HistoryPanel } from './ui/history';
 import { DepthOfField } from './layers/dof';
@@ -147,6 +150,13 @@ async function main(): Promise<void> {
   // rest is laid over, not another object in it.
   const posterLayer = new PosterLayer();
   viewer.scene.add(posterLayer.mesh);
+
+  // The graticule goes with it. Both are the paper rather than the map.
+  const planeGrid = new PlaneGrid();
+  planeGrid.visible = DEFAULT_GRID_VISIBLE;
+  viewer.scene.add(planeGrid.group);
+  const gridLabels = new GridLabels(document.body);
+  gridLabels.visible = DEFAULT_GRID_VISIBLE;
 
   if (loaded.clusters) {
     clusterField = new ClusterField(loaded.clusters, loaded.fiction);
@@ -454,6 +464,16 @@ async function main(): Promise<void> {
       onHistoryPanel: (visible) => {
         if (historyPanel) historyPanel.visible = visible;
       },
+      onGridVisible: (value) => {
+        planeGrid.visible = value;
+        gridLabels.visible = value;
+      },
+      onGridOpacity: (value) => {
+        planeGrid.opacity = value;
+        // The numbers go with the lines. A grid faded to nothing that still
+        // had "2 000 ly" written across it would be labelling the void.
+        gridLabels.visible = planeGrid.visible && value > 0;
+      },
       onDepthOfField: (strength) => {
         dof.strength = strength;
       },
@@ -498,6 +518,9 @@ async function main(): Promise<void> {
         detail.refresh(unit);
         labels.unit = unit;
         historyPanel?.setUnit(unit);
+        // The grid re-spaces itself on the next frame — its rings are round
+        // numbers of whichever unit is on screen, so switching unit moves them.
+        unitOnScreen = unit;
       },
       onPoster: (index) => {
         void posterLayer.show(loaded.posters[index] ?? null);
@@ -541,6 +564,11 @@ async function main(): Promise<void> {
       hud.currentUnit,
     );
   }
+
+  // What the grid spaces itself by. Read from the HUD once and kept in step
+  // through the unit callback, because the grid updates every frame and asking
+  // the HUD each time would be a DOM read in the render loop.
+  let unitOnScreen = hud.currentUnit;
 
   // Click to select, but only if the pointer did not travel — otherwise every
   // orbit drag that happens to end over a star would select it.
@@ -614,7 +642,21 @@ async function main(): Promise<void> {
     // without blur, and the labels have to thin out with the sky.
     labels.depthOfField = dof.strength > 0 || dof.dim > 0 ? dof : null;
 
+    // The grid is spaced from how much map is on screen, which changes with
+    // every scroll and every jump, so it is re-derived per frame rather than
+    // pushed from the controls that happen to alter it.
+    planeGrid.update(viewer.viewHalfHeight, unitOnScreen);
+
     const rect = canvas.getBoundingClientRect();
+    gridLabels.update(
+      viewer.camera,
+      rect.width,
+      rect.height,
+      planeGrid.radiiInUnit,
+      planeGrid.reachPc,
+      unitOnScreen,
+    );
+
     // Read each frame rather than pushed on select, so closing the panel from
     // its own button releases the label without a callback between the two.
     labels.selected = detail.currentId;

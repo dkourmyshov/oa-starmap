@@ -19,6 +19,7 @@ import type {
 import { DEFAULT_OPACITY as DEFAULT_CLUSTER_OPACITY } from '../layers/clusterField';
 import { DEFAULT_OPACITY as DEFAULT_HII_OPACITY } from '../layers/hiiField';
 import { DEFAULT_OPACITY as DEFAULT_ASSOCIATION_OPACITY } from '../layers/associationField';
+import { DEFAULT_OPACITY as DEFAULT_GRID_OPACITY } from '../layers/planeGrid';
 import { DEFAULT_MAX_LABELS } from './labels';
 import type { NameMode } from '../scene/objects';
 import {
@@ -42,6 +43,7 @@ export const DEFAULT_POSTER_OPACITY = 0.85;
 export const DEFAULT_ONLY_OA: boolean = true;
 export const DEFAULT_ASSOCIATIONS_VISIBLE: boolean = false;
 export const DEFAULT_HISTORY_PANEL_VISIBLE: boolean = false;
+export const DEFAULT_GRID_VISIBLE: boolean = true;
 
 export interface HudCallbacks {
   onMagnitudeLimit(value: number): void;
@@ -55,6 +57,8 @@ export interface HudCallbacks {
   onAssociationOpacity(value: number): void;
   /** Show or hide the history panel itself, not the year it is set to. */
   onHistoryPanel(visible: boolean): void;
+  onGridVisible(value: boolean): void;
+  onGridOpacity(value: number): void;
   onOAStarsVisible(value: boolean): void;
   onOnlyOA(enabled: boolean): void;
   onDepthOfField(strength: number): void;
@@ -121,6 +125,9 @@ export class Hud {
 
   /** The viewpoint and drag controls, greyed out while the plan view is up. */
   private orientationControls: HTMLElement[] = [];
+
+  /** Greyed out while the grid is off, being about a thing that is not drawn. */
+  private gridControls: HTMLElement[] = [];
 
   /** Caption of the magnitude slider, which the plan view renames. */
   private magnitudeLabel: HTMLElement | null = null;
@@ -312,6 +319,30 @@ export class Hud {
       historyRow.appendChild(historyToggle);
       panel.appendChild(historyRow);
     }
+
+    // The graticule. On to begin with, because a navigation aid nobody can
+    // find is not one: the whole job of this layer is to answer "which way am
+    // I looking and how far across is this", and a reader who does not know to
+    // ask for it is exactly the reader who needs it.
+    panel.appendChild(
+      this.countRow('Plane grid', null, (on) => {
+        this.callbacks.onGridVisible(on);
+        for (const control of this.gridControls) control.classList.toggle('disabled', !on);
+      }, DEFAULT_GRID_VISIBLE),
+    );
+    const gridOpacity = this.slider(
+      'Grid opacity',
+      0,
+      1,
+      DEFAULT_GRID_OPACITY,
+      0.02,
+      (v) => {
+        this.callbacks.onGridOpacity(v);
+        return v === 0 ? 'off' : `${Math.round(v * 100)}%`;
+      },
+    );
+    this.gridControls = [gridOpacity];
+    panel.appendChild(gridOpacity);
 
     panel.appendChild(this.countRow('Labels', null, (on) => this.callbacks.onLabelsVisible(on)));
     panel.appendChild(

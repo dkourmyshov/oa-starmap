@@ -435,6 +435,45 @@
         cursor: default;
       }
 
+      /*
+       * The graticule's writing. Beneath the map labels and above the canvas,
+       * in the grid's own colour and at its own weight, so a distance ring
+       * never reads as the name of something out there.
+       */
+      /*
+       * Between the canvas and the map labels. The canvas has no z-index and
+       * so sits at the bottom of the stack; the object labels are at 1 and the
+       * panels at 2. Stating it as its own layer rather than relying on both
+       * label overlays being at 1 and the grid happening to be appended first:
+       * a ring number drawn over a star's name is the wrong way round, and
+       * "whichever was created first" is not a rule anyone will remember.
+       */
+      .grid-labels {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      .grid-label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        white-space: nowrap;
+        font-size: 10.5px;
+        font-variant-numeric: tabular-nums;
+        letter-spacing: 0.04em;
+        color: rgba(150, 180, 225, 0.85);
+        text-shadow: 0 0 4px rgba(0, 0, 0, 0.9);
+      }
+
+      .grid-label-direction {
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: rgba(170, 198, 240, 0.95);
+      }
+
       #loading {
         position: fixed;
         inset: 0;
