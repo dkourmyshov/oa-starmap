@@ -196,8 +196,21 @@ export class Hud {
   ) {
     const panel = el('div', 'panel panel-stats');
 
-    const title = el('div', 'title', 'OA Starmap');
-    panel.appendChild(title);
+    // The masthead. Two lines, because the map and the setting are two claims
+    // and only one of them is ours: this is a star map, and the thing it maps
+    // is somebody else's universe. "OA Starmap" said neither out loud — it read
+    // as a project name, which is the one thing a reader arriving cold has no
+    // use for.
+    //
+    // Capital S in Sphere because that is how the Encyclopaedia writes it,
+    // eighteen times to one across the history this map quotes. The seam
+    // between their sentences and ours should not show.
+    const masthead = el('div', 'row');
+    const heading = el('div', 'masthead');
+    heading.appendChild(el('div', 'title', 'Starmap of the Terragen Sphere'));
+    heading.appendChild(el('div', 'masthead-sub', "Orion's Arm Universe Project"));
+    masthead.appendChild(heading);
+    panel.appendChild(masthead);
 
     const starLine = el('div', 'row');
     starLine.appendChild(el('span', 'label', 'Stars'));

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>OA Starmap</title>
+    <title>Starmap of the Terragen Sphere</title>
     <style>
       :root {
         --bg: #03040a;
@@ -91,6 +91,32 @@
         align-items: center;
         gap: 10px;
         padding: 2px 0;
+      }
+
+      /*
+       * The masthead: what this is, and whose universe it maps. Two lines
+       * stacked inside the header row rather than two rows, so the fold control
+       * still sits at the right of the heading and the attribution does not
+       * disappear when the panel is folded away. Nothing is more embarrassing
+       * on a map that cites a setting on every panel than folding the credit.
+       */
+      .masthead {
+        display: flex;
+        flex-direction: column;
+        gap: 1px;
+        min-width: 0;
+      }
+
+      .masthead .title {
+        margin-bottom: 0;
+      }
+
+      .masthead-sub {
+        color: var(--muted);
+        font-size: 10.5px;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+        margin-bottom: 8px;
       }
 
       .label {
