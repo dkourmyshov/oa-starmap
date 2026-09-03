@@ -25,6 +25,15 @@ function fakeRoot() {
   };
 }
 
+/**
+ * A stand-in for whatever the pointer is over: `ancestor` is the selector the
+ * real `closest` would match, or null for an element with no interested
+ * ancestor at all — a star label, say.
+ */
+function at(ancestor: string | null) {
+  return { closest: (selectors: string) => (ancestor && selectors.includes(ancestor) ? {} : null) };
+}
+
 function recorder() {
   const factors: number[] = [];
   return { factors, zoomBy: (factor: number) => factors.push(factor) };
@@ -73,6 +82,30 @@ describe('zoom gestures reach the map, not the browser', () => {
     captureZoomGestures(map, dom.root);
 
     expect(dom.fire('wheel', { ctrlKey: false, deltaY: 100 })).toBe(false);
+    expect(map.factors).toEqual([]);
+  });
+
+  it('zooms when the wheel turns over a star label, not nothing at all', () => {
+    // The bug: map labels are real buttons, because clicking one selects the
+    // star. A button takes the wheel event, OrbitControls is on the canvas and
+    // never sees it, and the map stops zooming wherever a name is written.
+    const map = recorder();
+    const dom = fakeRoot();
+    captureZoomGestures(map, dom.root);
+
+    expect(dom.fire('wheel', { ctrlKey: false, deltaY: 100, target: at(null) })).toBe(true);
+    expect(map.factors).toHaveLength(1);
+  });
+
+  it('still leaves the canvas and the panels to themselves', () => {
+    // The two places a plain wheel already means something: OrbitControls has
+    // the canvas, and a panel taller than the screen scrolls.
+    const map = recorder();
+    const dom = fakeRoot();
+    captureZoomGestures(map, dom.root);
+
+    expect(dom.fire('wheel', { ctrlKey: false, deltaY: 100, target: at('canvas') })).toBe(false);
+    expect(dom.fire('wheel', { ctrlKey: false, deltaY: 100, target: at('.panel') })).toBe(false);
     expect(map.factors).toEqual([]);
   });
 

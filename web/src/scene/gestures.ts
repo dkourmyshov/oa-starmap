@@ -30,6 +30,37 @@ const WHEEL_SENSITIVITY = 0.008;
 /** Safari's gesture scale is absolute; this converts a change in it to a factor. */
 const GESTURE_SENSITIVITY = 0.6;
 
+/**
+ * Where an ordinary wheel already means something, and must be left alone.
+ *
+ * Over the canvas OrbitControls has it, and turning it here as well would zoom
+ * twice a notch. Over a panel it is that panel scrolling, which is what the
+ * reader wants and what the timeline and the legend are built to do.
+ *
+ * Everything else on screen is an overlay lying *over the map*: a star's own
+ * name, which is a real button because clicking it selects the star, and which
+ * therefore swallowed the wheel. The reported symptom was exact — the scroll
+ * wheel stopped working whenever the pointer was over a clickable star. From
+ * the reader's side there is no overlay there at all, only the map, so the
+ * wheel has to do what it does over the map.
+ */
+const WHEEL_BELONGS_TO = 'canvas, .panel';
+
+/**
+ * Whether the pointer is over the map rather than over something with its own
+ * use for a wheel.
+ *
+ * Duck-typed rather than tested against `Element`, so the handler can be
+ * exercised without a DOM. An event with no target at all — which is what a
+ * bare synthetic event looks like — counts as not ours, leaving the ordinary
+ * wheel untouched, which is the safe way round.
+ */
+function overTheMap(target: EventTarget | null): boolean {
+  const node = target as { closest?: (selectors: string) => unknown } | null;
+  if (typeof node?.closest !== 'function') return false;
+  return node.closest(WHEEL_BELONGS_TO) === null;
+}
+
 export interface ZoomTarget {
   zoomBy(factor: number): void;
 }
@@ -64,10 +95,9 @@ export function captureZoomGestures(
   root: GestureRoot = window,
 ): () => void {
   const onWheel = (event: WheelEvent): void => {
-    // Only the zoom gesture. An ordinary wheel over a panel is that panel
-    // scrolling, which is what the reader wants and what the panels are built
-    // to do; over the canvas OrbitControls already has it.
-    if (!event.ctrlKey) return;
+    // A pinch is always zoom, wherever it lands. A plain wheel is zoom only
+    // where nothing else has a use for it — see WHEEL_BELONGS_TO.
+    if (!event.ctrlKey && !overTheMap(event.target)) return;
     event.preventDefault();
     // Down-swipe zooms out, matching the wheel and every map ever made.
     target.zoomBy(Math.exp(event.deltaY * WHEEL_SENSITIVITY));
