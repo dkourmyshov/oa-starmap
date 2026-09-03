@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import { hasOrionsArmBlock } from './detail';
+import { encyclopaediaArticle, hasOrionsArmBlock } from './detail';
 
 /**
  * The Orion's Arm block has failed to appear twice, both times because
@@ -41,5 +41,42 @@ describe('hasOrionsArmBlock', () => {
     expect(hasOrionsArmBlock(bare, false)).toBe(false);
     expect(hasOrionsArmBlock({ ...bare, associationSource: null }, false)).toBe(false);
     expect(hasOrionsArmBlock({ ...bare, events: [], worlds: [] }, false)).toBe(false);
+  });
+});
+
+/**
+ * The Encyclopaedia link is lifted to the top of the panel, where it can be
+ * read without scrolling. It reaches the panel by two different routes
+ * depending on what was clicked, and the catalogue's own citation must not be
+ * mistaken for it: ADS and VizieR say where the numbers came from, which is a
+ * different claim and has its own place at the foot.
+ */
+describe('encyclopaediaArticle', () => {
+  const ARTICLE = 'https://www.orionsarm.com/eg-article/4ce';
+
+  it('takes the association source, which is how a landmark carries it', () => {
+    expect(encyclopaediaArticle({ associationSource: ARTICLE })).toBe(ARTICLE);
+  });
+
+  it("takes a world's own article, which is how a settled system carries it", () => {
+    expect(encyclopaediaArticle({ worlds: [{ article: ARTICLE }] })).toBe(ARTICLE);
+  });
+
+  it('reads an address out of a citation that is mostly prose', () => {
+    expect(encyclopaediaArticle({ associationSource: `Table 3, ${ARTICLE}` })).toBe(ARTICLE);
+  });
+
+  it('passes over an address that is not the Encyclopaedia', () => {
+    expect(
+      encyclopaediaArticle({
+        associationSource: 'https://ui.adsabs.harvard.edu/abs/2021A%26A...646A.104H',
+        worlds: [{ article: ARTICLE }],
+      }),
+    ).toBe(ARTICLE);
+  });
+
+  it('has nothing to say about a star the setting never mentions', () => {
+    expect(encyclopaediaArticle({})).toBe(null);
+    expect(encyclopaediaArticle({ associationSource: null, worlds: [] })).toBe(null);
   });
 });

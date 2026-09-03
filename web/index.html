@@ -170,6 +170,22 @@
       }
 
       /*
+       * The Encyclopaedia article, at the head of a selection rather than in
+       * the block below the measurements. Boxed and a shade brighter than the
+       * notes around it because it is the one line on the panel that leads
+       * somewhere else, and the panel is capped at 46vh — anything further down
+       * than this needs scrolling to for.
+       */
+      .note-article {
+        margin: 7px 0 2px;
+        padding: 4px 8px;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        background: rgba(143, 180, 255, 0.08);
+        color: var(--text);
+      }
+
+      /*
        * Links sit inside note lines, which are already dim, so they are picked
        * out by the accent rather than by being brighter — a link should not
        * outweigh the note it belongs to. Wrapping is on the address so a long

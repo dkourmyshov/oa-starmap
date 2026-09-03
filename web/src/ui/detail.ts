@@ -194,6 +194,43 @@ function citationLine(className: string, text: string): HTMLElement {
   return linkLine(className, url, text.slice(0, text.indexOf(url)).trim());
 }
 
+/**
+ * The Encyclopaedia article behind a selection, if there is one.
+ *
+ * Gathered from what the panel was already going to print rather than carried
+ * separately by every `describe*`: the article reaches the panel as an
+ * association source on some kinds and as a world's own link on others, and a
+ * second field would be a second thing to forget to fill in. `hasOrionsArmBlock`
+ * above is a note about exactly that failure happening twice.
+ *
+ * Only orionsarm.com counts. The other addresses on this panel are ADS and
+ * VizieR — the catalogue's citation, which is a different claim and has its own
+ * place at the foot.
+ */
+export function encyclopaediaArticle(detail: {
+  associationSource?: string | null;
+  worlds?: { article: string }[];
+}): string | null {
+  const texts = [detail.associationSource ?? '', ...(detail.worlds ?? []).map((w) => w.article)];
+  for (const text of texts) {
+    const found = text.match(URL_PATTERN)?.find((url) => url.includes('orionsarm.com'));
+    if (found) return found;
+  }
+  return null;
+}
+
+/**
+ * A citation with an address that is already on the panel taken back out.
+ *
+ * Returns null when nothing but the address was left, so the caller can drop
+ * the line rather than print an empty one.
+ */
+function withoutLink(text: string, shown: string | null): string | null {
+  if (!shown || !text.includes(shown)) return text;
+  const rest = text.replace(shown, '').trim().replace(/[,;]$/, '').trim();
+  return rest || null;
+}
+
 /** "1 200 ly (940 – 1 500)" — the band is the honest part. */
 function distanceWithBand(
   distance: number,
@@ -272,6 +309,16 @@ export class DetailPanel {
 
     body.appendChild(el('div', 'note-line', detail.subtitle));
 
+    // The Encyclopaedia article, at the top where it can be seen without
+    // scrolling. It used to sit in the Orion's Arm block below the measurements,
+    // which on a 46vh panel is under the fold for anything with more than a few
+    // rows — so the one link a reader most wants after clicking a place, the one
+    // that says what the place *is*, was the one thing they had to go looking
+    // for. The catalogue citation stays at the foot: that is a statement about
+    // where the numbers came from, and it is not what anyone clicked for.
+    const article = encyclopaediaArticle(detail);
+    if (article) body.appendChild(linkLine('note-line note-article', article, 'Encyclopaedia'));
+
     for (const row of detail.rows) {
       const line = el('div', 'row');
       line.appendChild(el('span', 'label', row.label));
@@ -282,18 +329,24 @@ export class DetailPanel {
     const fiction = this.sources.fiction;
     const beyond = fiction ? detail.distancePc > fiction.frontierPc : false;
 
-    if (hasOrionsArmBlock(detail, beyond)) {
+    // Whatever the address at the top already said is not said again below.
+    // Where the source was nothing but that address, the line goes entirely —
+    // and with it, on a place whose only Orion's Arm content *was* that link,
+    // the whole block: a heading over nothing is worse than no heading.
+    const source = detail.associationSource
+      ? withoutLink(detail.associationSource, article)
+      : null;
+
+    if (hasOrionsArmBlock({ ...detail, associationSource: source }, beyond)) {
       const note = el('div', 'note');
       note.appendChild(el('div', 'note-line', "Orion's Arm"));
       if (detail.polities.length > 0) {
         note.appendChild(el('div', 'note-line note-polity', detail.polities.join(', ')));
-        if (detail.associationSource) {
-          note.appendChild(citationLine('note-line', `after ${detail.associationSource}`));
-        }
-      } else if (detail.associationSource) {
+        if (source) note.appendChild(citationLine('note-line', `after ${source}`));
+      } else if (source) {
         // Bare rather than "after …", which would claim the source backs an
         // affiliation when there is no affiliation to back.
-        note.appendChild(citationLine('note-line', detail.associationSource));
+        note.appendChild(citationLine('note-line', source));
       }
       for (const event of detail.events ?? []) {
         const line = el('div', 'row');
@@ -310,7 +363,11 @@ export class DetailPanel {
         line.appendChild(el('span', 'label', world.kind));
         line.appendChild(el('span', 'value', world.name));
         note.appendChild(line);
-        if (world.article) note.appendChild(linkLine('note-line', world.article));
+        // A system with several worlds gets a link each; the one already at the
+        // top is not repeated.
+        if (world.article && world.article !== article) {
+          note.appendChild(linkLine('note-line', world.article));
+        }
       }
       if (beyond && fiction) {
         // Stated on the panel rather than only implied by the missing colour,
