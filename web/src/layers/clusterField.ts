@@ -28,6 +28,7 @@ import {
 import { type EpochBasis, landmarkYears } from '../data/history';
 
 import { EXTENT_PARS, extentGeometry, extentUniforms, instanced } from './extent';
+import { FOCUS_PARS, UNFOCUSED_DIM, type FocusUniforms, focusUniforms } from './focus';
 export const DEFAULT_OPACITY = 0.7;
 
 /** Index order must match `layout.types.order` in the manifest. */
@@ -52,6 +53,7 @@ const VERTEX_SHADER = /* glsl */ `
   ${EXTENT_PARS}
   ${DOF_PARS}
   ${EPOCH_PARS}
+  ${FOCUS_PARS}
   uniform float uMinSize;
   uniform float uMaxSize;
   uniform float uUnassignedDim;
@@ -106,7 +108,7 @@ const VERTEX_SHADER = /* glsl */ `
 
     // Clusters carrying an Orion's Arm association are the ones being navigated
     // by, so the other ~7000 recede rather than competing with them.
-    vGain = mix(uUnassignedDim, 1.0, aAssigned);
+    vGain = mix(uUnassignedDim, 1.0, aAssigned) * focusGain();
 
     // Orion's Arm-only mode: keep just what the setting has claimed. A quad
     // collapsed onto its centre covers no fragments, which is how a mesh
@@ -189,13 +191,20 @@ export class ClusterField {
   private readonly typeColors: Float32Array;
   private readonly polityColorArray: Float32Array;
   private readonly colorAttribute: THREE.BufferAttribute;
+  private readonly focusAttribute: THREE.BufferAttribute;
+  /** Which instances each polity holds, for setFocusPolity. */
+  private readonly byPolity = new Map<string, number[]>();
 
   constructor(data: ClusterData, fiction: FictionData | null = null) {
     this.count = data.count;
 
-    // Polity colours, indexed 1-based to match the packed byte array.
+    // Polity colours, indexed 1-based to match the packed byte array. The ids
+    // are kept the same way round, so a holder read out of the packed bytes can
+    // be named without a search.
     const polityColors: (THREE.Color | undefined)[] = [];
+    const polityIds: string[] = [];
     for (const polity of fiction?.polities ?? []) {
+      polityIds[polity.index] = polity.id;
       polityColors[polity.index] = new THREE.Color(polity.color);
     }
 
@@ -231,6 +240,16 @@ export class ClusterField {
       // ring is a thin outline and cutting it finer than halves stops reading
       // as anything. Nothing recorded has three.
       const holders = fiction?.sharedPolities?.get(`cluster:${i}`);
+      // Membership is recorded for every holder, not only the two that get an
+      // arc: a cluster a third polity also claims should light up when that
+      // polity is picked, even though the ring has no room to say so.
+      for (const index of holders ?? (polityIndex ? [polityIndex] : [])) {
+        const id = polityIds[index];
+        if (!id) continue;
+        const held = this.byPolity.get(id);
+        if (held) held.push(i);
+        else this.byPolity.set(id, [i]);
+      }
       const second = holders && holders.length > 1 ? polityColors[holders[1]] : undefined;
       shared[i] = second ? 1 : 0;
       const other = second ?? chosen;
@@ -249,6 +268,7 @@ export class ClusterField {
     geometry.setAttribute('aColorB', instanced(secondColors, 3));
     geometry.setAttribute('aShared', instanced(shared, 1));
     geometry.setAttribute('aAssigned', instanced(assigned, 1));
+    geometry.setAttribute('aFocus', instanced(new Float32Array(data.count).fill(1), 1));
     // One pair of years per cluster, not per corner of its quad. Most of the
     // catalogue has none: these are the few the setting names, dated by their
     // own history where they have one and by their source's epoch where the
@@ -271,6 +291,7 @@ export class ClusterField {
       settled: yearsArray(epochPlaces('settled')),
     };
     this.colorAttribute = geometry.getAttribute('aColor') as THREE.BufferAttribute;
+    this.focusAttribute = geometry.getAttribute('aFocus') as THREE.BufferAttribute;
 
     this.material = new THREE.ShaderMaterial({
       uniforms: {
@@ -284,6 +305,7 @@ export class ClusterField {
         uMaxSize: { value: 20000.0 },
         uOpacity: { value: DEFAULT_OPACITY },
         uRingWidthPx: { value: 1.6 },
+        ...focusUniforms(),
         uUnassignedDim: { value: 1.0 },
         uOnlyOA: { value: 0.0 },
       },
@@ -350,6 +372,28 @@ export class ClusterField {
 
   set opacity(value: number) {
     this.material.uniforms.uOpacity.value = value;
+  }
+
+  /**
+   * Pick out one polity's holdings by taking everything else down.
+   *
+   * Nothing is added and nothing is hidden: the chosen polity's rings stay
+   * exactly as they were drawn, in their own colour, and the rest of the
+   * catalogue stays on screen as the context they are held in. See layers/focus.ts.
+   */
+  setFocusPolity(polityId: string | null): void {
+    const uniforms = this.material.uniforms as unknown as FocusUniforms;
+    if (polityId === null) {
+      // The attribute is left as it stands. With the dim at 1 it cannot be
+      // read, and rewriting it to clear a selection would be work for nothing.
+      uniforms.uFocusDim.value = 1;
+      return;
+    }
+    const focus = this.focusAttribute.array as Float32Array;
+    focus.fill(0);
+    for (const index of this.byPolity.get(polityId) ?? []) focus[index] = 1;
+    this.focusAttribute.needsUpdate = true;
+    uniforms.uFocusDim.value = UNFOCUSED_DIM;
   }
 
   /**

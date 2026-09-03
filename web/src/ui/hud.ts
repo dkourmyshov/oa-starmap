@@ -764,8 +764,8 @@ export class Hud {
         ? `${polity.resolved_count}/${polity.landmark_count}`
         : String(polity.member_count);
       row.appendChild(el('span', 'legend-count', count));
-      // The row shows which polity is currently ringed on the map, because the
-      // second click that takes the rings off has to be predictable: a switch
+      // The row shows which polity the map is currently picking out, because
+      // the second click that puts the map back has to be predictable: a switch
       // that looks the same on and off is a switch nobody trusts. Clearing the
       // others first — one polity is picked out at a time, and two rows both
       // looking picked would be a lie about what is on screen.
@@ -812,14 +812,8 @@ export class Hud {
     this.dressPanel(panel, "the Orion's Arm legend");
   }
 
-  /**
-   * Unmark every polity row.
-   *
-   * Called from outside when something else takes the rings off the map — the
-   * epoch moving, above all. A legend still claiming a polity is picked out
-   * when nothing on the map is ringed would be worse than no mark at all.
-   */
-  clearPolityFocus(): void {
+  /** Unmark every polity row, so that at most one ever looks chosen. */
+  private clearPolityFocus(): void {
     for (const row of this.polityList?.querySelectorAll('.legend-active') ?? []) {
       row.classList.remove('legend-active');
     }

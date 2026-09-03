@@ -59,6 +59,7 @@ import {
 
 
 import { DOF_PARS, type DofUniforms, dofUniforms } from './dof';
+import { FOCUS_PARS, UNFOCUSED_DIM, type FocusUniforms, focusUniforms } from './focus';
 import {
   DEFAULT_UNDATED_GAIN,
   DEFAULT_UNNAMED_GAIN,
@@ -108,6 +109,7 @@ const VERTEX_SHADER = /* glsl */ `
   uniform float uSize;
   ${DOF_PARS}
   ${EPOCH_PARS}
+  ${FOCUS_PARS}
   uniform float uUnaffiliatedDim;
 
   varying vec3 vColor0;
@@ -153,7 +155,7 @@ const VERTEX_SHADER = /* glsl */ `
     vScale = grown / uSize;
     vBlur = min(blurPx / (uSize * 0.5), 0.5);
     vGain = mix(uUnaffiliatedDim, 1.0, aAffiliated) * dofGain(uSize, grown)
-      * dofDim(defocus) * epoch;
+      * dofDim(defocus) * epoch * focusGain();
     gl_PointSize = grown;
 
     #include <logdepthbuf_vertex>
@@ -322,6 +324,7 @@ export class SettledField {
   private readonly polityColors: Float32Array[];
   private readonly neutralColors: Float32Array[];
   private readonly colorAttributes: THREE.BufferAttribute[];
+  private readonly focusAttribute: THREE.BufferAttribute;
 
   constructor(
     stars: StarData,
@@ -496,6 +499,9 @@ export class SettledField {
     geometry.setAttribute('aAffiliated', new THREE.BufferAttribute(affiliated, 1));
     geometry.setAttribute('aApprox', new THREE.BufferAttribute(approximate, 1));
     geometry.setAttribute('aVague', new THREE.BufferAttribute(vague, 1));
+    const focus = new Float32Array(this.count).fill(1);
+    this.focusAttribute = new THREE.BufferAttribute(focus, 1);
+    geometry.setAttribute('aFocus', this.focusAttribute);
 
     // Both bases are computed once and kept; switching between them rewrites
     // one attribute rather than rebuilding the layer.
@@ -539,6 +545,7 @@ export class SettledField {
 
         ...dofUniforms(),
         ...epochUniforms(),
+        ...focusUniforms(),
         uOpacity: { value: DEFAULT_OPACITY },
         uUnaffiliatedDim: { value: UNAFFILIATED_DIM },
       },
@@ -575,21 +582,26 @@ export class SettledField {
   }
 
   /**
-   * Where every system one polity holds is, for the highlight layer.
+   * Pick out one polity's holdings by taking everything else down.
    *
-   * A system, not a landmark: the political maps name a few dozen places per
-   * polity, and those are the only ones a landmark binding knows about, but
-   * most of what a polity holds reaches this map as a colony row or a world
-   * instead. Framing or ringing a polity from its landmarks alone would show
-   * the Terragen Federation as a handful of marks.
+   * Nothing is added and nothing is hidden: the chosen polity's rings stay
+   * exactly as they were drawn, in their own colour and at their own systems,
+   * and every other settled system stays on screen as the sphere they sit in.
+   * See layers/focus.ts.
+   *
+   * A system two polities share is a member of both, and lights up for either.
    */
-  memberPositions(polityId: string): { x: number; y: number; z: number }[] {
-    const position = this.points.geometry.getAttribute('position');
-    return (this.ringsByPolity.get(polityId) ?? []).map((index) => ({
-      x: position.getX(index),
-      y: position.getY(index),
-      z: position.getZ(index),
-    }));
+  setFocusPolity(polityId: string | null): void {
+    const uniforms = this.material.uniforms as unknown as FocusUniforms;
+    if (polityId === null) {
+      uniforms.uFocusDim.value = 1;
+      return;
+    }
+    const focus = this.focusAttribute.array as Float32Array;
+    focus.fill(0);
+    for (const index of this.ringsByPolity.get(polityId) ?? []) focus[index] = 1;
+    this.focusAttribute.needsUpdate = true;
+    uniforms.uFocusDim.value = UNFOCUSED_DIM;
   }
 
   /** What the map holds at any year, under the basis currently chosen. */

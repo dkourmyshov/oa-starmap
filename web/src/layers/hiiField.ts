@@ -19,6 +19,7 @@ import * as THREE from 'three';
 
 import type { FictionData, HiiData } from '../data/manifest';
 import { EXTENT_PARS, extentGeometry, extentUniforms, instanced } from './extent';
+import { FOCUS_PARS, UNFOCUSED_DIM, type FocusUniforms, focusUniforms } from './focus';
 import {
   DEFAULT_UNDATED_GAIN,
   DEFAULT_UNNAMED_GAIN,
@@ -51,6 +52,7 @@ const VERTEX_SHADER = /* glsl */ `
 
   ${EXTENT_PARS}
   ${EPOCH_PARS}
+  ${FOCUS_PARS}
   uniform float uMinSize;
   uniform float uMaxSize;
   uniform float uShowKinematic;
@@ -83,7 +85,7 @@ const VERTEX_SHADER = /* glsl */ `
     gl_Position = extentCorner(clipCentre, vSize);
     vColor = aColor;
 
-    vGain = mix(uUnassignedDim, 1.0, aAssigned);
+    vGain = mix(uUnassignedDim, 1.0, aAssigned) * focusGain();
 
     // Orion's Arm-only mode: keep just what the setting has claimed. A quad
     // collapsed onto its centre covers no fragments, which is how a mesh
@@ -154,13 +156,18 @@ export class HiiField {
   private readonly emissionColors: Float32Array;
   private readonly polityColorArray: Float32Array;
   private readonly colorAttribute: THREE.BufferAttribute;
+  private readonly focusAttribute: THREE.BufferAttribute;
+  /** Which instances each polity holds, for setFocusPolity. */
+  private readonly byPolity = new Map<string, number[]>();
 
   constructor(data: HiiData, fiction: FictionData | null = null) {
     this.count = data.count;
 
     const polityColors: (THREE.Color | undefined)[] = [];
+    const polityIds: string[] = [];
     for (const polity of fiction?.polities ?? []) {
       polityColors[polity.index] = new THREE.Color(polity.color);
+      polityIds[polity.index] = polity.id;
     }
 
     const positions = new Float32Array(data.count * 3);
@@ -184,6 +191,16 @@ export class HiiField {
       kinematic[i] = data.meta[i * 2] === METHOD_KINEMATIC ? 1 : 0;
 
       const polityIndex = fiction?.hiiPolity?.[i] ?? 0;
+      // Every holder, not only the one whose colour is drawn: a region two
+      // polities claim should light up for either of them.
+      for (const index of fiction?.sharedPolities?.get(`hii:${i}`) ??
+        (polityIndex ? [polityIndex] : [])) {
+        const id = polityIds[index];
+        if (!id) continue;
+        const held = this.byPolity.get(id);
+        if (held) held.push(i);
+        else this.byPolity.set(id, [i]);
+      }
       const byPolity = polityIndex ? polityColors[polityIndex] : undefined;
       const chosen = byPolity ?? EMISSION_COLOR;
       assigned[i] = byPolity ? 1 : 0;
@@ -201,6 +218,7 @@ export class HiiField {
     geometry.setAttribute('aColor', instanced(colors, 3));
     geometry.setAttribute('aKinematic', instanced(kinematic, 1));
     geometry.setAttribute('aAssigned', instanced(assigned, 1));
+    geometry.setAttribute('aFocus', instanced(new Float32Array(data.count).fill(1), 1));
 
     // One pair of years per region, not per corner of its quad. Almost none of
     // the Sharpless catalogue has any: these are the few Orion's Arm names,
@@ -224,6 +242,7 @@ export class HiiField {
       settled: yearsArray(epochPlaces('settled')),
     };
     this.colorAttribute = geometry.getAttribute('aColor') as THREE.BufferAttribute;
+    this.focusAttribute = geometry.getAttribute('aFocus') as THREE.BufferAttribute;
 
     this.material = new THREE.ShaderMaterial({
       uniforms: {
@@ -234,6 +253,7 @@ export class HiiField {
         uMaxSize: { value: 20000.0 },
         uOpacity: { value: DEFAULT_OPACITY },
         uShowKinematic: { value: 1.0 },
+        ...focusUniforms(),
         uUnassignedDim: { value: 1.0 },
         uOnlyOA: { value: 0.0 },
       },
@@ -296,6 +316,26 @@ export class HiiField {
 
   set opacity(value: number) {
     this.material.uniforms.uOpacity.value = value;
+  }
+
+  /**
+   * Pick out one polity's holdings by taking everything else down.
+   *
+   * Nothing is added and nothing is hidden: the chosen polity's regions stay
+   * exactly as they were drawn, in their own colour, and the rest of the sky
+   * stays on screen as the context they sit in. See layers/focus.ts.
+   */
+  setFocusPolity(polityId: string | null): void {
+    const uniforms = this.material.uniforms as unknown as FocusUniforms;
+    if (polityId === null) {
+      uniforms.uFocusDim.value = 1;
+      return;
+    }
+    const focus = this.focusAttribute.array as Float32Array;
+    focus.fill(0);
+    for (const index of this.byPolity.get(polityId) ?? []) focus[index] = 1;
+    this.focusAttribute.needsUpdate = true;
+    uniforms.uFocusDim.value = UNFOCUSED_DIM;
   }
 
   /** Hide regions placed by kinematic distance, leaving only stellar ones. */

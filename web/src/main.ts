@@ -8,7 +8,6 @@ import { type StarData, loadAll } from './data/manifest';
 import { type HistoryPlace, namedKeys } from './data/history';
 import { AssociationField } from './layers/associationField';
 import { ClusterField } from './layers/clusterField';
-import { type HighlightPoint, HighlightRings } from './layers/highlightRings';
 import { HiiField } from './layers/hiiField';
 import { OAStarField } from './layers/oaStarField';
 import { SettledField } from './layers/settledField';
@@ -178,12 +177,6 @@ async function main(): Promise<void> {
     viewer.scene.add(clusterField.mesh);
   }
 
-  // The mark the polity legend draws round what a polity holds. Added once and
-  // empty until something is clicked; see layers/highlightRings.ts for why the
-  // answer is a ring laid over the map rather than a change made to it.
-  const highlight = new HighlightRings();
-  viewer.scene.add(highlight.mesh);
-
   // Labelling and picking both need to know what is currently drawn, because
   // neither should ever offer an object the renderer is not showing.
   const view = {
@@ -293,111 +286,43 @@ async function main(): Promise<void> {
   };
 
   /**
-   * Where a binding points and how big it is, whichever catalogue it landed in.
-   *
-   * Each catalogue packs a different stride, so neither can be read without
-   * knowing the kind. The radius comes back with the position because a ring
-   * round a cluster wants to be the cluster's size and a ring round a star
-   * wants to be a fixed mark — a star's radius is nothing at any zoom this map
-   * reaches, so zero is the honest answer rather than a missing one.
+   * Where a binding points, whichever catalogue it landed in. Each catalogue packs a
+   * different stride, so the position cannot be read without knowing the kind.
    */
-  const bindingMark = (kind: string | null, index: number): HighlightPoint | null => {
+  const bindingPosition = (kind: string | null, index: number): THREE.Vector3 | null => {
     const source =
       kind === 'cluster'
-        ? { array: loaded.clusters?.geometry, stride: 8, radiusAt: 3 }
+        ? { array: loaded.clusters?.geometry, stride: 8 }
         : kind === 'hii'
-          ? { array: loaded.hii?.geometry, stride: 7, radiusAt: 3 }
+          ? { array: loaded.hii?.geometry, stride: 7 }
           : kind === 'star'
-            ? { array: data.positions, stride: 5, radiusAt: -1 }
+            ? { array: data.positions, stride: 5 }
             : null;
     if (!source?.array) return null;
     const base = index * source.stride;
-    return {
-      x: source.array[base],
-      y: source.array[base + 1],
-      z: source.array[base + 2],
-      radiusPc: source.radiusAt >= 0 ? source.array[base + source.radiusAt] : 0,
-    };
+    return new THREE.Vector3(source.array[base], source.array[base + 1], source.array[base + 2]);
   };
 
-  /** The same, as a point, for the callers that only want somewhere to fly to. */
-  const bindingPosition = (kind: string | null, index: number): THREE.Vector3 | null => {
-    const mark = bindingMark(kind, index);
-    return mark ? new THREE.Vector3(mark.x, mark.y, mark.z) : null;
-  };
+  /** Whose holdings are currently picked out, so a second click puts it back. */
+  let focusedPolity: string | null = null;
 
   /**
-   * The polity's own colour, lifted until it can be seen.
+   * Pick out one polity by taking the other thirty-nine down.
    *
-   * The ring is the polity's, and taking its colour is what ties it to the
-   * swatch that was clicked. But the palette has to keep forty polities apart
-   * from one another, not stand out against a black sky, and several of them
-   * are dark enough that a hairline in that colour is invisible. Hue and the
-   * relationships between hues survive; only the floor moves.
-   */
-  const ringColour = (polityId: string): THREE.Color => {
-    const polity = loaded.fiction?.polities.find((p) => p.id === polityId);
-    const colour = new THREE.Color(polity?.color ?? 0xffffff);
-    const hsl = { h: 0, s: 0, l: 0 };
-    colour.getHSL(hsl);
-    return colour.setHSL(hsl.h, Math.max(hsl.s, 0.55), Math.max(hsl.l, 0.66));
-  };
-
-  /** Which polity's holdings are currently ringed, so a second click undoes it. */
-  let ringedPolity: string | null = null;
-
-  /**
-   * Ring everything one polity holds, and frame the lot.
+   * Every layer that draws a polity colour is told the same thing, and none of
+   * them hides anything: an unheld object is dimmed, not dropped, because a
+   * polity's holdings mean nothing without the sphere around them.
    *
-   * Both halves answer the same question — where is this polity — and they have
-   * to be asked of the same list, or the map flies somewhere and marks things
-   * off screen. The list is every ring the settled layer drew for it, which is
-   * colonies, worlds and add-on stars as well as landmarks, plus the landmarks
-   * that live in the cluster and H II catalogues instead. Framing used to run
-   * off the landmark bindings alone, which for the Terragen Federation is a few
-   * dozen places out of hundreds.
+   * The camera does not move. Answering "where is this polity" by flying to it
+   * throws away the view the reader had arranged, and the answer is legible
+   * from wherever they were standing — which is the point of dimming rather
+   * than marking. A second click on the same row restores the map.
    */
   const focusPolity = (polityId: string): void => {
-    if (!loaded.fiction) return;
-
-    // A second click on the same row puts the map back. The legend is a set of
-    // switches then, rather than a set of things that can only be turned on.
-    if (ringedPolity === polityId) {
-      highlight.clear();
-      ringedPolity = null;
-      return;
-    }
-
-    const points: HighlightPoint[] = [];
-    for (const binding of loaded.fiction.bindings) {
-      // Stars are the settled layer's business, and it knows about more of them
-      // than the landmark list does; taking them from both would ring some
-      // twice.
-      if (binding.kind !== 'cluster' && binding.kind !== 'hii') continue;
-      if (binding.index === null || !binding.polities.includes(polityId)) continue;
-      const mark = bindingMark(binding.kind, binding.index);
-      // Drawn broken where the source puts the place in this polity's direction
-      // rather than inside its volume — the same reservation that leaves it
-      // uncoloured on the map.
-      if (mark) points.push({ ...mark, dashed: binding.beyond_frontier });
-    }
-    for (const place of settledField?.memberPositions(polityId) ?? []) points.push(place);
-    if (points.length === 0) return;
-
-    highlight.show(points, ringColour(polityId));
-    ringedPolity = polityId;
-
-    const centre = new THREE.Vector3();
-    for (const point of points) centre.add(new THREE.Vector3(point.x, point.y, point.z));
-    centre.divideScalar(points.length);
-
-    let extent = 0;
-    const probe = new THREE.Vector3();
-    for (const point of points) {
-      extent = Math.max(extent, probe.set(point.x, point.y, point.z).distanceTo(centre));
-    }
-
-    viewer.focusOn(centre, pc(Math.max(extent * 2.2, 50)));
+    focusedPolity = focusedPolity === polityId ? null : polityId;
+    settledField?.setFocusPolity(focusedPolity);
+    clusterField?.setFocusPolity(focusedPolity);
+    hiiField?.setFocusPolity(focusedPolity);
   };
 
   /**
@@ -422,13 +347,6 @@ async function main(): Promise<void> {
     hiiField?.setEpoch(year, undated);
     associationField?.setEpoch(year, undated);
     dropLines?.setEpoch(year, undated);
-    // The polity rings do not know about years, and a ring left hanging round a
-    // colony the epoch has just hidden would be the one mark on screen still
-    // asserting it. Taken off rather than filtered: what a polity held in 4200
-    // is a real question, and one this map cannot yet answer honestly.
-    highlight.clear();
-    ringedPolity = null;
-    hud.clearPolityFocus();
     if (state) {
       settledField?.setEpochBasis(state.basis);
       worldField?.setEpochBasis(state.basis);
@@ -718,7 +636,6 @@ async function main(): Promise<void> {
     // converts a pixel offset into clip space.
     const { width, height } = viewer.renderer.domElement;
     clusterField?.setViewport(width, height);
-    highlight.setViewport(width, height);
     hiiField?.setViewport(width, height);
     associationField?.setViewport(width, height);
     worldField?.setViewport(width, height);
