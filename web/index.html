@@ -139,6 +139,20 @@
         accent-color: var(--accent);
       }
 
+      /*
+       * A control that is about a layer nobody is drawing: the grid's opacity
+       * with the grid off, the guidelines' with the guidelines off. Dimmed and
+       * deaf rather than removed, because the row is where the reader will look
+       * for it once they switch the layer back on, and a panel whose rows move
+       * about is harder to use than one with a greyed row in it. The grid has
+       * been applying this class since it landed with nothing in the sheet to
+       * match it, so that switch has been quietly doing nothing.
+       */
+      .disabled {
+        opacity: 0.38;
+        pointer-events: none;
+      }
+
       .note {
         margin-top: 11px;
         padding-top: 9px;

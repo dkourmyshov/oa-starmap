@@ -484,6 +484,9 @@ async function main(): Promise<void> {
       onGridMeshVisible: (value) => {
         planeGrid.meshVisible = value;
       },
+      onDropLinesOpacity: (value) => {
+        if (dropLines) dropLines.opacity = value;
+      },
       onDropLinesVisible: (value) => {
         if (dropLines) dropLines.visible = value;
       },

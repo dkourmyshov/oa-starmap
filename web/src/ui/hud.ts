@@ -20,6 +20,7 @@ import { DEFAULT_OPACITY as DEFAULT_CLUSTER_OPACITY } from '../layers/clusterFie
 import { DEFAULT_OPACITY as DEFAULT_HII_OPACITY } from '../layers/hiiField';
 import { DEFAULT_OPACITY as DEFAULT_ASSOCIATION_OPACITY } from '../layers/associationField';
 import { DEFAULT_OPACITY as DEFAULT_GRID_OPACITY } from '../layers/planeGrid';
+import { DEFAULT_OPACITY as DEFAULT_DROP_LINES_OPACITY } from '../layers/dropLines';
 import { DEFAULT_MAX_LABELS } from './labels';
 import { type Foldable, makeFoldable } from './foldable';
 import { makeDraggable } from './drag';
@@ -81,6 +82,7 @@ export interface HudCallbacks {
   onGridOpacity(value: number): void;
   onGridMeshVisible(value: boolean): void;
   onDropLinesVisible(value: boolean): void;
+  onDropLinesOpacity(value: number): void;
   onOAStarsVisible(value: boolean): void;
   onOnlyOA(enabled: boolean): void;
   onDepthOfField(strength: number): void;
@@ -158,6 +160,9 @@ export class Hud {
 
   /** Greyed out while the grid is off, being about a thing that is not drawn. */
   private gridControls: HTMLElement[] = [];
+
+  /** The same, for the threads to the plane, which start hidden. */
+  private guidelineControls: HTMLElement[] = [];
 
   /** Caption of the magnitude slider, which the plan view renames. */
   private magnitudeLabel: HTMLElement | null = null;
@@ -423,15 +428,39 @@ export class Hud {
       this.countRow(
         'Plane guidelines',
         null,
-        (on) => this.callbacks.onDropLinesVisible(on),
+        (on) => {
+          this.callbacks.onDropLinesVisible(on);
+          for (const control of this.guidelineControls) control.classList.toggle('disabled', !on);
+        },
         DEFAULT_DROP_LINES_VISIBLE,
         'A thread from each system Orion’s Arm names down to the galactic ' +
           'plane: the foot says where it lies, the length says how far off the plane',
       ),
     );
 
+    // How loud the threads are. There is no right answer to set once and be
+    // done with: a hundred threads over the Inner Sphere at the weight that
+    // makes one readable is a curtain, and the weight that keeps the curtain
+    // thin loses the single thread the reader was following. It depends on how
+    // many are on screen, which is to say on where the reader is looking, so it
+    // is theirs to set.
+    const guidelineOpacity = this.slider(
+      'Guideline opacity',
+      0,
+      1,
+      DEFAULT_DROP_LINES_OPACITY,
+      0.02,
+      (v) => {
+        this.callbacks.onDropLinesOpacity(v);
+        return v === 0 ? 'off' : `${Math.round(v * 100)}%`;
+      },
+    );
+
     this.gridControls = [gridOpacity];
+    this.guidelineControls = [guidelineOpacity];
+    guidelineOpacity.classList.toggle('disabled', !DEFAULT_DROP_LINES_VISIBLE);
     panel.appendChild(gridOpacity);
+    panel.appendChild(guidelineOpacity);
 
     panel.appendChild(this.countRow('Labels', null, (on) => this.callbacks.onLabelsVisible(on)));
     panel.appendChild(
