@@ -34,6 +34,35 @@ function at(ancestor: string | null) {
   return { closest: (selectors: string) => (ancestor && selectors.includes(ancestor) ? {} : null) };
 }
 
+/**
+ * These tests run in node, which has no `WheelEvent`. The module builds a real
+ * one to hand to the canvas — that is the whole point of forwarding — so the
+ * constructor a browser would provide is supplied here rather than guarded for
+ * in the module, where the guard would be dead code everywhere but a test.
+ */
+class FakeWheelEvent {
+  readonly type: string;
+  readonly deltaX: number;
+  readonly deltaY: number;
+  readonly deltaMode: number;
+  readonly ctrlKey: boolean;
+  constructor(type: string, init: WheelEventInit = {}) {
+    this.type = type;
+    this.deltaX = init.deltaX ?? 0;
+    this.deltaY = init.deltaY ?? 0;
+    this.deltaMode = init.deltaMode ?? 0;
+    this.ctrlKey = init.ctrlKey ?? false;
+  }
+}
+const globals = globalThis as { WheelEvent?: unknown };
+globals.WheelEvent ??= FakeWheelEvent;
+
+/** A stand-in for the canvas a forwarded wheel is aimed at. */
+function sink() {
+  const events: Event[] = [];
+  return { events, dispatchEvent: (event: Event) => (events.push(event), true) };
+}
+
 function recorder() {
   const factors: number[] = [];
   return { factors, zoomBy: (factor: number) => factors.push(factor) };
@@ -49,8 +78,20 @@ describe('zoom gestures reach the map, not the browser', () => {
     const dom = fakeRoot();
     captureZoomGestures(map, dom.root);
 
-    expect(dom.fire('wheel', { ctrlKey: true, deltaY: 100 })).toBe(true);
+    expect(dom.fire('wheel', { ctrlKey: true, deltaY: 100, target: at('.panel') })).toBe(true);
     expect(map.factors).toHaveLength(1);
+  });
+
+  it('refuses a pinch over the canvas without zooming it a second time', () => {
+    // The controls are listening there already. Refusing the browser's page
+    // zoom is all this file has to do, and doing more would move the map twice
+    // for one gesture.
+    const map = recorder();
+    const dom = fakeRoot();
+    captureZoomGestures(map, dom.root);
+
+    expect(dom.fire('wheel', { ctrlKey: true, deltaY: 100, target: at('canvas') })).toBe(true);
+    expect(map.factors).toEqual([]);
   });
 
   it('listens in the capture phase, or the panels get there first', () => {
@@ -91,10 +132,29 @@ describe('zoom gestures reach the map, not the browser', () => {
     // never sees it, and the map stops zooming wherever a name is written.
     const map = recorder();
     const dom = fakeRoot();
-    captureZoomGestures(map, dom.root);
+    const canvas = sink();
+    captureZoomGestures(map, dom.root, canvas);
 
     expect(dom.fire('wheel', { ctrlKey: false, deltaY: 100, target: at(null) })).toBe(true);
-    expect(map.factors).toHaveLength(1);
+    // Handed to the canvas rather than converted here. Computing the zoom in
+    // this file was a second feel beside the controls' own, and forty times too
+    // strong: one touchpad sweep pulled the galaxy into the middle of the view.
+    expect(canvas.events).toHaveLength(1);
+    expect(map.factors).toEqual([]);
+  });
+
+  it('carries the delta and its mode across, so a notch is worth what it was', () => {
+    // OrbitControls scales its step by deltaY and multiplies by 16 for a
+    // line-mode wheel. Dropping deltaMode would make that notch a sixteenth.
+    const dom = fakeRoot();
+    const canvas = sink();
+    captureZoomGestures(recorder(), dom.root, canvas);
+
+    dom.fire('wheel', { ctrlKey: false, deltaY: 53, deltaMode: 1, target: at(null) });
+    const [forwarded] = canvas.events as WheelEvent[];
+    expect(forwarded.type).toBe('wheel');
+    expect(forwarded.deltaY).toBe(53);
+    expect(forwarded.deltaMode).toBe(1);
   });
 
   it('still leaves the canvas and the panels to themselves', () => {
@@ -114,8 +174,8 @@ describe('zoom gestures reach the map, not the browser', () => {
     const dom = fakeRoot();
     captureZoomGestures(map, dom.root);
 
-    dom.fire('wheel', { ctrlKey: true, deltaY: 100 });
-    dom.fire('wheel', { ctrlKey: true, deltaY: -100 });
+    dom.fire('wheel', { ctrlKey: true, deltaY: 100, target: at('.panel') });
+    dom.fire('wheel', { ctrlKey: true, deltaY: -100, target: at('.panel') });
     // Range is a standoff, so a factor above 1 is further away.
     expect(map.factors[0]).toBeGreaterThan(1);
     expect(map.factors[1]).toBeLessThan(1);

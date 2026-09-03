@@ -103,8 +103,10 @@ async function main(): Promise<void> {
 
   const viewer = new Viewer(canvas);
   // Before anything else takes a wheel event. See scene/gestures.ts: without
-  // this a pinch over a HUD panel zooms the browser instead of the map.
-  captureZoomGestures(viewer);
+  // this a pinch over a HUD panel zooms the browser instead of the map. The
+  // canvas goes with it, so a wheel that landed on an overlay can be handed to
+  // the controls listening there rather than converted to a zoom twice over.
+  captureZoomGestures(viewer, window, canvas);
   const starField = new StarField(data, {}, loaded.innerSphere?.byStar ?? null, loaded.worlds);
   viewer.scene.add(starField.points);
 

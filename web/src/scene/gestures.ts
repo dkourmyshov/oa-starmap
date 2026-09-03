@@ -22,6 +22,13 @@
  * Listening on the window in the capture phase, so the panels never get first
  * refusal, and with `passive: false`, without which preventDefault is ignored
  * and the whole thing silently does nothing.
+ *
+ * What reaches the map is the *event*, not a zoom computed here. A wheel that
+ * landed on an overlay is copied and dispatched at the canvas, where the same
+ * controls handle it as if the pointer had been over the map all along. The
+ * alternative — turning the delta into a zoom in this file — is a second feel
+ * to tune beside the controls' own, and it was tuned forty times too strong:
+ * a touchpad sweep took the whole galaxy into the middle of the screen.
  */
 
 /** How much of a wheel delta becomes zoom. Matched to OrbitControls' feel. */
@@ -31,36 +38,60 @@ const WHEEL_SENSITIVITY = 0.008;
 const GESTURE_SENSITIVITY = 0.6;
 
 /**
- * Where an ordinary wheel already means something, and must be left alone.
+ * What the pointer is over, which decides who gets the wheel.
  *
- * Over the canvas OrbitControls has it, and turning it here as well would zoom
- * twice a notch. Over a panel it is that panel scrolling, which is what the
- * reader wants and what the timeline and the legend are built to do.
- *
- * Everything else on screen is an overlay lying *over the map*: a star's own
- * name, which is a real button because clicking it selects the star, and which
- * therefore swallowed the wheel. The reported symptom was exact — the scroll
- * wheel stopped working whenever the pointer was over a clickable star. From
- * the reader's side there is no overlay there at all, only the map, so the
- * wheel has to do what it does over the map.
+ * `canvas` is the map itself, where OrbitControls is already listening.
+ * `panel` is a HUD panel, where an ordinary wheel scrolls the timeline or the
+ * legend and must be left alone. Everything else is an overlay lying *over* the
+ * map — a star's own name, above all, which is a real button because clicking
+ * it selects the star, and which therefore swallowed the wheel. From the
+ * reader's side there is no overlay there at all, only the map.
  */
-const WHEEL_BELONGS_TO = 'canvas, .panel';
+type Zone = 'canvas' | 'panel' | 'overlay';
 
 /**
- * Whether the pointer is over the map rather than over something with its own
- * use for a wheel.
- *
  * Duck-typed rather than tested against `Element`, so the handler can be
  * exercised without a DOM. An event with no target at all — which is what a
- * bare synthetic event looks like — counts as not ours, leaving the ordinary
- * wheel untouched, which is the safe way round.
+ * bare synthetic event looks like — is treated as the canvas, the case where
+ * this file does the least.
  */
-function overTheMap(target: EventTarget | null): boolean {
+function zoneOf(target: EventTarget | null): Zone {
   const node = target as { closest?: (selectors: string) => unknown } | null;
-  if (typeof node?.closest !== 'function') return false;
-  return node.closest(WHEEL_BELONGS_TO) === null;
+  if (typeof node?.closest !== 'function') return 'canvas';
+  if (node.closest('canvas')) return 'canvas';
+  if (node.closest('.panel')) return 'panel';
+  return 'overlay';
 }
 
+/** Somewhere to re-aim a wheel event: the map canvas, in practice. */
+export interface WheelSink {
+  dispatchEvent(event: Event): boolean;
+}
+
+/**
+ * The same wheel, aimed at the canvas.
+ *
+ * A copy rather than a re-dispatch of the original, which the DOM forbids while
+ * it is still being delivered. Only the fields OrbitControls reads are worth
+ * carrying, but they are all carried: it scales its step by `deltaY` and
+ * multiplies by 16 or 100 for the line and page modes, so dropping `deltaMode`
+ * would make one notch of a line-mode wheel a sixteenth of what it should be.
+ */
+function copyWheel(event: WheelEvent): WheelEvent {
+  return new WheelEvent('wheel', {
+    deltaX: event.deltaX,
+    deltaY: event.deltaY,
+    deltaZ: event.deltaZ,
+    deltaMode: event.deltaMode,
+    clientX: event.clientX,
+    clientY: event.clientY,
+    ctrlKey: event.ctrlKey,
+    bubbles: true,
+    cancelable: true,
+  });
+}
+
+/** The map, seen as the one thing this file needs of it. */
 export interface ZoomTarget {
   zoomBy(factor: number): void;
 }
@@ -93,13 +124,36 @@ export interface GestureRoot {
 export function captureZoomGestures(
   target: ZoomTarget,
   root: GestureRoot = window,
+  sink: WheelSink | null = null,
 ): () => void {
   const onWheel = (event: WheelEvent): void => {
-    // A pinch is always zoom, wherever it lands. A plain wheel is zoom only
-    // where nothing else has a use for it — see WHEEL_BELONGS_TO.
-    if (!event.ctrlKey && !overTheMap(event.target)) return;
+    const zone = zoneOf(event.target);
+    // An ordinary wheel over a panel is that panel scrolling, which is what the
+    // reader wants and what the timeline and the legend are built to do.
+    if (!event.ctrlKey && zone === 'panel') return;
+    // Over the canvas the controls are already listening, and the only thing
+    // wanted here is to stop the browser taking a pinch as page zoom. Zooming
+    // as well would zoom the map twice for one gesture.
+    if (zone === 'canvas') {
+      if (event.ctrlKey) event.preventDefault();
+      return;
+    }
+
     event.preventDefault();
-    // Down-swipe zooms out, matching the wheel and every map ever made.
+    // Handed to the map's own controls rather than turned into a zoom here.
+    // Doing that arithmetic in this file meant a second feel to tune, and it
+    // was tuned wrong: exp(deltaY * 0.008) is some forty times the step
+    // OrbitControls takes for the same event, so a touchpad sweep — dozens of
+    // events, each with a delta of a hundred or more — pulled the whole galaxy
+    // into the middle of the screen in one flick. Forwarding cannot drift like
+    // that, because it is not a second path: it is the path a wheel over the
+    // canvas already takes.
+    if (sink) {
+      sink.dispatchEvent(copyWheel(event));
+      return;
+    }
+    // Wired without a canvas to hand it to. Down-swipe zooms out, matching the
+    // wheel and every map ever made.
     target.zoomBy(Math.exp(event.deltaY * WHEEL_SENSITIVITY));
   };
 
