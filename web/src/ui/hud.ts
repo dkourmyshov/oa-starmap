@@ -164,6 +164,9 @@ export class Hud {
   /** The same, for the threads to the plane, which start hidden. */
   private guidelineControls: HTMLElement[] = [];
 
+  /** The polity legend, so the row whose holdings are ringed can be marked. */
+  private polityList: HTMLElement | null = null;
+
   /** Caption of the magnitude slider, which the plan view renames. */
   private magnitudeLabel: HTMLElement | null = null;
 
@@ -748,9 +751,20 @@ export class Hud {
         ? `${polity.resolved_count}/${polity.landmark_count}`
         : String(polity.member_count);
       row.appendChild(el('span', 'legend-count', count));
-      row.addEventListener('click', () => this.callbacks.onFocusPolity(polity.id));
+      // The row shows which polity is currently ringed on the map, because the
+      // second click that takes the rings off has to be predictable: a switch
+      // that looks the same on and off is a switch nobody trusts. Clearing the
+      // others first — one polity is picked out at a time, and two rows both
+      // looking picked would be a lie about what is on screen.
+      row.addEventListener('click', () => {
+        const wasOn = row.classList.contains('legend-active');
+        this.clearPolityFocus();
+        row.classList.toggle('legend-active', !wasOn);
+        this.callbacks.onFocusPolity(polity.id);
+      });
       list.appendChild(row);
     }
+    this.polityList = list;
     panel.appendChild(list);
 
     const pending = fiction.pending.length;
@@ -783,6 +797,19 @@ export class Hud {
 
     root.appendChild(panel);
     this.dressPanel(panel, "the Orion's Arm legend");
+  }
+
+  /**
+   * Unmark every polity row.
+   *
+   * Called from outside when something else takes the rings off the map — the
+   * epoch moving, above all. A legend still claiming a polity is picked out
+   * when nothing on the map is ringed would be worse than no mark at all.
+   */
+  clearPolityFocus(): void {
+    for (const row of this.polityList?.querySelectorAll('.legend-active') ?? []) {
+      row.classList.remove('legend-active');
+    }
   }
 
   /**

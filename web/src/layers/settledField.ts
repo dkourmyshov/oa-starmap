@@ -318,6 +318,7 @@ export class SettledField {
   private readonly namedAttribute: THREE.BufferAttribute;
   /** Ring index by every name the timeline might use for it. */
   private readonly ringsByKey = new Map<string, number[]>();
+  private readonly ringsByPolity = new Map<string, number[]>();
   private readonly polityColors: Float32Array[];
   private readonly neutralColors: Float32Array[];
   private readonly colorAttributes: THREE.BufferAttribute[];
@@ -515,6 +516,15 @@ export class SettledField {
         if (at) at.push(index);
         else this.ringsByKey.set(key, [index]);
       }
+      // The same index the other way round, for "show me everything this
+      // polity holds". Built here rather than walked for on demand because the
+      // rings are the only list that has all of them: colony rows, worlds on
+      // stars, landmark stars and add-on stars, gathered once.
+      for (const id of ring.polities) {
+        const held = this.ringsByPolity.get(id);
+        if (held) held.push(index);
+        else this.ringsByPolity.set(id, [index]);
+      }
     });
     this.colorAttributes = colors.map((array, slot) => {
       const attribute = new THREE.BufferAttribute(array, 3);
@@ -562,6 +572,24 @@ export class SettledField {
       known: this.yearsByBasis.known.slice(),
       settled: this.yearsByBasis.settled.slice(),
     };
+  }
+
+  /**
+   * Where every system one polity holds is, for the highlight layer.
+   *
+   * A system, not a landmark: the political maps name a few dozen places per
+   * polity, and those are the only ones a landmark binding knows about, but
+   * most of what a polity holds reaches this map as a colony row or a world
+   * instead. Framing or ringing a polity from its landmarks alone would show
+   * the Terragen Federation as a handful of marks.
+   */
+  memberPositions(polityId: string): { x: number; y: number; z: number }[] {
+    const position = this.points.geometry.getAttribute('position');
+    return (this.ringsByPolity.get(polityId) ?? []).map((index) => ({
+      x: position.getX(index),
+      y: position.getY(index),
+      z: position.getZ(index),
+    }));
   }
 
   /** What the map holds at any year, under the basis currently chosen. */
