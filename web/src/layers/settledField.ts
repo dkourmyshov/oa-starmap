@@ -59,6 +59,7 @@ import {
 
 
 import { DOF_PARS, type DofUniforms, dofUniforms } from './dof';
+import type { Placements } from './dropLines';
 import { FOCUS_PARS, UNFOCUSED_DIM, type FocusUniforms, focusUniforms } from './focus';
 import {
   DEFAULT_UNDATED_GAIN,
@@ -572,12 +573,16 @@ export class SettledField {
    * under each of them would be a second chance to disagree about which places
    * exist.
    */
-  get placements(): { positions: Float32Array; known: Float32Array; settled: Float32Array } {
+  get placements(): Placements {
     const position = this.points.geometry.getAttribute('position');
     return {
       positions: (position.array as Float32Array).slice(),
       known: this.yearsByBasis.known.slice(),
       settled: this.yearsByBasis.settled.slice(),
+      // Handed over with the positions for the same reason the positions are:
+      // this class is the one place the setting's systems are gathered, and
+      // whoever draws a thread under one needs to know who holds it.
+      byPolity: new Map(this.ringsByPolity),
     };
   }
 

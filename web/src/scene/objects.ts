@@ -99,6 +99,21 @@ const MAX_SIZE_BONUS = 1.5;
 /** Added when an object carries an Orion's Arm association — the map's anchors. */
 const POLITY_BONUS = 0.6;
 
+/**
+ * Added while the legend is picking out the polity that holds this object.
+ *
+ * Dimming the other names answers "which of these are held" but not "where are
+ * they": a name that lost its slot to a brighter neighbour is not dimmed, it is
+ * absent, and the polity looks emptier than it is. So while the reader is
+ * asking about one polity, its places take the space first.
+ *
+ * Wider than the whole scale — 3.0 at the top, plus MAX_SIZE_BONUS, against 0.1
+ * at the bottom — so that *every* held name is considered before any other,
+ * rather than only the ones that were already important. Ordering inside each
+ * group is untouched, because a constant added to one group cannot reorder it.
+ */
+const FOCUS_BONUS = 5.0;
+
 /** Importance before anything about the current view is known. */
 const BASE_IMPORTANCE = {
   starProper: 1.0,
@@ -262,6 +277,8 @@ export interface LayoutOptions {
   extraHeight?: number;
   /** Which of an object's names to show. Defaults to the setting's. */
   nameMode?: NameMode;
+  /** The polity the legend is picking out, whose names win their slots first. */
+  focusPolity?: string | null;
   /**
    * An object to label whatever the declutter pass decides.
    *
@@ -1077,7 +1094,14 @@ export class ObjectIndex {
       // through the side door.
       const size =
         this.radius[id] > 0 ? Math.min(this.screenR[id] / 40, MAX_SIZE_BONUS) : 0;
-      candidates.push({ id, priority: this.importance[id] + size, tiebreak: this.shuffle[id] });
+      const focused =
+        options.focusPolity != null &&
+        Boolean(this.labelPolities[id]?.includes(options.focusPolity));
+      candidates.push({
+        id,
+        priority: this.importance[id] + size + (focused ? FOCUS_BONUS : 0),
+        tiebreak: this.shuffle[id],
+      });
     }
     // Priority first, exactly; the shuffle only ever separates equals, so it
     // cannot promote a less important label above a more important one.

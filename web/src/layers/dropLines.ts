@@ -36,6 +36,7 @@ import {
   type EpochUniforms,
   epochUniforms,
 } from './epoch';
+import { FOCUS_PARS, type FocusUniforms, focusUniforms } from './focus';
 
 /** Faint by default. A guide should not out-draw the thing it guides to. */
 export const DEFAULT_OPACITY = 0.28;
@@ -45,6 +46,7 @@ const VERTEX_SHADER = /* glsl */ `
   #include <logdepthbuf_pars_vertex>
 
   ${EPOCH_PARS}
+  ${FOCUS_PARS}
 
   // 0 at the system, 1 at the plane. The line fades along its own length.
   attribute float aFoot;
@@ -66,7 +68,7 @@ const VERTEX_SHADER = /* glsl */ `
     // the thread reads as hanging from the marker rather than as a stick the
     // marker is mounted on. The floor keeps the foot visible enough to locate
     // in the plane, which is half of what the line is for.
-    vFade = mix(1.0, 0.25, aFoot) * epoch;
+    vFade = mix(1.0, 0.25, aFoot) * epoch * focusGain();
 
     vec3 world = position;
     // The foot of the line is the system's own x and y, at z = 0. Computed
@@ -103,6 +105,8 @@ export interface Placements {
   /** Interleaved [from, to] per system, under each basis. */
   known: Float32Array;
   settled: Float32Array;
+  /** Which systems each polity holds, by index into the above. */
+  byPolity: Map<string, number[]>;
 }
 
 export class DropLines {
@@ -111,10 +115,13 @@ export class DropLines {
 
   private readonly material: THREE.ShaderMaterial;
   private readonly yearAttribute: THREE.BufferAttribute;
+  private readonly focusAttribute: THREE.BufferAttribute;
   private readonly yearsByBasis: Record<EpochBasis, Float32Array>;
+  private readonly byPolity: Map<string, number[]>;
 
   constructor(placements: Placements) {
     this.count = Math.floor(placements.positions.length / 3);
+    this.byPolity = placements.byPolity;
 
     // Two vertices a system: one at the system, one at its foot. Both carry the
     // system's own position, and the shader flattens the second — see aFoot.
@@ -154,6 +161,9 @@ export class DropLines {
     this.yearAttribute = new THREE.BufferAttribute(years.slice(), 2);
     geometry.setAttribute('aYears', this.yearAttribute);
     geometry.setAttribute('aNamed', new THREE.BufferAttribute(named, 1));
+    // Two vertices a system here as well, so a thread is shown or hidden whole.
+    this.focusAttribute = new THREE.BufferAttribute(new Float32Array(this.count * 2).fill(1), 1);
+    geometry.setAttribute('aFocus', this.focusAttribute);
     geometry.boundingSphere = new THREE.Sphere(new THREE.Vector3(), Infinity);
     this.yearsByBasis = { known: years, settled: settledYears };
 
@@ -162,6 +172,7 @@ export class DropLines {
         ...epochUniforms(),
         uNorth: { value: new THREE.Vector3(0.55, 0.66, 0.86) },
         uSouth: { value: new THREE.Vector3(0.44, 0.5, 0.7) },
+        ...focusUniforms(),
         uOpacity: { value: DEFAULT_OPACITY },
       },
       vertexShader: VERTEX_SHADER,
@@ -190,6 +201,31 @@ export class DropLines {
   setEpochBasis(basis: EpochBasis): void {
     (this.yearAttribute.array as Float32Array).set(this.yearsByBasis[basis]);
     this.yearAttribute.needsUpdate = true;
+  }
+
+  /**
+   * Draw threads only under one polity's systems, or under all of them.
+   *
+   * Hidden rather than dimmed, which is the opposite of what the marks do and
+   * is right here: a thread is already the faintest thing on the map, so taking
+   * it to a seventh would only be a slower way of removing it, and the reason
+   * to want one polity's threads is that eight hundred of them are a curtain.
+   * The gain is a factor on the line's own fade, so the fragment discards it.
+   */
+  setFocusPolity(polityId: string | null): void {
+    const uniforms = this.material.uniforms as unknown as FocusUniforms;
+    if (polityId === null) {
+      uniforms.uFocusDim.value = 1;
+      return;
+    }
+    const focus = this.focusAttribute.array as Float32Array;
+    focus.fill(0);
+    for (const index of this.byPolity.get(polityId) ?? []) {
+      focus[index * 2] = 1;
+      focus[index * 2 + 1] = 1;
+    }
+    this.focusAttribute.needsUpdate = true;
+    uniforms.uFocusDim.value = 0;
   }
 
   set opacity(value: number) {

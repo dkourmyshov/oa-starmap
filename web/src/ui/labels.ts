@@ -124,6 +124,11 @@ export class LabelOverlay {
    * colours over a map that had gone quiet, which is worse than not dimming at
    * all — the labels are the loudest thing on screen and they were pointing
    * everywhere at once.
+   *
+   * It also decides who gets a slot, not only how the slot is drawn: the
+   * declutter pass puts the chosen polity's names in first. Dimming alone left
+   * a held place that lost its slot to a brighter neighbour missing rather than
+   * quiet, which reads as the polity having nothing there.
    */
   focusPolity: string | null = null;
 
@@ -168,6 +173,7 @@ export class LabelOverlay {
       epoch: this.epoch,
       pinned: this.selected,
       nameMode: this.nameMode,
+      focusPolity: this.focusPolity,
       absoluteMagnitudes: this.absoluteMagnitudes,
       extraHeight: this.showAltitude ? ALTITUDE_LINE_PX : 0,
     });
