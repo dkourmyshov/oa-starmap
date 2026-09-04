@@ -55,6 +55,35 @@ const EVENT_LABEL: Record<string, string> = {
 };
 
 /**
+ * The same events, where the source says which polity was involved.
+ *
+ * A separate table rather than a suffix bolted onto the one above, because the
+ * preposition is the meaning: settled *by* the Doran Empire, passed *to* the
+ * Non-Coercive Zone, capital *of* the Solar Dominion. This is the only place a
+ * polity dissolved before the setting's present is ever named on the map.
+ */
+const EVENT_WITH_POLITY: Record<string, (name: string) => string> = {
+  settled: (name) => `settled by ${name}`,
+  visited: (name) => `first visited by ${name}`,
+  transferred: (name) => `passed to ${name}`,
+  capital: (name) => `became a capital of ${name}`,
+  abandoned: (name) => `abandoned by ${name}`,
+  stewardship: (name) => `taken into stewardship by ${name}`,
+};
+
+/** How an event reads, naming its polity where it has one. */
+export function eventLabel(
+  event: { kind: string; polity?: string },
+  polityName: (id: string) => string | undefined,
+): string {
+  const plain = EVENT_LABEL[event.kind] ?? event.kind;
+  const name = event.polity ? polityName(event.polity) ?? event.polity : '';
+  if (!name) return plain;
+  const worded = EVENT_WITH_POLITY[event.kind];
+  return worded ? worded(name) : `${plain} (${name})`;
+}
+
+/**
  * How a hedged year reads.
  *
  * The sources hedge in several distinct ways and the panel should not flatten
@@ -376,7 +405,13 @@ export class DetailPanel {
         // what a run of them has to be scannable by. A span shows both ends,
         // and an approximate year is hedged rather than presented as a date.
         line.appendChild(el('span', 'label', formatYear(event)));
-        line.appendChild(el('span', 'value', EVENT_LABEL[event.kind] ?? event.kind));
+        line.appendChild(
+          el(
+            'span',
+            'value',
+            eventLabel(event, (id) => fiction?.polities.find((p) => p.id === id)?.name),
+          ),
+        );
         note.appendChild(line);
         if (event.note) note.appendChild(el('div', 'note-line', event.note));
       }

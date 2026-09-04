@@ -811,6 +811,20 @@ class WorldEvent(BaseModel):
     1500 to 2100" — three different claims, and only one of them is a date.
     """
 
+    polity: str = ""
+    """Which polity the event is about, as a polity id, where the source says.
+
+    This is how a place's *past* holders are recorded, since ``affiliations``
+    is only ever the present ones. Sesharia was settled in 1102 by the Doran
+    Empire and is held by the Non-Coercive Zone now; the first of those facts
+    has nowhere else to go, and the Doran Empire — dissolved by 5855 — has no
+    present holdings at all and would otherwise not exist in this data. The
+    meaning follows the kind: ``settled`` by it, ``transferred`` to it,
+    ``abandoned`` by it, ``capital`` of it. Validated against the polity file
+    at build time, so a dissolved polity named here has to be entered there,
+    with a colour, like Cygexpa.
+    """
+
     @model_validator(mode="after")
     def _span_runs_forwards(self) -> WorldEvent:
         if self.until_at is not None and self.until_at < self.year_at:

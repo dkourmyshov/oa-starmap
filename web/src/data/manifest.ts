@@ -503,6 +503,13 @@ export interface WorldEvent {
   until_at: number | null;
   /** exact | circa | not_later_than | not_earlier_than | between. */
   precision: string;
+  /**
+   * The polity the event is about, as an id; empty where the source names none.
+   * This is where a place's past holders live: `affiliations` is only ever the
+   * present ones, and a polity dissolved before the setting's present appears
+   * nowhere else.
+   */
+  polity: string;
 }
 
 export interface WorldEntry {

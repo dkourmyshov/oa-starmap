@@ -265,6 +265,13 @@ def build_worlds(
     unknown = sorted({a for w in source.worlds for a in w.affiliations} - known_polities)
     if unknown:
         raise ValueError(f"worlds.yaml cites unknown affiliations: {unknown}")
+    # An event's polity is a claim about the past, and a dissolved polity is
+    # still entered in the polity file, so the same check applies.
+    unknown = sorted(
+        {e.polity for w in source.worlds for e in w.events if e.polity} - known_polities
+    )
+    if unknown:
+        raise ValueError(f"worlds.yaml events name unknown polities: {unknown}")
 
     # Add-on designations, so an `oa_star` binding fails loudly rather than
     # silently placing nothing.
@@ -291,6 +298,7 @@ def build_worlds(
                 "source": e.source,
                 "until_at": e.until_at,
                 "precision": e.precision,
+                "polity": e.polity,
             }
             for e in sorted(world.events, key=lambda e: (e.year_at, e.kind))
         ]

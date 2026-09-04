@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import { encyclopaediaArticle, hasOrionsArmBlock } from './detail';
+import { encyclopaediaArticle, eventLabel, hasOrionsArmBlock } from './detail';
 
 /**
  * The Orion's Arm block has failed to appear twice, both times because
@@ -100,5 +100,36 @@ describe('encyclopaediaArticle', () => {
   it('has nothing to say about a star the setting never mentions', () => {
     expect(encyclopaediaArticle({})).toBe(null);
     expect(encyclopaediaArticle({ associationSource: null, worlds: [] })).toBe(null);
+  });
+});
+
+/**
+ * A past holder is only ever named through an event, so the wording is what
+ * carries the claim. "Settled by the Doran Empire" says who; "settled" beside
+ * a Non-Coercive Zone affiliation would say the wrong who.
+ */
+describe('eventLabel', () => {
+  const names: Record<string, string> = { 'doran-empire': 'Doran Empire' };
+  const named = (id: string) => names[id];
+
+  it('reads as before when the source names no polity', () => {
+    expect(eventLabel({ kind: 'settled' }, named)).toBe('settled');
+    expect(eventLabel({ kind: 'settled', polity: '' }, named)).toBe('settled');
+  });
+
+  it('puts the preposition the kind wants in front of the name', () => {
+    expect(eventLabel({ kind: 'settled', polity: 'doran-empire' }, named)).toBe('settled by Doran Empire');
+    expect(eventLabel({ kind: 'transferred', polity: 'doran-empire' }, named)).toBe('passed to Doran Empire');
+  });
+
+  it('falls back to the id rather than dropping a polity the file does not name', () => {
+    // The build refuses an unknown id, so this is belt and braces — but a
+    // silent drop would turn "settled by X" back into "settled", which is a
+    // different claim, and a quiet one.
+    expect(eventLabel({ kind: 'settled', polity: 'lost-polity' }, named)).toBe('settled by lost-polity');
+  });
+
+  it('brackets the name for a kind with no wording of its own', () => {
+    expect(eventLabel({ kind: 'observed', polity: 'doran-empire' }, named)).toBe('first observed (Doran Empire)');
   });
 });
