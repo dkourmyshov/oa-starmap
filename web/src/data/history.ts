@@ -245,6 +245,87 @@ export function combinedYears(worlds: WorldEntry[] | undefined, basis: EpochBasi
 }
 
 /**
+ * Who held a place from a given year, as read off one event.
+ *
+ * The event kinds that make a polity the holder. A visit does not: the First
+ * Federation ship that reached New Callisto in 1770 did not make New Callisto
+ * a Federation world, and the article says who holds it. An abandonment with
+ * no polity ends the holding.
+ */
+const HOLDER_KINDS = new Set(['settled', 'transferred', 'capital', 'stewardship']);
+
+export interface Holding {
+  /** The year from which these polities hold the place. */
+  from: number;
+  /** Empty when the place was abandoned. */
+  polities: string[];
+}
+
+/**
+ * A system's past holders, in order, from every world at its position.
+ *
+ * Only what the events state. A world with a settlement date and no polity on
+ * it contributes nothing here: its holder in that year is unknown, not nobody,
+ * and the map's answer for an unknown past holder is the present one.
+ */
+export function holdingsOf(worlds: WorldEntry[] | undefined): Holding[] {
+  const out: Holding[] = [];
+  for (const world of worlds ?? []) {
+    for (const event of world.events ?? []) {
+      if (event.polity && HOLDER_KINDS.has(event.kind)) {
+        out.push({ from: event.year_at, polities: [event.polity] });
+      } else if (event.kind === 'abandoned' && !event.polity) {
+        out.push({ from: event.year_at, polities: [] });
+      }
+    }
+  }
+  return out.sort((a, b) => a.from - b.from);
+}
+
+/**
+ * Who holds a place in a given year.
+ *
+ * The latest holding at or before the year, unless the polity it names had
+ * dissolved by then — in which case the present holders, since the sources
+ * record that the place passed to them and not when. With no holding before
+ * the year at all, the present holders as well: a past holder the sources do
+ * not name is unknown, and drawing an unknown as nobody would strip the
+ * colour off every system whose article gives a date but not a founder.
+ *
+ * So the colour drawn at a year is one of two claims, and the panel can tell
+ * them apart: a holder an event names, or the present holder standing in.
+ */
+export function holdersAt(
+  holdings: Holding[] | undefined,
+  present: string[],
+  year: number,
+  dissolvedAt: ReadonlyMap<string, number>,
+): string[] {
+  let latest: Holding | undefined;
+  for (const holding of holdings ?? []) {
+    if (holding.from <= year) latest = holding;
+    else break;
+  }
+  if (!latest) return present;
+  const gone = latest.polities.some((id) => {
+    const end = dissolvedAt.get(id);
+    return end !== undefined && year >= end;
+  });
+  return gone ? present : latest.polities;
+}
+
+/** Each polity's dissolution year, for `holdersAt`. */
+export function dissolutionYears(fiction: FictionData | null): Map<string, number> {
+  const out = new Map<string, number>();
+  for (const polity of fiction?.polities ?? []) {
+    if (polity.dissolved_at !== null && polity.dissolved_at !== undefined) {
+      out.set(polity.id, polity.dissolved_at);
+    }
+  }
+  return out;
+}
+
+/**
  * When a real catalogued object the setting names enters and leaves the map.
  *
  * Three sources of a year, in descending strength.

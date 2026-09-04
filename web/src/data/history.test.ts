@@ -7,6 +7,8 @@ import {
   NEVER_ENDS,
   UNDATED,
   combinedYears,
+  holdersAt,
+  holdingsOf,
   eraOf,
   landmarkYears,
   makeHistory,
@@ -299,5 +301,74 @@ describe('a real object the setting names', () => {
 
   it('survives having no fictional layer at all', () => {
     expect(landmarkYears(null, 'cluster', 10, 'known').from).toBe(UNDATED);
+  });
+});
+
+/**
+ * Who held a place in a given year, read off its events.
+ *
+ * The map already had a year; this is what colours a ring in it. The claims
+ * to keep apart: a holder an event names, a holder that had dissolved by then,
+ * and a past the sources do not name at all.
+ */
+describe('holdersAt', () => {
+  const ended = new Map([['doran-empire', 5855]]);
+  const sesharia = holdingsOf([
+    world({
+      affiliations: ['nocozo'],
+      events: [
+        { year_at: 1102, kind: 'settled', polity: 'doran-empire', note: '', source: '', until_at: null, precision: 'exact' },
+        { year_at: 1599, kind: 'visited', polity: '', note: '', source: '', until_at: null, precision: 'exact' },
+      ],
+    }),
+  ]);
+
+  it('names the polity that settled the place, from the year it did', () => {
+    expect(holdersAt(sesharia, ['nocozo'], 1102, ended)).toEqual(['doran-empire']);
+    expect(holdersAt(sesharia, ['nocozo'], 3000, ended)).toEqual(['doran-empire']);
+  });
+
+  it('gives an unknown past to the present holders, not to nobody', () => {
+    // Before the settlement the sources say nothing about who held it, and
+    // drawing that as unheld would strip the colour off every dated system
+    // whose article gives a year but not a founder.
+    expect(holdersAt(sesharia, ['nocozo'], 900, ended)).toEqual(['nocozo']);
+    expect(holdersAt(undefined, ['nocozo'], 3000, ended)).toEqual(['nocozo']);
+  });
+
+  it('falls back to the present holders once the past one has dissolved', () => {
+    // The Doran Empire's last remnants entered the Terragen Federation in
+    // 5855. Sesharia is NoCoZo now and its article does not say when; the one
+    // thing certain is that it was not Doran in 9000.
+    expect(holdersAt(sesharia, ['nocozo'], 5855, ended)).toEqual(['nocozo']);
+    expect(holdersAt(sesharia, ['nocozo'], 9000, ended)).toEqual(['nocozo']);
+  });
+
+  it('follows a change of hands, and an abandonment to nobody', () => {
+    const dorangloon = holdingsOf([
+      world({
+        events: [
+          { year_at: 3890, kind: 'transferred', polity: 'solar-dominion', note: '', source: '', until_at: null, precision: 'exact' },
+          { year_at: 929, kind: 'settled', polity: 'doran-empire', note: '', source: '', until_at: null, precision: 'exact' },
+          { year_at: 7000, kind: 'abandoned', polity: '', note: '', source: '', until_at: null, precision: 'exact' },
+        ],
+      }),
+    ]);
+    // Sorted by year whatever order the file had them in.
+    expect(dorangloon.map((h) => h.from)).toEqual([929, 3890, 7000]);
+    expect(holdersAt(dorangloon, ['terragen-federation'], 2000, ended)).toEqual(['doran-empire']);
+    expect(holdersAt(dorangloon, ['terragen-federation'], 3890, ended)).toEqual(['solar-dominion']);
+    expect(holdersAt(dorangloon, ['terragen-federation'], 8000, ended)).toEqual([]);
+  });
+
+  it('does not make a visitor a holder', () => {
+    const callisto = holdingsOf([
+      world({
+        events: [
+          { year_at: 1770, kind: 'visited', polity: 'first-federation', note: '', source: '', until_at: null, precision: 'exact' },
+        ],
+      }),
+    ]);
+    expect(callisto).toEqual([]);
   });
 });

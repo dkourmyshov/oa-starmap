@@ -30,6 +30,10 @@ import {
   NEVER_ENDS,
   UNDATED,
   combinedYears,
+  dissolutionYears,
+  type Holding,
+  holdersAt,
+  holdingsOf,
   landmarkYears,
 } from '../data/history';
 
@@ -427,6 +431,10 @@ export class ObjectIndex {
   private readonly settledFrom: Float32Array;
   private readonly endsAt: Float32Array;
   private readonly labelColor: (string | undefined)[];
+  /** Past holders on record, for the colour a year in history mode wants. */
+  private readonly labelHoldings: (Holding[] | undefined)[];
+  private readonly polityColor: Map<string, string>;
+  private readonly dissolvedAt: Map<string, number>;
   /** Who holds each object, for the polity focus. See PlacedLabel.polities. */
   private readonly labelPolities: (string[] | undefined)[];
 
@@ -502,6 +510,9 @@ export class ObjectIndex {
     const polityColor = new Map<string, string>(
       (fiction?.polities ?? []).map((p) => [p.id, p.color]),
     );
+    this.polityColor = polityColor;
+    this.dissolvedAt = dissolutionYears(fiction);
+    this.labelHoldings = new Array(total);
     const polityColorByIndex = new Map<number, string>(
       (fiction?.polities ?? []).map((p) => [p.index, p.color]),
     );
@@ -546,6 +557,7 @@ export class ObjectIndex {
         const held = affiliationsFor(colonies?.get(i), here);
         this.labelPolities[at] = held;
         this.labelColor[at] = polityColor.get(held[0] ?? '');
+        this.labelHoldings[at] = holdingsOf(here);
       }
 
       // What Orion's Arm calls the system takes precedence over what the sky
@@ -562,6 +574,7 @@ export class ObjectIndex {
         const heldHere = affiliationsFor(colony, worlds?.byStar.get(i));
         this.labelPolities[at] = heldHere;
         this.labelColor[at] = polityColor.get(heldHere[0] ?? '');
+        this.labelHoldings[at] = holdingsOf(worlds?.byStar.get(i));
       }
 
       // The catalogue's name is worked out whether or not the setting has one
@@ -769,6 +782,7 @@ export class ObjectIndex {
           this.labelColor[at] = polityColor.get(oaHeld[0]);
           this.labelPolities[at] = oaHeld;
         }
+        this.labelHoldings[at] = holdingsOf(bound);
         if (this.labels[at]) labelled.push(at);
         at++;
       }
@@ -807,6 +821,7 @@ export class ObjectIndex {
         this.assertedPosition[at] = 1;
         this.labelPolities[at] = world.affiliations;
         this.labelColor[at] = polityColor.get(world.affiliations[0] ?? '');
+        this.labelHoldings[at] = holdingsOf([world, ...guests]);
         if (this.labels[at]) labelled.push(at);
         at++;
       }
@@ -855,6 +870,17 @@ export class ObjectIndex {
    * three states are the ones the shaders draw — present, not yet or already
    * ended, and no date recorded at all.
    */
+  /**
+   * The colour a label carries: its present holder's, or in history mode the
+   * holder's in the year shown, so a name and the ring under it agree.
+   */
+  private colorAt(id: number, epoch: EpochFilter | undefined): string | undefined {
+    const holdings = this.labelHoldings[id];
+    if (!epoch || !holdings?.length) return this.labelColor[id];
+    const held = holdersAt(holdings, this.labelPolities[id] ?? [], epoch.year, this.dissolvedAt);
+    return held.length ? this.polityColor.get(held[0]) : undefined;
+  }
+
   private existsAt(id: number, epoch: EpochFilter): boolean {
     const from = epoch.basis === 'settled' ? this.settledFrom[id] : this.knownFrom[id];
     if (from === -Infinity) return true;
@@ -1143,7 +1169,7 @@ export class ObjectIndex {
         x: cx,
         y: cy,
         importance: this.importance[pinned],
-        color: unclaimed(pinned) ? undefined : this.labelColor[pinned],
+        color: unclaimed(pinned) ? undefined : this.colorAt(pinned, options.epoch),
         polities: this.labelPolities[pinned],
         asserted: this.assertedPosition[pinned] === 1,
         pinned: true,
@@ -1184,7 +1210,7 @@ export class ObjectIndex {
         x: cx,
         y: cy,
         importance: candidate.priority,
-        color: unclaimed(id) ? undefined : this.labelColor[id],
+        color: unclaimed(id) ? undefined : this.colorAt(id, options.epoch),
         polities: this.labelPolities[id],
         asserted: this.assertedPosition[id] === 1,
         depthPc: this.screenDepth[id],

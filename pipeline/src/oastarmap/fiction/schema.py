@@ -71,6 +71,18 @@ class Polity(BaseModel):
     refusing a name preceded by a capital — also refuses "The Vela Immunity".
     """
 
+    dissolved_at: int | None = None
+    """The year the polity ended, After Tranquility, where a source states one.
+
+    For a polity that no longer exists at the setting's present. A world's
+    past holder is read off its events, and a holder stays a holder until the
+    next event says otherwise — so without this, a place settled by the Doran
+    Empire and never dated as changing hands would be drawn as Doran for the
+    rest of history, including the five thousand years after the Empire's last
+    remnants entered the Terragen Federation. From this year on, the map falls
+    back to the present holders.
+    """
+
     kind: str = "meta-empire"
     """What this entry actually is.
 

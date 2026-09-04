@@ -408,6 +408,7 @@ def build_fiction(
                         "id": p.id,
                         "name": p.name,
                         "color": p.color,
+                        "dissolved_at": p.dissolved_at,
                         "uncertain": p.uncertain,
                         "source": p.source,
                         "landmark_count": len(p.landmarks),

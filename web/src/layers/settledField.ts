@@ -53,6 +53,10 @@ import {
   type PlaceYears,
   UNDATED,
   combinedYears,
+  dissolutionYears,
+  type Holding,
+  holdersAt,
+  holdingsOf,
   landmarkYears,
 } from '../data/history';
 
@@ -255,6 +259,13 @@ interface Ring {
   known?: PlaceYears;
   settled?: PlaceYears;
   /**
+   * Who held it before the present holders, where an event says.
+   *
+   * `polities` above is the present; this is what a year in history mode is
+   * coloured by. See `holdersAt`.
+   */
+  holdings?: Holding[];
+  /**
    * How the Encyclopaedia's timeline refers to this system, in every form it
    * might: by star index, by world name, by add-on designation. A ring stands
    * for a system and a system has several names, so matching on one of them
@@ -325,7 +336,15 @@ export class SettledField {
   private readonly polityColors: Float32Array[];
   private readonly neutralColors: Float32Array[];
   private readonly colorAttributes: THREE.BufferAttribute[];
+  private readonly segmentsAttribute: THREE.BufferAttribute;
+  private readonly affiliatedAttribute: THREE.BufferAttribute;
   private readonly focusAttribute: THREE.BufferAttribute;
+  /** Rings with a past holder on record, and what they hold in the present. */
+  private readonly dated: { index: number; present: string[]; holdings: Holding[] }[] = [];
+  private readonly polityColor: Map<string, THREE.Color>;
+  private readonly dissolvedAt: Map<string, number>;
+  private polityMode = true;
+  private shownYear: number | null = null;
 
   constructor(
     stars: StarData,
@@ -338,6 +357,8 @@ export class SettledField {
     for (const polity of fiction?.polities ?? []) {
       polityColor.set(polity.id, new THREE.Color(polity.color));
     }
+    this.polityColor = polityColor;
+    this.dissolvedAt = dissolutionYears(fiction);
 
     const rings: Ring[] = [];
     const ringed = new Set<number>();
@@ -361,6 +382,7 @@ export class SettledField {
         // undated and says so rather than defaulting to the beginning of time.
         known: combinedYears(here, 'known'),
         settled: combinedYears(here, 'settled'),
+        holdings: holdingsOf(here),
         keys: [starKey(starIndex), ...worldKeys(here)],
       });
     }
@@ -379,6 +401,7 @@ export class SettledField {
         polities: affiliationsFor(undefined, here),
         known: combinedYears(here, 'known'),
         settled: combinedYears(here, 'settled'),
+        holdings: holdingsOf(here),
         keys: [starKey(starIndex), ...worldKeys(here)],
       });
     }
@@ -430,6 +453,7 @@ export class SettledField {
         // to appear when the earlier of the two does.
         known: combinedYears([world, ...guests], 'known'),
         settled: combinedYears([world, ...guests], 'settled'),
+        holdings: holdingsOf([world, ...guests]),
         keys: [worldKey(world.name), ...worldKeys(guests)],
       });
     }
@@ -450,6 +474,7 @@ export class SettledField {
         polities,
         known: combinedYears(bound, 'known'),
         settled: combinedYears(bound, 'settled'),
+        holdings: holdingsOf(bound),
         keys: entry ? [oaStarKey(entry.name), ...worldKeys(bound)] : [],
       });
     }
@@ -493,11 +518,18 @@ export class SettledField {
 
     this.polityColors = colors.map((array) => array.slice());
     this.neutralColors = neutral;
+    rings.forEach((ring, index) => {
+      if (ring.holdings?.length) {
+        this.dated.push({ index, present: ring.polities, holdings: ring.holdings });
+      }
+    });
 
     const geometry = new THREE.BufferGeometry();
     geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-    geometry.setAttribute('aSegments', new THREE.BufferAttribute(segments, 1));
-    geometry.setAttribute('aAffiliated', new THREE.BufferAttribute(affiliated, 1));
+    this.segmentsAttribute = new THREE.BufferAttribute(segments, 1);
+    geometry.setAttribute('aSegments', this.segmentsAttribute);
+    this.affiliatedAttribute = new THREE.BufferAttribute(affiliated, 1);
+    geometry.setAttribute('aAffiliated', this.affiliatedAttribute);
     geometry.setAttribute('aApprox', new THREE.BufferAttribute(approximate, 1));
     geometry.setAttribute('aVague', new THREE.BufferAttribute(vague, 1));
     const focus = new Float32Array(this.count).fill(1);
@@ -628,6 +660,42 @@ export class SettledField {
     uniforms.uEpochOn.value = year === null ? 0 : 1;
     uniforms.uUndatedGain.value = showUndated ? DEFAULT_UNDATED_GAIN : 0;
     if (year !== null) uniforms.uYear.value = year;
+    if (year !== this.shownYear) {
+      this.shownYear = year;
+      this.paintHolders();
+    }
+  }
+
+  /**
+   * Colour each ring with a past on record by who held it in the shown year.
+   *
+   * Only those rings, and only on the CPU: a handful of systems carry a dated
+   * change of hands, and rewriting their few colour slots when the year moves
+   * is cheaper than teaching the shader a list of holdings per vertex. With no
+   * year shown, or polity colouring off, the present colours come back.
+   */
+  private paintHolders(): void {
+    if (!this.dated.length) return;
+    for (const { index, present, holdings } of this.dated) {
+      const held =
+        this.shownYear === null
+          ? present
+          : holdersAt(holdings, present, this.shownYear, this.dissolvedAt);
+      const shown = held.slice(0, MAX_SEGMENTS);
+      (this.segmentsAttribute.array as Float32Array)[index] = Math.max(shown.length, 1);
+      (this.affiliatedAttribute.array as Float32Array)[index] = shown.length ? 1 : 0;
+      for (let slot = 0; slot < MAX_SEGMENTS; slot++) {
+        const id = shown[Math.min(slot, Math.max(shown.length - 1, 0))] ?? '';
+        const chosen = this.polityMode ? this.polityColor.get(id) ?? STATUS_COLOR : STATUS_COLOR;
+        const array = this.colorAttributes[slot].array as Float32Array;
+        array[index * 3] = chosen.r;
+        array[index * 3 + 1] = chosen.g;
+        array[index * 3 + 2] = chosen.b;
+      }
+    }
+    this.segmentsAttribute.needsUpdate = true;
+    this.affiliatedAttribute.needsUpdate = true;
+    for (const attribute of this.colorAttributes) attribute.needsUpdate = true;
   }
 
   /**
@@ -679,11 +747,15 @@ export class SettledField {
    * system independent of who holds it; only the answer to *whose* goes away.
    */
   setPolityMode(enabled: boolean): void {
+    this.polityMode = enabled;
     const source = enabled ? this.polityColors : this.neutralColors;
     this.colorAttributes.forEach((attribute, slot) => {
       (attribute.array as Float32Array).set(source[slot]);
       attribute.needsUpdate = true;
     });
+    // The snapshot just copied in is the present; a year being shown wants
+    // its own holders back on top of it.
+    this.paintHolders();
   }
 
   set opacity(value: number) {

@@ -531,6 +531,7 @@ polities:
     name: Doran Empire
     color: "#A1887F"
     source: eg-system-articles
+    dissolved_at: 5855
     # Cyber-tweak clade out of Solsys in 629, first colony at Gliese 877 in 929,
     # then the red and orange dwarfs of the Inner Sphere. Fragmented over the
     # Consolidation wars; its last remnants entered the Terragen Federation in
@@ -540,6 +541,10 @@ polities:
     name: First Federation
     color: "#C0CA33"
     source: eg-system-articles
+    # No dissolution year: the timeline's Federation periods end at 2100 AT,
+    # but that is the end of a period, and no page read so far dates the end
+    # of the polity. Nothing is yet recorded as held by it, so nothing is
+    # drawn as still held by it either.
     # The early interstellar polity the system articles name most often after
     # the Solar Dominion: 160 mentions, on the ships that reached places and
     # the charters that founded them before any present holder existed. Read

@@ -411,6 +411,8 @@ export interface PolityInfo {
   id: string;
   name: string;
   color: string;
+  /** The year it ended, where a source states one; null for a present polity. */
+  dissolved_at: number | null;
   uncertain: boolean;
   landmark_count: number;
   resolved_count: number;
