@@ -85,6 +85,16 @@ interface Detail {
   polities: string[];
   /** Which OA source the polity association was read from, if any. */
   associationSource: string | null;
+  /**
+   * The object's own Encyclopaedia article, where a source names one.
+   *
+   * Distinct from the association source, which is the page the *affiliation*
+   * was read from. For a star in the Inner Sphere table those are different
+   * pages: the table is one topic listing nine hundred systems, and it links
+   * each one out to its article. Reading the source alone sent every one of
+   * those stars to the table.
+   */
+  article?: string | null;
   /** Dated history, earliest first. Years After Tranquility. */
   events?: WorldEvent[];
   /**
@@ -206,12 +216,24 @@ function citationLine(className: string, text: string): HTMLElement {
  * Only orionsarm.com counts. The other addresses on this panel are ADS and
  * VizieR — the catalogue's citation, which is a different claim and has its own
  * place at the foot.
+ *
+ * The object's own article leads, where a source names one apart from the page
+ * the affiliation came from. That order matters for the Inner Sphere: its
+ * source is a topic page listing every system within a hundred light years,
+ * and reading it first sent a reader who clicked Tau Ceti to that list rather
+ * than to Tau Ceti. The worlds come last because on a host's panel they are
+ * its guests, and the host's own page is the one that was clicked for.
  */
 export function encyclopaediaArticle(detail: {
+  article?: string | null;
   associationSource?: string | null;
   worlds?: { article: string }[];
 }): string | null {
-  const texts = [detail.associationSource ?? '', ...(detail.worlds ?? []).map((w) => w.article)];
+  const texts = [
+    detail.article ?? '',
+    detail.associationSource ?? '',
+    ...(detail.worlds ?? []).map((w) => w.article),
+  ];
   for (const text of texts) {
     const found = text.match(URL_PATTERN)?.find((url) => url.includes('orionsarm.com'));
     if (found) return found;
@@ -759,6 +781,11 @@ export class DetailPanel {
       associationSource:
         this.sourceLineFor('star', index) ??
         (colony?.affiliations.length ? this.sources.innerSphere?.dataset.source.citation ?? null : null),
+      // The table's own link for the system, then the page of a world drawn
+      // here. Neither is the topic page the affiliation was read from, which
+      // stays below as the citation for that claim and is not what a reader
+      // clicking a star is after.
+      article: colony?.article || here.find((w) => w.article)?.article || null,
       citation: stars.dataset.source.citation,
       distancePc: distance,
       focus: { x, y, z, standoff: pc(Math.max(distance * 0.12, 2)) },

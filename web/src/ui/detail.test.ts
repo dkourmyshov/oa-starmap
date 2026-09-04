@@ -62,6 +62,28 @@ describe('encyclopaediaArticle', () => {
     expect(encyclopaediaArticle({ worlds: [{ article: ARTICLE }] })).toBe(ARTICLE);
   });
 
+  it("prefers the object's own article to the page the affiliation came from", () => {
+    // The Inner Sphere table is one topic page for nine hundred systems, and
+    // each row links out to the system's article. The reader who clicked a
+    // star wants the second; the first was where its polity was read from,
+    // and it stays on the panel as that citation.
+    const TOPIC = 'https://www.orionsarm.com/eg-topic/45bcbcab90032';
+    expect(
+      encyclopaediaArticle({ article: ARTICLE, associationSource: `The Stars of the Inner Sphere. ${TOPIC}` }),
+    ).toBe(ARTICLE);
+  });
+
+  it("keeps a host's own page ahead of its guests'", () => {
+    // On a world's panel the association source is that world's article and
+    // the worlds are the ones it hosts. Earth was clicked for Earth, not for
+    // whatever orbits it. A star with no row in the table promotes a world
+    // drawn there into `article` itself, so this order costs it nothing.
+    const HOST = 'https://www.orionsarm.com/eg-article/host';
+    expect(
+      encyclopaediaArticle({ article: null, associationSource: HOST, worlds: [{ article: ARTICLE }] }),
+    ).toBe(HOST);
+  });
+
   it('reads an address out of a citation that is mostly prose', () => {
     expect(encyclopaediaArticle({ associationSource: `Table 3, ${ARTICLE}` })).toBe(ARTICLE);
   });
