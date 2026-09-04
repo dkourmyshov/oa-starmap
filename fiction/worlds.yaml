@@ -2341,10 +2341,23 @@ worlds:
     events:
       - year_at: 1102
         kind: settled
+        polity: doran-empire
+        note: >-
+          The data panel: "1102 AT by the Doran empire colony ship Zschorn". The
+          article's own history section has the Dorans "arriving at HR 637 in
+          1133 AT" instead; the panel's date is the one recorded.
+      - year_at: 1599
+        kind: visited
+        note: >-
+          A second arrival, not the first: a Novamedia/Birnam Ecotech-sponsored
+          ship brought the Bluesky sect, who built the first worldhouses.
     note: >-
       A moon of the gas giant Thraub. The article gives GL 86 and HR 637 while
       the colony table resolves the same colony to Gliese 54 A at 27 ly; the two
-      designations disagree and the table's is the one bound here.
+      designations disagree and the table's is the one bound here. A former
+      Doran Empire world and its frontier with the Eridanus League; the article
+      gives no date for its passing to the Non-Coercive Zone, only that the
+      Doran Empire fragmented over the following two millennia.
 
   - name: Sisyphos
     kind: planet
@@ -2654,11 +2667,44 @@ worlds:
     events:
       - year_at: 929
         kind: settled
+        polity: doran-empire
+        note: >-
+          "Colonised in 929 AT by the Doran clade, in the Gathol, a ship of
+          their own construction." The Doran Empire's first world; the
+          Sesharia article calls it Dorannok.
+      - year_at: 3890
+        kind: transferred
+        polity: solar-dominion
+        note: '"Joined the Solar Dominion in 3890."'
+      - year_at: 5855
+        kind: transferred
+        polity: terragen-federation
+        source: https://www.orionsarm.com/eg-article/48f94f1a7f8db
+        note: >-
+          From the Sesharia article: "The last remnants [of the Doran Empire]
+          including Dorannok (GL 877) entered the Terragen Federation in 5855."
     note: >-
       Gliese 877, in Octans at 28 ly, and reached in 929 — the earliest date on
       either roster it appears in. It came here twice, once with the Solar
       Dominion and once with the Terragen Federation, from the one article;
       both are drawn rather than one being chosen.
+
+  - name: Glim
+    kind: system
+    affiliations: [terragen-federation]
+    article: https://www.orionsarm.com/eg-article/4ce43b81bb70d
+    location:
+      star: HD 223889
+    events:
+      - year_at: 2638
+        kind: transferred
+        note: >-
+          "The system was a founding member of the Doran Empire, but later
+          seceded in 2638." The article names no one it passed to, and gives
+          no date for its settlement.
+    note: >-
+      HD 223889, an M0 dwarf at 33 ly, as the colony table has it. The present
+      affiliation is the table's; the article says only what it left.
 
   - name: Eden
     kind: planet
@@ -3380,6 +3426,8 @@ worlds:
     events:
       - year_at: 1770
         kind: visited
+        polity: first-federation
+        note: '"Reached: 1770 AT by the Madda''j, a Jovian/First Federation colony ship."'
       - year_at: 1931
         kind: visited
         source: "Encyclopaedia timeline, Late Federation / AI Emergence"

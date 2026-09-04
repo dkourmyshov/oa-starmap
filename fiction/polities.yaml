@@ -518,6 +518,33 @@ polities:
     # holds the To'ul'h and is classified with the Caretaker Gods alone: they are
     # protected rather than independent, which is the ordinary case.
 
+  # ---- Dissolved before the setting's present -------------------------------
+  #
+  # Named only through a world's events — settled *by*, passed *to* — never as
+  # a present affiliation, so they hold nothing on the map's legend and draw no
+  # ring. They are here so that an event can name them and the build can check
+  # the name, and they carry a colour for the day the map is drawn at a year
+  # when they existed. Cygexpa above is the precedent, kept for its volume; these
+  # are kept for their dates.
+
+  - id: doran-empire
+    name: Doran Empire
+    color: "#A1887F"
+    source: eg-system-articles
+    # Cyber-tweak clade out of Solsys in 629, first colony at Gliese 877 in 929,
+    # then the red and orange dwarfs of the Inner Sphere. Fragmented over the
+    # Consolidation wars; its last remnants entered the Terragen Federation in
+    # 5855. Read from the Sesharia and Dorangloon articles.
+
+  - id: first-federation
+    name: First Federation
+    color: "#C0CA33"
+    source: eg-system-articles
+    # The early interstellar polity the system articles name most often after
+    # the Solar Dominion: 160 mentions, on the ships that reached places and
+    # the charters that founded them before any present holder existed. Read
+    # from the New Callisto article's "Reached" field.
+
 # Landmarks whose odd position has been checked against the source and is
 # correct. The build's placement check is a proofreading aid for mis-transcribed
 # names — it is not a model of polity shape and does not overrule the fiction.
