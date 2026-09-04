@@ -71,6 +71,19 @@
         min-width: 268px;
         max-width: 320px;
         backdrop-filter: blur(9px);
+        /*
+         * Every panel here is capped in height and scrolls inside its cap, and
+         * a scrollbar that appears only when the content is long enough takes
+         * its width out of the content when it does. On a browser drawing real
+         * scrollbars rather than overlaying them, that is fifteen pixels the
+         * rows lose the moment a panel grows past its cap — and a row is a
+         * caption pushed left and a value pushed right, so the pair stops
+         * lining up with the rows above it. Reserving the gutter always means
+         * the width never moves. Thin because the gutter is then permanent and
+         * a permanent scrollbar should be quiet.
+         */
+        scrollbar-gutter: stable;
+        scrollbar-width: thin;
       }
 
       .panel-error {
@@ -83,6 +96,15 @@
         letter-spacing: 0.02em;
         margin-bottom: 9px;
         color: #fff;
+        /*
+         * The heading is a grip and a name at once. The grip is the bar it sits
+         * in, which keeps the move cursor; the name itself says it is text,
+         * because the name of the system a panel is describing is the first
+         * thing anybody wants to copy out of it. See ui/drag.ts for the travel
+         * threshold that lets a press select rather than drag.
+         */
+        cursor: text;
+        user-select: text;
       }
 
       .row {

@@ -16,6 +16,18 @@
 const EDGE_MARGIN = 24;
 
 /**
+ * How far the pointer must travel before a press becomes a drag, in pixels.
+ *
+ * Without this the press itself was the drag: it called preventDefault to stop
+ * the browser doing anything else with the gesture, and one of the things the
+ * browser does with a press on text is select it. So a panel could be moved and
+ * the name of the system it was describing could not be copied — reported
+ * exactly that way. A few pixels of travel tells the two apart, since selecting
+ * a word and shifting a panel do not look alike until the pointer moves.
+ */
+const DRAG_THRESHOLD_PX = 4;
+
+/**
  * Make `panel` draggable by `handle`.
  *
  * Buttons, sliders and selects inside the handle keep working: a drag starts
@@ -27,19 +39,19 @@ export function makeDraggable(panel: HTMLElement, handle: HTMLElement): void {
   let startY = 0;
   let originX = 0;
   let originY = 0;
+  /** A press has landed on the grip, but has not yet travelled far enough. */
+  let pending = false;
   let dragging = false;
 
   handle.style.cursor = 'move';
   handle.style.touchAction = 'none';
 
-  handle.addEventListener('pointerdown', (event) => {
-    // Anything interactive inside the bar is itself, not a grip.
-    if ((event.target as HTMLElement).closest('button, input, select, a')) return;
-
+  /** Take the panel out of the grid and pin it where the grid had put it. */
+  const begin = (event: PointerEvent): void => {
     const box = panel.getBoundingClientRect();
-    // Out of the grid, at exactly the place the grid had put it: measuring
-    // first and pinning to that leaves the panel visually where it was, so the
-    // drag starts from under the pointer rather than jumping to a corner.
+    // Measuring first and pinning to that leaves the panel visually where it
+    // was, so the drag starts from under the pointer rather than jumping to a
+    // corner.
     panel.style.position = 'fixed';
     panel.style.margin = '0';
     panel.style.left = `${box.left}px`;
@@ -47,17 +59,31 @@ export function makeDraggable(panel: HTMLElement, handle: HTMLElement): void {
     panel.style.right = 'auto';
     panel.style.bottom = 'auto';
     panel.style.maxWidth = `${box.width}px`;
-
-    startX = event.clientX;
-    startY = event.clientY;
     originX = box.left;
     originY = box.top;
     dragging = true;
+    // The press was allowed through so that it could select text, which means
+    // by now it may have. Whatever it caught is not what the reader is asking
+    // for once they start moving the panel.
+    window.getSelection()?.removeAllRanges();
     handle.setPointerCapture(event.pointerId);
-    event.preventDefault();
+  };
+
+  handle.addEventListener('pointerdown', (event) => {
+    // Anything interactive inside the bar is itself, not a grip.
+    if ((event.target as HTMLElement).closest('button, input, select, a')) return;
+    startX = event.clientX;
+    startY = event.clientY;
+    pending = true;
+    // Deliberately no preventDefault: the browser still gets the press, which
+    // is what makes the heading selectable. See DRAG_THRESHOLD_PX.
   });
 
   handle.addEventListener('pointermove', (event) => {
+    if (pending && !dragging) {
+      if (Math.hypot(event.clientX - startX, event.clientY - startY) < DRAG_THRESHOLD_PX) return;
+      begin(event);
+    }
     if (!dragging) return;
     const width = panel.offsetWidth;
     // Clamped so a panel can always be grabbed again. Dropped past the bottom
@@ -75,6 +101,7 @@ export function makeDraggable(panel: HTMLElement, handle: HTMLElement): void {
   });
 
   const end = (event: PointerEvent): void => {
+    pending = false;
     if (!dragging) return;
     dragging = false;
     if (handle.hasPointerCapture(event.pointerId)) handle.releasePointerCapture(event.pointerId);

@@ -754,9 +754,20 @@ export class ObjectIndex {
         // add-on entries are, but a few are real objects it carries because
         // Celestia's catalogue omits them, and those are not.
         this.assertedPosition[at] = entry?.real ? 0 : 1;
-        if (entry?.affiliation) {
-          this.labelColor[at] = polityColor.get(entry.affiliation);
-          this.labelPolities[at] = [entry.affiliation];
+        // Every holder, from the add-on entry and from the worlds sitting on it.
+        // Dschubba is an add-on star whose world names three polities and whose
+        // entry names none of them: taking the entry alone left it out of all
+        // three when the legend picked one, which is a thing the map already
+        // knew and was not saying.
+        const oaHeld = affiliationsFor(undefined, bound);
+        if (entry?.affiliation && !oaHeld.includes(entry.affiliation)) {
+          oaHeld.unshift(entry.affiliation);
+        }
+        if (oaHeld.length) {
+          // The entry's own affiliation still leads where it has one, so the
+          // colour on screen does not move.
+          this.labelColor[at] = polityColor.get(oaHeld[0]);
+          this.labelPolities[at] = oaHeld;
         }
         if (this.labels[at]) labelled.push(at);
         at++;

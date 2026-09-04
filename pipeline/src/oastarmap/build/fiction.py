@@ -250,13 +250,22 @@ def _member_counts(out_dir: Path) -> Counter[str]:
             for affiliation in row.get("affiliations", []):
                 counts[affiliation] += 1
 
-    for name, field in (("oastars.names.json", "affiliation"), ("worlds.json", "affiliation")):
+    # The add-on carries one affiliation a star; a world carries a list, because
+    # Orion's Arm volumes interpenetrate and a place can be held by several at
+    # once. Reading the singular field on both was a silent undercount: every
+    # world in the file contributed nothing at all, so the Fomalhaut Acquisition
+    # Society showed 1 for the six objects it holds, and any polity present only
+    # through worlds counted zero and was dropped from the legend entirely.
+    for name in ("oastars.names.json", "worlds.json"):
         path = out_dir / name
         if not path.exists():
             continue
         for row in json.loads(path.read_text(encoding="utf-8")):
-            if row.get(field):
-                counts[row[field]] += 1
+            one = row.get("affiliation")
+            if one:
+                counts[one] += 1
+            for affiliation in row.get("affiliations") or ():
+                counts[affiliation] += 1
 
     return counts
 
