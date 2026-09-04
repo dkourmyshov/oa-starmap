@@ -668,6 +668,16 @@
       }
 
       /* The position came from the fiction rather than from a measurement. */
+      /*
+       * A name outside the polity the legend is picking out. Two selectors, so
+       * this beats the per-kind colours above on specificity: clearing the
+       * inline polity colour is not enough to make a label grey, because every
+       * kind has a colour of its own here and the label just fell back to it.
+       */
+      .map-label.map-label-muted {
+        color: var(--muted);
+      }
+
       .map-label-asserted {
         font-style: italic;
       }

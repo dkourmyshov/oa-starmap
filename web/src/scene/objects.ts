@@ -589,6 +589,12 @@ export class ObjectIndex {
           BASE_IMPORTANCE.oaSystem,
         );
         this.isOA[at] = 1;
+        // A landmark star with no colony row and no world behind it has no
+        // holder from anywhere else, and would have dimmed under its own
+        // polity's selection.
+        if (!this.labelPolities[at]?.length) {
+          this.labelPolities[at] = polityByKind.star.get(i);
+        }
       }
       // A star the setting claims and does not date is undated, not timeless.
       // Relay 1 and Conver Ky are colony rows with no world behind them and no
@@ -1156,14 +1162,19 @@ export class ObjectIndex {
 }
 
 function buildPolityLookup(fiction: FictionData | null): {
-  star: Set<number>;
+  /** Star index to the polities the political maps name it for. */
+  star: Map<number, string[]>;
   cluster: Set<number>;
   hii: Set<number>;
 } {
-  const lookup = { star: new Set<number>(), cluster: new Set<number>(), hii: new Set<number>() };
+  const lookup = {
+    star: new Map<number, string[]>(),
+    cluster: new Set<number>(),
+    hii: new Set<number>(),
+  };
   for (const binding of fiction?.bindings ?? []) {
     if (binding.index === null) continue;
-    if (binding.kind === 'star') lookup.star.add(binding.index);
+    if (binding.kind === 'star') lookup.star.set(binding.index, binding.polities);
     else if (binding.kind === 'cluster') lookup.cluster.add(binding.index);
     else if (binding.kind === 'hii') lookup.hii.add(binding.index);
   }

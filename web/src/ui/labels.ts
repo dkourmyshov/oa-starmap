@@ -184,7 +184,19 @@ export class LabelOverlay {
       // setting it in italic claimed the setting had invented its position.
       const asserted = label.asserted ? ' map-label-asserted' : '';
       const pinned = label.pinned ? ' map-label-selected' : '';
-      node.className = `map-label ${KIND_CLASS[kind] ?? ''}${asserted}${pinned}`;
+      // Outside the chosen polity a name recedes and gives up its colour. The
+      // selected object is exempt: it was clicked, and an answer the reader
+      // cannot read is not an answer.
+      const held =
+        this.focusPolity === null ||
+        Boolean(label.pinned) ||
+        Boolean(label.polities?.includes(this.focusPolity));
+      // A class rather than an inline colour, because clearing the inline one
+      // does not leave a label grey: every kind carries a colour of its own in
+      // the sheet — clusters cyan, H II pink, worlds violet — so an unfocused
+      // label simply fell back to that and went on competing in a different hue.
+      const muted = held ? '' : ' map-label-muted';
+      node.className = `map-label ${KIND_CLASS[kind] ?? ''}${asserted}${pinned}${muted}`;
       node.style.transform = `translate3d(${label.x}px, ${label.y}px, 0) translate(-50%, -50%)`;
       // Faint labels stay legible but recede, so the eye lands on the anchors.
       // The selected one is always full strength: it was asked for.
@@ -195,13 +207,6 @@ export class LabelOverlay {
         this.depthOfField && !label.pinned
           ? this.depthOfField.labelStyle(label.depthPc, label.z)
           : null;
-      // Outside the chosen polity a name recedes and gives up its colour. The
-      // selected object is exempt: it was clicked, and an answer the reader
-      // cannot read is not an answer.
-      const held =
-        this.focusPolity === null ||
-        Boolean(label.pinned) ||
-        Boolean(label.polities?.includes(this.focusPolity));
       const gain = held ? 1 : UNFOCUSED_LABEL_GAIN;
       node.style.opacity = String((dof ? base * dof.opacity : base) * gain);
       node.style.filter = dof && dof.blurPx > 0.05 ? `blur(${dof.blurPx.toFixed(2)}px)` : '';
