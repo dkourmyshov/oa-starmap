@@ -108,6 +108,41 @@ The pilot, read from the four articles that mention the Doran Empire:
 
 Two polities entered: `doran-empire` and `first-federation`.
 
+## How a year is coloured
+
+History mode colours a system by who held it in the year shown, and the
+legend beside it lists only the polities holding something in that year. The
+rule, in `holdersAt`:
+
+1. The latest holding event at or before the year — settled by, passed to,
+   made a capital of, taken into stewardship by — names the holder. An
+   abandonment ends the holding. A visit is not a holding.
+2. If that holder had dissolved by the year (`dissolved_at` on the polity),
+   or there is no holding event before the year at all, the present holders
+   stand in. An unknown past is drawn as the present rather than as nobody,
+   because most dated systems give a year and not a founder.
+3. A present holder with a founding year (`founded_at`) does not stand in
+   before it. A system settled in 1200 that is Keterist now was not Keterist
+   then, whatever its article omits. A holding an event names is exempt from
+   this: a source calling a colony Keterist before 2388 is a claim about the
+   colony, and the map shows it. That is where a proto-Keterist colony goes —
+   on its own event, not on a rule.
+
+Both years are read off the history timeline and cited in `polities.yaml`
+beside each one; a polity whose founding the timeline does not date has none
+and stands in for any year. The Solar Dominion, Metasoft, the Negentropy
+Alliance, the Utopia Sphere and the Terragen Federation are the large ones
+still undated, because the timeline's first mention of each is of something
+joining it rather than of its forming.
+
+The early polities from the Encyclopaedia's Historical Polities page are
+entered, twenty-two of them, so that events can name them; they draw nowhere
+until one does. The timeline dates nine: the Eridanus League from 770, the
+Virginis Combine from 1590, the Conver Ambi 1984 to 3943, the Yoson
+Confederacy 2520 to 3941, the Soft Cathedral to 4521, the Sagittarius Sphere
+to 4805, Cygexpa to 7247, the Equalizer Civilization to about 7900, the Doran
+Empire to 5855. The rest carry the page's description and no year.
+
 ## What the rest of the pass looks like
 
 127 bound articles state a year where the map has none, and 112 holder fields

@@ -5,7 +5,7 @@
 import * as THREE from 'three';
 
 import { type StarData, loadAll } from './data/manifest';
-import { type HistoryPlace, namedKeys } from './data/history';
+import { type HistoryPlace, UNDATED, landmarkYears, namedKeys } from './data/history';
 import { AssociationField } from './layers/associationField';
 import { ClusterField } from './layers/clusterField';
 import { HiiField } from './layers/hiiField';
@@ -338,6 +338,28 @@ async function main(): Promise<void> {
    * label for a colony three centuries early would be the one part of the map
    * still asserting it.
    */
+  /**
+   * What each polity holds in a year, for the legend: the rings, plus the
+   * clusters and nebulae the political maps attribute, in the year those are
+   * attested. Landmark stars are rings already and are not counted twice.
+   */
+  const polityCountsAt = (state: EpochState): Map<string, number> => {
+    const counts =
+      settledField?.holderCountsAt(state.year, state.basis, state.showUndated) ?? new Map();
+    for (const binding of loaded.fiction?.bindings ?? []) {
+      if (binding.kind === null || binding.kind === 'star' || binding.index === null) continue;
+      if (binding.beyond_frontier) continue;
+      const years = landmarkYears(loaded.fiction, binding.kind, binding.index, state.basis);
+      const shown =
+        years.from === UNDATED
+          ? state.showUndated
+          : state.year >= years.from && state.year <= years.to;
+      if (!shown) continue;
+      for (const id of binding.polities) counts.set(id, (counts.get(id) ?? 0) + 1);
+    }
+    return counts;
+  };
+
   const applyEpoch = (state: EpochState | null): void => {
     const year = state ? state.year : null;
     const undated = state ? state.showUndated : true;
@@ -378,6 +400,7 @@ async function main(): Promise<void> {
     view.epoch = state
       ? { year: state.year, showUndated: state.showUndated, basis: state.basis }
       : undefined;
+    hud.setLegendYear(state ? polityCountsAt(state) : null);
     labels.epoch = view.epoch;
   };
 

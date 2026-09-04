@@ -166,6 +166,8 @@ export class Hud {
 
   /** The polity legend, so the row whose holdings are ringed can be marked. */
   private polityList: HTMLElement | null = null;
+  /** Each legend row by polity id, with the count it shows outside history mode. */
+  private readonly legendRows = new Map<string, { row: HTMLElement; count: HTMLElement; present: string; held: boolean }>();
 
   /** Caption of the magnitude slider, which the plan view renames. */
   private magnitudeLabel: HTMLElement | null = null;
@@ -746,13 +748,15 @@ export class Hud {
 
     const list = el('div', 'legend');
     for (const polity of fiction.polities) {
-      // Every polity that holds anything at all. Filtering on resolved_count
-      // hid seventeen of them, because that counts only landmarks read off the
-      // political maps — most polities are here through colonies, add-on
-      // systems and worlds instead, and the Caretaker Gods held eighteen
-      // objects without appearing at all.
-      if (polity.member_count === 0) continue;
+      // Every polity gets a row, and the row is shown when the polity holds
+      // something on the map being looked at. Outside history mode that is
+      // its present holdings — filtering on resolved_count once hid seventeen
+      // polities, because that counts only landmarks read off the political
+      // maps. In history mode it is what it held in the year shown, so a
+      // polity dissolved before the present appears in its own century and a
+      // present one not before it was founded.
       const row = el('button', 'legend-row');
+      row.hidden = polity.member_count === 0;
       const swatch = el('span', 'swatch');
       swatch.style.background = polity.color;
       row.appendChild(swatch);
@@ -763,7 +767,14 @@ export class Hud {
       const count = polity.landmark_count
         ? `${polity.resolved_count}/${polity.landmark_count}`
         : String(polity.member_count);
-      row.appendChild(el('span', 'legend-count', count));
+      const countNode = el('span', 'legend-count', count);
+      row.appendChild(countNode);
+      this.legendRows.set(polity.id, {
+        row,
+        count: countNode,
+        present: count,
+        held: polity.member_count > 0,
+      });
       // The row shows which polity the map is currently picking out, because
       // the second click that puts the map back has to be predictable: a switch
       // that looks the same on and off is a switch nobody trusts. Clearing the
@@ -810,6 +821,26 @@ export class Hud {
 
     root.appendChild(panel);
     this.dressPanel(panel, "the Orion's Arm legend");
+  }
+
+  /**
+   * Show the polities the map is showing.
+   *
+   * With counts for a year, only the polities holding something in that year
+   * are listed, each with what it holds then. With null the legend returns
+   * to the present: every polity with a member, and its member tally.
+   */
+  setLegendYear(counts: Map<string, number> | null): void {
+    for (const [id, entry] of this.legendRows) {
+      if (counts === null) {
+        entry.row.hidden = !entry.held;
+        entry.count.textContent = entry.present;
+      } else {
+        const held = counts.get(id) ?? 0;
+        entry.row.hidden = held === 0;
+        entry.count.textContent = String(held);
+      }
+    }
   }
 
   /** Unmark every polity row, so that at most one ever looks chosen. */

@@ -53,10 +53,11 @@ import {
   type PlaceYears,
   UNDATED,
   combinedYears,
-  dissolutionYears,
   type Holding,
+  type PolitySpans,
   holdersAt,
   holdingsOf,
+  politySpans,
   landmarkYears,
 } from '../data/history';
 
@@ -339,12 +340,13 @@ export class SettledField {
   private readonly segmentsAttribute: THREE.BufferAttribute;
   private readonly affiliatedAttribute: THREE.BufferAttribute;
   private readonly focusAttribute: THREE.BufferAttribute;
-  /** Rings with a past holder on record, and what they hold in the present. */
-  private readonly dated: { index: number; present: string[]; holdings: Holding[] }[] = [];
+  /** Every ring's present holders and its past ones on record, by index. */
+  private readonly holders: { present: string[]; holdings: Holding[] }[] = [];
   private readonly polityColor: Map<string, THREE.Color>;
-  private readonly dissolvedAt: Map<string, number>;
+  private readonly spans: PolitySpans;
   private polityMode = true;
   private shownYear: number | null = null;
+  private focusPolity: string | null = null;
 
   constructor(
     stars: StarData,
@@ -358,7 +360,7 @@ export class SettledField {
       polityColor.set(polity.id, new THREE.Color(polity.color));
     }
     this.polityColor = polityColor;
-    this.dissolvedAt = dissolutionYears(fiction);
+    this.spans = politySpans(fiction);
 
     const rings: Ring[] = [];
     const ringed = new Set<number>();
@@ -518,11 +520,9 @@ export class SettledField {
 
     this.polityColors = colors.map((array) => array.slice());
     this.neutralColors = neutral;
-    rings.forEach((ring, index) => {
-      if (ring.holdings?.length) {
-        this.dated.push({ index, present: ring.polities, holdings: ring.holdings });
-      }
-    });
+    for (const ring of rings) {
+      this.holders.push({ present: ring.polities, holdings: ring.holdings ?? [] });
+    }
 
     const geometry = new THREE.BufferGeometry();
     geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
@@ -630,13 +630,22 @@ export class SettledField {
    */
   setFocusPolity(polityId: string | null): void {
     const uniforms = this.material.uniforms as unknown as FocusUniforms;
+    this.focusPolity = polityId;
     if (polityId === null) {
       uniforms.uFocusDim.value = 1;
       return;
     }
     const focus = this.focusAttribute.array as Float32Array;
     focus.fill(0);
-    for (const index of this.ringsByPolity.get(polityId) ?? []) focus[index] = 1;
+    if (this.shownYear === null) {
+      for (const index of this.ringsByPolity.get(polityId) ?? []) focus[index] = 1;
+    } else {
+      // In a year, what it held then — a dissolved polity holds nothing in
+      // the present and everything it did in its own century.
+      for (let index = 0; index < this.count; index++) {
+        if (this.heldAt(index).includes(polityId)) focus[index] = 1;
+      }
+    }
     this.focusAttribute.needsUpdate = true;
     uniforms.uFocusDim.value = UNFOCUSED_DIM;
   }
@@ -666,22 +675,25 @@ export class SettledField {
     }
   }
 
+  /** Who holds ring `index` in the shown year, or in the present with no year shown. */
+  private heldAt(index: number): string[] {
+    const { present, holdings } = this.holders[index];
+    return this.shownYear === null
+      ? present
+      : holdersAt(holdings, present, this.shownYear, this.spans);
+  }
+
   /**
-   * Colour each ring with a past on record by who held it in the shown year.
+   * Colour every ring by who held it in the shown year.
    *
-   * Only those rings, and only on the CPU: a handful of systems carry a dated
-   * change of hands, and rewriting their few colour slots when the year moves
-   * is cheaper than teaching the shader a list of holdings per vertex. With no
-   * year shown, or polity colouring off, the present colours come back.
+   * On the CPU, when the year moves: a thousand rings times four colour slots
+   * is a small write, and cheaper than teaching the shader a list of holdings
+   * and founding years per vertex. With no year shown, or polity colouring
+   * off, the present colours come back.
    */
   private paintHolders(): void {
-    if (!this.dated.length) return;
-    for (const { index, present, holdings } of this.dated) {
-      const held =
-        this.shownYear === null
-          ? present
-          : holdersAt(holdings, present, this.shownYear, this.dissolvedAt);
-      const shown = held.slice(0, MAX_SEGMENTS);
+    for (let index = 0; index < this.count; index++) {
+      const shown = this.heldAt(index).slice(0, MAX_SEGMENTS);
       (this.segmentsAttribute.array as Float32Array)[index] = Math.max(shown.length, 1);
       (this.affiliatedAttribute.array as Float32Array)[index] = shown.length ? 1 : 0;
       for (let slot = 0; slot < MAX_SEGMENTS; slot++) {
@@ -696,6 +708,31 @@ export class SettledField {
     this.segmentsAttribute.needsUpdate = true;
     this.affiliatedAttribute.needsUpdate = true;
     for (const attribute of this.colorAttributes) attribute.needsUpdate = true;
+    // A picked-out polity is picked out by what it holds *now* on screen.
+    if (this.focusPolity !== null) this.setFocusPolity(this.focusPolity);
+  }
+
+  /**
+   * How many rings each polity holds in a year, counting only rings the year
+   * shows: the legend beside a map of 2400 should list the polities on it.
+   *
+   * A ring the sources leave undated counts only while undated places are
+   * being drawn, and then as its present holder, because that is what the map
+   * is showing for it.
+   */
+  holderCountsAt(year: number, basis: EpochBasis, showUndated: boolean): Map<string, number> {
+    const counts = new Map<string, number>();
+    const years = this.yearsByBasis[basis];
+    for (let index = 0; index < this.count; index++) {
+      const from = years[index * 2];
+      const to = years[index * 2 + 1];
+      if (from === UNDATED ? !showUndated : year < from || year > to) continue;
+      const { present, holdings } = this.holders[index];
+      for (const id of holdersAt(holdings, present, year, this.spans)) {
+        counts.set(id, (counts.get(id) ?? 0) + 1);
+      }
+    }
+    return counts;
   }
 
   /**

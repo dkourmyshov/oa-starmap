@@ -119,6 +119,11 @@ def test_polities_that_share_space_are_told_apart() -> None:
             continue
         for pid in world["affiliations"]:
             points.setdefault(pid, []).append(here)
+        # A past holder is drawn at the same place in history mode, and can be
+        # confused with its neighbours there just as a present one can.
+        for event in world["events"]:
+            if event.get("polity"):
+                points.setdefault(event["polity"], []).append(here)
 
     colours = {p["id"]: p["color"] for p in fiction["polities"]}
     held = {pid: np.array(v) for pid, v in points.items()}
@@ -138,6 +143,11 @@ def test_polities_that_share_space_are_told_apart() -> None:
                 continue
 
             here, there = held.get(first), held.get(second)
+            # A polity drawn nowhere — entered so that an event can name it,
+            # and named by none yet — meets nothing and cannot be confused
+            # with anything. It joins the check when its first event lands.
+            if here is None or there is None:
+                continue
             measurable = (
                 here is not None
                 and there is not None

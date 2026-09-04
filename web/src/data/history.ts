@@ -282,6 +282,12 @@ export function holdingsOf(worlds: WorldEntry[] | undefined): Holding[] {
   return out.sort((a, b) => a.from - b.from);
 }
 
+/** The years a polity is known to have existed between, for `holdersAt`. */
+export interface PolitySpans {
+  founded: ReadonlyMap<string, number>;
+  dissolved: ReadonlyMap<string, number>;
+}
+
 /**
  * Who holds a place in a given year.
  *
@@ -292,6 +298,13 @@ export function holdingsOf(worlds: WorldEntry[] | undefined): Holding[] {
  * not name is unknown, and drawing an unknown as nobody would strip the
  * colour off every system whose article gives a date but not a founder.
  *
+ * With one limit on the stand-in. A present holder with a founding year is
+ * not drawn before it: the Keter Dominion was set up in 2388, and a system
+ * settled in 1200 whose article does not say who by was not Keterist then,
+ * whatever it is now. A holding an event names is exempt, because that is a
+ * source saying so — a colony an article calls Keterist before the Dominion
+ * existed is a claim about the colony, and the map shows it.
+ *
  * So the colour drawn at a year is one of two claims, and the panel can tell
  * them apart: a holder an event names, or the present holder standing in.
  */
@@ -299,30 +312,39 @@ export function holdersAt(
   holdings: Holding[] | undefined,
   present: string[],
   year: number,
-  dissolvedAt: ReadonlyMap<string, number>,
+  spans: PolitySpans,
 ): string[] {
   let latest: Holding | undefined;
   for (const holding of holdings ?? []) {
     if (holding.from <= year) latest = holding;
     else break;
   }
-  if (!latest) return present;
-  const gone = latest.polities.some((id) => {
-    const end = dissolvedAt.get(id);
-    return end !== undefined && year >= end;
+  if (latest) {
+    const gone = latest.polities.some((id) => {
+      const end = spans.dissolved.get(id);
+      return end !== undefined && year >= end;
+    });
+    if (!gone) return latest.polities;
+  }
+  return present.filter((id) => {
+    const from = spans.founded.get(id);
+    return from === undefined || year >= from;
   });
-  return gone ? present : latest.polities;
 }
 
-/** Each polity's dissolution year, for `holdersAt`. */
-export function dissolutionYears(fiction: FictionData | null): Map<string, number> {
-  const out = new Map<string, number>();
+/** Each polity's founding and dissolution years, for `holdersAt`. */
+export function politySpans(fiction: FictionData | null): PolitySpans {
+  const founded = new Map<string, number>();
+  const dissolved = new Map<string, number>();
   for (const polity of fiction?.polities ?? []) {
+    if (polity.founded_at !== null && polity.founded_at !== undefined) {
+      founded.set(polity.id, polity.founded_at);
+    }
     if (polity.dissolved_at !== null && polity.dissolved_at !== undefined) {
-      out.set(polity.id, polity.dissolved_at);
+      dissolved.set(polity.id, polity.dissolved_at);
     }
   }
-  return out;
+  return { founded, dissolved };
 }
 
 /**

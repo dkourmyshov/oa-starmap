@@ -71,6 +71,18 @@ class Polity(BaseModel):
     refusing a name preceded by a capital — also refuses "The Vela Immunity".
     """
 
+    founded_at: int | None = None
+    """The year the polity came into being, After Tranquility, where a source states one.
+
+    A place whose past holder the sources do not name is drawn as its present
+    holder, which is the honest fallback — except that it would draw the Keter
+    Dominion over a system settled in 1200, twelve centuries before the
+    Dominion existed. From this year on the present holder may stand in; before
+    it, the place is drawn as held by nobody named. An event that names the
+    polity outright is exempt: a source that says a colony was Keterist before
+    the Dominion was founded is making a claim, and the map shows it.
+    """
+
     dissolved_at: int | None = None
     """The year the polity ended, After Tranquility, where a source states one.
 

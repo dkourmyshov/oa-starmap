@@ -9,6 +9,7 @@ import {
   combinedYears,
   holdersAt,
   holdingsOf,
+  politySpans,
   eraOf,
   landmarkYears,
   makeHistory,
@@ -312,7 +313,7 @@ describe('a real object the setting names', () => {
  * and a past the sources do not name at all.
  */
 describe('holdersAt', () => {
-  const ended = new Map([['doran-empire', 5855]]);
+  const ended = { founded: new Map<string, number>(), dissolved: new Map([['doran-empire', 5855]]) };
   const sesharia = holdingsOf([
     world({
       affiliations: ['nocozo'],
@@ -359,6 +360,38 @@ describe('holdersAt', () => {
     expect(holdersAt(dorangloon, ['terragen-federation'], 2000, ended)).toEqual(['doran-empire']);
     expect(holdersAt(dorangloon, ['terragen-federation'], 3890, ended)).toEqual(['solar-dominion']);
     expect(holdersAt(dorangloon, ['terragen-federation'], 8000, ended)).toEqual([]);
+  });
+
+  it('does not draw a present holder before it was founded', () => {
+    // The Keter Dominion was set up in 2388. A system settled in 1200 whose
+    // article does not say who by is Keterist now and was not then; and
+    // nobody else is named, so in 1200 it is held by nobody named.
+    const spans = { founded: new Map([['keter-dominion', 2388]]), dissolved: new Map<string, number>() };
+    expect(holdersAt([], ['keter-dominion'], 1200, spans)).toEqual([]);
+    expect(holdersAt([], ['keter-dominion'], 2388, spans)).toEqual(['keter-dominion']);
+    // A shared holding keeps whichever partners existed.
+    expect(holdersAt([], ['keter-dominion', 'nocozo'], 1200, spans)).toEqual(['nocozo']);
+  });
+
+  it('shows a colony a source calls Keterist before the Dominion was founded', () => {
+    // The exception, and the reason it is an event and not a rule: a source
+    // that names the polity is making a claim about the colony, and the map
+    // shows what the sources say rather than what the founding year implies.
+    const spans = { founded: new Map([['keter-dominion', 2388]]), dissolved: new Map<string, number>() };
+    const proto = [{ from: 2100, polities: ['keter-dominion'] }];
+    expect(holdersAt(proto, ['keter-dominion'], 2200, spans)).toEqual(['keter-dominion']);
+  });
+
+  it('reads both years off the polity file', () => {
+    const fiction = {
+      polities: [
+        { id: 'a', founded_at: 100, dissolved_at: null },
+        { id: 'b', founded_at: null, dissolved_at: 900 },
+      ],
+    } as unknown as FictionData;
+    const spans = politySpans(fiction);
+    expect([...spans.founded]).toEqual([['a', 100]]);
+    expect([...spans.dissolved]).toEqual([['b', 900]]);
   });
 
   it('does not make a visitor a holder', () => {

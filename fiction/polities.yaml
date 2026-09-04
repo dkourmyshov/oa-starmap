@@ -27,6 +27,17 @@ sources:
       some 2,600 years before the setting's present, so the volumes it draws are
       smaller than the current ones.
 
+  eg-historical-polities:
+    title: "Historical Polities"
+    page: "Orion's Arm Encyclopaedia Galactica"
+    url: https://www.orionsarm.com/eg-topic/56b553e0b8918
+    note: >-
+      The Encyclopaedia's own index of polities that no longer exist, most of
+      them Old Earth nations. The interstellar ones are entered below so that a
+      world's events can name them; a year on any of them is read off the
+      history timeline, cited where it is set, and left unset where the
+      timeline states none.
+
   eg-system-articles:
     title: "Encyclopaedia Galactica system articles"
     page: "Orion's Arm Encyclopaedia Galactica"
@@ -67,6 +78,10 @@ sources:
 polities:
   - id: cygexpa
     name: Cygexpa
+    # Encyclopaedia timeline, 7247: "The Cygexpa Sale. With no warning Lohengrin disbands the
+    # Cygexpa empire." Kept, as the comment below says; from this year its places
+    # read as held by whoever the sources name since.
+    dissolved_at: 7247
     color: "#4FC3F7"
     source: political-maps-8000at
     landmarks:
@@ -81,6 +96,13 @@ polities:
 
   - id: keter-dominion
     name: Keter Dominion
+    # Encyclopaedia timeline, 2388: "The Congregation of Information Light emigrates from the
+    # solar system to a remote system named Ain Soph Aur, setting up the structure
+    # of the Keter Dominion as it is today." Keterism is older — the timeline has
+    # a Keterist mind designer in 2109 — so a colony an article calls Keterist
+    # before 2388 is entered as such on its own event, which this year does not
+    # gate.
+    founded_at: 2388
     color: "#F8E5BC"
     # Separated from the Solar Dominion, which sat 8.1 away and now sits 16.7.
     # Hue had only 2.5 degrees of room between Solar above and The Seams below,
@@ -95,6 +117,8 @@ polities:
 
   - id: mutual-progress-association
     name: Mutual Progress Association
+    # Encyclopaedia timeline, 1967: "Formation of Mutual Progress Association."
+    founded_at: 1967
     color: "#66BB6A"
     source: political-maps-8000at
     landmarks:
@@ -104,6 +128,9 @@ polities:
 
   - id: sagittarius-transcultural-cooperation
     name: Sagittarius Transcultural Cooperation
+    # Encyclopaedia timeline, 4805: "Sagittarius Sphere dissolved by an alliance of ComEmp
+    # empires; becomes the Sagittarius Transcultural Cooperation."
+    founded_at: 4805
     color: "#AB47BC"
     source: political-maps-8000at
     landmarks: [IC 4651, Bochum 14, S31, Basel 5, NGC 4625, NGC 6416]
@@ -137,6 +164,9 @@ polities:
 
   - id: nocozo
     name: Non-Coercive Zone
+    # Encyclopaedia timeline, 1498: "With the formation of the Non Coercive Zone, 61 Virginis
+    # legally becomes its property."
+    founded_at: 1498
     color: "#FF7043"
     source: political-maps-8000at
     landmarks:
@@ -163,6 +193,9 @@ polities:
 
   - id: sophic-league
     name: Sophic League
+    # Encyclopaedia timeline, 2345: "The Sophic League emerges as an ecumenical answer to
+    # the expansionist materialism of the growing early AI-religions."
+    founded_at: 2345
     color: "#5C6BC0"
     source: political-maps-8000at
     landmarks:
@@ -173,6 +206,10 @@ polities:
 
   - id: communion-of-worlds
     name: Communion of Worlds
+    # Encyclopaedia timeline, 1989: a major revival among the empaths leads to migration
+    # to the southern galactic direction, "where they set up the Communion of
+    # Worlds."
+    founded_at: 1989
     color: "#F8BBD0"
     source: political-maps-8000at
     # Blanco 1 is also a Non-Coercive Zone landmark, and stays one. The article
@@ -374,12 +411,17 @@ polities:
 
   - id: refugium-federation
     name: Refugium Federation
+    # Encyclopaedia timeline, 5884: "Establishment of the Refugium Federation."
+    founded_at: 5884
     color: "#1D855F"
     kind: polity
     source: eg-system-articles
 
   - id: crystal-star-domain
     name: Crystal Star Domain
+    # Encyclopaedia timeline, 3670: "First Crystal Star Domain founded in the Monoceros Middle
+    # Regions." Re-established near the Rosette Nebula in 8400.
+    founded_at: 3670
     color: "#851D62"
     landmarks: [Cone Nebula, NGC 2244]
     kind: polity
@@ -405,6 +447,8 @@ polities:
 
   - id: puppis-democracy
     name: Puppis Democracy
+    # Encyclopaedia timeline, 7100: "The Puppis Democracy emerges near the red giant Pi Puppis."
+    founded_at: 7100
     color: "#ED5FED"
     kind: polity
     source: eg-system-articles
@@ -435,6 +479,8 @@ polities:
 
   - id: laughter-hegemony
     name: Laughter Hegemony
+    # Encyclopaedia timeline, 9487: "The Laughter Hegemony founded."
+    founded_at: 9487
     color: "#C1443A"
     landmarks: [NGC 6357]
     kind: polity
@@ -488,6 +534,10 @@ polities:
 
   - id: red-star-mpire
     name: Red Star 'M'pire
+    # Encyclopaedia timeline, 9550: seedships launched "to mark the 5,000th anniversary of
+    # the founding of the Red Star 'M'pire" — so 4550, by subtraction rather than
+    # by a line that names the year.
+    founded_at: 4550
     color: "#BF3000"
     source: eg-system-articles
     # Deep red for a red-star empire, 16.5 from its nearest, which is TRHN.
@@ -549,6 +599,191 @@ polities:
     # the Solar Dominion: 160 mentions, on the ships that reached places and
     # the charters that founded them before any present holder existed. Read
     # from the New Callisto article's "Reached" field.
+
+  # ---- Early interstellar polities, from the Historical Polities page -------
+  #
+  # Entered so that events can name them, and drawn only when one does. See the
+  # eg-historical-polities source above; each entry's comment is that page's
+  # description and whatever the history timeline dates.
+
+  - id: eridanus-league
+    name: Eridanus League
+    color: "#CFD8DC"
+    source: eg-historical-polities
+    founded_at: 770
+    # "Terragens' first interstellar polity, informally aligned with the First
+    # Federation." Timeline, 770: "River of Stars Charter proclaimed at Epsilon
+    # Eridani IID; leads to the foundation of the Eridanus League." The Sesharia
+    # article has it fragmenting into the NoCoZo and the Solar Dominion, undated.
+
+  - id: conver-ambi
+    name: Conver Ambi
+    color: "#C8E6C9"
+    source: eg-historical-polities
+    founded_at: 1984
+    dissolved_at: 3943
+    # Timeline, 1984: "Birnam Ecotech joins the Transtellar Cooperative Pact,
+    # resulting in the establishment of the Conver Ambi." 3943: "In the peace
+    # accords that ended the Conver Wars, the Conver Ambi is divided into three
+    # parts" — the core to the Solar Dominion, the Periphery to Metasoft.
+
+  - id: ambi-limis
+    name: Ambi Limis
+    color: "#B2EBF2"
+    source: eg-historical-polities
+    # "Historic polity, successor to the Conver Ambi." The timeline names the
+    # Conver Limis as a party to the Conver Wars from 3842, so it predates the
+    # division of 3943; no founding or ending year is stated.
+
+  - id: taurus-nexus
+    name: Taurus Nexus
+    color: "#C5CAE9"
+    source: eg-historical-polities
+    # "Early interstellar power that developed around an abandoned wormhole nexus
+    # in the area of space toward the constellation Taurus." Timeline, 1931: the
+    # Hyades wormhole network is found and "this becomes the wealthy and
+    # successful Taurus Nexus"; 3234 speaks of "the breakup of the Taurus Nexus"
+    # as already past. Neither is the year itself.
+
+  - id: sagittarius-sphere
+    name: Sagittarius Sphere
+    color: "#69F0AE"
+    source: eg-historical-polities
+    dissolved_at: 4805
+    # "A major Consolidation and Integration Empire/House." Timeline, 4805:
+    # "Sagittarius Sphere dissolved by an alliance of ComEmp empires; becomes the
+    # Sagittarius Transcultural Cooperation."
+
+  - id: soft-cathedral
+    name: Soft Cathedral
+    color: "#FFCA28"
+    source: eg-historical-polities
+    dissolved_at: 4521
+    # "Major historical bioist empire/house." Timeline, 4521: "Soft Cathedrals
+    # destroyed by the Sagittarius Sphere when they infect the Cathedral core
+    # systems with conversion weapons."
+
+  - id: virginis-combine
+    name: Virginis Combine
+    color: "#BBDEFB"
+    source: eg-historical-polities
+    founded_at: 1590
+    # "An early interstellar empire, influential during the late Federation and
+    # early Expansion periods." Timeline, 1590: "A number of Technorat habitats
+    # form the Virginis Combine [Beta Virginis]."
+
+  - id: yoson-confederacy
+    name: Yoson Confederacy
+    color: "#EF6C00"
+    source: eg-historical-polities
+    founded_at: 2520
+    dissolved_at: 3941
+    # Timeline, 2520: "Yoson Confederacy founded on Chiri by the Hippocratic
+    # Clade." 3941: "Dissolution of the Yoson Confederacy."
+
+  - id: equalizer-civilization
+    name: Equalizer Civilization
+    color: "#B388FF"
+    source: eg-historical-polities
+    dissolved_at: 7900
+    # "An infamous highly expansive human empire that attempted to implement true
+    # equality among all humans." Timeline, circa 7900: "Collapse of the
+    # Equalizer Civilization, after its having wiped out most humans in the
+    # volume." A circa year, entered as the year given.
+
+  - id: tsutari-ambastory
+    name: Tsutari Ambastory
+    color: "#E1BEE7"
+    source: eg-historical-polities
+    # "Religious confederation of baseline hu worlds responsible for ending the
+    # reign of the Terrorlords of Mandra Quin'Si in 2446." Timeline, 2446: the
+    # Battle of the Fringe. In being by then; no founding year stated.
+
+  - id: hyperion
+    name: Hyperion
+    color: "#8C9EFF"
+    source: eg-historical-polities
+    # "One of the earliest transapients, eventually controlling a megacorporation
+    # and later founding its own small short-lived empire on the edge of Terragen
+    # space." Timeline, 3414: "Hyperion and eir polity, the Marabi Patha Harmony,
+    # break away from the Solar Dominion."
+
+  - id: cassiopeia-federation
+    name: Cassiopeia Federation
+    color: "#D7CCC8"
+    source: eg-historical-polities
+    # "A client state within the NeoCygexpa Regnum" that collapsed into anomie in
+    # the late ComEmp period; timeline, 6299: "The Cassiopeia Federation Anomie."
+
+  - id: arantan-empire
+    name: Arantan Empire
+    color: "#0277BD"
+    source: eg-historical-polities
+    # "Aggressively expansionist Consolidation Age heterodox Solarian bionanoborg
+    # off-shoot that established itself in the Cygexpa volume." No year stated.
+
+  - id: varadic-hegemony
+    name: Varadic Hegemony
+    color: "#BA68C8"
+    source: eg-historical-polities
+    # "Expansionist Late Consolidation and early Integration vec-dominated polity
+    # which broke off from the Arantan Empire", dissolved by Dominion governors
+    # within three centuries of the Cygnus Wars. No year stated.
+
+  - id: fragan-sphere
+    name: Fragan Sphere
+    color: "#7C4DFF"
+    source: eg-historical-polities
+    # "3rd millennium AT autonomous Terragen interstellar civilization; many
+    # details about it and the reasons for its disappearance remain a mystery."
+
+  - id: linnent
+    name: LinnEnt
+    color: "#9E9D24"
+    source: eg-historical-polities
+    # Linnaeus Enterprises: "A commercial empire in the First Federation era and
+    # beyond, dedicated to colonising new systems using Engenerator technology."
+
+  - id: lyra-co-op
+    name: Lyra Co-op
+    color: "#DCE775"
+    source: eg-historical-polities
+    # "Late Federation to Age of Expansion democratic polity which collapsed due
+    # to an outbreak of the Sophoncy Virus."
+
+  - id: miidam-posthuman-republic
+    name: Miidam Posthuman Republic
+    color: "#536DFE"
+    source: eg-historical-polities
+    # "Age of Consolidation polity, originally part of the old Taurus Nexus."
+
+  - id: penglai-empire
+    name: Penglai Empire
+    color: "#E57373"
+    source: eg-historical-polities
+    # "Early superbright-tweak empire, based around Penglai."
+
+  - id: second-federation
+    name: Second Federation
+    color: "#FF8F00"
+    source: eg-historical-polities
+    # "Former Solsys-based polity and First Federation successor state."
+
+  - id: neocygexpa
+    name: NeoCygexpa
+    color: "#D84315"
+    source: eg-historical-polities
+    # The NeoCygexpa Regnum, named on the Historical Polities page only as what
+    # the Cassiopeia Federation was a client of. Distinct from Cygexpa above, which
+    # the timeline disbands in 7247.
+
+  - id: bourgatov-alliance
+    name: Bourgatov Alliance
+    color: "#78909C"
+    source: eg-historical-polities
+    # Not on the Historical Polities page. Named here because it was a
+    # significant party to the Version War and the reading pass will meet it; no
+    # source is yet cited for a year.
 
 # Landmarks whose odd position has been checked against the source and is
 # correct. The build's placement check is a proofreading aid for mis-transcribed

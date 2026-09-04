@@ -30,10 +30,11 @@ import {
   NEVER_ENDS,
   UNDATED,
   combinedYears,
-  dissolutionYears,
   type Holding,
+  type PolitySpans,
   holdersAt,
   holdingsOf,
+  politySpans,
   landmarkYears,
 } from '../data/history';
 
@@ -434,7 +435,7 @@ export class ObjectIndex {
   /** Past holders on record, for the colour a year in history mode wants. */
   private readonly labelHoldings: (Holding[] | undefined)[];
   private readonly polityColor: Map<string, string>;
-  private readonly dissolvedAt: Map<string, number>;
+  private readonly spans: PolitySpans;
   /** Who holds each object, for the polity focus. See PlacedLabel.polities. */
   private readonly labelPolities: (string[] | undefined)[];
 
@@ -511,7 +512,7 @@ export class ObjectIndex {
       (fiction?.polities ?? []).map((p) => [p.id, p.color]),
     );
     this.polityColor = polityColor;
-    this.dissolvedAt = dissolutionYears(fiction);
+    this.spans = politySpans(fiction);
     this.labelHoldings = new Array(total);
     const polityColorByIndex = new Map<number, string>(
       (fiction?.polities ?? []).map((p) => [p.index, p.color]),
@@ -875,9 +876,9 @@ export class ObjectIndex {
    * holder's in the year shown, so a name and the ring under it agree.
    */
   private colorAt(id: number, epoch: EpochFilter | undefined): string | undefined {
-    const holdings = this.labelHoldings[id];
-    if (!epoch || !holdings?.length) return this.labelColor[id];
-    const held = holdersAt(holdings, this.labelPolities[id] ?? [], epoch.year, this.dissolvedAt);
+    const present = this.labelPolities[id];
+    if (!epoch || !present?.length) return this.labelColor[id];
+    const held = holdersAt(this.labelHoldings[id], present, epoch.year, this.spans);
     return held.length ? this.polityColor.get(held[0]) : undefined;
   }
 

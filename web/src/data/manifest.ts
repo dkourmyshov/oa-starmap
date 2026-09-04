@@ -411,6 +411,8 @@ export interface PolityInfo {
   id: string;
   name: string;
   color: string;
+  /** The year it came into being, where a source states one. */
+  founded_at: number | null;
   /** The year it ended, where a source states one; null for a present polity. */
   dissolved_at: number | null;
   uncertain: boolean;
