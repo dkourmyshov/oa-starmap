@@ -36,6 +36,13 @@ from oastarmap.fiction.find import find
 from oastarmap.importers.celestia import import_oastars
 from oastarmap.importers.constellations import import_constellations
 from oastarmap.importers.history import import_history
+from oastarmap.importers.systems import (
+    read_articles,
+    show as show_article,
+    summarise,
+    worksheet_rows,
+    write_worksheet,
+)
 from oastarmap.importers.inner_sphere import import_inner_sphere
 from oastarmap.paths import DATA_OUT_DIR, FICTION_DIR, RAW_DIR, SOURCES_DIR, ensure_dirs
 from oastarmap.transform.frame import PC_TO_LY
@@ -115,6 +122,39 @@ def cmd_import_history(args: argparse.Namespace) -> int:
           f"{counts['events']} dated events and {counts['links']} links")
     print(f"  into {dest}")
     print("  review the diff before committing — this overwrites hand edits")
+    return 0
+
+
+def cmd_extract_systems(args: argparse.Namespace) -> int:
+    """Lay out what the saved system articles date, for a reader to work from."""
+    if not args.pages.is_dir():
+        print(f"System articles not found: {args.pages}", file=sys.stderr)
+        print("Save Encyclopaedia system articles there, one .htm each", file=sys.stderr)
+        return 1
+
+    articles, skipped = read_articles(args.pages)
+    rows = worksheet_rows(articles)
+    if args.show:
+        wanted = set(args.show)
+        for article in articles:
+            if article.id in wanted or article.title in wanted:
+                print(show_article(article, rows))
+                print()
+        return 0
+
+    dest = args.out
+    write_worksheet(rows, dest)
+    summary = summarise(articles, rows, skipped)
+    print(f"  read {summary['articles']} articles ({summary['skipped_topics']} index pages skipped), "
+          f"{summary['with_panel']} with a data panel, "
+          f"{summary['filed_under_a_polity']} filed under a polity")
+    print(f"  {summary['rows']} rows: {summary['rows_at']} dated in AT, "
+          f"{summary['rows_bare']} by a bare number, {summary['rows_holder_only']} naming a holder only")
+    print(f"  {summary['articles_on_the_map']} articles are on the map, "
+          f"{summary['articles_off_the_map']} are not; "
+          f"{summary['dated_but_map_undated']} on the map carry a year the map does not")
+    print(f"  into {dest}")
+    print("  the worksheet is untracked: what is read out of it goes into fiction/worlds.yaml")
     return 0
 
 
@@ -292,6 +332,30 @@ def main(argv: list[str] | None = None) -> int:
         help="directory of saved era and period pages",
     )
     p_history.set_defaults(func=cmd_import_history)
+
+    p_systems = sub.add_parser(
+        "extract-systems",
+        help="lay out the dates and holders the saved EG system articles state",
+    )
+    p_systems.add_argument(
+        "--pages",
+        type=Path,
+        default=SOURCES_DIR / "systems",
+        help="directory of saved system articles",
+    )
+    p_systems.add_argument(
+        "--out",
+        type=Path,
+        default=SOURCES_DIR / "derived" / "systems_history.tsv",
+        help="where to write the worksheet",
+    )
+    p_systems.add_argument(
+        "--show",
+        nargs="*",
+        metavar="ARTICLE",
+        help="print these articles' rows readably (by id or title) instead of writing the worksheet",
+    )
+    p_systems.set_defaults(func=cmd_extract_systems)
 
     p_con = sub.add_parser(
         "import-constellations",
