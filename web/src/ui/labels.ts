@@ -33,6 +33,18 @@ import {
 export const DEFAULT_MAX_LABELS = 45;
 
 /**
+ * What a name outside the chosen polity is multiplied by.
+ *
+ * Not the shaders' 0.14. A ring at a seventh of its brightness is still a ring
+ * on a black sky; a word at a seventh is gone, and a map that deletes half its
+ * names to answer a question has answered a different one. This is far enough
+ * down that the eye stops reading them and near enough that they are still
+ * there when looked at. The colour comes off as well, which does most of the
+ * work: a grey name recedes behind a coloured one at any opacity.
+ */
+export const UNFOCUSED_LABEL_GAIN = 0.32;
+
+/**
  * How much taller a label is once it carries its altitude, in pixels.
  *
  * The declutter pass lays boxes out from constants rather than from measured
@@ -105,6 +117,16 @@ export class LabelOverlay {
    */
   depthOfField: DepthOfField | null = null;
 
+  /**
+   * Whose names are being picked out, or null for all of them.
+   *
+   * The layers dim the marks; without this the names went on shouting in forty
+   * colours over a map that had gone quiet, which is worse than not dimming at
+   * all — the labels are the loudest thing on screen and they were pointing
+   * everywhere at once.
+   */
+  focusPolity: string | null = null;
+
   constructor(
     parent: HTMLElement,
     private readonly objects: ObjectIndex,
@@ -173,11 +195,19 @@ export class LabelOverlay {
         this.depthOfField && !label.pinned
           ? this.depthOfField.labelStyle(label.depthPc, label.z)
           : null;
-      node.style.opacity = String(dof ? base * dof.opacity : base);
+      // Outside the chosen polity a name recedes and gives up its colour. The
+      // selected object is exempt: it was clicked, and an answer the reader
+      // cannot read is not an answer.
+      const held =
+        this.focusPolity === null ||
+        Boolean(label.pinned) ||
+        Boolean(label.polities?.includes(this.focusPolity));
+      const gain = held ? 1 : UNFOCUSED_LABEL_GAIN;
+      node.style.opacity = String((dof ? base * dof.opacity : base) * gain);
       node.style.filter = dof && dof.blurPx > 0.05 ? `blur(${dof.blurPx.toFixed(2)}px)` : '';
       // The polity colour rides on the label rather than on the object, so a
       // star keeps the colour its photometry actually measured.
-      node.style.color = label.color ?? '';
+      node.style.color = held ? (label.color ?? '') : '';
       node.style.display = '';
       node.dataset.id = String(label.id);
     }

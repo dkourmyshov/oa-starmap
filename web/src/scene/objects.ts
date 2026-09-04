@@ -201,6 +201,13 @@ export interface PlacedLabel {
   importance: number;
   /** Polity colour, where the object has one. The marker carries it too. */
   color?: string;
+  /**
+   * Every polity holding this object, for the legend's focus.
+   *
+   * All of them, not just the one whose colour is drawn: a system two polities
+   * share should stay lit when either of them is picked out.
+   */
+  polities?: string[];
   /** The position is asserted by the fiction, not measured. Drawn in italic. */
   asserted?: boolean;
   /** Placed because it is selected, not because it won a slot. */
@@ -403,6 +410,8 @@ export class ObjectIndex {
   private readonly settledFrom: Float32Array;
   private readonly endsAt: Float32Array;
   private readonly labelColor: (string | undefined)[];
+  /** Who holds each object, for the polity focus. See PlacedLabel.polities. */
+  private readonly labelPolities: (string[] | undefined)[];
 
   /** Tiebreak order for the label layout. See `shuffleKey`. */
   private readonly shuffle: Uint32Array;
@@ -464,6 +473,7 @@ export class ObjectIndex {
     this.settledFrom = new Float32Array(total).fill(-Infinity);
     this.endsAt = new Float32Array(total).fill(NEVER_ENDS);
     this.labelColor = new Array(total);
+    this.labelPolities = new Array(total);
 
     this.screenX = new Float32Array(total);
     this.screenDepth = new Float32Array(total);
@@ -478,6 +488,18 @@ export class ObjectIndex {
     const polityColorByIndex = new Map<number, string>(
       (fiction?.polities ?? []).map((p) => [p.index, p.color]),
     );
+    // The same lookup the other way, for the packed byte arrays: a cluster's
+    // holders arrive as indices and the label has to be able to say which
+    // polity they name.
+    const polityIdByIndex = new Map<number, string>(
+      (fiction?.polities ?? []).map((p) => [p.index, p.id]),
+    );
+    /** Every polity holding a landmark, not only the one whose colour is drawn. */
+    const heldBy = (kind: string, index: number, single: number | undefined): string[] => {
+      const shared = fiction?.sharedPolities?.get(`${kind}:${index}`);
+      const indices = shared ?? (single ? [single] : []);
+      return indices.map((i) => polityIdByIndex.get(i)).filter((id): id is string => Boolean(id));
+    };
     const constellations = stars.dataset?.layout?.constellations?.values ?? [];
     const labelled: number[] = [];
     let at = 0;
@@ -504,9 +526,9 @@ export class ObjectIndex {
         this.importance[at] = BASE_IMPORTANCE.oaSystem;
         this.isOA[at] = 1;
         this.floored[at] = 1;
-        this.labelColor[at] = polityColor.get(
-          affiliationsFor(colonies?.get(i), here)[0] ?? '',
-        );
+        const held = affiliationsFor(colonies?.get(i), here);
+        this.labelPolities[at] = held;
+        this.labelColor[at] = polityColor.get(held[0] ?? '');
       }
 
       // What Orion's Arm calls the system takes precedence over what the sky
@@ -520,9 +542,9 @@ export class ObjectIndex {
         this.importance[at] = BASE_IMPORTANCE.oaSystem;
         this.isOA[at] = 1;
         this.floored[at] = 1;
-        this.labelColor[at] = polityColor.get(
-          affiliationsFor(colony, worlds?.byStar.get(i))[0] ?? '',
-        );
+        const heldHere = affiliationsFor(colony, worlds?.byStar.get(i));
+        this.labelPolities[at] = heldHere;
+        this.labelColor[at] = polityColor.get(heldHere[0] ?? '');
       }
 
       // The catalogue's name is worked out whether or not the setting has one
@@ -604,6 +626,7 @@ export class ObjectIndex {
           this.importance[at] += POLITY_BONUS;
           this.isOA[at] = 1;
           this.labelColor[at] = polityColorByIndex.get(fiction?.clusterPolity?.[i] ?? 0);
+          this.labelPolities[at] = heldBy('cluster', i, fiction?.clusterPolity?.[i]);
         }
         if (this.labels[at]) labelled.push(at);
         at++;
@@ -630,6 +653,7 @@ export class ObjectIndex {
           this.importance[at] += POLITY_BONUS;
           this.isOA[at] = 1;
           this.labelColor[at] = polityColorByIndex.get(fiction?.hiiPolity?.[i] ?? 0);
+          this.labelPolities[at] = heldBy('hii', i, fiction?.hiiPolity?.[i]);
         }
         if (this.labels[at]) labelled.push(at);
         at++;
@@ -707,7 +731,10 @@ export class ObjectIndex {
         // add-on entries are, but a few are real objects it carries because
         // Celestia's catalogue omits them, and those are not.
         this.assertedPosition[at] = entry?.real ? 0 : 1;
-        if (entry?.affiliation) this.labelColor[at] = polityColor.get(entry.affiliation);
+        if (entry?.affiliation) {
+          this.labelColor[at] = polityColor.get(entry.affiliation);
+          this.labelPolities[at] = [entry.affiliation];
+        }
         if (this.labels[at]) labelled.push(at);
         at++;
       }
@@ -744,6 +771,7 @@ export class ObjectIndex {
         // Everything reaching here was placed from the fiction's own numbers;
         // one bound to a catalogue star is indexed as that star instead.
         this.assertedPosition[at] = 1;
+        this.labelPolities[at] = world.affiliations;
         this.labelColor[at] = polityColor.get(world.affiliations[0] ?? '');
         if (this.labels[at]) labelled.push(at);
         at++;
@@ -1075,6 +1103,7 @@ export class ObjectIndex {
         y: cy,
         importance: this.importance[pinned],
         color: unclaimed(pinned) ? undefined : this.labelColor[pinned],
+        polities: this.labelPolities[pinned],
         asserted: this.assertedPosition[pinned] === 1,
         pinned: true,
         depthPc: this.screenDepth[pinned],
@@ -1115,6 +1144,7 @@ export class ObjectIndex {
         y: cy,
         importance: candidate.priority,
         color: unclaimed(id) ? undefined : this.labelColor[id],
+        polities: this.labelPolities[id],
         asserted: this.assertedPosition[id] === 1,
         depthPc: this.screenDepth[id],
         z: this.pz[id],

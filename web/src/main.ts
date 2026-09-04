@@ -323,6 +323,9 @@ async function main(): Promise<void> {
     settledField?.setFocusPolity(focusedPolity);
     clusterField?.setFocusPolity(focusedPolity);
     hiiField?.setFocusPolity(focusedPolity);
+    // The names too. They are the loudest thing on screen, and forty colours
+    // still shouting over a map that has gone quiet is worse than not dimming.
+    labels.focusPolity = focusedPolity;
   };
 
   /**
