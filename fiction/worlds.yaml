@@ -2889,6 +2889,346 @@ worlds:
       Wars "a joint protectorate" of the Solar Dominion and Metasoft, neither
       dated by the article. The colony table marks it blight.
 
+  - name: Ran
+    kind: system
+    system: Ran
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/4795465645a82
+    location:
+      star: Epsilon Eridani
+    events:
+      - year_at: 595
+        kind: settled
+        note: >-
+          "Reached 595 AT by the Kelkemesh, a Gengineer Republic starship" The
+          first arrival, followed by the Mayari from the Cislunar Alliance in
+          603 and the Cinnabar from the Martian Union in 607; the article
+          calls Ran one of the first systems settled by Terragens. The
+          Gengineer Republic, the Cislunar Alliance and the Martian Union are
+          Solsys polities of the Interplanetary Age, none of this file.
+      - year_at: 770
+        kind: capital
+        polity: eridanus-league
+        source: "Encyclopaedia timeline, The Sundering"
+        note: >-
+          "River of Stars Charter proclaimed at Epsilon Eridani IID; leads to
+          the foundation of the Eridanus League." The article itself says only
+          "Birthplace of the Eridanus League", undated.
+    note: >-
+      Epsilon Eridani, 10.5 ly, as the colony table has it; Ran is the system,
+      and the article calls it the birthplace of the Eridanus League. Since
+      the 59th century its polities have been overseen by the Ran Combine,
+      which is local.
+
+  - name: Lok Mai
+    kind: system
+    system: Lok Mai
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/491700c65734d
+    location:
+      star: Gliese 783 A
+    events:
+      - year_at: 1317
+        kind: settled
+        note: >-
+          "Chakri was first colonised by a mission from Ross 128b. The colony
+          ship Nanyang departed Sonthaya in 1185 AT and arrived at GL 783 in
+          1317 AT." Departure from Sonthaya was 1185 AT; the settlement date
+          recorded is the 1317 AT arrival. No overarching polity is named for
+          the Ross 128b mission itself. Before the colonists arrived a First
+          Federation probe was already terraforming the largest planet; the
+          system never became a full Federation member.
+      - year_at: 2679
+        kind: independent
+        note: >-
+          "In 2679 AT, the Lok Mai Confederation declared itself to be
+          permanently neutral." The Lok Mai Confederation, established in
+          1706, is local.
+    note: >-
+      Gliese 783 A, as the colony table has it.
+
+  - name: Vega
+    kind: system
+    system: Vega
+    also: [Aksijaha]
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/4b6ec434691e3
+    location:
+      star: Alpha Lyrae
+    events:
+      - year_at: 1130
+        kind: settled
+        note: >-
+          "Reached : 1130, by the Vega Triumvirate" Body text elaborates: 'the
+          luminous star Vega was reached in 1130 by the Vega Triumvirate,
+          which began to develop the system as a transapientech (and later
+          godtech ) research facility.' The Vega Triumvirate is not on the
+          roster. The Vega Triumvirate is no polity of this file.
+    note: >-
+      Alpha Lyrae, as the colony table has it.
+
+  - name: Yall-Ull
+    kind: system
+    system: Yall-Ull
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/4fbac899f11d0
+    location:
+      star: Gliese 667 A
+    events:
+      - year_at: 705
+        kind: visited
+        precision: circa
+        note: >-
+          "By the time the probe reached the system two centuries later Solsys
+          was in the nadir of a Dark Age, and the data sent back by the probe
+          was never received." Probe launched in 505 AT ('An unmanned
+          interstellar probe was launched in 505 AT to explore this system.');
+          arrival year computed as roughly two centuries after launch. No
+          sending polity is named for the probe. Launched in 505; its data was
+          never received, Solsys being in a Dark Age.
+      - year_at: 1109
+        kind: settled
+        polity: first-federation
+        note: >-
+          "The system was colonized by the First Federation in 1109 AT."
+          Colony mission fronted by Clan Yall, a close ally of House Genen;
+          neither Clan Yall nor House Genen is on the roster.
+    note: >-
+      Gliese 667 A, as the colony table has it.
+
+  - name: Benes
+    kind: system
+    system: Benes
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/460c3a58c388a
+    location:
+      star: HD 17925
+    events:
+      - year_at: 1699
+        kind: settled
+        note: >-
+          "Reached : 1699" The body's account of the Lagrange Defenders'
+          survey and sale of the system carries no year of its own; this panel
+          figure is presumed to be that event but the text does not say so.
+      - year_at: 1749
+        kind: transferred
+        polity: eridanus-league
+        note: >-
+          "In 1749 AT , the Council elected to join the Eridanus League ,
+          giving them access to a wealth of information that resulted in both
+          local renaissances and rashes of ideological conflicts, although the
+          Council successfully prevented these conflicts from escalating and
+          causing widespread damage."
+      - year_at: 2657
+        kind: transferred
+        polity: taurus-nexus
+        precision: not_earlier_than
+        note: >-
+          "The system joined the Taurus Nexus at the first opportunity, taking
+          advantage of the wormhole link between Makintairas and Rana that was
+          first opened in 2657." The sentence dates the wormhole's opening,
+          not the join itself, but ties the join to it as "the first
+          opportunity". The year is the wormhole's opening, at the first
+          opportunity after which the system joined.
+    note: >-
+      HD 17925, as the colony table has it.
+
+  - name: Rajand
+    kind: system
+    system: Rajand
+    affiliations: [zoeific-biopolity]
+    article: https://www.orionsarm.com/eg-article/46789378a3d4e
+    location:
+      star: Lalande 21185
+    events:
+      - year_at: 721
+        kind: settled
+        note: >-
+          "It only arrived at its destination in 721 AT ." This is the
+          Genetekkers' crewed colony ship (the Erwin Chargaff), launched from
+          Agamemnon in 568; Genetekkers are not on the roster. A Gengineer
+          Republic probe was launched towards it in 405; the Genetekkers who
+          arrived in 721 are no polity of this file.
+      - year_at: 1013
+        kind: transferred
+        polity: first-federation
+        precision: not_earlier_than
+        note: >-
+          "Ultimately the survivors chose to join the Federation of Sophonts
+          instead, and the system control ship, after assisting with minimum
+          restoration of system infrastructure, amicably departed."
+          "Federation of Sophonts" is a roster also-name for the First
+          Federation. No year is stated for the join itself; 1013 is carried
+          over from the control ship's arrival in the same episode ("a League
+          system control ship finally arrived in 1013"). The year is the
+          adjacent sentence's; the article does not date the joining itself.
+    note: >-
+      Lalande 21185, as the colony table has it.
+
+  - name: Rana
+    kind: system
+    system: Rana
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/460d8ebaea985
+    location:
+      star: Delta Eridani
+    events:
+      - year_at: 50
+        kind: observed
+        precision: circa
+        note: >-
+          "as planetary systems were mapped in the mid 1st century AT several
+          were discovered. One of the earliest double planets discovered was
+          Bill and Bull, named by the research team from Uppsala Astronomical
+          Observatory that discovered them around Delta Eridani (Rana)."
+          Uppsala Astronomical Observatory, the discoverer, is not on the
+          roster.
+      - year_at: 1699
+        kind: settled
+        note: >-
+          "When the Eridanus League was on its height, a number of NoCoZo-
+          aligned Eridanius-native corps settled the nearby Rana system in
+          1699." The settlers are described as NoCoZo-aligned corporations
+          native to Eridanus League territory, not as the NoCoZo or the
+          Eridanus League itself, so polity was left empty; see doubts. The
+          settlers were NoCoZo-aligned corporations native to the Eridanus
+          League, on the article's account; neither is named as the holder.
+    note: >-
+      Delta Eridani, as the colony table has it.
+
+  - name: Barnard's Star
+    kind: system
+    system: Barnard's Star
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/4609c8d6cadb4
+    location:
+      star: Gliese 699
+    events:
+      - year_at: 761
+        kind: settled
+        note: >-
+          "Barnard's Star was one of the first systems to be reached by
+          refugee ships after the Great Expulsion, when the Skylark of Valeron
+          arrived there in 761 AT." Refugees of the Great Expulsion; the
+          article names no polity, then or since, its later holders being
+          local factions.
+    note: >-
+      Gliese 699, as the colony table has it.
+
+  - name: Deucalion
+    kind: system
+    system: Deucalion
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/48f4fe1ed9f27
+    location:
+      star: HD 2071
+    events:
+      - year_at: 2603
+        kind: settled
+        polity: linnent
+        note: >-
+          "Colonised 2603AT" data-panel figure; the body text describes only a
+          probe reaching the system in 2603 AT, with colonists arriving
+          roughly six centuries later (see contradictions) The body has only
+          an automated probe of the Phoenix Sector Terraformation Corporation,
+          a LinnEnt venture, in 2603, with colonists some six centuries later;
+          both readings are kept.
+      - year_at: 2603
+        kind: visited
+        polity: linnent
+        note: >-
+          "HD 2071 was first explored in 2603 a.t. by an automated probe
+          belonging to the Phoenix Sector Terraformation Corporation ; these
+          probes were sent out from Audobon system in Grus as part of the
+          Linnent Empire." acting agent was the Phoenix Sector Terraformation
+          Corporation (not on the roster), operating as part of the Linnent
+          Empire
+    note: >-
+      HD 2071, as the colony table has it.
+
+  - name: Kiku
+    kind: system
+    system: Kiku
+    also: [Sakura]
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/521e1928abb1f
+    location:
+      star: 59 Virginis
+    events:
+      - year_at: 1500
+        kind: settled
+        precision: not_later_than
+        note: >-
+          "Reached Sakura was already inhabited by splinter factions of the
+          Zavijavan aioids by 1500 AT ." a breakaway aioid faction from
+          Zavijava (per body text, "which had migrated there from Zavijava
+          many centuries earlier"); not a polity on the roster
+      - year_at: 1783
+        kind: settled
+        note: >-
+          "The first pro-human ship, the Eridan-Federation colony ship Three
+          Stops To Goltarenqi , would not arrive until 1783." "Eridan-
+          Federation" is not on the roster (roster has Eridanus League and
+          First Federation, neither an exact match) The 'Eridan-Federation'
+          ship is not placed with either the Eridanus League or the First
+          Federation.
+    note: >-
+      59 Virginis, as the colony table has it.
+
+  - name: Blanchard
+    kind: system
+    system: Blanchard
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/5762be458989f
+    location:
+      star: Beta Caeli
+    events:
+      - year_at: 1522
+        kind: settled
+        note: >-
+          "Beta Caeli was reached in 1522 A.T. by the Undyoist colony ship
+          Qian Kun ." Undyoists are a religious/cultural group, not a polity
+          on the roster
+      - year_at: 3879
+        kind: visited
+        polity: nocozo
+        note: >-
+          "In 3879 the Blanchard Tape voted to invite the NoCoZo to send a
+          representative transapient to give them assistance and guidance;
+          they expected to get a single First Singularity visitor, but instead
+          several dozen transapients arrived, including in due course a S:2
+          Higher transapient ." recorded as visited rather than transferred
+          because the article later states Blanchard never formally joined the
+          NoCoZo A representative transapient invited, not a joining: the
+          article says Blanchard never formally joined the Zone.
+    note: >-
+      Beta Caeli, as the colony table has it.
+
+  - name: Tiwa
+    kind: system
+    system: Tiwa
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/5d4c19c9442f1
+    location:
+      star: Ross 128
+    events:
+      - year_at: 617
+        kind: settled
+        note: >-
+          "The Mingkwan arrived at Ross 128 in 617 AT, and set about creating
+          its new civilization." the Mingkwan was a Southeast Asian autonomous
+          probe mission, not tied to any roster polity The first of four
+          ships; the Karl Schroeder in 642, GAIA's arkship Nanyang in 737 and
+          the Utnapishtim-6 in 1224 followed.
+      - year_at: 1313
+        kind: transferred
+        polity: eridanus-league
+        note: >-
+          "In 1313, the Tiwa system became a member of the Eridanus League ,
+          joining just as the League was becoming increasingly disunited."
+    note: >-
+      Ross 128, as the colony table has it.
+
   - name: Huanghua
     kind: system
     system: Huanghua
@@ -5554,6 +5894,14 @@ worlds:
         within a few light years is what makes this a position rather than a
         guess; the distance comes out 3% under the stated 1,600, which is inside
         what "approximately" allows.
+    events:
+      - year_at: 8693
+        kind: settled
+        note: >-
+          "8693 - Human and dolphin refuges from the Gerkletoss
+          rebellion/transcendence arrive in the system and begin to terraform
+          Skiiws'nnii and exploit the resources of the system." the refugees
+          came from the Gerkletoss culture, which is not on the roster
     note: >-
       Local space here is dominated by the Sparks, 50 ly off, and a dark cloud
       called the Tatter. Most civilisations nearby descend from or were shaped
@@ -6804,6 +7152,13 @@ worlds:
     system: 61 Cygni
     affiliations: []
     article: https://www.orionsarm.com/eg-article/47a67ce4bf7a5
+    events:
+      - year_at: 597
+        kind: settled
+        note: >-
+          "Colonised 597 AT" The article names no polity; the system was
+          governed by the ETA Consortium and then, in the 2000s, the Cygnus
+          Development Corporation, and never joined the First Federation.
     note: A world of 61 Cygni.
 
   - name: "\u00c5"
@@ -8284,6 +8639,21 @@ worlds:
     events:
       - year_at: 10107
         kind: settled
+      - year_at: 9017
+        kind: observed
+        note: >-
+          "By the time of Seattle's discovery in 9017AT, Terragen civilization
+          had learned that alien life rarely resembled terrestrial life in any
+          fashion." No actor is named for the discovery; the preceding
+          paragraph credits the Argus Array with identifying the planet and a
+          later linelayer with reaching it, but neither sentence is dated.
+      - year_at: 10107
+        kind: settled
+        note: >-
+          "Colonized 10,107AT" The panel's "Allegiance" field names Metasoft
+          Version Tree separately, but does not tie it to this line directly;
+          see holder_undated. The panel's allegiance is the Metasoft Version
+          Tree; the article does not say who colonised it.
     note: >-
       In Auriga at 5,133 ly, and settled in 10107 — among the latest dates in
       this file, which runs to about 10600.
@@ -8471,6 +8841,25 @@ worlds:
     location:
       constellation: Lyra
       distance: 2090 ly
+    events:
+      - year_at: 5999
+        kind: settled
+        polity: solipsist-panvirtuality
+        note: >-
+          "This system had previously been claimed by the Panvirtuality in
+          5999, but all transmissions had ceased two hundred years later."
+          Text says "claimed", not "settled"; the Panvirts are later found to
+          have retreated into the gas giant Maral, so a resident presence is
+          implied but not stated outright for 5999.
+      - year_at: 6511
+        kind: settled
+        polity: cygexpa
+        note: >-
+          "Colonised 6511 AT" Colonised by United Stars, 'a subsidiary of the
+          Cygnus Expansion Association (Cygexpa)', which the body of the
+          article calls 'explored' rather than colonised in the same year. The
+          Panvirtuality's earlier claim went silent two hundred years after
+          5999.
     note: >-
       Kepler-9, in Lyra at 2,090 ly — a star known for its planets and too faint
       for the catalogues here, so the constellation carries the direction.

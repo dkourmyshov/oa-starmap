@@ -178,6 +178,22 @@ systems:
     label: Blue
     affiliation: the-seams
     article: https://www.orionsarm.com/eg-article/48ac8c3a3979d
+    events:
+      - year_at: 5184
+        kind: stewardship
+        note: >-
+          "Connected first to Alpha Star in 5184 AT, the planet Blue was
+          quickly declared a protectorate by Mallard of Blue." The protector is
+          the Burdikeer, the system's own transapient, not a Caretaker God of
+          this file.
+      - year_at: 5839
+        kind: transferred
+        note: >-
+          "In 5839 AT a wormhole arrived from Traction and was opened shortly
+          after. In the classic pattern of early Traction expansion, the
+          system was first overrun by mercenaries." Traction is the seat of
+          the Greyman Empire, no polity of this file; the panel's region is
+          the Seams.
 
   # ---- from the archives beyond OAAddons1 ---------------------------------
   # Ten .stc files went unread until every archive was imported rather than one.
