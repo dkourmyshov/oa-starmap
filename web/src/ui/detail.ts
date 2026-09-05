@@ -30,7 +30,10 @@ import {
   type ObjectIndex,
   bayerLabel,
   systemLabel,
+  type EpochFilter,
 } from '../scene/objects';
+import { type Holding, type PolitySpans, holdersAt, holdingsOf, politySpans } from '../data/history';
+import { affiliationsFor } from '../data/manifest';
 import { PC_TO_LY, type DistanceUnit, type Parsecs, formatDistance, pc } from '../units';
 import { type Foldable, makeFoldable } from './foldable';
 import { makeDraggable } from './drag';
@@ -114,6 +117,10 @@ interface Detail {
   polities: string[];
   /** Which OA source the polity association was read from, if any. */
   associationSource: string | null;
+  /** Present holders as polity ids, for the history-mode line. */
+  present?: string[];
+  /** Past holders on record, for the same. */
+  holdings?: Holding[];
   /**
    * The object's own Encyclopaedia article, where a source names one.
    *
@@ -296,8 +303,32 @@ function distanceWithBand(
   return `${main}  (${formatDistance(pc(lo), unit)} – ${formatDistance(pc(hi), unit)})`;
 }
 
+/**
+ * Who held a place in a year, beside who holds it now, as names.
+ *
+ * The map in history mode colours the place by the first; the panel is where
+ * the second is still said. Both are given so a reader can see which claim
+ * the colour is making — a holder an event names, or the present one standing
+ * in — and a place held by nobody named in that year says so.
+ */
+export function heldInYear(
+  detail: { present?: string[]; holdings?: Holding[] },
+  year: number,
+  spans: PolitySpans,
+  nameOf: (id: string) => string,
+): { then: string[]; now: string[] } | null {
+  const present = detail.present ?? [];
+  if (!present.length && !detail.holdings?.length) return null;
+  return {
+    then: holdersAt(detail.holdings, present, year, spans).map(nameOf),
+    now: present.map(nameOf),
+  };
+}
+
 export class DetailPanel {
   private readonly panel: HTMLElement;
+  /** Set while history mode is on, so the panel can say who held the place then. */
+  epoch: EpochFilter | undefined = undefined;
   /** Made on the first selection and re-pointed at each rebuilt body. */
   private fold: Foldable | null = null;
   private current: number | null = null;
@@ -369,6 +400,30 @@ export class DetailPanel {
     // where the numbers came from, and it is not what anyone clicked for.
     const article = encyclopaediaArticle(detail);
     if (article) body.appendChild(linkLine('note-line note-article', article, 'Encyclopaedia'));
+
+    // In history mode, who held it in the year shown and who holds it now,
+    // here rather than in the Orion's Arm block below, because the colour on
+    // the map has just changed and this is what it changed to.
+    const fictionData = this.sources.fiction;
+    if (this.epoch && fictionData) {
+      const names = new Map(fictionData.polities.map((p) => [p.id, p.name]));
+      const held = heldInYear(
+        detail,
+        this.epoch.year,
+        politySpans(fictionData),
+        (id) => names.get(id) ?? id,
+      );
+      if (held) {
+        const then = el('div', 'row');
+        then.appendChild(el('span', 'label', `${this.epoch.year} AT`));
+        then.appendChild(el('span', 'value', held.then.join(', ') || 'held by nobody named'));
+        body.appendChild(then);
+        const now = el('div', 'row');
+        now.appendChild(el('span', 'label', 'now'));
+        now.appendChild(el('span', 'value', held.now.join(', ') || 'no holder recorded'));
+        body.appendChild(now);
+      }
+    }
 
     for (const row of detail.rows) {
       const line = el('div', 'row');
@@ -484,6 +539,16 @@ export class DetailPanel {
    * a fact about the object, so the panel says which map — otherwise a colour
    * and a catalogue measurement read as equally authoritative.
    */
+  /** The polities the landmark bindings attach to an object, as ids. */
+  private polityIdsFor(kind: string, index: number): string[] {
+    const out: string[] = [];
+    for (const binding of this.sources.fiction?.bindings ?? []) {
+      if (binding.kind !== kind || binding.index !== index) continue;
+      for (const id of binding.polities) if (!out.includes(id)) out.push(id);
+    }
+    return out;
+  }
+
   private sourceLineFor(kind: string, index: number): string | null {
     const fiction = this.sources.fiction;
     if (!fiction) return null;
@@ -603,6 +668,8 @@ export class DetailPanel {
       rows,
       polities: held,
       associationSource: world.article || null,
+      present: world.affiliations,
+      holdings: holdingsOf([world, ...(worlds.byHost.get(world.name) ?? [])]),
       // The host's own events and its guests', interleaved by year.
       events: [world, ...(worlds.byHost.get(world.name) ?? [])]
         .flatMap((w) => w.events)
@@ -690,6 +757,11 @@ export class DetailPanel {
         ? [entry.uncertain ? `${affiliation.name} (uncertain)` : affiliation.name]
         : [],
       associationSource: entry.article || null,
+      present: [
+        ...(entry.affiliation ? [entry.affiliation] : []),
+        ...affiliationsFor(undefined, here).filter((id) => id !== entry.affiliation),
+      ],
+      holdings: holdingsOf(here),
       citation: oaStars.dataset.source.citation,
       distancePc: distance,
       focus: { x, y, z, standoff: pc(Math.max(distance * 0.12, 2)) },
@@ -816,6 +888,11 @@ export class DetailPanel {
       associationSource:
         this.sourceLineFor('star', index) ??
         (colony?.affiliations.length ? this.sources.innerSphere?.dataset.source.citation ?? null : null),
+      present: [
+        ...affiliationsFor(colony, here),
+        ...this.polityIdsFor('star', index).filter((id) => !affiliationsFor(colony, here).includes(id)),
+      ],
+      holdings: holdingsOf(here),
       // The table's own link for the system, then the page of a world drawn
       // here. Neither is the topic page the affiliation was read from, which
       // stays below as the citation for that claim and is not what a reader

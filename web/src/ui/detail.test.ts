@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import { encyclopaediaArticle, eventLabel, hasOrionsArmBlock } from './detail';
+import { encyclopaediaArticle, eventLabel, hasOrionsArmBlock, heldInYear } from './detail';
 
 /**
  * The Orion's Arm block has failed to appear twice, both times because
@@ -131,5 +131,41 @@ describe('eventLabel', () => {
 
   it('brackets the name for a kind with no wording of its own', () => {
     expect(eventLabel({ kind: 'observed', polity: 'doran-empire' }, named)).toBe('first observed (Doran Empire)');
+  });
+});
+
+/**
+ * The line history mode adds above the fold: who held the place in the year
+ * shown, and who holds it now. The colour on the map has just changed to the
+ * first, and the second is the claim the rest of the panel is still making.
+ */
+describe('heldInYear', () => {
+  const names: Record<string, string> = {
+    'penglai-empire': 'Penglai Empire',
+    'sophic-league': 'Sophic League',
+  };
+  const nameOf = (id: string) => names[id] ?? id;
+  const spans = { founded: new Map([['sophic-league', 2345]]), dissolved: new Map<string, number>() };
+  const penglai = {
+    present: ['sophic-league'],
+    holdings: [{ from: 1205, polities: ['penglai-empire'] }],
+  };
+
+  it('says who held it then and who holds it now', () => {
+    expect(heldInYear(penglai, 1500, spans, nameOf)).toEqual({
+      then: ['Penglai Empire'],
+      now: ['Sophic League'],
+    });
+  });
+
+  it('says nobody named for a year before any holder existed', () => {
+    // 1000 AT: before the Hsien revolt, and before the Sophic League was
+    // founded, so the present holder does not stand in either.
+    expect(heldInYear(penglai, 1000, spans, nameOf)).toEqual({ then: [], now: ['Sophic League'] });
+  });
+
+  it('has nothing to say about a place nobody has ever held', () => {
+    expect(heldInYear({ present: [], holdings: [] }, 1500, spans, nameOf)).toBe(null);
+    expect(heldInYear({}, 1500, spans, nameOf)).toBe(null);
   });
 });

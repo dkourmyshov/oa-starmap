@@ -137,6 +137,10 @@ polities:
 
   - id: negentropy-alliance
     name: Negentropy Alliance
+    # Given by the project owner from the polity's own Encyclopaedia article,
+    # as the year the Alliance was first announced. The timeline dates the
+    # Precepts of Negentropy to 1965 and the Seat of Judgement to 2465.
+    founded_at: 2465
     color: "#26C6DA"
     source: political-maps-8000at
     landmarks:
@@ -227,6 +231,13 @@ polities:
 
   - id: metasoft
     name: Metasoft Version Tree
+    # Encyclopaedia timeline, 2344: "Metasoft vec ships spread beyond human
+    # control ... The Metasoft biont management has no choice but to hand over
+    # the reins of power to its AI" — the independence of the vec polity from
+    # Metasoft Interstellar's management. The Version Tree itself is later:
+    # timeline, 2582, "Metasoft institutes the Version Tree system of standards."
+    # The corporation is older still, from the 2100s, per its article.
+    founded_at: 2344
     color: "#75CC32"
     # Its nearest neighbour was not the MPA but the Zoeific Biopolity, 4.2 away
     # and within half a degree of the same hue. Now 10.3 from both.
@@ -246,6 +257,10 @@ polities:
 
   - id: solar-dominion
     name: Solar Dominion
+    # Given by the project owner from the polity's own Encyclopaedia article,
+    # which is not among the saved pages; the history timeline has no line for
+    # its forming, its first mention being Shamash joining it in 2348.
+    founded_at: 2217
     color: "#FFEE58"
     source: political-maps-8000at
     landmarks:
@@ -395,6 +410,10 @@ polities:
 
   - id: terragen-federation
     name: Terragen Federation
+    # Given by the project owner from the polity's own Encyclopaedia article,
+    # which gives "Founded 2900-3200 AT". The earlier bound is entered, so the
+    # gate hides nothing the article allows; the range is the honest claim.
+    founded_at: 2900
     color: "#5AEEDA"
     # Was byte-identical to the Stellar Umma.
     kind: polity
@@ -406,6 +425,12 @@ polities:
 
   - id: utopia-sphere
     name: Utopia Sphere
+    # Given by the project owner from the polity's own Encyclopaedia article, as the
+    # colonisation of Beta Arae, taken as the first Utopia system proper. Hard to
+    # date: Chesed was already active at Ceres Mater in the 1900s, and that
+    # community reads as Keterist-proto-Utopian — the case for an event naming
+    # the polity outright, which this year does not gate.
+    founded_at: 2975
     color: "#F48FB1"
     source: eg-system-articles
 
@@ -759,7 +784,7 @@ polities:
 
   - id: penglai-empire
     name: Penglai Empire
-    color: "#E57373"
+    color: "#AEEA00"
     source: eg-historical-polities
     # "Early superbright-tweak empire, based around Penglai."
 
@@ -776,6 +801,19 @@ polities:
     # The NeoCygexpa Regnum, named on the Historical Polities page only as what
     # the Cassiopeia Federation was a client of. Distinct from Cygexpa above, which
     # the timeline disbands in 7247.
+
+  - id: biovirate
+    name: Biovirate
+    color: "#558B2F"
+    source: eg-system-articles
+    dissolved_at: 6210
+    # Not on the Historical Polities page; named by the project owner as one
+    # of the important ones. Encyclopaedia timeline, 5920: "Under Morral Kuprin
+    # Jerr, the Biovirate begins design and manufacture of organic autowars";
+    # 6009: "Pereira (the Biovirate capital) falls to the Keterists"; 6210:
+    # "Gannet II, the last isolated Biovirate stronghold, surrenders to
+    # Keterist advance forces without a struggle - end of the Biovirate
+    # empire." No founding year is stated.
 
   - id: bourgatov-alliance
     name: Bourgatov Alliance

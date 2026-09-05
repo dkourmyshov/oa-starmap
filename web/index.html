@@ -385,6 +385,11 @@
         cursor: pointer;
       }
 
+      /* The attribute loses to the flex above unless said again here. */
+      .legend-row[hidden] {
+        display: none;
+      }
+
       .legend-row:hover {
         background: rgba(143, 180, 255, 0.14);
       }

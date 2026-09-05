@@ -128,12 +128,20 @@ rule, in `holdersAt`:
    colony, and the map shows it. That is where a proto-Keterist colony goes —
    on its own event, not on a rule.
 
-Both years are read off the history timeline and cited in `polities.yaml`
-beside each one; a polity whose founding the timeline does not date has none
-and stands in for any year. The Solar Dominion, Metasoft, the Negentropy
-Alliance, the Utopia Sphere and the Terragen Federation are the large ones
-still undated, because the timeline's first mention of each is of something
-joining it rather than of its forming.
+Both years are cited in `polities.yaml` beside each one, from the history
+timeline where it dates them and otherwise from the polity's own article as
+given by the project owner: the Solar Dominion 2217, Metasoft 2344 (the vec
+polity's independence; the Version Tree itself is instituted in 2582), the
+Negentropy Alliance 2465, the Utopia Sphere 2975 (Beta Arae, taken as the
+first Utopia system proper; Ceres Mater in the 1900s reads as
+Keterist-proto-Utopian and is the case for an event), the Terragen
+Federation 2900 (the article gives 2900 to 3200; the earlier bound gates
+nothing the article allows). A polity with no founding year stands in for any
+year.
+
+In history mode the detail panel says, above the fold, who held the place in
+the year shown and who holds it now, so the colour on the map and the claim
+beneath it can be read together.
 
 The early polities from the Encyclopaedia's Historical Polities page are
 entered, twenty-two of them, so that events can name them; they draw nowhere
@@ -141,7 +149,15 @@ until one does. The timeline dates nine: the Eridanus League from 770, the
 Virginis Combine from 1590, the Conver Ambi 1984 to 3943, the Yoson
 Confederacy 2520 to 3941, the Soft Cathedral to 4521, the Sagittarius Sphere
 to 4805, Cygexpa to 7247, the Equalizer Civilization to about 7900, the Doran
-Empire to 5855. The rest carry the page's description and no year.
+Empire to 5855. The rest carry the page's description and no year. The
+Biovirate, not on that page, is entered from the timeline: its capital fell
+in 6009 and its last stronghold surrendered in 6210.
+
+Penglai is the first place read against these: settled 678, the Penglai
+Empire from the Hsien revolt of 1205 at the earliest, under Metasoft
+protection from the Conver Ambi's division in 3943, and the Sophic League's
+after the Version War. The Conver Ambi's control of the Empire between is
+undated by the article and so not an event.
 
 ## What the rest of the pass looks like
 

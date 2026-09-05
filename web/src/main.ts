@@ -401,6 +401,8 @@ async function main(): Promise<void> {
       ? { year: state.year, showUndated: state.showUndated, basis: state.basis }
       : undefined;
     hud.setLegendYear(state ? polityCountsAt(state) : null);
+    detail.epoch = view.epoch;
+    detail.refresh(hud.currentUnit);
     labels.epoch = view.epoch;
   };
 

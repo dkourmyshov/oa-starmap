@@ -3207,6 +3207,35 @@ worlds:
     events:
       - year_at: 678
         kind: settled
+      - year_at: 1205
+        kind: transferred
+        polity: penglai-empire
+        precision: not_earlier_than
+        note: >-
+          The Hsien revolt of 1205: "In the following centuries, under Hsien
+          leadership, the Penglai planetsiders, the belters, and jovianists
+          merged in a solar-system wide empire." The article dates the revolt
+          and not the empire, so this is the earliest it can be. The Conver
+          Ambi later "gained effective control of the Penglai Empire",
+          undated.
+      - year_at: 3943
+        kind: transferred
+        polity: metasoft
+        source: "Encyclopaedia timeline, for the year"
+        note: >-
+          "The Second Consolidation War ended with the destruction of the
+          Conver Ambi empire, and the Sigma Draconis system came under
+          Metasoft protection." The article gives no year; the timeline
+          divides the Conver Ambi in 3943.
+      - year_at: 4650
+        kind: transferred
+        polity: sophic-league
+        precision: not_earlier_than
+        source: "Encyclopaedia timeline, for the year"
+        note: >-
+          "After the Version War Penglai was re-assigned to the Sophic League
+          as part of the war settlement." The timeline's Version War period
+          ends in 4650.
       - year_at: 609
         kind: visited
         source: "Encyclopaedia timeline, The Sundering"
