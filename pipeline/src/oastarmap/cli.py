@@ -37,6 +37,8 @@ from oastarmap.importers.celestia import import_oastars
 from oastarmap.importers.constellations import import_constellations
 from oastarmap.importers.history import import_history
 from oastarmap.importers.systems import (
+    parse_article,
+    prose as article_prose,
     read_articles,
     show as show_article,
     summarise,
@@ -141,6 +143,32 @@ def cmd_extract_systems(args: argparse.Namespace) -> int:
                 print(show_article(article, rows))
                 print()
         return 0
+
+    if args.prose:
+        args.prose.mkdir(parents=True, exist_ok=True)
+        wanted = {row["article"] for row in rows}
+        first_row = {}
+        for row in rows:
+            first_row.setdefault(row["article"], row)
+        for path in sorted(args.pages.glob("*.htm*")):
+            markup = path.read_text(encoding="utf-8", errors="replace")
+            article = parse_article(markup, topics=args.topics)
+            if article is None or article.id not in wanted:
+                continue
+            first = first_row[article.id]
+            head = [
+                f"# {article.title}",
+                f"# {article.url}",
+                f"# on the map as: {first['place'] or '(not on the map)'}"
+                + (f" [{first['file']}]" if first["file"] else ""),
+                f"# already dated: {first['has'] or '(nothing)'}",
+                f"# filed under: {first['held_by'] or '(no polity)'}",
+                "",
+            ]
+            (args.prose / f"{article.id}.txt").write_text(
+                "\n".join(head) + article_prose(markup), encoding="utf-8"
+            )
+        print(f"  prose of {len(wanted)} articles under {args.prose}")
 
     dest = args.out
     write_worksheet(rows, dest)
@@ -348,6 +376,12 @@ def main(argv: list[str] | None = None) -> int:
         type=Path,
         default=SOURCES_DIR / "derived" / "systems_history.tsv",
         help="where to write the worksheet",
+    )
+    p_systems.add_argument(
+        "--prose",
+        type=Path,
+        metavar="DIR",
+        help="also write each article's text, headed by its map binding, one file per article",
     )
     p_systems.add_argument(
         "--topics",

@@ -368,6 +368,25 @@ def parse_article(markup: str, topics: bool = False) -> Article | None:
     return article
 
 
+def prose(markup: str) -> str:
+    """The article's text alone, for a reader that reads whole articles.
+
+    The worksheet carries only the sentences with a year or a holder in them,
+    which is enough to find the claims and not always enough to read them:
+    Corona's "it then joined the NoCoZo, was annexed by the Solar Dominion, and
+    finally became an Iota Network world" carries no year and frames every
+    dated line around it. The navigation, the data panel and the footer are
+    left in, since the panel is often where the dates are.
+    """
+    flat = _STRIP.sub("", markup)
+    start = _BODY_START.search(flat)
+    body = flat[start.start() :] if start else flat
+    text = html.unescape(_TAG.sub(" ", _BREAK.sub("\n", body)))
+    text = re.sub(r"[ \t]+", " ", text)
+    text = re.sub(r"\n\s*\n+", "\n", text)
+    return text.strip()
+
+
 def read_articles(folder: Path, topics: bool = False) -> tuple[list[Article], int]:
     """Every article in the folder, and how many pages were skipped as topics."""
     articles: list[Article] = []
