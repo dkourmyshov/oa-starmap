@@ -1,0 +1,28 @@
+article: 66ed91e548374
+title: Howling Sky (Groombridge 34)
+events:
+  - year_at: 1120
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "First Colonised 1120 AT"
+    note: ""
+  - year_at: 3086
+    kind: transferred
+    polity: second-federation
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The system joined the short-lived Second Federation in 3086 and that organisation managed to establish treaties providing for limited coexistence and trade between the various factions, establishing Lightways connections and re-establishing the Beamrider Network station which had been closed during the Vechon conflict."
+    note: ""
+holder_undated: []
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "'no colonists arrived until the Early First Federation, when a group of sophont moravecs known as the Vechons arrived and began to construct infrastructure in the system' gives only an era ('Early First Federation'), not a numeric year, so it was not written as a separate event; it is broadly consistent with the panel's 'First Colonised 1120 AT' but does not confirm or contradict it precisely, and it does not say the First Federation itself settled the place, only that the Vechons arrived during that era."
+  - "'This system was the target of a flyby probe in the late Interplanetary Era' names no year and no polity, so it could not be recorded as a visited event."
+  - "'A number of later colonists arrived in the Federation era, including several other vec groups and a small contingent of Nauri from Alpha Centauri, who mostly settled around Danann' gives no specific year and Nauri is not a roster polity, so no event was recorded."
+  - "The 4852 AT 'Snapshot/traveller's notes' dialogue has a Vec representative tell a Hwii dolphin diplomat 'you have given us this planetary territory so generously', which reads like an in-story transfer of territory, but neither Hwii nor the Vec faction speaking is a polity on the roster, the exchange is informal narrative flavour text rather than a documentary statement, and it is unclear whether 4852 is the year of the transfer or just the year of the conversation, so it was not recorded as an event."

@@ -1,0 +1,24 @@
+article: 48fc9bfb6b8ff
+title: "Metasoft Baseline Reserves"
+events:
+  - year_at: 4950
+    kind: settled
+    polity: metasoft
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Heimat is a large world, with 38% land cover, which was reached in 4950 AT."
+    note: "The article only says 'reached', not 'settled' or 'colonized'; it is not stated whether Metasoft founded the baseline population at this date or found one already present (as with the other reserve worlds in this article, whose baseline societies' own origin dates are never given)."
+holder_undated: []
+unplaced: []
+contradictions: []
+other_places:
+  - "Niuearth, a different Metasoft baseline reserve world with its own main article, originally colonized in the 2900s by the Colbartists and later held in turn by the NoCoZo, the Taurus Nexus, and finally Metasoft"
+  - "Wurm, a different Metasoft baseline reserve world with its own main article"
+  - "Dilmun, a different Metasoft baseline reserve world, reached in 5390 per this text"
+  - "Jafalgia, named as one of the best-known Metasoft Baseline worlds but not otherwise described here"
+  - "Earthland, named as one of the best-known Metasoft Baseline worlds but not otherwise described here"
+doubts:
+  - "Heimat is a large world, with 38% land cover, which was reached in 4950 AT. -- whether this date marks Metasoft founding a new baseline population or Metasoft making contact with (and then taking hands-off guardianship of) an already-present baseline population is not stated."
+  - "just before the completion of the first interstellar probe, the Metasoft guardians finally announced themselves and welcomed them into the Version Tree as probationary members. -- this reads as Heimat being formally taken into Metasoft, but no year is given; it falls sometime after the 6550 AT Gahn Space Agency moon mission, described only as 'over the next few hundred years'."
+  - "In 6550 AT the Gahn Space Agency managed to send a craft to the dusty moon of their world -- a native Heimat achievement (not a roster polity) within the already-settled system; excluded per the brief as a sub-settlement milestone, not a holder event."

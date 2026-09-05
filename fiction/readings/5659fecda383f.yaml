@@ -1,0 +1,34 @@
+article: 5659fecda383f
+title: Iota Virginis
+events:
+  - year_at: 1902
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Several explorer class dataships carrying AI arrived in 1902 to assess the system and create environments for the colonists that were already en route."
+    note: "No polity is named as sending these dataships."
+  - year_at: 1970
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Syrma was colonized in 1970 AT by a fleet of colony ships launched from Gliese 588 during the late Federation era."
+    note: "'during the late Federation era' dates the event but does not state that the First Federation itself sent or claimed the colony ships; see doubts."
+  - year_at: 1970
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 1970 AT the first wave of colonists arrived, taking up habitation in the previously prepared bubblehabs."
+    note: "Appears to restate the same 1970 colonization mentioned earlier in the article."
+holder_undated: []
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - quote: "Syrma was colonized in 1970 AT by a fleet of colony ships launched from Gliese 588 during the late Federation era."
+    note: "It is unclear whether 'the late Federation era' means the colony was First Federation-sponsored, or only that the colonization happened to occur during that era; the sentence does not say the Federation reached or settled the place, so polity was left blank."

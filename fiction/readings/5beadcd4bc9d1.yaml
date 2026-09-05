@@ -1,0 +1,21 @@
+article: 5beadcd4bc9d1
+title: Potato (Asteroid Habitat)
+events:
+  - year_at: 8933
+    kind: settled
+    polity: mutual-progress-association
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonized 8933 AT"
+    note: "Data panel also lists 'Polity Mutual Progress Association' for Potato."
+holder_undated: []
+unplaced: []
+contradictions: []
+other_places:
+  - "Bonfire System, The"
+  - "Ember"
+  - "Smoke"
+doubts:
+  - quote: "This situation was ended abruptly in 10581 when the system government intervened."
+    note: "Not recorded as a transferred event: the 'system government' appears to be the same Mutual Progress Association administration already holding Potato (per the panel and the 10583 sentence about 'the MPA's system administrator'), not a change of holder."

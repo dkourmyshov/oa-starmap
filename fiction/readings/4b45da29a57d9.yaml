@@ -1,0 +1,36 @@
+article: 4b45da29a57d9
+title: Pandya (Mu Cassiopeiae)
+events:
+  - year_at: 1118
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "A number of rotating space habitats were constructed in the circumbinary asteroid belt soon after the Prithvi Mata arrived in 1118 AT, collectively becoming known as the Pandyan cluster."
+    note: "The Prithvi Mata was an uncrewed seedship built by Surya Interstellar Inc.; no polity is named for the settlement itself."
+  - year_at: 1350
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The colony thrived in solitude until the first crewed interstellar ships arrived in 1350 from the nearby system of Alsafi (roughly 15 light-years away at the time), bringing with them the inhabitants of Penglai and their microbes."
+    note: "The ships carried people from Penglai (a place), not a stated act of the Penglai Empire polity, so no polity is recorded."
+holder_undated:
+  - polity: first-federation
+    quote: "Still, the treatment was a success, and the properly immunized Pandyans eventually joined the First Federation."
+  - polity: penglai-empire
+    quote: "Later, it briefly became part of the Penglai Evolution."
+  - polity: solar-dominion
+    quote: "During the Version War, the system was annexed by the Solar Dominion."
+unplaced:
+  - name: "Uoagranyu Free System (UFS)"
+    quote: "a separatist faction loyal to the Uoagranyu Free System (UFS), a local independent power, has gained popularity over the millennia."
+contradictions: []
+other_places:
+  - "Achird (Eta Cassiopeiae) - named as an early seedship target"
+  - "Uoagranyu (HR 8832) - named as an early seedship target"
+doubts:
+  - "\"The seedship Prithvi Mata was launched in 1004 AT towards this binary system.\" is a launch date, not an arrival or holder claim about Pandya itself, so it was not recorded as an event."
+  - "No explicit AT year is given for joining the First Federation, for briefly becoming part of the Penglai Evolution, or for the Version War annexation by the Solar Dominion; all three are recorded as holder_undated rather than dated events."

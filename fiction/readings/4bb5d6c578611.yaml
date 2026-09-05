@@ -1,0 +1,50 @@
+article: 4bb5d6c578611
+title: Wasat (Delta Geminorum)
+events:
+  - year_at: 1920
+    kind: settled
+    polity: first-federation
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Tianzun was reached by the First Federation in 1920 by colonists aboard the Visible Excitement."
+    note: ""
+  - year_at: 1920
+    kind: settled
+    polity: first-federation
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The system was first reached in 1920 by the Visible Excitement, a First Federation colony mission aligned with the TCP, which means it soon became part of the Conver Ambi, a theocratic empire based on the neighboring system Conver Ky (37 Geminorum), merely 6.5 light-years away."
+    note: ""
+  - year_at: 1920
+    kind: visited
+    polity: ""
+    precision: not_later_than
+    until_at: null
+    where: panel
+    quote: "Some ahuman groups had already arrived at the system by that time, although taking up residence deep inside the Neptunian planet Mappa, they were not detected by the Federation colonists until later."
+    note: "'That time' refers back to 1920, the First Federation reach date given in the same panel field. The ahuman groups are unnamed."
+  - year_at: 1848
+    kind: capital
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 1848, Wasat became home of the House Conver Limis, specialists of the colonization of AquaCytherean planets (also known as PelaCytherian wprlds)."
+    note: "House Conver Limis is a dynasty/faction, not a roster polity; see unplaced. A later sentence calls the Apex Carbuncle habitat 'the symbolic capital of the Conver Limis', supporting the capital classification."
+holder_undated:
+  - polity: conver-ambi
+    quote: "The system was first reached in 1920 by the Visible Excitement, a First Federation colony mission aligned with the TCP, which means it soon became part of the Conver Ambi, a theocratic empire based on the neighboring system Conver Ky (37 Geminorum), merely 6.5 light-years away."
+  - polity: solar-dominion
+    quote: "In the aftermath of the war, Wasat, the important wormhole hub Conver Ky, and several other core Conver systems became part of the Solar Dominion."
+unplaced:
+  - name: "House Conver Limis"
+    quote: "In 1848, Wasat became home of the House Conver Limis, specialists of the colonization of AquaCytherean planets (also known as PelaCytherian wprlds)."
+contradictions: []
+other_places:
+  - "Conver Ky (37 Geminorum) - the Conver Ambi's home system and a wormhole hub, named as also becoming part of the Solar Dominion alongside Wasat"
+doubts:
+  - "\"In 1848, Wasat became home of the House Conver Limis\" chronologically precedes the article's own 1920 first-reached date for the system; both are recorded verbatim, unresolved."
+  - "The mission that reached the system in 1920 is described as 'aligned with the TCP', an unexpanded acronym not on the roster; not treated as a holder."
+  - "The (Revived) Snukig, 'conceived in the early 10100s' among independent habitats, describes an internal cultural/political movement rather than a change of the system's own holder, so it was not recorded as an event."

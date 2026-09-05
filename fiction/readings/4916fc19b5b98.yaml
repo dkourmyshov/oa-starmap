@@ -1,0 +1,62 @@
+article: 4916fc19b5b98
+title: "Eunchong (Gliese 832)"
+events:
+  - year_at: 798
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Reached : 798, by colonists abroad the Trinity ."
+    note: "The Trinity is the colony ship (a GAIA Ark per the body text); the group aboard is a splinter of the EOCC, not on the roster."
+  - year_at: 798
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "After a quick survey of the system after arrival in 798 AT, the spacer-dominated colonists realized that Eunchong was not going to be an easy place to thrive in."
+    note: "The colonists are 'a fiercely independent splinter group of the EOCC via a GAIA Ark' per the preceding sentence; EOCC is not on the roster."
+  - year_at: 1128
+    kind: transferred
+    polity: eridanus-league
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The system was officially integrated into the Eridanus League in 1128."
+    note: ""
+holder_undated:
+  - polity: zoeific-biopolity
+    quote: "When the League eventually dissolved, a large number of the polities in this system became associate members of the Zoeific Biopolity, although others joined the Negentropy Alliance, the Mutual Progress Association, and the Terragen Federation."
+  - polity: negentropy-alliance
+    quote: "When the League eventually dissolved, a large number of the polities in this system became associate members of the Zoeific Biopolity, although others joined the Negentropy Alliance, the Mutual Progress Association, and the Terragen Federation."
+  - polity: mutual-progress-association
+    quote: "When the League eventually dissolved, a large number of the polities in this system became associate members of the Zoeific Biopolity, although others joined the Negentropy Alliance, the Mutual Progress Association, and the Terragen Federation."
+  - polity: terragen-federation
+    quote: "When the League eventually dissolved, a large number of the polities in this system became associate members of the Zoeific Biopolity, although others joined the Negentropy Alliance, the Mutual Progress Association, and the Terragen Federation."
+  - polity: zoeific-biopolity
+    quote: "Allegiance : Chiefly Zoefic, Negentropic, and Terragen Federation, with minor Utopian and Solarist elements. Deeper Covenant presence at the edge of the system."
+  - polity: negentropy-alliance
+    quote: "Allegiance : Chiefly Zoefic, Negentropic, and Terragen Federation, with minor Utopian and Solarist elements. Deeper Covenant presence at the edge of the system."
+  - polity: terragen-federation
+    quote: "Allegiance : Chiefly Zoefic, Negentropic, and Terragen Federation, with minor Utopian and Solarist elements. Deeper Covenant presence at the edge of the system."
+  - polity: utopia-sphere
+    quote: "Allegiance : Chiefly Zoefic, Negentropic, and Terragen Federation, with minor Utopian and Solarist elements. Deeper Covenant presence at the edge of the system."
+  - polity: solar-dominion
+    quote: "Allegiance : Chiefly Zoefic, Negentropic, and Terragen Federation, with minor Utopian and Solarist elements. Deeper Covenant presence at the edge of the system."
+  - polity: deeper-covenant
+    quote: "Allegiance : Chiefly Zoefic, Negentropic, and Terragen Federation, with minor Utopian and Solarist elements. Deeper Covenant presence at the edge of the system."
+unplaced:
+  - name: "EOCC"
+    quote: "Eunchong was colonized by a fiercely independent splinter group of the EOCC via a GAIA Ark."
+  - name: "River of Stars Charter"
+    quote: "The newly reformed government was not against responding to the River of Stars Charter."
+contradictions: []
+other_places:
+  - "Gatlida (Epsilon Indi), whose system control ships intervened in Eunchong's separatist conflicts"
+  - "Keid (40 Eridani), named only as a related article"
+  - "Ran (Epsilon Eridani), which answered Eunchong's request for an ambassador-judge"
+  - "Terranova, 82 Eridani IV, named only as a related article"
+doubts:
+  - "Although Eunchong technically remained independent at first, their culture and ideology became so heavily diluted by the Eridan culture (especially the Epsilon Indi cultures) over the next few hundred years that by 1100, little traces of the original culture remained. -- no year is given for when this 'independent' status began (presumably from the 798 settlement); it is not clear this counts as its own dateable 'independent' event rather than a default starting condition."
+  - "When the League eventually dissolved, a large number of the polities in this system became associate members of the Zoeific Biopolity... -- the Eridanus League's dissolution year is not stated here, and the roster also leaves eridanus-league's dissolved year blank, so none of these post-League holder changes can be dated."

@@ -873,7 +873,7 @@ polities:
     # ... until the founding of the Federation of Sol and Affiliated Systems"
     # in 2531.
     founded_at: 2531
-    color: "#FF8F00"
+    color: "#D2AF79"
     source: eg-historical-polities
     # "Former Solsys-based polity and First Federation successor state."
 

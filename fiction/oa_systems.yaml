@@ -113,6 +113,15 @@ systems:
     label: Heimat
     affiliation: metasoft
     article: https://www.orionsarm.com/eg-article/48fc9bfb6b8ff
+    events:
+      - year_at: 4950
+        kind: settled
+        polity: metasoft
+        note: >-
+          "Heimat is a large world, with 38% land cover, which was reached in
+          4950 AT." Heimat, one of the Metasoft Baseline Reserves the article
+          describes; 'reached', and the article does not say whether a
+          population was found or founded.
     note: The only Baseline Preserve named there without a page of its own.
 
   - star: JD 76601
@@ -159,6 +168,15 @@ systems:
     label: Panthalassa
     affiliation: zoeific-biopolity
     article: https://www.orionsarm.com/eg-article/48eca0a49a694
+    events:
+      - year_at: 3377
+        kind: settled
+        polity: zoeific-biopolity
+        note: >-
+          "the Quercus robur, a seedship of the Zoeific Biopolity, the first
+          ship to reach this system did not arrive until more than three
+          thousand years had passed, in 3377 a.t." The panel's present
+          affiliation is the Panthalassan Ocean Fleet, no polity of this file.
 
   - star: Pen-y-Ghent
     label: Pen-y-Ghent

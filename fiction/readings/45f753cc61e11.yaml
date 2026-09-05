@@ -1,0 +1,29 @@
+article: 45f753cc61e11
+title: April
+events:
+  - year_at: 1615
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "such as the Association of Rainy Habitats and the Goodwork League, the former of which helped to hydrate the planet up roughly a hundred years before the arrival of the Mumlan probe in 1615, and the latter agreeing to trade their infrastructure construction services for habitat ecosystem designs for its own uses."
+    note: "This is the arrival year of the Mumlan Terrainvestment probe mentioned earlier in the article; Mumlan Terrainvestment is a megacorporation, not a roster polity."
+holder_undated: []
+unplaced:
+  - name: "Mumlan Terrainvestment"
+    quote: "the terraforming commission for the planet was eventually accepted by Mumlan Terrainvestment in 1457 AT"
+  - name: "Nagaya Moyale"
+    quote: "Their client was the prosperous Nagaya Moyale habitat, which had sponsored colonization missions to this system before."
+  - name: "Association of Rainy Habitats"
+    quote: "such as the Association of Rainy Habitats and the Goodwork League"
+  - name: "Goodwork League"
+    quote: "such as the Association of Rainy Habitats and the Goodwork League"
+contradictions: []
+other_places:
+  - "Aksijaha - connected to April by a wormhole ('Only Connect!'), no events described there."
+doubts:
+  - "'the terraforming commission for the planet was eventually accepted by Mumlan Terrainvestment in 1457 AT' is a business/commission decision, not an arrival, settlement, or holder change, so it was not recorded as an event of any listed kind."
+  - "'the ecopoesis project concluded in 2538 AT' is a terraforming milestone, explicitly excluded by the brief."
+  - "'the colonists ... who had arrived at the system long before the completion of the ecopoesis project' implies an actual settlement predating 2538 AT, but no year is given for that arrival, so no settled event could be recorded."
+  - "'the names of the planets in this system were chosen by a public vote ... in 376' and 'Undecember was named later, during the First Federation era' are naming events, not colonisation or holder events, and the year 376 is not clearly marked AT (it is discussed in the context of the pre-Tranquility Gregorian calendar), so neither was recorded."

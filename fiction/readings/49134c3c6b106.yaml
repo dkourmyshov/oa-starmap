@@ -1,0 +1,29 @@
+article: 49134c3c6b106
+title: "Tincture (Gliese 581)"
+events:
+  - year_at: 1099
+    kind: visited
+    polity: first-federation
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Reached 1099AT by the First Federation-affiliated Nirav Assembly"
+    note: "The reaching party is the Nirav Assembly, described as 'First Federation-affiliated' rather than as the Federation itself."
+  - year_at: 1187
+    kind: settled
+    polity: first-federation
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Gliese 581 was settled in the Early First Federation, in 1187 AT, by the Nirav Assembly."
+    note: "As with the 1099 AT reaching, the actual settling body named is the Nirav Assembly, not the First Federation itself, though the sentence places it 'in the Early First Federation'."
+holder_undated: []
+unplaced:
+  - name: "Nirav Assembly"
+    quote: "Gliese 581 was settled in the Early First Federation, in 1187 AT, by the Nirav Assembly."
+contradictions: []
+other_places:
+  - "Yall-Ull (Gliese 667), named only as a related article, not described here"
+doubts:
+  - "In the Version War this neutral system was occupied by the Negentropists. -- no year is given for this occupation; the Version War's own dates are not stated anywhere in this article. Negentropy Alliance (negentropy-alliance) is on the roster, but whether the occupation was a lasting transfer of the system or a temporary wartime occupation that ended afterward is not stated."
+  - "'this neutral system' implies Tincture held no polity allegiance immediately before the Version War occupation, but no year or sentence states when or how it became neutral (plausibly, but not statedly, tied to the First Federation's 2099 AT dissolution per the roster)."

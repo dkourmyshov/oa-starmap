@@ -1,0 +1,35 @@
+article: 46d4d49a72fec
+title: Nimbus
+events:
+  - year_at: 1716
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 1716 it moved its headquarters to the Novoterra system where it set to terraform the planet Novoterra into a showpiece of nanotech macroengineering and integration."
+    note: "'It' is Ubikorp, a megacorporation of the First Federation era, not a polity on the roster (see unplaced). It is not clear from the text whether Novoterra was already settled before this, or whether this is its first development."
+  - year_at: 2123
+    kind: transferred
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "When contact was restored in 2123, Novoterra - now called Nimbus - became a neutral part of the Empire."
+    note: "'the Empire' is not identified by name with any roster polity; see unplaced."
+holder_undated: []
+unplaced:
+  - name: "Ubikorp"
+    quote: "Ubikorp was one of the dominant megacorporations of the First Federation , installing nanotech systems across inhabited space."
+  - name: "the Empire"
+    quote: "When contact was restored in 2123, Novoterra - now called Nimbus - became a neutral part of the Empire."
+  - name: "the Commonwealth"
+    quote: "During the Version War it was instrumental in the restoration of the Inner Sphere, briefly becoming one of the major worlds of the Commonwealth before settling back into virtuality ."
+contradictions: []
+other_places:
+  - "Escelon 3"
+doubts:
+  - quote: "In 1716 it moved its headquarters to the Novoterra system where it set to terraform the planet Novoterra into a showpiece of nanotech macroengineering and integration."
+    note: "Classified as settled, but this could instead be read as a megacorporation relocating its headquarters to an already-settled world rather than a first settlement; the article gives no earlier history for Novoterra."
+  - quote: "During the Version War it was instrumental in the restoration of the Inner Sphere, briefly becoming one of the major worlds of the Commonwealth before settling back into virtuality ."
+    note: "No AT year is given for the Version War in this article, and 'the Commonwealth' is not a roster polity, so no dated event could be recorded for this transfer and its reversal."

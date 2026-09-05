@@ -1,0 +1,26 @@
+article: 48f7fcd30db8c
+title: "Guanche - a Lost Colony"
+events:
+  - year_at: 8860
+    kind: transferred
+    polity: archosaurian-empire
+    precision: circa
+    until_at: null
+    where: body
+    quote: "More important still was the conquest of the material world, which allowed Guanche to progress to the microtech level and to tame atomic power in sixty years, which also allowed them to send the distress signal which attracted the Archosaur empireship Mirzallika and brought Guanche into the sphere of influence of the new regional superpower."
+    note: "No single sentence gives this event's year. It is derived by adding the stated 'sixty years' to the 'circa 8800 AT' mark given two paragraphs earlier for the chalcolithic power struggle; treat 8860 as an approximation built from the text's own numbers, not a stated year. Also unclear whether 'the new regional superpower' is definitely the Archosaurian Empire, or only the ship's crew/allegiance."
+holder_undated: []
+unplaced:
+  - name: "Hosoko Hegemony"
+    quote: "In the case of the Hosoko Hegemony this affiliation came to an abrupt end when the Hegemony seized all the assets of the Cygexpa association and reorganised them for their own benefit, in accordance with their own toposophocratic ideals."
+  - name: "Deneb Trading Volume"
+    quote: "Prior to the dissolution of the Cygexpa association, several smaller empires became established in the Cygnus Expansion direction, including the Deneb Trading Volume, and the Hosoko Hegemony."
+  - name: "Hosoko Posthegemonic Management Network"
+    quote: "The informal Hosoko Posthegemonic Management Network that was formed to recolonise the volume encountered many problems and did not reach Far Dniper until six hundred years had passed, circa 7900 AT."
+contradictions: []
+other_places:
+  - "Far Dniper, the nearest Hosoko world to Guanche, whose own depopulation and abandoned databanks are described in passing"
+doubts:
+  - "In the Guanche system, the solar collection swarm Power known as Uncle Jnr and the planetary development Power 33Lara took opposite sides in the memetic struggle which tore apart the Hegemony. -- this implies Guanche was itself part of the Hosoko Hegemony's domain before its collapse (placed at, or shortly after, the '7287 a.t.' mark given two paragraphs earlier), but no single sentence combines an explicit year with a holder statement naming Guanche, and the Hosoko Hegemony is not on the roster."
+  - "By this time Lohengrin had formally dissolved the Cygexpa Empire, perhaps as a consequence of the suffering of ordinary sophonts during the break-up of the Hegemony. -- 'By this time' is circa 7900 AT per the preceding sentence, which conflicts with the roster's cygexpa dissolved year of 7247. This is a polity-level fact rather than a Guanche event, but the mismatch may be worth a reviewer's attention."
+  - "The article is filed by the site itself under 'History > 5200 to 7800 AT: Post-ComEmp Era > 7200 to 7800 AT: The Central Alliance', an era/polity not on the roster, even though the narrated Guanche timeline (circa 7900-8860 AT) runs later than that bracket."

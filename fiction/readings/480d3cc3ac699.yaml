@@ -1,0 +1,36 @@
+article: 480d3cc3ac699
+title: Enigma Four
+events:
+  - year_at: 3346
+    kind: visited
+    polity: deeper-covenant
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Enigma Four was discovered by a scout ship from a minor Deeper Covenant clade in 3346."
+    note: ""
+  - year_at: 3346
+    kind: contact
+    polity: xenosophont
+    precision: exact
+    until_at: null
+    where: body
+    quote: "An attempt to contact the entity\\entities was met with success, but unfortunately the reply was impossible to understand for the pre- singularity crew."
+    note: "The resident intelligence, 'the Core', is a previously unknown hive mind not affiliated with any known polity; the roster's generic 'xenosophont' id is used here, and dated to the same 3346 expedition described in the surrounding text."
+  - year_at: 3580
+    kind: settled
+    polity: ""
+    precision: not_earlier_than
+    until_at: null
+    where: body
+    quote: "The relay was completed in 3580, and a research outpost was established a few years later to observe the Core."
+    note: "No polity is restated for the ship or outpost at this point in the text; the earlier 3346 scout ship was from a Deeper Covenant clade, but this later expedition's affiliation is not explicitly given."
+holder_undated: []
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - quote: "A new ship containing a SI:1 AI was sent to the Enigma system, who obtained permission to build a beamrider relay."
+    note: "No year is given for when this ship was sent, only for the relay's completion (3580) afterwards, so no separate dated event was recorded for the ship's arrival."
+  - quote: "An attempt to contact the entity\\entities was met with success, but unfortunately the reply was impossible to understand for the pre- singularity crew."
+    note: "Used the roster's 'xenosophont' id for this contact event since the Core is an unaffiliated, previously unknown intelligence; flagging this choice for review."

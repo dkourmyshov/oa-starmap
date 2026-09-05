@@ -1,0 +1,46 @@
+article: 4c1cb2ca8f150
+title: Alcor and Mizar
+events:
+  - year_at: 2097
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "A Truth-Santaya Networks colony ship arrived at Mizar in 2097 a.t. from Hesperia (later Fons Luminis)."
+    note: "Place: Mizar. Truth-Santaya Networks is a company, not a roster polity; see unplaced."
+  - year_at: 2530
+    kind: transferred
+    polity: solar-dominion
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Leonardo and most of the habitat bands joined the Solar Dominion in 2530, and a number of Dominion transapients of the Divine Order arrived during this period."
+    note: "Place: Mizar."
+  - year_at: 3645
+    kind: visited
+    polity: solipsist-panvirtuality
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 3645 a Panvirt linelayer arrived in the Alcor System, and after some (apparently ritualized) combat proceeded to open a wormhole from there to the Solipsist wormhole nexus."
+    note: "Place: Alcor."
+  - year_at: 3645
+    kind: transferred
+    polity: solipsist-panvirtuality
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Although no official conformation has come out of Alcor concerning this event, it must be assumed that this system is now a part of, or at least affiliated with, the Solipsist Panvirtuality."
+    note: "Place: Alcor. The source itself hedges this claim ('no official confirmation ... must be assumed')."
+holder_undated: []
+unplaced:
+  - name: "Truth-Santaya Networks"
+    quote: "A Truth-Santaya Networks colony ship arrived at Mizar in 2097 a.t. from Hesperia (later Fons Luminis)."
+contradictions: []
+other_places:
+  - "Fons Luminis (Xi Ursae Majoris), formerly Hesperia - origin of the Mizar colonists"
+doubts:
+  - "This single article covers two distinct places the map records separately (Mizar and Alcor, per the header); each event above is tagged with its place (Mizar or Alcor) in its note."
+  - "\"the colonists chose a 2000km planetoid orbiting Mizar Ab as their capital, naming it Leonardo\" makes Leonardo the seat of the Mizar colonists' own government, not of any roster polity, and carries no separate year, so it was not recorded as a dated event."
+  - "The 3645 Solipsist Panvirtuality transfer is explicitly hedged by the source ('must be assumed... or at least affiliated with'); recorded as stated, unresolved."

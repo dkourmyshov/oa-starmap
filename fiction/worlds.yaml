@@ -276,6 +276,18 @@ worlds:
       - year_at: 1365
         kind: settled
         note: >-
+          "The colony ships Root and Seed were launched in 1245 AT, arriving at
+          Lambda Aurigae IV in 1365 AT." The Green Alliance, no polity of this
+          file; megacorporations followed from 1425.
+      - year_at: 1687
+        kind: stewardship
+        polity: caretaker-gods
+        note: >-
+          "In 1687 AT an object of unknown nature entered the system." The
+          object was the protectorate ISO grown in secret by the Caretaker
+          Rachel, on the article's later account, and the panel's allegiance
+          is "Caretaker God (under the hyperturing Rachel)".
+    note: >-
       Lambda Aurigae, 41 ly, already on the map through the Inner Sphere colony
       table — which gives the system as "Rachel/New Gaia", two names for the one
       place. This entry adds the date rather than a position.
@@ -963,6 +975,13 @@ worlds:
     article: https://www.orionsarm.com/eg-article/5beadcd4bc9d1
     location:
       world: The Bonfire System
+    events:
+      - year_at: 8933
+        kind: settled
+        polity: mutual-progress-association
+        note: >-
+          "Colonized 8933 AT" Data panel also lists 'Polity Mutual Progress
+          Association' for Potato.
     note: An asteroid habitat in the Bonfire System, sharing its position.
 
   - name: Byrdis
@@ -2580,6 +2599,19 @@ worlds:
       - year_at: 2097
         kind: visited
         note: First reached.
+      - year_at: 2097
+        kind: settled
+        note: >-
+          "A Truth-Santaya Networks colony ship arrived at Mizar in 2097 a.t.
+          from Hesperia (later Fons Luminis)." Truth-Santaya Networks is no
+          polity of this file.
+      - year_at: 2530
+        kind: transferred
+        polity: solar-dominion
+        note: >-
+          "Leonardo and most of the habitat bands joined the Solar Dominion in
+          2530, and a number of Dominion transapients of the Divine Order
+          arrived during this period."
     note: >-
       81 ly. Alcor lies half a light year off and is held by others entirely —
       the two share an article and nothing else.
@@ -2591,6 +2623,22 @@ worlds:
     article: https://www.orionsarm.com/eg-article/4c1cb2ca8f150
     location:
       star: Alcor
+    events:
+      - year_at: 3645
+        kind: visited
+        polity: solipsist-panvirtuality
+        note: >-
+          "In 3645 a Panvirt linelayer arrived in the Alcor System, and after
+          some (apparently ritualized) combat proceeded to open a wormhole
+          from there to the Solipsist wormhole nexus."
+      - year_at: 3645
+        kind: transferred
+        polity: solipsist-panvirtuality
+        note: >-
+          "Although no official conformation has come out of Alcor concerning
+          this event, it must be assumed that this system is now a part of, or
+          at least affiliated with, the Solipsist Panvirtuality." The
+          article's own hedge: no official confirmation has come out of Alcor.
     note: >-
       An ahuman colony, already settled when Mizar was reached in 2097, and
       affiliated with the Solipsist Panvirtuality. Recorded separately from
@@ -3230,35 +3278,6 @@ worlds:
     note: >-
       Ross 128, as the colony table has it.
 
-  - name: Copernicus
-    kind: system
-    system: Copernicus
-    affiliations: []
-    article: https://www.orionsarm.com/eg-article/45e24d79c0d8b
-    location:
-      star: Rho1 Cancri A
-    events:
-      - year_at: 809
-        kind: visited
-        note: >-
-          "Reached: 809 AT, by subsophont probe Philip K. Dick."
-      - year_at: 1421
-        kind: settled
-        note: >-
-          "First crewed colonization mission in 1421 by the Kontore League."
-          Kontore League is not on the roster (see unplaced) The Kontore
-          League is no polity of this file.
-      - year_at: 5500
-        kind: transferred
-        polity: solar-dominion
-        note: >-
-          "Riga joined the Solar Dominion in 5500, and Danzig formed close
-          ties with the Terragen Federation." Riga is one world of the system;
-          the panel has Danzig with ties to the Terragen Federation and Mazda
-          affiliated to the Sophic League, undated.
-    note: >-
-      Rho1 Cancri A, as the colony table has it.
-
   - name: Jinvanco
     kind: system
     system: Jinvanco
@@ -3349,6 +3368,367 @@ worlds:
           article says, sought independence from it; no holder is named.
     note: >-
       Eta Cephei, as the colony table has it.
+
+  - name: Yarkk
+    kind: system
+    system: Yarkk
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/55114779e0902
+    location:
+      star: Gliese 833
+    events:
+      - year_at: 1976
+        kind: settled
+        polity: linnent
+        note: >-
+          "Goodworld/Yarkk was first colonised by Linnaeus Enterprises in 1976
+          AT, using engenerator technology." Linnaeus Enterprises is
+          identified elsewhere in the same article (Related Articles: 'LinnEnt
+          (Linnaeus Enterprises)') as LinnEnt, the roster polity.
+    note: >-
+      Gliese 833, as the colony table has it.
+
+  - name: Hamashta
+    kind: system
+    system: Hamashta
+    affiliations: [nocozo]
+    article: https://www.orionsarm.com/eg-article/57f4f02853c69
+    location:
+      star: p Eridani A
+    events:
+      - year_at: 820
+        kind: settled
+        note: >-
+          "They reached p Eridani in 820 AT, constructed several rotating
+          space habitats and colonised a number of small planetoids." The
+          refugees were from the 'Great Expulsion from Earth', not a group on
+          the roster; no polity is named for them at the time of settlement.
+          Refugees, before the League existed; the article names no polity.
+      - year_at: 846
+        kind: transferred
+        polity: eridanus-league
+        note: >-
+          "Hamashta joined the Eridanus League in 846 AT, and sent system
+          control ships to Eunchong to help suppress a rebellion in 1440."
+          Joined the NoCoZo 'on the breakup of the League', undated.
+    note: >-
+      p Eridani A, as the colony table has it.
+
+  - name: Howling Sky
+    kind: system
+    system: Howling Sky
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/66ed91e548374
+    location:
+      star: Groombridge 34 A
+    events:
+      - year_at: 1120
+        kind: settled
+        note: >-
+          "First Colonised 1120 AT"
+      - year_at: 3086
+        kind: transferred
+        polity: second-federation
+        note: >-
+          "The system joined the short-lived Second Federation in 3086 and
+          that organisation managed to establish treaties providing for
+          limited coexistence and trade between the various factions,
+          establishing Lightways connections and re-establishing the Beamrider
+          Network station which had been closed during the Vechon conflict."
+    note: >-
+      Groombridge 34 A, as the colony table has it.
+
+  - name: Ithiplumo
+    kind: system
+    system: Ithiplumo
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/462424233115a
+    events:
+      - year_at: 500
+        kind: settled
+        precision: circa
+        note: >-
+          "Reached: Approximately 500 AT by ahumans." The panel field is
+          literally labelled 'Reached', but the body text describes a
+          manufacturing programme starting around fifty years later and the
+          article calls this an 'Abandoned Diamond Belt aioid colony', so this
+          was classed as settled rather than visited. Ahumans are not a polity
+          on the roster. Ahumans, no polity of this file.
+      - year_at: 1027
+        kind: abandoned
+        precision: not_later_than
+        note: >-
+          "Structures of unknown function were constructed, but these had been
+          abandoned long before First Federation explorers reached this system
+          over seven hundred years later." 1027 AT is derived from the colony
+          ship's 327 AT departure plus the stated 'over seven hundred years
+          later' when First Federation explorers reached the system; the
+          abandonment is stated to have happened before that. The year is
+          arithmetic: the ahumans' departure of 327 plus the 'over seven
+          hundred years' the article gives.
+      - year_at: 1027
+        kind: visited
+        polity: first-federation
+        precision: not_earlier_than
+        note: >-
+          "Structures of unknown function were constructed, but these had been
+          abandoned long before First Federation explorers reached this system
+          over seven hundred years later." 1027 AT is derived from the colony
+          ship's 327 AT departure plus the stated 'over seven hundred years
+          later' when First Federation explorers reached the system. The same
+          sentence; the Federation explorers' arrival, likewise computed.
+      - year_at: 1235
+        kind: settled
+        polity: first-federation
+        note: >-
+          "Resettled in 1235 AT by colonists aboard the Federation colony ship
+          Whiddhar Korskumma."
+    note: >-
+      GJ 3379, as the colony table names the star; the catalogue here carries
+      no star by that designation, so the entry has its dates and no position.
+
+  - name: Twinkle
+    kind: system
+    system: Twinkle
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/4afaa8e94874a
+    location:
+      star: HD 4391
+    events:
+      - year_at: 1885
+        kind: visited
+        note: >-
+          "A fast Foundation dedicated transvot probeship, the Pangloss,
+          arrived at Twinkle from Audubon in 1885 AT, and began to construct a
+          laser receiver on the small moon of this world." The probeship is
+          described as belonging to the Terranova Foundation, not named as a
+          LinnEnt vessel in this sentence; see unplaced. A probeship of the
+          Terranova Foundation, no polity of this file, from Audubon.
+      - year_at: 1910
+        kind: settled
+        polity: linnent
+        note: >-
+          "By 1910 the first uploaded personalities were arriving from
+          Audubon, and the Pangloss downloaded these personalities into newly
+          engenerated human bodies based on their original DNA." Twinkle is
+          identified earlier in the article as one of the LinnEnt worlds where
+          uploaded colonists were downloaded into engenerated bodies to create
+          a colonist population.
+    note: >-
+      HD 4391, as the colony table has it.
+
+  - name: Syrma
+    kind: system
+    system: Syrma
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/5659fecda383f
+    location:
+      star: Iota Virginis
+    events:
+      - year_at: 1902
+        kind: visited
+        note: >-
+          "Several explorer class dataships carrying AI arrived in 1902 to
+          assess the system and create environments for the colonists that
+          were already en route." No polity is named as sending these
+          dataships.
+      - year_at: 1970
+        kind: settled
+        note: >-
+          "Syrma was colonized in 1970 AT by a fleet of colony ships launched
+          from Gliese 588 during the late Federation era." 'during the late
+          Federation era' dates the event but does not state that the First
+          Federation itself sent or claimed the colony ships; see doubts. From
+          Gliese 588, 'during the late Federation era'; the article does not
+          say the Federation settled it.
+    note: >-
+      Iota Virginis, as the colony table has it.
+
+  - name: Nimbus
+    kind: system
+    system: Nimbus
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/46d4d49a72fec
+    location:
+      star: 58 Eridani
+    events:
+      - year_at: 1716
+        kind: settled
+        note: >-
+          "In 1716 it moved its headquarters to the Novoterra system where it
+          set to terraform the planet Novoterra into a showpiece of nanotech
+          macroengineering and integration." 'It' is Ubikorp, a
+          megacorporation of the First Federation era, not a polity on the
+          roster (see unplaced). It is not clear from the text whether
+          Novoterra was already settled before this, or whether this is its
+          first development. Ubikorp, a megacorporation, moving its
+          headquarters; the article gives no earlier settlement.
+      - year_at: 2123
+        kind: transferred
+        note: >-
+          "When contact was restored in 2123, Novoterra - now called Nimbus -
+          became a neutral part of the Empire." 'the Empire' is not identified
+          by name with any roster polity; see unplaced. 'The Empire' is not
+          named further in the sentence; left unplaced.
+    note: >-
+      58 Eridani, as the colony table has it.
+
+  - name: New Earth
+    kind: system
+    system: New Earth
+    affiliations: [terragen-federation]
+    article: https://www.orionsarm.com/eg-article/48ec8ec7515b2
+    location:
+      star: 104 Tauri
+    events:
+      - year_at: 1709
+        kind: settled
+        note: >-
+          "104 Tauri (51.8 ly from Sol) was colonised in 1709 by the Tauri
+          Development Consortium." The settling body, the Tauri Development
+          Consortium, is a megacorp-sponsored consortium, not a polity on the
+          roster. The Tauri Development Consortium, no polity of this file;
+          the panel calls the system the Terragen Federation's capital,
+          undated.
+    note: >-
+      104 Tauri, as the colony table has it.
+
+  - name: Tincture
+    kind: system
+    system: Tincture
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/49134c3c6b106
+    location:
+      star: Gliese 581
+    events:
+      - year_at: 1099
+        kind: visited
+        polity: first-federation
+        note: >-
+          "Reached 1099AT by the First Federation-affiliated Nirav Assembly"
+          The reaching party is the Nirav Assembly, described as 'First
+          Federation-affiliated' rather than as the Federation itself. The
+          Nirav Assembly, First Federation-affiliated, is no polity of this
+          file.
+      - year_at: 1187
+        kind: settled
+        polity: first-federation
+        note: >-
+          "Gliese 581 was settled in the Early First Federation, in 1187 AT,
+          by the Nirav Assembly." As with the 1099 AT reaching, the actual
+          settling body named is the Nirav Assembly, not the First Federation
+          itself, though the sentence places it 'in the Early First
+          Federation'.
+    note: >-
+      Gliese 581, as the colony table has it.
+
+  - name: Eunchong
+    kind: system
+    system: Eunchong
+    affiliations: [zoeific-biopolity]
+    article: https://www.orionsarm.com/eg-article/4916fc19b5b98
+    location:
+      star: Gliese 832
+    events:
+      - year_at: 798
+        kind: settled
+        note: >-
+          "After a quick survey of the system after arrival in 798 AT, the
+          spacer-dominated colonists realized that Eunchong was not going to
+          be an easy place to thrive in." The colonists are 'a fiercely
+          independent splinter group of the EOCC via a GAIA Ark' per the
+          preceding sentence; EOCC is not on the roster. Aboard the Trinity,
+          an EOCC splinter group, no polity of this file.
+      - year_at: 1128
+        kind: transferred
+        polity: eridanus-league
+        note: >-
+          "The system was officially integrated into the Eridanus League in
+          1128."
+    note: >-
+      Gliese 832, as the colony table has it.
+
+  - name: Nova
+    kind: system
+    system: Nova
+    affiliations: [nocozo]
+    article: https://www.orionsarm.com/eg-article/48e6233abde08
+    location:
+      star: Tau Ceti
+    events:
+      - year_at: 438
+        kind: visited
+        note: >-
+          "Reached - Uncrewed: 438, Giordano Bruno" Panel field; uncrewed
+          probe named Giordano Bruno, no polity given.
+      - year_at: 588
+        kind: settled
+        note: >-
+          "Crewed: 588, Tsiolkovsky" Panel field; crewed ship Tsiolkovsky. The
+          article subtitle calls Nova the 'Home system of the first successful
+          extrasolar human colony', but no polity is named for this arrival.
+          The subtitle calls this the first successful extrasolar human
+          colony.
+    note: >-
+      Tau Ceti, as the colony table has it.
+
+  - name: Pandya
+    kind: system
+    system: Pandya
+    affiliations: [solar-dominion]
+    article: https://www.orionsarm.com/eg-article/4b45da29a57d9
+    location:
+      star: Mu Cassiopeiae A
+    events:
+      - year_at: 1118
+        kind: settled
+        note: >-
+          "A number of rotating space habitats were constructed in the
+          circumbinary asteroid belt soon after the Prithvi Mata arrived in
+          1118 AT, collectively becoming known as the Pandyan cluster." The
+          Prithvi Mata was an uncrewed seedship built by Surya Interstellar
+          Inc.; no polity is named for the settlement itself.
+      - year_at: 1350
+        kind: visited
+        note: >-
+          "The colony thrived in solitude until the first crewed interstellar
+          ships arrived in 1350 from the nearby system of Alsafi (roughly 15
+          light-years away at the time), bringing with them the inhabitants of
+          Penglai and their microbes." The ships carried people from Penglai
+          (a place), not a stated act of the Penglai Empire polity, so no
+          polity is recorded. Ships from Alsafi; the Penglai article dates its
+          own ship's arrival at Pandya to 1350.
+    note: >-
+      Mu Cassiopeiae A, as the colony table has it.
+
+  - name: Wasat
+    kind: system
+    system: Wasat
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/4bb5d6c578611
+    location:
+      star: Delta Geminorum Aa
+    events:
+      - year_at: 1920
+        kind: settled
+        polity: first-federation
+        note: >-
+          "Tianzun was reached by the First Federation in 1920 by colonists
+          aboard the Visible Excitement." Aligned with the TCP, 'which means
+          it soon became part of the Conver Ambi', undated.
+      - year_at: 1848
+        kind: capital
+        note: >-
+          "In 1848, Wasat became home of the House Conver Limis, specialists
+          of the colonization of AquaCytherean planets (also known as
+          PelaCytherian wprlds)." House Conver Limis is a dynasty/faction, not
+          a roster polity; see unplaced. A later sentence calls the Apex
+          Carbuncle habitat 'the symbolic capital of the Conver Limis',
+          supporting the capital classification. House Conver Limis, a
+          dynasty, no polity of this file; the year precedes the article's own
+          'first reached' of 1920, and both are kept as written.
+    note: >-
+      Delta Geminorum Aa, as the colony table has it.
 
   - name: Huanghua
     kind: system
@@ -5115,6 +5495,36 @@ worlds:
     article: https://www.orionsarm.com/eg-article/480d3cc3ac699
     location:
       oa_star: nr354-4536-566
+    events:
+      - year_at: 3346
+        kind: visited
+        polity: deeper-covenant
+        note: >-
+          "Enigma Four was discovered by a scout ship from a minor Deeper
+          Covenant clade in 3346."
+      - year_at: 3346
+        kind: contact
+        polity: xenosophont
+        note: >-
+          "An attempt to contact the entity\entities was met with success, but
+          unfortunately the reply was impossible to understand for the pre-
+          singularity crew." The resident intelligence, 'the Core', is a
+          previously unknown hive mind not affiliated with any known polity;
+          the roster's generic 'xenosophont' id is used here, and dated to the
+          same 3346 expedition described in the surrounding text. The entity
+          is the hive-mind of the Core, entered under the file's xenosophont
+          bucket.
+      - year_at: 3580
+        kind: settled
+        precision: not_earlier_than
+        note: >-
+          "The relay was completed in 3580, and a research outpost was
+          established a few years later to observe the Core." No polity is
+          restated for the ship or outpost at this point in the text; the
+          earlier 3346 scout ship was from a Deeper Covenant clade, but this
+          later expedition's affiliation is not explicitly given. A research
+          outpost 'a few years later' than the relay of 3580; the ship's
+          polity is not restated.
     note: >-
       A hive mind of unknown origin, in Aquarius at 448 ly. Unrelated to the
       Enigma Cluster and to the add-on's other star called Enigma, sharing only
@@ -5426,6 +5836,25 @@ worlds:
     article: https://www.orionsarm.com/eg-article/48f7fcd30db8c
     location:
       oa_star: JD 76601
+    events:
+      - year_at: 8860
+        kind: transferred
+        polity: archosaurian-empire
+        precision: circa
+        note: >-
+          "More important still was the conquest of the material world, which
+          allowed Guanche to progress to the microtech level and to tame
+          atomic power in sixty years, which also allowed them to send the
+          distress signal which attracted the Archosaur empireship Mirzallika
+          and brought Guanche into the sphere of influence of the new regional
+          superpower." No single sentence gives this event's year. It is
+          derived by adding the stated 'sixty years' to the 'circa 8800 AT'
+          mark given two paragraphs earlier for the chalcolithic power
+          struggle; treat 8860 as an approximation built from the text's own
+          numbers, not a stated year. Also unclear whether 'the new regional
+          superpower' is definitely the Archosaurian Empire, or only the
+          ship's crew/allegiance. The year is arithmetic on the article's
+          'circa 8800' and its sixty years, and the reader flagged it as such.
     note: >-
       2,899 ly out, on a position the Celestia add-on asserts rather than one
       any catalogue measures.
@@ -7645,11 +8074,27 @@ worlds:
     location:
       star: 55 Cancri
     events:
+      - year_at: 809
+        kind: visited
+        note: >-
+          "Reached: 809 AT, by subsophont probe Philip K. Dick."
       - year_at: 1421
         kind: settled
-        note: Arrived.
+        note: >-
+          "First crewed colonization mission in 1421 by the Kontore League."
+          Kontore League is not on the roster (see unplaced) The Kontore
+          League is no polity of this file.
+      - year_at: 5500
+        kind: transferred
+        polity: solar-dominion
+        note: >-
+          "Riga joined the Solar Dominion in 5500, and Danzig formed close
+          ties with the Terragen Federation." Riga is one world of the system;
+          the panel has Danzig with ties to the Terragen Federation and Mazda
+          affiliated to the Sophic League, undated.
     note: >-
-      55 Cancri, 41 ly out in Cancer. Affiliated to the Terragen Federation,
+      55 Cancri, 41 ly out in Cancer. The Copernicus article is at
+      https://www.orionsarm.com/eg-article/45e24d79c0d8b, read for the events. Affiliated to the Terragen Federation,
       which is the holder recorded, though the article gives it close ties to
       the Sophic League, Metasoft and the Solar Dominion besides.
 
@@ -8715,6 +9160,21 @@ worlds:
     location:
       constellation: Hydra
       distance: 892 ly
+    events:
+      - year_at: 3421
+        kind: visited
+        note: >-
+          "Reached 3421 AT" Panel field; body text says explorers first
+          reached Ruach some years before the supercritical biosphere was
+          discovered, no polity given.
+      - year_at: 3822
+        kind: settled
+        note: >-
+          "The Mirrored Owls arrived in the Ruach system in 3822, and are
+          believed to be descended from the ancient Genetekker society that
+          once thrived among the moons of Jupiter, although this is somewhat
+          controversial." The Mirrored Owls are a clade, not a roster polity;
+          see unplaced. The Mirrored Owls, a clade, no polity of this file.
     note: >-
       In Hydra at 892 ly. The star's name is the setting's own and matches
       nothing in the catalogues here.

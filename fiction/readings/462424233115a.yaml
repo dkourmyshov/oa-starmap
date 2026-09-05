@@ -1,0 +1,51 @@
+article: 462424233115a
+title: Ithiplumo (GJ 3379)
+events:
+  - year_at: 500
+    kind: settled
+    polity: ""
+    precision: circa
+    until_at: null
+    where: panel
+    quote: "Reached: Approximately 500 AT by ahumans."
+    note: "The panel field is literally labelled 'Reached', but the body text describes a manufacturing programme starting around fifty years later and the article calls this an 'Abandoned Diamond Belt aioid colony', so this was classed as settled rather than visited. Ahumans are not a polity on the roster."
+  - year_at: 987
+    kind: observed
+    polity: first-federation
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Ithiplumo was named in honor of Ithiplumo Team, the early Federation researcher team who first described the ahuman structures found across the system via the Uranian System Interferometry (SYY) in 987 AT."
+    note: "Description via interferometry from the Uranian system reads as remote observation, not physical arrival."
+  - year_at: 1027
+    kind: abandoned
+    polity: ""
+    precision: not_later_than
+    until_at: null
+    where: body
+    quote: "Structures of unknown function were constructed, but these had been abandoned long before First Federation explorers reached this system over seven hundred years later."
+    note: "1027 AT is derived from the colony ship's 327 AT departure plus the stated 'over seven hundred years later' when First Federation explorers reached the system; the abandonment is stated to have happened before that."
+  - year_at: 1027
+    kind: visited
+    polity: first-federation
+    precision: not_earlier_than
+    until_at: null
+    where: body
+    quote: "Structures of unknown function were constructed, but these had been abandoned long before First Federation explorers reached this system over seven hundred years later."
+    note: "1027 AT is derived from the colony ship's 327 AT departure plus the stated 'over seven hundred years later' when First Federation explorers reached the system."
+  - year_at: 1235
+    kind: settled
+    polity: first-federation
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Resettled in 1235 AT by colonists aboard the Federation colony ship Whiddhar Korskumma."
+    note: ""
+holder_undated: []
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "'Reached: Approximately 500 AT by ahumans' is a panel field literally named 'Reached'; it was classed as settled (not visited) because the article frames the whole site as a former colony, but a reviewer may prefer 'visited' for the initial arrival distinct from the manufacturing programme that followed roughly fifty years later."
+  - "'An ahuman colony ship departed from the Solar System towards this star in 327 AT' is a departure date from the Solar System, not an arrival or holder change at Ithiplumo, so it was not recorded as an event here."
+  - "The 1027 AT dates for the abandoned and visited entries are computed from '327 AT' plus 'over seven hundred years later' rather than stated outright as a single number; flagging for review in case a different reading of 'over seven hundred years later' is intended."
