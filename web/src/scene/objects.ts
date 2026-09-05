@@ -876,10 +876,26 @@ export class ObjectIndex {
    * holder's in the year shown, so a name and the ring under it agree.
    */
   private colorAt(id: number, epoch: EpochFilter | undefined): string | undefined {
+    if (!epoch) return this.labelColor[id];
+    const held = this.politiesAt(id, epoch);
+    return held?.length ? this.polityColor.get(held[0]) : undefined;
+  }
+
+  /**
+   * Who holds the object: its present holders, or in history mode its holders
+   * in the year shown. The one answer the colour, the focus and the label
+   * priority all read, so a name never disagrees with the ring under it.
+   *
+   * Huanghua is the case that made this one function: no present holder, a
+   * past on record, and a label that stayed white beside a Penglai-coloured
+   * ring because the colour asked about the present first.
+   */
+  private politiesAt(id: number, epoch: EpochFilter | undefined): string[] | undefined {
     const present = this.labelPolities[id];
-    if (!epoch || !present?.length) return this.labelColor[id];
-    const held = holdersAt(this.labelHoldings[id], present, epoch.year, this.spans);
-    return held.length ? this.polityColor.get(held[0]) : undefined;
+    const holdings = this.labelHoldings[id];
+    if (!epoch) return present;
+    if (!present?.length && !holdings?.length) return present;
+    return holdersAt(holdings, present ?? [], epoch.year, this.spans);
   }
 
   private existsAt(id: number, epoch: EpochFilter): boolean {
@@ -1134,7 +1150,7 @@ export class ObjectIndex {
         this.radius[id] > 0 ? Math.min(this.screenR[id] / 40, MAX_SIZE_BONUS) : 0;
       const focused =
         options.focusPolity != null &&
-        Boolean(this.labelPolities[id]?.includes(options.focusPolity));
+        Boolean(this.politiesAt(id, options.epoch)?.includes(options.focusPolity));
       candidates.push({
         id,
         priority: this.importance[id] + size + (focused ? FOCUS_BONUS : 0),
@@ -1171,7 +1187,7 @@ export class ObjectIndex {
         y: cy,
         importance: this.importance[pinned],
         color: unclaimed(pinned) ? undefined : this.colorAt(pinned, options.epoch),
-        polities: this.labelPolities[pinned],
+        polities: this.politiesAt(pinned, options.epoch),
         asserted: this.assertedPosition[pinned] === 1,
         pinned: true,
         depthPc: this.screenDepth[pinned],
@@ -1212,7 +1228,7 @@ export class ObjectIndex {
         y: cy,
         importance: candidate.priority,
         color: unclaimed(id) ? undefined : this.colorAt(id, options.epoch),
-        polities: this.labelPolities[id],
+        polities: this.politiesAt(id, options.epoch),
         asserted: this.assertedPosition[id] === 1,
         depthPc: this.screenDepth[id],
         z: this.pz[id],
