@@ -222,6 +222,33 @@ The 80 articles bound to no place are a separate question: they are places the
 map does not draw at all, and why each is undrawn is `questions.yaml`'s
 territory, not this note's.
 
+## The reading pass, as tried
+
+The corpus is a million tokens of prose, and the reader that reads whole
+articles is a cheaper model working from `sources/derived/reading-brief.md`
+and `polities-roster.txt`, one article's prose at a time, writing a candidate
+file under `sources/derived/candidates/` in a fixed shape: events with a
+verbatim quote each, holders named without a year, names it could not place,
+contradictions as pairs of quotes, doubts. The reviewer checks the candidates
+against the schema and roster (`review_candidates.py`, in the session
+scratchpad; worth moving into the pipeline if the pass continues) and writes
+the accepted ones into `worlds.yaml`.
+
+The trial, 2026-09-05: three Sonnet readers, two articles each, from the
+first tranche. Every file valid; every entry quoted; precision followed the
+wording; no polity id was invented, and the near-misses were left unplaced
+rather than mapped ("Hyperion Corp" beside the roster's `hyperion`, "Mutual
+Progress Alliance" beside the Association). Two contradictions and a third
+founding year for the NoCoZo surfaced that a regex would have averaged away.
+Six articles became 23 events across Jarre, Traction, and four new entries:
+Othelia, Titawin, Excelsior and Tabit.
+
+Cost: about 100,000 tokens per reader for two articles of some 8,000 tokens
+of prose each — the brief, the roster and the reasoning are most of it, so
+the fixed cost per reader dominates and more articles per reader amortise
+it. At two per reader the first tranche of 126 would be some six million
+Sonnet tokens; at six per reader, perhaps half that.
+
 ## Things the extractor still gets wrong, deliberately left
 
 - "Inner Sphere", "Dyson Sphere" and "Of The Utopia Sphere" come out as polity

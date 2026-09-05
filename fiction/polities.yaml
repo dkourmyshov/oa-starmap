@@ -185,8 +185,9 @@ polities:
     # 1598AT, various independent habitats, worlds, cybercosms, and star
     # systems have aligned themselves with the NoCoZo." The timeline has "the
     # formation of the Non Coercive Zone" a century earlier, at 1498, and a
-    # "Non-Coercion Zone Treaty of 159x" in 1656's line; the page's year is
-    # taken, as the page is the Zone's own account.
+    # "Non-Coercion Zone Treaty of 159x" in 1656's line; and the Othelia
+    # article has "in 2215 a.t. the Non Coercive Zone was established". The
+    # page's year is taken, as the page is the Zone's own account.
     founded_at: 1598
     color: "#FF7043"
     source: political-maps-8000at

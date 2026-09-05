@@ -2752,6 +2752,143 @@ worlds:
       HD 223889, an M0 dwarf at 33 ly, as the colony table has it. The present
       affiliation is the table's; the article says only what it left.
 
+  - name: Othelia
+    kind: system
+    system: Othelia
+    affiliations: [caretaker-gods]
+    article: https://www.orionsarm.com/eg-article/48ecbe842ac6d
+    location:
+      star: 61 Virginis
+    events:
+      - year_at: 569
+        kind: visited
+        note: '"569 - The 61 Virginis probes, since named the Virginis Effort, arrives within the target system."'
+      - year_at: 890
+        kind: visited
+        note: >-
+          "Humans first arrived within the 61 Virginis system in the year 890
+          a.t." — and stayed in hibernation until 928.
+      - year_at: 928
+        kind: settled
+        note: >-
+          "In 928 a.t. the first wave of colonists were awakened and settled,
+          and aided in their lives by Eostre." Led by Eostre and the Children
+          of Dawn, neither a polity of this file.
+      - year_at: 1263
+        kind: abandoned
+        note: '"The disease spread throughout the entire population, and by 1263 a.t. the last human died."'
+      - year_at: 1324
+        kind: settled
+        note: >-
+          "In 1324 a.t., during the Middle Federation Era, the megacorporation
+          Heliopause Transcendency colonization vessel Cyrus Blake arrived
+          within the system."
+      - year_at: 2215
+        kind: transferred
+        polity: nocozo
+        note: >-
+          "In 2215 a.t. the Non Coercive Zone was established, which
+          incorporated, among many corporations, Jupiter Transystems" — whose
+          claim on the system the Zone thereby took over. The article's 2215
+          for the Zone's establishment is a third year beside the Zone's own
+          page (1598) and the timeline (1498).
+      - year_at: 2240
+        kind: visited
+        polity: nocozo
+        note: >-
+          "It took until 2240 a.t. for the first NoCoZo ship to arrive in the
+          Othelia System." The same article has "the First Federation made
+          contact with her" a few years after 2240, which the Federation's
+          own end in 2099 makes hard to read; both are kept as written.
+      - year_at: 3039
+        kind: stewardship
+        polity: caretaker-gods
+        note: >-
+          "In 3039 at Eostre entered into the Compact of Eden. Recognized as a
+          Caretaker God, she was granted the support of other such AI's."
+    note: >-
+      61 Virginis, 28 ly. Eostremonath is the planet, Othelia the system;
+      Eostre governs the planet as a Caretaker God, with the Utopia Sphere,
+      the Mutual Progress Association, the Solar Dominion, the NoCoZo and the
+      Negentropy Alliance named as the largest presences in the system,
+      undated.
+
+  - name: Titawin
+    kind: system
+    system: Titawin
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/67d5cb928a1bf
+    location:
+      star: Upsilon Andromedae A
+    events:
+      - year_at: 1340
+        kind: settled
+        note: '"Titawin was first colonised in 1340AT by a group of Gaian Whales."'
+      - year_at: 8862
+        kind: contact
+        note: >-
+          "Following first contact in 8862" — with the Menexenes, a
+          xenosophont species of the gas giant's metallic hydrogen layer.
+    note: >-
+      Upsilon Andromedae, 44 ly: the Xenological Garden, a system of some
+      three dozen named worlds each with its own small history, held by no
+      polity of this file. The colony table marks it special.
+
+  - name: Excelsior
+    kind: system
+    system: Excelsior
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/66649fe342b45
+    location:
+      star: HD 217107
+    events:
+      - year_at: 2031
+        kind: settled
+        note: >-
+          "A splinter group of heterodox Centauri Vehicle Buddhists under the
+          patronage of the then-S:1 Gone/Semiote/Gone had taken the risk of
+          attempting to settle" the inner system, in 2031.
+      - year_at: 3499
+        kind: visited
+        note: >-
+          "The hyperturing linelayer Oholiab II arrived on schedule in 3499",
+          collapsed its wormhole payload and fled: the Excelsior Incident.
+    note: >-
+      HD 217107, 65 ly. No polity of this file is named as holding it at any
+      date; the article's actors are a transapient administrator and, later,
+      Corona's warships.
+
+  - name: Tabit
+    kind: system
+    system: Tabit
+    also: [Daedalus I]
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/48e6722138bbb
+    location:
+      star: Pi3 Orionis
+    events:
+      - year_at: 869
+        kind: settled
+        note: >-
+          Data panel: "The Turing arrived in 869 AT, followed by the Bintang
+          Harapan 1 in 893 AT." The first carried the Heterosemiotics, the
+          second the Indonesian expedition; neither a polity of this file.
+      - year_at: 1461
+        kind: transferred
+        polity: first-federation
+        note: >-
+          "In 1461 the true situation on Daedalus became known ... The
+          Federation was appalled, and immediately sent out an investigative
+          task force", and "over the next 300 years the Federation ... managed
+          to gradually break the deadlock between the different tribes". Read
+          as the Federation taking the system in hand; the article does not
+          call it an annexation.
+    note: >-
+      Pi3 Orionis, 26 ly; Daedalus I is the world. "During the age of AI
+      Emergence" it "became part of the Conver Ambi", and after the Conver
+      Wars "a joint protectorate" of the Solar Dominion and Metasoft, neither
+      dated by the article. The colony table marks it blight.
+
   - name: Huanghua
     kind: system
     system: Huanghua
@@ -5191,6 +5328,19 @@ worlds:
     kind: system
     affiliations: [the-seams]
     article: https://www.orionsarm.com/eg-article/48aca6f9717da
+    events:
+      - year_at: 4654
+        kind: transferred
+        polity: the-seams
+        note: '"before its inclusion in the Seams in 4654"'
+      - year_at: 6158
+        kind: transferred
+        note: >-
+          "In early 6158, the forces of Greyman swept out across the Traction
+          territories and declared that a new age of peace and prosperity was
+          at hand." The Greyman Empire, of Greyman Incorporated, is no polity
+          of this file; the panel's affiliation is "The Seams; The Greyman
+          Empire".
     note: >-
       Recorded without a position. Nothing here locates it — not the
       Encyclopaedia entry we have, not any of the eighteen Celestia archives,
@@ -7467,7 +7617,21 @@ worlds:
     events:
       - year_at: 8300
         kind: settled
-        precision: not_later_than
+        precision: circa
+        note: >-
+          "Terragen analysts have agreed that the colonists arrived around
+          8300 A.T"; "their civilisation therefore began sometime around 8600
+          AT, founded as a lo-tech society." The arrival is the settlement;
+          the founders erased their own origin, so no polity is named.
+      - year_at: 9499
+        kind: visited
+        polity: metasoft
+        precision: circa
+        note: >-
+          Vecs who "appear to have been ... associated with the Metasoft
+          Version Tree" "landed in Spaeth's capital city around 9499 A.T."
+          and left; the same visit is dated 9599 elsewhere in the article,
+          and the Metasoft identification is the article's own hedge.
     note: In Perseus at 4,962 ly, out past most of what this file holds.
 
   - name: Equinoxe
