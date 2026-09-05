@@ -1,0 +1,19 @@
+article: 47b8f8403fa65
+title: Zhenruj (Mu Herculis)
+events:
+  - year_at: 1264
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Reached 1264"
+    note: "panel gives 'Reached', not 'Colonised'; no polity is named"
+holder_undated: []
+unplaced: []
+contradictions: []
+other_places:
+  - "Aksijaha (Alpha Lyrae) -- 'Zhenruj was one of the first four stars connected to Aksijaha by wormhole, before the expansion of the Wormhole Nexus.'"
+doubts:
+  - "This system is almost exclusively reserved for transapient use, but has a small population of devout god-dwellers -- no polity is named for either the transapient use or the god-dweller population, and no year is given, so no holder entry was made."
+  - "The panel says 'Reached 1264' rather than 'Colonised'; recorded as `visited` rather than `settled`, though the body's mention of a resident god-dweller population leaves it unclear which the panel field is meant to record."

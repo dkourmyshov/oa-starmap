@@ -1510,6 +1510,29 @@ worlds:
       constellation: Centaurus
       note: >-
         In the Centaurus sector, which fixes the direction and not the distance.
+    events:
+      - year_at: 5480
+        kind: transferred
+        polity: paradigm
+        note: >-
+          "Minor, sparsely uninhabited and resource-poor Centaurus sector
+          Negentropist system , captured by the Paradigm in 5480 and liberated
+          by Paradigm Containment Organization (PCO) forces 5526 ." Clause:
+          'captured by the Paradigm in 5480'.
+      - year_at: 5526
+        kind: transferred
+        polity: negentropy-alliance
+        note: >-
+          "Minor, sparsely uninhabited and resource-poor Centaurus sector
+          Negentropist system , captured by the Paradigm in 5480 and liberated
+          by Paradigm Containment Organization (PCO) forces 5526 ." Clause:
+          'liberated by Paradigm Containment Organization (PCO) forces 5526'.
+          PCO is not on the roster and the sentence does not say the system
+          rejoined the Negentropy Alliance at this date, so polity is left
+          empty; see unplaced and doubts. Liberated by the Paradigm
+          Containment Organization; read as the return to the Negentropy
+          Alliance, of which the article calls Gritwald a nominal member, and
+          which the reader flagged as not stated outright.
     note: >-
       Held for a time by the Efficiency Maximization Paradigm. No year is given
       for either the capture or its end, so it stays prose rather than becoming
@@ -4144,6 +4167,62 @@ worlds:
     note: >-
       Chi Eridani A, as the colony table has it.
 
+  - name: Yosonia
+    kind: system
+    system: Yosonia
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/5bbccbeb9ecb3
+    location:
+      star: HD 180161
+    events:
+      - year_at: 2508
+        kind: settled
+        note: >-
+          "Colony founded in 2508 AT by the Hippocratic Clade ethnicity from
+          Euphrosyne ." The Hippocratic Clade is not on the roster; see
+          unplaced. The Hippocratic Clade, no polity of this file; 'later
+          capital and spiritual centre of the Yoson Confederacy', undated
+          here.
+    note: >-
+      HD 180161, as the colony table has it.
+
+  - name: Kounzu Faashi
+    kind: system
+    system: Kounzu Faashi
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/62452b1f56943
+    location:
+      star: Nu Octantis A
+    events:
+      - year_at: 2096
+        kind: visited
+        note: >-
+          "This system was first reached in 2096 AT by the autonomous
+          exploration craft Waryu" reached by an uncrewed autonomous
+          exploration craft; no polity is named for it The autonomous probe
+          Waryu; the later colonisation, 'during the Age of Expansion', is not
+          dated.
+    note: >-
+      Nu Octantis A, as the colony table has it.
+
+  - name: Zhenruj
+    kind: system
+    system: Zhenruj
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/47b8f8403fa65
+    location:
+      star: Mu Herculis Aa
+    events:
+      - year_at: 1264
+        kind: visited
+        note: >-
+          "Reached 1264" panel gives 'Reached', not 'Colonised'; no polity is
+          named 'Reached', which the reader flagged against the resident
+          population the article describes; the Orion Federation's holding is
+          undated.
+    note: >-
+      Mu Herculis Aa, as the colony table has it.
+
   - name: Huanghua
     kind: system
     system: Huanghua
@@ -4489,6 +4568,15 @@ worlds:
     article: https://www.orionsarm.com/eg-article/46f1e74d34205
     location:
       star: Xi Bootis
+    events:
+      - year_at: 6222
+        kind: settled
+        note: >-
+          "In 6222 a Nimbus colony was set up on Xi Bootis B I, but it
+          persisted only for 400 years before dissipating." Colony endured
+          about 400 years before dissipating; no explicit end year is given,
+          so none was recorded. By Nimbus, no polity of this file; the colony
+          'persisted only for 400 years', its end not dated outright.
     note: A world of Ishtar, the B component of the Shamash system.
 
   - name: Silenus
@@ -5428,6 +5516,11 @@ worlds:
     events:
       - year_at: 2210
         kind: settled
+        polity: metasoft
+        note: >-
+          "Monostheria was colonised by Metasoft in 2210 AT." Before the vec
+          polity's independence of 2344, so by the corporation: a source
+          naming the holder outright, which the founding year does not gate.
     note: >-
       HD 139664 in Lupus. The article's own right ascension and declination fall
       0.75 ly from the catalogue star at the distance it gives, which is as
@@ -8324,6 +8417,14 @@ worlds:
     events:
       - year_at: 7882
         kind: visited
+        note: >-
+          "First Reached 7882 AT" No polity or actor is named for this
+          reaching; recorded with an empty polity. The panel names no actor.
+      - year_at: 10000
+        kind: stewardship
+        polity: caretaker-gods
+        note: >-
+          "Kammerer became a Caretaker Protectorate in 10000 AT"
     note: >-
       A Caretaker Gods protectorate out along the Carina Rush, whose near end is
       2,246 ly away at Oh-F-Star-4 — so this is far beyond where the Terragen
@@ -9439,6 +9540,11 @@ worlds:
     events:
       - year_at: 2877
         kind: settled
+      - year_at: 2877
+        kind: settled
+        note: >-
+          "Colonised: 2877 AT" no polity is named alongside this panel figure
+          The panel names no settler; the Sophic League's holding is undated.
     note: >-
       In Puppis at 214 ly, within what the setting calls the Garden of Paradise
       Cluster — a region of its own naming that matches no catalogue here.

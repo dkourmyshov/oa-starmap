@@ -1,0 +1,27 @@
+article: 5f0b365e3a328
+title: Anaximander (system)
+events:
+  - year_at: 7882
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "First Reached 7882 AT"
+    note: "No polity or actor is named for this reaching; recorded with an empty polity."
+  - year_at: 10000
+    kind: stewardship
+    polity: caretaker-gods
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Kammerer became a Caretaker Protectorate in 10000 AT"
+    note: ""
+holder_undated:
+  - polity: nocozo
+    quote: "Saint Hilaire holds a small number of NoCoZo bubblehabs, using their proximity to Kammerer to observe events on that restricted planet"
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "\"First Reached 7882 AT\" gives no actor or polity; classified as a bare visited event with polity left empty per rule 7."

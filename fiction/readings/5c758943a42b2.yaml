@@ -1,0 +1,41 @@
+article: 5c758943a42b2
+title: Lucida (Iota Piscium)
+events:
+  - year_at: 6035
+    kind: independent
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Since 6035 the ruling body of this world has been the Planetary State of Corona ."
+    note: "Applies to Corona, one of the worlds of this system. The Planetary State of Corona is a local body, not a roster polity, so polity is left blank; the preceding sentence names its former holders as the NoCoZo and the Solar Dominion, undated. See unplaced."
+holder_undated:
+  - polity: taurus-nexus
+    quote: "The most notable of these is Corona, once the capital of the Taurus Nexus , a superpower of its time, although most other major polities in the system have also influenced other nearby star systems at some point, especially after the system became the center and the symbolic capital of the Iota Network."
+  - polity: iota-network
+    quote: "especially after the system became the center and the symbolic capital of the Iota Network"
+  - polity: solar-dominion
+    quote: "interrupted only by the brief occupation by the Solar Dominion, when they were forced out of isolation"
+  - polity: taurus-nexus
+    quote: "The planet was a minor member of the Taurus Nexus."
+  - polity: solar-dominion
+    quote: "It was then annexed by the Solar Dominion along with the rest of the system and finally joined the Iota Network."
+  - polity: iota-network
+    quote: "It was then annexed by the Solar Dominion along with the rest of the system and finally joined the Iota Network."
+  - polity: taurus-nexus
+    quote: "Corona is the former capital of the Taurus Nexus , and a major Academic World."
+  - polity: nocozo
+    quote: "The world has been part of the NoCoZo and the Solar Dominion , but is currently independent."
+  - polity: solar-dominion
+    quote: "The world has been part of the NoCoZo and the Solar Dominion , but is currently independent."
+unplaced:
+  - name: "Hera Federation"
+    quote: "Originally Minerva was part of the budding Hera Federation, but broke away during the Ex-MPA territory rush period."
+  - name: "Planetary State of Corona"
+    quote: "Since 6035 the ruling body of this world has been the Planetary State of Corona ."
+contradictions: []
+other_places:
+  - "Resonance (TRAPPIST-1) system — reached via a wormhole listed in this article's data panel, has its own article"
+doubts:
+  - "Minerva, Eva, Corona, New Eureka, Hera, Hestia, Nadir, Pasithea and Cahaya are all worlds of the single Lucida/Iota Piscium system and were treated as one place per the brief, even though Corona also has its own dedicated article ('Corona (Iota Piscium d)')."
+  - "None of the Taurus Nexus / Solar Dominion / NoCoZo / Iota Network membership or capital claims for Corona, Eva or the system as a whole carry an AT year, so all were recorded as holder_undated rather than dated events."

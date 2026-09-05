@@ -1,0 +1,35 @@
+article: 4af6f1873dbc6
+title: Chara (Beta Canum Venaticorum)
+events: []
+holder_undated:
+  - polity: zoeific-biopolity
+    quote: "but apart from Cleta, the Chara system remained independent from the emerging Zoeific Biopolity"
+  - polity: zoeific-biopolity
+    quote: "in contrast to its binary pair, Cleta, a long-time Zoeific Biopolity member, which has been enclosed within a canopy plant"
+  - polity: zoeific-biopolity
+    quote: "After the war, the two empires agreed on dividing the system (except Cleta, which was already a Zoeific world) into two"
+  - polity: solar-dominion
+    quote: "the Solar Dominion saw the system as no threat to their capital, and apart from several Solar Dominion outposts in the system's asteroid belt, the empire mostly left it alone"
+  - polity: solar-dominion
+    quote: "Chara was quickly (and, notably, without any resistance) annexed by the Solar Dominion to prevent the Standardizationists from claiming this strategic system first"
+  - polity: solar-dominion
+    quote: "Solarist influences are strong, but so are the original Etodist traditions, a combination of which became the foundation of the modern Euphrosynese identity"
+  - polity: metasoft
+    quote: "After the war, the two empires agreed on dividing the system (except Cleta, which was already a Zoeific world) into two"
+  - polity: metasoft
+    quote: "Aglaea is a densely populated Metasoft- Silicon Generation world, and Thalia is treated as a reserve and research site"
+  - polity: silicon-generation
+    quote: "Aglaea is a densely populated Metasoft- Silicon Generation world, and Thalia is treated as a reserve and research site"
+  - polity: metasoft
+    quote: "Unlike its smaller Metasoft-aligned sibling worlds, much of the activities on Phaenna reside in its extensive subsurface ocean"
+unplaced:
+  - name: "Standardizationists"
+    quote: "Chara was quickly (and, notably, without any resistance) annexed by the Solar Dominion to prevent the Standardizationists from claiming this strategic system first"
+contradictions: []
+other_places:
+  - "Arcadia -- 'Chara had good relations with its neighboring system, Arcadia'"
+  - "Fons Luminis -- 'The nearby Fons Luminis also exerted considerable influence'"
+doubts:
+  - "Euphrosyne was detected in the early Interplanetary Age, and after the Technocalypse was the target of a slow-moving Generation Ship, the Endurance, which left Solsys in 710 AT and was due to arrive in 2795 AT. -- no polity is named for the Endurance itself, and 'early Interplanetary Age' carries no AT year, so no `observed`/`visited` event was recorded from this sentence."
+  - "Following a mutiny, the colonists on board the Endurance chose not to decelerate on arrival, and the generation ship continued past Chara and into deep space. -- unclear whether the ship's passage through the system counts as a `visited` event (year_at 2795, precision exact, per the earlier 'due to arrive' clause) when nobody landed or stopped; left unrecorded as an event rather than guessed."
+  - "During this period, much faster ships from the First Federation and the Eridanus League had overtaken them. Around half the colonists from the Endurance were transferred to fast-moving conversion drive vessels and taken to join the colony on the third planet, Euphrosyne. -- implies a colony already existed at Euphrosyne before Endurance passed by, possibly settled by the First Federation and/or the Eridanus League, but no date is given and no sentence states either polity actually reached or settled Euphrosyne, so no `settled` event was inferred for either roster id."

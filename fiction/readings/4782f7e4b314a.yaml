@@ -1,0 +1,15 @@
+article: 4782f7e4b314a
+title: Schaiffer's World
+events: []
+holder_undated:
+  - polity: first-federation
+    quote: "First Federation scientific outpost, later settled by rianth refugees, now a mixed population Utopia Sphere world and center of \"Splice Church\" Universalism"
+  - polity: utopia-sphere
+    quote: "First Federation scientific outpost, later settled by rianth refugees, now a mixed population Utopia Sphere world and center of \"Splice Church\" Universalism"
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "later settled by rianth refugees -- rianths are a refugee clade rather than a named polity, group or company, and no date is given for this settlement, so it was not recorded as an event or an unplaced entry."
+  - "center of \"Splice Church\" Universalism -- a religious body, not a polity; not recorded as a holder."
+  - "No AT year is given anywhere in this article for any of the three stages (First Federation outpost, rianth settlement, Utopia Sphere world), so no dated events could be written; all three holder mentions sit in holder_undated/doubts instead."

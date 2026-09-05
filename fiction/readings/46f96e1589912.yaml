@@ -1,0 +1,33 @@
+article: 46f96e1589912
+title: Gritwald
+events:
+  - year_at: 5480
+    kind: transferred
+    polity: paradigm
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Minor, sparsely uninhabited and resource-poor Centaurus sector Negentropist system , captured by the Paradigm in 5480 and liberated by Paradigm Containment Organization (PCO) forces 5526 ."
+    note: "Clause: 'captured by the Paradigm in 5480'."
+  - year_at: 5526
+    kind: transferred
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Minor, sparsely uninhabited and resource-poor Centaurus sector Negentropist system , captured by the Paradigm in 5480 and liberated by Paradigm Containment Organization (PCO) forces 5526 ."
+    note: "Clause: 'liberated by Paradigm Containment Organization (PCO) forces 5526'. PCO is not on the roster and the sentence does not say the system rejoined the Negentropy Alliance at this date, so polity is left empty; see unplaced and doubts."
+holder_undated:
+  - polity: negentropy-alliance
+    quote: "Minor, sparsely uninhabited and resource-poor Centaurus sector Negentropist system , captured by the Paradigm in 5480 and liberated by Paradigm Containment Organization (PCO) forces 5526 ."
+  - polity: negentropy-alliance
+    quote: "Although a nominal member of the Negentropist Alliance, the current Gritwald leadership has more in common with NoCoNeg and even NoCoZo ideology, and it is likely that the system will seceded at some point."
+unplaced:
+  - name: "Paradigm Containment Organization (PCO)"
+    quote: "liberated by Paradigm Containment Organization (PCO) forces 5526"
+  - name: "NoCoNeg"
+    quote: "the current Gritwald leadership has more in common with NoCoNeg and even NoCoZo ideology"
+contradictions: []
+other_places: []
+doubts:
+  - "The 5526 liberation is stated as being carried out by the PCO (not a roster polity), and the text never says the system rejoined the Negentropy Alliance at that date, only that it is 'currently' a nominal member; recorded with polity left blank rather than inferring Negentropy Alliance as the post-1526 holder."

@@ -93,6 +93,12 @@ systems:
     label: Muuhome
     affiliation: xenosophont
     article: https://www.orionsarm.com/eg-article/47bb872326fa1
+    events:
+      - year_at: 7854
+        kind: contact
+        note: >-
+          "First Contacted: 7854 AT" — the Muuh, on their homeworld; the panel
+          names no contacting polity.
     note: >-
       Spelled Muuhome, against the add-on's "Muuhhome". Muuh-controlled, and
       independent rather than protected: they have their own System of Response

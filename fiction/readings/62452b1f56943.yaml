@@ -1,0 +1,17 @@
+article: 62452b1f56943
+title: Kounzu Faashi (Nu Octantis)
+events:
+  - year_at: 2096
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "This system was first reached in 2096 AT by the autonomous exploration craft Waryu"
+    note: "reached by an uncrewed autonomous exploration craft; no polity is named for it"
+holder_undated: []
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "and was first colonised during the Age of Expansion. -- 'Age of Expansion' is an era name, not an AT year, and no polity is named as the coloniser, so no `settled` event was recorded."

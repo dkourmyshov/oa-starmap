@@ -1,0 +1,19 @@
+article: 47bb872326fa1
+title: Muuhome
+events:
+  - year_at: 7854
+    kind: contact
+    polity: xenosophont
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "First Contacted: 7854 AT"
+    note: "The data panel does not say who made contact; Muuhome is a Muuh (xenosophont) world, so the generic xenosophont id is used rather than inferring a Terragen holder."
+holder_undated: []
+unplaced:
+  - name: "Muuh Empire"
+    quote: "The colony on this world was relatively minor in importance in the Muuh empire until contact with humanity ; it is now an important center for Terragen/Muuh interaction."
+contradictions: []
+other_places: []
+doubts:
+  - "The 'contact' event's polity is set to the generic roster id xenosophont, since Muuh (the resident species) has no dedicated roster id and the quote does not name who made contact. Worth a reviewer's check."

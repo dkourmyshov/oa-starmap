@@ -1,0 +1,22 @@
+article: 5bbccbeb9ecb3
+title: Yosonia
+events:
+  - year_at: 2508
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Colony founded in 2508 AT by the Hippocratic Clade ethnicity from Euphrosyne ."
+    note: "The Hippocratic Clade is not on the roster; see unplaced."
+holder_undated:
+  - polity: yoson-confederacy
+    quote: "Later capital and spiritual centre of the Yoson Confederacy ."
+unplaced:
+  - name: "Hippocratic Clade"
+    quote: "Colony founded in 2508 AT by the Hippocratic Clade ethnicity from Euphrosyne ."
+contradictions: []
+other_places:
+  - "Euphrosyne — named as the colonists' origin point; not described further here"
+  - "Chara (Beta Canum Venaticorum) — listed as a related article, not described in this text"
+doubts: []

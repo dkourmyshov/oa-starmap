@@ -1,0 +1,17 @@
+article: 47b8ef792becf
+title: Monostheria
+events:
+  - year_at: 2210
+    kind: settled
+    polity: metasoft
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Monostheria was colonised by Metasoft in 2210 AT ."
+holder_undated: []
+unplaced: []
+contradictions: []
+other_places:
+  - "New Root (mentioned as the other system Metasoft colonised at the same period; has its own article)"
+doubts:
+  - "The article states Monostheria was colonised by Metasoft in 2210 AT, but the roster gives Metasoft's founding year as 2344, i.e. later than the claimed colonisation. Recorded as stated, not resolved."

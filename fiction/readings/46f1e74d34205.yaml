@@ -1,0 +1,20 @@
+article: 46f1e74d34205
+title: Xi Bootis B I
+events:
+  - year_at: 6222
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 6222 a Nimbus colony was set up on Xi Bootis B I, but it persisted only for 400 years before dissipating."
+    note: "Colony endured about 400 years before dissipating; no explicit end year is given, so none was recorded."
+holder_undated: []
+unplaced:
+  - name: "Nimbus"
+    quote: "In 6222 a Nimbus colony was set up on Xi Bootis B I, but it persisted only for 400 years before dissipating."
+contradictions: []
+other_places: []
+doubts:
+  - "The site files this article under Solar Dominion, but \"Solar Dominion\" is never named in the body text, so no holder was recorded from the index alone."
+  - "The colony \"persisted only for 400 years\" after 6222 AT, implying an end circa 6622 AT, but no explicit end year is stated in the text, so no abandoned event was recorded."

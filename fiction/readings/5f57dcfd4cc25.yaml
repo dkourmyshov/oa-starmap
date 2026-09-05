@@ -1,0 +1,20 @@
+article: 5f57dcfd4cc25
+title: Socrates 471 system, The
+events:
+  - year_at: 8862
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Reached 8862 AT"
+    note: "No actor is named for who reached the system; not assumed to be the same event as contact with the resident Menexenes."
+holder_undated:
+  - polity: caretaker-gods
+    quote: "This system is under the protection of a Caretaker God , which has established an exclusion swarm around the planet."
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "'Reached 8862 AT' in the data panel may be intended as the system's first-contact date with the Menexenes, but the sentence does not say so, so it is recorded only as a dateless-actor 'visited' event, not 'contact'."
+  - "'A population of Metasoft vecs and xenobiologists live in the systems surrounding Socrates 471 A and Socrates 471 B' names Metasoft residents but does not state Metasoft holds or governs the system, so it was not recorded as a holder_undated entry."

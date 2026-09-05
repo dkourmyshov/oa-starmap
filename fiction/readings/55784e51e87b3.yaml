@@ -1,0 +1,21 @@
+article: 55784e51e87b3
+title: Orobon
+events:
+  - year_at: 2877
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised: 2877 AT"
+    note: "no polity is named alongside this panel figure"
+holder_undated:
+  - polity: sophic-league
+    quote: "The Sophic League colonists who inhabit this system rarely visit the planet's surface in person, but dwell in habitats built in the debris ring that lies outside the planet's orbit"
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "Approximately 39 million years ago the Mysterians moved this planet inwards into the white dwarf's habitable zone, and introduced a specialised version of their biota onto the tidally locked planet. -- pre-Terragen alien prehistory with no AT date; not recorded as an event."
+  - "Throughout this period the Hamiltonian Institute has maintained a presence in the Ring, attempting to piece together the minute fragments of Mysterian technology that remain in this system. -- the Hamiltonian Institute is not on the roster and this describes an ongoing research presence rather than a dated holding, so no entry or unplaced record was made."
+  - "In addition several groups of biont colonists have inhabited the debris ring at various times over the last seven millennia, perhaps most notably the near-baseline humans of the notorious Huxlyite sect. -- the Huxlyite sect is a cultural/religious grouping, not a polity, and carries no year, so no entry was made."
