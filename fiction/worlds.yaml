@@ -3229,6 +3229,157 @@ worlds:
     note: >-
       Ross 128, as the colony table has it.
 
+  - name: New Gaia
+    kind: system
+    system: New Gaia
+    affiliations: [caretaker-gods]
+    article: https://www.orionsarm.com/eg-article/48f7d26295d0f
+    location:
+      star: Lambda Aurigae
+    events:
+      - year_at: 1365
+        kind: settled
+        note: >-
+          "The colony ships Root and Seed were launched in 1245 AT, arriving
+          at Lambda Aurigae IV in 1365 AT." colonised by the Green Alliance, a
+          First Federation environmentalist movement not on the roster (see
+          unplaced); no roster polity is named as holder The Green Alliance,
+          no polity of this file; megacorporations followed from 1425.
+      - year_at: 1687
+        kind: stewardship
+        polity: caretaker-gods
+        note: >-
+          "In 1687 AT an object of unknown nature entered the system." the
+          object was the newly ascended hyperturing Rachel, who declared the
+          system off limits to further development and later became a founding
+          member of the Caretaker Gods, establishing the Rachelan Protectorate
+          over the system The object was the protectorate ISO grown in secret
+          by the Caretaker Rachel, on the article's later account, and the
+          panel's allegiance is 'Caretaker God (under the hyperturing
+          Rachel)'.
+    note: >-
+      Lambda Aurigae, as the colony table has it.
+
+  - name: Copernicus
+    kind: system
+    system: Copernicus
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/45e24d79c0d8b
+    location:
+      star: Rho1 Cancri A
+    events:
+      - year_at: 809
+        kind: visited
+        note: >-
+          "Reached: 809 AT, by subsophont probe Philip K. Dick."
+      - year_at: 1421
+        kind: settled
+        note: >-
+          "First crewed colonization mission in 1421 by the Kontore League."
+          Kontore League is not on the roster (see unplaced) The Kontore
+          League is no polity of this file.
+      - year_at: 5500
+        kind: transferred
+        polity: solar-dominion
+        note: >-
+          "Riga joined the Solar Dominion in 5500, and Danzig formed close
+          ties with the Terragen Federation." Riga is one world of the system;
+          the panel has Danzig with ties to the Terragen Federation and Mazda
+          affiliated to the Sophic League, undated.
+    note: >-
+      Rho1 Cancri A, as the colony table has it.
+
+  - name: Jinvanco
+    kind: system
+    system: Jinvanco
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/5e25af2c2b373
+    location:
+      star: Struve 2398 A
+    events:
+      - year_at: 637
+        kind: settled
+        note: >-
+          "Decelerating around Jinvanco B, named Rubasho or "Ruby", the
+          Advance first settled around the second of the red dwarf's two ice
+          giants." year computed from 'The joint venture left Jovian orbit in
+          472 AT aboard the Advance' plus 'Awakened from stasis 165 years
+          later' (472+165=637); no single sentence states 637 AT directly. The
+          colonists were a joint venture of Genetekkers (Gengineer Republic)
+          and tweaks from the Martian Union, neither on the roster (see
+          unplaced). The year is not stated: the Advance left in 472 and the
+          article gives a transit of 165 years. The settlers were of the
+          Gengineer Republic, no polity of this file.
+      - year_at: 784
+        kind: independent
+        note: >-
+          "The dissolution of the Gengineer Republic in 784 AT, proved to be
+          the breaking point for the JCA. Without even the pretext of a higher
+          headquarters to answer to, the half dozen JCA factions became
+          independent actors." the Gengineer Republic and the Jinvanco
+          Colonial Administration (JCA) are not on the roster (see unplaced)
+          The Jinvanco Colonial Authority's break from the Gengineer Republic,
+          which is no polity of this file.
+    note: >-
+      Struve 2398 A, as the colony table has it.
+
+  - name: Cervantes
+    kind: system
+    system: Cervantes
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/4bb9e51204f88
+    location:
+      star: Mu Arae
+    events:
+      - year_at: 1080
+        kind: settled
+        note: >-
+          "Launched in 714 AT, the ship arrived in 1080 AT with fifteen
+          hundred colonists in cryosleep." the colonists were Southern African
+          groups exiled after the Great Expulsion, granted a ship (the Zuma)
+          by GAIA; no roster polity is named as holder
+      - year_at: 1343
+        kind: visited
+        polity: first-federation
+        note: >-
+          "When Federation ships arrived in 1343, the colonies had developed
+          in two separate directions."
+      - year_at: 6550
+        kind: transferred
+        polity: utopia-sphere
+        precision: not_earlier_than
+        note: >-
+          "Only the eclipse of the Authenticist memeticity in this system in
+          6550 allowed the return of hi-tech meditech and uploading to this
+          world. Aldennia came once more under the protection of the Utopia
+          Sphere, while the Mandelans aligned themselves more with the
+          Negentropists; another influence was the nearby colony of Dante,
+          which had close ties to the Cervantes system by beamrider." 'once
+          more' implies this restores an earlier Utopia Sphere protection (see
+          the undated holder_undated entry below); the clause stating the
+          protection's return does not itself repeat the 6550 date, which
+          comes from the preceding sentence about the Authenticist eclipse
+          Aldennia is the world; the year is that of the eclipse of the
+          Authenticist memeticity that the article says allowed it.
+    note: >-
+      Mu Arae, as the colony table has it.
+
+  - name: Bone-Claw
+    kind: system
+    system: Bone-Claw
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/59b11b8fe7dfd
+    location:
+      star: Eta Cephei
+    events:
+      - year_at: 1550
+        kind: settled
+        note: >-
+          "Colonised 1550" Sapient Hyenas from the First Federation who, the
+          article says, sought independence from it; no holder is named.
+    note: >-
+      Eta Cephei, as the colony table has it.
+
   - name: Huanghua
     kind: system
     system: Huanghua

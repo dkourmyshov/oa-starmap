@@ -1,0 +1,35 @@
+article: 460d8ebaea985
+title: Bill and Bull
+events:
+  - year_at: 50
+    kind: observed
+    polity: ""
+    precision: circa
+    until_at: null
+    where: body
+    quote: "as planetary systems were mapped in the mid 1st century AT several were discovered. One of the earliest double planets discovered was Bill and Bull, named by the research team from Uppsala Astronomical Observatory that discovered them around Delta Eridani (Rana)."
+    note: "Uppsala Astronomical Observatory, the discoverer, is not on the roster."
+  - year_at: 1699
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "When the Eridanus League was on its height, a number of NoCoZo-aligned Eridanius-native corps settled the nearby Rana system in 1699."
+    note: "The settlers are described as NoCoZo-aligned corporations native to Eridanus League territory, not as the NoCoZo or the Eridanus League itself, so polity was left empty; see doubts."
+holder_undated: []
+unplaced:
+  - name: "Uppsala Astronomical Observatory"
+    quote: "One of the earliest double planets discovered was Bill and Bull, named by the research team from Uppsala Astronomical Observatory that discovered them around Delta Eridani (Rana)."
+  - name: "Rana Amat"
+    quote: "in the late 1700's Rana Amat dominated the Eridanius frontier as a supplier of antimatter, capital was flowing into the system and it looked like it would become the dominant Eridanius system."
+  - name: "Dionysian Erotocracy"
+    quote: "A number of opposing Eridanus interests allied with the Dionysian Erotocracy brought in a memetic weapon, a specially tuned advertising campaign designed by hyperturing marketing AIs from Nova Terra aided by Dionysos psychodesigners."
+contradictions: []
+other_places: []
+doubts:
+  - "\"When the Eridanus League was on its height, a number of NoCoZo-aligned Eridanius-native corps settled the nearby Rana system in 1699.\" -- neither \"the Eridanus League\" (context for timing) nor \"NoCoZo-aligned\" (describing the corps) is stated as the settling polity itself, so the event's polity was left empty rather than assumed."
+  - "\"In 1823 ... Rana Amat collapsed, and was bought up by Dionysian interests. Ironically the Erotocracy had collapsed while the plan was being implemented, and the remnants of the corporation were split up among other powers.\" -- describes a corporate collapse and buyout (Rana Amat, Dionysian Erotocracy, both unplaced), not an explicit statement that the Rana system itself changed political hands; no event recorded."
+  - "\"In 1995 the first Deep well industrial zone in the Terragen Sphere, known as Vulcan's Forge, was established in orbit around Uppsala...\" -- an infrastructure/industrial milestone inside the already-settled Rana system, not a holder change; no event recorded."
+  - "\"In 6484 a new culture calling itself Vore Abergism emerged in the Rana system\" and its dissolution \"in the Completion Event 7303\" -- both describe a homegrown culture's rise and self-disbandment, not a settlement, transfer, or abandonment of Rana (which \"remains inhabited by various small cultures\" afterward); no events recorded."
+  - "A related article (Rajand, 46789378a3d4e) separately describes Ran/Rana as the seat of the Eridanus League's interstellar union, but this article never states outright that Rana itself joined or was held by the Eridanus League, only that the League was contemporaneously \"on its height\" when the 1699 settlement happened."

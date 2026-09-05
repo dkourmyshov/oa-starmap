@@ -1,0 +1,20 @@
+article: 4b6ec434691e3
+title: Aksijaha (Alpha Lyrae)
+events:
+  - year_at: 1130
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Reached : 1130, by the Vega Triumvirate"
+    note: "Body text elaborates: 'the luminous star Vega was reached in 1130 by the Vega Triumvirate, which began to develop the system as a transapientech (and later godtech ) research facility.' The Vega Triumvirate is not on the roster."
+holder_undated: []
+unplaced:
+  - name: "Vega Triumvirate"
+    quote: "the luminous star Vega was reached in 1130 by the Vega Triumvirate, which began to develop the system as a transapientech (and later godtech ) research facility"
+contradictions: []
+other_places: []
+doubts:
+  - quote: "After the emerging S4s consolidated the expansion of the wormhole network, Vega was designated to become the root of the emerging wormhole Nexus, and thus began the process of the reconstruction of the system into Aksijaha, the great wormhole hub that it is today."
+    note: "No explicit year given for this designation/reconstruction, and it is an infrastructure role rather than a change of polity holder, so no event was recorded."

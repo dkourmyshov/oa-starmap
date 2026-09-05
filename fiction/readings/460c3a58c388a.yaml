@@ -1,0 +1,50 @@
+article: 460c3a58c388a
+title: Benes (HD 17925)
+events:
+  - year_at: 1699
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Reached : 1699"
+    note: "The body's account of the Lagrange Defenders' survey and sale of the system carries no year of its own; this panel figure is presumed to be that event but the text does not say so."
+  - year_at: 1749
+    kind: transferred
+    polity: eridanus-league
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 1749 AT , the Council elected to join the Eridanus League , giving them access to a wealth of information that resulted in both local renaissances and rashes of ideological conflicts, although the Council successfully prevented these conflicts from escalating and causing widespread damage."
+    note: ""
+  - year_at: 2657
+    kind: transferred
+    polity: taurus-nexus
+    precision: not_earlier_than
+    until_at: null
+    where: body
+    quote: "The system joined the Taurus Nexus at the first opportunity, taking advantage of the wormhole link between Makintairas and Rana that was first opened in 2657."
+    note: "The sentence dates the wormhole's opening, not the join itself, but ties the join to it as \"the first opportunity\"."
+  - year_at: 7521
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 7521, the system was visited by the Inner Sphere Development Alliance , a Terragen Federation -backed initiative."
+    note: "The visiting body is the Inner Sphere Development Alliance, described as Terragen Federation-backed rather than as the Federation itself; the system went on to decline the accompanying invitation to join the Terragen Federation, per the next sentence."
+holder_undated: []
+unplaced:
+  - name: "Lagrange Defenders"
+    quote: "Benes was surveyed by the Lagrange Defenders , who then sold sections of the system to various groups."
+  - name: "Benes Council"
+    quote: "All of the polities within the Benes system were regulated by an overseeing entity known as the Benes Council."
+  - name: "Inner Sphere Development Alliance"
+    quote: "In 7521, the system was visited by the Inner Sphere Development Alliance , a Terragen Federation -backed initiative."
+contradictions: []
+other_places: []
+doubts:
+  - "\"Reached : 1699\" (panel) is not tied by the body text to any single sentence with the same year; the Lagrange Defenders' survey/sale is the likeliest match but is itself undated."
+  - "\"In 6492 AT the news of the emergence of the baroque Vore Abergist culture reached Benes.\" -- this is news of a foreign culture arriving, not a ship, polity, or holder reaching Benes, so it was not recorded as an event; flagging in case a reviewer reads it otherwise."
+  - "\"Much of the system, while not opposed to the ideology of the empire, nevertheless politely rejected the invitation to join the Terragen Federation in favor of remaining independent.\" -- an explicit invitation and refusal, immediately after the 7521 visit; no transferred or independent event was recorded since the system did not change hands."
+  - "\"Allegiance : independent, with close ties to both Rana and the Terragen Federation.\" (panel) and the matching Current Era sentence give no year, so no event was recorded for the present-day tie to the Terragen Federation."

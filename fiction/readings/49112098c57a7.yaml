@@ -1,0 +1,27 @@
+article: 49112098c57a7
+title: Skiiws'nnii, Sk¡iiws'nnii
+events:
+  - year_at: 8693
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "8693 - Human and dolphin refuges from the Gerkletoss rebellion/transcendence arrive in the system and begin to terraform Skiiws'nnii and exploit the resources of the system."
+    note: "the refugees came from the Gerkletoss culture, which is not on the roster"
+holder_undated:
+  - polity: sagittarius-transcultural-cooperation
+    quote: "Recently the Gilboa STC clade has established a local Protectorate and Embassy-State on the surface."
+unplaced:
+  - name: "Gerkletoss"
+    quote: "8693 - Human and dolphin refuges from the Gerkletoss rebellion/transcendence arrive in the system and begin to terraform Skiiws'nnii and exploit the resources of the system."
+contradictions: []
+other_places:
+  - "Filiae Reserve — \"Volume of space centered around a group of stars apparently involved in an old transcendent civilisation... It has numerous terraformed planets teeming with life, but is aggressively protected by both local nanosystems and several Caretaker Gods.\""
+  - "Xiphias I — \"Star HIP 87740. World in the Serpens sector inhabited by a decadent and evolutionarily static heteromorph tweak clade, the Old Fogeys, who are served by turingrade vecs.\""
+  - "Cooperative Venture, The — \"An interstellar cooperation between the Serpens Region civilisations in mainly archaeology, trying to understand some relics from lost alien civilisations, especially the Dawn Hunters and the Black Acropolis... Main planet Avensis, 545 Manus in the classic Skiiws'nnii astronomy.\""
+doubts:
+  - "\"9196 - STC Relativistic ship arrives to begin formalising agreements and introducing basic technology.\" and \"9702 - Arrival of a further STC relativistic linelayer ship from Gilboa Reach with nanowormhole module.\" — the system was already settled long before either arrival (since 8693), so under the brief's rule that arrivals at an already-settled place are not events, neither was recorded as a visited entry; flagged here since the first establishes a lasting STC relationship."
+  - "\"for all practical purposes OEB declared itself an independent political entity\" (Mayehode Crisis, 9445 AT) — this reads like an independent-kind event, but the Orbital Exploration Bundle (OEB) is an internal orbital faction, not a polity on the roster, and it is not clear this concerns the system as a whole rather than one faction within it."
+  - "\"9596 - The dolphin federation officially secedes from the OEB.\" — again a secession, but both the dolphin federation and the OEB are internal factions, neither on the roster, and the system itself is not stated to change external allegiance."
+  - "The article's own breadcrumb trail files this world under \"Other Major Polities, Empires, and Meta-Empires > Sagittarius Transcultural Cooperation\", yet the Governance section states the planet \"remains an independent political entity ... fiercely independent and free from rule by any major AI empire\"; no single dated event resolves this, so no transferred/independent entry was written for STC rule."

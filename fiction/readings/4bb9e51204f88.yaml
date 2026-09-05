@@ -1,0 +1,42 @@
+article: 4bb9e51204f88
+title: "Negsoa: Mu Arae (Cervantes)"
+events:
+  - year_at: 1080
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Launched in 714 AT, the ship arrived in 1080 AT with fifteen hundred colonists in cryosleep."
+    note: "the colonists were Southern African groups exiled after the Great Expulsion, granted a ship (the Zuma) by GAIA; no roster polity is named as holder"
+  - year_at: 1343
+    kind: visited
+    polity: first-federation
+    precision: exact
+    until_at: null
+    where: body
+    quote: "When Federation ships arrived in 1343, the colonies had developed in two separate directions."
+  - year_at: 6550
+    kind: transferred
+    polity: utopia-sphere
+    precision: not_earlier_than
+    until_at: null
+    where: body
+    quote: "Only the eclipse of the Authenticist memeticity in this system in 6550 allowed the return of hi-tech meditech and uploading to this world. Aldennia came once more under the protection of the Utopia Sphere, while the Mandelans aligned themselves more with the Negentropists; another influence was the nearby colony of Dante, which had close ties to the Cervantes system by beamrider."
+    note: "'once more' implies this restores an earlier Utopia Sphere protection (see the undated holder_undated entry below); the clause stating the protection's return does not itself repeat the 6550 date, which comes from the preceding sentence about the Authenticist eclipse"
+holder_undated:
+  - polity: negentropy-alliance
+    quote: "After the fall of the First Federation two new factions arrived in the Cervantes system; the Negentropists, a faction of idealists dedicated to the preservation and diversification of order and complexity, and representatives of the Utopia Sphere, who were curious about the low-tech Aldennians and their eccentric lifestyle. The Negentropists set up bases on the moons of Rocinante, where energy was plentiful, and forged strong alliances with the Mandelans and the miners on the Io-like moon Medupe."
+    note: "undated beyond 'after the fall of the First Federation'"
+  - polity: utopia-sphere
+    quote: "Utopian Sphere colonies were established on Shaka, Biko and Mhokobo, orbiting Sancho."
+    note: "undated beyond 'after the fall of the First Federation' (preceding paragraph)"
+unplaced: []
+contradictions: []
+other_places:
+  - "Morrow and Griqua — a related article; Negsoa established a secondary colony at Morrow ('they successfully established a secondary colony of their own at Morrow, which was unfortunately depopulated in a plague in 3541 AT'), not described further here"
+doubts:
+  - quote: "A reply was received from Solsys in 1198, together with an offer to join the Federation of Sophonts."
+    note: "a dated offer, not a stated acceptance; no confirmation in the text that Negsoa formally joined the First Federation at this or any later date"
+  - quote: "In 5800 the influence of Authenticism began to be felt in this system, a philosophy which caused the influence of the Utopianists to wane dramatically on Aldennia."
+    note: "Authenticism is a philosophy/cult, not on the roster, and this describes waning influence rather than an explicit transfer away from the Utopia Sphere; see the 6550 transferred event for its reported return"

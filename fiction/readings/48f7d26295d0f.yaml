@@ -1,0 +1,70 @@
+article: 48f7d26295d0f
+title: "New Gaia (Lambda Aurigae A IV)"
+events:
+  - year_at: 1365
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The colony ships Root and Seed were launched in 1245 AT, arriving at Lambda Aurigae IV in 1365 AT."
+    note: "colonised by the Green Alliance, a First Federation environmentalist movement not on the roster (see unplaced); no roster polity is named as holder"
+  - year_at: 1425
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The arrival of the Megacorps, beginning with Omicron Developments Inc in 1425, Carbonaceous Chondrites Holdings Ltd in 1431, and CisLunar Mechanosynthesis in 1440 meant the end of the neo-primitivist idyll."
+    note: "Omicron Developments Inc, a megacorp not on the roster, developing other worlds of the Lambda Aurigae system (not New Gaia itself); see unplaced"
+  - year_at: 1431
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The arrival of the Megacorps, beginning with Omicron Developments Inc in 1425, Carbonaceous Chondrites Holdings Ltd in 1431, and CisLunar Mechanosynthesis in 1440 meant the end of the neo-primitivist idyll."
+    note: "Carbonaceous Chondrites Holdings Ltd, a megacorp not on the roster; see unplaced"
+  - year_at: 1440
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The arrival of the Megacorps, beginning with Omicron Developments Inc in 1425, Carbonaceous Chondrites Holdings Ltd in 1431, and CisLunar Mechanosynthesis in 1440 meant the end of the neo-primitivist idyll."
+    note: "CisLunar Mechanosynthesis, a megacorp not on the roster; see unplaced"
+  - year_at: 1687
+    kind: stewardship
+    polity: caretaker-gods
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 1687 AT an object of unknown nature entered the system."
+    note: "the object was the newly ascended hyperturing Rachel, who declared the system off limits to further development and later became a founding member of the Caretaker Gods, establishing the Rachelan Protectorate over the system"
+holder_undated:
+  - polity: caretaker-gods
+    quote: "Current Allegiance: Caretaker God (under the hyperturing Rachel), offworlders have ties to the Solar Organisation"
+    note: "from the data panel; the 'Solar Organisation' clause is separately flagged under doubts"
+unplaced:
+  - name: "Green Alliance"
+    quote: "New Gaia (or simply Gaia, as the world was later known as) was colonised by the Green Alliance, a First Federation environmentalist movement of mostly rianth and nearbaseline human race, disillusioned with the decline of ecological standards and the rise of corporate influence that were emerging in the early 1200s AT."
+  - name: "Omicron Developments Inc"
+    quote: "The arrival of the Megacorps, beginning with Omicron Developments Inc in 1425, Carbonaceous Chondrites Holdings Ltd in 1431, and CisLunar Mechanosynthesis in 1440 meant the end of the neo-primitivist idyll."
+  - name: "Carbonaceous Chondrites Holdings Ltd"
+    quote: "The arrival of the Megacorps, beginning with Omicron Developments Inc in 1425, Carbonaceous Chondrites Holdings Ltd in 1431, and CisLunar Mechanosynthesis in 1440 meant the end of the neo-primitivist idyll."
+  - name: "CisLunar Mechanosynthesis"
+    quote: "The arrival of the Megacorps, beginning with Omicron Developments Inc in 1425, Carbonaceous Chondrites Holdings Ltd in 1431, and CisLunar Mechanosynthesis in 1440 meant the end of the neo-primitivist idyll."
+  - name: "Dionysian Erotocracy"
+    quote: "Additional problems for settlers was the arrival of the Erotocracy. This was inevitable, as New Gaia was the closest major colony to Dionysos."
+contradictions: []
+other_places:
+  - "Dionysos (Dionysan Erotocracy) — a related article, mentioned only as a neighbouring system, not described here"
+doubts:
+  - quote: "Most important of all was the support of the Hyperturing known as Rachel (named after a Industrial Age ecological activist, Rachel Carson) which had in the 1190s AT manipulated the futures exchange in order to gain enough capital to buy rights to the fourth planet of the Lambda Aurigae system, which was known to support complex life. Rachel also obtained a two hundred year lease on the system as a whole."
+    note: "a dated rights purchase before colonisation, by an individual hyperturing not yet associated with any roster polity; not recorded as an event"
+  - quote: "During the 17th century the Lambda Aurigae system was opened up for colonisation."
+    note: "vague and undated as to who; possibly a further wave beyond the 1425-1440 megacorp arrivals already recorded, possibly the same development restated; left out as an event"
+  - quote: "The following year the megacorps withdrew."
+    note: "1688 AT, following the 1687 AT arrival of the Rachel ISO; a partial withdrawal (those already settled in the asteroid and moon colonies were welcome to stay), not a full abandonment; does not clearly fit any listed kind"
+  - quote: "Current Allegiance: Caretaker God (under the hyperturing Rachel), offworlders have ties to the Solar Organisation"
+    note: "'Solar Organisation' may be the roster's Solsys Organization under a variant name, but this is not asserted since the name does not exactly match the roster's listed alternates"

@@ -1,0 +1,35 @@
+article: 47a67ce4bf7a5
+title: Trip
+events:
+  - year_at: 597
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised 597 AT"
+    note: ""
+  - year_at: 2000
+    kind: transferred
+    polity: ""
+    precision: circa
+    until_at: null
+    where: body
+    quote: "As noted here , Trip's slow growth began in the 2000s, shortly after the system underwent a change in government from the ETA Consortium to the Cygnus Development Corporation."
+    note: "Governing bodies named (ETA Consortium, Cygnus Development Corporation) are companies, not on the roster."
+holder_undated: []
+unplaced:
+  - name: "Exa Energy"
+    quote: "Trip was selected by Exa Energy to be the center of shareholder habitation in 61 Cygni, leaving the indentured clone workers to develop the rest of the 61 Cygni system."
+  - name: "ETA Consortium"
+    quote: "shortly after the system underwent a change in government from the ETA Consortium to the Cygnus Development Corporation"
+  - name: "Cygnus Development Corporation"
+    quote: "shortly after the system underwent a change in government from the ETA Consortium to the Cygnus Development Corporation"
+contradictions: []
+other_places:
+  - "61 Cygni"
+doubts:
+  - quote: "It is an independent world in the Inner Sphere, but it hardly the only such system."
+    note: "Present-tense status only, no year given for when independence began."
+  - quote: "the system gave the First Federation's megacorps a considerable boost in interstellar development without ever joining the Federation"
+    note: "Explicitly denies First Federation membership; recorded for the reviewer, not as an event."

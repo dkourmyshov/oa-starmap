@@ -1,0 +1,48 @@
+article: 4902515f791e9
+title: Jarre
+events:
+  - year_at: 8300
+    kind: visited
+    polity: ""
+    precision: circa
+    until_at: null
+    where: body
+    quote: "Terragen analysts have agreed that the colonists arrived around 8300 A.T, most likely as passengers on a Halo Drive vessel given how far they would have had to travel to reach it by this time."
+    note: "No polity is named for the colonists; the article says their founders concealed or erased their children's knowledge of where they came from."
+  - year_at: 8600
+    kind: settled
+    polity: ""
+    precision: circa
+    until_at: null
+    where: body
+    quote: "Their civilisation therefore began sometime around 8600 AT, founded as a lo-tech society."
+    note: "Roughly three hundred years after the arrival dated to 8300 AT, matching the article's claim that the world was terraformed over a three-hundred-year period."
+  - year_at: 9499
+    kind: visited
+    polity: metasoft
+    precision: circa
+    until_at: null
+    where: body
+    quote: "They seem to have regarded Equinoxe's inhabitants with disdain, and landed in Spaeth's capital city around 9499 A.T."
+    note: "The article hedges the identification: \"they appear to have been vecs associated with the Metasoft Version Tree\". They departed without staying, matching 'visited' rather than 'settled'."
+  - year_at: 9599
+    kind: visited
+    polity: metasoft
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In light of this new knowledge, the Machainists began to see the vecs who visited in 9599 A.T as divine emissaries, surely sent by the god who had created this world and its inhabitants, now believing the purpose of life was to become machines themselves and be united with their creator."
+    note: "Gives a different year for the same vec visitation described elsewhere as 9499 A.T; see contradictions."
+holder_undated: []
+unplaced: []
+contradictions:
+  - about: "year of the Metasoft vec visitation to Equinoxe"
+    quotes:
+      - "and landed in Spaeth's capital city around 9499 A.T."
+      - "the Machainists began to see the vecs who visited in 9599 A.T as divine emissaries"
+other_places:
+  - name: "Swan's Neck"
+    quote: "a series of radio transmissions were picked up by telescopes in the Swan's Neck system, a major wormhole terminal 5354 light years from Sol, describing the history of the planet Equinoxe"
+doubts:
+  - "The sentence introducing the radio transmissions appears to be missing its year: \"In A.T a series of radio transmissions were picked up by telescopes in the Swan's Neck system... describing the history of the planet Equinoxe\". This looks like it should carry a 'reported' date (the year Swan's Neck received a signal whose contents describe an earlier, 10198 A.T, status quo on Equinoxe), but no number is given in the source text, so no entry could be written for it."
+  - "The Metasoft attribution for the 9499/9599 A.T vec visit rests on an uncertain in-story identification: the article itself says the vecs only \"appear to have been\" from Metasoft, and later states \"Investigations into the identity of the vecs who visited this polity in 9499 A.T have been fruitless.\""

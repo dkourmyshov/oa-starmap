@@ -1,0 +1,105 @@
+article: 48ecbe842ac6d
+title: Eostremonath and the Othelia System
+events:
+  - year_at: 569
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "569 - The 61 Virginis probes, since named the Virginis Effort, arrives within the target system."
+    note: "Unmanned, non-sapient AI-controlled probes launched from the Sol System in 288 AT; no polity is named for the mission."
+  - year_at: 890
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Humans first arrived within the 61 Virginis system in the year 890 a.t. (2859 c.e.). However, they remained locked within their induced hibernation-state while Eostre worked to begin her terraforming efforts."
+    note: "Colonists (led by the hyperturing Eostre and her followers, the Children of Dawn) remained in shipboard hibernation; see the 928 AT entry for when they were awakened and settled."
+  - year_at: 928
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "It was here that, in 928 a.t. (2996 c.e.), the first wave of colonists were awakened and settled, and aided in their lives by Eostre and her many servile programs."
+    note: "Colonisation was led by Eostre and the Children of Dawn, neither of which is a roster polity; see unplaced."
+  - year_at: 1263
+    kind: abandoned
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Whatever the case, the disease spread throughout the entire population, and by 1263 a.t. the last human died."
+    note: ""
+  - year_at: 1324
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 1324 a.t. (3392 c.e.), during the Middle Federation Era, the megacorporation Heliopause Transcendency colonization vessel Cyrus Blake arrived within the system."
+    note: "The colonising party is the megacorporation Heliopause Transcendency, not on the roster; see unplaced."
+  - year_at: 2215
+    kind: transferred
+    polity: nocozo
+    precision: exact
+    until_at: null
+    where: body
+    quote: "However, no move was made to reacquire 61 Virginis, and in 2215 a.t. the Non Coercive Zone was established, which incorporated, among many corporations, Jupiter Transystems. Suddenly, 61 Virginis was the property of the NoCoZo."
+    note: "The roster gives the NoCoZo's founding year as 1598 AT, earlier than this article's claim of 2215 AT; see doubts."
+  - year_at: 2240
+    kind: visited
+    polity: first-federation
+    precision: not_earlier_than
+    until_at: null
+    where: body
+    quote: "Eostre evolved into the Second Toposophic level in 2240 a.t., just a few scant years before the First Federation made contact with her, and entered into negotiations to mine the Kuiper and Oort regions of the Othelia System."
+    note: "Places First Federation contact a few years after 2240 AT rather than at an exact year; contradicts the next entry, which names the NoCoZo, not the First Federation, as the one arriving in exactly 2240 AT."
+  - year_at: 2240
+    kind: visited
+    polity: nocozo
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Still, it took until 2240 a.t. for the first NoCoZo ship to arrive in the Othelia System, and well within the local Kuiper Belt they were met by Eostre herself. It was an auspicious meeting between the NoCoZo vessel Illium and Eostre, represented by several unmanned vessels."
+    note: "Contradicts the preceding entry, which credits the First Federation, not the NoCoZo, with contact around this time."
+  - year_at: 3039
+    kind: stewardship
+    polity: caretaker-gods
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 3039 at Eostre entered into the Compact of Eden. Recognized as a Caretaker God, she was granted the support of other such AI's, and suddenly found herself with the power to maintain her people's isolationism."
+    note: ""
+holder_undated:
+  - polity: utopia-sphere
+    quote: "Two empires with the largest presences within the Othelia system are the Utopia Sphere and the Mutual Progress Alliance , followed by the Solar Dominion , the NoCoZo , and the Negentropy Alliance ."
+  - polity: solar-dominion
+    quote: "Two empires with the largest presences within the Othelia system are the Utopia Sphere and the Mutual Progress Alliance , followed by the Solar Dominion , the NoCoZo , and the Negentropy Alliance ."
+  - polity: nocozo
+    quote: "Two empires with the largest presences within the Othelia system are the Utopia Sphere and the Mutual Progress Alliance , followed by the Solar Dominion , the NoCoZo , and the Negentropy Alliance ."
+  - polity: negentropy-alliance
+    quote: "Two empires with the largest presences within the Othelia system are the Utopia Sphere and the Mutual Progress Alliance , followed by the Solar Dominion , the NoCoZo , and the Negentropy Alliance ."
+  - polity: caretaker-gods
+    quote: "The planet Eostremonath is directly governed by Eostre, a Caretaker God ."
+unplaced:
+  - name: "Children of Dawn"
+    quote: "She had a small following of neo-pagans , a group called the Children of Dawn ."
+  - name: "Heliopause Transcendency"
+    quote: "the megacorporation Heliopause Transcendency colonization vessel Cyrus Blake arrived within the system"
+  - name: "Jupiter Transystems"
+    quote: "Legally, Transystems had a valid claim to each of these worlds (if one ignored the colony's apparent independent rights)."
+  - name: "Mutual Progress Alliance"
+    quote: "Two empires with the largest presences within the Othelia system are the Utopia Sphere and the Mutual Progress Alliance , followed by the Solar Dominion , the NoCoZo , and the Negentropy Alliance ."
+contradictions:
+  - about: "identity of the polity that first made contact with Eostre around 2240 AT"
+    quotes:
+      - "Eostre evolved into the Second Toposophic level in 2240 a.t., just a few scant years before the First Federation made contact with her, and entered into negotiations to mine the Kuiper and Oort regions of the Othelia System."
+      - "Still, it took until 2240 a.t. for the first NoCoZo ship to arrive in the Othelia System, and well within the local Kuiper Belt they were met by Eostre herself."
+other_places: []
+doubts:
+  - "The article states the NoCoZo 'was established' in 2215 AT (\"in 2215 a.t. the Non Coercive Zone was established\"), but the roster gives the NoCoZo's founding year as 1598 AT. This is a roster/article discrepancy rather than a same-event contradiction within the article itself, but it bears on how the 2215 AT transferred entry should be read."
+  - "It is unclear who granted Eostre and the Children of Dawn 'the right to colonize' 61 Virginis in 601 AT: \"Eostre and the Children of Dawn petition for and ultimately win the right to colonize 61 Virginis.\" The article later casts doubt on whether the colonisation was even authorised: \"It is not clear whether Eostre had permission from GAIA to launch this ship.\""
+  - "'Mutual Progress Alliance', as named in the article, closely resembles the roster's Mutual Progress Association (also called MPA) but is not an exact match, so it was left unplaced rather than mapped to mutual-progress-association."

@@ -1,0 +1,32 @@
+article: 55114779e0902
+title: Goodworld (Yarkk)
+events:
+  - year_at: 1976
+    kind: settled
+    polity: linnent
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Goodworld/Yarkk was first colonised by Linnaeus Enterprises in 1976 AT, using engenerator technology."
+    note: "Linnaeus Enterprises is identified elsewhere in the same article (Related Articles: 'LinnEnt (Linnaeus Enterprises)') as LinnEnt, the roster polity."
+  - year_at: 1976
+    kind: visited
+    polity: ""
+    precision: not_later_than
+    until_at: null
+    where: body
+    quote: "An autonomous probe ship (the Yue-Lao, launched in 1760 by Galactic South, another subsidiary of the Terranova Foundation) was already exploring the system when contacted by LinnEnt and given instructions on how to construct an engenerator system."
+    note: "The probe's launch year (1760) is given, not its arrival; it was already present by the time of the 1976 settlement, so 1976 is used as a not-later-than bound."
+holder_undated: []
+unplaced:
+  - name: "Galactic South (subsidiary of the Terranova Foundation)"
+    quote: "An autonomous probe ship (the Yue-Lao, launched in 1760 by Galactic South, another subsidiary of the Terranova Foundation) was already exploring the system when contacted by LinnEnt and given instructions on how to construct an engenerator system."
+contradictions: []
+other_places:
+  - "Audubon System, The (LinnEnt HQ, seven light years distant)"
+  - "Bolobo (Linn-Ent colony where similar mind-control problems were later found)"
+  - "Twinkle (Linn-Ent colony where similar mind-control problems were later found)"
+doubts:
+  - "'Abandoned after a devastating attack in the Version War, Goodworld has been repopulated with an entirely new culture, mostly provolved African Grey Parrots.' describes an abandonment and a resettlement, but no AT year is given for either, so no event could be recorded despite this being exactly the kind of change the brief tracks."
+  - "'In 2799 Gansu Regio, an independent state of interface-free isolationists, uncovered many of the details of the mind-control system' names a dated 'independent state', but Gansu Regio reads as a sub-settlement/community within already-settled Goodworld, not a change of holder for the system itself, so it was not recorded as an event; Gansu Regio is not on the roster in any case."
+  - "'The world was finally terraformed in 8991.' is a terraforming milestone, excluded per the brief."

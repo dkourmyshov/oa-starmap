@@ -1,0 +1,27 @@
+article: 48e6233abde08
+title: Nova (Tau Ceti)
+events:
+  - year_at: 438
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Reached - Uncrewed: 438, Giordano Bruno"
+    note: "Panel field; uncrewed probe named Giordano Bruno, no polity given."
+  - year_at: 588
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Crewed: 588, Tsiolkovsky"
+    note: "Panel field; crewed ship Tsiolkovsky. The article subtitle calls Nova the 'Home system of the first successful extrasolar human colony', but no polity is named for this arrival."
+holder_undated:
+  - polity: nocozo
+    quote: "Galactography > Sephirotic Empires > Non-Coercive Zone (NoCoZo)"
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "The 588 AT crewed arrival (Tsiolkovsky) is tagged settled on the strength of the subtitle 'Home system of the first successful extrasolar human colony', but the panel line itself does not say a colony was founded that year, only that the system was reached; it could instead be another visited entry."

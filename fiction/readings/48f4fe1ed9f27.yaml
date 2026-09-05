@@ -1,0 +1,35 @@
+article: 48f4fe1ed9f27
+title: Deucalion
+events:
+  - year_at: 2603
+    kind: settled
+    polity: linnent
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised 2603AT"
+    note: "data-panel figure; the body text describes only a probe reaching the system in 2603 AT, with colonists arriving roughly six centuries later (see contradictions)"
+  - year_at: 2603
+    kind: visited
+    polity: linnent
+    precision: exact
+    until_at: null
+    where: body
+    quote: "HD 2071 was first explored in 2603 a.t. by an automated probe belonging to the Phoenix Sector Terraformation Corporation ; these probes were sent out from Audobon system in Grus as part of the Linnent Empire."
+    note: "acting agent was the Phoenix Sector Terraformation Corporation (not on the roster), operating as part of the Linnent Empire"
+holder_undated:
+  - polity: negentropy-alliance
+    quote: "When the Conver Ambi empire collapsed, Deucalion became allied to the Negentropy Alliance; a strong contingent of enhanced human warriors were sent into battle during the Version War , but they saw little actual fighting (few humans did); instead they found themselves employed as occupation forces on several conquered NoCoZo and independent worlds."
+unplaced: []
+contradictions:
+  - about: whether Deucalion was colonised in 2603 AT or only reached by an unstaffed probe that year, with colonists arriving centuries later
+    quotes:
+      - "Colonised 2603AT"
+      - "HD 2071 was first explored in 2603 a.t. by an automated probe belonging to the Phoenix Sector Terraformation Corporation ; these probes were sent out from Audobon system in Grus as part of the Linnent Empire."
+      - "by 2603 the Wormhole Nexus had already reached the nearby world of Trees at HD 3823, but no wormhole connection was made from Trees to Deucalion for another six hundred years. By this time several million colonists had been copied to the HD 2071 system from Audobon and elsewhere, and the terraforming of this bitter planet was well under way."
+other_places: []
+doubts:
+  - "\"by 2603 the Wormhole Nexus had already reached the nearby world of Trees at HD 3823, but no wormhole connection was made from Trees to Deucalion for another six hundred years. By this time several million colonists had been copied to the HD 2071 system from Audobon and elsewhere\" — implies an actual colonist settlement roughly six hundred years after 2603 (circa 3203), but no explicit year is stated in the text, so no event was recorded for it; flagged here instead."
+  - "\"When the Conver Ambi empire collapsed, Deucalion became allied to the Negentropy Alliance\" — no year is given for this change of allegiance; recorded under holder_undated rather than as a dated transferred event."
+  - "\"Deucalion was left largely vacant for three hundred years, its cities the haunt of feral pets and wild animals.\" — describes severe depopulation after a mass transcension in \"the last half of the tenth millennium a.t.\", but a few inhabitants remained throughout, so it is unclear whether this qualifies as abandoned, and no exact anchor year is given."
+  - "\"It has taken a new wave of entirely different immigrants, (Genen families from Iota Horologi and Parthenes from Aung San Suu Kyi) to breathe new life into this old world once more.\" — a resettlement of the depopulated world, but no year is given."

@@ -1,0 +1,32 @@
+article: 4afaa8e94874a
+title: Twinkle
+events:
+  - year_at: 1885
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "A fast Foundation dedicated transvot probeship, the Pangloss, arrived at Twinkle from Audubon in 1885 AT, and began to construct a laser receiver on the small moon of this world."
+    note: "The probeship is described as belonging to the Terranova Foundation, not named as a LinnEnt vessel in this sentence; see unplaced."
+  - year_at: 1910
+    kind: settled
+    polity: linnent
+    precision: exact
+    until_at: null
+    where: body
+    quote: "By 1910 the first uploaded personalities were arriving from Audubon, and the Pangloss downloaded these personalities into newly engenerated human bodies based on their original DNA."
+    note: "Twinkle is identified earlier in the article as one of the LinnEnt worlds where uploaded colonists were downloaded into engenerated bodies to create a colonist population."
+holder_undated:
+  - polity: linnent
+    quote: "An Engenerator colony, part of the LinnEnt empire"
+unplaced:
+  - name: "Terranova Foundation"
+    quote: "A fast Foundation dedicated transvot probeship, the Pangloss, arrived at Twinkle from Audubon in 1885 AT, and began to construct a laser receiver on the small moon of this world."
+contradictions: []
+other_places: []
+doubts:
+  - quote: "The society on Twinkle was still in chaos three hundred years later when the Communion of Worlds sent a diplomacy ship to the system, and the world joined that empire in the southern skies."
+    note: "No explicit AT year is given for this transfer to the Communion of Worlds. It is stated only relative to undated prior events (the ai-liberation virus transmission arrived in 2151; the hyperturing Pangloss left 'a decade later'; the joining came 'three hundred years' after that), so no year_at could be assigned without chaining several approximations not stated by the article itself."
+  - quote: "A fast Foundation dedicated transvot probeship, the Pangloss, arrived at Twinkle from Audubon in 1885 AT, and began to construct a laser receiver on the small moon of this world."
+    note: "Classified as visited rather than settled because no colonist population exists yet at this point; the colonist population is only created once uploaded personalities begin arriving and are engenerated into bodies, from 1910."

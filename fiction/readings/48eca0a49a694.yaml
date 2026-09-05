@@ -1,0 +1,25 @@
+article: 48eca0a49a694
+title: "Panthalassa"
+events:
+  - year_at: 3377
+    kind: settled
+    polity: zoeific-biopolity
+    precision: exact
+    until_at: null
+    where: body
+    quote: "the Quercus robur, a seedship of the Zoeific Biopolity, the first ship to reach this system did not arrive until more than three thousand years had passed, in 3377 a.t."
+    note: "The seedship stayed to raise its colonists in-system; the article gives no separate later date for the floating cities appearing."
+holder_undated:
+  - polity: zoeific-biopolity
+    quote: "Affiliation : Originally Zoeific Biopolity, currently Panthalassan Ocean Fleet"
+unplaced:
+  - name: "Panthalassan Ocean Fleet"
+    quote: "Affiliation : Originally Zoeific Biopolity, currently Panthalassan Ocean Fleet"
+contradictions: []
+other_places:
+  - "Fuego, a Europan type moon 500 ly distant from Panthalassa, home of the creatures provolved into the Lignosagittae"
+  - "New Charon, the world where the Lignosagittae who did not leave in relativistic fleets built their society"
+doubts:
+  - "Panthalassa was discovered by astrometry during the Interplanetary age by Julie Denley and identified as a giant water rich planet with an oxygen-bearing atmosphere. -- no AT year given; the Interplanetary age precedes the AT calendar."
+  - "Whether the Quercus robur's 3377 arrival should be read as 'visited' (arrival) or 'settled' (since it stayed and eventually raised colonists) is not spelled out by a single sentence."
+  - "The panel's 'currently Panthalassan Ocean Fleet' affiliation is not tied to any year in the body text; it is unclear when, if ever, control formally passed from the Zoeific Biopolity."

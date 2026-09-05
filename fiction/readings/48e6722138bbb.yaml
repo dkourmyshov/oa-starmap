@@ -1,0 +1,98 @@
+article: 48e6722138bbb
+title: "Daedalus I"
+events:
+  - year_at: 869
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "The Turing arrived in 869 AT, followed by the Bintang Harapan 1 in 893 AT."
+    note: "Panel line covers both this event and the 893 AT event below. The Turing carried the Heterosemiotics; see unplaced."
+  - year_at: 893
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "The Turing arrived in 869 AT, followed by the Bintang Harapan 1 in 893 AT."
+    note: "Panel line covers both this event and the 869 AT event above. The Bintang Harapan 1 carried the Indonesian-led expedition; see unplaced."
+  - year_at: 869
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "But decelerating by magbrake and the on-board antimatter-catalysed fusion drive, it arrived at its destination in 869 AT."
+    note: "Same event as the panel's 869 AT line, restated in the body text; refers to the Turing carrying the Heterosemiotics."
+  - year_at: 893
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The Indonesian expedition arrived in 893 AT."
+    note: "Same event as the panel's 893 AT line, restated in the body text."
+  - year_at: 1128
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The first outside ship to arrive was an exploration probe from Hyperion Corp , which merely scouted the system in 1128 AT and then returned."
+    note: "Hyperion Corp is an explicitly named corporation, not the roster polity 'Hyperion' (which has no founding/dissolution years on the roster and is not identified as a corporation); not mapped, per the brief's warning against mapping companies onto similarly-named polities. See unplaced."
+  - year_at: 1176
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "It was followed by a exploration craft from Omicron Developments Inc in 1176."
+    note: "The same Omicron ship/crew returned to the solar system in 1258 AT, after which Omicron Infosecurity ran an undated research operation in the system for a further two centuries (see doubts)."
+  - year_at: 1461
+    kind: transferred
+    polity: first-federation
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 1461 the true situation on Daedalus became known, due to the investigative journalist HeHaRo and insider leaks in Omicron Developments. The Federation was appalled, and immediately sent out an investigative task force."
+    note: "'The Federation' is identified as the roster's first-federation, per its documented alternate name 'the Federation (before 2099)'; 1461 AT falls well within that polity's 933-2099 span. The article says the Federation's civilising work, and Daedalus's transformation into 'any other federation planet', continued 'over the next 300 years' after this date, with no further explicit year given."
+holder_undated:
+  - polity: conver-ambi
+    quote: "During the age of AI Emergence , the by now largely corporate run Daedalus soon became part of the Conver Ambi ."
+  - polity: solar-dominion
+    quote: "After a long period of deliberate social restructuring the system became a joint protectorate, with the Dominion handling the bionts in the inner system and Metasoft the aioid infrastructure in the outer system."
+  - polity: metasoft
+    quote: "After a long period of deliberate social restructuring the system became a joint protectorate, with the Dominion handling the bionts in the inner system and Metasoft the aioid infrastructure in the outer system."
+unplaced:
+  - name: "Corporate Republic of Indonesia"
+    quote: "a consortium of south-east Asian corporations and interests in the Corporate Republic of Indonesia 's attempted to \"ride the coattails\" of the Chinese Space Development Consortium project by leasing the launch system, buying colony ship blueprints and essentially make a copy of the attempt."
+  - name: "Chinese Space Development Consortium"
+    quote: "a consortium of south-east Asian corporations and interests in the Corporate Republic of Indonesia 's attempted to \"ride the coattails\" of the Chinese Space Development Consortium project by leasing the launch system, buying colony ship blueprints and essentially make a copy of the attempt."
+  - name: "KMH Bionetics"
+    quote: "Together with the giant orbital corporation KMH Bionetics they launched the Bintang Harapan I in 524 AT and the Bintang Harapan II in 527 AT, with a very reasonable deal from the Solsys boostbeam corporations."
+  - name: "Communication Cultists"
+    quote: "One such group was the Communication Cultists , a spin-off from the transhumanist movement that believed in the digital manifest destiny of mankind and in the power of free nanotechnology and artificial intelligence ."
+  - name: "Heterosemiotics"
+    quote: "Especially one group, the Heterosemiotics , were convinced that the reason AI did not advance to truly transcendent levels of intelligence was that development was held back by the international restrictions, and that in a completely free environment all singularity barriers would be broken."
+  - name: "Hyperion Corp"
+    quote: "The first outside ship to arrive was an exploration probe from Hyperion Corp , which merely scouted the system in 1128 AT and then returned."
+  - name: "Omicron Developments Inc"
+    quote: "It was followed by a exploration craft from Omicron Developments Inc in 1176."
+  - name: "Daedalus Development Conglomerate (DDC)"
+    quote: "At that point the Daedalus Development Conglomerate approached the authorities. DDC was willing to buy the rights to the system cheaply, in order to allow primitivist clades (of which there were no shortage at the time) to migrate to a natural environment. Possibly a bit too readily the empires agreed, and DDC took over Pi 3 Orionis."
+  - name: "Institute of Eschatology"
+    quote: "In 5580 AT the Institute of Eschatology officially declared the Pi 3 system as being infected by a qlippothic AI entity, most likely a second order perversion."
+  - name: "Injeja Lateral Taz"
+    quote: "According to DDC spokesconcepts, this was partially due to the sizeable fraction of NeoDaedelians from the Injeja Lateral Taz that immigrated, intent on restoring the original culture."
+  - name: "ComEmp"
+    quote: "While the ComEmp was flourishing around the system, it was quietly and legally reverting to what it once was."
+contradictions: []
+other_places:
+  - "Daedalus (Zeta1 Reticuli) -- \"Two worlds in the Inner Sphere were named Daedalus independently of each other, during the post-Technocalypse chaos; the other is at Zeta1 Reticuli.\""
+doubts:
+  - "\"Over the next 200 years Omicron Infosecurity used Daedalus as a huge research laboratory.\" -- a continued presence following the 1176/1258 visit, but only dated as a relative span ('the next 200 years'); no explicit end year is given."
+  - "\"As the situation escalated an agreement was reached by both sides to evacuate the system, and in an unprecedented spacelift nearly all civilians were evacuated from the system. When the war started, the local commander systems simply implemented a pre-arranged protocol of mutual destruction and left.\" -- reads as an 'abandoned' event (evacuation ahead of the Version War), but no explicit AT year is given, only 'as the Version War approached'."
+  - "\"At that point the Daedalus Development Conglomerate approached the authorities. DDC was willing to buy the rights to the system cheaply ... Possibly a bit too readily the empires agreed, and DDC took over Pi 3 Orionis.\" -- a clear 'transferred' event (from the Dominion/Metasoft protectorate to DDC), but no explicit year is given, only 'when the war was over'."
+  - "\"In 5580 AT the Institute of Eschatology officially declared the Pi 3 system as being infected by a qlippothic AI entity, most likely a second order perversion.\" -- has an explicit year, but it is unclear whether an official threat classification is a 'reported' event under the brief's definition (the year the setting records a thing whose real date is earlier) or not an event at all."
+  - "\"Nor did they interfere when several infiltrator groups from Cyberia moved in.\" -- Cyberia is on the roster (cyberian-network), but the sentence describes infiltrator groups moving in, not a holder or governing claim, and gives no year."

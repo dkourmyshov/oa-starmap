@@ -1,0 +1,87 @@
+article: 5e25af2c2b373
+title: "Jinvanco (Struve 2398)"
+events:
+  - year_at: 637
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: 'Decelerating around Jinvanco B, named Rubasho or "Ruby", the Advance first settled around the second of the red dwarf''s two ice giants.'
+    note: "year computed from 'The joint venture left Jovian orbit in 472 AT aboard the Advance' plus 'Awakened from stasis 165 years later' (472+165=637); no single sentence states 637 AT directly. The colonists were a joint venture of Genetekkers (Gengineer Republic) and tweaks from the Martian Union, neither on the roster (see unplaced)."
+  - year_at: 664
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The first major political schism occurred in 664 AT, when a group led by the superbright Mirrek San Xiang departed for the innermost planet when rifts regarding system security threatened to spiral into violence."
+    note: "Xiang's faction, the Gardados, then built Sankja, a high-security society of closed orbitals around Jinvanco Bb; Gardados is not on the roster (see unplaced)"
+  - year_at: 784
+    kind: independent
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The dissolution of the Gengineer Republic in 784 AT, proved to be the breaking point for the JCA. Without even the pretext of a higher headquarters to answer to, the half dozen JCA factions became independent actors."
+    note: "the Gengineer Republic and the Jinvanco Colonial Administration (JCA) are not on the roster (see unplaced)"
+  - year_at: 1021
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Those who could not reconcile themselves to opening up to the rest of Terragen society departed in 1021 AT for Jinvanco A or as the Gardados remnant would call it Famawan (Distant Shelter)."
+    note: "Gardados remnant relocating to Famawan; Gardados is not on the roster (see unplaced)"
+  - year_at: 1200
+    kind: settled
+    polity: ""
+    precision: circa
+    until_at: null
+    where: body
+    quote: "Colonization of Famawan began in earnest at the start of the 13th century, though bands of Gardados and other groups could be found already living amongst the star's three small planets and asteroid belts."
+    note: "no specific roster polity is named for this wider colonisation"
+holder_undated:
+  - polity: deeper-covenant
+    quote: "Allegiance: Unaligned with heavy Deeper Covenant influence; several Sephirotic powers have representation in the system"
+    note: "from the data panel"
+  - polity: deeper-covenant
+    quote: "This made Jinvanco an integral part of the civilization that would eventually became the Deeper Convenant."
+    note: "sic: 'Convenant' in the source text"
+  - polity: deeper-covenant
+    quote: "The Deeper Covenant remained a common presence, especially in managing the Beamrider Network infrastructure."
+  - polity: metasoft
+    quote: "It represents Metasoft's greatest stronghold in the system."
+    note: "refers to the Yuranov Matrix habitat"
+  - polity: stellar-umma
+    quote: "The Stellar Umma operate the Al-Wahah Taqadam at Sankja L4, which houses the Al-Thunayiya Mosque, a frequent stop for Muslims making an embodied Haj to Sol."
+unplaced:
+  - name: "Gengineer Republic"
+    quote: "As the powers of Solsys jockeyed for position during the dawn of the Solsys Era, the Gengineer Republic sought to extend its presence to the stars."
+  - name: "Martian Union"
+    quote: "While the prospective colonists were mostly Genetekkers, a sizable minority of passengers were tweaks from the Martian Union."
+  - name: "Gardados"
+    quote: "Xiang's faction, known as the Gardados, sought to establish a completely independent polity in order to safeguard the system from possible malware/nanite infection coming from Solsys."
+  - name: "Jinvanco Colonial Administration (JCA)"
+    quote: "resource collection and orbital habitat construction took priority for the first two decades under the auspices of the Jinvanco Colonial Administration (JCA)."
+  - name: "Itan Industries"
+    quote: "became the corporate holding of Itan Industries, though a migratory society of quadrupedal vecs, the Shade Striders, developed there unmolested."
+  - name: "Larkez Compact"
+    quote: "Styled the Larkez Compact after the Nuvjuptari moon it was signed on, the agreement created a loose confederation for the purpose of managing an expanded Beamrider Network."
+  - name: "United Nations of Fruang"
+    quote: "one of the longest lived political entities was the United Nations of Fruang which, like its namesake from Terragen antiquity, served as a supranational organization for nearly all polities on and in orbit around the planet."
+  - name: "Crimson Sa'aali"
+    quote: "In 3263 AT, Jinvanco was caught off guard by the appearance of a group of S1 entities known as the Crimson Sa'aali."
+  - name: "the Guardianship (AI Overseers Discerning Shepard and Wise Gardner)"
+    quote: "Government: Approximately 1,700 separate polities operating under the loose Guardianship of the AI Overseers"
+contradictions: []
+other_places: []
+doubts:
+  - quote: "Though there were overtures, Jinvanco remained independent from the First Federation and its contemporary the Eridanus League."
+    note: "explicit non-affiliation with two roster polities (first-federation, eridanus-league); undated, and phrased as a negative rather than a positive holder or independence-event claim"
+  - quote: "After the collapse of the First Federation, Jinvanco remained on good terms but politically unaffiliated with the Solsys Organization, Taurus Network, and the Penglai Empire."
+    note: "another undated negative-affiliation claim; 'Taurus Network' may be the roster's Taurus Nexus under a variant name, not asserted; solsys-organization and penglai-empire are exact roster matches but are named as NOT holding Jinvanco"
+  - quote: "In 3263 AT, Jinvanco was caught off guard by the appearance of a group of S1 entities known as the Crimson Sa'aali."
+    note: "the Crimson Sa'aali were later deposed by the S2 Discerning Shepard, who then established what locals termed 'the Guardianship'; a dated takeover, but by non-roster transapient entities, and it is not the roster's Caretaker Gods despite the similar-sounding name; does not cleanly fit any listed kind (see unplaced)"
+  - quote: "Styled the Larkez Compact after the Nuvjuptari moon it was signed on, the agreement created a loose confederation for the purpose of managing an expanded Beamrider Network."
+    note: "follows directly from the mention of the Federation of Sophonts' founding in 933 AT, but this sentence itself gives no year for when the Larkez Compact was signed"

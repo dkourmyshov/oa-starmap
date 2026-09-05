@@ -1,0 +1,36 @@
+article: 48ac8c3a3979d
+title: Blue (Garden World)
+events:
+  - year_at: 5184
+    kind: stewardship
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Connected first to Alpha Star in 5184 AT , the planet Blue was quickly declared a protectorate by Mallard of Blue, who announced the planet and the xenoecology thriving there was protected by the Burdikeer and not to be exploited."
+    note: "Protector named is 'the Burdikeer', identified in the panel as the system's S Ethos ('Burdikeer Ethos'); not confirmed as one of the roster's Caretaker Gods, so left unplaced rather than mapped to caretaker-gods."
+  - year_at: 5839
+    kind: transferred
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 5839 AT a wormhole arrived from Traction and was opened shortly after. In the classic pattern of early Traction expansion, the system was first overrun by mercenaries."
+    note: "Followed by division of the system among Traction corporations: 'a group of corps of Traction entered the system, and started to divide the territory amongst themselves, buying the newly acquired territories from the mercenaries which had secured them.' 'Traction' is not on the roster."
+holder_undated:
+  - polity: the-seams
+    quote: "Region The Seams , 3rd Triangulum Corridor"
+unplaced:
+  - name: "Burdikeer"
+    quote: "the planet Blue was quickly declared a protectorate by Mallard of Blue, who announced the planet and the xenoecology thriving there was protected by the Burdikeer and not to be exploited"
+  - name: "Traction"
+    quote: "In 5839 AT a wormhole arrived from Traction and was opened shortly after."
+  - name: "The Greyman Empire"
+    quote: "AFFILIATION The Greyman Empire"
+contradictions: []
+other_places: []
+doubts:
+  - quote: "Still colonists moved into the system from Alpha Star (back then called Harkington's Star), and prepared to mine the systems resources which had been ignored by the Burdikeer."
+    note: "Reads as the actual settlement of Blue by colonists, but no year is given for it; it falls sometime after the 5184 AT protectorate declaration and before the 5340 AT wormhole event."
+  - quote: "In 6157 AT the region had just begun to quiet down, when refugee warships from Starlift Enterprises and the Resourcelift Corporation escaped into the system from the takeover of their homes in Traction."
+    note: "Refugee arrival and subsequent resistance movement against Traction rule; does not clearly state a change of holder for Blue itself, so not recorded as a transferred/independent event."

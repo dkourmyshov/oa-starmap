@@ -1,0 +1,38 @@
+article: 66649fe342b45
+title: "Excelsior Incident"
+events:
+  - year_at: 2031
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "However, when a splinter group of heterodox Centauri Vehicle Buddhists under the patronage of the then-S:1 Gone/Semiote/Gone had taken the risk of attempting to settle there, they were relieved to find only a tiny contingent of sub-singularity ais, who fled in the direction of Eta Aquarii before the settlers even reached the inner system in 2031."
+    note: "The settling group, heterodox Centauri Vehicle Buddhists, is not on the roster; see unplaced. Their patron, the transapient Gone/Semiote/Gone, is an individual administrator, not a polity."
+  - year_at: 3499
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The hyperturing linelayer Oholiab II arrived on schedule in 3499."
+    note: "Oholiab II collapsed its wormhole payload and fled the system shortly thereafter, never returning. No polity is named for it or its origin."
+holder_undated: []
+unplaced:
+  - name: "Centauri Vehicle Buddhists"
+    quote: "However, when a splinter group of heterodox Centauri Vehicle Buddhists under the patronage of the then-S:1 Gone/Semiote/Gone had taken the risk of attempting to settle there, they were relieved to find only a tiny contingent of sub-singularity ais, who fled in the direction of Eta Aquarii before the settlers even reached the inner system in 2031."
+  - name: "Corona"
+    quote: "A small fleet of Coronan S:2 warships, still returning from the First Consolidation War, was sent priority tightbeam orders to immediately redirect toward Excelsior at maximum acceleration."
+  - name: "Excelsior Ecumen"
+    quote: "Polities: Excelsior Ecumen, Centauri Revival (minority), Regulated Path of Fundamental Kja (minority)"
+  - name: "Centauri Revival"
+    quote: "Polities: Excelsior Ecumen, Centauri Revival (minority), Regulated Path of Fundamental Kja (minority)"
+  - name: "Regulated Path of Fundamental Kja"
+    quote: "Polities: Excelsior Ecumen, Centauri Revival (minority), Regulated Path of Fundamental Kja (minority)"
+contradictions: []
+other_places: []
+doubts:
+  - "\"Excelsior, although resource-rich and considered a potential target of colonization since the Information Age, had been avoided by Terragen settlers until the early third millennium AT due to the known presence of an unidentified ahuman Neumann clade that had departed in that direction in the mid-900s.\" -- unclear whether this dates any actual presence of the Neumann clade at Excelsior itself, or only its departure in that general direction in the mid-900s; also unclear if it should be read as a second, vaguer 'settled/avoided until' claim alongside the 2031 arrival."
+  - "\"Arise Eternal was apparently selected to take over rulership of Excelsior when Gone/Semiote/Gone announced her imminent departure for \\\"parts unknown\\\" in late 3198.\" -- a handover of administration between two S:2 transapients, neither of whom is a roster polity; unclear whether this is a 'capital'/'transferred' style event at all, since Excelsior is not shown as belonging to any polity."
+  - "\"Upon their arrival several decades later, they once again found no trace of Arise Eternal in the Dyson swarm or any other major computronium nodes.\" -- the Coronan warships' arrival and subsequent military occupation is only dated relative to the Oholiab detonation of 3499 ('several decades later'), with no explicit year given."
+  - "\"the Excelsior system (now exclusively modosophont-run) has never fully recovered on either a cultural or an economic level.\" -- describes the system as self-governed after the Incident, but since no polity is ever named as its prior ruler (Arise Eternal was a transapient, not a polity), it is unclear whether this counts as an 'independent' event under the brief's definitions."

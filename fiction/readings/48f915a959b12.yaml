@@ -1,0 +1,25 @@
+article: 48f915a959b12
+title: Solsys
+events: []
+holder_undated:
+  - polity: solsys-organization
+    quote: "Mercury Administration, democratic council overseen by the S1 entities known as the Lares; composed of 86 sub-polities, many with considerable autonomy; member of the Solsys Organization, with close ties to the Fomalhaut Acquisition Society."
+  - polity: fomalhaut-acquisition-society
+    quote: "Mercury Administration, democratic council overseen by the S1 entities known as the Lares; composed of 86 sub-polities, many with considerable autonomy; member of the Solsys Organization, with close ties to the Fomalhaut Acquisition Society."
+  - polity: nocozo
+    quote: "The Demeter hedonics center is officially operated as a joint venture between the Solsys Organization, an alliance of several NoCoZo entertainment and hedonics concerns, and the First Singularity overseer of the Swarm, generally known as Herodotus Nxt."
+  - polity: zoeific-biopolity
+    quote: "A Dyson Tree ecology that is a popular nexus for the 'bohemian' sub-culture in Solsys, with a strong Zoeific Biopolity and NoCoZo influence."
+  - polity: terragen-federation
+    quote: "There is a strong Terragen Federation presence, with the Eclecticism/Authenticism memes being extremely influential."
+  - polity: solsys-organization
+    quote: "The monastery is not a member of the Solsys Organization, but recognizes it as the primary secular authority of Sol System."
+    note: "the Kja Observance monastery on the Amalthea group habitat; stated explicitly as not a member, but recognising Solsys Org authority"
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - quote: "The vec settlements are all currently within the Solsys Organization framework, but various of them also have ties to Metasoft, the Terragen Federation, or the Silicon Generation."
+    note: "describes ties, not a holder claim; no year given, and 'ties to' is weaker than 'in the X'; left out of holder_undated as ambiguous"
+  - quote: "There is even a very small group of Muuh who arrived in the late 101st century and live in a small hab near the faint traces of what may have been the tholin baths of a Muuh settlement some millions of years ago."
+    note: "a dated arrival, but it is a small sub-settlement on Titan, itself long part of the already-settled Solsys system; excluded as a sub-settlement per the brief, not recorded as an event"

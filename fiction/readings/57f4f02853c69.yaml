@@ -1,0 +1,32 @@
+article: 57f4f02853c69
+title: Hamashta (p Eridani)
+events:
+  - year_at: 820
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "They reached p Eridani in 820 AT, constructed several rotating space habitats and colonised a number of small planetoids."
+    note: "The refugees were from the 'Great Expulsion from Earth', not a group on the roster; no polity is named for them at the time of settlement."
+  - year_at: 846
+    kind: transferred
+    polity: eridanus-league
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Hamashta joined the Eridanus League in 846 AT, and sent system control ships to Eunchong to help suppress a rebellion in 1440."
+    note: ""
+holder_undated:
+  - polity: nocozo
+    quote: "On the breakup of the League, it joined the NoCoZo."
+  - polity: eridanus-league
+    quote: "Orange dwarf double system, a former member of Eridanus League."
+unplaced: []
+contradictions: []
+other_places:
+  - "Eunchong (Gliese 832) - Hamashta sent system control ships there in 1440 to help suppress a rebellion; that is an event at Eunchong, not at Hamashta."
+doubts:
+  - "'Refugees from the Great Expulsion from Earth departed the Solar System in 692 AT' gives a departure year from Sol, not an arrival or holder change at Hamashta, so it was not recorded as an event for this place."
+  - "'On the breakup of the League, it joined the NoCoZo' gives no year for the transfer to NoCoZo, only the undated fact of it happening 'on the breakup of the League'; recorded under holder_undated rather than as a dated event."
+  - "'Starting in 6509 AT, a program of building Bishop Rings was commenced' is a construction/megastructure-building programme, not a settlement or holder change, so it was excluded."

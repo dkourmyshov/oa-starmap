@@ -1,0 +1,59 @@
+article: 5d4c19c9442f1
+title: Tiwa (Ross 128)
+events:
+  - year_at: 617
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The Mingkwan arrived at Ross 128 in 617 AT, and set about creating its new civilization."
+    note: "the Mingkwan was a Southeast Asian autonomous probe mission, not tied to any roster polity"
+  - year_at: 642
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 642, the beamrider pathfinder ship Karl Schroeder , one of the pre-Technocalypse missions launched from Sol to build cycler routes to nearby stars, arrived and established a colony in the local asteroid belt."
+    note: ""
+  - year_at: 737
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 681, the Nanyang , one of GAIA's arkships carrying 30,000 passengers was launched toward Ross 128, arriving in 737."
+    note: "GAIA is not on the roster; 681 is the launch date from elsewhere, 737 is the arrival at Tiwa"
+  - year_at: 1224
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The large colony ship Utnapishtim-6 reached the Tiwa system in 1224 AT."
+    note: "the Star Pilgrim Corporation, which operated the ship, is not on the roster"
+  - year_at: 1313
+    kind: transferred
+    polity: eridanus-league
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 1313, the Tiwa system became a member of the Eridanus League , joining just as the League was becoming increasingly disunited."
+    note: ""
+holder_undated:
+  - polity: deeper-covenant
+    quote: "The colony eventually constructed a functioning beamrider station and established contact with the nascent Deeper Convenant , formally joining that civilization a century later."
+unplaced:
+  - name: "Mingkwan (Southeast Asian probe mission)"
+    quote: "The Mingkwan arrived at Ross 128 in 617 AT, and set about creating its new civilization."
+  - name: "GAIA"
+    quote: "In 681, the Nanyang , one of GAIA's arkships carrying 30,000 passengers was launched toward Ross 128, arriving in 737."
+  - name: "Star Pilgrim Corporation"
+    quote: "The Utnapishtim-6 was a speculative venture of the Star Pilgrim Corporation, which sent colony missions to many systems during the Early Federation period."
+contradictions: []
+other_places:
+  - "Lok Mai — \"reaching Gliese 783 in 1317 AT to found the conservative world of Lok Mai\"; has its own article, listed under Related Articles."
+doubts:
+  - "\"established contact with the nascent Deeper Convenant , formally joining that civilization a century later\" — the joining year is only given relative to the 642 AT contact (i.e. roughly 742 AT), with no explicit absolute year stated, so it is recorded under holder_undated rather than as a dated transferred event."
+  - "\"During this early period, two waves of Eridani colony ships from Sol visited Tiwa. A number of Sonthayans joined the colonization effort, but most were disinterested.\" — no year is given for these visits, which follow the 1313 AT Eridanus League membership."

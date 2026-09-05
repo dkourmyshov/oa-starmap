@@ -1,0 +1,32 @@
+article: 521e1928abb1f
+title: Sakura (59 Virginis b)
+events:
+  - year_at: 1500
+    kind: settled
+    polity: ""
+    precision: not_later_than
+    until_at: null
+    where: panel
+    quote: "Reached Sakura was already inhabited by splinter factions of the Zavijavan aioids by 1500 AT ."
+    note: "a breakaway aioid faction from Zavijava (per body text, \"which had migrated there from Zavijava many centuries earlier\"); not a polity on the roster"
+  - year_at: 1783
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The first pro-human ship, the Eridan-Federation colony ship Three Stops To Goltarenqi , would not arrive until 1783."
+    note: "\"Eridan-Federation\" is not on the roster (roster has Eridanus League and First Federation, neither an exact match)"
+holder_undated:
+  - polity: solipsist-panvirtuality
+    quote: "Sakura continues to be inhabited by a number of reclusive cultures under transapient oversight, aligned with the Solipsist Panvirtuality ."
+unplaced:
+  - name: "Zavijavan aioids"
+    quote: "Reached Sakura was already inhabited by splinter factions of the Zavijavan aioids by 1500 AT ."
+  - name: "Eridan-Federation"
+    quote: "The first pro-human ship, the Eridan-Federation colony ship Three Stops To Goltarenqi , would not arrive until 1783."
+contradictions: []
+other_places:
+  - "Zavijava (Beta Virginis) — origin of the aioid faction resident at Sakura (\"a breakaway faction which had migrated there from Zavijava many centuries earlier\"); has its own article, listed under Related Articles."
+doubts:
+  - "\"One of these aioid expeditions became the first to come into contact with the local ahuman civilization.\" — a contact event, but no explicit year is given (it falls sometime after the 2962 AT wormhole link and before the population stabilised \"by 3500\"), and it is unclear which side should carry the polity: the visiting aioid explorers or the resident ahuman faction, neither of which maps to a roster id."

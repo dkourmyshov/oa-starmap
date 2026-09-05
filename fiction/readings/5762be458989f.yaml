@@ -1,0 +1,54 @@
+article: 5762be458989f
+title: Blanchard
+events:
+  - year_at: 1522
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Beta Caeli was reached in 1522 A.T. by the Undyoist colony ship Qian Kun ."
+    note: "Undyoists are a religious/cultural group, not a polity on the roster"
+  - year_at: 2107
+    kind: transferred
+    polity: ""
+    precision: not_earlier_than
+    until_at: null
+    where: body
+    quote: "In 2107 the Federation Representative left the system, leaving these worlds without transapient guidance. Finding that their interstellar credit was now effectively worthless the Tahmetians started to invade the remaining worlds. Most of the remaining asteroids, moons and planetoids fell to their invading troopships; the pacifist Undyoists gave no resistance, although there were spirited defences of several worlds by Etodist defenders."
+    note: "the Tahmetians are not a polity on the roster; this covers the outlying planetoids and asteroids, not Blanchard itself, which was defended successfully (see later event)"
+  - year_at: 3230
+    kind: transferred
+    polity: ""
+    precision: not_earlier_than
+    until_at: null
+    where: body
+    quote: "In the war that followed the pacifist Undyoists once again took no active part, but they were instrumental in deprogramming the most fanatical of the New Tahmetians once AgGardner and Tyl were finally subdued."
+    note: "\"subdued\" implies AgGardna and Tyl passed from New Tahmetian control back to the Etodists/Undyoists; none of these are polities on the roster"
+  - year_at: 3879
+    kind: visited
+    polity: nocozo
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 3879 the Blanchard Tape voted to invite the NoCoZo to send a representative transapient to give them assistance and guidance; they expected to get a single First Singularity visitor, but instead several dozen transapients arrived, including in due course a S:2 Higher transapient ."
+    note: "recorded as visited rather than transferred because the article later states Blanchard never formally joined the NoCoZo"
+holder_undated: []
+unplaced:
+  - name: "Undyoists / Undyoism"
+    quote: "Beta Caeli was reached in 1522 A.T. by the Undyoist colony ship Qian Kun ."
+  - name: "Inner Federation"
+    quote: "Population on Blanchard increased rapidly as new colony ships arrived from the Inner Federation , carrying with them more Undyoists and a smaller number of Etodists."
+  - name: "Tahmetians / Tahmetianity"
+    quote: "In 2107 the Federation Representative left the system, leaving these worlds without transapient guidance. Finding that their interstellar credit was now effectively worthless the Tahmetians started to invade the remaining worlds."
+  - name: "Etodists / Etodism"
+    quote: "there were spirited defences of several worlds by Etodist defenders."
+  - name: "New Tahmetians"
+    quote: "In 3230 the New Tahmetians goaded the Etodists into conflict, giving them a pretext to attack Blanchard which, they claimed, was acting as a haven for Etodian pirates."
+contradictions: []
+other_places:
+  - "Alpha Caeli — \"several Tahmetian ships arrived from Alpha Caeli, a system which received a visit from one of the miraculous Five Prophets\"; origin system of the Tahmetians, briefly described."
+doubts:
+  - "\"Towards the end of the First Federation Era several Tahmetian ships arrived from Alpha Caeli ... began to occupy several small objects in the middle system, including the planetoids AgGardna and Tyl.\" — no explicit AT year is given for this first Tahmetian arrival/occupation, only a relative era reference."
+  - "\"In 2107 the Federation Representative left the system\" — the roster gives the First Federation's dissolution as 2099 AT, two years before this date; it is unclear whether \"the Federation\" here means the First Federation or the separately named \"Inner Federation\" (also mentioned in this article and not on the roster), so no polity id was attached."
+  - "\"Blanchard has never formally joined the NoCoZo\" — an explicit statement of non-membership despite receiving NoCoZo transapient assistance from 3879 onward; noted here for contrast with the visited entry above."

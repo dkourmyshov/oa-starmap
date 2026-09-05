@@ -1,0 +1,94 @@
+article: 45e24d79c0d8b
+title: "Copernicus (55 Cancri)"
+events:
+  - year_at: 809
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Reached: 809 AT, by subsophont probe Philip K. Dick."
+  - year_at: 1421
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "First crewed colonization mission in 1421 by the Kontore League."
+    note: "Kontore League is not on the roster (see unplaced)"
+  - year_at: 809
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "The autonomous probe Philip K. Dick arrived in 809 AT and eventually joined Metasoft in 4790."
+    note: "this is the data panel's separate 'Colonized' field restating the same 809 AT arrival already given under 'Reached' (see the other 809 entry); the Metasoft-joining clause of this same sentence is recorded separately below at 4790"
+  - year_at: 1421
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "The Kontore League colony ship Hanse arrived in 1421"
+    note: "continuation of the 'Colonized' panel field; Kontore League is not on the roster (see unplaced)"
+  - year_at: 4790
+    kind: transferred
+    polity: metasoft
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "The autonomous probe Philip K. Dick arrived in 809 AT and eventually joined Metasoft in 4790."
+    note: "the aioid probe itself joined Metasoft; the body text adds that it established a base on Rhine, a moon of Lipperhey, but gives no year for the joining"
+  - year_at: 1421
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The Hanse arrived in 1421 AT from Solsys, and established habitats on the moons of Harriot and Lipperhey."
+    note: "the Hanse was the Kontore League colony ship; Kontore League is not on the roster (see unplaced)"
+  - year_at: 4608
+    kind: abandoned
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The Vec stronghold in the Rheticus system was destroyed in 4608 by the Dominion Stormfleet."
+    note: "likely the same Metasoft-linked outpost that had retreated from Rhine to Rheticus (preceding sentence), but this sentence does not itself name a holder for the stronghold; 'the Dominion' (the destroyer, matching roster's solar-dominion, also called 'Dominion') is not the stronghold's holder, so polity is left blank"
+  - year_at: 5500
+    kind: transferred
+    polity: solar-dominion
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Riga joined the Solar Dominion in 5500, and Danzig formed close ties with the Terragen Federation."
+holder_undated:
+  - polity: terragen-federation
+    quote: "System Affiliation: Danzig has ties to the Terragen Federation, Mazda is affiliated to the Sophic League and Riga is a member of the Solar Dominion."
+  - polity: sophic-league
+    quote: "System Affiliation: Danzig has ties to the Terragen Federation, Mazda is affiliated to the Sophic League and Riga is a member of the Solar Dominion."
+  - polity: solar-dominion
+    quote: "System Affiliation: Danzig has ties to the Terragen Federation, Mazda is affiliated to the Sophic League and Riga is a member of the Solar Dominion."
+  - polity: terragen-federation
+    quote: "Metaethics: Danzig is an independent Inner Sphere polity, with close ties to the Terragen Federation."
+unplaced:
+  - name: "Kontore League"
+    quote: "First crewed colonization mission in 1421 by the Kontore League."
+  - name: "Federal States"
+    quote: "Lipperhey became the most important planet in the early system, where two powerful (and rivaling) polities became established: the Federal States (capital: Bergen, a moon of Lipperhey) and the Amity, on Mazda."
+  - name: "Amity"
+    quote: "Lipperhey became the most important planet in the early system, where two powerful (and rivaling) polities became established: the Federal States (capital: Bergen, a moon of Lipperhey) and the Amity, on Mazda."
+contradictions: []
+other_places: []
+doubts:
+  - quote: "In 2358 the Conver Ambi established an embassy on Danzig, and became increasingly important over the next millennium or so."
+    note: "an embassy is a diplomatic presence, not clearly 'the system passed to a polity'; not recorded as a transferred event"
+  - quote: "The Federal States opposed Conver dominance in this system but were eventually sidelined and dissolved in 2800."
+    note: "describes a local non-roster polity's political dissolution (see unplaced: Federal States), not the settlement itself ending; does not map cleanly to any listed kind"
+  - quote: "After the breakup of the Conver Ambi the Solar Dominion took over, while Danzig remained independent."
+    note: "clear transfer language ('took over') and a claim of independence for Danzig, but no year is given in this sentence; the roster records conver-ambi as dissolved in 3943, but that is not stated in the article itself, so no year_at is asserted here"
+  - quote: "A new culture known as the Rezarki emerged on this world, and remained important until the 7000s."
+    note: "described as a culture, not clearly a governing polity holding the place; also a cultural period, which the brief excludes"
+  - quote: "Riga joined the Solar Dominion in 5500, and Danzig formed close ties with the Terragen Federation."
+    note: "recorded as a transferred event for Riga at 5500; it is unclear whether the year 5500 is also meant to date Danzig's 'close ties' with the Terragen Federation, so that clause is not separately dated"

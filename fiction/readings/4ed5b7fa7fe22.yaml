@@ -1,0 +1,20 @@
+article: 4ed5b7fa7fe22
+title: Aristotle (Delta Pavonis)
+events:
+  - year_at: 691
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The Aristotle system was colonised in 691 AT."
+    note: ""
+holder_undated:
+  - polity: deeper-covenant
+    quote: "The distant, scattered neptunian Hooke holds a Deeper Covenant colony."
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "Darwin is listed as a Related Article with its own page, but it is described here as the life-bearing world within the Aristotle system, so it was treated as the same place per rule 8 rather than as other_places."
+  - "'After the Battle of Darwin, this life-bearing world has been off-limits for colonisation' names a battle, not a settlement or holder change, so it was not recorded as an event."

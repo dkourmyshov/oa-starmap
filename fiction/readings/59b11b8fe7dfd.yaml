@@ -1,0 +1,59 @@
+article: 59b11b8fe7dfd
+title: "Bone-Claw (Eta Cephei)"
+events:
+  - year_at: 1550
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised 1550"
+  - year_at: 1550
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Sapient Hyenas from the First Federation arrived at Bone-Claw in 1550 AT. None of the colonists had taken the anti-aggression patch given to other members of their clade, and set out with the explicit goal of establishing a Hyena centre of power, free of human interference."
+    note: "colonists originated from the First Federation but explicitly sought independence from Federation/human control (see doubts); polity left blank rather than set to first-federation"
+  - year_at: 1540
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Ten years earlier, a preparation probe had seeded the second planet, named Skulk, with self-replicating bubblehabs and local infrastructure."
+    note: "year computed as 1550 minus the stated 'ten years earlier'; no sentence states 1540 AT directly; the probe's origin/affiliation is not stated"
+  - year_at: 2043
+    kind: transferred
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 2043, following negotiations, Belligerence and Imari offered Ett to a small group of rogue TakiCorb development vecs."
+    note: "TakiCorb development vecs are not on the roster (see unplaced)"
+  - year_at: 2060
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The TakiCorb vecs arrived by gentron in 2060."
+    note: "TakiCorb development vecs are not on the roster (see unplaced)"
+holder_undated:
+  - polity: deeper-covenant
+    quote: "Ett is now allied with the Deeper Covenant."
+unplaced:
+  - name: "TakiCorb development vecs"
+    quote: "In 2043, following negotiations, Belligerence and Imari offered Ett to a small group of rogue TakiCorb development vecs."
+contradictions: []
+other_places: []
+doubts:
+  - quote: "Sapient Hyenas from the First Federation arrived at Bone-Claw in 1550 AT. None of the colonists had taken the anti-aggression patch given to other members of their clade, and set out with the explicit goal of establishing a Hyena centre of power, free of human interference."
+    note: "the colonists came from First Federation territory, but the passage frames the colonisation as a deliberate break from Federation/human control, so it is unclear whether first-federation should be recorded as the settling polity; left blank above pending reviewer judgement"
+  - quote: "Though it remains unaffiliated, the Solar Dominion and the Negentropy Alliance have significant cultural pull."
+    note: "explicit non-affiliation (of Uncouth) with two roster polities (solar-dominion, negentropy-alliance); described as cultural pull only, not holding"
+  - quote: "Bone-Claw was finally connected to the Nexus by a microgauge wormhole in 5012."
+    note: "an infrastructure/connectivity milestone, not a change of holder; does not fit any listed kind"
+  - quote: "between the 2000s-2100s a number of colony ships were launched. The resultant colonies ensured the growth of Cutan as a language family. Many later allied with Cygexpa or the Solar Dominion."
+    note: "describes other, unnamed colonies founded by Bone-Claw emigrants elsewhere, not Bone-Claw itself; not recorded as an event for this place"

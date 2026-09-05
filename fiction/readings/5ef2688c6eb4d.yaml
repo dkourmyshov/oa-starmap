@@ -1,0 +1,41 @@
+article: 5ef2688c6eb4d
+title: Tengri (Kepler-9)
+events:
+  - year_at: 6511
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised 6511 AT"
+    note: ""
+  - year_at: 6511
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Explored 6511 AT by United Stars , a subsidiary of the Cygnus Expansion Association ( Cygexpa )."
+    note: "The actor named is United Stars, a client/subsidiary of Cygexpa, not Cygexpa itself; see doubts."
+  - year_at: 5999
+    kind: settled
+    polity: solipsist-panvirtuality
+    precision: exact
+    until_at: null
+    where: body
+    quote: "This system had previously been claimed by the Panvirtuality in 5999, but all transmissions had ceased two hundred years later."
+    note: "Text says \"claimed\", not \"settled\"; the Panvirts are later found to have retreated into the gas giant Maral, so a resident presence is implied but not stated outright for 5999."
+holder_undated: []
+unplaced:
+  - name: "United Stars"
+    quote: "Explored 6511 AT by United Stars , a subsidiary of the Cygnus Expansion Association ( Cygexpa )."
+contradictions:
+  - about: "what happened at Tengri in 6511 AT"
+    quotes:
+      - "Colonised 6511 AT"
+      - "Explored 6511 AT by United Stars , a subsidiary of the Cygnus Expansion Association ( Cygexpa )."
+other_places:
+  - "HD 177697 (Oscura), the Panvirtual colony founded by the nameless Displacement Drive Vessel's contingent; arrival dated 6805, transmission ceased 6710, described at length but is a separate system from Tengri."
+doubts:
+  - "\"Explored 6511 AT by United Stars , a subsidiary of the Cygnus Expansion Association ( Cygexpa ).\" -- United Stars is named as the actor and is not on the roster; Cygexpa is only named as the parent body it is a subsidiary/client of, so the entry leaves polity empty rather than crediting Cygexpa directly, per the rule that a ship \"from\" a polity does not by itself count as that polity reaching the place."
+  - "\"Tengri itself became the new regional capital of the so-called Tengri Plexus, and over time the rest of the damaged ships were repaired or reconstructed and began to trade between the new systems.\" -- no explicit year is given (only \"over the next hundred years\" relative to earlier undated action), and the Tengri Plexus is not a polity on the roster, so no capital event was recorded."

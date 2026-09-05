@@ -1,0 +1,35 @@
+article: 56cee52ae55da
+title: Seattle
+events:
+  - year_at: 10107
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonized 10,107AT"
+    note: "The panel's \"Allegiance\" field names Metasoft Version Tree separately, but does not tie it to this line directly; see holder_undated."
+  - year_at: 9017
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "By the time of Seattle's discovery in 9017AT, Terragen civilization had learned that alien life rarely resembled terrestrial life in any fashion."
+    note: "No actor is named for the discovery; the preceding paragraph credits the Argus Array with identifying the planet and a later linelayer with reaching it, but neither sentence is dated."
+holder_undated:
+  - polity: metasoft
+    quote: "Allegiance Metasoft Version Tree"
+  - polity: metasoft
+    quote: "Seattle currently falls within the Metasoft Version Tree and is managed by an SI:3 administrative node based on Mt. Ranier."
+unplaced:
+  - name: "Argus Array"
+    quote: "This SuperGaian garden planet was identified by the Argus Array long before a linelayer reached its location in the Perseus Arm ."
+  - name: "Kja Observance"
+    quote: "The node appears to have Kja Observance sympathies, which has some modosophonts concerned that it might secede as a Caretaker God."
+contradictions: []
+other_places: []
+doubts:
+  - "\"Colonized 10,107AT\" (panel) is not explicitly tied to the \"Allegiance Metasoft Version Tree\" line in the same panel; the event's polity was left empty rather than assumed to be Metasoft."
+  - "\"By the time of Seattle's discovery in 9017AT...\" -- recorded as visited rather than observed, since the discovery involved virches of specific animals (suggesting close-range or landed data collection), but the article never says explicitly that anyone landed as opposed to observing remotely."
+  - "\"The node appears to have Kja Observance sympathies, which has some modosophonts concerned that it might secede as a Caretaker God. However, ... there is no concern in Metasoft's upper ranks about this.\" -- explicitly hypothetical and denied, not an actual independence or stewardship event; no entry recorded."

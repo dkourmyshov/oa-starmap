@@ -1,0 +1,39 @@
+article: 4fbac899f11d0
+title: Yall-Ull (Gliese 667)
+events:
+  - year_at: 705
+    kind: visited
+    polity: ""
+    precision: circa
+    until_at: null
+    where: body
+    quote: "By the time the probe reached the system two centuries later Solsys was in the nadir of a Dark Age, and the data sent back by the probe was never received."
+    note: "Probe launched in 505 AT ('An unmanned interstellar probe was launched in 505 AT to explore this system.'); arrival year computed as roughly two centuries after launch. No sending polity is named for the probe."
+  - year_at: 1109
+    kind: settled
+    polity: first-federation
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The system was colonized by the First Federation in 1109 AT."
+    note: "Colony mission fronted by Clan Yall, a close ally of House Genen; neither Clan Yall nor House Genen is on the roster."
+holder_undated: []
+unplaced:
+  - name: "Clan Yall"
+    quote: "The colony mission was fronted by Clan Yall, a close ally of House Genen ."
+  - name: "House Genen"
+    quote: "The colony mission was fronted by Clan Yall, a close ally of House Genen ."
+  - name: "Geminga Orthodoxy"
+    quote: "Both the Ambi Limis and the Geminga Orthodoxy remembered this humanitarian effort on behalf of their citizens and retained close ties to the system."
+  - name: "Confederation of the Million Floating Eyots"
+    quote: "Numerous coalitions arose at this time, the largest being the colorfully-named Confederation of the Million Floating Eyots ."
+contradictions: []
+other_places:
+  - "Neo-Helix (neighbouring system)"
+doubts:
+  - quote: "The triple system of Gliese 667 was observed to hold three planets orbiting the more distant component, Gliese 667 C."
+    note: "Astronomical observation with no year given; precedes the 505 AT probe launch."
+  - quote: "The transition between the end of the First Federation and the rise of the megacorporations was a particularly difficult one for this system... The entire system became a backwater of sorts for the next millennium."
+    note: "No explicit year is given in this article for when the system left First Federation control or became isolated; the roster's First Federation dissolution year (2099) is not stated here."
+  - quote: "Yall-Ull returned to the galactic stage in 3901 when it was the chosen neutral site for a conference to negotiate an end to the Conver Wars . ... Both the Ambi Limis and the Geminga Orthodoxy remembered this humanitarian effort on behalf of their citizens and retained close ties to the system."
+    note: "Confirms neutral/unaffiliated status circa 3901 and later close ties with Ambi Limis and the (unrostered) Geminga Orthodoxy, but no holder change is stated."

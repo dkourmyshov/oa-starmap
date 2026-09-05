@@ -1,0 +1,65 @@
+article: 4609c8d6cadb4
+title: Barnard's Star
+events:
+  - year_at: -80
+    kind: observed
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Barnard's Star is a small red dwarf close to Earth, first observed by hu astronomers in 80BT."
+    note: ""
+  - year_at: -5
+    kind: observed
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "It was named van de Kamp's World after Peter van de Kamp, an astronomer who in 5BT claimed to have found a planet orbiting the star."
+    note: "the claimed planet was later shown (by 5AT) to be an instrumentation artefact"
+  - year_at: 49
+    kind: observed
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "While Barnard's Star was later (49AT) found to have a SuperArean planet, van de Kamp's claims of one or two Jovian planets were debunked by 5AT when they were found to be instrumentation artifacts."
+    note: ""
+  - year_at: 761
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Barnard's Star was one of the first systems to be reached by refugee ships after the Great Expulsion, when the Skylark of Valeron arrived there in 761 AT."
+    note: ""
+  - year_at: 1001
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The Siris Habitat generation ship arrived in 1001 AT, a relatively slow ship which had been launched shortly before the Technocalypse - but due to the lack of easily obtainable volatiles they did not remain long."
+    note: ""
+  - year_at: 7600
+    kind: transferred
+    polity: ""
+    precision: between
+    until_at: 7825
+    where: body
+    quote: "For example, the system was trapped in a set of sociopolitical contracts by the Waterbringers, Sunminers who monopolized volatile markets in the 7600-7825 period."
+    note: "the Waterbringers were a local Sunminer House, not a polity on the roster"
+holder_undated: []
+unplaced:
+  - name: "Waterbringers"
+    quote: "For example, the system was trapped in a set of sociopolitical contracts by the Waterbringers, Sunminers who monopolized volatile markets in the 7600-7825 period."
+  - name: "CCHH (Core Council and Henderson's Heroes)"
+    quote: "The war ended when a strong alliance between the Core Council and Henderson's Heroes (alliteration being a Barnard cultural custom at that time) succeeded in vanquishing the other fractions and impose a certain order on the system."
+  - name: "The Dustbunnies"
+    quote: "The Dustbunnies is the republic governing van de Kamp's World, which has a diffuse population of high-G and Arean tweaks."
+contradictions: []
+other_places: []
+doubts:
+  - "When the Negentropy Alliance attempted to \"give relief\" to the system during the Version War, the inhabitants rose up with a massive level of sabotage, passive resistance and open insurrection, forcing a withdrawal. — no year given, and the attempted annexation failed, so it is not recorded as a transferred event."
+  - "The same thing occurred in 9581 when he representatives of the Terragen Federation-sponsored Inner Sphere Development Alliance attempted to do something similar. — dated but again a failed intervention, not a completed transfer; \"Inner Sphere Development Alliance\" is not on the roster."
+  - "in 1893AT a systemwide civil war broke out between various fractions. The war ended when a strong alliance between the Core Council and Henderson's Heroes ... succeeded in vanquishing the other fractions and impose a certain order on the system. — civil war and the CCHH's rise to local government are internal, not a change of external holder, and no exact end date is given."

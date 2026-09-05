@@ -1,0 +1,27 @@
+article: 47768efc05bb3
+title: Ruach
+events:
+  - year_at: 3421
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Reached 3421 AT"
+    note: "Panel field; body text says explorers first reached Ruach some years before the supercritical biosphere was discovered, no polity given."
+  - year_at: 3822
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The Mirrored Owls arrived in the Ruach system in 3822, and are believed to be descended from the ancient Genetekker society that once thrived among the moons of Jupiter, although this is somewhat controversial."
+    note: "The Mirrored Owls are a clade, not a roster polity; see unplaced."
+holder_undated: []
+unplaced:
+  - name: "Mirrored Owls"
+    quote: "The Mirrored Owls arrived in the Ruach system in 3822, and are believed to be descended from the ancient Genetekker society that once thrived among the moons of Jupiter, although this is somewhat controversial."
+contradictions: []
+other_places: []
+doubts:
+  - "Whether the Mirrored Owls' 3822 arrival counts as settled (they remain, using native biota as hosts) or merely visited is unclear from the text; recorded as settled."

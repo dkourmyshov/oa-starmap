@@ -1,0 +1,51 @@
+article: 46789378a3d4e
+title: Rajand (Lalande 21185)
+events:
+  - year_at: 405
+    kind: visited
+    polity: ""
+    precision: not_earlier_than
+    until_at: null
+    where: body
+    quote: "A scientific probe affiliated with the Gengineer Republic was launched towards Lalande 21185 (which the Genetekkers called Rajand) in 405."
+    note: "405 is the launch year, not a stated arrival year; the probe (whose home, the Gengineer Republic, is not on the roster) is described as discovering conditions there, so it did reach the system, just at an unstated later date."
+  - year_at: 721
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "It only arrived at its destination in 721 AT ."
+    note: "This is the Genetekkers' crewed colony ship (the Erwin Chargaff), launched from Agamemnon in 568; Genetekkers are not on the roster."
+  - year_at: 1013
+    kind: transferred
+    polity: first-federation
+    precision: not_earlier_than
+    until_at: null
+    where: body
+    quote: "Ultimately the survivors chose to join the Federation of Sophonts instead, and the system control ship, after assisting with minimum restoration of system infrastructure, amicably departed."
+    note: "\"Federation of Sophonts\" is a roster also-name for the First Federation. No year is stated for the join itself; 1013 is carried over from the control ship's arrival in the same episode (\"a League system control ship finally arrived in 1013\")."
+holder_undated:
+  - polity: eridanus-league
+    quote: "Contact was established with a small number of colonies around other stars, chief among them being the thriving, sprawling civilization at Ran , and when that star sent an invitation to its interstellar union, known as the Eridanus League , the New L4 civilization agreed to become a part of it."
+  - polity: solar-dominion
+    quote: "Rajand is currently a peaceful home to 4,398 independent polities, mostly aligned to either the Genen , the Solar Dominion, the Deeper Covenant, or the Communion of Worlds."
+  - polity: deeper-covenant
+    quote: "Rajand is currently a peaceful home to 4,398 independent polities, mostly aligned to either the Genen , the Solar Dominion, the Deeper Covenant, or the Communion of Worlds."
+  - polity: communion-of-worlds
+    quote: "Rajand is currently a peaceful home to 4,398 independent polities, mostly aligned to either the Genen , the Solar Dominion, the Deeper Covenant, or the Communion of Worlds."
+unplaced:
+  - name: "Gengineer Republic"
+    quote: "A scientific probe affiliated with the Gengineer Republic was launched towards Lalande 21185 (which the Genetekkers called Rajand) in 405."
+  - name: "Genetekkers"
+    quote: "This prompted the Genetekkers to assemble a followup crewed mission to the star."
+  - name: "Genen"
+    quote: "Rajand is currently a peaceful home to 4,398 independent polities, mostly aligned to either the Genen , the Solar Dominion, the Deeper Covenant, or the Communion of Worlds."
+contradictions: []
+other_places:
+  - "Ran, described as \"the thriving, sprawling civilization\" and seat of the Eridanus League's interstellar union and later of a League system control ship; appears to have its own article and is not described in enough depth here to extract its own events."
+doubts:
+  - "\"In 1531, the Eridanus League finally returned; a colony ship from Ran arriving and establishing a small League aioid outpost at Rajand-Dok Saj L2.\" -- dated, but read as a sub-settlement (a small outpost) within an already-settled system rather than a change of the system's holder, so no event was recorded; flagging since it does mark a League return."
+  - "\"Shortly after the fall of the First Federation, a number of Genen groups from the outer Alsafi system began migrating to the star.\" -- no explicit year, and describes a sub-settlement (the Juhon Tan) within the already-settled system, so no event was recorded."
+  - "The header files this article under Zoeific Biopolity, but the prose body never names the Zoeific Biopolity explicitly, so no quote could be found to support a holder entry for it."
+  - "The 1013 date on the Federation-of-Sophonts transferred event is carried over from the control ship's arrival date in the preceding clause, not stated for the join itself; a reviewer may prefer to treat the join as undated."

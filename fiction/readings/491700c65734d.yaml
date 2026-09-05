@@ -1,0 +1,43 @@
+article: 491700c65734d
+title: Lok Mai
+events:
+  - year_at: 1317
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Chakri was first colonised by a mission from Ross 128b. The colony ship Nanyang departed Sonthaya in 1185 AT and arrived at GL 783 in 1317 AT."
+    note: "Departure from Sonthaya was 1185 AT; the settlement date recorded is the 1317 AT arrival. No overarching polity is named for the Ross 128b mission itself."
+  - year_at: 1317
+    kind: visited
+    polity: first-federation
+    precision: not_later_than
+    until_at: null
+    where: body
+    quote: "The largest planet in the system (a tidally-locked terrestrial world somewhat smaller than Earth) was already being terraformed by an autonomous probe, designed by the Yasamura Artificial Environments Corporation on behalf of the First Federation ."
+    note: "The probe was 'already' at work when the colonists arrived in 1317 AT; its own arrival date is not given, so 1317 is used as a not_later_than bound."
+  - year_at: 2679
+    kind: independent
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 2679 AT, the Lok Mai Confederation declared itself to be permanently neutral."
+    note: ""
+holder_undated: []
+unplaced:
+  - name: "Yasamura Artificial Environments Corporation"
+    quote: "The largest planet in the system (a tidally-locked terrestrial world somewhat smaller than Earth) was already being terraformed by an autonomous probe, designed by the Yasamura Artificial Environments Corporation on behalf of the First Federation ."
+  - name: "Lok Mai Confederation"
+    quote: "A new Lok Mai Confederation government was established in 1706 AT, which dealt with matters regarding relations with other star systems and the continued terraforming and development of Lok Mai."
+contradictions: []
+other_places:
+  - "Sonthaya (Ross 128b)"
+doubts:
+  - quote: "A new Lok Mai Confederation government was established in 1706 AT, which dealt with matters regarding relations with other star systems and the continued terraforming and development of Lok Mai."
+    note: "Dated founding of a local self-government (Lok Mai Confederation, not on the roster); unclear whether this should count as an 'independent' event since no prior overarching polity holding Lok Mai is confirmed anywhere in the text."
+  - quote: "The restrictions on transapient presence meant that the Federation could not send a FedRep to this system, and it never became a full member for that reason."
+    note: "Explicit statement that Lok Mai never became a full First Federation member despite settlers and a terraforming probe tied to the Federation."
+  - quote: "some surmise that the influence of the Caretaker Gods is evident in the preservation Lok Mai; but no evidence of direct Caretaker protection has ever been found."
+    note: "Speculative and explicitly unconfirmed; not recorded as a stewardship event."

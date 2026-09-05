@@ -1,0 +1,84 @@
+article: 67d5cb928a1bf
+title: Titawin Xenological Garden
+events:
+  - year_at: 1340
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Titawin was first colonised in 1340AT by a group of Gaian Whales."
+    note: "Settlers were a Gaian Whale group, not a roster polity; see unplaced."
+  - year_at: 7700
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The creation of Ardun in 7700 was one of the most controversial decisions in Titawin's history."
+    note: "Ardun was settled by baseline and nearbaseline humans within Titawin itself; no external polity is named."
+  - year_at: 8000
+    kind: settled
+    polity: ""
+    precision: between
+    until_at: 9000
+    where: body
+    quote: "Between 8000 and 9000, multiple xenosophonts and xenoprovolves joined, political issues became complex, and Titawin Xenological Garden took on its current form."
+    note: "General summary of continued settlement by unspecified xenosophonts and xenoprovolves; no group or polity is named."
+  - year_at: 8862
+    kind: contact
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Following first contact in 8862, the metallic hydrogen layer was Menexenoformed to have the appropriate pressure, temperature, levels of helium and neon, and magnetic fields."
+    note: "Contact with the Menexenes; Menexenes are a xenosophont species, not a polity."
+  - year_at: 9600
+    kind: settled
+    polity: ""
+    precision: not_earlier_than
+    until_at: null
+    where: body
+    quote: "Since 9600, a small but steadily growing community of Jade Chime Singers, along with some Faber reprogroups, has lived on New Chorus."
+    note: "No polity is named for the Jade Chime Singers or the Faber reprogroups."
+  - year_at: 10010
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "It was not until 10010 that several communities of Soft Ones, for reasons of their own, perhaps linked to the Epp War, migrated to Titawin."
+    note: "No polity is named for the Soft Ones."
+  - year_at: 10380
+    kind: settled
+    polity: ""
+    precision: not_earlier_than
+    until_at: null
+    where: body
+    quote: "a group of 812 engenerated Riposte from the Circumplanetary Culture have been living in a pressure dome on the surface since 10380."
+    note: "Settlers are Riposte from the 'Circumplanetary Culture'; not a roster polity, see unplaced."
+holder_undated: []
+unplaced:
+  - name: "Gaian Whales"
+    quote: "Titawin was first colonised in 1340AT by a group of Gaian Whales."
+  - name: "Haloists"
+    quote: "A number of small polities derived from Haloists colonised Titawin, and remained for the next few centuries, doing little to change the new planetary arrangement."
+  - name: "Xenological Garden Foundation"
+    quote: "ultimately leading to the creation of the Xenological Garden Foundation in 4902."
+  - name: "Circumplanetary Culture"
+    quote: "a group of 812 engenerated Riposte from the Circumplanetary Culture have been living in a pressure dome on the surface since 10380."
+contradictions: []
+other_places: []
+doubts:
+  - quote: "While Titawin is sometimes considered to be affiliated with the Caretaker Gods, its status is in fact much more ambiguous. No explicit transapient rule has been observed in the system, and while motions to declare formal Caretaker allegiance have been frequently proposed, they have always been defeated."
+    note: "Reads like a possible stewardship claim, but the article explicitly says the affiliation is unconfirmed and repeatedly voted down, and gives no year."
+  - quote: "New Scaramouche was reserved for the Riposte in 10270, when contact was announced on the Known Net."
+    note: "Unclear whether the 10270 contact was made at Titawin or elsewhere and merely announced there; 'reserved' is also not one of the listed event kinds."
+  - quote: "Ultimately, after many discussions, the Foundation ceded control of its operations to the To'ul'h inhabitants, leading to the autonomist principle of governance \"by xenosophonts for xenosophonts\" that remains to this day."
+    note: "Reads like a possible independence event, but no year is given and the Xenological Garden Foundation is not clearly a territory-holding polity."
+  - quote: "The majority of the inhabitants uploaded and soon after fell into the hedonic sink, enjoying a solipsistic existence of maximal bliss in a moon brain orbiting Upsilon Andromedae B, Titawin's distant red dwarf companion. They remain in such a state to this day, now known as the Titawin Sunk."
+    note: "Upsilon Andromedae B is called a companion star of Titawin, so this may be the same place rather than a different one; not listed under other_places for that reason, but flagged here."
+  - quote: "First contact with Cthonids and Pipers, with members of both species settling in Titawin, led to a resurgence in the Garden's fortunes."
+    note: "Describes contact and settlement but carries no year of its own; it sits between the 7002 wormhole grant and the following 8000-9000 sentence."
+  - quote: "the first xenoprovolves — Pspyders — were invited to join in 6500."
+    note: "'Invited' in 6500 is not clearly the same as settled; New Trees is later described as inhabited by provolved Pspyders with no separate arrival date."

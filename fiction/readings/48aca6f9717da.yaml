@@ -1,0 +1,60 @@
+article: 48aca6f9717da
+title: Traction
+events:
+  - year_at: 4654
+    kind: visited
+    polity: ""
+    precision: not_later_than
+    until_at: null
+    where: body
+    quote: "The YTS 5072-5871740 system was an uninhabited and rather uninteresting trinary system consisting of an unimpressive red star, a white dwarf and a small brown dwarf, visited only by a few probes and interstellar tourist-explorers, before its inclusion in the Seams in 4654."
+    note: "No polity is named for the probes or tourist-explorers; the visits predate the 4654 inclusion in the Seams."
+  - year_at: 4654
+    kind: transferred
+    polity: the-seams
+    precision: exact
+    until_at: null
+    where: body
+    quote: "before its inclusion in the Seams in 4654"
+    note: ""
+  - year_at: 6158
+    kind: transferred
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "in early 6158, the forces of Greyman swept out across the Traction territories and declared that a new age of peace and prosperity was at hand."
+    note: "The new holder is the Greyman Empire (formed by Greyman Incorporated after defeating the other corporations); not a roster polity, see unplaced."
+holder_undated:
+  - polity: the-seams
+    quote: "Polity AFFILIATION : The Seams; The Greyman Empire"
+  - polity: nocozo
+    quote: "REGION : The Seams, NoCoZo"
+unplaced:
+  - name: "Greyman Empire"
+    quote: "Polity AFFILIATION : The Seams; The Greyman Empire"
+  - name: "Greyman Incorporated"
+    quote: "However, back around the brown dwarf, Greyman Incorporated launched their own fleet as soon as they learned the result of the conflict."
+contradictions: []
+other_places:
+  - name: "Swartzchield"
+    quote: "a few corps expanded physically, establishing mining of the Swartzchield system in competition with the already established settlers of rianth-cyborg clade Swartzchield"
+  - name: "Blue"
+    quote: "In the 6th millennia, connections were opened to Blue and Moedus."
+  - name: "Moedus"
+    quote: "In the 6th millennia, connections were opened to Blue and Moedus."
+  - name: "Orange Polity"
+    quote: "STARGATES TO: Swartzchield (Corridor 59342), Blue (Corridor 343) Moedus (Corridor 3490), Orange Polity (Corridor 3920)"
+  - name: "Horus"
+    quote: "Greyman IX was a bit too happy for war, and though he captured the Horus and Maldavi systems from the Khordian Electorate and Manifold from Jeon, the resultant loss of trade hurt the corporations."
+  - name: "Maldavi"
+    quote: "Greyman IX was a bit too happy for war, and though he captured the Horus and Maldavi systems from the Khordian Electorate and Manifold from Jeon, the resultant loss of trade hurt the corporations."
+  - name: "Manifold"
+    quote: "Greyman IX was a bit too happy for war, and though he captured the Horus and Maldavi systems from the Khordian Electorate and Manifold from Jeon, the resultant loss of trade hurt the corporations."
+doubts:
+  - quote: "When the corporations arrived, one by one, they found the system largely devoid of materials, and the stargates yet unarrived."
+    note: "Describes the corporations settling Traction after its 4654 inclusion in the Seams, but no specific year is given."
+  - quote: "Under the able leadership of the newly crowned Emperor of the Greyman empire."
+    note: "Traction is evidently the Greyman Empire's home system (per the Imperial Line table), which would make it a capital in effect, but the article never states this explicitly."
+  - quote: "REGION : The Seams, NoCoZo"
+    note: "Unclear whether this means NoCoZo itself has ever held Traction, or only that the Seams (recorded separately) sits within the wider NoCoZo economic zone; recorded as holder_undated for both, undated either way."

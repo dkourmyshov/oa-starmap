@@ -1,0 +1,30 @@
+article: 64cc708f305ee
+title: Amethyst Habitat
+events: []
+holder_undated:
+  - polity: terragen-federation
+    quote: "An affiliate of the Terragen Federation , the Republic of the Northern Metropoli occupies much of the area around the northern endcap, as well as extensive cavern systems underground and fifteen ledge intra-habitats at various heights on the endcap itself."
+  - polity: nocozo
+    quote: "A NoCoZo affiliate, Mammon is a single continuous cityscape situated in the mid-northern latitudes of the hab."
+  - polity: zoeific-biopolity
+    quote: "A member of the Zoeific Biopolity , the thousands of Cityhives vary widely in size and design, but all share three traits: a high population density, a structure formed of gengineered organisms, and a citizenry in which each sophont occupies and controls three bodies simultaneously (the eponymous Triplets), connected via data links."
+  - polity: utopia-sphere
+    quote: "The southernmost polity inside Amethyst and a member of the Utopia Sphere , the Symphonies occupy the Southern Bay of the Vanda Ocean and much of the surrounding land."
+  - polity: cyberian-network
+    quote: "A member of the Cyberian Network , this polity consists of billions of virchworlds ranging in size from small rooms to large islands, each for a different purpose but usually hosted by one of the Spheres that each citizen spends their time associating with."
+  - polity: technorapture-hypernation
+    quote: "A member polity of the Technorapture Hypernation , citizens inhabit a virchworld with a physics model consisting of 8 spatial dimensions and 32 physical forces."
+  - polity: sophic-league
+    quote: "The Oneirolabyrinth exists within the mind of the S2 being called Manipura by modosophonts, a citizen of the Sophic League ."
+unplaced:
+  - name: "Resshuna Buildout Coalition"
+    quote: "Amethyst was commissioned in 8481 AT by the Resshuna Buildout Coalition, an organization run by seven of the system's S2 transapients , who are nominally assisted by many S1 and modosophont designers."
+contradictions: []
+other_places: []
+doubts:
+  - "This article covers only the internal history and polities of Amethyst Habitat, one of many habitats in the Tongokarbo Orbital Band of the Resshuna system (the place the map files this under); it never states when Resshuna itself was reached or settled, only when this one habitat within it was built."
+  - "\"Amethyst was commissioned in 8481 AT by the Resshuna Buildout Coalition...\" and \"Construction was completed in 8513...\" -- both dated, but read as a sub-settlement (a single habitat) within an already-settled system (older Bernal Spheres and singlehabs already existed at Resshuna per the same sentence), so no event was recorded."
+  - "\"Just five years later, all but one of the remaining zones were settled\" (c. 8522) and \"This zone later became the Kimbu Hedonic Jungle in 8539.\" -- both describe the settling of zones within the already-built Amethyst habitat, not a system- or habitat-level holder change."
+  - "\"Amethyst came to the particular attention of the wider Terragen Sphere in the 10570s as the popular immersive first-person virch travelogue series The Scenic Route came through the system.\" -- read as a cultural/publicity event, not a holder or arrival event."
+  - "\"Originally equal to Old Earth in size, this virch was expanded in 10593 due to population growth...\" -- a population-driven expansion of a virtual world within an existing polity (Amethyst Ultima), not a settlement or holder event."
+  - "None of the thirteen embodied and virtual polities' affiliations (Terragen Federation, NoCoZo, Zoeific Biopolity, Utopia Sphere, Cyberian Network, Technorapture Hypernation, Sophic League) carry a year, and each names only a sub-polity of the habitat rather than the Resshuna system as a whole; recorded as holder_undated rather than as events or as a single system-level holder."

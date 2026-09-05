@@ -1,0 +1,48 @@
+article: 4795465645a82
+title: Ran (Epsilon Eridani)
+events:
+  - year_at: 595
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Reached 595 AT by the Kelkemesh, a Gengineer Republic starship"
+    note: ""
+  - year_at: 603
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "followed by the Mayari from the Cislunar Alliance in 603"
+    note: ""
+  - year_at: 607
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "and the Cinnabar from the Martian Union in 607"
+    note: ""
+holder_undated:
+  - polity: eridanus-league
+    quote: "Birthplace of the Eridanus League"
+  - polity: eridanus-league
+    quote: "Some of the most remarkable and influential cultural elements from Ran hailed from its Eridanus League days."
+unplaced:
+  - name: "Gengineer Republic"
+    quote: "Reached 595 AT by the Kelkemesh, a Gengineer Republic starship"
+  - name: "Cislunar Alliance"
+    quote: "followed by the Mayari from the Cislunar Alliance in 603"
+  - name: "Martian Union"
+    quote: "and the Cinnabar from the Martian Union in 607"
+  - name: "Ran Combine"
+    quote: "Governance and Administration System polity : Ran Combine"
+contradictions: []
+other_places: []
+doubts:
+  - quote: "As one of the first systems to be settled by Terragens, the Ran system civilization has recently celebrated the ten thousandth Terran years of its history."
+    note: "Implies an early settlement but gives no explicit year; may or may not be the same event as the 595 AT arrival recorded above."
+  - quote: "Since emerging from the post-ComEmp chaos during the 59th century, interactions between these polities have been overseen by an organization commonly known as the Ran Combine"
+    note: "Unclear whether this describes a holder change of the system itself, or merely the formation of a local coordinating body (Ran Combine, not on the roster); year is only given as a century."

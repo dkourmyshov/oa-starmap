@@ -1,0 +1,23 @@
+article: 48ec8ec7515b2
+title: "New Earth (104 Tauri III)"
+events:
+  - year_at: 1709
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "104 Tauri (51.8 ly from Sol) was colonised in 1709 by the Tauri Development Consortium."
+    note: "The settling body, the Tauri Development Consortium, is a megacorp-sponsored consortium, not a polity on the roster."
+holder_undated:
+  - polity: terragen-federation
+    quote: "Allegiance -New Earth is the capital world of the Terragen Federation"
+unplaced:
+  - name: "Tauri Development Consortium"
+    quote: "104 Tauri (51.8 ly from Sol) was colonised in 1709 by the Tauri Development Consortium."
+contradictions: []
+other_places: []
+doubts:
+  - "A decade later a small fleet of megacorp System Ships arrived to take control of the Development Consortium, but the colonial government had already been restructured by the hyperturing into a model Federation polity. -- only a relative date (a decade after the 1709 colonisation), no absolute year stated, and it is unclear which polity, if any, the 'Federation' named here maps to on the roster."
+  - "Several centuries before the reconstruction of the planet's surface was complete, the interstellar political structure of the First Federation collapsed, but the New Earth administration continued to uphold the old ideals of cooperation between humans, AIs and other clades. -- no year given, and it is unclear whether New Earth was ever formally a First Federation holding before this."
+  - "New Earth became the capital of a re-born Federation, at first simply called the Tauri Federation and closely allied with the nearby Taurus Nexus. -- describes New Earth becoming a polity capital (the Tauri Federation, later renamed Terragen Federation) but states no year."
