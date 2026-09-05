@@ -1841,19 +1841,61 @@ worlds:
   - name: Corona
     kind: planet
     system: Lucida
-    affiliations: []
+    affiliations: [iota-network]
     article: https://www.orionsarm.com/eg-article/48e8b382428f5
     location:
       star: Iota Piscium
     events:
       - year_at: 1465
         kind: settled
+        note: >-
+          "When Jupiter Transystems arrived at Iota Piscium in 1465, they
+          claimed the entire system." The article's own periods: 1465-1497
+          pre-terraformation, 1497-1829 terraformation, 1829-2450 the Corona
+          Republic, which is local and not a polity entered here.
+      - year_at: 2450
+        kind: capital
+        polity: taurus-nexus
+        note: >-
+          "The government of the Taurus Nexus eventually relocated from Xi
+          Geminorum to Corona in 2450, supplanted the Corona Republic, and
+          established itself in a large orbital habitat at Corona-Sonata L4."
+      - year_at: 3435
+        kind: transferred
+        polity: nocozo
+        note: >-
+          "Corona quietly joined the NoCoZo in 3435, bringing few other inner
+          Taurus Nexus worlds and systems with it."
+      - year_at: 4492
+        kind: transferred
+        polity: solar-dominion
+        note: >-
+          "In 4492, during the Version War, a fleet from the Solar Dominion
+          arrived at Iota." The article's periods have the Solar Dominion from
+          4492 to 4606.
+      - year_at: 4606
+        kind: independent
+        note: >-
+          "The revolt was swift and bloodless, and shortly after the Solar
+          Dominion granted the system independence" — "the planet's
+          independence in 4606".
+      - year_at: 4609
+        kind: transferred
+        polity: iota-network
+        precision: not_earlier_than
+        note: >-
+          "Starting from 4609, three years after independence, an S4 entity
+          which called emself the Iota Scholar ... contacted the system." The
+          Network is the Scholar's, and the article dates the contact rather
+          than the Network; "finally became an Iota Network world, independent
+          from the major empires" is not dated. Neutral seat of the
+          Commonwealth of Empires from 4830 to 4870, which is not a polity
+          entered here.
     note: >-
-      Not a Non-Coercive Zone system now, after a complicated history: Lucida is
-      the capital of the academic Iota Network, which has no entry in the polity
-      list here. Left unaffiliated rather than filed under a former holder. The
-      system's own article is at
-      https://www.orionsarm.com/eg-article/5c758943a42b2.
+      Lucida is the capital of the academic Iota Network, "technically an
+      independent system and thus not in the Sephirotics", and drawn as the
+      Network's, as the colony table already had it. The system's own article
+      is at https://www.orionsarm.com/eg-article/5c758943a42b2.
 
   - name: Dorminy IV
     kind: system
