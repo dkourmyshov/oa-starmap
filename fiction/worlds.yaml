@@ -269,12 +269,13 @@ worlds:
     system: New Gaia
     also: [Rachel]
     affiliations: [caretaker-gods]
+    article: https://www.orionsarm.com/eg-article/48f7d26295d0f
     location:
       star: Lambda Aurigae
     events:
       - year_at: 1365
         kind: settled
-    note: >-
+        note: >-
       Lambda Aurigae, 41 ly, already on the map through the Inner Sphere colony
       table — which gives the system as "Rachel/New Gaia", two names for the one
       place. This entry adds the date rather than a position.
@@ -3228,37 +3229,6 @@ worlds:
           joining just as the League was becoming increasingly disunited."
     note: >-
       Ross 128, as the colony table has it.
-
-  - name: New Gaia
-    kind: system
-    system: New Gaia
-    affiliations: [caretaker-gods]
-    article: https://www.orionsarm.com/eg-article/48f7d26295d0f
-    location:
-      star: Lambda Aurigae
-    events:
-      - year_at: 1365
-        kind: settled
-        note: >-
-          "The colony ships Root and Seed were launched in 1245 AT, arriving
-          at Lambda Aurigae IV in 1365 AT." colonised by the Green Alliance, a
-          First Federation environmentalist movement not on the roster (see
-          unplaced); no roster polity is named as holder The Green Alliance,
-          no polity of this file; megacorporations followed from 1425.
-      - year_at: 1687
-        kind: stewardship
-        polity: caretaker-gods
-        note: >-
-          "In 1687 AT an object of unknown nature entered the system." the
-          object was the newly ascended hyperturing Rachel, who declared the
-          system off limits to further development and later became a founding
-          member of the Caretaker Gods, establishing the Rachelan Protectorate
-          over the system The object was the protectorate ISO grown in secret
-          by the Caretaker Rachel, on the article's later account, and the
-          panel's allegiance is 'Caretaker God (under the hyperturing
-          Rachel)'.
-    note: >-
-      Lambda Aurigae, as the colony table has it.
 
   - name: Copernicus
     kind: system
