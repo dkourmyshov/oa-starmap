@@ -249,6 +249,48 @@ the fixed cost per reader dominates and more articles per reader amortise
 it. At two per reader the first tranche of 126 would be some six million
 Sonnet tokens; at six per reader, perhaps half that.
 
+### The first tranche, done
+
+All 126 articles on the map that stated a year the map lacked have been read,
+in five batches of six to twelve articles per reader, and reviewed and
+merged between batches. What it produced, measured on the files:
+
+| | |
+|---|---|
+| readings kept whole under `fiction/readings` | 126 |
+| candidate events in them | 213 |
+| holders named without a year | 183 |
+| names that matched no polity | 161 |
+| contradictions as pairs of quotes | 4 |
+| articles that date nothing at all | 32 |
+| world entries, before and after | 533, 589 |
+| events in the world file, before and after | 437, 596 |
+| events naming a polity | 76 |
+
+The reviewer kept roughly two candidates in three: what went was probes and
+traders arriving after settlement, sub-settlements within a settled system,
+and reign tables. Polities most often named on events: the First Federation
+12, the NoCoZo 6, the Solar Dominion 5, the Eridanus League 5.
+
+Where the merges went wrong, and the fix each time: an entry the file
+already held under a different article or no article (New Gaia, Copernicus,
+Zavijava), now refused by the merge helper by name; an article covering two
+mapped places (Alcor and Mizar), folded by hand; a place living in the
+curated systems file rather than the world file (Blue, Panthalassa, Heimat,
+Muuhome), given its events by hand there; a star the catalogue does not
+carry (Ithiplumo's GJ 3379), left with its dates and no position. The helpers
+are under `pipeline/tools`: `review_candidates.py` lays a reading out against
+the schema and roster, `merge_candidates.py` splices accepted events into the
+world file by index.
+
+Cost, for the record: about 100,000 Sonnet tokens per reader at six
+articles, 70,000 to 90,000 at eight to twelve short ones, some 2.3 million
+for the tranche; the reviewer's share was under a million.
+
+What is left of the corpus: 355 articles bound to the map whose entries were
+already dated (the second tranche, where the readings would mostly add
+holders and second events), and 80 bound to nowhere.
+
 ## Things the extractor still gets wrong, deliberately left
 
 - "Inner Sphere", "Dyson Sphere" and "Of The Utopia Sphere" come out as polity
