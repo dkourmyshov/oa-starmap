@@ -1,0 +1,19 @@
+article: 49106ed3cb09b
+title: Orwell (Garden World)
+events:
+  - year_at: 5502
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "It was colonised in 5502 AT by a colonisation fleet from Criw-Ta, a Cygexpa client world ."
+    note: ""
+holder_undated: []
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "The colonisation fleet came 'from Criw-Ta, a Cygexpa client world', not from Cygexpa itself, so the settled event's polity was left blank rather than inferring cygexpa as the founding holder."
+  - "'Orwell's government is a close derivative of the First Federation' describes governmental style, not a claim that the First Federation held or settled the system, so no transferred/holder entry was made for it."
+  - "'The QDG coup' is mentioned in passing ('It keeps the system peaceful but doesn't interfere unduly with business (especially after the QDG coup)') with no year and no polity identification, so nothing was recorded for it."

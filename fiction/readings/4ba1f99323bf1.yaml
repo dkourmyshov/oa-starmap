@@ -1,0 +1,22 @@
+article: 4ba1f99323bf1
+title: "Ross 614"
+events:
+  - year_at: 750
+    kind: settled
+    polity: ""
+    precision: circa
+    until_at: null
+    where: panel
+    quote: "Colonised Approximately 750 AT"
+    note: "Colonised by the non-human aioids later identified as the PackRat Spores, not on the roster; see unplaced."
+holder_undated: []
+unplaced:
+  - name: "PackRat Spores"
+    quote: "The dividual aioid entities known as the PackRat Spores have since revealed that they own this system, one of the closest to Sol."
+contradictions: []
+other_places:
+  - "Diamond Belt - related article, a different a-human polity/region this system was once mistakenly believed to belong to."
+doubts:
+  - "\"The binary M-dwarf star system Ross 614 was appropriated early in the post- Technocalypse era by non-human aioids, and was long believed to be part of the a-human Diamond Belt.\" describes a belief later shown false (the system belongs to the PackRat Spores, not the Diamond Belt/Diamond Network), and gives no exact year beyond 'early in the post-Technocalypse era'; not recorded as a transferred event."
+  - "\"As such it was declared a forbidden system during the First Federation era and little contact was made for many millennia.\" names the First Federation era but describes a restriction/quarantine, not a holding or visit by the First Federation itself; not recorded as an event."
+  - "\"The lesser archailect currently residing within this twin megastructure has, in the past, claimed descent from a PackRat Spore aioid carried on a probe launched by Phobos University, during its program of relatively-low-budget interstellar probes launched circa 460-510 AT.\" ties a circa 460-510 AT probe programme to this system only through a disputed claim of descent (\"many historians argue... question the entity's actual origin\"); not recorded as a visited/settled event given the article's own doubt about it."

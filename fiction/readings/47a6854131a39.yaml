@@ -1,0 +1,26 @@
+article: 47a6854131a39
+title: Tytalus
+events:
+  - year_at: 3219
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Reached: 3219 AT"
+    note: ""
+  - year_at: 3219
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "it was not until the planet was reached in 3219AT that the cause of its peculiar composition was discovered; a complex biosphere which produces free chlorine as a byproduct of photosynthesis"
+    note: ""
+holder_undated: []
+unplaced: []
+contradictions: []
+other_places:
+  - "Outland, a second chlorogaian found in Andromeda, more than a thousand lightyears from Tytalus"
+doubts:
+  - "Title tagline calls Tytalus the \"Second chlorine world visited by Terragens\"; Terragens is a generic demonym for pan-human descendants, not a roster polity, so no polity/unplaced entry was made for it."

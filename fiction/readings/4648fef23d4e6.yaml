@@ -1,0 +1,25 @@
+article: 4648fef23d4e6
+title: Cythera
+events:
+  - year_at: 1958
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Colonised by the Ypperbach clade in 1958 AT."
+    note: "Holder is a clade (the Ypperbach, who became the Cythera clade), not a polity on the roster."
+holder_undated: []
+unplaced:
+  - name: "Ypperbach clade"
+    quote: "Colonised by the Ypperbach clade in 1958 AT."
+  - name: "Galactic Colonisation Board"
+    quote: "Since 9050 AT Cythera has been host to the Galactic Colonisation Board, a quasi-religious body responsible for coordinating the exploration of the Outer Volumes."
+  - name: "ComEmp"
+    quote: "In the ComEmp it largely lost its importance, growing more introvert and conservative."
+contradictions: []
+other_places: []
+doubts:
+  - "Panel field 'Allegiance Independent' names no polity and carries no date, so no independent event could be recorded from it."
+  - "'Since 9050 AT Cythera has been host to the Galactic Colonisation Board' is dated but the Board is a body, not a polity, and 'host to' does not match any listed event kind (not capital, not stewardship as it is not a Caretaker God), so it was left out of events."
+  - "The image caption 'during boarding in Cythera orbit, First Federation period' names a roster polity (first-federation) but gives only an era label, not a year, so it could not be recorded as a dated visit."

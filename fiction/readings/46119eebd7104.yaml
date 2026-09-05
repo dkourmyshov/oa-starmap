@@ -1,0 +1,29 @@
+article: 46119eebd7104
+title: "Budrosa Dyson"
+events:
+  - year_at: 5010
+    kind: settled
+    polity: negentropy-alliance
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Former Negentropy world, colonised in 5010 AT."
+    note: ""
+  - year_at: 5424
+    kind: transferred
+    polity: paradigm
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Burosa was attacked by the Efficiency Maximisation Paradigm and 'optimized' in 5424 AT; almost the entire population of the system was forcibly uploaded and stored as data, while the Paradigm began a prorgam of intensive megaengineering ."
+    note: ""
+holder_undated: []
+unplaced:
+  - name: "Paradigm Containment Organization"
+    quote: "An agreement reached between the Efficiency Maximization Paradigm and opposing Sephirotic forces under the Paradigm Containment Organization, limiting further enforced 'optimization' of existing populations."
+contradictions: []
+other_places:
+  - "Alexandria - 'released copies of the Repository, the uploaded biological archives and 263 million citizens, which were later restored at Alexandria and Ken Ferjik'"
+  - "Ken Ferjik - same quote as above"
+  - "Jekaumeatrine (related article, site of the Jekaumeatrine Accords)"
+doubts: []

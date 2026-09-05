@@ -1,0 +1,29 @@
+article: 4603222d0037f
+title: "Capella (Alpha Aurigae)"
+events:
+  - year_at: 1287
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised: 1287 AT"
+    note: ""
+  - year_at: 5350
+    kind: capital
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Capella became the capital of an important regional polity in the wake of the ComEmp break-up in 5350 AT ."
+    note: "The 'regional polity' is not named in this sentence; the Related Articles list links to a separate 'Capellan Federation' article, which is not on the roster and not textually confirmed as this polity."
+holder_undated: []
+unplaced:
+  - name: "ComEmp"
+    quote: "Capella became the capital of an important regional polity in the wake of the ComEmp break-up in 5350 AT ."
+  - name: "Capellan Federation"
+    quote: "Related Articles Capellan Federation"
+contradictions: []
+other_places: []
+doubts:
+  - "The 'regional polity' of which Capella became capital in 5350 AT is not named in the prose sentence itself; the Related Articles link names a 'Capellan Federation' article, which is not on the roster, so the capital event is left with an empty polity. Quote: \"Capella became the capital of an important regional polity in the wake of the ComEmp break-up in 5350 AT .\""

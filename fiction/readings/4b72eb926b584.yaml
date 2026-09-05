@@ -1,0 +1,34 @@
+article: 4b72eb926b584
+title: "Mandra Quin'Si (Gliese 673)"
+events:
+  - year_at: 1610
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Reached 1610"
+    note: "Followed by terraforming and settlement by the megacorps K4H and TakiCorb, neither on the roster; see unplaced."
+  - year_at: 2446
+    kind: transferred
+    polity: tsutari-ambastory
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 2446 the Tsutari Ambastory , a religious confederation drawn from the habitats across the system, overthrew the Quasa'an dynasty, bringing the era of tyranny to an end."
+    note: ""
+holder_undated: []
+unplaced:
+  - name: "K4H"
+    quote: "The early interstellar megacorps K4H and TakiCorb partially terraformed this dry planet, covering the desert surface with wide canals fringed by irrigated land."
+  - name: "TakiCorb"
+    quote: "The early interstellar megacorps K4H and TakiCorb partially terraformed this dry planet, covering the desert surface with wide canals fringed by irrigated land."
+  - name: "Quasa'an Dynasty"
+    quote: "Mandra Quin'Si resembles the classic atomic age pulp sf fables of Mars, although in this case the canals and decadent cities were built by human slaves ruled by the tyrants known as the Terrorlords of the Quasa'an Dynasty ."
+contradictions: []
+other_places:
+  - "Battle of the Fringe - a related article about a battle at the Fringe component of this system; excluded as a battle, not a holder-change."
+  - "Mukerilis Bis - related article, a different place."
+  - "Zhenruj (Mu Herculis) - related article, a different place."
+doubts:
+  - "The 2446 overthrow of the Quasa'an dynasty by the Tsutari Ambastory is recorded as kind 'transferred' since it changed who effectively held the system; it was a revolution rather than a joining/annexation/sale/protection in the strict sense the brief lists, so a reviewer may wish to reclassify or drop it."

@@ -1,0 +1,25 @@
+article: 4e27f79396fda
+title: "World of Forking Paths, The"
+events:
+  - year_at: 900
+    kind: observed
+    polity: ""
+    precision: not_later_than
+    until_at: null
+    where: body
+    quote: "As early as the 9th century A.T an atypical radiation signature from the system was detected."
+    note: "At the time interpreted as Diamond Belt megastructure construction, an interpretation the article does not confirm; polity left blank. Diamond Belt is not on the roster, see unplaced."
+holder_undated:
+  - polity: solipsist-panvirtuality
+    quote: "The World of Forking Paths may be loosely affiliated with the Panvirtuality metaempire."
+unplaced:
+  - name: "Diamond Belt"
+    quote: "At the time this was interpreted as a sign of megastructure construction being undertaken by a Diamond Belt faction."
+contradictions: []
+other_places: []
+doubts:
+  - "\"The virtual reality was created at the end of the Solsys Era (although the exact date is uncertain) and has been running for close to ten thousand years.\" gives no usable AT year (the article itself says the exact date is uncertain); not recorded as an event."
+  - "\"It would be several centuries before first contact was finally achieved in the mid Age of Expansion.\" describes a contact event (\"This process was spearheaded by a Tau Cetan effort\") but names no AT year, only an era; not recorded as an event. 'Tau Cetan effort' is not a named polity and is not placed in unplaced."
+  - "\"Starting in the late 4200's a restructuring of the World of Forking Paths occurred, at which time a number of godtech advances were incorporated into the world's structure... preceded by a successful mass transcension event that caused all overseeing AIs and a number of virtuals... to form into the current S4 entity.\" is an internal transformation with no change of holder; not recorded as an event."
+  - "The 'Panvirtuality metaempire' affiliation is hedged (\"may be loosely affiliated\") and undated, and the roster lists no alternate name for solipsist-panvirtuality matching this exact phrase; recorded under holder_undated as the best match but flagged for review."
+  - "The 9th century AT detection's contemporaneous interpretation as a 'Diamond Belt faction' megastructure is presented as a since-superseded guess, not a confirmed holder; the observed event above is recorded with polity left blank rather than any roster id."

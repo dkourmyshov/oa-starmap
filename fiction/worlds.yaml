@@ -3730,6 +3730,232 @@ worlds:
     note: >-
       Delta Geminorum Aa, as the colony table has it.
 
+  - name: Vaishali
+    kind: system
+    system: Vaishali
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/48fa76119f471
+    location:
+      star: Tau Boötis A
+    events:
+      - year_at: 1993
+        kind: visited
+        note: >-
+          "Reached 1993" The planet's other name, Millennium, is said to come
+          from the arrival date of the first colonists, which the article does
+          not give.
+    note: >-
+      Tau Boötis A, as the colony table has it.
+
+  - name: Keid
+    kind: system
+    system: Keid
+    affiliations: [nocozo]
+    article: https://www.orionsarm.com/eg-article/45e24ae0d6d07
+    location:
+      star: Omicron2 Eridani A
+    events:
+      - year_at: 789
+        kind: settled
+        note: >-
+          "The first wave of colonists were refugees from the Technocalypse
+          who arrived in 789 AT in arkships built by GAIA ." Refugees of the
+          Technocalypse in GAIA's arkships; a former member of the Eridanus
+          League and NoCoZo-aligned since, both undated.
+    note: >-
+      Omicron2 Eridani A, as the colony table has it.
+
+  - name: Capella
+    kind: system
+    system: Capella
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/4603222d0037f
+    location:
+      star: Alpha Aurigae Aa
+    events:
+      - year_at: 1287
+        kind: settled
+        note: >-
+          "Colonised: 1287 AT"
+      - year_at: 5350
+        kind: capital
+        note: >-
+          "Capella became the capital of an important regional polity in the
+          wake of the ComEmp break-up in 5350 AT ." The 'regional polity' is
+          not named in this sentence; the Related Articles list links to a
+          separate 'Capellan Federation' article, which is not on the roster
+          and not textually confirmed as this polity. The polity is the
+          Capellan Federation, named only in a related-articles link; no
+          polity of this file.
+    note: >-
+      Alpha Aurigae Aa, as the colony table has it.
+
+  - name: Caph
+    kind: system
+    system: Caph
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/4625899c756f8
+    location:
+      star: Beta Cassiopeiae
+    events:
+      - year_at: 1532
+        kind: settled
+        note: >-
+          "Beta Cassiopeiae, known as Caph, 54.7 light-years from Sol, was
+          colonized in 1532 AT using seed ships and parental vecs, and a
+          successful vec-biont hybrid civilization developed there, nominally
+          aligned with the Solar Dominion ." The sentence gives the
+          colonization date, but the 'nominally aligned with the Solar
+          Dominion' clause is not clearly dated to 1532 itself; recorded
+          separately below under holder_undated. Seed ships and parental vecs,
+          on the pattern of the Federation programme the article implies but
+          does not state; nominally Solarist since, undated.
+    note: >-
+      Beta Cassiopeiae, as the colony table has it.
+
+  - name: Luyten
+    kind: system
+    system: Luyten
+    affiliations: [diamond-network]
+    article: https://www.orionsarm.com/eg-article/4a40c4f0788d9
+    location:
+      star: Luyten's Star
+    events:
+      - year_at: 998
+        kind: settled
+        note: >-
+          "Reached : 998 by Ako Forward Chaining." Ako Forward Chaining is an
+          AI grouping, not on the roster; see unplaced. Ako Forward Chaining,
+          an AI grouping, no polity of this file.
+    note: >-
+      Luyten's Star, as the colony table has it.
+
+  - name: Mandra Quin'Si
+    kind: system
+    system: Mandra Quin'Si
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/4b72eb926b584
+    location:
+      star: Gliese 673
+    events:
+      - year_at: 1610
+        kind: settled
+        note: >-
+          "Reached 1610" Followed by terraforming and settlement by the
+          megacorps K4H and TakiCorb, neither on the roster; see unplaced. By
+          the megacorporations K4H and TakiCorb, no polities of this file.
+      - year_at: 2446
+        kind: transferred
+        polity: tsutari-ambastory
+        note: >-
+          "In 2446 the Tsutari Ambastory , a religious confederation drawn
+          from the habitats across the system, overthrew the Quasa'an dynasty,
+          bringing the era of tyranny to an end." A revolution rather than a
+          joining: the Ambastory overthrew the Quasa'an dynasty's Terrorlords.
+    note: >-
+      Gliese 673, as the colony table has it.
+
+  - name: Ross 614
+    kind: system
+    system: Ross 614
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/4ba1f99323bf1
+    location:
+      star: Ross 614 A
+    events:
+      - year_at: 750
+        kind: settled
+        precision: circa
+        note: >-
+          "Colonised Approximately 750 AT" Colonised by the non-human aioids
+          later identified as the PackRat Spores, not on the roster; see
+          unplaced. By the PackRat Spores, no polity of this file.
+    note: >-
+      Ross 614 A, as the colony table has it.
+
+  - name: Gaigent
+    kind: system
+    system: Gaigent
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/4e27f79396fda
+    location:
+      star: HD 4628
+    events:
+      - year_at: 900
+        kind: observed
+        precision: not_later_than
+        note: >-
+          "As early as the 9th century A.T an atypical radiation signature
+          from the system was detected." At the time interpreted as Diamond
+          Belt megastructure construction, an interpretation the article does
+          not confirm; polity left blank. Diamond Belt is not on the roster,
+          see unplaced. The radiation signature that led to the system being
+          noticed; the article names no observer.
+    note: >-
+      HD 4628, as the colony table has it.
+
+  - name: Anahita
+    kind: system
+    system: Anahita
+    affiliations: [metasoft]
+    article: https://www.orionsarm.com/eg-article/45f0d621c1174
+    location:
+      star: Gliese 249
+    events:
+      - year_at: 3805
+        kind: transferred
+        polity: metasoft
+        precision: not_earlier_than
+        note: >-
+          "After the war the system was awarded to Metasoft where it became an
+          independent module; it is to a large extent the biont gateway to
+          Metasoft today." The war is the Geminga Orthodoxy fleet's attack
+          begun in 3799, whose siege 'lasted till 3805'; the award is dated
+          only as following that war. 'After the war' of 3799-3805; the
+          original colonisation by the Dionysan Erotocracy, and the Conver
+          Ambi's holding, are undated.
+    note: >-
+      Gliese 249, as the colony table has it.
+
+  - name: Cythera
+    kind: system
+    system: Cythera
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/4648fef23d4e6
+    location:
+      star: HD 190771
+    events:
+      - year_at: 1958
+        kind: settled
+        note: >-
+          "Colonised by the Ypperbach clade in 1958 AT." Holder is a clade
+          (the Ypperbach, who became the Cythera clade), not a polity on the
+          roster. The Ypperbach clade, no polity of this file; the panel's
+          allegiance is independent.
+    note: >-
+      HD 190771, as the colony table has it.
+
+  - name: Lux
+    kind: system
+    system: Lux
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/468d9486eaa11
+    location:
+      star: Kappa1 Ceti
+    events:
+      - year_at: 1503
+        kind: settled
+        note: >-
+          "Reached 1503, by Parthene colonists" Body text corroborates: 'the
+          sites of early Terragen habitation in this system, primarily in form
+          of habitats established by Parthene colonists that arrived in 1503'.
+          The Parthene colonists are not a polity on the roster. Parthene
+          colonists, no polity of this file; mainly aligned since with the
+          MPA, the Solar Dominion and the Fomalhaut Acquisition Society,
+          undated.
+    note: >-
+      Kappa1 Ceti, as the colony table has it.
+
   - name: Huanghua
     kind: system
     system: Huanghua
@@ -4453,6 +4679,23 @@ worlds:
     article: https://www.orionsarm.com/eg-article/4d5d92f9dcd6d
     location:
       star: Beta Arae
+    events:
+      - year_at: 4200
+        kind: settled
+        polity: technorapture-hypernation
+        note: >-
+          "Shangdu was established by TRHN AIs and Utopia Sphere archai in
+          4200 as a way of allowing Utopian modosophont citizens the chance to
+          ascend ." Joint venture; recorded once for each founding polity. A
+          joint venture of the two; the second entry is the same sentence for
+          the Utopia Sphere.
+      - year_at: 4200
+        kind: settled
+        polity: utopia-sphere
+        note: >-
+          "Shangdu was established by TRHN AIs and Utopia Sphere archai in
+          4200 as a way of allowing Utopian modosophont citizens the chance to
+          ascend ." Joint venture; recorded once for each founding polity.
     note: >-
       In the Beta Arae system, in the Middle Regions. Held jointly by the
       Utopia Sphere and the TRHN, the TechnoRapture HyperNation.
@@ -7425,6 +7668,22 @@ worlds:
       dec_deg: -47.8421
       distance: 1783 ly
       near: Burdosa
+    events:
+      - year_at: 5010
+        kind: settled
+        polity: negentropy-alliance
+        note: >-
+          "Former Negentropy world, colonised in 5010 AT."
+      - year_at: 5424
+        kind: transferred
+        polity: paradigm
+        note: >-
+          "Burosa was attacked by the Efficiency Maximisation Paradigm and
+          'optimized' in 5424 AT; almost the entire population of the system
+          was forcibly uploaded and stored as data, while the Paradigm began a
+          prorgam of intensive megaengineering ." Almost the entire population
+          forcibly uploaded; released and restored elsewhere after the
+          Paradigm's containment.
     note: >-
       Around the star Burdosa. The article's coordinates fall in Centaurus, as
       it says. The article spells the structure Budrosa and the star Burdosa;
@@ -7667,6 +7926,15 @@ worlds:
       dec_deg: 20.2583
       distance: 3641 ly
       near: NGC 6802
+    events:
+      - year_at: 8155
+        kind: settled
+        polity: the-transcend
+        note: >-
+          "Transcend archailect exploration and construction swarms arrived in
+          the system 8155AT centuries before any other exploration team."
+          'Arrived', which the reader flagged; the panel's parent empire is
+          the Transcend.
     note: >-
       NGC 6802, and the largest catalogue disagreement this file has recorded:
       the article says 3,641 ly and the cluster catalogue 9,031, two and a half
@@ -8955,6 +9223,12 @@ worlds:
     events:
       - year_at: 5502
         kind: settled
+      - year_at: 5502
+        kind: settled
+        note: >-
+          "It was colonised in 5502 AT by a colonisation fleet from Criw-Ta, a
+          Cygexpa client world ." Colonists from Criw-Ta, 'a Cygexpa client
+          world'; the article does not name Cygexpa as the holder.
     note: >-
       Near NGC 6885 in Vulpecula at 1,954 ly. That designation is one of
       astronomy's tangled ones: this map's catalogue attaches the name to a deep
@@ -9475,6 +9749,10 @@ worlds:
       - year_at: 3219
         kind: visited
         note: Reached.
+      - year_at: 3219
+        kind: visited
+        note: >-
+          "Reached: 3219 AT"
     note: In Piscis Austrinus at 762 ly.
 
   - name: Tytalus

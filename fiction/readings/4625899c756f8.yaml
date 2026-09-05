@@ -1,0 +1,24 @@
+article: 4625899c756f8
+title: "Caph (Beta Cassiopeiae)"
+events:
+  - year_at: 1532
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Beta Cassiopeiae, known as Caph, 54.7 light-years from Sol, was colonized in 1532 AT using seed ships and parental vecs, and a successful vec-biont hybrid civilization developed there, nominally aligned with the Solar Dominion ."
+    note: "The sentence gives the colonization date, but the 'nominally aligned with the Solar Dominion' clause is not clearly dated to 1532 itself; recorded separately below under holder_undated."
+holder_undated:
+  - polity: solar-dominion
+    quote: "Beta Cassiopeiae, known as Caph, 54.7 light-years from Sol, was colonized in 1532 AT using seed ships and parental vecs, and a successful vec-biont hybrid civilization developed there, nominally aligned with the Solar Dominion ."
+  - polity: solar-dominion
+    quote: "Allegiance : Mostly either independent or Solarist ."
+unplaced: []
+contradictions: []
+other_places:
+  - "Achird A+B - 'Several systems in the Cassiopeia direction, such as Achird , were colonized in this fashion.'"
+doubts:
+  - "\"One of the methods used by the Federation of Sophonts to allow colonization of distant systems was the seed ship...\" -- 'Federation of Sophonts' is a First Federation alias on the roster (first-federation), and Caph's own 1532 AT colonization used this same seed-ship method, but the sentence describing Caph's colonization does not itself name a polity, so no polity was inferred for the settled event."
+  - "\"the system became cut off during the Version War , suspected by both the Dominion and by Metasoft of treachery; the civilization did not re-establish contact with the Sephirotic civilization after the War.\" -- no year is given for this loss of contact, so no independent/transferred event was recorded despite it reading as a break from Solar Dominion alignment."
+  - "\"In 5409, the star flared catastrophically. ... The collapse of the Caph civilization followed.\" -- this reads as a major turning point but the panel still shows a current population of 1.7 billion, so it does not clearly meet the 'abandoned' definition (everyone left or died); no event kind fit cleanly, so none was recorded."

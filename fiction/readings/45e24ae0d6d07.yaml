@@ -1,0 +1,33 @@
+article: 45e24ae0d6d07
+title: "Keid (40 Eridani)"
+events:
+  - year_at: 789
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The first wave of colonists were refugees from the Technocalypse who arrived in 789 AT in arkships built by GAIA ."
+    note: ""
+holder_undated:
+  - polity: eridanus-league
+    quote: "The colonies joined the Eridanus League soon after they received the famous Charter Transmission."
+  - polity: eridanus-league
+    quote: "Affiliation Former member of Eridanus League , now NoCoZo ."
+  - polity: nocozo
+    quote: "Affiliation Former member of Eridanus League , now NoCoZo ."
+  - polity: nocozo
+    quote: "B and C This red dwarf / white dwarf pair has major Sephirotic Intelligent Super Object (ISO) installations in orbit around them, affiliated to the NoCoZo and the Communion of Worlds"
+  - polity: communion-of-worlds
+    quote: "B and C This red dwarf / white dwarf pair has major Sephirotic Intelligent Super Object (ISO) installations in orbit around them, affiliated to the NoCoZo and the Communion of Worlds"
+unplaced:
+  - name: "GAIA"
+    quote: "The first wave of colonists were refugees from the Technocalypse who arrived in 789 AT in arkships built by GAIA ."
+  - name: "TakiCorb"
+    quote: "The original colonists were joined by a fleet organised by TakiCorb which arrived in 1100 AT."
+contradictions: []
+other_places:
+  - "Twilight (separate article) - 'See also the separate article on Twilight here.'"
+doubts:
+  - "Fleet organised by TakiCorb arriving in 1100 AT joined colonists already settled since 789 AT; not a new settlement or a change of holder, so not recorded as an event. Quote: \"The original colonists were joined by a fleet organised by TakiCorb which arrived in 1100 AT.\""
+  - "\"Twilight ... became an important Inner Sphere world after the fall of the Eridanus League.\" -- no year given and no explicit new holder stated, so not recorded as a transferred/independent event."

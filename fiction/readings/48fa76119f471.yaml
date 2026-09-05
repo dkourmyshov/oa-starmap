@@ -1,0 +1,17 @@
+article: 48fa76119f471
+title: Vaishali (Tau Boötis)
+events:
+  - year_at: 1993
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Reached 1993"
+    note: ""
+holder_undated: []
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "Body text says Licchavi/Millennium is named partly for \"the arrival date of the first colonists in the Tranquility calendar\", implying an actual settlement tied to a round-numbered year (the name plays on \"millennium\"), but no explicit AT year is given for that arrival in the body, and it is unclear whether it is the same event as the panel's \"Reached 1993\". Recorded above only as visited/reached at the panel's explicit year; the possible settled event is not separately recorded because no year is quoted for it."

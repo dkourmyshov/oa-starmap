@@ -1,0 +1,22 @@
+article: 45f0d621c1174
+title: Anahita (Gliese 249)
+events:
+  - year_at: 3805
+    kind: transferred
+    polity: metasoft
+    precision: not_earlier_than
+    until_at: null
+    where: body
+    quote: "After the war the system was awarded to Metasoft where it became an independent module; it is to a large extent the biont gateway to Metasoft today."
+    note: "The war is the Geminga Orthodoxy fleet's attack begun in 3799, whose siege 'lasted till 3805'; the award is dated only as following that war."
+holder_undated:
+  - polity: conver-ambi
+    quote: "After its dissolution it became part of the Conver Ambi, but retained extensive contacts with other Inner Sphere systems."
+unplaced:
+  - name: "Dionysan Erotocracy"
+    quote: "Anahita was originally colonized by Dionysians during the expansion of the Erotocracy."
+contradictions: []
+other_places: []
+doubts:
+  - "The original colonisation by Dionysians during the Erotocracy's expansion carries no numeric year, only 'during the expansion', so it could not be recorded as a dated event even though it is plainly the settlement of the place."
+  - "'the Geminga Orthodoxy fleet attacked the system in 3799' and 'The seige lasted till 3805' are a battle/siege, not a holder change, so left out as events per the brief; they are the only source for dating the subsequent transfer to Metasoft."

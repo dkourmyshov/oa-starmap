@@ -1,0 +1,28 @@
+article: 4d5d92f9dcd6d
+title: "Shangdu"
+events:
+  - year_at: 4200
+    kind: settled
+    polity: technorapture-hypernation
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Shangdu was established by TRHN AIs and Utopia Sphere archai in 4200 as a way of allowing Utopian modosophont citizens the chance to ascend ."
+    note: "Joint venture; recorded once for each founding polity."
+  - year_at: 4200
+    kind: settled
+    polity: utopia-sphere
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Shangdu was established by TRHN AIs and Utopia Sphere archai in 4200 as a way of allowing Utopian modosophont citizens the chance to ascend ."
+    note: "Joint venture; recorded once for each founding polity."
+holder_undated:
+  - polity: technorapture-hypernation
+    quote: "Affiliation TRHN and Utopia Sphere joint venture"
+  - polity: utopia-sphere
+    quote: "Affiliation TRHN and Utopia Sphere joint venture"
+unplaced: []
+contradictions: []
+other_places: []
+doubts: []

@@ -1,0 +1,40 @@
+article: 4a40c4f0788d9
+title: "Luyten's Star (Gliese 273)"
+events:
+  - year_at: 998
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Reached : 998 by Ako Forward Chaining."
+    note: "Ako Forward Chaining is an AI grouping, not on the roster; see unplaced."
+  - year_at: 998
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Due to its proximity (1.159 light-years at the time of its colonization in 998 AT), it was selected as a backup node for Ako Forward Chaining, an AI grouping that occupied the Procyon system from 500 to 7555 AT."
+    note: "Ako Forward Chaining is an AI grouping, not on the roster; see unplaced."
+holder_undated:
+  - polity: cyberian-network
+    quote: "The now-empty system was quickly claimed by Cyberian Network settlers from Procyon, then the NoCoZo megacorps, and like Procyon the system was split between the two empires."
+  - polity: nocozo
+    quote: "The now-empty system was quickly claimed by Cyberian Network settlers from Procyon, then the NoCoZo megacorps, and like Procyon the system was split between the two empires."
+unplaced:
+  - name: "Ako Forward Chaining"
+    quote: "Reached : 998 by Ako Forward Chaining."
+  - name: "The Fist of Man"
+    quote: "One of the more well known attempts was a multi-pronged onslaught by a radical militant group known as 'The Fist of Man', which began during the dawn of the sixth millennium with the goal of capturing several Luyten worlds."
+  - name: "Procyon Extension"
+    quote: "Another survivor of the Ako Forward Chaining is the Procyon Extension , a breakaway group that left Luyten in 7541 AT and established a daughter empire around YTS 213 015 2, 470 light-years from Sol."
+contradictions: []
+other_places:
+  - "Procyon (Alpha Canis Minoris) - has its own article, referenced as the mother system of Ako Forward Chaining."
+  - "Midnight Pearl - a third Ako Forward Chaining system, has its own article."
+  - "YTS 213 015 2 - the Procyon Extension's daughter empire site, 470 light-years from Sol; different place."
+doubts:
+  - "No year is given for when Cyberian Network settlers and then the NoCoZo megacorps claimed the now-empty system after the Procyon Phenomenon; recorded under holder_undated for lack of a date."
+  - "The Procyon Phenomenon itself, which emptied the system, is referenced but not dated in this article: \"It seemed that Luyten was destined to be an ahuman system forever. However, this expectation was proven wrong with the arrival of the news of the Procyon Phenomenon.\""
+  - "\"In the end, all three Ako Forward Chaining systems were successfully reclaimed.\" does not say by whom or when; not recorded as an event."

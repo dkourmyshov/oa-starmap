@@ -1,0 +1,25 @@
+article: 468d9486eaa11
+title: Lux (Kappa1 Ceti)
+events:
+  - year_at: 1503
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Reached 1503, by Parthene colonists"
+    note: "Body text corroborates: 'the sites of early Terragen habitation in this system, primarily in form of habitats established by Parthene colonists that arrived in 1503'. The Parthene colonists are not a polity on the roster."
+holder_undated:
+  - polity: mutual-progress-association
+    quote: "The Lucian polities are mainly aligned with MPA, Solar Dominion, and Fomalhaut Acquisition Society."
+  - polity: solar-dominion
+    quote: "The Lucian polities are mainly aligned with MPA, Solar Dominion, and Fomalhaut Acquisition Society."
+  - polity: fomalhaut-acquisition-society
+    quote: "The Lucian polities are mainly aligned with MPA, Solar Dominion, and Fomalhaut Acquisition Society."
+unplaced:
+  - name: "Parthene colonists"
+    quote: "Reached 1503, by Parthene colonists"
+contradictions: []
+other_places: []
+doubts:
+  - "Lux is 'home to 2.594 trillion sophonts organized into 10,375 polities' of its own, mostly overseen by a local 'Council of Four Great Dome Cables' not on the roster; the alignment with MPA, Solar Dominion and Fomalhaut Acquisition Society is loose ('mainly aligned with') rather than a stated transfer or joining, so it is recorded only as holder_undated, not as a transferred event."

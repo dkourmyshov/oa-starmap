@@ -1,0 +1,19 @@
+article: 4e26e0f62441a
+title: Transcend Seven
+events:
+  - year_at: 8155
+    kind: settled
+    polity: the-transcend
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Transcend archailect exploration and construction swarms arrived in the system 8155AT centuries before any other exploration team."
+    note: ""
+holder_undated:
+  - polity: the-transcend
+    quote: "Parent Empire The Transcend"
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "Arrival of Transcend archailect swarms in 8155 AT is recorded as `settled` because the intelligences stayed and transformed the system, though the sentence's verb is 'arrived' rather than an explicit settlement claim; a reviewer may prefer `visited`."
