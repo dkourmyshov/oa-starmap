@@ -1,0 +1,33 @@
+article: 4ed124d17ba7a
+title: Nathan
+events:
+  - year_at: 1490
+    kind: settled
+    polity: first-federation
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Colonised in 1490 by First Federation venturers the Kontore League."
+    note: ""
+  - year_at: 2145
+    kind: independent
+    polity: first-federation
+    precision: exact
+    until_at: null
+    where: body
+    quote: "However the First Federation was rapidly losing power and becoming irrelevant; in 2145 AT the FedRep withdrew from this system"
+    note: "The sentence describes the First Federation's local representative (FedRep) withdrawing as the Federation declined, not an explicit secession by the system; classified as independent for lack of a better fit, flagged for review."
+holder_undated:
+  - polity: solar-dominion
+    quote: "During the Version War Nathan was occupied by the Solar Dominion"
+unplaced:
+  - name: "Kontore League"
+    quote: "Colonised in 1490 by First Federation venturers the Kontore League."
+  - name: "Palatinate of Ezra"
+    quote: "the self-determining Palatinate of Ezra in the southern hemisphere has a thriving population of nearbaseline humans who reject augmented reality"
+contradictions: []
+other_places: []
+doubts:
+  - "\"this system had been visited by at least one transapient entity from Solsys more than a century before\" (before the 1490 colonisation) gives no explicit AT year, only a relative span, so no dated event was recorded for it."
+  - "The 2145 AT FedRep withdrawal is recorded as kind: independent, but the sentence describes an ambassadorial office leaving rather than the system itself seceding; a reviewer may prefer a different kind or none."
+  - "\"A FedRep AI ambassador set up shop on Zadok III\" (undated) reads like the system becoming a First Federation outpost, but this is not the kind of the polity's own capital, so no capital event was recorded."

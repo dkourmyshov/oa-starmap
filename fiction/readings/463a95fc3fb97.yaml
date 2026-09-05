@@ -1,0 +1,20 @@
+article: 463a95fc3fb97
+title: Conver Ky
+events:
+  - year_at: 1866
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised 1866 AT"
+    note: "No settling polity or group is named in the text for this date."
+holder_undated:
+  - polity: conver-ambi
+    quote: "Conver Ky was the capital of the Conver Ambi up until the Conver War."
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "No AT year is given for when Conver Ky became the Conver Ambi's capital, nor for the Conver War itself, so only a holder_undated entry could be recorded for that relationship."
+  - "\"the reducing atmosphere was terraformed over a period of five centuries by Jovian Ecotech\" is a terraforming milestone, excluded per the brief, and Jovian Ecotech is not a roster polity in any case."

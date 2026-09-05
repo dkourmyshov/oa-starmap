@@ -1,0 +1,27 @@
+article: 47b8e86a2d93c
+title: Mokupuni
+events:
+  - year_at: 3500
+    kind: settled
+    polity: ""
+    precision: circa
+    until_at: null
+    where: body
+    quote: "Mokupuni was originally a small Venus-like planet, modified by Edenist dissident AIs in the 3500's as the site for their own surreal sessile cyber-biosphere."
+    note: "\"Edenist dissident AIs\" and \"Eden\" are not on the polity roster."
+  - year_at: 8999
+    kind: transferred
+    polity: diamond-network
+    precision: exact
+    until_at: null
+    where: body
+    quote: "after nearly a thousand years of negotiations they joined the Diamond Network in 8999, one of the few worlds in the Terragen Sphere to leave the Sephirotics in order to join another metaempire."
+    note: ""
+holder_undated: []
+unplaced:
+  - name: "Eden"
+    quote: "Colony of Eden . with aioid nano-ecology ."
+contradictions: []
+other_places: []
+doubts:
+  - "\"The Mokup-Gran declared themselves neutral before the Version War and only interacted rarely with the rest of the Sephirotic empires\" implies a prior Sephirotic affiliation, but no polity or date is given for it, so no entry was made."

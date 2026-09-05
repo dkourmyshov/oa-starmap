@@ -1,0 +1,27 @@
+article: 5460a5aceb49a
+title: Zallach-Whige
+events:
+  - year_at: 2050
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised 2050 AT"
+    note: "No polity is named for this original colonisation, either in the panel or the body text."
+  - year_at: 8950
+    kind: settled
+    polity: zoeific-biopolity
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The colony in this system was stagnating until the Zoeific Biopolity constructed a McKendree Cylinder (Zallach-Whige) in 8950 AT, and encouraged House Genen to populate it."
+    note: "The system's original 2050 AT colony (moon and gas-giant bubblehabs) already existed and was 'stagnating'; this event is the Zoeific Biopolity's later construction and repopulation of the McKendree cylinder, not the system's first settlement."
+holder_undated: []
+unplaced:
+  - name: "House Genen"
+    quote: "encouraged House Genen to populate it"
+contradictions: []
+other_places: []
+doubts:
+  - "The 2050 AT colonisation and the 8950 AT Zoeific Biopolity cylinder construction are treated as two separate events (first settlement, then a change/expansion of the colony), not a contradiction, since they describe different acts at different dates; a reviewer may wish to confirm this reading."

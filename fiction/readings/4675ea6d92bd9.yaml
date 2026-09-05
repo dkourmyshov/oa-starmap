@@ -1,0 +1,32 @@
+article: 4675ea6d92bd9
+title: Hwii
+events:
+  - year_at: 1432
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Enhanced Dolphin interests settled Hwii in 1432 after the original Nanotech Window colonists had been found extinct."
+    note: "Settling group named as \"Enhanced Dolphin interests\", not a roster polity."
+  - year_at: 1432
+    kind: abandoned
+    polity: ""
+    precision: not_later_than
+    until_at: null
+    where: body
+    quote: "Enhanced Dolphin interests settled Hwii in 1432 after the original Nanotech Window colonists had been found extinct."
+    note: "The earlier Nanotech Window colony had ended by 1432, when Dolphin settlers found it extinct; the actual end date is not given."
+holder_undated:
+  - polity: sophic-league
+    quote: "Politically it allied itself with the Sophic League , even if it is only a lukewarm member."
+unplaced:
+  - name: "Enhanced Dolphin interests"
+    quote: "Enhanced Dolphin interests settled Hwii in 1432 after the original Nanotech Window colonists had been found extinct."
+  - name: "Nanotech Window colonists"
+    quote: "Enhanced Dolphin interests settled Hwii in 1432 after the original Nanotech Window colonists had been found extinct."
+contradictions: []
+other_places:
+  - "Black Acropolis, mentioned as the destination of a 2301 exodus of Hwii dolphins: \"In 2301 the visionary dolph Strange Diver led an exodus far across space to the Black Acropolis , where they formed the hybrid Gerkletoss culture with humans and the xenosophont Ultimates.\""
+doubts:
+  - "No date is given for the original human (Nanotech Window) settlement of Hwii that preceded the 1432 Dolphin arrival, nor for when it ended."

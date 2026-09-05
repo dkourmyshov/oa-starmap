@@ -1152,6 +1152,15 @@ worlds:
     location:
       hip: 93229
       catalogue_from_source: true
+    events:
+      - year_at: 2589
+        kind: settled
+        note: >-
+          "Founded/Colonized: 2589" Panel field gives no polity for the
+          founding date itself; the system's local polity (United Habitats of
+          Medius) and its MPA affiliation appear as separate, undated panel
+          fields. The panel gives the date and the MPA affiliation as separate
+          fields; the United Habitats of Medius is local.
     note: Erg is the primary. HIP 93229 is in Corona Australis at 280 ly.
 
   - name: Tar Vara
@@ -3956,6 +3965,185 @@ worlds:
     note: >-
       Kappa1 Ceti, as the colony table has it.
 
+  - name: Hwii
+    kind: system
+    system: Hwii
+    affiliations: [sophic-league]
+    article: https://www.orionsarm.com/eg-article/4675ea6d92bd9
+    location:
+      star: Zeta Tucanae
+    events:
+      - year_at: 1432
+        kind: abandoned
+        precision: not_later_than
+        note: >-
+          "Enhanced Dolphin interests settled Hwii in 1432 after the original
+          Nanotech Window colonists had been found extinct." The earlier
+          Nanotech Window colony had ended by 1432, when Dolphin settlers
+          found it extinct; the actual end date is not given. The Nanotech
+          Window colony, found extinct; its own dates are not given.
+      - year_at: 1432
+        kind: settled
+        note: >-
+          "Enhanced Dolphin interests settled Hwii in 1432 after the original
+          Nanotech Window colonists had been found extinct." Settling group
+          named as "Enhanced Dolphin interests", not a roster polity. Enhanced
+          Dolphin interests, no polity of this file.
+    note: >-
+      Zeta Tucanae, as the colony table has it.
+
+  - name: Xdim
+    kind: system
+    system: Xdim
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/46f1daaa9d1d4
+    location:
+      star: GJ 1105
+    events:
+      - year_at: 5500
+        kind: settled
+        precision: circa
+        note: >-
+          "Xdim was colonized in the 5500's by Xdim Euhabi, a corporation-sect
+          maintaining the computronium habitats of uploaded bionts." Xdim
+          Euhabi, a corporation-sect, no polity of this file.
+    note: >-
+      GJ 1105, as the colony table has it.
+
+  - name: Conver Ky
+    kind: system
+    system: Conver Ky
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/463a95fc3fb97
+    location:
+      star: 37 Geminorum
+    events:
+      - year_at: 1866
+        kind: settled
+        note: >-
+          "Colonised 1866 AT" No settling polity or group is named in the text
+          for this date. The panel names no settler; capital of the Conver
+          Ambi 'up until the Conver War', undated.
+    note: >-
+      37 Geminorum, as the colony table has it.
+
+  - name: Neo-Helix
+    kind: system
+    system: Neo-Helix
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/46cf87ac11567
+    location:
+      star: 36 Ophiuchi C
+    events:
+      - year_at: 1191
+        kind: settled
+        note: >-
+          "Colonised: 1191 AT" No settling polity or group is named at this
+          line; "Clan Yall from House Genen" is credited elsewhere with
+          designing the ecosystem, but the text does not tie that credit to
+          this date. The Zoeific Biopolity assumed its management after the
+          Age of Crisis, undated.
+    note: >-
+      36 Ophiuchi C, as the colony table has it.
+
+  - name: Peta Dromanis
+    kind: system
+    system: Peta Dromanis
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/47bf81960a439
+    location:
+      star: 12 Ophiuchi
+    events:
+      - year_at: 2278
+        kind: settled
+        note: >-
+          "Colonised 2278 AT" The article calls the system non-aligned.
+    note: >-
+      12 Ophiuchi, as the colony table has it.
+
+  - name: Alpha Centauri
+    kind: system
+    system: Alpha Centauri
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/487146f744c8e
+    location:
+      star: Alpha Centauri A
+    events:
+      - year_at: 206
+        kind: visited
+        note: >-
+          "the worlds of Alpha Centauri A+B were named by the exploration team
+          which mapped them in 206 a.t" The exploration/naming team's
+          affiliation is not stated here.
+      - year_at: 283
+        kind: settled
+        note: >-
+          "Colonized: 283 a.t." This figure sits under "Polity Name:
+          Cenaurinume Coalition" in the panel; Cenaurinume Coalition is not on
+          the polity roster. Under the Cenaurinume Coalition, no polity of
+          this file; the Von Neumann probes' later declaration of independence
+          is undated.
+    note: >-
+      Alpha Centauri A, as the colony table has it.
+
+  - name: Nathan
+    kind: system
+    system: Nathan
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/4ed124d17ba7a
+    location:
+      star: HD 55575
+    events:
+      - year_at: 1490
+        kind: settled
+        polity: first-federation
+        note: >-
+          "Colonised in 1490 by First Federation venturers the Kontore
+          League." The Kontore League, First Federation venturers, no polity
+          of this file.
+      - year_at: 2145
+        kind: independent
+        note: >-
+          "However the First Federation was rapidly losing power and becoming
+          irrelevant; in 2145 AT the FedRep withdrew from this system" The
+          sentence describes the First Federation's local representative
+          (FedRep) withdrawing as the Federation declined, not an explicit
+          secession by the system; classified as independent for lack of a
+          better fit, flagged for review. The Federation's representative
+          withdrew; read as the end of its holding, which the article does not
+          call a secession.
+    note: >-
+      HD 55575, as the colony table has it.
+
+  - name: Zallach-Whige
+    kind: system
+    system: Zallach-Whige
+    affiliations: [zoeific-biopolity]
+    article: https://www.orionsarm.com/eg-article/5460a5aceb49a
+    location:
+      star: Chi Eridani A
+    events:
+      - year_at: 2050
+        kind: settled
+        note: >-
+          "Colonised 2050 AT" No polity is named for this original
+          colonisation, either in the panel or the body text.
+      - year_at: 8950
+        kind: settled
+        polity: zoeific-biopolity
+        note: >-
+          "The colony in this system was stagnating until the Zoeific
+          Biopolity constructed a McKendree Cylinder (Zallach-Whige) in 8950
+          AT, and encouraged House Genen to populate it." The system's
+          original 2050 AT colony (moon and gas-giant bubblehabs) already
+          existed and was 'stagnating'; this event is the Zoeific Biopolity's
+          later construction and repopulation of the McKendree cylinder, not
+          the system's first settlement. A second settlement of a stagnating
+          colony, with House Genen, no polity of this file, encouraged to
+          populate the cylinder.
+    note: >-
+      Chi Eridani A, as the colony table has it.
+
   - name: Huanghua
     kind: system
     system: Huanghua
@@ -4826,6 +5014,12 @@ worlds:
     article: http://www.orionsarm.com/eg-article/4871893629b5e
     location:
       star: Beta Virginis
+    events:
+      - year_at: 868
+        kind: settled
+        note: >-
+          "Colonized: 868 A.T." No system-wide holder; the article names
+          protectorates and affiliations world by world, undated.
     note: Beta Virginis, 36 ly.
 
   - name: Pacifica
@@ -6643,6 +6837,12 @@ worlds:
       dec_deg: 6.5204
       distance: 1725 ly
       near: HD 169007
+    events:
+      - year_at: 6419
+        kind: settled
+        note: >-
+          "Colonised 6419at" The Clouds, a foghood civilisation, give the date
+          and 'no hint of the origin or nature of their founders'.
     note: >-
       A K2 star of 95 Sols, also TYC 444-2457-1 and HD 169007 — which is not in
       this map's catalogue, so the article's own coordinates place it.
@@ -7782,6 +7982,26 @@ worlds:
     location:
       hip: 101997
       distance: 46.9 ly
+    events:
+      - year_at: 3500
+        kind: settled
+        precision: circa
+        note: >-
+          "Mokupuni was originally a small Venus-like planet, modified by
+          Edenist dissident AIs in the 3500's as the site for their own
+          surreal sessile cyber-biosphere." "Edenist dissident AIs" and "Eden"
+          are not on the polity roster. Edenist dissident AIs, no polity of
+          this file.
+      - year_at: 8999
+        kind: transferred
+        polity: diamond-network
+        note: >-
+          "after nearly a thousand years of negotiations they joined the
+          Diamond Network in 8999, one of the few worlds in the Terragen
+          Sphere to leave the Sephirotics in order to join another
+          metaempire." 'One of the few worlds in the Terragen Sphere to leave
+          the Sephirotics' for the Network; its earlier Sephirotic affiliation
+          is undated.
     note: >-
       The third planet of HIP 101997 in Capricornus, at 47.9 ly against the
       article's 46.9. Given as 1.8 ly from Eden, which is not a place this map
@@ -7858,6 +8078,21 @@ worlds:
     location:
       constellation: Cygnus
       distance: 5102 ly
+    events:
+      - year_at: 9010
+        kind: transferred
+        polity: solipsist-panvirtuality
+        note: >-
+          "by mutual agreement the provisions of the Tragadi Accords were
+          followed, and thus C OB2-12 and others stars, including the multiple
+          star C OB2-8, were assigned to the Solipsist empire in 9010 AT" The
+          article separately states the region 'has been colonised by the
+          Solipsist Panvirtuality' with the Panvirt probes arriving before
+          Cygexpa's, but the only dated claim is this 9010 AT treaty
+          assignment; classified as transferred rather than settled because
+          the sentence describes a formal territorial assignment under the
+          Tragadi Accords. Under the Tragadi Accords; assignment rather than
+          settlement, as the reader flagged.
     note: >-
       A hypergiant of the Cygnus OB2 association, too reddened to appear in the
       catalogues this map loads, so the constellation carries the direction.
@@ -8843,6 +9078,12 @@ worlds:
       - year_at: 2828
         kind: stewardship
         note: Claimed by a Caretaker God.
+      - year_at: 2789
+        kind: visited
+        note: >-
+          "Reached 2789 AT" Panel gives no polity for who reached the system;
+          the world is later claimed by a Caretaker God in 2828, but nothing
+          ties the 2789 arrival itself to a polity.
     note: >-
       In Eridanus at 448 ly, and named twice — Inyanaine and Okerbart both
       appear for the same system.
@@ -9364,6 +9605,16 @@ worlds:
     article: https://www.orionsarm.com/eg-article/464f1e545d058
     location:
       star: Sigma Draconis
+    events:
+      - year_at: 4000
+        kind: settled
+        precision: circa
+        note: >-
+          "This world was inhabited by Mirrored Owl symbiotic swarm-nets,
+          including the entity known as Advection of Pure Drylines during the
+          4000's AT." Inhabiting group is a clade of symbiotic swarm-nets, not
+          a roster polity. The gas dwarf of the Shenjing system, inhabited by
+          the Mirrored Owls' swarm-nets; no polity of this file.
     note: >-
       A neptunian of Shenjing, at Sigma Draconis. Penglai is its moon, and has
       named it as parent since before this entry existed.
@@ -9888,6 +10139,23 @@ worlds:
       - year_at: 2990
         kind: visited
         note: Reached.
+      - year_at: 210
+        kind: observed
+        precision: circa
+        note: >-
+          "Zakdakha was first discovered using the Eyes of Luna in the early
+          3rd century AT." "early 3rd century AT" rendered as circa 210 AT; no
+          polity is named for this remote telescope discovery. With the Eyes
+          of Luna; the early third century, entered as 210.
+      - year_at: 3176
+        kind: visited
+        note: >-
+          "When the first modosophont explorers reached the system in 3176,
+          they dubbed the entity Dakha (meaning "the glittering one" in their
+          constructed language), and named the planet after em." No polity is
+          named for these explorers. The first modosophont explorers; a
+          Caretakerist entity had reached it in 2990, which the entry already
+          carries.
     note: >-
       In Sagitta at 803 ly. The system is not held; its world Zakdakha is, which
       is a distinction the setting draws and this file can carry.

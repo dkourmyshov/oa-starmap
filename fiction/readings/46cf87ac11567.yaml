@@ -1,0 +1,19 @@
+article: 46cf87ac11567
+title: Neo-Helix
+events:
+  - year_at: 1191
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised: 1191 AT"
+    note: "No settling polity or group is named at this line; \"Clan Yall from House Genen\" is credited elsewhere with designing the ecosystem, but the text does not tie that credit to this date."
+holder_undated:
+  - polity: zoeific-biopolity
+    quote: "Later, after the Age of Crisis , the entire nature of this planet's biosphere was changed; the management of the planet was assumed by the Zoeific Biopolity , who re-engineered the planet's environment to increase the stress level, producing an artificial post-apocalyptic scenario which produced many interesting (and sometimes disturbing) results."
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "The Zoeific Biopolity's assumption of management is only dated to \"after the Age of Crisis\", with no AT year given, so it could not be recorded as a dated transferred event."

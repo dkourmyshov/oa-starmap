@@ -1,0 +1,21 @@
+article: 4f55e7a94da54
+title: Cygnus OB2-12
+events:
+  - year_at: 9010
+    kind: transferred
+    polity: solipsist-panvirtuality
+    precision: exact
+    until_at: null
+    where: body
+    quote: "by mutual agreement the provisions of the Tragadi Accords were followed, and thus C OB2-12 and others stars, including the multiple star C OB2-8, were assigned to the Solipsist empire in 9010 AT"
+    note: "The article separately states the region 'has been colonised by the Solipsist Panvirtuality' with the Panvirt probes arriving before Cygexpa's, but the only dated claim is this 9010 AT treaty assignment; classified as transferred rather than settled because the sentence describes a formal territorial assignment under the Tragadi Accords."
+holder_undated: []
+unplaced:
+  - name: "Cygexpa"
+    quote: "long-distance exploration probes were sent by Cygexpa at an early date, the Panvirt probes arrived first"
+contradictions: []
+other_places:
+  - "C OB2-8 (the multiple star also mentioned as assigned to the Solipsist empire in 9010 AT and party to the 10201 AT conflict) appears to have its own article and is not this place."
+doubts:
+  - "\"long-distance exploration probes were sent by Cygexpa at an early date\" gives no AT year, so no event was recorded for Cygexpa's probes; note Cygexpa IS on the roster (cygexpa) so this is only a dating gap, not a missing-polity issue."
+  - "The 10201 AT swarm conflict between Cygnus OB2-12 and C OB2-8 is a battle/incident, not a change of holder, so it was not recorded as an event per the brief."

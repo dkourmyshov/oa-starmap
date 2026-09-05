@@ -1,0 +1,21 @@
+article: 4902eb14ca7bc
+title: Medius
+events:
+  - year_at: 2589
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Founded/Colonized: 2589"
+    note: "Panel field gives no polity for the founding date itself; the system's local polity (United Habitats of Medius) and its MPA affiliation appear as separate, undated panel fields."
+holder_undated:
+  - polity: mutual-progress-association
+    quote: "Affiliation: Mutual Progress Association"
+unplaced:
+  - name: "United Habitats of Medius"
+    quote: "Polity Name: United Habitats of Medius"
+contradictions: []
+other_places: []
+doubts:
+  - "The panel lists 'Founded/Colonized: 2589' as a separate field from 'Polity Name: United Habitats of Medius' and 'Affiliation: Mutual Progress Association'; it is not stated whether the 2589 date belongs to the local polity, the MPA, or simply the system's industrialisation, so no polity was attached to the settled entry."

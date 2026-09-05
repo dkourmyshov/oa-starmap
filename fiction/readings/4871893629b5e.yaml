@@ -1,0 +1,66 @@
+article: 4871893629b5e
+title: Zavijava (Beta Virginis)
+events:
+  - year_at: 868
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonized: 868 A.T."
+    note: "No polity is named for this original colonisation; the system's per-world affiliations described elsewhere postdate the founding of any of those polities."
+holder_undated:
+  - polity: solar-dominion
+    quote: "A Solar Dominion protectorate."
+    note: "Stated for New Africa (Aiball Oh-one)."
+  - polity: solar-dominion
+    quote: "A Solar Dominion protectorate."
+    note: "Stated for New Asia (Aiball One-oh)."
+  - polity: solar-dominion
+    quote: "Technically a Solar Dominion protectorate, although many of the colonies are of TRHN affiliation."
+    note: "Stated for New Europe (Isoai)."
+  - polity: technorapture-hypernation
+    quote: "Technically a Solar Dominion protectorate, although many of the colonies are of TRHN affiliation."
+    note: "Stated for New Europe (Isoai)."
+  - polity: utopia-sphere
+    quote: "Utopia Sphere affiliation, strong links with Oro Mistral and Beta Arae."
+    note: "Stated for New America (Pacifica)."
+  - polity: solar-dominion
+    quote: "Solar Dominion affiliation."
+    note: "Stated for New Australia (Adams)."
+  - polity: solar-dominion
+    quote: "Technically Solar Dominion, although Monroe hab is NoCoZo affiliated, and some of the technorat orbitals are aligned with the TRHN."
+    note: "Stated for New Antarctica (Green)."
+  - polity: nocozo
+    quote: "Technically Solar Dominion, although Monroe hab is NoCoZo affiliated, and some of the technorat orbitals are aligned with the TRHN."
+    note: "Monroe hab specifically, on New Antarctica (Green)."
+  - polity: technorapture-hypernation
+    quote: "Technically Solar Dominion, although Monroe hab is NoCoZo affiliated, and some of the technorat orbitals are aligned with the TRHN."
+    note: "Some technorat orbitals specifically, on New Antarctica (Green)."
+  - polity: deeper-covenant
+    quote: "Deeper Covenant affiliation."
+    note: "Stated for New Luna (Kemp)."
+  - polity: solar-dominion
+    quote: "Nominally Solar Dominion."
+    note: "Stated for New Mars (Vos Post)."
+  - polity: solar-dominion
+    quote: "Joint Solar Dominion / Utopia Sphere affiliation."
+    note: "Stated for New Jupiter (Hale)."
+  - polity: utopia-sphere
+    quote: "Joint Solar Dominion / Utopia Sphere affiliation."
+    note: "Stated for New Jupiter (Hale)."
+  - polity: virginis-combine
+    quote: "Most are member states of the Virginis Combine, and loosely aligned with the Utopia Sphere"
+  - polity: utopia-sphere
+    quote: "Most are member states of the Virginis Combine, and loosely aligned with the Utopia Sphere"
+unplaced:
+  - name: "Pacifica Commonwealth"
+    quote: "the only one of any size being the Pacifica Commonwealth on Pacifica"
+  - name: "House Adams"
+    quote: "Home of House Adams, formerly Adams Helium"
+contradictions: []
+other_places:
+  - "Oro Mistral (mentioned only as a link/relation from Pacifica; has strong links but is not described here)"
+  - "Beta Arae (mentioned as a link from Pacifica and as the destination of the Island Gate stargate; has its own article)"
+doubts:
+  - "This system has ten named worlds (New Africa/Aiball Oh-one, New Asia/Aiball One-oh, New Europe/Isoai, New America/Pacifica, New Australia/Adams, New Antarctica/Green, New Luna/Kemp, New Mars/Vos Post, New Jupiter/Hale, New Saturn/Franklin), several of which (Pacifica, Adams as 'Adams Helium') have their own dedicated Encyclopaedia Galactica articles. Treated here as one place per the header's single map entry (Zavijava [inner_sphere.yaml]) and the brief's rule that several worlds of one system are one place; a reviewer may want to check whether Pacifica or Adams are mapped separately elsewhere."

@@ -1,0 +1,21 @@
+article: 464f1e545d058
+title: Qinglong (world)
+events:
+  - year_at: 4000
+    kind: settled
+    polity: ""
+    precision: circa
+    until_at: null
+    where: body
+    quote: "This world was inhabited by Mirrored Owl symbiotic swarm-nets, including the entity known as Advection of Pure Drylines during the 4000's AT."
+    note: "Inhabiting group is a clade of symbiotic swarm-nets, not a roster polity."
+holder_undated: []
+unplaced:
+  - name: "Mirrored Owl symbiotic swarm-nets"
+    quote: "This world was inhabited by Mirrored Owl symbiotic swarm-nets, including the entity known as Advection of Pure Drylines during the 4000's AT."
+contradictions: []
+other_places:
+  - "Shenjing (Sigma Draconis) System, the system Qinglong orbits within, with its own article: \"Aquean MesoNeptunian planet in the Shenjing (Sigma Draconis) System , orbited by the terraformed moon Penglai . See the Shenjing article for more details.\""
+  - "Penglai, the terraformed moon of Qinglong, which has its own related article."
+doubts:
+  - "\"Qinglong is home to many bubblehabs in the Current Era\" gives no AT year (\"Current Era\" is not a date) so no event was recorded for it."

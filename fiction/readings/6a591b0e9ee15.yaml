@@ -1,0 +1,35 @@
+article: 6a591b0e9ee15
+title: "Zakdakha (Garden World)"
+events:
+  - year_at: 210
+    kind: observed
+    polity: ""
+    precision: circa
+    until_at: null
+    where: body
+    quote: "Zakdakha was first discovered using the Eyes of Luna in the early 3rd century AT."
+    note: "\"early 3rd century AT\" rendered as circa 210 AT; no polity is named for this remote telescope discovery."
+  - year_at: 2990
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The system was first reached in 2990 AT by a Caretakerist entity, which built a new body for emself in the planet's L2 point using asteroid material."
+    note: "The entity is called \"Caretakerist\", not explicitly \"a Caretaker God\"; left unmapped to the caretaker-gods roster id rather than inferring the connection (see doubts)."
+  - year_at: 3176
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "When the first modosophont explorers reached the system in 3176, they dubbed the entity Dakha (meaning \"the glittering one\" in their constructed language), and named the planet after em."
+    note: "No polity is named for these explorers."
+holder_undated: []
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "The entity that reached the system in 2990 AT is called \"Caretakerist\" rather than explicitly \"a Caretaker God\"; a reviewer may wish to decide whether this should instead be a kind: stewardship entry with polity: caretaker-gods, as in comparable articles (e.g. Jirayaka)."
+  - "The Geological History section separately states \"0.007 mya: Terragens reach Zakdakha, transplanting its biota far and wide\" on a million-years-ago timescale, not AT; this appears to be the same arrival already recorded at 2990/3176 AT restated on a different timescale, so it was not logged as a further event."
+  - "\"The remainder of the Tayaksekal system has remained open to settlement, although populations have remained relatively low\" implies settlement occurred at some point but gives no year or polity, so no settled event was recorded for it."

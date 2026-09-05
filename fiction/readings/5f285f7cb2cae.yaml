@@ -1,0 +1,25 @@
+article: 5f285f7cb2cae
+title: "Jirayaka (Garden World)"
+events:
+  - year_at: 2789
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Reached 2789 AT"
+    note: "Panel gives no polity for who reached the system; the world is later claimed by a Caretaker God in 2828, but nothing ties the 2789 arrival itself to a polity."
+  - year_at: 2828
+    kind: stewardship
+    polity: caretaker-gods
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Jirayaka was claimed by a Caretaker God known as Hokumbe in 2828, and remains under eir protection ever since."
+    note: ""
+holder_undated: []
+unplaced: []
+contradictions: []
+other_places:
+  - "Darwin (mentioned only as the life-bearing world where the scientist Jirayaka Mai-risa did her paleoxenology work, including the Jirayakan period there; not otherwise described in this article)."
+doubts: []

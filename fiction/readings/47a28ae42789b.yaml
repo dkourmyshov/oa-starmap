@@ -1,0 +1,28 @@
+article: 47a28ae42789b
+title: Vinculum
+events:
+  - year_at: 6419
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised 6419at"
+    note: ""
+  - year_at: 6419
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Although the Clouds have indicated the date of the foundation of their colony (6419at) they have given no hint of the origin or nature of their founders."
+    note: "The founders' identity and origin are not stated; only the foundation date is given."
+holder_undated: []
+unplaced:
+  - name: "The Clouds"
+    quote: "The Clouds, a nebulous civilisation in the Serpens Sector surrounding an orange giant star"
+contradictions: []
+other_places:
+  - "Gammergan (mentioned as an independently-developed, somewhat similar civilisation some 288ly away; has its own article)"
+  - "Nimbus (mentioned as the site of the inner sphere U-fog civilisation, disputed relation to the Clouds; has its own article)"
+doubts: []

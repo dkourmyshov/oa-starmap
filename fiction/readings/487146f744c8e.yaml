@@ -1,0 +1,34 @@
+article: 487146f744c8e
+title: Alpha Centauri
+events:
+  - year_at: 206
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "the worlds of Alpha Centauri A+B were named by the exploration team which mapped them in 206 a.t"
+    note: "The exploration/naming team's affiliation is not stated here."
+  - year_at: 283
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonized: 283 a.t."
+    note: "This figure sits under \"Polity Name: Cenaurinume Coalition\" in the panel; Cenaurinume Coalition is not on the polity roster."
+holder_undated: []
+unplaced:
+  - name: "Project Frontier"
+    quote: "Alpha Centauri was colonised by Von Neumann Machines (neumanns) affiliated with the Project Frontier in the Solsys Era"
+  - name: "Cenaurinume Coalition"
+    quote: "Polity Name: Cenaurinume Coalition"
+  - name: "Centauri Traders"
+    quote: "The Nearbaseline Human polity known as the Centauri Traders based on Caeneus have negotiated freedom of movement for human-derived species within the Centauri A+B system"
+  - name: "Solar Organisation"
+    quote: "Neutral independent house with formal treaties with the Sephirotic empires, particularly the Solar Organisation and the Terragen Federation; also affiliated with the Metasoft Version Tree and the Silicon Generation"
+contradictions: []
+other_places:
+  - "Proxima Centauri (Alpha Centauri C) (a companion star with its own independent nearbaseline human colony of great antiquity; has its own article and history article)"
+doubts:
+  - "\"The von Neumann replicating robots sent on Project Frontier probes spontaneously declared their independence once they arrived. This error in their programming led to the loss of Alpha Centauri, the closest star system to Sol.\" This reads as an independence/loss-of-holder event, but no year is given for it beyond \"once they arrived\", which may or may not be the same moment as the panel's \"Colonized: 283 a.t.\" No independent event was recorded for it."

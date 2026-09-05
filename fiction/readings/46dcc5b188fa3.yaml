@@ -1,0 +1,16 @@
+article: 46dcc5b188fa3
+title: Noyce
+events: []
+holder_undated:
+  - polity: nocozo
+    quote: "Inner sphere NoCoZo system."
+  - polity: metasoft
+    quote: "During the Version War the system was occupied by Standardizationist forces and became a major regional staging post for Metasoft ."
+unplaced:
+  - name: "Standardizationist forces"
+    quote: "During the Version War the system was occupied by Standardizationist forces and became a major regional staging post for Metasoft ."
+contradictions: []
+other_places: []
+doubts:
+  - "\"In 5379 the system was renamed Noyce, after Chipworth Noyce, a local culture hero\" gives a date but a renaming is not one of the tracked event kinds, so no event was recorded for it."
+  - "The wartime occupation by Standardizationist forces/Metasoft is only dated to \"During the Version War\", with no explicit AT year given in the text, so no dated event could be recorded even though a holder is named."

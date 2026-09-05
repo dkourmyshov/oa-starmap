@@ -1,0 +1,18 @@
+article: 47bf81960a439
+title: Peta Dromanis
+events:
+  - year_at: 2278
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised 2278 AT"
+    note: ""
+holder_undated: []
+unplaced: []
+contradictions: []
+other_places:
+  - "Arkab Prior B - The Necklace (the desert tribes of the Syrtis region fled 12 Ophiuchi and arrived there in the 7000's, becoming the Elsirac Ordinaries; has its own article)"
+doubts:
+  - "Article explicitly calls Peta Dromanis \"A minor non-aligned Inner Sphere system\", but this is a description of statelessness, not a dated transfer or independence event, so no entry was made for it."

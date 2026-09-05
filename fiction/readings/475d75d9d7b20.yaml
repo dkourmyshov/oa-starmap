@@ -1,0 +1,22 @@
+article: 475d75d9d7b20
+title: Outland
+events:
+  - year_at: 2933
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Reached 2933 AT"
+    note: "The panel gives only a \"Reached\" date; the text does not say who reached it or that a colony was established then."
+holder_undated:
+  - polity: solar-dominion
+    quote: "Originally a Solar Dominion protectorate, latterly affiliated with the Zoeific Biopolity ."
+  - polity: zoeific-biopolity
+    quote: "Originally a Solar Dominion protectorate, latterly affiliated with the Zoeific Biopolity ."
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "\"Originally a Solar Dominion protectorate, latterly affiliated with the Zoeific Biopolity\" implies two holder changes but gives no years for either, so no transferred events could be recorded."
+  - "\"First discovered chlorine ecology, apparently seeded by the Halogenics about 780 million years ago\" is a pre-Terragen timescale, not an AT year, and the Halogenics are a species, not a roster polity; not recorded as an event."

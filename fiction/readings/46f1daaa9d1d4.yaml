@@ -1,0 +1,18 @@
+article: 46f1daaa9d1d4
+title: Xdim (GJ 1105)
+events:
+  - year_at: 5500
+    kind: settled
+    polity: ""
+    precision: circa
+    until_at: null
+    where: body
+    quote: "Xdim was colonized in the 5500's by Xdim Euhabi, a corporation-sect maintaining the computronium habitats of uploaded bionts."
+    note: ""
+holder_undated: []
+unplaced:
+  - name: "Xdim Euhabi"
+    quote: "Xdim was colonized in the 5500's by Xdim Euhabi, a corporation-sect maintaining the computronium habitats of uploaded bionts."
+contradictions: []
+other_places: []
+doubts: []
