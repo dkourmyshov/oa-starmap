@@ -132,7 +132,7 @@ def cmd_extract_systems(args: argparse.Namespace) -> int:
         print("Save Encyclopaedia system articles there, one .htm each", file=sys.stderr)
         return 1
 
-    articles, skipped = read_articles(args.pages)
+    articles, skipped = read_articles(args.pages, topics=args.topics)
     rows = worksheet_rows(articles)
     if args.show:
         wanted = set(args.show)
@@ -348,6 +348,11 @@ def main(argv: list[str] | None = None) -> int:
         type=Path,
         default=SOURCES_DIR / "derived" / "systems_history.tsv",
         help="where to write the worksheet",
+    )
+    p_systems.add_argument(
+        "--topics",
+        action="store_true",
+        help="read topic pages too, which is what a polity's own page is",
     )
     p_systems.add_argument(
         "--show",

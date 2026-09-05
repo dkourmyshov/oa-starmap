@@ -288,13 +288,19 @@ def _panel_fields(markup: str) -> list[tuple[str, str, list[dict[str, str]]]]:
     return fields
 
 
-def parse_article(markup: str) -> Article | None:
+def parse_article(markup: str, topics: bool = False) -> Article | None:
     """One saved page, or None where it is not a system article.
 
     The folder holds a few of the alphabetical index pages beside the articles
-    they list; those are topics, and what they date is other articles.
+    they list; those are topics, and what they date is other articles. A
+    polity's own page is a topic too — the Sephirotic empires are filed as
+    topics with an essay and a data panel — and reading those for founding
+    years is what `topics` is for.
     """
-    if _TOPIC_ID.search(markup) or not (found := _ARTICLE_ID.search(markup)):
+    found = _ARTICLE_ID.search(markup)
+    if not found and topics:
+        found = _TOPIC_ID.search(markup)
+    if not found or (not topics and _TOPIC_ID.search(markup)):
         return None
     title_found = _TITLE.search(markup)
     title = _text(title_found.group(1)) if title_found else ""
@@ -362,12 +368,12 @@ def parse_article(markup: str) -> Article | None:
     return article
 
 
-def read_articles(folder: Path) -> tuple[list[Article], int]:
+def read_articles(folder: Path, topics: bool = False) -> tuple[list[Article], int]:
     """Every article in the folder, and how many pages were skipped as topics."""
     articles: list[Article] = []
     skipped = 0
     for path in sorted(folder.glob("*.htm*")):
-        article = parse_article(path.read_text(encoding="utf-8", errors="replace"))
+        article = parse_article(path.read_text(encoding="utf-8", errors="replace"), topics)
         if article is None:
             skipped += 1
         else:

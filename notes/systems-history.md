@@ -143,6 +143,41 @@ In history mode the detail panel says, above the fold, who held the place in
 the year shown and who holds it now, so the colour on the map and the claim
 beneath it can be read together.
 
+### The polity pages themselves
+
+The present polities' own pages are not system articles and were not in the
+corpus. Their ids were harvested from the history timeline's links (36 of the
+47 present polities are linked there by name), the pages fetched into
+`sources/polities` — the site answers a bare fetch with 406 and a browser
+user agent with the page — and the extractor run over that folder with
+`--topics`, since a Sephirotic empire's page is filed as a topic. 423 rows.
+Reading the rows that carry a year with a founding verb, or sit in a data
+panel, settled most of the list in one pass:
+
+- confirmed by the page's own data panel: Solar Dominion 2217, Negentropy
+  Alliance 2465, Sophic League 2345, Refugium Federation 5884, Puppis
+  Democracy 7100;
+- new from the pages: Zoeific Biopolity 1874 (Zoe's appearance, on the
+  owner's reading; the page names no founding as such), Arion Ascendancy
+  7610, Efficiency Maximization Paradigm "before 5285", Silicon Generation
+  1405, Emple-Dokcetics 7541, First Federation 933 to 2099, Second
+  Federation 2531 to 3726, Solsys Organization 3726, Disarchy the 4700s,
+  Xeon "not known before 9210", Orion Federation the 4600s;
+- **page and timeline disagree**, and the page is taken as the polity's own
+  account with the timeline's year kept beside it: the Non-Coercive Zone
+  1598 (timeline 1498), the Crystal Star Domain 4980 (timeline 3670), the
+  Communion of Worlds 2292 (timeline 1989);
+- left unset on purpose: the Cyberian Network, whose panel says "varies
+  according to the account; from 1400 - 3400 a.t."; the Keter Dominion keeps
+  the timeline's 2388, its page dating everything around the founding and
+  not the founding.
+
+Eleven present polities have no linked page yet: Vela, the Ulysses Network,
+the Perseus Principalities, the Seams, the Diamond Network, the Technorapture
+Hypernation, the Far Edge Civilisation, the Iota Network, the Albireo
+Confluence, the Transcend, the Primate Provolution Institute. The Iota
+Network is the one that has already shown on the map.
+
 The early polities from the Encyclopaedia's Historical Polities page are
 entered, twenty-two of them, so that events can name them; they draw nowhere
 until one does. The timeline dates nine: the Eridanus League from 770, the

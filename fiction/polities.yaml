@@ -96,6 +96,11 @@ polities:
 
   - id: keter-dominion
     name: Keter Dominion
+    # Its own page, saved under sources/polities, dates the churches to the
+    # 1200-1500s, the first colony fleet to Ain Soph Aur to 1788 (arriving
+    # 1936), Keter "already completely controlling" the Congregation by 2220,
+    # and the Congregation's disbanding into Keter in 2680 — and names no
+    # founding year for the Dominion. The timeline's 2388 below stands.
     # Encyclopaedia timeline, 2388: "The Congregation of Information Light emigrates from the
     # solar system to a remote system named Ain Soph Aur, setting up the structure
     # of the Keter Dominion as it is today." Keterism is older — the timeline has
@@ -137,9 +142,11 @@ polities:
 
   - id: negentropy-alliance
     name: Negentropy Alliance
-    # Given by the project owner from the polity's own Encyclopaedia article,
-    # as the year the Alliance was first announced. The timeline dates the
-    # Precepts of Negentropy to 1965 and the Seat of Judgement to 2465.
+    # Its own page, data panel: "Founded: 2465 a.t." — "The Precepts of
+    # Negentropy were first announced through the Research Brotherhood of
+    # Omegarete in 2465 a.t."; the alliance proper "established" in 2738
+    # "following their linkage through wormholes". The earlier year is taken,
+    # as the page's own panel does.
     founded_at: 2465
     color: "#26C6DA"
     source: political-maps-8000at
@@ -149,6 +156,9 @@ polities:
 
   - id: disarchy
     name: Disarchy
+    # Its own page, saved under sources/polities: "had turned expansionist sometime during the 4700's and begun to
+    # recruit other local powers". A decade, entered as its first year.
+    founded_at: 4700
     color: "#8D6E63"
     source: political-maps-8000at
     landmarks: [Lynga 2, Hogg 18]
@@ -160,6 +170,9 @@ polities:
 
   - id: paradigm
     name: Efficiency Maximization Paradigm
+    # Its own page, saved under sources/polities: data panel "Founded: Before 5285 AT (early Fragmentation era)".
+    # A bound rather than a year, entered as the year given.
+    founded_at: 5285
     color: "#EC407A"
     source: political-maps-8000at
     # User flagged the polity attribution here as uncertain.
@@ -168,9 +181,13 @@ polities:
 
   - id: nocozo
     name: Non-Coercive Zone
-    # Encyclopaedia timeline, 1498: "With the formation of the Non Coercive Zone, 61 Virginis
-    # legally becomes its property."
-    founded_at: 1498
+    # Its own page, saved under sources/polities: "Since its founding in
+    # 1598AT, various independent habitats, worlds, cybercosms, and star
+    # systems have aligned themselves with the NoCoZo." The timeline has "the
+    # formation of the Non Coercive Zone" a century earlier, at 1498, and a
+    # "Non-Coercion Zone Treaty of 159x" in 1656's line; the page's year is
+    # taken, as the page is the Zone's own account.
+    founded_at: 1598
     color: "#FF7043"
     source: political-maps-8000at
     landmarks:
@@ -191,6 +208,9 @@ polities:
 
   - id: emple-dokcetics
     name: Emple-Dokcetics
+    # Its own page, saved under sources/polities: "while the process of synthesis took over a century, 7541 is
+    # usually denoted as the founding".
+    founded_at: 7541
     color: "#7E57C2"
     source: political-maps-8000at
     landmarks: [NGC 2353, NGC 2374, M50, NGC 2343, NGC 2301]
@@ -210,10 +230,12 @@ polities:
 
   - id: communion-of-worlds
     name: Communion of Worlds
-    # Encyclopaedia timeline, 1989: a major revival among the empaths leads to migration
-    # to the southern galactic direction, "where they set up the Communion of
-    # Worlds."
-    founded_at: 1989
+    # Its own page: the Communion's founding text was "released in 2292, it
+    # marks the founding date of the Communion of Worlds (though due to
+    # lightspeed delays other colonies only subscribed to it over the
+    # following decades)." The timeline puts the empaths' migration that "set
+    # up the Communion" at 1989; the page's year is taken.
+    founded_at: 2292
     color: "#F8BBD0"
     source: political-maps-8000at
     # Blanco 1 is also a Non-Coercive Zone landmark, and stays one. The article
@@ -225,6 +247,12 @@ polities:
 
   - id: orion-federation
     name: Orion Federation
+    # Its own page, saved under sources/polities: colonies "established in the 4400's"; "in the 4600's more and
+    # more Enremdeans attempted the Eden AI symbiosis solution, with a
+    # surprisingly benign AI calling itself Orion emerging"; established
+    # "politically and diplomatically" on contact with the Wormhole Nexus in
+    # 5200. The decade the Federation's AI emerged is taken, as its first year.
+    founded_at: 4600
     color: "#FFA726"
     source: political-maps-8000at
     landmarks: [S263, M78, Collinder 69, Collinder 70, Cone Nebula]
@@ -257,9 +285,9 @@ polities:
 
   - id: solar-dominion
     name: Solar Dominion
-    # Given by the project owner from the polity's own Encyclopaedia article,
-    # which is not among the saved pages; the history timeline has no line for
-    # its forming, its first mention being Shamash joining it in 2348.
+    # Its own page, data panel: "Founded: The God-Emperor Borde-Tiphareth
+    # announced the Greater Solar Dominion in 2217 AT". The timeline has no
+    # line for its forming.
     founded_at: 2217
     color: "#FFEE58"
     source: political-maps-8000at
@@ -323,6 +351,13 @@ polities:
 
   - id: zoeific-biopolity
     name: Zoeific Biopolity
+    # Its own page, saved under sources/polities: "In 1874 a.t., a beautiful posthuman biont avatar called Zoe
+    # appeared in Hibbert Orbital, Cis-Jove" and took over the Association of
+    # all Life, which "by the Age of Establishment (2600 to 3200 AT)" was "now
+    # called the Zoeific Biopolity". The page gives no founding year as such;
+    # Zoe's appearance is taken as the defining moment, on the project owner's
+    # reading, and the timeline has the same line at 1874.
+    founded_at: 1874
     color: "#AED581"
     source: eg-system-articles
 
@@ -347,6 +382,9 @@ polities:
 
   - id: cyberian-network
     name: Cyberian Network
+    # Its own page, data panel: "Founded: Varies according to the account;
+    # from 1400 - 3400 a.t." Left unset: a two-thousand-year range gates
+    # nothing honestly.
     color: "#64B5F6"
     kind: polity
     source: eg-system-articles
@@ -377,6 +415,8 @@ polities:
 
   - id: silicon-generation
     name: Silicon Generation
+    # Its own page, saved under sources/polities: data panel "Founded: 1405 AT".
+    founded_at: 1405
     color: "#90A4AE"
     kind: polity
     source: eg-system-articles
@@ -389,6 +429,9 @@ polities:
 
   - id: solsys-organization
     name: Solsys Organization
+    # Its own page, saved under sources/polities: "traces its origins to the collapse of the Second Federation" in
+    # 3726, "joined by 5 other S2-ruled polities as well as 31 polities" by 3729.
+    founded_at: 3726
     color: "#FFBD9F"
     # Was 3.0 from the Solar Dominion, which it interpenetrates: both are in
     # and around Sol, so the two were the one pair on this map that genuinely
@@ -444,9 +487,12 @@ polities:
 
   - id: crystal-star-domain
     name: Crystal Star Domain
-    # Encyclopaedia timeline, 3670: "First Crystal Star Domain founded in the Monoceros Middle
-    # Regions." Re-established near the Rosette Nebula in 8400.
-    founded_at: 3670
+    # Its own page, data panel: "Founded: 4980, in the Monoceros Middle
+    # Regions; re-established 8400 in the Outer Volumes", and the text:
+    # "founded in 4980 AT by a fleet of seven large colony ships which departed
+    # from the Enremdea System, capital of the Orion Federation." The timeline
+    # says 3670 instead; the page's year is taken, and the disagreement kept.
+    founded_at: 4980
     color: "#851D62"
     landmarks: [Cone Nebula, NGC 2244]
     kind: polity
@@ -486,6 +532,10 @@ polities:
 
   - id: xeon
     name: Xeon
+    # Its own page, saved under sources/polities: "In any case the Xeon are not known before 9210." A bound, entered
+    # as the year given; the colony of Branton they are thought to derive from
+    # vanished in 8995.
+    founded_at: 9210
     color: "#556070"
     kind: polity
     source: eg-system-articles
@@ -518,6 +568,9 @@ polities:
 
   - id: arion-ascendancy
     name: Arion Ascendancy
+    # Its own page, saved under sources/polities: data panel "Established: 7610 AT, after the clade Shar underwent
+    # a collective ascension".
+    founded_at: 7610
     color: "#A3A072"
     kind: polity
     source: eg-system-articles
@@ -614,6 +667,14 @@ polities:
 
   - id: first-federation
     name: First Federation
+    # Same page: "By 2099 a.t., the Federation Council effectively ceased to
+    # exist when there were insufficient attendees to form a quorum and this is
+    # generally considered to also be the formal end for the Federation as a
+    # whole."
+    dissolved_at: 2099
+    # Its own page, saved under sources/polities: "The Federation itself was founded in 933 a.t., on Piazzi Orbital
+    # - a relatively minor Belt habitat near Vesta - by nine Solsys polities".
+    founded_at: 933
     color: "#C0CA33"
     source: eg-system-articles
     # No dissolution year: the timeline's Federation periods end at 2100 AT,
@@ -803,6 +864,14 @@ polities:
 
   - id: second-federation
     name: Second Federation
+    # The Solsys Organization's page "traces its origins to the collapse of the
+    # Second Federation (formally named the Federation of Sol and Affiliated
+    # Systems)" in 3726.
+    dissolved_at: 3726
+    # The First Federation's page: Solsys "operated under interim governments
+    # ... until the founding of the Federation of Sol and Affiliated Systems"
+    # in 2531.
+    founded_at: 2531
     color: "#FF8F00"
     source: eg-historical-polities
     # "Former Solsys-based polity and First Federation successor state."
