@@ -784,8 +784,21 @@ polities:
 
   - id: penglai-empire
     name: Penglai Empire
-    color: "#AEEA00"
+    # A salmon, chosen away from every green: the first choice was a lime that
+    # read as the Zoeific Biopolity's in a ring at low alpha.
+    color: "#EF968F"
     source: eg-historical-polities
+    # Its own article, https://www.orionsarm.com/eg-article/48e8a5fb37a9a:
+    # "developed from the Hsien revolution"; "the term 'the Penglaiese Empire'
+    # is a misnomer, since it was never an unified political group. It was
+    # generally called the 'Penglai Evolution' during its ascendancy"; "became
+    # part of the NoCoZo treaty in 1676"; "the formal end of the Penglaiese
+    # Evolution came in the Shi War 2220-2251", after which "the Reborn
+    # Penglaiese Empire came to rule the Sigma Draconis system. Formally
+    # independent, it quickly became a totally dependent part of the Conver
+    # Ambi", and "eventually dissolved into independent worlds", undated. So no
+    # founding or dissolution year is set: the Evolution's end is 2251, but
+    # the article keeps the name in use after it.
     # "Early superbright-tweak empire, based around Penglai."
 
   - id: second-federation

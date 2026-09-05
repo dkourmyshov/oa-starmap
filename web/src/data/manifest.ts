@@ -498,7 +498,7 @@ export interface FictionData {
 export interface WorldEvent {
   /** Years After Tranquility, the setting's epoch. Never converted to CE. */
   year_at: number;
-  /** visited | settled | contact | stewardship | transferred | reported | abandoned. */
+  /** visited | settled | contact | stewardship | transferred | independent | reported | abandoned. */
   kind: string;
   note: string;
   /** Where the date came from, when not the entry's own article. */

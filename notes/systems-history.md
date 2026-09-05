@@ -153,11 +153,24 @@ Empire to 5855. The rest carry the page's description and no year. The
 Biovirate, not on that page, is entered from the timeline: its capital fell
 in 6009 and its last stronghold surrendered in 6210.
 
-Penglai is the first place read against these: settled 678, the Penglai
-Empire from the Hsien revolt of 1205 at the earliest, under Metasoft
-protection from the Conver Ambi's division in 3943, and the Sophic League's
-after the Version War. The Conver Ambi's control of the Empire between is
-undated by the article and so not an event.
+Penglai is the first place read against these, from its own article and the
+Empire's: settled 678, the Penglai Evolution from the Hsien revolt of 1205 at
+the earliest, the Conver Ambi's from the Shi War's end in 2251 ("formally
+independent, it quickly became a totally dependent part of the Conver Ambi"),
+under Metasoft protection from the Ambi's division in 3943, and the Sophic
+League's after the Version War. Huanghua, read from its article because the
+worksheet listed it as naming the Empire: the First Federation's from 986,
+the Evolution's from 1683, and by 2000 broken away from both the Empire and
+SecureSpace — which needed an event kind of its own, `independent`, for a
+holding that ends with nobody named after it. Glim's secession is the same
+kind. Eight older transfers whose notes named the polity in words now name
+it as an id.
+
+A rule learnt the hard way on Penglai: before entering a polity, grep the
+worksheet for every article that mentions it and read those rows, and fetch
+the polity's own article (the site answers a bare curl with 406; a browser
+user agent gets the page) into `sources/polities/`. The Empire's own article
+and Huanghua's were both there to be read, and the first pass read neither.
 
 ## What the rest of the pass looks like
 

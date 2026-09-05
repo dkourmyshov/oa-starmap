@@ -394,6 +394,24 @@ describe('holdersAt', () => {
     expect([...spans.dissolved]).toEqual([['b', 900]]);
   });
 
+  it('ends a holding when the place breaks away and joins nobody', () => {
+    // Huanghua: the Federation's from 986, the Penglai Evolution's from
+    // 1683, and by 2000 "broke away from both the Penglai Empire and the
+    // SecureSpace interstellar hegemony" — nobody's, and still inhabited.
+    const huanghua = holdingsOf([
+      world({
+        events: [
+          { year_at: 986, kind: 'transferred', polity: 'first-federation', note: '', source: '', until_at: null, precision: 'exact' },
+          { year_at: 1683, kind: 'transferred', polity: 'penglai-empire', note: '', source: '', until_at: null, precision: 'exact' },
+          { year_at: 2000, kind: 'independent', polity: '', note: '', source: '', until_at: null, precision: 'not_later_than' },
+        ],
+      }),
+    ]);
+    expect(holdersAt(huanghua, [], 1300, ended)).toEqual(['first-federation']);
+    expect(holdersAt(huanghua, [], 1800, ended)).toEqual(['penglai-empire']);
+    expect(holdersAt(huanghua, [], 2500, ended)).toEqual([]);
+  });
+
   it('does not make a visitor a holder', () => {
     const callisto = holdingsOf([
       world({

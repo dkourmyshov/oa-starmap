@@ -257,7 +257,7 @@ const HOLDER_KINDS = new Set(['settled', 'transferred', 'capital', 'stewardship'
 export interface Holding {
   /** The year from which these polities hold the place. */
   from: number;
-  /** Empty when the place was abandoned. */
+  /** Empty when the place was abandoned, or broke away and joined nobody. */
   polities: string[];
 }
 
@@ -274,7 +274,7 @@ export function holdingsOf(worlds: WorldEntry[] | undefined): Holding[] {
     for (const event of world.events ?? []) {
       if (event.polity && HOLDER_KINDS.has(event.kind)) {
         out.push({ from: event.year_at, polities: [event.polity] });
-      } else if (event.kind === 'abandoned' && !event.polity) {
+      } else if ((event.kind === 'abandoned' || event.kind === 'independent') && !event.polity) {
         out.push({ from: event.year_at, polities: [] });
       }
     }

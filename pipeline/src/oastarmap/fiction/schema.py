@@ -749,6 +749,7 @@ EVENT_KINDS = frozenset(
         "capital",
         "stewardship",
         "transferred",
+        "independent",
         "reported",
         "abandoned",
     }
@@ -774,6 +775,10 @@ sources actually draw. Duxed was colonised in 1813 and acquired its Caretaker in
                    its settlement nor a change of owner.
 - ``stewardship``  a Caretaker God took the system under protection.
 - ``transferred``  the system changed hands between polities.
+- ``independent``  the system left its polity and joined none. Huanghua "broke
+                   away from both the Penglai Empire and the SecureSpace
+                   interstellar hegemony" by 2000; that is not a transfer, and
+                   it is not an abandonment either, since everyone stayed.
 - ``reported``     the date the setting *records*, where the event itself is
                    known to be earlier. Stanislaw's discovery is reported in
                    9920 and had plainly happened before that.

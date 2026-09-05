@@ -53,6 +53,7 @@ const EVENT_LABEL: Record<string, string> = {
   stewardship: 'taken into stewardship',
   capital: 'became a capital',
   transferred: 'changed hands',
+  independent: 'became independent',
   reported: 'discovery reported',
   abandoned: 'abandoned',
 };

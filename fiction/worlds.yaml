@@ -157,6 +157,7 @@ worlds:
         note: Taken over by a Caretaker God. The initial colonisation attempts are undated.
       - year_at: 4323
         kind: transferred
+        polity: nocozo
         note: Sold to a Non-Coercive Zone business.
     note: >-
       Not a Caretaker system any more, whatever it was between 3780 and 4323:
@@ -621,6 +622,7 @@ worlds:
       - year_at: 4496
         until_at: 4530
         kind: transferred
+        polity: cyberian-network
         note: >-
           Infiltrated and taken over from the Solar Dominion over thirty-four
           years. An infiltration rather than an event, which is why it carries
@@ -805,6 +807,7 @@ worlds:
     events:
       - year_at: 4450
         kind: transferred
+        polity: keter-dominion
         note: >-
           Joined the Keter Dominion. Not a colonisation date — the system was
           settled before that, and by whom is not recorded here.
@@ -2303,6 +2306,7 @@ worlds:
     events:
       - year_at: 9654
         kind: transferred
+        polity: nocozo
         note: Became Non-Coercive Zone property.
     note: A fiery-red brown dwarf.
 
@@ -2697,7 +2701,7 @@ worlds:
       star: HD 223889
     events:
       - year_at: 2638
-        kind: transferred
+        kind: independent
         note: >-
           "The system was a founding member of the Doran Empire, but later
           seceded in 2638." The article names no one it passed to, and gives
@@ -2705,6 +2709,43 @@ worlds:
     note: >-
       HD 223889, an M0 dwarf at 33 ly, as the colony table has it. The present
       affiliation is the table's; the article says only what it left.
+
+  - name: Huanghua
+    kind: system
+    system: Huanghua
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/4978914e5eb57
+    location:
+      star: Gliese 793
+    events:
+      - year_at: 920
+        kind: settled
+        note: '"The vessel left the Solar System in 665 AT, and arrived in 920."'
+      - year_at: 986
+        kind: transferred
+        polity: first-federation
+        note: >-
+          "In 971 an invitation to join the First Federation arrived from
+          Vesta, and after exchanging messages with Penglai, Liu Huanghua
+          joined the Federation in 986."
+      - year_at: 1683
+        kind: transferred
+        polity: penglai-empire
+        note: >-
+          "In 1683 the Penglai Evolution movement reached Sulphur Blossom,
+          causing the ruling Federation faction to collapse." The Empire's own
+          article: the AC+65 6955 colony Sulphur Blossom merged with
+          SecureSpace, which "did not worry the Penglai Hsien".
+      - year_at: 2000
+        kind: independent
+        precision: not_later_than
+        note: >-
+          "By 2000 the world broke away from both the Penglai Empire and the
+          SecureSpace interstellar hegemony."
+    note: >-
+      Gliese 793, an M3 dwarf at 26 ly, as the colony table has it. Liu
+      Huanghua is the world, Sulphur Blossom the colony; the table records no
+      present affiliation and the article names none.
 
   - name: Eden
     kind: planet
@@ -2805,6 +2846,7 @@ worlds:
     events:
       - year_at: 8760
         kind: transferred
+        polity: amalgamation
         note: Fell to the Amalgamation.
     note: >-
       Formerly of the Solar Dominion. The affiliation is the present holder.
@@ -2819,6 +2861,7 @@ worlds:
     events:
       - year_at: 8746
         kind: transferred
+        polity: solar-dominion
         note: >-
           The Solar Dominion arrives to find the system already settled by
           Mydonian Evolution postneumanns, neither aligned nor hostile.
@@ -3066,6 +3109,7 @@ worlds:
     events:
       - year_at: 8761
         kind: transferred
+        polity: amalgamation
         note: Fell to the Amalgamation, a year after Halsokallan.
     note: >-
       In Perseus, from coordinates. Formerly Sophic League; the affiliation is
@@ -3215,9 +3259,19 @@ worlds:
           The Hsien revolt of 1205: "In the following centuries, under Hsien
           leadership, the Penglai planetsiders, the belters, and jovianists
           merged in a solar-system wide empire." The article dates the revolt
-          and not the empire, so this is the earliest it can be. The Conver
-          Ambi later "gained effective control of the Penglai Empire",
-          undated.
+          and not the empire, so this is the earliest it can be. The Empire's
+          own article calls it the Penglai Evolution and has it "part of the
+          NoCoZo treaty in 1676".
+      - year_at: 2251
+        kind: transferred
+        polity: conver-ambi
+        source: https://www.orionsarm.com/eg-article/48e8a5fb37a9a
+        note: >-
+          The Shi War of 2220-2251 ended the Hsien Evolution: "the Reborn
+          Penglaiese Empire came to rule the Sigma Draconis system. Formally
+          independent, it quickly became a totally dependent part of the Conver
+          Ambi." Drawn as the Ambi's, since that is what the article says it
+          was, whatever it was formally.
       - year_at: 3943
         kind: transferred
         polity: metasoft
@@ -3298,6 +3352,7 @@ worlds:
     events:
       - year_at: 3234
         kind: transferred
+        polity: sophic-league
         note: Became part of the League.
 
   - name: Satyaloka
