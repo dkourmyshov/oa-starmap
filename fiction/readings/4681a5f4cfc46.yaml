@@ -1,0 +1,21 @@
+article: 4681a5f4cfc46
+title: "Jensan"
+events:
+  - year_at: 5309
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Sophic League world founded by Jensanist refugees from Neli-Neti , who arrived as hitchikers on a Spacefarer Union ship in 5309 AT."
+    note: "The header labels this 'visited 5309', but the sentence describes refugees founding the world, not merely visiting. No polity is recorded on this entry because the refugees and the Spacefarer Union carrying them are not the Sophic League; see holder_undated."
+holder_undated:
+  - polity: sophic-league
+    quote: "Sophic League world founded by Jensanist refugees from Neli-Neti , who arrived as hitchikers on a Spacefarer Union ship in 5309 AT."
+unplaced:
+  - name: "Spacefarer Union"
+    quote: "who arrived as hitchikers on a Spacefarer Union ship in 5309 AT"
+contradictions: []
+other_places: []
+doubts:
+  - "Kind mismatch: the header calls this 'visited', but the article calls Jensan 'founded' by the refugees who arrived in 5309, which reads as settlement."

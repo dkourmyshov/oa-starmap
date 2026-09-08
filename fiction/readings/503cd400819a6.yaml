@@ -1,0 +1,20 @@
+article: 503cd400819a6
+title: Fiarro Twin Worlds, The
+events:
+  - year_at: 2271
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Allegiance: Non-Coercive Zone (NoCoZo) Colonised: 2271 AT"
+    note: "Panel pairs the current allegiance with the colonisation year on one line, but the body attributes the colonising mission to reconditioned ships from Argelander, not named as a polity, so no settling polity is recorded here."
+holder_undated:
+  - polity: nocozo
+    quote: "This proprietary `face-morphing' technology was a major technological export from the Twin worlds during the Integration , by which time the system had become aligned with the Non-Coercive Zone ."
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "The header lists a second already-dated event, settled 2101, but no year 2101 (or any second settlement date) appears anywhere in the article body or panel; only 2271 AT is stated. Flagging for the reviewer rather than fabricating a quote."
+  - "Whether the panel's 'Colonised: 2271 AT' should be read as colonised BY the NoCoZo (since 'Allegiance: Non-Coercive Zone (NoCoZo)' sits on the same panel line) or is simply the current allegiance stated alongside an undated-by-polity colonisation year. Recorded separately per the no-inference rule; a reviewer may wish to merge them."

@@ -1,0 +1,23 @@
+article: 57b4613e13a25
+title: "Big Ben's World"
+events:
+  - year_at: 3900
+    kind: settled
+    polity: ""
+    precision: circa
+    until_at: null
+    where: body
+    quote: "Early in the 3900s A.T., Big Ben Janson, a minor transapient of the Non-Coersive Zone , created a clade of tweaks with which to colonize a world e was establishing around HD 217086."
+    note: "Big Ben Janson is described as a transapient 'of the Non-Coercive Zone', not as acting for it; the panel calls the system only 'loosely aligned with the NoCoZo', so no polity is recorded on this entry."
+holder_undated:
+  - polity: nocozo
+    quote: "AFFILIATION loosely aligned with the NoCoZo"
+unplaced: []
+contradictions:
+  - about: settlement year
+    quotes:
+      - "already dated: settled 8200"
+      - "Early in the 3900s A.T., Big Ben Janson, a minor transapient of the Non-Coersive Zone , created a clade of tweaks with which to colonize a world e was establishing around HD 217086."
+other_places: []
+doubts:
+  - "The header's 'settled 8200' has no matching settlement sentence; the only text anchored to 8200 is 'By 8200, Big Ben had evidently ascended as e had planned, because e left, abandoning the world and much of the infrastructure e had built, leaving the world in the care of some of eir lieutenants.' That describes the founder's departure and ascension, not a settlement, and the population (55 billion) continued afterwards, so it does not fit 'abandoned' either."

@@ -1,0 +1,30 @@
+article: 464d0eddc8718
+title: "Dorangloon (Gliese 877)"
+events:
+  - year_at: 929
+    kind: settled
+    polity: doran-empire
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Colonised in 929 AT by the Doran clade, in the Gathol , a ship of their own construction."
+    note: ""
+  - year_at: 3890
+    kind: transferred
+    polity: solar-dominion
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Joined the Solar Dominion in 3890."
+    note: ""
+holder_undated:
+  - polity: doran-empire
+    quote: "Capital of the Doran Empire ."
+unplaced: []
+contradictions: []
+other_places:
+  - "Secharia"
+  - "Glim"
+doubts:
+  - "The header also records 'transferred 5855 (terragen-federation)', matching the roster's Doran Empire dissolution year, but the article gives no year for this: 'In the aftermath of the Version War , Dorannok joined the Terragen Federation.' No AT year is attached to that sentence."
+  - "'Capital of the Doran Empire' is stated with no year attached; it may be related to the 929 settlement but is not itself dated as a separate 'capital' event."

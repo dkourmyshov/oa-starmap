@@ -1161,6 +1161,18 @@ worlds:
         kind: settled
         precision: between
         note: Colonised somewhere in this six-hundred-year window.
+      - year_at: 4280
+        kind: settled
+        precision: circa
+        note: >-
+          "Founded : The first colonists arrived in the Late First Federation
+          Era , while the Yas Om arrived during the Integration , around 4280
+          A.T" Only the Yas Om arrival carries an explicit year (circa 4280);
+          the first colonists' arrival is dated only to 'the Late First
+          Federation Era' with no number. The Yas Om are a clade, not a roster
+          polity, so polity is left blank. The Yas Om's arrival 'during the
+          Integration'; the first colonists' arrival 'in the Late First
+          Federation Era' is the map's older range.
     note: >-
       HIP 108036, HD 207958, 87 ly. The source names only the Bayer letter, and
       Capricornus also has a Kappa at 305 ly, so the entry is pinned to a
@@ -1231,6 +1243,20 @@ worlds:
     article: https://www.orionsarm.com/eg-article/4902dd900dbc5
     location:
       star: Xi Scorpii
+    events:
+      - year_at: 2001
+        until_at: 3000
+        kind: transferred
+        polity: mutual-progress-association
+        precision: between
+        note: >-
+          "When the MPA was founded in the third millennium AT, Kiyoshi was
+          one of the first systems to join." Third millennium AT taken as
+          2001-3000; the roster gives the MPA's founding year as 1967, which
+          falls in the second millennium AT, so this sentence appears to
+          conflict with that founding year. The article places the MPA's
+          founding in the third millennium; the timeline has its formation in
+          1967, and the map's founding year follows the timeline.
     note: >-
       A cluster of megastructures at Xi Scorpii, 79 ly. Bound by HD number: the
       star has no Hipparcos entry.
@@ -2047,6 +2073,19 @@ worlds:
     events:
       - year_at: 6210
         kind: settled
+      - year_at: 6304
+        kind: transferred
+        polity: disarchy
+        note: >-
+          "Crucis Corridor Negentropist world subverted by the Neutral Way,
+          declared itself the Disarchy Alliance in 6304, led by the
+          Postscripts of Randomness, as a deliberate parody of Negentropism."
+          Read as describing Gillbank's own system: previously Negentropist-
+          aligned, it declared itself (part of) the Disarchy in 6304. A
+          Negentropist world subverted by the Neutral Way, declaring itself
+          the Disarchy Alliance; the Disarchy's own page has it 'turned
+          expansionist' in the 4700s, which is the founding year the map
+          carries.
     note: >-
       Capital of the Disarchy, and founded a Negentropist world. Neither the
       year it changed hands nor the year it became a capital is given, so only
@@ -2371,6 +2410,19 @@ worlds:
         kind: settled
         precision: not_later_than
         note: Settled by this year, when Big Ben Janson ascended.
+      - year_at: 3900
+        kind: settled
+        precision: circa
+        note: >-
+          "Early in the 3900s A.T., Big Ben Janson, a minor transapient of the
+          Non-Coersive Zone , created a clade of tweaks with which to colonize
+          a world e was establishing around HD 217086." Big Ben Janson is
+          described as a transapient 'of the Non-Coercive Zone', not as acting
+          for it; the panel calls the system only 'loosely aligned with the
+          NoCoZo', so no polity is recorded on this entry. Big Ben Janson, a
+          minor transapient of the Zone, creating a clade to colonise the
+          world; the map's older 'settled 8200' is the year of the founder's
+          ascension and departure.
     note: >-
       In Cepheus at 2,758 ly. Early in the 3900s Big Ben Janson, then a minor
       Non-Coercive Zone transapient, made a clade of tweaks to settle the world
@@ -3474,6 +3526,18 @@ worlds:
         source: "Encyclopaedia timeline, The Age of Crisis"
         note: >-
           Cenote colonised by Solar Dominion .
+      - year_at: 7107
+        kind: settled
+        polity: solar-dominion
+        note: >-
+          "The Solar Dominion long distance linelayer Yucatan arrived in 7107
+          with a micro wormhole and a small cargo of digitised colonists, who
+          were to be given new bodies on arrival." The header labels this
+          event 'visited 7107', but the sentence describes colonists arriving
+          to be embodied and stay, which reads as settlement rather than a
+          visit. The linelayer Yucatan with digitised colonists to be
+          embodied; the map's older 'settled 7017' has no sentence in the
+          article.
     note: >-
       Designated YTS 233-091-0998, which is Orion's Arm's own numbering — and
       the add-on carries that star, so this is placed by an asserted position
@@ -3588,6 +3652,16 @@ worlds:
           "The system was a founding member of the Doran Empire, but later
           seceded in 2638." The article names no one it passed to, and gives
           no date for its settlement.
+      - year_at: 1711
+        kind: settled
+        polity: doran-empire
+        note: >-
+          "Reached : 1711 by colonists from Dorangloon" Dorangloon is a place,
+          not a polity on the roster, and the body only says the first
+          colonists were 'Dorans, from Dorranok'; no polity is confirmed for
+          the settlement itself, per the no-inference rule. Colonists from
+          Dorangloon, the Doran homeworld; the article calls the system a
+          founding member of the Doran Empire, which is the holder entered.
     note: >-
       HD 223889, an M0 dwarf at 33 ly, as the colony table has it. The present
       affiliation is the table's; the article says only what it left.
@@ -5555,6 +5629,17 @@ worlds:
       - year_at: 5309
         kind: visited
         note: Arrival.
+      - year_at: 5309
+        kind: settled
+        note: >-
+          "Sophic League world founded by Jensanist refugees from Neli-Neti ,
+          who arrived as hitchikers on a Spacefarer Union ship in 5309 AT."
+          The header labels this 'visited 5309', but the sentence describes
+          refugees founding the world, not merely visiting. No polity is
+          recorded on this entry because the refugees and the Spacefarer Union
+          carrying them are not the Sophic League; see holder_undated.
+          Jensanist refugees from Neli-Neti, hitchhikers on a Spacefarer Union
+          ship; the map's older 'visited 5309' is this arrival.
 
   - name: Kelarc
     kind: planet
@@ -5619,6 +5704,23 @@ worlds:
       - year_at: 2314
         kind: settled
         precision: not_later_than
+      - year_at: 2314
+        kind: capital
+        polity: sophic-league
+        note: >-
+          "Though the least populated of the three capital systems, New Taylor
+          is by far the oldest, being where the Mutual Aggression Deterrence
+          Accord was signed to form the Sophic League in 2314." The header
+          records this as 'settled 2314', but the article gives no separate
+          arrival/colonisation sentence -- the only dated claim is the signing
+          of the Accord that founded the Sophic League here, making New Taylor
+          a founding capital world. Recorded as kind capital rather than
+          settled; flagging for the reviewer. This also conflicts with the
+          roster's founding year for sophic-league (2345). Where the Mutual
+          Aggression Deterrence Accord was signed, 'the oldest' of the
+          League's three capital systems; the League's own page dates its
+          forming to 2345, which the map carries, and the map's older 'settled
+          2314' is this signing.
     note: HD 69830, in Puppis at 41 ly.
 
   - name: New Zaire
@@ -6490,7 +6592,22 @@ worlds:
         note: Infiltrated by the Amalgamation.
       - year_at: 10348
         kind: abandoned
+        polity: metasoft
         note: Destroyed by Metasoft in response.
+      - year_at: 10348
+        kind: transferred
+        polity: amalgamation
+        note: >-
+          "Despite the protection of the Perseus Arm Defence Organisation ,
+          this colony was infiltrated by the Amalgamation in 10348 AT. The
+          system was rapidly subverted by Amalgamation agents" No kind in the
+          list cleanly fits a hostile infiltration/subversion that was
+          destroyed rather than held; 'transferred' is the closest fit. The
+          header records this as 'contact 10348', but 'contact' is defined as
+          first contact with a resident xenosophont species, which the
+          Amalgamation (an external, hostile infiltrator) does not appear to
+          be. An infiltration despite the Perseus Arm Defence Organisation's
+          protection; the map's older 'contact 10348' is this event.
     note: >-
       The furthest place in this file, and the only one destroyed by the empire
       that built it: Metasoft answered the Amalgamation's infiltration in 10348
@@ -6595,6 +6712,24 @@ worlds:
     events:
       - year_at: 6307
         kind: settled
+      - year_at: 6803
+        kind: transferred
+        note: >-
+          "This world was invaded by the Teleological Tendency in 6803, and
+          the wormholes were subverted by that faction;" Teleological Tendency
+          is not on the roster; see unplaced. Recorded as transferred because
+          control of the system's wormholes actually changed hands, not merely
+          a battle. The Teleological Tendency, a Metasoft faction, no polity
+          of this file.
+      - year_at: 6915
+        kind: transferred
+        note: >-
+          "the Standardists regained control of the system in 6915, but the
+          war continued to be fought in the outer volumes (beyond the reach of
+          the Wormhole Nexus) for at least two hundred years more."
+          Standardists is not on the roster; see unplaced. The Standardists,
+          plausibly Metasoft's mainstream, which the article does not say; the
+          war went on in the outer volumes.
     note: >-
       A distance and no direction, so the article fixes how far away it is and
       nothing else. Recorded and not drawn.
@@ -8018,6 +8153,14 @@ worlds:
     events:
       - year_at: 4879
         kind: visited
+      - year_at: 4879
+        kind: settled
+        polity: orion-federation
+        note: >-
+          "The Erythail system was colonised by the newly emerging Orion
+          Federation in 4879 AT , during the ComEmp period ." 'The newly
+          emerging Orion Federation'; the map's older 'visited 4879' is the
+          panel's 'Reached'.
     note: >-
       Around the star Erythail. The article's coordinates fall in Monoceros, as
       it says.
@@ -8464,6 +8607,22 @@ worlds:
     events:
       - year_at: 680
         kind: settled
+      - year_at: 783
+        kind: visited
+        polity: eridanus-league
+        note: >-
+          "this system was one of the first contacted by the Eridanus League
+          in 783 but declined to join" The system declined to join the
+          Eridanus League, so this is recorded as visited rather than
+          transferred. Contacted by the League, 'but declined to join'.
+      - year_at: 950
+        kind: transferred
+        polity: first-federation
+        precision: not_earlier_than
+        note: >-
+          "After an economic crash in 950, the remaining colonists decided to
+          align themselves with the new First Federation ." 'The new First
+          Federation', after the economic crash of 950.
     note: Ross 248, 10.3 ly out in Andromeda.
 
   # ---- Refugium Federation -------------------------------------------------

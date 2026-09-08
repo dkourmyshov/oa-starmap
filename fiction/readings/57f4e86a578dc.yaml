@@ -1,0 +1,46 @@
+article: 57f4e86a578dc
+title: Rihal (Ross 248)
+events:
+  - year_at: 680
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised 680 by Genetekker Beamrider Network ship."
+    note: "Genetekker Beamrider Network is not on the roster; see unplaced."
+  - year_at: 680
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Colonised by the Beamrider Network in 680AT"
+    note: "Beamrider Network is not on the roster; see unplaced."
+  - year_at: 783
+    kind: visited
+    polity: eridanus-league
+    precision: exact
+    until_at: null
+    where: body
+    quote: "this system was one of the first contacted by the Eridanus League in 783 but declined to join"
+    note: "The system declined to join the Eridanus League, so this is recorded as visited rather than transferred."
+  - year_at: 950
+    kind: transferred
+    polity: first-federation
+    precision: not_earlier_than
+    until_at: null
+    where: body
+    quote: "After an economic crash in 950, the remaining colonists decided to align themselves with the new First Federation ."
+    note: ""
+holder_undated:
+  - polity: solsys-organization
+    quote: "Currently aligned with the Solsys Organisation , this system is mostly populated by space-adapted humans and aioids adapted to withstand the frequent flares."
+unplaced:
+  - name: "Genetekker Beamrider Network"
+    quote: "Colonised 680 by Genetekker Beamrider Network ship."
+  - name: "Beamrider Network"
+    quote: "Colonised by the Beamrider Network in 680AT"
+contradictions: []
+other_places: []
+doubts: []

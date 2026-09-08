@@ -1,0 +1,22 @@
+article: 46709b72c8717
+title: "Hightower"
+events:
+  - year_at: 4715
+    kind: observed
+    polity: deeper-covenant
+    precision: exact
+    until_at: null
+    where: body
+    quote: "When the system was first discovered by the Deeper Covenant in 4715 AT it was orbited by 18 moons of various sizes, ranging from some 2000km in diameter down to captured asteroids a few kilometers across."
+    note: ""
+holder_undated:
+  - polity: deeper-covenant
+    quote: "Primary world within the Realm , part of the Deeper Covenant , 759 ly from Sol."
+unplaced: []
+contradictions: []
+other_places:
+  - "The Realm"
+  - "Dam Tellion"
+doubts:
+  - "The header says 'filed under: (no polity)', but the article and its breadcrumb (Galactography > Other Major Polities, Empires, and Meta-Empires > Deeper Covenant) both attribute the system to the Deeper Covenant, including the discovery event itself."
+  - "Colonisation is described only relatively ('initially colonized and developed in a fairly standard manner in its first two centuries of habitation'), with no anchor year for when settlement itself occurred, only for the 4715 discovery."

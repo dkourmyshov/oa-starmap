@@ -1,0 +1,40 @@
+article: 4703bd784536b
+title: Proden
+events:
+  - year_at: 6307
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "This system was colonised in 6307, and connected to the Wormhole Nexus in 6700."
+    note: "The article calls Proden 'An important Metasoft world' but does not say Metasoft did the colonising, so no polity is recorded on this event; see holder_undated. The 6700 wormhole connection is not one of the listed event kinds."
+  - year_at: 6803
+    kind: transferred
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "This world was invaded by the Teleological Tendency in 6803, and the wormholes were subverted by that faction;"
+    note: "Teleological Tendency is not on the roster; see unplaced. Recorded as transferred because control of the system's wormholes actually changed hands, not merely a battle."
+  - year_at: 6915
+    kind: transferred
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "the Standardists regained control of the system in 6915, but the war continued to be fought in the outer volumes (beyond the reach of the Wormhole Nexus) for at least two hundred years more."
+    note: "Standardists is not on the roster; see unplaced."
+holder_undated:
+  - polity: metasoft
+    quote: "An important Metasoft world, 2200 ly from Sol."
+unplaced:
+  - name: "Teleological Tendency"
+    quote: "This world was invaded by the Teleological Tendency in 6803, and the wormholes were subverted by that faction;"
+  - name: "Standardists"
+    quote: "the Standardists regained control of the system in 6915, but the war continued to be fought in the outer volumes (beyond the reach of the Wormhole Nexus) for at least two hundred years more."
+contradictions: []
+other_places: []
+doubts:
+  - "'Standardists' likely names the Metasoft-aligned faction of the Second Vec War (Proden is filed under Metasoft Version Tree), but the article does not equate them, so they are not mapped to metasoft per the no-inference rule."
+  - "Whether the 6803 invasion/6915 recapture should count as 'transferred' events at all, given the brief excludes battles; recorded because the wormholes are explicitly stated as changing hands, but flagged since this reads close to a battle narrative."

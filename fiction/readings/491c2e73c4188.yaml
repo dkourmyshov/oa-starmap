@@ -1,0 +1,18 @@
+article: 491c2e73c4188
+title: "Cenote"
+events:
+  - year_at: 7107
+    kind: settled
+    polity: solar-dominion
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The Solar Dominion long distance linelayer Yucatan arrived in 7107 with a micro wormhole and a small cargo of digitised colonists, who were to be given new bodies on arrival."
+    note: "The header labels this event 'visited 7107', but the sentence describes colonists arriving to be embodied and stay, which reads as settlement rather than a visit."
+holder_undated: []
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "The header also records 'settled 7017', but no sentence in the article gives the year 7017; the only candidate for an earlier, undated arrival is 'the world was almost lifeless when the first explorers arrived from the Solar Dominion.'"
+  - "Kind mismatch: the header calls the 7107 Yucatan arrival 'visited', but the sentence describes colonists staying (see note on that entry)."

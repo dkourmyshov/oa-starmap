@@ -1,0 +1,26 @@
+article: 492312e04cd5e
+title: Mu Capricorni
+events:
+  - year_at: 4280
+    kind: settled
+    polity: ""
+    precision: circa
+    until_at: null
+    where: panel
+    quote: "Founded : The first colonists arrived in the Late First Federation Era , while the Yas Om arrived during the Integration , around 4280 A.T"
+    note: "Only the Yas Om arrival carries an explicit year (circa 4280); the first colonists' arrival is dated only to 'the Late First Federation Era' with no number. The Yas Om are a clade, not a roster polity, so polity is left blank."
+holder_undated:
+  - polity: keter-dominion
+    quote: "Memetic engineering eased the subsequent tensions, and Keterists brought the system into the fold with promises of economic success which were more or less fulfilled."
+  - polity: keter-dominion
+    quote: "Afterwards the Yas Om transapient Jolgru collected the system and fully integrated it into Keter society."
+  - polity: keter-dominion
+    quote: "s Current allegiance: Keter Dominion"
+unplaced: []
+contradictions: []
+other_places:
+  - "Ain Soph Aur, a neighbouring system that later sent colonists to Mu Capricorni"
+  - "Psi Capricorni and Delta Capricorni, reached from Mu Capricorni by stargate"
+doubts:
+  - "The header records this system's settlement as already dated 1500-2100, but no such range (or any number at all) appears in the article for the first colonists' arrival -- only the qualitative phrase 'the Late First Federation Era'. The First Federation ran 933-2099 per the roster, so 1500-2100 is plausible as an editorial estimate, but it is not a quote from this text; not recorded as an event here, flagged for the reviewer."
+  - "Unclear whether 'the first colonists arrived in the Late First Federation Era' should count as a separate settled event from the Yas Om's circa-4280 arrival in the same panel sentence."

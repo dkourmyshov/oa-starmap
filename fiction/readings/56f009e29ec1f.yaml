@@ -1,0 +1,34 @@
+article: 56f009e29ec1f
+title: Kulshedra
+events:
+  - year_at: 7209
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised: 7209"
+    note: ""
+  - year_at: 7209
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "This planet was colonised in 7209 by the Maastrichtian Corpus , a minor faction of archosaur lauzurogen provolves ."
+    note: "Maastrichtian Corpus is not on the roster; see unplaced."
+holder_undated:
+  - polity: archosaurian-empire
+    quote: "Kulshedra is a world in the Archosaurian Empire, where lizard-like Terragen sophonts have modified themselves for flight."
+unplaced:
+  - name: "Maastrichtian Corpus"
+    quote: "This planet was colonised in 7209 by the Maastrichtian Corpus , a minor faction of archosaur lauzurogen provolves ."
+  - name: "Toh Chi Lok-Nar"
+    quote: "Maastrichtian Corpus came into ideological conflict with the Toh Chi Lok-Nar , and most of the membership were transported on a Cygexpa exploration vessel to a relatively sparsely settled volume of Lacerta 1600 light years outwards from M39."
+  - name: "Jekerk Confederacy"
+    quote: "the dragonrexes of the Jekerk Confederacy, a polity extending over most of the second largest continent and a significant part of the third (Wyck) are less restrained"
+contradictions: []
+other_places: []
+doubts:
+  - "The intro states \"Kulshedra is a world in the Archosaurian Empire\" but the body says of the Limburg traditionalists \"maintain a close relationship with the Archosaurian Empire , although they are not officially members\" -- worth a reviewer's eye on whether Kulshedra is actually held by the Archosaurian Empire."
+  - "\"a wormhole connecting indirectly to the Archaipelago finally arrived in 8707\" -- a connectivity date, not a settlement or transfer of the system itself, so left out of events; flagged in case a reviewer reads it otherwise."

@@ -1,0 +1,19 @@
+article: 45e399a00e9e7
+title: Abruzzen
+events:
+  - year_at: 3644
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Solar Dominion world notable in 3644 AT for being the southernmost world of the Solar Dominion relative to the galactic plane when the famous explorer Killavan Yu-Tang set off from there on a long-range survey of the galactic disc."
+    note: "The header records this as 'settled 3644', but the sentence does not describe an arrival or colonisation at all -- it describes Abruzzen already being a Solar Dominion world in 3644, the year an explorer departed from it on a survey. No settlement/arrival date is stated anywhere in the article. Flagging strongly for the reviewer; polity left blank since Solar Dominion is not said to have settled the world in this year."
+holder_undated:
+  - polity: solar-dominion
+    quote: "Solar Dominion world notable in 3644 AT for being the southernmost world of the Solar Dominion relative to the galactic plane when the famous explorer Killavan Yu-Tang set off from there on a long-range survey of the galactic disc."
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "No sentence in this article describes when or by whom Abruzzen was actually settled; the only year present (3644 AT) marks the departure of an exploratory voyage from an already-established Solar Dominion world, which the header nonetheless records as the settlement date."

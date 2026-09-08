@@ -1,0 +1,19 @@
+article: 46674941b75a2
+title: Halsokallan
+events:
+  - year_at: 8760
+    kind: transferred
+    polity: amalgamation
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Solar Dominion system in the Perseus Arm , fallen to the Amalgamation in 8760."
+    note: ""
+holder_undated:
+  - polity: solar-dominion
+    quote: "Solar Dominion system in the Perseus Arm , fallen to the Amalgamation in 8760."
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "No settlement date is given anywhere in the article -- only the 8760 transfer to the Amalgamation is dated."

@@ -1,0 +1,19 @@
+article: 4e481edb4b523
+title: "'Å' (world)"
+events:
+  - year_at: 2205
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised in 2205 A.T. by Space-Adapted Humans (SAH)"
+    note: "Space-Adapted Humans is a clade, not a polity on the roster, so no polity id is assigned; current allegiance to the Negentropy Alliance is stated separately without a date."
+holder_undated:
+  - polity: negentropy-alliance
+    quote: "Current Allegiance: Negentropy Alliance"
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "\"But the Negentropy Alliance was more successful in appealing to the Authority's keen sense of order and hierarchy, and Å became aligned with that empire instead, contributing both spacecraft and crews to a number of actions in this region.\" -- this reads as a transferred event (joining the Negentropy Alliance), placed \"During the Version War\", but no AT year is given in the text, so it could not be written as a dated event."

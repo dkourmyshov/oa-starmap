@@ -1,0 +1,21 @@
+article: 4667386bcae2b
+title: Halcyon (20 Leonis Minoris)
+events:
+  - year_at: 1402
+    kind: settled
+    polity: first-federation
+    precision: exact
+    until_at: null
+    where: body
+    quote: "First colonized by the Federation of Sophonts in 1402AT."
+    note: "Federation of Sophonts is the roster's 'also called' name for the First Federation."
+holder_undated:
+  - polity: mutual-progress-association
+    quote: "Eventually this system declared for the early MPA and has been a solid member system ever since."
+unplaced: []
+contradictions: []
+other_places:
+  - "Tesseract, a Deeper Covenant crossroads system reached via the Gate Leonis wormhole"
+  - "RN-36-24-b, a resource-rich system reached via the Portal Minoris wormhole"
+doubts:
+  - "'After the collapse of the Federation, Halcyon civilization initially enjoyed a long phase of cultural independence.' has no year attached for when independence began, so no independent event could be recorded even as circa."

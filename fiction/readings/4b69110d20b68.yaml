@@ -1,0 +1,18 @@
+article: 4b69110d20b68
+title: Lam Wai-Chun (Chi Draconis)
+events:
+  - year_at: 4450
+    kind: transferred
+    polity: keter-dominion
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In the 4450 general elections the population chose to join the Keter Dominion and later came to collectively ascend in the 5300's."
+    note: ""
+holder_undated:
+  - polity: penglai-empire
+    quote: "Former member of the Penglai Empire , a cold world orbiting a wide binary star."
+unplaced: []
+contradictions: []
+other_places: []
+doubts: []

@@ -1,0 +1,21 @@
+article: 464ceaad61e78
+title: Djed
+events:
+  - year_at: 1999
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised 1999 AT"
+    note: "No coloniser is named in the panel line itself."
+holder_undated:
+  - polity: mutual-progress-association
+    quote: "Djed Terraformed Venusian planet, capital of the MPA."
+  - polity: mutual-progress-association
+    quote: "Polity Name: Mutual Progress Alliance Affiliation: MPA (Capital)"
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "Djed is called the MPA's capital throughout the article (\"Capital System of the MPA\", \"capital of the MPA\", \"Affiliation: MPA (Capital)\") but no year is given for when it became the capital, so no dated capital entry could be written."

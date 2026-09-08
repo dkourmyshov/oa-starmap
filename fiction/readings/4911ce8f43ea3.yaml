@@ -1,0 +1,23 @@
+article: 4911ce8f43ea3
+title: "Sadalmelik"
+events:
+  - year_at: 4101
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonized : 4101"
+    note: "The panel lists 'Affiliation: Mutual Progress Association' as a separate field, not in the same sentence as the colonisation date, so no polity is recorded on this entry; see holder_undated."
+holder_undated:
+  - polity: mutual-progress-association
+    quote: "Affiliation: Mutual Progress Association ."
+unplaced:
+  - name: "Sadelmelic Alliance"
+    quote: "Polity: Name: Sadelmelic Alliance"
+contradictions: []
+other_places:
+  - "Sadalsuud"
+  - "Enif"
+doubts:
+  - "The panel names several other polities and companies with a presence among the asteroid habitats (NoCoZo, Terragen Federation, Sophic League, the Stellar Umma, and others), with no dates and no clear claim that any of them holds the system as a whole, so none are recorded as holder_undated; the system's own affiliation is stated separately as Mutual Progress Association."

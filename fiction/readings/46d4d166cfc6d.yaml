@@ -1,0 +1,20 @@
+article: 46d4d166cfc6d
+title: New Taylor
+events:
+  - year_at: 2314
+    kind: capital
+    polity: sophic-league
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Though the least populated of the three capital systems, New Taylor is by far the oldest, being where the Mutual Aggression Deterrence Accord was signed to form the Sophic League in 2314."
+    note: "The header records this as 'settled 2314', but the article gives no separate arrival/colonisation sentence -- the only dated claim is the signing of the Accord that founded the Sophic League here, making New Taylor a founding capital world. Recorded as kind capital rather than settled; flagging for the reviewer. This also conflicts with the roster's founding year for sophic-league (2345)."
+holder_undated: []
+unplaced: []
+contradictions: []
+other_places:
+  - "Ararat, one of the other two Sophic League capital worlds named in this article"
+  - "Sacred Heart, one of the other two Sophic League capital worlds named in this article"
+doubts:
+  - "No sentence in this article states when New Taylor itself was first reached or colonised; the only year present (2314) is for the founding of the Sophic League via the Mutual Aggression Deterrence Accord, which the header treats as the settlement date."
+  - "The article's 2314 founding date for the Sophic League does not match the roster's founded year of 2345 for sophic-league; not resolved here."

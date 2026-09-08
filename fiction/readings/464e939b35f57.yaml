@@ -1,0 +1,31 @@
+article: 464e939b35f57
+title: Gillbank
+events:
+  - year_at: 6210
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised 6210 AT"
+    note: ""
+  - year_at: 6304
+    kind: transferred
+    polity: disarchy
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Crucis Corridor Negentropist world subverted by the Neutral Way, declared itself the Disarchy Alliance in 6304, led by the Postscripts of Randomness, as a deliberate parody of Negentropism."
+    note: "Read as describing Gillbank's own system: previously Negentropist-aligned, it declared itself (part of) the Disarchy in 6304."
+holder_undated:
+  - polity: disarchy
+    quote: "Gillbank is a terraformed lacustrian world, currently the capital of the Disarchy."
+  - polity: disarchy
+    quote: "Gillbank remains its formal capital world, although in the current era several systems (such as Evermore and Wolfra) are more economically powerful."
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "The roster gives the Disarchy's founding year as 4700, but this article states the system 'declared itself the Disarchy Alliance in 6304'. Not recorded as an in-article contradiction since the two figures come from different sources (roster vs. article), but flagged for the reviewer."
+  - "The vignette (dated 6252 AT) is in-universe barroom dialogue from an unreliable, self-admittedly conspiracy-minded speaker ('Gatteo Truthsayer') claiming local factions 'have been Negentropist-aligned for centuries' and that orbitals are 'joining the NoCoZo'. Not recorded as a fact-bearing event because it is presented as speculation/rumour within the fiction, not narrated as established history."
+  - "No explicit year is given for when Gillbank itself became the Disarchy's capital, as distinct from the system joining/declaring the Disarchy in 6304; the capital claims are therefore left undated."

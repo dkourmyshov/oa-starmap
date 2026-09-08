@@ -1,0 +1,18 @@
+article: 5620503b1c55a
+title: "New Zaire"
+events:
+  - year_at: 5030
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised: 5030 AT"
+    note: "The following clause states 'New Zaire is a world in the Sophic League', but does not say the Sophic League itself colonised it in 5030, so no polity is recorded on this entry; see holder_undated."
+holder_undated:
+  - polity: sophic-league
+    quote: "New Zaire is a world in the Sophic League which was initially founded by colonists who predominantly traced their ancestry back to Central Africa ."
+unplaced: []
+contradictions: []
+other_places: []
+doubts: []

@@ -1,0 +1,19 @@
+article: 4911a49ba4b44
+title: "Sacred Heart"
+events:
+  - year_at: 3234
+    kind: transferred
+    polity: sophic-league
+    precision: exact
+    until_at: null
+    where: body
+    quote: "became part of the Sophic League in 3234, in the aftermath of the Taurus Nexus breakup"
+    note: ""
+holder_undated: []
+unplaced: []
+contradictions: []
+other_places:
+  - "Ararat"
+  - "New Taylor"
+doubts:
+  - "The transfer is described as happening 'in the aftermath of the Taurus Nexus breakup', which suggests Sacred Heart may have previously belonged to the Taurus Nexus, but the article never states this directly, so no prior-holder entry is recorded."

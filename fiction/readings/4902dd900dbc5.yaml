@@ -1,0 +1,20 @@
+article: 4902dd900dbc5
+title: Kiyoshi
+events:
+  - year_at: 2001
+    kind: transferred
+    polity: mutual-progress-association
+    precision: between
+    until_at: 3000
+    where: body
+    quote: "When the MPA was founded in the third millennium AT, Kiyoshi was one of the first systems to join."
+    note: "Third millennium AT taken as 2001-3000; the roster gives the MPA's founding year as 1967, which falls in the second millennium AT, so this sentence appears to conflict with that founding year."
+holder_undated:
+  - polity: mutual-progress-association
+    quote: "Allegiance Mutual Progress Alliance"
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "\"The Kiyoshi system was actually colonized before the founding of the MPA itself by various groups of 'second generation' colonizers.\" -- states settlement predates the MPA's founding but gives no AT year of its own, so no settled entry with a year_at could be written; the settling group's polity (if any) is also unstated."
+  - "\"When the MPA was founded in the third millennium AT, Kiyoshi was one of the first systems to join.\" -- the stated founding range (2001-3000 AT) does not match the roster's MPA founding year of 1967 AT; flagged for a reviewer rather than resolved here."

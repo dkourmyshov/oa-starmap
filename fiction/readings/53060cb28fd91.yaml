@@ -1,0 +1,20 @@
+article: 53060cb28fd91
+title: Sacredtree
+events:
+  - year_at: 2802
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonized: 2802 a.t."
+    note: "The panel does not itself name a polity as coloniser; current allegiance to the Zoeific Biopolity is recorded separately below without a date."
+holder_undated:
+  - polity: zoeific-biopolity
+    quote: "Current Allegiance: The Zoeific Biopolity"
+unplaced:
+  - name: "Unified Ecopolities"
+    quote: "Name: Unified Ecopolities: Cyber-democratic republic of the major population centers within the system."
+contradictions: []
+other_places: []
+doubts: []

@@ -1,0 +1,24 @@
+article: 466c8fefdbfc5
+title: Harmonic-Resonance
+events:
+  - year_at: 2805
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Double planet in the Sophic League Middle Regions terraformed by Edenese superiors in 2805."
+    note: "The header already dates this system's settlement to 2805; that year is attached here to a terraforming action, not an arrival, and 'Edenese superiors' is not a roster polity, so no polity is recorded."
+holder_undated:
+  - polity: sophic-league
+    quote: "Harmonic-Resonance is in Sophic space, but not closely aligned to that empire, being of neutral/nominal affiliation. It is still a protectorate, although the Sophics rarely proslytise."
+unplaced: []
+contradictions:
+  - about: "colonisation vs. terraforming date"
+    quotes:
+      - "Double planet in the Sophic League Middle Regions terraformed by Edenese superiors in 2805."
+      - "The colonizers were from a few neutral worlds like Eden that set out some centuries earlier."
+other_places: []
+doubts:
+  - "'set out some centuries earlier' gives no numeric year, so the actual first colonisation cannot be dated even as circa, despite apparently predating the 2805 terraforming date the header uses as the settlement year."
+  - "'After the Version War the world remained independent.' has no year attached, so no independent event could be recorded."

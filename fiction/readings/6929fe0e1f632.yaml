@@ -1,0 +1,24 @@
+article: 6929fe0e1f632
+title: Valdern Megastructure
+events:
+  - year_at: 4879
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Reached 4879 AT"
+    note: ""
+  - year_at: 4879
+    kind: settled
+    polity: orion-federation
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The Erythail system was colonised by the newly emerging Orion Federation in 4879 AT , during the ComEmp period ."
+    note: ""
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "The header records this article's already-dated event as 'visited 4879', matching the panel's 'Reached 4879 AT'. But the body states the system was 'colonised by the newly emerging Orion Federation in 4879 AT' in the same year, which is a settled claim, not merely a visit. Both are recorded above; flagging the kind mismatch between header and body for the reviewer."

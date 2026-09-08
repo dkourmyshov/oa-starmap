@@ -1,0 +1,23 @@
+article: 4900d8c15efa3
+title: Fons Luminis (Xi Ursae Majoris)
+events:
+  - year_at: 1204
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Originally colonised in 1204 AT by the Truth-Santaya Network corporation, and named Hesperia , this system was renamed Fons Luminis by Daniel Borde and the Solarese Ecumenical Union of Churches of Light."
+    note: "Truth-Santaya Network corporation is not on the roster, so no settling polity is recorded; see unplaced."
+holder_undated:
+  - polity: solar-dominion
+    quote: "Fons Luminis is the capital of the Solar Dominion , and a significant wormhole junction, with connections to two side branches in addition to the main Nexus ."
+unplaced:
+  - name: "Truth-Santaya Network"
+    quote: "Originally colonised in 1204 AT by the Truth-Santaya Network corporation, and named Hesperia"
+  - name: "Solarese Ecumenical Union of Churches of Light"
+    quote: "this system was renamed Fons Luminis by Daniel Borde and the Solarese Ecumenical Union of Churches of Light"
+contradictions: []
+other_places: []
+doubts:
+  - "No year is given for when the system passed to (or the renaming by) the Solarese Ecumenical Union of Churches of Light, nor for when it became the Solar Dominion capital; both are left as undated notes."

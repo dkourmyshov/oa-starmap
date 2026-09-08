@@ -1,0 +1,20 @@
+article: 4682f1d6cae4b
+title: Jilunan (system)
+events:
+  - year_at: 8925
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised: 8925 AT"
+    note: "The panel line does not itself name a coloniser; affiliation with the Solar Dominion is stated separately without a date."
+holder_undated:
+  - polity: solar-dominion
+    quote: "Affiliation: Dominion (Surya-Ramydos Prefecture)"
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "The header records a 'visited 8925' event as well as 'settled 8925', but no sentence in the article separately describes a visit -- only \"Colonised: 8925 AT\" appears, which was written as the settled entry above. No independent quote could be found for a visited entry."
+  - "\"Jilunan - Text by M. Alan Kazlev (b. 6912 S1 7542 S2 7964 Transcended 8956)\" gives dates for the in-universe author persona's life and ascension, not for the place Jilunan; not treated as an event of the system."

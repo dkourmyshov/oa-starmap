@@ -1,0 +1,32 @@
+article: 47b8e6bd0c7e0
+title: "Modular Future"
+events:
+  - year_at: 10348
+    kind: transferred
+    polity: amalgamation
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Despite the protection of the Perseus Arm Defence Organisation , this colony was infiltrated by the Amalgamation in 10348 AT. The system was rapidly subverted by Amalgamation agents"
+    note: "No kind in the list cleanly fits a hostile infiltration/subversion that was destroyed rather than held; 'transferred' is the closest fit. The header records this as 'contact 10348', but 'contact' is defined as first contact with a resident xenosophont species, which the Amalgamation (an external, hostile infiltrator) does not appear to be."
+  - year_at: 10348
+    kind: abandoned
+    polity: metasoft
+    precision: exact
+    until_at: null
+    where: body
+    quote: "the infection was eradicated when Metasoft caused the self-destruction of all infrastructure, mindstates and data in this system"
+    note: "This sentence carries no year of its own; 10348 is taken from the preceding sentence ('infiltrated ... in 10348 AT'), since the destruction is described as following rapidly. Matches the header's 'abandoned 10348'."
+holder_undated:
+  - polity: metasoft
+    quote: "Metasoft colony in the Perseus Arm ."
+unplaced:
+  - name: "Perseus Arm Defence Organisation"
+    quote: "Despite the protection of the Perseus Arm Defence Organisation , this colony was infiltrated by the Amalgamation in 10348 AT."
+contradictions: []
+other_places:
+  - "Adorate"
+  - "Halsokallan"
+doubts:
+  - "Kind mismatch: the header calls the 10348 Amalgamation event 'contact', but the text describes an external infiltration/subversion of an existing Metasoft colony, not first contact with a resident species (see note on that entry)."
+  - "The abandoned event's year (10348) is inferred from the preceding sentence rather than stated in its own sentence (see note on that entry)."

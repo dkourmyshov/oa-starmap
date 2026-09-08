@@ -1,0 +1,29 @@
+article: 4ce43b81bb70d
+title: Glim (HD 223889)
+events:
+  - year_at: 1711
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Reached : 1711 by colonists from Dorangloon"
+    note: "Dorangloon is a place, not a polity on the roster, and the body only says the first colonists were 'Dorans, from Dorranok'; no polity is confirmed for the settlement itself, per the no-inference rule."
+  - year_at: 2638
+    kind: independent
+    polity: doran-empire
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The system was a founding member of the Doran Empire , but later seceded in 2638."
+    note: "Same sentence also establishes that the system held Doran Empire membership from (undated) founding until the 2638 secession."
+holder_undated:
+  - polity: terragen-federation
+    quote: "After the Version War Glim joined the Terragen Federation , and a number of new factions emerged."
+unplaced: []
+contradictions: []
+other_places:
+  - "Dorangloon (Gliese 877), origin of the colonists per the panel, and its own related article"
+doubts:
+  - "The panel says the colonists came from 'Dorangloon' while the body says the first colonists 'were Dorans, from Dorranok' -- possibly the same place under two spellings, possibly not; not resolved here."
+  - "No year is given for when Glim became a 'founding member of the Doran Empire', only that it seceded in 2638; the roster also has no founding year for doran-empire to cross-check against."
