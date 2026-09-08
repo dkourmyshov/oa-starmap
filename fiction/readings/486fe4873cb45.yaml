@@ -1,0 +1,29 @@
+article: 486fe4873cb45
+title: Kaggen (Gliese 876)
+events:
+  - year_at: 961
+    kind: settled
+    polity: ""
+    precision: not_later_than
+    until_at: null
+    where: panel
+    quote: "Colonized: at an unknown date (before 961 AT) by the ahuman entities known as the Three Kings"
+    note: "The Three Kings are the ahuman AI collective described earlier as 'The Red Dwarf Kings', not a polity on the roster."
+  - year_at: 1141
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "1141 AT by !Kung expedition (leader !Kweiten ta//ken)"
+    note: "Second half of the same combined panel field as the Three Kings entry above; the !Kung expedition is not a polity on the roster."
+holder_undated: []
+unplaced:
+  - name: "Three Kings"
+    quote: "Colonized: at an unknown date (before 961 AT) by the ahuman entities known as the Three Kings"
+contradictions: []
+other_places:
+  - "EZ Aquarii and GL887, named as other systems developed by the Three Kings: 'Territories: Star systems also developed by the Three Kings exist at EZ Aquarii, GL887'"
+doubts:
+  - "Header lists an already-dated 'settled 961', but the panel actually says colonisation was 'at an unknown date (before 961 AT)', so the settlement is recorded here as not_later_than 961 rather than exact."
+  - "Panel: 'AI ethos: Diamond belt isolationism- since 6103 limited contact made with Silicon Generation, the Three Kings have been making unknown information exchanges with the various Inner Sphere Archailects.' This gives a year (6103) for contact with the roster polity Silicon Generation, but it reads as ongoing diplomatic/information contact between two ahuman/AI polities rather than 'first contact with a resident xenosophont species' as defined for the contact kind, so no event was recorded."

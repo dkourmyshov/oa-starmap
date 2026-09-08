@@ -1,0 +1,48 @@
+article: 45eac09bed094
+title: Audubon System, The
+events:
+  - year_at: 1564
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonized 1564 a.t. by the Engenerated Copy Crew (telecopied by laser)"
+    note: "The Engenerated Copy Crew is a colonist group, not a polity on the roster."
+  - year_at: 1564
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The Engenerated Copy Crew were the first humans ever transmitted over a distance of several lightyears by engenerator, arriving in 1564."
+    note: "Restates the panel's 1564 AT colonisation date."
+  - year_at: 7109
+    kind: transferred
+    polity: nocozo
+    precision: not_later_than
+    until_at: null
+    where: body
+    quote: "Both inner system AIs finally entered an accord with the rival Linnent company transapient, O'Brien , in 7109 after the formal absorption of all 4 remaining Linnent Engenerator colonies into the NoCoZo."
+    note: "The accord itself is dated exactly to 7109; the 'formal absorption' it followed is not separately dated, only stated to have preceded it."
+holder_undated:
+  - polity: nocozo
+    quote: "Affiliation Inner Sphere NoCoZo"
+  - polity: linnent
+    quote: "HR 8501A, Capital system of the LinnEnt Empire"
+  - polity: linnent
+    quote: "The paraterraformed moon Tradescant orbits the gas giant Linnaeus, and was the nominal capital of the LinnEnt Empire (an empire built using early engenerator technology)."
+unplaced:
+  - name: "Terranovan Foundation"
+    quote: "Previously Tradescant was an independent company world, the last independent part of the Terranovan Foundation ."
+  - name: "Terranova Foundation"
+    quote: "There they created the Linnaeus Enterprises empire with support from the Terranova Foundation , and Tradescant became more wealthy than the rest of the solar system combined."
+  - name: "Linnaeus Enterprises"
+    quote: "There they created the Linnaeus Enterprises empire with support from the Terranova Foundation , and Tradescant became more wealthy than the rest of the solar system combined."
+contradictions: []
+other_places:
+  - "Gamma Pavonis, named as the origin of a relativistic Zarathustran crew: 'DeBourgainville is a centre for the Zarathustran philosophy, which arrived with a relativistic crew in 4002 from nearby Gamma Pavonis.'"
+doubts:
+  - "Header lists an already-dated 'visited 1392' with no corresponding date anywhere in the article body."
+  - "Body: 'DeBourgainville is a centre for the Zarathustran philosophy, which arrived with a relativistic crew in 4002 from nearby Gamma Pavonis.' This gives a year (4002) for the arrival of a relativistic crew practising Zarathustran philosophy, but they are not a polity, company or empire on the roster, so no event was recorded."
+  - "Body: 'Mediation by Zarathustran philosopher/counsellors prevented the Negentropy 45th relativists from bombarding Audubon with kinetic vapour in 4577 during the Version War.' This is a prevented attack, not a change of holder, so no event was recorded, though the date (4577) and the Negentropy Alliance's involvement may interest a reviewer."

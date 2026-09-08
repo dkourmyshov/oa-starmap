@@ -1,0 +1,21 @@
+article: 4a3bb4ef0f54d
+title: Rufus
+events:
+  - year_at: 1899
+    kind: settled
+    polity: first-federation
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The First Federation colony ship Actaeon, funded by Hantec Inc. from Caneshe Habitat in the Earth's Trojan Point, arrived at HD 114853 in 1899 AT."
+    note: "Header already records this as 'visited 1899'; the prose describes colonists who stayed and began terraforming, which reads as a settlement rather than a mere visit. Written as settled and flagged for review, not resolved."
+holder_undated:
+  - polity: nocozo
+    quote: "Rufus is today loosely aligned with the NoCoZo, at least partly because of the influence of ascended handvecs, and remains as politically mixed as ever."
+unplaced: []
+contradictions: []
+other_places:
+  - "Lupus (a distant gas giant with an ultratech transapient colony, to which some ascended postDogs and postvecs from Rufus have migrated)"
+doubts:
+  - "Header lists this system's dated event as 'visited 1899'; the article's account of the Actaeon's arrival (colonists remaining, terraforming beginning shortly after) reads as a settlement rather than a visit. Recorded here as settled 1899 but flagged for the reviewer to reconcile with the header label."
+  - "\"Rufus remains nominally independent, although the hybrid NoCoNeg meme-set is gradually gaining ground there.\" No year given; not recorded as an event."

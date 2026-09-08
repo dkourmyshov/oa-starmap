@@ -1,0 +1,30 @@
+article: 48e66c1f95162
+title: Daedalus II
+events:
+  - year_at: 3674
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 3674 when Detroit Marhenke (generally regarded as having expensive impulse control problems) murdered a competitor. To escape the PPLs and financial ruin he and his family escaped from Atlantis to Daedalus where they owned some land."
+    note: "This is the arrival that founded the colony that became the Tartarus Commonwealth (see unplaced); no roster polity is the actor here, only a fleeing family."
+  - year_at: 3674
+    kind: capital
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Founded 3674 AT"
+    note: "Panel line under 'Polity Name: Tartarus Commonwealth'. Header already records this system as 'capital 3674'; recorded here as capital of the (unplaced) Tartarus Commonwealth rather than of the Solar Dominion, since the article never states Solar Dominion founded or was seated here at this date -- see doubts."
+holder_undated:
+  - polity: solar-dominion
+    quote: "It has become a neo-feudalistic society, with close affiliations with the Solar Dominion, who have provided them with aid, finance, and technology."
+unplaced:
+  - name: "Tartarus Commonwealth"
+    quote: "Polity Name: Tartarus Commonwealth"
+contradictions: []
+other_places:
+  - "Atlantis (Zeta1 Reticuli II), the neighbouring world the Marhenke family fled from; has its own related article."
+doubts:
+  - "Header already records 'capital 3674', but the article never states that Daedalus II became the Solar Dominion's capital, or any polity's capital by that word, at that date. The only '3674' facts are: the Marhenke family's flight to Daedalus (a settlement, by a family, not a polity), and the panel's 'Founded 3674 AT' under the local, non-roster polity 'Tartarus Commonwealth'. Solar Dominion affiliation is stated only as a present-day, undated informal alignment. Flagged for the reviewer to reconcile with the header."

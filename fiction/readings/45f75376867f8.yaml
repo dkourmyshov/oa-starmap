@@ -1,0 +1,26 @@
+article: 45f75376867f8
+title: Apogee Maximal
+events:
+  - year_at: 6402
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 5884 a neumann probe was sent to the system and, upon arrival in 6402, deployed several self-replicating fusion units in the Apogeean atmosphere."
+    note: "The probe was despatched in 5884 AT; 6402 AT is recorded as its arrival year."
+  - year_at: 6756
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 6756 a 1000 meter wormhole was set up in the system and visitors from the rest of the Terragen Sphere began to arrive, drawn mostly by the spectacular views of the home galaxy filling the sky."
+    note: ""
+holder_undated: []
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "Header lists an already-dated 'settled 6402', but the body says colonists arrived 'some two centuries later' than the probe's 6402 AT arrival (implying settlement circa 6602 AT, not 6402), and gives no exact year for the colonists' arrival itself. Quote: 'By the time colonists arrived some two centuries later the equatorial region had been filled with light emitting fusion units creating a Sunline which illuminates the entire moon system.'"
+  - "Header lists an already-dated 'visited 6610' with no corresponding date anywhere in the article body (only 5884, 6402 and 6756 appear)."

@@ -1,0 +1,20 @@
+article: 57699df2f2118
+title: Unon-Duuz
+events:
+  - year_at: 1203
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonized 1203AT"
+    note: "The panel lists 'Allegiance Terragen Federation' as a separate field, not joined to this claim. The body narrates a joint First Federation / Deeper Covenant colonisation expedition; the Terragen Federation was not founded until 2900 AT, after this date, so no polity is recorded here."
+holder_undated:
+  - polity: terragen-federation
+    quote: "Allegiance Terragen Federation"
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "Body: 'Launched from Sol System in 1123AT using temporarily retargeted Deeper boostbeams, the ships of the combined expedition accelerated to a cruising velocity of .2c with virtually no reaction mass loss. After 75 years of interstellar flight, Federation amat drives, augmented by Deeper mag-brakes, decelerated the colony fleet into orbit around the triple suns, now renamed Unon-Duuz...' This describes a joint First Federation / Deeper Covenant expedition launched in 1123 AT and arriving after 75 years of flight (arithmetic would suggest circa 1198 AT), close to but not identical to the panel's 'Colonized 1203AT'. No explicit arrival year or explicit settling-polity sentence is given, so no event was recorded from this passage."
+  - "Body: 'Visited by a Deeper flyby probe over a century before, and telescopically surveyed prior to the mission setting out, the system was determined to contain no significant planets, but was home to several asteroid belts and a respectable Oort cloud.' This implies an earlier Deeper Covenant probe visit but gives no absolute year (only 'over a century before' the undated 'mission setting out'), so no event was recorded from it."

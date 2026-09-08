@@ -1,0 +1,26 @@
+article: 47bcf1f1efee6
+title: Pardes
+events:
+  - year_at: 2010
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Originally a lifeless, mature gaian world it was colonised in 2010 AT."
+    note: "No coloniser is named in this sentence."
+  - year_at: 2376
+    kind: capital
+    polity: cygexpa
+    precision: exact
+    until_at: null
+    where: body
+    quote: "It was terraformed with relative ease and became the headquarters of the Cygnus Expansion Association in 2376."
+    note: "'Cygnus Expansion Association' is the full name behind 'Cygexpa', per the article's own opening line ('Pardes is the former Cygexpa capitalworld')."
+holder_undated: []
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "\"Before the Great Cygexpa Sell-off, this world was the seat of the merchantile Archai Lohengrin until e traded away most of the Cygnus Empire.\" No year is given for the Sell-off, though it evidently ended Pardes's status as Cygexpa's capital; not recorded as an event for want of a date."
+  - "\"The sect fragmented when Cygexpa was sold off\" -- again no year given for this apparent end of Cygexpa's hold on Pardes; not recorded as an event."

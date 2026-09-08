@@ -1,0 +1,26 @@
+article: 4611a0308412d
+title: Byrdis (also known as Kaa Yvanti)
+events:
+  - year_at: 2069
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Kaa Yvanti was colonised in 2069 by a number of nanotech consortia and Empath clades."
+    note: "'Nanotech consortia and Empath clades' are generic descriptions, not named polities on the roster."
+  - year_at: 8760
+    kind: transferred
+    polity: mutual-progress-association
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 8760 the system joined the MPA, and the influx of megaengineering expertise, trade and bradyvals continued the growth of Byrdis."
+    note: ""
+holder_undated:
+  - polity: nocozo
+    quote: "During the Integration it became a minor but prosperous affiliate to the NoCoZo ."
+unplaced: []
+contradictions: []
+other_places: []
+doubts: []

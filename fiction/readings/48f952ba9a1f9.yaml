@@ -1,0 +1,20 @@
+article: 48f952ba9a1f9
+title: Oia (Here)
+events:
+  - year_at: 5411
+    kind: settled
+    polity: sophic-league
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Oia was colonised by a long-range exploration mission in 5411 a.t by the Aphoxis cult of the Sophic League."
+    note: "The Aphoxis cult is not itself on the roster; recorded as a Sophic League colonisation since the sentence directly ties the cult to the Sophic League."
+holder_undated:
+  - polity: nocozo
+    quote: "Affiliation: Sophic League, later NoCoZo"
+unplaced:
+  - name: "Aphoxis cult"
+    quote: "Oia was colonised by a long-range exploration mission in 5411 a.t by the Aphoxis cult of the Sophic League."
+contradictions: []
+other_places: []
+doubts: []

@@ -1,0 +1,19 @@
+article: 49121338648ef
+title: Seat of Judgement, The
+events:
+  - year_at: 2465
+    kind: capital
+    polity: negentropy-alliance
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Exactly why it was selected in 2465AT as the apex of the legal pyramid of Negentropy remains unknown."
+    note: ""
+holder_undated:
+  - polity: negentropy-alliance
+    quote: "Affiliation Negentropy Alliance - Capital World"
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "Body: 'A combined operation by NoCoZo, MPA and Metasoft forces attacked the system during the later years of the Version War.' This is a battle with no year given and no stated change of holder (the archailect was simply absent when the attack came), so it was not recorded as an event."

@@ -1,0 +1,51 @@
+article: 46f87b317d5d3
+title: Walloo and the Bellerophon Archipelago
+events:
+  - year_at: 4207
+    kind: settled
+    polity: solar-dominion
+    precision: exact
+    until_at: null
+    where: body
+    quote: "A line of three systems at 1200 ly from Sol in the Further Enif Prefecture, colonised by Solar Dominion linelayer Bellerophon in 4207 and lost when both legs of the wormhole link to Enif were detonated by Metasoft infiltration in 4578 during the Version War."
+    note: ""
+  - year_at: 4578
+    kind: abandoned
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "lost when both legs of the wormhole link to Enif were detonated by Metasoft infiltration in 4578 during the Version War"
+    note: "The article's own word is 'abandoning' (of the archipelago, treated as lost by the Dominion). Fit to 'abandoned' is imperfect: Idina's population centres were sterilised outright, but colonists on Walloo itself survived in diminished numbers, and Jabez's Shabtis also survived. Flagged for review."
+  - year_at: 4893
+    kind: visited
+    polity: solar-dominion
+    precision: exact
+    until_at: null
+    where: body
+    quote: "This dead system was discovered by a Dominion relativist ship in 4893, and led to the abandoning of the archipelago as lost for two thousand years."
+    note: "Refers to Idina, the first system of the archipelago, found sterilised."
+  - year_at: 6930
+    kind: visited
+    polity: deeper-covenant
+    precision: exact
+    until_at: null
+    where: body
+    quote: "A civilisation of miniature Shabtis serving and worshipping a large immobile solipsist hyperintelligence (housed in a mighty Pyramid) was found in 6930 by Deeper Covenanters, raising hopes that the last colony, Walloo, might have survived in some form."
+    note: "Refers to Jabez, the second system of the archipelago; the Shabtis are Terragen-derived former colonists, not a xenosophont species, so recorded as visited rather than contact."
+  - year_at: 8970
+    kind: visited
+    polity: deeper-covenant
+    precision: exact
+    until_at: null
+    where: body
+    quote: "After contact with the Covenanters in 8970 the population was diluted and lost through emigration until the eleventh millennium when a limited disaster site tourism trade has developed."
+    note: "Refers to Walloo itself, the third and last surviving colony of the archipelago."
+holder_undated: []
+unplaced: []
+contradictions: []
+other_places:
+  - "Enif Prefecture, the wider region this archipelago's wormhole link connected to; has its own related article."
+doubts:
+  - "The 4578 event (wormhole destroyed, archipelago lost) is recorded as kind 'abandoned' on the strength of the article's own word 'abandoning', but only Idina was fully depopulated; Walloo and Jabez both had surviving populations. A reviewer may prefer a different treatment."
+  - "The events at 6930 and 8970 concern different systems within this one archipelago place (Jabez, then Walloo); both are recorded since the article and map file treat the archipelago as a single place."

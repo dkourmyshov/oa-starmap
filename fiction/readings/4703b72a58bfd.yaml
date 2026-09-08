@@ -1,0 +1,30 @@
+article: 4703b72a58bfd
+title: Polonius
+events:
+  - year_at: 6436
+    kind: settled
+    polity: refugium-federation
+    precision: not_later_than
+    until_at: null
+    where: body
+    quote: "An exploration probe from the Refugium colony of Polonius detects signs of intelligent life in a system 240 lightyears distant."
+    note: "The article never states Polonius's own settlement date directly; 6436 is the earliest year given, and describes Polonius already as an established 'Refugium colony' launching a probe outward. Recorded as not_later_than 6436 AT, matching the map's existing 'settled 6436' entry. The event described (probe detecting a distant alien-seeming system) itself concerns a different place -- see other_places."
+  - year_at: 7340
+    kind: transferred
+    polity: nocozo
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Schism war ends in the fracturing of the Refugium Federation. The radicals accept help from the Andian Mission and join the NoCoZo, while the orthodox worlds choose to remain isolated."
+    note: "Polonius's own membership in this transfer is given in the following, undated sentence: 'Polonius is among the radical Refugium worlds that has become aligned with the NoCoZo, and is now a major local capital and wormhole nexus in its own right.' No separate year is given for Polonius specifically; 7340 is taken from the Schism War's dated end."
+holder_undated: []
+unplaced:
+  - name: "Kesterists / Kestnerists (Andian Mission)"
+    quote: "The aliens turn out to be Kesterists from the NoCoZo who give the Polonians the news that humankind has survived."
+contradictions: []
+other_places:
+  - "The system 240 light years from Polonius where the 'aliens' (in fact NoCoZo Kesterists/Kestnerists) were detected in 6436 and contacted in 6916; not named in this article."
+doubts:
+  - "The header's 'settled 6436' is not directly supported by a sentence stating Polonius was settled then; the article's earliest date (6436) instead describes a probe launched from an already-existing 'Refugium colony of Polonius'. Flagged for the reviewer."
+  - "\"Polonius is among the radical Refugium worlds that has become aligned with the NoCoZo, and is now a major local capital and wormhole nexus in its own right.\" The 'major local capital' phrase has no polity or year of its own attached and was not recorded as a separate 'capital' event."
+  - "The aliens contacted in 6916 turn out not to be xenosophonts at all, but NoCoZo humans (Kesterists) mistaken for aliens by both sides; not recorded as a 'contact' event for that reason."

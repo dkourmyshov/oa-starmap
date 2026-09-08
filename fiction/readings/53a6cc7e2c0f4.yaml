@@ -1,0 +1,22 @@
+article: 53a6cc7e2c0f4
+title: Galrecon
+events:
+  - year_at: 2598
+    kind: settled
+    polity: conver-ambi
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Colonised by the Conver Ambi in 2598 AT , this world was dry and inhospitable, with most of the population living in surface domehabs or in underground cities."
+    note: ""
+holder_undated:
+  - polity: nocozo
+    quote: "Far from the main Conver worlds, this minor colony was overwhelmed by NoCoZo mercenary foces during the world."
+unplaced:
+  - name: "Commonwealth of Empires"
+    quote: "After the Version War the NoCoZo and the Dominion found themselves allies once more as part of the Commonwealth of Empires ."
+contradictions: []
+other_places:
+  - "The nearby system of YTS 45-900190-2, said to have been annexed by the Solar Dominion a decade after Galrecon's NoCoZo takeover: 'The nearby system of YTS 45-900190-2, only 2.1 light years away was annexed by the Solar Dominion a decade later.'"
+doubts:
+  - "Body: 'Far from the main Conver worlds, this minor colony was overwhelmed by NoCoZo mercenary foces during the world.' (quoted verbatim, including apparent typos 'foces' and 'the world'). No year is given for this takeover; the article's own narrative places it before the Version War (which is said to begin in 4445 and reach Galrecon later), since by the time of the Version War Galrecon is already described as NoCoZo-aligned, opposite the Solar Dominion colony at Huitzilopochtli. It may refer to the separate 'Conver Wars' mentioned later in the article, but that is not stated explicitly."

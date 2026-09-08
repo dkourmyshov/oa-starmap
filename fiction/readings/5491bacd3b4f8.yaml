@@ -1,0 +1,19 @@
+article: 5491bacd3b4f8
+title: Magal Worldrings, the
+events:
+  - year_at: 2522
+    kind: settled
+    polity: taurus-nexus
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Magal was colonised in 2522 AT by the Taurus Nexus"
+    note: ""
+holder_undated:
+  - polity: terragen-federation
+    quote: "Magal was colonised in 2522 AT by the Taurus Nexus, but became part of the Terragen Federation following the First Consolidation War."
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "Body: 'but became part of the Terragen Federation following the First Consolidation War' gives no year for this transfer, only a reference to the (undated, in this article) First Consolidation War, so no transferred event was recorded."

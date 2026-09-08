@@ -1,0 +1,17 @@
+article: 58db9b4a098ed
+title: Oquendo
+events:
+  - year_at: 8550
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The Oquendo system was first settled in 8550 AT by an intrepid group of Solar Dominion Low-Gravity Tweaks who wanted to set off on their own to explore the outer volumes and expand their influence among the stars."
+    note: "The settlers are described as 'Solar Dominion Low-Gravity Tweaks' (their clade/origin) who wanted to 'set off on their own'; the panel lists Allegiance as Non-aligned, so no polity is recorded as coloniser here."
+holder_undated: []
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "The settling group's Solar Dominion origin and their stated wish to 'set off on their own' to found a Non-aligned system pull in opposite directions for whether this counts as a Solar Dominion settlement; recorded with polity left blank rather than resolved."

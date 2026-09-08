@@ -1,0 +1,18 @@
+article: 4a02ec19dfd93
+title: Morrow and Griqua
+events:
+  - year_at: 2220
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Morrow was reached in 2220 AT by a venture vessel from Negsoa (Mu Arae bII) launched at the height of First Federation power, but arriving centuries later."
+    note: "'Launched at the height of First Federation power' describes the era, not a stated sponsoring polity; Negsoa is the vessel's place of origin, not a polity."
+holder_undated: []
+unplaced: []
+contradictions: []
+other_places:
+  - "Negsoa (Mu Arae bII), origin of the venture vessel that reached Morrow; has its own related article."
+doubts:
+  - "\"After a hundred more standard years Morrow cylinder held no human population at all, and Griqua was slowly being disassembled by vec scrap-merchants.\" This follows directly from the two plagues described (first plague circa 3541 AT, second twenty months later), and reads as the colony's end/depopulation -- matching the 'abandoned' definition -- but the brief excludes plagues and population figures as events, and this is the direct effect of a plague. Left out of events for that reason; flagged here since a reviewer may judge otherwise. No exact AT year is given for it in any case, only 'a hundred more standard years' after the epidemics."

@@ -1,0 +1,19 @@
+article: 47bb8439173c7
+title: Muna Kipasi Incident
+events:
+  - year_at: 6992
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The most famous (but by no means the most extreme) example occurred in one of the Muna Kipasi orbitals (Goldfishnebula Plexus, Negentropy Alliance space) in 6992. A Museum Ship identifying itself as the Hume approached the system and requested a number of biological specimens."
+    note: "The Museum Ship Hume is a single vessel, not a polity on the roster, so polity is left empty."
+holder_undated:
+  - polity: negentropy-alliance
+    quote: "The most famous (but by no means the most extreme) example occurred in one of the Muna Kipasi orbitals (Goldfishnebula Plexus, Negentropy Alliance space) in 6992."
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "Body: 'Most system resources had to go into fighting these swarms until the arrival of the Negentropist 24th Quick Response Task Force nearly nine months later, by which time the Hume was long gone.' This gives only a relative date (nine months after the 6992 incident) for the Task Force's arrival, and the system was already Negentropy Alliance territory, so no separate event was recorded."

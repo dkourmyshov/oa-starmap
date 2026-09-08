@@ -1,0 +1,33 @@
+article: 5b291ca5d036f
+title: FuMa
+events:
+  - year_at: 2855
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "FuMa was colonised in 2855 AT (After Tranquility) by Birnam Ecotech and quickly absorbed into mainstream Conver Ambi culture."
+    note: "The colonising company Birnam Ecotech (elsewhere spelled Birnham Ecotech in this article) is not on the roster; see unplaced."
+  - year_at: 2855
+    kind: transferred
+    polity: conver-ambi
+    precision: circa
+    until_at: null
+    where: body
+    quote: "FuMa was colonised in 2855 AT (After Tranquility) by Birnam Ecotech and quickly absorbed into mainstream Conver Ambi culture."
+    note: "No separate year is given for the absorption into Conver Ambi culture; 'quickly' is taken as close to the 2855 colonisation date, consistent with the map's existing double-dating (settled 2855; transferred 2855)."
+holder_undated:
+  - polity: metasoft
+    quote: "After the end of the Conver Wars FuMa became a Metasoft possession, and many of the merborgs migrated outwards to the Periphery and joined the Ambi Limis."
+  - polity: terragen-federation
+    quote: "At the end of the Version War this volume of space was removed from Metasoft control by the Tilia-Zwicky Accords and given to the Terragen Federation, a non-combatant empire who made significant gains largely by remaining on good terms with both sides."
+unplaced:
+  - name: "Birnam Ecotech / Birnham Ecotech"
+    quote: "FuMa was colonised in 2855 AT (After Tranquility) by Birnam Ecotech and quickly absorbed into mainstream Conver Ambi culture."
+contradictions: []
+other_places:
+  - "HIP 29221 / 29221d, a Metasoft colony bombarded and invaded by Conver Ambi forces dispatched from FuMa during the Second Consolidation War (arriving 3798 AT; Metasoft reinforcements arrived and the Conver fleet surrendered 3813 AT)"
+doubts:
+  - "The FuMa-to-Metasoft transfer ('After the end of the Conver Wars') and the Metasoft-to-Terragen-Federation transfer ('At the end of the Version War') are both given without an AT year anywhere in this article; recorded under holder_undated rather than as dated events."
+  - "The 2855 transfer to Conver Ambi is inferred from 'quickly absorbed' in the same sentence as the 2855 colonisation date, not from a separately stated year."

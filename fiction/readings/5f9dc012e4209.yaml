@@ -1,0 +1,34 @@
+article: 5f9dc012e4209
+title: Freedonia
+events:
+  - year_at: 2477
+    kind: settled
+    polity: nocozo
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The S Antliae system was colonised in 2477 AT by a joint NoCoZo / Sophic League mission, drawn by the unusual characteristics of this double star."
+    note: "Joint colonisation by NoCoZo and the Sophic League; recorded as two entries, one per polity."
+  - year_at: 2477
+    kind: settled
+    polity: sophic-league
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The S Antliae system was colonised in 2477 AT by a joint NoCoZo / Sophic League mission, drawn by the unusual characteristics of this double star."
+    note: "Joint colonisation by NoCoZo and the Sophic League; recorded as two entries, one per polity."
+  - year_at: 2677
+    kind: independent
+    polity: ""
+    precision: circa
+    until_at: null
+    where: body
+    quote: "The joint NoCoZo/Sophic administration named this system Freedonia, but after two centuries they declared themselves independent of both empires and seceded from Sephirotic influence."
+    note: "Year computed as circa 2677 AT, two centuries after the stated 2477 colonisation; the article gives only the relative span 'two centuries', not an AT year, for the secession itself."
+holder_undated: []
+unplaced: []
+contradictions: []
+other_places:
+  - "Avanola (TYC 7212-290-1), founded 2844 AT by the Freedonian Expansion Initiative as a colony mission from Freedonia; has its own article and is the gateway to the Xacounian Expansion."
+doubts:
+  - "The independence year (circa 2677) is calculated from 'after two centuries' relative to the 2477 settlement date; no explicit AT year appears in the text for the secession itself."

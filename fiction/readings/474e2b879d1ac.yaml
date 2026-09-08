@@ -1,0 +1,21 @@
+article: 474e2b879d1ac
+title: Vangelis
+events:
+  - year_at: 3224
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Founded/Colonized: 3224"
+    note: "The panel names the local polity as 'Académie Empathique Vangelis' (see unplaced), not directly the Communion of Worlds; its 'Affiliation: Communion of Worlds' line is recorded separately under holder_undated, per the no-inference rule."
+holder_undated:
+  - polity: communion-of-worlds
+    quote: "Affiliation: Communion of Worlds"
+unplaced:
+  - name: "Académie Empathique Vangelis"
+    quote: "Polity Name: Académie Empathique Vangelis"
+contradictions: []
+other_places: []
+doubts:
+  - "\"Begun five centuries ago as a joint project with the Biopolity\" (the orwood forests at the Vangelis-Tabane L4/L5 points) gives no AT year, only a span relative to an unstated 'present'; not recorded as an event. The Biopolity is the Zoeific Biopolity (roster: zoeific-biopolity)."

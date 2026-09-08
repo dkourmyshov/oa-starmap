@@ -1,0 +1,28 @@
+article: 532b2a4235638
+title: Zikhron
+events:
+  - year_at: 2830
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Settled by secular Jewish colonists in 2830 AT , this comparatively wet and warm Mars-like world was terraformed with some minor difficulty."
+    note: "'Secular Jewish colonists' is not a polity on the roster."
+  - year_at: 3802
+    kind: transferred
+    polity: terragen-federation
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Joined the Terragen Federation during the Consolidation Wars , but was nevertheless occupied for thirteen years by the Geminga Orthodoxy until it was liberated by a Terragen Federation force in 3802."
+    note: "Records the liberation year (3802); the earlier joining 'during the Consolidation Wars' has no year given, see holder_undated."
+holder_undated:
+  - polity: terragen-federation
+    quote: "Joined the Terragen Federation during the Consolidation Wars , but was nevertheless occupied for thirteen years by the Geminga Orthodoxy until it was liberated by a Terragen Federation force in 3802."
+unplaced:
+  - name: "Geminga Orthodoxy"
+    quote: "Joined the Terragen Federation during the Consolidation Wars , but was nevertheless occupied for thirteen years by the Geminga Orthodoxy until it was liberated by a Terragen Federation force in 3802."
+contradictions: []
+other_places: []
+doubts: []

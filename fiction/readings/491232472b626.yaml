@@ -1,0 +1,19 @@
+article: 491232472b626
+title: Tabridgen
+events:
+  - year_at: 6859
+    kind: settled
+    polity: orion-federation
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Tabridgen was settled by Orion Federation trader and exploration neumanns in 6859."
+    note: "Panel note '(neumann colony that later became St Hieden)' names a within-system sub-polity, not treated separately per the sub-settlement rule."
+holder_undated:
+  - polity: emple-dokcetics
+    quote: "Ucerthaga is Emple Dokcetic."
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "\"System is Orion Federation, however individual polities and habs may be Orion Federation, NoCoZo, Negentropy Alliance, Sophic League, Metasoft, Emple Dokcetic, other, or non-aligned.\" This is a general, undated, speculative list of possible affiliations for individual habs within the system rather than an affirmed holder claim for the place; not recorded as holder_undated beyond the affirmed Ucerthaga/Emple-Dokcetic line."

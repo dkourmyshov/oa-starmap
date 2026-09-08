@@ -1,0 +1,35 @@
+article: 46de1625d2357
+title: Qjellto
+events:
+  - year_at: 2100
+    kind: settled
+    polity: ""
+    precision: not_earlier_than
+    until_at: null
+    where: body
+    quote: "This small planet in the Inner Sphere was paraterraformed in 2100 AT. It was settled over the next few centuries by retroists and low-tech peripatetics."
+    note: "Paraterraforming itself (2100 AT) is a terraforming milestone, not recorded as an event; the settlement it describes followed 'over the next few centuries', so it is recorded as not_earlier_than 2100. No polity/company is named for the settlers, only 'retroists and low-tech peripatetics'."
+  - year_at: 4896
+    kind: transferred
+    polity: utopia-sphere
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The aphasics congregated on the Hrek worldhouse, which in 4896 AT became a Utopia Sphere enclave run by the archailect Nameless One."
+    note: ""
+  - year_at: 9405
+    kind: transferred
+    polity: zoeific-biopolity
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The Qjellto society elsewhere developed into a fairly typical multiurban Inner Sphere society, eventually joining the Zoeific Biopolity in 9405 AT."
+    note: ""
+holder_undated:
+  - polity: cygexpa
+    quote: "Former Cygexpa world."
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "Header lists 'already dated: settled 2100; settled 2344'. The body supports a settlement date anchored to 2100 AT ('paraterraformed in 2100 AT... settled over the next few centuries'), but nothing in the body text corresponds to 2344, and the settlement itself is not pinned to an exact year even for 2100 (it happened 'over the next few centuries' afterward)."

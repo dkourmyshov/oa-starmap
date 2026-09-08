@@ -1,0 +1,35 @@
+article: 666acac0358cd
+title: Kaana (Gaia BH3)
+events:
+  - year_at: 5510
+    kind: visited
+    polity: biovirate
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Kaana was a prime objective for exploration and colonisation, and a joint Biovirate / Cygexpa mission reached there in 5510 AT."
+    note: "Joint mission named with Cygexpa; recorded as two entries, one per named polity."
+  - year_at: 5510
+    kind: visited
+    polity: cygexpa
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Kaana was a prime objective for exploration and colonisation, and a joint Biovirate / Cygexpa mission reached there in 5510 AT."
+    note: "Joint mission named with Biovirate; recorded as two entries, one per named polity."
+  - year_at: 6030
+    kind: transferred
+    polity: keter-dominion
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Although the Kaana system saw no fighting, a Keter Dominion ISO arrived in 6030 to assume control over the system."
+    note: ""
+holder_undated:
+  - polity: keter-dominion
+    quote: "Since that time this system has been solely controlled by the Keter Dominion."
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "Body: 'For over a thousand standard years the system was run as a joint colony by Cygexpa and Keter, but then the Cygexpa empire voluntarily disbanded itself and handed over full control to Keter, including the wormhole connection which had arrived just after the Biovirate war.' This describes a second, seemingly final, handover of control to Keter Dominion, distinct from the ISO's 6030 AT arrival, but gives no year for it."

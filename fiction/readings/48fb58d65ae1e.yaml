@@ -1,0 +1,38 @@
+article: 48fb58d65ae1e
+title: Hiederia
+events:
+  - year_at: 8614
+    kind: visited
+    polity: solar-dominion
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 8614 a Solar Dominion exploration fleet discovered an unassuming Red Dwarf with a warm neptunian , a scattered asteroid belt , single airless rockball world, an icy failed core, and a diffuse comet halo."
+    note: ""
+  - year_at: 8746
+    kind: visited
+    polity: solar-dominion
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Unfortunately, on arrival in 8746, it was found that the jovian had been colonised by a high level postneumann civilization."
+    note: "Records the Solar Dominion linelayer Borde's Glory XXIV's 8746 AT arrival; the postneumann 'Mydonian Evolution' colonisation it found already in place is not separately dated."
+  - year_at: 8746
+    kind: transferred
+    polity: solar-dominion
+    precision: not_earlier_than
+    until_at: null
+    where: body
+    quote: "Over the next 2 standard years negotiations continued (mostly at a very slow pace because of the low WH bandwidth), and it was agreed that the Mydonians would keep the warm neptunian, two thirds of the stellar output, and half the asteroid belt . The rest of the system would be ceded to the Solar Dominion, or left fallow."
+    note: "Negotiations followed the linelayer's 8746 AT arrival and took about two standard years; no exact year is given for the cession itself, so it is recorded as not earlier than 8746."
+holder_undated:
+  - polity: solar-dominion
+    quote: "Allegiance Solar Dominion and Independant postneumann 'Mydonian Evolution'"
+unplaced:
+  - name: "Mydonian Evolution"
+    quote: "The postneumanns - who identified themselves as the \"Mydonian Evolution\" - were seen to be non-hostile, and not affiliated with any of the major ahuman hyperpolities or metacivilizations, and had established themselves in and around a number of warm neptunians in the region, where they had set up Deep Well Industrial Zones as well as high temperature computronium bands."
+contradictions: []
+other_places:
+  - "New Jamis, a nearby uninhabited system the linelayer was redirected to: 'Borde's Glory XXIV with her precious wormhole cargo was redirected to a nearby uninhabited system, which was named New Jamis.'"
+doubts:
+  - "Header lists an already-dated 'settled 8746' for the Solar Dominion, but the body only supports a discovery/arrival at 8746 and a cession of part of the system agreed over the following two years; no sentence states the Solar Dominion 'settled' the system in 8746, and the postneumann Mydonian Evolution (not on roster) had already colonised it by that date with no year given."

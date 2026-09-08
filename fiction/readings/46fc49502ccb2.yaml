@@ -1,0 +1,26 @@
+article: 46fc49502ccb2
+title: Pas Greenen
+events:
+  - year_at: 9001
+    kind: settled
+    polity: orion-federation
+    precision: exact
+    until_at: null
+    where: body
+    quote: "This world was colonised by the Li T'ieh-kuai, a transapient colony ship from the Orion Federation which was determined to allow each colony to develop in its own way without posthuman influence."
+    note: "The year 9001 AT is given in the panel line ('Colonised: 9001 AT'); the coloniser and its Orion Federation origin are given in the following body sentence, describing the same colonisation act."
+  - year_at: 7233
+    kind: capital
+    polity: equalizer-civilization
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The Equalizer movement emerged on Pas Greenen in 7233 AT, mostly in an attempt to regulate intelligence augmentation technology (IA)."
+    note: "Recorded as 'capital' since Pas Greenen is where the Equalizer Civilization's ruling Planetary Directorate emerged and was seated, though the article never uses the word 'capital' of this world itself."
+holder_undated: []
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "\"The Equalizer Civilization collapsed in the early 7900's AT, after the wars had wiped out most bionts in the volume.\" This corroborates the roster's equalizer-civilization dissolved year (7900), but the year is a decade-level approximation ('early 7900's'), not an exact AT year, and the sentence describes the collapse across 'the volume' rather than stating a specific fate for Pas Greenen itself, so it was not forced into a 'kind'. Flagged in case the reviewer wants it recorded."
+  - "\"in the late 7800's AT, wars broke out to depose the Directorate\" -- likewise decade-level only, and a war/battle rather than a holder change; not recorded as an event."

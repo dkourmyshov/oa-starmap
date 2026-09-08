@@ -1,0 +1,32 @@
+article: 47953c5148ba9
+title: Enremdea
+events:
+  - year_at: 4603
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Colonised in 4603 AT by refugees from the Taurus Nexus and Djangalla Reformism."
+    note: "Matches header already-dated settled 4603. The colonists are refugees FROM the Taurus Nexus (a roster polity) and from Djangalla Reformism (not on the roster, see unplaced); the sentence does not say the Taurus Nexus itself settled or claimed the place, so no polity has been recorded for this event."
+  - year_at: 5106
+    kind: capital
+    polity: orion-federation
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Enremdea became the capital of the Orion Federation in 5106, when Orion ascended to S:4 level, after disassembling the innermost planet to create a godswarm."
+    note: ""
+holder_undated:
+  - polity: metasoft
+    quote: "In 6083 the system became militarised in response to Metasoft attempts to reclaim this region, which was still nominally part of their territory."
+unplaced:
+  - name: "Djangalla Reformism"
+    quote: "Colonised in 4603 AT by refugees from the Taurus Nexus and Djangalla Reformism."
+contradictions: []
+other_places: []
+doubts:
+  - quote: "The system had already been explored by Metasoft probes, but there had not been any permanent settlement by that empire so far."
+    note: "Undated relative to the 4603 colonisation; it explicitly says no permanent settlement resulted, so no visited/settled event has been recorded for Metasoft here."
+  - quote: "In 6083 the system became militarised in response to Metasoft attempts to reclaim this region, which was still nominally part of their territory. The Metasoft fleets did not reach Enremdea, but the system has remained capable of a high level of defense ever since."
+    note: "No actual holder change occurred (the Metasoft fleets did not reach Enremdea), so this has not been recorded as a transferred/settled event; recorded under holder_undated instead for Metasoft's stated nominal claim."

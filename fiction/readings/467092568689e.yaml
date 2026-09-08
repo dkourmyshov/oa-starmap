@@ -1,0 +1,20 @@
+article: 467092568689e
+title: Hhrraiirah
+events:
+  - year_at: 5533
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised: 5533 AT"
+    note: "The panel's 'Allegiance: Sophic League' line is not explicitly tied to this colonisation date, so the polity is left blank here and the allegiance recorded separately under holder_undated, per the no-inference rule."
+holder_undated:
+  - polity: sophic-league
+    quote: "Allegiance : Sophic League"
+unplaced: []
+contradictions: []
+other_places:
+  - "Yhrraini and Jhairrn (in the Utopia Sphere), home worlds of the related Harrroh (Indian elephant provolve) clade."
+doubts:
+  - "Whether the 5533 colonisation and the Sophic League allegiance are the same act (i.e. whether 'settled' should carry polity: sophic-league) is not stated explicitly in the text; left split per the no-inference rule for the reviewer to judge."

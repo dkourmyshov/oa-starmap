@@ -1,0 +1,27 @@
+article: 532b2e15251be
+title: Yangko
+events:
+  - year_at: 2957
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "This world was settled in 2957 by the nDao, Neo-taoist colonists seeking refuge from the increasingly Hsienist culture of the Penglai Empire, and also from the even more radical Conver Ambi culture that was growing in importance at that time."
+    note: "The nDao are a cultural/religious group of colonists, not a roster polity; see unplaced."
+  - year_at: 3509
+    kind: transferred
+    polity: terragen-federation
+    precision: exact
+    until_at: null
+    where: body
+    quote: "this conservatism attracted the 'Dao, who became members of that empire in 3509."
+    note: "'That empire' refers to the Terragen Federation, named in the immediately preceding sentence as the faction that gained territory in this volume."
+holder_undated: []
+unplaced:
+  - name: "nDao"
+    quote: "This world was settled in 2957 by the nDao, Neo-taoist colonists seeking refuge from the increasingly Hsienist culture of the Penglai Empire, and also from the even more radical Conver Ambi culture that was growing in importance at that time."
+contradictions: []
+other_places: []
+doubts:
+  - "\"Under the terms of the peace settlement a large volume of territory was conferred upon the Terragen Federation\" describes the surrounding region after the Second Consolidation War, with no year given, and it is unclear whether it names a further, separate change for Yangko itself (already recorded here as a TF member from 3509). Not written as an event."

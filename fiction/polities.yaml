@@ -887,7 +887,7 @@ polities:
 
   - id: biovirate
     name: Biovirate
-    color: "#558B2F"
+    color: "#DD3CA4"
     source: eg-system-articles
     dissolved_at: 6210
     # Not on the Historical Polities page; named by the project owner as one

@@ -1,0 +1,29 @@
+article: 54c109a62b582
+title: Sagan Prime
+events:
+  - year_at: 8016
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Reached in 8016 AT by the Neo-Edenist Vuvena sect, Sagan XXI was the twenty-first planet to be named after Carl Sagan in the Solar Dominion volume alone."
+    note: "Same paragraph also states 'A small domed habitat was set up on the small hot rocky world Vaygay', with no separate year given for that habitat."
+  - year_at: 8700
+    kind: settled
+    polity: ""
+    precision: not_later_than
+    until_at: null
+    where: body
+    quote: "By 8700 the cylinder was habitable and was given the name Sagan Prime. Most of the population of this system migrated to the new habitat in the following centuries."
+    note: ""
+holder_undated:
+  - polity: solar-dominion
+    quote: "Allegiance Solar Dominion"
+unplaced:
+  - name: "Neo-Edenist Vuvena sect"
+    quote: "Reached in 8016 AT by the Neo-Edenist Vuvena sect, Sagan XXI was the twenty-first planet to be named after Carl Sagan in the Solar Dominion volume alone."
+contradictions: []
+other_places: []
+doubts:
+  - "The panel word 'Reached' matches the header's already-dated kind 'visited', but the same paragraph also describes a domed habitat being set up on Vaygay, which reads more like settlement; no separate year is given for the habitat, so it was not recorded as its own event."

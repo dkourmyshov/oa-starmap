@@ -1,0 +1,42 @@
+article: 464deafc952ed
+title: Hoshanti's Star (Gavit)
+events:
+  - year_at: 10054
+    kind: settled
+    polity: deeper-covenant
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised 10054 (Deepers), 10483 (Hoshanti)"
+    note: "First half of a combined panel field: the Deeper Covenant colonisation."
+  - year_at: 10483
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised 10054 (Deepers), 10483 (Hoshanti)"
+    note: "Second half of the same combined panel field, apparently referring to the ship Hoshanti (see body, which instead gives 8925 for the Hoshanti's arrival); see contradictions."
+  - year_at: 8925
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The sophont ship Hoshanti arrived in 8925, following the Fubas Clone Event ."
+    note: "The ship 'is now largely in retirement, but still participates in local administration', so it stayed rather than merely visiting."
+holder_undated:
+  - polity: deeper-covenant
+    quote: "Affiliation Deeper Covenant"
+  - polity: solar-dominion
+    quote: "Population (permanent) 25 (24 Deepers (Beamrider Station Maintenance), 1 retired Solar Dominion vessel)"
+  - polity: solar-dominion
+    quote: "This ship is now largely in retirement, but still participates in local administration, and this means that the system is for all purposes a part of the Solar Dominion as well as the Beamrider Network , and thus serves as a useful although minor regional interface between the two, gaining benefits from both."
+unplaced: []
+contradictions:
+  - about: "Hoshanti's arrival/colonisation year"
+    quotes:
+      - "Colonised 10054 (Deepers), 10483 (Hoshanti)"
+      - "The sophont ship Hoshanti arrived in 8925, following the Fubas Clone Event ."
+other_places: []
+doubts: []

@@ -165,6 +165,14 @@ worlds:
           First public reports of the discovery. The discovery itself was
           earlier — probably in the 9700s — so this is the date the setting
           records rather than the date it happened.
+      - year_at: 9921
+        kind: visited
+        note: >-
+          "Reached 9921" Data panel field; body says the planet was found
+          before public reports appeared, by a relativistic Faber/Tavi
+          expedition (Faber and Tavi are clades, not roster polities). The
+          panel's year; the body has the first reports reaching the wormhole
+          network 'in the late 9920s'.
     note: >-
       Located by constellation despite the add-on carrying a star called Enigma,
       because the two do not agree. The add-on puts it in Columba at 4,598 ly —
@@ -1101,7 +1109,24 @@ worlds:
     events:
       - year_at: 5510
         kind: visited
+        polity: biovirate
         note: First reached.
+      - year_at: 5510
+        kind: visited
+        polity: cygexpa
+        note: >-
+          "Kaana was a prime objective for exploration and colonisation, and a
+          joint Biovirate / Cygexpa mission reached there in 5510 AT." Joint
+          mission named with Biovirate; recorded as two entries, one per named
+          polity. A joint Biovirate and Cygexpa mission; the entry's older
+          'visited 5510' now carries the Biovirate.
+      - year_at: 6030
+        kind: transferred
+        polity: keter-dominion
+        note: >-
+          "Although the Kaana system saw no fighting, a Keter Dominion ISO
+          arrived in 6030 to assume control over the system." A Keter Dominion
+          ISO 'to assume control over the system', without fighting.
     note: >-
       A black hole — Gaia BH3, in Aquila. Placed by its coordinates rather than
       bound to a catalogue star, because it is not a star and is not in any
@@ -1313,6 +1338,13 @@ worlds:
     events:
       - year_at: 2069
         kind: settled
+      - year_at: 8760
+        kind: transferred
+        polity: mutual-progress-association
+        note: >-
+          "In 8760 the system joined the MPA, and the influx of
+          megaengineering expertise, trade and bradyvals continued the growth
+          of Byrdis."
     note: >-
       Gliese 109, 25 ly. The colony table gives the system as "Byrdis & Ka
       Yvanti", with one a in Ka rather than two.
@@ -1379,6 +1411,17 @@ worlds:
     events:
       - year_at: 2702
         kind: settled
+      - year_at: 3007
+        kind: transferred
+        polity: mutual-progress-association
+        note: >-
+          "when they became part of the Mutual Progress Alliance in 3007 they
+          began to consider a number of more unusual projects" Article says
+          "Mutual Progress Alliance"; the roster's matching polity is the
+          Mutual Progress Association (MPA), which the panel's "Allegiance:
+          MPA" and the roster's own alias both support as the same body.
+          Flagged for the reviewer. 'Mutual Progress Alliance' as the article
+          spells it.
     note: Wrapped around the planet Mungo. HD 154519 is in Ophiuchus at 356 ly.
 
   - name: Gordelpus
@@ -1602,6 +1645,37 @@ worlds:
         note: >-
           Reached, only to find an ahuman colony already established there. A
           first visit that was not a first arrival.
+      - year_at: 1521
+        kind: settled
+        note: >-
+          "The K4H decided to dig in on the outer belt, as well as appropriate
+          some frozen kuiper bodies and an inner rockball." Same year and
+          continuous narrative as the "reached" clause above, but this clause
+          describes staying rather than merely arriving; the header records
+          this year only as visited. See contradictions. The K4H development
+          project, finding a Diamond Belt colony already there; the map's
+          older 'visited 1521' is this arrival.
+      - year_at: 1470
+        kind: settled
+        precision: circa
+        note: >-
+          "Diamond Belt neumann colony thought to have been established c.
+          1470s - 1480s" Panel gives a two-decade approximate range, "c. 1470s
+          - 1480s"; year_at is the earlier bound only. The panel's own
+          estimate for the Diamond Belt neumann colony the K4H found in 1521.
+      - year_at: 3194
+        kind: visited
+        polity: mutual-progress-association
+        note: >-
+          "In 3194 a third toposophic MPA artificer ISO, fascinated by the
+          vast project, made contact with the distributed intelligence of the
+          dyson, and was able to establish communication channels and protocol
+          and information exchanges between Oikoumene and Djed." The sentence
+          attributes this contact to an MPA-affiliated artificer. Whether this
+          is the point Oikoumene formally became MPA-affiliated (per the
+          panel's current "Affiliation: MPA") is not stated and is not
+          inferred here. A third-toposophic MPA artificer ISO making contact
+          with the dyson's distributed intelligence.
     note: Zeta Serpentis, 75 ly — an Inner Sphere system.
 
   - name: Pen-y-Ghent
@@ -2233,6 +2307,20 @@ worlds:
         note: >-
           The Copy Crew arrive at Audubon , the first humans ever to be transmitted
           over an interstellar distance (nine light years) by engenerator .
+      - year_at: 7109
+        kind: transferred
+        polity: nocozo
+        precision: not_later_than
+        note: >-
+          "Both inner system AIs finally entered an accord with the rival
+          Linnent company transapient, O'Brien , in 7109 after the formal
+          absorption of all 4 remaining Linnent Engenerator colonies into the
+          NoCoZo." The accord itself is dated exactly to 7109; the 'formal
+          absorption' it followed is not separately dated, only stated to have
+          preceded it. An accord between the system's AIs and the LinnEnt
+          transapient O'Brien; the reader read it as the Zone's absorption of
+          the system, and the map's older 'visited 1392' has no sentence in
+          the article.
     note: >-
       Given as HR 8501A. The Bright Star numbers are not carried here, but the
       colony table resolves the same system to HD 211415 at 46 ly.
@@ -2496,6 +2584,7 @@ worlds:
     events:
       - year_at: 2598
         kind: settled
+        polity: conver-ambi
     note: In Auriga at 245 ly.
 
   - name: Regor
@@ -2882,6 +2971,7 @@ worlds:
     events:
       - year_at: 5411
         kind: settled
+        polity: sophic-league
     note: >-
       Originally a Sophic League colony and possibly still tied to it, so both
       are recorded. The name descends from a word meaning "here".
@@ -2905,6 +2995,24 @@ worlds:
     events:
       - year_at: 7988
         kind: settled
+      - year_at: 2000
+        kind: observed
+        precision: circa
+        note: >-
+          "One such system, JD 440454221, was detected in Pyxis at long range
+          in the third millennium AT, long before the first explorer class
+          craft reached the vicinity." "third millennium AT" spans roughly
+          2001-3000; year_at is the start of that millennium. 'The third
+          millennium AT', entered as 2000.
+      - year_at: 9526
+        kind: abandoned
+        note: >-
+          "Two small terrestrial worlds which collided in 9526 AT" The
+          planetary collision physically destroys both worlds, ending any
+          habitation. See doubts for an earlier, undated evacuation ("the two
+          doomed planets were deserted") that preceded a later wave of death-
+          seeker visitors before this final impact. The two worlds collided,
+          ending the colony; an earlier evacuation is undated.
     note: Two planets that collided, and are now one object.
 
   - name: Relief
@@ -2949,6 +3057,17 @@ worlds:
       - year_at: 1899
         kind: visited
         note: Reached.
+      - year_at: 1899
+        kind: settled
+        polity: first-federation
+        note: >-
+          "The First Federation colony ship Actaeon, funded by Hantec Inc.
+          from Caneshe Habitat in the Earth's Trojan Point, arrived at HD
+          114853 in 1899 AT." Header already records this as 'visited 1899';
+          the prose describes colonists who stayed and began terraforming,
+          which reads as a settlement rather than a mere visit. Written as
+          settled and flagged for review, not resolved. The Actaeon, funded by
+          Hantec Inc.; the map's older 'visited 1899' is this arrival.
     note: In Centaurus at 82 ly.
 
   - name: Sakvaback
@@ -3031,6 +3150,17 @@ worlds:
         source: "Encyclopaedia timeline, Late Federation / AI Emergence"
         note: >-
           Terranova Foundation probeship arrives at Twinkle .
+      - year_at: 4328
+        kind: transferred
+        note: >-
+          "In 4328 Terranova was bought by Riddersdan Ikki, a major
+          shareholder nanotech AI owning several of the largest NoCoZo
+          megacorps." Riddersdan Ikki is an individual AI, not on the roster
+          (see unplaced). The sentence describes ownership by that individual,
+          not an acquisition by NoCoZo as a polity, so no roster polity has
+          been recorded. Riddersdan Ikki, a nanotech AI and shareholder of
+          NoCoZo megacorps, an individual; the map's older 'visited 1885' has
+          no sentence in the article.
     note: >-
       82 Eridani IV, 19.7 ly. The catalogue carries the star under the Gould
       designation 82 G. Eri rather than a Flamsteed number.
@@ -3386,6 +3516,17 @@ worlds:
       - year_at: 3674
         kind: capital
         note: The polity founded here.
+      - year_at: 3674
+        kind: settled
+        note: >-
+          "In 3674 when Detroit Marhenke (generally regarded as having
+          expensive impulse control problems) murdered a competitor. To escape
+          the PPLs and financial ruin he and his family escaped from Atlantis
+          to Daedalus where they owned some land." This is the arrival that
+          founded the colony that became the Tartarus Commonwealth (see
+          unplaced); no roster polity is the actor here, only a fleeing
+          family. The Marhenke family's flight after a murder; the map's older
+          'capital 3674' is the panel's 'Founded 3674 AT'.
     note: >-
       The third named place at Zeta-1 Reticuli, after Atlantis and Prometheus,
       and the third meta-empire in one system.
@@ -5019,6 +5160,14 @@ worlds:
           Arrival of the linelayer Borde's Glory XXIV at Hiederia . It is found that
           the system's jovian had been colonised by a high level postneumann
           civilization.
+      - year_at: 8614
+        kind: visited
+        polity: solar-dominion
+        note: >-
+          "In 8614 a Solar Dominion exploration fleet discovered an unassuming
+          Red Dwarf with a warm neptunian , a scattered asteroid belt , single
+          airless rockball world, an icy failed core, and a diffuse comet
+          halo."
     note: In the Perseus Rift, 3,618 ly.
 
   - name: Gavit
@@ -5203,6 +5352,15 @@ worlds:
       - year_at: 8016
         kind: visited
         note: Reached.
+      - year_at: 8700
+        kind: settled
+        precision: not_later_than
+        note: >-
+          "By 8700 the cylinder was habitable and was given the name Sagan
+          Prime. Most of the population of this system migrated to the new
+          habitat in the following centuries." The cylinder habitable, and
+          most of the system's population migrated to it; the map's older
+          'visited 8016' is the Vuvena sect's arrival.
     note: A habitat, given as near NGC 1444.
 
   - name: Shamash
@@ -5289,6 +5447,36 @@ worlds:
     events:
       - year_at: 4207
         kind: settled
+      - year_at: 4578
+        kind: abandoned
+        note: >-
+          "lost when both legs of the wormhole link to Enif were detonated by
+          Metasoft infiltration in 4578 during the Version War" The article's
+          own word is 'abandoning' (of the archipelago, treated as lost by the
+          Dominion). Fit to 'abandoned' is imperfect: Idina's population
+          centres were sterilised outright, but colonists on Walloo itself
+          survived in diminished numbers, and Jabez's Shabtis also survived.
+          Flagged for review. Both legs of the wormhole to Enif detonated by
+          Metasoft infiltration; the archipelago 'lost'.
+      - year_at: 4893
+        kind: visited
+        polity: solar-dominion
+        note: >-
+          "This dead system was discovered by a Dominion relativist ship in
+          4893, and led to the abandoning of the archipelago as lost for two
+          thousand years." Refers to Idina, the first system of the
+          archipelago, found sterilised. A Dominion relativist ship finding
+          Idina dead, after which the archipelago was written off for two
+          thousand years.
+      - year_at: 8970
+        kind: visited
+        polity: deeper-covenant
+        note: >-
+          "After contact with the Covenanters in 8970 the population was
+          diluted and lost through emigration until the eleventh millennium
+          when a limited disaster site tourism trade has developed." Refers to
+          Walloo itself, the third and last surviving colony of the
+          archipelago. Contact with the Covenanters at Walloo.
     note: >-
       Three systems in a line, one of them Walloo. Given as in the further Enif
       Prefecture, and Enif is in Pegasus at 690 ly — so the constellation is
@@ -5879,6 +6067,22 @@ worlds:
         source: "Encyclopaedia timeline, The Age of Expansion"
         note: >-
           Qjellto settled by retroists and low-tech peripathetics.
+      - year_at: 4896
+        kind: transferred
+        polity: utopia-sphere
+        note: >-
+          "The aphasics congregated on the Hrek worldhouse, which in 4896 AT
+          became a Utopia Sphere enclave run by the archailect Nameless One."
+          The Hrek worldhouse became a Utopia Sphere enclave under the
+          archailect Nameless One; the map's older 'settled 2344' has no
+          sentence in the article.
+      - year_at: 9405
+        kind: transferred
+        polity: zoeific-biopolity
+        note: >-
+          "The Qjellto society elsewhere developed into a fairly typical
+          multiurban Inner Sphere society, eventually joining the Zoeific
+          Biopolity in 9405 AT." The rest of Qjellto's society, 'eventually'.
     note: >-
       Divided rather than shared: the Utopia Sphere holds the Hrek worldhouse
       and the Zoeific Biopolity everywhere else.
@@ -6129,6 +6333,7 @@ worlds:
         kind: settled
       - year_at: 2855
         kind: transferred
+        polity: conver-ambi
         precision: not_earlier_than
         note: Passed to the Terragen Federation at some later date.
     note: >-
@@ -6668,6 +6873,14 @@ worlds:
     events:
       - year_at: 2957
         kind: settled
+      - year_at: 3509
+        kind: transferred
+        polity: terragen-federation
+        note: >-
+          "this conservatism attracted the 'Dao, who became members of that
+          empire in 3509." 'That empire' refers to the Terragen Federation,
+          named in the immediately preceding sentence as the faction that
+          gained territory in this volume.
     note: HD 284842, 394 ly out in Taurus, and the furthest of this roster.
 
   - name: Zikhron
@@ -6680,6 +6893,18 @@ worlds:
     events:
       - year_at: 2830
         kind: settled
+      - year_at: 3802
+        kind: transferred
+        polity: terragen-federation
+        note: >-
+          "Joined the Terragen Federation during the Consolidation Wars , but
+          was nevertheless occupied for thirteen years by the Geminga
+          Orthodoxy until it was liberated by a Terragen Federation force in
+          3802." Records the liberation year (3802); the earlier joining
+          'during the Consolidation Wars' has no year given, see
+          holder_undated. During the Consolidation Wars, though occupied
+          thirteen years by the Geminga Orthodoxy, no polity of this file;
+          3802 is the liberation.
     note: HD 30380, 259 ly out in Taurus.
 
   - name: Sinyavskaya
@@ -7333,6 +7558,16 @@ worlds:
     events:
       - year_at: 2010
         kind: settled
+      - year_at: 2376
+        kind: capital
+        polity: cygexpa
+        note: >-
+          "It was terraformed with relative ease and became the headquarters
+          of the Cygnus Expansion Association in 2376." 'Cygnus Expansion
+          Association' is the full name behind 'Cygexpa', per the article's
+          own opening line ('Pardes is the former Cygexpa capitalworld'). The
+          headquarters of the Cygnus Expansion Association; ended by the Great
+          Cygexpa Sell-off, undated here.
     note: HD 190605, 146 ly out in Vulpecula.
 
   - name: 4 Vulpeculae
@@ -7706,6 +7941,13 @@ worlds:
     events:
       - year_at: 4603
         kind: settled
+      - year_at: 5106
+        kind: capital
+        polity: orion-federation
+        note: >-
+          "Enremdea became the capital of the Orion Federation in 5106, when
+          Orion ascended to S:4 level, after disassembling the innermost
+          planet to create a godswarm."
     note: >-
       A moon of a gas giant, given as GH4343 Monocerotis VII — a designation no
       catalogue here carries, leaving the constellation.
@@ -8856,7 +9098,22 @@ worlds:
     events:
       - year_at: 6436
         kind: settled
+        polity: refugium-federation
         precision: not_later_than
+      - year_at: 7340
+        kind: transferred
+        polity: nocozo
+        note: >-
+          "Schism war ends in the fracturing of the Refugium Federation. The
+          radicals accept help from the Andian Mission and join the NoCoZo,
+          while the orthodox worlds choose to remain isolated." Polonius's own
+          membership in this transfer is given in the following, undated
+          sentence: 'Polonius is among the radical Refugium worlds that has
+          become aligned with the NoCoZo, and is now a major local capital and
+          wormhole nexus in its own right.' No separate year is given for
+          Polonius specifically; 7340 is taken from the Schism War's dated
+          end. The Schism War's end; the radicals joined the Zone with the
+          Andian Mission's help.
     note: >-
       Formerly of the Refugium Federation and Non-Coercive Zone now, which is
       the present holder this file records.
@@ -9031,6 +9288,18 @@ worlds:
     events:
       - year_at: 9001
         kind: settled
+        polity: orion-federation
+      - year_at: 7233
+        kind: capital
+        polity: equalizer-civilization
+        note: >-
+          "The Equalizer movement emerged on Pas Greenen in 7233 AT, mostly in
+          an attempt to regulate intelligence augmentation technology (IA)."
+          Recorded as 'capital' since Pas Greenen is where the Equalizer
+          Civilization's ruling Planetary Directorate emerged and was seated,
+          though the article never uses the word 'capital' of this world
+          itself. The Equalizer movement's emergence here, read by the reader
+          as its seat.
     note: >-
       In Monoceros at 4,890 ly, which the article gives — so this is placed
       properly rather than estimated, and the sheet's contribution was only to
@@ -9235,6 +9504,14 @@ worlds:
       - year_at: 961
         kind: settled
         precision: not_later_than
+      - year_at: 1141
+        kind: settled
+        note: >-
+          "1141 AT by !Kung expedition (leader !Kweiten ta//ken)" Second half
+          of the same combined panel field as the Three Kings entry above; the
+          !Kung expedition is not a polity on the roster. The !Kung expedition
+          under !Kweiten ta//ken; the Three Kings' colony of before 961 is the
+          map's older settlement.
     note: Gliese 876, 15 ly out in Aquarius.
 
   - name: Mokupuni
@@ -10139,6 +10416,27 @@ worlds:
     events:
       - year_at: 2477
         kind: settled
+        polity: nocozo
+      - year_at: 2477
+        kind: settled
+        polity: sophic-league
+        note: >-
+          "The S Antliae system was colonised in 2477 AT by a joint NoCoZo /
+          Sophic League mission, drawn by the unusual characteristics of this
+          double star." Joint colonisation by NoCoZo and the Sophic League;
+          recorded as two entries, one per polity. A joint NoCoZo and Sophic
+          League mission; the same sentence carries the Zone.
+      - year_at: 2677
+        kind: independent
+        precision: circa
+        note: >-
+          "The joint NoCoZo/Sophic administration named this system Freedonia,
+          but after two centuries they declared themselves independent of both
+          empires and seceded from Sephirotic influence." Year computed as
+          circa 2677 AT, two centuries after the stated 2477 colonisation; the
+          article gives only the relative span 'two centuries', not an AT
+          year, for the secession itself. 'After two centuries' of joint
+          administration, entered as 2677; independent of both.
     note: >-
       Around S Antliae — CD-28 7373, HD 82610, SAO 177619, HIP 46810, HR 3798 —
       which this map's catalogue carries under its numbers but under no name, at
@@ -10863,6 +11161,32 @@ worlds:
         kind: settled
         precision: not_later_than
         note: Settled by this year, when contact with the colonists had faded to nothing.
+      - year_at: 6810
+        kind: visited
+        note: >-
+          "In 6810 an interstellar trading ship of the Spacefarer's Union
+          visited the system and found the planet deserted." Spacefarer's
+          Union is not on the roster (see unplaced).
+      - year_at: 6810
+        kind: abandoned
+        precision: not_later_than
+        note: >-
+          "In 6810 an interstellar trading ship of the Spacefarer's Union
+          visited the system and found the planet deserted." The ship found
+          the planet already deserted on arrival in 6810; the colony's actual
+          end is undated, sometime after contact with the outside had dried up
+          by 6299 (see doubts) and before this 6810 visit. Found deserted by
+          the Spacefarer's Union ship of 6810; the map's older 'settled 6299'
+          has no sentence in the article, whose 6299 is when contact dried up.
+      - year_at: 7197
+        kind: visited
+        polity: metasoft
+        note: >-
+          "However the arrival of a Metasoft emissary fleet in 7197 prevented
+          the massacre of the last remaining Horrors." "The Version Tree" a
+          sentence later refers to the same fleet; Metasoft Version Tree is
+          the roster's metasoft polity. An emissary fleet, which 'prevented
+          the massacre of the last remaining Horrors'.
     note: >-
       In Cancer at 1,712 ly. The article gives no date for the colony itself.
       What it gives is 6299, by which time contact with the original settlers

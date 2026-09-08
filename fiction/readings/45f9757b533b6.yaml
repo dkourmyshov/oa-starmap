@@ -1,0 +1,20 @@
+article: 45f9757b533b6
+title: Argelander
+events:
+  - year_at: 2190
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised 2190 AT"
+    note: "The panel's 'Affiliation NoCoZo' line is not explicitly tied to this colonisation date, so the polity is left blank here and the affiliation recorded separately under holder_undated, per the no-inference rule."
+holder_undated:
+  - polity: nocozo
+    quote: "Affiliation NoCoZo"
+unplaced: []
+contradictions: []
+other_places:
+  - "Gamma-2 Velorum (Regor), destination of a long-range mission launched from Argelander in 2870 by Vaneld Stellar Engineering AG, arriving shortly before that star went supernova; has its own related article."
+doubts:
+  - "\"The strange Christian sect that worships Jesus the Borg was founded here in 3008.\" A dated claim, but the founding of a religious sect is not one of the listed event kinds (no change of holder or settlement status); not recorded as an event."
