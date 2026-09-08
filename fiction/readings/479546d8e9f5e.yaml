@@ -1,0 +1,76 @@
+article: 479546d8e9f5e
+title: Gatlida (Epsilon Indi)
+events:
+  - year_at: 610
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Autonomous ship Swift , launched 488 AT, arrived 610 AT"
+    note: "The autonomous (uncrewed) probe ship; the body text does not describe it staying or colonising. Not present in the header's dated-event list at all."
+  - year_at: 621
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonyship Sure , launched 499 AT, arrived 621 AT"
+    note: "Header records this quote as 'visited 621', but the body identifies this same ship (Sure) as the vessel that first successfully colonised the system (see the 636 AT entry below), so it is classified here as settled. Contradicts the body's arrival year of 636 AT for Sure; see contradictions."
+  - year_at: 636
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The Prudence Foundation craft Sure arrived in 636 AT ."
+    note: "Matches header's 'settled 636'. The Prudence Foundation is not on the roster; see unplaced."
+  - year_at: 764
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Imhotep 12, 764 AT, Prima Station, Epsilon Indi orbit"
+    note: "Local date-stamp of the in-fiction excerpt from 'Voyages of the Starlark', describing new arrivals at Prima Station; matches header's 'visited 764'."
+  - year_at: 764
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The arkship Starlark arrived in 764, and this increased the population of this system significantly."
+    note: "Matches header's 'visited 764'."
+  - year_at: 815
+    kind: transferred
+    polity: eridanus-league
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 815, Gatlida joined the Eridanus League"
+    note: ""
+holder_undated:
+  - polity: nocozo
+    quote: "Since the Age of Consolidation the system has been a part of the NoCoZo."
+unplaced:
+  - name: "House Stevens"
+    quote: "first successfully colonized by the clones of House Stevens ."
+  - name: "Prudence Foundation"
+    quote: "The Prudence Foundation craft Sure arrived in 636 AT ."
+  - name: "Gatlidan Provisional Confederacy"
+    quote: "The various colonies in the Gatlidan Provisional Confederacy willingly joined the League except for the Stevens traditionalists, and certain Christian-cultist and Ecopagan factions located on planetoids in the outer belts."
+  - name: "Ganesha Mission"
+    quote: "One of these groups, the Ganesha Mission , attempted to mis-use League laws to stage a hostile corporate takeover of this world."
+contradictions:
+  - about: arrival year of colony ship Sure
+    quotes:
+      - "Colonyship Sure , launched 499 AT, arrived 621 AT"
+      - "The Prudence Foundation craft Sure arrived in 636 AT ."
+other_places:
+  - "Praxis-Gnosis (Epsilon Indi B)"
+  - "Ran"
+doubts:
+  - "The header's 'visited 880' has no corresponding quote anywhere in this article's text; it could not be found or recorded."
+  - "The Swift ship's 610 AT arrival does not appear in the header's dated-event list at all; flagged as a new finding."
+  - "'New colonies were established at Deep Red, Neruda and Shiva, as more arkships arrived from Solsys' and the Eridanus League's breakup/collapse are described only relative to other events (no explicit AT year), so they were not recorded as dated entries."
+  - "The Beamrider cycler station at Praxis (established 641 a.t.) and the Deeper Covenant presence at the Ba-Bb system belong to the brown-dwarf components Praxis and Gnosis, which have their own separate article ('Praxis-Gnosis (Epsilon Indi B)'); per the brief these were left to that article rather than recorded here."

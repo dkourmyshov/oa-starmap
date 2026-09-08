@@ -1,0 +1,26 @@
+article: 48f73a3693b59
+title: Rangar (Etaran System)
+events:
+  - year_at: 3702
+    kind: observed
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 3702 A.T. , a huge burst of radio waves was detected emanating from a planet orbiting the star HD 148071."
+    note: ""
+holder_undated:
+  - polity: negentropy-alliance
+    quote: "Eventually, the Negentropists set up a permanent installation on the gas giant's solitary moon, and found the moon to be dense with heavier elements."
+  - polity: negentropy-alliance
+    quote: "AFFILIATION : Negentropy Alliance"
+unplaced:
+  - name: "Black Acropolis Builders"
+    quote: "local urban legends say that the Rings of Rangar and the Black Acropolis Dysons were built by the same civilization"
+contradictions: []
+other_places:
+  - "Black Acropolis"
+doubts:
+  - "No AT year is ever given for the Negentropists' 'permanent installation' (the actual settlement of the system); only the 3702 AT detection of the radio burst carries an explicit year, so the settled-type claim was recorded only under holder_undated."
+  - "The dispatch of the first microprobe swarm ('soon' after 3702) and the follow-up Negentropist probe swarm ('After The Version War') are undated beyond era references, so no separate visited entries were made for them."
+  - "The claim that 'the rings were created by a migratory fleet of Solipsist panvirtuality ships which passed through the system about a thousand years before' is explicitly speculative ('far more likely') and has no anchored AT year, so it was not recorded as a dated event."

@@ -1,0 +1,34 @@
+article: 48f745215d5c7
+title: Ribblehead
+events:
+  - year_at: 3499
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Founded: 3499 Terraformed 4800"
+    note: "Matches the header's already-dated 'settled 3499'. The affiliation, Mutual Progress Association, is not tied to this founding date by the text; see holder_undated. 'Terraformed 4800' is a terraforming milestone, not recorded as a separate event."
+  - year_at: 3499
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "a severe conflict arose in 3499 over a large chondritic world known as Ribblehead, rich in carbon and aluminium but depleted in iron. The venusian tweaks, Clade Leda and the titanian adapts, the Methanoids both claimed the planet, but the Bluesky sect muscled in and seeded it with nanobacilli and poikilotrophs"
+    note: "The narrative account of the same 3499 founding as the panel entry above, naming the settling group as 'the Bluesky sect', none of Clade Leda, the Methanoids, or the Bluesky sect being on the polity roster (see unplaced). The preceding claim dispute is a conflict, not itself recorded as an event."
+holder_undated:
+  - polity: mutual-progress-association
+    quote: "Affiliation: Mutual Progress Association"
+unplaced:
+  - name: "Bluesky sect"
+    quote: "the Bluesky sect muscled in and seeded it with nanobacilli and poikilotrophs"
+  - name: "Clade Leda"
+    quote: "The venusian tweaks, Clade Leda and the titanian adapts, the Methanoids both claimed the planet"
+  - name: "Methanoids"
+    quote: "The venusian tweaks, Clade Leda and the titanian adapts, the Methanoids both claimed the planet"
+contradictions: []
+other_places: []
+doubts:
+  - "'Continent (23) has since 7897 AT become accessible for monitored tourism' is a dated internal administrative change (tourist access to one continent of an already-settled world), not a settlement, transfer, or other listed event kind; not recorded as an event."
+  - "No sentence directly dates when Ribblehead's affiliation with the Mutual Progress Association began; the 3499 founding entries above do not themselves name the MPA as the founding polity, so the MPA affiliation is recorded only as holder_undated."

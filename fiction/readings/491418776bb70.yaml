@@ -1,0 +1,52 @@
+article: 491418776bb70
+title: "Tunh Xenohole, The"
+events:
+  - year_at: 3965
+    kind: observed
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 3965 the Lagrange Defenders, a research/exploration megacorp-institute discovered an artificial structure in the system Neb 34786, 1237 ly from Sol."
+    note: "Lagrange Defenders is not on the roster; see unplaced. Matches the header's 'observed 3965', though the following sentences describe xenoarcheologists exploring the wormhole in person, which could instead read as 'visited' -- left as observed to match the header, flagged for the reviewer."
+  - year_at: 4094
+    kind: contact
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 4094 it was discovered that the Tunnler wormhole in fact housed a powerful xenotech AI, which was still active, though largely dormant."
+    note: "Judgement call: treats the dormant Tunnler wormhole AI as the resident xenosophont contacted; the discoverers (Lagrange, Tunh Logika) are not on the roster. Flagged in doubts."
+  - year_at: 4100
+    kind: transferred
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 4100 Tunh Logika formally joined the Institute of Exopaleontology as a department-nation."
+    note: "Neither Tunh Logika nor the Institute of Exopaleontology is on the roster; see unplaced."
+  - year_at: 4805
+    kind: transferred
+    polity: sagittarius-transcultural-cooperation
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Tunh Logika survived just barely, and when the Sagittarius Transcultural Cooperation was created this system was a founding member."
+    note: "The sentence does not itself give a numeral; the year 4805 is the Sagittarius Transcultural Cooperation's founding year from the roster, taken as the implied date of 'when the Sagittarius Transcultural Cooperation was created'. Flagged in doubts."
+holder_undated: []
+unplaced:
+  - name: "Lagrange Defenders"
+    quote: "In 3965 the Lagrange Defenders, a research/exploration megacorp-institute discovered an artificial structure in the system Neb 34786, 1237 ly from Sol."
+  - name: "Tunh Logika"
+    quote: "Tunh became an independent neutral polity, the Tunh Logika (of course still largely a puppet government to Lagrange)."
+  - name: "Institute of Exopaleontology"
+    quote: "In 4100 Tunh Logika formally joined the Institute of Exopaleontology as a department-nation."
+contradictions: []
+other_places:
+  - "Kringsler Volume: a neighbouring region 'formerly dominated by Kringslerism', with its own article; only mentioned here in passing."
+  - "Oh-F-Star-4 (OF-Star-4): 'The capital of the Carina rush', with a similar alien wormhole once part of the same network; has its own article."
+doubts:
+  - "\"Tunh became an independent neutral polity, the Tunh Logika\" has no explicit year attached (only 'for the first decades' after 3965), so it is not recorded as a dated event, though Tunh Logika is listed under unplaced since it recurs as an actor in later dated sentences."
+  - "Whether the 4094 discovery of the dormant Tunnler wormhole AI counts as 'contact' with a resident xenosophont, versus simply a further observed/visited discovery about the wormhole's contents, is left for the reviewer."
+  - "The 4805 STC founding-membership event has its year taken from the roster rather than from a numeral in the article text; flagged for the reviewer to confirm against the roster's own sourcing."
+  - "\"The xenohole was connected to the Terragen wormhole Nexus some time after the war was finished, in 5500 AT\" is an infrastructure milestone, not a holder change, so excluded as an event."

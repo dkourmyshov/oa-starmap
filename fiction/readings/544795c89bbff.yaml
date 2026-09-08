@@ -1,0 +1,38 @@
+article: 544795c89bbff
+title: Ivonya-Ngia
+events:
+  - year_at: 2609
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "First Colonised: 2609 AT; Rruuhhll elephants ascended 3909 AT"
+    note: "Colonists are the provolved elephant clade Hrruuaiih, not on the polity roster (see unplaced). Matches the header's already-dated 'settled 2609'."
+  - year_at: 4020
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Recolonised: 4020 AT"
+    note: "Recolonists are described in the body as refugees and colonists arriving after the Version War, mostly nearbaseline humans and mammalian provolves; no roster polity is named for them. Matches the header's already-dated 'settled 4020'."
+  - year_at: 4800
+    kind: transferred
+    polity: keter-dominion
+    precision: exact
+    until_at: null
+    where: body
+    quote: "This world joined the Keter Dominion in 4800."
+    note: "Not present in the header's already-dated list, though the article is filed under Keter Dominion. 'This world' may refer specifically to the Keterist gas giant Jjrrerrrerr/Annabel rather than the whole Ivonya-Ngia system; see doubts."
+holder_undated: []
+unplaced:
+  - name: "Hrruuaiih"
+    quote: "Most of the worlds colonised by the provolved African elephants known as the Hrruuaiih are in the Sophic League region, counterspinwards of Earth. A small contingent, however, set off for the Aquila Rift"
+contradictions: []
+other_places:
+  - "Yhrraini and Jhairrn (terraformed elephant worlds in the Utopia Sphere, mentioned in the Elephant related-article summary text)"
+doubts:
+  - "'This world joined the Keter Dominion in 4800' is the only dated transfer in the article, but 'this world' most naturally refers back to the Keterist gas giant Jjrrerrrerr/Annabel (where the ascended elephants migrated in 3909), not necessarily the diskworld Ivonya-Ngia or the system as a whole; recorded against the system per the one-place-per-article rule, flagged for review."
+  - "'Eventually the sophants underwent a mass transcension in 3909, and migrated into the metallic hydrogen layer of the gas giant Jjrrerrrerr' is an ascension and an in-system relocation; excluded as an event per the brief, though it left the original cylinder habitats effectively abandoned (no explicit abandonment date or quote is given)."
+  - "'In 5003 the scavenger vecs exploring Kibale habitat declared it safe' and 'In 9097 this world was finally opened for habitation' (Honnaka) are sub-settlements within the already-settled system; excluded as events per the brief."

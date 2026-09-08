@@ -1,0 +1,29 @@
+article: 5eb6bd9f69c02
+title: Uppalavanna Complex
+events:
+  - year_at: 4722
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised 4722 AT"
+    note: "Panel field for colonisation year; the panel's 'Allegiance Keter Dominion' field is not explicitly dated to this year, so polity is left empty here (see the body quote below for the dated holder claim)."
+  - year_at: 4722
+    kind: settled
+    polity: keter-dominion
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The Uppalavanna system was colonised in 4722 AT by the Tarazed/Rift Mission, which carried a contingent of Keterist modosophonts and a smaller number of first singularity transapients."
+    note: ""
+holder_undated:
+  - polity: keter-dominion
+    quote: "Allegiance Keter Dominion"
+unplaced: []
+contradictions: []
+other_places:
+  - "Emmit: a separate Biovirate system 16 light years away, besieged from 5953 to 5960 AT and overcome the following year during the Biovirate War; has its own article and is not this place."
+doubts:
+  - "\"By 5500 AT, modosophonts were travelling to the Uppalavanna Complex from many nearby systems\" describes ongoing traffic to an already-settled place, not a discrete visited/settled event, so not recorded as an event."
+  - "The Biovirate War (escalated 5802 AT) and the siege of Emmit (5953-5960 AT) are battles, not holder changes for Uppalavanna itself, so excluded per the brief."

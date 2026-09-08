@@ -1,0 +1,39 @@
+article: 4922e9afcd478
+title: Bullseye
+events:
+  - year_at: 1790
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The colony ship Shakti arrived there in 1790 a.t. and named the planet for the huge rotating storm located at the subsolar point in the planet's thick atmosphere."
+    note: "The map header records this as 'visited 1790'; a 'colony ship' arriving and the population remaining (see 'the population of colonists... were then joined by an influx' post-2706) reads as 'settled' rather than a mere visit. Flagged for reviewer judgement rather than resolved. No polity is attributed: Solar Dominion is not founded until 2217, after this date."
+  - year_at: 5880
+    kind: independent
+    polity: solar-dominion
+    precision: exact
+    until_at: null
+    where: body
+    quote: "A separatist movement, possibly backed by the Solipsist Panvirtuality, led to secession from the Solar Dominion in 5880, but the political situation in this world deteriorated, with wars between various factions."
+    note: ""
+holder_undated:
+  - polity: solar-dominion
+    quote: "Allegiance Former Solar Dominion, now independent but with strong\nties to the Zoeific Biopolity"
+  - polity: zoeific-biopolity
+    quote: "Allegiance Former Solar Dominion, now independent but with strong\nties to the Zoeific Biopolity"
+  - polity: solar-dominion
+    quote: "this formerly independent planet was first seized by the Solar Dominion, then 'liberated' by a Cyberian-Metasoft fleet"
+  - polity: cyberian-network
+    quote: "then 'liberated' by a Cyberian-Metasoft fleet"
+  - polity: metasoft
+    quote: "then 'liberated' by a Cyberian-Metasoft fleet"
+  - polity: solar-dominion
+    quote: "In the final settlement the world was granted to the Solarists, but as it was relatively distant from the main empire Solarian influence remained weak."
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "The Version War holder changes (seized by Solar Dominion, 'liberated' by a Cyberian-Metasoft fleet, granted to the Solarists) carry no explicit AT year in the text, so they are recorded under holder_undated rather than as dated events."
+  - "\"The planet was declared habitable in 2706, more than eighty years before schedule\" is a terraforming milestone, not a settlement event, per the brief; the colony (Shakti, 1790) is treated as already established by that point."
+  - "The separatist movement of 5880 was 'possibly backed by the Solipsist Panvirtuality' (on the roster), but this is not stated as the Panvirtuality holding the system, so no holder entry is made for it."

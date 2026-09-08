@@ -1,0 +1,23 @@
+article: 4e49327008e0e
+title: Blefuscu
+events:
+  - year_at: 6110
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "First reached in 6110 AT by a Nisse colony ship, this large world in Pyxis, 2105 ly from Sol, was originally a dry SuperGaian type world with very little water."
+    note: "Clade Nisse is not on the polity roster (see unplaced). The header lists this as both 'visited 6110' and 'settled 6110'; the prose only gives one arrival, by a colony ship that stayed, which reads as settled rather than a separate visit."
+holder_undated: []
+unplaced:
+  - name: "Nisse"
+    quote: "First reached in 6110 AT by a Nisse colony ship"
+  - name: "Tramecksan Empire"
+    quote: "In 7988, A polity calling itself the Tramecksan Empire emerged victorious from the conflict and absorbed several smaller nations, and declared that the defeated population would henceforth be subservient to the victors"
+contradictions: []
+other_places: []
+doubts:
+  - "The header records this place as both 'visited 6110' and 'settled 6110', but the prose supports only a single dated arrival (a colony ship that stayed); recorded once here as settled, with the duplicate header entry flagged for review."
+  - "The Tramecksan Empire's rise to dominance in 7988 by absorbing several smaller nations after a local war reads as an internal conquest on the same world, not a system-level transfer to an outside polity; not recorded as a 'transferred' event, but the polity and date are noted here since a reviewer may see it differently."
+  - "'the system finally dissolved and returned to a more equitable form of post-scarcity society' (undated, following the slave revolts) marks the end of Tramecksan rule but carries no year and no roster polity, so it is not recorded as an event."

@@ -1,0 +1,29 @@
+article: 671fbea784d7c
+title: The Violets (BL and UV Ceti)
+events:
+  - year_at: 465
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "This mission, crewed by an ahuman group, reached the system in 465, five years before the Solipsist League ship."
+    note: "Header records this as 'visited 465'; the prose goes on to describe this ahuman group taking BL Ceti and building an industrial base there, which reads closer to 'settled'. The ahuman group is never given a proper name, so no polity is recorded."
+  - year_at: 520
+    kind: transferred
+    polity: ""
+    precision: not_later_than
+    until_at: null
+    where: body
+    quote: "By the beginning of 520, the entirety of the ahuman civilization had already retreated into the depths of the planets as the solipsists reigned in space."
+    note: "The Solipsist League is not on the roster, so polity is left empty; see unplaced."
+holder_undated: []
+unplaced:
+  - name: "Solipsist League"
+    quote: "They fled from Solsys in 342 aboard a comet core converted into computronium, using deuterium they had gathered to boost the ship up to 0.07c."
+contradictions: []
+other_places:
+  - "Ran"
+doubts:
+  - "The Solipsist League ship's arrival is only given relative to the ahumans' ('five years before' the 465 AT arrival, i.e. implying circa 470 AT); no explicit AT year is stated for it in the prose, so no separate dated entry was made for that arrival."
+  - "'On 7 Copernicus 517 (local time)' names a local calendar, not an AT year, and describes a battle (a flare and subsequent assault), which the brief excludes as an event kind; it was not recorded."

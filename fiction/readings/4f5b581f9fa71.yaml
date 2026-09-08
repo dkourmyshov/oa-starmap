@@ -1,0 +1,44 @@
+article: 4f5b581f9fa71
+title: Pelion and Ossa
+events:
+  - year_at: 2000
+    kind: observed
+    polity: ""
+    precision: circa
+    until_at: null
+    where: body
+    quote: "One such system, JD 440454221, was detected in Pyxis at long range in the third millennium AT, long before the first explorer class craft reached the vicinity."
+    note: "\"third millennium AT\" spans roughly 2001-3000; year_at is the start of that millennium."
+  - year_at: 7988
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "By the time the first colony ship arrived, in 7988 AT, the orbits of the planets were well known and predicted far into the future."
+    note: "Matches header already-dated settled 7988. See doubts and holder_undated for the joint NoCoZo / Sophic League venture named later in the article without its own date."
+  - year_at: 9526
+    kind: abandoned
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Two small terrestrial worlds which collided in 9526 AT"
+    note: "The planetary collision physically destroys both worlds, ending any habitation. See doubts for an earlier, undated evacuation (\"the two doomed planets were deserted\") that preceded a later wave of death-seeker visitors before this final impact."
+holder_undated:
+  - polity: nocozo
+    quote: "At first Otus and Ephialtes, the S:2 level individuals in command of the joint NoCoZo / Sophic League colonisation venture, planned to simply observe this spectacular event from a distance, and exploit the vast amount of differentiated matter that would be thrown out by the collision."
+  - polity: sophic-league
+    quote: "At first Otus and Ephialtes, the S:2 level individuals in command of the joint NoCoZo / Sophic League colonisation venture, planned to simply observe this spectacular event from a distance, and exploit the vast amount of differentiated matter that would be thrown out by the collision."
+unplaced: []
+contradictions: []
+other_places: ["Threshold", "Gehenna Incident, The"]
+doubts:
+  - quote: "At first Otus and Ephialtes, the S:2 level individuals in command of the joint NoCoZo / Sophic League colonisation venture, planned to simply observe this spectacular event from a distance, and exploit the vast amount of differentiated matter that would be thrown out by the collision."
+    note: "Carries no year of its own; it appears to describe the same colonisation effort whose colony ship arrived in 7988 AT, but that link is not made in a single dated sentence, so it is recorded as holder_undated rather than joined to the 7988 settled event."
+  - quote: "By 9015 the Sophic League had also withdrawn from the diversion project."
+    note: "Withdrawal from a specific orbit-diversion engineering project, not a stated change in who holds the system, so it has not been recorded as an independent/transferred/abandoned event."
+  - quote: "At the end of this relocation the two doomed planets were deserted, with a number of newly built, spacious, empty cities gathering dust beneath the new, oxygen-rich skies."
+    note: "Reads as an abandonment of the colony, but no explicit year is given (only that it follows the undated Sophic League withdrawal and precedes the death-seeker migrants who arrive ahead of the dated 9526 collision)."
+  - quote: "long before the first explorer class craft reached the vicinity"
+    note: "No explicit year for this visit is given, only that it preceded the 7988 colony ship by an unspecified span."

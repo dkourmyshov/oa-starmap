@@ -1,0 +1,59 @@
+article: 48fe1da7a2205
+title: Chorus
+events:
+  - year_at: 7953
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Faber/Tavi exploration and development teams entered what they thought was a virgin system in 7953, and though they left Chorus strictly alone other than for scientific purposes, they began to develop the rest of the system."
+    note: "Header records this as 'visited 7953'; the prose describes ongoing development of the system, not just a visit. Fabers and Tavi are clades/groups, not on the polity roster (see unplaced)."
+  - year_at: 7953
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Founded/Colonized: Reached 7953 AT by the Fabers and Tavi"
+    note: "Infobox-style Polity section restating the same year as the body-text account above."
+  - year_at: 10377
+    kind: independent
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Jade Chime Singers' Moot achieved full independence in 10377."
+    note: "Independence appears to be from the Faber/Tavi development lease, not from any roster polity; Chorusmoot (the local government) is not on the roster either."
+  - year_at: 8677
+    kind: transferred
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "They made the existence of the new sapient clade public in 8677, after several centuries of development, and the Tavi and Faber colonists granted the new clade ownership of Chorus and the entire system"
+    note: "Neither Faber/Tavi (grantor) nor Chorusmoot/Jade Chime Singers (grantee) are on the polity roster; see unplaced. Ownership transfer year is inferred from the same sentence as the 8677 public-disclosure date."
+  - year_at: 6000
+    kind: stewardship
+    polity: caretaker-gods
+    precision: not_earlier_than
+    until_at: null
+    where: body
+    quote: "At undetermined point, probably not before the 7th millennium AT, Mist Rising, a transapient of Terragen origin, presumably explored the system and marked Chorus for eir own."
+    note: "Mist Rising's ethos is presumed to be a form of Caretakerism (see data panel AI's Ethos line). The article itself hedges this as 'undetermined' and 'presumably'."
+holder_undated: []
+unplaced:
+  - name: "Fabers"
+    quote: "Founded/Colonized: Reached 7953 AT by the Fabers and Tavi"
+  - name: "Tavi"
+    quote: "Founded/Colonized: Reached 7953 AT by the Fabers and Tavi"
+  - name: "Chorusmoot"
+    quote: "POLITY Name: Chorusmoot"
+contradictions: []
+other_places:
+  - "Doreen (own article; mentioned as a neighbouring mystery-world under the Compact of Eden)"
+doubts:
+  - "The header dates this place 'visited 7953', but the prose's Founded/Colonized line and the body account both describe an arrival that leads to ongoing development of the system, closer to 'settled' than 'visited'; recorded as settled here, flagged for review."
+  - "The 10377 'full independence' of Jade Chime Singers' Moot has no roster polity as predecessor holder (Faber/Tavi are not on the roster), so the 'independent' classification may not be the right fit for this data model; recorded as-is."
+  - "Mist Rising's system-marking date is explicitly described as 'undetermined' and only 'probably not before the 7th millennium AT'; the year_at of 6000 here is a rough anchor for that century-scale hedge, not a claimed exact year."
+  - "'The system was invaded briefly in 10403 by a mercenary NoCoZo entity, Payment Due, but expelled by Mist Rising' is a battle with no lasting change of holder; excluded as an event per the brief."

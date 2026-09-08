@@ -1,0 +1,61 @@
+article: 4910f10364835
+title: Rajasekar
+events:
+  - year_at: 1748
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "the 1748 AT colonisation attempt of Tau 1 Gruis (CD-4913988) II, named Rajasekar by Truth-Santaya Networks"
+    note: "Matches header's 'settled 1748'. Neither Truth-Santaya Networks (the namer) nor the Terranova Foundation (the coloniser, see unplaced) is on the roster."
+  - year_at: 2534
+    kind: visited
+    polity: stellar-umma
+    precision: exact
+    until_at: null
+    where: body
+    quote: "When the Stellar Umma research vessel al Geber arrived at the planet in 2534 AT ( Age of Expansion ) they found a widespread technological civilisation composed of hundreds of modified species."
+    note: "Matches header's 'visited 2534'."
+  - year_at: 4192
+    kind: abandoned
+    polity: ""
+    precision: circa
+    until_at: null
+    where: body
+    quote: "Just ten years after the first outbreak the culture had collapsed to the point where it could no longer maintain the necessary nanotech and information infrastructure, and it died out."
+    note: "Year is computed as 4182 AT (the viral outbreak, 'In 4182 AT ... a viral infection ... attacked the Pikuu-Pik-3') plus the sentence's own 'ten years after'; no explicit AT number is given for the collapse itself, so this should be checked by the reviewer."
+  - year_at: 6450
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Rajasekar was later colonised in 6450 AT ( Post-ComEmp Era ) by a Sophic tweak adaptation calling themselves the New Rajasekarians."
+    note: "Matches header's 'settled 6450'. The New Rajasekarians are not on the roster (see unplaced); 'Sophic tweak' hints at Sophic League affiliation but does not name it as the colonising polity, so polity is left empty."
+  - year_at: 7833
+    kind: transferred
+    polity: mutual-progress-association
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Currently Rajasekar is a member of the Mutual Progress Association after the 7833 AT coup by the Requiemists against the until then ruling Spranger Party."
+    note: "The sentence ties current MPA membership to the 7833 AT coup, but does not explicitly say MPA membership began at that date rather than at some later point; flagged for reviewer confirmation."
+holder_undated: []
+unplaced:
+  - name: "Truth-Santaya Networks"
+    quote: "the 1748 AT colonisation attempt of Tau 1 Gruis (CD-4913988) II, named Rajasekar by Truth-Santaya Networks"
+  - name: "Terranova Foundation"
+    quote: "The colony effort from Terranova Foundation planned to set up a base, sequence the planetary genomes and functions, and sell whatever biological tricks had evolved."
+  - name: "New Rajasekarians"
+    quote: "Rajasekar was later colonised in 6450 AT ( Post-ComEmp Era ) by a Sophic tweak adaptation calling themselves the New Rajasekarians."
+  - name: "Requiemists"
+    quote: "Currently Rajasekar is a member of the Mutual Progress Association after the 7833 AT coup by the Requiemists against the until then ruling Spranger Party."
+  - name: "Spranger Party"
+    quote: "Currently Rajasekar is a member of the Mutual Progress Association after the 7833 AT coup by the Requiemists against the until then ruling Spranger Party."
+contradictions: []
+other_places: []
+doubts:
+  - "'Terranova instead sent down a vec research team to deal with the issue in 1810 AT' was treated as Terranova's own follow-up to a colony it had already settled (like a probe/trader arriving after settlement), so it was not recorded as a new event, even though the vecs were eventually left behind as colonists at an unstated later date."
+  - "The 4192 AT date for the culture's collapse (kind abandoned) is derived from 'ten years after' the 4182 AT outbreak rather than stated outright; see the note on that event."
+  - "It is unclear whether the 7833 AT coup date is also the date Rajasekar joined the Mutual Progress Association, or whether MPA membership came later; see the note on that event."

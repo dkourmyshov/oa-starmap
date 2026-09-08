@@ -1,0 +1,72 @@
+article: 490b34ec41bb6
+title: Oikoumene Dyson
+events:
+  - year_at: 1521
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "K4H von neumann probe arrived 1521"
+    note: "Matches header already-dated visited 1521."
+  - year_at: 1521
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In AT 1521 a K4H von neumann development project reached Zeta Serpentis only to find an entrenched colony of Diamond Belt neumanns already developing the inner asteroid belt and dismantling one of the gas giants."
+    note: ""
+  - year_at: 1521
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The K4H decided to dig in on the outer belt, as well as appropriate some frozen kuiper bodies and an inner rockball."
+    note: "Same year and continuous narrative as the \"reached\" clause above, but this clause describes staying rather than merely arriving; the header records this year only as visited. See contradictions."
+  - year_at: 1470
+    kind: settled
+    polity: ""
+    precision: circa
+    until_at: null
+    where: panel
+    quote: "Diamond Belt neumann colony thought to have been established c. 1470s - 1480s"
+    note: "Panel gives a two-decade approximate range, \"c. 1470s - 1480s\"; year_at is the earlier bound only."
+  - year_at: 1895
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "When a second K4H expedition arrived in AT 1895, they discovered a partial dyson, still under construction, already consisting of millions of huge habitats of varying configurations and biont habitability."
+    note: "The expedition's transmission was subsequently lost and the Corporation wrote it off as a loss; nothing suggests this expedition stayed."
+  - year_at: 3194
+    kind: visited
+    polity: mutual-progress-association
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 3194 a third toposophic MPA artificer ISO, fascinated by the vast project, made contact with the distributed intelligence of the dyson, and was able to establish communication channels and protocol and information exchanges between Oikoumene and Djed."
+    note: "The sentence attributes this contact to an MPA-affiliated artificer. Whether this is the point Oikoumene formally became MPA-affiliated (per the panel's current \"Affiliation: MPA\") is not stated and is not inferred here."
+holder_undated:
+  - polity: mutual-progress-association
+    quote: "Affiliation: MPA"
+unplaced:
+  - name: "K4H"
+    quote: "a K4H von neumann development project reached Zeta Serpentis"
+  - name: "Astrographic Institute"
+    quote: "the Zeta Serpentis system was declared a hazard zone by Astrographic Institute on Stirling Orbital, Jove Trojan, SolSys"
+  - name: "Unity (Tau Ceti expedition)"
+    quote: "the famous Unity-led expedition from Tau Ceti"
+contradictions:
+  - about: "kind of the 1521 event (visited vs. settled)"
+    quotes:
+      - "already dated: visited 1521 [header]"
+      - "The K4H decided to dig in on the outer belt, as well as appropriate some frozen kuiper bodies and an inner rockball."
+other_places: ["Djed", "Medius", "Tau Ceti"]
+doubts:
+  - quote: "This was followed by a wormhole link to Medius - originally a nanoscale link that was rapidly inflated to macroscale (100 meters). Oikoumene had joined the Nexus."
+    note: "\"Joined the Nexus\" reads as joining a wormhole/communication network, not necessarily the MPA polity, and no separate year is given for it beyond the 3194 contact date above."
+  - quote: "Over the next six or seven centuries, many expeditions were launched by idealists, adventurers, cranks, and claim jumpers looking to make it rich, or establish a perfect society, or even (as was the case of the famous Unity-led expedition from Tau Ceti) open up friendly communication with the strange dyson colony."
+    note: "No anchor year is given for the start of this span (it follows the undated \"even before this\" clause), and it describes recurring expeditions of colonists who mostly disappeared into the habitats rather than a single dated settlement or transfer."

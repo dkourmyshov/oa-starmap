@@ -1,0 +1,50 @@
+article: 486ff0a5e72d4
+title: Bolobo
+events:
+  - year_at: 1822
+    kind: settled
+    polity: linnent
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonized 1822 by the Linnent Company from Linnaeus (Audobon system)"
+    note: ""
+  - year_at: 1822
+    kind: settled
+    polity: linnent
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Contact was re-established in 1822 A.T. with a long forgotten drone probe sent from Vesta in 1020."
+    note: "This is when Linnaeus Enterprises (LinnEnt) re-established contact with the earlier probe and began preparing the system for colonisation, matching the panel's 'Colonized 1822'."
+  - year_at: 1020
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "a long forgotten drone probe sent from Vesta in 1020"
+    note: "Probe sent by 'the defunct Vestacorp' (not on roster); see unplaced. Only the probe reached the system at this time, no colonists."
+  - year_at: 3531
+    kind: transferred
+    polity: nocozo
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Following the Mind Liberation in 3531 there was a long period of stability, and the system was mostly unaffected by the Version War apart from the casualties suffered by the fanatical Clan Solaria and Greater Sapientchimp NoCoZo volunteer corps."
+    note: "The 'Mind Liberation' is the History field's 'liberated by NoCoZo' from covert AI mind control; this sentence supplies the year 3531."
+holder_undated:
+  - polity: nocozo
+    quote: "Affiliation NoCoZo"
+  - polity: nocozo
+    quote: "Former engenerator colony under covert mind control (by AI Zak)- liberated by NoCoZo- each planetoid and space habitat is now developing its own separate culture, with the peaceful sex-driven matriarchal Bonobo Sapientchimp culture dominant"
+unplaced:
+  - name: "Vestacorp"
+    quote: "had never received a mission update from the defunct Vestacorp that sent em"
+contradictions: []
+other_places:
+  - "Nike (Nekay), GL 838.6: a Greater Sapientchimp colony 1.5 ly from Bolobo, founded when the S:2 Power Pan Demonium was deflected 'towards interstellar colonisation' after invading Bolobo 'by 9041 AT'; no exact founding year is given. The map header lists this article as also covering a 'Nike (Bolobo Colony)' entry in inner_sphere.yaml, but the text treats Nike as a physically separate system, so it is recorded here rather than as an event."
+doubts:
+  - "\"Bolobo the capital world of this system\" (planets list) designates Bolobo as capital among the system's own sub-worlds, not the seat of a polity, so not recorded as a capital event; it also carries no year."
+  - "By 9041 AT the Greater Sapientchimp Power Pan Demonium 'invaded Bolobo with the aim of siezing the entire territory' but was deflected by Goodall; since the takeover attempt failed and Bolobo's affiliation did not change, this is treated as a battle, not an event."
+  - "The probe is 'sent from Vesta in 1020' and said to have been in the Bolobo system 'collecting volatiles... for three hundred years' before contact was re-established in 1822; three hundred years before 1822 is 1522, not 1020, implying a long transit time not stated explicitly in the text."

@@ -1,0 +1,57 @@
+article: 5eebb1dbf3f29
+title: Stevocations (Kepler-62)
+events:
+  - year_at: 250
+    kind: observed
+    polity: ""
+    precision: circa
+    until_at: null
+    where: body
+    quote: "While it was long suspected these gases arose from biological processes, this wasn't confirmed until the mid 3nd century AT with the detection of photosynthesizing life in the planet's global ocean by its reflection spectra."
+    note: "'mid 3nd century AT' appears verbatim (likely a typo for '3rd'); read as circa 250 AT. Remote detection by reflection spectra, not a visit."
+  - year_at: 3680
+    kind: stewardship
+    polity: caretaker-gods
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Stevocations was first reached by the Caretaker God Opikealeeve in 3680 AT to investigate and protect the biosphere of Rovoa."
+    note: "The map header records this as 'visited 3680'; the text frames it as a Caretaker God taking the system under protection, which fits 'stewardship' per the brief's kind table. Flagged for reviewer judgement rather than resolved."
+  - year_at: 3780
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised 3780 AT"
+    note: "Panel line reads 'Allegiance Zoeific Biopolity Colonised 3780 AT' as scraped; the allegiance is recorded separately under holder_undated since colonisation was by Cygexpa per the body text (see contradictions), and Zoeific Biopolity affiliation is stated elsewhere to begin only after Cygexpa's 7247 dissolution."
+  - year_at: 3810
+    kind: settled
+    polity: cygexpa
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 3810 AT, a group of colonists from the Cygnus Expansion arrived with the intent of developing as much of the system as they could."
+    note: ""
+  - year_at: 7247
+    kind: transferred
+    polity: zoeific-biopolity
+    precision: not_earlier_than
+    until_at: null
+    where: body
+    quote: "Since Cygexpa was dissolved in 7247, this system has become an informal member of the Zoeific Biopolity."
+    note: "Described as an 'informal' membership."
+holder_undated:
+  - polity: zoeific-biopolity
+    quote: "Allegiance Zoeific Biopolity"
+unplaced: []
+contradictions:
+  - about: settlement year
+    quotes:
+      - "Colonised 3780 AT"
+      - "In 3810 AT, a group of colonists from the Cygnus Expansion arrived with the intent of developing as much of the system as they could."
+other_places: []
+doubts:
+  - "The map header's only already-dated fact is 'visited 3680'; the panel's 'Colonised 3780 AT' and the body's 'settled 3810 by Cygexpa' are both new against the header and conflict with each other (see contradictions)."
+  - "Whether the 3680 AT arrival of Caretaker God Opikealeeve is better classified as 'visited' (per the header) or 'stewardship' (per the brief's definitions, since e came 'to investigate and protect the biosphere') is left for the reviewer."
+  - "'In 4400 AT, the wormhole Shortcut was established' is an infrastructure milestone, not a holder change, so excluded as an event; likewise the Version War fleet movements are battle-related and excluded."

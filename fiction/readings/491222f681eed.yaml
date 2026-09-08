@@ -1,0 +1,42 @@
+article: 491222f681eed
+title: Stanislaw
+events:
+  - year_at: 9921
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Reached 9921"
+    note: "Data panel field; body says the planet was found before public reports appeared, by a relativistic Faber/Tavi expedition (Faber and Tavi are clades, not roster polities)."
+  - year_at: 9920
+    kind: reported
+    polity: ""
+    precision: circa
+    until_at: null
+    where: body
+    quote: "First reports of Stanislaw reached the wormhole network in the late 9920's."
+    note: "Header already records reported 9920 (exact); the article's own wording is \"late 9920's\", not the year 9920 itself."
+holder_undated: []
+unplaced:
+  - name: "Corundum Glittering"
+    quote: "An entity called Corundum Glittering presently controls access to the system."
+  - name: "Faber, Clade"
+    quote: "the members of an alliance of Faber reprogroups were the first sapients to explore Stanislaw"
+  - name: "Tavi, Clade"
+    quote: "they soon retreated to orbital habs and ceded the work on the ground to their Tavi partners"
+  - name: "KROME1101"
+    quote: "the militant vec protection organization KROME1101 has offered anti-terrorist services in exchange for the designs of several of Stanislaw's predators and drytech viroids"
+  - name: "Museum Ships"
+    quote: "Similar agreements were apparently concluded with one or more Museum Ships and other institutes of learning."
+contradictions:
+  - about: "reported year"
+    quotes:
+      - "already dated: reported 9920 [header]"
+      - "First reports of Stanislaw reached the wormhole network in the late 9920's."
+other_places: []
+doubts:
+  - quote: "several polities and organizations declared the system a protected area under Corundum Glittering's management, according to an information release that was broadcast in 10209 AT and repeated with additional signatories in 10309."
+    note: "Corundum Glittering, an independent post-Faber AI (see \"AI's Current allegiance: independent\" in the data panel), is the one stated to manage the system. The Metasoft Version Tree, the Caretaker Gods, the Silicon Generation, and the Fomalhaut Acquisition Society are named as supporters/signatories of a protected-area declaration, not as holders of the system, so no settled/transferred/stewardship entry has been recorded for any of them without inferring a holder the text does not state."
+  - quote: "At some point in the past 500 years the post-Faber entity Corundum Glittering took charge of activities on and around Stanislaw."
+    note: "No absolute AT year is given, only a window relative to an unstated present; Corundum Glittering is not a roster polity."

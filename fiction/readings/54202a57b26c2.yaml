@@ -1,0 +1,27 @@
+article: 54202a57b26c2
+title: Hypatia
+events:
+  - year_at: 1819
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "HD 129777 is 193 ly from Sol, and at the ship's cruising velocity the journey lasted more than 280 years, finally arriving in 1819 AT."
+    note: "The colonists are Clade Parthene, not on the polity roster (see unplaced). Matches the header's already-dated 'settled 1819' with no discrepancy found."
+holder_undated: []
+unplaced:
+  - name: "Clade Parthene"
+    quote: "The all-female clade known as Clade Parthene was created in the Interplanetary age and survived the Technocalypse and subsequent Dark Age in near-isolation in their colony on the asteroid 5 Astraea."
+  - name: "ComEmp"
+    quote: "The wormhole to Zhuo-lian (now a NoCoNeg world) was finally reopened by the ComEmp, which also opened new wormholes to LeGuin and the other surviving Parthene worlds"
+contradictions: []
+other_places:
+  - "LeGuin (Parthene colony founded by a group who left Hypatia; own article implied)"
+  - "Cherryh (Parthene world founded by the same group; own article implied)"
+  - "Atwood (Parthene world founded by the same group, later devastated in the Version conflict; own article implied)"
+  - "Zhuo-lian (NoCoZo/NoCoNeg system linked to Hypatia by wormhole, overwhelmed by the 67th Negentropist fleet after 4480; own article implied)"
+doubts:
+  - "'In 4480 the stargate was closed by the Nexus transapients, and soon after Zhuo-lian was overwhelmed by the 67th Negentropist fleet' describes events at Zhuo-lian, not at Hypatia itself, and Zhuo-lian's fall is a battle rather than a holder change of Hypatia; not recorded as an event here."
+  - "'True male humans were first permitted to enter the system in 9001... the women finally began to allow all male individuals of any clade into the world from 9011 onwards' are dated social-policy changes, not a holder or settlement change under the brief's event kinds; flagged rather than recorded as events."
+  - "'One conflict in 7888 occured between certain hi-tech factions based in Chaio...' is a battle/blockade with no lasting change of holder; excluded as an event per the brief."

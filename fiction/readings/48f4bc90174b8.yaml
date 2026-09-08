@@ -1,0 +1,28 @@
+article: 48f4bc90174b8
+title: Arkab Prior B - The Necklace
+events:
+  - year_at: 4311
+    kind: settled
+    polity: mutual-progress-association
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Arkab A and B were first colonised in 4311 a.t, Arkab A being allocated to the Negentropy Alliance, Arkab B allocated to the MPA."
+    note: "Matches the header's already-dated 'settled 4311'. Arkab Prior A is a different place with its own article (see other_places); its allocation to the Negentropy Alliance is quoted here only because it shares the sentence with Arkab B's founding."
+  - year_at: 4520
+    kind: transferred
+    polity: negentropy-alliance
+    precision: not_earlier_than
+    until_at: null
+    where: body
+    quote: "During the Version War Arkab Prior B was occupied by Negentropist forces from 4520 onwards; the territory was returned to the MPA after hostilities ceased."
+    note: "A wartime occupation rather than an annexation, formalised return to the MPA has no year given in the text ('after hostilities ceased'); see doubts."
+holder_undated: []
+unplaced: []
+contradictions: []
+other_places:
+  - "Arkab Prior A (own article; binary companion star, allocated to the Negentropy Alliance in the same 4311 colonisation)"
+doubts:
+  - "The 4520 occupation by Negentropist forces is a wartime military occupation, not clearly an annexation/joining/sale in the sense the brief's 'transferred' kind describes; recorded as a transferred event because it names a dated change of the controlling polity, but flagged for review."
+  - "'the territory was returned to the MPA after hostilities ceased' has no explicit year in the text, so no return-to-MPA event is recorded; the system's 'Current allegiance: Mutual Progress Association' in the data panel is consistent with this undated return."
+  - "'Construction of the Necklace was started in 6800 by the Mutual Progress alliance under the terms of the Prior B territory agreements' and the habitat-completion/conversion dates (7500, 8110, 8729, 9945) are construction and infrastructure milestones with no change of polity holder; not recorded as events."

@@ -1,0 +1,68 @@
+article: 4978914e5eb57
+title: Huanghua
+events:
+  - year_at: 920
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The vessel left the Solar System in 665 AT, and arrived in 920."
+    note: "Matches header already-dated settled 920. The following sentence says \"On arrival the Qin Shi Huang settled into orbit around the single terrestrial world\"; full surface habitability came only later, in 1488 (see doubts/skipped terraforming note)."
+  - year_at: 986
+    kind: transferred
+    polity: first-federation
+    precision: exact
+    until_at: null
+    where: body
+    quote: "after exchanging messages with Penglai, Liu Huanghua joined the Federation in 986."
+    note: "Matches header already-dated transferred 986 (first-federation)."
+  - year_at: 1120
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "firstly from Penglai and in 1120 a small fleet of vessels from Solsys belonging to the SecureSpace megacorp arrived to assist in the development of the system."
+    note: "SecureSpace is a megacorp, not on the roster (see unplaced); \"For three hundred more years SecureSpace and the Sulphur Blossom colonists worked to improve their world\" indicates they stayed rather than merely visiting."
+  - year_at: 1683
+    kind: transferred
+    polity: penglai-empire
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 1683 the Penglai Evolution movement reached Sulphur Blossom, causing the ruling Federation faction to collapse."
+    note: "Matches header already-dated transferred 1683 (penglai-empire), and \"Penglai Evolution\" is a listed alias for penglai-empire on the roster. But see contradictions/doubts: the same sentence-group says SecureSpace (a megacorp) actually took over local government and the world then looked to NoCoZo for leadership, not that it was administered by the Penglai Empire as such."
+  - year_at: 2000
+    kind: independent
+    polity: ""
+    precision: not_later_than
+    until_at: null
+    where: body
+    quote: "and by 2000 the world broke away from both the Penglai Empire and the SecureSpace interstellar hegemony. Sulphur Blossom now became an independent world, and formally changed its name to the more clement Huanghua (Yellow Flower)."
+    note: "Matches header already-dated independent 2000, but the article's own wording is \"by 2000\" (not_later_than), not an exact year. See contradictions."
+holder_undated:
+  - polity: solar-dominion
+    quote: "Huanghua was occupied by the Solar Dominion during the Version War, and has retained some ties with that empire ever since"
+  - polity: nocozo
+    quote: "the corporate world looked towards the newly formed NoCoZo for leadership"
+unplaced:
+  - name: "SecureSpace"
+    quote: "In the ensuing chaos the SecureSpace megacorp representatives moved to take over the reigns of government, and the world became a corporate state."
+  - name: "Earth Goddess (GAIA)"
+    quote: "During the Great Expulsion a number of large Arks were constructed by the agents of the Earth Goddess to carry large numbers of refugees from the Solar System."
+contradictions:
+  - about: "precision of the independent 2000 date"
+    quotes:
+      - "already dated: independent 2000 [header]"
+      - "and by 2000 the world broke away from both the Penglai Empire and the SecureSpace interstellar hegemony."
+  - about: "who actually held Huanghua after 1683"
+    quotes:
+      - "already dated: transferred 1683 (penglai-empire) [header]"
+      - "In the ensuing chaos the SecureSpace megacorp representatives moved to take over the reigns of government, and the world became a corporate state... and the corporate world looked towards the newly formed NoCoZo for leadership."
+other_places: ["Penglai", "China", "Vesta"]
+doubts:
+  - quote: "Then in 971 an invitation to join the First Federation arrived from Vesta, and after exchanging messages with Penglai, Liu Huanghua joined the Federation in 986."
+    note: "971 is the date the invitation (a message) arrived, not a physical visit or holder change on its own; 986 is recorded above as the transferred event."
+  - quote: "Huanghua was occupied by the Solar Dominion during the Version War, and has retained some ties with that empire ever since"
+    note: "No explicit AT year is given for the Version War occupation, so it is recorded under holder_undated rather than as a dated event."

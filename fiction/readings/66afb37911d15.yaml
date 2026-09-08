@@ -1,0 +1,32 @@
+article: 66afb37911d15
+title: Spica (Alpha Virginis)
+events:
+  - year_at: 2499
+    kind: settled
+    polity: solipsist-panvirtuality
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Reached 2499 AT by a solipsist transapient colony ship, codenamed Aim for the Stars."
+    note: ""
+  - year_at: 2499
+    kind: visited
+    polity: first-federation
+    precision: not_earlier_than
+    until_at: null
+    where: panel
+    quote: "It was shortly followed by a Federation mission Kazumyu."
+    note: "No explicit year is stated for the Kazumyu mission; it is only dated relative to the 2499 AT arrival of Aim for the Stars in the preceding sentence."
+holder_undated:
+  - polity: solipsist-panvirtuality
+    quote: "Although the Twin Sister is officially affiliated with the Solipsist Panvirtuality, e is generally at least neutral to modosophonts, and sometimes even positively interacts with them."
+unplaced: []
+contradictions:
+  - about: settlement year
+    quotes:
+      - "Reached 2499 AT by a solipsist transapient colony ship, codenamed Aim for the Stars."
+      - "E emerged in 6603 AT from the merger of two Panvirtuality S4s that previously inhabited the hypernode, and has since been the highest toposophic entity within the system."
+other_places: []
+doubts:
+  - "The header records 'settled 6603', but the only sentence in the prose carrying the year 6603 describes the Twin Sister archailect's emergence from a merger of two pre-existing S4s ('E emerged in 6603 AT from the merger of two Panvirtuality S4s that previously inhabited the hypernode'), which is an ascension, not a colonisation or holder change, and the article's own colony-ship 'Reached' claim is dated 2499. This was not recorded as a settled event per the brief's exclusion of ascensions, but is flagged above as a contradiction for the reviewer."
+  - "The Bottlemaster Node's creation (7113 AT) and relocation (7600s AT) are sub-settlement/megastructure milestones within the already-settled Spica system, so they were not recorded as events."

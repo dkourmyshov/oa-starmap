@@ -79,6 +79,50 @@ worlds:
       - year_at: 7953
         kind: visited
         note: Explorers entered the system.
+      - year_at: 7953
+        kind: settled
+        note: >-
+          "Faber/Tavi exploration and development teams entered what they
+          thought was a virgin system in 7953, and though they left Chorus
+          strictly alone other than for scientific purposes, they began to
+          develop the rest of the system." Header records this as 'visited
+          7953'; the prose describes ongoing development of the system, not
+          just a visit. Fabers and Tavi are clades/groups, not on the polity
+          roster (see unplaced). Faber and Tavi exploration and development
+          teams, no polity of this file; the map's older 'visited 7953' is
+          this arrival.
+      - year_at: 8677
+        kind: transferred
+        note: >-
+          "They made the existence of the new sapient clade public in 8677,
+          after several centuries of development, and the Tavi and Faber
+          colonists granted the new clade ownership of Chorus and the entire
+          system" Neither Faber/Tavi (grantor) nor Chorusmoot/Jade Chime
+          Singers (grantee) are on the polity roster; see unplaced. Ownership
+          transfer year is inferred from the same sentence as the 8677 public-
+          disclosure date. Ownership granted to the Jade Chime Singers, the
+          sapient clade the colonists had developed; no polity of this file.
+      - year_at: 10377
+        kind: independent
+        note: >-
+          "Jade Chime Singers' Moot achieved full independence in 10377."
+          Independence appears to be from the Faber/Tavi development lease,
+          not from any roster polity; Chorusmoot (the local government) is not
+          on the roster either. The Jade Chime Singers' Moot; independence
+          from the Faber and Tavi colonists rather than from any polity of
+          this file.
+      - year_at: 6000
+        kind: stewardship
+        polity: caretaker-gods
+        precision: not_earlier_than
+        note: >-
+          "At undetermined point, probably not before the 7th millennium AT,
+          Mist Rising, a transapient of Terragen origin, presumably explored
+          the system and marked Chorus for eir own." Mist Rising's ethos is
+          presumed to be a form of Caretakerism (see data panel AI's Ethos
+          line). The article itself hedges this as 'undetermined' and
+          'presumably'. Mist Rising, 'at undetermined point, probably not
+          before the 7th millennium'; the article's own hedge, kept.
     note: >-
       The add-on independently confirms the article: it places Cantor in Carina
       at 2,736 ly against the article's Carina at 2,735 ly — two sources
@@ -797,6 +841,13 @@ worlds:
     events:
       - year_at: 1704
         kind: settled
+      - year_at: 4498
+        kind: transferred
+        polity: negentropy-alliance
+        note: >-
+          "allowing them to assume control of the system when the Negentropy
+          Alliance declared war on the MPA in 4498" The Alliance assumed
+          control on declaring war on the MPA.
     note: >-
       18 Scorpii, and the catalogue agrees with the article to two decimals at
       46.11 ly. Held by four meta-empires at once.
@@ -1025,6 +1076,16 @@ worlds:
       - year_at: 4020
         kind: settled
         note: Recolonised, fourteen centuries after the first attempt.
+      - year_at: 4800
+        kind: transferred
+        polity: keter-dominion
+        note: >-
+          "This world joined the Keter Dominion in 4800." Not present in the
+          header's already-dated list, though the article is filed under Keter
+          Dominion. 'This world' may refer specifically to the Keterist gas
+          giant Jjrrerrrerr/Annabel rather than the whole Ivonya-Ngia system;
+          see doubts. 'This world', which the reader notes may be the gas
+          giant Jjrrerrrerr rather than the whole system.
     note: HD 181853, in Aquila at 413 ly.
 
   - name: Kaana
@@ -1091,6 +1152,7 @@ worlds:
     events:
       - year_at: 4722
         kind: settled
+        polity: keter-dominion
     note: In Aquila. The catalogue puts HIP 96353 at 1,315 ly against the article's 1,378.
 
   - name: World Garden
@@ -1159,6 +1221,27 @@ worlds:
     events:
       - year_at: 4311
         kind: settled
+        polity: mutual-progress-association
+      - year_at: 4520
+        kind: transferred
+        polity: negentropy-alliance
+        precision: not_earlier_than
+        note: >-
+      - year_at: 4650
+        kind: transferred
+        polity: mutual-progress-association
+        precision: not_earlier_than
+        source: "Encyclopaedia timeline, for the year"
+        note: >-
+          "The territory was returned to the MPA" after the Version War, which
+          the timeline's period ends in 4650; the article gives no year.
+          "During the Version War Arkab Prior B was occupied by Negentropist
+          forces from 4520 onwards; the territory was returned to the MPA
+          after hostilities ceased." A wartime occupation rather than an
+          annexation, formalised return to the MPA has no year given in the
+          text ('after hostilities ceased'); see doubts. An occupation during
+          the Version War; 'the territory was returned to the MPA' after it,
+          undated.
     note: >-
       Beta-1 Sagittarii B. Arkab Prior is one wide binary, its components some
       3,290 AU apart — a twentieth of a light year, which is nothing at this
@@ -2255,6 +2338,14 @@ worlds:
     events:
       - year_at: 1822
         kind: settled
+        polity: linnent
+      - year_at: 1020
+        kind: visited
+        note: >-
+          "a long forgotten drone probe sent from Vesta in 1020" Probe sent by
+          'the defunct Vestacorp' (not on roster); see unplaced. Only the
+          probe reached the system at this time, no colonists. A drone probe
+          from Vesta, forgotten until contact was re-established in 1822.
     note: >-
       Given as HR 8323. The colony table has the same system as Gliese 838.6 at
       51 ly, under the name "Nike (Bolobo Colony)".
@@ -2448,6 +2539,11 @@ worlds:
         source: "Encyclopaedia timeline, The Sundering"
         note: >-
           Hindi Expansion vessel arrives at Epsilon Indi .
+      - year_at: 815
+        kind: transferred
+        polity: eridanus-league
+        note: >-
+          "In 815, Gatlida joined the Eridanus League"
     note: 11.9 ly, one of the nearest systems recorded here.
 
   - name: Gum Nebula
@@ -3205,6 +3301,28 @@ worlds:
       - year_at: 1790
         kind: visited
         note: Reached.
+      - year_at: 1790
+        kind: settled
+        note: >-
+          "The colony ship Shakti arrived there in 1790 a.t. and named the
+          planet for the huge rotating storm located at the subsolar point in
+          the planet's thick atmosphere." The map header records this as
+          'visited 1790'; a 'colony ship' arriving and the population
+          remaining (see 'the population of colonists... were then joined by
+          an influx' post-2706) reads as 'settled' rather than a mere visit.
+          Flagged for reviewer judgement rather than resolved. No polity is
+          attributed: Solar Dominion is not founded until 2217, after this
+          date. The colony ship Shakti; the map's older 'visited 1790' is this
+          arrival.
+      - year_at: 5880
+        kind: independent
+        note: >-
+          "A separatist movement, possibly backed by the Solipsist
+          Panvirtuality, led to secession from the Solar Dominion in 5880, but
+          the political situation in this world deteriorated, with wars
+          between various factions." Secession from the Solar Dominion, whose
+          holding the article dates nowhere; the Version War's seizures and
+          liberations are undated too.
     note: >-
       In Andromeda at 92 ly. Formerly of the Solar Dominion and independent now,
       with strong ties to the Zoeific Biopolity — ties rather than membership,
@@ -3243,6 +3361,19 @@ worlds:
       - year_at: 1977
         kind: visited
         note: Reached.
+      - year_at: 1977
+        kind: settled
+        note: >-
+          "Reached 1977 AT" Header records this as 'visited 1977'; classified
+          here as settled because the body says the Akirates 'arrived' and the
+          system 'was home of' them (see the body entry below). The Akirates,
+          a heterodox offshoot of the Stevens clade, who made it home; the
+          map's older 'visited 1977' is this arrival.
+      - year_at: 2866
+        kind: transferred
+        polity: solar-dominion
+        note: >-
+          "The system joined the Solar Dominion in 2866 AT."
     note: 45 ly. Chalawan is the star's own recognised name, not only the setting's.
 
   - name: Daedalus II
@@ -4771,6 +4902,22 @@ worlds:
         kind: visited
         precision: between
         note: First reached somewhere in this range.
+      - year_at: 1300
+        kind: visited
+        polity: first-federation
+        precision: circa
+        note: >-
+          "In the 1300s the Federation sent a number of expeditions to Achird
+          A+B" Matches the '1300' end of the header's 'visited 943-1300'
+          range. 'The 1300s', entered as 1300.
+      - year_at: 2501
+        kind: settled
+        polity: solar-dominion
+        note: >-
+          "In 2501, the Solar Dominion sent a mission fleet to this system,
+          and established a colony on the largely undeveloped world
+          Mattancheri" A colony on Mattancheri, 'the largely undeveloped
+          world'.
     note: Eta Cassiopeiae A and B, 19 ly.
 
   - name: Enif Prefecture
@@ -5125,6 +5272,7 @@ worlds:
         note: Reached.
       - year_at: 3575
         kind: settled
+        polity: solar-dominion
         source: "Encyclopaedia timeline, Age of Consolidation"
         note: >-
           Silenus colonised by the Solar Dominion.
@@ -5910,6 +6058,19 @@ worlds:
     events:
       - year_at: 2980
         kind: settled
+        polity: conver-ambi
+      - year_at: 6400
+        kind: settled
+        polity: silicon-generation
+        note: >-
+          "recolonised 6400" From the same data-panel line as the 2980
+          colonisation, 'Colonized: 2980 A.T recolonised 6400'. Not present in
+          the header's already-dated list, which records only settled 2980.
+          Silicon Generation defector vecs, per the body, in a system 'largely
+          abandoned' after the Conver Wars; the panel gives the Silicon
+          Generation as the present holder where the map's colony table gives
+          Metasoft, and the article's own blurb says 'now part of the Metasoft
+          empire', undated.
     note: 42 Tauri, also Psi Tauri, 91 ly out.
 
   - name: Church-Turing
@@ -6740,6 +6901,43 @@ worlds:
     events:
       - year_at: 3680
         kind: visited
+      - year_at: 3680
+        kind: stewardship
+        polity: caretaker-gods
+        note: >-
+          "Stevocations was first reached by the Caretaker God Opikealeeve in
+          3680 AT to investigate and protect the biosphere of Rovoa." The map
+          header records this as 'visited 3680'; the text frames it as a
+          Caretaker God taking the system under protection, which fits
+          'stewardship' per the brief's kind table. Flagged for reviewer
+          judgement rather than resolved. The Caretaker God Opikealeeve, 'to
+          investigate and protect the biosphere of Rovoa'; the map's older
+          'visited 3680' is this arrival.
+      - year_at: 3780
+        kind: settled
+        note: >-
+          "Colonised 3780 AT" Panel line reads 'Allegiance Zoeific Biopolity
+          Colonised 3780 AT' as scraped; the allegiance is recorded separately
+          under holder_undated since colonisation was by Cygexpa per the body
+          text (see contradictions), and Zoeific Biopolity affiliation is
+          stated elsewhere to begin only after Cygexpa's 7247 dissolution. The
+          panel's year; the body has the colonists arriving in 3810.
+      - year_at: 3810
+        kind: settled
+        polity: cygexpa
+        note: >-
+          "In 3810 AT, a group of colonists from the Cygnus Expansion arrived
+          with the intent of developing as much of the system as they could."
+          Colonists from the Cygnus Expansion.
+      - year_at: 7247
+        kind: transferred
+        polity: zoeific-biopolity
+        precision: not_earlier_than
+        note: >-
+          "Since Cygexpa was dissolved in 7247, this system has become an
+          informal member of the Zoeific Biopolity." Described as an
+          'informal' membership. 'An informal member' since Cygexpa's
+          dissolution.
     note: >-
       The system of the star Steve. Zoeific with Caretaker elements, so both are
       drawn. No identifier is given, leaving the constellation to carry the
@@ -7873,6 +8071,27 @@ worlds:
         kind: observed
         note: >-
           An artificial structure found in the system by the Lagrange Defenders.
+      - year_at: 4094
+        kind: contact
+        note: >-
+          "In 4094 it was discovered that the Tunnler wormhole in fact housed
+          a powerful xenotech AI, which was still active, though largely
+          dormant." Judgement call: treats the dormant Tunnler wormhole AI as
+          the resident xenosophont contacted; the discoverers (Lagrange, Tunh
+          Logika) are not on the roster. Flagged in doubts. The Tunnler
+          wormhole's dormant xenotech AI.
+      - year_at: 4805
+        kind: transferred
+        polity: sagittarius-transcultural-cooperation
+        note: >-
+          "Tunh Logika survived just barely, and when the Sagittarius
+          Transcultural Cooperation was created this system was a founding
+          member." The sentence does not itself give a numeral; the year 4805
+          is the Sagittarius Transcultural Cooperation's founding year from
+          the roster, taken as the implied date of 'when the Sagittarius
+          Transcultural Cooperation was created'. Flagged in doubts. A
+          founding member of the Cooperation; the year is the Cooperation's
+          founding from the timeline, the article giving none.
     note: >-
       A T1 brown dwarf, Neb 34786, with the planet Gatto and a wormhole mouth
       601 AU out — 7.8 km across in the current era. Its far mouth is 3,309 ly
@@ -9060,6 +9279,27 @@ worlds:
     events:
       - year_at: 465
         kind: visited
+      - year_at: 465
+        kind: settled
+        note: >-
+          "This mission, crewed by an ahuman group, reached the system in 465,
+          five years before the Solipsist League ship." Header records this as
+          'visited 465'; the prose goes on to describe this ahuman group
+          taking BL Ceti and building an industrial base there, which reads
+          closer to 'settled'. The ahuman group is never given a proper name,
+          so no polity is recorded. An ahuman group's mission, 'five years
+          before the Solipsist League ship'; the map's older 'visited 465' is
+          this arrival.
+      - year_at: 520
+        kind: transferred
+        precision: not_later_than
+        note: >-
+          "By the beginning of 520, the entirety of the ahuman civilization
+          had already retreated into the depths of the planets as the
+          solipsists reigned in space." The Solipsist League is not on the
+          roster, so polity is left empty; see unplaced. The solipsists of the
+          Solipsist League, no polity of this file, 'reigned in space' while
+          the ahumans withdrew into the planets.
     note: >-
       BL and UV Ceti, a pair of flare stars also catalogued as Gliese 65, GJ 65,
       L 726-8 and PLX 343.1. In no catalogue this map loads — they are faint
@@ -10885,6 +11125,31 @@ worlds:
         note: >-
           Rajasekar is colonised by a Sophic tweak adaptation calling themselves the
           New Rajasekarians.
+      - year_at: 4192
+        kind: abandoned
+        precision: circa
+        note: >-
+          "Just ten years after the first outbreak the culture had collapsed
+          to the point where it could no longer maintain the necessary
+          nanotech and information infrastructure, and it died out." Year is
+          computed as 4182 AT (the viral outbreak, 'In 4182 AT ... a viral
+          infection ... attacked the Pikuu-Pik-3') plus the sentence's own
+          'ten years after'; no explicit AT number is given for the collapse
+          itself, so this should be checked by the reviewer. 'Ten years after
+          the first outbreak' of 4182; the culture the Stellar Umma had found
+          in 2534.
+      - year_at: 7833
+        kind: transferred
+        polity: mutual-progress-association
+        note: >-
+          "Currently Rajasekar is a member of the Mutual Progress Association
+          after the 7833 AT coup by the Requiemists against the until then
+          ruling Spranger Party." The sentence ties current MPA membership to
+          the 7833 AT coup, but does not explicitly say MPA membership began
+          at that date rather than at some later point; flagged for reviewer
+          confirmation. After the Requiemists' coup against the Spranger
+          Party; the reader flagged the link between the coup and the joining
+          as the article's, not stated.
     note: >-
       Tau-1 Gruis, also CD-49 13988, 108.0 ly out against the article's 108.58.
       Three holders, which the article gives together rather than in sequence.
@@ -11146,6 +11411,23 @@ worlds:
       - year_at: 6603
         kind: settled
         precision: not_later_than
+      - year_at: 2499
+        kind: settled
+        polity: solipsist-panvirtuality
+        note: >-
+          "Reached 2499 AT by a solipsist transapient colony ship, codenamed
+          Aim for the Stars." The map's older 'settled 6603' is the year the
+          archailect Twin Sister emerged, not a settlement.
+      - year_at: 2499
+        kind: visited
+        polity: first-federation
+        precision: not_earlier_than
+        note: >-
+          "It was shortly followed by a Federation mission Kazumyu." No
+          explicit year is stated for the Kazumyu mission; it is only dated
+          relative to the 2499 AT arrival of Aim for the Stars in the
+          preceding sentence. The Federation mission Kazumyu, 'shortly' after
+          the solipsist ship.
     note: >-
       Alpha Virginis, 250 ly out — a blue giant pair, and the brightest star in
       Virgo, now the Panvirtuality's.
@@ -11254,6 +11536,16 @@ worlds:
       - year_at: 5781
         kind: settled
         note: The system reached.
+      - year_at: 7450
+        kind: visited
+        polity: nocozo
+        precision: circa
+        note: >-
+          "The Torus was isolated for some time until it was contacted in the
+          late 7400's A.T. by ambassadors of the NoCoZo." Contact by NoCoZo
+          ambassadors with the existing colony; no transfer of the system to
+          NoCoZo is stated. Ambassadors of the NoCoZo, ending the Torus's
+          isolation; 'the late 7400s', entered as 7450.
     note: >-
       An artificial world at HIP 86278, which the setting calls Zeta Lagani, in
       Ophiuchus. The catalogue gives 429 ly against the article's 510, a sixth

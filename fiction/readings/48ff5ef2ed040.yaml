@@ -1,0 +1,37 @@
+article: 48ff5ef2ed040
+title: Achird A+B
+events:
+  - year_at: 943
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "the starship Dyaushpitr departed Solsys in 943 AT"
+    note: "This is the ship's departure from Solsys, not a stated arrival year at Achird; no explicit arrival year appears in the prose. Matches the '943' end of the header's 'visited 943-1300' range."
+  - year_at: 1300
+    kind: visited
+    polity: first-federation
+    precision: circa
+    until_at: null
+    where: body
+    quote: "In the 1300s the Federation sent a number of expeditions to Achird A+B"
+    note: "Matches the '1300' end of the header's 'visited 943-1300' range."
+  - year_at: 2501
+    kind: settled
+    polity: solar-dominion
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 2501, the Solar Dominion sent a mission fleet to this system, and established a colony on the largely undeveloped world Mattancheri"
+    note: ""
+holder_undated:
+  - polity: solar-dominion
+    quote: "During the late Integration Period, the Dandiya system (Achird B) declared its full alignment with the Solar Dominion, even though a significant number of vecs of all kinds still inhabited the system."
+unplaced: []
+contradictions: []
+other_places:
+  - "Beta Cassiopeia (Caph)"
+doubts:
+  - "The only explicit '943 AT' date in the prose is the Dyaushpitr's departure from Solsys, not its arrival at Achird; the article never states the arrival year outright. Recorded as 'visited' to match the header's lower bound, but a reviewer should decide whether departure-from-Solsys is the intended anchor."
+  - "The Dandiya (Achird B) system's 'full alignment' with the Solar Dominion is only dated to the 'late Integration Period', an era name with no AT year given, so it is recorded undated rather than as a dated transferred event."

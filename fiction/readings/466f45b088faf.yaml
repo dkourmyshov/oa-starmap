@@ -1,0 +1,27 @@
+article: 466f45b088faf
+title: Kelarc
+events:
+  - year_at: 2701
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised 2701AT"
+    note: ""
+  - year_at: 2701
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Colonised by Sophist bionts and aioids in 2701, this lifeless world was a relatively easy candidate for terraformation."
+    note: "'Sophist' bionts and aioids is not the same string as the roster's 'Sophic League', and the sentence does not name the League as the colonising power, so polity is left empty rather than inferred (see doubts)."
+holder_undated:
+  - polity: sophic-league
+    quote: "Kelarc was fully terraformed by 3400, and has become an important place of pilgrimage among the League Worlds."
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "The article is filed under Sophic League and later calls Kelarc one of the 'League Worlds', but no sentence explicitly states the Sophic League colonised or held the system in 2701; the colonists are only called 'Sophist bionts and aioids'. Polity was left empty on the settled events per the brief's rule against mapping by similarity; the League affiliation is recorded only as holder_undated."

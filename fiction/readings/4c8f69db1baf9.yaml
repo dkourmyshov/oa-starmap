@@ -1,0 +1,44 @@
+article: 4c8f69db1baf9
+title: Nys-eldush
+events:
+  - year_at: 6810
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 6810 an interstellar trading ship of the Spacefarer's Union visited the system and found the planet deserted."
+    note: "Spacefarer's Union is not on the roster (see unplaced)."
+  - year_at: 6810
+    kind: abandoned
+    polity: ""
+    precision: not_later_than
+    until_at: null
+    where: body
+    quote: "In 6810 an interstellar trading ship of the Spacefarer's Union visited the system and found the planet deserted."
+    note: "The ship found the planet already deserted on arrival in 6810; the colony's actual end is undated, sometime after contact with the outside had dried up by 6299 (see doubts) and before this 6810 visit."
+  - year_at: 7197
+    kind: visited
+    polity: metasoft
+    precision: exact
+    until_at: null
+    where: body
+    quote: "However the arrival of a Metasoft emissary fleet in 7197 prevented the massacre of the last remaining Horrors."
+    note: "\"The Version Tree\" a sentence later refers to the same fleet; Metasoft Version Tree is the roster's metasoft polity."
+holder_undated: []
+unplaced:
+  - name: "Spacefarer's Union"
+    quote: "In 6810 an interstellar trading ship of the Spacefarer's Union visited the system and found the planet deserted."
+  - name: "Hypercorruption Advance"
+    quote: "The Version Tree were determined to extend their influence in the Cancer Sector to counter the threat of the Hypercorruption Advance."
+contradictions:
+  - about: "no explicit settlement year in the body matching the header's settled 6299"
+    quotes:
+      - "already dated: settled 6299 [header]"
+      - "By 6299 even this contact had dried up."
+other_places: ["Danzig", "Corona", "Bourgatov", "Nimbus"]
+doubts:
+  - quote: "By 6299 even this contact had dried up."
+    note: "This is the only occurrence of 6299 in the article, and it describes the original colonists' last contact with the outside galaxy, not their founding. No explicit settlement year is given anywhere in the article for the colony described earlier in the same paragraph (\"One particularly enthusiastic chapter succeeded in chartering a colony mission to a new system...\"); no settled event has been written against that year for lack of a supporting quote. See contradictions."
+  - quote: "Before the new colony was ten standard years old rumours of mysterious sightings began to circulate"
+    note: "The second colony, established sometime after the 6810 visit, is never given an explicit founding year of its own."

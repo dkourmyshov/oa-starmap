@@ -1,0 +1,38 @@
+article: 4ac1fabd2c3c0
+title: Silenus
+events:
+  - year_at: 3190
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Silenus was first reached by a Truth-Santaya Networks long range probe in 3190; the single terrestrial planet was surveyed and found to be a marginal case for colonisation because of its extreme axial tilt."
+    note: "Probe operator 'Truth-Santaya Networks' is not on the roster; see unplaced."
+  - year_at: 3575
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised 3575 AT"
+    note: ""
+  - year_at: 3575
+    kind: settled
+    polity: solar-dominion
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Nevertheless a colony ship from the Solar Dominion world of Nu Eden finally reached the system in 3575."
+    note: ""
+holder_undated:
+  - polity: solar-dominion
+    quote: "Solar Dominion colony world with a large axial tilt"
+unplaced:
+  - name: "Truth-Santaya Networks"
+    quote: "Silenus was first reached by a Truth-Santaya Networks long range probe in 3190"
+contradictions: []
+other_places: []
+doubts:
+  - "\"The HD 12820 system was connected to the wormhole nexus in 3800\" is an infrastructure milestone, not a holder change, so excluded as an event."
+  - "\"When a new Guardian was appointed in 6017, E outlawed all such territorial conflicts\" is a local administrative appointment within the already-settled Solar Dominion colony, not a change of holder, so excluded."

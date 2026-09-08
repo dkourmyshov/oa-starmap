@@ -1,0 +1,24 @@
+article: 48ff744e2daf7
+title: Eden
+events:
+  - year_at: 1209
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised 1209AT"
+    note: "Body text ('It was settled by fleeing heterodox tweaks, who set up a fairly utopian society run by symbiotic AIs') corroborates this but gives no year of its own and names no roster polity as the settlers."
+holder_undated:
+  - polity: solar-dominion
+    quote: "Affiliation: Independent (affiliated informally with the Solar Dominion)"
+  - polity: solar-dominion
+    quote: "Even in later centuries Eden never became part of the mighty Solar Dominion, but it still reaped great rewards by being the rumored Birthplace of the God-Emperor."
+    note: "This sentence explicitly denies formal Solar Dominion membership; recorded here as a holder-adjacent claim, not as a transfer."
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "The header files this article under Solar Dominion, but the body explicitly states 'Eden never became part of the mighty Solar Dominion' and the panel gives its affiliation as 'Independent (affiliated informally with the Solar Dominion)'; flagged since the filing category and the stated affiliation are in tension."
+  - "\"The seventh world, Ananda\" has its own Related Article ('Ananda (world)'); treated here as another world of the same Eden system (Gliese 785) per the brief's 'one place per article' rule rather than as a different place, though it carries no date either way."
+  - "\"protected by the seraiph of the Lord of Rays but also a few competing powers\" names an unclear, undated protector not on the roster; not recorded as it carries no year and its role (stewardship vs. something else) is unclear from the text."

@@ -1,0 +1,35 @@
+article: 45e77b7ad49fc
+title: Chalawan (47 Ursae Majoris)
+events:
+  - year_at: 1977
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Reached 1977 AT"
+    note: "Header records this as 'visited 1977'; classified here as settled because the body says the Akirates 'arrived' and the system 'was home of' them (see the body entry below)."
+  - year_at: 1977
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The system was home of the Akirates , a heterodox offshoot of the powerful Stevens clade that arrived in 1977 AT."
+    note: "The Akirates/Stevens clade are not on the roster; see unplaced."
+  - year_at: 2866
+    kind: transferred
+    polity: solar-dominion
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The system joined the Solar Dominion in 2866 AT."
+    note: ""
+holder_undated: []
+unplaced:
+  - name: "Akirates (Stevens clade)"
+    quote: "The system was home of the Akirates , a heterodox offshoot of the powerful Stevens clade that arrived in 1977 AT."
+contradictions: []
+other_places: []
+doubts:
+  - "Header records the 1977 AT arrival as 'visited', but the prose describes the Akirates arriving and making the system their home, which fits 'settled' better; recorded as settled with a note on both entries."

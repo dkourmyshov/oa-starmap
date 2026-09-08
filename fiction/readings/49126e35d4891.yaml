@@ -1,0 +1,44 @@
+article: 49126e35d4891
+title: "Terranova, 82 Eridani IV"
+events:
+  - year_at: 1065
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "82 Eridani was eventually colonised in 1065 by the Terranova Foundation in alliance with the Grue Brothers, an empath clan wishing to escape the competition of the Old Solar system."
+    note: "Matches header already-dated settled 1065. Terranova Foundation (a megacorp) and the Grue Brothers (an empath clan) are not on the roster (see unplaced)."
+  - year_at: 4328
+    kind: transferred
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 4328 Terranova was bought by Riddersdan Ikki, a major shareholder nanotech AI owning several of the largest NoCoZo megacorps."
+    note: "Riddersdan Ikki is an individual AI, not on the roster (see unplaced). The sentence describes ownership by that individual, not an acquisition by NoCoZo as a polity, so no roster polity has been recorded."
+holder_undated:
+  - polity: eridanus-league
+    quote: "Member of the Eridanus League , later headquarters of the Terranova Foundation exploration megacorps. Now a private resort world."
+  - polity: nocozo
+    quote: "Affiliation: NoCoZo"
+  - polity: nocozo
+    quote: "Terranova Foundation succeeded in dragging the planet into the NoCoZo, but found that the economic climate at Merrion was much better."
+unplaced:
+  - name: "Terranova Foundation"
+    quote: "82 Eridani was eventually colonised in 1065 by the Terranova Foundation in alliance with the Grue Brothers, an empath clan wishing to escape the competition of the Old Solar system."
+  - name: "Grue Brothers"
+    quote: "82 Eridani was eventually colonised in 1065 by the Terranova Foundation in alliance with the Grue Brothers, an empath clan wishing to escape the competition of the Old Solar system."
+  - name: "Riddersdan Ikki"
+    quote: "In 4328 Terranova was bought by Riddersdan Ikki, a major shareholder nanotech AI owning several of the largest NoCoZo megacorps."
+contradictions:
+  - about: "header's already-dated visited 1885 has no matching year or event anywhere in the article text"
+    quotes:
+      - "already dated: settled 1065; visited 1885 [header]"
+      - "(no occurrence of 1885, or any unattributed visit near that year, appears anywhere in the supplied prose)"
+other_places: ["Linn-ent (LinnEnt)", "Audubon", "Linnaeus", "Merrion", "Epsilon Eridani"]
+doubts:
+  - quote: "82 Eri was initially targeted by a long-range Marian-Catholic mission (the Intercessor), launched in 478 AT Unfortunately this ambitious long-range journey proved beyond the technology of that time and the 8,000 frozen colonists aboard the Intercessor passed right through the system into deep space with a dead crew at the helm."
+    note: "478 AT is the mission's launch year from Sol, not an arrival year at 82 Eridani; the ship passed through without landing (dead crew), so no visited/settled event has been recorded against it."
+  - quote: "Terranova Foundation had become part of the emerging NoCoZo, but the system was outside the treaty and they tried to convince the entire League to join."
+    note: "Describes the Terranova Foundation (megacorp) joining NoCoZo while the system itself remained outside the treaty at that point; no year is given."

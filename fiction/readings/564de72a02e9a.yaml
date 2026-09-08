@@ -1,0 +1,30 @@
+article: 564de72a02e9a
+title: Gargamadua Stripworld
+events:
+  - year_at: 2702
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised: 2702 AT"
+    note: "Matches header already-dated settled 2702. Body attributes the colonisation to the Interstellar Frontiers Group (not on the roster; see unplaced) but does not repeat the year in that sentence."
+  - year_at: 3007
+    kind: transferred
+    polity: mutual-progress-association
+    precision: exact
+    until_at: null
+    where: body
+    quote: "when they became part of the Mutual Progress Alliance in 3007 they began to consider a number of more unusual projects"
+    note: "Article says \"Mutual Progress Alliance\"; the roster's matching polity is the Mutual Progress Association (MPA), which the panel's \"Allegiance: MPA\" and the roster's own alias both support as the same body. Flagged for the reviewer."
+holder_undated:
+  - polity: mutual-progress-association
+    quote: "Allegiance: MPA ."
+unplaced:
+  - name: "Interstellar Frontiers Group"
+    quote: "Colonised initially by the Interstellar Frontiers Group this system had only two significant planets, a hermian-type rockball near the hot star and a distant PsychroJovian world."
+contradictions: []
+other_places: ["Uyuni", "Djed", "Yno"]
+doubts:
+  - quote: "when they became part of the Mutual Progress Alliance in 3007 they began to consider a number of more unusual projects"
+    note: "\"Mutual Progress Alliance\" is not the exact roster name (Mutual Progress Association); recorded against mutual-progress-association on the assumption this is the same body, per the panel's \"Allegiance: MPA\" and the roster's MPA alias, but worth the reviewer's eye."

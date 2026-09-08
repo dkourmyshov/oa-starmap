@@ -1,0 +1,44 @@
+article: 48ac2be955c0b
+title: Brin
+events:
+  - year_at: 2980
+    kind: settled
+    polity: conver-ambi
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonized: 2980 A.T"
+    note: "Body text corroborates: 'The 42 Tauri system was colonised comparatively late by the Conver Ambi after having gained the territorial rights to the system after the Taurus Nexus breakup.' Matches the header's already-dated 'settled 2980'."
+  - year_at: 6400
+    kind: settled
+    polity: silicon-generation
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "recolonised 6400"
+    note: "From the same data-panel line as the 2980 colonisation, 'Colonized: 2980 A.T recolonised 6400'. Not present in the header's already-dated list, which records only settled 2980."
+  - year_at: 6000
+    kind: settled
+    polity: silicon-generation
+    precision: circa
+    until_at: null
+    where: body
+    quote: "The system was largely abandoned except for a number of orbital habitats above Brin, and some Silicon Generation defector vecs that moved into the remaining tectonic system tunnels in the 6000's."
+    note: "Body-text account of the same recolonisation as the panel's 'recolonised 6400', dated only to the decade."
+holder_undated:
+  - polity: silicon-generation
+    quote: "Affiliation: Former Conver Ambi, now Silicon Generation"
+  - polity: conver-ambi
+    quote: "Affiliation: Former Conver Ambi, now Silicon Generation"
+  - polity: metasoft
+    quote: "Now a part of the Metasoft empire."
+unplaced:
+  - name: "Geminga Orthodoxy"
+    quote: "the Geminga Orthodoxy used their remaining stockpiles of antimatter to open magma chambers in the Lense range"
+contradictions: []
+other_places: []
+doubts:
+  - "The data panel states 'Affiliation: Former Conver Ambi, now Silicon Generation', but the related-article summary for Erson states the planet is 'Now a part of the Metasoft empire' and the article is filed under Metasoft Version Tree; these three sources disagree on the current holder, and no year is given for any Metasoft takeover, so no transferred-to-Metasoft event is recorded."
+  - "'During the Conver Wars insurgents defeated the Orthodoxy in the orbital battle... As Metasoft expeditionary force RightNode arrived a full orbit-ground assault was initiated' describes Metasoft conquering the system from the Geminga Orthodoxy, but carries no year in the text; treated as an undated battle, not recorded as an event, though it may explain the 'now part of the Metasoft empire' claim above."
+  - "Planet IV is described as 'devastated in the Second Consolidation War' in the planet list, while the body text calls the same conflict 'the Conver Wars'; it is unclear whether these are the same war under two names or two different wars, and neither is dated."
+  - "'gained the territorial rights to the system after the Taurus Nexus breakup' implies the Taurus Nexus held rights to the system before the Conver Ambi, but gives no year for either the Taurus Nexus's holding or its breakup; not recorded as an event or holder_undated for lack of a clear holding statement."
