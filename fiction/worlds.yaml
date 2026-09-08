@@ -7031,6 +7031,47 @@ worlds:
         source: "Encyclopaedia timeline, The Sundering"
         note: >-
           MyuvYin settled by tweak bioborg clade.
+      - year_at: 1211
+        kind: transferred
+        precision: circa
+        note: >-
+          "After a decade of desperate fighting, the entire system was
+          subsumed, apart from a few ships which escaped to nearby systems to
+          raise the alarm." Year is circa, derived from the attack's stated
+          start ("In 1201 AT a psychophager ahuman replicator swarm began to
+          attack...") plus "a decade" of fighting. The conquering group-mind,
+          later called the MyuvYin Gestalt, is not on the roster; see
+          unplaced. Subsumed by the psychophager swarm after a decade of
+          fighting; the Deeper Covenant's page dates the swarm's arrival to
+          1201.
+      - year_at: 2104
+        kind: transferred
+        note: >-
+          "At 2104 AT, Yiramm-MyuvYin empire ships claimed the clade's
+          original system for itself only." "The clade's original system" is
+          MyuvYin itself. "Yiramm-MyuvYin empire" is not on the roster; see
+          unplaced. The Yiramm-MyuvYin empire, no polity of this file.
+      - year_at: 2853
+        kind: transferred
+        note: >-
+          "In the end the two empires merged into a single Neo-MyuvYinian
+          civilization, later subverted by the mobile Panvirt ISO
+          101100abaaababa in 2853 AT." The mobile Panvirt ISO 101100abaaababa
+          is an individual entity, not a polity, group or company, so it was
+          not added to unplaced. Subverted by the mobile Panvirt ISO
+          101100abaaababa; the reader left the Panvirtuality unnamed as the
+          holder.
+      - year_at: 3625
+        kind: transferred
+        polity: deeper-covenant
+        note: >-
+          "In 3625 the system was connected to the Beamrider Network , with
+          several local polities (who reorganised some of their habitats into
+          beamrider stations) joining the Deeper Covenant ." Only "several
+          local polities" of the system joined, not necessarily the whole
+          system, which the article elsewhere describes as split among many
+          diverse, non-aligned factions. Connected to the Beamrider Network,
+          with local polities joining the Covenant.
     note: >-
       Gliese 205, also HD 36395 and HIP 25878, in Orion. Both stated distances
       land: 18.59 ly from Sol against the catalogue's 18.604, and 6.283 from
