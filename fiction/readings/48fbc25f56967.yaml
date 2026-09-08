@@ -1,0 +1,34 @@
+article: 48fbc25f56967
+title: "Evermore"
+events:
+  - year_at: 4772
+    kind: settled
+    polity: caretaker-gods
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 4772 a.t, following the Version War, The Twelve acquired full development rights to the uninhabited Altus Lucror planetary system — located at the edge of NoCoZo space along the Negentropy Alliance border."
+    note: "Matches header's settled 4772. Polity caretaker-gods is inferred only from the article's own 'Appears in Topics: Caretaker Gods' filing and its description of The Twelve as 'the collective archailect' who built Evermore, not from wording in this sentence itself, which names no roster polity. The wording ('acquired full development rights', a system 'sold to' a polity) may fit the 'transferred' kind at least as well as 'settled', since the system was uninhabited at the time; recorded as settled to match the header, but flagged for the reviewer."
+  - year_at: 4773
+    kind: settled
+    polity: caretaker-gods
+    precision: not_later_than
+    until_at: null
+    where: body
+    quote: "Within a year of the acquisition eir ISO appeared within Altus Lucror to begin aligning resources for the future development process."
+    note: "Matches header's settled 4773, but the year 4773 is not itself stated in the text; it is inferred from 'within a year of the acquisition' (4772). Same polity caveat as the 4772 entry."
+  - year_at: 6648
+    kind: independent
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 6648 The Twelve, through a series of contract buyouts, seceded from the NoCoZo and claimed political neutrality."
+    note: "Not in the header. Implies Evermore/Altus Lucror had been part of the NoCoZo before this date, though no join date is given anywhere in the article."
+holder_undated: []
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "The article gives two further dated construction milestones that were not written as events because they read as terraforming/construction milestones rather than a change of holder or population: quote \"In 6797 the original system was completely dismantled, and with the raw materials staged, construction began on the actual habitat complex.\"; quote \"These operations, including construction, ecology development and population integration were complete by 9173.\" The reviewer may want to weigh these against the header's 4772/4773 'settled' dates, since actual habitation of Evermore's cylinders seems to postdate both by a wide margin (cylinder population, per the 'Populating the Complex' section, took 'just over two millennia' to complete, with no stated start year)."
+  - "The article's opening paragraph describes Evermore as blending Negentropy Alliance, NoCoZo and Caretaker characteristics, and the site files it under all three topics, but no sentence states that the Negentropy Alliance ever held or governed the system (only that it lies near the Alliance's border), so no Negentropy Alliance entry was written: quote \"Evermore is a blend of the Negentropy, NoCoZo and Caretaker characteristics found in its creator, the collective archailect known as The Twelve.\""

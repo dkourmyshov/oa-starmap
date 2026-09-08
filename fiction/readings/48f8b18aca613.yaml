@@ -1,0 +1,69 @@
+article: 48f8b18aca613
+title: "Dionysos (Psi5 Aurigae II)"
+events:
+  - year_at: 2941
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonized: 2941 AT"
+    note: "Matches header's settled 2941, but conflicts sharply with the body narrative's 941 AT arrival date; see contradictions."
+  - year_at: 941
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "After a journey of 53 light years, and travelling at approximately 0.197 c, they arrived at Psi 5 Aurigae in 941 AT."
+    note: "The colonising body was the United Christian New Jerusalem Association (UCNJA), not on the polity roster. Conflicts with the data panel's 'Colonized: 2941 AT'; see contradictions."
+  - year_at: 980
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 980 AT the Genetekker Dionysist clade arrived, in the He-3 powered ship Mendel."
+    note: "The Genetekkers came from the Gengineer Republic's colonisation initiative, not on the roster. Their population 'began to increase rapidly upon arrival', i.e. they stayed. This may or may not be what the header's 'visited 1980' refers to (980 vs. 1980); see doubts."
+  - year_at: 1151
+    kind: visited
+    polity: first-federation
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 1151 AT the first Federation ship, the Interstellar Development Group exploration and terraforming vessel Morgan arrived."
+    note: "The text goes on to say a rocky inner planet was allocated to the corporation and more ships/colonists arrived over the following century, so this may amount to more than a simple visit; recorded as 'visited' to follow the wording. This may or may not be what the header's 'visited 1980' refers to; see doubts."
+  - year_at: 2010
+    kind: transferred
+    polity: communion-of-worlds
+    precision: circa
+    until_at: null
+    where: body
+    quote: "By the early 21st century a.t. things had settled down. Dionysos joined Communion, and in 2310 AT the first Wormhole Link was established between the Psi 5 Aurigae system and Heartland."
+    note: "Year_at is a rough placement for 'the early 21st century a.t.' (i.e. somewhere in 2001-2100 AT); no exact year is given for the joining itself, only for the later 2310 AT wormhole link (an infrastructure event, not recorded separately)."
+holder_undated:
+  - polity: communion-of-worlds
+    quote: "Affiliation: Communion of Worlds"
+unplaced:
+  - name: "United Christian New Jerusalem Association (UCNJA)"
+    quote: "Dionysos (formerly Jerusalem) was colonised by the United Christian New Jerusalem Association, an alliance of several American Christian fundamentalist churches that formed in 505 AT."
+  - name: "AIMSTAR Technologies"
+    quote: "Moreover, the UCNJA corporate rep informed them that under Cislunar Law the entire Psi 5 Aurigae system was owned by AIMSTAR Technologies."
+  - name: "Gengineer Republic"
+    quote: "They had launched in 548 AT, long before the Ave Deo, as part of the Gengineer Republic's initiative to colonise deep space."
+  - name: "Ecumenical Council"
+    quote: "In 947 AT the Ecumenical Council seized power, persuading, cajoling or forcing everybody to accept their authority."
+  - name: "Total Real Life Entertainment"
+    quote: "It was bought up by local interests representing the Federation megacorp Total Real Life Entertainment, where it was made into a kind of Horror Show Theme Park."
+contradictions:
+  - about: "Settlement year of Dionysos/Jerusalem: 2941 AT (data panel) versus 941 AT (body narrative)"
+    quotes:
+      - "Colonized: 2941 AT"
+      - "After a journey of 53 light years, and travelling at approximately 0.197 c, they arrived at Psi 5 Aurigae in 941 AT."
+other_places:
+  - "New Gaia (Lambda Aurigae IV) - a neighbouring colony with its own article"
+  - "Heartland - the system linked to Psi 5 Aurigae by the first wormhole, in 2310 AT"
+  - "1342 Capricorni system - mentioned in passing as another Erotocracy-influenced world"
+doubts:
+  - "The header's 'visited 1980' does not match any year given in the article text. The two nearest candidate events are the Genetekker clade's arrival in 980 AT (which reads as a settlement, not a visit, since they stayed and grew in population) and the first Federation ship Morgan's arrival in 1151 AT (which does read as a 'visited', and involves the roster polity first-federation). Neither has the year 1980. Both are recorded as their own events; the header entry is not resolved to either: quote \"In 980 AT the Genetekker Dionysist clade arrived, in the He-3 powered ship Mendel.\"; quote \"In 1151 AT the first Federation ship, the Interstellar Development Group exploration and terraforming vessel Morgan arrived.\""
+  - "The Sinai Valley Jesurun community's abandonment was not written as its own event: it is a sub-settlement within the already-settled Dionysos/Jerusalem system, but the wording is an exact match for the 'abandoned' kind, so it is flagged here in case the reviewer wants it recorded: quote \"The community was finally abandoned in 1780.\""

@@ -1,0 +1,111 @@
+article: 5de8fb490b641
+title: Beta Pictoris
+events:
+  - year_at: 912
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonized 912AT (Diamond Belt)"
+    note: "Panel labels this 'Colonized', but the header records this as part of a broader 'visited 912-1070' range; this Diamond Belt starwisp colony was later destroyed in the 940-999 war described in the body."
+  - year_at: 948
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "948AT (Exa Energy)"
+    note: ""
+  - year_at: 912
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The first Diamond Belt mission to arrive was an ultralight starwisp that brought very limited industrial abilities, less than a kilogram of payload softly braked to the edge of the system in 912."
+    note: ""
+  - year_at: 948
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The launches would arrive in 948 (security), 962 (Easel Project), and 967 (follow-up probes)."
+    note: "Exa Energy security probe arrival."
+  - year_at: 962
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The launches would arrive in 948 (security), 962 (Easel Project), and 967 (follow-up probes)."
+    note: "Exa Energy Easel Project probe arrival."
+  - year_at: 967
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The launches would arrive in 948 (security), 962 (Easel Project), and 967 (follow-up probes)."
+    note: "Exa Energy follow-up probes arrival."
+  - year_at: 1033
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The 1033 and 1070 Diamond Belt colonization missions were defeated more quickly."
+    note: "Second Diamond Belt mission."
+  - year_at: 1070
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The 1033 and 1070 Diamond Belt colonization missions were defeated more quickly."
+    note: "Third Diamond Belt mission; matches the header's 'visited 912-1070' upper bound."
+  - year_at: 912
+    kind: visited
+    polity: ""
+    precision: between
+    until_at: 1070
+    where: body
+    quote: "These reached Beta Pictoris between 912 and 1070."
+    note: "Summary statement covering all three Diamond Belt missions; matches the header's 'visited 912-1070' almost verbatim."
+  - year_at: 1140
+    kind: visited
+    polity: first-federation
+    precision: exact
+    until_at: null
+    where: body
+    quote: "the first exchanges encouraged the Federation to transmit ai diplomats (prototype FedReps) in 1076, who arrived in 1140."
+    note: "Diplomats dispatched 1076, arrived 1140; recorded under the arrival year."
+  - year_at: 1270
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "An enterprising hyperturing transmitted emself to the system, arriving in 1270."
+    note: "The hyperturing's origin/affiliation is not stated at the point of arrival; Beta Pictoris became a Metasoft satrapy afterward (see holder_undated)."
+holder_undated:
+  - polity: metasoft
+    quote: "Beta Pictoris quickly became a satrapy of Metasoft Interstellar, and the example presented by the system's independent vecs and aioids were influential in the exclusion of bionts from the corporation's leadership."
+  - polity: metasoft
+    quote: "Allegiance Metasoft Version Tree."
+unplaced:
+  - name: "Diamond Belt"
+    quote: "Beta Pictoris became a militarized system that briefly terrified the First Federation because of three Diamond Belt colonization missions."
+  - name: "Exa Energy"
+    quote: "The launches would arrive in 948 (security), 962 (Easel Project), and 967 (follow-up probes)."
+contradictions: []
+other_places:
+  - "Proxima Centauri"
+  - "Gliese 65"
+  - "Procyon"
+doubts:
+  - quote: "These reached Beta Pictoris between 912 and 1070."
+    note: "All three Diamond Belt missions are recorded as 'visited' to match the header, but the first mission did establish a scaling industrial colony (912) that was only destroyed later in the 940-999 war; a reviewer may prefer 'settled' followed by an 'abandoned' entry for that first mission instead."
+  - quote: "Beta Pictoris quickly became a satrapy of Metasoft Interstellar"
+    note: "No exact year is given for this transfer; it follows the hyperturing's 1270 arrival in the text but the sentence itself carries no date, so it is recorded only as holder_undated rather than with an inferred year."

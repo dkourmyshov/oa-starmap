@@ -1,0 +1,67 @@
+article: 48ac37b0e82ba
+title: "Cableville"
+events:
+  - year_at: 4710
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Founded 4710"
+    note: "Matches header's settled 4710."
+  - year_at: 4710
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In the aftermath of the Version War the Verzi Collective Colonisation Effort set out to colonise the Zhuangzi system in the Butterfly Cluster, arriving in 4710 A.T."
+    note: "Matches header's settled 4710. The Verzi Collective Colonisation Effort (VCCE) is not on the polity roster."
+  - year_at: 5405
+    kind: transferred
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 5405, following several decades of negotiation, the system was purchased by the S2 transapient HolyDeveloper, who renamed the system Cableville and initiated an ambitious plan to upgrade the system and turn it into a major economic centre and hotspot for tourists and landscape designers."
+    note: "HolyDeveloper is an individual transapient, not a roster polity."
+  - year_at: 5990
+    kind: transferred
+    polity: ""
+    precision: not_earlier_than
+    until_at: null
+    where: body
+    quote: "In HolyDeveloper's absence, a consortium of transapients seized the system."
+    note: "No exact year is given for the seizure itself; it is placed immediately after the preceding sentence, dated 5990, describing HolyDeveloper's disappearance. The consortium is unnamed and not on the roster."
+  - year_at: 7905
+    kind: transferred
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 7905 the NoCoZo megacorp Dancing Stars - an organisation of S2 transapients - purchased Cableville, paying off the debt that HolyDeveloper had acquired."
+    note: "Dancing Stars is a NoCoZo megacorp, not the NoCoZo polity itself; per the brief's rule against mapping a megacorporation onto a polity, polity is left blank rather than set to nocozo."
+holder_undated:
+  - polity: mutual-progress-association
+    quote: "AI Allegiance: Nominal allegiance to MPA and Utopia Sphere"
+  - polity: utopia-sphere
+    quote: "AI Allegiance: Nominal allegiance to MPA and Utopia Sphere"
+  - polity: mutual-progress-association
+    quote: "Though formally independent, Cableville is nominally aligned with the MPA and the Utopia Sphere."
+  - polity: utopia-sphere
+    quote: "Though formally independent, Cableville is nominally aligned with the MPA and the Utopia Sphere."
+unplaced:
+  - name: "Verzi Collective Colonisation Effort (VCCE)"
+    quote: "In the aftermath of the Version War the Verzi Collective Colonisation Effort set out to colonise the Zhuangzi system in the Butterfly Cluster, arriving in 4710 A.T."
+  - name: "Verzi Ecumene"
+    quote: "Upon arrival, the Verzi Ecumene was set up as an overarching governing body for the system."
+  - name: "HolyDeveloper"
+    quote: "In 5405, following several decades of negotiation, the system was purchased by the S2 transapient HolyDeveloper, who renamed the system Cableville."
+  - name: "Dancing Stars"
+    quote: "In 7905 the NoCoZo megacorp Dancing Stars - an organisation of S2 transapients - purchased Cableville, paying off the debt that HolyDeveloper had acquired."
+contradictions: []
+other_places:
+  - "Relay Thorn12 - destination of Cableville's stargate"
+doubts:
+  - "The header's 'visited 5136' does not match any year given anywhere in the article text (the years present are 4710, 4800, 5150, 5250, 5405, 5973, 5990, 6110, 7200, 7905 and 8200); no candidate sentence could be identified for it."
+  - "The article gives two conflicting date ranges for Spaghetti's construction: the infobox says 'constructed between 4800 and 5250', while the body says it 'was completed in 5150, 300 years after construction began' (implying a 4850 start). This is not one of the tracked kinds (it is megastructure construction, not a change of holder or population), so it was not written as an event, but is flagged here as a numeric inconsistency: quote \"Spaghetti: The first topopolis of Cableville, constructed between 4800 and 5250.\"; quote \"Spaghetti was completed in 5150, 300 years after construction began.\""

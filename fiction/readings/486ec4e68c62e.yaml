@@ -1,0 +1,62 @@
+article: 486ec4e68c62e
+title: Atlantis (Zeta1 Reticuli II)
+events:
+  - year_at: 1636
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "First Colonized 1636 A.T."
+    note: ""
+  - year_at: 1636
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Mayflower arrived at the end of Hippocrates, 1636 AT, finding a habitable world with seven major continents."
+    note: "Matches the header's already-recorded 'visited 1636'."
+  - year_at: 1636
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Shortly after the initial landing the Auction was instituted, establishing the land ownership rights and constitution of the planet."
+    note: "Matches the header's already-recorded 'settled 1636'; colonisation is organised by the Atlantis Foundation, not a roster polity, see unplaced."
+  - year_at: 1395
+    kind: transferred
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "in AT 1395 the sub-relativistic colonisation ship Mayflower was launched towards Zeta 1 Reticuli II, the whole planet being purchased off Jupiter Transystems."
+    note: "This is a real-estate purchase of an unvisited, terraforming-in-progress world from Jupiter Transystems by the Atlantis Foundation, neither a roster polity (see unplaced); it predates any Terragen presence on the planet, see doubts."
+  - year_at: 2368
+    kind: transferred
+    polity: nocozo
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 2368 Zeta 1 Reticuli I and II formally became part of the Non-Coercion Zone, but while automatically gravitating to the NoCoZo, Atlantis was far too individualistic and finely grained anarchic to really be able to gather enough capital to fund stargates."
+    note: "Matches the header's 'filed under: Non-Coercive Zone (NoCoZo)' and the panel's 'Affiliation NoCoZo'."
+holder_undated:
+  - polity: nocozo
+    quote: "Affiliation NoCoZo"
+unplaced:
+  - name: "Jupiter Transystems"
+    quote: "the whole planet being purchased off Jupiter Transystems. Jupiter Transystems had botched the terraforming - bombarding the lifeless world with too many comets"
+  - name: "Atlantis Foundation"
+    quote: "It was organised by Atlantis Foundation, a group of libertarian hyperturings and their various superturing and superbright agents."
+contradictions: []
+other_places:
+  - name: "Prometheus"
+    quote: "During this time, the Zetareticulite Confederation on Prometheus remained strictly neutral and served as go-betweens and trusted third parties."
+  - name: "Daedalus II"
+    quote: "Every so often, Daedalean, Promethean, Hayekian, and other interplanetary cultures go in and out of fashion."
+doubts:
+  - "Jupiter Transystems' 1395 AT sale of the still-unvisited planet (event above) is a borderline case: no one had reached Zeta 1 Reticuli II yet at that point, so it is arguably a paper transaction rather than a 'transferred' holder-of-a-settled-place event; a reviewer may prefer to drop it."
+  - "During the Version War, Atlantis suffered 'a brief occupation by a revisionist force' after a Negentropy Alliance/Solar Dominion squadron defeated the Atlantean fleet, but no year is given and the article says Atlantis 'remained largely standardization [sic] side throughout', i.e. did not change allegiance, so this was read as a battle/occupation rather than a transferred event."
+  - "The header's map filename lists this place as 'Atlantis/Prometheus/Daedalus', suggesting the map may merge these three worlds into one entry, but this article only covers Atlantis; Prometheus and Daedalus are listed above under other_places since they have their own related articles."
+  - "'The Penglaist Empire was in full swing and already annexed a number of nearby star systems' appears to refer to the roster's Penglai Empire (penglai-empire), but the sentence does not claim Penglai reached or annexed Zeta 1 Reticuli itself, so no event was written for it."

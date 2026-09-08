@@ -1,0 +1,79 @@
+article: 48000db9a9c2f
+title: Black Acropolis
+events:
+  - year_at: -312000000
+    kind: settled
+    polity: xenosophont
+    precision: exact
+    until_at: null
+    where: body
+    quote: "312 million standard years BT - The Tkzeph build the original Dyson swarm, then mysteriously vanish, and the swarm falls into ruin."
+    note: "Also stated in the overview: 'appears to have been first built 312 million years ago by the vanished Tkzeph empire.' 'Xenosophont' is the roster's generic id; the Tkzeph are not individually on the roster."
+  - year_at: -16000000
+    kind: settled
+    polity: xenosophont
+    precision: exact
+    until_at: null
+    where: body
+    quote: "16 million years BT - The Black Acropolis Civilisation emerges, possibly having evolved from Tzkeph biotech, and build the existing structure from the debris."
+    note: "The Tkzeph structure had lain derelict in the interim; this is a new, unrelated species resettling it."
+  - year_at: -14800000
+    kind: abandoned
+    polity: xenosophont
+    precision: circa
+    until_at: null
+    where: body
+    quote: "14.8 million years BT - The Black Acropolis Civilisation is wiped out, apparently by the enigmatic Dawn Hunters."
+    note: "Hedged in the overview text: 'apparently... if contemporaneous Muuh legends are trustworthy.'"
+  - year_at: -1200000
+    kind: settled
+    polity: xenosophont
+    precision: exact
+    until_at: null
+    where: body
+    quote: "1.2 million years ago - The Ultimates are introduced into several of the biospheres by another enigmatic civilisation: after a short period of expansion they settle into a static society."
+    note: "The introducing civilisation itself left no other trace and may only have visited via probe; the Ultimates are the ones who remained."
+  - year_at: 4701
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "4701 AT - A clade of heterodox dolphin colonists from Hwii arrive at the Black Acropolis habitats, fleeing the rigidity and conservatism of Okeanism."
+    note: "Header records this year under kind 'contact', but this sentence describes Terragen dolphin colonists arriving and settling, not contact with the Ultimates; see the 4723 entry."
+  - year_at: 4723
+    kind: contact
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "4723 - They are joined by an expedition of Space Adapted Humans. The Dolphins and SAH contact the Ultimates."
+    note: "This is the article's actual first-contact date with the Ultimates (a resident xenosophont species); it differs from the header's 'contact 4701'."
+  - year_at: 4900
+    kind: transferred
+    polity: ""
+    precision: circa
+    until_at: null
+    where: body
+    quote: "After several decades of conflict between each other and with the Ultimates, they formed the hybrid Gerkletoss civilisation in the 4900s."
+    note: "Local hybrid civilisation (dolphins, humans, Ultimates), not on the roster. It is unclear whether this is the same polity as the separately-mentioned 'Gerkletoss system' (see doubts)."
+holder_undated: []
+unplaced:
+  - name: "Gerkletoss civilisation"
+    quote: "After several decades of conflict between each other and with the Ultimates, they formed the hybrid Gerkletoss civilisation in the 4900s."
+contradictions:
+  - about: "first contact with the Ultimates"
+    quotes:
+      - "4701 AT - A clade of heterodox dolphin colonists from Hwii arrive at the Black Acropolis habitats, fleeing the rigidity and conservatism of Okeanism."
+      - "4723 - They are joined by an expedition of Space Adapted Humans. The Dolphins and SAH contact the Ultimates."
+other_places:
+  - "Hwii"
+  - "Gerkletoss"
+  - "Skiiws'nnii"
+doubts:
+  - quote: "312 million standard years BT / 16 million years BT / 1.2 million years ago"
+    note: "These pre-Terragen events are recorded with polity 'xenosophont', the roster's generic id, since none of the Tkzeph, the Black Acropolis Civilisation, or the Ultimates' creators are individually on the roster. Reviewer should confirm this generic use is wanted."
+  - quote: "The Black Acropolis, 1530 ly from Sol in Ophiuchus, was detected in the Interplanetary Age by telescopic observation"
+    note: "No explicit year is given (only the era name 'Interplanetary Age'), so no event was recorded for this observation."
+  - quote: "5768 - The Gerkletoss system is connected to the Wormhole Nexus."
+    note: "This later reference to 'the Gerkletoss system' suggests Gerkletoss may be a separate star system rather than simply the local Black Acropolis civilisation formed in the 4900s; if so, the 4900s 'transferred' entry may still belong here (it describes the population within Black Acropolis) but its later history from 4937 onward belongs to that other place and was not recorded."

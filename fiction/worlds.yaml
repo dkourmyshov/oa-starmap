@@ -213,6 +213,16 @@ worlds:
       - year_at: 4773
         kind: settled
         note: Development actually begins.
+      - year_at: 6648
+        kind: independent
+        note: >-
+          "In 6648 The Twelve, through a series of contract buyouts, seceded
+          from the NoCoZo and claimed political neutrality." Not in the
+          header. Implies Evermore/Altus Lucror had been part of the NoCoZo
+          before this date, though no join date is given anywhere in the
+          article. The Twelve seceded from the NoCoZo by contract buyouts; the
+          Zone's holding before that is undated here.
+    note: A blend of the Caretaker Gods with the Negentropy Alliance and the NoCoZo.
     article: https://www.orionsarm.com/eg-article/48fbc25f56967
     location:
       note: >-
@@ -222,8 +232,6 @@ worlds:
         1006 nebula, with incursions Solward. Lynga 2 and Feinstein 1 are both
         in the open cluster catalogue, so the axis could be drawn; the remnant
         of SN 1006 is not, and "the edge" is not a point in any case.
-    note: A blend of the Caretaker Gods with the Negentropy Alliance and the NoCoZo.
-
   - name: Hyvixnym
     kind: planet
     affiliations: [caretaker-gods]
@@ -316,6 +324,60 @@ worlds:
           Settled by the Sephirotics. Already connected to the ahuman
           Terragen-origin Taurus Nexus at the time, so somebody had been there
           before — no date for that.
+      - year_at: 2143
+        kind: visited
+        note: >-
+          "The planet Taln was discovered in 2143A.T. by the Royal Exploration
+          Craft Red Penny as it explored the Taurus Nexus." The header records
+          'settled 2143', but this sentence describes only the discovery and
+          orbital examination of the planet by a scout ship; the article dates
+          actual colonisation to 2187 (see below) -- flagged under
+          contradictions and doubts. The article treats 2143 as the discovery;
+          the map's older 'settled 2143' is kept beside it, and the colony
+          missions begin in 2187.
+      - year_at: 2187
+        kind: settled
+        note: >-
+          "The first colony missions began in 2187A.T. The Rhesus Imperium,
+          Compliant Garmenia and the Wards of the Nightwatchman (WotN) quickly
+          transported over ten thousand colonists to the surface along with
+          neumans, autofabs and other industrial equipment." None of the three
+          founding nations are on the roster; see unplaced. This appears to be
+          the article's true first-colonisation date, versus the header's
+          settled 2143. The Rhesus Imperium, Compliant Garmenia and the Wards
+          of the Nightwatchman, none a polity of this file; the Taurus Nexus's
+          holding is undated.
+      - year_at: 3301
+        kind: stewardship
+        polity: caretaker-gods
+        note: >-
+          "In 3301A.T. any chance was taken away from them. The several
+          hundred approaching ships announced that the system was now under
+          Caretaker God control and that access was prohibited indefinitely...
+          An agreement was made among the powers of the region to recognise
+          total control of Taln by the Caretakers, who promptly declared the
+          system a protectorate." Matches the article's filing under Caretaker
+          Gods.
+      - year_at: 3457
+        kind: reported
+        note: >-
+          "In 3457A.T. the craft arrived in orbit of a NoCoZo gas giant. It
+          transmitted a message into the orbital band to the heart of the
+          SoSoCo enclave stating: "The Talnians were/are well, they are simply
+          no longer of Taln"." Reports that the surviving Talnian population
+          had already been removed from the planet, apparently around the time
+          of the 3301 AT Caretaker takeover; the real date of removal is not
+          stated -- see doubts. The message revealing that the population had
+          been removed.
+      - year_at: 7009
+        kind: settled
+        note: >-
+          "Despite this the Legate received more than enough applications and
+          in 7009A.T. the first 100,000 immigrants arrived." Resettlement of
+          Taln City after the population was removed c. 3301-3457 AT. No
+          single polity is named as sponsor; the Legate is described as 'an
+          Avatar of all the systems ruling entities'. Resettlement under the
+          Legate.
     note: >-
       The article gives 134 ly; the catalogue puts HD 27836 at 156 ly, a 17 per
       cent difference of the size that separates a pre-Gaia parallax from a
@@ -469,6 +531,21 @@ worlds:
     events:
       - year_at: 6700
         kind: settled
+      - year_at: 7000
+        kind: transferred
+        polity: communion-of-worlds
+        precision: not_later_than
+        note: >-
+          "After several skirmishes and further uncertainty, the Nabla Biowars
+          appealed to the Communion's mediator guilds (with whom they'd had
+          previous experience). Subsequently, several Communion mediators and
+          bridge minds travelled to Caerwactod." No exact year is given for
+          the Communion's arrival as mediator; it falls between the 6800 AT
+          Nabla Biowars arrival and the 'By 7000, a complex syncretic culture
+          had emerged' note, so not_later_than 7000 is used here. Matches the
+          panel's 'Allegiance: Communion of Worlds' and the header's 'filed
+          under: Communion of Worlds'. The Nabla Biowars appealed to the
+          Communion's mediator guilds; no exact year is given.
     note: A partial Dyson sphere.
 
   - name: Anomie
@@ -502,6 +579,41 @@ worlds:
         source: "Encyclopaedia timeline, Late Federation / AI Emergence"
         note: >-
           Chronosians arrive at Dionysos .
+      - year_at: 941
+        kind: settled
+        note: >-
+          "After a journey of 53 light years, and travelling at approximately
+          0.197 c, they arrived at Psi 5 Aurigae in 941 AT." The colonising
+          body was the United Christian New Jerusalem Association (UCNJA), not
+          on the polity roster. Conflicts with the data panel's 'Colonized:
+          2941 AT'; see contradictions. The panel's 'Colonized: 2941 AT' is
+          kept beside it; the body's 941 reads as the same year with a digit
+          transposed, and neither is resolved here.
+      - year_at: 1151
+        kind: visited
+        polity: first-federation
+        note: >-
+          "In 1151 AT the first Federation ship, the Interstellar Development
+          Group exploration and terraforming vessel Morgan arrived." The text
+          goes on to say a rocky inner planet was allocated to the corporation
+          and more ships/colonists arrived over the following century, so this
+          may amount to more than a simple visit; recorded as 'visited' to
+          follow the wording. This may or may not be what the header's
+          'visited 1980' refers to; see doubts.
+      - year_at: 2010
+        kind: transferred
+        polity: communion-of-worlds
+        precision: circa
+        note: >-
+          "By the early 21st century a.t. things had settled down. Dionysos
+          joined Communion, and in 2310 AT the first Wormhole Link was
+          established between the Psi 5 Aurigae system and Heartland." Year_at
+          is a rough placement for 'the early 21st century a.t.' (i.e.
+          somewhere in 2001-2100 AT); no exact year is given for the joining
+          itself, only for the later 2310 AT wormhole link (an infrastructure
+          event, not recorded separately). 'By the early 21st century a.t.
+          things had settled down. Dionysos joined Communion'; the century,
+          entered as 2010.
     note: Psi-5 Aurigae, 54 ly. Already in the Inner Sphere colony table.
 
   - name: Elderman's Star
@@ -677,6 +789,53 @@ worlds:
         source: "Encyclopaedia timeline, The Sundering"
         note: >-
           The arkship Jubilee arrives at Procyon .
+      - year_at: 1000
+        kind: transferred
+        precision: circa
+        note: >-
+          "By the dawn of the second millennium the Ako Forward Chaining had
+          formally joined the Diamond Belt, seeking allies from the growing
+          influence of the First Federation." "Diamond Belt" is not a literal
+          roster alias of Diamond Network, but the article's own data panel
+          ('former member of the Diamond Belt') and topic filing ('Diamond
+          Network') strongly suggest the same entity -- flagged for reviewer
+          confirmation, see doubts. The Ako Forward Chaining joined the
+          Diamond Belt, which the reader matched to the Diamond Network and
+          this entry does not, the names differing.
+      - year_at: 7555
+        kind: abandoned
+        note: >-
+          "On 25 Faraday 7555 the Procyon Phenomenon occurred. As yet an
+          unexplained event, the Procyon Phenomenon completely eliminated the
+          Ako Forward Chaining from the Procyon system." Ends the Ako Forward
+          Chaining's roughly 7,000-year occupation of the system; the clade is
+          not on the roster. The Procyon Phenomenon eliminated the Ako Forward
+          Chaining from the system.
+      - year_at: 7567
+        kind: transferred
+        polity: cyberian-network
+        precision: not_later_than
+        note: >-
+          "The arrival of megacorporations aligned with the NoCoZo helped to
+          stabilized the physical structure of the various megastructures in
+          the star system. By 7567 a power sharing agreement between the
+          Cyberian colonists and the NoCoZo megacorporations had been worked
+          out." Matches the header's filing under Cyberian Network and the
+          panel's 'Affiliation NoCoZo & Cyberian'. A joint arrangement -- see
+          the companion nocozo entry below. Megacorporations aligned with the
+          NoCoZo and the Cyberian Network arriving after the Phenomenon; the
+          same sentence carries the next entry.
+      - year_at: 7567
+        kind: transferred
+        polity: nocozo
+        precision: not_later_than
+        note: >-
+          "The arrival of megacorporations aligned with the NoCoZo helped to
+          stabilized the physical structure of the various megastructures in
+          the star system. By 7567 a power sharing agreement between the
+          Cyberian colonists and the NoCoZo megacorporations had been worked
+          out." Companion entry to the cyberian-network transfer above; a
+          shared power arrangement, not exclusive NoCoZo control.
     note: >-
       Joint Cyberian and Non-Coercive Zone after a long and strange history;
       neither of its present holders founded it.
@@ -1015,6 +1174,27 @@ worlds:
         source: "Encyclopaedia timeline, The ComEmp Period"
         note: >-
           MPA relativist ship arrives at Cableville .
+      - year_at: 5405
+        kind: transferred
+        note: >-
+          "In 5405, following several decades of negotiation, the system was
+          purchased by the S2 transapient HolyDeveloper, who renamed the
+          system Cableville and initiated an ambitious plan to upgrade the
+          system and turn it into a major economic centre and hotspot for
+          tourists and landscape designers." HolyDeveloper is an individual
+          transapient, not a roster polity. A consortium of transapients, in
+          HolyDeveloper's absence.
+      - year_at: 5990
+        kind: transferred
+        precision: not_earlier_than
+        note: >-
+          "In HolyDeveloper's absence, a consortium of transapients seized the
+          system." No exact year is given for the seizure itself; it is placed
+          immediately after the preceding sentence, dated 5990, describing
+          HolyDeveloper's disappearance. The consortium is unnamed and not on
+          the roster. Dancing Stars, a NoCoZo megacorporation of S2
+          transapients, not the Zone itself; the panel's MPA and Utopia Sphere
+          affiliation is undated.
     note: Zhuangzi is the primary. No catalogue identifier is given for it.
 
   - name: Galbydeia Torus
@@ -1776,6 +1956,18 @@ worlds:
         source: "Encyclopaedia timeline, Late Federation / AI Emergence"
         note: >-
           Mayflower arrives at Atlantis (Zeta1 Reticuli II).
+      - year_at: 2368
+        kind: transferred
+        polity: nocozo
+        note: >-
+          "In 2368 Zeta 1 Reticuli I and II formally became part of the Non-
+          Coercion Zone, but while automatically gravitating to the NoCoZo,
+          Atlantis was far too individualistic and finely grained anarchic to
+          really be able to gather enough capital to fund stargates." Matches
+          the header's 'filed under: Non-Coercive Zone (NoCoZo)' and the
+          panel's 'Affiliation NoCoZo'. Zeta1 Reticuli I and II together; the
+          article adds that Atlantis was 'far too individual' to gravitate to
+          the Zone in practice.
     note: >-
       One cell of the colony table holds three names for this system —
       Atlantis, Prometheus and Daedalus — belonging to three meta-empires.
@@ -2255,6 +2447,35 @@ worlds:
     events:
       - year_at: 3189
         kind: settled
+      - year_at: 5400
+        kind: transferred
+        polity: nocozo
+        note: >-
+          "In 5400 AT Helen joined the NoCoZo." Not in the header. Applies to
+          Helen/Neli specifically; Clytemnestra/Neti separately joined the
+          Utopia Sphere in 5541 (see next entry), so the system's two worlds
+          carry two different polity affiliations rather than one
+          contradicting the other. Helen, one of the twin worlds.
+      - year_at: 5541
+        kind: transferred
+        polity: utopia-sphere
+        note: >-
+          "Clytemnestra joined the Utopia Sphere, as an outlier world, in 5541
+          AT." Not in the header. Applies to Clytemnestra/Neti specifically;
+          see note on the 5400 Helen/NoCoZo entry. Clytemnestra, the other,
+          'as an outlier world'.
+      - year_at: 9545
+        kind: transferred
+        note: >-
+          "This conflict was terminated abruptly in 9545 AT when a force of
+          Paraz provolves invaded the twin planets, equipped with Sephirotic
+          godtech weapons, completely overwhelming all other combatants with
+          little or no bloodshed." Not in the header. The Paraz and the
+          resulting 'New Synergy' society are not on the polity roster; polity
+          left blank rather than mapped to nocozo or utopia-sphere, which this
+          event appears to supersede for governance purposes but does not
+          explicitly say it replaces. Paraz provolves with Sephirotic godtech
+          weapons; no polity of this file.
     note: >-
       Placed at 698 ly in the direction of HIP 63911, rather than at the 17,120
       ly the catalogue gives that star. Musca is both the constellation the
@@ -4824,6 +5045,19 @@ worlds:
         note: >-
           Penglai ship arrives at Pandya and infects local population with pathogens
           to which they have no immunity.
+      - year_at: 715
+        kind: independent
+        note: >-
+          "Riding on the wave of popular support and independence following
+          their unilateral declaration of independence, Jian Hsin (or Jian-tze
+          as he now liked to style himself), leader of the new PCA, made the
+          former districts of Hao Chen, Daonin, Tsi Leng and Hsu Hsi into
+          sovereign nations, and they were formally recognized by the PCA."
+          Independence was declared from the founding corporations (Heavenly
+          Palaces Incorporated and partners), not from a roster polity, so no
+          prior holder is named. Jian Hsin's unilateral declaration of
+          independence from the Heavenly Palaces company; the Jian Dynasty is
+          local.
     note: >-
       A moon of the gas dwarf Qinglong, in the Shenjing system. Mostly Sophic
       League, with Zoeific, Solarist, Fomalhaut and Metasoft presences in orbit.
@@ -5059,6 +5293,15 @@ worlds:
           to detect information-rich signals from the Xi Geminorum AI - 1
           Civilization; the AIs are never heard from again. After hastily running
           through a number of simula...
+      - year_at: 4447
+        kind: capital
+        note: >-
+          "The world has been the official capital of the polity since its
+          inception in 4447, wielding considerable political and cultural
+          clout in the otherwise legislatively loose Confederation." Refers to
+          the Ayysis Confederation (not on the roster); Unnar is its capital,
+          within the New Callisto system's Ayysis Range. Capital of the Ayysis
+          Confederation from its inception, no polity of this file.
     note: >-
       The article gives three distances — 60.663 ly from Sol, 8.761 from Alzirr
       and 3.790 from Paanlaansuu — and they intersect at one point, 0.19 ly from
@@ -5089,6 +5332,41 @@ worlds:
     events:
       - year_at: 4296
         kind: settled
+      - year_at: 3937
+        kind: settled
+        note: >-
+          "The Jurassica Institute's expedition ship, at a speed just under
+          0.7c, reached HD 160519 on 3937 AT." The very next sentence says the
+          arriving uploads, aioids, and hyperturings 'had no trouble setting
+          up infrastructure' on the fourth planet, so this reads as the actual
+          colonists staying, not a mere visit. The Jurassica Institute is not
+          a roster polity, see unplaced. The Jurassica Institute's expedition;
+          the panel's 'Colonized: 4296' is kept beside it, and neither the
+          4195 oxygen milestone nor the 4384 completion of terraforming
+          matches either.
+      - year_at: 4853
+        kind: abandoned
+        note: >-
+          "Evacuated: 4853 AT" See doubts: the body suggests this was the
+          departure of the neosaurian provolve population specifically, not a
+          full depopulation of the system. The neosaurians' fleet departed for
+          Ruprecht 108; the body implies caretakers stayed and repopulation
+          followed.
+      - year_at: 4699
+        kind: transferred
+        polity: utopia-sphere
+        precision: not_later_than
+        note: >-
+          "During the Version War , Owen officially aligned itself with the
+          Utopia Sphere, one of the neutral Sephirotic empires which were non-
+          combatants in that conflict." No exact year is given for the
+          alignment itself; it is bounded by the following sentence, 'In 4699
+          AT, after the war, a Utopian linelayer reached the system', so
+          not_later_than 4699 is used. Matches the header's 'filed under:
+          Utopia Sphere'. During the Version War; the 5687 declaration of the
+          system as 'an honorary part of the Archosaurian Empire' is left to
+          the readings, honorary affiliation being a marker this map does not
+          draw.
     note: >-
       Named as HD 160519, which is in Ara as the article says, but at 287 ly
       rather than the 387 given — too wide a gap to bind across, so the star
@@ -5289,6 +5567,24 @@ worlds:
         until_at: 1070
         kind: visited
         precision: between
+      - year_at: 1140
+        kind: visited
+        polity: first-federation
+        note: >-
+          "the first exchanges encouraged the Federation to transmit ai
+          diplomats (prototype FedReps) in 1076, who arrived in 1140."
+          Diplomats dispatched 1076, arrived 1140; recorded under the arrival
+          year. Prototype FedReps transmitted in 1076.
+      - year_at: 1270
+        kind: visited
+        note: >-
+          "An enterprising hyperturing transmitted emself to the system,
+          arriving in 1270." The hyperturing's origin/affiliation is not
+          stated at the point of arrival; Beta Pictoris became a Metasoft
+          satrapy afterward (see holder_undated). A hyperturing who
+          transmitted emself; the Diamond Belt missions of 912 to 1070 were
+          all defeated, and Exa Energy's probes of 948 to 967 are no polity of
+          this file.
     note: >-
       64 ly out. The colony table carries this system as Vinci, giving the star
       name as the second of the pair; both names are on the map.
@@ -5389,6 +5685,21 @@ worlds:
       - year_at: 6000
         kind: settled
         precision: circa
+      - year_at: 6000
+        kind: transferred
+        polity: metasoft
+        precision: circa
+        note: >-
+          "As Metasoft settled and developed surrounding systems in the early
+          6000's, Jovanus sought to profit by producing amat and magmatter for
+          export... so e "contracted" with Metasoft for a system caretaker AI
+          ("Overseer")... the popular theory (to everyone but Jovanus) is that
+          Metasoft was responsible for convincing Jovanus to industrialize the
+          system and all but turn it into a Metasoft protectorate." This is
+          when the system panel's 'AFFILIATION: Metasoft' begins, per the body
+          text; no more precise year is given than 'the early 6000's'. Jovanus
+          sought to profit from Metasoft's development of the surrounding
+          systems; the panel's affiliation is Metasoft.
     note: >-
       In the Metasoft Outer Volumes, about 2,000 ly out and located against NGC
       1663 — which this map's cluster catalogue does not contain, that catalogue
@@ -5445,6 +5756,10 @@ worlds:
     events:
       - year_at: 5217
         kind: settled
+        polity: metasoft
+        note: >-
+          "Colonized: 5217 a.t"; "established by the Metasoft Version Tree", in
+          the body, undated.
 
   - name: KapekNow
     kind: system
@@ -5705,6 +6020,70 @@ worlds:
       - year_at: 900
         kind: visited
         note: First reached by isolationist AIs.
+      - year_at: 900
+        kind: settled
+        precision: circa
+        note: >-
+          "a small isolationist AI colony arrived around 900 AT, likely from
+          the red dwarf AD Leonis, a system inhabited by Diamond Belt ahuman
+          AI and containing some planetary-surface computronium nodes of
+          similar design" The header records this as 'visited 900'; the colony
+          'made a home' on Hesperides and stayed until it departed in the
+          1300s, which reads as settled rather than visited -- see doubts. An
+          isolationist AI colony, 'likely from AD Leonis', which stayed; the
+          map's earlier 'visited 900' is this arrival.
+      - year_at: 1300
+        kind: abandoned
+        precision: circa
+        note: >-
+          "They made a home on Hesperides' cold, icy surface and sustained
+          themselves with fusion energy, but sometime in the 1300s, they built
+          a new ship and departed for places unknown." End of the c.900 AT AI
+          colony on Hesperides; no polity is named.
+      - year_at: 1521
+        kind: settled
+        note: >-
+          "The mission arrived in the system in 1521, with an initial
+          population of 43,000 baseline and nearbaseline humans and 5
+          superturing AI advisors." The Strength of the Lion colony ship,
+          launched 988 AT from Solsys; no polity is named as sponsoring the
+          mission. The Strength of the Lion mission, 43,000 humans and five
+          superturing advisors; no polity named.
+      - year_at: 2099
+        kind: independent
+        precision: not_earlier_than
+        note: >-
+          "After news arrived of the dissolution of the Federation in 2099,
+          Foremost of Kiruna declared the independent Delta Leonis Republic, a
+          nominal cyberdemocracy with its capital in the Tundral Forest
+          Arcology Complex near Kiruna's south pole." Implies the system had
+          been part of the First Federation, but no explicit joining date is
+          given; the First Federation's roster dissolution year (2099)
+          matches. Foremost of Kiruna declared the Delta Leonis Republic,
+          local; the Federation's own holding is not recorded here.
+      - year_at: 4176
+        kind: transferred
+        polity: zoeific-biopolity
+        note: >-
+          "In 4176, the S3 Lawgiver of the Jungle, of the Zoeific Biopolity,
+          purchased development rights over Canaveral and 52 of its moons from
+          the few million local inhabitants." Concerns development rights over
+          Canaveral and its moons specifically, not a stated transfer of the
+          whole system -- see doubts. Development rights over Canaveral and 52
+          of its moons, one planet of the system.
+      - year_at: 6005
+        kind: transferred
+        polity: technorapture-hypernation
+        note: >-
+          "By far the most momentous event in the history of Delta Leonis was
+          in 6005, when Uncountable Qualia, a member of the Technorapture
+          Hypernation and at the time an S3, used a combination of commercial
+          purchases and memetic influence to attain full development rights to
+          the central star." Matches the article's own filing under
+          Technorapture Hypernation; the system is presently ruled by
+          Uncountable Qualia of that polity. Uncountable Qualia of the
+          Hypernation, 'by far the most momentous event' in the system's
+          history.
     note: >-
       A collection of virchworlds at Zosma, Delta Leonis, 58 ly out — one of
       the few entries here that is a place only in the sense that the hardware
@@ -5881,6 +6260,30 @@ worlds:
       - year_at: 812
         kind: settled
         note: The first domed habitats.
+      - year_at: 964
+        kind: transferred
+        polity: first-federation
+        note: >-
+          "when (in 964) they finally received a message from the old Solar
+          System, inviting them to join the Federation of Sophonts. The
+          colonists, now more than 4000 strong, sent a reply back in the
+          affirmative, but even before their message could reach its
+          destination they were contacted (in 972) by an approaching vessel
+          coming from the direction of the Solar System." 'Federation of
+          Sophonts' is the roster's alternate name for the First Federation
+          before 2099. This concerns the Arcadian colonists' own affiliation,
+          not the other worlds of the Chloris system. Invited by message from
+          the old Solar System; the colonists 'now more than 4000 strong'
+          accepted.
+      - year_at: 3231
+        kind: transferred
+        polity: zoeific-biopolity
+        note: >-
+          "Arcadian biotechnology, philosophy and lifestyle was found to be
+          thoroughly compatible with Zoeific doctrine, and the Council of
+          Hives joined the Biopolity in 3231." The Council of Hives is
+          Arcadia's own governing body. Matches the article's filing under
+          Zoeific Biopolity.
     note: >-
       One of the few places here whose travel time can be checked: 30 ly in 290
       years is a tenth of lightspeed, which is a slowboat and reads as one.
@@ -5955,6 +6358,21 @@ worlds:
     events:
       - year_at: 3500
         kind: settled
+      - year_at: 5453
+        kind: settled
+        polity: zoeific-biopolity
+        note: >-
+          "The next big change came in 5453, when, after a period of
+          negotiation with the current inhabitants, a siblinghood of young
+          Amphisapien colonists from the Zoeific Biopolity arrived in system."
+          Not in the header. A second wave of colonists, explicitly said to be
+          'from the Zoeific Biopolity', who stayed and founded a lasting new
+          culture ('For the next centuries a new culture blossomed'); recorded
+          as settled rather than visited on that basis. Consistent with the
+          data panel's undated 'Allegiance Zoefic Biopolity'. Amphisapien
+          colonists from the Biopolity, after negotiation with the
+          inhabitants; the earlier colonists of 3500 were Madi from the Deeper
+          Covenant.
     note: HD 181144 in Sagitta, the article's 119 ly against the catalogue's 118.
 
   - name: Tien-schu
@@ -7052,6 +7470,34 @@ worlds:
       - year_at: 4701
         kind: contact
         note: Reached by Terragens.
+      - year_at: 4701
+        kind: settled
+        note: >-
+          "4701 AT - A clade of heterodox dolphin colonists from Hwii arrive
+          at the Black Acropolis habitats, fleeing the rigidity and
+          conservatism of Okeanism." Header records this year under kind
+          'contact', but this sentence describes Terragen dolphin colonists
+          arriving and settling, not contact with the Ultimates; see the 4723
+          entry. Dolphin colonists from Hwii; the map's older 'contact 4701'
+          is this arrival, and the article dates the contact with the
+          Ultimates to 4723.
+      - year_at: 4723
+        kind: contact
+        note: >-
+          "4723 - They are joined by an expedition of Space Adapted Humans.
+          The Dolphins and SAH contact the Ultimates." This is the article's
+          actual first-contact date with the Ultimates (a resident xenosophont
+          species); it differs from the header's 'contact 4701'.
+      - year_at: 4900
+        kind: transferred
+        precision: circa
+        note: >-
+          "After several decades of conflict between each other and with the
+          Ultimates, they formed the hybrid Gerkletoss civilisation in the
+          4900s." Local hybrid civilisation (dolphins, humans, Ultimates), not
+          on the roster. It is unclear whether this is the same polity as the
+          separately-mentioned 'Gerkletoss system' (see doubts). The hybrid
+          Gerkletoss civilisation of dolphins, humans and Ultimates, local.
     note: >-
       A dyson swarm of xenosophont origin, in Ophiuchus at 1,530 ly — near the
       Serpens Reach without being of it: 124 ly from the Sparks, 268 from
@@ -7089,6 +7535,38 @@ worlds:
     events:
       - year_at: 415
         kind: visited
+      - year_at: 698
+        kind: settled
+        note: >-
+          "The first colonists departed Solsys in 655 AT in the Sopdet, a GAIA
+          ark, and arrived 698 AT" First modosophont colonists; no roster
+          polity is named as sponsor. In the Sopdet, a GAIA ark; no polity
+          named.
+      - year_at: 4115
+        kind: transferred
+        polity: solsys-organization
+        precision: not_earlier_than
+        note: >-
+          "With the departure of the clade the Sirius system became a Solar
+          Organisation Protectorate Territory." This sentence carries no year
+          of its own; it directly follows the Sirius Dynamics clade's 4115
+          departure (previous sentence), so precision is approximated as
+          not_earlier_than 4115. After the Sirius Dynamics clade relocated to
+          the Keter Dominion in 4115.
+      - year_at: 7000
+        kind: transferred
+        precision: not_later_than
+        note: >-
+          "A new wave of immigration, consisting mostly of virtual sophonts
+          known as the Noëa (pl. Noëadrim), began to arrive in the eighth
+          millenium, and established a new hegemony known as the Sirian
+          Heirarchy." 'Eighth millennium' is approximated as not later than
+          7000 AT, since the following sentence states the Sirian Hierarchy
+          'Since 7000... have begun' the starlifting project, implying they
+          were already the system's governance by then. Sirian Hierarchy is
+          not on the roster. The Noëa, virtual sophonts, and the Sirian
+          Hierarchy the reader names as the new holder, no polity of this
+          file; 'the eighth millennium', entered as 7000.
     note: >-
       8.6 ly out. The Organization holds the Twelve Solaria habitat cluster
       here and not the system at large, which the ring cannot distinguish from
@@ -7199,6 +7677,56 @@ worlds:
     events:
       - year_at: 865
         kind: settled
+      - year_at: 1220
+        kind: visited
+        polity: first-federation
+        note: >-
+          "1220 A Federation explorer ship Songs of Worlds arrived at
+          Resonance."
+      - year_at: 1408
+        kind: transferred
+        polity: first-federation
+        note: >-
+          "1408 Resonance joined the Federation, and a Federation
+          Representative arrived."
+      - year_at: 2139
+        kind: independent
+        note: >-
+          "2139 News of the dissolution of the Federation of Sophonts reached
+          Resonance, and the FedRep returned to Solsys." The Federation
+          dissolved elsewhere; Resonance is left in no polity as a result.
+          Could alternatively be read as a 'reported' entry, since the
+          sentence is framed as news arriving rather than the dissolution
+          itself.
+      - year_at: 2298
+        kind: transferred
+        polity: conver-ambi
+        note: >-
+          "2298 Missionaries from the Conver Ambi arrived and set up a polity
+          on Yaudel; this became known as the Sekintorof Cyborgium."
+          Missionaries who set up the Sekintorof Cyborgium on Yaudel, one
+          world of the system.
+      - year_at: 2890
+        kind: transferred
+        polity: taurus-nexus
+        note: >-
+          "2890 A wormhole link to Lucida arrived, strengthening ties to the
+          Taurus Nexus. The DayNight Union and the Republic of Eunna became
+          aligned with the Taurus Nexus." Only the DayNight Union (Remi/Fulno)
+          and Republic of Eunna (Shinoh/Eunna) are described joining, not
+          explicitly the whole system. An alignment rather than a joining: the
+          wormhole to Lucida strengthened ties, and the DayNight Union and the
+          Republic of Eunna 'became aligned' with the Nexus.
+      - year_at: 5411
+        kind: transferred
+        polity: iota-network
+        note: >-
+          "5411 The Iota Network, based in the Lucida (Iota Piscium) system
+          and associated transapient advisers, arrived in Resonance and
+          peacefully took control over the system, citing the ideological
+          tension period that followed the decline of the ComEmp as the
+          reason." The Network 'arrived in Resonance and peacefully took
+          control'.
     note: >-
       TRAPPIST-1, which no catalogue this map loads carries — an ultracool dwarf
       far below the magnitude any of them reach. No distance is given here
@@ -8289,6 +8817,36 @@ worlds:
     events:
       - year_at: 370
         kind: settled
+      - year_at: 370
+        kind: visited
+        note: >-
+          "Colonized 370AT (arrival of first robotic probe)" Header already
+          records this as 'settled 370'; the clause itself describes only a
+          robotic probe, which this brief classifies as visited rather than
+          settled. The panel's own gloss on its 'Colonized 370AT': the first
+          robotic probe; the map's older settled 370 is kept beside it.
+      - year_at: 597
+        kind: settled
+        note: >-
+          "597AT (arrival of first colonists)" The first colonists; the body
+          has the flights arriving 'in the late Fifth and early Sixth
+          century'.
+      - year_at: 945
+        kind: visited
+        polity: first-federation
+        note: >-
+          "61 Cygni's sporadic contact with various habitats in SolSys meant
+          it was quickly contacted by the First Federation in 945 AT." The
+          Consortium declined the Federation's invitation to join; no transfer
+          occurred.
+      - year_at: 2114
+        kind: transferred
+        note: >-
+          "ETA's system governance operations were consolidated into the not-
+          for-profit Cygnus Development Corporation (CDC)." Same year the ETA
+          Consortium was formally liquidated; CDC is not a roster polity. The
+          ETA Consortium's governance consolidated into the Cygnus Development
+          Corporation; neither a polity of this file.
     note: >-
       A nearby binary of two orange dwarfs, 11.4 ly out in Cygnus, settled early
       enough to be one of the first systems colonised outside Solsys.
@@ -8532,6 +9090,63 @@ worlds:
         kind: visited
         precision: between
         note: Reached in the thirty-eighth century.
+      - year_at: 3837
+        kind: settled
+        note: >-
+          "The first wave of settlers arrived in 3837 AT , at the start of the
+          Integration." The settling coalition is described only as 'a loose
+          coalition of first singularity transapients... not closely aligned
+          with any particular Sephirotic empire', so no polity is named.
+      - year_at: 4490
+        until_at: 4922
+        kind: transferred
+        polity: negentropy-alliance
+        note: >-
+          "in 4490 a Negentropy Alliance fleet entered the system and attacked
+          Avenue Station, causing devastaion... the coalition capitulated
+          without further destruction." Section heading gives the span as 'The
+          Occupational Period - 4490 to 4922 AT', matching until_at. An
+          occupation: the fleet attacked Avenue Station and the coalition
+          capitulated; the Alliance held it until 4922.
+      - year_at: 4922
+        kind: transferred
+        note: >-
+          "Regardless, Xacou rapidly took control of the system." Xacou (later
+          the Xacounian Empire) is an individual transapient, not a roster
+          polity; see unplaced. Xacou's empire, no polity of this file.
+      - year_at: 5398
+        kind: transferred
+        note: >-
+          "After the war Avanola was governed by a Zendart occupation force,
+          and suffered a period of stagnation." Zendart Dominion is not a
+          roster polity; see unplaced. Marks the end of the Xacounian War
+          (5165-5398). A Zendart occupation force; the Zendart Dominion is no
+          polity of this file.
+      - year_at: 5787
+        kind: transferred
+        precision: not_later_than
+        note: >-
+          "The Gentry now held Avanola along with all nearby systems." The
+          capture of Avanola happened at an unstated point during the Zendart
+          Dominion Civil War (5610s-5787 AT); the Gentry Coalition/Gentry
+          Polity/Gentry Hardline Polity is not a roster polity, see unplaced.
+          The Gentry, no polity of this file.
+      - year_at: 7245
+        kind: transferred
+        note: >-
+          "Enefevee's seraiph fleet absorbed Avanola into eir new growing
+          empire and rearranged the fundamental logistics of the system."
+          Enefevee is an individual archailect, not a roster polity; see
+          unplaced. Enefevee's empire, no polity of this file.
+      - year_at: 7388
+        kind: independent
+        note: >-
+          "The bulk of the survivors consolidated themselves into localized
+          regions, first forming a single entity called the Avanola Federation
+          in 7388." Local modosophont self-governance after the Virch Purge;
+          Enefevee's continued nominal status over the system is unclear from
+          the text, see doubts. The Avanola Federation, local, formed by the
+          survivors.
     note: >-
       In Antlia at 705 ly, from coordinates the article prints to arcseconds.
       The date is a century rather than a year, and is stored as the century.
@@ -8663,6 +9278,33 @@ worlds:
     events:
       - year_at: 9107
         kind: settled
+      - year_at: 8437
+        kind: settled
+        note: >-
+          "The Cyrus system was initially settled by a relativistic 'claim
+          staking' operation from the Chauzor megacorp, an organisation which
+          was defunct by the time the hyperturing probe Prismatic Helium-3
+          arrived in 8437AT." Chauzor megacorp is not on the roster (see
+          unplaced); its own claim-staking 'settlement' is undated. Prismatic
+          Helium-3, also not on the roster, arrived in 8437 AT to find the
+          claim already defunct and went on to found a vec colony -- this
+          reads as the article's own settlement narrative, in tension with the
+          panel's 9107 AT figure. The Chauzor megacorp's claim-staking
+          operation, no polity of this file; the panel's 'Colonized 9107' is
+          kept beside it.
+      - year_at: 9200
+        kind: settled
+        note: >-
+          "In 9200AT, Prismatic Helium-3's Hydrogen Republic was contacted by
+          a biont colonial developer who expressed interest in the eoGaian
+          world Zamin. The Hydrogen Republic accepted the request and
+          negotiated limits on development, while positioning itself as the
+          recognized owner of the Cyrus system. The new settlers were granted
+          extended leases." First biont (neb) settlement of Zamin, the
+          system's main colony world. Hydrogen Republic is not on the roster;
+          the biont developer is not named. Neither 9107 AT nor 8437 AT is
+          repeated here. The Hydrogen Republic, local, accepting a biont
+          colonial developer for Zamin.
     note: >-
       4,357 ly out, and that is the whole of it: no constellation and no
       coordinates, so there is a radius and no direction, and nothing is drawn.
@@ -9394,6 +10036,15 @@ worlds:
     events:
       - year_at: 1300
         kind: settled
+      - year_at: 993
+        kind: visited
+        note: >-
+          "This proved to be the decayed remains of a repair station built by
+          a terrestrial hyperturing in 993 AT." An unnamed hyperturing, itself
+          a Great Expulsion refugee with a faster ship, paused here to refuel
+          and refurbish its debris shield; no polity named. A repair station
+          of a terrestrial hyperturing, found decayed by the colonists of
+          1300; the builder is not named.
     note: HD 4967 in Cetus, 50 ly out against the article's 51.
 
   - name: New Eureka
@@ -9434,6 +10085,7 @@ worlds:
         note: Arrived.
       - year_at: 3157
         kind: abandoned
+        polity: mutual-progress-association
         source: "Encyclopaedia timeline, Age of Establishment"
         note: >-
           Hip 99265 , Newhope system abandoned.
@@ -9444,6 +10096,18 @@ worlds:
           The nearbaseline human colony ship, the Freedom's Light, crewed by
           followers of the utopian nearbaseline human Marus Midas Chuny, arrive at
           Hip 99265, with 980 colonists in stasis, and rename the system Newhope .
+      - year_at: 2415
+        kind: visited
+        polity: mutual-progress-association
+        note: >-
+          "Colonized: Reached in 2415 by autonomous probe" Not in the header.
+          The panel labels this 'Colonized', but its own wording ('Reached...
+          by autonomous probe') describes a probe visit rather than a stay,
+          and the system was subsequently abandoned (3157) and only settled by
+          people much later (3429); recorded as visited to match the literal
+          wording, flagged for the reviewer. The MPA Neumann bpRW-1011000110,
+          which established the system's infrastructure; the MPA's mining
+          swarms abandoned it in 3157.
     note: >-
       HIP 76282 in Serpens, 113 ly out against the article's 120. The
       coordinates the article prints are the star's own to the arcsecond.
@@ -9836,6 +10500,24 @@ worlds:
     events:
       - year_at: 7117
         kind: settled
+      - year_at: 6935
+        kind: settled
+        note: >-
+          "6935 AT Arrival of transapient AI 'Swift'" Swift is described as an
+          unaffiliated 'anti-biont hyperturing' that fled the Inner Sphere
+          during the Conver Wars, not a named polity; see doubts. The
+          transapient AI Swift, who stayed for centuries before the
+          colonisation mission of 7117; no polity of this file.
+      - year_at: 7423
+        kind: independent
+        note: >-
+          "7423 AT Great Cygexpa Sell Off, de facto independence and isolation
+          of Savannah" The article says Cygexpa's sell off left the Jackson
+          colony's ownership 'unclear and disputed', which the Timeline Table
+          links to Savannah's de facto independence; it does not state
+          Savannah was formally part of Cygexpa before this. The Great Cygexpa
+          Sell-Off; the article does not otherwise record Cygexpa as holding
+          the system.
     note: >-
       In Monoceros at 2,958 ly. A middle-tech world under Caretaker protection,
       which is why the Caretakers hold it and its inhabitants do not.

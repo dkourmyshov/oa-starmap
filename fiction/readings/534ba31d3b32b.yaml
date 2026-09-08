@@ -1,0 +1,45 @@
+article: 534ba31d3b32b
+title: Savannah
+events:
+  - year_at: 7117
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonized 7117AT"
+    note: "Data Panel entry; no polity is named as sponsor of the colonization mission."
+  - year_at: 7117
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "7117 AT Arrival of Savannah colonization mission"
+    note: "Timeline Table entry, matches header's already-dated settled 7117 and the Data Panel figure."
+  - year_at: 6935
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "6935 AT Arrival of transapient AI 'Swift'"
+    note: "Swift is described as an unaffiliated 'anti-biont hyperturing' that fled the Inner Sphere during the Conver Wars, not a named polity; see doubts."
+  - year_at: 7423
+    kind: independent
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "7423 AT Great Cygexpa Sell Off, de facto independence and isolation of Savannah"
+    note: "The article says Cygexpa's sell off left the Jackson colony's ownership 'unclear and disputed', which the Timeline Table links to Savannah's de facto independence; it does not state Savannah was formally part of Cygexpa before this."
+holder_undated: []
+unplaced:
+  - name: "Federal Imperium of Savannah"
+    quote: "Polity Federal Imperium of Savannah"
+contradictions: []
+other_places: []
+doubts:
+  - "Swift's 6935 AT arrival (see event above): the article calls it 'an older, anti-biont hyperturing with a toposophic level of S2' that 'had fled the Inner Sphere during the Conver Wars and arrived some hundreds of years earlier' than 7117 AT; whether a lone hostile AI's occupation counts as settled per the brief, and whether it should carry any roster polity, is unclear -- it is not stated to belong to Conver Ambi or any other polity."
+  - "\"The first biont colonists were engenerated uploads from the NoCoZo and Cygexpa.\" This is undated (occurring 'several centuries' after 7117, once terraforming was underway) and describes the genetic/upload origin of colonists rather than a polity reaching or settling the system, so it was not recorded as an event or a holder_undated entry."
+  - "10,441 AT ('personal union of major kingdoms' families') and 10,456 AT (Savannah 'legally united under the Federal Imperium of Savannah') are exact dated claims about Savannah's own government forming, but the Federal Imperium of Savannah is not on the roster, so no event was recorded for either."

@@ -1,0 +1,54 @@
+article: 490b210f5bc0b
+title: "Newhope"
+events:
+  - year_at: 2415
+    kind: visited
+    polity: mutual-progress-association
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonized: Reached in 2415 by autonomous probe"
+    note: "Not in the header. The panel labels this 'Colonized', but its own wording ('Reached... by autonomous probe') describes a probe visit rather than a stay, and the system was subsequently abandoned (3157) and only settled by people much later (3429); recorded as visited to match the literal wording, flagged for the reviewer."
+  - year_at: 2415
+    kind: visited
+    polity: mutual-progress-association
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The infrastructure of the red dwarf Hip 76282, just outside the Inner Sphere, was established by the MPA Neumann bpRW-1011000110 in 2415 a.t., from which comes its popular name \"1001100110's star.\""
+    note: "Not in the header. The probe is explicitly an MPA (Mutual Progress Association) Neumann probe."
+  - year_at: 3157
+    kind: abandoned
+    polity: mutual-progress-association
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Following extraction by MPA Mining Swarms of most volatiles, the system was abandoned in 3157."
+    note: "Matches header's abandoned 3157."
+  - year_at: 3429
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "News slowly spread, and in 3429 an independently financed nearbaseline human colony ship, the Freedom's Light, crewed by followers of the utopian hu Marus Midas Chuny, arrived with 980 colonists in stasis, and renamed the system Newhope."
+    note: "Matches header's settled 3429. The colonists were independently financed, not affiliated with any roster polity."
+  - year_at: 3429
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "News slowly spread, and in 3429 an independently financed nearbaseline human colony ship, the Freedom's Light, crewed by followers of the utopian hu Marus Midas Chuny, arrived with 980 colonists in stasis, and renamed the system Newhope."
+    note: "Matches header's visited 3429, from the same sentence as the settled 3429 entry above; the header appears to record both the ship's arrival and the colonists' staying as separate kinds for the one event."
+holder_undated:
+  - polity: mutual-progress-association
+    quote: "Deep in the heart of the inner MPA volume, this independent world now acquired protected status as a wildsap preserve - the humans and other clades in this system are free to do as they wish, even wage war on and exterminate each other - but if the system faces an external threat the MPA has unilaterally decided to offer protection if required."
+unplaced:
+  - name: "Freedom's Light colonists / followers of Marus Midas Chuny (the Chunyists)"
+    quote: "News slowly spread, and in 3429 an independently financed nearbaseline human colony ship, the Freedom's Light, crewed by followers of the utopian hu Marus Midas Chuny, arrived with 980 colonists in stasis, and renamed the system Newhope."
+contradictions: []
+other_places:
+  - "Dobsan - an MPA red dwarf system linked to Newhope by a wormhole built in the 9200's"
+doubts:
+  - "Neither of the two 2415 visited entries is in the header (which lists only settled 3429, abandoned 3157 and visited 3429); flagged in case the reviewer wants them added."

@@ -1,0 +1,65 @@
+article: 57f2790443640
+title: Taln
+events:
+  - year_at: 2143
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The planet Taln was discovered in 2143A.T. by the Royal Exploration Craft Red Penny as it explored the Taurus Nexus."
+    note: "The header records 'settled 2143', but this sentence describes only the discovery and orbital examination of the planet by a scout ship; the article dates actual colonisation to 2187 (see below) -- flagged under contradictions and doubts."
+  - year_at: 2187
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The first colony missions began in 2187A.T. The Rhesus Imperium, Compliant Garmenia and the Wards of the Nightwatchman (WotN) quickly transported over ten thousand colonists to the surface along with neumans, autofabs and other industrial equipment."
+    note: "None of the three founding nations are on the roster; see unplaced. This appears to be the article's true first-colonisation date, versus the header's settled 2143."
+  - year_at: 3301
+    kind: stewardship
+    polity: caretaker-gods
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 3301A.T. any chance was taken away from them. The several hundred approaching ships announced that the system was now under Caretaker God control and that access was prohibited indefinitely... An agreement was made among the powers of the region to recognise total control of Taln by the Caretakers, who promptly declared the system a protectorate."
+    note: "Matches the article's filing under Caretaker Gods."
+  - year_at: 3457
+    kind: reported
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 3457A.T. the craft arrived in orbit of a NoCoZo gas giant. It transmitted a message into the orbital band to the heart of the SoSoCo enclave stating: \"The Talnians were/are well, they are simply no longer of Taln\"."
+    note: "Reports that the surviving Talnian population had already been removed from the planet, apparently around the time of the 3301 AT Caretaker takeover; the real date of removal is not stated -- see doubts."
+  - year_at: 7009
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Despite this the Legate received more than enough applications and in 7009A.T. the first 100,000 immigrants arrived."
+    note: "Resettlement of Taln City after the population was removed c. 3301-3457 AT. No single polity is named as sponsor; the Legate is described as 'an Avatar of all the systems ruling entities'."
+holder_undated:
+  - polity: taurus-nexus
+    quote: "Taln is a Caretaker God world located in the Octagon system of the (former) Taurus Nexus."
+unplaced:
+  - name: "The Rhesus Imperium"
+    quote: "including Red Penny's motherland: The Rhesus Imperium"
+  - name: "Compliant Garmenia"
+    quote: "The Rhesus Imperium, Compliant Garmenia and the Wards of the Nightwatchman (WotN) quickly transported over ten thousand colonists to the surface"
+  - name: "Wards of the Nightwatchman (WotN)"
+    quote: "The Rhesus Imperium, Compliant Garmenia and the Wards of the Nightwatchman (WotN) quickly transported over ten thousand colonists to the surface"
+contradictions:
+  - about: "settlement year and kind"
+    quotes:
+      - "The planet Taln was discovered in 2143A.T. by the Royal Exploration Craft Red Penny as it explored the Taurus Nexus."
+      - "The first colony missions began in 2187A.T. The Rhesus Imperium, Compliant Garmenia and the Wards of the Nightwatchman (WotN) quickly transported over ten thousand colonists to the surface"
+other_places:
+  - "The other worlds of the Octagon system, jointly developed from 7006 AT by 'eight stakeholding empires' (only the Terragen Federation is named), not individually described here"
+  - "The home system of the SoSoCo, a NoCoZo gas giant, where the Talnian refugees' uploads were delivered in 3457 AT"
+doubts:
+  - "The header's 'settled 2143' does not match the article's own account, which treats 2143 as a discovery/orbital-examination date and 2187 as the start of actual colonisation -- see the contradictions entry above."
+  - "At 7006 AT the wormhole reopened and 'transapients from multiple empires' (the Terragen Federation named among an unspecified 'eight stakeholding empires') began joint development of the renamed Octagon system, but the text never states that Taln itself was transferred to, or joined, any specific polity -- not recorded as a transferred event."
+  - "The exact date the surviving Talnian population was removed from the planet is never stated; it lies somewhere between the 3301 AT Caretaker takeover and the 3457 AT reveal of their fate, recorded above only as a reported event."

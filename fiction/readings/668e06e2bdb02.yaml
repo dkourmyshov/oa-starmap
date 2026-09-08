@@ -1,0 +1,37 @@
+article: 668e06e2bdb02
+title: Caerwactod
+events:
+  - year_at: 6700
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised: 6700 AT"
+    note: ""
+  - year_at: 6700
+    kind: settled
+    polity: ""
+    precision: circa
+    until_at: null
+    where: body
+    quote: "Caerwactod was initially colonised in the 6700s by a a group of frontier Nauri, and soon afterwards by a tribe of Sailors of the Ebon Sea , both of whom found the system's extensive debris ring to be a useful habitat."
+    note: "Nauri and Sailors of the Ebon Sea are clades, not roster polities, so polity is left blank. Matches the header's already-recorded 'settled 6700'."
+  - year_at: 7000
+    kind: transferred
+    polity: communion-of-worlds
+    precision: not_later_than
+    until_at: null
+    where: body
+    quote: "After several skirmishes and further uncertainty, the Nabla Biowars appealed to the Communion's mediator guilds (with whom they'd had previous experience). Subsequently, several Communion mediators and bridge minds travelled to Caerwactod."
+    note: "No exact year is given for the Communion's arrival as mediator; it falls between the 6800 AT Nabla Biowars arrival and the 'By 7000, a complex syncretic culture had emerged' note, so not_later_than 7000 is used here. Matches the panel's 'Allegiance: Communion of Worlds' and the header's 'filed under: Communion of Worlds'."
+holder_undated:
+  - polity: communion-of-worlds
+    quote: "Allegiance: Communion of Worlds"
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "The Communion of Worlds' mediating arrival (written above as not_later_than 7000) is bounded in the text only by the 6800 AT Nabla Biowars arrival and the 'By 7000' syncretic-culture line; no exact year is stated, so a reviewer may prefer a different precision or year."
+  - "The article gives two different dates for the creation of the Tumbling Skulls: the History section says 'In 9400, Menexene uploads... led to the creation of the Tumbling Skulls', while the Tumbling Skulls section says they are 'dating from 9600 when a group of Plasma Menexenes put forward a proposal for the first one.' Construction of a named structure is not a tracked event kind, so neither was written as an event, but the discrepancy is flagged here for a reviewer."
+  - "Numerous later dates (6800, 7620, 7650-7800, 7800, 8000, 8400, 9100, 9600, 9900s, 10300) describe sub-settlements, megastructure construction, or cultural shifts within the already-settled system, and were excluded as not being tracked event kinds."

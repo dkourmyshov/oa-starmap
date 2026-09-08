@@ -1,0 +1,215 @@
+article: 48e8b382428f5
+title: "Corona (Iota Piscium d)"
+events:
+  - year_at: 58
+    kind: observed
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Corona's discovery was announced along with the two other terrestrial planets in the system in 58 AT (2027 CE)."
+    note: ""
+  - year_at: 71
+    kind: observed
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "However, in 71 AT (2040 AT), to people's disappointment, the planet's atmosphere was found to be dominated by nitrogen and carbon dioxide."
+    note: "The text's own parenthetical year label is inconsistent (2040 AT rather than a c.e. year), quoted as written."
+  - year_at: 95
+    kind: observed
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The blue auroral glow was observed in 95 AT (2064 AT), the first time an aurora is detected on a terrestrial extrasolar planet."
+    note: "As above, the parenthetical is 'AT' rather than a c.e. year in the source text."
+  - year_at: 1465
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "When Jupiter Transystems arrived at Iota Piscium in 1465, they claimed the entire system, but focused most of their exploration, colonisation and development efforts on the two outer planets, Hera and Hestia."
+    note: "Matches the header's settled 1465. Jupiter Transystems is not on the polity roster."
+  - year_at: 1471
+    kind: transferred
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Corona was sold along with Eva to the newly arrived Piscium Development in 1471."
+    note: "Piscium Development is not on the polity roster."
+  - year_at: 1486
+    kind: capital
+    polity: ""
+    precision: exact
+    until_at: 1547
+    where: body
+    quote: "A rotating habitat was assembled around it as the spacecraft-turned-habitat was made capital of Corona, in 1486."
+    note: "Capital of Corona's own local government (Piscium Development), not of a roster polity. Consistent with the Notable Locations entry 'Duorkin [1486-1547]'."
+  - year_at: 1547
+    kind: capital
+    polity: ""
+    precision: exact
+    until_at: 1829
+    where: body
+    quote: "In 1547, the capital was moved from the Duorkin complex down to Heisenberg."
+    note: "Local capital, not a roster polity. Matches Notable Locations 'Heisenberg [1547-1829]'."
+  - year_at: 1829
+    kind: capital
+    polity: ""
+    precision: exact
+    until_at: 3396
+    where: body
+    quote: "Delphi (founded 1794) [1829-3396] - The third capital of Corona during the Republic period and the Taurus Nexus period located in southwestern Quark."
+    note: "Local capital, not a roster polity. Conflicts with the body narrative's 1843 date for the same move; see contradictions."
+  - year_at: 1843
+    kind: capital
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The planet's capital was once again moved, this time from Heisenberg to Delphi in 1843."
+    note: "Conflicts with the Notable Locations bracket '[1829-3396]' for Delphi; see contradictions."
+  - year_at: 3263
+    kind: transferred
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Although not part of the original ahuman-built wormhole network, Iota was close enough to both the burgeoning Taurus Nexus and the First Federation to be wormhole-linked to both; leading in turn to Corona rising to become the capital of the Taurus Nexus before its fall in 3263."
+    note: "The intro's own date for the Taurus Nexus's fall conflicts with the article's History table (Taurus Nexus period given as 2450-3435) and with the 3396/3435 dates given in the body; see contradictions. No successor polity is named in this clause, so polity is left blank."
+  - year_at: 2450
+    kind: capital
+    polity: taurus-nexus
+    precision: exact
+    until_at: 3435
+    where: body
+    quote: "The government of the Taurus Nexus eventually relocated from Xi Geminorum to Corona in 2450, supplanted the Corona Republic, and established itself in a large orbital habitat at Corona-Sonata L4, dubbed New Geminorum."
+    note: "Matches header's capital 2450 (taurus-nexus). Corroborated by Notable Locations 'New Geminorum [2450-3396]'."
+  - year_at: 3435
+    kind: transferred
+    polity: nocozo
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Corona quietly joined the NoCoZo in 3435, bringing few other inner Taurus Nexus worlds and systems with it."
+    note: "Matches header's transferred 3435 (nocozo)."
+  - year_at: 3435
+    kind: transferred
+    polity: nocozo
+    precision: exact
+    until_at: null
+    where: body
+    quote: "With the end of the First Consolidation War in 3435, Corona became a member of the Non-Coersive Zone."
+    note: "Second, corroborating statement of the same 3435 NoCoZo transfer."
+  - year_at: 3396
+    kind: capital
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Albertgrad (founded 1478) [3396-] - The current capital of Corona, the result of the United Corona Organization's relocation of the capital in the aftermath of the civil war."
+    note: "Local capital (United Corona Organization), not a roster polity."
+  - year_at: 4492
+    kind: transferred
+    polity: solar-dominion
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 4492, during the Version War, a fleet from the Solar Dominion arrived at Iota. Local defense forces were completely outmatched and the system's many governments all quickly surrendered."
+    note: "Matches header's transferred 4492 (solar-dominion)."
+  - year_at: 4606
+    kind: independent
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Glaran culture split into many subcultures which would then continue to develop separately from the world, even after the planet's independence in 4606."
+    note: "Matches header's independent 4606."
+  - year_at: 4606
+    kind: independent
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 4606, most of the Iota system, spearheaded by a coalition between Hera, Hestia, and Corona, the three major polities of the system, revolted against Solarian rule, 50 Coronese years after the annexation."
+    note: "Corroborating statement; the revolt led to the Solar Dominion granting independence shortly after. '50 Coronese years' is a local-year count (Corona's year is c. 2.28 Julian years), not 50 AT years, so it is not a contradiction with the 4492 annexation date."
+  - year_at: 4609
+    kind: transferred
+    polity: iota-network
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Starting from 4609, three years after independence, an S4 entity which called emself the Iota Scholar, a result of the mergers of many S2s and S3s in a group which migrated away prior to the Solar Dominion occupation, contacted the system through some of the old, pre-Version War comms wormholes."
+    note: "Matches header's transferred 4609 (iota-network). E offered the Iota system status as er protectorate in exchange for protection and technology, and most Iotan polities (with a few exceptions) agreed."
+  - year_at: 4830
+    kind: capital
+    polity: ""
+    precision: exact
+    until_at: 4870
+    where: body
+    quote: "Corona temporarily became the Commonwealth of Empires' neutral seat from 4830 to 4870."
+    note: "The Commonwealth of Empires (ComEmp) is not on the polity roster."
+  - year_at: 4728
+    kind: capital
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "University (founded 4623) [4728-] - The academic capital of Corona, as well as of the Iota Commonwealth, the University city is a gigantic amalgamation of hundreds of major universities over 10 kilometers in radius."
+    note: "A secondary 'academic capital', not the planetary or polity capital. 'Iota Commonwealth' is not on the polity roster (and may or may not be the same body as iota-network; not resolved here)."
+  - year_at: 5763
+    kind: capital
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Mincity (founded 5409) [5763-] - The virtual capital of Corona, and a famous Minimal Surface City, originally founded by Kalmanto Aesthetics in 5409 as a rebellion against the old-fashioned building codes, an AI entropy tax haven, and an artwork."
+    note: "A virtual/informal capital, not a roster polity's capital."
+holder_undated:
+  - polity: iota-network
+    quote: "Although technically an independent system and thus not in the Sephirotics, the entire Iota system is aligned with it, has many close ties to many of the Inner Sphere and other Sephirotic systems, and is usually treated as one."
+unplaced:
+  - name: "Jupiter Transystems"
+    quote: "When Jupiter Transystems arrived at Iota Piscium in 1465, they claimed the entire system, but focused most of their exploration, colonisation and development efforts on the two outer planets, Hera and Hestia."
+  - name: "Piscium Development"
+    quote: "Corona was sold along with Eva to the newly arrived Piscium Development in 1471."
+  - name: "Corona Republic"
+    quote: "The local Pisces Development governing entity soon evolved into the first government of Corona, the Corona Republic."
+  - name: "United Corona Organization"
+    quote: "In the wake of the battle, the United Corona Organization, a half-government-half-organization entity dedicated to preventing the planet from devolving into warring states and providing resources for reconstruction of the damaged cities, united the remaining cities full of panicking civilians."
+  - name: "Commonwealth of Empires"
+    quote: "Corona temporarily became the Commonwealth of Empires' neutral seat from 4830 to 4870."
+  - name: "Iota Commonwealth"
+    quote: "The academic capital of Corona, as well as of the Iota Commonwealth, the University city is a gigantic amalgamation of hundreds of major universities over 10 kilometers in radius."
+  - name: "New Eureka polity"
+    quote: "In 1646, the New Eureka polity made a decision to join the Corona polity."
+  - name: "Planetary State of Corona"
+    quote: "Corona and its environs are controlled by the Planetary State of Corona."
+contradictions:
+  - about: "Whether the Taurus Nexus period over Corona ended in 3263, or in 3396/3435 as the History section and its own table give"
+    quotes:
+      - "leading in turn to Corona rising to become the capital of the Taurus Nexus before its fall in 3263"
+      - "2450-3435: Taurus Nexus period"
+      - "Corona quietly joined the NoCoZo in 3435, bringing few other inner Taurus Nexus worlds and systems with it."
+  - about: "Whether Delphi became Corona's capital in 1829 or 1843"
+    quotes:
+      - "Delphi (founded 1794) [1829-3396] - The third capital of Corona during the Republic period and the Taurus Nexus period located in southwestern Quark."
+      - "The planet's capital was once again moved, this time from Heisenberg to Delphi in 1843."
+other_places:
+  - "Hera (Iota Piscium system) - a sibling world with its own article"
+  - "Hestia (Iota Piscium system) - a sibling world with its own article"
+  - "Xi Geminorum - former seat of the Taurus Nexus government before its move to Corona"
+  - "Bourgatov, capital of the Bourgatov Alliance"
+  - "Fons Luminis - origin of a Solar Dominion linelayer"
+  - "Ais Alnah - destination system of the wormhole into the Perseus Rift / Blackbody Cluster"
+  - "Seven Marbles (TRAPPIST-1) - a nearby system mentioned as a former symbol of the ComEmp"
+doubts:
+  - "Sonata (Corona's moon) is said to have 'gone independent shortly before the declaration of the war' (the Taurus Nexus civil war, c. 3396), but no year is given for its independence: quote \"Meanwhile, Sonata, Corona's moon, went independent shortly before the declaration of the war, and as a result it managed to completely avoid the assaults.\""
+  - "New Eureka's 1646 decision to join the Corona polity was treated as a sub-settlement (New Eureka joining an already-settled Corona system), not an event of Corona's own holder, and so was not written as an event; flagged in case the reviewer disagrees: quote \"In 1646, the New Eureka polity made a decision to join the Corona polity.\""
+  - "The 6035 merger that formed the 'Planetary State of Corona' (Corona's own current government) was not written as an event: no roster polity is involved and it reads as a local government reorganisation rather than a change of holder: quote \"the various polities under the United Corona Organization, after millennia of working together, voted to merge and form the current government, the Planetary State of Corona, in 6035, celebrating 2,000 local years of the founding of the Coronese civilization.\""
+  - "Several dated regional/provincial capital successions within Corona (e.g. Heisenberg [1792-] for Quark, Freemanberg [1806-3396] and Celsiusen [3398-] for Baryon, Aktera [1811-7327] and Eureka [7327-] for Glara, and the Planck/Fermi/Bose province capitals) were treated as sub-planetary administrative detail and not written as events."
+  - "The article's own header files Corona under the Non-Coercive Zone (NoCoZo) topic, but the body's Current Era description places it under the Iota Network's protection instead (transferred 4609); the reviewer may want to check whether the site's filing is simply legacy/historical categorisation."

@@ -1,0 +1,81 @@
+article: 5385f65c43e09
+title: "Neli-Neti"
+events:
+  - year_at: 3189
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised 3189 AT"
+    note: "Matches header's settled 3189."
+  - year_at: 3189
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "On arrival in 3189 AT the Project colonists surveyed the twin worlds, and voted to give them names from classical antiquity; Helen and Clytemnestra, the legendary female twin sisters of Castor and Pollux."
+    note: "Matches header's settled 3189. The Musca Sector Long Range Project is not on the polity roster."
+  - year_at: 3189
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "3189 AT - Fleet reaches Helen and Clytemnestra"
+    note: "The article's own Timeline restating the same 3189 arrival."
+  - year_at: 3998
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "When Helen and Clytemnestra were both fully habitable in 3998 AT, Rudra withdrew to Cassandra to pursue eir own projects, leaving the nearbaselines to establish their own cultures without further interference."
+    note: "Not in the header. Marks the point at which Clytemnestra itself (as opposed to Helen, settled 3189) became habitable and the Yadavist colonists established themselves there, per the following section 'The Yadavists on Clytemnestra'. No roster polity is named."
+  - year_at: 4501
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "For the rest of the war the HIP 63911 system was free from conflict, but Parthene refugees from the nearby system of Atwood began to arrive in 4501 AT, and established separate colonies in orbit around the twin planets."
+    note: "Not in the header. The Parthenes are a clade of refugees, not a roster polity."
+  - year_at: 5400
+    kind: transferred
+    polity: nocozo
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 5400 AT Helen joined the NoCoZo."
+    note: "Not in the header. Applies to Helen/Neli specifically; Clytemnestra/Neti separately joined the Utopia Sphere in 5541 (see next entry), so the system's two worlds carry two different polity affiliations rather than one contradicting the other."
+  - year_at: 5541
+    kind: transferred
+    polity: utopia-sphere
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Clytemnestra joined the Utopia Sphere, as an outlier world, in 5541 AT."
+    note: "Not in the header. Applies to Clytemnestra/Neti specifically; see note on the 5400 Helen/NoCoZo entry."
+  - year_at: 9545
+    kind: transferred
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "This conflict was terminated abruptly in 9545 AT when a force of Paraz provolves invaded the twin planets, equipped with Sephirotic godtech weapons, completely overwhelming all other combatants with little or no bloodshed."
+    note: "Not in the header. The Paraz and the resulting 'New Synergy' society are not on the polity roster; polity left blank rather than mapped to nocozo or utopia-sphere, which this event appears to supersede for governance purposes but does not explicitly say it replaces."
+holder_undated: []
+unplaced:
+  - name: "Musca Sector Long Range Project"
+    quote: "The Musca Sector Long Range Project launched a mission towards HIP 63911 in 2205 AT."
+  - name: "Paraz / the New Synergy"
+    quote: "Neli/Neti today is a completely new and transformed society, including elements of the old Yadavist and Helenite culture as well as Jensanist hedonism and a large pinch of Paraz exotica."
+contradictions: []
+other_places:
+  - "Darwin (Life-bearing World) - the garden world in the Delta Pavonis system whose displaced colonists ultimately settled Neli-Neti; has its own article"
+  - "Little Garcia (Epsilon Eridani system) - mentioned as another destination for Darwin's displaced colonists"
+  - "Mendel - mentioned as another world settled by Darwin's displaced colonists"
+  - "Atwood - the system Parthene refugees fled from in 4501 AT"
+  - "JD 1904456593 / Jensan - the colony founded by the Jensanists who escaped in 5005 AT; the Timeline's '5309 AT - Jensan colonised' refers to this different place, not to Neli-Neti"
+doubts: []

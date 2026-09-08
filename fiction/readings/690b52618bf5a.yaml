@@ -1,0 +1,52 @@
+article: 690b52618bf5a
+title: New Callisto
+events:
+  - year_at: 1770
+    kind: visited
+    polity: first-federation
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Reached: 1770 AT by the Madda'j, a Jovian/First Federation colony ship."
+    note: ""
+  - year_at: 4447
+    kind: capital
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The world has been the official capital of the polity since its inception in 4447, wielding considerable political and cultural clout in the otherwise legislatively loose Confederation."
+    note: "Refers to the Ayysis Confederation (not on the roster); Unnar is its capital, within the New Callisto system's Ayysis Range."
+holder_undated:
+  - polity: utopia-sphere
+    quote: "In the Current Era, a Utopia Sphere aligned polity, the Dvis Coltroff Contentment Commission, has nominally incorporated all major celestial bodies in the system."
+  - polity: utopia-sphere
+    quote: "Affiliation: Independent Inner Sphere system, with ties to the Utopia Sphere, Silicon Generation, and Terragen Federation. Cyberia, the Hyades Version Tree, Technorapture Hypernation and the Zoefic Biopolity are also represented."
+  - polity: silicon-generation
+    quote: "Affiliation: Independent Inner Sphere system, with ties to the Utopia Sphere, Silicon Generation, and Terragen Federation. Cyberia, the Hyades Version Tree, Technorapture Hypernation and the Zoefic Biopolity are also represented."
+  - polity: terragen-federation
+    quote: "Affiliation: Independent Inner Sphere system, with ties to the Utopia Sphere, Silicon Generation, and Terragen Federation. Cyberia, the Hyades Version Tree, Technorapture Hypernation and the Zoefic Biopolity are also represented."
+  - polity: cyberian-network
+    quote: "Affiliation: Independent Inner Sphere system, with ties to the Utopia Sphere, Silicon Generation, and Terragen Federation. Cyberia, the Hyades Version Tree, Technorapture Hypernation and the Zoefic Biopolity are also represented."
+  - polity: technorapture-hypernation
+    quote: "Affiliation: Independent Inner Sphere system, with ties to the Utopia Sphere, Silicon Generation, and Terragen Federation. Cyberia, the Hyades Version Tree, Technorapture Hypernation and the Zoefic Biopolity are also represented."
+  - polity: zoeific-biopolity
+    quote: "Affiliation: Independent Inner Sphere system, with ties to the Utopia Sphere, Silicon Generation, and Terragen Federation. Cyberia, the Hyades Version Tree, Technorapture Hypernation and the Zoefic Biopolity are also represented."
+unplaced:
+  - name: "Dvis Coltroff Contentment Commission"
+    quote: "Government: Nominally, the Dvis Coltroff Contentment Commission, Transapientocracy controlled by AllShield."
+  - name: "Ayysis Confederation"
+    quote: "The world has been the official capital of the polity since its inception in 4447, wielding considerable political and cultural clout in the otherwise legislatively loose Confederation."
+  - name: "League of Tanf-del"
+    quote: "Eidkaljaf, the former capital of the League of Tanf-del sits above, at the north pole."
+  - name: "Hyades Version Tree"
+    quote: "Cyberia, the Hyades Version Tree, Technorapture Hypernation and the Zoefic Biopolity are also represented."
+contradictions: []
+other_places: []
+doubts:
+  - quote: "(none found)"
+    note: "The header records an already-dated 'visited 1931' for this system, but no year in the 1930s (or any mention of 1931) appears anywhere in this article's panel or body text. No entry could be written for it."
+  - quote: "Reached: 1770 AT by the Madda'j, a Jovian/First Federation colony ship."
+    note: "Recorded as 'visited' to match the header, but the ship is called a 'colony ship' and Hemmdall's description below ('the first world in the system to be colonized by the Madda'j') suggests this may actually have been a settlement rather than a visit."
+  - quote: "New Callisto is an Inner Sphere system notable for ... reaching the Taurus Nexus first after the disappearance of the Xi Geminorum AI-1 civilization"
+    note: "No year is given, and it is unclear whether 'reaching the Taurus Nexus' means contact with the Taurus Nexus polity (on the roster) or simply reaching a region of space of that name. Not recorded as an event or holder note."

@@ -267,6 +267,11 @@ export interface Holding {
  * Only what the events state. A world with a settlement date and no polity on
  * it contributes nothing here: its holder in that year is unknown, not nobody,
  * and the map's answer for an unknown past holder is the present one.
+ *
+ * A transfer to a polity this file does not hold — Avanola to Xacou's empire,
+ * Traction to the Greyman Empire — ends the previous holding all the same.
+ * The map cannot colour the new holder, but drawing the old one on would be
+ * the one answer the source rules out.
  */
 export function holdingsOf(worlds: WorldEntry[] | undefined): Holding[] {
   const out: Holding[] = [];
@@ -274,7 +279,10 @@ export function holdingsOf(worlds: WorldEntry[] | undefined): Holding[] {
     for (const event of world.events ?? []) {
       if (event.polity && HOLDER_KINDS.has(event.kind)) {
         out.push({ from: event.year_at, polities: [event.polity] });
-      } else if ((event.kind === 'abandoned' || event.kind === 'independent') && !event.polity) {
+      } else if (
+        (event.kind === 'abandoned' || event.kind === 'independent' || event.kind === 'transferred') &&
+        !event.polity
+      ) {
         out.push({ from: event.year_at, polities: [] });
       }
     }

@@ -1,0 +1,85 @@
+article: 48acb62323e17
+title: "Sirius (Alpha Canis Majoris)"
+events:
+  - year_at: 415
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Autonomous probe Aschere was launched towards this system in 329 AT, and arrived in 415 AT."
+    note: "Sent by Prometheus Incorporated, not a roster polity."
+  - year_at: 698
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The first colonists departed Solsys in 655 AT in the Sopdet, a GAIA ark, and arrived 698 AT"
+    note: "First modosophont colonists; no roster polity is named as sponsor."
+  - year_at: 4115
+    kind: abandoned
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "After some tense negotiation the Sirius Dynamics clade agreed to relocate in 4115. They emigrated into the Keter Dominion and are believed to have transcended there. As a last gesture, officially to preclude any mis-use or scavenging by primitives, they detonated all their system facilities using antimatter."
+    note: "Sirius Dynamics is a local research clade/company, not a roster polity."
+  - year_at: 4115
+    kind: transferred
+    polity: solsys-organization
+    precision: not_earlier_than
+    until_at: null
+    where: body
+    quote: "With the departure of the clade the Sirius system became a Solar Organisation Protectorate Territory."
+    note: "This sentence carries no year of its own; it directly follows the Sirius Dynamics clade's 4115 departure (previous sentence), so precision is approximated as not_earlier_than 4115."
+  - year_at: 4402
+    kind: visited
+    polity: communion-of-worlds
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Following the conditions of the 4402 Communion-mediated Treaty of O'Steen both SO and the paranoids agreed to keep out of each other's way"
+    note: "Dates the Communion of Worlds' mediated peacekeeping presence in the system; the peacekeeping force itself was 'called in' at an unspecified earlier point."
+  - year_at: 4488
+    kind: visited
+    polity: solar-dominion
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 4488 the Solar Organisation closed down their stargate, leaving the relatively short-range Dominion vessels stranded some twenty-five light years from home"
+    note: "Confirms the Solar Dominion corvette Ardsley and support ship Escanabo (sent earlier in the passage, undated) were present in the system by this date."
+  - year_at: 4520
+    kind: visited
+    polity: metasoft
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 4520 a single battered Metasoft relativistic autowar (a model 4000 autowars heavy battledrone, no. 7213b-2509+) wandered into the system, quickly destroyed the Escanabo and was about to engage in and annihilate the Ardsley"
+    note: "The destruction of the Escanabo and the ensuing standoff are battle detail, excluded; only the bare arrival of a Metasoft unit is recorded."
+  - year_at: 7000
+    kind: transferred
+    polity: ""
+    precision: not_later_than
+    until_at: null
+    where: body
+    quote: "A new wave of immigration, consisting mostly of virtual sophonts known as the Noëa (pl. Noëadrim), began to arrive in the eighth millenium, and established a new hegemony known as the Sirian Heirarchy."
+    note: "'Eighth millennium' is approximated as not later than 7000 AT, since the following sentence states the Sirian Hierarchy 'Since 7000... have begun' the starlifting project, implying they were already the system's governance by then. Sirian Hierarchy is not on the roster."
+holder_undated:
+  - polity: solsys-organization
+    quote: "Galactography > Other Major Polities, Empires, and Meta-Empires > Solsys Organization"
+unplaced:
+  - name: "Prometheus Incorporated"
+    quote: "The faction which launched this probe, Prometheus Incorporated began building massive amat production facilities around Sirius A."
+  - name: "Sirius Dynamics"
+    quote: "After some tense negotiation the Sirius Dynamics clade agreed to relocate in 4115."
+  - name: "Sirian Heirarchy"
+    quote: "A new wave of immigration, consisting mostly of virtual sophonts known as the Noëa (pl. Noëadrim), began to arrive in the eighth millenium, and established a new hegemony known as the Sirian Heirarchy."
+contradictions: []
+other_places:
+  - "Procyon"
+doubts:
+  - quote: "Galactography  >  Other Major Polities, Empires, and Meta-Empires  >  Solsys Organization"
+    note: "The header records 'filed under: (no polity)', but the article's own breadcrumb navigation files it under Solsys Organization, and the body text describes the system becoming a 'Solar Organisation Protectorate Territory' in 4115. Worth reconciling with the header."
+  - quote: "the Sirius system became a Solar Organisation Protectorate Territory"
+    note: "The article spells this polity 'Solar Organisation' (abbreviated 'SO') throughout the body, while the breadcrumb and roster use 'Solsys Organization' / 'Solsys Org'. Treated as the same roster id (solsys-organization)."

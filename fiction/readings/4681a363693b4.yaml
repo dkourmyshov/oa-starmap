@@ -1,0 +1,20 @@
+article: 4681a363693b4
+title: Jafalgia
+events:
+  - year_at: 5217
+    kind: settled
+    polity: metasoft
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonized: 5217 a.t"
+    note: "The panel line itself carries no holder; polity is read from the body's direct statement that Metasoft established this reserve (see holder_undated) and terraformed the world before settlers arrived. Matches the header's already-recorded 'settled 5217'."
+holder_undated:
+  - polity: metasoft
+    quote: "The planet Jafalgia is one of the many baseline reserve worlds established by the Metasoft Version Tree , noted for its rich artistic culture."
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "The polity on the sole dated event (settled 5217) was attributed to Metasoft from the body's undated claim that Metasoft 'established' the reserve and terraformed it 'before the planet's settlement', rather than from any sentence carrying the year itself; a reviewer may prefer the polity left blank on a strict reading of rule 7."
+  - "Body text gives the planetfall of the baseline settlers only as occurring within 'the 53rd and 54th centuries after tranquility' (i.e. roughly 5201-5400), consistent with but not independently pinning down the panel's 5217; no separate body-sourced settled entry was written for it."

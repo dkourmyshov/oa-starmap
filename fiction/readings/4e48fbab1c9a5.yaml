@@ -1,0 +1,34 @@
+article: 4e48fbab1c9a5
+title: Eutopia
+events:
+  - year_at: 2880
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised 2880 AT"
+    note: "Matches the header's already-dated settled 2880."
+  - year_at: 2880
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Clade Columbia-Bartlebel and their AI guardian Chesed (at that point a mere S2 power) arrived at the Eutopia system in 2880."
+    note: "Clade Columbia-Bartlebel is not on the roster; see unplaced. Chesed later founds/guides the Utopia Sphere, but no year is given for Eutopia formally joining that polity -- see holder_undated and doubts."
+holder_undated:
+  - polity: utopia-sphere
+    quote: "Affiliation Utopia Sphere"
+  - polity: utopia-sphere
+    quote: "Topia : An ancient and venerable planet, first of the Beta Arae worlds that later became the Utopia Sphere ."
+unplaced:
+  - name: "Clade Columbia-Bartlebel"
+    quote: "In the 2000s, Clade Columbia-Bartlebel sent out a wave of colony ships from Ceres Mater."
+contradictions: []
+other_places:
+  - "Beta Arae, connected by the stargate 'Sanguine' (per the travel panel and the 4201 AT stargate connection); has its own Related Article"
+  - "Fyra Hedonocracy, a neighbouring polity not on the roster whose collapse in the 3900s sent erotogini refugees to Eutopia"
+doubts:
+  - "No sentence gives an AT year for Eutopia/Topia formally becoming part of the Utopia Sphere; the roster records the Utopia Sphere as founded 2975 AT, 95 years after the 2880 AT settlement recorded above, but the article never states a joining date, so no transferred event was recorded."
+  - "'By 4201 the Eutopia System had been connected to Beta Arae via stargate' is an infrastructure link, not a stated change of Eutopia's own holder, so it was not recorded as an event."

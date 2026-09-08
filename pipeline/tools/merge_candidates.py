@@ -27,6 +27,7 @@ ap.add_argument("--name")
 ap.add_argument("--affiliations")
 ap.add_argument("--entry-note", default="")
 ap.add_argument("--dry", action="store_true")
+ap.add_argument("--force", action="store_true", help="append even where the entry has the same year and kind")
 args = ap.parse_args()
 
 def overrides(items):
@@ -81,11 +82,30 @@ if m:
     sect = s.find("\n  # ----", start + 5)
     end = min(x for x in (nxt, sect, len(s)) if x > 0)
     entry = s[start:end]
+    # An event the entry already carries with the same year and kind is not
+    # appended again: the second tranche re-reads dated entries, and the panel's
+    # "Colonised 1102" is the settlement the map already has.
+    have = set(re.findall(r"- year_at: (\d+)\n(?:        [a-z_]+: [^\n]*\n)*?        kind: (\w+)", entry))
+    kept = []
+    for i in keep:
+        key = (str(events[i]["year_at"]), kind_over.get(i, events[i]["kind"]))
+        if key in have and not getattr(args, "force", False):
+            print(f"skipped {key[1]} {key[0]}: already on the entry")
+        else:
+            kept.append(i)
+    keep = kept
+    blocks = "".join(event_block(i) for i in keep)
+    if not keep:
+        print(f"nothing new for {m.group(1)}")
+        sys.exit(0)
     if "\n    events:\n" in entry:
-        # append after the last event, i.e. before the entry's `    note:` if it follows events
-        note_at = entry.find("\n    note:")
-        ev_at = entry.find("\n    events:\n")
-        insert_at = note_at + 1 if note_at > ev_at else len(entry.rstrip("\n")) + 1
+        # append after the last event: the events block ends at the next line
+        # that starts a top-level key of the entry (four spaces, then a word).
+        # Appending at the entry's end put Evermore's new event inside its
+        # location block, which followed the events.
+        ev_at = entry.find("\n    events:\n") + 1
+        after = re.search(r"\n    [a-z_]+:", entry[ev_at + len("    events:\n"):])
+        insert_at = ev_at + len("    events:\n") + after.start() + 1 if after else len(entry.rstrip("\n")) + 1
         new_entry = entry[:insert_at] + blocks + entry[insert_at:]
     else:
         note_at = entry.find("\n    note:")

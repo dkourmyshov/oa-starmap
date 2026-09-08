@@ -1,0 +1,71 @@
+article: 475d8f392ccca
+title: Owen (System)
+events:
+  - year_at: 4296
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonized: 4296 AT"
+    note: "Matches the header's already-recorded 'settled 4296', but see contradictions: no body sentence restates this year for the settlement itself."
+  - year_at: 3937
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The Jurassica Institute's expedition ship, at a speed just under 0.7c, reached HD 160519 on 3937 AT."
+    note: "The very next sentence says the arriving uploads, aioids, and hyperturings 'had no trouble setting up infrastructure' on the fourth planet, so this reads as the actual colonists staying, not a mere visit. The Jurassica Institute is not a roster polity, see unplaced."
+  - year_at: 4853
+    kind: abandoned
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Evacuated: 4853 AT"
+    note: "See doubts: the body suggests this was the departure of the neosaurian provolve population specifically, not a full depopulation of the system."
+  - year_at: 4853
+    kind: abandoned
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "On 4853 AT, the fleet of neosaurians departed at relativistic velocity towards the open cluster Ruprecht 108, leaving their planet behind to recover."
+    note: "Preparations ran 'Starting from 4832 ~ 4852 AT' per the preceding sentence; GEvidian and caretaker entities appear to have remained, and revival/repopulation programs resumed 'the next few centuries' afterward, see doubts."
+  - year_at: 4699
+    kind: transferred
+    polity: utopia-sphere
+    precision: not_later_than
+    until_at: null
+    where: body
+    quote: "During the Version War , Owen officially aligned itself with the Utopia Sphere, one of the neutral Sephirotic empires which were non-combatants in that conflict."
+    note: "No exact year is given for the alignment itself; it is bounded by the following sentence, 'In 4699 AT, after the war, a Utopian linelayer reached the system', so not_later_than 4699 is used. Matches the header's 'filed under: Utopia Sphere'."
+  - year_at: 5687
+    kind: transferred
+    polity: archosaurian-empire
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 5687 AT, following some rather terse communication between ArchSaur and I Give The Horn of Plenty, the Ornith system and Owen were declared an honorary part of the Archosaurian Empire ."
+    note: "The Ornith system is a different place, see other_places. 'Declared an honorary part of' is unusual wording for a transfer, see doubts."
+holder_undated: []
+unplaced:
+  - name: "SecureSpace"
+    quote: "A semi-sentient interstellar probe, launched in the Late Federation era by SecureSpace , had surveyed the system for potential colonization and discovered that Joule and the outer dust belt had been occupied by isolationist ai entities for some centuries."
+  - name: "Jurassica Institute"
+    quote: "the Jurassica Institute had been newly established and was eagerly looking for unclaimed planets to terraform"
+contradictions:
+  - about: settlement year
+    quotes:
+      - "Colonized: 4296 AT"
+      - "The Jurassica Institute's expedition ship, at a speed just under 0.7c, reached HD 160519 on 3937 AT."
+other_places:
+  - name: "Ornith system"
+    quote: "In 5687 AT, following some rather terse communication between ArchSaur and I Give The Horn of Plenty, the Ornith system and Owen were declared an honorary part of the Archosaurian Empire ."
+doubts:
+  - "The panel's 'Colonized: 4296 AT' matches no year restated in the body's colonization narrative, which instead gives the ship's arrival as 3937 AT, an oxygen-level milestone as 4195 AT, and terraforming completion (with the planet's renaming to Owen) as 4384 AT; none of these equal 4296. Both the panel figure and the closest body figure (3937, the actual arrival/settling) are written above and flagged as a contradiction, but a reviewer may want to weigh the 4195/4384 milestones too even though they were excluded here as terraforming milestones."
+  - "The panel's 'Evacuated: 4853 AT' and the body's matching 4853 AT departure both describe the neosaurian provolve fleet leaving for Ruprecht 108 'leaving their planet behind to recover' - the body implies GEvidian, the Jurassica/Lazurogenics Institutes, and I Give The Horn of Plenty remained and resumed species-revival programs within centuries, so this may not be a clean 'abandoned' (everyone left or died) in the sense the brief intends; written as abandoned here since that is the closest tracked kind to the panel's own word 'Evacuated'."
+  - "'In the early Age of Re-Evaluation period, I Give The Horn of Plenty took over day-to-day administration of the system' looks like a stewardship event (Caretaker God taking the system under protection; roster id caretaker-gods) but carries no numeric AT year, only the era name, so it was left out of events rather than guessing a year."
+  - "The 5687 AT Archosaurian Empire event uses the phrase 'declared an honorary part of the Archosaurian Empire', and the very next sentence says 'the rest of the system was declared off-limits' to non-pilgrims, which reads more like a titular/tourism designation than a full governance transfer; I Give The Horn of Plenty appears to remain the administering Caretaker God. The header files this place under Utopia Sphere even though the latest dated polity claim in the body is this 5687 Archosaurian Empire one; both events are written above without resolving which the map should prefer."
+  - "The isolationist ai occupation of Joule and the outer dust belt, noted as having lasted 'for some centuries' before the 3937 AT arrival, has no specific name or year and so was not written as an event."

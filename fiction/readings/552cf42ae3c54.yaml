@@ -1,0 +1,47 @@
+article: 552cf42ae3c54
+title: New Brooklyn
+events:
+  - year_at: 1300
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The Guardia arrived at New Brooklyn in 1300AT and initially found no signs of other visitors."
+    note: "New Brooklyn is independent throughout its history and is not a roster polity."
+  - year_at: 1300
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonized 1300AT"
+    note: ""
+  - year_at: 993
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "This proved to be the decayed remains of a repair station built by a terrestrial hyperturing in 993 AT."
+    note: "An unnamed hyperturing, itself a Great Expulsion refugee with a faster ship, paused here to refuel and refurbish its debris shield; no polity named."
+  - year_at: 1307
+    kind: reported
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 1307 AT, detailed exploration of the system turned up evidence of what was first thought to be alien visitation on Times Square (today known as \"Times\"), an icy, outer planet."
+    note: "This is the colonists' own discovery date for the 993 AT hyperturing visit recorded above; see doubts."
+holder_undated: []
+unplaced: []
+contradictions: []
+other_places:
+  - name: "Elysimus"
+    quote: "two of its colonies would eventually bloodlessly secede to join the Taurus Nexus; Elysimus in 2507 and Boulder in 2617AT, respectively."
+  - name: "Boulder"
+    quote: "two of its colonies would eventually bloodlessly secede to join the Taurus Nexus; Elysimus in 2507 and Boulder in 2617AT, respectively."
+doubts:
+  - "Whether the 1307 AT discovery of the 993 AT hyperturing waystation counts as its own 'reported' entry, or is better read as mere colour on the 993 AT visited event, is not settled here; both readings are defensible under the brief."
+  - "The 646 AT departure of the Guardia from Earth orbit is a dated claim but concerns Earth/Sol, not New Brooklyn, so it was not written as an event of this place."
+  - "Elysimus (2507 AT secession, 3423 AT reconquest, 3533 AT independence/union with NoCoZo) and Boulder (2617 AT secession) carry their own dated history but are a different place from New Brooklyn; their dates were left out of events and only flagged under other_places."

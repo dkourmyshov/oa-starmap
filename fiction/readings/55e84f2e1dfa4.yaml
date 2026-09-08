@@ -1,0 +1,48 @@
+article: 55e84f2e1dfa4
+title: Cyrus
+events:
+  - year_at: 9107
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonized 9107AT"
+    note: "Matches the header's already-dated settled 9107, but no sentence in the body gives this year -- see contradictions and doubts."
+  - year_at: 8437
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The Cyrus system was initially settled by a relativistic 'claim staking' operation from the Chauzor megacorp, an organisation which was defunct by the time the hyperturing probe Prismatic Helium-3 arrived in 8437AT."
+    note: "Chauzor megacorp is not on the roster (see unplaced); its own claim-staking 'settlement' is undated. Prismatic Helium-3, also not on the roster, arrived in 8437 AT to find the claim already defunct and went on to found a vec colony -- this reads as the article's own settlement narrative, in tension with the panel's 9107 AT figure."
+  - year_at: 9200
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 9200AT, Prismatic Helium-3's Hydrogen Republic was contacted by a biont colonial developer who expressed interest in the eoGaian world Zamin. The Hydrogen Republic accepted the request and negotiated limits on development, while positioning itself as the recognized owner of the Cyrus system. The new settlers were granted extended leases."
+    note: "First biont (neb) settlement of Zamin, the system's main colony world. Hydrogen Republic is not on the roster; the biont developer is not named. Neither 9107 AT nor 8437 AT is repeated here."
+holder_undated: []
+unplaced:
+  - name: "Chauzor megacorp"
+    quote: "The Cyrus system was initially settled by a relativistic 'claim staking' operation from the Chauzor megacorp, an organisation which was defunct by the time the hyperturing probe Prismatic Helium-3 arrived in 8437AT."
+  - name: "Hydrogen Republic"
+    quote: "In 9200AT, Prismatic Helium-3's Hydrogen Republic was contacted by a biont colonial developer who expressed interest in the eoGaian world Zamin."
+  - name: "Cyrusian League"
+    quote: "Polities Cyrusian League , system-wide diplomatic and trade body"
+  - name: "Ishtarian Development Corporation (IDC)"
+    quote: "Ishtarian Development Corporation (IDC), terraforming Naheed and developing Ishtar Belt"
+  - name: "Zamin Federation"
+    quote: "Zamin Federation , federal aiocracy managing numerous polities of Zamin and Maha"
+contradictions:
+  - about: "system settlement year"
+    quotes:
+      - "Colonized 9107AT"
+      - "The Cyrus system was initially settled by a relativistic 'claim staking' operation from the Chauzor megacorp, an organisation which was defunct by the time the hyperturing probe Prismatic Helium-3 arrived in 8437AT."
+other_places: []
+doubts:
+  - "The header's 'settled 9107' repeats the Data Panel's 'Colonized 9107AT', but nothing in the body text gives that year; the body instead describes an undated Chauzor megacorp claim, an 8437 AT arrival by Prismatic Helium-3, and a 9200 AT start to Zamin's biont colonization. A reviewer should judge which (if any) of these the panel's 9107 figure is meant to reflect."
+  - "IDC's founding in 10403AT ('IDC was founded in 10403AT as a joint venture... with the goal of terraforming the Cytherean world Naheed') was treated as a terraforming-project start rather than a settled event, per the brief's exclusion of terraforming milestones."

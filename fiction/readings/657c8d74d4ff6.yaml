@@ -1,0 +1,128 @@
+article: 657c8d74d4ff6
+title: "Resonance (TRAPPIST-1) System: History"
+events:
+  - year_at: 865
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "865 The first colony ship The Maid arrived. Due to cryogenic failure, the colonists in hibernation died en route, and with no cryosleep facilities available the crew all died of old age before reaching TRAPPIST-1, but the fully sophont ship The Maid began to create a population of aioid and vec offspring by replicating itself in a diverse range of forms."
+    note: "The Maid is a sophont ship/phyle, not a polity."
+  - year_at: 1220
+    kind: visited
+    polity: first-federation
+    precision: exact
+    until_at: null
+    where: body
+    quote: "1220 A Federation explorer ship Songs of Worlds arrived at Resonance."
+    note: ""
+  - year_at: 1298
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "1298 A Beamrider ship arrived in the system, and began to set up a boostbeam station, thus opening up the system to new colonists."
+    note: "No polity named as sender."
+  - year_at: 1408
+    kind: transferred
+    polity: first-federation
+    precision: exact
+    until_at: null
+    where: body
+    quote: "1408 Resonance joined the Federation, and a Federation Representative arrived."
+    note: ""
+  - year_at: 2139
+    kind: independent
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "2139 News of the dissolution of the Federation of Sophonts reached Resonance, and the FedRep returned to Solsys."
+    note: "The Federation dissolved elsewhere; Resonance is left in no polity as a result. Could alternatively be read as a 'reported' entry, since the sentence is framed as news arriving rather than the dissolution itself."
+  - year_at: 2233
+    kind: transferred
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The Rasante Power Authority was established during the Federation Era to collect energy for the darkside habitats, and in 2233 became the de facto rulers of this world."
+    note: "Rasante Power Authority is a local, non-roster body ruling the world Rasante (later Visne)."
+  - year_at: 2298
+    kind: transferred
+    polity: conver-ambi
+    precision: exact
+    until_at: null
+    where: body
+    quote: "2298 Missionaries from the Conver Ambi arrived and set up a polity on Yaudel; this became known as the Sekintorof Cyborgium."
+    note: ""
+  - year_at: 2771
+    kind: transferred
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Reyvik's early history was not particularly notable, and the only event of significance is that it became an autonomous part of the Rasante polity in 2771."
+    note: "Rasante polity is local and not on the roster."
+  - year_at: 2890
+    kind: transferred
+    polity: taurus-nexus
+    precision: exact
+    until_at: null
+    where: body
+    quote: "2890 A wormhole link to Lucida arrived, strengthening ties to the Taurus Nexus. The DayNight Union and the Republic of Eunna became aligned with the Taurus Nexus."
+    note: "Only the DayNight Union (Remi/Fulno) and Republic of Eunna (Shinoh/Eunna) are described joining, not explicitly the whole system."
+  - year_at: 5411
+    kind: transferred
+    polity: iota-network
+    precision: exact
+    until_at: null
+    where: body
+    quote: "5411 The Iota Network, based in the Lucida (Iota Piscium) system and associated transapient advisers, arrived in Resonance and peacefully took control over the system, citing the ideological tension period that followed the decline of the ComEmp as the reason."
+    note: ""
+  - year_at: 8876
+    kind: transferred
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "8876 The Seven Marbles Combine formed under the guidance of the S:2 transapient The Scholar, including most of the planets in this system and many of the orbiting habitats."
+    note: "Local polity, not on the roster; the system had already come under Iota Network control in 5411."
+holder_undated:
+  - polity: iota-network
+    quote: "The system is currently part of the Iota Network, an independent polity lead by the archailect Iota Scholar, with close ties to various other polities such as the NoCoZo and Solar Dominion."
+  - polity: nocozo
+    quote: "The system is currently part of the Iota Network, an independent polity lead by the archailect Iota Scholar, with close ties to various other polities such as the NoCoZo and Solar Dominion."
+  - polity: solar-dominion
+    quote: "The system is currently part of the Iota Network, an independent polity lead by the archailect Iota Scholar, with close ties to various other polities such as the NoCoZo and Solar Dominion."
+  - polity: solar-dominion
+    quote: "It is also known as one of the worlds most heavily influenced by Eva's cultural exportation endeavor, perhaps due to their common Solar Dominion-influenced background."
+  - polity: metasoft
+    quote: "In contrast Yaudel's cool surface has closer ties with Metasoft and is now home to a number of cryovec and marine vec communities, both in the ice and below it, in the ocean itself."
+  - polity: cyberian-network
+    quote: "A sizable portion of this planet's population migrated into these virches, and became closely aligned with the Cyberian Network."
+  - polity: fomalhaut-acquisition-society
+    quote: "Suspended beneath the ice crust are a number of aquatic habitats aligned with the Fomalhaut Acquisition Society, and there the ancient Sanctuary cultures are studied and reconstructed in suitably modified form."
+unplaced:
+  - name: "Rasante Power Authority"
+    quote: "The Rasante Power Authority was established during the Federation Era to collect energy for the darkside habitats, and in 2233 became the de facto rulers of this world."
+  - name: "Rasante polity"
+    quote: "the only event of significance is that it became an autonomous part of the Rasante polity in 2771."
+  - name: "Seven Marbles Combine"
+    quote: "The Seven Marbles Combine formed under the guidance of the S:2 transapient The Scholar, including most of the planets in this system and many of the orbiting habitats."
+contradictions: []
+other_places:
+  - "Lucida (Iota Piscium)"
+  - "Corona (Iota Piscium d)"
+  - "Yosunoh (Iota Pegasi)"
+  - "Ain Soph Aur (Delta Capricorni)"
+doubts:
+  - quote: "1055 First communication between the Federation of Sophonts in Solsys and the Resonance system."
+    note: "A communication link, not a physical visit; unclear whether this should count as 'visited'. Not recorded as an event."
+  - quote: "2139 News of the dissolution of the Federation of Sophonts reached Resonance, and the FedRep returned to Solsys."
+    note: "Recorded as 'independent' (the system is left in no polity); could instead be read as 'reported' given the 'news... reached' framing."
+  - quote: "Since the Iota Network uses the ComEmp ontology, Reyvik was among the last and the most reluctant in Seven Marbles to join it."
+    note: "Ambiguous whether 'it' refers to the Iota Network or to the ComEmp ontology; no year given either way, so nothing recorded."
+  - quote: "The Corona Fleet finally arrived in 3355, and with their assistance the system was pacified and gradually restored."
+    note: "Corona is not on the roster and this reads as war pacification/aid rather than a clear holder change, so not recorded as an event."

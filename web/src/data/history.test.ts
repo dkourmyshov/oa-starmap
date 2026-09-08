@@ -412,6 +412,22 @@ describe('holdersAt', () => {
     expect(holdersAt(huanghua, [], 2500, ended)).toEqual([]);
   });
 
+  it('ends a holding when the place passes to a polity the file does not hold', () => {
+    // Avanola: occupied by the Negentropy Alliance from 4490, taken by
+    // Xacou's empire in 4922. The map cannot colour Xacou; it must not go on
+    // colouring the Alliance either.
+    const avanola = holdingsOf([
+      world({
+        events: [
+          { year_at: 4490, kind: 'transferred', polity: 'negentropy-alliance', note: '', source: '', until_at: 4922, precision: 'exact' },
+          { year_at: 4922, kind: 'transferred', polity: '', note: '', source: '', until_at: null, precision: 'exact' },
+        ],
+      }),
+    ]);
+    expect(holdersAt(avanola, [], 4700, ended)).toEqual(['negentropy-alliance']);
+    expect(holdersAt(avanola, [], 5000, ended)).toEqual([]);
+  });
+
   it('does not make a visitor a holder', () => {
     const callisto = holdingsOf([
       world({

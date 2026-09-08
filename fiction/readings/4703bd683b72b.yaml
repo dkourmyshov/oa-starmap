@@ -1,0 +1,72 @@
+article: 4703bd683b72b
+title: Procyon (Alpha Canis Minoris)
+events:
+  - year_at: 500
+    kind: settled
+    polity: ""
+    precision: circa
+    until_at: null
+    where: body
+    quote: "Around 500 the exploration probe reached Procyon system and began the arduous task of converting asteroids into computronium."
+    note: "Matches the header's already-dated settled 500 (the text itself says 'Around 500', so precision here is circa rather than exact). The actors -- Exa Energy, an unidentified ai allied to the Solipsist League, and the resulting clade Ako Forward Chaining -- are not on the roster; see unplaced."
+  - year_at: 749
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The first of these arkships to arrive was the Jubilee in 749 AT."
+    note: "Possibly what the header's 'visited 679' refers to -- see doubts on the year discrepancy. The Jubilee's colonists never established a lasting settlement ('by the 700s the last of the colonists had died out'), fitting visited rather than settled."
+  - year_at: 1000
+    kind: transferred
+    polity: diamond-network
+    precision: circa
+    until_at: null
+    where: body
+    quote: "By the dawn of the second millennium the Ako Forward Chaining had formally joined the Diamond Belt, seeking allies from the growing influence of the First Federation."
+    note: "\"Diamond Belt\" is not a literal roster alias of Diamond Network, but the article's own data panel ('former member of the Diamond Belt') and topic filing ('Diamond Network') strongly suggest the same entity -- flagged for reviewer confirmation, see doubts."
+  - year_at: 7555
+    kind: abandoned
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "On 25 Faraday 7555 the Procyon Phenomenon occurred. As yet an unexplained event, the Procyon Phenomenon completely eliminated the Ako Forward Chaining from the Procyon system."
+    note: "Ends the Ako Forward Chaining's roughly 7,000-year occupation of the system; the clade is not on the roster."
+  - year_at: 7567
+    kind: transferred
+    polity: cyberian-network
+    precision: not_later_than
+    until_at: null
+    where: body
+    quote: "The arrival of megacorporations aligned with the NoCoZo helped to stabilized the physical structure of the various megastructures in the star system. By 7567 a power sharing agreement between the Cyberian colonists and the NoCoZo megacorporations had been worked out."
+    note: "Matches the header's filing under Cyberian Network and the panel's 'Affiliation NoCoZo & Cyberian'. A joint arrangement -- see the companion nocozo entry below."
+  - year_at: 7567
+    kind: transferred
+    polity: nocozo
+    precision: not_later_than
+    until_at: null
+    where: body
+    quote: "The arrival of megacorporations aligned with the NoCoZo helped to stabilized the physical structure of the various megastructures in the star system. By 7567 a power sharing agreement between the Cyberian colonists and the NoCoZo megacorporations had been worked out."
+    note: "Companion entry to the cyberian-network transfer above; a shared power arrangement, not exclusive NoCoZo control."
+holder_undated:
+  - polity: cyberian-network
+    quote: "Affiliation NoCoZo & Cyberian"
+  - polity: nocozo
+    quote: "Affiliation NoCoZo & Cyberian"
+unplaced:
+  - name: "Exa Energy"
+    quote: "Exa Energy won the bid to acquisition the Procyon system, and launched the von neumann probe Zhang Qian in late 338 AT, with the intent of starting up an automated resource mining operation."
+  - name: "Solipsist League"
+    quote: "an unidentified ai with allegiances to the Solipsist League. This ai would ultimately become the founding member of clade Ako Forward Chaining."
+  - name: "Ako Forward Chaining"
+    quote: "To facilitate this process the original solipsist AI copied eirself, thus creating the clade Ako Forward Chaining."
+  - name: "GAIA"
+    quote: "they became aware of arkships launched by GAIA during the Great Expulsion"
+contradictions: []
+other_places:
+  - "Luyten's Star (Gliese 273) and its ISO the Procyon Extension, 1.1 ly from Procyon, which split off from the Ako Forward Chaining in 7541 AT and severed all links with Procyon"
+doubts:
+  - "The header records 'visited 679', but no sentence in the article gives that year. The closest candidate is the Jubilee arkship's arrival in 749 AT (recorded above as visited); a reviewer should check whether 679 is a typo or refers to something not found here."
+  - "The circa-1000 AT 'joined the Diamond Belt' event is mapped to the roster's diamond-network, based on the article's own data panel and topic filing rather than an explicit alias -- flagged for reviewer confirmation."
+  - "574 AT (news of a Solsys nano-outbreak reaching the Ako Forward Chaining) and 643 AT (the Ako Forward Chaining becoming aware of GAIA's arkships) concern information about events elsewhere reaching Procyon, not a change to Procyon's own holder, so were not recorded as events."

@@ -1,0 +1,61 @@
+article: 638d2ba84b2c6
+title: Gigaverse
+events:
+  - year_at: 900
+    kind: settled
+    polity: ""
+    precision: circa
+    until_at: null
+    where: body
+    quote: "a small isolationist AI colony arrived around 900 AT, likely from the red dwarf AD Leonis, a system inhabited by Diamond Belt ahuman AI and containing some planetary-surface computronium nodes of similar design"
+    note: "The header records this as 'visited 900'; the colony 'made a home' on Hesperides and stayed until it departed in the 1300s, which reads as settled rather than visited -- see doubts."
+  - year_at: 1300
+    kind: abandoned
+    polity: ""
+    precision: circa
+    until_at: null
+    where: body
+    quote: "They made a home on Hesperides' cold, icy surface and sustained themselves with fusion energy, but sometime in the 1300s, they built a new ship and departed for places unknown."
+    note: "End of the c.900 AT AI colony on Hesperides; no polity is named."
+  - year_at: 1521
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The mission arrived in the system in 1521, with an initial population of 43,000 baseline and nearbaseline humans and 5 superturing AI advisors."
+    note: "The Strength of the Lion colony ship, launched 988 AT from Solsys; no polity is named as sponsoring the mission."
+  - year_at: 2099
+    kind: independent
+    polity: ""
+    precision: not_earlier_than
+    until_at: null
+    where: body
+    quote: "After news arrived of the dissolution of the Federation in 2099, Foremost of Kiruna declared the independent Delta Leonis Republic, a nominal cyberdemocracy with its capital in the Tundral Forest Arcology Complex near Kiruna's south pole."
+    note: "Implies the system had been part of the First Federation, but no explicit joining date is given; the First Federation's roster dissolution year (2099) matches."
+  - year_at: 4176
+    kind: transferred
+    polity: zoeific-biopolity
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 4176, the S3 Lawgiver of the Jungle, of the Zoeific Biopolity, purchased development rights over Canaveral and 52 of its moons from the few million local inhabitants."
+    note: "Concerns development rights over Canaveral and its moons specifically, not a stated transfer of the whole system -- see doubts."
+  - year_at: 6005
+    kind: transferred
+    polity: technorapture-hypernation
+    precision: exact
+    until_at: null
+    where: body
+    quote: "By far the most momentous event in the history of Delta Leonis was in 6005, when Uncountable Qualia, a member of the Technorapture Hypernation and at the time an S3, used a combination of commercial purchases and memetic influence to attain full development rights to the central star."
+    note: "Matches the article's own filing under Technorapture Hypernation; the system is presently ruled by Uncountable Qualia of that polity."
+holder_undated: []
+unplaced:
+  - name: "Diamond Belt ahuman AI"
+    quote: "likely from the red dwarf AD Leonis, a system inhabited by Diamond Belt ahuman AI and containing some planetary-surface computronium nodes of similar design"
+contradictions: []
+other_places: []
+doubts:
+  - "The header's 'already dated: visited 900' is recorded above as a settled event instead, since the c.900 AT AI colony 'made a home' on Hesperides and stayed for centuries before departing in the 1300s -- that reads closer to the brief's definition of settled than of visited."
+  - "The 4176 AT Zoeific Biopolity purchase (event above) is explicitly of development rights over Canaveral and 52 of its moons, not a stated transfer of the whole Delta Leonis system; recorded as transferred but flagged for a reviewer to judge scope."
+  - "\"the local civilization remained in close contact with the rest of the Federation and benefited from advances in science and technology developed elsewhere\" is undated and describes contact/benefit, not a stated holder relationship, so it was not recorded as holder_undated."

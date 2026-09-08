@@ -1,0 +1,106 @@
+article: 5f9b29c09ab97
+title: Avanola
+events:
+  - year_at: 3700
+    kind: visited
+    polity: ""
+    precision: circa
+    until_at: null
+    where: body
+    quote: "This debris belt had been mapped by telescope many centuries before, but when the explorer ships arrived in the 38th century AT, at the end of the Age of Consolidation, they could make a detailed analysis of the resources available."
+    note: "Ships were from Freedonia, a joint NoCoZo/Sophic League colony (see other_places); the sentence does not itself say either polity reached Avanola, so polity is left blank per rule 7. '38th century AT' matches the map's already-recorded 'visited 3701-3800' at century granularity."
+  - year_at: 3837
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The first wave of settlers arrived in 3837 AT , at the start of the Integration."
+    note: "The settling coalition is described only as 'a loose coalition of first singularity transapients... not closely aligned with any particular Sephirotic empire', so no polity is named."
+  - year_at: 4490
+    kind: transferred
+    polity: negentropy-alliance
+    precision: exact
+    until_at: 4922
+    where: body
+    quote: "in 4490 a Negentropy Alliance fleet entered the system and attacked Avenue Station, causing devastaion... the coalition capitulated without further destruction."
+    note: "Section heading gives the span as 'The Occupational Period - 4490 to 4922 AT', matching until_at."
+  - year_at: 4922
+    kind: transferred
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Regardless, Xacou rapidly took control of the system."
+    note: "Xacou (later the Xacounian Empire) is an individual transapient, not a roster polity; see unplaced."
+  - year_at: 5398
+    kind: transferred
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "After the war Avanola was governed by a Zendart occupation force, and suffered a period of stagnation."
+    note: "Zendart Dominion is not a roster polity; see unplaced. Marks the end of the Xacounian War (5165-5398)."
+  - year_at: 5787
+    kind: transferred
+    polity: ""
+    precision: not_later_than
+    until_at: null
+    where: body
+    quote: "The Gentry now held Avanola along with all nearby systems."
+    note: "The capture of Avanola happened at an unstated point during the Zendart Dominion Civil War (5610s-5787 AT); the Gentry Coalition/Gentry Polity/Gentry Hardline Polity is not a roster polity, see unplaced."
+  - year_at: 6618
+    kind: independent
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 6618 AT control of Avanola was assumed by a former Gentry transapient known as Telavaskarut (commonly known as Tela)."
+    note: "Read as Avanola passing out of Gentry control to an independent local ruler; see doubts."
+  - year_at: 7245
+    kind: transferred
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Enefevee's seraiph fleet absorbed Avanola into eir new growing empire and rearranged the fundamental logistics of the system."
+    note: "Enefevee is an individual archailect, not a roster polity; see unplaced."
+  - year_at: 7388
+    kind: independent
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The bulk of the survivors consolidated themselves into localized regions, first forming a single entity called the Avanola Federation in 7388."
+    note: "Local modosophont self-governance after the Virch Purge; Enefevee's continued nominal status over the system is unclear from the text, see doubts."
+holder_undated: []
+unplaced:
+  - name: "Xacounian Empire"
+    quote: "Over the next centuries Xacou established the Xacounian Empire , a regime which was to have dominion over the neighboring regions."
+  - name: "Zendart Dominion"
+    quote: "The resistance was linked to the Zendart Dominion , a faction headed by a local, independent S3 transapient who had already lost several systems to the new Empire."
+  - name: "Gentry Hardline Polity"
+    quote: "a fleet of combat ships approached, hailing as the Gentry Hardline Polity ."
+  - name: "Remnant Dominion"
+    quote: "the most significant were the original two: the Embracent Alliance and the Remnant Dominion , within which Avanola was located."
+  - name: "Embracent Alliance"
+    quote: "the most significant were the original two: the Embracent Alliance and the Remnant Dominion , within which Avanola was located."
+  - name: "Enefevee"
+    quote: "A S:3 transap known as Enefevee , once a member of the Gentry just like Tela, had transcended to become an S4 and was seeking out new conquests throughout the region."
+  - name: "Avanola Federation"
+    quote: "first forming a single entity called the Avanola Federation in 7388."
+contradictions: []
+other_places:
+  - name: "Freedonia"
+    quote: "The Avanola system was first reached by exploration ships from Freedonia , a joint NoCoZo / Sophic League colony orbiting the contact binary star S Antliae."
+  - name: "Bourgatov"
+    quote: "After receiving news in 4490 AT of the collapse of Bourgatov , the transapients made the decision to close down the local wormhole mouth and shut themselves off from the rest of the Nexus."
+  - name: "Hapa:2"
+    quote: "In 5165, a Xacounian fleet entering the Hapa:2 system encountered military resistance much stronger than it had seen thus far."
+doubts:
+  - "The prose gives the first arrival only as 'the 38th century AT' (circa 3700), while the header already records 'visited 3701-3800'; both are written above rather than being merged."
+  - "'until finally in 7280, Form transcended to the first toposophic level' falls chronologically inside the 'Transcendence Experiment Period — 7500 to 7600 AT' section and looks like it may be a typo (e.g. for 7520); transcension is not a tracked kind regardless, so it was left out of events, but the date anomaly is flagged for a reviewer."
+  - "Whether the 6618 AT assumption of control by Tela (event above) is a formal secession from the Gentry, or merely a change of local administrator within an already-loosening Gentry Polity, is not stated outright."
+  - "Later internal reorganisations (the Avanola Federation's 7439 AT splintering, the Twins' governance changes from 8040 AT, their 8283 AT merger into 'Twin') were read as internal politics rather than holder changes and left out of events."
+  - "During the Virch Purge (7380-7450 AT) most inhabitants were uploaded and evacuated, but the text says some were deliberately left behind and the system was not wholly emptied, so this was not written as an 'abandoned' event."
+  - "The 7735 AT 'void squatter' colonists and the 7789/7799 AT Luisia/S2 incident both read as resettlement of an already-settled system per the brief's instructions, so neither was written as an event despite bearing exact years."

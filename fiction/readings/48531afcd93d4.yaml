@@ -1,0 +1,40 @@
+article: 48531afcd93d4
+title: Arcadia (Beta Comae Berenices)
+events:
+  - year_at: 812
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The first domed habitat was erected on the surface of Arcadia in 812 AT."
+    note: "Matches the header's already-dated settled 812. The sleepership Arkady (launched 518 AT from an unnamed multinational mission) is not tied to any roster polity."
+  - year_at: 964
+    kind: transferred
+    polity: first-federation
+    precision: exact
+    until_at: null
+    where: body
+    quote: "when (in 964) they finally received a message from the old Solar System, inviting them to join the Federation of Sophonts. The colonists, now more than 4000 strong, sent a reply back in the affirmative, but even before their message could reach its destination they were contacted (in 972) by an approaching vessel coming from the direction of the Solar System."
+    note: "'Federation of Sophonts' is the roster's alternate name for the First Federation before 2099. This concerns the Arcadian colonists' own affiliation, not the other worlds of the Chloris system."
+  - year_at: 3231
+    kind: transferred
+    polity: zoeific-biopolity
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Arcadian biotechnology, philosophy and lifestyle was found to be thoroughly compatible with Zoeific doctrine, and the Council of Hives joined the Biopolity in 3231."
+    note: "The Council of Hives is Arcadia's own governing body. Matches the article's filing under Zoeific Biopolity."
+holder_undated: []
+unplaced:
+  - name: "Republic of Virginis"
+    quote: "the Arcadians forged close links with the incomers from Beta Virginis, who established the Republic of Virginis in the southern ocean, as well as a number of floating cities in the Arcadian Great Ocean"
+contradictions: []
+other_places:
+  - "The Chloris System (the data panel refers planet listings to a separate main article of that name)"
+  - "Daphnis, Crocus, Dryas, Diana (and its moon Endymion), Doris, Galatea, Chloe, Smilax, Adonis, Pan -- other worlds of the Chloris system, several with their own colonisation and polity history (Virginis Combine, Conver Ambi, Solar Dominion, Metasoft), not extracted here as they are not Arcadia"
+doubts:
+  - "The header records 'visited 808', but no sentence gives 808 AT explicitly; it is only derivable by adding 'launched toward Beta Com in 518 AT' to 'took 290 years to arrive' (518+290=808). Not recorded as a formal event under rule 2 (no literal quote of the year) -- flagged here for the reviewer to check against the header."
+  - "Wallace's arrival ('in 972 ... an approaching vessel', probe launched 673 AT) and departure ('in 1690, e departed the system') were not recorded as events, per the instruction that a probe or trader arriving after a place is settled (here, after 812 AT) is not itself an event."
+  - "The article gives two different years for the Virginis Combine's dissolution: 'In 2512 the Virginis Combine also dissolved' and later 'when the Combine dissolved in 3932'. This concerns the Virginis Combine and other Chloris-system worlds rather than Arcadia itself, so it is not listed under contradictions, but is flagged here since it may matter to another article."
+  - "\"This world had been observed remotely from Solsys, and tentatively selected as a possible target for future colonisation\" is undated and was not recorded as an observed event."

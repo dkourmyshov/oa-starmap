@@ -1,0 +1,28 @@
+article: 591f39b037a27
+title: "Ys, The Ocean of"
+events:
+  - year_at: 3500
+    kind: settled
+    polity: deeper-covenant
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The earliest colonies around Ys date from 3500, when a group of Madi arrived from the Deeper Covenant."
+    note: "Matches header's settled 3500. Polity is recorded as deeper-covenant because the colonists are explicitly said to have 'arrived from the Deeper Covenant' (roster id deeper-covenant), which is treated here like the brief's 'ship from the First Federation' example."
+  - year_at: 5453
+    kind: settled
+    polity: zoeific-biopolity
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The next big change came in 5453, when, after a period of negotiation with the current inhabitants, a siblinghood of young Amphisapien colonists from the Zoeific Biopolity arrived in system."
+    note: "Not in the header. A second wave of colonists, explicitly said to be 'from the Zoeific Biopolity', who stayed and founded a lasting new culture ('For the next centuries a new culture blossomed'); recorded as settled rather than visited on that basis. Consistent with the data panel's undated 'Allegiance Zoefic Biopolity'."
+holder_undated:
+  - polity: zoeific-biopolity
+    quote: "Allegiance Zoefic Biopolity"
+unplaced: []
+contradictions: []
+other_places:
+  - "Ecotopia - destination of the stargate 'River of Life' from Ys"
+doubts:
+  - "The Europans who arrived among the 'other colonists' (undated) later 'set up a small, independent polity along one segment of the ring' around the time the ring was first completed in 6300; this internal faction ('the Europan polity') is not on the roster and was not written as an event, since it concerns only part of Ys rather than the whole place: quote \"The Europans set up a small, independent polity along one segment of the ring, while the Madi and Amphisapiens settled for a more diffuse, open society with no territorial boundaries.\""

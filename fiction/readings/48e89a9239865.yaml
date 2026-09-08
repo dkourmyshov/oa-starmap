@@ -1,0 +1,62 @@
+article: 48e89a9239865
+title: Penglai
+events:
+  - year_at: 678
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised 678 AT"
+    note: ""
+  - year_at: 678
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The Tianzhou 1 arrived in 678 AT."
+    note: "Colonisation mission funded by Heavenly Palaces Incorporated (H.P. Inc.), not a roster polity."
+  - year_at: 715
+    kind: independent
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Riding on the wave of popular support and independence following their unilateral declaration of independence, Jian Hsin (or Jian-tze as he now liked to style himself), leader of the new PCA, made the former districts of Hao Chen, Daonin, Tsi Leng and Hsu Hsi into sovereign nations, and they were formally recognized by the PCA."
+    note: "Independence was declared from the founding corporations (Heavenly Palaces Incorporated and partners), not from a roster polity, so no prior holder is named."
+  - year_at: 1205
+    kind: transferred
+    polity: penglai-empire
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 1205 AT, with local Jovianist and Federation Genen help, the Hsien managed to organize a bloody revolt. The by now much loathed Jian Dynasty was toppled, and the Xian Dynasty instituted in its place."
+    note: "Matches the header's 'transferred 1205 (penglai-empire)'. The article states the Penglai Empire itself (the merger of planetsiders, belters, and jovianists into a solar-system wide empire) formed only 'in the following centuries' after this revolt, without a specific year."
+holder_undated:
+  - polity: conver-ambi
+    quote: "After the Conver Ambi gained effective control of the Penglai Empire, Penglai was an important part of the Conver empire"
+  - polity: metasoft
+    quote: "however the Second Consolidation War ended with the destruction of the Conver Ambi empire, and the Sigma Draconis system came under Metasoft protection"
+  - polity: sophic-league
+    quote: "After the Version War Penglai was re-assigned to the Sophic League as part of the war settlement, and is now an important Sophic centre for spiritual development."
+  - polity: sophic-league
+    quote: "AI AI overseers : the Heavenly Immortals ( Sophic League affiliation)"
+unplaced:
+  - name: "Heavenly Palaces Incorporated"
+    quote: "The first colonization mission to Penglai was mostly funded by Heavenly Palaces Incorporated (H.P. Inc.) and its associated partners."
+  - name: "Penglai Colony Administration (PCA)"
+    quote: "On attaining power, they called themselves Penglai Colony Administration (PCA), with Jian himself as First Colony Administrator and Michael Qian Ganymede as Sage-Advisor."
+contradictions: []
+other_places: []
+doubts:
+  - quote: "(none found)"
+    note: "The header records 'transferred 2251 (conver-ambi)', but no year 2251, and no year at all, appears in this article's account of the Conver Ambi taking control of the Penglai Empire."
+  - quote: "(none found)"
+    note: "The header records 'transferred 3943 (metasoft)', but no year 3943, and no year at all, appears in this article's account of Metasoft protection beginning after the Second Consolidation War."
+  - quote: "(none found)"
+    note: "The header records 'transferred 4650 (sophic-league)', but no year 4650, and no year at all, appears in this article's account of the reassignment to the Sophic League after the Version War."
+  - quote: "(none found)"
+    note: "The header records 'visited 609', but no year 609, and no matching narrative, appears anywhere in this article."
+  - quote: "(none found)"
+    note: "The header records 'visited 1350', but no year 1350, and no matching narrative, appears anywhere in this article."

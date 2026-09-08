@@ -1,0 +1,28 @@
+article: 52e80a3a924b5
+title: Pentagon Moons
+events:
+  - year_at: 6000
+    kind: settled
+    polity: ""
+    precision: circa
+    until_at: null
+    where: body
+    quote: "The Pentagon Moons system was settled by a Genetekker expatriate Su ( Dom Jovanus to eir friends), who arrived in the 6000s, e having departed the Inner Sphere in the late Federation Period with an early S2 conversion drive starship as part of a complicated to financial and memetic transaction with Metasoft ."
+    note: "Jovanus is an individual Su, not a polity; although eir tech came from a deal with Metasoft, the sentence does not say Metasoft itself reached or settled the system, so polity is left blank per rule 7. Matches the header's already-recorded 'settled 6000'."
+  - year_at: 6000
+    kind: transferred
+    polity: metasoft
+    precision: circa
+    until_at: null
+    where: body
+    quote: "As Metasoft settled and developed surrounding systems in the early 6000's, Jovanus sought to profit by producing amat and magmatter for export... so e \"contracted\" with Metasoft for a system caretaker AI (\"Overseer\")... the popular theory (to everyone but Jovanus) is that Metasoft was responsible for convincing Jovanus to industrialize the system and all but turn it into a Metasoft protectorate."
+    note: "This is when the system panel's 'AFFILIATION: Metasoft' begins, per the body text; no more precise year is given than 'the early 6000's'."
+holder_undated: []
+unplaced: []
+contradictions: []
+other_places:
+  - name: "Metropolis Ring City"
+    quote: "Instead, ey negotiated for territory on the Metropolis Ring City."
+doubts:
+  - "'the 6000s' and 'the early 6000's' were both read as circa 6000 per the brief's 'the 1100s' example; both entries above land on the same year_at as a result, though the second is visibly later within that century."
+  - "Whether Jovanus already carried some Metasoft affiliation on arrival (eir conversion-drive starship and tech came from a deal with Metasoft) or only became affiliated later via Overseer is left ambiguous by the text; only the later, explicit 'protectorate' passage was written as the transferred event."

@@ -1,0 +1,102 @@
+article: 57ab8a3c4959c
+title: 61 Cygni
+events:
+  - year_at: 370
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonized 370AT (arrival of first robotic probe)"
+    note: "Header already records this as 'settled 370'; the clause itself describes only a robotic probe, which this brief classifies as visited rather than settled."
+  - year_at: 597
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "597AT (arrival of first colonists)"
+    note: ""
+  - year_at: 120
+    kind: observed
+    polity: ""
+    precision: not_later_than
+    until_at: null
+    where: body
+    quote: "61 Cygni A & B's planetary systems were largely mapped by 120AT"
+    note: ""
+  - year_at: 180
+    kind: observed
+    polity: ""
+    precision: not_later_than
+    until_at: null
+    where: body
+    quote: "gradual improvements in astronomical instruments confirmed these were mostly rocky, dense worlds by 180 AT"
+    note: ""
+  - year_at: 470
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The Cygnus pathfinder probe arrived in 470 AT."
+    note: "Exa Energy's Cygnus Project probe; established a fuel depot, nobody stayed."
+  - year_at: 492
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The faster 409 AT security probe arrived in 492 AT, actually overtaking two industrial probes"
+    note: "Exa Energy security probe."
+  - year_at: 470
+    kind: settled
+    polity: ""
+    precision: between
+    until_at: 530
+    where: body
+    quote: "The colonization flights found operating industry, habitats, and maser braking systems waiting for them as they began arriving in the late Fifth and early Sixth centuries"
+    note: "Fifth century AT is 401-500, sixth century AT is 501-600; approximated as 470-530. This predates the panel's 597AT first-colonist arrival by decades."
+  - year_at: 945
+    kind: visited
+    polity: first-federation
+    precision: exact
+    until_at: null
+    where: body
+    quote: "61 Cygni's sporadic contact with various habitats in SolSys meant it was quickly contacted by the First Federation in 945 AT."
+    note: "The Consortium declined the Federation's invitation to join; no transfer occurred."
+  - year_at: 2114
+    kind: transferred
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "ETA's system governance operations were consolidated into the not-for-profit Cygnus Development Corporation (CDC)."
+    note: "Same year the ETA Consortium was formally liquidated; CDC is not a roster polity."
+holder_undated:
+  - polity: ""
+    quote: "Polity Cygnus Development Corporation"
+unplaced:
+  - name: "Exa Energy"
+    quote: "The Cygnus pathfinder probe arrived in 470 AT."
+  - name: "Exa Energy"
+    quote: "The faster 409 AT security probe arrived in 492 AT, actually overtaking two industrial probes"
+  - name: "ETA Consortium"
+    quote: "the larger, follow-on human colonization ships of the Cygnus project's last phase required an alliance with Ares Heavy Lifting and Teledyne, forming the ETA Consortium"
+  - name: "ETA Consortium"
+    quote: "The Consortium declined the Federation's invitation promptly (answer arriving at Ceres in 957)"
+  - name: "Cygnus Development Corporation"
+    quote: "Polity Cygnus Development Corporation"
+  - name: "Cygnus Development Corporation"
+    quote: "ETA's system governance operations were consolidated into the not-for-profit Cygnus Development Corporation (CDC)."
+contradictions: []
+other_places:
+  - "Beta Pictoris"
+  - "Procyon"
+doubts:
+  - quote: "Colonized 370AT (arrival of first robotic probe) 597AT (arrival of first colonists)"
+    note: "Header says 'already dated: settled 370', and the panel labels this whole line 'Colonized', but the clause itself attributes 370 AT to a robotic probe only; actual colonist arrival is separately dated 597 AT in the same panel line. Recorded 370 as visited and 597 as settled; a reviewer may prefer to treat 370 as the recorded settlement date to match the header."
+  - quote: "it was quickly contacted by the First Federation in 945 AT"
+    note: "Classified as 'visited' since the First Federation is not a xenosophont species (so 'contact' does not apply) and the Consortium declined to join (so 'transferred' does not apply)."
+  - quote: "it successfully attacked it with several guided tungsten munitions in 373AT"
+    note: "This date (373 AT) for the security probe's attack appears to be a typo in the source: the security probe itself was launched in 409 AT and arrived in 492 AT, so an attack 'a year' later should read 493 AT, not 373 AT. Not recorded as an event since battles are excluded regardless."
