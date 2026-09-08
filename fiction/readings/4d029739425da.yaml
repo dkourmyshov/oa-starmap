@@ -1,0 +1,36 @@
+article: 4d029739425da
+title: "Rak Mesba"
+events:
+  - year_at: 1322
+    kind: observed
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "This object was first recognised as anomalous in 1322 AT, but (because of its large distance) the first exploration mission did not reach there until 9083 AT."
+    note: ""
+  - year_at: 9083
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "This object was first recognised as anomalous in 1322 AT, but (because of its large distance) the first exploration mission did not reach there until 9083 AT."
+    note: "Confirmed later by 'On Jung 19, 9083, Anggun awakened Salleh and his team as they entered the system.'"
+  - year_at: 9513
+    kind: reported
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Following the receipt at Hutan Baru of Salleh's initial report in 9513, a great deal of interest in mounting follow-up expeditions to Rak Mesba has been generated, mostly among various corporations and institutes."
+    note: "The 9083 AT visit's findings were not received back at Hutan Baru until 9513 AT."
+holder_undated: []
+unplaced: []
+contradictions: []
+other_places:
+  - "Hutan Baru (Carina Reach) - launch point of the 8512 AT survey mission to Rak Mesba, and where Salleh's report was received in 9513 AT"
+  - "IC 2944 (the Running Chicken Nebula) - the foreground nebula that had obscured Rak Mesba from observation"
+doubts:
+  - quote: "The ship was launched in 8512 AT."
+    note: "Departure of the survey ship Pertanyaan from Hutan Baru, not an arrival at or observation of Rak Mesba itself; not logged as an event for this place."

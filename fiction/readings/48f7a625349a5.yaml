@@ -1,0 +1,49 @@
+article: 48f7a625349a5
+title: Ridgewell
+events:
+  - year_at: 1383
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised 1383 AT"
+    note: "Panel gives no holder for the colonisation; current Allegiance (MPA) is stated separately with no date attached."
+  - year_at: 1939
+    kind: capital
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 1939 a.t. the decision to relocate was made, a three-way meeting was arranged between the Guardians of Bios League, Mao-UbiCol, and House Stevens."
+    note: "Marks House Stevens' decision to relocate its capital/home to Chi Herculis; House Stevens, Mao-UbiCol and the Guardians of Bios League are not roster polities."
+  - year_at: 6590
+    kind: transferred
+    polity: mutual-progress-association
+    precision: circa
+    until_at: null
+    where: body
+    quote: "it was agreed that the Chi Herculis system would become an MPA Protectorate."
+    note: "Dated by the preceding sentence, 'In the 6590s AT a squadron of MPA Liberator B Series Autowars repulsed Negentropist forces... and advanced on Ridgewell.'"
+holder_undated:
+  - polity: mutual-progress-association
+    quote: "Allegiance: Mutual Progress Association (MPA)"
+unplaced:
+  - name: "House Mao-UbiCol"
+    quote: "Originally claimed and mapped by House Mao-UbiCol during the Middle Federation period, the planet Chi Herculis V is one of the closest life-bearing worlds to Sol."
+  - name: "House Stevens"
+    quote: "the powerful House Stevens began making inquiries regarding a new capital, following increasing dissatisfaction with the Epsilon Indi system during the late Federation period."
+  - name: "Guardians of Bios League"
+    quote: "a three-way meeting was arranged between the Guardians of Bios League, Mao-UbiCol, and House Stevens."
+contradictions: []
+other_places:
+  - "Fons Luminus (Xi Ursae Majoris) - the emerging Solar Dominion"
+  - "Merrion (Alpha Mensae) - the Non Coercive Zone"
+  - "Atlantis (Zeta1 Reticuli)"
+  - "Germyn cluster (brown dwarf, 8 LY)"
+  - "Lin-Darwon Free Republic (BD +39 2947, 6 LY)"
+doubts:
+  - quote: "a Caretaker ISO entered the system and attacked the Metasoft ground forces that were currently in possession of Ridgewell"
+    note: "Set about two years after the 6499 AT firefight (so circa 6501 AT); unclear whether Metasoft's wartime occupation of the planet counts as a 'transferred' holder event or is just battle narrative."
+  - quote: "The 6500s AT saw the Negentropist Eighth Fleet take control of surrounding space."
+    note: "Unclear whether 'surrounding space' means the Chi Herculis system itself or only the neighbouring volume; the following sentences have the Negentropists occupying other systems (Germyn cluster, Lin-Darwon Free Republic) instead because the ISO was too strong to challenge in-system."

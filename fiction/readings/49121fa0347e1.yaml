@@ -1,0 +1,54 @@
+article: 49121fa0347e1
+title: "Shamash (Xi Boötis)"
+events:
+  - year_at: 1349
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "First reached by the minor megacorp Hearp Rangers (later part of the Taurus Nexus) in 1349."
+    note: "Matches the header's already-recorded visited 1349. Hearp Rangers is a megacorp, not on the roster; see unplaced. It is described as later becoming part of the Taurus Nexus, but had not yet done so at the time of this event."
+  - year_at: 1349
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "First reached by the minor megacorp Hearp Rangers (later part of the Taurus Nexus) in 1349. They discovered a terraformable planet in orbit around the A star and hired the cyborg clade Etaoin Roltz to oversee the project."
+    note: "Matches the header's already-recorded settled 1349. Hearp Rangers hired the cyborg clade Etaoin Roltz to begin the terraforming project immediately after reaching the system; neither is on the roster."
+  - year_at: 1239
+    kind: independent
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "When a formal request for status report came in 1239 they declared that they owned the rights to the world (which they named Shamash) as Hearp Rangers had ceased to exist."
+    note: "The Etaoin Roltz (a cyborg clade, not on the roster) asserted ownership against the Taurus Nexus's claim by succession from Hearp Rangers, precipitating the war described next. This year is earlier than the 1349 first-reached date given above; see doubts."
+  - year_at: 2348
+    kind: transferred
+    polity: solar-dominion
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 2348 Shamash formally joined the Solar Dominion."
+    note: "New against the header, which records only visited/settled 1349."
+  - year_at: 3263
+    kind: transferred
+    polity: solar-dominion
+    precision: exact
+    until_at: null
+    where: body
+    quote: "When the Taurus Nexus break-up occurred in 3263 Locos was annexed by the Dominion."
+    note: "New against the header. Locos is a continent of Shamash previously leased to the Taurus Nexus; its annexation is recorded as a transferred event rather than treated as a mere sub-settlement, since it is a stated change of holder."
+holder_undated: []
+unplaced:
+  - name: "Hearp Rangers"
+    quote: "First reached by the minor megacorp Hearp Rangers (later part of the Taurus Nexus) in 1349."
+  - name: "Etaoin Roltz"
+    quote: "hired the cyborg clade Etaoin Roltz to oversee the project"
+contradictions: []
+other_places: []
+doubts:
+  - quote: "When a formal request for status report came in 1239 they declared that they owned the rights to the world (which they named Shamash) as Hearp Rangers had ceased to exist."
+    note: "This year (1239) is earlier than the system's first-reached year of 1349 given just above, which is chronologically inconsistent; recorded literally as written."

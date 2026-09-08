@@ -1,0 +1,27 @@
+article: 4670a60a449d5
+title: Kepleria
+events:
+  - year_at: 6996
+    kind: settled
+    polity: mutual-progress-association
+    precision: exact
+    until_at: 9998
+    where: body
+    quote: "Founded/Colonized: Construction began 6996 and was completed in 9998. Colonization of habitats is ongoing; many are still completely wild and unpopulated by sophonts."
+    note: "Matches the header's already-dated settled 6996. Polity taken from context: Kepleria's affiliation is the Mutual Progress Association, and its History section credits the project to Ptah, an MPA archailect; no single sentence states 'the MPA colonised Kepleria', see doubts."
+  - year_at: 6996
+    kind: settled
+    polity: mutual-progress-association
+    precision: exact
+    until_at: 7231
+    where: body
+    quote: "The first shell, Octahedron (or Octa for short), was begun in 6996 and completed in 7231 at a distance of about 0.234 AU from Johannes."
+    note: "Same date as above, giving the specific detail that the first Dyson shell (Octa) was the initial construction."
+holder_undated: []
+unplaced: []
+contradictions: []
+other_places:
+  - "Chromataforum, mentioned only in the Related Articles summary as 'a massive megastructure and series of virtual worlds belonging to the zoeific biopolity'; has its own article and is not otherwise described in Kepleria's prose."
+doubts:
+  - "No sentence directly states which polity colonised Kepleria; mutual-progress-association was inferred from the system's stated affiliation and the History section crediting the project to the MPA archailect Ptah. Flagged in case this counts as inferring a holder rather than reading one stated."
+  - "Icosa (begun 7217), Dodeca (built 8101-8890), Tetra (resumed 9168, completed 9439), and the Cube (begun 9550, finished 9998) are further Dyson-shell construction stages within the same already-settled system; treated as sub-settlements/megascale-engineering milestones, not separate events, per the brief."

@@ -1,0 +1,85 @@
+article: 4871520aab6c2
+title: Aolai (Gamma Leporis)
+events:
+  - year_at: 868
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: 2052
+    where: body
+    quote: "Founded/Colonized: first colonized 868AT to 2052 AT. (Beneficence); Occupied for 200 years by an ahuman AI which mysteriously disappeared."
+    note: "Beneficence is not on the roster; see unplaced."
+  - year_at: 868
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Ao Lai was first settled by the famous Exodus Beneficents in 868 AT."
+    note: "Beneficence/Exodus Beneficents not on roster; see unplaced. This date contradicts the article's own timeline, which gives 933 AT for the same arrival (see contradictions)."
+  - year_at: 2052
+    kind: abandoned
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "development continued apace until their spectacular and near-miraculous technorapture (or, as some hardened sceptics have it, hoax and mass murder) in 2052 AT."
+    note: "The technorapture is described as the wholesale departure of the Beneficents; whether this counts as 'everyone left' is left to the reviewer."
+  - year_at: 933
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "933 AT: Exodus Beneficents arrive at Gamma Leporis and begin extensive development in both systems"
+    note: "The header records this event as 'visited 933'; the sentence describes arrival plus development, which reads as settled rather than visited. Beneficence/Exodus Beneficents not on roster; see unplaced. Contradicts the 868 AT settlement date given elsewhere in the same article (see contradictions)."
+  - year_at: 1166
+    kind: visited
+    polity: first-federation
+    precision: exact
+    until_at: null
+    where: body
+    quote: "1166 AT: First Federation ship arrives at Gamma Leporis"
+    note: "Matches the header's already-dated 'visited 1166'."
+  - year_at: 2252
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "2252 AT: New Beneficence re-colonizes vacant systems at Gamma Leporis"
+    note: "New Beneficence not on roster; see unplaced. Body text names the leader: 'Many regard \"year zero\" of the system's history to have begun with the arrival of Ukarima Lovejoy's small band of New Beneficence believers in 2252 AT'."
+  - year_at: 2271
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "2271 AT: IPP leases space at Gamma Leporis B from the New Beneficence; commences planet-building"
+    note: "Institute for Primate Provolution (IPP) not on roster; see unplaced."
+  - year_at: 7040
+    kind: capital
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "7040 AT: Migration of IPP headquarters to holdings at Gamma Leporis (later named Ao Lai)"
+    note: "IPP not on roster; see unplaced. Matches 'IPP headquarters since 7040' in the government box."
+holder_undated: []
+unplaced:
+  - name: "Beneficence / Exodus Beneficents"
+    quote: "Ao Lai was first settled by the famous Exodus Beneficents in 868 AT."
+  - name: "New Beneficence"
+    quote: "2252 AT: New Beneficence re-colonizes vacant systems at Gamma Leporis"
+  - name: "Institute for Primate Provolution (IPP)"
+    quote: "Primary Polity: Name: Institute for Primate Provolution"
+contradictions:
+  - about: first settlement/arrival year of the Exodus Beneficents at Gamma Leporis
+    quotes:
+      - "Ao Lai was first settled by the famous Exodus Beneficents in 868 AT."
+      - "933 AT: Exodus Beneficents arrive at Gamma Leporis and begin extensive development in both systems"
+other_places: []
+doubts:
+  - "The 4600 AT Version War refugee influx ('Over 3 billion refugees settle at Ao Lai; many remain after the peace') was not recorded as an event: the system was already settled, and this reads as a population movement rather than a change of holder."
+  - "The 933 AT timeline entry was classified as settled rather than the header's 'visited', since the sentence describes arrival and the start of development; flagged for reviewer judgement."
+  - "The IPP is treated as unplaced throughout, being an institute rather than a polity on the roster; the 'capital' entry at 7040 AT reflects the article's own framing of Ao Lai as IPP headquarters."

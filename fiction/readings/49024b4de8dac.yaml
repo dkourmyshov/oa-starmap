@@ -1,0 +1,40 @@
+article: 49024b4de8dac
+title: Felicidade
+events:
+  - year_at: 1704
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised 1704AT"
+    note: ""
+  - year_at: 1704
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The first of these large, slow ships arrived in 1704AT."
+    note: "Corroborates the panel's 'Colonised 1704AT'; no roster polity is named as the settling power, only the sponsoring group Refugiados Sul-Americanos (see unplaced)."
+  - year_at: 4498
+    kind: transferred
+    polity: negentropy-alliance
+    precision: exact
+    until_at: null
+    where: body
+    quote: "allowing them to assume control of the system when the Negentropy Alliance declared war on the MPA in 4498"
+    note: ""
+holder_undated:
+  - polity: mutual-progress-association
+    quote: "This impossible construct is a collaboration between several different factions, the MPA and the Negentropists managing the construction and maintenance of the shell."
+  - polity: negentropy-alliance
+    quote: "This impossible construct is a collaboration between several different factions, the MPA and the Negentropists managing the construction and maintenance of the shell."
+unplaced:
+  - name: "Refugiados Sul-Americanos"
+    quote: "Four space arks sponsored by the Refugiados Sul-Americanos departed from Solsys in 1104-1116 AT, each carrying twenty thousand colonists in cryostasis to the sunlike star 18 Scorpii."
+contradictions: []
+other_places: []
+doubts:
+  - "The 1704 AT settlement is not attributed to any roster polity in the prose (only to the sponsoring group Refugiados Sul-Americanos, which is not on the roster); the 'Federation Era' framing is descriptive of the period, not a named polity holding the system."
+  - "The construction start (6995 AT, 'This project was started in 6995 AT') and completion (9016, 'the Impossible Dyson was completed in 9016') of the Dyson shell are megascale-engineering milestones, not a holder change, so they were not recorded as events per the brief."

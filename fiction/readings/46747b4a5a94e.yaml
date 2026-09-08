@@ -1,0 +1,59 @@
+article: 46747b4a5a94e
+title: Klarus
+events:
+  - year_at: 1512
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The terraforming operation went well, and Praeclarus was opened for colonization as early as 1512 AT (although full terraforming still required 200 years)."
+    note: "Matches the header's already-dated settled 1512. Run by the Praeclarus Corporation, owned by K4H and Birnam Ecotech, neither on the roster; see unplaced."
+  - year_at: 3843
+    kind: transferred
+    polity: solar-dominion
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The disaster occurred during the Conver Wars in 3843 AT, when the Conver Ambi broke up. The Solar Dominion took the chance and seized the majority of shares in the Corporation, using some local unrest as a pretext for declaring a state of system-wide emergency and moved in with their forces."
+    note: ""
+  - year_at: 4477
+    kind: transferred
+    polity: metasoft
+    precision: exact
+    until_at: null
+    where: body
+    quote: "While the first onslaught was defeated, in 4477 the Metasoft fleet successfully penetrated the system and defeated the Dominion defenses in the bitter Second Battle of Klarus."
+    note: "'In the end the system was lost' to Metasoft during the Version War; see the following entry for its recovery in 4478 AT."
+  - year_at: 4478
+    kind: transferred
+    polity: solar-dominion
+    precision: exact
+    until_at: null
+    where: body
+    quote: "It was freed in 4478 AT in the Third and Fourth Battles of Klarus, but all wormhole links were destroyed in the Fifth Battle in 4480 AT."
+    note: "Klarus returns to Solar Dominion control after the 4477 loss to Metasoft. The wormhole destruction in 4480 AT (Fifth Battle) is infrastructure damage, not a change of holder, and is not recorded as a separate event."
+  - year_at: 6653
+    kind: visited
+    polity: solar-dominion
+    precision: exact
+    until_at: null
+    where: body
+    quote: "When Dominion exploration craft revisited the system in 6653 AT, the PicaPica negotiated a deal with them, cleverly setting themselves up as a kind of local prefecture."
+    note: "The PicaPica are a relativist crew/organization, not on the roster; see unplaced."
+holder_undated: []
+unplaced:
+  - name: "K4H"
+    quote: "K4H together with Birnam Ecotech set up a terraforming operation on the prebiotic terrestrial third planet together with an extensive automatic long-range impact defense."
+  - name: "Birnam Ecotech"
+    quote: "K4H together with Birnam Ecotech set up a terraforming operation on the prebiotic terrestrial third planet together with an extensive automatic long-range impact defense."
+  - name: "Praeclarus Corporation"
+    quote: "It was run by Praeclarus Corporation, owned mainly by K4H and Birnam Ecotech."
+  - name: "PicaPica"
+    quote: "Partially this was due to help and trade with the relativist crew of the PicaPica , a courier/trade/intelligence organization that found that the system provided them an excellent base to deal with several of the recovering Inner Sphere powers without any risk of having a powerful local government step in on them."
+contradictions: []
+other_places:
+  - "Fons Luminis (Xi Ursae Majoris), a neighbouring Solar Dominion system with its own article, mentioned as a strategic reason for the Dominion's interest in Klarus."
+  - "Tiphareth, mentioned only as the destination a scoutship left to report to; not otherwise described here."
+doubts:
+  - "'Over the ComEmp era the original PicaPica-governance was phased out by the Dominion' describes a return to full Dominion administration but gives no specific AT year, only an era name; not recorded as a dated event."

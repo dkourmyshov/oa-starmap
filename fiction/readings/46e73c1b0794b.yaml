@@ -1,0 +1,72 @@
+article: 46e73c1b0794b
+title: Zarathustra
+events:
+  - year_at: 838
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The desperate AIs used their remaining resources to set up a colony, and then changed the orbit so that the ship would crash into the atmosphere"
+    note: "Year computed from 'Nedyne Industries launched in 671 AT towards Gamma Pavonis' and 'The flight took 167 years' (671+167=838); matches the header's already-dated settled 838. Nedyne Industries is not a roster polity."
+  - year_at: 1312
+    kind: visited
+    polity: first-federation
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 1312 a First Federation exploration group sponsored by Jupiter Transsystems arrived in system."
+    note: "Sponsored by Jupiter Transsystems, a megacorp not on the roster (see unplaced)."
+  - year_at: 1312
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Signalling back, they began to set up a new colony to exploit the system."
+    note: "This corporate exploitation colony is attributed to Jupiter Transsystems (unplaced), not the First Federation directly, and is distinct from the original 838 AT Nedyne colony."
+  - year_at: 1358
+    kind: abandoned
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "During a week of bitter fighting JT lost to the \"primitives\". The few survivors who could fled using the starship, using its exhaust to blast a wide swath of radioactive destruction over the planet but not accomplishing much else. The local company branch AI erased itself."
+    note: "Ends Jupiter Transsystems' (unplaced) hold on Zarathustra, dated by the preceding 'In 1358 JT attempted to take back Zarathustra'."
+  - year_at: 1500
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "When the next JT ship arrived in 1500, it found itself outnumbered and outgunned. It retreated, warning all others about the system filled with dangerous nano-toting \"googols\" and their splice pets."
+    note: "Jupiter Transsystems (unplaced) ship arrives and retreats; nobody stayed."
+  - year_at: 1900
+    kind: visited
+    polity: nocozo
+    precision: circa
+    until_at: null
+    where: body
+    quote: "Zarathustra remained isolated for almost 400 years until a NoCoZo trade expedition arrived."
+    note: "Year computed as circa 400 years after the 1500 AT JT retreat ('almost 400 years' - so slightly earlier than exactly 1900)."
+  - year_at: 1965
+    kind: transferred
+    polity: nocozo
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 1965 Zarathustra formally joined the NoCoZo, and has since then (individually) been one of the most radical anti-coercive members."
+    note: "Not mentioned in the header, which only lists settled 838."
+holder_undated: []
+unplaced:
+  - name: "Jupiter Transsystems"
+    quote: "In 1312 a First Federation exploration group sponsored by Jupiter Transsystems arrived in system."
+  - name: "Nedyne Industries"
+    quote: "Zarathustra was originally colonised by heteromorphic tweaks who originated from the Nedyne Industries corporate headquarters and mining outposts in Jupiter orbit."
+contradictions: []
+other_places: []
+doubts:
+  - quote: "In 1350 further JT colonists arrived and began the colonisation program in earnest."
+    note: "Unclear whether this is a distinct settlement event or a continuation of the 1312 AT Jupiter Transsystems colony already logged."
+  - quote: "a scout expedition to the old AI citadel breached its surface in 1352"
+    note: "Triggers the uprising that leads to JT's 1358 AT defeat; a mid-conflict episode rather than a holder change, so not logged as its own event."

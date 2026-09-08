@@ -1,0 +1,18 @@
+article: 46f96a821bb69
+title: Googlehertz Virchdrome
+events:
+  - year_at: 4800
+    kind: settled
+    polity: solipsist-panvirtuality
+    precision: circa
+    until_at: null
+    where: body
+    quote: "Known since the pre-singularity age, the Southern Coalsack would only be the target of colonization in the 4800s AT . There were multiple parties that attempted to colonize the nebula, including those composed of ordinary modosophonts, but the first space vessel to reach it was a Panvirtuality reactionless drive ship . Being backed with the technologies of an unknown archailect, the minds within this ship quickly set up infrastructure and by the time Sephirotic colonists appeared there was nothing they could claim."
+    note: "Matches the header's already-recorded settled 4800-4899 in year (the wording 'the 4800s AT' is recorded here as circa per the brief's rule for decade phrasing). The header records this article as filed under no polity, but the text names the Solipsist Panvirtuality as the settling party; flagged as new information for the reviewer."
+holder_undated: []
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - quote: "Known since the pre-singularity age, the Southern Coalsack would only be the target of colonization in the 4800s AT ."
+    note: "The header files this article under no polity, yet the body clearly identifies the Solipsist Panvirtuality as the party that settled the nebula; worth a reviewer's attention."

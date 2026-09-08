@@ -59,6 +59,14 @@ worlds:
     events:
       - year_at: 3709
         kind: settled
+      - year_at: 7909
+        kind: stewardship
+        polity: caretaker-gods
+        note: >-
+          "Many wars were fought in this system, until a tribunal of Caretaker
+          God transapients declared the world off-limits to outsiders in
+          7909AT." Not present in the header's already-dated list (which only
+          has settled 3709); this is a new dated claim for the reviewer.
 
   - name: Chorus
     kind: planet
@@ -135,6 +143,29 @@ worlds:
     events:
       - year_at: 691
         kind: settled
+      - year_at: 483
+        kind: visited
+        precision: not_later_than
+        note: >-
+          "In 483 a transmission from the Carl Sagan reported back to Earth."
+          The neumann probe Carl Sagan surveying Delta Pavonis and reporting
+          the discovery of Darwin's biosphere; launched earlier in 291 AT (see
+          doubts). The Carl Sagan probe's transmission, received on Earth in
+          483; its arrival was earlier.
+      - year_at: 1000
+        until_at: 1130
+        kind: visited
+        polity: first-federation
+        precision: between
+        note: >-
+          "The arrival of the Federation of Sophonts in the 11th and early
+          12th centuries seemed at first to usher in a new age of prosperity
+          and learning." "Federation of Sophonts" is a listed alternative name
+          for the First Federation. "11th and early 12th centuries"
+          approximated here as 1000-1130 AT; no explicit year given. The
+          sentence describes arrival/influence, not a stated transfer of the
+          system's holder. 'The 11th and early 12th centuries', entered as the
+          span.
     note: >-
       Aristotle is Orion's Arm's name for the star itself, not a second world —
       it is Delta Pavonis, 19.9 ly, one of the nearest systems here. Named as
@@ -647,6 +678,7 @@ worlds:
     events:
       - year_at: 4312
         kind: settled
+        polity: communion-of-worlds
         note: Founded.
       - year_at: 2292
         kind: settled
@@ -677,6 +709,40 @@ worlds:
     events:
       - year_at: 1758
         kind: settled
+      - year_at: 1735
+        kind: visited
+        note: >-
+          "In 1735 AT the first vessel passed right by Zeta Reticuli without
+          slowing down." A ufer/Traveller sect colony ship that failed to
+          stop; crew and colonists believed dead or in hypersleep, so nobody
+          stayed. The first vessel, which did not slow down.
+      - year_at: 1788
+        kind: settled
+        note: >-
+          "A third ship, the Heavenly Fellowship, employing more advanced
+          life-support systems, arrived thirty years later with the crew alive
+          and well." Year derived as 1758 + the "thirty years later" stated in
+          the text, relative to the second ship's 1758 AT arrival. This may be
+          the true first living settlement; see contradictions. The Heavenly
+          Fellowship, 'thirty years later' than the ship of 1758 whose
+          colonists were found dead; the panel's 'Colonized 1758' is kept
+          beside it.
+      - year_at: 4234
+        kind: visited
+        polity: technorapture-hypernation
+        note: >-
+          "In 4234 AT the system received a visit by an S3 TRHN emissary, whom
+          the Confederationists named "Raphael" and who provided them with a
+          few clarketech trinkets, much to the envy of the Atlanteans.
+          "Raphael" descended to the surface and made contact with the
+          isolationist ai "Gray". Following this, "Gray" unexpectedly
+          transformed part of emself (and several hundred square kilometers of
+          the surface of Prometheus) into a series of unusual diamondoid-
+          coated monoliths, while the majority of eir mass became a huge swarm
+          of small ISOs ('the Rapture') that accompanied Raphael back to the
+          TRHN." "Gray" is a local AI (originally from the Diamond Belt), not
+          a xenosophont species, so this is not recorded as a contact event.
+          An S3 emissary the Confederationists named Raphael.
     note: >-
       Zeta-1 Reticuli, 39 ly. The colony table packs it into one cell with
       Atlantis and Daedalus, three named places of three different polities in
@@ -694,6 +760,17 @@ worlds:
     events:
       - year_at: 5218
         kind: settled
+      - year_at: 5750
+        kind: transferred
+        polity: communion-of-worlds
+        note: >-
+          "In 5750 AT, they announced their intention to invite further
+          members of the Communion to create a polity centered around the
+          currently unclaimed outer gas giants." This is the Prism Wardens'
+          announcement of intent to found a Communion-affiliated polity, not a
+          plainly stated completion of the transfer; see doubts. An announced
+          intention to found a Communion polity around the unclaimed outer
+          system, which the reader flagged as not a completed transfer.
     note: >-
       A planet and a megastructure both. Coordinates given as 05h 48m 50s,
       -14d 28' 03" in Lepus, so the direction is exact and only the distance is
@@ -1371,6 +1448,15 @@ worlds:
       - year_at: 5345
         kind: settled
         note: Completed.
+      - year_at: 4785
+        until_at: 5345
+        kind: settled
+        polity: mutual-progress-association
+        note: >-
+          "Founded: construction began 4785 AT , completed 5345" The header
+          already records settled 4650-5200, which matches neither the 4785
+          start nor the 5345 completion date given here; flagged for review.
+          The map's older 'settled 4650' has no support in the article.
 
   - name: New Magnitogorsk
     kind: planet
@@ -1486,6 +1572,17 @@ worlds:
     events:
       - year_at: 1383
         kind: settled
+      - year_at: 6590
+        kind: transferred
+        polity: mutual-progress-association
+        precision: circa
+        note: >-
+          "it was agreed that the Chi Herculis system would become an MPA
+          Protectorate." Dated by the preceding sentence, 'In the 6590s AT a
+          squadron of MPA Liberator B Series Autowars repulsed Negentropist
+          forces... and advanced on Ridgewell.' Agreed between the Guardians
+          of Bios League, Mao-UbiCol and House Stevens; 'the 6590s', entered
+          as 6590.
     note: Chi Herculis, 52 ly.
 
   - name: Sadalmelik
@@ -1584,6 +1681,39 @@ worlds:
         note: >-
           The planet New Daffy was colonised by heretic expansionists from the
           Negentropy Alliance world of Greylag , becoming the New Daffy Panoparchy .
+      - year_at: 2556
+        kind: transferred
+        note: >-
+          "In 2556 AT FreedomWorld got a lucrative offer from the TakiCorb
+          subsidiary Serpens Development Blast for the colonisation rights,
+          and they sold the right to the planet." FreedomWorld Inc. and the
+          TakiCorb subsidiary Serpens Development Blast are megacorporations,
+          not roster polities (see unplaced). Serpens Development Blast, a
+          TakiCorb subsidiary, no polity of this file; the map's older
+          'settled 6230' has no sentence in the article.
+      - year_at: 4479
+        until_at: 4539
+        kind: transferred
+        polity: nocozo
+        note: >-
+          "During the Version War, Daffy was hard hit by the standardisation
+          side, and in 4479 AT it was occupied by NoCoZo / Cyberian forces."
+          until_at computed from 'throughout the 60 year occupation'. The
+          occupation was contested throughout by local resistance (the
+          Narchy), so this may be military occupation rather than an accepted
+          transfer of allegiance - flagged for review. An occupation during
+          the Version War, contested throughout by the local Narchy; the same
+          sentence carries the Cyberian Network.
+      - year_at: 4479
+        until_at: 4539
+        kind: transferred
+        polity: cyberian-network
+        note: >-
+          "During the Version War, Daffy was hard hit by the standardisation
+          side, and in 4479 AT it was occupied by NoCoZo / Cyberian forces."
+          until_at computed from 'throughout the 60 year occupation'. Paired
+          with the NoCoZo entry above; same caveat about contested occupation
+          applies.
     note: >-
       Psi Serpentis, 48 ly, a triple — A, Ba and Bb. Daffy orbits A, which is
       the component the catalogue entry is.
@@ -1614,6 +1744,32 @@ worlds:
       - year_at: 3123
         kind: settled
         precision: not_later_than
+      - year_at: 3123
+        kind: transferred
+        polity: negentropy-alliance
+        note: >-
+          "In 3123 they made a complex system lease deal with the Negentropy
+          Alliance , giving them the development rights to the system in
+          exchange for among other things a major wormhole infrastructure
+          development effort linking NGC 6475 with the Inner Sphere,
+          settlement rights on some of the polar atolls and of course lease on
+          the Tichy biosphere ." The header already records settled 3123; the
+          article frames this year as a lease deal transferring development
+          rights from the Soft Cathedrals to the Negentropy Alliance, not as
+          the original settlement (which is undated - see holder_undated).
+          Recorded as transferred rather than settled; see doubts. Development
+          rights under a system lease; the map's older 'settled 3123' is this
+          deal.
+      - year_at: 5022
+        kind: settled
+        note: >-
+          "Tichy was recolonised and renamed Alexandria by the Aratron
+          Archivists in 5022." New against the header, which records only
+          settled 3123. The Aratron Archivists are not on the roster; see
+          unplaced. The system had by this point become a largely forgotten
+          nanohazard following the 4540 attack, so this reads as a
+          recolonisation rather than a first settlement. The Aratron
+          Archivists, no polity of this file, after the attack of 4540.
     note: >-
       Given as near HD 162909 and Ptolemy's Cluster, so the direction is that
       star's and the distance the article's. The star itself is at 658 ly, which
@@ -2018,6 +2174,17 @@ worlds:
       - year_at: 3104
         kind: settled
         note: Founded.
+      - year_at: 6500
+        kind: abandoned
+        note: >-
+          "By 6500 A.T. the innumerable habitats of the Republic had been
+          reduced to iron-rich dust. A very few survivors were rescued, but
+          the Republic of Bethsyngaria, now nothing but an object lesson in
+          unrestrained growth, was gone, less than three and a half thousand
+          years after its was founded." The Republic destroyed itself in a
+          civil war triggered by unchecked population growth; a very few
+          survivors were rescued but the polity itself ended. Reduced to dust;
+          a very few survivors rescued.
     note: A polity of four systems.
 
   - name: Big Ben's World
@@ -2065,6 +2232,16 @@ worlds:
       - year_at: 9341
         kind: settled
         note: Funded.
+      - year_at: 9627
+        kind: visited
+        note: >-
+          "The world was completed in 9625AT and opened to the first tourists
+          in 9627." No polity is named as reaching the world; the Bizarro
+          World Corporation (unplaced) built and operates it. This may be a
+          better fit than 9337/9341 for a first-arrival event; see doubts. The
+          map's 'settled 9337' and '9341' are the proposal and the funding of
+          the world; its completion in 9625 and opening in 9627 are the first
+          arrivals.
     note: >-
       An artificial planetoid of antimatter, in deep space a twentieth of a
       light year from Relief — the same point at this scale.
@@ -2421,6 +2598,46 @@ worlds:
     events:
       - year_at: 1845
         kind: settled
+        polity: linnent
+      - year_at: 1600
+        kind: visited
+        polity: linnent
+        precision: circa
+        note: >-
+          "During the 1600s AT, Linnaeus Enterprises (LinnEnt) , then a
+          subsidiary of the Terranova Foundation megacorp , dispatched von
+          Neumann -enabled settlement craft to establish initial
+          infrastructure and build the system's first engenerators ." Robotic
+          precursor infrastructure-building phase, preceding the 1845 AT
+          arrival of modosophont colonists. "The 1600s AT" has no more precise
+          year given. Von Neumann-enabled settlement craft, ahead of the
+          engenerated colonists of 1845.
+      - year_at: 2400
+        kind: transferred
+        polity: linnent
+        precision: circa
+        note: >-
+          "This however changed by the 2400s AT. LinnEnt increasingly acted as
+          a multi-system polity and began exercising increasing control over
+          the system's burgeoning population attempting to regulate lightway
+          and beamrider network traffic. Nevertheless, Thoughtful Benefactor
+          ultimately established control over the system and made it a part of
+          the LinnEnt's empire." It is unclear whether this describes a
+          genuine change of holder or a tightening of control over a system
+          already LinnEnt's since 1845; flagged in doubts. 'LinnEnt
+          increasingly acted as a multi-system polity and began exercising
+          increasing control'; the reader flagged this as tightened
+          administration rather than a new holder.
+      - year_at: 3932
+        kind: independent
+        note: >-
+          "In 3932, Thoughtful Benefactor abruptly ceased operating on
+          LinnEnt's behalf and left the system." Marks the end of the "LinnEnt
+          Era (1845-3932 AT)"; the resulting Scramble left the system
+          fragmented among competing factions, with no single successor polity
+          named. Thoughtful Benefactor, LinnEnt's agent, 'abruptly ceased
+          operating on LinnEnt's behalf and left the system'; the LinnEnt era
+          the article names runs 1845 to 3932.
     note: Teplo is the primary. Also given as HD 1273 A and HIP 1349 A.
 
   - name: Naos
@@ -2737,6 +2954,22 @@ worlds:
         source: "Encyclopaedia timeline, The Sundering"
         note: >-
           GAIA's refugee arks arrive at Twilight .
+      - year_at: 810
+        kind: transferred
+        polity: eridanus-league
+        note: >-
+          "The newly arrived colonists joined the Eridanus League in 810 AT,
+          and together with Epsilon Eridani were the founding partners of that
+          early interstellar empire." The roster records the Eridanus League
+          as founded 770 AT, a 40-year gap from this "founding partner" claim;
+          not a same-article contradiction, but see doubts. With Epsilon
+          Eridani, 'the founding partners of that early interstellar empire'.
+      - year_at: 5403
+        kind: transferred
+        polity: nocozo
+        note: >-
+          "They formally joined the NoCoZo in 5403." Matches the header's
+          "filed under: Non-Coercive Zone (NoCoZo)".
     note: >-
       40 Eridani A, 16 ly. The system's own article is at
       https://www.orionsarm.com/eg-article/45e24ae0d6d07.
@@ -2786,6 +3019,39 @@ worlds:
         note: >-
           Not stated outright but computed from the expedition's departure and
           the length of its flight, so it carries that uncertainty.
+      - year_at: 1312
+        kind: visited
+        polity: first-federation
+        note: >-
+          "In 1312 a First Federation exploration group sponsored by Jupiter
+          Transsystems arrived in system." Sponsored by Jupiter Transsystems,
+          a megacorp not on the roster (see unplaced).
+      - year_at: 1312
+        kind: settled
+        note: >-
+          "Signalling back, they began to set up a new colony to exploit the
+          system." This corporate exploitation colony is attributed to Jupiter
+          Transsystems (unplaced), not the First Federation directly, and is
+          distinct from the original 838 AT Nedyne colony. A second colony, by
+          Jupiter Transsystems, lost to the first colony's descendants in
+          1358; the original colony of 838 continued.
+      - year_at: 1900
+        kind: visited
+        polity: nocozo
+        precision: circa
+        note: >-
+          "Zarathustra remained isolated for almost 400 years until a NoCoZo
+          trade expedition arrived." Year computed as circa 400 years after
+          the 1500 AT JT retreat ('almost 400 years' - so slightly earlier
+          than exactly 1900). 'Almost 400 years' of isolation before a NoCoZo
+          trade expedition; entered as 1900.
+      - year_at: 1965
+        kind: transferred
+        polity: nocozo
+        note: >-
+          "In 1965 Zarathustra formally joined the NoCoZo, and has since then
+          (individually) been one of the most radical anti-coercive members."
+          Not mentioned in the header, which only lists settled 838.
     note: The colony table gives the system as "Oromasdes / Zarathustra".
 
   - name: Zarauztar
@@ -4656,6 +4922,36 @@ worlds:
       - year_at: 1512
         kind: settled
         note: Opened for colonisation.
+      - year_at: 3843
+        kind: transferred
+        polity: solar-dominion
+        note: >-
+          "The disaster occurred during the Conver Wars in 3843 AT, when the
+          Conver Ambi broke up. The Solar Dominion took the chance and seized
+          the majority of shares in the Corporation, using some local unrest
+          as a pretext for declaring a state of system-wide emergency and
+          moved in with their forces." The Dominion seized the majority of
+          shares when the Conver Ambi broke up.
+      - year_at: 4477
+        kind: transferred
+        polity: metasoft
+        note: >-
+          "While the first onslaught was defeated, in 4477 the Metasoft fleet
+          successfully penetrated the system and defeated the Dominion
+          defenses in the bitter Second Battle of Klarus." 'In the end the
+          system was lost' to Metasoft during the Version War; see the
+          following entry for its recovery in 4478 AT.
+      - year_at: 4478
+        kind: transferred
+        polity: solar-dominion
+        note: >-
+          "It was freed in 4478 AT in the Third and Fourth Battles of Klarus,
+          but all wormhole links were destroyed in the Fifth Battle in 4480
+          AT." Klarus returns to Solar Dominion control after the 4477 loss to
+          Metasoft. The wormhole destruction in 4480 AT (Fifth Battle) is
+          infrastructure damage, not a change of holder, and is not recorded
+          as a separate event. Freed in the Third and Fourth Battles of
+          Klarus; all wormhole links destroyed in the Fifth, in 4480.
     note: 31 ly.
 
   - name: Mayhew
@@ -4778,6 +5074,22 @@ worlds:
         source: "Encyclopaedia timeline, Middle Federation / Megacorps"
         note: >-
           Shamash (Xi Bootis A III)colonised by Hearp Rangers.
+      - year_at: 2348
+        kind: transferred
+        polity: solar-dominion
+        note: >-
+          "In 2348 Shamash formally joined the Solar Dominion." New against
+          the header, which records only visited/settled 1349.
+      - year_at: 3263
+        kind: transferred
+        polity: solar-dominion
+        note: >-
+          "When the Taurus Nexus break-up occurred in 3263 Locos was annexed
+          by the Dominion." New against the header. Locos is a continent of
+          Shamash previously leased to the Taurus Nexus; its annexation is
+          recorded as a transferred event rather than treated as a mere sub-
+          settlement, since it is a stated change of holder. Locos, a world of
+          the system, at the Taurus Nexus break-up.
     note: >-
       Xi Boötis, 22 ly. Shamash is the A component and Ishtar the B; the
       catalogue carries the pair as one entry.
@@ -5930,6 +6242,20 @@ worlds:
     events:
       - year_at: 3808
         kind: settled
+        polity: metasoft
+        note: >-
+          "Colonisation date 3808 AT / Joint mission Metasoft and Taurus Nexus"; the body adds that "this joint fleet arrived in 3808, by which time the Taurus Nexus no longer existed".
+      - year_at: 3950
+        kind: visited
+        polity: silicon-generation
+        precision: not_earlier_than
+        note: >-
+          "A number of Backgrounder factions started arriving in the 3950s,
+          followed by several ships sent by the Silicon Generation from the
+          (then) fringes of the Terragen Sphere." 'Followed by' implies after
+          the 3950s Backgrounder arrivals; no exact year is given for the
+          Silicon Generation ships. Backgrounder factions first, then ships of
+          the Silicon Generation.
     note: 863 ly out, and among the most luminous stars anyone here has settled.
 
   - name: Wurm
@@ -6312,6 +6638,16 @@ worlds:
     events:
       - year_at: 1611
         kind: settled
+      - year_at: 1140
+        kind: visited
+        note: >-
+          "In 1140 a small fleet of automated Genen bioships were sent to
+          assess the Iota system and its worlds and resources, and prepare
+          them for the arrival of the Genetekker ark." The bioships belong to
+          House Genen (later joined to the First Federation, per the preceding
+          sentence), not explicitly the Federation itself; House Genen is not
+          on the roster. Automated Genen bioships preparing the system for the
+          Genetekker ark; House Genen is no polity of this file.
     note: >-
       Iota Horologii, 57 ly out. Only loosely Zoeific, which is drawn as
       ownership for want of anything weaker to draw.
@@ -6535,6 +6871,51 @@ worlds:
         source: "Encyclopaedia timeline, The Early Federation Age"
         note: >-
           First Federation ship arrives at Gamma Leporis .
+      - year_at: 868
+        kind: settled
+        note: >-
+          "Ao Lai was first settled by the famous Exodus Beneficents in 868
+          AT." Beneficence/Exodus Beneficents not on roster; see unplaced.
+          This date contradicts the article's own timeline, which gives 933 AT
+          for the same arrival (see contradictions). The article's own
+          timeline has the Exodus Beneficents arriving in 933, which the map
+          already carries as a visit; both are kept.
+      - year_at: 2052
+        kind: abandoned
+        note: >-
+          "development continued apace until their spectacular and near-
+          miraculous technorapture (or, as some hardened sceptics have it,
+          hoax and mass murder) in 2052 AT." The technorapture is described as
+          the wholesale departure of the Beneficents; whether this counts as
+          'everyone left' is left to the reviewer. The Beneficents'
+          technorapture, 'or, as some hardened sceptics have it, hoax and mass
+          murder'.
+      - year_at: 2252
+        kind: settled
+        note: >-
+          "2252 AT: New Beneficence re-colonizes vacant systems at Gamma
+          Leporis" New Beneficence not on roster; see unplaced. Body text
+          names the leader: 'Many regard "year zero" of the system's history
+          to have begun with the arrival of Ukarima Lovejoy's small band of
+          New Beneficence believers in 2252 AT'. The New Beneficence, no
+          polity of this file.
+      - year_at: 2271
+        kind: settled
+        polity: primate-provolution-institute
+        note: >-
+          "2271 AT: IPP leases space at Gamma Leporis B from the New
+          Beneficence; commences planet-building" Institute for Primate
+          Provolution (IPP) not on roster; see unplaced. The Institute for
+          Primate Provolution leasing space at Gamma Leporis B and commencing
+          planet-building.
+      - year_at: 7040
+        kind: capital
+        polity: primate-provolution-institute
+        note: >-
+          "7040 AT: Migration of IPP headquarters to holdings at Gamma Leporis
+          (later named Ao Lai)" IPP not on roster; see unplaced. Matches 'IPP
+          headquarters since 7040' in the government box. The Institute's
+          headquarters migrating to its holdings here, later named Ao Lai.
     note: >-
       The system takes in both components of Gamma Leporis, 29 ly out. Bound to
       B because that is the one the add-on carries — the real star catalogue
@@ -9338,6 +9719,25 @@ worlds:
           ties with the Terragen Federation." Riga is one world of the system;
           the panel has Danzig with ties to the Terragen Federation and Mazda
           affiliated to the Sophic League, undated.
+      - year_at: 2058
+        kind: settled
+        polity: conver-ambi
+        note: >-
+          "In 2058 the Conver Ambi arrived and set up an embassy/colony on
+          Danzig, in the continent of Wendlant." Founded within the already-
+          settled system; recorded because it names a new roster polity
+          establishing a colony, later becoming (undated) 'the dominant force
+          in this system'. An embassy and colony on Danzig, in the continent
+          of Wendlant, one world of the system.
+      - year_at: 6887
+        kind: transferred
+        polity: sophic-league
+        note: >-
+          "At this time the Amity population were becoming increasingly
+          attracted by the spiritual ethos of the Sophic League, and joined
+          them in 6887." Amity is a local faction on Mazda (unplaced), within
+          the Copernicus system. The Amity population, one world of the
+          system, drawn to the League's spiritual ethos.
     note: >-
       55 Cancri, 41 ly out in Cancer. The Copernicus article is at
       https://www.orionsarm.com/eg-article/45e24d79c0d8b, read for the events. Affiliated to the Terragen Federation,
@@ -9477,6 +9877,15 @@ worlds:
     events:
       - year_at: 2730
         kind: settled
+      - year_at: 2733
+        kind: settled
+        note: >-
+          "they were the first to arrive (in 2733AT) thanks to their peak
+          velocity of 0.8c" This is the arrival of the Gearhead forerunners at
+          51 Ophiuchi, immediately followed by the founding of REoC; it
+          conflicts with the panel's 2730AT colonisation date. The Republican
+          Engine of Creation's ship, first to arrive; the panel's 'Colonized
+          2730AT' is kept beside it.
     note: >-
       51 Ophiuchi, 410 ly out, and the catalogue agrees with the article to a
       tenth of a light year. Home to an independent vec culture that began in
@@ -9493,6 +9902,30 @@ worlds:
     events:
       - year_at: 2734
         kind: settled
+        polity: conver-ambi
+        note: >-
+          "Gomeisa was colonised by the Conver Ambi in 2734 AT."
+      - year_at: 9444
+        kind: transferred
+        polity: metasoft
+        note: >-
+          "Eventually in 9444AT Beta Canis Minoris became joint property of
+          the two empires, and an increasingly diverse population of vecs,
+          mystics, cyborgs, alphas and betas now fill the bubblehabs of
+          Polheim and the now fully-completed shellworld of Amundsen." Joint
+          with Sophic League, see the paired entry below. Not mentioned in the
+          header, which only lists settled 2734. 'Joint property of the two
+          empires'; the same sentence carries the Sophic League.
+      - year_at: 9444
+        kind: transferred
+        polity: sophic-league
+        note: >-
+          "Eventually in 9444AT Beta Canis Minoris became joint property of
+          the two empires, and an increasingly diverse population of vecs,
+          mystics, cyborgs, alphas and betas now fill the bubblehabs of
+          Polheim and the now fully-completed shellworld of Amundsen." Joint
+          with Metasoft, see the paired entry above. Not mentioned in the
+          header, which only lists settled 2734.
     note: >-
       Beta Canis Minoris, 161 ly out. Recorded under both holders because that
       is what the article makes of it: an important interface between Metasoft
@@ -9513,6 +9946,7 @@ worlds:
         until_at: 4899
         kind: settled
         precision: between
+        polity: solipsist-panvirtuality
     note: >-
       Several thousand processing megastructures in and around the Southern
       Coalsack — the dark nebula in Crux, southern to distinguish it from the
@@ -10429,6 +10863,14 @@ worlds:
       - year_at: 9083
         kind: visited
         note: Reached.
+      - year_at: 9513
+        kind: reported
+        note: >-
+          "Following the receipt at Hutan Baru of Salleh's initial report in
+          9513, a great deal of interest in mounting follow-up expeditions to
+          Rak Mesba has been generated, mostly among various corporations and
+          institutes." The 9083 AT visit's findings were not received back at
+          Hutan Baru until 9513 AT.
     note: >-
       A xenosophont megastructure at 6,318 ly, from coordinates the article
       prints to four decimal places. Xenosophont make is not xenosophont

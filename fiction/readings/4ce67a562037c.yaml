@@ -1,0 +1,61 @@
+article: 4ce67a562037c
+title: Nadia (HD 1273)
+events:
+  - year_at: 1600
+    kind: visited
+    polity: linnent
+    precision: circa
+    until_at: null
+    where: body
+    quote: "During the 1600s AT, Linnaeus Enterprises (LinnEnt) , then a subsidiary of the Terranova Foundation megacorp , dispatched von Neumann -enabled settlement craft to establish initial infrastructure and build the system's first engenerators ."
+    note: "Robotic precursor infrastructure-building phase, preceding the 1845 AT arrival of modosophont colonists. \"The 1600s AT\" has no more precise year given."
+  - year_at: 1845
+    kind: settled
+    polity: linnent
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised: (by engenerator) 1845 AT"
+    note: "Header already records settled 1845; matches. Start of the body's \"LinnEnt Era (1845-3932 AT)\" section."
+  - year_at: 1845
+    kind: settled
+    polity: linnent
+    precision: exact
+    until_at: null
+    where: body
+    quote: "LinnEnt Era (1845-3932 AT)"
+    note: "Section heading; body text describes colonists being engenerated at Nadia following this. Header already records settled 1845; matches. The 3932 end-year of this heading is recorded separately as the 3932 \"independent\" event below."
+  - year_at: 2400
+    kind: transferred
+    polity: linnent
+    precision: circa
+    until_at: null
+    where: body
+    quote: "This however changed by the 2400s AT. LinnEnt increasingly acted as a multi-system polity and began exercising increasing control over the system's burgeoning population attempting to regulate lightway and beamrider network traffic. Nevertheless, Thoughtful Benefactor ultimately established control over the system and made it a part of the LinnEnt's empire."
+    note: "It is unclear whether this describes a genuine change of holder or a tightening of control over a system already LinnEnt's since 1845; flagged in doubts."
+  - year_at: 3932
+    kind: independent
+    polity: linnent
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 3932, Thoughtful Benefactor abruptly ceased operating on LinnEnt's behalf and left the system."
+    note: "Marks the end of the \"LinnEnt Era (1845-3932 AT)\"; the resulting Scramble left the system fragmented among competing factions, with no single successor polity named."
+  - year_at: 5670
+    kind: visited
+    polity: ""
+    precision: circa
+    until_at: null
+    where: body
+    quote: "Another one of the major events during this time was the visitation of the S3 entity Roaming Kindness during the 5670s AT whose 84km long ultratech ISO made a distinct impression on the system."
+    note: "Roaming Kindness is an individual transapient entity, not a polity on the roster."
+holder_undated:
+  - polity: nocozo
+    quote: "While the UNNS did not officially join any of the Sepheriotics it maintained close ties with the NoCoZo."
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "Early precursor exploration has no usable year: \"it is thought that the Cislunar Alliance launched the first interstellar flyby probe during the Interplanetary Age\" and \"Nadian archeologist have discovered traces of other visitations during the Interplanetary Dark Age and Early First Federation periods, including the ruins of a vec colony on Hetman, but none seemed to have flourished.\" No entries were created for these."
+  - "The 2400s AT \"transferred\" event (see above) may simply be a tightening of LinnEnt's existing administration rather than a new change of holder, since the system was already colonised by LinnEnt in 1845."
+  - "\"In 7159 AT the Union of Nadian Nations and Sophonts (UNNS) was established.\" This is a local, non-roster government's formation, not clearly one of the eight event kinds, so it was not recorded as an event."

@@ -1,0 +1,61 @@
+article: 47713d102a5a2
+title: Rigel
+events:
+  - year_at: 3808
+    kind: settled
+    polity: metasoft
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonisation date 3808 AT / Joint mission Metasoft and Taurus Nexus"
+    note: "Panel names both Metasoft and Taurus Nexus as joint colonisers; written as separate entries per polity."
+  - year_at: 3808
+    kind: settled
+    polity: taurus-nexus
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonisation date 3808 AT / Joint mission Metasoft and Taurus Nexus"
+    note: "See contradictions: the body text says the Taurus Nexus 'no longer existed' by the time the joint fleet arrived in 3808."
+  - year_at: 4231
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "some deep space objects were taken over by the K4H modosophonts when they finally arrived in 4231"
+    note: "The mission was launched in 1709 by K4H 'on behalf of the Federation of Sophonts' (roster alias for first-federation), but that polity dissolved in 2099 AT per the roster, long before this 4231 AT arrival; the arrival sentence itself names no polity, so left unattributed. See doubts."
+  - year_at: 3858
+    kind: reported
+    polity: taurus-nexus
+    precision: exact
+    until_at: null
+    where: body
+    quote: "However the news of the dissolution of the Taurus Nexus did not reach Rigel until fifty years later, transmitted by comm-laser from the outermost extent of the then-current wormhole nexus."
+    note: "Year computed as fifty years after the 3808 AT arrival named in the preceding sentence."
+  - year_at: 3950
+    kind: visited
+    polity: silicon-generation
+    precision: not_earlier_than
+    until_at: null
+    where: body
+    quote: "A number of Backgrounder factions started arriving in the 3950s, followed by several ships sent by the Silicon Generation from the (then) fringes of the Terragen Sphere."
+    note: "'Followed by' implies after the 3950s Backgrounder arrivals; no exact year is given for the Silicon Generation ships."
+holder_undated: []
+unplaced:
+  - name: "K4H"
+    quote: "An early mission to Rigel set off in 1709, launched by K4H on behalf of the Federation of Sophonts, but this very-long-duration mission would not arrive until 4231 AT."
+contradictions:
+  - about: "which polity/polities are credited for the 3808 AT colonisation of Rigel"
+    quotes:
+      - "Colonisation date 3808 AT / Joint mission Metasoft and Taurus Nexus"
+      - "This joint fleet arrived in 3808, by which time the Taurus Nexus no longer existed."
+other_places:
+  - "beta 555D - colonised by Panvirtual Solipsists (solipsist-panvirtuality) in 7131 AT; explicitly not gravitationally bound to the Rigel group, described as a separate star"
+doubts:
+  - quote: "An early mission to Rigel set off in 1709, launched by K4H on behalf of the Federation of Sophonts, but this very-long-duration mission would not arrive until 4231 AT."
+    note: "The First Federation (roster alias 'Federation of Sophonts') had already dissolved (2099 AT per roster) by the 4231 AT arrival; not inferring continued First Federation authority at arrival."
+  - quote: "The ex-Taurus Nexus faction remained independent, but formed increasingly close links with Metasoft and with the Terragan Federation, which had absorbed many of the old Taurus colonies by this time."
+    note: "No specific year given for this 'remained independent' status; unclear whether it deserves its own dated 'independent' entry."
+  - quote: "When the Orion Federation emerged in the post CompEmp era the Rigel system did not become part of it but remained loyal to Metasoft."
+    note: "No explicit AT year given for the Orion Federation's emergence at Rigel (Orion Federation founded 4600 AT per roster); this only confirms Metasoft's continued hold, not logged as a new dated event."

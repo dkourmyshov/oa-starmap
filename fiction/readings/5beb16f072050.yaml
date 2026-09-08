@@ -1,0 +1,44 @@
+article: 5beb16f072050
+title: Gearhead
+events:
+  - year_at: 2730
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonized 2730AT"
+    note: "Panel names the holder as the Republican Engine of Creation (REoC), which is not on the roster; see unplaced."
+  - year_at: 2733
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "they were the first to arrive (in 2733AT) thanks to their peak velocity of 0.8c"
+    note: "This is the arrival of the Gearhead forerunners at 51 Ophiuchi, immediately followed by the founding of REoC; it conflicts with the panel's 2730AT colonisation date."
+  - year_at: 2882
+    kind: visited
+    polity: ""
+    precision: between
+    until_at: 5411
+    where: body
+    quote: "The various superturing and hyperturing missions that arrived between 2882 and 5411 AT either promptly surrendered in the face of an S2 civilization (later S3 and S4 ), or were quickly subsumed when they made futile attempts to seize the system."
+    note: "No specific polity is named for these missions; see doubts."
+holder_undated: []
+unplaced:
+  - name: "Republican Engine of Creation"
+    quote: "Polities Republican Engine of Creation, cyberdemocratic republic"
+contradictions:
+  - about: settlement year
+    quotes:
+      - "Colonized 2730AT"
+      - "they were the first to arrive (in 2733AT) thanks to their peak velocity of 0.8c"
+other_places:
+  - name: "Diamond Light"
+    quote: "The forerunners of the Gearheads departed Diamond Light systems in 2130AT during the Diamond Network's rapid memetic annexation of the former."
+doubts:
+  - quote: "The various superturing and hyperturing missions that arrived between 2882 and 5411 AT either promptly surrendered in the face of an S2 civilization (later S3 and S4 ), or were quickly subsumed when they made futile attempts to seize the system."
+    note: "Unclear whether this generalised, multi-century description of anonymous missions counts as a single dated event; recorded as one anyway."
+  - quote: "Colonization attempts had been launched as early as the Interplanetary Age by ahuman ais fleeing SolSys, but the 410-light year distance from Sol took much longer to cross with older propulsion methods."
+    note: "No AT year is given for these attempts, and it is not stated that any of them reached the system; not recorded as an event."

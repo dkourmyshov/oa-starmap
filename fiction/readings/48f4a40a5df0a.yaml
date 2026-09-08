@@ -1,0 +1,49 @@
+article: 48f4a40a5df0a
+title: Darwin (Life-bearing World)
+events:
+  - year_at: 483
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 483 a transmission from the Carl Sagan reported back to Earth."
+    note: "The neumann probe Carl Sagan surveying Delta Pavonis and reporting the discovery of Darwin's biosphere; launched earlier in 291 AT (see doubts)."
+  - year_at: 691
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "by the time the colonists arrived in 691 AT the Sol System back home had been laid waste by the Technocalypse and the Great Expulsion."
+    note: "Header already records settled 691; matches. Colony ship Evolution was sent by the New Life Consortium, not on the roster; see unplaced."
+  - year_at: 691
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised 691 AT"
+    note: "Data panel line for the satellite Wedgwood; matches the body text and header."
+  - year_at: 1000
+    kind: visited
+    polity: first-federation
+    precision: between
+    until_at: 1130
+    where: body
+    quote: "The arrival of the Federation of Sophonts in the 11th and early 12th centuries seemed at first to usher in a new age of prosperity and learning."
+    note: "\"Federation of Sophonts\" is a listed alternative name for the First Federation. \"11th and early 12th centuries\" approximated here as 1000-1130 AT; no explicit year given. The sentence describes arrival/influence, not a stated transfer of the system's holder."
+holder_undated:
+  - polity: caretaker-gods
+    quote: "Allegiance: Caretaker God (Darwin ISO)"
+unplaced:
+  - name: "New Life Consortium"
+    quote: "it was not until 491 AT that the New Life Consortium launched the manned colony ship Evolution"
+contradictions: []
+other_places:
+  - "Aristotle (Delta Pavonis) — the star, with its own separate article: \"Star Aristotle, Delta Pavonis ( see separate article )\""
+  - "Little Garcia, a moon in the Epsilon Eridani system: \"Some were eventually relocated on Little Garcia, a half-terraformed moon in the Epsilon Eridani system\""
+  - "Helen and Clytemnestra, twin worlds settled by ex-Darwin colonists: \"a number of ex-Darwin colonists went on to found a new colony on the twin worlds of Helen and Clytemnestra\""
+doubts:
+  - "Probe launch dates are not recorded as events, only the arrival/report: \"in 291 a neumann probe propelled by a pellet-stream/magsail, the Carl Sagan , was launched towards Delta Pavonis\" and \"it was not until 491 AT that the New Life Consortium launched the manned colony ship Evolution\"."
+  - "\"In 1391 the Provisional Darwin Administration was set up, and the defeated colonists were placed in orbital camps pending a decision as to what would become of them.\" This is an internal post-war reorganisation of local government, not clearly a settled/transferred/independent/capital event, so it was not recorded as one."

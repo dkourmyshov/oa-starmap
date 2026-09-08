@@ -1,0 +1,39 @@
+article: 567bf6e68730c
+title: Bizarro World
+events:
+  - year_at: 9337
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 9337 AT the self-proclaimed \"post human of the 1.51st toposophic \" artist Glittering Gamma emerged from eir art studio in the clouds of Neptune with a proposal: make an entire planet and ecosystem of amat , which would be \"the ultimate work of Perfect Art .\""
+    note: "Header already records 'settled 9337' for this date, but the sentence describes only a proposal by an individual artist, not a colonisation or arrival; kept as settled to match the header for diffing, flagged under doubts."
+  - year_at: 9341
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "This changed abruptly in 9341 when a higher toposophic entity (suspected to be behind the Relief system) quietly funded it and created a corporation to organize the effort."
+    note: "Header already records 'settled 9341' for this date, but the sentence describes funding and the founding of a corporation, not a colonisation or arrival; kept as settled to match the header for diffing, flagged under doubts. The funding entity and the Bizarro World Corporation are not named polities; see unplaced."
+  - year_at: 9627
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The world was completed in 9625AT and opened to the first tourists in 9627."
+    note: "No polity is named as reaching the world; the Bizarro World Corporation (unplaced) built and operates it. This may be a better fit than 9337/9341 for a first-arrival event; see doubts."
+holder_undated:
+  - polity: nocozo
+    quote: "\"Bizarro World\" is an artificial planetoid (or artificial Stevensonian object) in deep space approximately 0.05 light-years from Relief in the NoCoZo , and is unique for being constructed entirely of anti-matter ."
+unplaced:
+  - name: "Bizarro World Corporation"
+    quote: "With the founding of the Bizarro World Corporation, the concept of the antimatter planet underwent an abrupt shift from Gamma's publicized vision for it."
+contradictions: []
+other_places:
+  - "Relief (mentioned repeatedly as the neighbouring system and suspected seat of the higher toposophic entity behind the project; has its own article)."
+doubts:
+  - "The header's already-dated 'settled 9337' and 'settled 9341' do not correspond to any arrival or colonisation in the prose: 9337 is Glittering Gamma's proposal and 9341 is the corporation's founding/funding. The world itself was completed in 9625 AT and opened to tourists in 9627 AT; no date is given for when a resident population (bionts and vecs, 'almost two million' today) began to accumulate."
+  - "A caption gives the fatal antimatter explosion as occurring in '10001 AT' ('The annihilation of a small party of tourists in 10001 AT caused massive destruction') while the body text gives '10,000AT' ('by the time of the explosion in 10,000AT'). Not recorded as an event either way, since it is a disaster rather than a change of holder, but noted for the reviewer."

@@ -1,0 +1,28 @@
+article: 59b109574cb45
+title: "Torus World, The"
+events:
+  - year_at: 5781
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Conspersio arrived in 5781 A.T. along with eir followers, around 10,000 in number."
+    note: "Settler is the individual transapient Conspersio (an associate member of the MPA), not a polity; no polity holder is stated for the colony itself."
+  - year_at: 7450
+    kind: visited
+    polity: nocozo
+    precision: circa
+    until_at: null
+    where: body
+    quote: "The Torus was isolated for some time until it was contacted in the late 7400's A.T. by ambassadors of the NoCoZo."
+    note: "Contact by NoCoZo ambassadors with the existing colony; no transfer of the system to NoCoZo is stated."
+holder_undated:
+  - polity: nocozo
+    quote: "Affiliation None officially, but has ties to NoCoZo"
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "Conspersio is described as an S:2 transapient and 'associate member of the MPA'; the settlement event is attributed to Conspersio personally, not to the MPA or any polity, so polity is left empty rather than assigned to mutual-progress-association."
+  - "\"Conspersio finished creating the first toroidal world in the early 6100's A.T.\" describes completion of the artificial megastructure, treated as a construction/terraforming milestone rather than a settlement event per the brief."

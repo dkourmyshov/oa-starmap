@@ -1,0 +1,68 @@
+article: 47a683c98fd29
+title: Twilight
+events:
+  - year_at: 789
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The first colonists to arrive at Keid arrived in 789 in the Hephaestus , one of GAIA's arks , refugees from the Great Expulsion."
+    note: "Header already records settled 789; matches. \"GAIA's arks\" not on the roster; see unplaced."
+  - year_at: 789
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The first colonists to arrive at Keid arrived in 789 in the Hephaestus , one of GAIA's arks , refugees from the Great Expulsion."
+    note: "Header already records visited 789; matches, using the same sentence as the settled entry above. It is unclear why the map records both kinds for what appears to be one event; possibly distinguishing arrival at the Keid system from settlement of the Dawn/Twilight world. Flagged for reviewer."
+  - year_at: 810
+    kind: transferred
+    polity: eridanus-league
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The newly arrived colonists joined the Eridanus League in 810 AT, and together with Epsilon Eridani were the founding partners of that early interstellar empire."
+    note: "The roster records the Eridanus League as founded 770 AT, a 40-year gap from this \"founding partner\" claim; not a same-article contradiction, but see doubts."
+  - year_at: 890
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "A very large contingent of Chinese descended baselines arrived from Solsys in 890, as part of the Phobos Expulsion Resettlement Treaty."
+    note: "Possibly a sub-settlement/population wave within the already-settled system rather than a distinct event; included for exhaustiveness, see doubts. \"Phobos Expulsion Resettlement Treaty\" not on the roster; see unplaced."
+  - year_at: 1100
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "A TakiCorb mission arrived in 1100, and the new colonists became also very pro-League."
+    note: "Possibly a sub-settlement/population wave within the already-settled system rather than a distinct event; included for exhaustiveness, see doubts. \"TakiCorb\" not on the roster; see unplaced."
+  - year_at: 5403
+    kind: transferred
+    polity: nocozo
+    precision: exact
+    until_at: null
+    where: body
+    quote: "They formally joined the NoCoZo in 5403."
+    note: "Matches the header's \"filed under: Non-Coercive Zone (NoCoZo)\"."
+holder_undated: []
+unplaced:
+  - name: "GAIA's arks"
+    quote: "The first colonists to arrive at Keid arrived in 789 in the Hephaestus , one of GAIA's arks , refugees from the Great Expulsion."
+  - name: "TakiCorb"
+    quote: "A TakiCorb mission arrived in 1100, and the new colonists became also very pro-League."
+  - name: "Phobos Expulsion Resettlement Treaty"
+    quote: "A very large contingent of Chinese descended baselines arrived from Solsys in 890, as part of the Phobos Expulsion Resettlement Treaty."
+contradictions: []
+other_places:
+  - "Dante — a different tidally-locked world with cultural ties to Twilight, with its own related article; quotes: \"As on Dante and other such worlds the conditions at the east and west poles are most favourable for precipitation...\" and \"Twilight maintains close ties with Dante, and many of the original Eridanus League worlds.\""
+  - "Keid (40 Eridani) — the star itself has a separate related article, similar to how Darwin's star Aristotle has its own article."
+doubts:
+  - "Another article (MyuvYin, id 4a08dca7bbc9c) states \"managed to defend the system of Twilight from subjugation in 1480 AT\" during the MyuvYin Psychophager wars, but this event is not mentioned anywhere in Twilight's own article. Flagged for reviewer as a possible cross-article gap."
+  - "The header records both \"settled 789\" and \"visited 789\" for what appears to be a single sentence in the text; both are written above, but it is unclear why both kinds apply."
+  - "The 810 AT joining of the Eridanus League as a \"founding partner\" sits against the roster's own founding year of 770 AT for the Eridanus League; not a same-article contradiction, but worth a reviewer's eye."
+  - "The 890 AT and 1100 AT arrivals may be sub-settlements within an already-settled system (settled 789) rather than genuine new events; included per the brief's exhaustiveness instruction, flagged here for reviewer judgement."

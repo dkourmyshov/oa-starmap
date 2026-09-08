@@ -1,0 +1,61 @@
+article: 5f01de4e81446
+title: Duxed
+events:
+  - year_at: 270
+    kind: observed
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Piaget was first observed in 270 AT."
+    note: ""
+  - year_at: 271
+    kind: observed
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "A year later, Pacol and Duxed were discovered in the system's habitable zone."
+    note: "\"A year later\" than the preceding sentence's 270 AT observation of Piaget."
+  - year_at: 1813
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 1813 AT, the first successful attempt was made by a group of Big Five settlers, utilizing a fleet of biostasis hibernation colony ships."
+    note: "Header already records settled 1813; matches. Settler group named is \"Big Five\", not on the roster; see unplaced."
+  - year_at: 2819
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The colonists had sent a fleet of neumanns five years before the launch of the main colony, arriving in 2819 AT after 1,006 years, and paving the way for what would be known as the Duxed Union."
+    note: "Robotic neumann precursor fleet, not sophont settlers; the main colonists' own arrival year is not stated. See doubts."
+  - year_at: 2917
+    kind: stewardship
+    polity: caretaker-gods
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Unsafe Precautions arrived in 2917 AT as a Second Singularity mind, but ascended to the Third Singularity in 3439, transforming one of Pacol's moons into an M-Brain, to house eir mind."
+    note: "Header already records stewardship 2917; matches. The 3439 ascension is not itself an event kind (ascensions are excluded)."
+  - year_at: 2917
+    kind: stewardship
+    polity: caretaker-gods
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 2917 AT the Duxedian space traffic control detected several mysterious conversion drive vessels entering the system."
+    note: "Same year as the arrival quote above; the Caretaker God's assumption of control over Duxed is described in the following sentences of this passage."
+holder_undated: []
+unplaced:
+  - name: "Big Five"
+    quote: "In 1813 AT, the first successful attempt was made by a group of Big Five settlers, utilizing a fleet of biostasis hibernation colony ships."
+contradictions: []
+other_places: []
+doubts:
+  - "Failed colonisation attempt with no usable year: \"During the early First Federation era, an attempt at colonizing Duxed was made by Intralaunch, however an unknown failure destroyed the colony ship en route.\" No numeric year_at is given, and the attempt failed (ship destroyed en route), so no event entry was written."
+  - "The neumann precursor fleet's 2819 AT arrival is described as \"paving the way for\" the Duxed Union, while the main colony's own attempt is dated 1813 AT and its actual arrival year is never stated; unclear which year, if either, is the operative settlement date, and the stated travel-time arithmetic (\"five years before... arriving... after 1,006 years\") does not obviously reconcile with 1813 and 2819 together."
+  - "\"The first groups to settle Duxed originated from the NoCoZo, but did not retain ties with that empire.\" The article is filed under Non-Coercive Zone (NoCoZo) in the site's own index, but this sentence explicitly disclaims an ongoing tie, so it was not recorded as holder_undated."

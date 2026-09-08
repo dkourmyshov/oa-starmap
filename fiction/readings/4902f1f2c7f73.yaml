@@ -1,0 +1,32 @@
+article: 4902f1f2c7f73
+title: Metropolis Ring City
+events:
+  - year_at: 4785
+    kind: settled
+    polity: mutual-progress-association
+    precision: exact
+    until_at: 5345
+    where: panel
+    quote: "Founded: construction began 4785 AT , completed 5345"
+    note: "The header already records settled 4650-5200, which matches neither the 4785 start nor the 5345 completion date given here; flagged for review."
+  - year_at: 5345
+    kind: settled
+    polity: mutual-progress-association
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The orbital was completed in 5345, and given the name Metropolis Ring City."
+    note: "Matches the header's already-recorded settled 5345."
+holder_undated:
+  - polity: mutual-progress-association
+    quote: "Affiliation: Mutual Progress Association Founded: construction began 4785 AT , completed 5345"
+unplaced:
+  - name: "Vast Builder"
+    quote: "Urban Cloudscapes had requested of, and received permission from, the regional archailect Vast Builder ownership of Ho Jong Star (YTS 2190-5310-95) and its system of planets."
+contradictions: []
+other_places: []
+doubts:
+  - quote: "Founded: construction began 4785 AT , completed 5345"
+    note: "The header's already-dated 'settled 4650-5200' has no matching text anywhere in this article; only 4785 (construction start) and 5345 (completion) appear."
+  - quote: "Urban Cloudscapes had requested of, and received permission from, the regional archailect Vast Builder ownership of Ho Jong Star (YTS 2190-5310-95) and its system of planets."
+    note: "No year is given for this grant of ownership, which precedes construction beginning in 4785; recorded as holder_undated rather than as a dated transfer."

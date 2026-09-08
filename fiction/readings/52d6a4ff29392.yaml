@@ -1,0 +1,29 @@
+article: 52d6a4ff29392
+title: "Bethsyngaria, Republic of"
+events:
+  - year_at: 3104
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The Republic of Bethsyngaria was founded in 3104 A.T. by a group within the Non-Coercive Zone who wished to found a society that cared more for the welfare of its citizens than was usual in the individualistic, self reliant ethos of the NoCoZo."
+    note: "Matches the header's already-dated settled 3104. The Republic of Bethsyngaria is not on the roster; see unplaced. The founders originated within the NoCoZo but explicitly set out to found a separate society; nocozo was not attached as the settling polity, see doubts."
+  - year_at: 6500
+    kind: abandoned
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "By 6500 A.T. the innumerable habitats of the Republic had been reduced to iron-rich dust. A very few survivors were rescued, but the Republic of Bethsyngaria, now nothing but an object lesson in unrestrained growth, was gone, less than three and a half thousand years after its was founded."
+    note: "The Republic destroyed itself in a civil war triggered by unchecked population growth; a very few survivors were rescued but the polity itself ended."
+holder_undated: []
+unplaced:
+  - name: "Republic of Bethsyngaria"
+    quote: "The Republic of Bethsyngaria was founded in 3104 A.T. by a group within the Non-Coercive Zone who wished to found a society that cared more for the welfare of its citizens than was usual in the individualistic, self reliant ethos of the NoCoZo."
+contradictions: []
+other_places: []
+doubts:
+  - "The article is filed under NoCoZo, but its own prose describes the Republic of Bethsyngaria as a distinct, self-governing polity founded by emigrants from the NoCoZo, never reincorporated into it; no sentence asserts NoCoZo held or governed the Republic's system(s) at any date, so nocozo was not attached to the settled event."
+  - "The founding narrative ('a group within the Non-Coercive Zone who wished to found a society') carries some overtones of a breakaway/secession, but since it is the founding of a brand-new colony in an 'otherwise unclaimed and uninhabited fringe system' rather than an existing settled system leaving a polity, it was classified as settled rather than independent."
+  - "Numerous further dated population figures (3600, 4100, 4600, 5100, 5600, 6100 AT) and undated territorial expansion/contraction (colonising two systems within a century of founding; invading and later losing neighbouring systems; civil war noted by wormhole archai in 6133 AT) were excluded as population figures, terraforming/dismantlement milestones, or battles per the brief, and because no neighbouring system is named or tied to a roster polity."

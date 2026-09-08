@@ -1,0 +1,40 @@
+article: 46510b2b2c317
+title: "Frog's Head"
+events:
+  - year_at: 1611
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised 1611 AT"
+    note: ""
+  - year_at: 1140
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 1140 a small fleet of automated Genen bioships were sent to assess the Iota system and its worlds and resources, and prepare them for the arrival of the Genetekker ark."
+    note: "The bioships belong to House Genen (later joined to the First Federation, per the preceding sentence), not explicitly the Federation itself; House Genen is not on the roster."
+holder_undated:
+  - polity: zoeific-biopolity
+    quote: "Frog's Head is loosely aligned with the Zoeific Biopolity, as most of the transapients who are resident in this system or visit it are loyal to that empire; but it is currently not officially part of that empire."
+unplaced:
+  - name: "House Genen"
+    quote: "In 1140 a small fleet of automated Genen bioships were sent to assess the Iota system and its worlds and resources, and prepare them for the arrival of the Genetekker ark."
+  - name: "House Genen"
+    quote: "the colonists at Iota Horologi made contact with the Genen back in the Federation worlds, and the Heket system became part of that organisation."
+contradictions: []
+other_places:
+  - "Solsys / Jupiter - departure point of the Rabelais, launched in 791 AT"
+  - "Zallach-Whige, Chi Eridani system - McKendree cylinder ecology created in 8950 AT"
+  - "April - wormhole endpoint 'Dream of Translation'"
+  - "HD 12042 - wormhole endpoint 'Outward Bound'"
+doubts:
+  - quote: "Currently this world is independent and has been for six hundred years (but visitors are advised to check before travelling)."
+    note: "No explicit AT anchor is given for 'currently' in the article, so this cannot be resolved to a fixed year_at."
+  - quote: "Enforcer Family members were expelled from Thoth in 2170 AT, largely at the insistence of a faction of Atavists who feared a repeat of certain conflicts with the Fighting Body clan that dated back to the pre-Technocalypse era."
+    note: "An internal Genen Family dispute, not a change of the system's holder; flagged in case a reviewer disagrees."
+  - quote: "made contact with the ancient Genetekker ship as they sped past"
+    note: "Two non-native ships meeting in transit to the system, not contact with a resident species nor an arrival that stayed; not logged as its own event."

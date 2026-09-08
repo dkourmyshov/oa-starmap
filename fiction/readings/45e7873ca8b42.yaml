@@ -1,0 +1,29 @@
+article: 45e7873ca8b42
+title: "Alexandria (Tichy 44-III)"
+events:
+  - year_at: 3123
+    kind: transferred
+    polity: negentropy-alliance
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 3123 they made a complex system lease deal with the Negentropy Alliance , giving them the development rights to the system in exchange for among other things a major wormhole infrastructure development effort linking NGC 6475 with the Inner Sphere, settlement rights on some of the polar atolls and of course lease on the Tichy biosphere ."
+    note: "The header already records settled 3123; the article frames this year as a lease deal transferring development rights from the Soft Cathedrals to the Negentropy Alliance, not as the original settlement (which is undated - see holder_undated). Recorded as transferred rather than settled; see doubts."
+  - year_at: 5022
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Tichy was recolonised and renamed Alexandria by the Aratron Archivists in 5022."
+    note: "New against the header, which records only settled 3123. The Aratron Archivists are not on the roster; see unplaced. The system had by this point become a largely forgotten nanohazard following the 4540 attack, so this reads as a recolonisation rather than a first settlement."
+holder_undated:
+  - polity: soft-cathedral
+    quote: "Alexandria, originally named Tichy 44-III, was first visited and colonized by the Soft Cathedrals ."
+contradictions: []
+other_places: []
+doubts:
+  - quote: "In 3123 they made a complex system lease deal with the Negentropy Alliance , giving them the development rights to the system"
+    note: "Header records this as settled 3123; the article's own wording is a lease/transfer of development rights, not a first settlement, so it is recorded here as kind transferred instead."
+  - quote: "In orbit the Negentropists watched in horror as the ruined cities were abandoned and the metal pipe became the weapon of choice. [...] Tichy became known as a major nanohazard and was largely forgotten other than as a transit point."
+    note: "The planetary population and its cities collapsed after the 4540 attack, and the world is later described as 'recolonised' in 5022, implying an abandonment in between - but no year is given for that abandonment, so no dated event was recorded for it."

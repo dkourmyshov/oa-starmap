@@ -1,0 +1,40 @@
+article: 59b0537bbfe08
+title: Gomeisa
+events:
+  - year_at: 2734
+    kind: settled
+    polity: conver-ambi
+    precision: exact
+    until_at: null
+    where: body
+    quote: "A bright star in Canis Minoris, Gomeisa was colonised by the Conver Ambi in 2734 AT."
+    note: "Panel also gives 'Colonised 2734 AT' and 'Status Former Conver Ambi regional hub' separately, without pairing the date to the polity in the panel itself."
+  - year_at: 9444
+    kind: transferred
+    polity: metasoft
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Eventually in 9444AT Beta Canis Minoris became joint property of the two empires, and an increasingly diverse population of vecs, mystics, cyborgs, alphas and betas now fill the bubblehabs of Polheim and the now fully-completed shellworld of Amundsen."
+    note: "Joint with Sophic League, see the paired entry below. Not mentioned in the header, which only lists settled 2734."
+  - year_at: 9444
+    kind: transferred
+    polity: sophic-league
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Eventually in 9444AT Beta Canis Minoris became joint property of the two empires, and an increasingly diverse population of vecs, mystics, cyborgs, alphas and betas now fill the bubblehabs of Polheim and the now fully-completed shellworld of Amundsen."
+    note: "Joint with Metasoft, see the paired entry above. Not mentioned in the header, which only lists settled 2734."
+holder_undated:
+  - polity: conver-ambi
+    quote: "Status Former Conver Ambi regional hub"
+unplaced: []
+contradictions: []
+other_places:
+  - "Delta Hydrae, Sophic League - new ComEmp-era wormhole link from Gomeisa"
+  - "Jafalgia and Earthland - reserve planets that the Paradoxy independents migrated to after the Metasoft protectorate was established"
+doubts:
+  - quote: "Long before the start of the Second Consolidation War, Metasoft autofabs had entered several of the systems in this sector (often via the local wormholes, which in this region were leased from the Sephirotic powers) and began to build infrastructure in the Oort clouds."
+    note: "No explicit AT year given; also names 'several of the systems in this sector' rather than Gomeisa alone, though the following sentence is specifically about Gomeisa's defence in that war."
+  - quote: "Now a Metasoft protectorate, the cyborgs of Gomeisa were gradually absorbed into the vec culture of that Sephirotic empire."
+    note: "No explicit AT year given for Gomeisa becoming a Metasoft protectorate; it falls sometime after the (also undated) Second Consolidation War and before the Version War, so it cannot be logged as a dated event."

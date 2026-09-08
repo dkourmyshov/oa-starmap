@@ -1,0 +1,47 @@
+article: 48f94f1a7f8db
+title: Sesharia
+events:
+  - year_at: 1102
+    kind: settled
+    polity: doran-empire
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonized: 1102 AT by the Doran empire colony ship Zschorn from the Nanotech Window Cyborg colony at GL 877"
+    note: "Header already records settled 1102 (doran-empire); matches. See contradictions."
+  - year_at: 1133
+    kind: settled
+    polity: doran-empire
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The Dorans later spread out among the red and orange dwarfs of the Inner Sphere , arriving at HR 637 in 1133 AT."
+    note: "HR 637 is Sesharia's system. Conflicts with the panel's 1102 AT colonisation date; see contradictions."
+  - year_at: 1599
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 1599 AT a Novamedia/Birnam Ecotech-sponsored ship arrived bringing the Bluesky sect , a life-extended group of NeoBuddhist ecotechnicians who developed Secharia with artificially-lit bluesky harddomes to recreate Earthlike conditions, then established the first successful Bluesky Worldhouses on Hiresia and Dreir."
+    note: "Header already records this as \"visited 1599\", but the sentence describes the Bluesky sect arriving, developing Secharia, and establishing permanent Worldhouses on Hiresia and Dreir, which reads as a settlement rather than a visit; reclassified here as settled and flagged for reviewer. \"Novamedia/Birnam Ecotech\" is not on the roster; see unplaced."
+holder_undated:
+  - polity: nocozo
+    quote: "Affiliation: Currently NoCoZo , former Doran Empire world and frontier with the Eridanus League ."
+  - polity: doran-empire
+    quote: "Affiliation: Currently NoCoZo , former Doran Empire world and frontier with the Eridanus League ."
+unplaced:
+  - name: "Novamedia/Birnam Ecotech"
+    quote: "In 1599 AT a Novamedia/Birnam Ecotech-sponsored ship arrived bringing the Bluesky sect"
+contradictions:
+  - about: settlement/arrival year at Sesharia (HR 637)
+    quotes:
+      - "Colonized: 1102 AT by the Doran empire colony ship Zschorn from the Nanotech Window Cyborg colony at GL 877"
+      - "The Dorans later spread out among the red and orange dwarfs of the Inner Sphere , arriving at HR 637 in 1133 AT."
+other_places:
+  - "Dorannok / Dorangloon (Gliese 877, GL 877) — the Doran clade's first colony, with its own related article \"Dorangloon (Gliese 877)\"; quotes: \"One of these factions, the cyber-tweak Doran clade , set off from Solsys in an amat-fusion hybrid ship from Toutatis asteroid in 629 AT, and first set up a colony at Dorannok (GL 877).\" and \"The last remnants including Dorannok (GL 877) entered the Terragen Federation in 5855.\""
+  - "Glim (HD 223889) — listed as a related article; not otherwise described in this text."
+  - "p Eridani — a neighbouring system Secharia made contact and trade with; quote: \"Secharia made contact with nearby p Eridani in 1307 AT, and soon trading vessels were carrying genetic material, hi-tech components and computronium, and also large numbers of colonists, between the two systems.\""
+doubts:
+  - "\"Secharia made contact with nearby p Eridani in 1307 AT\" is not recorded as an event: p Eridani is not a xenosophont species, and no change of Sesharia's own holder is stated."
+  - "\"Over the next two thousand years, the Doran empire was in conflict with the Hildago Emergent Order , Tahmehtian Crusaders and the Conver Ambi in the First and Second Consolidation wars, and fragmented, as did the Eridanus league, variously joining the NoCoZo or the Solar Dominion.\" This has no explicit year and is not specifically tied to Sesharia, so it was not recorded as a dated event here; it may be the unstated source of the panel's undated \"Currently NoCoZo\" affiliation."

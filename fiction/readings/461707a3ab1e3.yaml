@@ -1,0 +1,28 @@
+article: 461707a3ab1e3
+title: Beelzebub
+events:
+  - year_at: 3709
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised 3709AT"
+    note: "Matches the header's already-dated settled 3709. No polity is named for the original colonists anywhere in the article."
+  - year_at: 7909
+    kind: stewardship
+    polity: caretaker-gods
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Many wars were fought in this system, until a tribunal of Caretaker God transapients declared the world off-limits to outsiders in 7909AT."
+    note: "Not present in the header's already-dated list (which only has settled 3709); this is a new dated claim for the reviewer."
+holder_undated: []
+unplaced:
+  - name: "Bigoloz"
+    quote: "The local traders guild, Bigoloz, has refused to answer any questions or give any information, and attempts to uncover the history of the planet have been stonewalled by this organisation."
+contradictions: []
+other_places: []
+doubts:
+  - "The 7909 AT stewardship event is not among the header's already-dated events for this article; flagged as new."
+  - "'The properties of MellaUx 137 were not fully discovered until late in the 44th century (the integration)' gives only a century-level approximation and describes a scientific discovery rather than a place event, so it was not recorded."

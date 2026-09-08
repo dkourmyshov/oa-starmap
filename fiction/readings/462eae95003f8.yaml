@@ -1,0 +1,16 @@
+article: 462eae95003f8
+title: Earth
+events:
+  - year_at: 621
+    kind: stewardship
+    polity: caretaker-gods
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 621 GAIA issued an ultimatum: live according to strict ecological rules as one of a tiny minority granted permission to remain, leave, or be destroyed."
+    note: "Matches the header's already-recorded stewardship 621. The evacuation that followed (the Great Expulsion) is described as lasting twenty years, but no end year is stated."
+holder_undated: []
+unplaced: []
+contradictions: []
+other_places: []
+doubts: []

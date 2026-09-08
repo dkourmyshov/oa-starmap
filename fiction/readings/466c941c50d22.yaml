@@ -1,0 +1,41 @@
+article: 466c941c50d22
+title: Heartland
+events:
+  - year_at: 4312
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Founded 4312 AT"
+    note: "Header already records settled 4312; matches. Body separately attributes the construction to the Communion of Worlds (see the body entry below)."
+  - year_at: 4312
+    kind: settled
+    polity: communion-of-worlds
+    precision: exact
+    until_at: 4640
+    where: body
+    quote: "Construction began in 4312 AT and finished in 4640. To achieve it, the Communion heated the part of the surface of both the star and brown dwarf with conversion reactors, and forced continual coronal mass ejections with magnetic fields."
+    note: "Header already records settled 4312; matches. \"The Communion\" is the roster's listed alternative name for Communion of Worlds. 4640 recorded as until_at (construction finish)."
+holder_undated:
+  - polity: communion-of-worlds
+    quote: "Allegiance Communion of Worlds (Capital)"
+  - polity: communion-of-worlds
+    quote: "Heartland is the capital of the Communion of Worlds."
+  - polity: solar-dominion
+    quote: "For example, the Canberra Chancery is within the Solarian Grand Chancery, and in formal terms represents Canberra orbital to the Solar Dominion."
+  - polity: cyberian-network
+    quote: "In the Cyberian Chancery, utility fog enacts virches at random."
+  - polity: metasoft
+    quote: "The Metasoft and Silicon Generation Chanceries are open to hard vacuum."
+  - polity: silicon-generation
+    quote: "The Metasoft and Silicon Generation Chanceries are open to hard vacuum."
+  - polity: negentropy-alliance
+    quote: "The Negentropist Chancery has frozen the atmosphere of its level 5 and 6 orbitals as comment on the wastefulness of turbulence, opening the way for a different flavour of adventure sports."
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "The header's second already-dated claim, \"settled 2292\", does not correspond to any year mentioned anywhere in this article's prose or panels (the only years given are 4312 and 4640, both about construction). 2292 AT is the roster's own founding year for the Communion of Worlds itself, not a year this article states; flagged for reviewer attention, no matching quote could be written."
+  - "\"The resultant mass streams, travelling at 0.01c, reached their destination 130 and 200 years later.\" No fixed AT anchor year is given for \"later\", so no event entry was created for the mass streams' arrival."
+  - "The mapping of \"Solarian Chancery\" to the Solar Dominion relies on the demonym; the same passage's later, explicit use of \"Solar Dominion\" supports it, but a reviewer should confirm."

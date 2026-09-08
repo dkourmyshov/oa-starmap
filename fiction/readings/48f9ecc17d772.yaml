@@ -1,0 +1,26 @@
+article: 48f9ecc17d772
+title: Anomie
+events:
+  - year_at: 1420
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The Truth-Santaya Networks colony ship from Ganymede with two thousand colonists in nanostasis arrived at Gamma Cephei in 1420 a.t. ."
+    note: "Matches the header's already-dated settled 1420. Truth-Santaya Networks is a company, not on the roster; see unplaced."
+holder_undated:
+  - polity: sophic-league
+    quote: "Allegiance currently Sophic League and Communion of Worlds"
+  - polity: communion-of-worlds
+    quote: "Allegiance currently Sophic League and Communion of Worlds"
+unplaced:
+  - name: "Truth-Santaya Networks"
+    quote: "The Truth-Santaya Networks colony ship from Ganymede with two thousand colonists in nanostasis arrived at Gamma Cephei in 1420 a.t. ."
+contradictions: []
+other_places:
+  - "Pandya (Mu Cassiopeia) and Lam Wai-Chun (Chi Draconis), named only as the destinations of Errai's two stargates; not otherwise described here."
+doubts:
+  - "The AI 1200TR 'had been living in the system for five hundred years' before the colonists' 1420 AT arrival, implying an arrival around 920 AT, but no explicit AT year is given for it and it is not a recorded polity, so no event was recorded."
+  - "'By the time the Cygexpa WarFleet arrived to claim the world as a protectorate during the Version War the world was a gibbering shambles, and the Fleet stood off without making physical contact for fear of infection.' names a roster polity (cygexpa) arriving with intent to claim the system, but gives no explicit AT year and states the fleet did not make contact or complete the claim; not recorded as an event, but flagged for reviewer attention since it may be datable elsewhere."
+  - "'Allegiance currently Sophic League and Communion of Worlds' is undated; no sentence states when either polity came to hold Errai/Anomie."

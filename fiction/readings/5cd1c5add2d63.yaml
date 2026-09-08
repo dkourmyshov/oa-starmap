@@ -1,0 +1,36 @@
+article: 5cd1c5add2d63
+title: Spinel
+events:
+  - year_at: 5218
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Settlers initially arrived in the Tigris system in 5218 AT , led by a vec group known as the Shifting Kings ."
+    note: "Matches the header's already-recorded settled 5218. The Shifting Kings are not on the roster; see unplaced."
+  - year_at: 5523
+    kind: visited
+    polity: communion-of-worlds
+    precision: exact
+    until_at: null
+    where: body
+    quote: "While this conflict was occurring, a 'family' of S:2 entities ( empai and post-bionts , though the difference was hardly noticeable) affiliated with the Communion of Worlds arrived at Tigris in 5523 AT."
+    note: ""
+  - year_at: 5750
+    kind: transferred
+    polity: communion-of-worlds
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 5750 AT, they announced their intention to invite further members of the Communion to create a polity centered around the currently unclaimed outer gas giants."
+    note: "This is the Prism Wardens' announcement of intent to found a Communion-affiliated polity, not a plainly stated completion of the transfer; see doubts."
+holder_undated: []
+unplaced:
+  - name: "Shifting Kings"
+    quote: "Settlers initially arrived in the Tigris system in 5218 AT , led by a vec group known as the Shifting Kings ."
+contradictions: []
+other_places: []
+doubts:
+  - quote: "In 5750 AT, they announced their intention to invite further members of the Communion to create a polity centered around the currently unclaimed outer gas giants."
+    note: "Recorded as a transferred event, but the sentence describes an announcement of intent rather than a stated completion; the subsequent joining of inhabitants to the new Communion-affiliated polity is described without a year."

@@ -1,0 +1,64 @@
+article: 486ebb201f514
+title: Danzig
+events:
+  - year_at: 497
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 497 AT (2466 c.e.) the autonomous probe Philip K. Dick was sent to Copernicus, a G8 class star 41 ly from Earth, and established a magnetic energy collector/autofactory on Rhine, a moon of the jovian world Lipperhey."
+    note: "497 AT is before the First Federation's founding (933 AT per roster); the probe is unaffiliated with any roster polity."
+  - year_at: 1421
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The Hanse arrived in 1421 AT."
+    note: "Header records this as visited 1421. The Hanse was a Kontore League (unplaced) colony ship 'launched towards this star by the First Federation in 1001 AT'; its colonists went on to found the Federal States and Amity, which reads as a settlement rather than a mere visit - flagged for review."
+  - year_at: 2058
+    kind: settled
+    polity: conver-ambi
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 2058 the Conver Ambi arrived and set up an embassy/colony on Danzig, in the continent of Wendlant."
+    note: "Founded within the already-settled system; recorded because it names a new roster polity establishing a colony, later becoming (undated) 'the dominant force in this system'."
+  - year_at: 4790
+    kind: transferred
+    polity: metasoft
+    precision: exact
+    until_at: null
+    where: body
+    quote: "in 4790 it made contact with and joined Metasoft"
+    note: "Refers specifically to the autofac/AI facility on Rhine (built by the probe Philip K. Dick), not necessarily the whole Copernicus system."
+  - year_at: 6887
+    kind: transferred
+    polity: sophic-league
+    precision: exact
+    until_at: null
+    where: body
+    quote: "At this time the Amity population were becoming increasingly attracted by the spiritual ethos of the Sophic League, and joined them in 6887."
+    note: "Amity is a local faction on Mazda (unplaced), within the Copernicus system."
+holder_undated:
+  - polity: solar-dominion
+    quote: "Riga eventually joined the Solar Dominion."
+  - polity: terragen-federation
+    quote: "Danzig is now an independent Inner Sphere world, affiliated to the Terragen Federation, but with close ties to the Sophic League, Metasoft and the Solar Dominion."
+unplaced:
+  - name: "Kontore League"
+    quote: "A Kontore League colony ship, the Hanse, was launched towards this star by the First Federation in 1001 AT."
+  - name: "Federal States"
+    quote: "Bergen became the centre of the Federal States, which was the ascendant culture in this system for many centuries."
+  - name: "Amity"
+    quote: "On Mazda the rival polity of Amity was established, and proved to have more staying power than the Federal States."
+contradictions: []
+other_places:
+  - "Shamash - target of Metasoft's long-distance relativistic attacks from the Copernicus B outpost during the Version War"
+  - "Rheticus system - Metasoft culture the Resarki established fresh links with, circa 7000 AT"
+doubts:
+  - quote: "The Hanse arrived in 1421 AT."
+    note: "Header records this as 'visited 1421 AT'; recorded here as kind: settled instead because the colonists went on to found local polities. Flagged for reviewer to reconcile."
+  - quote: "After the breakup of the Conver Ambi, the Solar Dominion moved into the system, although the Rezarki retained their independence."
+    note: "No explicit AT year given. Per the roster, Conver Ambi dissolved in 3943 AT, so this move would be no earlier than that, but the article gives no number to record as year_at."

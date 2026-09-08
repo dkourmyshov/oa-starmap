@@ -1,0 +1,40 @@
+article: 4910e5c60edcc
+title: "Wadai (WD 0230-144)"
+events:
+  - year_at: 1419
+    kind: observed
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 1419, a faction within the New Home League, the Jasmeela Islamic Community , contributed to this trend by launching a starship, called the Amideen , on an interstellar flight over 40 light years long towards the white dwarf star WD 0230-144."
+    note: "Matches the header's already-recorded observed 1419 in year, but the sentence itself describes the launch of the colony ship towards Wadai rather than an observation; recorded as observed to match the header, flagged in doubts. Neither the New Home League nor the Jasmeela Islamic Community is on the roster; see unplaced."
+  - year_at: 1681
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Reached : 1681, by colonists aboard the colony ship Amideen ."
+    note: "Matches the header's already-recorded settled 1681. Consistent with the 1419 launch plus the 262-year journey given in the body. No polity is named in this panel line."
+holder_undated:
+  - polity: sophic-league
+    quote: "In the Current Era, the Wadai system is overseen by Adus D'galla, a group of S1 transapients affiliated with the Sophic League ."
+unplaced:
+  - name: "New Home League"
+    quote: "a faction within the New Home League, the Jasmeela Islamic Community , contributed to this trend by launching a starship"
+  - name: "Jasmeela Islamic Community"
+    quote: "the Jasmeela Islamic Community , contributed to this trend by launching a starship, called the Amideen"
+  - name: "Wadai League"
+    quote: "the colonists established the Wadai League , an organization modeled after the Eridanus League, to govern themselves and the immigrants who would transmit themselves to the system later."
+  - name: "Dalim transapients"
+    quote: "It came into contact with a small group of transapients at the nearby star of Dalim, and soon became its client polity."
+contradictions: []
+other_places:
+  - name: "Ran"
+    quote: "During the period between 1379 and 1925, the Ran system was very active in interstellar colonization, sending tens of starships to colonize new systems over this period."
+doubts:
+  - quote: "In 1419, a faction within the New Home League, the Jasmeela Islamic Community , contributed to this trend by launching a starship, called the Amideen , on an interstellar flight over 40 light years long towards the white dwarf star WD 0230-144."
+    note: "The header records observed 1419, but this sentence describes the launch/departure of the colony ship rather than an observation of the system; recorded under kind observed to align with the header year, but the classification is uncertain."
+  - quote: "It came into contact with a small group of transapients at the nearby star of Dalim, and soon became its client polity."
+    note: "No year is given for Wadai becoming a client polity of the Dalim transapients, nor for the later transition to Sophic League affiliation described in the Current Era; neither is recorded as a dated event."

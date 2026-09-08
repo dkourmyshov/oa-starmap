@@ -1,0 +1,65 @@
+article: 48e664f348410
+title: Prometheus
+events:
+  - year_at: 1758
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonized : 1758 a.t."
+    note: "Header already records settled 1758; matches. See contradictions/doubts about whether this ship's colonists actually survived to settle."
+  - year_at: 1735
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 1735 AT the first vessel passed right by Zeta Reticuli without slowing down."
+    note: "A ufer/Traveller sect colony ship that failed to stop; crew and colonists believed dead or in hypersleep, so nobody stayed."
+  - year_at: 1758
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 1758 AT a second ship, of different design, approached. This one managed to decelerate but the cryogenic systems had failed."
+    note: "Matches the header's settled 1758 and the panel's Colonized 1758, but the following sentences state this ship's colonists were found dead (frozen corpses) on arrival, not living settlers. See contradictions."
+  - year_at: 1788
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "A third ship, the Heavenly Fellowship, employing more advanced life-support systems, arrived thirty years later with the crew alive and well."
+    note: "Year derived as 1758 + the \"thirty years later\" stated in the text, relative to the second ship's 1758 AT arrival. This may be the true first living settlement; see contradictions."
+  - year_at: 4234
+    kind: visited
+    polity: technorapture-hypernation
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 4234 AT the system received a visit by an S3 TRHN emissary, whom the Confederationists named \"Raphael\" and who provided them with a few clarketech trinkets, much to the envy of the Atlanteans. \"Raphael\" descended to the surface and made contact with the isolationist ai \"Gray\". Following this, \"Gray\" unexpectedly transformed part of emself (and several hundred square kilometers of the surface of Prometheus) into a series of unusual diamondoid-coated monoliths, while the majority of eir mass became a huge swarm of small ISOs ('the Rapture') that accompanied Raphael back to the TRHN."
+    note: "\"Gray\" is a local AI (originally from the Diamond Belt), not a xenosophont species, so this is not recorded as a contact event."
+holder_undated:
+  - polity: communion-of-worlds
+    quote: "Affiliation : Communion of Worlds Colonized : 1758 a.t."
+    note: "Panel field. Body text dates the actual joining of the Communion to \"the early Consolidation Age\" with no AT year given; see doubts."
+unplaced:
+  - name: "Zetareticulite Confederation"
+    quote: "Polity Name : Zetareticulite Confederation"
+  - name: "Jupiter Transystems"
+    quote: "Prometheus was named and surveyed by the original Jupiter Transystems ai and remained in JT hands until appropriated by an isolationist ai that emigrated there from the Diamond Belt, and declared the planet off-limits."
+contradictions:
+  - about: settlement year and whether the settlers survived
+    quotes:
+      - "Colonized : 1758 a.t."
+      - "In 1758 AT a second ship, of different design, approached. This one managed to decelerate but the cryogenic systems had failed."
+      - "A third ship, the Heavenly Fellowship, employing more advanced life-support systems, arrived thirty years later with the crew alive and well."
+other_places:
+  - "Atlantis (Zeta1 Reticuli II) — another world of the same Zeta Reticuli system with its own separate article, referenced repeatedly (e.g. \"influences from Atlantis and Daedalus II are widespread\")."
+  - "Daedalus II — another world of the same system with its own separate article, referenced alongside Atlantis."
+doubts:
+  - "\"During the early Consolidation Age the Ufers joined the Communion, as they believe the empaths to be the paradigm for the original space brothers.\" No AT year is given for this join, so no dated event was created; recorded as holder_undated instead."
+  - "The article gives three ship arrivals (1735 failed flyby, 1758 arrival with dead cryo-failed colonists, and a third ship \"thirty years later\" with living crew) for what the header/panel call settled 1758. It is unclear which arrival the reviewer should treat as the operative settlement; all three are recorded."
+  - "\"Prometheus was named and surveyed by the original Jupiter Transystems ai and remained in JT hands until appropriated by an isolationist ai that emigrated there from the Diamond Belt, and declared the planet off-limits.\" No year is given for either the original survey or the later appropriation by \"Gray\"; not recorded as dated events."

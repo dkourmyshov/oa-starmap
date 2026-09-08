@@ -1,0 +1,19 @@
+article: 4910f56025f46
+title: Relief
+events:
+  - year_at: 9279
+    kind: reported
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "This system came to wide notice when a fully automated non-sentient line-layer vessel appeared at the Wormhole Nexus in 9279 and began to inflate what ended up being an 1800 meter wormhole."
+    note: "Matches the header's already-dated reported 9279. The sentence implies the system, its habitats, and its 'five controllers' already existed and simply connected to the Wormhole Nexus and became publicly known in 9279; no earlier founding date is given in the article, see doubts."
+holder_undated:
+  - polity: nocozo
+    quote: "Relief is a brown dwarf system in the NoCoZo Volume , 5,009 light years from Sol in the Carina Rush ."
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "The article never gives an actual settlement/founding date for Relief itself, only the 9279 AT date on which its wormhole connection made it publicly known; treated as reported per the header, but the true founding remains unstated. The identity of 'the five controllers of Relief' and the mysterious S3 Jupiter node that designed the system are never named, so no polity or holder could be attached to any event here."

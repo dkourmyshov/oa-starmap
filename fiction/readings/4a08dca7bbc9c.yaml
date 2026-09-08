@@ -1,0 +1,59 @@
+article: 4a08dca7bbc9c
+title: MyuvYin
+events:
+  - year_at: 809
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "MyuvYin was an early Inner Sphere colony, settled 809 AT by GAIA ark ."
+    note: "Header already records settled 809; matches. \"GAIA ark\" is not on the roster; see unplaced."
+  - year_at: 1211
+    kind: transferred
+    polity: ""
+    precision: circa
+    until_at: null
+    where: body
+    quote: "After a decade of desperate fighting, the entire system was subsumed, apart from a few ships which escaped to nearby systems to raise the alarm."
+    note: "Year is circa, derived from the attack's stated start (\"In 1201 AT a psychophager ahuman replicator swarm began to attack...\") plus \"a decade\" of fighting. The conquering group-mind, later called the MyuvYin Gestalt, is not on the roster; see unplaced."
+  - year_at: 2104
+    kind: transferred
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "At 2104 AT, Yiramm-MyuvYin empire ships claimed the clade's original system for itself only."
+    note: "\"The clade's original system\" is MyuvYin itself. \"Yiramm-MyuvYin empire\" is not on the roster; see unplaced."
+  - year_at: 2853
+    kind: transferred
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In the end the two empires merged into a single Neo-MyuvYinian civilization, later subverted by the mobile Panvirt ISO 101100abaaababa in 2853 AT."
+    note: "The mobile Panvirt ISO 101100abaaababa is an individual entity, not a polity, group or company, so it was not added to unplaced."
+  - year_at: 3625
+    kind: transferred
+    polity: deeper-covenant
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 3625 the system was connected to the Beamrider Network , with several local polities (who reorganised some of their habitats into beamrider stations) joining the Deeper Covenant ."
+    note: "Only \"several local polities\" of the system joined, not necessarily the whole system, which the article elsewhere describes as split among many diverse, non-aligned factions."
+holder_undated: []
+unplaced:
+  - name: "GAIA ark"
+    quote: "MyuvYin was an early Inner Sphere colony, settled 809 AT by GAIA ark ."
+  - name: "MyuvYin Gestalt"
+    quote: "The population of this system melded (together with extensive computronium resources) into a capable group-mind , which has become known to history as the MyuvYin Gestalt , or simply the MyuvYin."
+  - name: "Yiramm-MyuvYin empire"
+    quote: "At 2104 AT, Yiramm-MyuvYin empire ships claimed the clade's original system for itself only."
+contradictions: []
+other_places:
+  - "Twilight — a different system defended by the First Federation from MyuvYin subjugation in 1480 AT; quote: \"managed to defend the system of Twilight from subjugation in 1480 AT.\""
+  - "Gliese 213 (Photonchip Kingdom) — a different red dwarf system invaded by MyuvYin in 1512 AT, home to a Diamond Belt-affiliated civilisation; quote: \"In 1512 AT the MyuvYin civilization invaded the red dwarf system Gliese 213 , which held a Diamond Belt civilization associated with the Procyon Extension .\""
+  - "LHS 1723 (Yiramm) and LP 658-2 — nearby systems overrun by the MyuvYin Psychophagers, though Yiramm later becomes part of this article's own narrative; quote: \"the MyuvYin Pyschophagers overran a number of nearby biont and cyborg systems such as the red dwarf LHS 1723 (Yiramm) and the white dwarf LP 658-2 .\""
+doubts:
+  - "The header's second already-dated claim, \"settled 892\", does not correspond to any year mentioned anywhere in this article's text; flagged for reviewer attention, no matching quote could be written."
+  - "The header says \"filed under: (no polity)\", but the article's own top breadcrumb reads \"Galactography > Other Major Polities, Empires, and Meta-Empires > Deeper Covenant\", and the body explicitly records local polities joining the Deeper Covenant in 3625 AT. The header field looks like it may have missed this."

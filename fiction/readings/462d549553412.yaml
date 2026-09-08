@@ -1,0 +1,58 @@
+article: 462d549553412
+title: Daffy
+events:
+  - year_at: 1777
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Reached 1777 AT"
+    note: ""
+  - year_at: 2556
+    kind: transferred
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 2556 AT FreedomWorld got a lucrative offer from the TakiCorb subsidiary Serpens Development Blast for the colonisation rights, and they sold the right to the planet."
+    note: "FreedomWorld Inc. and the TakiCorb subsidiary Serpens Development Blast are megacorporations, not roster polities (see unplaced)."
+  - year_at: 4479
+    kind: transferred
+    polity: nocozo
+    precision: exact
+    until_at: 4539
+    where: body
+    quote: "During the Version War, Daffy was hard hit by the standardisation side, and in 4479 AT it was occupied by NoCoZo / Cyberian forces."
+    note: "until_at computed from 'throughout the 60 year occupation'. The occupation was contested throughout by local resistance (the Narchy), so this may be military occupation rather than an accepted transfer of allegiance - flagged for review."
+  - year_at: 4479
+    kind: transferred
+    polity: cyberian-network
+    precision: exact
+    until_at: 4539
+    where: body
+    quote: "During the Version War, Daffy was hard hit by the standardisation side, and in 4479 AT it was occupied by NoCoZo / Cyberian forces."
+    note: "until_at computed from 'throughout the 60 year occupation'. Paired with the NoCoZo entry above; same caveat about contested occupation applies."
+holder_undated:
+  - polity: negentropy-alliance
+    quote: "Affiliation Negentropy Alliance"
+  - polity: conver-ambi
+    quote: "The new tenants of Daffy were the Harvists of the Conver Ambi, a fairly mainstream population."
+  - polity: negentropy-alliance
+    quote: "Daffy is one of the Five official Capitals of the Negentropy Alliance."
+unplaced:
+  - name: "Lander Geotech"
+    quote: "Psi Serpentis II was terraformed by Lander Geotech, starting at 1991 AT and becoming habitable in 2080 AT."
+  - name: "FreedomWorld Inc."
+    quote: "The colonisation rights were sold to FreedomWorld Inc., a colonisation corporation aiming at attracting dissidents, freethinkers and independent-minded individuals to the new world."
+  - name: "TakiCorb / Serpens Development Blast"
+    quote: "In 2556 AT FreedomWorld got a lucrative offer from the TakiCorb subsidiary Serpens Development Blast for the colonisation rights, and they sold the right to the planet."
+  - name: "Church of Negentropy"
+    quote: "In the aftermath one group managed to unite the scattered survivors and restore order and environment control: the Church of Negentropy."
+contradictions: []
+other_places:
+  - "Ken Ferjik, Greylag, Gegton X, and the Seat of Judgement - the other four official Capitals of the Negentropy Alliance"
+  - "Haqqu - nearby system evacuated due to strange matter weapon presence; its solarian refugees came to Daffy after the Version War and restored a solarist society said to date from the 3000's AT there"
+doubts:
+  - quote: "(header) already dated: settled 6230"
+    note: "No sentence anywhere in the article text names 6230 AT or otherwise matches a settlement claim for that year; the panel gives no colonisation date at all, only 'Reached 1777 AT'. Flagged as unverifiable against the source text - a reviewer should check whether 6230 belongs to this article."
