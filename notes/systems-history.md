@@ -344,6 +344,19 @@ Utopia Sphere "during the Age of Consolidation", which the timeline puts at
 kept under `sources/polities/`, gave Denebola's amat farms (1748) and the
 M'Buto Confederacy's annexation (1816) their holder.
 
+### Holders named without a year
+
+The readings file a polity an article names as holder but never dates
+under `holder_undated`, and the merge helper enters nothing from that
+list. Conver Ky's "capital of the Conver Ambi up until the Conver War" and
+Pereira's "capital of the Biovirate" were both there and both invisible on
+the map. A sweep on 2026-09-09 (commits `412113c`, `daa3c60`) found
+thirteen such cases naming a dissolved polity, and entered the eleven that
+an era name or a neighbouring date bounds, as `between` the era's years on
+the timeline or `not_earlier_than` the polity's founding. The rule: an
+article's "during the Age of Establishment" is a date, to the era's width;
+a bare "former Cygexpa world" is not, and stays a note.
+
 What is left of the corpus: 47 articles bound to nowhere on the map
 (`sources/derived/tranche3_unbound.txt`), and the 47 articles across both
 tranches that date nothing at all.
