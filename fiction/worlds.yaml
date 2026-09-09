@@ -6277,6 +6277,14 @@ worlds:
     location:
       constellation: Ara
       distance: 390 ly
+    events:
+      - year_at: 2540
+        kind: settled
+        note: >-
+          "Colonization ships first arrived at the system in 2540 a.t." No
+          polity is named for the colonization ships; the system's Utopia
+          Sphere affiliation is given only in the undated panel field (see
+          holder_undated).
     note: >-
       The system of the star Ahag. The constellation is not stated and is taken
       from the rest of the Utopia Sphere's core.
@@ -6384,6 +6392,65 @@ worlds:
       - year_at: 868
         kind: visited
         note: Reached by humans.
+      - year_at: 868
+        kind: settled
+        note: >-
+          "Colonized 868 a.t." The body text has the New World arriving in
+          856, the panel and the timeline 868; the timeline's year is entered.
+      - year_at: 878
+        kind: settled
+        note: >-
+          "878 - first colony established on the surface, small orbitals
+          established" First colony (Liberty) on New America's surface,
+          distinct from the system-arrival events above.
+      - year_at: 1156
+        kind: visited
+        polity: first-federation
+        note: >-
+          "1156 - arrival of the Federation robot Survey Vessel Magellan"
+      - year_at: 1541
+        kind: independent
+        note: >-
+          "1541 - Equatorial clades capture Liberty, declare independence. NA
+          orbital counterattack leads to the so-called Pacifica War; the
+          NuyorkMainstream finally defeated by technorat ai intrusion programs
+          and goo attacks. New America renamed Pacifica. Mainstream
+          administration exiled to some small orbitals around the outer
+          planets." New America's prior mainstream administration was not
+          itself a roster polity, so no 'from' polity is recorded.
+      - year_at: 1590
+        kind: transferred
+        polity: virginis-combine
+        note: >-
+          "1590 - A number of Technorat habitats form the Virginan Combine"
+          Matches the roster's founding year (1590) for the Virginis Combine.
+          The Combine's own page (sources/polities): the technorat habitats
+          founded it in 1590 and "Pacifica and its orbitals joined the
+          colonisation effort soon after" the first ships of 1625.
+      - year_at: 2500
+        kind: stewardship
+        polity: utopia-sphere
+        precision: not_later_than
+        note: >-
+          "by the 2500s if became clear that some Utopia Sphere entity had
+          colonised the sea and taken the role of planetary protector." Sic:
+          the article reads 'if' for 'it'. The protector is the Great Whale
+          ISO, attributed here only to 'a Utopia Sphere entity', not
+          explicitly to the roster's Caretaker Gods. This precedes the Utopia
+          Sphere's founding year on the map (2975, Beta Arae); the article's
+          'Utopia Sphere entity' is entered as the proto-affiliation the
+          founding year does not gate.
+      - year_at: 2512
+        kind: transferred
+        polity: conver-ambi
+        precision: not_later_than
+        note: >-
+          "by 2512 the Combine and the Conver Ambi announced a merger." Merger
+          of the wider Virginis Combine into Conver Ambi. The article says
+          Pacifica itself instead joined the Utopia Sphere while 'the rest of
+          the system' aligned with the Conver Ambi. Pacifica went with the
+          Combine into the Conver Ambi; its own accession to the Utopia Sphere
+          came later, 'During the Age of Consolidation' (see the next event).
 
   - name: Qjellto
     kind: planet

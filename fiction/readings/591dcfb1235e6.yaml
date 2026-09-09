@@ -1,0 +1,28 @@
+article: 591dcfb1235e6
+title: Rengood
+events:
+  - year_at: 2681
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised 2681"
+    note: "Matches header's already-dated settled 2681. No polity is named alongside this date; the article's own affiliation is only given undated (see holder_undated)."
+  - year_at: 4471
+    kind: transferred
+    polity: negentropy-alliance
+    precision: exact
+    until_at: null
+    where: body
+    quote: "when this world was attacked and subdued by the Negentropist Fifth Fleet in 4471 AT, Orintergen was nowhere to be found"
+    note: "'Negentropist' is the roster's Negentropy Alliance. The article states the world was militarily subdued but does not explicitly say it was annexed or retained afterward; see doubts."
+holder_undated:
+  - polity: cyberian-network
+    quote: "Cyberian Water World in Aquila."
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - note: "Whether being 'attacked and subdued' by the Negentropist Fifth Fleet in 4471 AT constitutes a lasting change of the system's holder (from the Cyberian Network) to the Negentropy Alliance, or only a temporary wartime action during the Version War, is not stated."
+    quote: "when this world was attacked and subdued by the Negentropist Fifth Fleet in 4471 AT, Orintergen was nowhere to be found."

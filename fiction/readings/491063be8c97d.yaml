@@ -1,0 +1,20 @@
+article: 491063be8c97d
+title: Oro Mistral
+events:
+  - year_at: 2540
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Colonization ships first arrived at the system in 2540 a.t."
+    note: "No polity is named for the colonization ships; the system's Utopia Sphere affiliation is given only in the undated panel field (see holder_undated)."
+holder_undated:
+  - polity: utopia-sphere
+    quote: "Affiliation Utopia Sphere"
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - note: "The asteroid-belt colonies being 'almost deserted' as population shifted to the terraformed planet, and provolves beginning to 'trickle in' from 2940, both read as population/demographic change internal to an already-settled system rather than new dated settlement or holder events, so they were excluded per the brief. Flagging in case a reviewer weighs it differently."
+    quote: "Within another 100 years the asteroid communities had been almost deserted as more and more bioids moved to the more luxurious Oro Mistral. / Beginning in 2940, large populations of provolves began to trickle in, slowly at first, but progressively larger migrations took place in the continuing decades."

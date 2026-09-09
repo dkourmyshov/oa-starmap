@@ -1,0 +1,160 @@
+article: 48735da987f1b
+title: Pacifica
+events:
+  - year_at: 815
+    kind: visited
+    polity: ""
+    precision: circa
+    until_at: null
+    where: body
+    quote: "815 - (approx) Solipsist AI probe reaches Beta Virginis"
+    note: "Matches header's already-dated visited 815. The probe's origin is only speculated to be 'solipsist' elsewhere in the body text; not identified with the roster's Solipsist Panvirtuality, so polity is left blank."
+  - year_at: 856
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "When the New World arrived at Beta Virginis in 856, they discovered that at least one, and possibly three, inner planets had been claimed by isolationist ai."
+    note: "Contradicts the 868 arrival date given elsewhere in this same article (panel and timeline); see contradictions."
+  - year_at: 868
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonized 868 a.t."
+    note: ""
+  - year_at: 868
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "868 - New World arrives at Beta Virginis"
+    note: "Matches header's already-dated visited 868, but the article's own data panel calls the same year 'Colonized' (a settled-type claim) rather than visited; see doubts."
+  - year_at: 878
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "878 - first colony established on the surface, small orbitals established"
+    note: "First colony (Liberty) on New America's surface, distinct from the system-arrival events above."
+  - year_at: 970
+    kind: reported
+    polity: first-federation
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 970 the technocrats began receiving faint broadbeam radio transmissions from Sol. It seemed that life hadn't been destroyed totally, and that a new society, the \"Federation of Sophonts\" was being built."
+    note: "News of the Federation's founding (933 AT per the roster) reaching Beta Virginis by radio in 970."
+  - year_at: 1068
+    kind: transferred
+    polity: first-federation
+    precision: not_later_than
+    until_at: null
+    where: body
+    quote: "By 1068 fully four-fifths of the technorats had officially seceded. And whilst they never actually formed a single technarch-style orbital league, each habitat was a local free zone, with strong ties to other habitats and to the Federation, which they officially joined."
+    note: "Only the technorat habitats (four-fifths of them) are described as seceding from the New America administration and joining the Federation; the join itself is not separately dated from the secession."
+  - year_at: 1140
+    kind: abandoned
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "1140 - hu-ai war; loss of New Europe"
+    note: "New Europe's colony ended when the resident isolationist ai destroyed/absorbed it and the world was renamed Isoai. The isolationist ai are not a roster polity (see unplaced); never inferred as Diamond Network, which the article treats as a separate, later-visiting entity."
+  - year_at: 1156
+    kind: visited
+    polity: first-federation
+    precision: exact
+    until_at: null
+    where: body
+    quote: "1156 - arrival of the Federation robot Survey Vessel Magellan"
+    note: ""
+  - year_at: 1541
+    kind: independent
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "1541 - Equatorial clades capture Liberty, declare independence. NA orbital counterattack leads to the so-called Pacifica War; the NuyorkMainstream finally defeated by technorat ai intrusion programs and goo attacks. New America renamed Pacifica. Mainstream administration exiled to some small orbitals around the outer planets."
+    note: "New America's prior mainstream administration was not itself a roster polity, so no 'from' polity is recorded."
+  - year_at: 1590
+    kind: transferred
+    polity: virginis-combine
+    precision: exact
+    until_at: null
+    where: body
+    quote: "1590 - A number of Technorat habitats form the Virginan Combine"
+    note: "Matches the roster's founding year (1590) for the Virginis Combine."
+  - year_at: 2200
+    kind: transferred
+    polity: utopia-sphere
+    precision: circa
+    until_at: null
+    where: body
+    quote: "During the 2200s, as the Combine moved in the direction of the Conver Ambi, the Pacificans quietly made diplomatic connections with the NoCoZo and Utopia sphere - NoCoZo helped fund a wormhole link directly to the Arae region in exchange for some tourism, and Utopia agreed to support Pacifica."
+    note: "Diplomatic support rather than full accession; the article's later, firmer 'joined the Utopia Sphere' statement carries no year at all (see holder_undated)."
+  - year_at: 2500
+    kind: stewardship
+    polity: utopia-sphere
+    precision: not_later_than
+    until_at: null
+    where: body
+    quote: "by the 2500s if became clear that some Utopia Sphere entity had colonised the sea and taken the role of planetary protector."
+    note: "Sic: the article reads 'if' for 'it'. The protector is the Great Whale ISO, attributed here only to 'a Utopia Sphere entity', not explicitly to the roster's Caretaker Gods."
+  - year_at: 2512
+    kind: transferred
+    polity: conver-ambi
+    precision: not_later_than
+    until_at: null
+    where: body
+    quote: "by 2512 the Combine and the Conver Ambi announced a merger."
+    note: "Merger of the wider Virginis Combine into Conver Ambi. The article says Pacifica itself instead joined the Utopia Sphere while 'the rest of the system' aligned with the Conver Ambi."
+holder_undated:
+  - polity: utopia-sphere
+    quote: "Current Affiliation Utopia Sphere"
+  - polity: utopia-sphere
+    quote: "During the Age of Consolidation the world joined the Utopia Sphere, where it was and still remains one of the most open of the Utopia Sphere worlds."
+  - polity: virginis-combine
+    quote: "Beta Virginis IV, former capital of the Virginis Combine (originally New America)"
+  - polity: solar-dominion
+    quote: "When the dust of the Conver War had settled, the Solar Dominion found itself in control of Beta Virginis and a number of nearby systems ... Dominion regional leaders had no choice but to administer the system as a protectorate and semi-independent principality, the Betavirginia Province."
+  - polity: solar-dominion
+    quote: "Although the Dominion retains nominal sovereignty over the system, even the Solarian administrators acknowledge they don't really have much power over the territory, and tactfully decide to avoid humiliation by forcing a crisis."
+  - polity: conver-ambi
+    quote: "The rest of the system remained independent, or aligned with the Conver Ambi."
+  - polity: solar-dominion
+    quote: "the Beta Virginis Solarists go all the way back to the late Age of Consolidation, when the Dominion annexed the Combine, along with much of the old Conver Ambis."
+unplaced:
+  - name: "Look Outwards Combine"
+    quote: "an ambitious project was initiated by the Look Outwards Combine, giving them 49% ownership over the Beta Virginis system in exchange for enough amat to take them there at 0.1 c."
+  - name: "M'Buto Confederacy"
+    quote: "after some years of increasingly close links, M'Buto Confederacy (BD -9.3413) joins the Combine."
+  - name: "TakiCorb"
+    quote: "Denebola Incident - renegade exploration management AI from TakiCorb uses nanoweaponry to capture the system"
+  - name: "Nova mediacorps"
+    quote: "1300 - Nova mediacorps powerful and influential"
+  - name: "Geminga Orthodox"
+    quote: "the Geminga Orthodox were of course claiming this was a primary source of evil memetic infection"
+contradictions:
+  - about: "year the New World arrived at Beta Virginis"
+    quotes:
+      - "868 - New World arrives at Beta Virginis"
+      - "When the New World arrived at Beta Virginis in 856, they discovered that at least one, and possibly three, inner planets had been claimed by isolationist ai."
+other_places:
+  - "Denebola - has its own article/s (Denebola, Denebola Incident, Denebola Collapse); this article only mentions Combine amat farms seeded there in 1748."
+  - "Porrima - has its own related article and a separate 'Porrima Incident' article; this article only mentions an alien artifact discovered there in 1752."
+doubts:
+  - note: "The map records 868 as 'visited', but the article's own data panel labels the same year 'Colonized' (a settled-type claim), a kind mismatch worth a reviewer's eye."
+    quote: "Colonized 868 a.t."
+  - note: "The timeline and the body text give different years for the opening of the second cycler/beamrider network; not a listed event kind, so not entered as a contradiction, but flagged here."
+    quote: "7120 - second cycler network opened, connecting the system with many nearby red and brown dwarfs and several Utopia and NoCoZo worlds. / In 5120 a second cycler (beamrider) network was officially opened, connecting the system with many nearby red and brown dwarfs and several Utopia and NoCoZo worlds."
+  - note: "First sightings of a resident entity (the Great Whale ISO) by locals in 2534 does not clearly fit any listed kind, since 'observed' is defined as a place being seen from afar by an outside polity, not a resident being noticed by its own inhabitants."
+    quote: "2534 - first confirmed sightings of The Great Whale ISO"
+  - note: "Contact between the New World colonists and the resident isolationist ai around 868 is not classified as the 'contact' kind, since the ai are not a xenosophont species."
+    quote: "There was much discussion on what to do, and contact was finally established between the ship and mission ais and the locals."
+  - note: "Unnamed 'outlying red dwarf systems' near Beta Virginis seceded and joined several polities during the Version War; no names are given, so they cannot be placed as separate other_places, and no year is given for the secession."
+    quote: "the outlying red dwarf systems, apart from Luyten 901-10 and Ross 948, unilaterally seceded and joined the NoCoZo, Cyberia, the MPA, and Metasoft."
