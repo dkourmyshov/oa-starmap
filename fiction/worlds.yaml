@@ -997,7 +997,11 @@ worlds:
     events:
       - year_at: 2681
         kind: settled
-    note: In Aquila. The catalogue puts HD 193275 at 207 ly against the article's 195.
+    note: >-
+      In Aquila. The catalogue puts HD 193275 at 207 ly against the article's
+      195. "Attacked and subdued by the Negentropist Fifth Fleet in 4471 AT",
+      a Version War action the article does not follow with a change of
+      holder, so it is not entered as one; the readings keep it.
 
   # ---- Keter Dominion -----------------------------------------------------
   #
@@ -6355,6 +6359,18 @@ worlds:
         note: >-
           "Colonized: 868 A.T." No system-wide holder; the article names
           protectorates and affiliations world by world, undated.
+      - year_at: 1068
+        kind: transferred
+        polity: first-federation
+        precision: not_later_than
+        source: https://www.orionsarm.com/eg-article/48735da987f1b
+        note: >-
+          The Pacifica article: "By 1068 fully four-fifths of the technorats
+          had officially seceded" from the New America administration to the
+          Federation, "and whilst they never actually formed a single
+          technarch-style orbital league, each habitat was a local Federation
+          member." The habitats, not the planet's surface, which stayed with
+          the orbital regime until 1541.
       - year_at: 1590
         kind: capital
         polity: virginis-combine
@@ -6451,6 +6467,20 @@ worlds:
           the system' aligned with the Conver Ambi. Pacifica went with the
           Combine into the Conver Ambi; its own accession to the Utopia Sphere
           came later, 'During the Age of Consolidation' (see the next event).
+      - year_at: 3200
+        until_at: 3800
+        kind: transferred
+        polity: utopia-sphere
+        precision: between
+        note: >-
+          "During the Age of Consolidation the world joined the Utopia Sphere,
+          where it was and still remains one of the most open of the Utopia
+          Sphere worlds. The rest of the system remained independent, or
+          aligned with the Conver Ambi." The era's span is the timeline's
+          (3200 to 3800 AT). The 2200s brought only "diplomatic connections
+          with the NoCoZo and Utopia sphere", and the timeline's "2217 -
+          Pacifica begins making overtures to the Utopia Sphere ai clusters at
+          Beta Arae" precedes Beta Arae's colonisation as the map dates it.
 
   - name: Qjellto
     kind: planet
