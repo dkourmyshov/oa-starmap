@@ -1,0 +1,18 @@
+article: 4626d7ad72fe8
+title: Church-Turing (world)
+events:
+  - year_at: 2460
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised 2460 AT"
+    note: "Matches the header's already-dated settlement of 2460. The world is called 'An important Metasoft world' elsewhere in the text, but that statement carries no year, so the holder is recorded separately rather than on this event."
+holder_undated:
+  - polity: metasoft
+    quote: "An important Metasoft world, the most populous planetary object in Metasoft Space after NewRoot"
+unplaced: []
+contradictions: []
+other_places: []
+doubts: []

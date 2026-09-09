@@ -1,0 +1,18 @@
+article: 47aa8331028d9
+title: World of Meditating Idols
+events:
+  - year_at: 1915
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "A thorough survey of the planet in 1915 AT uncovered some traces of a preindustrial stone-carving culture."
+    note: "Header records this as 'observed 1915'; the survey physically reached the surface and uncovered relics there, which reads as visited rather than merely observed from afar."
+holder_undated: []
+unplaced: []
+contradictions: []
+other_places:
+  - "Epsilon Sculptoris (mentioned only in passing, as the site of a previously found derelict craft)"
+doubts:
+  - "Kind classification ('visited' here) differs from the header's 'observed 1915' for the same 1915 AT date; flagging for reviewer judgement."

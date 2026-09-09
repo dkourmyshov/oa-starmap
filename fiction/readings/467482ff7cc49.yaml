@@ -1,0 +1,17 @@
+article: 467482ff7cc49
+title: Kragliath
+events:
+  - year_at: 3209
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised 3209 AT"
+    note: "Matches the header's already-dated settlement of 3209. The world is 'ruled by nomadic prides of Megasibers', its own native inhabitants, not by an external polity."
+holder_undated: []
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "A 'mysterious abandoned colony ship' was found wrecked on Kragliath by the Megasiber pioneers, hinting at some earlier, unrecorded arrival, but no year or origin polity is given for it."

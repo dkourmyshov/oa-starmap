@@ -1,0 +1,20 @@
+article: 47a13e4633416
+title: Tao Li
+events:
+  - year_at: 2320
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised: 2320 AT"
+    note: "Matches the header's already-dated settlement of 2320. No polity is stated to have done the settling; NoCoZo appears only in the page's breadcrumb, so it is recorded separately as an undated holder."
+holder_undated:
+  - polity: nocozo
+    quote: "Galactography  >  Sephirotic Empires  >  Non-Coercive Zone (NoCoZo)"
+    note: "Breadcrumb/section heading only; the body prose never states NoCoZo holds Tao Li directly."
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "The inhabitants are described as 'cold adapted clades such as House Ghauetti', a named clade rather than a holder claim; not recorded as a holder or unplaced entry."

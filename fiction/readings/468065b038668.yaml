@@ -1,0 +1,18 @@
+article: 468065b038668
+title: Hyttinen
+events:
+  - year_at: 3110
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised 3110AT"
+    note: ""
+holder_undated:
+  - polity: nocozo
+    quote: "Important NoCoZo system."
+unplaced: []
+contradictions: []
+other_places: []
+doubts: []

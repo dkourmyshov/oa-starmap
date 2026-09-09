@@ -1,0 +1,16 @@
+article: 4f18e05693e65
+title: Skeblu
+events:
+  - year_at: 9433
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised 9433"
+    note: "Matches the header's already-dated settlement of 9433. No polity is named anywhere in the article."
+holder_undated: []
+unplaced: []
+contradictions: []
+other_places: []
+doubts: []

@@ -1,0 +1,20 @@
+article: 478c171e73982
+title: Sy
+events:
+  - year_at: 3910
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised 3910 AT"
+    note: "Matches the header's already-dated settlement of 3910. No polity is named as having settled it."
+holder_undated:
+  - polity: cygexpa
+    quote: "Affiliation Former Cygexpa world, now independent bureaucracy"
+    note: "States a past Cygexpa affiliation and a present independent status, but gives no year for either the coming-under-Cygexpa or the later independence."
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "'Former Cygexpa world, now independent bureaucracy' implies both a transfer to Cygexpa and a later independence, but neither carries a year, so neither could be written as a dated 'transferred' or 'independent' event."

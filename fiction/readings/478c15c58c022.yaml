@@ -1,0 +1,14 @@
+article: 478c15c58c022
+title: Swallowflight
+events: []
+holder_undated: []
+unplaced:
+  - name: "Vela Immunity"
+    quote: "Capital of the Vela Immunity, located near the Vela Supernova Remnant, 880 ly from Sol."
+  - name: "Vela Immunity"
+    quote: "The planet is now efficiently defended by the Vela Immunity system."
+contradictions: []
+other_places: []
+doubts:
+  - "Header records 'capital 8100', but the text never states a year for when Swallowflight became the Vela Immunity's capital. The only AT year in the text, 8100, is attached instead to a disastrous self-replicating spore-technology plague ('victim of a disastrous event ... in 8100 AT'), which is explicitly a non-event (plague) under the brief unless it is itself a change of holder, and the text does not say that. Not written as an event; flagging for reviewer judgement since the numbers match."
+  - "'Vela Immunity' is named as the holder/capital-status polity but is not an exact match to the roster's 'vela' entry (no alternate name given for 'vela' on the roster), so it is recorded as unplaced rather than mapped to that id."

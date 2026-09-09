@@ -1,0 +1,19 @@
+article: 4aaed32f4b1e3
+title: Realm, The
+events:
+  - year_at: 4715
+    kind: visited
+    polity: deeper-covenant
+    precision: exact
+    until_at: null
+    where: body
+    quote: "First discovered by a Deeper survey swarm in 4715 AT, the area of space that would eventually become the Realm contained some twenty-four brown dwarf and jovian class worlds all within a single cubic light-year volume."
+    note: ""
+holder_undated:
+  - polity: deeper-covenant
+    quote: "Moving quickly, the Deeper Covenant first laid claim to and then colonized the volume."
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "Header records 'capital 10600' for this article, but no year matching 10600 appears anywhere in the article text; no quote could be found for it."

@@ -1,0 +1,24 @@
+article: 474e2f74abc1f
+title: Varnerkaspi
+events:
+  - year_at: 8048
+    kind: abandoned
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 8048 they departed at relativist velocity for the galactic core, leaving behind a rich selection of sometimes innovative and valuable and occasionally dangerous artifacts."
+    note: "'They' are the Durrel Inheritors, a Neutral Way clade not on the roster (see unplaced). Matches the header's already-dated abandonment of 8048."
+holder_undated:
+  - polity: nocozo
+    quote: "Galactography  >  Sephirotic Empires  >  Non-Coercive Zone (NoCoZo)"
+    note: "Breadcrumb/section heading only."
+unplaced:
+  - name: "Durrel Inheritors"
+    quote: "Outer Crucis Corridor/Centaurus Sector Outer Volumes world formerly inhabited by the Neutral Way clade Durrel Inheritors (an off-shoot of the original cyborg Durrel Inheritors clan)."
+  - name: "NoCoZo Posthuman Artifacts and Productions corpclade"
+    quote: "The world is currently and profitably governed by the NoCoZo Posthuman Artifacts and Productions corpclade."
+contradictions: []
+other_places: []
+doubts:
+  - "The current governing body is named 'NoCoZo Posthuman Artifacts and Productions corpclade' -- despite the name, this is a corpclade, not the NoCoZo polity itself, per the rule against mapping a company onto a polity by name similarity; kept in unplaced rather than mapped to 'nocozo'. No year is given for it taking over, in any case."

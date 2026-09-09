@@ -1,0 +1,16 @@
+article: 477027c0787a2
+title: Remagar
+events:
+  - year_at: 8822
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised: 8822 AT"
+    note: "Matches the header's already-dated settlement of 8822. No polity is named anywhere in the article."
+holder_undated: []
+unplaced: []
+contradictions: []
+other_places: []
+doubts: []

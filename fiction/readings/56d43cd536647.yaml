@@ -1,0 +1,19 @@
+article: 56d43cd536647
+title: Rosmion
+events:
+  - year_at: 5001
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised: 5001 AT"
+    note: ""
+holder_undated:
+  - polity: sagittarius-transcultural-cooperation
+    quote: "Rosmion was colonised by the then-relatively new Sagittarius Transcultural Cooperation during the Commonwealth of Empires period."
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "The panel dates colonisation to 5001 AT but does not name a coloniser; the body names the Sagittarius Transcultural Cooperation as coloniser but without repeating a year in that sentence. Likely the same event, but the two facts are not stated together, so they are recorded separately rather than merged."

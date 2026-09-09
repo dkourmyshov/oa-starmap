@@ -1,0 +1,20 @@
+article: 46674b9181a4f
+title: Harbinger Dyson
+events:
+  - year_at: 3300
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Built by The Seven Neogenist Lifegivers, started in 3300 AT and grown organically for the next three thousand years."
+    note: ""
+holder_undated:
+  - polity: zoeific-biopolity
+    quote: "Dynamically supported Biotech Dyson Sphere, Nuiarkady Plexus, Sagitta (Zoeific Biopolity)."
+unplaced:
+  - name: "The Seven Neogenist Lifegivers"
+    quote: "Built by The Seven Neogenist Lifegivers, started in 3300 AT and grown organically for the next three thousand years."
+contradictions: []
+other_places: []
+doubts: []

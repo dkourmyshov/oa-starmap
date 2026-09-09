@@ -1,0 +1,28 @@
+article: 478986428e74a
+title: Steelcliff
+events:
+  - year_at: 7852
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Reached 7852 AT"
+    note: "Header records this as 'settled 7852'; the article describes only reaching/discovering a native BioGeoComputing world, with no Terragen colonisation stated, so 'visited' is used here rather than 'settled'."
+  - year_at: 7852
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The first alien BioGeoComputing system, discovered in 7852 AT."
+    note: ""
+holder_undated:
+  - polity: negentropy-alliance
+    quote: "Steelcliff is an isolated world towards galactic anti-spinward in what was then the Negentropy Alliance Outer Volumes."
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "Header records 'settled 7852' but the article states only that the world was reached/discovered (a native alien mind, not a Terragen colony); reclassified as 'visited' for both the panel and body statements of the same year."
+  - "Body states transapient contact specialists 'have made limited contact with the entity or entities within' after studying the world 'for nearly three millenia', but gives no AT year for that contact, only the 7852 AT discovery date."

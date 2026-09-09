@@ -1,0 +1,17 @@
+article: 4fba54934c663
+title: Amboseli
+events:
+  - year_at: 8515
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Amboseli was colonised in 8515 by a group of ungulate provolves emigrating from the Ulysses Network, which they saw as excessively consequentialist in outlook."
+    note: "Matches the header's already-dated settlement of 8515. The Ulysses Network is named as the origin the colonists were emigrating away from (rejecting its outlook), not as a polity that settled or holds Amboseli, so polity is left blank per the no-inference rule."
+holder_undated: []
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "The colonists explicitly left the Ulysses Network over a philosophical disagreement; a reviewer may want to confirm Amboseli should carry no holder at all rather than 'ulysses-network'."

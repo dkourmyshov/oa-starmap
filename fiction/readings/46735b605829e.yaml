@@ -1,0 +1,24 @@
+article: 46735b605829e
+title: KJEI-54-458945
+events:
+  - year_at: 8000
+    kind: observed
+    polity: ""
+    precision: circa
+    until_at: null
+    where: body
+    quote: "Closer observations in the 8000s AT reveal anomalous emissions from the neutron stars, prompting an exploration mission that arrived in 9800."
+    note: "The 'closer observations' of the 8000s AT is a from-afar observation, distinct from the 9800 exploration mission below."
+  - year_at: 9800
+    kind: contact
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Closer observations in the 8000s AT reveal anomalous emissions from the neutron stars, prompting an exploration mission that arrived in 9800."
+    note: "Matches the header's already-dated contact of 9800; the article does not name who sent the exploration mission."
+holder_undated: []
+unplaced: []
+contradictions: []
+other_places: []
+doubts: []

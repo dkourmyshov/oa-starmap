@@ -1,0 +1,22 @@
+article: 476ec0a831af6
+title: Refugium
+events:
+  - year_at: 5740
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised: 5740 AT"
+    note: "Matches one of the header's five already-dated claims (settled 5740). The body also glosses this more vaguely as 'settled in the 6th millennium by the Semperist Survival Fleet' -- the Semperist Survival Fleet is not on the roster, so no polity is recorded."
+holder_undated:
+  - polity: refugium-federation
+    quote: "Capital of the Refugium Federation, settled in the 6th millennium by the Semperist Survival Fleet."
+    note: "No year is given for when the world became the Federation's capital. Note for the reviewer: the roster gives the Refugium Federation a founding year of 5884, which is later than this world's stated settlement of 5740 -- the settling fleet may predate the Federation itself."
+unplaced:
+  - name: "Semperist Survival Fleet"
+    quote: "Capital of the Refugium Federation, settled in the 6th millennium by the Semperist Survival Fleet."
+contradictions: []
+other_places: []
+doubts:
+  - "The header records four further already-dated claims -- visited 5740, settled 5989, settled 6000, and visited 6916 -- none of which appear anywhere in this very short article's text. Only the settled 5740 claim could be confirmed from the prose; the other four could not be confirmed or contradicted here."

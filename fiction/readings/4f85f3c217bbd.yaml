@@ -1,0 +1,24 @@
+article: 4f85f3c217bbd
+title: Zhang Qian
+events:
+  - year_at: 3120
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised: 3120 AT"
+    note: ""
+holder_undated:
+  - polity: sophic-league
+    quote: "Allegiance: Sophic League / NoCoZo"
+  - polity: nocozo
+    quote: "Allegiance: Sophic League / NoCoZo"
+  - polity: nocozo
+    quote: "Significantly, most of the cityblocks owe their allegiance to the NoCoZo, while many of the human and provolve inhabitants of this world retain membership of the Sophic League empire."
+  - polity: sophic-league
+    quote: "Significantly, most of the cityblocks owe their allegiance to the NoCoZo, while many of the human and provolve inhabitants of this world retain membership of the Sophic League empire."
+unplaced: []
+contradictions: []
+other_places: []
+doubts: []

@@ -1,0 +1,17 @@
+article: 4682f991708d7
+title: Jordana
+events:
+  - year_at: 4694
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "It is thought that the MPA philosopher and fabulist Quistan Kemshola was killed in a shuttle crash on Jordana in 4694."
+    note: "The header records this as 'observed 4694', but the sentence describes a shuttle crash on the planet, implying an actual physical arrival rather than a from-afar observation; recorded here as 'visited' and flagged for review. Kemshola's own MPA affiliation is not grounds to record MPA as a holder of Jordana (an individual's presence, not a polity action)."
+holder_undated: []
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "Kind mismatch against the header: the header calls this 'observed 4694', but a shuttle crash means someone physically reached the planet, which better fits 'visited'. Recorded as 'visited' above; flagged rather than silently corrected."

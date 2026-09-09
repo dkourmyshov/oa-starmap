@@ -2260,6 +2260,15 @@ worlds:
     events:
       - year_at: 7852
         kind: settled
+      - year_at: 7852
+        kind: visited
+        note: >-
+          "Reached 7852 AT" Header records this as 'settled 7852'; the article
+          describes only reaching/discovering a native BioGeoComputing world,
+          with no Terragen colonisation stated, so 'visited' is used here
+          rather than 'settled'. The world holds a native alien mind, and the
+          article has it reached, not colonised; the map's older 'settled
+          7852' is this sentence read as a settlement.
     note: >-
       A xenosophont world of sorts, inside Negentropy volumes and under no
       Caretaker God's custodianship — which is what separates it from
@@ -5202,6 +5211,25 @@ worlds:
           undated.
     note: >-
       Mu Herculis Aa, as the colony table has it.
+
+  - name: Uoagranyu
+    kind: system
+    system: Uoagranyu
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/472131eb3b72b
+    location:
+      star: HD 219134
+    events:
+      - year_at: 1046
+        kind: settled
+        note: >-
+          "Colonised 1046, by Surya Interstellar Colonisation Inc. using
+          seedships." Surya Interstellar Colonisation Inc. is not on the
+          roster; see unplaced. Surya Interstellar Colonisation Inc., no
+          polity of this file; the Version War conquest and the Free System's
+          independence are undated.
+    note: >-
+      HD 219134, as the colony table has it.
 
   - name: Huanghua
     kind: system
@@ -9950,7 +9978,20 @@ worlds:
         source: "Encyclopaedia timeline, The Integration"
         note: >-
           Nirio colonised in by an AI consortium setting up a baseline reservation
-          and a local To'ul'h utopia. Becomes part of the Utopia Sphere .
+          and a local To'ul'h utopia. Becomes part of the Utopia Sphere .      - year_at: 5439
+        kind: transferred
+        polity: paradigm
+        note: >-
+          "Attacked by the Efficiency Maximisation Paradigm in 5439 and
+          optimized with little loss of life; most of the population was
+          uploaded against their will and instantiated inside a virtual
+          reality copy of their original environment." Framed as an attack,
+          but the following sentences state the system 'remained in Paradigm
+          control' afterward, so this is recorded as a change of holder rather
+          than a mere battle. An attack after which the system 'remained in
+          Paradigm control'; the map's older 'settled 4384' has no sentence in
+          the article.
+
   - name: Jekaumeatrine
     kind: system
     affiliations: [deeper-covenant]
@@ -11174,6 +11215,18 @@ worlds:
       - year_at: 8697
         kind: settled
         note: Settled from the fringes of the Solar Dominion.
+      - year_at: 9149
+        kind: abandoned
+        note: >-
+          "In 9149 the Henonian culture started the construction of a well-
+          defended Matrioshka Brain around HIP 10541, and almost every clade
+          and entity belonging to that culture migrated to the new substrate.
+          Only a very few sophonts remained on the old world, all belonging to
+          a single clade." Population did not fall to zero -- 'a very few
+          sophonts' of one clade remained -- so this is a near-total
+          depopulation rather than a clean abandonment; flagged for review. A
+          few sophonts stayed; the Czenik Fleet's later colonisation is
+          undated.
     note: >-
       Given as 70 ly from HIP 10541 and 4,240 ly from Sol. Those cannot both
       hold here: the catalogue puts that star at 7,887 ly, nearly twice as far,
@@ -11313,6 +11366,16 @@ worlds:
         kind: capital
         precision: not_later_than
         note: One of the largest centres of Deeper civilisation.
+      - year_at: 4715
+        kind: visited
+        polity: deeper-covenant
+        note: >-
+          "First discovered by a Deeper survey swarm in 4715 AT, the area of
+          space that would eventually become the Realm contained some twenty-
+          four brown dwarf and jovian class worlds all within a single cubic
+          light-year volume." A Deeper survey swarm's discovery; the
+          Covenant's colonisation, and the map's older 'capital 10600', are
+          undated in the article.
     note: >-
       A major Deeper Covenant cluster about 750 ly rimward of Sol, and one of
       the largest centres of Deeper civilisation anywhere. Hightower is its

@@ -1,0 +1,18 @@
+article: 559bd77adb246
+title: Whirlygig
+events:
+  - year_at: 3315
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonized 3315AT"
+    note: ""
+holder_undated:
+  - polity: terragen-federation
+    quote: "Local Government AI direct rule under Terragen Federation suzerainty"
+unplaced: []
+contradictions: []
+other_places: []
+doubts: []

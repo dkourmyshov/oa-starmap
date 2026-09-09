@@ -1,0 +1,25 @@
+article: 49125f5d1c049
+title: Turing (Castor)
+events:
+  - year_at: 2211
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised 2211 AT"
+    note: ""
+holder_undated:
+  - polity: technorapture-hypernation
+    quote: "Region: Inner Sphere Imperial Capital of the Technorapture Hypernation"
+  - polity: technorapture-hypernation
+    quote: "While first colonizing and then eventually extensively re-engineering the energy and mass rich regions around the primary binary pairs, the Technorapture Hypernation historically had little interest in the comparatively minuscule resources of the dwarf system."
+  - polity: metasoft
+    quote: "Tertiaries: (Still extant) Castor C1 and C2, also known as YY Geminorum (Metasoft colony)"
+  - polity: metasoft
+    quote: "A treaty ceding the system to Metasoft on the condition that they not attempt to develop the other components was quickly established and everyone soon went on about their business."
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "Header records 'visited 854' for this article, but no year matching 854 appears anywhere in the article text; no quote could be found for it."

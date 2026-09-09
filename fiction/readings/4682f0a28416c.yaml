@@ -1,0 +1,18 @@
+article: 4682f0a28416c
+title: Jhairrn
+events:
+  - year_at: 3444
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised: 3444 AT"
+    note: "Matches the header's already-dated settlement of 3444. The world is called a 'Terraformed Utopia Sphere planet' elsewhere in the text, but that statement carries no year, so the holder is recorded separately rather than on this event."
+holder_undated:
+  - polity: utopia-sphere
+    quote: "Terraformed Utopia Sphere planet, near the Negentropist border, is the home world of the Harrroh race of sophants, originally developed from Indian elephants."
+unplaced: []
+contradictions: []
+other_places: []
+doubts: []

@@ -1,0 +1,18 @@
+article: 4609c83fbc355
+title: Barboro
+events:
+  - year_at: 2245
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised: 2245 AT"
+    note: ""
+holder_undated:
+  - polity: keter-dominion
+    quote: "One of the first Keterist systems to be established, in Capricornus."
+unplaced: []
+contradictions: []
+other_places: []
+doubts: []

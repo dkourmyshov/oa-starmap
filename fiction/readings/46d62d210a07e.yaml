@@ -1,0 +1,29 @@
+article: 46d62d210a07e
+title: Nirio
+events:
+  - year_at: 5184
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Colonized in 5184 by an AI consortium setting up a baseline reservation and a local Toulh utopia."
+    note: ""
+  - year_at: 5439
+    kind: transferred
+    polity: paradigm
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Attacked by the Efficiency Maximisation Paradigm in 5439 and optimized with little loss of life; most of the population was uploaded against their will and instantiated inside a virtual reality copy of their original environment."
+    note: "Framed as an attack, but the following sentences state the system 'remained in Paradigm control' afterward, so this is recorded as a change of holder rather than a mere battle."
+holder_undated:
+  - polity: utopia-sphere
+    quote: "Former Utopia sphere system."
+  - polity: paradigm
+    quote: "Despite Utopia demands during the Jekaumeatrine negotiations it remained in Paradigm control."
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "Header records two settled dates for this place, 5184 and 4384, but only 5184 AT appears anywhere in this article's text; no quote could be found for 4384."

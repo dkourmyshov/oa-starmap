@@ -1,0 +1,20 @@
+article: 472131eb3b72b
+title: Uoagranyu (Gliese 892)
+events:
+  - year_at: 1046
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Colonised 1046, by Surya Interstellar Colonisation Inc. using seedships."
+    note: "Surya Interstellar Colonisation Inc. is not on the roster; see unplaced."
+holder_undated: []
+unplaced:
+  - name: "Surya Interstellar Colonisation Inc."
+    quote: "Colonised 1046, by Surya Interstellar Colonisation Inc. using seedships."
+contradictions: []
+other_places: []
+doubts:
+  - "During the Version War, Uoagranyu 'was bombed, conquered, and enslaved by both sides in the war'; neither side is named as a roster polity and no year is given, so no event could be recorded."
+  - "The article states 'The Uoagranyu Free System remains an independent demopoly to this day', which reads as an independence claim, but no year attaches to the declaration of neutrality/independence ('the leader of the planet, Tanek Jos ... renounced all previous allegiances, declared neutrality'), so no dated 'independent' event could be written."

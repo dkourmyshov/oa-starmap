@@ -1,0 +1,17 @@
+article: 46845bb30a037
+title: Lombardo
+events:
+  - year_at: 1566
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised 1566 AT"
+    note: "Matches the header's already-dated settlement of 1566. No polity is named as having settled it."
+holder_undated: []
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "The article says the system 'was first established as a Free Zone during the middle Federation period', which loosely matches the First Federation's era (933-2099 AT per the roster) and roughly matches the 1566 colonisation year, but gives no explicit numeric year of its own, so no separate event could be written for it; flagging in case a reviewer reads it as a distinct or corroborating claim."

@@ -1,0 +1,28 @@
+article: 49142c044cba7
+title: Hoopworld
+events:
+  - year_at: 10580
+    kind: abandoned
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "This structure had eleven times the surface area of Earth, but required dynamic stabilisation to retain its shape and size; after the Oracle War this was no longer available and the structure disintegrated in 10580"
+    note: "Matches the header's already-dated abandonment of 10580."
+  - year_at: 10580
+    kind: abandoned
+    polity: ""
+    precision: not_later_than
+    until_at: null
+    where: body
+    quote: "The structure became unsafe and after the conflict was finally resolved it was abandoned, leaving the structure to slowly tear itself apart by 10580."
+    note: "Same underlying fact as the panel line above, restated in the 'Extract from The Oracle War' passage; kept as a separate entry since the wording ('by 10580') differs in precision."
+holder_undated:
+  - polity: mutual-progress-association
+    quote: "Galactography  >  Sephirotic Empires  >  Mutual Progress Association"
+    note: "Site breadcrumb categorisation only; the prose never states in the body that the Mutual Progress Association held Hoopworld."
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "The header also records an already-dated 'abandoned 10565', but no year matching 10565 appears anywhere in this article's text; only 10580 is stated (twice). Flagging for the reviewer since one of the two header-dated events cannot be confirmed from this prose."

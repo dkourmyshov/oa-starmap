@@ -1,0 +1,18 @@
+article: 4ac0ad22a9c89
+title: Perdix
+events:
+  - year_at: 3010
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Perdix was settled by a House Genen mission in 3010 AT."
+    note: "Matches the header's already-dated settlement of 3010. House Genen is not on the polities roster; see unplaced."
+holder_undated: []
+unplaced:
+  - name: "House Genen"
+    quote: "Perdix was settled by a House Genen mission in 3010 AT."
+contradictions: []
+other_places: []
+doubts: []

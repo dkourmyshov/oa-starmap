@@ -1,0 +1,18 @@
+article: 460c3bd4ad939
+title: Beta Arae
+events:
+  - year_at: 2975
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised 2975AT"
+    note: ""
+holder_undated:
+  - polity: utopia-sphere
+    quote: "The heart of the Beta Arae volume, which is the core of the Utopia Sphere, Beta Arae is surrounded by god-tech megastructures believed to hold part of the substrate for the Utopia Sphere archailect Chesed."
+unplaced: []
+contradictions: []
+other_places: []
+doubts: []

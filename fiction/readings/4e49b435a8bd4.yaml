@@ -1,0 +1,27 @@
+article: 4e49b435a8bd4
+title: Henon
+events:
+  - year_at: 8697
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Colonised in 8697 by the Velesia Independents, a mixed group of high superbrights and low transapients originating from the fringes of the Solar Dominion, this world is 70 light years from the bright star HIP 10541 and 4240 light years from Sol."
+    note: "Matches the header's already-dated settlement of 8697. The Velesia Independents are not on the roster; see unplaced. They are said to originate from the fringes of the Solar Dominion, but the sentence does not say the Solar Dominion itself reached or settled Henon, so no holder is recorded for it."
+  - year_at: 9149
+    kind: abandoned
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 9149 the Henonian culture started the construction of a well-defended Matrioshka Brain around HIP 10541, and almost every clade and entity belonging to that culture migrated to the new substrate. Only a very few sophonts remained on the old world, all belonging to a single clade."
+    note: "Population did not fall to zero -- 'a very few sophonts' of one clade remained -- so this is a near-total depopulation rather than a clean abandonment; flagged for review."
+holder_undated: []
+unplaced:
+  - name: "Velesia Independents"
+    quote: "Colonised in 8697 by the Velesia Independents, a mixed group of high superbrights and low transapients originating from the fringes of the Solar Dominion"
+contradictions: []
+other_places: []
+doubts:
+  - "A second colonisation is described -- 'a new colonisation initiative, the Czenik Fleet, sent several ships there' after news of Henon's depopulation reached the Known Net -- but no year is given for it, so no event could be recorded. The Czenik Fleet is also not on the roster."

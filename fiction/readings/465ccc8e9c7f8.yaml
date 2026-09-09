@@ -1,0 +1,18 @@
+article: 465ccc8e9c7f8
+title: Incorp
+events:
+  - year_at: 2777
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Colonised 2777 AT."
+    note: ""
+holder_undated:
+  - polity: metasoft
+    quote: "Important Metasoft colony, located on a large moon of a gas giant orbiting HD 107793, 307 ly from Sol in the Melotte 111 (Coma Berenices) cluster."
+unplaced: []
+contradictions: []
+other_places: []
+doubts: []

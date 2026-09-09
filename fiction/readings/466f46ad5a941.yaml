@@ -1,0 +1,20 @@
+article: 466f46ad5a941
+title: Ken Ferjik (world)
+events:
+  - year_at: 2207
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised: 2207AT"
+    note: "Matches the header's already-dated settlement of 2207. The article does not say who settled it; its status as a Negentropy Alliance capital is stated separately and without a year, so no polity is inferred here."
+holder_undated:
+  - polity: negentropy-alliance
+    quote: "Ken Ferjik is one of the Five Capitals of the Negentropy Alliance. The other capitals are Gegton X, Daffy, The Seat of Judgement and Greylag."
+    note: "No year is given for when Ken Ferjik became a capital of the Negentropy Alliance, so this cannot be written as a dated 'capital' event."
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "The header also records an already-dated 'visited 2581', but the year 2581 does not appear anywhere in this article's text, so no matching event could be written or confirmed."
