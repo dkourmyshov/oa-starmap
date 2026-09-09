@@ -5377,6 +5377,17 @@ worlds:
       star: Theta Persei
     events:
       - year_at: 4490
+        kind: settled
+        polity: bourgatov-alliance
+        precision: not_later_than
+        note: >-
+          No settlement year is stated anywhere saved, only that it was
+          already "one of the most populous systems of the Inner Sphere, at
+          its height home to 34 billion humans, splices and vecs" by the
+          time of its collapse; the year is that collapse's own upper bound
+          (see below), entered here too so the map can show the system as
+          inhabited before it.
+      - year_at: 4490
         kind: capital
         polity: bourgatov-alliance
         precision: not_later_than
@@ -5426,6 +5437,19 @@ worlds:
           Geminorum) ... consistent with the existence of a wormhole in the
           system." From the Taurus Nexus's own page, as pasted by the
           project owner: the article this system is otherwise unread from.
+      - year_at: 1931
+        until_at: 2031
+        kind: settled
+        polity: taurus-nexus
+        precision: between
+        source: sources/polities/taurus-nexus.txt
+        note: >-
+          No settlement year is stated; the span is bounded by what is. "The
+          New Callistoans laid claim to the territory and began to prepare
+          for a massive colonization and development initiative" after the
+          resident AI civilization's activity ceased in 1931, and by 2031 it
+          was the Nexus's capital (see below), which it could not be
+          unsettled.
       - year_at: 2031
         kind: capital
         polity: taurus-nexus
