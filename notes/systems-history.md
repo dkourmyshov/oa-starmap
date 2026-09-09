@@ -291,6 +291,48 @@ What is left of the corpus: 355 articles bound to the map whose entries were
 already dated (the second tranche, where the readings would mostly add
 holders and second events), and 80 bound to nowhere.
 
+### The second tranche, done
+
+The 290 articles bound to the map whose entries were already dated, read on
+2026-09-08 and 09 in eight batches, the polity-naming articles first. What a
+re-reading adds is holders and changes of hands, and it did:
+
+| | after tranche one | after tranche two |
+|---|---|---|
+| readings kept whole | 126 | 416 |
+| candidate events in them | 213 | 862 |
+| holders named without a year | 183 | 451 |
+| names that matched no polity | 161 | 439 |
+| contradictions as pairs of quotes | 4 | 36 |
+| world entries | 589 | 590 |
+| events in the world file | 596 | 826 |
+| events naming a polity | 76 | 229 |
+
+Polities most often named on events now: the First Federation 24, the
+NoCoZo 19, the Solar Dominion 16, Metasoft 14, the MPA 13, the Negentropy
+Alliance 10, LinnEnt 9, the Eridanus League and the Sophic League 8 each,
+the Conver Ambi 7.
+
+Two rules were added on the way. The merge helper skips an event the entry
+already carries with the same year and kind, since a panel's "Colonised
+1102" is the settlement the map has, and appends after the last event rather
+than at the entry's end. And a transfer to a polity this file does not hold
+now ends the previous holding: the map cannot colour Xacou's empire at
+Avanola, and it must not go on colouring the Alliance either.
+
+The re-reading also found the map's older dates wanting in a way the first
+tranche could not: some sixty entries carried a year that no sentence in
+their article states, or that the article attaches to a different kind of
+claim. Spica's "settled 6603" was the year its archailect emerged; Landau's
+"settled 4556" the year it ceased to be Metasoft's capital; Big Ben's World's
+"settled 8200" its founder's ascension; Steelcliff's "settled 7852" the
+reaching of a native mind. Each such entry now says so beside the older
+date, which is kept, since it came from somewhere. The readings' `doubts`
+list the rest.
+
+What is left of the corpus: 50 articles bound to nowhere on the map, and
+the 47 articles across both tranches that date nothing at all.
+
 ## Things the extractor still gets wrong, deliberately left
 
 - "Inner Sphere", "Dyson Sphere" and "Of The Utopia Sphere" come out as polity
