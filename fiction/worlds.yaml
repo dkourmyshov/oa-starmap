@@ -5038,8 +5038,22 @@ worlds:
         kind: settled
         note: >-
           "Colonised 1866 AT" No settling polity or group is named in the text
-          for this date. The panel names no settler; capital of the Conver
-          Ambi 'up until the Conver War', undated.
+          for this date. The timeline has the world earlier: circa 1800, "On
+          the important corporate outpost of 37 Geminorum I there develops an
+          ideology of corporate theism and monomegist supremacy", the link
+          pointing at this article.
+      - year_at: 1984
+        kind: capital
+        polity: conver-ambi
+        precision: not_earlier_than
+        source: "Encyclopaedia timeline, 1984 and 3713"
+        note: >-
+          "Conver Ky was the capital of the Conver Ambi up until the Conver
+          War." The article dates neither; the Ambi's establishment is the
+          timeline's 1984 ("Birnam Ecotech joins the Transtellar Cooperative
+          Pact, resulting in the establishment of the Conver Ambi") and the
+          Conver War its 3713. The Ambi's division of 3943 ends the holding;
+          which of its three parts took the old capital, no saved page says.
     note: >-
       37 Geminorum, as the colony table has it.
 
@@ -12163,10 +12177,46 @@ worlds:
     events:
       - year_at: 4307
         kind: settled
+        note: >-
+          "Colonised: 4307 AT." "Cygnus Sector, Middle Regions system
+          colonised by a long-range seedship mission in 4307." The timeline
+          agrees. No settling group is named.
+      - year_at: 4650
+        until_at: 6009
+        kind: capital
+        polity: biovirate
+        precision: between
+        note: >-
+          "Too far from the Inner Sphere to become involved in the Version
+          War, this world became the capital of the Biovirate, a major
+          anthropist empire, in the centuries following that conflict." The
+          span runs from the Version War period's close (4650, the timeline's
+          era) to the capital's fall; the Biovirate is first named on the
+          timeline in 5715. Between them, 4544: "In the outer volumes,
+          Pereira suffers a massive hypereconomic and social breakdown,
+          causing the death of 2 billion inhabitants."
+      - year_at: 6009
+        kind: transferred
+        polity: keter-dominion
+        source: "Encyclopaedia timeline, 6009"
+        note: >-
+          "Pereira (the Biovirate capital) falls to the Keterists." The
+          article: "Pereira was conquered by the Keter Dominion following the
+          Keterist-Biovirate war".
+      - year_at: 6251
+        kind: abandoned
+        source: "Encyclopaedia timeline, 6251"
+        note: >-
+          "Pereira attacked and destroyed (along with the Keterist defences)
+          by a squadron of highly evolved biowars." The article: "then
+          attacked and sterilised by rogue bio-Autowars."
       - year_at: 10600
         kind: transferred
         precision: not_later_than
-        note: Once the Biovirate's capital; now divided, with much of it unaligned.
+        note: >-
+          Once the Biovirate's capital; now divided, with much of it
+          unaligned: "at present nominally administered by a coalition of
+          Keterist, MPA, Zoeific, and non-aligned transapients", undated.
     note: >-
       Galactic coordinates given outright — 995, 1016, -180 ly — which return
       1,433 ly in Aquila, the distance and constellation the article also
