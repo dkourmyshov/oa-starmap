@@ -1,0 +1,17 @@
+article: 46e73d558b681
+title: Zarauztar
+events:
+  - year_at: 4815
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised: 4815 AT"
+    note: "No settling party or polity is named anywhere in the body text."
+holder_undated: []
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "The header files this article under NoCoZo, but the body text never states a NoCoZo affiliation for Zarauztar; it only describes mining companies, a Depository, and Museum Ships without naming any polity."

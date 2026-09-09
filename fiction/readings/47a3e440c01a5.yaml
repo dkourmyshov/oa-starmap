@@ -1,0 +1,19 @@
+article: 47a3e440c01a5
+title: Threshold
+events:
+  - year_at: 5100
+    kind: settled
+    polity: ""
+    precision: circa
+    until_at: null
+    where: body
+    quote: "As part of the study of the hole in the 5100's a framework of dynamic orbital rings was used to suspend a number of research stations close to the horizon."
+    note: "Matches the header's already-dated settled 5100, though the wording ('in the 5100's') is a decade-level circa rather than an exact year. The sentence is passive and does not name who built the framework, so polity is left blank; see holder_undated for the Mutual Progress Association location claim."
+holder_undated:
+  - polity: mutual-progress-association
+    quote: "A black hole in the Mutual Progress Association, one of the closest to the Inner Sphere."
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "The increase in burials 'in 5500' that turned Threshold mainly into a cemetery is a change of use, not a change of holder or a settlement, so it was not recorded as an event."

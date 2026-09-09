@@ -1,0 +1,23 @@
+article: 48ec992cac979
+title: Sisyphos
+events:
+  - year_at: 3321
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "When the Hydra Outreach, an exploration franchise allied with the NoCoZo reached Sisyphos in 3321 the world was confirmed as uninhabitable"
+    note: "Actor is the Hydra Outreach, an exploration franchise described as allied with the NoCoZo; NoCoZo itself is not said to have reached the world, so polity is left blank per the no-inference rule. Matches the header's already-dated visited 3321."
+holder_undated:
+  - polity: nocozo
+    quote: "Chthonian type world; joint NoCoZo and Metasoft sovereignty"
+  - polity: metasoft
+    quote: "Chthonian type world; joint NoCoZo and Metasoft sovereignty"
+unplaced:
+  - name: "Hydra Outreach"
+    quote: "the Hydra Outreach, an exploration franchise allied with the NoCoZo reached Sisyphos in 3321"
+contradictions: []
+other_places: []
+doubts:
+  - "The subtitle names joint NoCoZo and Metasoft sovereignty but gives no year for when either polity took the system, and no explicit year is given for when the Kobold colony itself was founded (only 'after a thousand years of expansion' relative to the 3321 visit), so no settled event is recorded. A reviewer may want to judge whether the 3321 visited event should instead carry polity nocozo given the Hydra Outreach's stated alliance."

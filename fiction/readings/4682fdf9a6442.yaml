@@ -1,0 +1,25 @@
+article: 4682fdf9a6442
+title: Junna
+events:
+  - year_at: 2938
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised 2938"
+    note: "Matches the header's already-dated settled 2938. No verb ties the following 'Minor Negentropy Alliance world' phrase to this date, so polity is left blank here (see holder_undated)."
+holder_undated:
+  - polity: negentropy-alliance
+    quote: "Minor Negentropy Alliance world."
+  - polity: mutual-progress-association
+    quote: "Suffered during the Version War and became an MPA garrison."
+unplaced:
+  - name: "Zoeticism"
+    quote: "Since the age of separative empires the locals have drifted increasingly towards Zoeticism."
+contradictions: []
+other_places: []
+doubts:
+  - "'Suffered during the Version War and became an MPA garrison' describes a change of holder (Negentropy Alliance to MPA) but gives no year, so it is recorded as holder_undated rather than a transferred event; this is new against the header, which lists only settled 2938. A reviewer may want to attach a Version War-era date if one is known from elsewhere."
+  - "'Zoeticism' is not mapped to the roster's zoeific-biopolity per the rule against matching a similarly-named belief system to a polity; recorded as unplaced instead."
+  - "The 3267-3421 period as centre for the Institute of Baseline Psychotypology is an institutional headquarters, not a polity capital, so no capital event was recorded for it."

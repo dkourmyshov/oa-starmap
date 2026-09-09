@@ -1,0 +1,22 @@
+article: 50c7400a01dfc
+title: Earthland
+events:
+  - year_at: 3501
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Established by 254 Gamma Titania in 3501 as the first Baseline Reserve World; the Teleological Tendency first emerged on this world."
+    note: "254 Gamma Titania (linked as its own article) is not on the roster, so polity is left blank."
+holder_undated: []
+unplaced:
+  - name: "254 Gamma Titania"
+    quote: "Established by 254 Gamma Titania in 3501 as the first Baseline Reserve World; the Teleological Tendency first emerged on this world."
+  - name: "Standardist seraphim"
+    quote: "Occupied by Standardist seraphim during the Second Vec War ."
+contradictions: []
+other_places: []
+doubts:
+  - "The header files this article under Metasoft Version Tree, but the word 'Metasoft' never appears in the body text itself; the Metasoft link comes only from the breadcrumb/header, not from a body sentence."
+  - "'Occupied by Standardist seraphim during the Second Vec War' names no year within this article, so it could not be entered as a dated event."

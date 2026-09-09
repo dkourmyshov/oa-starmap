@@ -1,0 +1,30 @@
+article: 470033894c883
+title: Akela (Wolf 359)
+events:
+  - year_at: 450
+    kind: visited
+    polity: ""
+    precision: circa
+    until_at: null
+    where: body
+    quote: "The system was first reached in approximately 450 AT by ahuman AIs, which are believed to have left Solsys around 335 AT."
+    note: "Matches the header's already-dated visited 450. The 'ahuman AIs' are not a named polity, so polity is left empty."
+  - year_at: 730
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "A beamrider mission arrived in 730 AT and began construction of a boostbeam station soon afterwards."
+    note: "Not in the header's already-dated list (which has visited 450 and visited 1150, not 730). This appears to be the same arrival as 'the first Beamrider Network explorers' below; Beamrider Network is not on the roster, so no polity is recorded (see unplaced)."
+holder_undated:
+  - polity: solsys-organization
+    quote: "The Akela system is a Solsys Organisation protectorate."
+unplaced:
+  - name: "Beamrider Network"
+    quote: "When the first Beamrider Network explorers arrived, they discovered \"The Chandelier\", a 40 kilometre long diamondoid structure of unknown purpose."
+contradictions: []
+other_places: []
+doubts:
+  - "Header lists an already-dated 'visited 1150' for this place, but no year 1150 (or any statement matching it) appears anywhere in the article body -- could not find a quote to record it against."
+  - "\"It possesses a minor Synthetic Human colony on one of the moons of Raksa\" -- 'Synthetic Human' here reads as a clade name rather than a clear invocation of the roster's Synthetic/Human Alliance polity, so it was not recorded as a holder claim."

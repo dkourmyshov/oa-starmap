@@ -1,0 +1,25 @@
+article: 47a28b116776e
+title: Third Def8
+events:
+  - year_at: 2431
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised: 2431 AT"
+    note: "Matches the header's already-dated settled 2431. No settling polity is stated in this clause -- see holder_undated for the Communion of Worlds affiliation."
+holder_undated:
+  - polity: communion-of-worlds
+    quote: "Important Communion of Worlds member-system"
+unplaced:
+  - name: "Etosha Empire"
+    quote: "Traditionally the leadership of the Etosha Empire is held by two or more males, who work together to provide a broader range of policies."
+  - name: "Medarin Community"
+    quote: "These impostors used empathic technology to replicate the behaviour of the originals with sufficient realism to deceive the rest of the Etosha ruling elite, while subtly steering this powerful empire into a damaging and ultimately disastrous war against their neighbours, the Medarin Community."
+  - name: "Jonesians"
+    quote: "a Communion empai based in the cloudtops of Def8 alerted the Medarin coalition to the deception, which was the handiwork of the Jonesians, a dissident group of human superiors who had long harboured ambitions of gaining influence and territory on this large moon."
+contradictions: []
+other_places: []
+doubts:
+  - "\"In 8010 Rythan and Meowor ... were murdered and replaced by impostors\" (the Usurpation by The False Coalition) is a dated internal coup within the Etosha Empire, not a change of the system's holder, and the Etosha Empire is not on the roster -- left out of events as a coup/ascension-type happening, not a listed kind."

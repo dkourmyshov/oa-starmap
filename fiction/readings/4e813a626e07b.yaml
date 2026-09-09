@@ -1,0 +1,19 @@
+article: 4e813a626e07b
+title: Avensis
+events:
+  - year_at: 7609
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised: 7609 AT"
+    note: "Matches the header's already-dated settled 7609. No polity is named as the settler in this line; the following description names the Cooperative Venture, which is not on the roster (see unplaced)."
+holder_undated: []
+unplaced:
+  - name: "Cooperative Venture"
+    quote: "Capital of the Cooperative Venture - a number of Networked civilizations studying relics from lost alien civilizations."
+contradictions: []
+other_places: []
+doubts:
+  - "Avensis is called 'Capital of the Cooperative Venture' immediately after the 'Colonised: 7609 AT' panel line, which could mean the capital status dates to the same year, but no year is stated for the capital claim itself and the Cooperative Venture is not a roster polity, so no capital event was recorded, only the unplaced note."

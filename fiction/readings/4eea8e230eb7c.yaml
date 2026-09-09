@@ -1,0 +1,28 @@
+article: 4eea8e230eb7c
+title: Simurgh (Garden World)
+events:
+  - year_at: 7309
+    kind: observed
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Survey Commenced 7309 AT"
+    note: "Body text identifies the surveying party as Negentropist xenologists (see next entry)."
+  - year_at: 7309
+    kind: visited
+    polity: negentropy-alliance
+    precision: exact
+    until_at: null
+    where: body
+    quote: "This world has been under continuous observation since 7309 when a team of Negentropist xenologists reached the system."
+    note: "Matches the header's already-recorded observed 7309, though 'reached the system' describes physical arrival rather than remote observation."
+holder_undated: []
+unplaced: []
+contradictions:
+  - about: "kind of the 7309 event (observed vs visited)"
+    quotes:
+      - "Survey Commenced 7309 AT"
+      - "This world has been under continuous observation since 7309 when a team of Negentropist xenologists reached the system."
+other_places: []
+doubts: []

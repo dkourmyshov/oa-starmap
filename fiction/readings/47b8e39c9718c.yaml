@@ -1,0 +1,18 @@
+article: 47b8e39c9718c
+title: Mithras (Fata Morgana)
+events:
+  - year_at: 4496
+    kind: transferred
+    polity: cyberian-network
+    precision: exact
+    until_at: 4530
+    where: body
+    quote: "In 4496 Cyberian software agents led by copies of the Grand Wizard level infiltrator ai Orintergen made the perhaps most flawless and devastating virtual coup of the entire war."
+    note: "Until_at 4530 taken from: 'By 4530 the coup was sociologically complete.' Matches the header's already-recorded transferred 4496-4530 (cyberian-network)."
+holder_undated:
+  - polity: solar-dominion
+    quote: "Former important Solar Dominion system, subverted by the Cyberians during the Version War."
+unplaced: []
+contradictions: []
+other_places: []
+doubts: []

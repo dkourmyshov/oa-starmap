@@ -601,6 +601,7 @@ worlds:
     events:
       - year_at: 6449
         kind: settled
+        polity: communion-of-worlds
         note: Construction begins.
 
   - name: Caerwactod
@@ -903,6 +904,16 @@ worlds:
       - year_at: 2103
         kind: visited
         note: Reached.
+      - year_at: 2223
+        kind: independent
+        note: >-
+          "In the Glorious Defenestration of 2223, OGA was overthrown and the
+          planet became at least on paper democratic and independent." OGA
+          (Orinoco Government Associates), the overthrown local government, is
+          a TakiCorb subsidiary, not a roster polity; the planet is described
+          as becoming independent of it, joining no listed polity at this
+          point. The Glorious Defenestration, overthrowing the OGA and
+          TakiCorb, no polities of this file.
     note: Lambda Serpentis, 39 ly.
 
   - name: Procyon
@@ -1883,6 +1894,7 @@ worlds:
     events:
       - year_at: 2397
         kind: settled
+        polity: negentropy-alliance
       - year_at: 2581
         kind: visited
         source: "Encyclopaedia timeline, The Age of Expansion"
@@ -2288,7 +2300,16 @@ worlds:
         kind: visited
         source: "Encyclopaedia timeline, Middle Federation / Megacorps"
         note: >-
-          First manned mission arrives at Merrion .
+          First manned mission arrives at Merrion .      - year_at: 2215
+        kind: capital
+        polity: nocozo
+        note: >-
+          "Merrion became NoCoZo seat in 2215 after the Treaty Revision
+          summit." New against the header, which lists only visited 1284,
+          settled 1395 and visited 1395. The NoCoZo seat after the Treaty
+          Revision summit; the map's older 'settled 1395' is a manned
+          exploration mission in the article's words.
+
   - name: Algol
     kind: system
     system: Algol
@@ -2309,6 +2330,16 @@ worlds:
       - year_at: 1831
         kind: visited
         note: Reached.
+      - year_at: 1831
+        kind: settled
+        note: >-
+          "Reached 1831, by colonists aboard the Kadoluk ." Header records
+          this place as already-dated 'visited 1831'; the panel calls the
+          arrivals 'colonists' and the body (same year) says they founded a
+          colony, so this reads as a settlement rather than a mere visit --
+          flagged as a kind conflict, not just recorded as visited. Parrot
+          provolves aboard the Kadoluk; the map's older 'visited 1831' is this
+          arrival.
 
   - name: Argelander
     kind: planet
@@ -2665,6 +2696,23 @@ worlds:
       - year_at: 1738
         kind: visited
         note: Reached.
+      - year_at: 2310
+        kind: visited
+        note: >-
+          "A K4H exploration-class vessel arrived in 2310, and found that the
+          probeship AI had apparently transcended into a S:1 animin entity,
+          which did not respond directly to their efforts to establish
+          contact." K4H reads as a vessel-class designation, not a named
+          polity; no holder recorded. A K4H exploration vessel, finding the
+          probe's AI transcended into the Breather.
+      - year_at: 2340
+        kind: settled
+        note: >-
+          "After a period of assessment, and because the Breather entity did
+          not impede their investigations in any way, the torus was declared
+          safe for colonisation in 2340." No settling polity is named for this
+          colonisation. The torus declared safe for colonisation; no polity
+          named.
     note: >-
       An animin presence. The local civilisation is loosely associated with the
       Non-Coercive Zone and closely with the Disarchy, so both are recorded.
@@ -5492,6 +5540,7 @@ worlds:
     events:
       - year_at: 1752
         kind: visited
+        polity: virginis-combine
         note: >-
           A derelict alien starship found here — the first dated event the
           system has, and evidence of somebody's presence rather than of the
@@ -6725,8 +6774,14 @@ worlds:
       star: 94 Ceti
     events:
       - year_at: 4556
-        kind: settled
+        kind: capital
+        polity: metasoft
         precision: not_later_than
+        note: >-
+          "Landau was a modosophont-level capital of the Metasoft until 4556,
+          when the system was attacked in the Version War. The role was then
+          reassigned to NewRoot." The map's older 'settled 4556' was this
+          sentence read as a settlement; the article gives no settlement year.
     note: 94 Ceti, 75 ly out.
 
   - name: M'Buto
@@ -6833,6 +6888,7 @@ worlds:
     events:
       - year_at: 2019
         kind: settled
+        polity: metasoft
     note: Nu-2 Lupi, 48 ly out.
 
   - name: Niuearth
@@ -8313,6 +8369,7 @@ worlds:
     events:
       - year_at: 1650
         kind: settled
+        polity: stellar-umma
     note: >-
       HD 74868, a close binary, at 119.1 ly against the article's 119 — the
       closest agreement in this file. The catalogue puts it in Vela.
@@ -8509,6 +8566,7 @@ worlds:
     events:
       - year_at: 5767
         kind: settled
+        polity: sagittarius-transcultural-cooperation
     note: >-
       Two planets under one name, in Scorpius near NGC 6383 and 1,090 ly from
       the Tunh wormhole. The cluster is at 3,591 ly and supplies the direction.
@@ -8825,6 +8883,17 @@ worlds:
         source: "Encyclopaedia timeline, The Early Federation Age"
         note: >-
           '.....' sporeship arrives at Wolf 359 and spreads from there.
+      - year_at: 730
+        kind: visited
+        note: >-
+          "A beamrider mission arrived in 730 AT and began construction of a
+          boostbeam station soon afterwards." Not in the header's already-
+          dated list (which has visited 450 and visited 1150, not 730). This
+          appears to be the same arrival as 'the first Beamrider Network
+          explorers' below; Beamrider Network is not on the roster, so no
+          polity is recorded (see unplaced). A beamrider mission, building a
+          boostbeam station; the map's older 'visited 1150' has no sentence in
+          the article.
     note: Wolf 359, 7.9 ly out in Leo.
 
   - name: Sirius
@@ -11498,6 +11567,7 @@ worlds:
     events:
       - year_at: 2309
         kind: settled
+        polity: fomalhaut-acquisition-society
         note: Arrived.
     note: >-
       A ship that became a habitat, at Epsilon Microscopii — 169 ly out against
@@ -12154,6 +12224,16 @@ worlds:
       - year_at: 7309
         kind: observed
         note: Surveyed by Negentropist xenologists.
+      - year_at: 7309
+        kind: visited
+        polity: negentropy-alliance
+        note: >-
+          "This world has been under continuous observation since 7309 when a
+          team of Negentropist xenologists reached the system." Matches the
+          header's already-recorded observed 7309, though 'reached the system'
+          describes physical arrival rather than remote observation.
+          Negentropist xenologists, under whose observation the world has been
+          since; the panel's 'Survey Commenced 7309' is the map's older entry.
     note: >-
       In Circinus at 3,084 ly. Watched by the Negentropy Alliance rather than
       held by it, so the field is empty and the note carries the relationship.

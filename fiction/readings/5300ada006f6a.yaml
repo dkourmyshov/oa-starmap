@@ -1,0 +1,28 @@
+article: 5300ada006f6a
+title: Canberra Orbital
+events:
+  - year_at: 6449
+    kind: settled
+    polity: communion-of-worlds
+    precision: exact
+    until_at: null
+    where: body
+    quote: "in 6449 the Communion invited megastructure specialists from the MPA to construct a Banks Orbital from the planetoids and asteroids in the inner system"
+    note: "Matches the header's already-dated settled 6449, but the sentence itself describes the Communion commissioning construction, not colonists arriving; the text says the structure was only 'ready to receive colonists' six hundred years later, with no year given for that (see doubts)."
+  - year_at: 6449
+    kind: visited
+    polity: mutual-progress-association
+    precision: exact
+    until_at: null
+    where: body
+    quote: "in 6449 the Communion invited megastructure specialists from the MPA to construct a Banks Orbital from the planetoids and asteroids in the inner system"
+    note: "MPA specialists are stated to have come to build the structure; they are not said to have stayed or settled it themselves."
+holder_undated:
+  - polity: communion-of-worlds
+    quote: "Allegiance: Communion of Worlds"
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "The header dates settlement to 6449, but the article's own sequence puts construction commissioning at 6449 and readiness for colonists 'six hundred years later' (no explicit year given for that date), so the true colonist-arrival year may differ from 6449; no alternate year is quoted, so no contradiction pair is recorded, only this note."
+  - "The 8003 Ratel/Fusionist conflict on Canberra is a battle, not a change of holder, so it was excluded per the brief's list of non-events."

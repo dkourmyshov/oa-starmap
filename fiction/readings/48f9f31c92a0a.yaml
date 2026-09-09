@@ -1,0 +1,39 @@
+article: 48f9f31c92a0a
+title: Merrion (Alpha Mensae)
+events:
+  - year_at: 1284
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "First visited by a SecureSpace exploration probe in 1284 and a manned exploration mission in 1395."
+    note: "The probe is credited to SecureSpace, which is not on the roster."
+  - year_at: 1395
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "First visited by a SecureSpace exploration probe in 1284 and a manned exploration mission in 1395."
+    note: "The 'manned exploration mission' is not credited to any named party, and the sentence does not say anyone stayed; the header instead records this year as a settlement (see contradictions)."
+  - year_at: 2215
+    kind: capital
+    polity: nocozo
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Merrion became NoCoZo seat in 2215 after the Treaty Revision summit."
+    note: "New against the header, which lists only visited 1284, settled 1395 and visited 1395."
+holder_undated: []
+unplaced:
+  - name: "SecureSpace"
+    quote: "First visited by a SecureSpace exploration probe in 1284 and a manned exploration mission in 1395."
+contradictions:
+  - about: "nature of the 1395 event"
+    quotes:
+      - "already dated: settled 1395 [header]"
+      - "First visited by a SecureSpace exploration probe in 1284 and a manned exploration mission in 1395."
+other_places: []
+doubts:
+  - "The header records 'settled 1395', but the body only says a manned exploration mission occurred that year, with no statement that it stayed; recorded here as visited rather than settled, and flagged as a contradiction rather than resolved."

@@ -1,0 +1,27 @@
+article: 4703b95b8c03b
+title: Porrima
+events:
+  - year_at: 1752
+    kind: visited
+    polity: virginis-combine
+    precision: exact
+    until_at: null
+    where: body
+    quote: "It is famous as the place where the first high technology non-Terragen artifact — a derelict alien starship — was discovered in 1752 by the Virginis Combine ship Fra Angelico."
+    note: "Matches the header's already-dated visited 1752. The Virginis Combine ship approached and was destroyed by the derelict alien's defences; nobody stayed."
+  - year_at: 1827
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The Fra Angelico had been driven into a highly eccentric orbit by the artifact, and the ship and its cargo of corpses was not found until 1827."
+    note: "A recovery expedition must have reached the system again by 1827 to find the wreck, but no polity is named as conducting the search."
+holder_undated:
+  - polity: solar-dominion
+    quote: "The Porrima system is currently a Solar Dominion protectorate inhabited by a number of bioid and cyborg clades."
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "The header records an already-dated 'visited 597' for this article, but no year 597 (or any claim near it) appears anywhere in the article text; only 1752 and 1827 are dated, so no corresponding entry could be written and no quote can be supplied for it. Flagging for a reviewer since the map may hold this date from a source not present in this prose."

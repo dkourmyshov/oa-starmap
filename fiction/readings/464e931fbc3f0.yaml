@@ -1,0 +1,20 @@
+article: 464e931fbc3f0
+title: Gilboa Reach
+events:
+  - year_at: 5189
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised 5189AT"
+    note: "Matches the header's already-dated settled 5189. No settling polity is named in this clause -- see holder_undated for the STC affiliation."
+holder_undated:
+  - polity: sagittarius-transcultural-cooperation
+    quote: "Important STC outpost and stargate plexus at the edge of the Serpens sector , consisting of a large L5 orbital swarm of habitats and a terraformed world , Gilboa, which is distinguished by its unusual and lush vegetation (a result of an earlier terraforming attempt where gengineered terragen moss and lichen hybridized with indigenous prokaryotes)."
+unplaced: []
+contradictions: []
+other_places:
+  - "Skiiiws'nnii -- named only as a Serpens Sector world reached via this gateway, not described"
+  - "Miracle City -- named only as a Serpens Sector world reached via this gateway, not described"
+doubts: []

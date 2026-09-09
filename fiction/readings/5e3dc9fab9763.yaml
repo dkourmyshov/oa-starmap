@@ -1,0 +1,19 @@
+article: 5e3dc9fab9763
+title: Niaanyo
+events:
+  - year_at: 7879
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "They detected a small Stevensonian world in Sagitta, ten light years from the nearest star and thirty light years from the nearest wormhole, and moved there in 7879 AT."
+    note: "Settlers were the Tulu clade of vecs, a clade rather than a roster polity, so polity is left blank."
+holder_undated: []
+unplaced:
+  - name: "Tulu clade"
+    quote: "One such group was the Tulu clade of vecs , many of which had been engaged in habitat maintenance and construction for thousands of years in the Cygexpa region."
+contradictions: []
+other_places: []
+doubts:
+  - "By 8910 a cultural exchange mission arrived and Backgrounders/other Hiders were given surface apartments, and separately Raffins were found to have colonised disused tunnels; both read as growth within the already-settled world rather than a new settlement, so neither was entered as an event, per the brief's rule on sub-settlements within an already-settled system."

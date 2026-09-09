@@ -1,0 +1,26 @@
+article: 52b993102478a
+title: Niuearth
+events:
+  - year_at: 2998
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "This world was originally colonized and terraformed in 2998 by the Colbartists , a group of humans and cyborgs who wished to live without hyperturing supervision."
+    note: "The Colbartists are not on the roster, so polity is left blank."
+holder_undated:
+  - polity: nocozo
+    quote: "However the political situation on the world quickly collapsed, and the world was briefly annexed by the NoCoZo , then by the Taurus Nexus ."
+  - polity: taurus-nexus
+    quote: "However the political situation on the world quickly collapsed, and the world was briefly annexed by the NoCoZo , then by the Taurus Nexus ."
+  - polity: metasoft
+    quote: "Following the Consolidation Wars and the breakup of the Taurus Nexus, Niuearth fell into Metasoft hands, and has been maintained ever since as a safe haven for human baselines and nearbaselines ."
+unplaced:
+  - name: "Colbartists"
+    quote: "This world was originally colonized and terraformed in 2998 by the Colbartists , a group of humans and cyborgs who wished to live without hyperturing supervision."
+contradictions: []
+other_places:
+  - "Rimmar (where the augmented Lucjordanians were relocated) and Earthland (another Metasoft baseline reserve) are mentioned but are their own places."
+doubts:
+  - "The NoCoZo, then Taurus Nexus, then Metasoft holder sequence has no years attached to any of the three transfers, so none could be entered as a dated 'transferred' event despite being clear changes of holder."

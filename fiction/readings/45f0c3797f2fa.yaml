@@ -1,0 +1,21 @@
+article: 45f0c3797f2fa
+title: Altair
+events:
+  - year_at: 550
+    kind: settled
+    polity: ""
+    precision: circa
+    until_at: null
+    where: body
+    quote: "The system was occupied in about 550 AT by a solipsist ai replicator probe, that converted the available resources into a number of primitive megastructures."
+    note: "The occupier is a generic 'solipsist ai replicator probe', not the roster polity Solipsist Panvirtuality and not a named group, so polity is left blank."
+holder_undated: []
+unplaced:
+  - name: "Altair Knowledge Designs"
+    quote: "During the Age of Emergence the Altair system held the headquarters of Altair Knowledge Designs , a sentience development megacorp which produced the first independently-evolved hypersentient a-life species, the AKD."
+contradictions: []
+other_places:
+  - "Ascension, where the Merged Humanoid appeared during the Integration, is a separate place with its own article."
+doubts:
+  - "First Federation explorer neumanns are said to have arrived after the probe's occupation, finding the deconstructed asteroids and khaki goo, but no year is given for their arrival, so no dated event could be recorded for it."
+  - "The breadcrumb files this article under the Diamond Network topic, but the header says filed under (no polity); the text's 'Diamond Belt' reads as a historical era/region name rather than a clear reference to the roster polity Diamond Network, so no holder was recorded from it."

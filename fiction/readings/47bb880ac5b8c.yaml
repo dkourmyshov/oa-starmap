@@ -1,0 +1,18 @@
+article: 47bb880ac5b8c
+title: Mykropht III
+events:
+  - year_at: 3019
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised: 3019 AT"
+    note: "Matches the header's already-dated settled 3019. The body text names the settling group as 'the Radiation Nation, radiation-resistant human-derived bionts', which is not on the roster, so polity is left blank; see unplaced."
+holder_undated: []
+unplaced:
+  - name: "Radiation Nation"
+    quote: "The planet has been colonised by the Radiation Nation, radiation-resistant human-derived bionts."
+contradictions: []
+other_places: []
+doubts: []

@@ -1,0 +1,23 @@
+article: 534fee3bba72a
+title: "Narrenschiff, The"
+events:
+  - year_at: 2309
+    kind: settled
+    polity: fomalhaut-acquisition-society
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Using conversion drive propulsion, this ship arrived in 2309 A.T, and soon found evidence of alien construction."
+    note: "Matches the header's already-dated settled 2309. The vessel that arrived was built by the Fomalhault Acquisition Society (spelled thus in the prose), and the same paragraph has the Fomacist Acquisitors take possession of the tunnels."
+holder_undated:
+  - polity: fomalhaut-acquisition-society
+    quote: "Somewhat disappointed, the Fomacist Acquisitors nevertheless took possession of the empty tunnels and surveyed them in minute detail, recording their dimensions, orientation, possible methods of construction and the methods used to clear the tunnels."
+unplaced:
+  - name: "Hamilton Institute (of Exopaleontology)"
+    quote: "During the Integration the Hamilton Institute established a large research agency in this system, dedicated to the study of this mysterious lost civilisation, which they labelled 'Unnamed Species HIE072CZE'."
+  - name: "Fursprechers"
+    quote: "In 4355 a group of transavant dissidents known as the Fursprechers campaigned for the reconfiguration of the Narrenschiff into a warship to defend the system against attack during the Version War."
+contradictions: []
+other_places: []
+doubts:
+  - "\"In 4355 a group of transavant dissidents ... campaigned for the reconfiguration of the Narrenschiff into a warship\" is a dated local political/military episode, not a change of holder, settlement, or the other listed event kinds, so it was left out of events."

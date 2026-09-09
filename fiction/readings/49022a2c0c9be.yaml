@@ -1,0 +1,19 @@
+article: 49022a2c0c9be
+title: NewRoot
+events:
+  - year_at: 2019
+    kind: settled
+    polity: metasoft
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised 2019 AT"
+    note: "Body text corroborates: 'Metasoft began colonizing the system from there.'"
+holder_undated:
+  - polity: metasoft
+    quote: "The planet of NewRoot serves as the ceremonial capital of the Metasoft Version Tree."
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "NewRoot is called the 'ceremonial capital' of the Metasoft Version Tree, but no year is given for when it took that role, so it is recorded as holder_undated rather than a dated capital event."

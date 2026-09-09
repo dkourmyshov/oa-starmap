@@ -1,0 +1,18 @@
+article: 45f973105f71c
+title: Arcturus
+events:
+  - year_at: 1427
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised 1427 AT"
+    note: "Matches the header's already-dated settled 1427. No polity is named for the colonisation itself; see holder_undated for the Cyberian Network claim."
+holder_undated:
+  - polity: cyberian-network
+    quote: "A centre of the distributed Cyberian Network."
+unplaced: []
+contradictions: []
+other_places: []
+doubts: []

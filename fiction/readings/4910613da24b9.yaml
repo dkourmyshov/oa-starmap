@@ -1,0 +1,31 @@
+article: 4910613da24b9
+title: "Orinoco (Lambda Serpentis)"
+events:
+  - year_at: 2103
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Reached 2103 AT"
+    note: "Matches the header's already-dated visited 2103. No polity is named as having reached the system."
+  - year_at: 2223
+    kind: independent
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In the Glorious Defenestration of 2223, OGA was overthrown and the planet became at least on paper democratic and independent."
+    note: "OGA (Orinoco Government Associates), the overthrown local government, is a TakiCorb subsidiary, not a roster polity; the planet is described as becoming independent of it, joining no listed polity at this point."
+holder_undated:
+  - polity: cyberian-network
+    quote: "Orinoco is currently together with Fata Morgana one of the leading planets of the Cyberia Sphere."
+unplaced:
+  - name: "TakiCorb"
+    quote: "Orinoco was one of the first worlds to be terraformed by TakiCorb"
+  - name: "Orinoco Government Associates (OGA)"
+    quote: "the local government (Orinoco Government Associates, a TakiCorb subsidiary) used more and more harsh or intrusive methods"
+contradictions: []
+other_places: []
+doubts:
+  - "The sentence 'Largely settled by colonists claiming South American ancestry, Orinoco was one of the first worlds to be terraformed by TakiCorb' immediately follows the 'Reached 2103 AT' panel line and describes what reads as an actual settlement, which could conflict with the header's classification of this date as visited rather than settled; no separate year is given for the settlement itself, so no settled entry was recorded, only this note."

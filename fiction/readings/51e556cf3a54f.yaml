@@ -1,0 +1,26 @@
+article: 51e556cf3a54f
+title: "Amida System, the"
+events:
+  - year_at: 9871
+    kind: observed
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "On 10 Kepler 9871 A.T., the wandering transapient starship Eien no Gakusei (Japanese for \"Eternal Student\") broke nearly five centuries of self-imposed radio silence with the announcement e had discovered evidence of an extinct xenosophont civilization located on a moon orbiting the largest world in a very old K0IV subgiant's planetary system."
+    note: "Matches the header's already-dated observed 9871. The discoverer is a single wandering transapient starship, not a polity, so polity is left blank; the description of examined cave structures could also read as a physical visit rather than a remote observation (see doubts)."
+  - year_at: 33
+    kind: observed
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The star, designated C2306265-085103 by the RAdial Velocity Experiment (RAVE) survey of 33 A.T., is a member of the so-called \"Aquarius Stream\" of stars"
+    note: "A survey designation date for the star itself, not for the extinct civilization found later; no polity is named as conducting the survey."
+holder_undated: []
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "The 9871 entry's kind is uncertain: the header calls it observed, but the article describes examination of cave-like structures and etched rock faces in enough detail that this could instead be a visited event; recorded as observed to match the header, per the instruction to write the already-dated kind and flag any difference."
+  - "The extinct xenosophont civilization HIE294PZE is not a contact (it is extinct, with 'no further evidence of tools... nor any unambiguous fossil record'), so no contact event was recorded despite the discovery of a civilization."

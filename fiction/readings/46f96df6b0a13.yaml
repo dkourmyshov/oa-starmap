@@ -1,0 +1,20 @@
+article: 46f96df6b0a13
+title: Greylag
+events:
+  - year_at: 2397
+    kind: settled
+    polity: negentropy-alliance
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised 2397 AT"
+    note: "Polity per body text describing Greylag as 'Negentropy theocratic-monastic world; one of the Five Capitals of the Alliance.'"
+holder_undated:
+  - polity: negentropy-alliance
+    quote: "Negentropy theocratic-monastic world; one of the Five Capitals of the Alliance."
+unplaced: []
+contradictions: []
+other_places:
+  - "New Daffy (Panoparchy), founded by heretic expansionists from Greylag in 6230, has its own article."
+doubts:
+  - "The header records an already-dated 'visited 2581' for Greylag, but no year 2581 or matching claim appears anywhere in this article's text, so no entry could be written for it."

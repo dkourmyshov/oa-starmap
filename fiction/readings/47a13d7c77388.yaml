@@ -1,0 +1,21 @@
+article: 47a13d7c77388
+title: Tannhauser
+events:
+  - year_at: 3218
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Reached : 3218 AT"
+    note: "Matches the header's already-dated visited 3218. No polity is named as having reached the system."
+holder_undated:
+  - polity: utopia-sphere
+    quote: "The system is currently part of the Utopia Sphere, while Tannhauser itself is jointly governed by the Utopia Sphere and the Caretaker Gods."
+  - polity: caretaker-gods
+    quote: "The system is currently part of the Utopia Sphere, while Tannhauser itself is jointly governed by the Utopia Sphere and the Caretaker Gods."
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "No year is given for when settlement (limited surface settlement of xenoprovolves) began, nor for when the Utopia Sphere/Caretaker Gods joint governance was established, so no settled, stewardship or transferred event could be dated despite the article's holder statement."

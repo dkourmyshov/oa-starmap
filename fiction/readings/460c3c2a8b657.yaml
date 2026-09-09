@@ -1,0 +1,28 @@
+article: 460c3c2a8b657
+title: Betelgeuse
+events:
+  - year_at: 3621
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "First Reached in 3621 AT"
+    note: "Matches the header's already-dated visited 3621."
+  - year_at: 3621
+    kind: capital
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Alpha Orionis, 58 Orionis, the capital of the Betelgeuse volume ."
+    note: "Matches the header's already-dated capital 3621, but this sentence carries no date of its own -- 3621 is carried over from the header/panel's 'First Reached' date for comparison. 'Betelgeuse volume' is a region, not a polity on the roster, so polity is left empty (see unplaced)."
+holder_undated: []
+unplaced:
+  - name: "Betelgeuse volume"
+    quote: "Alpha Orionis, 58 Orionis, the capital of the Betelgeuse volume ."
+contradictions: []
+other_places:
+  - "Betelgeuse Umma -- related article describing a Consolidation Age offshoot culture that settled elsewhere in the volume; not this system's own place"
+doubts:
+  - "The 'capital of the Betelgeuse volume' claim has no date of its own in the prose; the year 3621 recorded above is taken only from the header's already-dated capital 3621 and from the co-located 'First Reached in 3621 AT' panel line, not from a dated sentence about becoming capital."

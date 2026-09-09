@@ -1,0 +1,23 @@
+article: 591f26a73b0e1
+title: Eganfodugbe
+events:
+  - year_at: 2640
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "By the time explorers reached the system in 2640 AT , some of the bubblehabs had even achieved sophonce and developed an idiosyncratic society of their own."
+    note: "The header records this as settled 2640, but the sentence only describes explorers reaching and discovering the already feral world (they named it), with no colony established; recorded here as visited and flagged as a contradiction."
+holder_undated:
+  - polity: first-federation
+    quote: "Eganfodugbe was the target of a long-range autonomous probe sent in the Early Federation ."
+unplaced: []
+contradictions:
+  - about: "nature of the 2640 event (settled vs visited)"
+    quotes:
+      - "already dated: settled 2640 [header]"
+      - "By the time explorers reached the system in 2640 AT , some of the bubblehabs had even achieved sophonce and developed an idiosyncratic society of their own."
+other_places: []
+doubts:
+  - "'Sent in the Early Federation' names no exact year; taken loosely to mean the First Federation polity and recorded as holder_undated rather than a dated event."

@@ -1,0 +1,18 @@
+article: 46788c08a643b
+title: Labeyrie
+events:
+  - year_at: 3155
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised: 3155"
+    note: "Matches the header's already-dated settled 3155. No settling polity is named in this clause -- see holder_undated for the Communion of Worlds affiliation."
+holder_undated:
+  - polity: communion-of-worlds
+    quote: "Important Communion of Worlds member-system"
+unplaced: []
+contradictions: []
+other_places: []
+doubts: []

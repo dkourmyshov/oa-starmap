@@ -1,0 +1,19 @@
+article: 46cf859e07951
+title: Nengs
+events:
+  - year_at: 3989
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised: 3989 AT"
+    note: "Matches the header's already-dated settled 3989. No polity is named in this line itself; see holder_undated for the Communion of Worlds allegiance."
+holder_undated:
+  - polity: communion-of-worlds
+    quote: "Allegiance: Communion of Worlds"
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "'Type: Lifeless Gaian terraformed (completed 5609)' is a terraforming milestone, excluded per the brief's list of non-events, so no entry was made for 5609."

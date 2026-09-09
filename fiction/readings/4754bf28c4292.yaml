@@ -1,0 +1,18 @@
+article: 4754bf28c4292
+title: Vistaa
+events:
+  - year_at: 2509
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised: 2509 AT"
+    note: "Matches the header's already-dated settled 2509. No polity is named in this line itself; the article separately calls Vistaa 'an important Communion of Worlds system' without tying that statement to the colonisation date, so polity is left blank here (see holder_undated)."
+holder_undated:
+  - polity: communion-of-worlds
+    quote: "Vistaa is an important Communion of Worlds system, a cool Gaian coming out of an ice age, minimally terraformed to support Terragen lifeforms."
+unplaced: []
+contradictions: []
+other_places: []
+doubts: []

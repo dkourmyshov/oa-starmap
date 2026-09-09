@@ -1,0 +1,29 @@
+article: 45e77cd829bbd
+title: Alpamis (Pi Mensae)
+events:
+  - year_at: 1831
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Reached 1831, by colonists aboard the Kadoluk ."
+    note: "Header records this place as already-dated 'visited 1831'; the panel calls the arrivals 'colonists' and the body (same year) says they founded a colony, so this reads as a settlement rather than a mere visit -- flagged as a kind conflict, not just recorded as visited."
+  - year_at: 1831
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The Alpamis system was first colonized by parrot provolves aboard the Kadoluk , who settled on the satellites of Barchin, the large jovian planet in an eccentric orbit."
+    note: "Same episode as the panel's 'Reached 1831'; the body does not repeat the year but is plainly the same arrival. No polity is named for the colonists."
+holder_undated:
+  - polity: nocozo
+    quote: "Currently a minor NoCoZo system, directly connected to a wormhole Relay system which also possesses links to the major NoCoZo systems of Merrion (Alpha Mensae) and Frei (Zeta Doradus) ."
+unplaced: []
+contradictions: []
+other_places:
+  - "Merrion (Alpha Mensae) -- named as a linked NoCoZo system, not described"
+  - "Frei (Zeta Doradus) -- named as a linked NoCoZo system, not described"
+doubts:
+  - "Header's already-dated entry is 'visited 1831', but both the panel ('Reached 1831, by colonists') and body ('first colonized ... who settled') describe a settlement in 1831, not a visit -- worth a reviewer's eye on whether the map's event kind should change from visited to settled."

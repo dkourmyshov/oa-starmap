@@ -1,0 +1,23 @@
+article: 46f876d71e252
+title: Wachowski Prime
+events:
+  - year_at: 3560
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The first Matrioshka Brain, completed in 3560 AT by post-Diamond belt entities."
+    note: "Matches the header's already-dated settled 3560. The builders are named only as 'post-Diamond belt entities', not the roster's Diamond Network, and the sentence describes construction rather than an arrival, so no polity is asserted (see unplaced and doubts)."
+holder_undated: []
+unplaced:
+  - name: "post-Diamond belt entities"
+    quote: "The first Matrioshka Brain, completed in 3560 AT by post-Diamond belt entities."
+  - name: "Wachowski Civilization"
+    quote: "many of the linked worlds still will not deal with the Sephirotics, and have since cut their wormhole links and established their own breakaway civilization, known as the Wachowski Civilization"
+contradictions: []
+other_places:
+  - "Wachowski Civilization: a breakaway grouping of linked worlds formerly connected to Wachowski Prime by wormhole, described only in passing here and with its own related article."
+doubts:
+  - "The article is filed under 'Other Major Polities, Empires, and Meta-Empires > Diamond Network' in its breadcrumb, and Diamond Network is on the roster (diamond-network), but no body sentence explicitly states Diamond Network holds or settled Wachowski Prime, so no holder entry was recorded from that breadcrumb alone; a reviewer may want to weigh it."
+  - "'The local entities underwent some sort of transformation in 9215 AT, and since then have been a lot more friendly to Keterist and TRHN ai' describes a shift in disposition toward keter-dominion and technorapture-hypernation, not a stated transfer of the system, so no transferred event was recorded for 9215."

@@ -1,0 +1,19 @@
+article: 57ea997933d9b
+title: Arugula
+events:
+  - year_at: 10202
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised 10202"
+    note: "Matches the header's already-dated settled 10202; no colonising polity is named for this date (the seeding group, the Hosoko Periphery Initiative, is not on the roster -- see unplaced)."
+holder_undated: []
+unplaced:
+  - name: "Hosoko Periphery Initiative"
+    quote: "Seeded by the Hosoko Periphery Initiative, this relatively young colony has only a few hundred years of history at present."
+contradictions: []
+other_places: []
+doubts:
+  - "\"Inhabited by vecs from the inner Cygexpa volumes who wished to establish their own relatively simple utopia\" -- names Cygexpa only as the colonists' place of origin, not as a settling or holding polity for Arugula, so no polity was recorded for the settlement."

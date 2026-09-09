@@ -1,0 +1,36 @@
+article: 58737c8c90cd6
+title: Gacrux and the Breather
+events:
+  - year_at: 1738
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "This system was reached by autonomous probe in 1738 AT , but contact was lost with the probe shortly afterwards."
+    note: "Matches the header's already-dated visited 1738."
+  - year_at: 2310
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "A K4H exploration-class vessel arrived in 2310, and found that the probeship AI had apparently transcended into a S:1 animin entity, which did not respond directly to their efforts to establish contact."
+    note: "K4H reads as a vessel-class designation, not a named polity; no holder recorded."
+  - year_at: 2340
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "After a period of assessment, and because the Breather entity did not impede their investigations in any way, the torus was declared safe for colonisation in 2340."
+    note: "No settling polity is named for this colonisation."
+holder_undated:
+  - polity: nocozo
+    quote: "Gacrux is loosely associated with the NoCoZo , but has close links with the Disarchy , which lies at the far end of their local wormhole trunkroute."
+unplaced: []
+contradictions: []
+other_places:
+  - "Deathjungle of Kalii (named only in a comparison of dangers, not described)"
+doubts:
+  - "\"A K4H exploration-class vessel arrived in 2310\" -- K4H is not on the roster and appears to name a ship class rather than a polity; left unattributed rather than guessed."

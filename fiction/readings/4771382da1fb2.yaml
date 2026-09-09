@@ -1,0 +1,21 @@
+article: 4771382da1fb2
+title: Bentharis
+events:
+  - year_at: 3652
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Reached 3652 AT by Hamilton Institute survey vessel Sramana"
+    note: "Matches the header's already-dated visited 3652. The Hamilton Institute is not on the roster (see unplaced), so polity is left blank."
+holder_undated: []
+unplaced:
+  - name: "Hamilton Institute"
+    quote: "Reached 3652 AT by Hamilton Institute survey vessel Sramana"
+  - name: "HIE Archaeological Reserve"
+    quote: "System Polity: HIE Archaeological Reserve"
+contradictions: []
+other_places: []
+doubts:
+  - "The related article link 'Hov's'sa (HIE-015-PZE, the Bentharis II Civilization)' implies a xenosophont civilization was found in this system, which would normally be a contact event, but this article's own text gives no date or detail for any such contact, so nothing was recorded for it here."

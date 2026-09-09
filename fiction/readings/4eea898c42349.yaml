@@ -1,0 +1,16 @@
+article: 4eea898c42349
+title: Solaris
+events:
+  - year_at: 3955
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "First Colonised: 3955 A.T."
+    note: "Matches the header's already-dated settled 3955. No settling polity is named anywhere in the article."
+holder_undated: []
+unplaced: []
+contradictions: []
+other_places: []
+doubts: []

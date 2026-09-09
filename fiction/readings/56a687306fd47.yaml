@@ -1,0 +1,20 @@
+article: 56a687306fd47
+title: Hyxuym
+events:
+  - year_at: 3877
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The Hider Colony on Hyxuym was established in 3877 by the Spacefarer Union craft Zhōnghuá"
+    note: "The colonists were Hider refugees the craft dropped off; the craft itself belonged to the Spacefarer Union, which is not on the roster, so polity is left blank rather than inferred."
+holder_undated: []
+unplaced:
+  - name: "Spacefarer Union"
+    quote: "The Hider Colony on Hyxuym was established in 3877 by the Spacefarer Union craft Zhōnghuá"
+contradictions: []
+other_places:
+  - "The Realm (a Deeper Covenant world 110ly from Hyxuym, where emigrated Hiders from Hyxuym now live) has its own article and is not this place."
+doubts:
+  - "The founding sentence credits establishment to 'the Spacefarer Union craft' rather than to the Hider refugees who actually stayed; left polity empty per the no-inference rule rather than assigning either party."

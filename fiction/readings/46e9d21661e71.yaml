@@ -1,0 +1,17 @@
+article: 46e9d21661e71
+title: Yathrib
+events:
+  - year_at: 1650
+    kind: settled
+    polity: stellar-umma
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised: 1650 AT"
+    note: "Polity per body text: 'One of the four original colonies of the Stellar Umma, together with Medina (capital of the Umma Core), Zamzam (now capital of the Umma Shell) and Jeddah.' New against the header, which lists this article as filed under (no polity)."
+holder_undated: []
+unplaced: []
+contradictions: []
+other_places:
+  - "Medina (capital of the Umma Core), Zamzam (capital of the Umma Shell) and Jeddah are named as the other three original Stellar Umma colonies, each with its own article."
+doubts: []

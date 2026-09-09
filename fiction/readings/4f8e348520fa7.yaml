@@ -1,0 +1,20 @@
+article: 4f8e348520fa7
+title: Epsilon Sculptoris
+events:
+  - year_at: 1460
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The first alien artifact, a fragmentary hull of a robotic satellite, was discovered here in 1460 AT."
+    note: "The header records this as 'observed 1460', but the artifact is described as physically discovered 'here', which reads as somebody reaching the system rather than seeing it from afar; recorded here as visited and flagged as a contradiction. No finder is named, so polity is left blank."
+holder_undated: []
+unplaced: []
+contradictions:
+  - about: "nature of the 1460 event (observed vs visited)"
+    quotes:
+      - "already dated: observed 1460 [header]"
+      - "The first alien artifact, a fragmentary hull of a robotic satellite, was discovered here in 1460 AT."
+other_places: []
+doubts: []

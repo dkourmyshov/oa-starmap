@@ -1,0 +1,16 @@
+article: 57b4750a0d015
+title: New Dumont
+events:
+  - year_at: 3998
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised: 3998 AT"
+    note: "Matches the header's already-dated settled 3998. No settling polity is named anywhere in the article; filed only under the generic 'Minor Polities' topic."
+holder_undated: []
+unplaced: []
+contradictions: []
+other_places: []
+doubts: []

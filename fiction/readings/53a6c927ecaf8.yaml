@@ -1,0 +1,24 @@
+article: 53a6c927ecaf8
+title: Laurel and Hardy
+events:
+  - year_at: 5767
+    kind: settled
+    polity: sagittarius-transcultural-cooperation
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Sagitarius Transcultural Cooperation 1090 ly from the Tunh Wormhole Colonised 5767 AT"
+    note: "Matches the header's already-dated settled 5767; panel spells the polity 'Sagitarius'."
+  - year_at: 5767
+    kind: settled
+    polity: sagittarius-transcultural-cooperation
+    precision: exact
+    until_at: null
+    where: body
+    quote: "This system was reached by the Sagittarius Transcultural Cooperation in 5767AT, during the Age of Re-evaluation."
+    note: "Matches the header's already-dated settled 5767."
+holder_undated: []
+unplaced: []
+contradictions: []
+other_places: []
+doubts: []

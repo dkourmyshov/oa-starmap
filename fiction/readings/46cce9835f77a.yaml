@@ -1,0 +1,19 @@
+article: 46cce9835f77a
+title: Naos
+events:
+  - year_at: 5680
+    kind: settled
+    polity: ""
+    precision: circa
+    until_at: null
+    where: body
+    quote: "Naos was colonized in the 5680's by a bizarre corporate-religious clade calling itself the UV Consciousness."
+    note: "The UV Consciousness is not on the roster."
+holder_undated: []
+unplaced:
+  - name: "UV Consciousness"
+    quote: "Naos was colonized in the 5680's by a bizarre corporate-religious clade calling itself the UV Consciousness."
+contradictions: []
+other_places: []
+doubts:
+  - "The header files this article under NoCoZo, but the body text never states a NoCoZo affiliation for Naos or its colonists."

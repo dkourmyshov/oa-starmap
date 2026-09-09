@@ -1,0 +1,18 @@
+article: 45e4e60b2bec2
+title: Adorate
+events:
+  - year_at: 8761
+    kind: transferred
+    polity: amalgamation
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Sophic enclave in the Perseus Arm that fell to the Amalgamation in 8761."
+    note: "Matches the header's already-dated transferred 8761 (amalgamation)."
+holder_undated:
+  - polity: sophic-league
+    quote: "The newly terraformed world Adorate, an ecumenical Sophic League colony."
+unplaced: []
+contradictions: []
+other_places: []
+doubts: []
