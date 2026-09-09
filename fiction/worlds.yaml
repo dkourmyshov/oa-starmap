@@ -1925,6 +1925,7 @@ worlds:
           Negentropy Alliance world of Greylag , becoming the New Daffy Panoparchy .
       - year_at: 2556
         kind: transferred
+        polity: conver-ambi
         note: >-
           "In 2556 AT FreedomWorld got a lucrative offer from the TakiCorb
           subsidiary Serpens Development Blast for the colonisation rights,
@@ -1956,6 +1957,20 @@ worlds:
           until_at computed from 'throughout the 60 year occupation'. Paired
           with the NoCoZo entry above; same caveat about contested occupation
           applies.
+      - year_at: 3943
+        kind: transferred
+        polity: negentropy-alliance
+        precision: not_earlier_than
+        note: >-
+          "The Conver Wars devastated the planet ... In the aftermath one
+          group managed to unite the scattered survivors and restore order
+          and environment control: the Church of Negentropy ... Over a span
+          of a decade they united the planet, creating a new planetary
+          government strongly based on negentropism", and "As the
+          Negentropy Alliance grew Daffy became one of the main worlds". The
+          year is the timeline's end of the Conver Wars, 3943. The Ambi's
+          tenancy of 2556: "The new tenants of Daffy were the Harvists of the
+          Conver Ambi".
     note: >-
       Psi Serpentis, 48 ly, a triple — A, Ba and Bb. Daffy orbits A, which is
       the component the catalogue entry is.
@@ -1985,7 +2000,12 @@ worlds:
     events:
       - year_at: 3123
         kind: settled
+        polity: soft-cathedral
         precision: not_later_than
+        note: >-
+          "Alexandria, originally named Tichy 44-III, was first visited and
+          colonized by the Soft Cathedrals." Undated; "Over the span of a
+          century they created an ecosystem" before the lease of 3123.
       - year_at: 3123
         kind: transferred
         polity: negentropy-alliance
@@ -3957,6 +3977,18 @@ worlds:
           to gradually break the deadlock between the different tribes". Read
           as the Federation taking the system in hand; the article does not
           call it an annexation.
+      - year_at: 1984
+        until_at: 2100
+        kind: transferred
+        polity: conver-ambi
+        precision: between
+        note: >-
+          "During the age of AI Emergence, the by now largely corporate run
+          Daedalus soon became part of the Conver Ambi." The era is the
+          timeline's 1500 to 2100; the Ambi's establishment (1984) is the
+          earlier bound. "In 5580 AT the Institute of Eschatology officially
+          declared the Pi 3 system as being infected by a qlippothic AI
+          entity", which changes no holder here.
     note: >-
       Pi3 Orionis, 26 ly; Daedalus I is the world. "During the age of AI
       Emergence" it "became part of the Conver Ambi", and after the Conver
@@ -4723,6 +4755,16 @@ worlds:
           (a place), not a stated act of the Penglai Empire polity, so no
           polity is recorded. Ships from Alsafi; the Penglai article dates its
           own ship's arrival at Pandya to 1350.
+      - year_at: 1350
+        until_at: 2099
+        kind: transferred
+        polity: first-federation
+        precision: between
+        note: >-
+          "Still, the treatment was a success, and the properly immunized
+          Pandyans eventually joined the First Federation." After the
+          epidemic the Penglai ship brought in 1350; the Federation's end is
+          the later bound.
     note: >-
       Mu Cassiopeiae A, as the colony table has it.
 
@@ -4752,6 +4794,26 @@ worlds:
           supporting the capital classification. House Conver Limis, a
           dynasty, no polity of this file; the year precedes the article's own
           'first reached' of 1920, and both are kept as written.
+      - year_at: 1984
+        kind: transferred
+        polity: conver-ambi
+        precision: not_earlier_than
+        note: >-
+          "The system was first reached in 1920 by the Visible Excitement, a
+          First Federation colony mission aligned with the TCP, which means it
+          soon became part of the Conver Ambi, a theocratic empire based on
+          the neighboring system Conver Ky (37 Geminorum)." The year is the
+          Ambi's establishment on the timeline.
+      - year_at: 3943
+        kind: transferred
+        polity: solar-dominion
+        source: "Encyclopaedia timeline, 3943"
+        note: >-
+          "In the aftermath of the war, Wasat, the important wormhole hub
+          Conver Ky, and several other core Conver systems became part of the
+          Solar Dominion." The year is the peace accords' on the timeline.
+          The colony table gives the system no present affiliation, and
+          nothing saved says it left the Dominion.
     note: >-
       Delta Geminorum Aa, as the colony table has it.
 
@@ -4939,6 +5001,18 @@ worlds:
           only as following that war. 'After the war' of 3799-3805; the
           original colonisation by the Dionysan Erotocracy, and the Conver
           Ambi's holding, are undated.
+      - year_at: 1984
+        until_at: 3799
+        kind: transferred
+        polity: conver-ambi
+        precision: between
+        note: >-
+          "Anahita was originally colonized by Dionysians during the
+          expansion of the Erotocracy. After its dissolution it became part
+          of the Conver Ambi, but retained extensive contacts with other
+          Inner Sphere systems." Neither the Erotocracy's end nor the
+          accession is dated; the bounds are the Ambi's establishment on the
+          timeline (1984) and the Geminga Orthodoxy's attack of 3799.
     note: >-
       Gliese 249, as the colony table has it.
 
@@ -5054,6 +5128,16 @@ worlds:
           Pact, resulting in the establishment of the Conver Ambi") and the
           Conver War its 3713. The Ambi's division of 3943 ends the holding;
           which of its three parts took the old capital, no saved page says.
+      - year_at: 3943
+        kind: transferred
+        polity: solar-dominion
+        source: https://www.orionsarm.com/eg-article/4bb5d6c578611
+        note: >-
+          The Wasat article: "In the aftermath of the war, Wasat, the
+          important wormhole hub Conver Ky, and several other core Conver
+          systems became part of the Solar Dominion." The year is the peace
+          accords' on the timeline. The colony table gives the system no
+          present affiliation, and nothing saved says it left the Dominion.
     note: >-
       37 Geminorum, as the colony table has it.
 
@@ -5190,6 +5274,15 @@ worlds:
           unplaced. The Hippocratic Clade, no polity of this file; 'later
           capital and spiritual centre of the Yoson Confederacy', undated
           here.
+      - year_at: 2520
+        kind: capital
+        polity: yoson-confederacy
+        precision: not_earlier_than
+        note: >-
+          "Later capital and spiritual centre of the Yoson Confederacy."
+          Undated; the year is the Confederacy's founding as this file has
+          it, twelve years after the colony's own. The Confederacy's end
+          (3941) closes the holding.
     note: >-
       HD 180161, as the colony table has it.
 
@@ -6529,6 +6622,8 @@ worlds:
           multiurban Inner Sphere society, eventually joining the Zoeific
           Biopolity in 9405 AT." The rest of Qjellto's society, 'eventually'.
     note: >-
+      The panel's "Former Cygexpa world." is undated and not entered as a
+      holding; it fell somewhere before the Utopia Sphere enclave of 4896.
       Divided rather than shared: the Utopia Sphere holds the Hrek worldhouse
       and the Zoeific Biopolity everywhere else.
 
@@ -6538,6 +6633,18 @@ worlds:
     article: https://www.orionsarm.com/eg-article/4782f7e4b314a
     location:
       star: Gl 830
+    events:
+      - year_at: 933
+        until_at: 2099
+        kind: settled
+        polity: first-federation
+        precision: between
+        note: >-
+          "First Federation scientific outpost, later settled by rianth
+          refugees, now a mixed population Utopia Sphere world and center of
+          'Splice Church' Universalism." The article's only sentence of
+          history; the bounds are the Federation's own years. The rianth
+          settlement and the Utopia Sphere's accession are undated.
     note: >-
       A moon of a superterrestrial planet. The article names the star four
       ways — Gl 830, HD 204587, BD -13 5945 and HIP 106147 — and all four are
@@ -10574,6 +10681,18 @@ worlds:
     article: https://www.orionsarm.com/eg-article/48f4938fd0487
     location:
       star: Aldebaran
+    events:
+      - year_at: 2600
+        until_at: 3200
+        kind: transferred
+        polity: conver-ambi
+        precision: between
+        note: >-
+          "The rise of the Conver Ambi was bad news for ADSP and the local
+          corporate polity was undermined during the age of establishment by
+          relativistic Conver Ambi colonisers (who originally posed as nomad
+          clone-clade workers)." The era is the timeline's 2600 to 3200; the
+          article states no year at all.
     note: >-
       The eye of Taurus, 67 ly out, and independent — one of the nearer bright
       stars to hold to no empire.
@@ -11040,6 +11159,14 @@ worlds:
       - year_at: 2640
         kind: settled
         note: Reached again.
+      - year_at: 900
+        until_at: 1200
+        kind: visited
+        polity: first-federation
+        precision: between
+        note: >-
+          "Eganfodugbe was the target of a long-range autonomous probe sent
+          in the Early Federation." The era is the timeline's 900 to 1200.
     note: >-
       Galactic coordinates given outright — -140, 215, -60 ly — which come to
       264 ly in Cassiopeia. Reached a second time in 2640, the article's word
