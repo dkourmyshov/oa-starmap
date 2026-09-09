@@ -330,8 +330,23 @@ reaching of a native mind. Each such entry now says so beside the older
 date, which is kept, since it came from somewhere. The readings' `doubts`
 list the rest.
 
-What is left of the corpus: 50 articles bound to nowhere on the map, and
-the 47 articles across both tranches that date nothing at all.
+### The article addresses, and the three they hid
+
+The world file wrote every article address with `http://` and the
+worksheet, which binds prose to map entries by address, wrote `https://`,
+so three articles that are on the map read as unbound: Pacifica, Oro
+Mistral and Rengood. Every address is now `https://`, and the three were
+read on 2026-09-09 (commits `5a66552`, `5f1acce`). Pacifica's is the
+article that dates Beta Virginis: the Federation secession by 1068, the
+Combine in 1590, the Conver Ambi merger of 2512 and the accession to the
+Utopia Sphere "during the Age of Consolidation", which the timeline puts at
+3200 to 3800. The Combine's own page, supplied by the project owner and
+kept under `sources/polities/`, gave Denebola's amat farms (1748) and the
+M'Buto Confederacy's annexation (1816) their holder.
+
+What is left of the corpus: 47 articles bound to nowhere on the map
+(`sources/derived/tranche3_unbound.txt`), and the 47 articles across both
+tranches that date nothing at all.
 
 ## Things the extractor still gets wrong, deliberately left
 
