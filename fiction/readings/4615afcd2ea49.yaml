@@ -1,0 +1,21 @@
+article: 4615afcd2ea49
+title: Cephalotopia
+events:
+  - year_at: 2756
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonized: 2756 a.t"
+    note: "Matches header's 'settled 2756'. No polity is named for the colonisation itself; the world's Utopia Sphere affiliation is stated elsewhere without a year (see holder_undated)."
+holder_undated:
+  - polity: utopia-sphere
+    quote: "Cephalotopia is a famous waterworld located in the Utopia Sphere."
+unplaced: []
+contradictions: []
+other_places:
+  - "Nutarctica, a Utopia Sphere world some 43 light years away reached via the stargate The Golden Staircase, is a different place with its own article."
+doubts:
+  - "The roster gives the Utopia Sphere a founding year of 2975, which is later than this world's stated colonisation year of 2756. The article does not say Utopia Sphere colonised the world, only that it is 'located in the Utopia Sphere' in the present tense, so no polity was attached to the settled event; flagging this gap for the reviewer."
+  - "'This moon, known as Seaside, was colonized shortly after the planet's settlement' gives no exact year and is a sub-settlement within the already-settled system, so no event was written for it."

@@ -1,0 +1,16 @@
+article: 466c9a62708d2
+title: Hekufast
+events:
+  - year_at: 3709
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The Deines arrived in 3709 AT, wealthy from their trade in the Xeno-B anti-radiation treatment."
+    note: "Matches the header's 'settled 3709'. The Deines are described as 'a subclade of Radiation Nation' — a clade, not a roster polity, so not recorded as a holder."
+holder_undated: []
+unplaced: []
+contradictions: []
+other_places: []
+doubts: []

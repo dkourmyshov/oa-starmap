@@ -1,0 +1,36 @@
+article: 4648f119470cc
+title: Upali C/D II
+events:
+  - year_at: 218
+    kind: observed
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "It was not until 218 AT that the first detailed examination of Melotte 111 was performed, being from the space-based astronomical observatory located in a high polar orbit 1.3 AU from Sol."
+    note: "This survey (from the Beringia Observatory) is what first catalogued the star later renamed Upali, as BerMel 115."
+  - year_at: 517
+    kind: observed
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 517 AT, much more advanced methods of astronomically observing BerMel 115 were employed."
+    note: "BerMel 115 is the pre-colonisation catalogue name of the Upali system."
+  - year_at: 2608
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 2608 AT, the Wanderer's Yearning arrived at the outskirts of the Upali System."
+    note: "The header records this as \"visited 2608\", but the article goes on to describe a full colony landing (\"It was Year One on the world of Jannah\"), not a mere visit; flagged as a kind mismatch, not a year contradiction."
+holder_undated: []
+unplaced:
+  - name: "Hamiltonians"
+    quote: "One such group was the Hamiltonians, a society of baseline Humans (for the most part) who wished to establish a new society based on the premise of becoming fully and naturally integrated within the environment of a living world."
+contradictions: []
+other_places: []
+doubts:
+  - "The header's already-dated entry calls the 2608 event \"visited\", but the article describes the Wanderer's Yearning landing colonists who never left (\"It was Year One on the world of Jannah\"); this reads as settled, not merely visited. Worth a reviewer's check."
+  - "The colony's later internal governments (Federated Prolate, the Proletariat, the University) are never described as affiliating with, seceding from, or being founded by any roster polity, so no capital/independent/transferred entries were written for them, even though the Hamilton Institute's 3416 AT founding is a significant governance change on this world."

@@ -1,0 +1,31 @@
+article: 490b3010a681a
+title: Oceanus Ultimata
+events:
+  - year_at: 1198
+    kind: observed
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "it was not until 1198 AT that astronomers in Solsys determined that the ring was brighter than could be explained by illumination by Beyniou alone and consisted almost entirely of variously sized bodies of liquid water"
+    note: ""
+  - year_at: 9462
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The 80Star Investigation Authority, a Carina Rush exploration faction led by a rather pioneer-mind S4 entity, took the opportunity to dedicate a small fleet of craft to such a mission, which would arrive in 9462 AT."
+    note: "The header already records 'visited 8162' for this place, but no year 8162 appears anywhere in this text; the only stated arrival year for an exploration mission is 9462 AT. Flagged for review — see contradictions."
+holder_undated: []
+unplaced:
+  - name: "80Star Investigation Authority"
+    quote: "The 80Star Investigation Authority has recently installed a stargate linking Beyniou to the Nexus, using mass-energy extracted from a nearby red dwarf."
+contradictions:
+  - about: "first-visited year"
+    quotes:
+      - "[header] already dated: visited 8162"
+      - "took the opportunity to dedicate a small fleet of craft to such a mission, which would arrive in 9462 AT"
+other_places: []
+doubts:
+  - "No sentence in the body text contains the year 8162 that the header records as already-dated; see contradictions."

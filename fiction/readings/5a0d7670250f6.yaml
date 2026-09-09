@@ -1,0 +1,40 @@
+article: 5a0d7670250f6
+title: Remnant, The
+events:
+  - year_at: 2650
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: 3150
+    where: panel
+    quote: "Colonized Formerly: Undocumented Terragen colony (2650-3150? a.t)"
+    note: "The panel marks the end year with a question mark, i.e. uncertain. No polity is named for this early, undocumented colony."
+  - year_at: 3150
+    kind: abandoned
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonized Formerly: Undocumented Terragen colony (2650-3150? a.t)"
+    note: "Same panel line as the settlement entry above; the end year itself carries a '?' in the source, and the body confirms the colony 'failed' and was wiped out ('Stut ... openly admits to cleansing all biont life from the system')."
+  - year_at: 3383
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "This system was rediscovered by the Fomac Acquisitor ship Inevitably Successful Under all Circumstances in 3383 a.t , and it has since been placed under Fomalhaut stewardship."
+    note: "Matches the header's 'visited 3383'."
+  - year_at: 3383
+    kind: transferred
+    polity: fomalhaut-acquisition-society
+    precision: exact
+    until_at: null
+    where: body
+    quote: "This system was rediscovered by the Fomac Acquisitor ship Inevitably Successful Under all Circumstances in 3383 a.t , and it has since been placed under Fomalhaut stewardship."
+    note: "New against the header, which records only 'visited 3383'. 'Placed under Fomalhaut stewardship' reads as the system coming under the Fomalhaut Acquisition Society's protection from the same year."
+holder_undated: []
+unplaced: []
+contradictions: []
+other_places: []
+doubts: []

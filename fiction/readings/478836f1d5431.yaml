@@ -1,0 +1,38 @@
+article: 478836f1d5431
+title: Sakvaback
+events:
+  - year_at: 5804
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Sakvaback (also pronounced Sökvabäck) was first colonised by the Scarlen Host in 5804 AT; they rapidly terraformed this cold planet using orbiting mirrors and swarmtech, but became isolationist and transcended in 6910 AT, leaving the planet uninhabited for over a hundred standard years."
+    note: "Matches the header's 'settled 5804'. The Scarlen Host is not a roster polity — see unplaced."
+  - year_at: 6910
+    kind: abandoned
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Sakvaback (also pronounced Sökvabäck) was first colonised by the Scarlen Host in 5804 AT; they rapidly terraformed this cold planet using orbiting mirrors and swarmtech, but became isolationist and transcended in 6910 AT, leaving the planet uninhabited for over a hundred standard years."
+    note: "Same sentence as the settlement entry; the Scarlen Host transcended and left the world empty."
+  - year_at: 7013
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The empty world became a goal for transcension chasers for a period, but was mostly empty of transapientech by 7013 AT when a second wave of permanent colonists arrived from the Regor Plexus."
+    note: "New against the header, which records only 'settled 5804'; matches the article's own panel line 'Recolonised: 7013 AT'."
+holder_undated:
+  - polity: nocozo
+    quote: "Important NoCoZo system."
+unplaced:
+  - name: "Scarlen Host"
+    quote: "Sakvaback (also pronounced Sökvabäck) was first colonised by the Scarlen Host in 5804 AT; they rapidly terraformed this cold planet using orbiting mirrors and swarmtech, but became isolationist and transcended in 6910 AT, leaving the planet uninhabited for over a hundred standard years."
+  - name: "Regor Plexus"
+    quote: "The empty world became a goal for transcension chasers for a period, but was mostly empty of transapientech by 7013 AT when a second wave of permanent colonists arrived from the Regor Plexus."
+contradictions: []
+other_places: []
+doubts: []

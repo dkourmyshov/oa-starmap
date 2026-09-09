@@ -1,0 +1,47 @@
+article: 47bcf7d1a1549
+title: Paz (Morpheo Ab)
+events:
+  - year_at: 5650
+    kind: settled
+    polity: ""
+    precision: circa
+    until_at: null
+    where: body
+    quote: "Colonized by non-Gabrielic pilgrims of The True Universalist Church circa 5650 under Jon N'mabbo ."
+    note: "The True Universalist Church is not on the roster; see unplaced. The article says 'circa 5650', a softer precision than the header's plain 'settled 5650' -- see doubts."
+  - year_at: 5840
+    kind: transferred
+    polity: negentropy-alliance
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Claimed for the Negentropist empire by the linelayer Columbus 5 in 5840."
+    note: ""
+  - year_at: 7430
+    kind: transferred
+    polity: paradigm
+    precision: not_later_than
+    until_at: null
+    where: body
+    quote: "Taken over by the Efficiency Maximization Paradigm . This planet and its moon were optimized and dismantled before 7430."
+    note: "No exact year is given for the takeover itself; it is bounded by the 'before 7430' dismantlement that followed it."
+  - year_at: 7430
+    kind: abandoned
+    polity: paradigm
+    precision: not_later_than
+    until_at: null
+    where: body
+    quote: "This planet and its moon were optimized and dismantled before 7430."
+    note: ""
+holder_undated: []
+unplaced:
+  - name: "The True Universalist Church"
+    quote: "Colonized by non-Gabrielic pilgrims of The True Universalist Church circa 5650 under Jon N'mabbo ."
+  - name: "Clade Borup"
+    quote: "During the ComEmp period a culture of inequality developed under the new ruling Clade Borup."
+contradictions: []
+other_places:
+  - "Paz (Inner Sphere): 'Not to be confused with the Inner Sphere planet of the same name that became an important cultureworld during the First Federation' -- a different place with its own article."
+doubts:
+  - "The article says the world was colonised 'circa 5650', a softer precision than the header's plain 'settled 5650' (which implies exact); recorded as circa per the text, per rule 6's instruction to flag any difference from the header."
+  - "Jon N'mabbo's own dates are given elsewhere as '[3487-c.5110 (standard year)]', with him dying in transit -- decades before the circa-5650 arrival -- consistent with a long nanostasis voyage rather than a contradiction, but worth a reviewer's eye since it is not explicit in the main article text itself."

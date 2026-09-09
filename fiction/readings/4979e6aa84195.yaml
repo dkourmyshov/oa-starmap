@@ -1,0 +1,70 @@
+article: 4979e6aa84195
+title: Medina
+events:
+  - year_at: 1639
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised 1639 AT"
+    note: "Data panel gives no actor; body text attributes the reaching/colonising of Medina to the Islamic Unity (unplaced, not on roster)."
+  - year_at: 1639
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Medina, An Earth-sized terrestrial world 118 light years from Sol, had already been reached by an Islamic Unity craft in 1639, and the long slow process of terraformation was already under way."
+    note: "Actor is the Islamic Unity, not on the roster; see unplaced."
+  - year_at: 1600
+    kind: settled
+    polity: ""
+    precision: circa
+    until_at: null
+    where: body
+    quote: "During the seventeenth century a.t. the Islamic Unity embarked on such a project, sending large numbers of ships to three systems in the Puppis and Canis Major regions, and with them many millions of Islamic Unity colonists on a migration, or hejira , to the stars."
+    note: "One of three systems settled in this hejira; describes the same broad colonisation as the exact 1639 entries above, at coarser precision. Actor is the Islamic Unity, not on the roster."
+  - year_at: 2000
+    kind: capital
+    polity: stellar-umma
+    precision: circa
+    until_at: null
+    where: body
+    quote: "These four systems shared the title of capital world for a few centuries, before Medina became ascendant in the twenty first century A.T."
+    note: ""
+  - year_at: 2676
+    kind: capital
+    polity: stellar-umma
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Tensions between isolationist factions and dynamic, expansionist groups led the a schism in 2676, and Medina was left as capital of the Core worlds only, with the outer regions breaking away and developing a new empire with its own invented language, Umma of the Shell."
+    note: "The outer regions broke away as a new, unnamed-on-roster empire ('Umma of the Shell'); Medina itself remained capital, now of the Core worlds/Stellar Umma."
+  - year_at: 8000
+    kind: settled
+    polity: ""
+    precision: circa
+    until_at: null
+    where: body
+    quote: "During the ninth millennium, the Merdre, a clade of gas giant adapted bioborgs arrived in the Medina System, and became established in the large ringed giant Khartoum."
+    note: "Khartoum is a gas giant in the same system as Medina. The Merdre are a clade, not a polity; see unplaced."
+holder_undated:
+  - polity: stellar-umma
+    quote: "Together with the nearby systems of Yathrib, Zamzam and Jeddah, Medina became the core of the Stellar Umma, a predominantly Islamic empire."
+  - polity: nocozo
+    quote: "The NoCoZo also has strong presence in this system, with several large habitats in the Medina/Rabat Lagrange points."
+unplaced:
+  - name: "Islamic Unity"
+    quote: "During the seventeenth century a.t. the Islamic Unity embarked on such a project, sending large numbers of ships to three systems in the Puppis and Canis Major regions, and with them many millions of Islamic Unity colonists on a migration, or hejira , to the stars."
+  - name: "Umma of the Shell"
+    quote: "with the outer regions breaking away and developing a new empire with its own invented language, Umma of the Shell."
+  - name: "Merdre"
+    quote: "the Merdre, a clade of gas giant adapted bioborgs arrived in the Medina System, and became established in the large ringed giant Khartoum."
+contradictions: []
+other_places:
+  - "Zamzam: a related-article footnote calls it 'Capital of the Shell, the outer part of the Stellar Umma' -- a different place with its own article."
+  - "Yathrib and Jeddah are named as the other two systems settled alongside Medina in the same hejira, each presumably with its own article."
+doubts:
+  - "The 8890at Absurdist attack on Medina and Medina's retaliation against Khartoum are a war, not a change of holder, and were excluded per the brief; the eventual expulsion of most Merdre from the system has no explicit year attached ('eventually'), so no abandoned event was written for it."
+  - "Whether the circa-1600 'seventeenth century a.t.' migration entry is redundant with the exact-1639 entries for the same colonisation, or describes a distinct earlier/later phase, is left for the reviewer."

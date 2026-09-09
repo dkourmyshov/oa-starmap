@@ -1,0 +1,21 @@
+article: 508b48d94e043
+title: Uyuni
+events:
+  - year_at: 6318
+    kind: settled
+    polity: sagittarius-transcultural-cooperation
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Colonised in 6318 AT by Sagittarius Transcultural Cooperation exploration craft, this world had been observed from the inner sphere many millennia before despite its large distance, because of its high albedo."
+    note: "Matches header's 'settled 6318' and the data panel's 'Colonised 6318 AT'."
+holder_undated: []
+unplaced:
+  - name: "Peruyuni UnLimited"
+    quote: "By 7600 AT these three corps had consolidated into Peruyuni UnLimited, a single body controlled by a superturing which was itself the result of the merger of several lesser AI."
+contradictions: []
+other_places:
+  - "Gargamadua Stripworld (Gargamadua habitat in the MPA), the origin of many Southend settlers, is a different place with its own article and is only mentioned here as a point of origin."
+doubts:
+  - "The world 'had been observed from the inner sphere many millennia before' its 6318 AT colonisation, but no AT year is given for that observation, so no observed event could be written."
+  - "'For five hundred years the STC observed this biosphere... then declared that the surface of Uyuni was open for colonisation' gives a duration but no absolute year for when observation began or colonisation of the surface (as opposed to the system) was opened."

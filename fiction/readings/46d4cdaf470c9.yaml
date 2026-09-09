@@ -1,0 +1,26 @@
+article: 46d4cdaf470c9
+title: New Mars
+events:
+  - year_at: 1333
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Reached 1333 by Lagrange Defender survey probe Kochimotan."
+    note: "Matches the header's 'visited 1333'. 'Lagrange Defender' reads as the probe's class/type rather than a polity name and is not mapped to any roster id."
+holder_undated:
+  - polity: nocozo
+    quote: "The Dunimine system with its two small planets is home to the Khen Thu culture, a polity under the guardianship of the S2 hivemind Upholder of Sportsmanship , an affiliate of the NoCoZo ."
+  - polity: terragen-federation
+    quote: "Most polities around Maronyo, beyond the star's immediate surroundings, are members of the Metagovernment Order of New Mars , a Terragen Federation -aligned suprapolitical entity that formed during the Version War ."
+unplaced:
+  - name: "Metagovernment Order of New Mars"
+    quote: "Most polities around Maronyo, beyond the star's immediate surroundings, are members of the Metagovernment Order of New Mars , a Terragen Federation -aligned suprapolitical entity that formed during the Version War ."
+  - name: "Dongkom Umbrella"
+    quote: "The polities around Duminine are generally aligned with the Dongkom Umbrella , a neutral minor interstellar organization with members drawn from a handful of star systems scattered across the Nexus."
+contradictions: []
+other_places: []
+doubts:
+  - "'Lagrange Defender survey probe Kochimotan' could name a survey corp rather than a probe class; left without a polity rather than guessed."
+  - "'An increasing number of polities have begun rejecting membership in either of these entities over the last thousand years, possibly marking the system's transition into a new political era' gestures at drift toward independence with no year attached; not written up as an event."

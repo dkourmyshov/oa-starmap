@@ -1,0 +1,23 @@
+article: 4609c7a409fbf
+title: Barawatten
+events:
+  - year_at: 1644
+    kind: abandoned
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 1644 AT the Klarawappen habitat mysteriously vanished ; the most likely explanation is that the colonists decided to suddenly migrate to the Oort Cloud to become Hiders , but no evidence for this move has ever been found."
+    note: "The header records this year as 'settled 1644', but the only sentence carrying that year describes a habitat vanishing, not a settlement. 'Abandoned' is a best-fit label for a speculative, unconfirmed departure — see contradictions and doubts. No settlement year is given anywhere in the article."
+holder_undated:
+  - polity: keter-dominion
+    quote: "The current allegiance of the inhabitants is to Keter ."
+unplaced: []
+contradictions:
+  - about: "meaning of the year 1644"
+    quotes:
+      - "[header] already dated: settled 1644"
+      - "In 1644 AT the Klarawappen habitat mysteriously vanished ; the most likely explanation is that the colonists decided to suddenly migrate to the Oort Cloud to become Hiders , but no evidence for this move has ever been found."
+other_places: []
+doubts:
+  - "No sentence in the text gives a year for the colony's founding; 1644 AT is the only dated claim in the article, and it describes a habitat's disappearance, hedged as speculative ('most likely explanation... no evidence... has ever been found')."

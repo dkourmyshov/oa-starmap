@@ -1,0 +1,25 @@
+article: 4f438057ece53
+title: Calyx
+events:
+  - year_at: 4285
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "A cold, wet PelaGelidian world in Lyra, Calyx was colonised in 4285 by AmBlla AP, a minor exploration franchise associated with the Cygnus Expansion Association ."
+    note: "AmBlla AP is a corporate exploration franchise, not a polity (unplaced). It is said to be 'associated with the Cygnus Expansion Association', which may be the full name of Cygexpa (see doubts), but the coloniser named is the franchise, not that polity itself, so polity is left blank per rule 7."
+holder_undated:
+  - polity: cygexpa
+    quote: "In common with many Cygexpa worlds Calyx was run as a commercial venture at that time, and one of the goals of the transapient Chief Executive was to supply a large and content population of consumers with consumable goods as efficiently as possible."
+unplaced:
+  - name: "AmBlla AP"
+    quote: "Calyx was colonised in 4285 by AmBlla AP, a minor exploration franchise associated with the Cygnus Expansion Association ."
+  - name: "Cygnus Expansion Association"
+    quote: "Calyx was colonised in 4285 by AmBlla AP, a minor exploration franchise associated with the Cygnus Expansion Association ."
+contradictions: []
+other_places: []
+doubts:
+  - "'Cygnus Expansion Association' (used once, at first mention) appears to be the spelled-out name of Cygexpa, since the article uses 'Cygexpa' by itself for the rest of the article to describe the same volume/empire (e.g. 'Cygexpa worlds', 'Cygexpa volume', 'the inner Cygexpa empire'). The roster's cygexpa entry has no 'also called' filled in, so this equivalence is left for the reviewer rather than assumed for the settlement event's polity."
+  - "'The dissolution of the inner Cygexpa empire in 7247 affected this world to a very great extent, and most of the transapient population left for the outer volumes during the next two centuries.' Cygexpa's roster dissolution year (7247) matches, but the article never states that Calyx itself changed polity, seceded, or was left holderless -- only that its culture and population were affected -- so no independent/transferred/abandoned event was written for 7247. Worth a reviewer's eye given how central Cygexpa is to this world's history."
+  - "Two local political-succession dates (Guardian of the Recovery Kreyasha Ble succeeding her mother in 4801, and Kreyasha Npa in 5620) and an ascension attempt in 5682 were excluded as internal leadership changes, not changes of system holder."

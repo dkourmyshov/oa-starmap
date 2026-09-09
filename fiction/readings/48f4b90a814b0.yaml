@@ -1,0 +1,19 @@
+article: 48f4b90a814b0
+title: Arkab Prior A
+events:
+  - year_at: 4311
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The inhabited worlds of Arkab Prior A were designed during the initial colonisation of Beta Sag in 4311, and created from the gas giant worlds which were being dismantled."
+    note: "Matches the header's 'settled 4311'. This sentence does not itself name a coloniser; the panel separately states 'Current allegiance: Negentropy Alliance', undated (see holder_undated)."
+holder_undated:
+  - polity: negentropy-alliance
+    quote: "Current allegiance: Negentropy Alliance"
+unplaced: []
+contradictions: []
+other_places:
+  - "Arkab Prior B (the binary companion, covered in its own related article 'Arkab Prior B - The Necklace')"
+doubts: []

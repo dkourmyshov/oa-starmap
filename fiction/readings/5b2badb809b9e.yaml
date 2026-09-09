@@ -1,0 +1,28 @@
+article: 5b2badb809b9e
+title: Braciola
+events:
+  - year_at: 114
+    kind: observed
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Although it was discovered many years before 1 AT, it was thoroughly studied by Italian scientists in the year 114 AT. This was when it was discovered that its planets were discovered, including one, Maiale c (Braciola), that looked promising for a colony."
+    note: "New event, not in header. No polity: 'Italian scientists' names no roster entity."
+  - year_at: 2723
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In the year 2723 AT a colony mission consisting of near-baseline humans arrived at Braciola (Maiale c) and built their colony."
+    note: "Header records this as 'visited 2723', but the sentence describes the colonists building their colony, which reads as settled rather than a mere visit. No polity is named for the colony mission."
+holder_undated:
+  - polity: zoeific-biopolity
+    quote: "Since the CompEmp period a delegation from the Zoeific Biopolity has been present on this world, communicating with the Consciousness in its fashion and mediating between this entity and the local human population."
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "The header dates this article's event as 'visited 2723', but the quoted sentence describes a colony mission that 'built their colony' -- I have recorded it as settled; a reviewer should check whether visited was intended instead."
+  - "The Zoeific Biopolity's presence is described as a diplomatic/mediating delegation rather than as governance of the system, so it is recorded as holder_undated rather than as a transferred event."

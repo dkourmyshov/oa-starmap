@@ -1,0 +1,22 @@
+article: 4801367969609
+title: Doreen/Doreens
+events:
+  - year_at: 7980
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Reached 7980 AT"
+    note: "Header records this as 'contact 7980', but the data panel only says 'Reached', and the body text names no first-contact event tied to this year: the original Doreen species is already extinct, and the only surviving entity (an S:1-level mechosystem/transapient) is described as having 'some limited contact' with the Caretaker Gods with no year attached (see doubts). No polity is named for the reaching party."
+holder_undated:
+  - polity: caretaker-gods
+    quote: "In the end, entry to the system was forbidden to S<1 entities other than those operating under the close supervision of a transapient representative of the Caretakers."
+unplaced:
+  - name: "Sagittarius Cooperation"
+    quote: "Archaeological research by scientists from the Sagittarius Cooperation has shown that this species developed a technological civilization, achieved interplanetary travel, and created artificially intelligent machines."
+contradictions: []
+other_places: []
+doubts:
+  - "Header records 'contact 7980', but the only dated line in the article is the panel's 'Reached 7980 AT'; no year is given for any first-contact event with the Doreen transapient, and the original Doreen species was already extinct by the time of discovery."
+  - "'Sagittarius Cooperation' may be an informal name for the roster's Sagittarius Transcultural Cooperation (STC), but the article never spells that out, so it is left unplaced rather than mapped."

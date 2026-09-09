@@ -1,0 +1,30 @@
+article: 60d0eac6b3df1
+title: Purcell
+events:
+  - year_at: 2188
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The Osmin system was first reached in 2188 AT during the first Expansion era, by the Sagittarius Beachhead Undertaking."
+    note: "Matches header's 'visited 2188'. No polity: the Sagittarius Beachhead Undertaking is not on the roster (see unplaced)."
+  - year_at: 4498
+    kind: transferred
+    polity: negentropy-alliance
+    precision: not_earlier_than
+    until_at: null
+    where: body
+    quote: "Negentropist forces occupied the planetary system, and commandeered many of the planetoids in the local belt for logistical resources."
+    note: "New event, not in header. This follows directly from the Negentropist attack of 4498 AT described in the previous sentence; no separate year is given for when occupation itself began. The occupation is described as continuing under 'a remnant Revisionist occupation force until the end of the War' after the main fleet left in 4512, with no year given for the war's end or for a return to prior status."
+holder_undated:
+  - polity: mutual-progress-association
+    quote: "During this period the majority of the independent habitats in this system were aligned with the Mutual Progress Association; a significant fraction of the population were provolved baboons, and their Metal Monkey companions."
+unplaced:
+  - name: "Sagittarius Beachhead Undertaking"
+    quote: "The Osmin system was first reached in 2188 AT during the first Expansion era, by the Sagittarius Beachhead Undertaking."
+contradictions: []
+other_places: []
+doubts:
+  - "Whether the Version War occupation by Negentropist forces (from 4498, reduced to a 'remnant Revisionist occupation force' after 4512, 'until the end of the War') should count as a transferred event, or is closer to a battle/military occupation excluded by the brief, is a judgement call for the reviewer."
+  - "No year is given for when the system's holder reverted after the Version War ended."

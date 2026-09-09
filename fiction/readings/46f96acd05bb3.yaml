@@ -1,0 +1,34 @@
+article: 46f96acd05bb3
+title: Gordelpus
+events:
+  - year_at: 2700
+    kind: settled
+    polity: ""
+    precision: circa
+    until_at: null
+    where: body
+    quote: "Central MPA system, colonized by the Kathelian Confederacy in the 2700's."
+    note: "Matches the header's 'settled 2700'. The Kathelian Confederacy is an MPA-aligned sub-polity, not itself on the roster — see unplaced."
+  - year_at: 6433
+    kind: transferred
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The new STC-aligned Erniac government came into conflict with pro-Negentropic and pro-Keterist influences, weakening the political market and allowing the Sonato system to buy the polityship in 6433."
+    note: "New against the header, which records only 'settled 2700' and 'settled 2790'. 'The Sonato system' is not a roster polity (see unplaced), so polity is left blank."
+holder_undated:
+  - polity: sagittarius-transcultural-cooperation
+    quote: "The new STC-aligned Erniac government came into conflict with pro-Negentropic and pro-Keterist influences, weakening the political market and allowing the Sonato system to buy the polityship in 6433."
+unplaced:
+  - name: "Kathelian Confederacy"
+    quote: "Central MPA system, colonized by the Kathelian Confederacy in the 2700's."
+  - name: "Sonato system"
+    quote: "allowing the Sonato system to buy the polityship in 6433"
+  - name: "Erniac government"
+    quote: "The new STC-aligned Erniac government came into conflict with pro-Negentropic and pro-Keterist influences, weakening the political market and allowing the Sonato system to buy the polityship in 6433."
+contradictions: []
+other_places: []
+doubts:
+  - "The header also records 'settled 2790'; no year 2790 appears anywhere in the article text."
+  - "The Kathelian engineer-gods 'vanished in 6304 (likely transcending)', causing disarray; treated as an ascension-type event excluded by the brief and not written up, though it sits between the two dated events above and shapes the 6433 transfer."

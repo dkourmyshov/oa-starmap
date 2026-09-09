@@ -1,0 +1,19 @@
+article: 49119e365a395
+title: Rudolph
+events:
+  - year_at: 9654
+    kind: transferred
+    polity: nocozo
+    precision: exact
+    until_at: null
+    where: body
+    quote: "While initially the sole property of the caretaker god Santa Khan (who still remains as a worship figure to this day) the Rudolph system became the property of the NoCoZo in 9654."
+    note: "Matches the header's already-dated 'transferred 9654 (nocozo)'."
+holder_undated:
+  - polity: caretaker-gods
+    quote: "While initially the sole property of the caretaker god Santa Khan (who still remains as a worship figure to this day) the Rudolph system became the property of the NoCoZo in 9654."
+    note: "No year is given for when Santa Khan (a Caretaker God) first took the system under protection, only that it predates the 9654 AT transfer to the NoCoZo."
+unplaced: []
+contradictions: []
+other_places: []
+doubts: []

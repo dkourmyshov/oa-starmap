@@ -1,0 +1,29 @@
+article: 4ce67be2dba24
+title: Hammerstein
+events:
+  - year_at: 2180
+    kind: settled
+    polity: linnent
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Hammerstein was settled by the Engenerator Method in 2180 AT by the Linnaeus Enterprises division of the Terranova Foundation."
+    note: "Matches header's 'settled 2180'. Mapped to roster id linnent because the article's own Related Articles list gives 'LinnEnt (Linnaeus Enterprises)' as an explicit equivalence, not a resemblance-based guess. The parent 'Terranova Foundation' is not on the roster (see unplaced)."
+  - year_at: 3410
+    kind: transferred
+    polity: nocozo
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Hammerstein joined the NoCoZo in 3410, and adopted a form of government known as Futarchy; this system is found on a number of NoCoZO Worlds, and integrates well with the predominantly libertarian philosophy of that empire."
+    note: "New event, not in header."
+holder_undated: []
+unplaced:
+  - name: "Terranova Foundation"
+    quote: "Hammerstein was settled by the Engenerator Method in 2180 AT by the Linnaeus Enterprises division of the Terranova Foundation."
+  - name: "Invisible Hand"
+    quote: "For most of the Version War period Hammerstein was an archailectocracy, ruled directly by the local representatives of the Invisible Hand; many mercenaries went to war in this period, and a significant number did not return, even as data copies."
+contradictions: []
+other_places: []
+doubts:
+  - "During most of the Version War period Hammerstein was ruled directly by 'the local representatives of the Invisible Hand' as an archailectocracy; no exact years are given for this period, and it is not stated whether this interrupted NoCoZo membership, so no transferred/independent event was written for it."

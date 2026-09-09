@@ -1,0 +1,50 @@
+article: 4611935cb9c74
+title: Branton
+events:
+  - year_at: 7866
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised 7866 AT"
+    note: "No settling group is named."
+  - year_at: 8995
+    kind: transferred
+    polity: xeon
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 8995 the colonists in this system were subsumed by a rogue hyperturing , believed to be an Exploration Rover class 4 S:1. This entity appears to have used the hapless colonists as a biotic matrix for the Xeon blight."
+    note: "This is a hostile subsuming/infection by a rogue hyperturing using the colonists for the 'Xeon blight', not a conventional annexation; mapped to the roster's xeon id with caution -- see doubts, since the roster gives Xeon's founding as 9210, later than this 8995at incident."
+  - year_at: 9010
+    kind: abandoned
+    polity: xeon
+    precision: not_later_than
+    until_at: null
+    where: body
+    quote: "The Xeon blight abandoned this world to establish a minor empire several hundred light years to rimward; after contact was lost with the Branton colony, a fleet of rescue ships arrived in 9010, only to discover that the system was empty of sophonts."
+    note: "The Xeon blight's departure is undated in itself, but had already happened by the time the 9010at rescue fleet found the system empty."
+  - year_at: 9010
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "after contact was lost with the Branton colony, a fleet of rescue ships arrived in 9010, only to discover that the system was empty of sophonts."
+    note: "The rescue fleet's polity is not named at this point in the text."
+  - year_at: 9010
+    kind: settled
+    polity: solar-dominion
+    precision: not_earlier_than
+    until_at: null
+    where: body
+    quote: "A new wave of colonists began to arrive in this system soon afterwards from the Solar Dominion , and mostly inhabit orbiting space habitats and the moon Vali, while preserving the environment of Sigyn as a nature reserve."
+    note: "'soon afterwards' the 9010at discovery of the empty system."
+holder_undated: []
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "The header's 'already dated: reported 9210' has no supporting quote anywhere in this article -- no year 9210 appears in the text. The roster independently gives Xeon's founding year as 9210, which may be the source of the map's reported date, but this article's own Xeon-related events are dated 8995 (subsumption) and by-9010 (abandonment), not 9210; flagged for a reviewer to reconcile against the Xeon article itself."
+  - "Whether the 8995at subsuming of Branton's colonists 'as a biotic matrix for the Xeon blight' is properly a transferred event to the polity xeon, given the roster dates Xeon's founding five years later at itself is doubtful; recorded here as the closest fit among the tracked kinds."

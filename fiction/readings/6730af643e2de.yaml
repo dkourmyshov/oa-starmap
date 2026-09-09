@@ -1,0 +1,40 @@
+article: 6730af643e2de
+title: Midnight Pearl
+events:
+  - year_at: 1032
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Due to its proximity to both Procyon and Luyten's star, the isolationist ahuman group Ako Forward Chaining viewed the brown dwarf UGPS 0722-05 as a favorable location for a colony, establishing a settlement there in 1032 AT."
+    note: "Ako Forward Chaining is not on the roster; see unplaced."
+  - year_at: 7558
+    kind: abandoned
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 7558 AT, the light from Procyon reached UGPS 0722-05, and all of the Ako Forward Chaining inhabitants vanished."
+    note: "Automated defences kept guarding the empty system after this; see doubts regarding the S1 transapient Luel's, who claimed the region soon after but did not gain actual control until 10324 AT."
+  - year_at: 10324
+    kind: transferred
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Finally, in 10324 AT, a team named \"Wagun\" was able to reach Midnight Pearl's upper atmosphere and was awarded control over the entire brown dwarf system by Luel's."
+    note: "'Wagun' is a game-show contestant team, not a polity on the roster; see unplaced. Luel's (an S1 transapient, not a listed polity) was the one awarding control."
+holder_undated:
+  - polity: deeper-covenant
+    quote: "In the Current Era, Midnight Pearl is sparsely inhabited. However, boostbeam stations have been constructed by the Deeper Covenant."
+unplaced:
+  - name: "Ako Forward Chaining"
+    quote: "Due to its proximity to both Procyon and Luyten's star, the isolationist ahuman group Ako Forward Chaining viewed the brown dwarf UGPS 0722-05 as a favorable location for a colony, establishing a settlement there in 1032 AT."
+  - name: "Wagun"
+    quote: "Finally, in 10324 AT, a team named \"Wagun\" was able to reach Midnight Pearl's upper atmosphere and was awarded control over the entire brown dwarf system by Luel's."
+contradictions: []
+other_places: []
+doubts:
+  - "Soon after 7558 AT, 'an S1 transapient named Luel's ... almost immediately sent out ships to claim the region around Midnight Pearl', but actual control was not awarded until 10324 AT via the game show; no exact year is given for Luel's initial claim, and Luel's is an individual transapient rather than a polity, so no event was written for that intermediate claim. A reviewer may want to record Luel's de facto stewardship of the region across that interval even though it maps to no roster polity."
+  - "Who currently holds/governs Midnight Pearl after 10324 AT (beyond the Deeper Covenant's undated boostbeam-station presence) is not stated."

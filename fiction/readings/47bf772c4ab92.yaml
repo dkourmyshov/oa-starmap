@@ -1,0 +1,47 @@
+article: 47bf772c4ab92
+title: Pereira
+events:
+  - year_at: 4307
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised: 4307 AT ."
+    note: ""
+  - year_at: 4307
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Cygnus Sector, Middle Regions system colonised by a long-range seedship mission in 4307."
+    note: "No settling group is named beyond 'a long-range seedship mission'."
+holder_undated:
+  - polity: biovirate
+    quote: "Too far from the Inner Sphere to become involved in the Version War, this world became the capital of the Biovirate , a major anthropist empire, in the centuries following that conflict."
+  - polity: keter-dominion
+    quote: "Pereira was conquered by the Keter Dominion following the Keterist-Biovirate war, then attacked and sterilised by rogue bio-Autowars ."
+  - polity: keter-dominion
+    quote: "It is at present nominally administered by a coalition of Keterist, MPA , Zoeific , and non-aligned transapients."
+  - polity: mutual-progress-association
+    quote: "It is at present nominally administered by a coalition of Keterist, MPA , Zoeific , and non-aligned transapients."
+  - polity: zoeific-biopolity
+    quote: "It is at present nominally administered by a coalition of Keterist, MPA , Zoeific , and non-aligned transapients."
+  - polity: cygexpa
+    quote: "The occasional skirmish has been broken up by the local Cygexpa fleet space arm, essentially the cutters Birklei and Coais and a company of Polaris-Mutango II Territorial Marines."
+unplaced:
+  - name: "Church of Man (Reformed)"
+    quote: "Shrine of Lapkei the True, a small colony of Church of Man (Reformed), who are presently trying to have the whole system declared a Galactic Memorial."
+  - name: "Clan Ado"
+    quote: "The outer asteroid belt has a recently established colony of Clan Ado, an eccentric H. sapiens Pride fringe group who wish to revive the Biovirate"
+  - name: "Polaris-Mutango II Cygexpas"
+    quote: "Lindgrer, the second world in the system, an AreanXeric Subtype world, hosts a colony of Clade Polaris-Mutango II Cygexpas who are looking at developing the whole system for tourism."
+contradictions: []
+other_places:
+  - "Cythera: seat of the Galactic Colonisation Board, which rules on re-terraforming proposals for Pereira; a different place."
+  - "Gulanoa II: where the scientific scout Junsee was destroyed by a biowar in 10457 AT; not established as part of the Pereira system."
+doubts:
+  - "The header's 'already dated: ... transferred 10600' has no supporting quote anywhere in the article -- no year 10600 appears in the text at all. The only holder change described (Biovirate to Keter Dominion, 'following the Keterist-Biovirate war') carries no year, and given the roster shows Biovirate dissolved in 6210, a transfer at 10600 (after Biovirate's dissolution, and after the 10457 biowar incident mentioned in-text) seems chronologically hard to square with the article as written. Flagged for a reviewer to check the source page directly."
+  - "The Biovirate becoming capital 'in the centuries following that conflict [the Version War]' and the Keter Dominion conquest are both undated in-article; if the Version War's real-world AT dates are known independently, a reviewer could convert these to precise/circa events."
+  - "Whether 'Clade Polaris-Mutango II Cygexpas' implies an actual Cygexpa polity presence (beyond the explicitly named 'local Cygexpa fleet space arm', which is recorded above) is left to the reviewer, per the rule against mapping clades onto polities by name resemblance."

@@ -1,0 +1,44 @@
+article: 464d338cc6026
+title: Gammergan
+events:
+  - year_at: 5107
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised 5107 AT"
+    note: "Body text names the coloniser as the Interstellar Frontiers Group (not on roster; see unplaced): 'This system was originally colonised by the Interstellar Frontiers Group, but contact was lost with this system in 6580 AT.'"
+  - year_at: 9885
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "contact was re-established in 9885 when the Skiiws'nnii ship Namor entered the system."
+    note: "Skiiws'nnii is a species/clade, not a roster polity; see unplaced."
+  - year_at: 9885
+    kind: settled
+    polity: ""
+    precision: not_earlier_than
+    until_at: null
+    where: body
+    quote: "with great caution set up a thallasaforming regime on a frozen moon of the remaining jovian planet, which the old IFG had named Munroe ."
+    note: "Skiiws'nnii settlement of the moon Munroe, narrated as following directly on from the 9885at re-contact, with no separate year given."
+holder_undated:
+  - polity: mutual-progress-association
+    quote: "Former lost colony in the MPA Ophiuchus Region"
+  - polity: sagittarius-transcultural-cooperation
+    quote: "After contact with the STC and Skiiws'nnii, the Gammergan culture was established as a swarm reservation, visited by researchers and tourists alike. Many Gammerganners joined the STC Exploration corps, and are well known as as a versatile, rather idiosyncratic space-adapted clade."
+unplaced:
+  - name: "Interstellar Frontiers Group"
+    quote: "This system was originally colonised by the Interstellar Frontiers Group, but contact was lost with this system in 6580 AT."
+  - name: "Skiiws'nnii"
+    quote: "contact was re-established in 9885 when the Skiiws'nnii ship Namor entered the system."
+  - name: "Orbital Council"
+    quote: "The Orbital Council , Skiiws'nnii's allies from their home system, began to collect the debris using magnetic scoops, to gather raw material for orbital habitats in the near-empty comfort zones."
+contradictions: []
+other_places: []
+doubts:
+  - "'Contact was lost with this system in 6580 AT' is a clearly dated turning point but does not obviously fit any of the tracked kinds (it is not stated as the system seceding, joining another polity, or being abandoned -- only that contact ended); no event was recorded for it, but a reviewer may want to capture it, perhaps as independent or abandoned depending on how the map wants to treat the 3300-year isolation."
+  - "The STC/Skiiws'nnii relationship (holder_undated above) describes 'the Gammergan culture ... established as a swarm reservation' and locals 'joined the STC Exploration corps' -- this is a looser cultural/administrative tie than outright sovereignty, and carries no year."

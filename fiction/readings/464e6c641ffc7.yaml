@@ -1,0 +1,30 @@
+article: 464e6c641ffc7
+title: Focal Point
+events:
+  - year_at: 6400
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised 6400"
+    note: "Matches header's 'settled 6400'. No polity is named for the colonisation; the demiurge godling The Looking Glass is named as creator of the colony's races (see unplaced)."
+  - year_at: 7400
+    kind: abandoned
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Depopulated 7400"
+    note: "New event, not in header. Corroborated by the body's 'The destruction of this colony during the so-called Abaddon Catastrophe raised new fears and concerns...', which does not itself restate the year."
+holder_undated:
+  - polity: archosaurian-empire
+    quote: "The planet Focal Point remains an unpopulated wasteland, and the Archosaurian Entity has declared it to be a restricted planet."
+unplaced:
+  - name: "The Looking Glass"
+    quote: "Various races were created by the demiurge godling formerly known as The Looking Glass , a being of unknown origin (believed by some to be an ascended form of the lost entity Quizical , or of Haliki Movarion , or both)"
+contradictions: []
+other_places: []
+doubts:
+  - "'The Archosaurian Entity' is taken to mean the Archosaurian Empire's archailect (the ArchSaur), matching the roster's archosaurian-empire, based on the Archaipelago/ArchSaur context and Related Articles; this identification is not stated explicitly under that exact name."
+  - "No year is given for when the Archosaurian Entity declared the planet restricted, so it is recorded as holder_undated rather than as a dated event."

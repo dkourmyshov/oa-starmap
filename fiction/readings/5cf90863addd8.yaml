@@ -1,0 +1,55 @@
+article: 5cf90863addd8
+title: Regulus
+events:
+  - year_at: 2231
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The primary pair was colonized by vecs (from 39 Leonis) in 2231 AT."
+    note: "'vecs' is a description of the settlers' clade, not a named polity, so left blank rather than mapped to any roster entry."
+  - year_at: 2231
+    kind: settled
+    polity: ""
+    precision: not_earlier_than
+    until_at: null
+    where: body
+    quote: "The orange dwarf of the outer pair was colonized by a coalition of lazurogened members of the Homo genus, including Erectus, Heidelbergensis, and Neanderthals (from Xi Ursae Majoris) a few years later."
+    note: "'a few years later' than the 2231 AT colonisation of the primary pair, no exact year given. The settlers are described as an unnamed coalition, not a polity."
+  - year_at: 2259
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 2259 a vec probe exploring the red dwarf's system detected signs of ancient water on Enlil, the Arean third planet"
+    note: "Probe survey of Regulus C (red dwarf), the third star of this quadruple system; treated as the same place per the brief's one-place-per-system rule."
+  - year_at: 2262
+    kind: observed
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "in 2262 it was determined that the planet once possessed a biosphere of simple pre-Prokaryote level organisms, which likely went extinct about 15 million years earlier"
+    note: "Further characterisation of the 2259 probe find, not a new physical visit."
+  - year_at: 6200
+    kind: transferred
+    polity: sophic-league
+    precision: circa
+    until_at: null
+    where: body
+    quote: "The starlifting operations continued unchecked during this period, and continued until the 6200s, removing a total of 0.4 solar masses from the star. At this point a archailect aligned with the Sophic League took control of the structure."
+    note: "Strictly, this says the archailect took control of the star-lifting structure, not explicitly the whole system; see doubts."
+holder_undated:
+  - polity: metasoft
+    quote: "During the Version War the vecs in this system were nominally aligned with the Metasoft side , but they avoided the conflict by adopting an tacit stance of neutrality."
+  - polity: sophic-league
+    quote: "The hominid cultures on Ishtar are also aligned with the Sophic League , and the local archailect is known to take a close interest in the welfare of these cultures."
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "Whether the archailect 'aligned with the Sophic League' taking control of the star-lifting structure circa the 6200s (transferred event above) amounts to Regulus becoming a Sophic League system, or only that one piece of infrastructure changing hands -- the header files this article under Sophic League, and the undated line about Ishtar's cultures being aligned with the League supports the former, but no sentence states the system itself was annexed or joined."
+  - "The Version War-era 'nominal alignment' with Metasoft is explicitly undercut by 'a tacit stance of neutrality' in the same sentence, so it is recorded as holder_undated rather than an event, with the weakness of the claim flagged here."
+  - "Terraforming milestones for Ishtar (started 2372, completed 2757 AT) and the star-lifting programme (started 2620s, main operation from 3086) were excluded as non-events per the brief."

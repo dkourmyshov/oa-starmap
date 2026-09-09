@@ -1,0 +1,35 @@
+article: 692a119117331
+title: Hyvixnym
+events:
+  - year_at: 325
+    kind: observed
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Hyvixnym was discovered in 325 AT by a telescopic scanning project that had a mission to catalog rogue objects in the Milky Way galaxy. Hyvixnym was given the catalog number 42+3340-Gz."
+    note: "New event, not in header. No polity is named for the scanning project."
+  - year_at: 7950
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Hyvixnym explored and sampled by an autonomous explorer class ship that found the exotic biosphere."
+    note: "Matches header's 'visited 7950'."
+  - year_at: 8002
+    kind: stewardship
+    polity: caretaker-gods
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The Caretaker God Midnight Castellan assumes custody of Hyvixnym to protect its native life."
+    note: "Matches header's 'stewardship 8002'."
+holder_undated: []
+unplaced: []
+contradictions: []
+other_places:
+  - "Hyxuym, in Auriga, is a different, similarly-named world mentioned only as the source of Hyvixnym's name ('New Hyxuym' in the local Deeper language)."
+doubts:
+  - "Several geological-timescale dates (c. 2.3 bya, c. 1.9 bya, c. 1.1 bya, c. 200 mya) describe the planet's formation, ejection, and the emergence of its life; these are not AT years and are skipped per the brief."
+  - "'After the initial exploration, a few Hider mining ships and probes visited the planet.' has no year attached, so no event was written for it."

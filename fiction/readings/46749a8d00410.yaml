@@ -1,0 +1,21 @@
+article: 46749a8d00410
+title: Kuranaba
+events:
+  - year_at: 2589
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonised 2589AT"
+    note: "Matches the header's 'settled 2589'. The body text describes the same colonisation ('colonized by a number of old Solsys clades ... during the Age of Expansion') without repeating the year; no single named polity is given for the colonists."
+holder_undated:
+  - polity: sophic-league
+    quote: "The system was later incorporated into the Sophic League following the establishment of Satyaloka with the ascension/emergence of the Blessed One and establishment of a microgauge wormhole link ."
+unplaced:
+  - name: "Jovian League"
+    quote: "Kuranaba (sometimes spelled or pronounced Karanaba) is a Sophic League system (Gv9 type star) colonized by a number of old Solsys clades (ethnic Hindu , Jovian League , Space Adapted Human , etc.) during the Age of Expansion ."
+contradictions: []
+other_places:
+  - "Big Tor (portal world reached via the Kuranaba Gate wormhole, opened 9853 AT)"
+doubts: []

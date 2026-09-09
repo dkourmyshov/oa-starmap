@@ -1,0 +1,27 @@
+article: 462a6ca1b0077
+title: Cog
+events:
+  - year_at: 1405
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: panel
+    quote: "Colonized in 1405 AT ."
+    note: "Matches the header's 'settled 1405'. The preceding line, 'Capital of the Silicon Generation .', is undated and not merged into this entry — see holder_undated and doubts."
+  - year_at: 1698
+    kind: observed
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "When this structure was discovered in 1698 AT it was labeled \"Cog\" by certain sensationalist sectors of the Known Net ."
+    note: "External observation/naming of the already-settled system's Dyson swarm, not a separate settlement."
+holder_undated:
+  - polity: silicon-generation
+    quote: "Capital of the Silicon Generation ."
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "'Capital of the Silicon Generation .' sits immediately before 'Colonized in 1405 AT .' in the panel, and the Silicon Generation's roster founding year is also 1405; it is plausible Cog became capital in the same year, but the text never says so directly, so 'capital' is recorded only as undated."

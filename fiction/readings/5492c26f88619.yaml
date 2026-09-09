@@ -1,0 +1,20 @@
+article: 5492c26f88619
+title: Dilmun
+events:
+  - year_at: 5390
+    kind: settled
+    polity: metasoft
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Explorers from Metasoft first reached Dilmun in 5390 AT."
+    note: "Matches header's 'settled 5390' and the data panel's 'Colonised: 5390 AT'. The sentence itself says 'first reached'; the world was not fully populated on its terraformed surface until the unveiling of 5740 AT (see doubts)."
+holder_undated: []
+unplaced:
+  - name: "Teleological Tendency"
+    quote: "At this time, the Teleological Tendency was populating the Metasoft Baseline Reserves, a series of worlds with unaugmented human populations."
+contradictions: []
+other_places: []
+doubts:
+  - "The prose's 5390 AT date is for explorers 'first reaching' Dilmun and the Tendency claiming it, not for baselines occupying the finished surface; 'settled' is used here to match the header and data panel's 'Colonised: 5390 AT', but a reviewer may want to weigh this against the 5740 AT planetwide unveiling described below."
+  - "'The first day of 5740 AT saw a massive planetwide unveiling ceremony, in which all the habitat domes were dismantled and all those in space habitats landed.' -- this could be read as the point at which colonists actually took up residence on the finished surface, but it is bound up with 'Terraformation Completed: 5740 AT', which the brief excludes as a terraforming milestone, so it was not written as a separate settled event."

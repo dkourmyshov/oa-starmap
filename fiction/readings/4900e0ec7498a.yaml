@@ -1,0 +1,26 @@
+article: 4900e0ec7498a
+title: Galbydeia Torus
+events:
+  - year_at: 7830
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "It was originally suggested by the Archons of Galbydeia in 7830 to explore the possibilities of large scale spacetime engineering - instead of just opening microscopic wormholes it would rip macroscopic wormholes straight into existence, possibly revolutionizing the wormhole manufacturing business."
+    note: "This sentence dates only the proposal of the Torus project by the already-resident 'Archons of Galbydeia' (not on roster; see unplaced); the article never explicitly states when Galbydeia itself was first settled. 7830 is used here to match the header's already-dated settled 7830, per rule 6, but see doubts."
+holder_undated:
+  - polity: mutual-progress-association
+    quote: "One of the most infamous Mutual Progress Association megaengineering projects ever, the Galbydeia Torus remains a point of controversy among the member systems."
+unplaced:
+  - name: "Archons of Galbydeia"
+    quote: "It was originally suggested by the Archons of Galbydeia in 7830 to explore the possibilities of large scale spacetime engineering"
+  - name: "Daharran Unity"
+    quote: "Today Galbydeia is inhabited by a large number of space-time engineers, megatechnology admirers, omegist sects, some Keterist offshoots, a number of cults worshipping the Torus ... and even a small secretive colony from the Daharran Unity."
+  - name: "Tarynt-Ometa Clade"
+    quote: "this collection is currently used by the Tarynt-Ometa Clade in an experiment with gravity transmission"
+contradictions: []
+other_places: []
+doubts:
+  - "The header's 'already dated: settled 7830' has no explicit settlement sentence in the body; 7830 is only the date the Archons of Galbydeia (already present) proposed the Torus project. Whether the map's settled date is drawn from this sentence or from an unstated earlier source is worth a reviewer's eye."
+  - "8944 AT ('success was reported - a wormhole had emerged') and 9733 AT (a near-catastrophic stabilisation incident) are technological/accident milestones with no holder change, so no events were written for them."

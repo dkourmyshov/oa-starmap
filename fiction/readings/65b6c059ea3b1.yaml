@@ -1,0 +1,37 @@
+article: 65b6c059ea3b1
+title: Grenrij (CW Leonis)
+events:
+  - year_at: 2698
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The first of these autonomous probes arrived in the vicinity of Grenrij in 2698 AT, and were able to take the first close-up photos of the star's surroundings, as well as its planets, and map additional small bodies in greater detail."
+    note: "The header already records 'settled 2698'; this sentence describes only autonomous probes arriving, with no colonists. Compare the 3100 AT entry below — see contradictions."
+  - year_at: 3100
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Several more probe missions of various affiliations and designs arrived at the star system soon after, some of which were capable of constructing engenerator stations, among other rudimentary infrastructures within the system, to permit virtual sophont migration as well as prepare the system for the first crewed colony missions which would not arrive until 3100 AT."
+    note: "New against the header, which records only 'settled 2698' for the probe arrival. This is the article's own date for the first crewed colony mission."
+  - year_at: 50
+    kind: observed
+    polity: ""
+    precision: circa
+    until_at: null
+    where: body
+    quote: "Since its discovery during the first century AT, the Grenrij system and the surrounding Peanut Nebula were observed and their characteristics teased out, having attracted a lot of attention due to its status as the nearest carbon star to Solsys."
+    note: "Text says 'during the first century AT'; year_at 50 stands in as a rough midpoint of that century."
+holder_undated: []
+unplaced: []
+contradictions:
+  - about: "settlement year"
+    quotes:
+      - "The first of these autonomous probes arrived in the vicinity of Grenrij in 2698 AT, and were able to take the first close-up photos of the star's surroundings, as well as its planets, and map additional small bodies in greater detail."
+      - "prepare the system for the first crewed colony missions which would not arrive until 3100 AT"
+other_places: []
+doubts:
+  - "'A number of fast long-range probes and colony missions were launched towards the star starting from the late Federation era' gives no numeric year for when missions began; not written up as an event."

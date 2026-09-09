@@ -1,0 +1,38 @@
+article: 5f25d0ba9c60c
+title: Giant Ring of the ArchSaur
+events:
+  - year_at: 5400
+    kind: visited
+    polity: ""
+    precision: circa
+    until_at: null
+    where: body
+    quote: "First probes arrived around 5400AT and a group of first toposophic AIs with solipsist tendencies claimed the system, established a presence around the superjovian planet and slowly began transforming some of its moons to computronium structures."
+    note: "Matches header's 'visited 5400'. The same sentence also describes the AIs claiming and settling the system (see next entry, kind: settled)."
+  - year_at: 5400
+    kind: settled
+    polity: ""
+    precision: circa
+    until_at: null
+    where: body
+    quote: "First probes arrived around 5400AT and a group of first toposophic AIs with solipsist tendencies claimed the system, established a presence around the superjovian planet and slowly began transforming some of its moons to computronium structures."
+    note: "The AIs (later called the Deep Dreamers) claimed the system and established a presence, which reads as more than a visit; header only records 'visited 5400'. No polity: the AIs are not named as a roster entity at this point."
+  - year_at: 8400
+    kind: transferred
+    polity: archosaurian-empire
+    precision: not_earlier_than
+    until_at: null
+    where: body
+    quote: "Things changed abruptly after the Archaipelago attacks of 8400AT. After the ArchSaur archailect subsumed UrchinStar, she sent out a task force that apparently was able to memetically subvert or subsume the Dreamers without firing a single shot. In the aftermath of these events, the ArchSaur consolidated control over the system and began installing starlifting equipment around the two stars and started disassembling the superjovian planet for building more starlifting systems and computronium structures."
+    note: "New event, not in header: the system passes from the independent Deep Dreamers to the Archosaurian Empire (the ArchSaur) some time after the 8400 AT Archaipelago attacks; exact year of the takeover itself is not given."
+holder_undated:
+  - polity: archosaurian-empire
+    quote: "Polity name: Archosaurian Empire"
+unplaced:
+  - name: "Deep Dreamers"
+    quote: "By the early 6000s after tranquility the AIs, by now known as the Deep Dreamers, had ascended to second toposophic level and transformed the largest 6 moons of the gas giant into moon-brain nodes."
+contradictions: []
+other_places: []
+doubts:
+  - "Classifying the 5400 AT arrival as 'settled' (in addition to 'visited') is an inference from 'claimed the system, established a presence'; the header only lists 'visited 5400', so a reviewer should judge whether settled is warranted here."
+  - "The exact year the ArchSaur took control (as opposed to the 8400 AT attacks that preceded it) is not stated; 'not_earlier_than 8400' is a judgement call."

@@ -1,0 +1,21 @@
+article: 5a69ca7eef167
+title: Bonfire System, The
+events:
+  - year_at: 7833
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "It was developed by a private group in 7833, but has since been subsumed by later settlers."
+    note: "Matches the header's 'settled 7833'. The colonising 'private group' is not named or identified with any roster polity; the Mutual Progress Association's link to the system is stated only as an undated, present-day membership (see holder_undated)."
+holder_undated:
+  - polity: mutual-progress-association
+    quote: "Bonfire is a Middle Regions star system that is a member of the Mutual Progress Association ."
+  - polity: mutual-progress-association
+    quote: "The MPA has a resident S2 governor in this system."
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "A transapient 'acquired' the planet Ash within this system in 7655 AT ('In 7655AT, a transapient acquired the world and unleashed von Neumann construction swarms...'), a date earlier than the system's 7833 AT development; treated as a sub-settlement within an already-settled system per the brief and not written up as an event, but the ordering is odd enough to flag for a reviewer."

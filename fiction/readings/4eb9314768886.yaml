@@ -1,0 +1,19 @@
+article: 4eb9314768886
+title: Locus
+events:
+  - year_at: 6207
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Reached in 6207 AT by the Jardine Venture, an independent exploration corp formerly affiliated to the NoCoZo , this planet had already been the subject of long-distance study for some time."
+    note: "The header also records 'settled 6207' for the same year; this sentence states only that an exploration corp reached the planet, not that it was settled that year. The corp is described as 'formerly affiliated to the NoCoZo', so NoCoZo is not recorded as the settler's polity."
+holder_undated: []
+unplaced:
+  - name: "Jardine Venture"
+    quote: "Reached in 6207 AT by the Jardine Venture, an independent exploration corp formerly affiliated to the NoCoZo , this planet had already been the subject of long-distance study for some time."
+contradictions: []
+other_places: []
+doubts:
+  - "'By 6800 the former anoxic atmosphere (mainly nitrogen and argon, with some CO2) was modified to contain enough oxygen for a population of mildly tweaked nearbaseline humans .' implies people were resident by 6800 at the latest, but gives no settlement year of its own and reads as a terraforming milestone rather than a settlement claim; no separate settled entry was written from it."

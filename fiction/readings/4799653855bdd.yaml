@@ -1,0 +1,22 @@
+article: 4799653855bdd
+title: Euripedes Mey
+events:
+  - year_at: 6407
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "It was first reached by the exploration and poet-theologian relativistic Neumann Probe Gregor 23 in 6407 AT."
+    note: "Matches header's 'visited 6407'. No polity is named for the probe Gregor 23."
+holder_undated:
+  - polity: sophic-league
+    quote: "Euripides Mey (YTS 102483210-IV) is a mesobiotic world (Gaian Type - Thalassic Subtype) near M48, under joint Sophic/Caretaker stewardship."
+  - polity: caretaker-gods
+    quote: "Euripides Mey (YTS 102483210-IV) is a mesobiotic world (Gaian Type - Thalassic Subtype) near M48, under joint Sophic/Caretaker stewardship."
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "No year is given for when the 'joint Sophic/Caretaker stewardship' arrangement began, so it is recorded as holder_undated rather than as a dated stewardship/transferred event."
+  - "The article body spells the world 'Euripides Mey', while the header and map file use 'Euripedes Mey'; the header spelling is used for the title field here."

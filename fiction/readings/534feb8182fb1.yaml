@@ -1,0 +1,39 @@
+article: 534feb8182fb1
+title: Yoruba
+events:
+  - year_at: 1800
+    kind: settled
+    polity: ""
+    precision: circa
+    until_at: null
+    where: body
+    quote: "The HD 216008 system was first reached in approximately 1800 AT by a rogue ahuman AI."
+    note: "Matches the header's 'settled 1800'. This 'colony' is a single ahuman entity that stayed roughly five centuries, not a conventional colony — compare the 2307 entry below and see contradictions."
+  - year_at: 2307
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "In 2307 an Expansion Age colony ship arrived in the system, carrying nearbaseline humans from Luna, Mars and the asteroid belt, many of whom claimed West African ancestry."
+    note: "New against the header, which records only 'settled 1800'. This is the system's first human colony."
+  - year_at: 3055
+    kind: transferred
+    polity: fomalhaut-acquisition-society
+    precision: not_earlier_than
+    until_at: null
+    where: body
+    quote: "in 3055 a FAS acquisitor/trader mission obtained a decryption key from the still-active diamond belt system of JD 778-0919-1 which could unlock the mysteries inside the computronium structures; for a thousand years the Curators of the FAS explored the strange datascapes contained within; during this time Yoruba formally became a member of the relatively modest Fomalhaut empire."
+    note: "New against the header. The text dates the decryption mission to 3055 but says only 'during this time' (the following thousand years) for formal FAS membership, so the membership year is not pinned down more precisely than 'not earlier than 3055'."
+holder_undated: []
+unplaced:
+  - name: "Inner Diamond belt culture"
+    quote: "This entity (which does not seem to have assumed a name at any point, but is sometimes known as Julia because of the fractal nature of its constructs) appears to have left the Solar System before the Great Expulsion and was part of the short-lived Inner Diamond belt culture until the emergence of the First Federation ."
+contradictions:
+  - about: "first/settlement year"
+    quotes:
+      - "The HD 216008 system was first reached in approximately 1800 AT by a rogue ahuman AI."
+      - "In 2307 an Expansion Age colony ship arrived in the system, carrying nearbaseline humans from Luna, Mars and the asteroid belt, many of whom claimed West African ancestry."
+other_places: []
+doubts:
+  - "'Inner Diamond belt culture' resembles the roster's Diamond Network by name only; not mapped to it, per the brief's warning against mapping by resemblance."

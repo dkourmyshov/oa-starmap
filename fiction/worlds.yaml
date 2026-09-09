@@ -1016,6 +1016,20 @@ worlds:
       - year_at: 1644
         kind: settled
         precision: not_later_than
+      - year_at: 1644
+        kind: abandoned
+        note: >-
+          "In 1644 AT the Klarawappen habitat mysteriously vanished ; the most
+          likely explanation is that the colonists decided to suddenly migrate
+          to the Oort Cloud to become Hiders , but no evidence for this move
+          has ever been found." The header records this year as 'settled
+          1644', but the only sentence carrying that year describes a habitat
+          vanishing, not a settlement. 'Abandoned' is a best-fit label for a
+          speculative, unconfirmed departure — see contradictions and doubts.
+          No settlement year is given anywhere in the article. The Klarawappen
+          habitat 'mysteriously vanished'; the map's older 'settled 1644' is
+          this same sentence read the other way, and the article gives no
+          settlement year.
     note: A moon of the gas giant Garell, at 70 Ophiuchi, 17 ly.
 
   - name: Barboro
@@ -1459,12 +1473,26 @@ worlds:
     events:
       - year_at: 2700
         kind: settled
+        polity: mutual-progress-association
+        note: >-
+          "Central MPA system, colonized by the Kathelian Confederacy in the
+          2700's." The Confederacy is an MPA polity, per the timeline.
 
       - year_at: 2790
         kind: settled
         source: "Encyclopaedia timeline, Age of Establishment"
         note: >-
-          Gordelpus (MPA) colonized by the Kathelian Confederacy.
+          Gordelpus (MPA) colonized by the Kathelian Confederacy.      - year_at: 6433
+        kind: transferred
+        note: >-
+          "The new STC-aligned Erniac government came into conflict with pro-
+          Negentropic and pro-Keterist influences, weakening the political
+          market and allowing the Sonato system to buy the polityship in
+          6433." New against the header, which records only 'settled 2700' and
+          'settled 2790'. 'The Sonato system' is not a roster polity (see
+          unplaced), so polity is left blank. To the Sonato system, no polity
+          of this file, after the STC-aligned Erniac government's conflicts.
+
   - name: The Gurth Hexanode Repository
     kind: megastructure
     affiliations: [mutual-progress-association, negentropy-alliance]
@@ -1740,6 +1768,21 @@ worlds:
       - year_at: 2188
         kind: visited
         note: First reached.
+      - year_at: 4498
+        kind: transferred
+        polity: negentropy-alliance
+        precision: not_earlier_than
+        note: >-
+          "Negentropist forces occupied the planetary system, and commandeered
+          many of the planetoids in the local belt for logistical resources."
+          New event, not in header. This follows directly from the
+          Negentropist attack of 4498 AT described in the previous sentence;
+          no separate year is given for when occupation itself began. The
+          occupation is described as continuing under 'a remnant Revisionist
+          occupation force until the end of the War' after the main fleet left
+          in 4512, with no year given for the war's end or for a return to
+          prior status. An occupation in the Version War; the MPA's holding
+          before and after is undated.
     note: >-
       Osmin is TYC 6305-2141-1, a G1V star of 0.85 solar masses and 0.55 solar
       luminosities. The Tycho catalogue is not one this map carries, so the
@@ -2724,6 +2767,16 @@ worlds:
     events:
       - year_at: 2180
         kind: settled
+        polity: linnent
+      - year_at: 3410
+        kind: transferred
+        polity: nocozo
+        note: >-
+          "Hammerstein joined the NoCoZo in 3410, and adopted a form of
+          government known as Futarchy; this system is found on a number of
+          NoCoZO Worlds, and integrates well with the predominantly
+          libertarian philosophy of that empire." New event, not in header.
+          And adopted Futarchy.
     note: >-
       A moon of a gas giant, at HD 870 in Tucana, 67 ly. Also given as GJ 2001.
 
@@ -3132,6 +3185,25 @@ worlds:
     events:
       - year_at: 5804
         kind: settled
+      - year_at: 6910
+        kind: abandoned
+        note: >-
+          "Sakvaback (also pronounced Sökvabäck) was first colonised by the
+          Scarlen Host in 5804 AT; they rapidly terraformed this cold planet
+          using orbiting mirrors and swarmtech, but became isolationist and
+          transcended in 6910 AT, leaving the planet uninhabited for over a
+          hundred standard years." Same sentence as the settlement entry; the
+          Scarlen Host transcended and left the world empty. The Scarlen Host,
+          no polity of this file, gone.
+      - year_at: 7013
+        kind: settled
+        note: >-
+          "The empty world became a goal for transcension chasers for a
+          period, but was mostly empty of transapientech by 7013 AT when a
+          second wave of permanent colonists arrived from the Regor Plexus."
+          New against the header, which records only 'settled 5804'; matches
+          the article's own panel line 'Recolonised: 7013 AT'. A second wave
+          of permanent colonists.
     note: The planet is spelled Sökvabäck.
 
   - name: Sesharia
@@ -3466,6 +3538,33 @@ worlds:
         kind: abandoned
         precision: circa
         note: Possibly where Xeon originated.
+      - year_at: 8995
+        kind: transferred
+        polity: xeon
+        note: >-
+          "In 8995 the colonists in this system were subsumed by a rogue
+          hyperturing , believed to be an Exploration Rover class 4 S:1. This
+          entity appears to have used the hapless colonists as a biotic matrix
+          for the Xeon blight." This is a hostile subsuming/infection by a
+          rogue hyperturing using the colonists for the 'Xeon blight', not a
+          conventional annexation; mapped to the roster's xeon id with caution
+          -- see doubts, since the roster gives Xeon's founding as 9210, later
+          than this 8995at incident. The colonists subsumed by a rogue
+          hyperturing, the origin of the Xeon; the map's older 'abandoned
+          8995' stands beside it, and the Xeon's own page has them 'not known
+          before 9210'.
+      - year_at: 9010
+        kind: settled
+        polity: solar-dominion
+        precision: not_earlier_than
+        note: >-
+          "A new wave of colonists began to arrive in this system soon
+          afterwards from the Solar Dominion , and mostly inhabit orbiting
+          space habitats and the moon Vali, while preserving the environment
+          of Sigyn as a nature reserve." 'soon afterwards' the 9010at
+          discovery of the empty system. A new wave of colonists from the
+          Dominion, 'soon afterwards' the rescue fleet of 9010 found the
+          system empty.
     note: >-
       In the outer Cassiopeia sector, read as the volume behind the
       constellation. The star is TYC 3663-2842-1, from a catalogue this map does
@@ -5837,6 +5936,19 @@ worlds:
     events:
       - year_at: 2231
         kind: settled
+      - year_at: 6200
+        kind: transferred
+        polity: sophic-league
+        precision: circa
+        note: >-
+          "The starlifting operations continued unchecked during this period,
+          and continued until the 6200s, removing a total of 0.4 solar masses
+          from the star. At this point a archailect aligned with the Sophic
+          League took control of the structure." Strictly, this says the
+          archailect took control of the star-lifting structure, not
+          explicitly the whole system; see doubts. The League took control of
+          the star-lifting operation, which the reader flagged as not plainly
+          the whole system; 'the 6200s', entered as 6200.
     note: Alpha Leonis, 79 ly.
 
   - name: Sacred Heart
@@ -6295,6 +6407,36 @@ worlds:
       - year_at: 3383
         kind: visited
         note: Rediscovered by a Society ship.
+      - year_at: 2650
+        until_at: 3150
+        kind: settled
+        note: >-
+          "Colonized Formerly: Undocumented Terragen colony (2650-3150? a.t)"
+          The panel marks the end year with a question mark, i.e. uncertain.
+          No polity is named for this early, undocumented colony. The panel's
+          'Undocumented Terragen colony (2650-3150? a.t)', with its own
+          question mark.
+      - year_at: 3150
+        kind: abandoned
+        note: >-
+          "Colonized Formerly: Undocumented Terragen colony (2650-3150? a.t)"
+          Same panel line as the settlement entry above; the end year itself
+          carries a '?' in the source, and the body confirms the colony
+          'failed' and was wiped out ('Stut ... openly admits to cleansing all
+          biont life from the system'). The end of the panel's range, likewise
+          questioned.
+      - year_at: 3383
+        kind: transferred
+        polity: fomalhaut-acquisition-society
+        note: >-
+          "This system was rediscovered by the Fomac Acquisitor ship
+          Inevitably Successful Under all Circumstances in 3383 a.t , and it
+          has since been placed under Fomalhaut stewardship." New against the
+          header, which records only 'visited 3383'. 'Placed under Fomalhaut
+          stewardship' reads as the system coming under the Fomalhaut
+          Acquisition Society's protection from the same year. Rediscovered by
+          a Fomac Acquisitor ship and placed under Fomalhaut stewardship; the
+          map's older 'visited 3383' is this arrival.
     note: >-
       HD 205739, since named Samaya, 303 ly out in Piscis Austrinus — the same
       constellation as Fomalhaut but not especially near it, 17 degrees away on
@@ -6312,6 +6454,31 @@ worlds:
         kind: settled
         precision: circa
         note: Reached by ahumans.
+      - year_at: 2307
+        kind: settled
+        note: >-
+          "In 2307 an Expansion Age colony ship arrived in the system,
+          carrying nearbaseline humans from Luna, Mars and the asteroid belt,
+          many of whom claimed West African ancestry." New against the header,
+          which records only 'settled 1800'. This is the system's first human
+          colony. Nearbaseline humans from Luna, Mars and the Belt; the rogue
+          ahuman AI of 1800 is the map's older settlement.
+      - year_at: 3055
+        kind: transferred
+        polity: fomalhaut-acquisition-society
+        precision: not_earlier_than
+        note: >-
+          "in 3055 a FAS acquisitor/trader mission obtained a decryption key
+          from the still-active diamond belt system of JD 778-0919-1 which
+          could unlock the mysteries inside the computronium structures; for a
+          thousand years the Curators of the FAS explored the strange
+          datascapes contained within; during this time Yoruba formally became
+          a member of the relatively modest Fomalhaut empire." New against the
+          header. The text dates the decryption mission to 3055 but says only
+          'during this time' (the following thousand years) for formal FAS
+          membership, so the membership year is not pinned down more precisely
+          than 'not earlier than 3055'. A FAS acquisitor mission, after
+          obtaining a decryption key from the diamond belt system.
     note: HD 216008, 169 ly out in Grus.
 
   # ---- Metasoft Version Tree ----------------------------------------------
@@ -6409,6 +6576,7 @@ worlds:
     events:
       - year_at: 5390
         kind: settled
+        polity: metasoft
 
   - name: Earthland
     kind: planet
@@ -6928,6 +7096,18 @@ worlds:
       - year_at: 5089
         kind: settled
         note: Construction began.
+      - year_at: 6303
+        kind: transferred
+        polity: technorapture-hypernation
+        note: >-
+          "TRHN aid and affiliation was accepted and in 6303at the Corot All-
+          Say hosted a ceremony for the installation of the software black box
+          into the matrioshka angelnet." The affiliation is described
+          elsewhere as loose ('Loosely affiliated with the Technorapture
+          Hypernation'); this is the year the affiliation was formally
+          accepted, not a full annexation. 'TRHN aid and affiliation was
+          accepted', with a ceremony at the Corot All-Say; the reader flagged
+          a loose affiliation.
     note: >-
       A matrioshka brain around the star CoRoT-3, and the cybercosm running
       inside it. Only loosely affiliated with the TRHN, which is drawn as
@@ -7146,6 +7326,16 @@ worlds:
     events:
       - year_at: 2723
         kind: visited
+      - year_at: 2723
+        kind: settled
+        note: >-
+          "In the year 2723 AT a colony mission consisting of near-baseline
+          humans arrived at Braciola (Maiale c) and built their colony."
+          Header records this as 'visited 2723', but the sentence describes
+          the colonists building their colony, which reads as settled rather
+          than a mere visit. No polity is named for the colony mission. A
+          colony mission of near-baseline humans; the map's older 'visited
+          2723' is this arrival.
     note: >-
       The article's coordinates fall in Delphinus, as it says. No star is named,
       so the direction stands on its own.
@@ -7568,6 +7758,25 @@ worlds:
       - year_at: 1032
         kind: settled
         precision: circa
+      - year_at: 7558
+        kind: abandoned
+        note: >-
+          "In 7558 AT, the light from Procyon reached UGPS 0722-05, and all of
+          the Ako Forward Chaining inhabitants vanished." Automated defences
+          kept guarding the empty system after this; see doubts regarding the
+          S1 transapient Luel's, who claimed the region soon after but did not
+          gain actual control until 10324 AT. When Procyon's light reached the
+          brown dwarf, 'all of the Ako Forward Chaining inhabitants vanished'.
+      - year_at: 10324
+        kind: transferred
+        note: >-
+          "Finally, in 10324 AT, a team named "Wagun" was able to reach
+          Midnight Pearl's upper atmosphere and was awarded control over the
+          entire brown dwarf system by Luel's." 'Wagun' is a game-show
+          contestant team, not a polity on the roster; see unplaced. Luel's
+          (an S1 transapient, not a listed polity) was the one awarding
+          control. A team named Wagun, awarded control of the whole system; no
+          polity of this file.
     note: >-
       Also UGPS J072227.51-054031.2, WISEPA J072227.27-054029.9 and GJ 11075.
       Procyon and Luyten's Star are 1.1 ly apart and Midnight Pearl is a few
@@ -7883,6 +8092,37 @@ worlds:
       - year_at: 5400
         kind: visited
         note: First arrived.
+      - year_at: 5400
+        kind: settled
+        precision: circa
+        note: >-
+          "First probes arrived around 5400AT and a group of first toposophic
+          AIs with solipsist tendencies claimed the system, established a
+          presence around the superjovian planet and slowly began transforming
+          some of its moons to computronium structures." The AIs (later called
+          the Deep Dreamers) claimed the system and established a presence,
+          which reads as more than a visit; header only records 'visited
+          5400'. No polity: the AIs are not named as a roster entity at this
+          point. First-toposophic AIs 'with solipsist tendencies' claiming the
+          system, no polity of this file.
+      - year_at: 8400
+        kind: transferred
+        polity: archosaurian-empire
+        precision: not_earlier_than
+        note: >-
+          "Things changed abruptly after the Archaipelago attacks of 8400AT.
+          After the ArchSaur archailect subsumed UrchinStar, she sent out a
+          task force that apparently was able to memetically subvert or
+          subsume the Dreamers without firing a single shot. In the aftermath
+          of these events, the ArchSaur consolidated control over the system
+          and began installing starlifting equipment around the two stars and
+          started disassembling the superjovian planet for building more
+          starlifting systems and computronium structures." New event, not in
+          header: the system passes from the independent Deep Dreamers to the
+          Archosaurian Empire (the ArchSaur) some time after the 8400 AT
+          Archaipelago attacks; exact year of the takeover itself is not
+          given. After the Archaipelago attacks of 8400 and the ArchSaur's
+          subsumption of UrchinStar; the exact year is not stated.
     note: >-
       In M39, which the catalogue puts at 965 ly against the article's 1,010 —
       agreeing to 5%. The cluster's centre supplies the direction; where in a
@@ -7976,6 +8216,14 @@ worlds:
     events:
       - year_at: 1405
         kind: settled
+      - year_at: 1698
+        kind: observed
+        note: >-
+          "When this structure was discovered in 1698 AT it was labeled "Cog"
+          by certain sensationalist sectors of the Known Net ." External
+          observation/naming of the already-settled system's Dyson swarm, not
+          a separate settlement. Discovered by outsiders and labelled Cog on
+          the Known Net, three centuries after its colonisation.
     note: >-
       HD 190470 in Vulpecula, 72 ly out, and already in the colony table — this
       entry adds the article and the date the table has no column for.
@@ -8030,6 +8278,27 @@ worlds:
         source: "Encyclopaedia timeline, Late Federation / AI Emergence"
         note: >-
           Islamic Unity probeship arrives at Medina .
+      - year_at: 2000
+        kind: capital
+        polity: stellar-umma
+        precision: circa
+        note: >-
+          "These four systems shared the title of capital world for a few
+          centuries, before Medina became ascendant in the twenty first
+          century A.T." Ascendant among the four capital worlds of the Umma
+          'in the twenty first century AT', entered as 2000.
+      - year_at: 2676
+        kind: capital
+        polity: stellar-umma
+        note: >-
+          "Tensions between isolationist factions and dynamic, expansionist
+          groups led the a schism in 2676, and Medina was left as capital of
+          the Core worlds only, with the outer regions breaking away and
+          developing a new empire with its own invented language, Umma of the
+          Shell." The outer regions broke away as a new, unnamed-on-roster
+          empire ('Umma of the Shell'); Medina itself remained capital, now of
+          the Core worlds/Stellar Umma. Capital of the Core after the schism
+          of 2676.
     note: >-
       HIP 39330, also HD 66653, in Puppis at 118.7 ly against the article's 118.
       Its own right ascension and declination land in Puppis too, as stated.
@@ -8342,6 +8611,13 @@ worlds:
     events:
       - year_at: 5107
         kind: settled
+      - year_at: 9885
+        kind: visited
+        note: >-
+          "contact was re-established in 9885 when the Skiiws'nnii ship Namor
+          entered the system." Skiiws'nnii is a species/clade, not a roster
+          polity; see unplaced. The Skiiws'nnii ship Namor re-establishing
+          contact; contact had been lost in 6580.
     note: On the border, and held by both.
 
   - name: Vinculum
@@ -10549,6 +10825,13 @@ worlds:
     events:
       - year_at: 6400
         kind: settled
+      - year_at: 7400
+        kind: abandoned
+        note: >-
+          "Depopulated 7400" New event, not in header. Corroborated by the
+          body's 'The destruction of this colony during the so-called Abaddon
+          Catastrophe raised new fears and concerns...', which does not itself
+          restate the year.
     note: >-
       On the edge of M39, the cluster NGC 7092 in Cygnus, at 1,048 ly against
       the cluster's catalogued 965 — an eight percent difference, and being on
@@ -10706,6 +10989,30 @@ worlds:
       - year_at: 2698
         kind: settled
         note: Arrived.
+      - year_at: 2698
+        kind: visited
+        note: >-
+          "The first of these autonomous probes arrived in the vicinity of
+          Grenrij in 2698 AT, and were able to take the first close-up photos
+          of the star's surroundings, as well as its planets, and map
+          additional small bodies in greater detail." The header already
+          records 'settled 2698'; this sentence describes only autonomous
+          probes arriving, with no colonists. Compare the 3100 AT entry below
+          — see contradictions. Autonomous probes; the map's older 'settled
+          2698' is this arrival.
+      - year_at: 3100
+        kind: settled
+        note: >-
+          "Several more probe missions of various affiliations and designs
+          arrived at the star system soon after, some of which were capable of
+          constructing engenerator stations, among other rudimentary
+          infrastructures within the system, to permit virtual sophont
+          migration as well as prepare the system for the first crewed colony
+          missions which would not arrive until 3100 AT." New against the
+          header, which records only 'settled 2698' for the probe arrival.
+          This is the article's own date for the first crewed colony mission.
+          The first crewed colony missions, after engenerator stations were
+          built.
     note: >-
       CW Leonis, a carbon star wrapped in enough of its own soot that none of
       the catalogues here carry it, so the constellation holds the direction
@@ -11498,6 +11805,30 @@ worlds:
     events:
       - year_at: 5650
         kind: settled
+      - year_at: 5840
+        kind: transferred
+        polity: negentropy-alliance
+        note: >-
+          "Claimed for the Negentropist empire by the linelayer Columbus 5 in
+          5840." By the linelayer Columbus 5.
+      - year_at: 7430
+        kind: transferred
+        polity: paradigm
+        precision: not_later_than
+        note: >-
+          "Taken over by the Efficiency Maximization Paradigm . This planet
+          and its moon were optimized and dismantled before 7430." No exact
+          year is given for the takeover itself; it is bounded by the 'before
+          7430' dismantlement that followed it. The planet and its moon
+          'optimized and dismantled before 7430'; the same sentence carries
+          the abandonment.
+      - year_at: 7430
+        kind: abandoned
+        polity: paradigm
+        precision: not_later_than
+        note: >-
+          "This planet and its moon were optimized and dismantled before
+          7430."
     note: >-
       Named for its star rather than its world, because the world was called Paz
       — a name this file already uses for a system in Draco — and because the
@@ -11516,6 +11847,7 @@ worlds:
     events:
       - year_at: 5902
         kind: settled
+        polity: refugium-federation
         note: Reached.
     note: >-
       Built around a black hole in Centaurus at 2,210 ly, and named for the
@@ -12072,6 +12404,15 @@ worlds:
       - year_at: 2608
         kind: visited
         note: Reached.
+      - year_at: 2608
+        kind: settled
+        note: >-
+          "In 2608 AT, the Wanderer's Yearning arrived at the outskirts of the
+          Upali System." The header records this as "visited 2608", but the
+          article goes on to describe a full colony landing ("It was Year One
+          on the world of Jannah"), not a mere visit; flagged as a kind
+          mismatch, not a year contradiction. The Wanderer's Yearning; the
+          map's older 'visited 2608' is this arrival.
     note: >-
       HIP 60206 in Coma Berenices, 275 ly out against the article's 239.65 — a
       seventh further, which binds. The article also puts it near Melotte 111,
@@ -12099,6 +12440,7 @@ worlds:
     events:
       - year_at: 6318
         kind: settled
+        polity: sagittarius-transcultural-cooperation
     note: >-
       Near NGC 6520 in Sagittarius at 4,920 ly, where the catalogue puts the
       cluster at 5,571 — an eighth further, close enough that the two describe

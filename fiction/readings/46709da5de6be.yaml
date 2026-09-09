@@ -1,0 +1,34 @@
+article: 46709da5de6be
+title: Himmelsschmiede
+events:
+  - year_at: 4736
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Construction began in 4736 AT when the relativistic linelayer Matthew Fountaine Maury arrived with a nanogauge wormhole to the New Magnitogorsk hub."
+    note: "No polity is named as sender of the linelayer in this sentence; the system's MPA affiliation is stated elsewhere without a date (see holder_undated)."
+  - year_at: 10285
+    kind: abandoned
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The last kiloton of Tantalum made on Einstein 25, 10?285 AT. was cast into a sculpture of the system while it was running at full blast and put up at New Magnitogorsk."
+    note: "The digit sequence in the source text is garbled ('10?285 AT'); year_at is a best guess at 10285. This marks the end of Himmelsschmiede's productive life -- 'After about 3500 years of continued operation all matter of the star had been dropped into the deep well and all processing operations were diassembled' -- after which 'Today the Himmelsschmiede system is an empty place ... It has been used up and now is a barren place of no use for anyone.'"
+holder_undated:
+  - polity: mutual-progress-association
+    quote: "Heavy industrialized system in MPA space - One of the largest Deep Well industrialized Zones that ever existed in the terragen sphere"
+unplaced: []
+contradictions: []
+other_places:
+  - "New Magnitogorsk: the hub/nexus this system's first wormhole connects to."
+  - "Kepleria: 'in the center of the MPA', reached by the system's other wormhole."
+  - "New Siberia (plexus): a different developing region of the MPA supplied by Himmelsschmiede's output between 4778 AT and about 8100 AT; Brahe 7 is named within it as where 'the first load of iridium and titanium was produced' in that period."
+  - "Hellsgate: another MPA Deep Well Industrial Zone, said to be the first with a custom-made black hole, in 5333 a.t."
+  - "Hephaestus' Forge: a Metasoft DWIZ named for comparison of scale, not otherwise described here."
+doubts:
+  - "Header says 'already dated: ... visited 6736' but no year matching 6736 appears anywhere in the article body; no quote could be found to support or contradict it, so no event entry was written for that date."
+  - "The 10285at (garbled as '10?285 AT' in the source) final-production/abandonment date is uncertain digit-for-digit and should be checked against the original article page."
+  - "The Industriekapitaen AI series is said to be 'developed in 311 a.t. in what used to be Germany, and later ascended to SI: 2 in the NoCoZo' -- this concerns the controlling AI's own history, not Himmelsschmiede as a place, and was excluded as a place event."

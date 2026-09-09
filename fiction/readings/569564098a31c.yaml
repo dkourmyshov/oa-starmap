@@ -1,0 +1,26 @@
+article: 569564098a31c
+title: Quint
+events:
+  - year_at: 5089
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Construction began in 5089at with neumanns seeded onto the various natural satellites of Yolk (the name given to the superjovian Corot-3b by the first colonists)."
+    note: "Colonists were 'a broad alliance of modosophont groups' (unnamed, not a polity); dataship flotilla dispatched in the latter Age of Establishment."
+  - year_at: 6303
+    kind: transferred
+    polity: technorapture-hypernation
+    precision: exact
+    until_at: null
+    where: body
+    quote: "TRHN aid and affiliation was accepted and in 6303at the Corot All-Say hosted a ceremony for the installation of the software black box into the matrioshka angelnet."
+    note: "The affiliation is described elsewhere as loose ('Loosely affiliated with the Technorapture Hypernation'); this is the year the affiliation was formally accepted, not a full annexation."
+holder_undated: []
+unplaced: []
+contradictions: []
+other_places: []
+doubts:
+  - "Whether the 6303at TRHN affiliation counts as a 'transferred' event given it is described as a 'loose affiliation' rather than annexation or membership; the intro calls Quint only 'loosely affiliated' with TRHN, never a TRHN system outright."
+  - "The 5089at settlement was by an unnamed 'broad alliance of modosophont groups', not a polity, so polity is left blank rather than mapped onto Technorapture Hypernation, which did not yet have a relationship with Quint at that date."

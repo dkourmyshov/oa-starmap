@@ -1,0 +1,29 @@
+article: 48fa66f687117
+title: Dante
+events:
+  - year_at: 1380
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "The world of Dante was colonised in 1380 AT by the Company of Venturers from Nova Terra in the Lumiere , one of the first colonisation efforts by the Novans."
+    note: "Company of Venturers / the Novans (of Nova Terra) are not on the roster; see unplaced."
+  - year_at: 3500
+    kind: settled
+    polity: ""
+    precision: not_later_than
+    until_at: null
+    where: body
+    quote: "Two SuperJovian gas giants Beatrice and Virgil offered limited opportunity for off-world migration, and by 3500 a.t the gas giants were encircled by several colonized icy moons and thousands of rotating habitats under the watchful eye of the local S2 transapient , DaCapo ."
+    note: "Beatrice and Virgil are the two gas giants of the same system as Dante, treated as the same place per the brief. No settling group is named."
+holder_undated:
+  - polity: solar-dominion
+    quote: "Long after the Version War , during which the inner Alighieri system including Dante was placed under Solarist occupation but outer Alighieri system remained a free independent zone, the hemispheres remained bitter rivals and opponents."
+unplaced:
+  - name: "Company of Venturers"
+    quote: "The world of Dante was colonised in 1380 AT by the Company of Venturers from Nova Terra in the Lumiere , one of the first colonisation efforts by the Novans."
+contradictions: []
+other_places: []
+doubts:
+  - "The Solarist occupation of (inner) Dante is only dated to 'the Version War', a known era but with no explicit AT year given in this article, so it is recorded as holder_undated rather than a dated transferred event; a reviewer with the Version War's dates could promote it. The outer Alighieri system is said to have 'remained a free independent zone' during the same war, but since it is the same star system as Dante and no year or clear resolution is given, no independent event was written for it either."

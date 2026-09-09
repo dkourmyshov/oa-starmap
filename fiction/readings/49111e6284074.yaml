@@ -1,0 +1,21 @@
+article: 49111e6284074
+title: Miracle City
+events:
+  - year_at: 8830
+    kind: visited
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "This world was first reached by a Gerkeltoss ship in 8830, although there is evidence that an Interstellar Frontiers Group mission visited several thousand years earlier than this date."
+    note: "Matches header's 'visited 8830'. No polity is named on the roster for either the Gerkeltoss or the Interstellar Frontiers Group (see unplaced)."
+holder_undated: []
+unplaced:
+  - name: "Gerkeltoss"
+    quote: "This world was first reached by a Gerkeltoss ship in 8830, although there is evidence that an Interstellar Frontiers Group mission visited several thousand years earlier than this date."
+  - name: "Interstellar Frontiers Group"
+    quote: "This world was first reached by a Gerkeltoss ship in 8830, although there is evidence that an Interstellar Frontiers Group mission visited several thousand years earlier than this date."
+contradictions: []
+other_places: []
+doubts:
+  - "'An Interstellar Frontiers Group mission visited several thousand years earlier than this date [8830]' gives no absolute AT year, so no separate event could be written for it, though it would predate 8830 by 'several thousand years' if a year were known."

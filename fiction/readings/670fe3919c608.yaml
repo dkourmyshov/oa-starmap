@@ -1,0 +1,18 @@
+article: 670fe3919c608
+title: Penrose Place
+events:
+  - year_at: 5902
+    kind: settled
+    polity: refugium-federation
+    precision: exact
+    until_at: null
+    where: body
+    quote: "However, for the growing Refugium Federation, this same quality, rendering it extremely difficult to detect from a distance, made it an ideal location. After a peaceful political schism in a nearby red dwarf member system, a group of nearbaseline human and provolve colonists set out towards the system, arriving in 5902."
+    note: "Matches header's 'settled 5902'; adds the holder (Refugium Federation) that the header line alone does not state."
+holder_undated:
+  - polity: refugium-federation
+    quote: "Penrose Place is still a member of the Refugium Federation, but it stands somewhat aloof from the other members, being neither entirely inward-looking, nor enamoured with cultural changes in the rest of the galaxy."
+unplaced: []
+contradictions: []
+other_places: []
+doubts: []

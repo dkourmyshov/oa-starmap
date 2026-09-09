@@ -1,0 +1,20 @@
+article: 4cfd1ab04285b
+title: Grignard
+events:
+  - year_at: 5309
+    kind: settled
+    polity: ""
+    precision: exact
+    until_at: null
+    where: body
+    quote: "Settled in 5309 AT by settlers from the Adhara Trade Treaty volume, this world is a GaianPaludial world with 45% ocean coverage but has a moderately damp climate in the tropical regions."
+    note: "Adhara Trade Treaty is not on the roster; see unplaced."
+holder_undated: []
+unplaced:
+  - name: "Adhara Trade Treaty"
+    quote: "Settled in 5309 AT by settlers from the Adhara Trade Treaty volume, this world is a GaianPaludial world with 45% ocean coverage but has a moderately damp climate in the tropical regions."
+contradictions: []
+other_places: []
+doubts:
+  - "'Neurotechnology imported from the TechnoRapture HyperNation in 5444' is a dated technology transfer, not a claim that TRHN reached, settled, or held Grignard, so no event was written for it (per rule 7)."
+  - "'Eventually society on Grignard underwent a rolling transcension, which took several decades (from 7656 to 7689) to complete', after which 'the only modosophonts left on Grignard were those who could not be integrated' and 'many migrated to the Keter Dominion or the Hypernation' -- this is a mass-ascension and depopulation event, both categories the brief excludes, so it was not recorded even though it plausibly ended the original colony in all but name. Grignard is now said to be 'host to an entirely new colony of Clade Tavi provolve/splices', but no year is given for that resettlement and Clade Tavi is not a polity, so no entry could be written for it either."
