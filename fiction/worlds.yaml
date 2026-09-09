@@ -5138,6 +5138,10 @@ worlds:
           systems became part of the Solar Dominion." The year is the peace
           accords' on the timeline. The colony table gives the system no
           present affiliation, and nothing saved says it left the Dominion.
+          As the project owner describes it: nominally Solar Dominion still,
+          but the system was never fully cleaned up after the Conver War and
+          remains dangerous to this day. No saved article says so; kept here
+          on that authority rather than a citation.
     note: >-
       37 Geminorum, as the colony table has it.
 
@@ -5363,6 +5367,86 @@ worlds:
       Beta Leonis, 36 ly, as the colony table has it, which names the system
       and no holder; the Encyclopaedia's Denebola Incident article is not
       among the saved pages.
+
+  - name: Bourgatov
+    kind: planet
+    system: Bourgatov
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/46100f97c38ac
+    location:
+      star: Theta Persei
+    events:
+      - year_at: 4490
+        kind: capital
+        polity: bourgatov-alliance
+        precision: not_later_than
+        note: >-
+          "Formerly one of the most populous systems of the Inner Sphere, at
+          its height home to 34 billion humans, splices and vecs." The
+          Corona article names it outright: "Bourgatov, the capital of the
+          Bourgatov Alliance." Neither article dates the Alliance's founding
+          or how long it held its capital; the year is an upper bound, from
+          the Avanola article's "news in 4490 AT of the collapse of
+          Bourgatov."
+      - year_at: 4490
+        kind: abandoned
+        precision: not_later_than
+        source: https://www.orionsarm.com/eg-article/5f9b29c09ab97
+        note: >-
+          "The Bourgatov blight ... got out of hand, assimilated and grew
+          into a wildly unstable and malign software blight ... the
+          population had to abandon of the system. After a few centuries the
+          blight seemed to have worked itself out. From a population of 34
+          billion, only 490 million survived." The collapse itself is
+          undated in Bourgatov's own article; the year, again, is the
+          Avanola article's news of it reaching that system in 4490, an
+          upper bound rather than the collapse's own date.
+    note: >-
+      Theta Persei, 36.6 ly. "Thinly populated by Radiation Nation tweaks,
+      various scavengers and archaeologists" today, no polity of this file.
+      Refugees went on to the asteroid belt at Iota Persei, "the last
+      (known) inhabitants" of which "left in 9300", and to New Magnitogorsk
+      in the Middle Regions; neither is placed on this map.
+
+  - name: Alzirr
+    kind: system
+    system: Alzirr
+    also: [Xi Geminorum AI-1]
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/48e8a9ebbbdb7
+    location:
+      star: Xi Geminorum
+    events:
+      - year_at: 1558
+        kind: observed
+        source: sources/polities/taurus-nexus.txt
+        note: >-
+          "In 1558 AT the Wide Array Exotic Radiation Telescope ... in the
+          Solsys Oort Cloud detected unusual readings from Alzirr (Xi
+          Geminorum) ... consistent with the existence of a wormhole in the
+          system." From the Taurus Nexus's own page, as pasted by the
+          project owner: the article this system is otherwise unread from.
+      - year_at: 2031
+        kind: capital
+        polity: taurus-nexus
+        source: sources/polities/taurus-nexus.txt
+        note: >-
+          The page's own data panel: "Capitals Xi Geminorum (2031-2450),
+          Corona (2450-3435)." Neither year is dated in the running prose;
+          the government relocated to Corona in 2450 (see that entry), but
+          nothing says Xi Geminorum left the Nexus before the Nexus's own
+          dissolution in 3435.
+    note: >-
+      Xi Geminorum, 60 ly, the F5 IV-V star Alzirr; the colony table's own
+      name for it is "Alzirr / Xi Geminorum AI-1", the code name the article
+      gives the ahuman AI civilization once resident there. By 1931 that
+      civilization's activity had ceased -- "no signs of activity such as
+      waste heat or drive signatures" -- leaving the wormhole and its
+      megastructures for the First Federation's New Callisto observers to
+      find and, eventually, claim. This is the wormhole network's origin
+      point and the Taurus Nexus's first capital; the article this entry is
+      built from is otherwise unread, and no polity is recorded here after
+      the Nexus's 3435 dissolution.
 
   - name: Huanghua
     kind: system
@@ -7101,8 +7185,25 @@ worlds:
     affiliations: [metasoft]
     location:
       star: 10 Tauri
+    events:
+      - year_at: 2268
+        until_at: 3435
+        kind: settled
+        polity: taurus-nexus
+        precision: between
+        source: sources/polities/taurus-nexus.txt
+        note: >-
+          No article of its own. The Taurus Nexus's own page, as pasted by
+          the project owner: "over the following centuries a number of other
+          colonies such as Makintairas (10 Tauri) ... eventually joined the
+          Taurus Nexus", after wormhole technology's replication in 2268;
+          the span runs to the Nexus's own dissolution in 3435. The Benes
+          article independently has Makintairas as a live wormhole hub in
+          2657: "the wormhole link between Makintairas and Rana."
     note: >-
-      10 Tauri, 45 ly out. From the colony table; no article of its own.
+      10 Tauri, 45 ly out. From the colony table; no article of its own. The
+      colony table's present affiliation, Metasoft, is undated for when
+      that succeeded the Nexus.
 
   - name: Modular Future
     kind: system
@@ -7491,6 +7592,23 @@ worlds:
     events:
       - year_at: 2522
         kind: settled
+        polity: taurus-nexus
+        note: >-
+          "Magal was colonised in 2522 AT by the Taurus Nexus, but became
+          part of the Terragen Federation following the First Consolidation
+          War."
+      - year_at: 3263
+        kind: transferred
+        polity: terragen-federation
+        precision: not_earlier_than
+        source: sources/polities/taurus-nexus.txt
+        note: >-
+          "But became part of the Terragen Federation following the First
+          Consolidation War." Undated in Magal's own article; the Taurus
+          Nexus's own page (as pasted by the project owner) dates the war's
+          start: "In 3263 the 'Inner Sector' attempted to break free in
+          order to become part of the NoCoZo, leading to the First
+          Consolidation War." How long the war ran is not stated.
     note: >-
       HIP 21091, 192 ly out in Taurus, and 9.6 ly from Sinyavskaya — the two
       nearest Federation places recorded here, and near enough that anything
@@ -7589,9 +7707,36 @@ worlds:
       hd: 29528
       catalogue_from_source: true
     events:
-      - year_at: 3800
+      - year_at: 2268
+        until_at: 3435
         kind: settled
-        precision: not_later_than
+        polity: taurus-nexus
+        precision: between
+        note: >-
+          "Planet originally colonized by the Taurus Nexus." Undated; the
+          span is the Nexus's own page (as pasted by the project owner,
+          sources/polities/taurus-nexus.txt), from wormhole technology's
+          replication in 2268 -- after which "a number of other colonies
+          such as ... Sinyavskaya (HD 29528) ... eventually joined the
+          Taurus Nexus" -- to the Nexus's own dissolution in 3435. This
+          replaces the map's older 'settled 3800', which was a misreading of
+          the sentence below about the 3800s dictatorship, not a settlement
+          date.
+      - year_at: 3435
+        kind: independent
+        note: >-
+          "After the fall of the Nexus Sinyavskaya became an independent
+          world in the backwaters beyond the Hyades."
+      - year_at: 3800
+        kind: transferred
+        polity: terragen-federation
+        precision: not_earlier_than
+        note: >-
+          "In the 3800's it became notorious for the dictatorial government
+          of the Proclag Oamnoran. Suffered severe overpopulation followed
+          by collapse because of Receptist ideology. Eventually Sinyavskaya,
+          now a cinder world, joined the Terragen Federation." Undated
+          beyond "eventually", after the 3800s events named here.
     note: HD 29528, 189 ly out in Taurus, 9.6 ly from the Magal Worldrings.
 
   # ---- Zoeific Biopolity --------------------------------------------------
@@ -12041,6 +12186,20 @@ worlds:
     affiliations: []
     location:
       star: 39 Tauri
+    events:
+      - year_at: 2268
+        until_at: 3435
+        kind: settled
+        polity: taurus-nexus
+        precision: between
+        source: sources/polities/taurus-nexus.txt
+        note: >-
+          No article of its own. The Taurus Nexus's own page, as pasted by
+          the project owner: "over the following centuries a number of other
+          colonies such as Makintairas (10 Tauri), Niu Mynti (39 Tauri) ...
+          eventually joined the Taurus Nexus", after wormhole technology's
+          replication in 2268; the span runs to the Nexus's own dissolution
+          in 3435.
     note: 39 Tauri, 55 ly out. No article of its own.
 
   - name: Nys-eldush
@@ -12308,6 +12467,13 @@ worlds:
           "Colonised: 4307 AT." "Cygnus Sector, Middle Regions system
           colonised by a long-range seedship mission in 4307." The timeline
           agrees. No settling group is named.
+      - year_at: 4307
+        kind: transferred
+        note: >-
+          No polity holds newly settled Pereira; entered so the map does not
+          default to the present coalition (see the 10600 note below) for the
+          three centuries before the Biovirate. Follows the same "held by
+          nobody" pattern as that entry's own 10600 event.
       - year_at: 4650
         until_at: 6009
         kind: capital

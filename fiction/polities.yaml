@@ -726,11 +726,18 @@ polities:
     name: Taurus Nexus
     color: "#C5CAE9"
     source: eg-historical-polities
+    founded_at: 2031
+    dissolved_at: 3435
     # "Early interstellar power that developed around an abandoned wormhole nexus
-    # in the area of space toward the constellation Taurus." Timeline, 1931: the
-    # Hyades wormhole network is found and "this becomes the wealthy and
-    # successful Taurus Nexus"; 3234 speaks of "the breakup of the Taurus Nexus"
-    # as already past. Neither is the year itself.
+    # in the area of space toward the constellation Taurus." Its own page, as
+    # pasted by the project owner (sources/polities/taurus-nexus.txt): data
+    # panel "Capitals Xi Geminorum (2031-2450), Corona (2450-3435)" and "Key
+    # Dates ... Dissolution (3435)", the latter also in the running prose: "In
+    # 3435 the last vestige of the Taurus Nexus Cooperative Forum was finally
+    # dissolved." The founding year is the earlier capital's, there being no
+    # firmer moment the page names as the government's start; "Detection
+    # (1558)" and "Exploration and Initial Settlement (1950-2250)" both
+    # precede any government existing to found.
 
   - id: sagittarius-sphere
     name: Sagittarius Sphere
@@ -913,11 +920,12 @@ polities:
 
   - id: bourgatov-alliance
     name: Bourgatov Alliance
-    color: "#78909C"
+    color: "#663323"
     source: eg-historical-polities
-    # Not on the Historical Polities page. Named here because it was a
-    # significant party to the Version War and the reading pass will meet it; no
-    # source is yet cited for a year.
+    # Not on the Historical Polities page. Its capital, Bourgatov (Theta
+    # Persei III), carries the only years found for it -- see that entry --
+    # bounded by the Avanola article's 4490 report of Bourgatov's collapse.
+    # No founding year is stated anywhere saved.
 
 # Landmarks whose odd position has been checked against the source and is
 # correct. The build's placement check is a proofreading aid for mis-transcribed
