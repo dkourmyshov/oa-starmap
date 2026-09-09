@@ -922,10 +922,16 @@ polities:
     name: Bourgatov Alliance
     color: "#663323"
     source: eg-historical-polities
-    # Not on the Historical Polities page. Its capital, Bourgatov (Theta
-    # Persei III), carries the only years found for it -- see that entry --
-    # bounded by the Avanola article's 4490 report of Bourgatov's collapse.
-    # No founding year is stated anywhere saved.
+    founded_at: 2000
+    dissolved_at: 4490
+    # Not on the Historical Polities page. Its own page, as pasted by the
+    # project owner (sources/polities/bourgatov-alliance.txt): the clan
+    # "relocate[d] their headquarters to the newly terraformed Theta Persei
+    # III" during the 2000's AT, and by 4490 the system's population had
+    # collapsed from 34 billion to 490 million -- see the Bourgatov entry.
+    # The Alliance's other worlds "were all absorbed by various empires"
+    # afterward, undated; the Bourgatov capital's fall is taken as the
+    # Alliance's own end, there being nothing saved that names a later one.
 
 # Landmarks whose odd position has been checked against the source and is
 # correct. The build's placement check is a proofreading aid for mis-transcribed

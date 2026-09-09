@@ -2654,7 +2654,13 @@ worlds:
       Lucida is the capital of the academic Iota Network, "technically an
       independent system and thus not in the Sephirotics", and drawn as the
       Network's, as the colony table already had it. The system's own article
-      is at https://www.orionsarm.com/eg-article/5c758943a42b2.
+      is at https://www.orionsarm.com/eg-article/5c758943a42b2. The
+      Bourgatov Alliance's own page, as pasted by the project owner
+      (sources/polities/bourgatov-alliance.txt): after Bourgatov's collapse
+      of 4490, "of the Bourgatov clan, only a handful of relativistic
+      journeyers survived. They later congregated on Corona during the
+      ComEmp period where they remain in cryonic suspension to this day" --
+      not a change of Corona's own holder, and not entered as an event.
 
   - name: Dorminy IV
     kind: system
@@ -5376,48 +5382,57 @@ worlds:
     location:
       star: Theta Persei
     events:
-      - year_at: 4490
+      - year_at: 2000
+        until_at: 2099
         kind: settled
         polity: bourgatov-alliance
-        precision: not_later_than
+        precision: between
+        source: sources/polities/bourgatov-alliance.txt
         note: >-
-          No settlement year is stated anywhere saved, only that it was
-          already "one of the most populous systems of the Inner Sphere, at
-          its height home to 34 billion humans, splices and vecs" by the
-          time of its collapse; the year is that collapse's own upper bound
-          (see below), entered here too so the map can show the system as
-          inhabited before it.
-      - year_at: 4490
-        kind: capital
-        polity: bourgatov-alliance
-        precision: not_later_than
-        note: >-
-          "Formerly one of the most populous systems of the Inner Sphere, at
-          its height home to 34 billion humans, splices and vecs." The
-          Corona article names it outright: "Bourgatov, the capital of the
-          Bourgatov Alliance." Neither article dates the Alliance's founding
-          or how long it held its capital; the year is an upper bound, from
-          the Avanola article's "news in 4490 AT of the collapse of
-          Bourgatov."
+          The Bourgatov Alliance's own page, as pasted by the project owner:
+          "During the 2000's AT the terraforming investments began to truly
+          pay off, and the Bourgatow used their vast wealth to relocate
+          their headquarters to the newly terraformed Theta Persei III,
+          which they renamed Bourgatov." Capital from the same move, per the
+          Corona article: "Bourgatov, the capital of the Bourgatov
+          Alliance", undated there. "Politically Bourgatov, still owned and
+          run by the Bourgatov clan transaps, carefully weathered all
+          political upheavals" through the First and Second Consolidation
+          Wars and into the Integration, "a major power ... with a total
+          wealth nearly equal to the major empires", down to the Version
+          War's outbreak at Bourgatov in 4476 and the collapse of 4490
+          below. The clan itself goes back much further, to the asteroid
+          Bourgatow in the Old Solar System, settled in the 390's AT; not
+          placed on this map, and kept as context in the note below.
       - year_at: 4490
         kind: abandoned
         precision: not_later_than
-        source: https://www.orionsarm.com/eg-article/5f9b29c09ab97
+        source: sources/polities/bourgatov-alliance.txt
         note: >-
-          "The Bourgatov blight ... got out of hand, assimilated and grew
-          into a wildly unstable and malign software blight ... the
-          population had to abandon of the system. After a few centuries the
-          blight seemed to have worked itself out. From a population of 34
-          billion, only 490 million survived." The collapse itself is
-          undated in Bourgatov's own article; the year, again, is the
-          Avanola article's news of it reaching that system in 4490, an
-          upper bound rather than the collapse's own date.
+          "As the advanced infrastructure broke down in the assaults of AI
+          viruses, nanoswarms and economic chaos ... the biospheres were
+          infiltrated with nanoweapons, forcing people into space ... By
+          4490 AT the initial population of 34 billion had been reduced to
+          a mere 490 million." The shorter world-profile article
+          (eg-article/46100f97c38ac) gives the same figures by way of an
+          unnamed faction's runaway "hunter-seeker virus" blight rather than
+          the Version War's proxy conflict named here; likely the same
+          event through two tellings, not a real contradiction. "The other
+          Bourgatov Alliance worlds fared better, but were all absorbed by
+          various empires. Of the Bourgatov clan, only a handful of
+          relativistic journeyers survived. They later congregated on
+          Corona during the ComEmp period where they remain in cryonic
+          suspension to this day" -- none of this is placed on the map.
     note: >-
       Theta Persei, 36.6 ly. "Thinly populated by Radiation Nation tweaks,
       various scavengers and archaeologists" today, no polity of this file.
       Refugees went on to the asteroid belt at Iota Persei, "the last
       (known) inhabitants" of which "left in 9300", and to New Magnitogorsk
-      in the Middle Regions; neither is placed on this map.
+      in the Middle Regions; neither is placed on this map. The clan's
+      original home, the asteroid Bourgatow, was towed here in the 3700's
+      AT and later vanished to "a secret location", per its own page, "a
+      hidden treasure trove somewhere in interstellar space" in popular
+      myth since.
 
   - name: Alzirr
     kind: system
