@@ -752,6 +752,13 @@ polities:
 
   - id: virginis-combine
     name: Virginis Combine
+    # Its own page, as given by the project owner (sources/polities): "In
+    # 1590 AT a number of technorat clades in the Beta Virginis system founded
+    # the Virginis Combine colonisation group"; first ships in 1625; outposts
+    # on the nearby red dwarfs, the M'Buto Confederacy and Denebola; "taken
+    # over by the Conver Ambi following the Denebola Incident, and was
+    # eventually broken up between Metasoft and the Solar Dominion, while
+    # Pacifica eventually joined the Utopia Sphere."
     # The Arcadia article: "In 2512 the Virginis Combine also dissolved, and
     # it was effectively absorbed by the Conver Ambi"; the Pacifica article:
     # "by 2512 the Combine and the Conver Ambi announced a merger". Arcadia

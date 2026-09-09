@@ -5231,6 +5231,28 @@ worlds:
     note: >-
       HD 219134, as the colony table has it.
 
+  - name: Denebola
+    kind: system
+    system: Denebola
+    affiliations: []
+    location:
+      star: Beta Leonis
+    events:
+      - year_at: 1748
+        kind: settled
+        polity: virginis-combine
+        source: "Encyclopaedia timeline, Late Federation / AI Emergence"
+        note: >-
+          "Virginis Combine amat farms seeded at Denebola." The Combine's own
+          page: "the young bright A class star Denebola (8 light-years) which
+          became an important amat-farm center for the Combine", and which
+          "later underwent an over-complexity collapse (see the Denebola
+          Incident)", undated there.
+    note: >-
+      Beta Leonis, 36 ly, as the colony table has it, which names the system
+      and no holder; the Encyclopaedia's Denebola Incident article is not
+      among the saved pages.
+
   - name: Huanghua
     kind: system
     system: Huanghua
@@ -6835,12 +6857,26 @@ worlds:
 
   - name: M'Buto
     kind: system
+    also: [M'Buto Confederacy]
     affiliations: [metasoft, nocozo]
     location:
       star: Gliese 454
+    events:
+      - year_at: 1816
+        kind: transferred
+        polity: virginis-combine
+        source: "Encyclopaedia timeline, Late Federation / AI Emergence"
+        note: >-
+          "After some years of increasingly close links, the M'Buto Confederacy
+          joins the Virginis Combine." The Combine's own page: the Confederacy,
+          "a loose solar system alliance of diverse habitats, clades,
+          corporations, and Houses, was easily subverted and annexed by the
+          combine."
     note: >-
       Gliese 454, 42 ly out. Named in the colony table and held jointly with the
-      Non-Coercive Zone; the Encyclopaedia gives it no article of its own.
+      Non-Coercive Zone; the Encyclopaedia gives it no article of its own. The
+      Combine's page puts the M'Buto Confederacy at BD -9 3413, 10.7 ly from
+      Beta Virginis.
 
   - name: Makintairas
     kind: system
