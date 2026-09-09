@@ -990,7 +990,7 @@ worlds:
   - name: Rengood
     kind: planet
     affiliations: [cyberian-network]
-    article: http://www.orionsarm.com/eg-article/591dcfb1235e6
+    article: https://www.orionsarm.com/eg-article/591dcfb1235e6
     location:
       hd: 193275
       distance: 195 ly
@@ -6251,7 +6251,7 @@ worlds:
   - name: Oro Mistral
     kind: system
     affiliations: [utopia-sphere]
-    article: http://www.orionsarm.com/eg-article/491063be8c97d
+    article: https://www.orionsarm.com/eg-article/491063be8c97d
     location:
       constellation: Ara
       distance: 390 ly
@@ -6316,7 +6316,7 @@ worlds:
     kind: system
     system: Zavijava
     affiliations: [utopia-sphere]
-    article: http://www.orionsarm.com/eg-article/4871893629b5e
+    article: https://www.orionsarm.com/eg-article/4871893629b5e
     location:
       star: Beta Virginis
     events:
@@ -6325,13 +6325,34 @@ worlds:
         note: >-
           "Colonized: 868 A.T." No system-wide holder; the article names
           protectorates and affiliations world by world, undated.
+      - year_at: 1590
+        kind: capital
+        polity: virginis-combine
+        source: "Encyclopaedia timeline, Late Federation / AI Emergence"
+        note: >-
+          "A number of Technorat habitats form the Virginis Combine [Beta
+          Virginis]." The Combine formed here; its own page is not among the
+          saved articles, and the Zavijava article says only that most of the
+          system's worlds "are member states of the Virginis Combine".
+      - year_at: 2512
+        kind: transferred
+        polity: conver-ambi
+        source: https://www.orionsarm.com/eg-article/48735da987f1b
+        note: >-
+          The Pacifica article: "by 2512 the Combine and the Conver Ambi
+          announced a merger." The Arcadia article has both "In 2512 the
+          Virginis Combine also dissolved, and it was effectively absorbed by
+          the Conver Ambi" and, later, "when the Combine dissolved in 3932";
+          the earlier year is entered and the later kept here. Pacifica
+          itself "joined the Utopia Sphere" in the Age of Consolidation,
+          undated.
     note: Beta Virginis, 36 ly.
 
   - name: Pacifica
     kind: planet
     system: Zavijava
     affiliations: [utopia-sphere]
-    article: http://www.orionsarm.com/eg-article/48735da987f1b
+    article: https://www.orionsarm.com/eg-article/48735da987f1b
     location:
       star: Beta Virginis
     events:

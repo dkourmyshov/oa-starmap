@@ -752,6 +752,12 @@ polities:
 
   - id: virginis-combine
     name: Virginis Combine
+    # The Arcadia article: "In 2512 the Virginis Combine also dissolved, and
+    # it was effectively absorbed by the Conver Ambi"; the Pacifica article:
+    # "by 2512 the Combine and the Conver Ambi announced a merger". Arcadia
+    # also says "when the Combine dissolved in 3932", once; the earlier year
+    # is entered.
+    dissolved_at: 2512
     color: "#BBDEFB"
     source: eg-historical-polities
     founded_at: 1590
