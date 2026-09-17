@@ -359,6 +359,17 @@ export class DetailPanel {
     this.panel.style.display = 'none';
   }
 
+  /**
+   * Where "Fly here" would go for a given id, without opening the panel.
+   *
+   * Reuses `describe`'s per-kind focus computation, so the plan view's
+   * auto-centre on a search pick and this panel's own button always agree
+   * on where an object actually is.
+   */
+  focusFor(id: number, unit: DistanceUnit): { x: number; y: number; z: number; standoff: Parsecs } | null {
+    return this.describe(id, unit)?.focus ?? null;
+  }
+
   show(id: number, unit: DistanceUnit): void {
     const detail = this.describe(id, unit);
     if (!detail) {
