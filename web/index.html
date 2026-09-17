@@ -328,7 +328,10 @@
         cursor: pointer;
       }
 
-      .search-result:hover {
+      /* `.active` is the row the arrow keys are on, kept in step with the
+         mouse on hover so the two never point at different rows at once. */
+      .search-result:hover,
+      .search-result.active {
         background: rgba(143, 180, 255, 0.16);
       }
 

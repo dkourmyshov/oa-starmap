@@ -882,6 +882,12 @@ export class Hud {
    * one opens its detail panel, the same place a click on its marker would;
    * "Fly here" inside that panel is what actually moves the camera, and
    * search does not shortcut past it.
+   *
+   * Down arrow steps into the result list, Up and Down move within it, and
+   * Enter picks whichever row is current — the first one, if the reader
+   * never touched an arrow key. Hovering a row moves the same "current" mark,
+   * so the keyboard and the mouse are never pointing at two different rows
+   * at once.
    */
   private buildSearch(): HTMLElement {
     const box = el('div', 'search-box');
@@ -895,9 +901,21 @@ export class Hud {
     results.hidden = true;
     box.appendChild(results);
 
+    let rows: HTMLElement[] = [];
+    let active = -1;
+
     const clear = (): void => {
       results.replaceChildren();
       results.hidden = true;
+      rows = [];
+      active = -1;
+    };
+
+    const setActive = (index: number): void => {
+      if (!rows.length) return;
+      active = Math.max(0, Math.min(index, rows.length - 1));
+      for (const [i, row] of rows.entries()) row.classList.toggle('active', i === active);
+      rows[active].scrollIntoView({ block: 'nearest' });
     };
 
     const pick = (hit: SearchHit): void => {
@@ -915,6 +933,8 @@ export class Hud {
       }
       const hits = this.callbacks.onSearch(query);
       results.replaceChildren();
+      rows = [];
+      active = -1;
       if (!hits.length) {
         results.appendChild(el('div', 'search-empty', 'No match'));
       } else {
@@ -922,7 +942,9 @@ export class Hud {
           const row = el('button', 'search-result', hit.label);
           row.type = 'button';
           row.addEventListener('click', () => pick(hit));
+          row.addEventListener('mouseenter', () => setActive(rows.indexOf(row)));
           results.appendChild(row);
+          rows.push(row);
         }
       }
       results.hidden = false;
@@ -933,9 +955,14 @@ export class Hud {
         input.value = '';
         clear();
         input.blur();
+      } else if (event.key === 'ArrowDown' && rows.length) {
+        event.preventDefault();
+        setActive(active < 0 ? 0 : active + 1);
+      } else if (event.key === 'ArrowUp' && rows.length) {
+        event.preventDefault();
+        setActive(active < 0 ? rows.length - 1 : active - 1);
       } else if (event.key === 'Enter') {
-        const first = results.querySelector('.search-result') as HTMLElement | null;
-        first?.click();
+        (rows[active] ?? rows[0])?.click();
       }
     });
 
