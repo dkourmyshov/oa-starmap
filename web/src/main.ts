@@ -568,14 +568,14 @@ async function main(): Promise<void> {
       onSearch: (query) => objects.search(query, labels.nameMode),
       onSearchSelect: (id) => {
         select(id);
-        // In the plan view a jump is a pan and a rescale, not a flight
-        // through space, so a search pick centres it the way clicking a
-        // point on an ordinary map would. Perspective keeps "Fly here" as
-        // the deliberate second step: see the note on buildSearch.
-        if (viewer.projectionMode === '2d') {
-          const focus = detail.focusFor(id, hud.currentUnit);
-          if (focus) viewer.focusOn(new THREE.Vector3(focus.x, focus.y, focus.z), focus.standoff);
-        }
+        // A pan, not a flight: the target moves to what was found and the
+        // zoom stays exactly where the reader already had it, in both
+        // projections. "Fly here"'s own standoff is scaled from distance to
+        // Sol, which read as a sensible frame near the inner sphere and an
+        // almost empty screen anywhere else; reusing the current range
+        // sidesteps that rather than inheriting it into search as well.
+        const focus = detail.focusFor(id, hud.currentUnit);
+        if (focus) viewer.focusOn(new THREE.Vector3(focus.x, focus.y, focus.z), viewer.range);
       },
       onViewpoint: (name) => viewer.setViewpoint(name),
       onControlMode: (mode) => viewer.setControlMode(mode),

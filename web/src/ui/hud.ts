@@ -879,10 +879,11 @@ export class Hud {
    * Matches whatever the "Names" toggle currently shows — main.ts asks
    * `ObjectIndex.search` with the same mode the labels are drawn in, so a
    * result never names something the map itself would not call that. Picking
-   * one opens its detail panel, the same place a click on its marker would.
-   * In the plan view main.ts also re-centres on it, since that is a pan
-   * rather than a trip through space; in perspective the camera stays put
-   * and "Fly here" inside the panel is the deliberate second step.
+   * one opens its detail panel, the same place a click on its marker would,
+   * and main.ts also pans the view to it at whatever zoom is already set —
+   * on screen and readable at once, rather than a highlighted label the
+   * reader has to go hunting for off in a corner, or a fresh zoom level of
+   * "Fly here"'s own choosing.
    *
    * Down arrow steps into the result list, Up and Down move within it, and
    * Enter picks whichever row is current — the first one, if the reader
