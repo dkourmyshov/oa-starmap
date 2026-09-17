@@ -24,7 +24,7 @@ import { DEFAULT_OPACITY as DEFAULT_DROP_LINES_OPACITY } from '../layers/dropLin
 import { DEFAULT_MAX_LABELS } from './labels';
 import { type Foldable, makeFoldable } from './foldable';
 import { makeDraggable } from './drag';
-import type { NameMode } from '../scene/objects';
+import type { NameMode, SearchHit } from '../scene/objects';
 import {
   type ControlMode,
   CONTROL_MODES,
@@ -93,6 +93,9 @@ export interface HudCallbacks {
   onPolityMode(enabled: boolean): void;
   onFocusPolity(polityId: string): void;
   onJump(target: JumpTarget): void;
+  /** As the reader types. Synchronous: the results are a plain array scan, not a fetch. */
+  onSearch(query: string): SearchHit[];
+  onSearchSelect(id: number): void;
   onViewpoint(name: Viewpoint): void;
   onControlMode(mode: ControlMode): void;
   onUnitChange(unit: DistanceUnit): void;
@@ -213,6 +216,8 @@ export class Hud {
     heading.appendChild(el('div', 'masthead-sub', "Orion's Arm Universe Project"));
     masthead.appendChild(heading);
     panel.appendChild(masthead);
+
+    panel.appendChild(this.buildSearch());
 
     const starLine = el('div', 'row');
     starLine.appendChild(el('span', 'label', 'Stars'));
@@ -866,6 +871,75 @@ export class Hud {
     this.folds.push(makeFoldable(panel, { title }));
     const header = panel.firstElementChild as HTMLElement | null;
     if (header) makeDraggable(panel, header);
+  }
+
+  /**
+   * A text box that finds a named object as the reader types.
+   *
+   * Matches whatever the "Names" toggle currently shows — main.ts asks
+   * `ObjectIndex.search` with the same mode the labels are drawn in, so a
+   * result never names something the map itself would not call that. Picking
+   * one opens its detail panel, the same place a click on its marker would;
+   * "Fly here" inside that panel is what actually moves the camera, and
+   * search does not shortcut past it.
+   */
+  private buildSearch(): HTMLElement {
+    const box = el('div', 'search-box');
+    const input = el('input', 'search-input') as HTMLInputElement;
+    input.type = 'search';
+    input.placeholder = 'Find a star, system, cluster…';
+    input.autocomplete = 'off';
+    box.appendChild(input);
+
+    const results = el('div', 'search-results');
+    results.hidden = true;
+    box.appendChild(results);
+
+    const clear = (): void => {
+      results.replaceChildren();
+      results.hidden = true;
+    };
+
+    const pick = (hit: SearchHit): void => {
+      this.callbacks.onSearchSelect(hit.id);
+      input.value = '';
+      clear();
+      input.blur();
+    };
+
+    input.addEventListener('input', () => {
+      const query = input.value;
+      if (!query.trim()) {
+        clear();
+        return;
+      }
+      const hits = this.callbacks.onSearch(query);
+      results.replaceChildren();
+      if (!hits.length) {
+        results.appendChild(el('div', 'search-empty', 'No match'));
+      } else {
+        for (const hit of hits) {
+          const row = el('button', 'search-result', hit.label);
+          row.type = 'button';
+          row.addEventListener('click', () => pick(hit));
+          results.appendChild(row);
+        }
+      }
+      results.hidden = false;
+    });
+
+    input.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        input.value = '';
+        clear();
+        input.blur();
+      } else if (event.key === 'Enter') {
+        const first = results.querySelector('.search-result') as HTMLElement | null;
+        first?.click();
+      }
+    });
+
+    return box;
   }
 
   /**

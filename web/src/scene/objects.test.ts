@@ -1417,6 +1417,99 @@ describe('real and Orion’s Arm names', () => {
   });
 });
 
+describe('object search', () => {
+  // A star with only a catalogue name, and a colonised one with both — the
+  // same pair `keeps a settled star's catalogue name...` above builds, so a
+  // search for its Orion's Arm name and its catalogue name can be told apart.
+  const build = () =>
+    new ObjectIndex(
+      makeStars(
+        [
+          [0, 0, -100],
+          [0, 0, -200],
+        ],
+        { '0': { proper: 'Vega' }, '1': { proper: 'Lambda Aurigae' } },
+      ),
+      null,
+      null,
+      null,
+      null,
+      new Map([
+        [
+          1,
+          {
+            star_index: 1,
+            star: 'Lambda Aurigae',
+            colony: 'New Gaia',
+            described: '',
+            article: '',
+            spectral_type: '',
+            mass_sol: '',
+            luminosity_sol: '',
+            distance_ly: 41,
+            method: 'name',
+            distance_disagrees: false,
+            affiliations: [] as string[],
+            status: '',
+            note: '',
+          },
+        ],
+      ]),
+    );
+
+  it('matches only whichever name the current mode would show', () => {
+    const index = build();
+    expect(index.search('lambda', 'oa')).toEqual([]);
+    expect(index.search('lambda', 'real').map((h) => h.label)).toEqual(['Lambda Aurigae']);
+    expect(index.search('new gaia', 'real')).toEqual([]);
+    expect(index.search('new gaia', 'oa').map((h) => h.label)).toEqual(['New Gaia']);
+    expect(index.search('gaia', 'both').map((h) => h.label)).toEqual(['New Gaia (Lambda Aurigae)']);
+    expect(index.search('lambda', 'both').map((h) => h.label)).toEqual(['New Gaia (Lambda Aurigae)']);
+  });
+
+  it('falls back to whichever name a star has, in every mode', () => {
+    const index = build();
+    for (const mode of ['oa', 'real', 'both'] as const) {
+      expect(index.search('vega', mode).map((h) => h.label)).toEqual(['Vega']);
+    }
+  });
+
+  it('is case-insensitive and ignores a blank or whitespace query', () => {
+    const index = build();
+    expect(index.search('VEGA', 'oa').map((h) => h.label)).toEqual(['Vega']);
+    expect(index.search('', 'oa')).toEqual([]);
+    expect(index.search('   ', 'oa')).toEqual([]);
+  });
+
+  it('sorts a name the query starts ahead of one it is only found inside', () => {
+    const index = new ObjectIndex(
+      makeStars(
+        [
+          [0, 0, -100],
+          [0, 0, -200],
+        ],
+        { '0': { proper: 'Nova Vega' }, '1': { proper: 'Vega' } },
+      ),
+      null,
+      null,
+      null,
+    );
+    expect(index.search('vega', 'oa').map((h) => h.label)).toEqual(['Vega', 'Nova Vega']);
+  });
+
+  it('caps the number of results', () => {
+    const names: Record<string, Record<string, string>> = {};
+    const positions: [number, number, number][] = [];
+    for (let i = 0; i < 30; i++) {
+      positions.push([0, 0, -100 - i]);
+      names[String(i)] = { proper: `Star ${i}` };
+    }
+    const index = new ObjectIndex(makeStars(positions, names), null, null, null);
+    expect(index.search('star', 'oa')).toHaveLength(20);
+    expect(index.search('star', 'oa', 5)).toHaveLength(5);
+  });
+});
+
 describe('the map as it stood in a year', () => {
   const dated = (name: string, knownFrom: number | null, settledAt: number | null = null) =>
     ({

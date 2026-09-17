@@ -212,6 +212,12 @@ export interface ObjectRef {
   index: number;
 }
 
+/** One hit from `ObjectIndex.search`: an id `select` can open, and the text it matched on. */
+export interface SearchHit {
+  id: number;
+  label: string;
+}
+
 /** A label the layout algorithm decided to draw, in CSS pixels. */
 export interface PlacedLabel {
   id: number;
@@ -907,6 +913,32 @@ export class ObjectIndex {
 
   ref(id: number): ObjectRef {
     return { kind: this.kind[id], index: this.srcIndex[id] };
+  }
+
+  /**
+   * Find labelled objects by name.
+   *
+   * Matched against whichever text the given mode would actually put on the
+   * map — the same call `layout` makes for the same id — so a search for a
+   * catalogue designation comes up empty while the map reads Orion's Arm
+   * names only, rather than finding an object the reader cannot see named
+   * that way. Prefix matches sort first, then the shorter label, so typing
+   * "vega" surfaces Vega itself ahead of everything merely near it.
+   */
+  search(query: string, mode: NameMode, limit = 20): SearchHit[] {
+    const needle = query.trim().toLowerCase();
+    if (!needle) return [];
+    const hits: SearchHit[] = [];
+    for (const id of this.labelled) {
+      const label = composeLabel(this.labels[id] ?? '', this.labelsReal[id] ?? '', mode);
+      if (label.toLowerCase().includes(needle)) hits.push({ id, label });
+    }
+    hits.sort((a, b) => {
+      const aPrefix = a.label.toLowerCase().startsWith(needle) ? 0 : 1;
+      const bPrefix = b.label.toLowerCase().startsWith(needle) ? 0 : 1;
+      return aPrefix - bPrefix || a.label.length - b.label.length;
+    });
+    return hits.slice(0, limit);
   }
 
   /**

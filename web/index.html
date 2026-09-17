@@ -268,6 +268,76 @@
         color: var(--text);
       }
 
+      /*
+       * The object search box, at the top of the stats panel because it is the
+       * fastest way into the map a reader who already knows a name has. The
+       * results list sits under the box rather than replacing it, so typing a
+       * second, more specific query is a correction rather than a restart.
+       */
+      .search-box {
+        position: relative;
+        margin: 4px 0 10px;
+      }
+
+      .search-input {
+        pointer-events: auto;
+        box-sizing: border-box;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid var(--border);
+        color: var(--text);
+        border-radius: 6px;
+        padding: 5px 8px;
+        font: inherit;
+      }
+
+      .search-input::placeholder {
+        color: var(--muted);
+      }
+
+      .search-input:focus {
+        outline: none;
+        border-color: var(--accent);
+      }
+
+      /* Layered over whatever is below it, like the panels themselves, so a
+         long result list cannot push the rest of the panel's rows around. */
+      .search-results {
+        position: absolute;
+        z-index: 1;
+        top: calc(100% + 3px);
+        left: 0;
+        right: 0;
+        max-height: 240px;
+        overflow-y: auto;
+        background: #12161f;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+      }
+
+      .search-result {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        text-align: left;
+        background: none;
+        border: none;
+        color: var(--text);
+        padding: 5px 8px;
+        font: inherit;
+        cursor: pointer;
+      }
+
+      .search-result:hover {
+        background: rgba(143, 180, 255, 0.16);
+      }
+
+      .search-empty {
+        padding: 5px 8px;
+        color: var(--muted);
+        font-size: 11.5px;
+      }
+
       .jump-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;

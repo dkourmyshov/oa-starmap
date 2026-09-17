@@ -565,6 +565,8 @@ async function main(): Promise<void> {
       },
       onFocusPolity: focusPolity,
       onJump: handleJump,
+      onSearch: (query) => objects.search(query, labels.nameMode),
+      onSearchSelect: (id) => select(id),
       onViewpoint: (name) => viewer.setViewpoint(name),
       onControlMode: (mode) => viewer.setControlMode(mode),
       onUnitChange: (unit) => {
