@@ -1587,9 +1587,19 @@ worlds:
     affiliations: [mutual-progress-association]
     article: https://www.orionsarm.com/eg-article/4670a60a449d5
     location:
+      ra_deg: 253.5355
+      dec_deg: -41.8267
+      distance: 531 ly
+      near: HD 152219
       note: >-
-        The primary is HD 152219, which is in none of the catalogues this map
-        carries, and no distance or constellation is given to fall back on.
+        The data panel: "Right ascension: 16h54m08.51s, Declination:
+        -41°49'36", Distance from Sol: 531 ly, Constellation: Scorpius."
+        Converted from sexagesimal. The primary, Johannes, is given as HD
+        152219 and as YTS 6465-7800-313, neither of which is in any catalogue
+        this map carries, so the position comes from the panel's own
+        coordinates rather than a resolved star. An earlier pass over this
+        entry checked only the HD number and, finding no match, left the
+        place unlocated without reading the rest of the panel.
     events:
       - year_at: 6996
         kind: settled
