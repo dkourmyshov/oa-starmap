@@ -11150,11 +11150,14 @@ worlds:
       distance: 3300 ly
       note: >-
         Was an interpolation from the transcription of Anders Sandberg's maps,
-        at 3014 ly with a wide error. This position is from the Orion's Arm Celestia add-ons' location catalogues (OAAddons9, OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv), which the star importer never read because it takes only .stc files,
-        and it falls 5 degrees from that interpolation — two methods
-        agreeing, where the same interpolation was 41 degrees and a factor of
-        seven wrong for Aries Vector. The catalogue's distance is taken, being
-        a figure someone stated rather than one this project worked out.
+        at 3014 ly with a wide error. The position is now from the Orion's Arm Celestia add-ons' location catalogues (OAAddons9, OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv), which the star importer never read because it takes only .stc files.
+        The add-on catalogues are the preferred source for a volume of this
+        kind whatever the two happen to agree on: the Anders map is known to
+        be unreliable about where an individual system or world sits, and only
+        somewhat better about polities. That they fall 5 degrees apart here
+        is a comfort rather than an argument — the same interpolation was 41
+        degrees and a factor of seven out for Aries Vector, and one agreement
+        does not make a method.
     note: Emerged.
     note: >-
       Of the Negentropy Alliance, though it is the Disarchy's article that
@@ -11183,11 +11186,14 @@ worlds:
       distance: 3200 ly
       note: >-
         Was an interpolation from the transcription of Anders Sandberg's maps,
-        at 3114 ly with a wide error. This position is from the Orion's Arm Celestia add-ons' location catalogues (OAAddons9, OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv), which the star importer never read because it takes only .stc files,
-        and it falls 3 degrees from that interpolation — two methods
-        agreeing, where the same interpolation was 41 degrees and a factor of
-        seven wrong for Aries Vector. The catalogue's distance is taken, being
-        a figure someone stated rather than one this project worked out.
+        at 3114 ly with a wide error. The position is now from the Orion's Arm Celestia add-ons' location catalogues (OAAddons9, OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv), which the star importer never read because it takes only .stc files.
+        The add-on catalogues are the preferred source for a volume of this
+        kind whatever the two happen to agree on: the Anders map is known to
+        be unreliable about where an individual system or world sits, and only
+        somewhat better about polities. That they fall 3 degrees apart here
+        is a comfort rather than an argument — the same interpolation was 41
+        degrees and a factor of seven out for Aries Vector, and one agreement
+        does not make a method.
     note: >-
       The largest organised polity within the Disarchy, and with no article of
       its own — the Disarchy's is what describes it.
