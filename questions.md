@@ -8,7 +8,7 @@ Nothing below is a complaint about the setting. Most of it is the ordinary frict
 
 ---
 
-## Open questions (28)
+## Open questions (29)
 
 ### Shona — Shona's article gives its position twice, and the two directions are thirty degrees apart.
 
@@ -340,6 +340,24 @@ Two separate gaps, and the second is the larger. First, an affiliation here is a
 
 - https://www.orionsarm.com/eg-topic/49c787abb28fd
 - https://www.orionsarm.com/eg-topic/45b170f9e0941
+
+### Fredholm and Everypath — Two Keter systems have three candidate distances each, spanning a factor of ten, and no Encyclopaedia source among them.
+
+*contradiction*
+
+Both have articles — eg-article/4650f71e6bad5 and eg-article/479bbbd65a070 — and both are stubs: a short general description, no data panel, no position. So the Encyclopaedia does not place either system, and every figure the map could use comes from somewhere else.
+There are three candidates each, and they do not overlap:
+Fredholm is 154 ly by the Celestia wormhole-nexus add-on's own coordinates; 144 ly if read as the star those coordinates land on, HIP 95066, which is 26 Aquilae and the name the add-on itself writes; 1,053 ly if read as the catalogue number the add-on writes beside that name, HIP 107144, which is 26 Aquarii in a different constellation; and 1,525 ly by interpolation from the transcription of Anders Sandberg's maps.
+Everypath is 369 ly by the add-on's coordinates; 617 ly for HIP 96378, the star those coordinates land on exactly; and 1,364 ly by the same map interpolation.
+No source outranks another here on Orion's Arm authority, because none of them is Orion's Arm. The map transcription is known to be contradicted by Encyclopaedia entries elsewhere. The Celestia add-on is third-party, and has been caught misidentifying twice — Fredholm's own catalogue number, and Barboro, which it puts at a star the Encyclopaedia's Inner Sphere table assigns elsewhere. The catalogue figures are only as good as the identification they rest on.
+Note what changes with the choice: at the add-on's figures the two sit about 215 ly apart, and at the map transcription's about 160 ly apart but four times further out. The Keter Dominion accommodates either — it runs from 16.7 ly at Barawatten to 3,100 at World Garden — so the empire's own geography does not decide it, and an earlier argument here that it did was wrong, having been made from `worlds.yaml` alone while seven Keter systems sat in the colony table.
+
+**What the map does now.** Uses the add-on's stated coordinates and distance, on the project owner's decision, and binds neither system to a catalogue star even though both sets of coordinates land on one. Binding would assert an identification the add-on has twice got wrong, and would silently swap the distance for the catalogue's. The panel names the add-on as the source, so a reader is told which of the three figures they are looking at.
+
+**What would settle it.** Anything in the Encyclopaedia that states a position for either system, or expands either stub. Failing that, whether the add-on's author worked from a source this project has not seen.
+
+- https://www.orionsarm.com/eg-article/4650f71e6bad5
+- https://www.orionsarm.com/eg-article/479bbbd65a070
 
 ### The Celestia wormhole-nexus add-on — A nineteenth Celestia add-on places systems nothing else places, and twice names a star the Encyclopaedia names differently.
 

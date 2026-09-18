@@ -10055,42 +10055,45 @@ worlds:
   - name: Everypath
     kind: system
     affiliations: [keter-dominion]
+    article: https://www.orionsarm.com/eg-article/479bbbd65a070
     location:
       ra_deg: 293.9317
       dec_deg: 1.7283
       distance: 369 ly
       note: >-
         From the Celestia wormhole-nexus add-on (S. Ball, 2016, under
-        sources/celestia_wormhole_nexus), the only source that places this
-        system at all; no article exists for it. This replaces an
-        interpolation from the transcription of Anders Sandberg's maps,
-        which put it at a 20-degree direction error and an 800 ly distance
-        error.
-        Its coordinates fall exactly on HIP 96378, whose catalogue distance is 617
-        ly against the add-on's 369. Not bound to the star, so that the
-        disagreement stays visible rather than being resolved by silently
-        taking one figure. See questions.md.
+        sources/celestia_wormhole_nexus). The article is a stub and states no
+        position, so nothing from the Encyclopaedia bears on this; the figure
+        replaces an interpolation from the transcription of Anders Sandberg's
+        maps, which put it at 1,364 ly with a 20-degree direction error and an
+        800 ly distance error. Three sources now disagree about how far out it
+        is — 369 ly here, 1,364 from the map transcription, and 617 for HIP
+        96378, the star the add-on's own coordinates land on exactly — and none
+        of them is the Encyclopaedia. Not bound to that star, so the
+        disagreement stays visible rather than being settled by silently taking
+        one figure. See questions.md.
 
   - name: Fredholm
     kind: system
     affiliations: [keter-dominion]
+    article: https://www.orionsarm.com/eg-article/4650f71e6bad5
     location:
       ra_deg: 290.1371
       dec_deg: -5.4158
       distance: 154 ly
       note: >-
         From the Celestia wormhole-nexus add-on (S. Ball, 2016, under
-        sources/celestia_wormhole_nexus), the only source that places this
-        system at all; no article exists for it. This replaces an
-        interpolation from the transcription of Anders Sandberg's maps,
-        which put it at a 20-degree direction error and an 800 ly distance
-        error.
-        Its coordinates fall on HIP 95066, which is 26 Aquilae at 144 ly, and the
-        add-on writes "26 Aquilae" in the name — but the catalogue number it
-        writes beside it, HIP 107144, is 26 Aquarii at 1,053 ly, a different
-        star in a different constellation. Not bound to either star for that
-        reason: the direction and distance are what the add-on actually
-        asserts consistently. See questions.md.
+        sources/celestia_wormhole_nexus). The article is a stub and states no
+        position, so nothing from the Encyclopaedia bears on this; the figure
+        replaces an interpolation from the transcription of Anders Sandberg's
+        maps, which put it at 1,525 ly with a 20-degree direction error and an
+        800 ly distance error. Three sources now disagree about how far out it
+        is — 154 ly here, 1,525 from the map transcription, and 144 or 1,053
+        depending on which of two stars the add-on meant — and none of them is
+        the Encyclopaedia. Its coordinates fall on HIP 95066, 26 Aquilae at 144
+        ly, and the add-on writes "26 Aquilae" in the name, but the catalogue
+        number beside it, HIP 107144, is 26 Aquarii at 1,053 ly. Not bound to
+        either star for that reason. See questions.md.
 
   - name: Restored Ambi Limis
     kind: system
