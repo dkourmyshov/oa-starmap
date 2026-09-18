@@ -986,6 +986,57 @@ questions:
       - https://celestiaproject.space/forum/viewtopic.php?f=23&t=17436
       - https://www.orionsarm.com/eg-article/491277421c9f8
 
+  - id: celestia-location-catalogues
+    topic: The Celestia add-ons' .dsc location catalogues
+    status: open
+    severity: question
+    summary: Twenty location files across five archives were never read, because the importer takes only star catalogues; they hold 160 named places.
+    detail: >-
+      `oa_stars.yaml` is built by an importer that opens each add-on archive and
+      reads every `.stc` file in it. The add-ons also ship `.dsc` files — deep
+      sky catalogues — and those have never been opened. There are twenty of
+      them across five archives, thirteen in OAAddons9's OALocationsv4 folder
+      alone, and between them they name 160 distinct places with coordinates:
+      systems in oaplanets.dsc, outer volumes in oalocs3.dsc, empire markers in
+      OAEMPIRES.dsc and its southern twin, the Taurus Nexus's own systems, and
+      real nebulae and clusters in oalocations.dsc. Extracted to
+      sources/derived/oa_dsc_locations.tsv.
+
+      Eighty of the 160 this map already holds under the same name. Ten of those
+      eighty had a weaker position than the catalogues offer, and testing each
+      direction against the constellation its article names sorted them cleanly.
+      Enremdea, Dilmun and Zennor were cones and are now directions: each
+      catalogue direction falls inside the cone it replaces and each distance
+      matches the article's. Arkady 2 had no position at all and now has one in
+      Carina, which is where its own article's Carina Trade and Carina Rush put
+      it. The Locality of Wolfra and TrueModel were interpolations from the
+      transcription of Anders Sandberg's maps and are now catalogue positions
+      three and five degrees from those interpolations — the same method that
+      was 41 degrees and a factor of seven wrong for Aries Vector, right here.
+
+      Three were refused. Ozymandias: direction inside Vela but 2,509 ly against
+      the article's 1,897. Stanislaw: distance exactly the article's 4,598 ly
+      but a direction 24 degrees from Canis Major's centre against a radius of
+      14. Oceanus Ultimata: 5,171 ly and 23 degrees outside Musca, where its
+      article puts its own system, Beyniou, in Musca at 7,122 — that one is
+      drawn at Beyniou instead, from our own data.
+
+      The real nebulae and clusters in oalocations.dsc are a separate case and
+      are not loaded. They record which historical distances the Orion's Arm
+      authors were working from, which is worth knowing, but this map takes real
+      objects from current scientific catalogues.
+    map_does: >-
+      Takes a catalogue direction where it agrees with the constellation the
+      article names, and refuses it where it does not, whatever the distance
+      agreement. The eighty names the catalogues carry that this map does not
+      hold at all are not yet entered.
+    would_settle: >-
+      For Ozymandias and Stanislaw, which figure the Encyclopaedia means. More
+      broadly, whether the importer should read `.dsc` files as well, which
+      would make these positions data rather than a one-off extraction.
+    links:
+      - https://www.orionsarm.com/xcms.php?r=oa-page&page=gen_OACelestia2
+
   - id: gazetteer-against-our-own-positions
     topic: Systems the gazetteer places differently
     status: open

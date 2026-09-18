@@ -158,6 +158,12 @@ worlds:
     location:
       constellation: Canis Major
       distance: 4598 ly
+      note: >-
+        Kept as a cone. The Celestia location catalogues give a direction at
+        exactly the 4,598 ly the article states — but it lies 24 degrees from
+        the centre of Canis Major against a radius of 14, so it is not in the
+        constellation the article names. The matching distance does not redeem
+        a direction in the wrong part of the sky. See questions.md.
     events:
       - year_at: 9920
         kind: reported
@@ -2431,9 +2437,15 @@ worlds:
     affiliations: [nocozo]
     article: https://www.orionsarm.com/eg-article/48ff3802ed02e
     location:
+      ra_deg: 162.1875
+      dec_deg: -62.6264
+      distance: 2698 ly
       note: >-
         In the outer Non-Coercive Zone, on the long Carina Trade of wormholes
-        towards the Carina Rush — a route rather than a position.
+        towards the Carina Rush — which the article gives as a route rather than
+        a position. The position is from the Orion's Arm Celestia add-ons' location catalogues (OAAddons9, OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv), which the star importer never read because it takes only .stc files.
+        It falls in Carina, which is what the article's own Carina Trade and
+        Carina Rush imply, and nothing else here places this world.
 
   - name: Atlantis
     kind: planet
@@ -3209,6 +3221,12 @@ worlds:
     location:
       constellation: Vela
       distance: 1897 ly
+      note: >-
+        Kept as a cone. The Celestia location catalogues give a direction that
+        falls inside Vela, 9 degrees from its centre against a radius of 18 —
+        but they put the system at 2,509 ly where the article says 1,897, and a
+        direction asserted for an object 600 ly further out is not obviously the
+        right direction for this one. See questions.md.
     note: Capital of the Premacy.
 
   - name: Pelion and Ossa
@@ -7862,8 +7880,15 @@ worlds:
     affiliations: [metasoft]
     article: https://www.orionsarm.com/eg-article/5492c26f88619
     location:
-      constellation: Gemini
+      ra_deg: 110.85
+      dec_deg: 24.211
       distance: 2101.8 ly
+      note: >-
+        Was Gemini and a distance, which is a cone 2101.8 ly deep. The direction is
+        from the Orion's Arm Celestia add-ons' location catalogues (OAAddons9, OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv), which the star importer never read because it takes only .stc files.
+        It falls 3 degrees from the centre of Gemini against that
+        constellation's radius of 16, so it agrees with the cone it replaces,
+        and the catalogue's own distance of 2101.8 ly agrees with the article's.
     events:
       - year_at: 5390
         kind: settled
@@ -9734,8 +9759,15 @@ worlds:
     affiliations: [orion-federation]
     article: https://www.orionsarm.com/eg-article/47953c5148ba9
     location:
-      constellation: Monoceros
+      ra_deg: 91.74
+      dec_deg: -6.987
       distance: 1608 ly
+      note: >-
+        Was Monoceros and a distance, which is a cone 1608 ly deep. The direction is
+        from the Orion's Arm Celestia add-ons' location catalogues (OAAddons9, OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv), which the star importer never read because it takes only .stc files.
+        It falls 14 degrees from the centre of Monoceros against that
+        constellation's radius of 19, so it agrees with the cone it replaces,
+        and the catalogue's own distance of 1608 ly agrees with the article's.
     events:
       - year_at: 4603
         kind: settled
@@ -11113,20 +11145,17 @@ worlds:
     affiliations: [negentropy-alliance]
     article: https://www.orionsarm.com/eg-article/464ba71b5823e
     location:
-      ra_deg: 226.1351
-      dec_deg: -56.2329
-      distance: 3014 ly
-      direction_error_deg: 20.0
-      distance_error: 800 ly
-      estimated: >-
-        Interpolated from the transcription of Anders Sandberg's maps, from the
-        anchors nearest the cell. It falls inside them, which is the better
-        case. No article gives a position.
-    events:
-      - year_at: 4700
-        kind: settled
-        precision: circa
-        note: Emerged.
+      ra_deg: 216.75
+      dec_deg: -56.6
+      distance: 3300 ly
+      note: >-
+        Was an interpolation from the transcription of Anders Sandberg's maps,
+        at 3014 ly with a wide error. This position is from the Orion's Arm Celestia add-ons' location catalogues (OAAddons9, OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv), which the star importer never read because it takes only .stc files,
+        and it falls 5 degrees from that interpolation — two methods
+        agreeing, where the same interpolation was 41 degrees and a factor of
+        seven wrong for Aries Vector. The catalogue's distance is taken, being
+        a figure someone stated rather than one this project worked out.
+    note: Emerged.
     note: >-
       Of the Negentropy Alliance, though it is the Disarchy's article that
       describes it.
@@ -11149,14 +11178,16 @@ worlds:
     affiliations: [disarchy]
     article: https://www.orionsarm.com/eg-article/464ba71b5823e
     location:
-      ra_deg: 201.1785
-      dec_deg: -60.6953
-      distance: 3114 ly
-      direction_error_deg: 30.0
-      distance_error: 1200 ly
-      estimated: >-
-        Interpolated from the transcription of Anders Sandberg's maps, and
-        extrapolated beyond the anchors around it. No article gives a position.
+      ra_deg: 205.5
+      dec_deg: -58.0
+      distance: 3200 ly
+      note: >-
+        Was an interpolation from the transcription of Anders Sandberg's maps,
+        at 3114 ly with a wide error. This position is from the Orion's Arm Celestia add-ons' location catalogues (OAAddons9, OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv), which the star importer never read because it takes only .stc files,
+        and it falls 3 degrees from that interpolation — two methods
+        agreeing, where the same interpolation was 41 degrees and a factor of
+        seven wrong for Aries Vector. The catalogue's distance is taken, being
+        a figure someone stated rather than one this project worked out.
     note: >-
       The largest organised polity within the Disarchy, and with no article of
       its own — the Disarchy's is what describes it.
@@ -13221,6 +13252,15 @@ worlds:
     system: Beyniou
     affiliations: []
     article: https://www.orionsarm.com/eg-article/490b3010a681a
+    location:
+      world: Beyniou
+      note: >-
+        Drawn where Beyniou is, the system it is a megastructure of, which it
+        shares an article with — that article putting Beyniou in Musca at 7,122
+        ly. The Celestia location catalogues carry an Oceanus Ultimata too, at
+        5,171 ly and 23 degrees from the centre of Musca against a radius of
+        8.8, so they disagree with the article on both direction and distance
+        and are not followed. See questions.md.
     events:
       - year_at: 8162
         kind: visited
@@ -14151,8 +14191,15 @@ worlds:
     affiliations: []
     article: https://www.orionsarm.com/eg-article/48f949fa9c789
     location:
-      constellation: Libra
+      ra_deg: 229.4401
+      dec_deg: -14.1408
       distance: 2786 ly
+      note: >-
+        Was Libra and a distance, which is a cone 2786 ly deep. The direction is
+        from the Orion's Arm Celestia add-ons' location catalogues (OAAddons9, OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv), which the star importer never read because it takes only .stc files.
+        It falls 2 degrees from the centre of Libra against that
+        constellation's radius of 16, so it agrees with the cone it replaces,
+        and the catalogue's own distance of 2787.72 ly agrees with the article's.
     note: In Libra at 2,786 ly.
 
   - name: Zeta1 Reticuli

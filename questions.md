@@ -8,7 +8,7 @@ Nothing below is a complaint about the setting. Most of it is the ordinary frict
 
 ---
 
-## Open questions (33)
+## Open questions (34)
 
 ### Shona — Shona's article gives its position twice, and the two directions are thirty degrees apart.
 
@@ -381,6 +381,21 @@ Relay 005 is not drawn. Swapped back it lands on Epsilon Indi, 11.9 ly, which is
 - https://celestiaproject.space/forum/viewtopic.php?f=23&t=17436
 - https://www.orionsarm.com/eg-article/491277421c9f8
 
+### The Celestia add-ons' .dsc location catalogues — Twenty location files across five archives were never read, because the importer takes only star catalogues; they hold 160 named places.
+
+*question*
+
+`oa_stars.yaml` is built by an importer that opens each add-on archive and reads every `.stc` file in it. The add-ons also ship `.dsc` files — deep sky catalogues — and those have never been opened. There are twenty of them across five archives, thirteen in OAAddons9's OALocationsv4 folder alone, and between them they name 160 distinct places with coordinates: systems in oaplanets.dsc, outer volumes in oalocs3.dsc, empire markers in OAEMPIRES.dsc and its southern twin, the Taurus Nexus's own systems, and real nebulae and clusters in oalocations.dsc. Extracted to sources/derived/oa_dsc_locations.tsv.
+Eighty of the 160 this map already holds under the same name. Ten of those eighty had a weaker position than the catalogues offer, and testing each direction against the constellation its article names sorted them cleanly. Enremdea, Dilmun and Zennor were cones and are now directions: each catalogue direction falls inside the cone it replaces and each distance matches the article's. Arkady 2 had no position at all and now has one in Carina, which is where its own article's Carina Trade and Carina Rush put it. The Locality of Wolfra and TrueModel were interpolations from the transcription of Anders Sandberg's maps and are now catalogue positions three and five degrees from those interpolations — the same method that was 41 degrees and a factor of seven wrong for Aries Vector, right here.
+Three were refused. Ozymandias: direction inside Vela but 2,509 ly against the article's 1,897. Stanislaw: distance exactly the article's 4,598 ly but a direction 24 degrees from Canis Major's centre against a radius of 14. Oceanus Ultimata: 5,171 ly and 23 degrees outside Musca, where its article puts its own system, Beyniou, in Musca at 7,122 — that one is drawn at Beyniou instead, from our own data.
+The real nebulae and clusters in oalocations.dsc are a separate case and are not loaded. They record which historical distances the Orion's Arm authors were working from, which is worth knowing, but this map takes real objects from current scientific catalogues.
+
+**What the map does now.** Takes a catalogue direction where it agrees with the constellation the article names, and refuses it where it does not, whatever the distance agreement. The eighty names the catalogues carry that this map does not hold at all are not yet entered.
+
+**What would settle it.** For Ozymandias and Stanislaw, which figure the Encyclopaedia means. More broadly, whether the importer should read `.dsc` files as well, which would make these positions data rather than a one-off extraction.
+
+- https://www.orionsarm.com/xcms.php?r=oa-page&page=gen_OACelestia2
+
 ### Systems the gazetteer places differently — Of eight systems where the add-on could improve on our position, two did, one is untrustworthy, and two contradict the article outright.
 
 *contradiction*
@@ -521,13 +536,13 @@ Blanco 1, Collinder 173, Collinder 359, Cone Nebula, Czernik 8, NGC 2244, NGC 70
 
 ## Worlds located only by constellation
 
-93 of 629 canonical worlds are given as a distance and a constellation. That fixes the distance exactly and the direction only to the width of the constellation, which at these ranges is hundreds to thousands of light years. The map draws these with a broken ring rather than a solid one, and the detail panel gives the error in light years.
+90 of 629 canonical worlds are given as a distance and a constellation. That fixes the distance exactly and the direction only to the width of the constellation, which at these ranges is hundreds to thousands of light years. The map draws these with a broken ring rather than a solid one, and the detail panel gives the error in light years.
 
 Coordinates, or a nearby named star, would turn any of these from a region into a position.
 
-## 58 places described but not located
+## 56 places described but not located
 
-Arkady 2, Arnon Dar, Avase, Big Bob, Crustuse, Cyrus, Dashwood, Druidworld, Elderman's Star, Evermore, Galbydeia Torus, Garlin, and 46 more
+Arnon Dar, Avase, Big Bob, Crustuse, Cyrus, Dashwood, Druidworld, Elderman's Star, Evermore, Galbydeia Torus, Garlin, Gavit, and 44 more
 
 ## 1 designation reused in the Celestia add-on
 
