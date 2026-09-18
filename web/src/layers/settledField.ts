@@ -34,6 +34,25 @@
  * which landed a pixel inside this one and read as two rings meaning nothing in
  * particular. Only worlds are ever dashed — a catalogue star is exactly where
  * the catalogue says.
+ *
+ * Ring *width* says what sort of thing is being marked, which is the third
+ * question and the last free channel. Almost everything on this layer is a
+ * place someone holds, and draws at the standard size. The twenty
+ * `polity_marker` entries are not places — the mark *is* the polity: Xeon, the
+ * Amalgamation, the Locality of Wolfra, the Mensan Way. Those draw wider, so
+ * that "a system held by them" and "them" do not look alike.
+ *
+ * The kind has to be declared in the data, and was: nothing inferrable
+ * separated the two. `volume` used to carry both a polity's territory and the
+ * Horsehead Nebula, and matching a name against the polity roster finds three
+ * of the forty-three, because the roster does not hold the small polities —
+ * while also finding Hyperion, which is a world. What is still a `volume` is a
+ * region that is nobody: a nebula, a plexus, a stretch of space shared out.
+ *
+ * Width is the whole of the distinction for now. A marker with a stated extent
+ * should eventually draw that extent instead, which this layer cannot do —
+ * it draws point sprites, and a physical radius needs the quad path in
+ * `extent.ts` that the cluster and HII layers use.
  */
 
 import * as THREE from 'three';
@@ -82,6 +101,16 @@ export const DEFAULT_OPACITY = 0.85;
 /** Ring diameter in device pixels. */
 export const DEFAULT_SIZE_PX = 13.0;
 
+/**
+ * How much wider a polity's marker is drawn than a place someone holds.
+ *
+ * Enough to read as a different kind of mark at a glance, not so much that it
+ * swallows the systems inside it — at 1.8 a marker is about three times the
+ * area of a system ring, which is the difference between "bigger" and "a
+ * different thing".
+ */
+export const POLITY_MARKER_SIZE_SCALE = 1.8;
+
 /** A settled system with no polity — abandoned, blight, independent. */
 const STATUS_COLOR = new THREE.Color(0x9aa4bb);
 
@@ -110,9 +139,11 @@ const VERTEX_SHADER = /* glsl */ `
   attribute float aSegments;
   attribute float aAffiliated;
   attribute float aApprox;
+  attribute float aWide;
   attribute float aVague;
 
   uniform float uSize;
+  uniform float uWideScale;
   ${DOF_PARS}
   ${EPOCH_PARS}
   ${FOCUS_PARS}
@@ -157,10 +188,11 @@ const VERTEX_SHADER = /* glsl */ `
     // where the camera is looking.
     float defocus = dofDecades(viewPos);
     float blurPx = dofBlurPx(defocus);
-    float grown = uSize + 2.0 * blurPx;
-    vScale = grown / uSize;
-    vBlur = min(blurPx / (uSize * 0.5), 0.5);
-    vGain = mix(uUnaffiliatedDim, 1.0, aAffiliated) * dofGain(uSize, grown)
+    float base = uSize * mix(1.0, uWideScale, aWide);
+    float grown = base + 2.0 * blurPx;
+    vScale = grown / base;
+    vBlur = min(blurPx / (base * 0.5), 0.5);
+    vGain = mix(uUnaffiliatedDim, 1.0, aAffiliated) * dofGain(base, grown)
       * dofDim(defocus) * epoch * focusGain();
     gl_PointSize = grown;
 
@@ -249,6 +281,8 @@ interface Ring {
   approximate?: boolean;
   /** The radius is doubtful too, so the ring is drawn dotted instead. */
   vague?: boolean;
+  /** A region rather than a point, so the ring is drawn wider. */
+  wide?: boolean;
   /**
    * When this system enters and leaves the record, under each basis.
    *
@@ -450,6 +484,9 @@ export class SettledField {
         polities: affiliationsFor(undefined, [world]),
         approximate: (world.direction_error_deg ?? 0) > 0,
         vague: (world.distance_error_ly ?? 0) > 0,
+        // The one kind that changes how a thing is drawn. Everything else the
+        // kind says is descriptive, and read nowhere but a panel.
+        wide: world.kind === 'polity_marker',
         // The host and everything it carries. Potato is dated by its own
         // article and drawn by the Bonfire System's marker, so the marker has
         // to appear when the earlier of the two does.
@@ -488,6 +525,7 @@ export class SettledField {
     const segments = new Float32Array(this.count);
     const affiliated = new Float32Array(this.count);
     const approximate = new Float32Array(this.count);
+    const wide = new Float32Array(this.count);
     const vague = new Float32Array(this.count);
     const colors = Array.from({ length: MAX_SEGMENTS }, () => new Float32Array(this.count * 3));
     const neutral = Array.from({ length: MAX_SEGMENTS }, () => new Float32Array(this.count * 3));
@@ -500,6 +538,7 @@ export class SettledField {
       const shown = ring.polities.slice(0, MAX_SEGMENTS);
       affiliated[out] = shown.length ? 1 : 0;
       approximate[out] = ring.approximate ? 1 : 0;
+      wide[out] = ring.wide ? 1 : 0;
       vague[out] = ring.vague ? 1 : 0;
       segments[out] = Math.max(shown.length, 1);
 
@@ -531,6 +570,7 @@ export class SettledField {
     this.affiliatedAttribute = new THREE.BufferAttribute(affiliated, 1);
     geometry.setAttribute('aAffiliated', this.affiliatedAttribute);
     geometry.setAttribute('aApprox', new THREE.BufferAttribute(approximate, 1));
+    geometry.setAttribute('aWide', new THREE.BufferAttribute(wide, 1));
     geometry.setAttribute('aVague', new THREE.BufferAttribute(vague, 1));
     const focus = new Float32Array(this.count).fill(1);
     this.focusAttribute = new THREE.BufferAttribute(focus, 1);
@@ -575,6 +615,7 @@ export class SettledField {
     this.material = new THREE.ShaderMaterial({
       uniforms: {
         uSize: { value: DEFAULT_SIZE_PX },
+        uWideScale: { value: POLITY_MARKER_SIZE_SCALE },
 
         ...dofUniforms(),
         ...epochUniforms(),

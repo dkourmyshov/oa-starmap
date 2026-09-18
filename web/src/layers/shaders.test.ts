@@ -213,4 +213,72 @@ describe('shader sources', () => {
     }
     expect(problems).toEqual([]);
   });
+
+  it('binds every attribute its shaders declare', () => {
+    // An attribute declared in GLSL and never given a buffer does not fail: WebGL
+    // hands the shader zero for it, so the feature it carries quietly does
+    // nothing for every vertex. `aWide` widens the ring on a polity's marker,
+    // and had it been bound under a misspelt name, every check above would pass
+    // and every marker would draw at a system's size.
+    //
+    // A shared chunk declares attributes for its callers rather than for
+    // itself, and the two chunks that do it settle the binding differently:
+    // epoch.ts hands out a helper that binds aYears and aNamed for the layer,
+    // while focus.ts leaves aFocus to each layer. So a chunk's attribute counts
+    // as bound if either the chunk or the layer binds it, and an attribute a
+    // layer declares in its own shader has to be bound by that layer.
+    const attributesIn = (glsl: string): string[] =>
+      [...glsl.matchAll(/attribute\s+(?:float|vec[234])\s+(\w+)\s*;/g)]
+        .map((m) => m[1])
+        // three.js supplies `position` itself on every BufferGeometry.
+        .filter((a) => a !== 'position');
+
+    const chunks = new Map<string, string[]>();
+    for (const { source } of layers) {
+      for (const [, pars, glsl] of source.matchAll(
+        /export const (\w+_PARS) = \/\* glsl \*\/ `([\s\S]*?)`/g,
+      )) {
+        chunks.set(pars, attributesIn(glsl));
+      }
+    }
+
+    // Slots are bound in a loop, so the name reaches setAttribute as a template
+    // literal with the index appended: aColor0 binds as `aColor${slot}`.
+    const binds = (source: string, attribute: string): boolean =>
+      new RegExp(`setAttribute\\(\\s*'${attribute}'`).test(source) ||
+      new RegExp(`setAttribute\\(\\s*\`${attribute.replace(/\d+$/, '')}\\$\\{`).test(source);
+
+    const byName = new Map(layers.map(({ name, source }) => [name, source]));
+    const chunkModule = new Map<string, string>();
+    for (const [name, source] of byName) {
+      for (const [, pars] of source.matchAll(/export const (\w+_PARS) = /g)) {
+        chunkModule.set(pars, name);
+      }
+    }
+
+    const problems: string[] = [];
+    for (const { name, source } of layers) {
+      for (const glsl of shadersIn(source)) {
+        // A chunk's own text declares for its callers, not for itself.
+        const isOwnChunk = [...chunkModule].some(
+          ([pars, module]) => module === name && source.includes(`export const ${pars} = /* glsl */ \``),
+        );
+        if (!isOwnChunk) {
+          for (const attribute of attributesIn(glsl)) {
+            if (!binds(source, attribute)) problems.push(`${name}: ${attribute}`);
+          }
+        }
+        for (const [pars, declared] of chunks) {
+          if (!glsl.includes(`\${${pars}}`)) continue;
+          const chunk = byName.get(chunkModule.get(pars) ?? '') ?? '';
+          for (const attribute of declared) {
+            if (!binds(source, attribute) && !binds(chunk, attribute)) {
+              problems.push(`${name}: ${attribute}`);
+            }
+          }
+        }
+      }
+    }
+    expect(problems).toEqual([]);
+  });
 });

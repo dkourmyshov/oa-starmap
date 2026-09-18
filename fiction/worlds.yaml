@@ -129,7 +129,7 @@ worlds:
       agreeing to four figures.
 
   - name: Corambytia Protectorate
-    kind: volume
+    kind: polity_marker
     affiliations: [caretaker-gods]
     extent: 290 ly
     article: https://www.orionsarm.com/eg-article/46412ddb422d6
@@ -2245,7 +2245,7 @@ worlds:
           Negentropy Alliance space) and abducts more than five thousand sapient and
           subsapient bioids. By the ti...
   - name: New Daffy Panoparchy
-    kind: volume
+    kind: polity_marker
     affiliations: [negentropy-alliance]
     article: https://www.orionsarm.com/eg-article/46d4c2fc470c7
     location:
@@ -2527,7 +2527,7 @@ worlds:
       note: In the Centauri sector, which fixes the direction and not the range.
 
   - name: Republic of Bethsyngaria
-    kind: volume
+    kind: polity_marker
     affiliations: [nocozo]
     article: https://www.orionsarm.com/eg-article/52d6a4ff29392
     location:
@@ -2937,7 +2937,7 @@ worlds:
       map does not carry, so the position rests on the constellation.
 
   - name: Olumbi
-    kind: volume
+    kind: polity_marker
     affiliations: [nocozo]
     article: https://www.orionsarm.com/eg-article/4758ad8fe1752
     location:
@@ -6393,7 +6393,7 @@ worlds:
     note: Eta Cassiopeiae A and B, 19 ly.
 
   - name: Enif Prefecture
-    kind: volume
+    kind: polity_marker
     affiliations: [solar-dominion]
     article: https://www.orionsarm.com/eg-article/48fb5d37cbdb6
     location:
@@ -10419,7 +10419,7 @@ worlds:
   # ---- Far Edge Civilisation -----------------------------------------------
 
   - name: Far Edge
-    kind: volume
+    kind: polity_marker
     affiliations: [far-edge-civilisation]
     article: https://www.orionsarm.com/eg-article/48bc8685b8223
     location:
@@ -10761,7 +10761,7 @@ worlds:
   # they are anywhere.
 
   - name: The Surreal Rash
-    kind: volume
+    kind: polity_marker
     affiliations: [mutual-progress-association]
     article: https://www.orionsarm.com/eg-article/48114afa516df
     location:
@@ -10838,7 +10838,7 @@ worlds:
         a Dominion holding, which the ring cannot distinguish from one.
 
   - name: Hosoko
-    kind: volume
+    kind: polity_marker
     affiliations: [cygexpa]
     location:
       ra_deg: 311.8664
@@ -11049,7 +11049,7 @@ worlds:
       polity is dropped. Its interpolated direction did land in Scorpius, which
       is the half the sheet got right.
   - name: Velarian Confederation
-    kind: volume
+    kind: polity_marker
     affiliations: [disarchy]
     location:
       ra_deg: 155.8470
@@ -11109,7 +11109,7 @@ worlds:
       sheet drew it in the Zone's colour, which is where it is and not whose it
       is.
   - name: The Mensan Way
-    kind: volume
+    kind: polity_marker
     also: [Mensa Federation]
     extent: 96 ly
     affiliations: [disarchy]
@@ -11141,7 +11141,7 @@ worlds:
       loose confederation rather than an empire. The sheet labels it "Mensa
       Federation", which is taken to be this.
   - name: TrueModel
-    kind: system
+    kind: polity_marker
     affiliations: [negentropy-alliance]
     article: https://www.orionsarm.com/eg-article/464ba71b5823e
     location:
@@ -11163,7 +11163,7 @@ worlds:
       Of the Negentropy Alliance, though it is the Disarchy's article that
       describes it.
   - name: Celerin Volume
-    kind: volume
+    kind: polity_marker
     article: https://www.orionsarm.com/eg-article/46131b51c1171
     location:
       ra_deg: 73.1691
@@ -11177,7 +11177,7 @@ worlds:
         article gives no position.
     note: Independent, and recorded with no affiliation because that is what it is.
   - name: Locality of Wolfra
-    kind: volume
+    kind: polity_marker
     affiliations: [disarchy]
     article: https://www.orionsarm.com/eg-article/464ba71b5823e
     location:
@@ -11261,7 +11261,7 @@ worlds:
   # ---- ahuman, unaligned, and the rest ------------------------------------
 
   - name: The Amalgamation
-    kind: volume
+    kind: polity_marker
     affiliations: [amalgamation]
     article: https://www.orionsarm.com/eg-topic/45f0c580310bf
     location:
@@ -11288,7 +11288,7 @@ worlds:
   # for once is not an artefact of shared coordinates: each gives its own.
 
   - name: Efficiency Maximization Paradigm
-    kind: volume
+    kind: polity_marker
     extent: 250 ly
     affiliations: [paradigm]
     article: https://www.orionsarm.com/eg-topic/46212d6e18aa1
@@ -11397,7 +11397,7 @@ worlds:
   # ---- Xeon and Branton ----------------------------------------------------
 
   - name: Xeon
-    kind: volume
+    kind: polity_marker
     affiliations: [xeon]
     article: https://www.orionsarm.com/eg-article/4611935cb9c74
     location:
@@ -11623,7 +11623,7 @@ worlds:
       difference, inside what this file treats as agreement, so it binds.
 
   - name: Normidic Machinophyle Supercluster
-    kind: volume
+    kind: polity_marker
     affiliations: [solipsist-panvirtuality]
     article: https://www.orionsarm.com/eg-article/46dcc986d994d
     location:
@@ -12568,7 +12568,7 @@ worlds:
       while the article's distance holds to a thousandth of a light year.
 
   - name: Adhara Trade Treaty
-    kind: volume
+    kind: polity_marker
     affiliations: []
     article: https://www.orionsarm.com/eg-topic/45e38eecd1efc
     location:
@@ -12781,7 +12781,7 @@ worlds:
       the word rimward to place it by.
 
   - name: Realm of the Deeper Covenant
-    kind: volume
+    kind: polity_marker
     affiliations: [deeper-covenant]
     article: https://www.orionsarm.com/eg-article/4aaed32f4b1e3
     location:
@@ -13543,7 +13543,7 @@ worlds:
       nobody, and this file has no way to draw that.
 
   - name: Puysha-Para
-    kind: volume
+    kind: polity_marker
     affiliations: []
     note: >-
       A civilisation placed only as 25 ly from Kuranaba, which this map holds

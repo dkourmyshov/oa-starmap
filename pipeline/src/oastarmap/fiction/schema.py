@@ -884,7 +884,25 @@ class World(BaseModel):
 
     name: str
     kind: str = "planet"
-    """planet, moon, system, megastructure, volume — descriptive, not structural."""
+    """planet, moon, system, megastructure, volume, polity_marker.
+
+    Descriptive rather than structural, with one exception: ``polity_marker``
+    changes how the thing is drawn, because it is the only kind where the mark
+    *is* a political entity rather than a place someone holds.
+
+    It was split out of ``volume``, which had been carrying both the
+    Amalgamation's territory and the Horsehead Nebula. Nothing in the data told
+    those apart — matching a volume's name against the polity roster finds three
+    of the forty-three, since the roster does not carry the small polities, and
+    it also finds Hyperion, which is a world — so the distinction is declared
+    here rather than guessed at further downstream. What stays a ``volume`` is a
+    region no one polity is: a nebula, a wormhole plexus, a named stretch of
+    space that several polities share.
+
+    A ``polity_marker`` may be a point or may have an extent. Most are points
+    because the setting gives no size; three state one, and the field for it is
+    on the location.
+    """
 
     system: str = ""
     """The system it is in, where that has a name of its own."""
