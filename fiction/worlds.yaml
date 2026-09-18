@@ -3687,20 +3687,18 @@ worlds:
         precision: circa
         note: Possibly where Xeon originated.
       - year_at: 8995
-        kind: transferred
-        polity: xeon
+        kind: contact
         note: >-
           "In 8995 the colonists in this system were subsumed by a rogue
-          hyperturing , believed to be an Exploration Rover class 4 S:1. This
+          hyperturing, believed to be an Exploration Rover class 4 S:1. This
           entity appears to have used the hapless colonists as a biotic matrix
-          for the Xeon blight." This is a hostile subsuming/infection by a
-          rogue hyperturing using the colonists for the 'Xeon blight', not a
-          conventional annexation; mapped to the roster's xeon id with caution
-          -- see doubts, since the roster gives Xeon's founding as 9210, later
-          than this 8995at incident. The colonists subsumed by a rogue
-          hyperturing, the origin of the Xeon; the map's older 'abandoned
-          8995' stands beside it, and the Xeon's own page has them 'not known
-          before 9210'.
+          for the Xeon blight." Recorded as contact and not as a transfer to
+          Xeon, which is what this entry used to say. Nothing held Branton
+          here: the entity subsumed the colonists and then, in the article's
+          own words, "abandoned this world to establish a minor empire several
+          hundred light years to rimward". A rescue fleet in 9010 found the
+          system empty. Xeon begins here and never possesses the place, and the
+          roster's founding year of 9210 sits later than this in any case.
       - year_at: 9010
         kind: settled
         polity: solar-dominion
@@ -3716,8 +3714,10 @@ worlds:
     note: >-
       In the outer Cassiopeia sector, read as the volume behind the
       constellation. The star is TYC 3663-2842-1, from a catalogue this map does
-      not carry. Re-colonised by the Solar Dominion, which is the present
-      holder; Xeon may have begun here in 8995.
+      not carry. Re-colonised by the Solar Dominion, which is the present holder
+      and the only one this system has ever had: the Xeon blight originated here
+      in 8995 and left, and the entry no longer records it as having held the
+      place.
 
   - name: Bullseye
     kind: planet
@@ -11401,16 +11401,38 @@ worlds:
     affiliations: [xeon]
     article: https://www.orionsarm.com/eg-article/4611935cb9c74
     location:
-      constellation: Cassiopeia
+      ra_deg: 26.675
+      dec_deg: 61.929
+      distance: 3544 ly
+      direction_error_deg: 15.0
+      distance_error: 400 ly
+      estimated: >-
+        Worked out from Branton, where the blight began, and the article's own
+        account of where it went: it "abandoned this world to establish a minor
+        empire several hundred light years to rimward". Branton sits at
+        galactic (-1849, 2739, -15) ly; four hundred light years rimward of it,
+        which is to say that much further from the galactic centre, is 3,544 ly
+        from Sol and 5.4 degrees from Branton on the sky. That point is in
+        Cassiopeia, agreeing with the article's "Perseus Quadrant of the Outer
+        Cassiopeia Sector", which is the only direction it gives.
+
+        The errors say how little this is worth. "Several hundred" is read as
+        four hundred and could be two or eight, which is the 400 ly; and
+        "rimward" is a direction in the galaxy rather than a bearing, which is
+        most of the 15 degrees. What the estimate buys is that the Xeon
+        polity's one marker is somewhere rather than nowhere, and it is marked
+        as ours rather than the setting's.
     events:
       - year_at: 9210
         kind: reported
         note: First known to the Sephirotics.
     note: >-
-      Given as the Perseus Quadrant of the Outer Cassiopeia Sector — a direction
-      and no distance, so the constellation is recorded and nothing is drawn. It
-      may have originated at Branton in 8995, which is placed; if that is right
-      this belongs at 3,305 ly, and the article does not say it is.
+      Given as the Perseus Quadrant of the Outer Cassiopeia Sector, which is a
+      direction and no distance. The distance above is inferred from Branton
+      instead, where the blight began before moving "several hundred light
+      years to rimward"; the derivation and its error bars are on the position.
+      This entry is the Xeon polity's only member, and the reason the legend
+      counted one for it while the map drew nothing.
 
   # ---- Diamond Network -----------------------------------------------------
 
