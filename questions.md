@@ -8,7 +8,7 @@ Nothing below is a complaint about the setting. Most of it is the ordinary frict
 
 ---
 
-## Open questions (38)
+## Open questions (40)
 
 ### Shona — Shona's article gives its position twice, and the two directions are thirty degrees apart.
 
@@ -475,7 +475,9 @@ OAEMPIRES.dsc and southOAEMPIRES.dsc carry forty-five OpenCluster entries named 
 Measured against the worlds this map places for the same polity, in three dimensions, the nearest placed world to each anchor is: Utopia Sphere 22 ly (Megasov), Archosaurian Empire 12 ly (Giant Ring of the ArchSaur), Solar Dominion 186, 522, 851, 1005 ly, Metasoft 190, 368, 786, 1083 ly, Orion Federation 238 and 712 ly, Cygexpa 244, 966, 1300 ly, Emple-Dokcetic 338 ly, NoCoZo 368, 622, 1542, 1642 ly, Keter Dominion 443 and 1171 ly, Sagittarius Transcultural Cooperation 478 ly, MPA 488 and 738 ly, Sophic League 794, 1058, 1189 ly, Negentropy Alliance 1053 and 1179 ly, Red Star M'pire 2532 ly.
 Those gaps are mostly of the same order as the polity's own spread, which is what a hand-placed label on a large volume should look like and is a quiet corroboration of both sources. The Sophic League is the one consistent oddity: all three of its anchors sit 800 to 1,200 ly from our nearest member while our five members lie within 481 ly of each other, so the disagreement is systematic rather than one bad label.
 
-**What the map does now.** Draws no marker for any polity whose worlds it already places, because an anchor of this kind adds nothing to ten or a hundred real positions and a wide ring at a label's position would compete with them. The anchors were used only where this map had nothing: the Refugium Federation, the Oracle Machine Territory, the Serpens Region, the Verifex Nebula, NoCoNeg, and the Enigma and Prediction Clusters.
+**What the map does now.** Draws no marker for any polity whose worlds it already places, because an anchor of this kind adds nothing to ten or a hundred real positions and a wide ring at a label's position would compete with them.
+Of the seven first entered from the anchors, four turned out to be things this map already held under another name and were withdrawn: the Verifex Nebula is the Gehenna Incident, the Enigma Cluster was already a landmark on NGC 6755, the Cat's Paw was already the Laughter Hegemony's landmark on NGC 6357, and the Refugium Empire is the Refugium system, which the anchor has now given a direction. Three stand as their own objects: the Oracle Machines, the Serpens Region and NoCoNeg. NGC 6994 is a fourth, entered under its designation rather than as the Prediction Cluster.
+The lesson is about method rather than about the add-on: each of the four was found by searching one index, and each was already in a different one -- landmarks.yaml twice, a `hazard` entry once, a constellation cone once.
 
 **What would settle it.** Whether the add-on's author placed these labels from the same reading of the articles this map works from, or from a source for polity extents that we do not have. The Sophic League's systematic offset would be the case to ask about.
 
@@ -485,7 +487,8 @@ Those gaps are mostly of the same order as the polity's own spread, which is wha
 
 OAEMPIRES.dsc labels the anchor at 11h 26m, -43.3, 2204 ly REFUGIUM EMPIRE. The Encyclopaedia files Refugium itself, Polonius and Salaam under "Galactography > Minor Polities > Refugium Federation", and this map's polity roster carries `refugium-federation`. Nothing else in our sources uses "empire" for it, and the other labels in the same file are not uniformly styled that way — SOPHIC LEAGUE, NEGENTROPY ALLIANCE and COMMUNION OF WORLDS all keep their own words.
 
-**What the map does now.** Places the marker as the Refugium Federation, on the identification alone: Refugium is a distinctive enough name, and no second polity in the sources answers to it.
+**What the map does now.** Reads the anchor as the Refugium system rather than as a marker for the federation, which is what it was first entered as. The anchor gives 2,204 ly where the article gives 2,205, and its direction falls inside the Centaurus cone the article states, so it is the system's position and the system now has a direction. The federation is drawn through its members.
+Penrose Place, the federation's other placed member, is not moved with it: its own article gives Centaurus and 2,210 ly independently, so its cone is its own reading and not an inheritance from Refugium. That the two agree to five light years is therefore two sources agreeing, but it is not evidence that they share a system, and nothing here says they do.
 
 **What would settle it.** Whether the polity changed its name during the period the add-on was drawn for, or whether the label is simply loose.
 
@@ -510,6 +513,29 @@ This map cannot say from its own data why one is absent and the other present. W
 **What the map does now.** Places both from the add-on's own figures rather than binding either to the catalogue, so that the add-on's position for NGC 6755 and the catalogue's can be compared rather than silently merged.
 
 **What would settle it.** Whether NGC 6994 is a cluster at all in the modern literature. If it is not, the Prediction Cluster is a fictional object given a real designation, which is a different thing from a real one renamed.
+
+### Enigma Cluster — The cluster catalogue puts NGC 6755 beyond the Terragen frontier, where the setting has Keter running a cluster brain in it.
+
+*contradiction*
+
+The Enigma Cluster is NGC 6755, which the Encyclopaedia states outright and this map records as a landmark: "a former Keter cluster brain which has disappeared, leaving a mysterious network of wormholes behind", with a settled date of 7222 AT. The open-cluster catalogue this map builds from puts NGC 6755 at 7,446 ly. OAEMPIRES.dsc puts the Enigma Cluster at 4,632 ly, a difference of 2,814 ly, or a factor of 1.6.
+The gap straddles a line that matters. This map takes the Terragen frontier as 7,000 ly, so at the catalogue's distance the cluster falls outside it and is drawn bound and named but not polity-coloured -- a Keter cluster brain that the map cannot colour as Keter. At the add-on's distance it is comfortably inside, and the anomaly disappears. As the project owner puts it, 4,632 is much more sensible than 7,446 in a direction where no xenoholes extend the Terragen reach.
+This is the pattern already recorded for Beta Arae and the twelve wormhole-nexus distances: an add-on drawn against an older figure, and a catalogue since revised. What makes this one different is that the fiction depends on the number rather than merely quoting it.
+
+**What the map does now.** Draws the landmark where the catalogue puts it, because a landmark is by definition an Orion's Arm name for a real catalogued object and carries no distance of its own -- the schema has no field for one, deliberately. So there is at present no way to record the setting's figure for a landmark short of making it a separate world entry, which would draw the cluster twice.
+
+**What would settle it.** Which distance the article was written against. Failing that, whether a landmark should be able to state the setting's own distance beside the catalogue's, which is a question about this map rather than about Orion's Arm, and the only one of the four here that we could answer ourselves.
+
+### Cat's Paw Nebula — The nebula's published distance and the cluster catalogue's for NGC 6357 differ by about a thousand light years.
+
+*uncertainty*
+
+The Cat's Paw is NGC 6357, the Laughter Hegemony's one landmark, and this map resolves it through the cluster catalogue at 1,672 pc, or 5,454 ly. It was also briefly a world entry in its own right, placed at 4,370 ly from the nebula's own published coordinates, with an extent of 70 ly -- that entry has been withdrawn as a double of the landmark.
+The two figures are about 1,100 ly apart. The likely cause is that they describe different things: a catalogue of open clusters measures the cluster in the nebula, and the nebula's own literature measures the gas.
+
+**What the map does now.** Draws it once, through the landmark, at the catalogue's distance, and names it the Cat's Paw Nebula rather than NGC 6357.
+
+**What would settle it.** Whether the setting means the cluster or the nebula. Nothing in the Laughter Hegemony's material distinguishes them.
 
 ## The Inner Sphere colony tables
 
@@ -580,7 +606,7 @@ Blanco 1, Collinder 173, Collinder 359, Cone Nebula, Czernik 8, NGC 2244, NGC 70
 
 ## Worlds located only by constellation
 
-90 of 636 canonical worlds are given as a distance and a constellation. That fixes the distance exactly and the direction only to the width of the constellation, which at these ranges is hundreds to thousands of light years. The map draws these with a broken ring rather than a solid one, and the detail panel gives the error in light years.
+89 of 632 canonical worlds are given as a distance and a constellation. That fixes the distance exactly and the direction only to the width of the constellation, which at these ranges is hundreds to thousands of light years. The map draws these with a broken ring rather than a solid one, and the detail panel gives the error in light years.
 
 Coordinates, or a nearby named star, would turn any of these from a region into a position.
 

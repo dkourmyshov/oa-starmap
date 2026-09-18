@@ -35,19 +35,28 @@
  * particular. Only worlds are ever dashed — a catalogue star is exactly where
  * the catalogue says.
  *
- * Ring *width* says what sort of thing is being marked, which is the third
- * question and the last free channel. Almost everything on this layer is a
- * place someone holds, and draws at the standard size. The twenty
- * `polity_marker` entries are not places — the mark *is* the polity: Xeon, the
- * Amalgamation, the Locality of Wolfra, the Mensan Way. Those draw wider, so
- * that "a system held by them" and "them" do not look alike.
+ * Ring *width* says how big a thing is being marked, which is the third
+ * question and the last free channel. It has three steps, because the file
+ * makes three claims and a reader who cannot tell them apart is being told
+ * something false about two of them:
  *
- * The kind has to be declared in the data, and was: nothing inferrable
- * separated the two. `volume` used to carry both a polity's territory and the
- * Horsehead Nebula, and matching a name against the polity roster finds three
- * of the forty-three, because the roster does not hold the small polities —
- * while also finding Hyperion, which is a world. What is still a `volume` is a
- * region that is nobody: a nebula, a plexus, a stretch of space shared out.
+ * - a **place**, at the standard size. A system, a world, a habitat: a point,
+ *   and nearly everything on this layer.
+ * - a **region**, half again as wide. `volume` — a nebula, a wormhole plexus,
+ *   a named stretch of space. Not a point and not anybody, so a thin circle
+ *   reading as a world was wrong twice over.
+ * - a **polity's marker**, wider still. `polity_marker`, where the mark *is*
+ *   the political entity: Xeon, the Amalgamation, the Locality of Wolfra.
+ *
+ * The middle step is the one that needed saying. It went in when the Serpens
+ * Region drew as a thin world circle, which is neither what it is nor what it
+ * belongs to.
+ *
+ * Which of the three a thing is has to be declared in the data, and is.
+ * Nothing inferrable separated a polity's territory from the Horsehead Nebula:
+ * matching a volume's name against the polity roster finds three of
+ * forty-three, because the roster does not hold the small polities, while also
+ * finding Hyperion, which is a world.
  *
  * Width is the whole of the distinction for now. A marker with a stated extent
  * should eventually draw that extent instead, which this layer cannot do —
@@ -102,14 +111,32 @@ export const DEFAULT_OPACITY = 0.85;
 export const DEFAULT_SIZE_PX = 13.0;
 
 /**
+ * How much wider a region is drawn than a place.
+ *
+ * Small enough that a nebula does not compete with the systems in front of it,
+ * large enough to read as deliberate rather than as a rendering wobble.
+ */
+export const REGION_SIZE_SCALE = 1.45;
+
+/**
  * How much wider a polity's marker is drawn than a place someone holds.
  *
  * Enough to read as a different kind of mark at a glance, not so much that it
- * swallows the systems inside it — at 1.8 a marker is about three times the
- * area of a system ring, which is the difference between "bigger" and "a
- * different thing".
+ * swallows the systems inside it — at 1.9 a marker is about three and a half
+ * times the area of a system ring, which is the difference between "bigger"
+ * and "a different thing". It has to clear the region step above it as well as
+ * the standard size below, which is why the two are not evenly spaced: area
+ * grows as the square, so 1.45 and 1.9 are further apart to the eye than the
+ * numbers suggest.
  */
-export const POLITY_MARKER_SIZE_SCALE = 1.8;
+export const POLITY_MARKER_SIZE_SCALE = 1.9;
+
+/** The ring-size multiplier a world's kind earns it. */
+export function sizeScaleFor(kind: string | undefined): number {
+  if (kind === 'polity_marker') return POLITY_MARKER_SIZE_SCALE;
+  if (kind === 'volume') return REGION_SIZE_SCALE;
+  return 1;
+}
 
 /** A settled system with no polity — abandoned, blight, independent. */
 const STATUS_COLOR = new THREE.Color(0x9aa4bb);
@@ -143,7 +170,6 @@ const VERTEX_SHADER = /* glsl */ `
   attribute float aVague;
 
   uniform float uSize;
-  uniform float uWideScale;
   ${DOF_PARS}
   ${EPOCH_PARS}
   ${FOCUS_PARS}
@@ -188,7 +214,11 @@ const VERTEX_SHADER = /* glsl */ `
     // where the camera is looking.
     float defocus = dofDecades(viewPos);
     float blurPx = dofBlurPx(defocus);
-    float base = uSize * mix(1.0, uWideScale, aWide);
+    // aWide carries the multiplier itself rather than a 0/1 flag, because
+    // there are three sizes and a blend between two of them cannot say which.
+    // Floored at 1.0 so that an unbound attribute -- which WebGL reads as zero
+    // -- collapses to the standard size rather than to nothing at all.
+    float base = uSize * max(aWide, 1.0);
     float grown = base + 2.0 * blurPx;
     vScale = grown / base;
     vBlur = min(blurPx / (base * 0.5), 0.5);
@@ -281,8 +311,8 @@ interface Ring {
   approximate?: boolean;
   /** The radius is doubtful too, so the ring is drawn dotted instead. */
   vague?: boolean;
-  /** A region rather than a point, so the ring is drawn wider. */
-  wide?: boolean;
+  /** The ring-size multiplier: 1 for a place, more for a region or a marker. */
+  scale?: number;
   /**
    * When this system enters and leaves the record, under each basis.
    *
@@ -484,9 +514,9 @@ export class SettledField {
         polities: affiliationsFor(undefined, [world]),
         approximate: (world.direction_error_deg ?? 0) > 0,
         vague: (world.distance_error_ly ?? 0) > 0,
-        // The one kind that changes how a thing is drawn. Everything else the
-        // kind says is descriptive, and read nowhere but a panel.
-        wide: world.kind === 'polity_marker',
+        // The one thing the kind changes about how a place is drawn.
+        // Everything else it says is descriptive, and read nowhere but a panel.
+        scale: sizeScaleFor(world.kind),
         // The host and everything it carries. Potato is dated by its own
         // article and drawn by the Bonfire System's marker, so the marker has
         // to appear when the earlier of the two does.
@@ -538,7 +568,7 @@ export class SettledField {
       const shown = ring.polities.slice(0, MAX_SEGMENTS);
       affiliated[out] = shown.length ? 1 : 0;
       approximate[out] = ring.approximate ? 1 : 0;
-      wide[out] = ring.wide ? 1 : 0;
+      wide[out] = ring.scale ?? 1;
       vague[out] = ring.vague ? 1 : 0;
       segments[out] = Math.max(shown.length, 1);
 
@@ -615,7 +645,6 @@ export class SettledField {
     this.material = new THREE.ShaderMaterial({
       uniforms: {
         uSize: { value: DEFAULT_SIZE_PX },
-        uWideScale: { value: POLITY_MARKER_SIZE_SCALE },
 
         ...dofUniforms(),
         ...epochUniforms(),

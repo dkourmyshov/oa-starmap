@@ -637,7 +637,7 @@ def test_every_star_binding_is_supported() -> None:
     assert unsupported == [], f"catalogue numbers with nothing to check them: {unsupported}"
 
 
-def test_a_name_and_a_number_must_agree() -> None:
+def test_a_name_and_a_number_must_agree(tmp_path) -> None:
     """Giving both is allowed and is the strongest form — if they match."""
     from oastarmap.build.worlds import build_worlds
 
@@ -650,13 +650,20 @@ def test_a_name_and_a_number_must_agree() -> None:
         "      star: Zeta Serpentis\n"
         "      distance: 1019 ly\n"
     )
-    scratch = source.with_name("worlds.pair.yaml")
+    # Built outside the repository, for the reason given above: the try/finally
+    # this replaced cleaned up after itself, but only if the process lived long
+    # enough to run it, and a `git status` during the run still saw the file.
+    scratch = tmp_path / "worlds.yaml"
     scratch.write_text(broken, encoding="utf-8")
-    try:
-        with pytest.raises(ValueError, match="it is a different star"):
-            build_worlds(scratch)
-    finally:
-        scratch.unlink()
+    for sibling in ("polities.yaml", "oa_stars.yaml", "oa_systems.yaml",
+                    "constellations.yaml"):
+        source_sibling = FICTION_DIR / sibling
+        if source_sibling.exists():
+            (tmp_path / sibling).write_text(
+                source_sibling.read_text(encoding="utf-8"), encoding="utf-8"
+            )
+    with pytest.raises(ValueError, match="it is a different star"):
+        build_worlds(scratch)
 
 
 def test_a_missing_constellation_table_is_an_error_not_a_silent_gap() -> None:

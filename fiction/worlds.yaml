@@ -6268,7 +6268,7 @@ worlds:
 
   - name: Krantor
     kind: system
-    affiliations: [negentropy-alliance]
+    affiliations: [noconeg]
     article: https://www.orionsarm.com/eg-article/46dcbc280a037
     location:
       ra_deg: 208.186474083
@@ -6280,9 +6280,11 @@ worlds:
         article, and the article cited here is NoCoNeg's, the polity it belongs
         to — Negentropy by law and Non-Coercive by spirit. The gazetteer's note
         on Try Anything Once, the route reaching it, reads "To Non Coersive
-        Zone". Recorded under the Negentropy Alliance, on the project owner's
-        decision, this file having no entry for NoCoNeg and no other world
-        wanting one.
+        Zone". Recorded under the Negentropy Alliance for a time, on the project
+        owner's decision, this file then having no entry for NoCoNeg and no
+        other world wanting one. Both halves of that have stopped being true
+        since: the add-on's NOCONEG region is a second object wanting it, so
+        the polity now exists and this system sits under it.
 
   - name: Trees
     kind: system
@@ -9451,6 +9453,7 @@ worlds:
 
   - name: Gehenna Incident
     kind: hazard
+    also: [Verifex Nebula]
     affiliations: [emple-dokcetics]
     extent: 5240 ly
     article: https://www.orionsarm.com/eg-article/464e89d70a038
@@ -9459,6 +9462,12 @@ worlds:
       dec_deg: -8.3547
       distance: 3030 ly
       near: M50 (NGC 2323)
+      note: >-
+        OAEMPIRES.dsc carries a VERIFEX NEBULA at 105.675, -8.383 and 3,028.5 ly
+        -- the same object under the name of the being whose experiment caused
+        it, 0.04 degrees and one and a half light years from this position,
+        which were arrived at separately. Recorded as an alternate name rather
+        than as a second object.
     note: >-
       Not a settlement but a front. A megascale metric engineering project of
       the archailect Verifex, attempted in the M50 cluster in 7981 and
@@ -10360,8 +10369,23 @@ worlds:
     affiliations: [refugium-federation]
     article: https://www.orionsarm.com/eg-article/476ec0a831af6
     location:
-      constellation: Centaurus
+      ra_deg: 171.6
+      dec_deg: -43.3
       distance: 2205 ly
+      note: >-
+        Was Centaurus and a distance, which is a cone 2,205 ly deep. The
+        direction is the REFUGIUM EMPIRE anchor in OAEMPIRES.dsc, one of the
+        Orion's Arm Celestia add-ons' location catalogues (OAAddons9,
+        OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv).
+
+        The anchor is this system and not a separate marker for the federation,
+        which is what it was first entered as. It gives 2,204 ly against the
+        article's 2,205 -- a light year apart at two thousand, which is an
+        agreement and not a coincidence -- and its direction falls 17.9 degrees
+        from the centre of Centaurus against that constellation's radius of
+        27.7, so it is inside the cone it replaces. The add-on names it an
+        empire where the Encyclopaedia files the polity under Minor Polities as
+        a federation; see questions.md.
     events:
       - year_at: 5740
         kind: settled
@@ -11205,27 +11229,9 @@ worlds:
     note: >-
       The largest organised polity within the Disarchy, and with no article of
       its own — the Disarchy's is what describes it.
-  - name: Refugium Federation
+  - name: Oracle Machines
     kind: polity_marker
-    affiliations: [refugium-federation]
-    location:
-      ra_deg: 171.6
-      dec_deg: -43.3
-      distance: 2204 ly
-      note: >-
-        The REFUGIUM EMPIRE anchor in OAEMPIRES.dsc, one of the Orion's Arm Celestia add-ons' location catalogues (OAAddons9,
-        OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv). Nothing else in this map's sources
-        puts a number on the federation, and the add-on names it an empire where
-        the Encyclopaedia files it under Minor Polities as a federation -- see
-        questions.md.
-    note: >-
-      This map holds three of its members -- Refugium, Polonius and Penrose
-      Place -- and places none of them, so until now the federation had no
-      position at all. That is what the anchor is worth here: for a polity whose
-      worlds are already placed it would add nothing.
-  - name: Oracle Machine Territory
-    kind: polity_marker
-    affiliations: []
+    affiliations: [oracle-machines]
     location:
       ra_deg: 322.5
       dec_deg: -28.0
@@ -11242,12 +11248,14 @@ worlds:
       of Jke's Ladder "began to take on the characteristics of other Oracle
       Machine Thrall worlds, becoming static and changeless utopias".
 
-      Recorded with no affiliation because the polity roster has no entry for
-      them, not because they held nothing. Drawn grey in consequence.
-  - name: Prediction Cluster
+      Entered in the polity roster as `oracle-machines`, coloured as a
+      near relation of the Diamond Network, which they are an offshoot of --
+      the mainstream Diamonders "reject the Oracle Machine cult" in 10552,
+      which is a schism rather than a meeting.
+  - name: NGC 6994
     kind: volume
-    also: [NGC 6994]
-    affiliations: []
+    also: [Prediction Cluster]
+    affiliations: [oracle-machines]
     location:
       ra_deg: 314.729
       dec_deg: -12.633
@@ -11261,47 +11269,9 @@ worlds:
     note: >-
       Where the Oracle War ended: "10591 - The Prediction Cluster is captured;
       the Sibyl vanishes. End of the Oracle War."
-  - name: Enigma Cluster
-    kind: volume
-    also: [NGC 6755]
-    affiliations: [keter-dominion]
-    location:
-      ra_deg: 286.954
-      dec_deg: 4.267
-      distance: 4632.5 ly
-      note: >-
-        Given as NGC 6755 by OAEMPIRES.dsc, one of the Orion's Arm Celestia add-ons' location catalogues (OAAddons9,
-        OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv). The cluster layer already draws NGC 6755
-        from the real catalogue, where it also answers to Collinder 397 and
-        MWSC 3051; this entry is the Orion's Arm name and history for it, and is
-        placed from the add-on's figures rather than the catalogue's so that the
-        two can be compared rather than silently merged.
-    note: >-
-      "Enigma Cluster, The (NGC 6755) - A former Keter cluster brain which has
-      disappeared, leaving a mysterious network of wormholes behind."
-  - name: Verifex Nebula
-    kind: volume
-    affiliations: []
-    location:
-      ra_deg: 105.675
-      dec_deg: -8.383
-      distance: 3028.5 ly
-      note: >-
-        The VERIFEX NEBULA anchor in OAEMPIRES.dsc, one of the Orion's Arm Celestia add-ons' location catalogues (OAAddons9,
-        OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv). It falls 0.04 degrees from Tabridgen,
-        which this map places independently at 2,870 ly -- the same point on the
-        sky and 5% nearer. That is corroboration rather than coincidence:
-        Tabridgen is the system the Encyclopaedia says "was warned of the result
-        of Verifex's catastrophic experiment, and with Empledokcetic help and
-        investment all of the larger habitats and megastructures were hardened
-        and survived the radiation blast".
-    note: >-
-      The remnant of the experiment itself. Named for Verifex, whose "future
-      experiments" another article dates a colony ship's route around, and whose
-      event the timeline updates in 10000.
   - name: NoCoNeg
     kind: volume
-    affiliations: []
+    affiliations: [noconeg]
     location:
       ra_deg: 207.0
       dec_deg: -58.5
@@ -11318,7 +11288,15 @@ worlds:
       common with NoCoNeg and even NoCoZo ideology" while still a nominal member
       of the Negentropist Alliance. The anchor marks where the add-on draws that
       culture, not a border. Drawn with no affiliation, since it is by
-      definition the ground between two of them.
+      definition the ground between two of them. It is coloured as a
+      variation on the Negentropy Alliance's own, which is where Krantor sat
+      until this entry gave the meme-set somewhere to belong.
+
+      The two are 0.7 degrees apart on the sky and 1,680 ly apart in depth. That
+      is not the usual objection to a shared colour: this is a memeticity rather
+      than a territory, and it is expected to turn up at both ranges. What it
+      does sit oddly with is the start -- the meme-set dates from the end of the
+      Version War, when the Terragen Bubble did not reach as far as 2,800 ly.
   - name: Serpens Region
     kind: volume
     affiliations: []
@@ -14432,24 +14410,3 @@ worlds:
       object seen through a different measurement rather than a different
       place.
 
-  - name: Cat's Paw Nebula
-    kind: volume
-    extent: 70 ly
-    affiliations: [laughter-hegemony]
-    location:
-      ra_deg: 260.2121
-      dec_deg: -36.1150
-      distance: 4370 ly
-    note: >-
-      NGC 6334 in Scorpius, 4,370 ly out give or take 650, and some 70 ly
-      across. The nebula catalogue this map loads carries Sharpless numbers
-      only, so this is placed from its published coordinates rather than from a
-      catalogue entry.
-
-      It sits two degrees from the War and Peace Nebula on the sky, and the two
-      are reported to be joined by a filament and possibly one complex — but
-      their distances do not agree that they are near each other. Depending on
-      which figure is used for the other, they fall between 1,100 and 2,100 ly
-      apart, which is many times either one's size. The gap is more likely a
-      disagreement between distance estimates than real space, and this file
-      records both figures rather than moving one to meet the other.

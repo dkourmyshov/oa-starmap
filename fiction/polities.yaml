@@ -76,6 +76,31 @@ sources:
 # `kind` distinguishes what an entry actually is. Most are meta-empires, the
 # default. Some are smaller polities, and one is not a political body at all.
 polities:
+  - id: oracle-machines
+    name: Oracle Machines
+    color: '#1596CB'
+    kind: polity
+    source: eg-system-articles
+    note: >-
+      The power the Oracle War was fought against, and an offshoot of the
+      Diamond Network -- in 10552 "the Diamond Nexus is closed throughout the
+      Terragen Sphere; the mainstream Diamonders reject the Oracle Machine
+      cult", which is a schism. Coloured as a near relation for that reason:
+      the Diamond Network is the closest polity to it on the map at dE 9.3,
+      which is as close as the palette allows two that could be seen together.
+  - id: noconeg
+    name: NoCoNeg
+    color: '#12A3BB'
+    kind: polity
+    source: eg-system-articles
+    note: >-
+      A meme-set rather than a territory: the hybrid of Non-Coercive and
+      Negentropist thought that Krantor is held by, "Negentropy by law and
+      Non-Coercive by spirit". Coloured as a variation on the Negentropy
+      Alliance, which is its nearest neighbour on the map at dE 9.9.
+
+      Entered when the add-on's NOCONEG region gave it a second object. Krantor
+      sat under the Negentropy Alliance until then, for want of anywhere else.
   - id: cygexpa
     name: Cygexpa
     # Encyclopaedia timeline, 7247: "The Cygexpa Sale. With no warning Lohengrin disbands the

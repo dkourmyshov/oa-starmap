@@ -108,3 +108,11 @@ landmarks:
   # because a landmark must resolve to a catalogued object and the nebula
   # catalogue is one of the ones this build has not loaded; it is among the 41
   # the build reports as pending. Add it when that lands.
+  - catalogue: NGC 6357
+    name: Cat's Paw Nebula
+    note: >-
+      The Laughter Hegemony's one landmark, and already bound through the
+      polity's own roster entry; this gives it the name rather than the
+      designation. It was briefly also a world entry, placed from the nebula's
+      published coordinates at 4,370 ly, which is not what the cluster
+      catalogue says of NGC 6357 -- see questions.md.
