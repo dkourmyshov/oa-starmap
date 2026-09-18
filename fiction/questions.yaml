@@ -843,7 +843,7 @@ questions:
     topic: Fredholm and Everypath
     status: open
     severity: contradiction
-    summary: Two Keter systems have three candidate distances each, spanning a factor of ten, and no Encyclopaedia source among them.
+    summary: Two Keter systems have three candidate distances each, spanning a factor of ten, and no Encyclopaedia source among them — and the method that placed them has now been caught out once.
     detail: >-
       Both have articles — eg-article/4650f71e6bad5 and eg-article/479bbbd65a070
       — and both are stubs: a short general description, no data panel, no
@@ -870,6 +870,21 @@ questions:
       and Barboro, which it puts at a star the Encyclopaedia's Inner Sphere
       table assigns elsewhere. The catalogue figures are only as good as the
       identification they rest on.
+
+      The method that placed them has since been checked against a third
+      source and failed. Aries Vector was interpolated the same way, at 1,119
+      ly; the gazetteer identifies it as 41 Arietis at 165.7 ly, the catalogue
+      agrees with that to four decimal places, and the project owner's copy of
+      an older picture map shows it beside the Blueshift Archipelago, which the
+      catalogue position puts 45 ly away and the interpolation put 960. The
+      interpolation was 41 degrees out in direction and wrong by a factor of
+      seven in distance. Twelve entries still rest on it: Olumbi, Syrtis,
+      Arbiter, Restored Ambi Limis, Polonius, Velarian Confederation, Blackbody
+      Cluster, Mutual Satisfaction, The Mensan Way, TrueModel, Celerin Volume
+      and the Locality of Wolfra, together with Fredholm and Everypath here.
+      That is not a reason to believe the add-on wherever it disagrees, but it
+      is a reason to stop treating the interpolation as the conservative
+      choice.
 
       Note what changes with the choice: at the add-on's figures the two sit
       about 215 ly apart, and at the map transcription's about 160 ly apart but

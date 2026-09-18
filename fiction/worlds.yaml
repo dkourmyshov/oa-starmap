@@ -10700,18 +10700,24 @@ worlds:
     affiliations: [metasoft]
     article: https://www.orionsarm.com/eg-article/45f97a9777d95
     location:
-      ra_deg: 87.4193
-      dec_deg: 21.2689
-      distance: 1119 ly
-      direction_error_deg: 20.0
-      distance_error: 800 ly
-      estimated: >-
-        Interpolated from the transcription of Anders Sandberg's maps, fitted
-        from the anchors nearest it in the sheet rather than from a transform
-        over the whole grid, since the rows and columns are not evenly spaced.
-        The error is what checking that method against places we already hold
-        gives: six to nine hundred light years. No article puts a number on
-        this system.
+      hip: 13209
+      distance: 165.7 ly
+      note: >-
+        41 Arietis, also Bharani, which the catalogue puts at 165.65 ly — the
+        figure the Celestia wormhole-nexus add-on gives for this system to four
+        decimal places, the add-on having built on the archived Wormhole
+        Gazetteer that names it. Three things agree on it. The identification
+        is to a real star rather than to coordinates, so it is not one of the
+        add-on's invented positions; its gate partner, New Root, lies 90
+        degrees away, so the direction is not borrowed from the link; and the
+        project owner's own copy of an older picture map shows Aries Vector
+        beside the Blueshift Archipelago, which this position puts 45 ly off
+        and which is Metasoft's, as this system is.
+
+        This replaces an interpolation from the transcription of Anders
+        Sandberg's maps, which had it at 1,119 ly and 41 degrees away — 960 ly
+        from the Blueshift Archipelago rather than 45. Twelve other entries
+        still rest on that method; see questions.md.
 
   - name: Mekelon
     kind: system
