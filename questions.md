@@ -8,7 +8,7 @@ Nothing below is a complaint about the setting. Most of it is the ordinary frict
 
 ---
 
-## Open questions (34)
+## Open questions (38)
 
 ### Shona — Shona's article gives its position twice, and the two directions are thirty degrees apart.
 
@@ -467,6 +467,50 @@ Beta Arae is the one that matters beyond bookkeeping. The Encyclopaedia's own ar
 - https://celestiaproject.space/forum/viewtopic.php?f=23&t=17436
 - https://www.orionsarm.com/eg-topic/49c787abb28fd
 
+### The Celestia add-ons' empire labels — The add-on's forty-five empire markers are label anchors with no extent, and where this map places a polity's worlds independently the two agree only to within the polity's own spread.
+
+*uncertainty*
+
+OAEMPIRES.dsc and southOAEMPIRES.dsc carry forty-five OpenCluster entries named for twenty-eight polities and regions. Forty-one of them state `Radius 2.`, the same token value, which is what makes Celestia draw the label rather than a measurement of anything; the four exceptions are the two real clusters and two others. So an anchor is an assertion that a polity is roughly hereabouts, and the several anchors a large polity carries — four for the NoCoZo, four for the Solar Dominion, four for Metasoft, three each for the Sophic League and Cygexpa — are the same name written across the sky more than once, not distinct territories.
+Measured against the worlds this map places for the same polity, in three dimensions, the nearest placed world to each anchor is: Utopia Sphere 22 ly (Megasov), Archosaurian Empire 12 ly (Giant Ring of the ArchSaur), Solar Dominion 186, 522, 851, 1005 ly, Metasoft 190, 368, 786, 1083 ly, Orion Federation 238 and 712 ly, Cygexpa 244, 966, 1300 ly, Emple-Dokcetic 338 ly, NoCoZo 368, 622, 1542, 1642 ly, Keter Dominion 443 and 1171 ly, Sagittarius Transcultural Cooperation 478 ly, MPA 488 and 738 ly, Sophic League 794, 1058, 1189 ly, Negentropy Alliance 1053 and 1179 ly, Red Star M'pire 2532 ly.
+Those gaps are mostly of the same order as the polity's own spread, which is what a hand-placed label on a large volume should look like and is a quiet corroboration of both sources. The Sophic League is the one consistent oddity: all three of its anchors sit 800 to 1,200 ly from our nearest member while our five members lie within 481 ly of each other, so the disagreement is systematic rather than one bad label.
+
+**What the map does now.** Draws no marker for any polity whose worlds it already places, because an anchor of this kind adds nothing to ten or a hundred real positions and a wide ring at a label's position would compete with them. The anchors were used only where this map had nothing: the Refugium Federation, the Oracle Machine Territory, the Serpens Region, the Verifex Nebula, NoCoNeg, and the Enigma and Prediction Clusters.
+
+**What would settle it.** Whether the add-on's author placed these labels from the same reading of the articles this map works from, or from a source for polity extents that we do not have. The Sophic League's systematic offset would be the case to ask about.
+
+### Refugium Federation — The add-on calls it the Refugium Empire; the Encyclopaedia files it as a federation.
+
+*contradiction*
+
+OAEMPIRES.dsc labels the anchor at 11h 26m, -43.3, 2204 ly REFUGIUM EMPIRE. The Encyclopaedia files Refugium itself, Polonius and Salaam under "Galactography > Minor Polities > Refugium Federation", and this map's polity roster carries `refugium-federation`. Nothing else in our sources uses "empire" for it, and the other labels in the same file are not uniformly styled that way — SOPHIC LEAGUE, NEGENTROPY ALLIANCE and COMMUNION OF WORLDS all keep their own words.
+
+**What the map does now.** Places the marker as the Refugium Federation, on the identification alone: Refugium is a distinctive enough name, and no second polity in the sources answers to it.
+
+**What would settle it.** Whether the polity changed its name during the period the add-on was drawn for, or whether the label is simply loose.
+
+### Crystal Star Domain — The add-on's Crystal Star marker is nearly three times as far out as the one system this map places for that polity.
+
+*contradiction*
+
+OAEMPIRES.dsc gives CRYSTAL STAR DOMINION at 6h 30m, +5.0, 5000 ly. This map places Portal, one of the domain's three recorded members, at 91.4145, -6.0542 and 1,720 ly from its own article. The two are 12.6 degrees apart on the sky and 3,343 ly apart in space, the add-on being the further out by a factor of 2.9.
+The add-on's direction is close to NGC 2244, which this map also holds as a member of the domain and which the cluster catalogue puts at much the add-on's distance. So the two sources may be pointing at opposite ends of a real volume rather than contradicting each other — but 3,343 ly is a large volume, and the add-on states no extent that would say so.
+
+**What the map does now.** Places no marker for the domain and leaves Portal where its article puts it. The domain has three recorded members, which is few enough that a marker would have been worth adding had the two sources agreed.
+
+**What would settle it.** The domain's own extent, or a second member with a stated position between the two.
+
+### Prediction Cluster — NGC 6994 is not in the open-cluster catalogue this map builds from, though NGC 6755 beside it is.
+
+*uncertainty*
+
+southOAEMPIRES.dsc identifies the Prediction Cluster as NGC 6994, at 20h 59m, -12.633, 2021 ly, and the Enigma Cluster as NGC 6755, at 19h 08m, +4.267, 4632 ly. NGC 6755 is in the catalogue this map's cluster layer builds from, under that designation and as Collinder 397 and MWSC 3051. NGC 6994 is not in it at all, under any of the aliases the catalogue carries.
+This map cannot say from its own data why one is absent and the other present. What it can say is that the add-on's two identifications are not of equal standing: one names an object we independently draw, and the other names something our catalogue does not list.
+
+**What the map does now.** Places both from the add-on's own figures rather than binding either to the catalogue, so that the add-on's position for NGC 6755 and the catalogue's can be compared rather than silently merged.
+
+**What would settle it.** Whether NGC 6994 is a cluster at all in the modern literature. If it is not, the Prediction Cluster is a fictional object given a real designation, which is a different thing from a real one renamed.
+
 ## The Inner Sphere colony tables
 
 909 of 1,122 rows resolve to a star we hold. The rest break down as follows.
@@ -536,7 +580,7 @@ Blanco 1, Collinder 173, Collinder 359, Cone Nebula, Czernik 8, NGC 2244, NGC 70
 
 ## Worlds located only by constellation
 
-90 of 629 canonical worlds are given as a distance and a constellation. That fixes the distance exactly and the direction only to the width of the constellation, which at these ranges is hundreds to thousands of light years. The map draws these with a broken ring rather than a solid one, and the detail panel gives the error in light years.
+90 of 636 canonical worlds are given as a distance and a constellation. That fixes the distance exactly and the direction only to the width of the constellation, which at these ranges is hundreds to thousands of light years. The map draws these with a broken ring rather than a solid one, and the detail panel gives the error in light years.
 
 Coordinates, or a nearby named star, would turn any of these from a region into a position.
 

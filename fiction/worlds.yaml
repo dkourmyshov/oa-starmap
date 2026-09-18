@@ -10765,16 +10765,24 @@ worlds:
     affiliations: [mutual-progress-association]
     article: https://www.orionsarm.com/eg-article/48114afa516df
     location:
-      ra_deg: 271.9853
-      dec_deg: -14.3955
-      distance: 2111 ly
-      direction_error_deg: 20.0
-      distance_error: 800 ly
-      estimated: >-
-        Interpolated from the sheet, between the anchors nearest it. A former
-        Mutual Progress Association volume left apparently deserted after a
-        transformation nobody has explained, so the polity colour records who
-        held it rather than who is there.
+      ra_deg: 268.5
+      dec_deg: -19.5
+      distance: 2150 ly
+      note: >-
+        Was interpolated from the transcription of Anders Sandberg's maps, at
+        271.985, -14.396 and 2,111 ly, with twenty degrees and 800 ly of stated
+        error. The position is now the SURREAL RASH anchor in
+        southOAEMPIRES.dsc, one of the Orion's Arm Celestia add-ons' location catalogues (OAAddons9,
+        OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv),
+        which is the preferred source for a volume of this kind: the sheet is
+        unreliable about where an individual system sits and only somewhat
+        better about a polity. The two fall 6.1 degrees apart and agree on
+        distance to 2%, 2,150 ly against 2,111 -- a correction of direction
+        rather than a different object. See questions.md.
+    note: >-
+      A former Mutual Progress Association volume left apparently deserted after
+      a transformation nobody has explained, so the polity colour records who
+      held it rather than who is there.
 
   - name: Aries Vector
     kind: system
@@ -11197,6 +11205,140 @@ worlds:
     note: >-
       The largest organised polity within the Disarchy, and with no article of
       its own — the Disarchy's is what describes it.
+  - name: Refugium Federation
+    kind: polity_marker
+    affiliations: [refugium-federation]
+    location:
+      ra_deg: 171.6
+      dec_deg: -43.3
+      distance: 2204 ly
+      note: >-
+        The REFUGIUM EMPIRE anchor in OAEMPIRES.dsc, one of the Orion's Arm Celestia add-ons' location catalogues (OAAddons9,
+        OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv). Nothing else in this map's sources
+        puts a number on the federation, and the add-on names it an empire where
+        the Encyclopaedia files it under Minor Polities as a federation -- see
+        questions.md.
+    note: >-
+      This map holds three of its members -- Refugium, Polonius and Penrose
+      Place -- and places none of them, so until now the federation had no
+      position at all. That is what the anchor is worth here: for a polity whose
+      worlds are already placed it would add nothing.
+  - name: Oracle Machine Territory
+    kind: polity_marker
+    affiliations: []
+    location:
+      ra_deg: 322.5
+      dec_deg: -28.0
+      distance: 1700 ly
+      note: >-
+        The ORACLE MACHINE TERRITORY anchor in southOAEMPIRES.dsc, one of the Orion's Arm Celestia add-ons' location catalogues (OAAddons9,
+        OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv). The anchor states no extent:
+        it carries the token radius the add-on gives every empire label.
+    note: >-
+      The Oracle Machines are the power the Oracle War was fought against --
+      "the mainstream Diamonders reject the Oracle Machine cult" in 10552, and
+      in 10591 "the Prediction Cluster is captured; the Sibyl vanishes. End of
+      the Oracle War". They hold thrall worlds: the Mystery Cult's forty rungs
+      of Jke's Ladder "began to take on the characteristics of other Oracle
+      Machine Thrall worlds, becoming static and changeless utopias".
+
+      Recorded with no affiliation because the polity roster has no entry for
+      them, not because they held nothing. Drawn grey in consequence.
+  - name: Prediction Cluster
+    kind: volume
+    also: [NGC 6994]
+    affiliations: []
+    location:
+      ra_deg: 314.729
+      dec_deg: -12.633
+      distance: 2021.2 ly
+      note: >-
+        Given as NGC 6994 by OAEMPIRES.dsc's southern companion, one of the Orion's Arm Celestia add-ons' location catalogues (OAAddons9,
+        OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv). Placed from the add-on's own
+        figures rather than from a catalogue, because NGC 6994 is not in the
+        open-cluster catalogue this map builds its clusters from, while NGC 6755
+        beside it is -- so there is nothing here to bind to. See questions.md.
+    note: >-
+      Where the Oracle War ended: "10591 - The Prediction Cluster is captured;
+      the Sibyl vanishes. End of the Oracle War."
+  - name: Enigma Cluster
+    kind: volume
+    also: [NGC 6755]
+    affiliations: [keter-dominion]
+    location:
+      ra_deg: 286.954
+      dec_deg: 4.267
+      distance: 4632.5 ly
+      note: >-
+        Given as NGC 6755 by OAEMPIRES.dsc, one of the Orion's Arm Celestia add-ons' location catalogues (OAAddons9,
+        OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv). The cluster layer already draws NGC 6755
+        from the real catalogue, where it also answers to Collinder 397 and
+        MWSC 3051; this entry is the Orion's Arm name and history for it, and is
+        placed from the add-on's figures rather than the catalogue's so that the
+        two can be compared rather than silently merged.
+    note: >-
+      "Enigma Cluster, The (NGC 6755) - A former Keter cluster brain which has
+      disappeared, leaving a mysterious network of wormholes behind."
+  - name: Verifex Nebula
+    kind: volume
+    affiliations: []
+    location:
+      ra_deg: 105.675
+      dec_deg: -8.383
+      distance: 3028.5 ly
+      note: >-
+        The VERIFEX NEBULA anchor in OAEMPIRES.dsc, one of the Orion's Arm Celestia add-ons' location catalogues (OAAddons9,
+        OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv). It falls 0.04 degrees from Tabridgen,
+        which this map places independently at 2,870 ly -- the same point on the
+        sky and 5% nearer. That is corroboration rather than coincidence:
+        Tabridgen is the system the Encyclopaedia says "was warned of the result
+        of Verifex's catastrophic experiment, and with Empledokcetic help and
+        investment all of the larger habitats and megastructures were hardened
+        and survived the radiation blast".
+    note: >-
+      The remnant of the experiment itself. Named for Verifex, whose "future
+      experiments" another article dates a colony ship's route around, and whose
+      event the timeline updates in 10000.
+  - name: NoCoNeg
+    kind: volume
+    affiliations: []
+    location:
+      ra_deg: 207.0
+      dec_deg: -58.5
+      distance: 2800 ly
+      note: >-
+        The NOCONEG anchor in southOAEMPIRES.dsc, one of the Orion's Arm Celestia add-ons' location catalogues (OAAddons9,
+        OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv). It sits 1.2 degrees from the Locality of
+        Wolfra and 400 ly nearer, which is the part of the sky the add-on gives
+        the Disarchy's neighbours generally.
+    note: >-
+      Not a polity but a meme-set, and recorded as a region for that reason:
+      Rufus "remains nominally independent, although the hybrid NoCoNeg meme-set
+      is gradually gaining ground there", and Gritwald's leadership "has more in
+      common with NoCoNeg and even NoCoZo ideology" while still a nominal member
+      of the Negentropist Alliance. The anchor marks where the add-on draws that
+      culture, not a border. Drawn with no affiliation, since it is by
+      definition the ground between two of them.
+  - name: Serpens Region
+    kind: volume
+    affiliations: []
+    location:
+      ra_deg: 277.5
+      dec_deg: 5.5
+      distance: 1600 ly
+      note: >-
+        The SERPENS REGION anchor in southOAEMPIRES.dsc, one of the Orion's Arm
+        Celestia add-ons' location catalogues (OAAddons9, OALocationsv4;
+        extracted to sources/derived/oa_dsc_locations.tsv). It falls 3.7 degrees
+        from Miracle City, which this map places independently at 1,730 ly, an
+        8% difference in range -- and Miracle City is one of the two worlds the
+        Encyclopaedia names as being in this region, so the anchor and the
+        article agree without either having been read against the other.
+    note: >-
+      A region of space rather than a polity, and recorded as one. Gilboa Reach
+      "is the most important gateway between the STC and the Serpens Sector
+      worlds such as Skiiiws'nnii and Miracle City", and a colony elsewhere "was
+      isolated for 3300 years because of the turmoil in the Serpens Region".
   - name: Pas Greenen
     kind: system
     also: [Pnas Greenen]
