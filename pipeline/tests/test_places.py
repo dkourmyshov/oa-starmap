@@ -8,7 +8,7 @@ from __future__ import annotations
 
 import yaml
 
-from oastarmap.fiction.places import all_places, by_article, by_name
+from oastarmap.fiction.places import all_places, by_article, by_name, by_polity
 
 
 def write(fiction, name, payload):
@@ -39,6 +39,9 @@ def build(tmp_path):
     ]})
     write(fiction, "polities.yaml", {"polities": [
         {"id": "metasoft", "name": "Metasoft", "landmarks": ["Zeta Tauri"]},
+    ]})
+    write(fiction, "colonies.yaml", {"colonies": [
+        {"colony": "Keid", "affiliations": ["zoeific-biopolity"]},
     ]})
     return fiction
 
@@ -99,3 +102,32 @@ def test_a_table_row_with_no_colony_is_still_a_place(tmp_path):
 def test_landmarks_are_places_too(tmp_path):
     index = by_name(all_places(build(tmp_path)))
     assert index["zeta tauri"][0].source == "polities.yaml"
+
+
+def test_a_polity_is_gathered_from_every_file_that_names_it(tmp_path):
+    """Each file says who holds a place in its own way, and none is a superset.
+
+    `worlds.yaml` carries a list, `oa_systems.yaml` a single field, and a colony
+    row's holder is in `colonies.yaml` under a name that has to be matched back.
+    Answering from any one of them is the mistake this module exists to stop,
+    and it was made twice more before this lookup was written: once reading the
+    Keter Dominion's reach off `worlds.yaml` while seven of its systems sat in
+    the colony table, once calling a polity unplaced that had a system in
+    `oa_systems.yaml`.
+    """
+    index = by_polity(all_places(build(tmp_path)))
+
+    assert {p.source for p in index["zoeific-biopolity"]} == {
+        "oa_systems.yaml",   # Panthalassa, by its own `affiliation`
+        "inner_sphere.yaml",  # Keid, via colonies.yaml
+    }
+    assert {p.source for p in index["metasoft"]} == {
+        "worlds.yaml",    # Niuearth, by `affiliations`
+        "polities.yaml",  # Zeta Tauri, by being listed as its landmark
+    }
+
+
+def test_a_place_no_file_assigns_is_held_by_nobody(tmp_path):
+    """The add-on stars record no holder at all, and must not invent one."""
+    places = {p.name: p for p in all_places(build(tmp_path)) if p.source == "oa_stars.yaml"}
+    assert places["Panthalassa"].polities == []

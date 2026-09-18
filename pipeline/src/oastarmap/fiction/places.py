@@ -24,6 +24,7 @@ caller was writing by hand.
 
 from __future__ import annotations
 
+import re
 from collections import defaultdict
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -51,6 +52,17 @@ class Place:
     record: dict[str, Any] = field(default_factory=dict)
     """The entry as written, for callers that need a field this class omits."""
 
+    polities: list[str] = field(default_factory=list)
+    """Who holds it, by polity id, however its own file happens to say so.
+
+    Five files, five conventions: `worlds.yaml` has a list under
+    `affiliations`, `oa_systems.yaml` a single `affiliation`, a colony row
+    keeps its holder in `colonies.yaml` under a name that has to be matched
+    back, a landmark's holder is the polity that lists it, and `oa_stars.yaml`
+    records none at all. Resolved once here so that "who does this polity
+    hold" is a question with one answer rather than five partial ones.
+    """
+
     @property
     def names(self) -> list[str]:
         """Every name this place answers to, the canonical one first."""
@@ -69,10 +81,37 @@ def _load(path: Path) -> Any:
         return yaml.safe_load(handle)
 
 
+def _colony_holders(fiction_dir: Path) -> dict[str, list[str]]:
+    """Colony name, case-folded, to the polities `colonies.yaml` gives it.
+
+    The colony table itself records no holder: the assignment lives in a
+    separate file keyed by the same column, and one row's column can name
+    several colonies of several polities. Split the same way that file
+    documents — on "/" and "&", parentheticals ignored — so a lookup by
+    either the whole column or one name in it finds the holder.
+    """
+    colonies = _load(fiction_dir / "colonies.yaml") or {}
+    holders: dict[str, list[str]] = defaultdict(list)
+    for entry in colonies.get("colonies", []):
+        name = entry.get("colony") or ""
+        affiliations = entry.get("affiliations") or []
+        if not name or not affiliations:
+            continue
+        keys = [name, *re.split(r"[/&]", re.sub(r"\([^)]*\)", "", name))]
+        for key in keys:
+            key = key.strip().casefold()
+            if key:
+                for polity in affiliations:
+                    if polity not in holders[key]:
+                        holders[key].append(polity)
+    return dict(holders)
+
+
 def all_places(fiction_dir: Path | None = None) -> list[Place]:
     """Every place in every file, in no particular order."""
     fiction_dir = fiction_dir or FICTION_DIR
     places: list[Place] = []
+    colony_holders = _colony_holders(fiction_dir)
 
     worlds = _load(fiction_dir / "worlds.yaml") or {}
     for w in worlds.get("worlds", []):
@@ -84,13 +123,15 @@ def all_places(fiction_dir: Path | None = None) -> list[Place]:
             location.get("oa_star") or "",
         ]
         places.append(Place(w["name"], "worlds.yaml", w.get("article", ""),
-                            [a for a in aliases if a], w))
+                            [a for a in aliases if a], w,
+                            list(w.get("affiliations") or [])))
 
     systems = _load(fiction_dir / "oa_systems.yaml") or {}
     for e in systems.get("systems", []):
         label = e.get("label") or e["star"]
+        held = [e["affiliation"]] if e.get("affiliation") else []
         places.append(Place(label, "oa_systems.yaml", e.get("article", ""),
-                            [e["star"], e.get("real") or ""], e))
+                            [e["star"], e.get("real") or ""], e, held))
 
     stars = _load(fiction_dir / "oa_stars.yaml") or {}
     for e in stars.get("stars", []):
@@ -106,12 +147,14 @@ def all_places(fiction_dir: Path | None = None) -> list[Place]:
         if not name:
             continue
         places.append(Place(name, "inner_sphere.yaml", e.get("article", ""),
-                            [e.get("star") or ""], e))
+                            [e.get("star") or ""], e,
+                            colony_holders.get(name.strip().casefold(), [])))
 
     polities = _load(fiction_dir / "polities.yaml") or {}
     for p in polities.get("polities", []):
         for landmark in p.get("landmarks") or []:
-            places.append(Place(landmark, "polities.yaml", "", [], {"polity": p["id"]}))
+            places.append(Place(landmark, "polities.yaml", "", [],
+                                {"polity": p["id"]}, [p["id"]]))
 
     return places
 
@@ -131,4 +174,22 @@ def by_name(places: list[Place] | None = None) -> dict[str, list[Place]]:
     for place in places if places is not None else all_places():
         for name in place.names:
             index[name.casefold()].append(place)
+    return dict(index)
+
+
+def by_polity(places: list[Place] | None = None) -> dict[str, list[Place]]:
+    """Places keyed by the polity that holds them, across every file.
+
+    The lookup this module was missing. Twice in one sitting an analysis asked
+    "where does this polity reach" and answered it from `worlds.yaml` alone:
+    once concluding the Keter Dominion began at 1,119 ly when seven of its
+    systems are inside 90 ly in the colony table, and once that a polity had no
+    place on the map at all when it had one in `oa_systems.yaml`. Both were the
+    same mistake as the four the module header records, in a lookup nobody had
+    written down yet.
+    """
+    index: dict[str, list[Place]] = defaultdict(list)
+    for place in places if places is not None else all_places():
+        for polity in place.polities:
+            index[polity].append(place)
     return dict(index)

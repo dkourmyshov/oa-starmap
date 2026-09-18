@@ -306,6 +306,11 @@ def cmd_build(args: argparse.Namespace) -> int:
 
 
 def cmd_find(args: argparse.Namespace) -> int:
+    if args.polity:
+        return _list_polity(args.polity)
+    if not args.name:
+        print("give a name, or --polity <id>")
+        return 2
     hits = find(args.name)
     if not hits:
         print(f"no place matching {args.name!r} in any index")
@@ -313,6 +318,26 @@ def cmd_find(args: argparse.Namespace) -> int:
     for hit in hits:
         print(hit)
     print(f"{len(hits)} match(es) across {len({h.source for h in hits})} index(es)")
+    return 0
+
+
+def _list_polity(polity: str) -> int:
+    """Every place a polity holds, from every file that records one.
+
+    Answering this from one file is a mistake this project has made repeatedly
+    and expensively, because each file says who holds a place in its own way
+    and none of them is a superset. See `fiction.places.by_polity`.
+    """
+    from oastarmap.fiction.places import by_polity
+
+    held = by_polity().get(polity, [])
+    if not held:
+        print(f"no place held by {polity!r} in any index")
+        return 1
+    for place in sorted(held, key=lambda p: (p.source, p.name)):
+        print(f"  {place.name:32} [{place.source}]")
+    sources = {p.source for p in held}
+    print(f"{len(held)} place(s) across {len(sources)} index(es): {', '.join(sorted(sources))}")
     return 0
 
 
@@ -410,7 +435,13 @@ def main(argv: list[str] | None = None) -> int:
         "find",
         help="look a place up by name across every index that holds one",
     )
-    p_find.add_argument("name", help="name, alias or fragment; case-insensitive")
+    p_find.add_argument(
+        "name", nargs="?", help="name, alias or fragment; case-insensitive"
+    )
+    p_find.add_argument(
+        "--polity",
+        help="instead list every place this polity id holds, across every file",
+    )
     p_find.set_defaults(func=cmd_find)
 
     args = parser.parse_args(argv)
