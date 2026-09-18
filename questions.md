@@ -358,6 +358,7 @@ Note what changes with the choice: at the add-on's figures the two sit about 215
 
 - https://www.orionsarm.com/eg-article/4650f71e6bad5
 - https://www.orionsarm.com/eg-article/479bbbd65a070
+- https://celestiaproject.space/forum/viewtopic.php?f=23&t=17436
 
 ### The Celestia wormhole-nexus add-on — A nineteenth Celestia add-on places systems nothing else places, and twice names a star the Encyclopaedia names differently.
 

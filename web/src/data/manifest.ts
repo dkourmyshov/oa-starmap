@@ -310,6 +310,8 @@ export interface FictionDataset {
 }
 
 export interface Manifest {
+  /** Content hash per emitted file, keyed by basename. See `versions`. */
+  versions?: Record<string, string>;
   generator: string;
   units: {
     storage: string;
@@ -356,8 +358,30 @@ export interface StarData {
  */
 export const DATA_ROOT = `${import.meta.env.BASE_URL}data`;
 
+/**
+ * A content hash per dataset file, from the manifest, so a URL changes exactly
+ * when its file does.
+ *
+ * GitHub Pages serves everything with `Cache-Control: max-age=600` and offers
+ * no way to set a header. Vite content-hashes the bundle, so the code is never
+ * stale — but the datasets sit at fixed paths, and for ten minutes after a
+ * deploy a browser will pair new code with old data and draw it without a word.
+ * That is worse than being wholly stale, and it is not theoretical: a panel
+ * went on citing a source the same deploy had corrected, through two reloads,
+ * while the file on the server was already right.
+ *
+ * Set once the manifest is in, before any dataset is fetched.
+ */
+let versions: Record<string, string> = {};
+
+/** A file's URL, carrying its version where the manifest gives one. */
+function dataUrl(file: string): string {
+  const version = versions[file.split('/').pop() ?? file];
+  return version ? `${DATA_ROOT}/${file}?v=${version}` : `${DATA_ROOT}/${file}`;
+}
+
 async function fetchBinary(file: string): Promise<ArrayBuffer> {
-  const response = await fetch(`${DATA_ROOT}/${file}`);
+  const response = await fetch(dataUrl(file));
   if (!response.ok) {
     throw new Error(`Failed to load ${file}: ${response.status} ${response.statusText}`);
   }
@@ -365,7 +389,7 @@ async function fetchBinary(file: string): Promise<ArrayBuffer> {
 }
 
 async function fetchJson<T>(file: string): Promise<T> {
-  const response = await fetch(`${DATA_ROOT}/${file}`);
+  const response = await fetch(dataUrl(file));
   if (!response.ok) {
     throw new Error(`Failed to load ${file}: ${response.status} ${response.statusText}`);
   }
@@ -698,9 +722,30 @@ export interface LoadedData {
   posters: Poster[];
 }
 
+/**
+ * The manifest, and the versions every other fetch is keyed by.
+ *
+ * The one file that cannot carry its own version, being where the versions are.
+ * Revalidated rather than trusted: it is a few kilobytes and a 304 costs
+ * nothing, where believing a cached copy would pin every dataset to whatever
+ * version it listed ten minutes ago — which is the whole failure this is here
+ * to stop.
+ */
+async function loadManifest(): Promise<Manifest> {
+  const response = await fetch(`${DATA_ROOT}/manifest.json`, { cache: 'no-cache' });
+  if (!response.ok) {
+    throw new Error(
+      `Failed to load manifest.json: ${response.status} ${response.statusText}`,
+    );
+  }
+  const manifest = (await response.json()) as Manifest;
+  versions = manifest.versions ?? {};
+  return manifest;
+}
+
 /** Load every dataset the manifest advertises. Clusters are optional. */
 export async function loadAll(): Promise<LoadedData> {
-  const manifest = await fetchJson<Manifest>('manifest.json');
+  const manifest = await loadManifest();
   verifyContract(manifest);
 
   const stars = await loadStars(manifest);
@@ -933,7 +978,7 @@ async function loadClusters(dataset: ClustersDataset): Promise<ClusterData> {
 }
 
 export async function loadStarData(): Promise<StarData> {
-  const manifest = await fetchJson<Manifest>('manifest.json');
+  const manifest = await loadManifest();
   verifyContract(manifest);
   return loadStars(manifest);
 }

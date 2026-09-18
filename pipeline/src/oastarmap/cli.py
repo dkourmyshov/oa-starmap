@@ -22,6 +22,7 @@ from oastarmap.build.oastars import SOURCE_URL, STARS_FILE, build_oastars
 from oastarmap.build.posters import build_posters
 from oastarmap.build.posters import describe as describe_posters
 from oastarmap.build.questions import build_questions
+from oastarmap.fetch.base import sha256
 from oastarmap.build.questions import format_report as format_questions_report
 from oastarmap.build.stars import build_stars
 from oastarmap.build.worlds import WORLDS_FILE, build_worlds
@@ -250,10 +251,30 @@ def cmd_build(args: argparse.Namespace) -> int:
     if posters:
         datasets["posters"] = posters
 
+    # A short content hash per emitted file, so the renderer can ask for each
+    # one by a URL that changes when and only when the file does.
+    #
+    # GitHub Pages serves everything with `Cache-Control: max-age=600` and gives
+    # no way to set a header. The bundle is content-hashed by Vite and so is
+    # never stale, but the datasets sit at fixed paths — so for ten minutes
+    # after a deploy a browser pairs new code with old data and renders it
+    # without complaint. That is worse than being wholly stale: it showed a
+    # panel citing a source that the same deploy had corrected.
+    #
+    # Hashes rather than a build id, to keep the reproducibility promise below
+    # and to avoid re-fetching eighteen megabytes of star positions because an
+    # unrelated dataset changed.
+    versions = {
+        path.name: sha256(path)[:12]
+        for path in sorted(DATA_OUT_DIR.rglob("*"))
+        if path.is_file() and path.name != "manifest.json"
+    }
+
     # No timestamp: the build must be byte-reproducible so that a changed output
     # file always means changed data, never merely a rerun.
     manifest = {
         "generator": f"oastarmap {__version__}",
+        "versions": versions,
         "units": {
             "storage": "pc",
             "display_default": "ly",
