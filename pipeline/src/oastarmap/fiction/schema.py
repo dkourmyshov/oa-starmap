@@ -900,6 +900,20 @@ class World(BaseModel):
     also: list[str] = Field(default_factory=list)
     """Other names the setting uses for the same place."""
 
+    labels_system: bool = False
+    """Show this world's name for the whole system, rather than the system's own.
+
+    The default is the other way about, and should stay that way: a system is
+    not its best-known planet, and labelling Sol "Earth" would be wrong the
+    moment Luna is added. But the setting does not always put its famous name
+    on the system. Oceanus Ultimata is a megastructure everyone has heard of
+    at Beyniou, which nobody has, and a marker reading "Beyniou" hides the one
+    name a reader is looking for.
+
+    So this is the named exception, for the case where the thing the system is
+    known for is not the system. Set it on at most one world per position.
+    """
+
     affiliations: list[str] = Field(default_factory=list)
     """Polity ids. More than one is a genuine shared presence, not indecision.
 

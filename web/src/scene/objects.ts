@@ -172,8 +172,18 @@ const BASE_IMPORTANCE = {
  * Mars is added, and the same holds for every system that grows a second entry.
  * Only where no world names a system does the label fall back to the worlds
  * themselves, and it names them all rather than picking one arbitrarily.
+ *
+ * The exception is declared, not inferred: a world with `labels_system` says
+ * that what this system is known for is not the system. Oceanus Ultimata is a
+ * megastructure at Beyniou, and a marker reading "Beyniou" hides the one name
+ * a reader would be looking for. Nothing guesses at this — an entry has to
+ * claim it.
  */
-export function systemLabel(worlds: { name: string; system: string }[]): string {
+export function systemLabel(
+  worlds: { name: string; system: string; labels_system?: boolean }[],
+): string {
+  const claimed = worlds.find((w) => w.labels_system);
+  if (claimed) return claimed.name;
   const named = worlds.find((w) => w.system);
   if (named) return named.system;
   if (worlds.length <= 2) return worlds.map((w) => w.name).join(' / ');

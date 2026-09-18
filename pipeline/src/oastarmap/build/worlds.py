@@ -328,6 +328,7 @@ def build_worlds(
             "system": world.system,
             "parent": world.parent,
             "also": world.also,
+            "labels_system": world.labels_system,
             "affiliations": world.affiliations,
             "uncertain": world.uncertain,
             "article": world.article,

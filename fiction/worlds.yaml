@@ -13256,6 +13256,7 @@ worlds:
   - name: Oceanus Ultimata
     kind: megastructure
     system: Beyniou
+    labels_system: true
     affiliations: []
     article: https://www.orionsarm.com/eg-article/490b3010a681a
     location:
@@ -13277,7 +13278,15 @@ worlds:
     note: >-
       A megastructure at Beyniou, most probably of xenosophont make. Probably is
       the article's own hedge, and origin is not possession, so no holder is
-      recorded and the xenosophont tag is not used.
+      recorded and the xenosophont tag is not used. The Non-Coercive Zone, the
+      Mutual Progress Association, the Zoeific Biopolity and the Chthonids are
+      all present here, as the project owner reads it, but presence is not
+      affiliation and none of them holds the place, so the entry stays
+      unaffiliated rather than colouring it four ways.
+
+      It labels the system rather than Beyniou doing so: the megastructure is
+      what this system is known for, and a marker reading "Beyniou" would hide
+      the name a reader is looking for.
 
   - name: Tyrion
     kind: system

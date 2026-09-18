@@ -590,6 +590,8 @@ export interface WorldEntry {
   estimated: string;
   /** Where the position came from, where the entry says. Often empty. */
   location_note: string;
+  /** This world's name labels the whole system. See `systemLabel`. */
+  labels_system?: boolean;
   /** The same error as a length at this distance, which is the legible form. */
   direction_error_ly: number | null;
   /**

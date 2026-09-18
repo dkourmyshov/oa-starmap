@@ -32,6 +32,7 @@ import {
   ObjectIndex,
   bayerLabel,
   composeLabel,
+  systemLabel,
 } from './objects';
 
 const WIDTH = 800;
@@ -1754,5 +1755,43 @@ describe('OB associations', () => {
     expect(indexWith().layout(camera(), onlyOA).map((label) => label.text)).toContain(
       'Ori OB1b',
     );
+  });
+});
+
+
+describe('what a shared marker is called', () => {
+  it('names the system, not its best-known world', () => {
+    // Sol is not Earth, and stops being it the moment Luna is added.
+    expect(systemLabel([
+      { name: 'Earth', system: 'Sol' },
+      { name: 'Luna', system: 'Sol' },
+    ])).toBe('Sol');
+  });
+
+  it('falls back to the worlds where none names a system', () => {
+    expect(systemLabel([{ name: 'Alpha', system: '' }, { name: 'Beta', system: '' }]))
+      .toBe('Alpha / Beta');
+    expect(systemLabel([
+      { name: 'Alpha', system: '' },
+      { name: 'Beta', system: '' },
+      { name: 'Gamma', system: '' },
+    ])).toBe('Alpha +2');
+  });
+
+  it('lets one world claim the label, for the case the default gets wrong', () => {
+    // Oceanus Ultimata is a megastructure everyone has heard of, at Beyniou,
+    // which nobody has. A marker reading "Beyniou" hides the name being looked
+    // for. The claim is declared on the entry; nothing infers it.
+    expect(systemLabel([
+      { name: 'Beyniou', system: 'Beyniou' },
+      { name: 'Oceanus Ultimata', system: 'Beyniou', labels_system: true },
+    ])).toBe('Oceanus Ultimata');
+  });
+
+  it('ignores the claim where no world makes it', () => {
+    expect(systemLabel([
+      { name: 'Beyniou', system: 'Beyniou', labels_system: false },
+      { name: 'Oceanus Ultimata', system: 'Beyniou', labels_system: false },
+    ])).toBe('Beyniou');
   });
 });
