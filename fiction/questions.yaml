@@ -1030,13 +1030,31 @@ questions:
       nothing here says which source is wrong.
 
       A note on method, because the first pass got St Xye right for the wrong
-      reason. It was refused on the ground that its gate partner lay nine
-      degrees away, inside the band where this add-on seems to place systems it
-      has no star for along the line of their link. That is a real pattern but
-      a weak test, and this file already holds the strong one: the IAU
-      constellation cones, with a radius per constellation. Testing a proposed
-      direction against the constellation the article states is cheap, decisive
-      either way, and should come first.
+      reason, and the difference matters for every case after it.
+
+      Two tests are available for a proposed direction. The constellation test
+      asks whether it falls inside the cone the article names, and this file
+      holds the IAU boundaries with a radius per constellation, so the answer is
+      exact. It can veto: a direction outside the stated constellation
+      contradicts the article, and no amount of precision redeems a position
+      that is in the wrong part of the sky.
+
+      The sight-line test asks whether the direction merely repeats where the
+      system's gate partner already is — a real pattern in this add-on, since
+      it had to put its invented systems somewhere. But it cannot veto, and the
+      numbers say why. Of the 33 routes whose two ends are both real catalogue
+      stars, seven are within ten degrees of each other; of the 37 with at
+      least one invented end, fourteen are. So seeing ten degrees moves the odds
+      by a factor of under two. Genuine neighbours are often close together,
+      which is the whole reason a network links them.
+
+      What the sight-line test is good for is knowing what a marker claims. If a
+      direction is inherited from a link, drawing a point where a cone used to
+      be adds precision without adding knowledge, and the entry should say so.
+      That is a caveat to record, not a reason to refuse. Had St Xye's direction
+      fallen inside Norma, it should have been taken with the caveat noted; it
+      was refused because it falls outside, and that is the only ground that
+      carries the refusal.
 
       Not improvements at all. April, Pollux and UV Ceti came up in the sweep
       only because their entries are colony rows, and a colony row already
