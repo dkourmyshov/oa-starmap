@@ -6198,6 +6198,70 @@ worlds:
         gazetteer's and the project owner's. No polity is recorded and no
         article names it.
 
+  - name: Radwan
+    kind: system
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/47fec92ad2278
+    location:
+      ra_deg: 186.323051208
+      dec_deg: -65.769855083
+      distance: 158.1 ly
+      note: >-
+        From the archived Wormhole Gazetteer (https://www.orionsarm.com/eg-article/4e297b0884b1a), an Encyclopaedia page removed in the Wormhole Nexus revision and kept under sources/ as a Wayback capture of November 2017. Its superseded topology is not drawn. The position is the Celestia wormhole-nexus add-on's (https://celestiaproject.space/forum/viewtopic.php?f=23&t=17436), built from that same gazetteer, which gave no coordinates itself. The add-on's designation for the primary is HD
+        108054. It has no article of its own and is named in the Pan-Sophontist
+        League's, cited here; the gazetteer's note on The Way of Trees, the
+        route reaching it, reads "To Pan-Sophontist League". Drawn as neutral
+        rather than as that League's, on the project owner's decision, because
+        this file has no entry for it and one world is too thin a reason to add
+        a polity — the Encyclopaedia's timeline names it once more, at Karmiti.
+
+  - name: Krantor
+    kind: system
+    affiliations: [negentropy-alliance]
+    article: https://www.orionsarm.com/eg-article/46dcbc280a037
+    location:
+      ra_deg: 208.186474083
+      dec_deg: -59.096063361
+      distance: 1120.8 ly
+      note: >-
+        From the archived Wormhole Gazetteer (https://www.orionsarm.com/eg-article/4e297b0884b1a), an Encyclopaedia page removed in the Wormhole Nexus revision and kept under sources/ as a Wayback capture of November 2017. Its superseded topology is not drawn. The position is the Celestia wormhole-nexus add-on's (https://celestiaproject.space/forum/viewtopic.php?f=23&t=17436), built from that same gazetteer, which gave no coordinates itself. The add-on's designation for the primary is HIP
+        67748. It has no article of its own; it is named in the Megasov
+        article, and the article cited here is NoCoNeg's, the polity it belongs
+        to — Negentropy by law and Non-Coercive by spirit. The gazetteer's note
+        on Try Anything Once, the route reaching it, reads "To Non Coersive
+        Zone". Recorded under the Negentropy Alliance, on the project owner's
+        decision, this file having no entry for NoCoNeg and no other world
+        wanting one.
+
+  - name: Trees
+    kind: system
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/491277421c9f8
+    location:
+      hip: 31540
+      distance: 121.9 ly
+      note: >-
+        HD 47186 in Canis Major, which the catalogue puts at 121.9 ly, the
+        figure the article gives. The archived Wormhole Gazetteer names a Trees
+        too and the add-on built from it places that one at HD 3823, 81.4 ly —
+        a different star, entered separately below. See questions.md.
+
+  - name: Trees (HD 3823)
+    kind: system
+    also: [Trees]
+    affiliations: []
+    location:
+      ra_deg: 10.106956875
+      dec_deg: -59.454603611
+      distance: 81.4 ly
+      note: >-
+        From the archived Wormhole Gazetteer (https://www.orionsarm.com/eg-article/4e297b0884b1a), an Encyclopaedia page removed in the Wormhole Nexus revision and kept under sources/ as a Wayback capture of November 2017. Its superseded topology is not drawn. The position is the Celestia wormhole-nexus add-on's (https://celestiaproject.space/forum/viewtopic.php?f=23&t=17436), built from that same gazetteer, which gave no coordinates itself. The add-on's designation for the primary is HD
+        3823, on a row the colony table already carries with no colony name.
+        The Encyclopaedia's own Trees is HD 47186 at 121.9 ly, entered above:
+        two different stars forty light years apart. They were probably meant
+        as one place, but nothing establishes that, so both are drawn and each
+        names the other. See questions.md.
+
   - name: Huanghua
     kind: system
     system: Huanghua
@@ -9114,6 +9178,12 @@ worlds:
       out. Bound to the primary, which is what the catalogue carries and what
       the map draws a system at. Both stated distances agree to a hundredth:
       11.87 ly from Sol against 11.867, and 14.07 from Ran against 14.107.
+      The archived Wormhole Gazetteer names a Tesseract, and the Celestia
+      add-on built from it puts Tesseract at Epsilon Indi — this system.
+      Tesseract has no article of its own and is named in Halcyon's, which
+      makes it the Deeper Covenant's, as Praxis-Gnosis is. Likely another
+      name for what is already here rather than a fourth thing at this
+      star, so no separate marker is drawn for it. See questions.md.
 
   - name: Yin-Yang
     kind: system
