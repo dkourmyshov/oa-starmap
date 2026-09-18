@@ -906,6 +906,9 @@ questions:
       source only where they are silent. Four identification questions have come
       out of reading it, and they are different in kind.
 
+      Three of these are errors by the same hand, which is the measure of how
+      much its identifications carry where nothing checks them.
+
       Barboro. The add-on calls it HD 211038 (HIP 109822) at 124 ly. The
       Encyclopaedia's own Inner Sphere table gives Barboro as Psi Capricorni at
       47.7 ly — and the add-on lists Psi Capricorni separately, under no name.
@@ -924,11 +927,22 @@ questions:
       been meant as one place, but nothing establishes that, so both are drawn
       and each carries a note pointing at the other.
 
-      Relay 005. The add-on places it at 2,870 ly. The Encyclopaedia's relay
-      series, Relay 0 through Relay 9, is an Inner Sphere run of stars between
-      28 and 72 ly, and the numbering style differs too. Not the same object as
-      Relay 0 or Relay 5; treated as a separate invention and drawn alongside
-      them.
+      Orchid and Relay 005, which the add-on has exchanged. It puts Orchid at
+      Epsilon Indi, 11.8 ly, and Relay 005 at 2,870 ly. The gazetteer notes the
+      route to Orchid as going "To Perseus Arm" and the route to Relay 005 as
+      going "To Inner Sphere", which is the other way round — and the far
+      coordinates sit at galactic longitude 140, straight down the Perseus Arm,
+      while the near ones do not. Both routes run from Jarre, which is likely
+      how they came to be swapped. Entered swapped back.
+
+      Relay 005 is not drawn. Swapped back it lands on Epsilon Indi, 11.9 ly,
+      which is already crowded — Gatlida at A, Praxis-Gnosis at Ba and Bb — and
+      nothing explains a relay there as well. Nor is it one of the
+      Encyclopaedia's Relay 0 to Relay 9, an Inner Sphere run between 28 and 72
+      ly under a different numbering: the nearest of those by name, Relay 5, is
+      HD 147513 at 42 ly, which is 36.6 ly from Epsilon Indi and plainly a
+      different star. So the gazetteer's Relay 005 is recorded here and given
+      no marker.
     map_does: >-
       Follows the Encyclopaedia wherever it speaks — Barboro stays Psi
       Capricorni. Where only the add-on speaks, takes its coordinates and does

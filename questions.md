@@ -365,10 +365,12 @@ Note what changes with the choice: at the add-on's figures the two sit about 215
 *contradiction*
 
 The wormhole-nexus add-on (S. Ball, 2016) is not one of the eighteen official archives and carries 117 named systems with coordinates. Where it overlaps those archives it copies them exactly, so it is an independent source only where they are silent. Four identification questions have come out of reading it, and they are different in kind.
+Three of these are errors by the same hand, which is the measure of how much its identifications carry where nothing checks them.
 Barboro. The add-on calls it HD 211038 (HIP 109822) at 124 ly. The Encyclopaedia's own Inner Sphere table gives Barboro as Psi Capricorni at 47.7 ly — and the add-on lists Psi Capricorni separately, under no name. Settled: the Encyclopaedia's table wins, and the add-on is simply wrong here. Recorded because it measures how much the add-on's identifications can be trusted where nothing checks them.
 Fredholm. The add-on writes the number HIP 107144, which is 26 Aquarii at 1,053 ly, while its own written name for the same entry is "26 Aquilae" and its coordinates fall exactly on HIP 95066, which is 26 Aquilae at 144 ly. Name and coordinates agree with each other and not with the number.
 Trees. The add-on puts it at HD 3823, 81.4 ly, on a row our colony table already carries with no colony name. The Encyclopaedia's Trees is HD 47186 (HIP 31540) at 121.9 ly. Two different stars. They may well have been meant as one place, but nothing establishes that, so both are drawn and each carries a note pointing at the other.
-Relay 005. The add-on places it at 2,870 ly. The Encyclopaedia's relay series, Relay 0 through Relay 9, is an Inner Sphere run of stars between 28 and 72 ly, and the numbering style differs too. Not the same object as Relay 0 or Relay 5; treated as a separate invention and drawn alongside them.
+Orchid and Relay 005, which the add-on has exchanged. It puts Orchid at Epsilon Indi, 11.8 ly, and Relay 005 at 2,870 ly. The gazetteer notes the route to Orchid as going "To Perseus Arm" and the route to Relay 005 as going "To Inner Sphere", which is the other way round — and the far coordinates sit at galactic longitude 140, straight down the Perseus Arm, while the near ones do not. Both routes run from Jarre, which is likely how they came to be swapped. Entered swapped back.
+Relay 005 is not drawn. Swapped back it lands on Epsilon Indi, 11.9 ly, which is already crowded — Gatlida at A, Praxis-Gnosis at Ba and Bb — and nothing explains a relay there as well. Nor is it one of the Encyclopaedia's Relay 0 to Relay 9, an Inner Sphere run between 28 and 72 ly under a different numbering: the nearest of those by name, Relay 5, is HD 147513 at 42 ly, which is 36.6 ly from Epsilon Indi and plainly a different star. So the gazetteer's Relay 005 is recorded here and given no marker.
 
 **What the map does now.** Follows the Encyclopaedia wherever it speaks — Barboro stays Psi Capricorni. Where only the add-on speaks, takes its coordinates and does not bind the system to a catalogue star, so that an identification this author has got wrong twice is never asserted as ours. Trees and Relay 005 are drawn as separate places from their Encyclopaedia namesakes, each noting the other.
 
@@ -462,7 +464,7 @@ Blanco 1, Collinder 173, Collinder 359, Cone Nebula, Czernik 8, NGC 2244, NGC 70
 
 ## Worlds located only by constellation
 
-94 of 593 canonical worlds are given as a distance and a constellation. That fixes the distance exactly and the direction only to the width of the constellation, which at these ranges is hundreds to thousands of light years. The map draws these with a broken ring rather than a solid one, and the detail panel gives the error in light years.
+94 of 625 canonical worlds are given as a distance and a constellation. That fixes the distance exactly and the direction only to the width of the constellation, which at these ranges is hundreds to thousands of light years. The map draws these with a broken ring rather than a solid one, and the detail panel gives the error in light years.
 
 Coordinates, or a nearby named star, would turn any of these from a region into a position.
 
