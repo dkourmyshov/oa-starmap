@@ -6882,7 +6882,10 @@ worlds:
         system at 409 ly rather than 209. Both spell it Kurabana, where the
         article and this file spell it Kuranaba. Taken as one place under two
         spellings, with the Encyclopaedia keeping the distance and the add-on
-        supplying the direction it never had. See questions.md.
+        supplying the direction it never had — though that direction is 3.1
+        degrees from Big Tor, the system Kuranaba's first gate was opened from,
+        which is close enough that the add-on may have derived it from the link
+        rather than known it. See questions.md.
     events:
       - year_at: 2589
         kind: settled

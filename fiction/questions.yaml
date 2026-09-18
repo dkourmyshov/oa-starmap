@@ -968,6 +968,71 @@ questions:
       - https://celestiaproject.space/forum/viewtopic.php?f=23&t=17436
       - https://www.orionsarm.com/eg-article/491277421c9f8
 
+  - id: gazetteer-gate-direction-and-sightlines
+    topic: The Wormhole Gazetteer and the add-on built from it
+    status: open
+    severity: question
+    summary: Kuranaba's gate runs inward against the nexus rule, and the add-on tends to place invented systems along their partner's line of sight.
+    detail: >-
+      Two things about the gazetteer's geometry, neither of which the map can
+      settle, and both of which bear on how much its positions are worth.
+
+      The gate direction. The project owner notes that gates in the nexus were
+      opened from the root outwards, to avoid timelike loops, and Kuranaba's
+      first gate was opened from Big Tor — which is the wrong way. Aksijaha at
+      Vega is the root; Big Tor is 675 ly from it, while Kuranaba is 234 ly from
+      it at the article's 209 ly distance, or 434 at the add-on's 409. Either
+      way the gate runs inward, from the further system to the nearer. Kuranaba
+      is described as a conservative Sophic world that took a gate late, which
+      may be the whole of the explanation, and the owner flags the rule as
+      possibly an oversimplification.
+
+      The choice of Big Tor is odder still once the neighbours are measured.
+      From Kuranaba at the article's 209 ly, Ararat is 72 ly away and Kelarc 73,
+      and both are Sophic League worlds as Kuranaba is. Big Tor is 426 ly away
+      and is shared with the Non-Coercive Zone. So the gate was brought from
+      nearly six times further off, past two systems of Kuranaba's own polity.
+      The project owner also places Kuranaba in or near the Garden of Paradise
+      cluster, which this map does not hold under that name — the only figure
+      for it here, from the OALocations add-on, puts it at 70 ly and some
+      twenty degrees away, which does not fit, so that association is
+      unverified rather than confirmed or denied. The nexus topology has been retconned
+      since, so this settles nothing about the current setting — it is recorded
+      because it is the kind of check that catches a transcription error, and
+      here it does not.
+
+      The sight-lines. Across the seventy routes where the add-on positions both
+      ends, the median angular separation of a gate-linked pair is 32.6 degrees,
+      which is what one would expect of a network that goes where it likes. But
+      twenty-one pairs sit within ten degrees of each other, and fourteen of
+      those twenty-one involve a system with no catalogue star behind it — a
+      position the add-on invented. The extreme cases are Cableville and MXRDR55
+      at 0.2 degrees, MegaSov and NewGrath at 2.0, Sadalmelik and Eden II at
+      2.3, Blue and Manifold at 2.5, and Kuranaba and Big Tor at 3.1.
+
+      The likely reading is that where the add-on had no real star for a system,
+      it placed it near the direction of whatever it was gated to. If so, those
+      directions are not independent evidence of where anything is; they are an
+      artifact of the link. That does not make them wrong, but it means a
+      position of this kind carries about as much weight as the statement "it is
+      connected to X", and no more. Not all invented positions are like this:
+      Dam Tellion sits 56 degrees from its own gate partner, Hightower, so
+      something else determined that one.
+    map_does: >-
+      Draws them, since they are the only positions anyone has offered, and
+      marks the provenance on every entry so a reader can see which kind of
+      claim a marker is. Where a system has a catalogue star behind it the
+      position is as good as the identification; where it does not, and its
+      partner is a few degrees away, it should be read as a direction borrowed
+      from the link.
+    would_settle: >-
+      Whether the add-on's author had positions for the invented systems from
+      somewhere, or derived them from the topology. A note from him, or a source
+      predating the add-on that places any of the fourteen, would answer it.
+    links:
+      - https://www.orionsarm.com/eg-article/4e297b0884b1a
+      - https://celestiaproject.space/forum/viewtopic.php?f=23&t=17436
+
   - id: gazetteer-positions-against-articles
     topic: Kuranaba and Dam Tellion
     status: open
