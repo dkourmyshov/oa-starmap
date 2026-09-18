@@ -8,7 +8,7 @@ Nothing below is a complaint about the setting. Most of it is the ordinary frict
 
 ---
 
-## Open questions (27)
+## Open questions (28)
 
 ### Shona — Shona's article gives its position twice, and the two directions are thirty degrees apart.
 
@@ -341,6 +341,20 @@ Two separate gaps, and the second is the larger. First, an affiliation here is a
 - https://www.orionsarm.com/eg-topic/49c787abb28fd
 - https://www.orionsarm.com/eg-topic/45b170f9e0941
 
+### The Celestia wormhole-nexus add-on — A nineteenth Celestia add-on places systems nothing else places, and twice names a star the Encyclopaedia names differently.
+
+*contradiction*
+
+The wormhole-nexus add-on (S. Ball, 2016) is not one of the eighteen official archives and carries 117 named systems with coordinates. Where it overlaps those archives it copies them exactly, so it is an independent source only where they are silent. Where it is the sole source it has been taken — Traction, whose system name and primary designation the article confirms, and Fredholm and Everypath, which have no article at all.
+Two of its identifications do not hold up. It calls Barboro the star HD 211038 (HIP 109822) at 124 ly, while the Encyclopaedia's own Inner Sphere table gives Barboro as Psi Capricorni at 47.7 ly — and the add-on lists Psi Capricorni separately, under no name. And its Fredholm carries the number HIP 107144, which is 26 Aquarii at 1,053 ly, while its own written name for the same entry is "26 Aquilae" and its coordinates fall exactly on HIP 95066, which is 26 Aquilae at 144 ly.
+Neither error is fatal to the positions: the Barboro case is settled by the Encyclopaedia's table, and the Fredholm case is a number that contradicts the name and coordinates beside it rather than a position in doubt. But they are the measure of how much weight the add-on's identifications carry where nothing checks them.
+
+**What the map does now.** Takes the add-on's direction and distance where it is the only source, and does not bind those systems to a catalogue star even where the coordinates land on one exactly. Barboro stays as the Inner Sphere table has it. Where the add-on and the catalogue disagree on the distance to a star both identify the same way — twelve cases, its figures mostly the smaller — the catalogue is used, since a 2016 add-on is quoting the astronomy of its day and ours is Gaia DR3.
+
+**What would settle it.** Articles for Fredholm and Everypath, or any Encyclopaedia statement of their positions. More generally, whether the add-on's author worked from sources this project has not seen, or matched names to nearby stars.
+
+- https://www.orionsarm.com/eg-topic/45b170f9e0941
+
 ## The Inner Sphere colony tables
 
 909 of 1,122 rows resolve to a star we hold. The rest break down as follows.
@@ -410,13 +424,13 @@ Blanco 1, Collinder 173, Collinder 359, Cone Nebula, Czernik 8, NGC 2244, NGC 70
 
 ## Worlds located only by constellation
 
-95 of 593 canonical worlds are given as a distance and a constellation. That fixes the distance exactly and the direction only to the width of the constellation, which at these ranges is hundreds to thousands of light years. The map draws these with a broken ring rather than a solid one, and the detail panel gives the error in light years.
+94 of 593 canonical worlds are given as a distance and a constellation. That fixes the distance exactly and the direction only to the width of the constellation, which at these ranges is hundreds to thousands of light years. The map draws these with a broken ring rather than a solid one, and the detail panel gives the error in light years.
 
 Coordinates, or a nearby named star, would turn any of these from a region into a position.
 
-## 63 places described but not located
+## 59 places described but not located
 
-Arkady 2, Arnon Dar, Avase, Big Bob, Crustuse, Cyrus, Danzig, Dashwood, Druidworld, Elderman's Star, Equinoxe, Evermore, and 51 more
+Arkady 2, Arnon Dar, Avase, Big Bob, Crustuse, Cyrus, Dashwood, Druidworld, Elderman's Star, Evermore, Galbydeia Torus, Garlin, and 47 more
 
 ## 1 designation reused in the Celestia add-on
 

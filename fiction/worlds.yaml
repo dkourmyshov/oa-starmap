@@ -1410,8 +1410,17 @@ worlds:
     affiliations: [mutual-progress-association]
     article: https://www.orionsarm.com/eg-article/48ac37b0e82ba
     location:
-      constellation: Scorpius
+      ra_deg: 265.25
+      dec_deg: -32.25
       distance: 1543 ly
+      note: >-
+        Was a constellation and a distance, which is a cone 1,543 ly deep.
+        The Celestia wormhole-nexus add-on (sources/celestia_wormhole_nexus)
+        gives an exact direction for it, and names the primary "YTS
+        23375-458-5" at 1543 ly — both of which the article's own panel
+        states too, as "Designation of Primary YTS 23375-458-5" and "Distance
+        from Sol 1543 ly". The direction is the add-on's alone; everything
+        else agrees.
     events:
       - year_at: 4710
         kind: settled
@@ -8992,8 +9001,21 @@ worlds:
 
   - name: Traction
     kind: system
+    also: [Crossroad 134]
     affiliations: [the-seams]
     article: https://www.orionsarm.com/eg-article/48aca6f9717da
+    location:
+      ra_deg: 280.2708
+      dec_deg: -38.6142
+      distance: 899 ly
+      note: >-
+        From the Celestia wormhole-nexus add-on (S. Ball, 2016, under
+        sources/celestia_wormhole_nexus), which is not one of the eighteen
+        official archives. It carries this system as "Crossroad 134: YTS
+        5072-5871740: Traction", and the article's own panel gives the same
+        two designations — "SYSTEM: Crossroad 134", "PRIMARY: YTS
+        5072-5871740" — so the identification is the article's and only the
+        position is the add-on's. No Encyclopaedia source states a distance.
     events:
       - year_at: 4654
         kind: transferred
@@ -9008,9 +9030,10 @@ worlds:
           of this file; the panel's affiliation is "The Seams; The Greyman
           Empire".
     note: >-
-      Recorded without a position. Nothing here locates it — not the
-      Encyclopaedia entry we have, not any of the eighteen Celestia archives,
-      not the Inner Sphere table.
+      The Seams, in the NoCoZo, around a K3 primary with a white dwarf and a
+      brown dwarf in trinary orbit. Nothing in the Encyclopaedia, the
+      eighteen Celestia archives or the Inner Sphere table locates it; the
+      nineteenth add-on does, and is cited on the position above.
 
   # ---- Disarchy ------------------------------------------------------------
 
@@ -10033,31 +10056,41 @@ worlds:
     kind: system
     affiliations: [keter-dominion]
     location:
-      ra_deg: 279.6469
-      dec_deg: -11.9306
-      distance: 1364 ly
-      direction_error_deg: 20.0
-      distance_error: 800 ly
-      estimated: >-
-        Interpolated from the transcription of Anders Sandberg's maps, fitted
-        from the anchors nearest this cell rather than by one transform over the
-        whole sheet, whose rows and columns are unevenly spaced. It falls inside the anchors used, which is the better case. No
-        article gives a position for it.
+      ra_deg: 293.9317
+      dec_deg: 1.7283
+      distance: 369 ly
+      note: >-
+        From the Celestia wormhole-nexus add-on (S. Ball, 2016, under
+        sources/celestia_wormhole_nexus), the only source that places this
+        system at all; no article exists for it. This replaces an
+        interpolation from the transcription of Anders Sandberg's maps,
+        which put it at a 20-degree direction error and an 800 ly distance
+        error.
+        Its coordinates fall exactly on HIP 96378, whose catalogue distance is 617
+        ly against the add-on's 369. Not bound to the star, so that the
+        disagreement stays visible rather than being resolved by silently
+        taking one figure. See questions.md.
 
   - name: Fredholm
     kind: system
     affiliations: [keter-dominion]
     location:
-      ra_deg: 280.7109
-      dec_deg: -9.2881
-      distance: 1525 ly
-      direction_error_deg: 20.0
-      distance_error: 800 ly
-      estimated: >-
-        Interpolated from the transcription of Anders Sandberg's maps, fitted
-        from the anchors nearest this cell rather than by one transform over the
-        whole sheet, whose rows and columns are unevenly spaced. It falls inside the anchors used, which is the better case. No
-        article gives a position for it.
+      ra_deg: 290.1371
+      dec_deg: -5.4158
+      distance: 154 ly
+      note: >-
+        From the Celestia wormhole-nexus add-on (S. Ball, 2016, under
+        sources/celestia_wormhole_nexus), the only source that places this
+        system at all; no article exists for it. This replaces an
+        interpolation from the transcription of Anders Sandberg's maps,
+        which put it at a 20-degree direction error and an 800 ly distance
+        error.
+        Its coordinates fall on HIP 95066, which is 26 Aquilae at 144 ly, and the
+        add-on writes "26 Aquilae" in the name — but the catalogue number it
+        writes beside it, HIP 107144, is 26 Aquarii at 1,053 ly, a different
+        star in a different constellation. Not bound to either star for that
+        reason: the direction and distance are what the add-on actually
+        asserts consistently. See questions.md.
 
   - name: Restored Ambi Limis
     kind: system
@@ -10809,6 +10842,8 @@ worlds:
     system: 61 Cygni
     affiliations: []
     article: https://www.orionsarm.com/eg-article/47a67ce4bf7a5
+    location:
+      star: 61 Cygni
     events:
       - year_at: 597
         kind: settled
@@ -10816,7 +10851,10 @@ worlds:
           "Colonised 597 AT" The article names no polity; the system was
           governed by the ETA Consortium and then, in the 2000s, the Cygnus
           Development Corporation, and never joined the First Federation.
-    note: A world of 61 Cygni.
+    note: >-
+      A world of 61 Cygni, and bound to that star, as the system entry beside
+      it already was. It sat unplaced only because the system was named in
+      the `system` field, which groups, and never in the location.
 
   - name: "\u00c5"
     kind: planet
@@ -11333,13 +11371,18 @@ worlds:
     system: Copernicus
     affiliations: [terragen-federation]
     article: https://www.orionsarm.com/eg-article/486ebb201f514
+    location:
+      star: 55 Cancri
     events:
       - year_at: 1421
         kind: visited
         source: "Encyclopaedia timeline, Middle Federation / Megacorps"
         note: >-
           The First Federation Kontore League colony ship Hanse arrives at Danzig .
-    note: The world of Copernicus.
+    note: >-
+      The world of Copernicus, and bound to the same star that entry is,
+      which it shares an article with. The Celestia wormhole-nexus add-on
+      names 55 Cancri as Danzig independently.
 
   - name: Eganfodugbe
     kind: planet
@@ -11906,7 +11949,15 @@ worlds:
     system: Jarre
     affiliations: []
     article: https://www.orionsarm.com/eg-article/4902515f791e9
-    note: The world of Jarre.
+    location:
+      world: Jarre
+    note: >-
+      The world of Jarre, third of its four planets, and drawn where the
+      system entry it shares an article with is drawn. The Celestia
+      wormhole-nexus add-on also carries a "Jarre", but at 3,065 ly towards
+      Cassiopeia, where the article puts the system at 4,962 ly in Perseus;
+      the article is followed and the add-on's star is taken to be something
+      else.
 
   - name: Inyanaine
     kind: system

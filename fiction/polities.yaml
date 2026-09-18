@@ -364,9 +364,14 @@ polities:
 
   - id: the-seams
     name: The Seams
-    color: "#C0A71B"
+    color: "#543F72"
     # A border polity is diffuse by definition, so it can meet anything and must
-    # be told apart from everything. It was 4.6 from the Orion Federation.
+    # be told apart from everything. It was 4.6 from the Orion Federation, and
+    # then 8.2 from LinnEnt — two yellow-greens a reader would have had to take
+    # on trust. Moved out of that family altogether rather than shuffled within
+    # it. The clash only surfaced when Traction was placed, because the check
+    # counts colony rows and worlds.yaml and does not see oa_systems.yaml, where
+    # Blue has been the Seams' other member all along.
     kind: polity
     source: eg-system-articles
 

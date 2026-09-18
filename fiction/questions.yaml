@@ -838,3 +838,45 @@ questions:
     links:
       - https://www.orionsarm.com/eg-topic/49c787abb28fd
       - https://www.orionsarm.com/eg-topic/45b170f9e0941
+
+  - id: wormhole-addon-identifications
+    topic: The Celestia wormhole-nexus add-on
+    status: open
+    severity: contradiction
+    summary: A nineteenth Celestia add-on places systems nothing else places, and twice names a star the Encyclopaedia names differently.
+    detail: >-
+      The wormhole-nexus add-on (S. Ball, 2016) is not one of the eighteen
+      official archives and carries 117 named systems with coordinates. Where
+      it overlaps those archives it copies them exactly, so it is an
+      independent source only where they are silent. Where it is the sole
+      source it has been taken — Traction, whose system name and primary
+      designation the article confirms, and Fredholm and Everypath, which have
+      no article at all.
+
+      Two of its identifications do not hold up. It calls Barboro the star HD
+      211038 (HIP 109822) at 124 ly, while the Encyclopaedia's own Inner
+      Sphere table gives Barboro as Psi Capricorni at 47.7 ly — and the add-on
+      lists Psi Capricorni separately, under no name. And its Fredholm carries
+      the number HIP 107144, which is 26 Aquarii at 1,053 ly, while its own
+      written name for the same entry is "26 Aquilae" and its coordinates fall
+      exactly on HIP 95066, which is 26 Aquilae at 144 ly.
+
+      Neither error is fatal to the positions: the Barboro case is settled by
+      the Encyclopaedia's table, and the Fredholm case is a number that
+      contradicts the name and coordinates beside it rather than a position in
+      doubt. But they are the measure of how much weight the add-on's
+      identifications carry where nothing checks them.
+    map_does: >-
+      Takes the add-on's direction and distance where it is the only source,
+      and does not bind those systems to a catalogue star even where the
+      coordinates land on one exactly. Barboro stays as the Inner Sphere table
+      has it. Where the add-on and the catalogue disagree on the distance to a
+      star both identify the same way — twelve cases, its figures mostly the
+      smaller — the catalogue is used, since a 2016 add-on is quoting the
+      astronomy of its day and ours is Gaia DR3.
+    would_settle: >-
+      Articles for Fredholm and Everypath, or any Encyclopaedia statement of
+      their positions. More generally, whether the add-on's author worked from
+      sources this project has not seen, or matched names to nearby stars.
+    links:
+      - https://www.orionsarm.com/eg-topic/45b170f9e0941
