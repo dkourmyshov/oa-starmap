@@ -8,7 +8,7 @@ Nothing below is a complaint about the setting. Most of it is the ordinary frict
 
 ---
 
-## Open questions (29)
+## Open questions (30)
 
 ### Shona — Shona's article gives its position twice, and the two directions are thirty degrees apart.
 
@@ -360,19 +360,38 @@ Note what changes with the choice: at the add-on's figures the two sit about 215
 - https://www.orionsarm.com/eg-article/479bbbd65a070
 - https://celestiaproject.space/forum/viewtopic.php?f=23&t=17436
 
-### The Celestia wormhole-nexus add-on — A nineteenth Celestia add-on places systems nothing else places, and twice names a star the Encyclopaedia names differently.
+### The Celestia wormhole-nexus add-on — A third-party add-on names systems the Encyclopaedia names differently, or that may not be the same places at all.
 
 *contradiction*
 
-The wormhole-nexus add-on (S. Ball, 2016) is not one of the eighteen official archives and carries 117 named systems with coordinates. Where it overlaps those archives it copies them exactly, so it is an independent source only where they are silent. Where it is the sole source it has been taken — Traction, whose system name and primary designation the article confirms, and Fredholm and Everypath, which have no article at all.
-Two of its identifications do not hold up. It calls Barboro the star HD 211038 (HIP 109822) at 124 ly, while the Encyclopaedia's own Inner Sphere table gives Barboro as Psi Capricorni at 47.7 ly — and the add-on lists Psi Capricorni separately, under no name. And its Fredholm carries the number HIP 107144, which is 26 Aquarii at 1,053 ly, while its own written name for the same entry is "26 Aquilae" and its coordinates fall exactly on HIP 95066, which is 26 Aquilae at 144 ly.
-Neither error is fatal to the positions: the Barboro case is settled by the Encyclopaedia's table, and the Fredholm case is a number that contradicts the name and coordinates beside it rather than a position in doubt. But they are the measure of how much weight the add-on's identifications carry where nothing checks them.
+The wormhole-nexus add-on (S. Ball, 2016) is not one of the eighteen official archives and carries 117 named systems with coordinates. Where it overlaps those archives it copies them exactly, so it is an independent source only where they are silent. Four identification questions have come out of reading it, and they are different in kind.
+Barboro. The add-on calls it HD 211038 (HIP 109822) at 124 ly. The Encyclopaedia's own Inner Sphere table gives Barboro as Psi Capricorni at 47.7 ly — and the add-on lists Psi Capricorni separately, under no name. Settled: the Encyclopaedia's table wins, and the add-on is simply wrong here. Recorded because it measures how much the add-on's identifications can be trusted where nothing checks them.
+Fredholm. The add-on writes the number HIP 107144, which is 26 Aquarii at 1,053 ly, while its own written name for the same entry is "26 Aquilae" and its coordinates fall exactly on HIP 95066, which is 26 Aquilae at 144 ly. Name and coordinates agree with each other and not with the number.
+Trees. The add-on puts it at HD 3823, 81.4 ly, on a row our colony table already carries with no colony name. The Encyclopaedia's Trees is HD 47186 (HIP 31540) at 121.9 ly. Two different stars. They may well have been meant as one place, but nothing establishes that, so both are drawn and each carries a note pointing at the other.
+Relay 005. The add-on places it at 2,870 ly. The Encyclopaedia's relay series, Relay 0 through Relay 9, is an Inner Sphere run of stars between 28 and 72 ly, and the numbering style differs too. Not the same object as Relay 0 or Relay 5; treated as a separate invention and drawn alongside them.
 
-**What the map does now.** Takes the add-on's direction and distance where it is the only source, and does not bind those systems to a catalogue star even where the coordinates land on one exactly. Barboro stays as the Inner Sphere table has it. Where the add-on and the catalogue disagree on the distance to a star both identify the same way — twelve cases, its figures mostly the smaller — the catalogue is used, since a 2016 add-on is quoting the astronomy of its day and ours is Gaia DR3.
+**What the map does now.** Follows the Encyclopaedia wherever it speaks — Barboro stays Psi Capricorni. Where only the add-on speaks, takes its coordinates and does not bind the system to a catalogue star, so that an identification this author has got wrong twice is never asserted as ours. Trees and Relay 005 are drawn as separate places from their Encyclopaedia namesakes, each noting the other.
 
-**What would settle it.** Articles for Fredholm and Everypath, or any Encyclopaedia statement of their positions. More generally, whether the add-on's author worked from sources this project has not seen, or matched names to nearby stars.
+**What would settle it.** For Trees, whether the Encyclopaedia means one world or two. For Relay 005, any Encyclopaedia mention of it at all. For the rest, whether the add-on's author worked from sources this project has not seen.
 
-- https://www.orionsarm.com/eg-topic/45b170f9e0941
+- https://celestiaproject.space/forum/viewtopic.php?f=23&t=17436
+- https://www.orionsarm.com/eg-article/491277421c9f8
+
+### The Celestia wormhole-nexus add-on — For twelve stars the add-on and our catalogue agree on which star it is and disagree on how far away it is.
+
+*contradiction*
+
+In each of these the add-on's coordinates land on the catalogue star to 0.00 degrees, so the identification is not in doubt; only the distance is. Its figure first, ours second, both in light years:
+Djed 145.9 / 136.5 (HIP 89642). Barboro 124.2 / 131.0 (HIP 109822, and see the identification question — the Encyclopaedia puts Barboro at a different star again). Everypath 369.4 / 616.8 (HIP 96378). Sadalmelik 523.5 / 659.5 (HIP 109074). Medius 246.0 / 279.5 (HIP 93229). Beta Arae 645.9 / 715.2 (HIP 85258). QipeFika 2836.2 / 3034.1 (HIP 34999). Oceans Unlimited Dyson 452.4 / 521.5 (HIP 103511). Uvanth IV 1469.2 / 1074.2 (HIP 93227). Krantor 1120.8 / 1587.7 (HIP 67748). Manifold 556.6 / 644.8 (HIP 90074). Moedus 1284.1 / 1431.1 (HIP 89361).
+Ten of the twelve are smaller than ours, which is the signature of an older parallax rather than a claim about the setting: the add-on is from 2016 and our catalogue is AT-HYG v3.2, roughly ninety per cent of its distances from Gaia DR3. So these read as one astronomy against another, not as the fiction contradicting a measurement, which is a different thing from the Third Def8 case and takes a different answer.
+Beta Arae is the one that matters beyond bookkeeping. The Encyclopaedia's own arithmetic — Huan Gao 19 ly away, the Wallace swarm 44, Wilson 82 — only works if Beta Arae is about 635 to 645 ly out. The add-on independently says 646. If the articles were written against the pre-Gaia figure and Gaia later moved the star to 715, that explains all three numbers at once and would settle a question open since the swarms were placed.
+
+**What the map does now.** Uses the catalogue distance in every one of the twelve, since where the add-on is quoting astronomy rather than asserting fiction, the newer measurement is simply better. The systems drawn from the add-on's own coordinates are unaffected, being unbound to any catalogue star.
+
+**What would settle it.** Whether the pre-Gaia distance to Beta Arae was in fact about 645 ly, which would turn its entry from a contradiction into a dated measurement. For the rest, nothing: they are ours to keep current.
+
+- https://celestiaproject.space/forum/viewtopic.php?f=23&t=17436
+- https://www.orionsarm.com/eg-topic/49c787abb28fd
 
 ## The Inner Sphere colony tables
 
