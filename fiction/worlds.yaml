@@ -2294,15 +2294,13 @@ worlds:
       constellation: Norma
       distance: 623 ly
       note: >-
-        Left as a cone deliberately. The Celestia add-on gives a direction for
-        this system at exactly the 623 ly the article states, which is what
-        recommended the same upgrade for MegaSov and Hightower — but St Xye's
-        gate partner, Baenf, lies nine degrees from that direction, inside the
-        band where the add-on appears to have placed systems it had no star for
-        along the line of their link. The distance agreeing proves nothing
-        either way, since the add-on's author had the articles. So the
-        direction is not taken, and a cone that says "somewhere in Norma"
-        remains the honest claim. See questions.md.
+        Left as a cone. The Celestia add-on gives a direction for this system at
+        exactly the 623 ly the article states, which is what recommended the
+        same upgrade for MegaSov and Hightower — but that direction lies 18
+        degrees from the centre of Norma, and Norma's own cone has a radius of
+        10.5, so it is not in the constellation the article gives. A direction
+        that contradicts the article is not a refinement of a cone drawn from
+        it. See questions.md.
     note: No dates.
 
   - name: Steelcliff
@@ -3463,11 +3461,14 @@ worlds:
       constellation: Carina
       distance: 1149 ly
       note: >-
-        Kept as a cone. The Celestia add-on names the same primary, TYC
-        8627-2183-1, so the identification is not in doubt — but it puts the
-        system at 1,708 ly where the article says 1,149, and a direction eleven
-        degrees from the centre of Carina cannot be worth 559 ly of distance
-        this file has no reason to prefer. See questions.md.
+        Kept as a cone. Both sources name the same primary, TYC 8627-2183-1, so
+        the identification is agreed, and the add-on's direction does fall
+        inside Carina — 17 degrees from its centre against a radius of 24.7. But
+        the add-on puts the system at 1,708 ly where the article says 1,149,
+        and a position asserted for an object 559 ly further out is not
+        obviously the right direction for this one. Taking the direction and
+        keeping the article's distance is the other option and is not taken
+        here. See questions.md.
     note: The star is TYC 8627-2183-1, from a catalogue this map does not carry.
 
   - name: Wega
@@ -7997,10 +7998,10 @@ worlds:
       distance: 723 ly
       note: >-
         Kept as a cone. The Celestia add-on gives a direction for KapekNow, but
-        it lies 121 degrees from the centre of Aquila, which is the
-        constellation the article names — not a refinement of this cone but a
-        different part of the sky altogether, and 813 ly against the article's
-        723. Nothing here can say which is meant. See questions.md.
+        it lies 115 degrees from the centre of Aquila against that
+        constellation's radius of 19.2 — not a refinement of this cone but the
+        opposite side of the sky, and 813 ly against the article's 723. Nothing
+        here can say which is meant. See questions.md.
 
   - name: Landau
     kind: system
