@@ -8,7 +8,7 @@ Nothing below is a complaint about the setting. Most of it is the ordinary frict
 
 ---
 
-## Open questions (32)
+## Open questions (33)
 
 ### Shona — Shona's article gives its position twice, and the two directions are thirty degrees apart.
 
@@ -381,6 +381,24 @@ Relay 005 is not drawn. Swapped back it lands on Epsilon Indi, 11.9 ly, which is
 - https://celestiaproject.space/forum/viewtopic.php?f=23&t=17436
 - https://www.orionsarm.com/eg-article/491277421c9f8
 
+### Systems the gazetteer places differently — Of eight systems where the add-on could improve on our position, two did, one is untrustworthy, and two contradict the article outright.
+
+*contradiction*
+
+A sweep of all 117 systems the add-on names, against what this file already held for each. Most are bound to catalogue stars already and nothing the add-on says could improve them. Eight had a position weaker than what it offers, and they divide four ways.
+Taken. Hightower had the article's 759 ly and no direction of its own — it was borrowing the Realm of the Deeper Covenant's, which is itself an estimate. The add-on gives coordinates at exactly 759 ly, eight degrees from that borrowed direction, with its gate partner 56 degrees away. Two methods agreeing to eight degrees is worth more than either alone. MegaSov was a cone in Ara at 709 ly; the add-on gives a direction four degrees from Ara's centre at exactly 709 ly, naming Durran's Star as the article does, with its partner 24 degrees off.
+Refused as unreliable. St Xye is a cone in Norma at 623 ly and the add-on gives a direction at exactly 623 — but its gate partner Baenf is nine degrees away, inside the band where this add-on appears to place systems it has no star for along the line of their link. The distance agreeing proves nothing, since its author had the articles.
+Refused as contradictory. Vast Endeavour names the same primary in both sources, TYC 8627-2183-1, so the identification is agreed — but the article says 1,149 ly and the add-on 1,708, and a direction eleven degrees from Carina's centre does not buy 559 ly. KapekNow is worse: the article puts it in Aquila at 723 ly and the add-on's direction lies 121 degrees from Aquila's centre, which is not a refinement of that cone but a different part of the sky.
+Not improvements at all. April, Pollux and UV Ceti came up in the sweep only because their entries are colony rows, and a colony row already resolves to a catalogue star.
+
+**What the map does now.** Takes the two that agree with the article's own distance and are not sight-line artifacts. Leaves the other three as they were, each entry saying why. Nothing here overrides an Encyclopaedia figure.
+
+**What would settle it.** For Vast Endeavour, which distance the Encyclopaedia means for a star both sources agree on. For KapekNow, whether Aquila or the add-on's direction is the error. For St Xye, whether the add-on had a position for it or inferred one from Baenf.
+
+- https://www.orionsarm.com/eg-article/474e32264c8a1
+- https://www.orionsarm.com/eg-article/466e0f4fb75a8
+- https://celestiaproject.space/forum/viewtopic.php?f=23&t=17436
+
 ### The Wormhole Gazetteer and the add-on built from it — Kuranaba's gate runs inward against the nexus rule, and the add-on tends to place invented systems along their partner's line of sight.
 
 *question*
@@ -498,7 +516,7 @@ Blanco 1, Collinder 173, Collinder 359, Cone Nebula, Czernik 8, NGC 2244, NGC 70
 
 ## Worlds located only by constellation
 
-94 of 629 canonical worlds are given as a distance and a constellation. That fixes the distance exactly and the direction only to the width of the constellation, which at these ranges is hundreds to thousands of light years. The map draws these with a broken ring rather than a solid one, and the detail panel gives the error in light years.
+93 of 629 canonical worlds are given as a distance and a constellation. That fixes the distance exactly and the direction only to the width of the constellation, which at these ranges is hundreds to thousands of light years. The map draws these with a broken ring rather than a solid one, and the detail panel gives the error in light years.
 
 Coordinates, or a nearby named star, would turn any of these from a region into a position.
 

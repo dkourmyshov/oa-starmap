@@ -2293,6 +2293,16 @@ worlds:
     location:
       constellation: Norma
       distance: 623 ly
+      note: >-
+        Left as a cone deliberately. The Celestia add-on gives a direction for
+        this system at exactly the 623 ly the article states, which is what
+        recommended the same upgrade for MegaSov and Hightower — but St Xye's
+        gate partner, Baenf, lies nine degrees from that direction, inside the
+        band where the add-on appears to have placed systems it had no star for
+        along the line of their link. The distance agreeing proves nothing
+        either way, since the add-on's author had the articles. So the
+        direction is not taken, and a cone that says "somewhere in Norma"
+        remains the honest claim. See questions.md.
     note: No dates.
 
   - name: Steelcliff
@@ -3452,6 +3462,12 @@ worlds:
     location:
       constellation: Carina
       distance: 1149 ly
+      note: >-
+        Kept as a cone. The Celestia add-on names the same primary, TYC
+        8627-2183-1, so the identification is not in doubt — but it puts the
+        system at 1,708 ly where the article says 1,149, and a direction eleven
+        degrees from the centre of Carina cannot be worth 559 ly of distance
+        this file has no reason to prefer. See questions.md.
     note: The star is TYC 8627-2183-1, from a catalogue this map does not carry.
 
   - name: Wega
@@ -7255,8 +7271,18 @@ worlds:
     affiliations: [utopia-sphere]
     article: https://www.orionsarm.com/eg-article/4902ed956c7a6
     location:
-      constellation: Ara
+      ra_deg: 264.5
+      dec_deg: -55.85
       distance: 709 ly
+      note: >-
+        Was Ara and a distance, which is a cone 709 ly deep. The archived
+        Wormhole Gazetteer (https://www.orionsarm.com/eg-article/4e297b0884b1a) names MegaSov, and the Celestia
+        add-on built from it (https://celestiaproject.space/forum/viewtopic.php?f=23&t=17436) gives these coordinates at
+        exactly the 709 ly the article states, calling the primary Durran's
+        Star as the article does. The direction falls four degrees from the
+        centre of Ara, so it agrees with the constellation it replaces, and its
+        gate partner Uvanth IV is 24 degrees off, so the direction is not
+        borrowed from the link.
     note: >-
       A megastructure around Durran's Star, the system's primary, in what the
       article calls the Arae Sector.
@@ -7969,6 +7995,12 @@ worlds:
     location:
       constellation: Aquila
       distance: 723 ly
+      note: >-
+        Kept as a cone. The Celestia add-on gives a direction for KapekNow, but
+        it lies 121 degrees from the centre of Aquila, which is the
+        constellation the article names — not a refinement of this cone but a
+        different part of the sky altogether, and 813 ly against the article's
+        723. Nothing here can say which is meant. See questions.md.
 
   - name: Landau
     kind: system
@@ -9041,15 +9073,20 @@ worlds:
     affiliations: [deeper-covenant]
     article: https://www.orionsarm.com/eg-article/46709b72c8717
     location:
-      ra_deg: 89.0897
-      dec_deg: 41.0893
+      ra_deg: 97.5
+      dec_deg: 46.166666667
       distance: 759 ly
-      direction_error_deg: 20.0
-      estimated: >-
-        759 ly is the article's own; it never gave a direction, and for a while
-        this was a radius with nothing to point it at. The direction is the
-        Realm of the Deeper Covenant's, which contains this world, and is worked
-        out at that entry rather than here.
+      note: >-
+        759 ly is the article's own, and the direction is now the system's own
+        rather than the Realm of the Deeper Covenant's borrowed: the archived
+        Wormhole Gazetteer (https://www.orionsarm.com/eg-article/4e297b0884b1a) names Hightower, and the Celestia
+        add-on built from it (https://celestiaproject.space/forum/viewtopic.php?f=23&t=17436) gives these coordinates at
+        exactly the 759 ly the article states. Two things recommend it over the
+        borrowed direction. It agrees with that borrowed direction to eight
+        degrees, which is well inside the twenty this entry used to carry — two
+        methods landing in the same place. And its gate partner, Dam Tellion,
+        lies 56 degrees away, so this is not one of the add-on's positions that
+        merely copies the direction of whatever a system is linked to.
     events:
       - year_at: 4715
         kind: observed
