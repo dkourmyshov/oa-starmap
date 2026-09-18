@@ -564,6 +564,8 @@ export interface WorldEntry {
    * on the map an estimate and a measurement are the same dot.
    */
   estimated: string;
+  /** Where the position came from, where the entry says. Often empty. */
+  location_note: string;
   /** The same error as a length at this distance, which is the legible form. */
   direction_error_ly: number | null;
   /**

@@ -668,6 +668,11 @@ export class DetailPanel {
       rows.push({ label: 'Position', value: 'estimated, not stated by a source', warn: true });
       rows.push({ label: 'Derivation', value: world.estimated });
     }
+    // What put the marker here. A world bound to a catalogue star carries its
+    // citation at the foot of the panel; one drawn at bare coordinates has no
+    // catalogue behind it, so without this the reader is given a position and
+    // no way to ask where it came from.
+    if (world.location_note) rows.push({ label: 'Position from', value: world.location_note });
     if (world.note) rows.push({ label: 'Note', value: world.note });
 
     const held = (world.affiliations ?? [])

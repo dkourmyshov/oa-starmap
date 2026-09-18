@@ -332,6 +332,11 @@ def build_worlds(
             "uncertain": world.uncertain,
             "article": world.article,
             "note": world.note,
+            # Where the position came from, which for a world drawn at bare
+            # coordinates is the only thing on the panel that says who claimed
+            # them. Thirty-nine entries carried one of these and none of them
+            # reached the screen: the field was authored, and never emitted.
+            "location_note": world.location.note,
             "method": method,
             "events": events,
             # The years a map of the sphere is drawn from: when this place

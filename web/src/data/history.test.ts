@@ -24,6 +24,7 @@ function world(over: Partial<WorldEntry>): WorldEntry {
   return {
     name: 'Somewhere',
     kind: 'planet',
+    location_note: '',
     system: '',
     parent: '',
     also: [],

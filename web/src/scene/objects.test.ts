@@ -1242,6 +1242,7 @@ describe('affiliations merge across sources', () => {
     ({
       name: 'Felicidade Dyson',
       kind: 'megastructure',
+      location_note: '',
       system: 'Felicidae',
       parent: '',
       also: [],
