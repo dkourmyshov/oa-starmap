@@ -2296,11 +2296,17 @@ worlds:
       note: >-
         Left as a cone. The Celestia add-on gives a direction for this system at
         exactly the 623 ly the article states, which is what recommended the
-        same upgrade for MegaSov and Hightower — but that direction lies 18
-        degrees from the centre of Norma, and Norma's own cone has a radius of
-        10.5, so it is not in the constellation the article gives. A direction
-        that contradicts the article is not a refinement of a cone drawn from
-        it. See questions.md.
+        same upgrade for MegaSov and Hightower — but that direction is in Ara,
+        8.7 degrees from its centre, and 18 degrees from the centre of Norma,
+        whose cone has a radius of 10.5. It is not in the constellation the
+        article gives.
+
+        What probably happened is visible in the pair. St Xye's gate partner is
+        Baenf, 8.8 degrees away in the add-on, and Baenf's position is the
+        well-founded one: its article places it in the "Utopia Outer Arae" and
+        the add-on puts it 2.7 degrees from Ara's centre. So the anchored end
+        of this link is Baenf, and St Xye looks to have been set down beside it
+        — which carried it out of Norma and into Ara. See questions.md.
     note: No dates.
 
   - name: Steelcliff
@@ -5733,7 +5739,12 @@ worlds:
         (https://celestiaproject.space/forum/viewtopic.php?f=23&t=17436),
         built from that same gazetteer and endorsed by Steve Bowers; the
         gazetteer itself gave no coordinates. The add-on's designation for the
-        primary is TYC 8340-1104-1. The article is its own.
+        primary is TYC 8340-1104-1. The article is its own, and it corroborates
+        the position: it puts Baenf in the "Utopia Outer Arae", and these
+        coordinates fall 2.7 degrees from the centre of Ara. That is the
+        firmest agreement any of the add-on's invented positions has with the
+        Encyclopaedia — all the article gives is a region, no distance from Sol
+        and no coordinates, and the add-on lands in the middle of it.
 
   - name: NewGrath
     kind: system
