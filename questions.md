@@ -8,7 +8,7 @@ Nothing below is a complaint about the setting. Most of it is the ordinary frict
 
 ---
 
-## Open questions (30)
+## Open questions (31)
 
 ### Shona — Shona's article gives its position twice, and the two directions are thirty degrees apart.
 
@@ -380,6 +380,21 @@ Relay 005 is not drawn. Swapped back it lands on Epsilon Indi, 11.9 ly, which is
 - https://celestiaproject.space/forum/viewtopic.php?f=23&t=17436
 - https://www.orionsarm.com/eg-article/491277421c9f8
 
+### Kuranaba and Dam Tellion — For two systems the gazetteer's position and the article's own account cannot both be right.
+
+*contradiction*
+
+Dam Tellion. The Realm of the Deeper Covenant's article, which is the only one naming it, puts it "some fifty light-years distant" from that system. The archived Wormhole Gazetteer names it too, and the Celestia add-on built from that gazetteer places it at RA 57.879, Dec +2.017, 1,080 ly. Those two directions are 48 degrees apart as seen from Sol, so the separation cannot be closed by moving Dam Tellion along its own line of sight: the closest it could come to the Realm at any distance is 559 ly. The Realm's own position is an estimate with a 20-degree error, and even spending all of that leaves 28 degrees and some 360 ly. One of the two is wrong and the geometry does not say which.
+Kuranaba. The article gives the star as TYC 5978-3659-1 at 209 ly and no direction. The gazetteer and the add-on spell it Kurabana, give the star as TYC 7074-1427-1, and put it at 409 ly. Neither TYC is in a catalogue this map carries, so neither can be checked. The names differ by a transposition and the distances by a digit, which is the shape of a copying error rather than of two systems — but which source made it is not recoverable from here.
+
+**What the map does now.** Draws Dam Tellion where the add-on puts it, that being the only position either source offers, and records the contradiction on the entry rather than splitting the difference or suppressing the marker. Draws Kuranaba with the add-on's direction and the article's distance, bound to neither star, on the principle this file already applies where an identifier is sound and only a figure is doubted.
+
+**What would settle it.** For Dam Tellion, any position in the Encyclopaedia for it or for the Realm that is not an inference. For Kuranaba, which of the two TYC designations is the real one, or a third source giving either a distance or a direction.
+
+- https://www.orionsarm.com/eg-article/4aaed32f4b1e3
+- https://www.orionsarm.com/eg-article/46749a8d00410
+- https://celestiaproject.space/forum/viewtopic.php?f=23&t=17436
+
 ### The Celestia wormhole-nexus add-on — For twelve stars the add-on and our catalogue agree on which star it is and disagree on how far away it is.
 
 *contradiction*
@@ -469,9 +484,9 @@ Blanco 1, Collinder 173, Collinder 359, Cone Nebula, Czernik 8, NGC 2244, NGC 70
 
 Coordinates, or a nearby named star, would turn any of these from a region into a position.
 
-## 59 places described but not located
+## 58 places described but not located
 
-Arkady 2, Arnon Dar, Avase, Big Bob, Crustuse, Cyrus, Dashwood, Druidworld, Elderman's Star, Evermore, Galbydeia Torus, Garlin, and 47 more
+Arkady 2, Arnon Dar, Avase, Big Bob, Crustuse, Cyrus, Dashwood, Druidworld, Elderman's Star, Evermore, Galbydeia Torus, Garlin, and 46 more
 
 ## 1 designation reused in the Celestia add-on
 

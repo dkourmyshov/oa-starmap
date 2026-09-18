@@ -6046,8 +6046,13 @@ worlds:
         (https://celestiaproject.space/forum/viewtopic.php?f=23&t=17436),
         built from that same gazetteer and endorsed by Steve Bowers; the
         gazetteer itself gave no coordinates. It has no article of its own and
-        is named in the one cited. No polity recorded. The Realm's article
-        puts it "some fifty light-years distant" from that system.
+        is named in the one cited. No polity recorded. The Realm's article puts
+        it "some fifty light-years distant" from that system, and this position
+        cannot be reconciled with that: the two directions are 48 degrees apart
+        as seen from Sol, so no distance along this line of sight brings them
+        within 559 ly of each other. Drawn where the add-on puts it, because
+        that is the only position either source gives, and the contradiction
+        recorded rather than split. See questions.md.
 
   - name: Eden II
     kind: system
@@ -6865,10 +6870,19 @@ worlds:
     affiliations: [sophic-league]
     article: https://www.orionsarm.com/eg-article/46749a8d00410
     location:
+      ra_deg: 98.966461667
+      dec_deg: -31.212711389
+      distance: 209 ly
       note: >-
-        209 ly from Sol and no direction given. The star is TYC 5978-3659-1,
-        from a catalogue this map does not carry, so there is nothing to recover
-        the direction from either.
+        The direction is the Celestia wormhole-nexus add-on's (https://celestiaproject.space/forum/viewtopic.php?f=23&t=17436),
+        built from the archived Wormhole Gazetteer (https://www.orionsarm.com/eg-article/4e297b0884b1a); the
+        distance is the article's own 209 ly. The two sources do not otherwise
+        agree, and neither is bound to: the article gives the star as TYC
+        5978-3659-1, the add-on gives TYC 7074-1427-1, and the add-on puts the
+        system at 409 ly rather than 209. Both spell it Kurabana, where the
+        article and this file spell it Kuranaba. Taken as one place under two
+        spellings, with the Encyclopaedia keeping the distance and the add-on
+        supplying the direction it never had. See questions.md.
     events:
       - year_at: 2589
         kind: settled
@@ -8021,13 +8035,16 @@ worlds:
 
   - name: Modular Future
     kind: system
-    affiliations: [metasoft]
+    affiliations: []
     article: https://www.orionsarm.com/eg-article/47b8e6bd0c7e0
     location:
       ra_deg: 59.4633
       dec_deg: 40.0103
       distance: 5771 ly
     events:
+      # Held by nobody now: Metasoft destroyed it and the Amalgamation did not
+      # keep it, so what is left is a cinder system with no polity over it. The
+      # events below are the whole of its allegiance, and they end in 10348.
       - year_at: 10348
         kind: contact
         note: Infiltrated by the Amalgamation.
