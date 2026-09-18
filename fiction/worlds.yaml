@@ -10706,18 +10706,26 @@ worlds:
         41 Arietis, also Bharani, which the catalogue puts at 165.65 ly — the
         figure the Celestia wormhole-nexus add-on gives for this system to four
         decimal places, the add-on having built on the archived Wormhole
-        Gazetteer that names it. Three things agree on it. The identification
-        is to a real star rather than to coordinates, so it is not one of the
-        add-on's invented positions; its gate partner, New Root, lies 90
-        degrees away, so the direction is not borrowed from the link; and the
-        project owner's own copy of an older picture map shows Aries Vector
-        beside the Blueshift Archipelago, which this position puts 45 ly off
-        and which is Metasoft's, as this system is.
+        Gazetteer that names it. Two things commend it over what it replaces,
+        an interpolation from the transcription of Anders Sandberg's maps that
+        had this system at 1,119 ly and 41 degrees away. The identification is
+        to a real star rather than to coordinates, so it is not one of the
+        add-on's invented positions, and its gate partner, New Root, lies 90
+        degrees off, so the direction is not borrowed from the link either.
 
-        This replaces an interpolation from the transcription of Anders
-        Sandberg's maps, which had it at 1,119 ly and 41 degrees away — 960 ly
-        from the Blueshift Archipelago rather than 45. Twelve other entries
-        still rest on that method; see questions.md.
+        A third argument is weaker than it first looked and is recorded as
+        such. The project owner's copy of an older picture map shows Aries
+        Vector beside the Blueshift Archipelago, and this position puts the two
+        45 ly apart where the interpolation puts them 960 — but both of those
+        figures are computed from add-on positions, the Blueshift
+        Archipelago's included, and no other source places that system at all.
+        So the picture map corroborates the relation and not the position: it
+        agrees with the add-on without needing an extra assumption, and agrees
+        with the interpolation only if the Blueshift Archipelago is also a
+        thousand light years further out than anything says. That is a reason
+        to prefer this reading, not proof of it. The article is a stub and
+        names no star. Twelve other entries still rest on the interpolation;
+        see questions.md.
 
   - name: Mekelon
     kind: system
