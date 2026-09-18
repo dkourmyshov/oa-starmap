@@ -335,9 +335,14 @@ def _list_polity(polity: str) -> int:
         print(f"no place held by {polity!r} in any index")
         return 1
     for place in sorted(held, key=lambda p: (p.source, p.name)):
-        print(f"  {place.name:32} [{place.source}]")
+        when = "" if polity in place.polities else "  (past, by event)"
+        print(f"  {place.name:32} [{place.source}]{when}")
     sources = {p.source for p in held}
-    print(f"{len(held)} place(s) across {len(sources)} index(es): {', '.join(sorted(sources))}")
+    now = sum(1 for p in held if polity in p.polities)
+    print(
+        f"{len(held)} place(s) across {len(sources)} index(es): "
+        f"{', '.join(sorted(sources))} — {now} held now, {len(held) - now} in the past"
+    )
     return 0
 
 

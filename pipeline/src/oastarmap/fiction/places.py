@@ -63,6 +63,17 @@ class Place:
     hold" is a question with one answer rather than five partial ones.
     """
 
+    past_polities: list[str] = field(default_factory=list)
+    """Who has held it, by polity id, from the dated events on the entry.
+
+    A polity can hold nothing today and a great deal in 3000 AT, and the map
+    draws it at those places whenever the year is set back — so for any
+    question about reach, colour or confusability, a past holding is a holding.
+    LinnEnt is the case: no present affiliation anywhere, nine worlds held
+    through events, and a first pass at this lookup reported it holding
+    nothing at all.
+    """
+
     @property
     def names(self) -> list[str]:
         """Every name this place answers to, the canonical one first."""
@@ -122,16 +133,26 @@ def all_places(fiction_dir: Path | None = None) -> list[Place]:
             location.get("star") or "",
             location.get("oa_star") or "",
         ]
+        past = []
+        for event in w.get("events") or []:
+            polity = event.get("polity")
+            if polity and polity not in past:
+                past.append(polity)
         places.append(Place(w["name"], "worlds.yaml", w.get("article", ""),
                             [a for a in aliases if a], w,
-                            list(w.get("affiliations") or [])))
+                            list(w.get("affiliations") or []), past))
 
     systems = _load(fiction_dir / "oa_systems.yaml") or {}
     for e in systems.get("systems", []):
         label = e.get("label") or e["star"]
         held = [e["affiliation"]] if e.get("affiliation") else []
+        past = []
+        for event in e.get("events") or []:
+            polity = event.get("polity")
+            if polity and polity not in past:
+                past.append(polity)
         places.append(Place(label, "oa_systems.yaml", e.get("article", ""),
-                            [e["star"], e.get("real") or ""], e, held))
+                            [e["star"], e.get("real") or ""], e, held, past))
 
     stars = _load(fiction_dir / "oa_stars.yaml") or {}
     for e in stars.get("stars", []):
@@ -177,7 +198,9 @@ def by_name(places: list[Place] | None = None) -> dict[str, list[Place]]:
     return dict(index)
 
 
-def by_polity(places: list[Place] | None = None) -> dict[str, list[Place]]:
+def by_polity(
+    places: list[Place] | None = None, *, when: str = "ever"
+) -> dict[str, list[Place]]:
     """Places keyed by the polity that holds them, across every file.
 
     The lookup this module was missing. Twice in one sitting an analysis asked
@@ -187,9 +210,22 @@ def by_polity(places: list[Place] | None = None) -> dict[str, list[Place]]:
     place on the map at all when it had one in `oa_systems.yaml`. Both were the
     same mistake as the four the module header records, in a lookup nobody had
     written down yet.
+
+    `when="ever"`, the default, counts a past holding as a holding: the map
+    draws it in history mode, so it bears on reach, colour and confusability
+    exactly as a present one does. `when="now"` narrows to present
+    affiliations. The default is the superset because the failure this lookup
+    exists to stop is always an undercount — the first version of it counted
+    only present affiliations and duly reported LinnEnt, which holds nine
+    worlds through events, as holding nothing.
     """
+    if when not in ("ever", "now"):
+        raise ValueError(f"when must be 'ever' or 'now', got {when!r}")
     index: dict[str, list[Place]] = defaultdict(list)
     for place in places if places is not None else all_places():
-        for polity in place.polities:
+        held = list(place.polities)
+        if when == "ever":
+            held += [p for p in place.past_polities if p not in held]
+        for polity in held:
             index[polity].append(place)
     return dict(index)

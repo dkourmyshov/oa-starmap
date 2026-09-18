@@ -519,7 +519,7 @@ def test_an_ending_is_not_a_presence_date() -> None:
     assert worlds["Halcyon"]["ended_at"] is None
 
 
-def test_a_stated_distance_catches_a_wrong_star() -> None:
+def test_a_stated_distance_catches_a_wrong_star(tmp_path) -> None:
     """The guard that would have caught Oikoumene.
 
     A wrong catalogue number does not fail to resolve — it resolves to a real
@@ -538,13 +538,23 @@ def test_a_stated_distance_catches_a_wrong_star() -> None:
         "      hd: 175869\n"
         "      distance: 75.7 ly\n"
     )
-    scratch = source.with_name("worlds.wrongstar.yaml")
+    # Built outside the repository. This used to write into fiction/ beside the
+    # real file, because build_worlds resolves its siblings with `with_name`
+    # and needs them there — but an interrupted run then left half a megabyte
+    # of stray YAML in the working tree, where a concurrent `git status` caught
+    # it and raised a false alarm about a file nobody had created. Copying the
+    # four siblings it reads costs little and keeps the repository clean.
+    scratch = tmp_path / "worlds.yaml"
     scratch.write_text(broken, encoding="utf-8")
-    try:
-        with pytest.raises(ValueError, match="it is a different star"):
-            build_worlds(scratch)
-    finally:
-        scratch.unlink()
+    for sibling in ("polities.yaml", "oa_stars.yaml", "oa_systems.yaml",
+                    "constellations.yaml"):
+        source_sibling = FICTION_DIR / sibling
+        if source_sibling.exists():
+            (tmp_path / sibling).write_text(
+                source_sibling.read_text(encoding="utf-8"), encoding="utf-8"
+            )
+    with pytest.raises(ValueError, match="it is a different star"):
+        build_worlds(scratch)
 
 
 def test_oikoumene_is_in_the_inner_sphere() -> None:

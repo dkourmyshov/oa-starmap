@@ -24,7 +24,8 @@ def build(tmp_path):
          "location": {"oa_star": "JD 836902"}},
         {"name": "Twilight", "kind": "planet", "also": ["Dusk"],
          "article": "https://www.orionsarm.com/eg-article/aaa",
-         "location": {"star": "Omicron2 Eridani"}},
+         "location": {"star": "Omicron2 Eridani"},
+         "events": [{"year_at": 3000, "kind": "transferred", "polity": "linnent"}]},
     ]})
     write(fiction, "oa_systems.yaml", {"systems": [
         {"star": "JD 98738", "label": "Panthalassa", "affiliation": "zoeific-biopolity",
@@ -131,3 +132,23 @@ def test_a_place_no_file_assigns_is_held_by_nobody(tmp_path):
     """The add-on stars record no holder at all, and must not invent one."""
     places = {p.name: p for p in all_places(build(tmp_path)) if p.source == "oa_stars.yaml"}
     assert places["Panthalassa"].polities == []
+
+
+def test_a_polity_that_only_ever_held_is_still_a_holder(tmp_path):
+    """A past holding is a holding: the map draws it whenever the year is set back.
+
+    LinnEnt has no present affiliation anywhere and nine worlds held through
+    events. The first version of this lookup counted affiliations alone and
+    reported it holding nothing, while the palette check — which does count
+    events — was at the same moment refusing to let it share a colour.
+    """
+    places = all_places(build(tmp_path))
+    assert by_polity(places)["linnent"][0].name == "Twilight"
+    assert "linnent" not in by_polity(places, when="now")
+
+
+def test_holding_now_and_holding_ever_are_both_askable(tmp_path):
+    places = all_places(build(tmp_path))
+    assert {p.name for p in by_polity(places, when="now")["metasoft"]} == {
+        "Niuearth", "Zeta Tauri",
+    }
