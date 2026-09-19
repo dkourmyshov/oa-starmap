@@ -660,8 +660,9 @@ export class Hud {
       // Positions the setting asserts rather than measures; say so where the
       // other provenance lines are, not somewhere it can be missed. The line
       // used to end "drawn as open diamonds", which stopped being true when the
-      // shape came off — and was misleading before that, since the 308 worlds
-      // carrying their own coordinates are asserted too and never were diamonds.
+      // shape came off. The shape itself was not a mistake when made: the map
+      // held catalogue stars and these and nothing else, so add-on provenance
+      // and asserted position were one set. The canonical worlds split them.
       note.appendChild(
         el(
           'div',

@@ -6,20 +6,26 @@
  * white dwarf, a brown dwarf, a pulsar and an O star among them — so there is
  * real stellar data here, and it is what the marker shows.
  *
- * They were open diamonds until 2026-09-19, on the reasoning that "every other
- * point on this map is somewhere because a measurement put it there, these are
- * somewhere because the fiction says so, and the map would be lying by omission
- * if the two looked alike." The first clause was true when written and is not
- * now: 308 worlds carry their own coordinates, 223 from a stated right ascension
- * and declination and 85 from a constellation, and every one is somewhere
- * because the fiction says so. All of them draw as dots.
+ * They were open diamonds from 2026-08-01 to 2026-09-19, on the reasoning that
+ * "every other point on this map is somewhere because a measurement put it
+ * there, these are somewhere because the fiction says so, and the map would be
+ * lying by omission if the two looked alike."
  *
- * So the diamond never meant "asserted rather than observed". It meant "came
- * from the Celestia add-on" — provenance, not the nature of the claim — and 21
- * marked out of 329 read as a distinction the map could not explain. The ring
- * does not make it up either: ring continuity says how precisely a thing is
- * located, so a fictional star with a stated position takes a solid ring exactly
- * as a catalogue star does. That is correct, and a different question.
+ * That was true when it was written. The map then held catalogue stars and
+ * these, and nothing else — so "came from the Celestia add-on" and "asserted
+ * rather than observed" picked out the same set, and the diamond meant both at
+ * once. It was outgrown rather than mistaken. Nine days and fifteen commits
+ * later the canonical worlds arrived, one of them carrying its own right
+ * ascension and declination; today 308 do, 223 from stated coordinates and 85
+ * from a constellation, every one asserted by the fiction and every one drawn
+ * as a dot.
+ *
+ * At which point the two halves came apart and only provenance was left — 21
+ * marked out of 329, reading as a distinction the map could not explain. The
+ * ring does not carry the other half either: continuity says how precisely a
+ * thing is located, so a fictional star with a stated position takes a solid
+ * ring exactly as a catalogue star does. That is correct, and a different
+ * question.
  *
  * What the marker no longer carries is the polity. An affiliation is drawn the
  * same way here as it is on a real settled star — a ring around the star and a
