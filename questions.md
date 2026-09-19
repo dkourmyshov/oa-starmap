@@ -608,9 +608,11 @@ The open-cluster catalogue this map builds from holds two rows covering those th
 That is the long-standing NGC 1746 question -- whether the object is a cluster at all or an asterism of stars at different distances -- and a name meaning "three" sits oddly with a catalogue that can find two.
 The neighbourhood fits regardless: the position is 640 ly from Metasoft's nearest extent label and 771 ly from Paula, a Metasoft world this map places, so a Metasoft volume there is unremarkable. Proden's article gives 2,200 ly with no direction, which falls between the two rows; nothing read so far puts Proden in this cluster rather than merely at its range.
 
-**What the map does now.** Records the Triplet Cluster and draws it nowhere. Binding a landmark to either row would settle the asterism question by implication, which is not this map's to settle, and choosing between 2,289 and 2,797 ly would be choosing which of them the setting meant.
+**What the map does now.** Draws it at the setting's 2,022 ly on the catalogue's bearing, and leaves the identification open, which is possible because the two are separable. The rows are 0.230 degrees apart, and at 2,022 ly that is 8.1 light years of transverse distance -- so whichever row the setting means, and whether or not the two are one object, the bearing is the same to within eight light years. Theia_754's is used, being the nearer row and much the better match for the stated distance.
+The disagreement that remains is in depth: 2,022 ly against Theia_754's 2,289 is 11.7%, and against NGC_1758's 2,797 is 27.7%. The setting's figure is kept, as everywhere else on this map where the two differ.
 
-**What would settle it.** Whether Orion's Arm means all three designations or the group as the older catalogues drew it. A distance for the Triplet Cluster itself would also do it: 2,289 and 2,797 are far enough apart to tell which row is meant, or that neither is.
+**What would settle it.** Whether Orion's Arm means all three designations or the group as the older catalogues drew it. The 2,022 ly narrows it -- Theia_754 is much the closer of the two and NGC_1758 is 775 ly out -- without closing it, since 267 ly is still a long way to be wrong about a cluster one is naming.
+Also whether Proden, at 2,200 ly with no direction, is in this cluster. 178 ly separates the two figures; if it is, the cluster hands Proden a direction it has never had.
 
 ## The Inner Sphere colony tables
 
@@ -684,9 +686,9 @@ Blanco 1, Collinder 173, Collinder 359, Cone Nebula, Czernik 8, NGC 2244, NGC 70
 
 Coordinates, or a nearby named star, would turn any of these from a region into a position.
 
-## 53 places described but not located
+## 52 places described but not located
 
-Arnon Dar, Avase, Big Bob, Crustuse, Cyrus, Dashwood, Druidworld, Elderman's Star, Evermore, Filiae Reserve, Galbydeia Torus, Garlin, and 41 more
+Arnon Dar, Avase, Big Bob, Crustuse, Cyrus, Dashwood, Druidworld, Elderman's Star, Evermore, Filiae Reserve, Galbydeia Torus, Garlin, and 40 more
 
 ## 1 designation reused in the Celestia add-on
 

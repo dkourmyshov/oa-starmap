@@ -121,7 +121,15 @@ export class HistoryPanel {
    * faint and counted; hidden, the reader sees only what the sources date.
    */
   private showUndated = false;
-  private emphasise = true;
+  /**
+   * Whether the period's own timeline dims everything it does not name.
+   *
+   * Off. It answers a narrower question than the year control does — "what is
+   * this period about" rather than "what existed then" — and starting with it
+   * on meant the reader met a map already dimmed by a filter they had not
+   * chosen, and had to guess which of the two controls was hiding things.
+   */
+  private emphasise = false;
   private unit: DistanceUnit;
 
   constructor(
@@ -256,7 +264,7 @@ export class HistoryPanel {
         'Emphasise period',
         'on',
         'off',
-        true,
+        false,
         'Dim everything the chosen period’s own timeline does not name',
         (on) => {
           this.emphasise = on;

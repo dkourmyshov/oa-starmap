@@ -212,9 +212,33 @@ export type NameMode = 'oa' | 'real' | 'both';
 export function composeLabel(oa: string, real: string, mode: NameMode): string {
   if (!oa) return real;
   if (!real) return oa;
+  // One name wearing two hats. Sol is Sol in both the catalogue and the
+  // setting, and "Sol (Sol)" tells the reader nothing twice.
+  if (oa === real) return oa;
   if (mode === 'oa') return oa;
   if (mode === 'real') return real;
   return `${oa} (${real})`;
+}
+
+/**
+ * Whether every word of a query is answered by some name the object carries.
+ *
+ * Plain substring first, which settles most of it. The fallback is what makes
+ * the catalogue searchable: a term matches when a name *token* is a prefix of
+ * it, so "Ceti" finds "Cet", "Eridani" finds "Eri" and "Epsilon" finds "Eps".
+ * The constellation reaches the browser abbreviated and the genitive forms are
+ * nowhere in the data, so the alternative was authoring 88 of them from memory
+ * — which is how a wrong one gets in.
+ *
+ * Three characters minimum on that fallback. Below it "Ara" would answer to
+ * "a", and every term must match, so one loose term spoils a good query.
+ */
+export function matchesAllTerms(hay: string, terms: string[]): boolean {
+  if (!terms.length) return false;
+  const tokens = hay.split(/[^\p{L}\p{N}]+/u).filter((tok) => tok.length >= 3);
+  return terms.every(
+    (term) => hay.includes(term) || tokens.some((tok) => term.startsWith(tok)),
+  );
 }
 
 export interface ObjectRef {
@@ -433,6 +457,17 @@ export class ObjectIndex {
    */
   private readonly labels: (string | undefined)[];
   private readonly labelsReal: (string | undefined)[];
+  /**
+   * Every name form the object answers to, lowercased, for search alone.
+   *
+   * Searching the drawn label finds only what the label happens to render.
+   * Tau Ceti draws as "τ Cet" — a Greek letter the reader cannot type and an
+   * abbreviation the reader would not think to — so "Tau Ceti" matched nothing,
+   * and neither did "Nova", the settlement it carries. This holds the Bayer
+   * word, the Flamsteed number, the Gliese designation and the constellation
+   * beside the names actually shown.
+   */
+  private readonly searchText: (string | undefined)[];
   /** 1 where the object carries Orion's Arm content of any kind. */
   private readonly isOA: Uint8Array;
   /**
@@ -522,6 +557,7 @@ export class ObjectIndex {
     this.importance = new Float32Array(total);
     this.labels = new Array(total);
     this.labelsReal = new Array(total);
+    this.searchText = new Array(total);
     this.isOA = new Uint8Array(total);
     this.isExtent = new Uint8Array(total);
     this.assertedPosition = new Uint8Array(total);
@@ -621,24 +657,51 @@ export class ObjectIndex {
       let catalogueWeight = 0;
       if (names) {
         const constellation = constellations[stars.constellation[i]] ?? '';
-        if (names.proper) {
-          catalogue = names.proper;
-          catalogueWeight = BASE_IMPORTANCE.starProper;
-        } else if (names.bayer) {
-          catalogue = bayerLabel(names.bayer, constellation);
-          catalogueWeight = BASE_IMPORTANCE.starBayer;
-        } else if (names.flam) {
-          // Flamsteed number, which is likewise meaningless without one.
-          catalogue = constellation ? `${names.flam} ${constellation}` : names.flam;
-          catalogueWeight = BASE_IMPORTANCE.starDesignation;
-        } else if (names.gl) {
-          catalogue = names.gl;
-          catalogueWeight = BASE_IMPORTANCE.starDesignation;
+        // Every form this star answers to, best first. The setting's own name
+        // is added below; these are the catalogue's.
+        const forms: [string, number][] = [];
+        if (names.proper) forms.push([names.proper, BASE_IMPORTANCE.starProper]);
+        if (names.bayer) {
+          forms.push([bayerLabel(names.bayer, constellation), BASE_IMPORTANCE.starBayer]);
         }
+        if (names.flam) {
+          // Flamsteed number, which is likewise meaningless without one.
+          const flam = constellation ? `${names.flam} ${constellation}` : names.flam;
+          forms.push([flam, BASE_IMPORTANCE.starDesignation]);
+        }
+        if (names.gl) forms.push([names.gl, BASE_IMPORTANCE.starDesignation]);
+
+        // The best form the *setting* has not already taken. Ran's proper name
+        // is Ran, which is also what Orion's Arm calls it, and stopping at the
+        // proper name there left the reader no scientific name at all — the
+        // entry read "Ran" in both-names mode and searching "Epsilon Eridani"
+        // found nothing. Falling through to the Bayer designation gives the
+        // reader the second name the mode promises.
+        const distinct = forms.find(([form]) => form !== this.labels[at]);
+        [catalogue, catalogueWeight] = distinct ?? forms[0] ?? ['', 0];
+
+        this.searchText[at] = [
+          ...forms.map(([form]) => form),
+          names.proper,
+          names.bayer,
+          names.bf,
+          names.flam,
+          names.gl,
+          constellation,
+        ]
+          .filter(Boolean)
+          .join(' ')
+          .toLowerCase();
       }
       if (this.labels[at]) {
-        // Both names exist and differ, so the reader can be shown either.
-        if (catalogue && catalogue !== this.labels[at]) this.labelsReal[at] = catalogue;
+        // Recorded even when it is the same word. Sol's only catalogue name is
+        // Sol, and storing it only when it differed left `labelsReal` empty --
+        // so Sol had no label at all in any year before the Solsys colony's
+        // first date, where the rule is that a star keeps whatever the
+        // catalogue calls it. A star with no catalogue name still says nothing,
+        // which is the case that rule is for; `composeLabel` collapses the
+        // duplicate rather than writing "Sol (Sol)".
+        if (catalogue) this.labelsReal[at] = catalogue;
       } else if (catalogue) {
         this.labels[at] = catalogue;
         this.importance[at] = catalogueWeight;
@@ -957,10 +1020,21 @@ export class ObjectIndex {
   search(query: string, mode: NameMode, limit = 20): SearchHit[] {
     const needle = query.trim().toLowerCase();
     if (!needle) return [];
+    const terms = needle.split(/\s+/).filter(Boolean);
     const hits: SearchHit[] = [];
     for (const id of this.labelled) {
       const label = composeLabel(this.labels[id] ?? '', this.labelsReal[id] ?? '', mode);
-      if (label.toLowerCase().includes(needle)) hits.push({ id, label });
+      // The mode still decides *which* names are searched, as it decides which
+      // are shown. What changed is that the catalogue side is no longer the one
+      // rendered string: τ Cet draws a Greek letter nobody can type and an
+      // abbreviation nobody would think of, so the Bayer word, the Flamsteed
+      // number, the Gliese designation and the constellation are searched too.
+      const oaPart = this.labels[id] ?? '';
+      const realPart = `${this.labelsReal[id] ?? ''} ${this.searchText[id] ?? ''}`;
+      const hay = (
+        mode === 'oa' ? oaPart : mode === 'real' ? realPart : `${oaPart} ${realPart}`
+      ).toLowerCase();
+      if (matchesAllTerms(hay, terms)) hits.push({ id, label });
     }
     hits.sort((a, b) => {
       const aPrefix = a.label.toLowerCase().startsWith(needle) ? 0 : 1;

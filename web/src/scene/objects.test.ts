@@ -31,6 +31,7 @@ import {
   KIND_STAR,
   ObjectIndex,
   bayerLabel,
+  matchesAllTerms,
   composeLabel,
   systemLabel,
 } from './objects';
@@ -1467,6 +1468,24 @@ describe('object search', () => {
     expect(index.search('new gaia', 'oa').map((h) => h.label)).toEqual(['New Gaia']);
     expect(index.search('gaia', 'both').map((h) => h.label)).toEqual(['New Gaia (Lambda Aurigae)']);
     expect(index.search('lambda', 'both').map((h) => h.label)).toEqual(['New Gaia (Lambda Aurigae)']);
+  });
+
+  it('finds a star by a scientific name the label never renders', () => {
+    // τ Cet draws a Greek letter the reader cannot type and an abbreviation
+    // they would not think of, so "Tau Ceti" matched nothing at all. The Bayer
+    // word, the Flamsteed number and the constellation are searched now, and a
+    // name token that is a prefix of a query word counts: "Cet" answers "Ceti",
+    // "Eri" answers "Eridani", "Eps" answers "Epsilon".
+    expect(matchesAllTerms('nova τ cet 52 tau cet gl 71', ['tau', 'ceti'])).toBe(true);
+    expect(matchesAllTerms('ran ε eri 18 eps eri gl 144', ['epsilon', 'eridani'])).toBe(true);
+    expect(matchesAllTerms('diwali achird η cas 24 eta cas', ['eta', 'cassiopeiae'])).toBe(true);
+    // Every term must match, so a query naming two different stars finds none.
+    expect(matchesAllTerms('nova τ cet 52 tau cet', ['tau', 'eridani'])).toBe(false);
+    // The prefix fallback needs three characters. A shorter token may not
+    // answer a long query, or "ab" would claim every word beginning "ab";
+    // plain substring is untouched and still matches a single letter.
+    expect(matchesAllTerms('ab cet', ['abcdef'])).toBe(false);
+    expect(matchesAllTerms('ara', ['a'])).toBe(true);
   });
 
   it('falls back to whichever name a star has, in every mode', () => {

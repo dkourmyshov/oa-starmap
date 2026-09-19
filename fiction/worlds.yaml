@@ -5177,6 +5177,30 @@ worlds:
   - name: Conver Ambi
     kind: polity_marker
     affiliations: [conver-ambi]
+    events:
+      - year_at: 1984
+        kind: reported
+        polity: conver-ambi
+        note: >-
+          The polity's own founding, from the timeline: "Birnam Ecotech joins
+          the Transtellar Cooperative Pact, resulting in the establishment of
+          the Conver Ambi." Recorded as `reported` for the same reason Xeon's
+          and the Amalgamation's markers are -- nothing was settled here, a
+          polity came into being and this mark is it.
+      - year_at: 3943
+        kind: abandoned
+        note: >-
+          "In the peace accords that ended the Conver Wars, the Conver Ambi is
+          divided into three parts" -- the core to the Solar Dominion, the
+          Periphery to Metasoft. `abandoned` is the only kind that ends an
+          entry, and what ended here is the polity rather than a colony, which
+          is what this marker stands for.
+
+          Without these two the entry had no dates at all, so it drew on the
+          contemporary map, where a polity dissolved in 3943 has no business,
+          and failed to draw in its own centuries, where it belongs. An undated
+          entry is shown whenever undated entries are, which for a marker of
+          something that demonstrably ended is the wrong answer twice.
     location:
       ra_deg: 97.5
       dec_deg: 17.0
@@ -6495,6 +6519,14 @@ worlds:
   - name: Cygexpa (Cygnus, Inner Middle Regions)
     kind: polity_extent
     affiliations: [cygexpa]
+    events:
+      - year_at: 7247
+        kind: abandoned
+        note: >-
+          "The Cygexpa Sale. With no warning Lohengrin disbands the Cygexpa
+          empire." The label says Cygexpa is hereabouts, which stops being true
+          in 7247, so the label stops here. Without this it drew on the
+          contemporary map for an empire six hundred years disbanded.
     location:
       ra_deg: 301.5
       dec_deg: 33.5
@@ -6513,6 +6545,14 @@ worlds:
   - name: Cygexpa (Draco)
     kind: polity_extent
     affiliations: [cygexpa]
+    events:
+      - year_at: 7247
+        kind: abandoned
+        note: >-
+          "The Cygexpa Sale. With no warning Lohengrin disbands the Cygexpa
+          empire." The label says Cygexpa is hereabouts, which stops being true
+          in 7247, so the label stops here. Without this it drew on the
+          contemporary map for an empire six hundred years disbanded.
     location:
       ra_deg: 270.0
       dec_deg: 66.7
@@ -6531,6 +6571,14 @@ worlds:
   - name: Cygexpa (Cygnus, Outer Middle Regions)
     kind: polity_extent
     affiliations: [cygexpa]
+    events:
+      - year_at: 7247
+        kind: abandoned
+        note: >-
+          "The Cygexpa Sale. With no warning Lohengrin disbands the Cygexpa
+          empire." The label says Cygexpa is hereabouts, which stops being true
+          in 7247, so the label stops here. Without this it drew on the
+          contemporary map for an empire six hundred years disbanded.
     location:
       ra_deg: 313.5
       dec_deg: 45.5
@@ -8938,30 +8986,46 @@ worlds:
     kind: volume
     affiliations: [metasoft]
     location:
+      ra_deg: 75.972
+      dec_deg: 23.677
+      distance: 2022 ly
       note: >-
-        Recorded and not drawn. The project owner offers NGC 1746, 1750 and 1758
-        as the identification, with a question mark, and this map's own cluster
-        catalogue neither confirms nor refuses it.
+        The distance is the setting's, from the project owner. The direction is
+        this map's cluster catalogue, and it is usable despite the
+        identification being unsettled -- which is the point worth recording.
 
-        What the catalogue holds is two rows for those three designations, not
-        three. NGC_1758 carries NGC 1746 and NGC 1758 among its aliases at
-        76.175, 23.813 and 2,797 ly; Theia_754 carries NGC 1746 and NGC 1750 at
-        75.972, 23.677 and 2,289 ly. Both are in Taurus, both answer to
-        Collinder 57 and Melotte 28, and they sit 0.23 degrees apart on the sky
-        and 509 ly apart in depth. That is the NGC 1746 question as astronomy
-        has it -- whether the object is a cluster or an asterism of stars at
-        different distances -- and binding a landmark to either row would pick a
-        side of it.
+        The identification offered is NGC 1746, 1750 and 1758, with a question
+        mark, and the catalogue holds two rows for those three designations
+        rather than three. NGC_1758 carries NGC 1746 and NGC 1758 among its
+        aliases, at 76.175, 23.813 and 2,797 ly; Theia_754 carries NGC 1746 and
+        NGC 1750, at 75.972, 23.677 and 2,289 ly. Both sit in Taurus and both
+        answer to Collinder 57 and Melotte 28. That is the standing NGC 1746
+        question, whether the thing is a cluster or an asterism of stars at
+        different ranges, and this map does not settle it.
 
-        The neighbourhood supports the reading even so. That position is 640 ly
-        from Metasoft's nearest extent label and 771 from Paula, a Metasoft
-        world this map places, so a Metasoft volume there is where one should be.
+        It does not have to. The two rows are 0.230 degrees apart, which at
+        2,022 ly is 8.1 light years of transverse distance -- so whichever of
+        them the setting means, and whether or not they are one object, the
+        bearing is the same to within eight light years. The dispute is about
+        depth, and the depth is stated. Theia_754's bearing is used, it being
+        the nearer row and the better match for the stated distance.
+
+        The remaining gap is in range and is not small: 2,022 ly against
+        Theia_754's 2,289 is 11.7%, and against NGC_1758's 2,797 is 27.7%. The
+        setting's figure is kept and the catalogue's is not, as everywhere else
+        here. See questions.md.
     note: >-
       A Metasoft volume, and with Proden one of the places caught up in the
-      Teleological Tendency's part of the Second Vec War. Proden's own article
-      gives 2,200 ly with no direction, which falls between the two catalogue
-      rows above; that is suggestive and no more, since nothing read so far puts
-      Proden in this cluster rather than merely at its range.
+      Teleological Tendency's part of the Second Vec War. The timeline has it at
+      6850: "Second Vec War - Seven new archai have been created in the Triplet
+      Cluster since the start of the conflict by the Teleological Tendency."
+
+      Held under Metasoft because the Tendency is a faction of it and has no
+      roster entry of its own, the same treatment Proden's events get.
+
+      Proden is at 2,200 ly with no direction, 178 further out than this. Near
+      enough to wonder whether it sits in the cluster, and nothing read so far
+      says it does.
   - name: Proden
     kind: planet
     affiliations: [metasoft]
