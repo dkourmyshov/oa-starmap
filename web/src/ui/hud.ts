@@ -797,12 +797,23 @@ export class Hud {
       swatch.style.background = polity.color;
       row.appendChild(swatch);
       row.appendChild(el('span', 'legend-name', polity.name));
-      // Landmarks are shown as a fraction because the denominator is knowable:
-      // the political maps name a fixed list. Everything else has no total to
-      // count against, so the member tally stands alone.
-      const count = polity.landmark_count
-        ? `${polity.resolved_count}/${polity.landmark_count}`
-        : String(polity.member_count);
+      // How much of this polity is on the map, which is the member tally and
+      // nothing else. A landmark fraction used to replace it wherever a polity
+      // had landmarks at all, on the reasoning that a fraction says more than a
+      // count because the denominator is knowable — true in itself, and it hid
+      // most of the legend. The Non-Coercive Zone read 13/20 while holding 119
+      // things; the Efficiency Maximization Paradigm read 1/1 while holding
+      // five, which is how it was noticed. Twenty-one of forty rows understated
+      // themselves, and the number also changed meaning on entering history
+      // mode, where the same row has always shown a plain count.
+      //
+      // The fraction survives where it says something the tally cannot: that
+      // some of the polity's named landmarks are not drawn at all.
+      const unresolved = polity.landmark_count - polity.resolved_count;
+      const count =
+        unresolved > 0
+          ? `${polity.member_count} · ${polity.resolved_count}/${polity.landmark_count}`
+          : String(polity.member_count);
       const countNode = el('span', 'legend-count', count);
       row.appendChild(countNode);
       this.legendRows.set(polity.id, {
