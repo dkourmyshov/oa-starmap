@@ -6737,6 +6737,58 @@ worlds:
         volume; together they sketch an extent that its placed worlds, being
         points, cannot. Named for Scorpius, where it falls, the polity's own name being
       taken by the polity.
+  - name: Nessus
+    kind: planet
+    affiliations: []
+    location:
+      star: Alpha Centauri A
+      note: >-
+        A planet of Alpha Centauri, on the project owner's reading.
+        oaplanets.dsc, one of the Orion's Arm Celestia add-ons' location catalogues (OAAddons9,
+        OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv),
+        puts it at 219.902, -60.834 and 4.4 ly, which is Alpha Centauri AB's
+        position and range rather than Proxima's.
+
+        Bound to the A component because a planet needs one star and no source
+        here names which; A and B are some 23 AU apart, so at 4.3 ly the choice
+        moves nothing on the map and the note is the honest part.
+    note: >-
+      Entered from the add-on, which is the only source this map holds that
+      names it. The system's colony is recorded separately as Cenauri.
+  - name: Tierra del Fuego
+    kind: planet
+    also: [Terra del Fuego]
+    affiliations: []
+    location:
+      star: Epsilon Indi A
+      note: >-
+        Given as a colony in Epsilon Indi, on the project owner's reading.
+        oaplanets.dsc, one of the Orion's Arm Celestia add-ons' location catalogues (OAAddons9,
+        OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv),
+        spells it "Terra del Fuego" and puts it at 11.8 ly, against Epsilon
+        Indi's 11.867 -- so the add-on is naming this system. The spelling
+        above is the one the real place bears and the add-on's is kept as an
+        alternate.
+
+        Bound to the A component, which no source here states: A and B are
+        about 1,500 AU apart and at this range that is nothing on the map.
+        Epsilon Indi already carries the Gatlida and Praxis-Gnosis colonies,
+        and how this stands to them is not recorded. See questions.md.
+  - name: NoCoZo (Sagittarius)
+    kind: polity_extent
+    affiliations: [nocozo]
+    location:
+      ra_deg: 277.5
+      dec_deg: -34.8
+      distance: 2240 ly
+      note: >-
+        Labelled SAGITTARIUS NOCOZO in oalocations3.dsc, one of the Orion's Arm Celestia add-ons' location catalogues (OAAddons9,
+        OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv). The fifth label the add-ons write
+        for the Non-Coercive Zone and the only one outside the two empire
+        catalogues, which is why it was not found with the other four.
+    note: >-
+      Named for Sagittarius, where it falls, after the four from the empire
+      catalogues -- Vela, Centaurus, Triangulum Australe and Puppis.
   - name: NoCoZo (Vela)
     kind: polity_extent
     affiliations: [nocozo]
@@ -12008,7 +12060,7 @@ worlds:
         things by them is open; see questions.md.
     note: >-
       Recorded with no holder. The Encyclopaedia's phrase "the Serpens Sector
-      worlds such as Skiiiws'nnii and Miracle City" is the only mention this map
+      worlds such as Sk'iiws'nnii and Miracle City" is the only mention this map
       holds, and both of those sit by the Serpens Region's position rather than
       this one, so attributing the Region's holders to this entry would be
       guessing.
@@ -12140,7 +12192,7 @@ worlds:
       A region of space rather than a polity, and recorded as one, held
       between the Mutual Progress Association and the Sagittarius Transcultural
       Cooperation. Gilboa Reach "is the most important gateway between the STC
-      and the Serpens Sector worlds such as Skiiiws'nnii and Miracle City", and
+      and the Serpens Sector worlds such as Sk'iiws'nnii and Miracle City", and
       a colony elsewhere "was isolated for 3300 years because of the turmoil in
       the Serpens Region".
 

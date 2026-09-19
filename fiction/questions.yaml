@@ -1542,7 +1542,7 @@ questions:
       colony article says a system "was isolated for 3300 years because of the
       turmoil in the Serpens Region". Gilboa Reach's says it "is the most
       important gateway between the STC and the Serpens Sector worlds such as
-      Skiiiws'nnii and Miracle City".
+      Sk'iiws'nnii and Miracle City".
 
       That second sentence is the awkward one. It says *Sector*, and Miracle
       City -- which this map places independently at 273.75, +5.81 and 1,730 ly
@@ -1649,3 +1649,31 @@ questions:
     would_settle: >-
       A modern distance to M42 from a catalogue this map loads, which would
       replace the number without touching the direction.
+
+  - id: tierra-del-fuego-and-nessus
+    topic: Nessus and Tierra del Fuego
+    status: open
+    severity: uncertainty
+    summary: Two Inner Sphere worlds the add-on names, each bound to a system's primary because no source names the component.
+    detail: >-
+      oaplanets.dsc carries a "Nessus" at 219.902, -60.834 and 4.4 ly, which is
+      Alpha Centauri AB's position and range rather than Proxima's, and a "Terra
+      del Fuego" at 11.8 ly, against Epsilon Indi's 11.867. The project owner
+      reads the first as a planet of Alpha Centauri and the second as a colony
+      in Epsilon Indi.
+
+      Neither this map's sources nor the add-on says which component either
+      belongs to. Both are bound to the primary in consequence: Alpha Centauri A
+      and B lie some 23 AU apart, Epsilon Indi A and B about 1,500, and at 4.3
+      and 11.9 ly those are nothing on the map -- so the binding is a
+      bookkeeping choice and not a claim.
+
+      Epsilon Indi already carries two colonies here, Gatlida on A and
+      Praxis-Gnosis on Ba and Bb. How Tierra del Fuego stands to either is not
+      recorded. The add-on spells it "Terra del Fuego"; the spelling used is the
+      one the real place bears, with the add-on's kept as an alternate.
+    map_does: >-
+      Draws both at their systems, with the component recorded as unstated.
+    would_settle: >-
+      The articles. Either would also say whether Tierra del Fuego is a world of
+      one of the colonies already held or a third thing in the same system.

@@ -8,7 +8,7 @@ Nothing below is a complaint about the setting. Most of it is the ordinary frict
 
 ---
 
-## Open questions (43)
+## Open questions (44)
 
 ### Shona — Shona's article gives its position twice, and the two directions are thirty degrees apart.
 
@@ -546,7 +546,7 @@ The two figures are about 1,100 ly apart. The likely cause is that they describe
 *uncertainty*
 
 southOAEMPIRES.dsc has a SERPENS REGION at 18h 30m, +5.5, 1600 ly. oalocationsx.dsc has a Serpens Sector at 17h 20m, -14.9, 3159 ly. They are 21 degrees apart on the sky and 1,559 ly apart in space, so the add-on treats them as two objects.
-The Encyclopaedia uses both words without obviously distinguishing them. A colony article says a system "was isolated for 3300 years because of the turmoil in the Serpens Region". Gilboa Reach's says it "is the most important gateway between the STC and the Serpens Sector worlds such as Skiiiws'nnii and Miracle City".
+The Encyclopaedia uses both words without obviously distinguishing them. A colony article says a system "was isolated for 3300 years because of the turmoil in the Serpens Region". Gilboa Reach's says it "is the most important gateway between the STC and the Serpens Sector worlds such as Sk'iiws'nnii and Miracle City".
 That second sentence is the awkward one. It says *Sector*, and Miracle City -- which this map places independently at 273.75, +5.81 and 1,730 ly -- sits 3.7 degrees from the add-on's Serpens *Region* and nowhere near its Serpens Sector. So either the add-on's two entries are one thing placed twice, or the Encyclopaedia's two words are used interchangeably for a region the add-on also drew a wider sector around.
 One reading offered by the project owner is that the Sector is the whole constellation's cone and the Region a specific volume within it. The Sector's position does not obviously support that -- a cone's label would be expected near the constellation's middle, and this sits in Ophiuchus rather than Serpens -- but neither does anything contradict it.
 
@@ -575,6 +575,18 @@ The direction is the nebula's own and beyond dispute. The distance is the add-on
 **What the map does now.** Draws it at the add-on's figures, both of them, and says here that the distance is the first thing on this entry to replace.
 
 **What would settle it.** A modern distance to M42 from a catalogue this map loads, which would replace the number without touching the direction.
+
+### Nessus and Tierra del Fuego — Two Inner Sphere worlds the add-on names, each bound to a system's primary because no source names the component.
+
+*uncertainty*
+
+oaplanets.dsc carries a "Nessus" at 219.902, -60.834 and 4.4 ly, which is Alpha Centauri AB's position and range rather than Proxima's, and a "Terra del Fuego" at 11.8 ly, against Epsilon Indi's 11.867. The project owner reads the first as a planet of Alpha Centauri and the second as a colony in Epsilon Indi.
+Neither this map's sources nor the add-on says which component either belongs to. Both are bound to the primary in consequence: Alpha Centauri A and B lie some 23 AU apart, Epsilon Indi A and B about 1,500, and at 4.3 and 11.9 ly those are nothing on the map -- so the binding is a bookkeeping choice and not a claim.
+Epsilon Indi already carries two colonies here, Gatlida on A and Praxis-Gnosis on Ba and Bb. How Tierra del Fuego stands to either is not recorded. The add-on spells it "Terra del Fuego"; the spelling used is the one the real place bears, with the add-on's kept as an alternate.
+
+**What the map does now.** Draws both at their systems, with the component recorded as unstated.
+
+**What would settle it.** The articles. Either would also say whether Tierra del Fuego is a world of one of the colonies already held or a third thing in the same system.
 
 ## The Inner Sphere colony tables
 
@@ -644,7 +656,7 @@ Blanco 1, Collinder 173, Collinder 359, Cone Nebula, Czernik 8, NGC 2244, NGC 70
 
 ## Worlds located only by constellation
 
-85 of 674 canonical worlds are given as a distance and a constellation. That fixes the distance exactly and the direction only to the width of the constellation, which at these ranges is hundreds to thousands of light years. The map draws these with a broken ring rather than a solid one, and the detail panel gives the error in light years.
+85 of 677 canonical worlds are given as a distance and a constellation. That fixes the distance exactly and the direction only to the width of the constellation, which at these ranges is hundreds to thousands of light years. The map draws these with a broken ring rather than a solid one, and the detail panel gives the error in light years.
 
 Coordinates, or a nearby named star, would turn any of these from a region into a position.
 
