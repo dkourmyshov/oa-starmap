@@ -10390,20 +10390,30 @@ worlds:
     affiliations: [refugium-federation]
     article: https://www.orionsarm.com/eg-article/476ec0a831af6
     location:
-      constellation: Centaurus
+      ra_deg: 171.6
+      dec_deg: -43.3
       distance: 2205 ly
       note: >-
-        Centaurus and a distance, both the article's, which is a cone and not a
-        direction. It was briefly moved to the REFUGIUM EMPIRE anchor in
-        OAEMPIRES.dsc on the strength of that anchor's 2,204 ly against this
-        2,205 -- but a cone 27.7 degrees wide cannot confirm a direction, and
-        the anchor lies 17.9 degrees off its axis, which at this range is some
-        680 ly from where the cone is drawn. Two sources agreeing on radius are
-        not agreeing on position.
+        The distance is the article's. The direction is the REFUGIUM EMPIRE
+        anchor in OAEMPIRES.dsc, one of the Orion's Arm Celestia add-ons'
+        location catalogues (OAAddons9, OALocationsv4; extracted to
+        sources/derived/oa_dsc_locations.tsv), which replaces the article's
+        Centaurus -- a cone 27.7 degrees wide and no direction at all.
 
-        The article is the Encyclopaedia's own and the anchor is an add-on's, so
-        the article stands and the anchor is drawn separately as the
-        federation's marker. See questions.md.
+        Two things carry that. The anchor falls inside Centaurus by the IAU
+        boundaries, checked against them rather than against the enclosing cone
+        this map records for the constellation; so it agrees with the article
+        instead of overriding it. And it states 2,204 ly where the article
+        states 2,205, which is a match at one part in two thousand and says the
+        add-on's author was working from this article -- so the label is
+        anchored on this system, though the add-on writes the polity's name
+        rather than the system's.
+
+        That is weaker than the add-on naming the system outright, which is what
+        it does for Enremdea, Dilmun and Zennor. It is recorded as a question.
+        The federation's own marker is drawn at the same point in consequence;
+        if the reasoning above is right they are the same place, and the pair of
+        rings says so.
     events:
       - year_at: 5740
         kind: settled
@@ -13610,6 +13620,15 @@ worlds:
       Built around a black hole in Centaurus at 2,210 ly, and named for the
       process that makes such a thing worth building: energy drawn from the
       hole's rotation.
+
+      Kept as a cone where Refugium, the federation's other placed member, has
+      taken a direction from the add-on. The two cases are not alike: the
+      add-on's distance matches Refugium's article to a light year, which is
+      what says the label was anchored on that system, and nothing of the kind
+      links it to this one -- the add-on has no entry for Penrose Place under
+      any name, and its 2,210 ly is five light years off the anchor rather than
+      one. Borrowing a bearing from a different object would be inventing the
+      one thing no source here gives.
 
   - name: Perdix
     kind: planet

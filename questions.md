@@ -485,11 +485,11 @@ The lesson is about method rather than about the add-on: each of the four was fo
 
 *contradiction*
 
-OAEMPIRES.dsc labels the anchor at 11h 26m, -43.3, 2204 ly REFUGIUM EMPIRE. The Encyclopaedia files Refugium itself, Polonius and Salaam under "Galactography > Minor Polities > Refugium Federation", and this map's polity roster carries `refugium-federation`. Nothing else in our sources uses "empire" for it, and the other labels in the same file are not uniformly styled that way — SOPHIC LEAGUE, NEGENTROPY ALLIANCE and COMMUNION OF WORLDS all keep their own words.
+OAEMPIRES.dsc labels the anchor at 11h 26m, -43.3, 2204 ly REFUGIUM EMPIRE -- the polity's name and not a system's, which is the weakness in reading it as a position for Refugium. Where the add-on means a system it says so, as it does for Enremdea, Dilmun and Zennor. The Encyclopaedia files Refugium itself, Polonius and Salaam under "Galactography > Minor Polities > Refugium Federation", and this map's polity roster carries `refugium-federation`. Nothing else in our sources uses "empire" for it, and the other labels in the same file are not uniformly styled that way — SOPHIC LEAGUE, NEGENTROPY ALLIANCE and COMMUNION OF WORLDS all keep their own words.
 
-**What the map does now.** Keeps Refugium and Penrose Place where their own articles put them, and draws the anchor separately as the federation's marker. Both members are Encyclopaedia-sourced and the anchor is an add-on's, which settles the precedence for this map; what it does not settle is the gap.
-The anchor was briefly read as the Refugium system itself, on the strength of 2,204 ly against the article's 2,205. That was wrong. The article gives Centaurus and a distance, which is a cone 27.7 degrees wide and no direction at all, so a matching radius confirms nothing about direction -- and the anchor lies 17.9 degrees off the cone's axis, about 680 ly from where the cone is drawn at this range.
-Penrose Place is not tied to Refugium either: its own article gives Centaurus and 2,210 ly independently. The five light years between them are two sources agreeing, not one inheriting from the other, and nothing says they share a system.
+**What the map does now.** Gives Refugium the anchor's direction and keeps the article's distance, so the add-on refines the article within the article's own constraint rather than overriding it. Two things carry that. The anchor falls inside Centaurus by the IAU boundaries -- checked against the boundaries and not against the enclosing cone, which is 27.7 degrees wide and would have admitted a great deal -- so it agrees with what the article says. And it states 2,204 ly against the article's 2,205, a match at one part in two thousand, which says the add-on's author had this article in front of them.
+The federation's marker is drawn at the same point in consequence. If the reasoning is right the two are the same place, and the wide ring with the thin one inside says so.
+Penrose Place keeps its cone. The add-on has no entry for it under any name, and its article's 2,210 ly is five light years off the anchor rather than one, so nothing ties the label to it; borrowing Refugium's bearing would invent the one thing no source gives. It is therefore still drawn at the cone's axis, some 680 ly from the other two.
 
 **What would settle it.** A direction for Refugium, which would say whether the add-on's anchor is where the federation actually is or a label dropped at a guess. Failing that, the federation's own extent: 680 ly is nothing for a polity and a great deal for a system, and which of those the marker is standing for is the whole of the question. The empire-or-federation naming is the smaller half of it.
 
@@ -607,7 +607,7 @@ Blanco 1, Collinder 173, Collinder 359, Cone Nebula, Czernik 8, NGC 2244, NGC 70
 
 ## Worlds located only by constellation
 
-90 of 633 canonical worlds are given as a distance and a constellation. That fixes the distance exactly and the direction only to the width of the constellation, which at these ranges is hundreds to thousands of light years. The map draws these with a broken ring rather than a solid one, and the detail panel gives the error in light years.
+89 of 633 canonical worlds are given as a distance and a constellation. That fixes the distance exactly and the direction only to the width of the constellation, which at these ranges is hundreds to thousands of light years. The map draws these with a broken ring rather than a solid one, and the detail panel gives the error in light years.
 
 Coordinates, or a nearby named star, would turn any of these from a region into a position.
 
