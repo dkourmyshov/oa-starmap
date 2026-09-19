@@ -10670,16 +10670,33 @@ worlds:
     affiliations: [sagittarius-transcultural-cooperation]
     article: https://www.orionsarm.com/eg-article/464e931fbc3f0
     location:
+      ra_deg: 275.451833
+      dec_deg: -1.449472
       distance: 1606 ly
+      note: >-
+        All three from the article, which states "Distance from Sol 1606 LY,
+        Constellation: Serpens, RA: 18h21m48.44s, Dec: -01d26'58.1\"" -- so this
+        is a stated position and not a cone.
+
+        It was recorded as a distance alone, on the reasoning that Serpens is
+        the one constellation this map will not place anything by: it is in two
+        pieces and its centre of area falls in Ophiuchus between them, so a
+        world put at that centre would be drawn in the wrong constellation. All
+        true, and beside the point, because the article gives coordinates and
+        the constellation was never needed. They convert to 275.451833,
+        -1.449472, which the IAU boundaries put in Serpens.
+
+        The primary is TYC 5098-195-1, from a catalogue this map does not carry,
+        so the position is taken as stated rather than bound to a star.
     events:
       - year_at: 5189
         kind: settled
     note: >-
-      Given as 1,606 ly in Serpens, and Serpens is the one constellation this
-      map refuses to place anything by: it is in two pieces and its centre of
-      area falls in Ophiuchus between them, so a world put there would be drawn
-      in the wrong constellation entirely. The distance is recorded and the
-      direction is not.
+      An STC outpost and stargate plexus at the edge of the Serpens sector, a
+      large L5 orbital swarm about the terraformed world Gilboa. It falls 7.2
+      degrees from the add-on's Serpens Region anchor -- and its own article is
+      what names "the Serpens Sector worlds such as Sk'iiws'nnii and Miracle
+      City", the sentence the Region and Sector question turns on.
 
   - name: Laurel and Hardy
     kind: planet
@@ -10896,6 +10913,13 @@ worlds:
         exactly. This is their midpoint and the error covers both. If the 84 ly
         is to the Venture's nearest edge rather than its capital, the position
         moves but not far.
+
+        Checked since against a source that did not feed the working:
+        oalocationsx.dsc writes a "Cooperative Venture" label at 276.0, 5.7 and
+        1,661 ly, which falls 1.94 degrees from this position -- inside the
+        two-degree error stated above -- and 0.4% off its distance. Two
+        independent routes to one point is as much confirmation as a derived
+        position on this map has ever had.
     events:
       - year_at: 7609
         kind: settled
