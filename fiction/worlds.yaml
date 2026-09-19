@@ -134,8 +134,15 @@ worlds:
     extent: 290 ly
     article: https://www.orionsarm.com/eg-article/46412ddb422d6
     location:
-      constellation: Antlia
+      ra_deg: 165.021
+      dec_deg: -39.512
       distance: 1500 ly
+      note: >-
+        Was Antlia and a distance. The direction is the entry oaloc4.dsc spells
+        "Coryambytia Protectorate", one of the Orion's Arm Celestia add-ons' location catalogues (OAAddons9,
+        OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv), and it falls in Antlia by the IAU
+        boundaries, agreeing with the article. The add-on's 1,592 ly against the
+        article's 1,500 is 6%, and the article's is kept.
     events:
       - year_at: 4678
         kind: settled
@@ -8915,11 +8922,24 @@ worlds:
     affiliations: [metasoft]
     article: https://www.orionsarm.com/eg-article/5058816aa9afb
     location:
+      ra_deg: 96.165
+      dec_deg: 26.934
       distance: 1066 ly
+      note: >-
+        The distance is the article's. The direction is from oaplanets.dsc, one
+        of the Orion's Arm Celestia add-ons' location catalogues (OAAddons9,
+        OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv),
+        which gives 1,067.9 ly against the article's 1,066 -- two light years
+        apart at a thousand, which says the add-on's author had this article in
+        front of them rather than that two sources agree. It falls in Gemini;
+        the article names no constellation, so there is nothing here to check
+        the direction against beyond its own plausibility.
     events:
       - year_at: 3980
         kind: settled
-    note: A distance and no direction. Recorded and not drawn.
+    note: >-
+      Had a distance and no direction, and was recorded rather than drawn until
+      the add-on supplied one.
 
   # ---- Red Star 'M'pire ---------------------------------------------------
   #
@@ -10365,6 +10385,22 @@ worlds:
 
   # ---- Orion Federation ----------------------------------------------------
 
+  - name: Akasha
+    kind: system
+    affiliations: []
+    article: https://www.orionsarm.com/eg-article/45e77b18819de
+    location:
+      ra_deg: 55.98
+      dec_deg: 22.85
+      distance: 451 ly
+      note: >-
+        From oaloc4.dsc, one of the Orion's Arm Celestia add-ons' location catalogues (OAAddons9,
+        OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv),
+        which is the only source this map holds that places it. It falls in
+        Taurus.
+    note: >-
+      Entered from a mini-article, with no polity recorded because none is
+      named.
   - name: Alnitak
     kind: system
     affiliations: [orion-federation]
@@ -10439,11 +10475,19 @@ worlds:
     affiliations: [orion-federation]
     article: https://www.orionsarm.com/eg-article/475d6e3f3b712
     location:
-      constellation: Orion
-    note: >-
-      The central part of the Federation, and undrawn: no distance is given
-      here, and the nebula is in none of the catalogues this build loads. The
-      direction is recorded and nothing else.
+      ra_deg: 83.740
+      dec_deg: -5.485
+      distance: 1177.5 ly
+      note: >-
+        Both from oalocations.dsc, one of the Orion's Arm Celestia add-ons' location catalogues (OAAddons9,
+        OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv). The direction is the nebula's own, and
+        agrees with the article's Orion.
+
+        The distance is the add-on's because this map has no other: the nebula
+        is in none of the catalogues this build loads, and the article gives no
+        figure. It is a 2007 add-on quoting the astronomy of its day, so it is
+        the weakest number on this entry and the one to replace first. See
+        questions.md.
 
   - name: Tabridgen
     kind: system
@@ -12787,8 +12831,20 @@ worlds:
     affiliations: [caretaker-gods]
     article: https://www.orionsarm.com/eg-article/5f0b365e3a328
     location:
-      constellation: Carina
+      ra_deg: 129.716
+      dec_deg: -57.950
       distance: 3667 ly
+      note: >-
+        Was Carina and a distance, which is a cone. The direction is the entry
+        oalocs3.dsc calls "Kemmerer", one of the Orion's Arm Celestia add-ons' location catalogues (OAAddons9,
+        OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv) -- a misspelling of Kammerer, which is
+        this system's world and shares its article, so the add-on is placing the
+        system under the name of the thing in it.
+
+        It falls in Carina by the IAU boundaries, agreeing with the article. Its
+        distance does not: it gives 4,101 ly against the article's 3,667, which
+        is 12% and too much to reconcile, so the article's is kept and the
+        add-on supplies direction only. See questions.md.
     events:
       - year_at: 7882
         kind: visited
@@ -12811,9 +12867,17 @@ worlds:
     system: Anaximander
     affiliations: [caretaker-gods]
     article: https://www.orionsarm.com/eg-article/5f0b365e3a328
+    location:
+      world: Anaximander
     note: >-
       The world of Anaximander, and a xenosophont biome — which is why the
       Caretaker Gods hold it.
+
+      Drawn where Anaximander is, which it had not been: naming the system in
+      `system:` does not place a world, and this one carried no location of its
+      own, so it was recorded and drawn nowhere. The add-on has a "Kemmerer" and
+      it is not a separate object -- it is this system, under this world's name
+      misspelt, and it is applied there.
 
   - name: Cthonids
     kind: system
@@ -13821,8 +13885,16 @@ worlds:
     affiliations: []
     article: https://www.orionsarm.com/eg-article/48fa522b098a9
     location:
-      constellation: Carina
+      ra_deg: 164.685
+      dec_deg: -61.912
       distance: 6459 ly
+      note: >-
+        Was Carina and a distance. The direction is "Alpha Jupkai" in
+        oaloc4.dsc, one of the Orion's Arm Celestia add-ons' location catalogues (OAAddons9,
+        OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv),
+        which falls in Carina by the IAU boundaries as the article says. The
+        add-on's 6,105 ly against the article's 6,459 is 5.5%, and the
+        article's is kept.
     note: >-
       In Carina at 6,459 ly, and the remains of an extinct xenosophont
       civilisation. No holder is recorded: there is nobody left to hold it.

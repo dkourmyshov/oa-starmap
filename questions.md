@@ -8,7 +8,7 @@ Nothing below is a complaint about the setting. Most of it is the ordinary frict
 
 ---
 
-## Open questions (41)
+## Open questions (43)
 
 ### Shona — Shona's article gives its position twice, and the two directions are thirty degrees apart.
 
@@ -554,6 +554,28 @@ One reading offered by the project owner is that the Sector is the whole constel
 
 **What would settle it.** Whether the two names mean two things, and if so which of them Gilboa Reach's sentence is about.
 
+### Anaximander and Kammerer — The add-on puts the Anaximander system 434 ly further out than its article does.
+
+*contradiction*
+
+oalocs3.dsc carries an entry it spells "Kemmerer" at 8h 39m, -57.95, 4101 ly. Kammerer is the world of Anaximander and shares the system's article, so the add-on is placing the system under the name of the thing in it -- the same shape as REFUGIUM EMPIRE standing for Refugium, and misspelt besides.
+The direction is good: it falls in Carina by the IAU boundaries, which is what the article states and all the article states. The distance is not: 4,101 ly against the article's 3,667 is 12%, where the add-on's figures for Wurm and Refugium match their articles to two light years in a thousand. Something different is happening here, and nothing in our sources says what.
+
+**What the map does now.** Takes the direction and keeps the article's distance, so Anaximander stops being a cone. Kammerer is drawn through the system, which it had not been: naming a system in `system:` does not place a world, and Kammerer carried no location of its own, so it was held and drawn nowhere.
+
+**What would settle it.** Whether the add-on's author had a figure for Anaximander that our sources do not carry, or simply put the label at a guessed depth along the right bearing.
+
+### Orion Nebula — The nebula's distance here is a 2007 add-on's, for want of any other.
+
+*uncertainty*
+
+The Orion Nebula is the central part of the Orion Federation and had a constellation and nothing else -- no distance in the article, and the nebula in none of the catalogues this build loads. oalocations.dsc gives 5h 34m, -5.485 and 1,177.5 ly.
+The direction is the nebula's own and beyond dispute. The distance is the add-on quoting the astronomy of 2007, which is the weakest kind of number this map carries: not the setting asserting something, and not a measurement we chose. The Enigma Cluster is the case where an add-on's dated figure was the right one to keep, because the fiction depended on it; nothing depends on this one.
+
+**What the map does now.** Draws it at the add-on's figures, both of them, and says here that the distance is the first thing on this entry to replace.
+
+**What would settle it.** A modern distance to M42 from a catalogue this map loads, which would replace the number without touching the direction.
+
 ## The Inner Sphere colony tables
 
 909 of 1,122 rows resolve to a star we hold. The rest break down as follows.
@@ -622,13 +644,13 @@ Blanco 1, Collinder 173, Collinder 359, Cone Nebula, Czernik 8, NGC 2244, NGC 70
 
 ## Worlds located only by constellation
 
-88 of 673 canonical worlds are given as a distance and a constellation. That fixes the distance exactly and the direction only to the width of the constellation, which at these ranges is hundreds to thousands of light years. The map draws these with a broken ring rather than a solid one, and the detail panel gives the error in light years.
+85 of 674 canonical worlds are given as a distance and a constellation. That fixes the distance exactly and the direction only to the width of the constellation, which at these ranges is hundreds to thousands of light years. The map draws these with a broken ring rather than a solid one, and the detail panel gives the error in light years.
 
 Coordinates, or a nearby named star, would turn any of these from a region into a position.
 
-## 55 places described but not located
+## 52 places described but not located
 
-Arnon Dar, Avase, Big Bob, Crustuse, Cyrus, Dashwood, Druidworld, Elderman's Star, Evermore, Galbydeia Torus, Garlin, Gavit, and 43 more
+Arnon Dar, Avase, Big Bob, Crustuse, Cyrus, Dashwood, Druidworld, Elderman's Star, Evermore, Galbydeia Torus, Garlin, Gavit, and 40 more
 
 ## 1 designation reused in the Celestia add-on
 

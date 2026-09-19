@@ -1597,3 +1597,55 @@ questions:
     would_settle: >-
       Nothing outstanding. Ararat's own distance would confirm it, and Ararat is
       not yet placed.
+
+  - id: anaximander-distance
+    topic: Anaximander and Kammerer
+    status: open
+    severity: contradiction
+    summary: The add-on puts the Anaximander system 434 ly further out than its article does.
+    detail: >-
+      oalocs3.dsc carries an entry it spells "Kemmerer" at 8h 39m, -57.95, 4101
+      ly. Kammerer is the world of Anaximander and shares the system's article,
+      so the add-on is placing the system under the name of the thing in it --
+      the same shape as REFUGIUM EMPIRE standing for Refugium, and misspelt
+      besides.
+
+      The direction is good: it falls in Carina by the IAU boundaries, which is
+      what the article states and all the article states. The distance is not:
+      4,101 ly against the article's 3,667 is 12%, where the add-on's figures
+      for Wurm and Refugium match their articles to two light years in a
+      thousand. Something different is happening here, and nothing in our
+      sources says what.
+    map_does: >-
+      Takes the direction and keeps the article's distance, so Anaximander stops
+      being a cone. Kammerer is drawn through the system, which it had not been:
+      naming a system in `system:` does not place a world, and Kammerer carried
+      no location of its own, so it was held and drawn nowhere.
+    would_settle: >-
+      Whether the add-on's author had a figure for Anaximander that our sources
+      do not carry, or simply put the label at a guessed depth along the right
+      bearing.
+
+  - id: orion-nebula-distance
+    topic: Orion Nebula
+    status: open
+    severity: uncertainty
+    summary: The nebula's distance here is a 2007 add-on's, for want of any other.
+    detail: >-
+      The Orion Nebula is the central part of the Orion Federation and had a
+      constellation and nothing else -- no distance in the article, and the
+      nebula in none of the catalogues this build loads. oalocations.dsc gives
+      5h 34m, -5.485 and 1,177.5 ly.
+
+      The direction is the nebula's own and beyond dispute. The distance is the
+      add-on quoting the astronomy of 2007, which is the weakest kind of number
+      this map carries: not the setting asserting something, and not a
+      measurement we chose. The Enigma Cluster is the case where an add-on's
+      dated figure was the right one to keep, because the fiction depended on
+      it; nothing depends on this one.
+    map_does: >-
+      Draws it at the add-on's figures, both of them, and says here that the
+      distance is the first thing on this entry to replace.
+    would_settle: >-
+      A modern distance to M42 from a catalogue this map loads, which would
+      replace the number without touching the direction.
