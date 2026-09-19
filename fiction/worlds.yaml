@@ -10364,28 +10364,46 @@ worlds:
 
   # ---- Refugium Federation -------------------------------------------------
 
+  - name: Refugium Federation
+    kind: polity_marker
+    affiliations: [refugium-federation]
+    location:
+      ra_deg: 171.6
+      dec_deg: -43.3
+      distance: 2204 ly
+      note: >-
+        The REFUGIUM EMPIRE anchor in OAEMPIRES.dsc, one of the Orion's Arm
+        Celestia add-ons' location catalogues (OAAddons9, OALocationsv4;
+        extracted to sources/derived/oa_dsc_locations.tsv). The add-on names it
+        an empire where the Encyclopaedia files it under Minor Polities as a
+        federation.
+    note: >-
+      Drawn where the add-on puts the polity, which is about 680 ly from where
+      this map draws Refugium and Penrose Place -- the only two members it
+      places, and both of them from Encyclopaedia articles that give Centaurus
+      and a distance without a direction. A marker that far from its own
+      members is either a polity wider than its two known worlds, or a
+      disagreement between the two sources about where any of it is. Nothing
+      here settles which; see questions.md.
   - name: Refugium
     kind: system
     affiliations: [refugium-federation]
     article: https://www.orionsarm.com/eg-article/476ec0a831af6
     location:
-      ra_deg: 171.6
-      dec_deg: -43.3
+      constellation: Centaurus
       distance: 2205 ly
       note: >-
-        Was Centaurus and a distance, which is a cone 2,205 ly deep. The
-        direction is the REFUGIUM EMPIRE anchor in OAEMPIRES.dsc, one of the
-        Orion's Arm Celestia add-ons' location catalogues (OAAddons9,
-        OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv).
+        Centaurus and a distance, both the article's, which is a cone and not a
+        direction. It was briefly moved to the REFUGIUM EMPIRE anchor in
+        OAEMPIRES.dsc on the strength of that anchor's 2,204 ly against this
+        2,205 -- but a cone 27.7 degrees wide cannot confirm a direction, and
+        the anchor lies 17.9 degrees off its axis, which at this range is some
+        680 ly from where the cone is drawn. Two sources agreeing on radius are
+        not agreeing on position.
 
-        The anchor is this system and not a separate marker for the federation,
-        which is what it was first entered as. It gives 2,204 ly against the
-        article's 2,205 -- a light year apart at two thousand, which is an
-        agreement and not a coincidence -- and its direction falls 17.9 degrees
-        from the centre of Centaurus against that constellation's radius of
-        27.7, so it is inside the cone it replaces. The add-on names it an
-        empire where the Encyclopaedia files the polity under Minor Polities as
-        a federation; see questions.md.
+        The article is the Encyclopaedia's own and the anchor is an add-on's, so
+        the article stands and the anchor is drawn separately as the
+        federation's marker. See questions.md.
     events:
       - year_at: 5740
         kind: settled
@@ -10856,8 +10874,8 @@ worlds:
         so this one says little more than the direction and the polity.
 
   - name: Hyperion
-    kind: system
-    affiliations: [solar-dominion]
+    kind: polity_marker
+    affiliations: [hyperion]
     article: https://www.orionsarm.com/eg-article/46805c9b24e09
     location:
       ra_deg: 72.3787
@@ -10866,8 +10884,11 @@ worlds:
       direction_error_deg: 20.0
       distance_error: 800 ly
       estimated: >-
-        Interpolated from the sheet. A rebellious Solar corporation rather than
-        a Dominion holding, which the ring cannot distinguish from one.
+        Interpolated from the sheet. A rebellious Solar corporation rather
+        than a Dominion holding -- which the ring could not distinguish from
+        one while this was a system coloured for the Solar Dominion, and now
+        does: it is the corporation's own marker, in the corporation's own
+        colour, which the polity roster has carried all along.
 
   - name: Hosoko
     kind: polity_marker
@@ -11005,7 +11026,7 @@ worlds:
         either star for that reason. See questions.md.
 
   - name: Restored Ambi Limis
-    kind: system
+    kind: polity_marker
     article: https://www.orionsarm.com/eg-article/45f0cb71d22de
     location:
       ra_deg: 80.7504
@@ -11026,7 +11047,11 @@ worlds:
         note: Founded.
     note: >-
       Drawn in the sheet's colour for the minor, neutral and unaligned, so no
-      polity is recorded.
+      polity is recorded. The roster does carry `ambi-limis`, but that is the
+      old polity of the Conver Ambi's era and this was founded in 7971, four
+      thousand years after it; the two are a tradition rather than one thing,
+      and nothing read so far says the restored polity claims the old one's
+      identity. So the marker is a marker and stays uncoloured.
   - name: Polonius
     kind: system
     affiliations: [nocozo]
