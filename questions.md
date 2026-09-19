@@ -481,17 +481,17 @@ The lesson is about method rather than about the add-on: each of the four was fo
 
 **What would settle it.** Whether the add-on's author placed these labels from the same reading of the articles this map works from, or from a source for polity extents that we do not have. The Sophic League's systematic offset would be the case to ask about.
 
-### Refugium Federation — The add-on puts the Refugium Federation some 680 ly from the only two members this map places, and calls it an empire where the Encyclopaedia calls it a federation.
+### Refugium Federation — The add-on calls it the Refugium Empire where the Encyclopaedia files it under Minor Polities as a federation.
 
-*contradiction*
+*uncertainty*
 
-OAEMPIRES.dsc labels the anchor at 11h 26m, -43.3, 2204 ly REFUGIUM EMPIRE -- the polity's name and not a system's, which is the weakness in reading it as a position for Refugium. Where the add-on means a system it says so, as it does for Enremdea, Dilmun and Zennor. The Encyclopaedia files Refugium itself, Polonius and Salaam under "Galactography > Minor Polities > Refugium Federation", and this map's polity roster carries `refugium-federation`. Nothing else in our sources uses "empire" for it, and the other labels in the same file are not uniformly styled that way — SOPHIC LEAGUE, NEGENTROPY ALLIANCE and COMMUNION OF WORLDS all keep their own words.
+OAEMPIRES.dsc labels the anchor at 11h 26m, -43.3, 2204 ly REFUGIUM EMPIRE. The Encyclopaedia files Refugium, Polonius and Salaam under "Galactography > Minor Polities > Refugium Federation", and this map's roster carries `refugium-federation`. The other labels in the same file are not uniformly styled that way -- SOPHIC LEAGUE, NEGENTROPY ALLIANCE and COMMUNION OF WORLDS all keep their own words.
+The position half of this question is closed, and worth recording because it was nearly answered wrongly twice. The federation's own page states the bearing outright: "In 5740 the first colony ships reached Refugium, an easily terraformable terrestrial world approximately 2200 lightyears from Sol towards NGC 3680." The add-on's anchor falls 0.159 degrees from NGC 3680, so it is not a second source agreeing with the first -- it is the add-on's author reading the same sentence. Treating it as corroboration would have been double-counting one statement.
 
-**What the map does now.** Gives Refugium the anchor's direction and keeps the article's distance, so the add-on refines the article within the article's own constraint rather than overriding it. Two things carry that. The anchor falls inside Centaurus by the IAU boundaries -- checked against the boundaries and not against the enclosing cone, which is 27.7 degrees wide and would have admitted a great deal -- so it agrees with what the article says. And it states 2,204 ly against the article's 2,205, a match at one part in two thousand, which says the add-on's author had this article in front of them.
-The federation's marker is drawn at the same point in consequence. If the reasoning is right the two are the same place, and the wide ring with the thin one inside says so.
-Penrose Place keeps its cone. The add-on has no entry for it under any name, and its article's 2,210 ly is five light years off the anchor rather than one, so nothing ties the label to it; borrowing Refugium's bearing would invent the one thing no source gives. It is therefore still drawn at the cone's axis, some 680 ly from the other two.
+**What the map does now.** Places Refugium on NGC 3680's bearing, resolved through this map's own cluster catalogue, at the article's 2,205 ly. Penrose Place takes the same bearing with its own 2,210 ly and a 1.3 degree error, that being the angle subtended at this range by the 50 ly radius of the sphere the federation's page says it had grown to by 6000; the speed of light gives a harder bound of 162 ly, or 4.2 degrees, across the 162 years between Refugium's colonisation in 5740 and this world being reached in 5902.
+Both were Centaurus cones until that was worked out, which drew them 684 ly apart -- four times the light-speed limit. The cone was not vague but impossible, which is a useful reminder that an unstated direction is still a direction once something is drawn from it.
 
-**What would settle it.** A direction for Refugium, which would say whether the add-on's anchor is where the federation actually is or a label dropped at a guess. Failing that, the federation's own extent: 680 ly is nothing for a polity and a great deal for a system, and which of those the marker is standing for is the whole of the question. The empire-or-federation naming is the smaller half of it.
+**What would settle it.** Whether the polity was ever called an empire. Nothing else here is open.
 
 ### Crystal Star Domain — The add-on's Crystal Star marker is nearly three times as far out as the one system this map places for that polity.
 
@@ -620,7 +620,7 @@ Blanco 1, Collinder 173, Collinder 359, Cone Nebula, Czernik 8, NGC 2244, NGC 70
 
 ## Worlds located only by constellation
 
-89 of 640 canonical worlds are given as a distance and a constellation. That fixes the distance exactly and the direction only to the width of the constellation, which at these ranges is hundreds to thousands of light years. The map draws these with a broken ring rather than a solid one, and the detail panel gives the error in light years.
+88 of 640 canonical worlds are given as a distance and a constellation. That fixes the distance exactly and the direction only to the width of the constellation, which at these ranges is hundreds to thousands of light years. The map draws these with a broken ring rather than a solid one, and the detail panel gives the error in light years.
 
 Coordinates, or a nearby named star, would turn any of these from a region into a position.
 

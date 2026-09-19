@@ -10412,46 +10412,44 @@ worlds:
       note: >-
         The REFUGIUM EMPIRE anchor in OAEMPIRES.dsc, one of the Orion's Arm
         Celestia add-ons' location catalogues (OAAddons9, OALocationsv4;
-        extracted to sources/derived/oa_dsc_locations.tsv). The add-on names it
-        an empire where the Encyclopaedia files it under Minor Polities as a
-        federation.
+        extracted to sources/derived/oa_dsc_locations.tsv). It falls 0.159
+        degrees from NGC 3680, which is the cluster the federation's own page
+        gives Refugium's bearing towards, so the anchor is the add-on's author
+        reading that sentence rather than an independent placement.
     note: >-
-      Drawn where the add-on puts the polity, which is about 680 ly from where
-      this map draws Refugium and Penrose Place -- the only two members it
-      places, and both of them from Encyclopaedia articles that give Centaurus
-      and a distance without a direction. A marker that far from its own
-      members is either a polity wider than its two known worlds, or a
-      disagreement between the two sources about where any of it is. Nothing
-      here settles which; see questions.md.
+      Drawn on top of Refugium and Penrose Place, which is where a marker for a
+      polity 100 ly across with twenty colonised systems belongs. It was for a
+      while drawn 684 ly from both, when they were Centaurus cones and this was
+      the only stated direction in the federation's record; that gap is gone,
+      and it was never a fact about the setting. The add-on names it an empire
+      where the Encyclopaedia files it under Minor Polities as a federation,
+      which is the part still open; see questions.md.
   - name: Refugium
     kind: system
     affiliations: [refugium-federation]
     article: https://www.orionsarm.com/eg-article/476ec0a831af6
     location:
-      ra_deg: 171.6
-      dec_deg: -43.3
+      ra_deg: 171.404
+      dec_deg: -43.230
       distance: 2205 ly
       note: >-
-        The distance is the article's. The direction is the REFUGIUM EMPIRE
-        anchor in OAEMPIRES.dsc, one of the Orion's Arm Celestia add-ons'
-        location catalogues (OAAddons9, OALocationsv4; extracted to
-        sources/derived/oa_dsc_locations.tsv), which replaces the article's
-        Centaurus -- a cone 27.7 degrees wide and no direction at all.
+        The Encyclopaedia gives the direction itself, which this entry spent a
+        while not knowing. The Refugium Federation's own page has it: "In 5740
+        the first colony ships reached Refugium, an easily terraformable
+        terrestrial world approximately 2200 lightyears from Sol towards NGC
+        3680." So the direction is NGC 3680's, resolved through this map's own
+        cluster catalogue at 171.404, -43.230; the distance is the article's
+        2,205, which the federation page's "approximately 2200" agrees with.
 
-        Two things carry that. The anchor falls inside Centaurus by the IAU
-        boundaries, checked against them rather than against the enclosing cone
-        this map records for the constellation; so it agrees with the article
-        instead of overriding it. And it states 2,204 ly where the article
-        states 2,205, which is a match at one part in two thousand and says the
-        add-on's author was working from this article -- so the label is
-        anchored on this system, though the add-on writes the polity's name
-        rather than the system's.
+        NGC 3680 itself is 3,335 ly out, so "towards" is a bearing and not a
+        neighbourhood -- Refugium sits a thousand light years in front of the
+        cluster it is lined up with.
 
-        That is weaker than the add-on naming the system outright, which is what
-        it does for Enremdea, Dilmun and Zennor. It is recorded as a question.
-        The federation's own marker is drawn at the same point in consequence;
-        if the reasoning above is right they are the same place, and the pair of
-        rings says so.
+        The add-on's REFUGIUM EMPIRE anchor, which this entry briefly took its
+        direction from, falls 0.159 degrees from NGC 3680. That is not a second
+        source agreeing: it is the add-on's author reading the same sentence and
+        pointing at the same cluster. Recorded because it was nearly mistaken
+        for corroboration.
     events:
       - year_at: 5740
         kind: settled
@@ -13775,26 +13773,37 @@ worlds:
     affiliations: [refugium-federation]
     article: https://www.orionsarm.com/eg-article/670fe3919c608
     location:
-      constellation: Centaurus
+      ra_deg: 171.404
+      dec_deg: -43.230
       distance: 2210 ly
-    events:
-      - year_at: 5902
-        kind: settled
-        polity: refugium-federation
-        note: Reached.
+      direction_error_deg: 1.3
+      estimated: >-
+        The distance is the article's. The direction is Refugium's, 50 ly of
+        which is all this world can be away from it, and that bound is the
+        federation's own history rather than a guess.
+
+        Its page says "by 6000 the Refugium Federation had expanded to a sphere
+        100 light years in diameter, including 20 colonised systems", which puts
+        every member within 50 ly of the centre. Refugium was reached in 5740
+        and this world in 5902, so there were 162 years to cross the gap and the
+        speed of light caps it at 162 ly regardless. At 2,210 ly those bounds
+        are 1.3 and 4.2 degrees of sky; the smaller is recorded as the error.
+
+        This was a Centaurus cone until that was worked out, which drew it 684
+        ly from Refugium -- four times the hard limit and thirteen times the
+        likely one, so the cone was not merely vague but impossible.
     note: >-
       Built around a black hole in Centaurus at 2,210 ly, and named for the
       process that makes such a thing worth building: energy drawn from the
       hole's rotation.
 
-      Kept as a cone where Refugium, the federation's other placed member, has
-      taken a direction from the add-on. The two cases are not alike: the
-      add-on's distance matches Refugium's article to a light year, which is
-      what says the label was anchored on that system, and nothing of the kind
-      links it to this one -- the add-on has no entry for Penrose Place under
-      any name, and its 2,210 ly is five light years off the anchor rather than
-      one. Borrowing a bearing from a different object would be inventing the
-      one thing no source here gives.
+      The bearing is Refugium's, and borrowed deliberately. It was kept as a
+      cone for a while on the argument that no source gives this world a
+      direction and inventing one would be worse -- but a cone is a direction
+      too, just an unstated one, and the cone drew it 684 ly from the system it
+      was colonised from in 162 years. Nothing no-sourced about that: it is
+      faster than light. The federation's stated extent is the source, and it
+      is a better one than the constellation.
 
   - name: Perdix
     kind: planet
