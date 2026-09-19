@@ -8934,6 +8934,34 @@ worlds:
       ordinary empire instead of a Caretaker God. Given as 2,107 ly out near 9
       Geminorum; that star is at 5,966 ly, so only its direction is used.
 
+  - name: The Triplet Cluster
+    kind: volume
+    affiliations: [metasoft]
+    location:
+      note: >-
+        Recorded and not drawn. The project owner offers NGC 1746, 1750 and 1758
+        as the identification, with a question mark, and this map's own cluster
+        catalogue neither confirms nor refuses it.
+
+        What the catalogue holds is two rows for those three designations, not
+        three. NGC_1758 carries NGC 1746 and NGC 1758 among its aliases at
+        76.175, 23.813 and 2,797 ly; Theia_754 carries NGC 1746 and NGC 1750 at
+        75.972, 23.677 and 2,289 ly. Both are in Taurus, both answer to
+        Collinder 57 and Melotte 28, and they sit 0.23 degrees apart on the sky
+        and 509 ly apart in depth. That is the NGC 1746 question as astronomy
+        has it -- whether the object is a cluster or an asterism of stars at
+        different distances -- and binding a landmark to either row would pick a
+        side of it.
+
+        The neighbourhood supports the reading even so. That position is 640 ly
+        from Metasoft's nearest extent label and 771 from Paula, a Metasoft
+        world this map places, so a Metasoft volume there is where one should be.
+    note: >-
+      A Metasoft volume, and with Proden one of the places caught up in the
+      Teleological Tendency's part of the Second Vec War. Proden's own article
+      gives 2,200 ly with no direction, which falls between the two catalogue
+      rows above; that is suggestive and no more, since nothing read so far puts
+      Proden in this cluster rather than merely at its range.
   - name: Proden
     kind: planet
     affiliations: [metasoft]
@@ -8962,6 +8990,10 @@ worlds:
           plausibly Metasoft's mainstream, which the article does not say; the
           war went on in the outer volumes.
     note: >-
+      One of two places the project owner names as Metasoft volumes caught up in
+      the Teleological Tendency's part of the Second Vec War; the other is the
+      Triplet Cluster, entered below and likewise undrawn.
+
       A distance and no direction, so the article fixes how far away it is and
       nothing else. Recorded and not drawn.
 

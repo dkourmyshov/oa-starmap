@@ -8,7 +8,7 @@ Nothing below is a complaint about the setting. Most of it is the ordinary frict
 
 ---
 
-## Open questions (45)
+## Open questions (46)
 
 ### Shona — Shona's article gives its position twice, and the two directions are thirty degrees apart.
 
@@ -599,6 +599,19 @@ This is a real star and the disagreement is between two measurements of it, not 
 
 **What would settle it.** Nothing outstanding for the map; the catalogue is ours to keep current. Recorded so the next reader does not take the 1,092 for a claim about the setting.
 
+### The Triplet Cluster — Whether the Triplet Cluster is NGC 1746, 1750 and 1758, which this map's catalogue records as two objects rather than three.
+
+*uncertainty*
+
+The Triplet Cluster is a Metasoft volume, and with Proden one of the places caught up in the Teleological Tendency's part of the Second Vec War. The identification offered is NGC 1746, 1750 and 1758, and the difficulty is on the astronomy's side rather than the setting's.
+The open-cluster catalogue this map builds from holds two rows covering those three designations. NGC_1758 carries NGC 1746 and NGC 1758 among its aliases, at 76.175, 23.813 and 2,797 ly. Theia_754 carries NGC 1746 and NGC 1750, at 75.972, 23.677 and 2,289 ly. Both sit in Taurus, both answer to Collinder 57 and Melotte 28, and they are 0.23 degrees apart on the sky and 509 ly apart in depth.
+That is the long-standing NGC 1746 question -- whether the object is a cluster at all or an asterism of stars at different distances -- and a name meaning "three" sits oddly with a catalogue that can find two.
+The neighbourhood fits regardless: the position is 640 ly from Metasoft's nearest extent label and 771 ly from Paula, a Metasoft world this map places, so a Metasoft volume there is unremarkable. Proden's article gives 2,200 ly with no direction, which falls between the two rows; nothing read so far puts Proden in this cluster rather than merely at its range.
+
+**What the map does now.** Records the Triplet Cluster and draws it nowhere. Binding a landmark to either row would settle the asterism question by implication, which is not this map's to settle, and choosing between 2,289 and 2,797 ly would be choosing which of them the setting meant.
+
+**What would settle it.** Whether Orion's Arm means all three designations or the group as the older catalogues drew it. A distance for the Triplet Cluster itself would also do it: 2,289 and 2,797 are far enough apart to tell which row is meant, or that neither is.
+
 ## The Inner Sphere colony tables
 
 909 of 1,122 rows resolve to a star we hold. The rest break down as follows.
@@ -667,13 +680,13 @@ Blanco 1, Collinder 173, Collinder 359, Cone Nebula, Czernik 8, NGC 2244, NGC 70
 
 ## Worlds located only by constellation
 
-85 of 680 canonical worlds are given as a distance and a constellation. That fixes the distance exactly and the direction only to the width of the constellation, which at these ranges is hundreds to thousands of light years. The map draws these with a broken ring rather than a solid one, and the detail panel gives the error in light years.
+85 of 681 canonical worlds are given as a distance and a constellation. That fixes the distance exactly and the direction only to the width of the constellation, which at these ranges is hundreds to thousands of light years. The map draws these with a broken ring rather than a solid one, and the detail panel gives the error in light years.
 
 Coordinates, or a nearby named star, would turn any of these from a region into a position.
 
-## 52 places described but not located
+## 53 places described but not located
 
-Arnon Dar, Avase, Big Bob, Crustuse, Cyrus, Dashwood, Druidworld, Elderman's Star, Evermore, Filiae Reserve, Galbydeia Torus, Garlin, and 40 more
+Arnon Dar, Avase, Big Bob, Crustuse, Cyrus, Dashwood, Druidworld, Elderman's Star, Evermore, Filiae Reserve, Galbydeia Torus, Garlin, and 41 more
 
 ## 1 designation reused in the Celestia add-on
 
