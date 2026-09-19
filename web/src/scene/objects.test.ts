@@ -1460,14 +1460,31 @@ describe('object search', () => {
       ]),
     );
 
-  it('matches only whichever name the current mode would show', () => {
+  it('matches either name in any mode, and labels the hit by the mode', () => {
+    // Search used to follow the mode, so 'lambda' found nothing while Orion's
+    // Arm names were shown. That reads well as a rule about labels and badly as
+    // one about finding: the mode opens on 'oa', so the entire catalogue was
+    // unsearchable until the reader found a control they had no reason to look
+    // for, and a correctly typed name returning nothing says the object is not
+    // on the map rather than that it is called something else here.
     const index = build();
-    expect(index.search('lambda', 'oa')).toEqual([]);
+    expect(index.search('lambda', 'oa').map((h) => h.label)).toEqual(['New Gaia']);
     expect(index.search('lambda', 'real').map((h) => h.label)).toEqual(['Lambda Aurigae']);
-    expect(index.search('new gaia', 'real')).toEqual([]);
+    expect(index.search('new gaia', 'real').map((h) => h.label)).toEqual(['Lambda Aurigae']);
     expect(index.search('new gaia', 'oa').map((h) => h.label)).toEqual(['New Gaia']);
     expect(index.search('gaia', 'both').map((h) => h.label)).toEqual(['New Gaia (Lambda Aurigae)']);
     expect(index.search('lambda', 'both').map((h) => h.label)).toEqual(['New Gaia (Lambda Aurigae)']);
+  });
+
+  it('finds a settled star by its catalogue name in every mode', () => {
+    // The Orion's Arm name and the catalogue name are different words here --
+    // New Gaia on Lambda Aurigae -- which is the ordinary case and the one the
+    // equal-name fix does not touch. Both must find it, in every mode.
+    const index = build();
+    for (const mode of ['oa', 'real', 'both'] as const) {
+      expect(index.search('lambda aurigae', mode).map((h) => h.id)).toEqual([1]);
+      expect(index.search('aurigae', mode).map((h) => h.id)).toEqual([1]);
+    }
   });
 
   it('finds a star by a scientific name the label never renders', () => {

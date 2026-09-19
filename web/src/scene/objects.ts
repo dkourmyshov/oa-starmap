@@ -1024,16 +1024,19 @@ export class ObjectIndex {
     const hits: SearchHit[] = [];
     for (const id of this.labelled) {
       const label = composeLabel(this.labels[id] ?? '', this.labelsReal[id] ?? '', mode);
-      // The mode still decides *which* names are searched, as it decides which
-      // are shown. What changed is that the catalogue side is no longer the one
-      // rendered string: τ Cet draws a Greek letter nobody can type and an
-      // abbreviation nobody would think of, so the Bayer word, the Flamsteed
-      // number, the Gliese designation and the constellation are searched too.
-      const oaPart = this.labels[id] ?? '';
-      const realPart = `${this.labelsReal[id] ?? ''} ${this.searchText[id] ?? ''}`;
-      const hay = (
-        mode === 'oa' ? oaPart : mode === 'real' ? realPart : `${oaPart} ${realPart}`
-      ).toLowerCase();
+      // Every name the object answers to, whichever the mode draws. Search
+      // once followed the mode, on the reasoning that a reader asking for
+      // Orion's Arm names is not asking to be shown catalogue ones — true of
+      // *labels*, and the wrong rule for finding things. The mode opens on
+      // 'oa', so the catalogue was unsearchable until the reader changed a
+      // control they had no reason to look for, and a correct name returning
+      // nothing says the object is absent rather than differently labelled.
+      //
+      // The label shown for the hit still follows the mode. What the reader
+      // typed is how they found it; what they read is what the map calls it.
+      const hay = `${this.labels[id] ?? ''} ${this.labelsReal[id] ?? ''} ${
+        this.searchText[id] ?? ''
+      }`.toLowerCase();
       if (matchesAllTerms(hay, terms)) hits.push({ id, label });
     }
     hits.sort((a, b) => {
