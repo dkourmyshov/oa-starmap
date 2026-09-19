@@ -1327,9 +1327,25 @@ questions:
       nearest member while our five members lie within 481 ly of each other, so
       the disagreement is systematic rather than one bad label.
     map_does: >-
-      Draws no marker for any polity whose worlds it already places, because an
-      anchor of this kind adds nothing to ten or a hundred real positions and a
-      wide ring at a label's position would compete with them.
+      Draws no marker yet for any polity whose worlds it already places. The
+      reason first given for that was wrong and is corrected here rather than
+      quietly dropped: it said a wide ring at such an anchor "adds a claim the
+      source doesn't make". It does not. The add-on puts the polity's name at
+      that point, which is exactly the claim the marker would draw, and the
+      marker states no extent because this map draws none.
+
+      The second half was wrong too. The several anchors a large polity carries
+      were described as one name written across the sky repeatedly. Measured,
+      they are 600 to 3,200 ly apart: the NoCoZo's four span 3,234 ly, the Solar
+      Dominion's four 2,406, Metasoft's four 2,362. They are samples of a
+      volume, and a volume is the thing this map has no other way of showing --
+      its hundred placed Solar Dominion worlds are points, and points do not
+      say where a polity stops.
+
+      What remains of the objection is that thirty-three more wide rings among
+      the worlds they enclose may be hard to read. That is a rendering question,
+      not a question about what the sources say, and it was dressed up as the
+      latter.
 
       Of the seven first entered from the anchors, four turned out to be things
       this map already held under another name and were withdrawn: the Verifex
