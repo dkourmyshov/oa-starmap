@@ -10665,6 +10665,31 @@ worlds:
       line of sight and the rest is across it — consistent, and the cluster's
       direction is what places this.
 
+  - name: Filiae Reserve
+    kind: volume
+    also: [The Reserve]
+    affiliations: [caretaker-gods]
+    location:
+      note: >-
+        Three vertices and no distance, none of the three resolvable here. The
+        article gives "a rough tetrahedron from the red dwarf YTS 594-456111,
+        the sun-like star Filiae and the wisp of dark cloud locally called the
+        Mouthpiece" — YTS is a designation this map's catalogues do not carry,
+        and neither Filiae nor the Mouthpiece appears in any of them or in the
+        add-ons. So it is recorded and drawn nowhere.
+
+        What is known is the neighbourhood: it is listed among the Serpens
+        Region's places, whose members this map does place between 1,530 and
+        1,730 ly. A distance for any one vertex would put it there.
+    note: >-
+      "Volume of space centered around a group of stars apparently involved in
+      an old transcendent civilisation... It has numerous terraformed planets
+      teeming with life, but is aggressively protected by both local nanosystems
+      and several Caretaker Gods. What lies inside is unknown."
+
+      Held by the Caretaker Gods on that last sentence, which is the only holder
+      the article names. Probably the label Steve Bowers' maps carry as "The
+      Reserve", which is recorded as an alternate name.
   - name: Gilboa Reach
     kind: system
     affiliations: [sagittarius-transcultural-cooperation]
@@ -10792,7 +10817,16 @@ worlds:
     location:
       hip: 87740
       catalogue_from_source: true
-    note: HIP 87740, also HD 163334, in Ophiuchus at 1,687 ly.
+    note: >-
+      HIP 87740, also HD 163334, in Ophiuchus at 1,687 ly — the article places
+      it in the Serpens sector, which is a region rather than the constellation
+      and reaches this far.
+
+      "World in the Serpens sector inhabited by a decadent and evolutionarily
+      static heteromorph tweak clade, the Old Fogeys, who are served by
+      turingrade vecs. The Old Fogeys are likely left from one of the Inner
+      Sphere systems during the Age of Expansion, but records that might
+      confirm this have been lost.""
 
   # ---- the Serpens Reach, on the MPA and Cooperation border -----------------
   #
@@ -10906,9 +10940,8 @@ worlds:
       estimated: >-
         1,655 ly from Sol and about 158 from Sk'iiws'nnii, which is two
         constraints and leaves a circle. The third is an assumption rather than
-        a statement: Miracle City lists 84 ly to "the Cooperative Venture", and
-        Avensis is that polity's capital, so the figure is read as being to
-        here. On that reading three spheres meet in two points, 2.5 degrees
+        a statement: Miracle City lists 84 ly to "the Cooperative Venture",
+        and Avensis is its main planet, so the figure is read as being to here. On that reading three spheres meet in two points, 2.5 degrees
         apart, both in Ophiuchus and both satisfying all three distances
         exactly. This is their midpoint and the error covers both. If the 84 ly
         is to the Venture's nearest edge rather than its capital, the position
@@ -10923,7 +10956,14 @@ worlds:
     events:
       - year_at: 7609
         kind: settled
-    note: Capital of the Cooperative Venture.
+    note: >-
+      The Cooperative Venture's main planet. The Venture is not a polity and is
+      recorded as none: its own entry calls it "an interstellar cooperation
+      between the Serpens Region civilisations in mainly archaeology, trying to
+      understand some relics from lost alien civilisations, especially the Dawn
+      Hunters and the Black Acropolis", with sidelines in transfer protocols,
+      conflict resolution and geography. An organisation across the region's
+      worlds rather than a holder of them, so nothing here is coloured for it.
 
   # ---- the Tunh Xenohole ---------------------------------------------------
 
