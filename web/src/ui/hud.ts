@@ -657,14 +657,16 @@ export class Hud {
       note.appendChild(el('div', 'note-line', associations.source.citation));
     }
     if (oaStars) {
-      // The one layer whose positions are not measurements; say so where the
-      // other provenance lines are, not somewhere it can be missed.
+      // Positions the setting asserts rather than measures; say so where the
+      // other provenance lines are, not somewhere it can be missed. The line
+      // used to end "drawn as open diamonds", which stopped being true when the
+      // shape came off — and was misleading before that, since the 308 worlds
+      // carrying their own coordinates are asserted too and never were diamonds.
       note.appendChild(
         el(
           'div',
           'note-line note-warn',
-          `${oaStars.count} OA stars are placed by the setting, not observed — ` +
-            `drawn as open diamonds.`,
+          `${oaStars.count} OA stars are placed by the setting, not observed.`,
         ),
       );
     }

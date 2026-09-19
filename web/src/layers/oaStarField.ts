@@ -1,16 +1,25 @@
 /**
  * Orion's Arm stars — the suns the setting asserts.
  *
- * Every other point on this map is somewhere because a measurement put it there.
- * These are somewhere because the fiction says so, and the map would be lying by
- * omission if the two looked alike. So they are drawn as small open diamonds
- * rather than filled discs: recognisably stars, unmistakably not observations.
+ * They are drawn as discs coloured by spectral class, exactly as the catalogue
+ * stars are. The add-on gives 26 of the 27 a spectral type — mostly G2V, with a
+ * white dwarf, a brown dwarf, a pulsar and an O star among them — so there is
+ * real stellar data here, and it is what the marker shows.
  *
- * The exception is the handful the add-on carries only because Celestia's
- * catalogue omits them — Wadai's white dwarf, Geminga, Arkab Prior B. Those are
- * real objects at measured positions, so a diamond would state the opposite of
- * the truth about them; they get a filled disc. The distinction comes from the
- * curated `real` field, never from the shape of the designation.
+ * They were open diamonds until 2026-09-19, on the reasoning that "every other
+ * point on this map is somewhere because a measurement put it there, these are
+ * somewhere because the fiction says so, and the map would be lying by omission
+ * if the two looked alike." The first clause was true when written and is not
+ * now: 308 worlds carry their own coordinates, 223 from a stated right ascension
+ * and declination and 85 from a constellation, and every one is somewhere
+ * because the fiction says so. All of them draw as dots.
+ *
+ * So the diamond never meant "asserted rather than observed". It meant "came
+ * from the Celestia add-on" — provenance, not the nature of the claim — and 21
+ * marked out of 329 read as a distinction the map could not explain. The ring
+ * does not make it up either: ring continuity says how precisely a thing is
+ * located, so a fictional star with a stated position takes a solid ring exactly
+ * as a catalogue star does. That is correct, and a different question.
  *
  * What the marker no longer carries is the polity. An affiliation is drawn the
  * same way here as it is on a real settled star — a ring around the star and a
@@ -23,7 +32,7 @@
  * did apply that law, on the reasoning that the absolute magnitudes are asserted
  * too — which made them invisible. These stars sit at 150-1570 pc with typical
  * absolute magnitude 4.7, so their apparent magnitude is 12 to 16; against a
- * magnitude limit of 7.5 that is a flux of 0.01, and a diamond at one percent
+ * magnitude limit of 7.5 that is a flux of 0.01, and a marker at one percent
  * alpha is not on the map in any useful sense.
  *
  * The mistake was treating them as photometry. They are annotations: the point
@@ -67,7 +76,6 @@ const VERTEX_SHADER = /* glsl */ `
 
   attribute vec3 aColor;
   attribute float aBare;
-  attribute float aReal;
 
   uniform float uSize;
   ${DOF_PARS}
@@ -76,7 +84,6 @@ const VERTEX_SHADER = /* glsl */ `
 
   varying vec3 vColor;
   varying float vGain;
-  varying float vReal;
   varying float vBlur;
   varying float vScale;
 
@@ -92,14 +99,14 @@ const VERTEX_SHADER = /* glsl */ `
     }
 
     vColor = aColor;
-    vReal = aReal;
 
     // Entries the add-on gives nothing but a designation recede, so the ones
     // it actually says something about stand out.
     vGain = mix(1.0, uBareDim, aBare);
 
-    // Constant screen size: a marker, not a luminosity. Big enough that the
-    // hollow centre reads as a diamond rather than smearing into a dot.
+    // Constant screen size: a marker, not a luminosity. These sit at 150 to
+    // 1,570 pc with a typical absolute magnitude of 4.7, so the magnitude law
+    // would put them at apparent 12 to 16 and off the map entirely.
     // Depth of field. The sprite grows to make room for the blur and the
     // fragment scales its coordinate back, so the marker keeps its screen size
     // and only its edges soften — a ring that swelled with defocus would read
@@ -125,7 +132,6 @@ const FRAGMENT_SHADER = /* glsl */ `
 
   varying vec3 vColor;
   varying float vGain;
-  varying float vReal;
   varying float vBlur;
   varying float vScale;
 
@@ -133,21 +139,10 @@ const FRAGMENT_SHADER = /* glsl */ `
     vec2 offset = (gl_PointCoord * 2.0 - 1.0) * vScale;
     float w = vBlur;
 
-    // A real object gets a star's glyph: a soft filled disc, drawn at constant
-    // size because the magnitude law would put a 14.8-magnitude white dwarf
-    // below any usable exposure. The rest get an open diamond.
-    float disc = 1.0 - smoothstep(0.10 - w, 0.62 + w, length(offset));
-
-    // L1 distance makes a diamond where L2 would make a circle.
-    float d = abs(offset.x) + abs(offset.y);
-
-    // Hollow: the outline is the tell, and a filled marker at this size would be
-    // indistinguishable from a star.
-    float edge = 1.0 - smoothstep(0.42 - w, 1.0 + w, d);
-    float core = 1.0 - smoothstep(0.0, 0.46 + w, d);
-    float diamond = d > 1.0 ? 0.0 : clamp(edge - core, 0.0, 1.0);
-
-    float shape = mix(diamond, disc, vReal);
+    // A star's glyph: a soft filled disc, at constant size because the
+    // magnitude law would put a 14.8-magnitude white dwarf below any usable
+    // exposure.
+    float shape = 1.0 - smoothstep(0.10 - w, 0.62 + w, length(offset));
     float alpha = shape * uOpacity * vGain;
     if (alpha < 0.004) discard;
 
@@ -191,7 +186,6 @@ export class OAStarField {
     const positions = new Float32Array(this.count * 3);
     const colors = new Float32Array(this.count * 3);
     const bare = new Float32Array(this.count);
-    const real = new Float32Array(this.count);
 
     const lut = data.colorLut;
     const lutSize = lut.length / 3;
@@ -208,7 +202,6 @@ export class OAStarField {
       const entry = data.names[i];
       bare[out] =
         entry && entry.oa_designation && !entry.system && !entry.affiliation ? 1 : 0;
-      real[out] = entry?.real ? 1 : 0;
 
       const ci = data.positions[base + 4];
       if (ci <= unknown + 1 || lutSize === 0) {
@@ -230,7 +223,6 @@ export class OAStarField {
     geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
     geometry.setAttribute('aColor', new THREE.BufferAttribute(colors, 3));
     geometry.setAttribute('aBare', new THREE.BufferAttribute(bare, 1));
-    geometry.setAttribute('aReal', new THREE.BufferAttribute(real, 1));
 
     // Only the add-on stars carrying a world are dated at all; the rest are
     // positions the setting asserts with no year attached, and take the undated
