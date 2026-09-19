@@ -797,22 +797,23 @@ export class Hud {
       swatch.style.background = polity.color;
       row.appendChild(swatch);
       row.appendChild(el('span', 'legend-name', polity.name));
-      // How much of this polity is on the map, which is the member tally and
-      // nothing else. A landmark fraction used to replace it wherever a polity
-      // had landmarks at all, on the reasoning that a fraction says more than a
-      // count because the denominator is knowable — true in itself, and it hid
-      // most of the legend. The Non-Coercive Zone read 13/20 while holding 119
-      // things; the Efficiency Maximization Paradigm read 1/1 while holding
-      // five, which is how it was noticed. Twenty-one of forty rows understated
-      // themselves, and the number also changed meaning on entering history
-      // mode, where the same row has always shown a plain count.
+      // How much of this polity is on the map, over how much of it is known:
+      // "112/119" is a hundred and twelve places drawn out of a hundred and
+      // nineteen the sources put under this polity, the other seven having no
+      // coordinates yet. Where everything known is drawn the fraction says
+      // nothing and the tally stands alone.
       //
-      // The fraction survives where it says something the tally cannot: that
-      // some of the polity's named landmarks are not drawn at all.
-      const unresolved = polity.landmark_count - polity.resolved_count;
+      // This replaced a fraction of resolved landmarks over listed ones, which
+      // measured something else entirely — how many of a polity's named
+      // clusters and nebulae bound to a row in the catalogues this map loads —
+      // and which substituted itself for the tally rather than joining it. The
+      // Non-Coercive Zone read 13/20 while holding 119 things, and 21 of the 40
+      // rows understated themselves that way. That number is a fact about our
+      // catalogue coverage rather than about the setting, so it belongs in
+      // questions.md and not in front of a reader.
       const count =
-        unresolved > 0
-          ? `${polity.member_count} · ${polity.resolved_count}/${polity.landmark_count}`
+        polity.placed_count < polity.member_count
+          ? `${polity.placed_count}/${polity.member_count}`
           : String(polity.member_count);
       const countNode = el('span', 'legend-count', count);
       row.appendChild(countNode);

@@ -444,6 +444,8 @@ export interface PolityInfo {
   resolved_count: number;
   /** Objects of every kind the polity holds: landmarks, colonies, systems, worlds. */
   member_count: number;
+  /** Of those, how many have a position and are drawn. */
+  placed_count: number;
   beyond_frontier_count: number;
   /** Key into `FictionData.sources` for where this landmark list was read from. */
   source: string;

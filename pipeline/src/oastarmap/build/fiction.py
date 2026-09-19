@@ -14,6 +14,7 @@ from __future__ import annotations
 
 import json
 import math
+import re
 from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Any
@@ -228,8 +229,13 @@ def _load_distances(out_dir: Path) -> dict[str, np.ndarray]:
     return distances
 
 
-def _member_counts(out_dir: Path) -> Counter[str]:
-    """How many objects of any kind each polity actually holds.
+def _key(name: str) -> str:
+    """Fold a name for comparing a landmark designation against a place name."""
+    return re.sub(r"[^a-z0-9]", "", name.lower())
+
+
+def _member_counts(out_dir: Path) -> tuple[Counter[str], Counter[str], dict[str, set[str]]]:
+    """How many objects of any kind each polity holds, and how many are drawn.
 
     The legend used to hide a polity with no *landmark* bindings, which meant it
     hid seventeen of them: a landmark is a cluster or nebula read off the
@@ -243,12 +249,21 @@ def _member_counts(out_dir: Path) -> Counter[str]:
     skipped, which is a normal state rather than an error.
     """
     counts: Counter[str] = Counter()
+    placed: Counter[str] = Counter()
+    # What each polity's members are called, so an unresolved landmark that is
+    # already a world entry is not counted a second time. Ten of the forty are:
+    # the Helix and Jupiter nebulae, NGC 2438 and the rest were placed by hand
+    # from published coordinates *because* the catalogues do not carry them, so
+    # they are at once a drawn object and a landmark that failed to bind.
+    named: dict[str, set[str]] = defaultdict(set)
 
     colonies = out_dir / "innersphere.json"
     if colonies.exists():
         for row in json.loads(colonies.read_text(encoding="utf-8")):
             for affiliation in row.get("affiliations", []):
                 counts[affiliation] += 1
+                # Every colony sits on a catalogue star, so every one is drawn.
+                placed[affiliation] += 1
 
     # The add-on carries one affiliation a star; a world carries a list, because
     # Orion's Arm volumes interpenetrate and a place can be held by several at
@@ -261,13 +276,22 @@ def _member_counts(out_dir: Path) -> Counter[str]:
         if not path.exists():
             continue
         for row in json.loads(path.read_text(encoding="utf-8")):
+            # An add-on star carries its position; a world may have none yet.
+            drawn = "ra_deg" not in row or row.get("ra_deg") is not None
+            keys = {_key(row.get("name", ""))} | {_key(a) for a in row.get("also") or ()}
             one = row.get("affiliation")
             if one:
                 counts[one] += 1
+                if drawn:
+                    placed[one] += 1
+                named[one] |= keys
             for affiliation in row.get("affiliations") or ():
                 counts[affiliation] += 1
+                if drawn:
+                    placed[affiliation] += 1
+                named[affiliation] |= keys
 
-    return counts
+    return counts, placed, named
 
 
 def build_fiction(
@@ -391,10 +415,22 @@ def build_fiction(
         )
 
     # Landmarks plus every other kind of member, so the legend can show a polity
-    # that holds only colonies.
-    members = _member_counts(out_dir)
+    # that holds only colonies. Counted twice over: everything the polity is
+    # known to hold, and the subset of it this map can actually draw. A place
+    # with no coordinates yet belongs to the polity as surely as one with them,
+    # and the difference between the two numbers is the honest measure of how
+    # much of the polity is missing from the map.
+    members, placed_members, named = _member_counts(out_dir)
     for polity in fiction.polities:
-        members[polity.id] += sum(1 for b in report.resolved if polity.id in b.polities)
+        for binding in report.bindings:
+            if polity.id not in binding.polities:
+                continue
+            if binding.resolved:
+                members[polity.id] += 1
+                placed_members[polity.id] += 1
+            elif _key(binding.landmark) not in named.get(polity.id, ()):
+                # Known to belong to the polity and drawn nowhere.
+                members[polity.id] += 1
 
     files = {
         "cluster_polity": write_array(out_dir / "fiction.clusterpolity.bin", cluster_polity),
@@ -415,6 +451,7 @@ def build_fiction(
                         "landmark_count": len(p.landmarks),
                         "resolved_count": sum(1 for b in report.resolved if p.id in b.polities),
                         "member_count": members.get(p.id, 0),
+                        "placed_count": placed_members.get(p.id, 0),
                         "beyond_frontier_count": sum(
                             1 for b in report.resolved if p.id in b.polities and b.beyond_frontier
                         ),
