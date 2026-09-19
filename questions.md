@@ -8,7 +8,7 @@ Nothing below is a complaint about the setting. Most of it is the ordinary frict
 
 ---
 
-## Open questions (44)
+## Open questions (45)
 
 ### Shona — Shona's article gives its position twice, and the two directions are thirty degrees apart.
 
@@ -588,6 +588,17 @@ Epsilon Indi already carries two colonies here, Gatlida on A and Praxis-Gnosis o
 
 **What would settle it.** The articles. Either would also say whether Tierra del Fuego is a world of one of the colonies already held or a third thing in the same system.
 
+### Puppis Democracy — The add-on puts the Puppis Democracy on Pi Puppis's bearing at 1,092 ly; this map's catalogue has the star at 566.
+
+*uncertainty*
+
+oalocs3.dsc's "Puppis Democracy" label falls 0.01 degrees from Pi Puppis, the red giant the Encyclopaedia's timeline says the Democracy "emerges near", and on which this map binds Ahadi, its sole principal member. On bearing the three agree exactly. On range they do not: the add-on states 1,092 ly, and the catalogue this map loads puts Pi Puppis at 566.
+This is a real star and the disagreement is between two measurements of it, not between the setting and astronomy -- the same shape as Beta Arae and the wormhole-nexus distances, an add-on from the 2000s quoting the figure of its day. Nothing in the fiction depends on which is right.
+
+**What the map does now.** Keeps Ahadi on the catalogue star at the catalogue's distance, and records the add-on's figure on the entry. No separate marker is drawn for the polity, Ahadi being where the sources put it.
+
+**What would settle it.** Nothing outstanding for the map; the catalogue is ours to keep current. Recorded so the next reader does not take the 1,092 for a claim about the setting.
+
 ## The Inner Sphere colony tables
 
 909 of 1,122 rows resolve to a star we hold. The rest break down as follows.
@@ -656,7 +667,7 @@ Blanco 1, Collinder 173, Collinder 359, Cone Nebula, Czernik 8, NGC 2244, NGC 70
 
 ## Worlds located only by constellation
 
-85 of 677 canonical worlds are given as a distance and a constellation. That fixes the distance exactly and the direction only to the width of the constellation, which at these ranges is hundreds to thousands of light years. The map draws these with a broken ring rather than a solid one, and the detail panel gives the error in light years.
+85 of 679 canonical worlds are given as a distance and a constellation. That fixes the distance exactly and the direction only to the width of the constellation, which at these ranges is hundreds to thousands of light years. The map draws these with a broken ring rather than a solid one, and the detail panel gives the error in light years.
 
 Coordinates, or a nearby named star, would turn any of these from a region into a position.
 

@@ -1677,3 +1677,28 @@ questions:
     would_settle: >-
       The articles. Either would also say whether Tierra del Fuego is a world of
       one of the colonies already held or a third thing in the same system.
+
+  - id: dsc-pi-puppis-distance
+    topic: Puppis Democracy
+    status: open
+    severity: uncertainty
+    summary: The add-on puts the Puppis Democracy on Pi Puppis's bearing at 1,092 ly; this map's catalogue has the star at 566.
+    detail: >-
+      oalocs3.dsc's "Puppis Democracy" label falls 0.01 degrees from Pi Puppis,
+      the red giant the Encyclopaedia's timeline says the Democracy "emerges
+      near", and on which this map binds Ahadi, its sole principal member. On
+      bearing the three agree exactly. On range they do not: the add-on states
+      1,092 ly, and the catalogue this map loads puts Pi Puppis at 566.
+
+      This is a real star and the disagreement is between two measurements of
+      it, not between the setting and astronomy -- the same shape as Beta Arae
+      and the wormhole-nexus distances, an add-on from the 2000s quoting the
+      figure of its day. Nothing in the fiction depends on which is right.
+    map_does: >-
+      Keeps Ahadi on the catalogue star at the catalogue's distance, and
+      records the add-on's figure on the entry. No separate marker is drawn
+      for the polity, Ahadi being where the sources put it.
+    would_settle: >-
+      Nothing outstanding for the map; the catalogue is ours to keep current.
+      Recorded so the next reader does not take the 1,092 for a claim about the
+      setting.

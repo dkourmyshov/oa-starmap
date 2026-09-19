@@ -5174,6 +5174,27 @@ worlds:
     note: >-
       GJ 1105, as the colony table has it.
 
+  - name: Conver Ambi
+    kind: polity_marker
+    affiliations: [conver-ambi]
+    location:
+      ra_deg: 97.5
+      dec_deg: 17.0
+      distance: 80 ly
+      note: >-
+        From TaurusNexus.dsc, one of the Orion's Arm Celestia add-ons' location catalogues (OAAddons9,
+        OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv),
+        the only source this map holds that gives the polity a position. It
+        falls in Gemini, 10.2 degrees on the sky and 26 ly in space from Conver
+        Ky, the polity's capital, which this map places on its catalogue star
+        at 56.8 ly -- a marker sitting a few tens of light years from the
+        capital of a polity that was a few tens of light years across, which is
+        where it should sit.
+    note: >-
+      A marker for a polity that no longer exists at the setting's present, in
+      the roster from 1984 to 3943 AT. Its one placed member, Conver Ky, is
+      drawn as the Solar Dominion's today and as Conver Ambi's in history mode;
+      this mark stands for the polity itself at any year.
   - name: Conver Ky
     kind: system
     system: Conver Ky
@@ -11274,7 +11295,16 @@ worlds:
     article: https://www.orionsarm.com/eg-article/4703c44b2ccb2
     location:
       star: Pi Puppis
-    note: Pi Puppis, 566 ly out.
+      note: >-
+        oalocs3.dsc, one of the Orion's Arm Celestia add-ons' location catalogues (OAAddons9,
+        OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv),
+        writes a "Puppis Democracy" label 0.01 degrees from this star's bearing
+        -- so the add-on puts the polity here too, which agrees with the
+        Encyclopaedia's "emerges near the red giant Pi Puppis". It gives 1,092
+        ly where this map's catalogue gives 566 for the star. That is one
+        astronomy against another, an older distance for a real star, and the
+        catalogue's stands; see questions.md under the add-on distances.
+    note: Pi Puppis, 566 ly out. The Puppis Democracy's sole principal member.
 
   # ---- the Synthetic/Human Alliance ----------------------------------------
 
@@ -12263,6 +12293,24 @@ worlds:
 
   # ---- ahuman, unaligned, and the rest ------------------------------------
 
+  - name: Amalgamation (Perseus)
+    kind: polity_extent
+    affiliations: [amalgamation]
+    location:
+      ra_deg: 34.693
+      dec_deg: 58.314
+      distance: 6435.5 ly
+      note: >-
+        From oaloc4.dsc, one of the Orion's Arm Celestia add-ons' location catalogues (OAAddons9,
+        OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv). It falls 0.09 degrees from this map's own
+        marker for the Amalgamation and 346 ly nearer, so the two agree on
+        bearing to within a tenth of a degree and differ 5% in depth.
+    note: >-
+      Drawn as a second mark rather than folded into the first, on the project
+      owner's call: two positions along one bearing say how deep the polity
+      runs, which one point cannot. Both fall in Perseus, so the constellation
+      does not distinguish them and this one carries it in its name while the
+      marker keeps the polity's own.
   - name: The Amalgamation
     kind: polity_marker
     affiliations: [amalgamation]

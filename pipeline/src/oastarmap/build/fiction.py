@@ -276,8 +276,16 @@ def _member_counts(out_dir: Path) -> tuple[Counter[str], Counter[str], dict[str,
         if not path.exists():
             continue
         for row in json.loads(path.read_text(encoding="utf-8")):
-            # An add-on star carries its position; a world may have none yet.
-            drawn = "ra_deg" not in row or row.get("ra_deg") is not None
+            # Whether the thing is drawn, which is not whether it carries
+            # coordinates. A world bound to a catalogue star or to a
+            # constellation cone has a null `ra_deg` because its position is
+            # resolved downstream -- 295 are bound to a star, 85 to a cone, and
+            # reading `ra_deg` called 405 of the 627 drawn worlds undrawn and
+            # understated every polity in the legend. `method` is where this
+            # lives: "none" is located by nothing, and an add-on star has no
+            # method field at all because it is always positioned.
+            method = row.get("method")
+            drawn = True if method is None else method != "none"
             keys = {_key(row.get("name", ""))} | {_key(a) for a in row.get("also") or ()}
             one = row.get("affiliation")
             if one:
