@@ -16,7 +16,13 @@ import math
 import numpy as np
 import pytest
 
-from oastarmap.build.oastars import STARS_FILE, OAStarStats, _place, build_oastars
+from oastarmap.build.oastars import (
+    DESIGNATION_ONLY,
+    STARS_FILE,
+    OAStarStats,
+    _place,
+    build_oastars,
+)
 from oastarmap.fiction.schema import OAStarFile
 from oastarmap.importers.celestia import parse_stc, system_name
 from oastarmap.paths import DATA_OUT_DIR, FICTION_DIR
@@ -426,7 +432,49 @@ class TestCuration:
         hidden = {e["name"] for e in built["names"] if e["hidden"]}
         assert {"Proxima Centauri2", "Arkab Prior Necklace"} <= hidden
         assert "JD 836902" not in hidden
-        assert len(hidden) == 54  # the 52 above, and these two
+
+        # Nothing is hidden but by one of the three rules. This was a count --
+        # `len(hidden) == 54` -- until the filler rule took it to 91, and a
+        # count answers the question by being edited. Composing the set from
+        # the rules keeps the guard: an entry hidden for no stated reason still
+        # fails, however many there are.
+        by_comment = {
+            e["name"]
+            for e in built["names"]
+            if e["hidden"] and any(r in e["comment"] for r in ("NGC 6633", "near Cenote"))
+        }
+        filler = {
+            e["name"]
+            for e in built["names"]
+            if e["hidden"]
+            and not e["comment"]
+            and not e["system"]
+            and DESIGNATION_ONLY.match(e["name"])
+        }
+        assert hidden == by_comment | filler | {"Proxima Centauri2", "Arkab Prior Necklace"}
+
+    def test_a_star_the_addon_only_names_is_hidden(self, built):
+        """`alottafictionalstars.stc` is 29 G2V stars with every field blank.
+
+        They were drawn because they carry the Orion's Arm flag, which they
+        honestly do -- they came from an add-on. But the "Orion's Arm only"
+        control reads as "things the setting says something about", and of these
+        it says nothing: no world, no system, no comment, and a designation for
+        a name.
+        """
+        # Tested on the label, which is what a reader sees: it is the world's
+        # name where one is bound and the designation where nothing is. So a
+        # drawn star labelled "JD 518795" is the unlabelled dot complained of,
+        # while JD 76601 is drawn and labelled Guanche and is not.
+        drawn = [e for e in built["names"] if not e["hidden"]]
+        bare = [e["label"] for e in drawn if DESIGNATION_ONLY.match(e["label"])]
+        assert bare == [], f"drawn with nothing but a designation for a label: {bare}"
+
+        # And the rule stops there. These are unbound and uncommented too; what
+        # saves them is that somebody named them.
+        shown = {e["name"] for e in drawn}
+        for named in ("Enigma", "Geminga", "Arkab Prior B"):
+            assert named in shown
 
     def test_curating_an_absent_star_fails_the_build(self, tmp_path):
         """Otherwise a designation typo silently loses the whole assignment."""

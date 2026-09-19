@@ -29,6 +29,26 @@
 # by the cross-match.
 hide_comment_matching:
   - Star in cluster NGC 6633
+  # Five stars whose whole content is "Star near Cenote with planets" -- the
+  # same claim as the NGC 6633 rule above in a different neighbourhood: a star
+  # is there, and nothing about it. The sixth of that group names a system,
+  # Cenote and Sequence, and stays.
+  - near Cenote
+
+# Hide add-on stars carrying nothing but a catalogue designation: no world bound
+# to them, no system, no comment, and a name that is a designation rather than a
+# name. Twenty-nine of the thirty-three are `alottafictionalstars.stc`, whose
+# filename is the honest description -- G2V after G2V with every other field
+# blank, generated to populate the volume rather than to say anything.
+#
+# They were visible because they are flagged as Orion's Arm data, which they
+# are: they came from an add-on. But "Orion's Arm only" reads to anyone using it
+# as "things the setting says something about", and of these it says nothing.
+#
+# Nothing is discarded. The entries stay in oa_stars.yaml with their positions,
+# and any one of them reappears the moment a world binds to it or somebody gives
+# it a name, without this file being touched.
+hide_designation_only: true
 
 systems:
   - star: Arkab Prior B

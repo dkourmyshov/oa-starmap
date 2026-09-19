@@ -31,6 +31,7 @@ from typing import Any
 
 import astropy.units as u
 import numpy as np
+import yaml
 
 from oastarmap.build.writer import CI_UNKNOWN, write_array, write_json
 from oastarmap.fiction.schema import (
@@ -85,6 +86,7 @@ class OAStarStats:
     spectral: Counter = field(default_factory=Counter)
     name_collisions: list[str] = field(default_factory=list)
     hidden: int = 0
+    filler: int = 0
     curated: int = 0
 
     def as_dict(self) -> dict[str, Any]:
@@ -95,16 +97,50 @@ class OAStarStats:
             "spectral_types": dict(sorted(self.spectral.items())),
             "name_collisions": self.name_collisions,
             "hidden": self.hidden,
+            "filler": self.filler,
             "curated": self.curated,
         }
+
+
+#: Names that are a catalogue designation and nothing else.
+#:
+#: "JD 518795" matches and "Geminga" does not, which is the whole distinction
+#: the filler rule turns on: somebody troubled to name the second.
+DESIGNATION_ONLY = re.compile(r"^(JD|HIP|HD|GJ|GL|TYC|YTS|NR)[\s-]*[\d\s-]+$", re.IGNORECASE)
+
+
+def _stars_with_worlds(fiction_dir: Path) -> set[str]:
+    """Add-on stars some world in the file is bound to.
+
+    Read from worlds.yaml rather than from the built dataset because this build
+    runs before that one. Only the `oa_star` field is wanted, so a failure to
+    parse is not fatal here -- the worlds build will raise on it in its turn,
+    with a better message than this function could give.
+    """
+    path = fiction_dir / "worlds.yaml"
+    if not path.exists():
+        return set()
+    try:
+        raw = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+    except yaml.YAMLError:
+        return set()
+    bound: set[str] = set()
+    for world in raw.get("worlds") or ():
+        location = (world or {}).get("location") or {}
+        star = location.get("oa_star") or world.get("oa_star")
+        if star:
+            bound.add(str(star))
+    return bound
 
 
 def _place(
     entries: list[OAStarEntry],
     curation: OASystemFile,
     stats: OAStarStats,
+    bound: set[str] | None = None,
 ) -> list[dict[str, Any]]:
     """Turn imported entries into positioned records, applying curation."""
+    bound = set() if bound is None else bound
     by_star: dict[str, OASystem] = {s.star: s for s in curation.systems}
     unmatched = sorted(set(by_star) - {e.name for e in entries})
     if unmatched:
@@ -149,9 +185,23 @@ def _place(
         curated = by_star.get(entry.name)
         # Two ways to be hidden: a comment rule that covers a whole group, and a
         # flag on one entry for a duplicate no rule could recognise.
-        hidden = any(rule in entry.comment for rule in curation.hide_comment_matching) or bool(
-            curated and curated.hidden
+        # Three ways to be hidden: a comment rule that covers a whole group, a
+        # flag on one entry for a duplicate no rule could recognise, and the
+        # filler rule for entries with no comment for a substring to match.
+        filler = (
+            curation.hide_designation_only
+            and entry.name not in bound
+            and not entry.system
+            and not entry.comment
+            and bool(DESIGNATION_ONLY.match(entry.name))
         )
+        hidden = (
+            any(rule in entry.comment for rule in curation.hide_comment_matching)
+            or bool(curated and curated.hidden)
+            or filler
+        )
+        if filler:
+            stats.filler += 1
         if hidden:
             stats.hidden += 1
 
@@ -199,7 +249,9 @@ def build_oastars(stars_path: Path | None = None, out_dir: Path | None = None) -
 
     stats = OAStarStats()
     curation = OASystemFile.load(stars_path.with_name(SYSTEMS_FILE))
-    records = _place(OAStarFile.load(stars_path).stars, curation, stats)
+    records = _place(
+        OAStarFile.load(stars_path).stars, curation, stats, _stars_with_worlds(stars_path.parent)
+    )
 
     known = {p.id for p in FictionFile.load(stars_path.with_name(POLITIES_FILE)).polities}
     unknown = sorted({r["affiliation"] for r in records if r["affiliation"]} - known)
