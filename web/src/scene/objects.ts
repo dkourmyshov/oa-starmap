@@ -275,6 +275,14 @@ export interface LayerVisibility {
   world: boolean;
   /** Show only objects Orion's Arm has claimed. */
   oaOnly?: boolean;
+  /**
+   * Show the empire-extent labels.
+   *
+   * Their rings are switched off by a gain in the shader, which the label
+   * overlay knows nothing about — so without this the names went on being
+   * printed over nothing, which is worse than leaving the rings up.
+   */
+  polityExtent?: boolean;
 }
 
 export interface LayoutOptions {
@@ -427,6 +435,15 @@ export class ObjectIndex {
   private readonly labelsReal: (string | undefined)[];
   /** 1 where the object carries Orion's Arm content of any kind. */
   private readonly isOA: Uint8Array;
+  /**
+   * An empire-extent label, which the reader can switch off.
+   *
+   * Kept per object rather than read off the layer, because the layer is
+   * `world` for these as for everything else in worlds.yaml — hiding the
+   * whole world layer to hide thirty-four annotations would take six hundred
+   * places with it.
+   */
+  private readonly isExtent: Uint8Array;
   /** 1 where the position comes from the fiction rather than a measurement. */
   private readonly assertedPosition: Uint8Array;
   /**
@@ -506,6 +523,7 @@ export class ObjectIndex {
     this.labels = new Array(total);
     this.labelsReal = new Array(total);
     this.isOA = new Uint8Array(total);
+    this.isExtent = new Uint8Array(total);
     this.assertedPosition = new Uint8Array(total);
     this.floored = new Uint8Array(total);
     // -Infinity means "always there", and after construction only ordinary
@@ -824,6 +842,7 @@ export class ObjectIndex {
         this.kind[at] = KIND_WORLD;
         this.srcIndex[at] = i;
         this.isOA[at] = 1;
+        if (world.kind === 'polity_extent') this.isExtent[at] = 1;
         const guests = worlds.byHost.get(world.name) ?? [];
         const wKnown = combinedYears([world, ...guests], 'known');
         this.knownFrom[at] = wKnown.from;
@@ -987,6 +1006,7 @@ export class ObjectIndex {
       if (kind === KIND_ASSOCIATION && !visible.association) continue;
       if (kind === KIND_OASTAR && !visible.oastar) continue;
       if (kind === KIND_WORLD && !visible.world) continue;
+      if (this.isExtent[id] && visible.polityExtent === false) continue;
       // An OB association is exempt. Its own layer does not respond to this
       // switch either, and for the same reason: unlike a cluster or a nebula it
       // carries no polity binding at all, so filtering on the setting's claims

@@ -194,6 +194,7 @@ async function main(): Promise<void> {
       oastar: Boolean(oaStarField),
       world: Boolean(worldField),
       oaOnly: DEFAULT_ONLY_OA,
+      polityExtent: DEFAULT_POLITY_EXTENTS,
     },
   };
 
@@ -543,7 +544,12 @@ async function main(): Promise<void> {
         hiiField?.setOnlyOA(enabled);
       },
       onPolityExtents: (enabled) => {
+        // Two things, because the ring and its name are drawn by different
+        // machinery: a gain in the settled-field shader, and a filter in the
+        // label overlay. Setting only the first left the names printed over
+        // nothing.
         settledField?.setExtentsVisible(enabled);
+        view.visible.polityExtent = enabled;
       },
       onOAStarsVisible: (value) => {
         if (oaStarField) oaStarField.visible = value;
@@ -675,6 +681,7 @@ async function main(): Promise<void> {
     hiiField?.setOnlyOA(true);
   }
   settledField?.setExtentsVisible(DEFAULT_POLITY_EXTENTS);
+  view.visible.polityExtent = DEFAULT_POLITY_EXTENTS;
   if (historyPanel) historyPanel.visible = DEFAULT_HISTORY_PANEL_VISIBLE;
 
   viewer.addFrameCallback((dt) => {

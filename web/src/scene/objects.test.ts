@@ -1571,6 +1571,52 @@ describe('the map as it stood in a year', () => {
       .layout(camera(), { ...at(year, showUndated), maxLabels: 5 })
       .map((label) => label.text);
 
+  it('hides an empire-extent label when the extents are switched off', () => {
+    // The ring and its name are drawn by different machinery: the ring by a
+    // gain in the settled-field shader, the name by this overlay. Switching the
+    // extents off used to reach only the first, so thirty-four names went on
+    // being printed over nothing — which is worse than leaving the rings up,
+    // because a name with no mark under it looks like a place.
+    //
+    // The filter cannot be the `world` layer flag, which is what visibility is
+    // otherwise keyed on: these are worlds like the other six hundred, and
+    // hiding that layer would take all of them.
+    // Far enough apart that the declutter pass keeps both; overlapping boxes
+    // would drop one for reasons unrelated to what is being tested.
+    const standalone = (name: string, kind: string, x: number) =>
+      ({
+        ...dated(name, 1000),
+        kind,
+        star_index: null,
+        x,
+        y: 0,
+        z: -100,
+      }) as unknown as WorldData['worlds'][number];
+
+    const extent = standalone('NoCoZo (Vela)', 'polity_extent', -30);
+    const ordinary = standalone('Ridgewell', 'system', 30);
+    const index = new ObjectIndex(makeStars([], {}), null, null, null, null, null, {
+      worlds: [extent, ordinary],
+      byStar: new Map(),
+      byOAStar: new Map(),
+      byHost: new Map(),
+    } as unknown as WorldData);
+
+    const names = (polityExtent: boolean) =>
+      index
+        .layout(camera(), {
+          ...pickOptions,
+          maxLabels: 5,
+          visible: { ...ALL_VISIBLE, polityExtent },
+        })
+        .map((label) => label.text);
+
+    expect(names(true)).toContain('NoCoZo (Vela)');
+    expect(names(false)).not.toContain('NoCoZo (Vela)');
+    // And the switch reaches only the extents.
+    expect(names(false)).toContain('Ridgewell');
+  });
+
   it('does not name a settlement before anyone reached it', () => {
     // The star is real and is drawn in every year. What the year decides is
     // whether the setting has a name for it yet — so before 4000 the label is
