@@ -12022,7 +12022,7 @@ worlds:
       Umma, which is the colour drawn. Plural in its own article's title and
       singular in the add-on's entry.
   - name: Terragen Federation
-    kind: polity_marker
+    kind: polity_extent
     also: [Terran Federation]
     affiliations: [terragen-federation]
     article: https://www.orionsarm.com/eg-topic/45ce4e17cd0c6
@@ -12038,8 +12038,16 @@ worlds:
         an alternate rather than followed.
     note: >-
       Sixty light years out is the early Federation's own scale rather than a
-      claim about the polity at its greatest extent, and this map places twenty
-      of its worlds independently.
+      claim about the polity at its greatest extent. Recorded as an extent label
+      rather than as the polity's marker, which is the same call as the
+      thirty-three from the empire catalogues and rests on the same test: the
+      Federation holds twenty places here and six of them are drawn, all of
+      them Inner Sphere colonies, so switching this label off costs an
+      annotation and not the polity.
+
+      That count is worth the words. Read off worlds.yaml alone the Federation
+      has nothing placed at all, which is what made this a marker to begin with;
+      its worlds are colonies on real stars, in another file.
   - name: Garden of Paradise Cluster
     kind: volume
     affiliations: [sophic-league]

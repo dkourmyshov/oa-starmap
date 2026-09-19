@@ -48,12 +48,13 @@ export const DEFAULT_ONLY_OA: boolean = true;
 /**
  * Whether the empire-extent labels start on.
  *
- * On, because they are the only thing on this map that says where a polity
- * stops — a hundred placed Solar Dominion worlds are points, and points do not
- * draw a border. Off is for when thirty-three wide rings among the worlds they
- * enclose get in the way, which is the reason there is a switch at all.
+ * Off. They are the only thing on this map that says where a polity stops — a
+ * hundred placed Solar Dominion worlds are points, and points do not draw a
+ * border — but that is an answer to a question the reader has to ask first.
+ * Thirty-four wide rings over the worlds they enclose is a lot to meet before
+ * asking it, so the map opens without them and they are one click away.
  */
-export const DEFAULT_POLITY_EXTENTS: boolean = true;
+export const DEFAULT_POLITY_EXTENTS: boolean = false;
 export const DEFAULT_ASSOCIATIONS_VISIBLE: boolean = false;
 export const DEFAULT_HISTORY_PANEL_VISIBLE: boolean = false;
 export const DEFAULT_GRID_VISIBLE: boolean = true;
