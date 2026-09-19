@@ -1520,3 +1520,74 @@ questions:
     would_settle: >-
       Whether the setting means the cluster or the nebula. Nothing in the
       Laughter Hegemony's material distinguishes them.
+
+  - id: serpens-sector-or-region
+    topic: Serpens Sector and Serpens Region
+    status: open
+    severity: uncertainty
+    summary: The add-on carries both as separate objects 1,500 ly apart; the Encyclopaedia uses the two words for what may be one thing.
+    detail: >-
+      southOAEMPIRES.dsc has a SERPENS REGION at 18h 30m, +5.5, 1600 ly.
+      oalocationsx.dsc has a Serpens Sector at 17h 20m, -14.9, 3159 ly. They are
+      21 degrees apart on the sky and 1,559 ly apart in space, so the add-on
+      treats them as two objects.
+
+      The Encyclopaedia uses both words without obviously distinguishing them. A
+      colony article says a system "was isolated for 3300 years because of the
+      turmoil in the Serpens Region". Gilboa Reach's says it "is the most
+      important gateway between the STC and the Serpens Sector worlds such as
+      Skiiiws'nnii and Miracle City".
+
+      That second sentence is the awkward one. It says *Sector*, and Miracle
+      City -- which this map places independently at 273.75, +5.81 and 1,730 ly
+      -- sits 3.7 degrees from the add-on's Serpens *Region* and nowhere near
+      its Serpens Sector. So either the add-on's two entries are one thing
+      placed twice, or the Encyclopaedia's two words are used interchangeably
+      for a region the add-on also drew a wider sector around.
+
+      One reading offered by the project owner is that the Sector is the whole
+      constellation's cone and the Region a specific volume within it. The
+      Sector's position does not obviously support that -- a cone's label would
+      be expected near the constellation's middle, and this sits in Ophiuchus
+      rather than Serpens -- but neither does anything contradict it.
+    map_does: >-
+      Draws both, at the positions the add-on gives, because it locates them
+      differently and nothing here says they are one thing. The Serpens Region
+      carries its article and its holders, the Mutual Progress Association and
+      the Sagittarius Transcultural Cooperation. The Serpens Sector is drawn
+      with no holder: attributing the Region's to it would be guessing.
+    would_settle: >-
+      Whether the two names mean two things, and if so which of them Gilboa
+      Reach's sentence is about.
+
+  - id: garden-of-paradise-distance
+    topic: Garden of Paradise Cluster
+    status: settled
+    severity: contradiction
+    summary: The add-on gives the cluster Rho Puppis's distance rather than the cluster's.
+    detail: >-
+      oalocs3.dsc puts the Garden of Paradise Cluster at 8h 07m, -24.3, 70 ly.
+      The direction is Rho Puppis to three decimals, which is right: the Ararat
+      article says "Ararat is located on the edge of the Garden of Paradise
+      Cluster (Rho Puppis)". The distance is Rho Puppis's own, and it is not the
+      cluster's.
+
+      Orobon's article gives "Distance from Sol: 214 ly. Constellation: Puppis -
+      in the so-called Garden of Paradise Cluster". Kuranaba, placed on this map
+      independently at 209 ly, is in or near the same cluster. At 70 ly the
+      cluster would sit inside the Inner Sphere, among stars this map holds
+      individually, and a dozen worlds terraformed by a vanished alien species
+      would have been noticed rather than discovered in 2642.
+
+      So the add-on's author took the star named in the article and used the
+      catalogue's range for it, which is the same mistake in the other direction
+      from the Enigma Cluster, where the setting's own figure was the one worth
+      keeping.
+    map_does: >-
+      Takes the add-on's direction, which is the article's own Rho Puppis, and
+      the Encyclopaedia's 214 ly from Orobon. Settled rather than open: the
+      sources do not actually disagree here, one of them was simply misread by
+      the add-on, and this is recorded so the next reader does not repeat it.
+    would_settle: >-
+      Nothing outstanding. Ararat's own distance would confirm it, and Ararat is
+      not yet placed.

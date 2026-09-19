@@ -11370,9 +11370,130 @@ worlds:
       than a territory, and it is expected to turn up at both ranges. What it
       does sit oddly with is the start -- the meme-set dates from the end of the
       Version War, when the Terragen Bubble did not reach as far as 2,800 ly.
-  - name: Serpens Region
+  - name: Serpens Sector
     kind: volume
     affiliations: []
+    location:
+      ra_deg: 260.01
+      dec_deg: -14.917
+      distance: 3159 ly
+      note: >-
+        From oalocationsx.dsc, one of the Orion's Arm Celestia add-ons' location catalogues (OAAddons9,
+        OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv).
+        The add-on carries this and a Serpens Region as two entries with
+        different positions -- 21 degrees apart on the sky and 1,500 ly apart in
+        depth -- so they are drawn as two objects. Whether the setting means two
+        things by them is open; see questions.md.
+    note: >-
+      Recorded with no holder. The Encyclopaedia's phrase "the Serpens Sector
+      worlds such as Skiiiws'nnii and Miracle City" is the only mention this map
+      holds, and both of those sit by the Serpens Region's position rather than
+      this one, so attributing the Region's holders to this entry would be
+      guessing.
+  - name: Muuh Volume
+    kind: volume
+    affiliations: [xenosophont]
+    article: https://www.orionsarm.com/eg-topic/45bd5c0041e98
+    location:
+      ra_deg: 67.625
+      dec_deg: 37.839
+      distance: 6100 ly
+      note: >-
+        From oalocs3.dsc, one of the Orion's Arm Celestia add-ons' location catalogues (OAAddons9,
+        OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv).
+    note: >-
+      The Muuh's own volume, and recorded as a region rather than as a polity
+      marker: the article is the species' and nothing in it says the Muuh are
+      organised as a polity in the Terragen sense, which is a claim this map
+      should not make on their behalf.
+
+      Muuhome lies in another direction entirely and that is not an objection --
+      it is an exclave of the main volume rather than its centre.
+  - name: Soft Ones Volume
+    kind: volume
+    affiliations: [xenosophont]
+    article: https://www.orionsarm.com/eg-topic/45c5247899c85
+    location:
+      ra_deg: 85.65
+      dec_deg: 30.05
+      distance: 6100 ly
+      note: >-
+        From oalocs3.dsc, one of the Orion's Arm Celestia add-ons' location catalogues (OAAddons9,
+        OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv).
+        It sits 14 degrees from the Muuh Volume at the same stated 6,100 ly,
+        which is the add-on filing the two xenosophont volumes at one range
+        rather than two measurements agreeing.
+    note: >-
+      The Soft Ones' volume, recorded as a region for the same reason as the
+      Muuh's: the article is the species', and whether they are a polity in the
+      Terragen sense is not something this map knows.
+  - name: Dreamspheres
+    kind: polity_marker
+    affiliations: [stellar-umma]
+    article: https://www.orionsarm.com/eg-article/464f22cfb75a1
+    location:
+      ra_deg: 96.304
+      dec_deg: -41.25
+      distance: 543.6 ly
+      note: >-
+        From oaplanets.dsc, one of the Orion's Arm Celestia add-ons' location catalogues (OAAddons9,
+        OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv),
+        which files it under the singular "Dreamsphere".
+    note: >-
+      A dual civilisation, one part of which is accepted within the Stellar
+      Umma, which is the colour drawn. Plural in its own article's title and
+      singular in the add-on's entry.
+  - name: Terragen Federation
+    kind: polity_marker
+    also: [Terran Federation]
+    affiliations: [terragen-federation]
+    article: https://www.orionsarm.com/eg-topic/45ce4e17cd0c6
+    location:
+      ra_deg: 73.5
+      dec_deg: 13.0
+      distance: 60 ly
+      note: >-
+        From TaurusNexus.dsc, one of the Orion's Arm Celestia add-ons' location catalogues (OAAddons9,
+        OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv),
+        where it is labelled TERRAN FEDERATION -- the Encyclopaedia's own name
+        for it is the Terragen Federation, and the add-on's is recorded above as
+        an alternate rather than followed.
+    note: >-
+      Sixty light years out is the early Federation's own scale rather than a
+      claim about the polity at its greatest extent, and this map places twenty
+      of its worlds independently.
+  - name: Garden of Paradise Cluster
+    kind: volume
+    affiliations: [sophic-league]
+    article: https://www.orionsarm.com/eg-article/4b8feb3387407
+    location:
+      ra_deg: 121.74
+      dec_deg: -24.3
+      distance: 214 ly
+      note: >-
+        The direction is from oalocs3.dsc, one of the Orion's Arm Celestia add-ons' location catalogues (OAAddons9,
+        OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv),
+        and is Rho Puppis to three decimal places -- which is the star the
+        Encyclopaedia names the cluster by: "Ararat is located on the edge of
+        the Garden of Paradise Cluster (Rho Puppis)".
+
+        The distance is not the add-on's. It gives 70 ly, which is Rho Puppis's
+        own distance and not the cluster's: the add-on's author took the star
+        from the article and its range from the catalogue. Orobon, a world of
+        this cluster, is given as "Distance from Sol: 214 ly. Constellation:
+        Puppis - in the so-called Garden of Paradise Cluster", and 214 is used
+        here. Kuranaba, which this map places independently at 209 ly, agrees;
+        at 70 the cluster would be inside the Inner Sphere. See questions.md.
+    note: >-
+      "A dozen human-habitable worlds in Puppis (today called the Garden of
+      Paradise Cluster), apparently terraformed by a long-vanished alien
+      species" -- discovered in 2642, and one of the three things the Sophic
+      League's own article credits with making the League a major power rather
+      than a minor one.
+  - name: Serpens Region
+    kind: volume
+    affiliations: [mutual-progress-association, sagittarius-transcultural-cooperation]
+    article: https://www.orionsarm.com/eg-article/47843e18da23b
     location:
       ra_deg: 277.5
       dec_deg: 5.5
@@ -11386,10 +11507,17 @@ worlds:
         Encyclopaedia names as being in this region, so the anchor and the
         article agree without either having been read against the other.
     note: >-
-      A region of space rather than a polity, and recorded as one. Gilboa Reach
-      "is the most important gateway between the STC and the Serpens Sector
-      worlds such as Skiiiws'nnii and Miracle City", and a colony elsewhere "was
-      isolated for 3300 years because of the turmoil in the Serpens Region".
+      A region of space rather than a polity, and recorded as one, held
+      between the Mutual Progress Association and the Sagittarius Transcultural
+      Cooperation. Gilboa Reach "is the most important gateway between the STC
+      and the Serpens Sector worlds such as Skiiiws'nnii and Miracle City", and
+      a colony elsewhere "was isolated for 3300 years because of the turmoil in
+      the Serpens Region".
+
+      Note that the sentence corroborating this entry says *Sector*, and the
+      add-on carries a Serpens Sector as a separate object 21 degrees and 1,500
+      ly away. Both are drawn, because the add-on locates them differently and
+      nothing here says they are one thing. See questions.md.
   - name: Pas Greenen
     kind: system
     also: [Pnas Greenen]
