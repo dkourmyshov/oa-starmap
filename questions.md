@@ -523,7 +523,8 @@ The Enigma Cluster is NGC 6755, which the Encyclopaedia states outright and this
 The gap straddles a line that matters. This map takes the Terragen frontier as 7,000 ly, so at the catalogue's distance the cluster falls outside it and is drawn bound and named but not polity-coloured -- a Keter cluster brain that the map cannot colour as Keter. At the add-on's distance it is comfortably inside, and the anomaly disappears. As the project owner puts it, 4,632 is much more sensible than 7,446 in a direction where no xenoholes extend the Terragen reach.
 This is the pattern already recorded for Beta Arae and the twelve wormhole-nexus distances: an add-on drawn against an older figure, and a catalogue since revised. What makes this one different is that the fiction depends on the number rather than merely quoting it.
 
-**What the map does now.** Draws the landmark where the catalogue puts it, because a landmark is by definition an Orion's Arm name for a real catalogued object and carries no distance of its own -- the schema has no field for one, deliberately. So there is at present no way to record the setting's figure for a landmark short of making it a separate world entry, which would draw the cluster twice.
+**What the map does now.** Draws it at the setting's 4,632 ly, as a placed object rather than as a landmark. A landmark is by definition an Orion's Arm name for a real catalogued object and takes the catalogue's position entire -- the schema has no distance field, deliberately -- so the setting's figure could not be recorded on one. The Enigma Cluster is therefore an entry in worlds.yaml, and NGC 6755 has been withdrawn both from the landmark table and from the Keter Dominion's landmark list, so that the cluster is drawn once and not twice.
+What that costs is worth stating plainly. NGC 6755 is a real object and the map now draws it twice over in a sense: once as an uncoloured, unnamed cluster where the catalogue puts it, and once as the Enigma Cluster 2,800 ly nearer. Those are the same object under two measurements, and the map shows both rather than choosing for the reader -- but only the fictional one carries the name, the article, the 7222 date and the Keter colour.
 
 **What would settle it.** Which distance the article was written against. Failing that, whether a landmark should be able to state the setting's own distance beside the catalogue's, which is a question about this map rather than about Orion's Arm, and the only one of the four here that we could answer ourselves.
 
@@ -577,7 +578,7 @@ Colonies we have been given a polity for, whose star does not resolve. The assig
 
 Abydos, Algol, Byrdis & Ka Yvanti, Goldilocks ISO, Hammerstein, Ithiplumo, Liaris Rosette, Midnight Pearl, Monostheria, Noyce, Proxima, Resonance, and 5 more
 
-## 11 landmarks past the 7,000 ly frontier
+## 10 landmarks past the 7,000 ly frontier
 
 Landmarks that fall inside a polity's area on the political maps but sit far beyond any canonical Terragen frontier. The maps are slices of the galactic plane with approximate borders, so a landmark inside a polity's outline marks a direction rather than a territorial claim. Drawn, bound, and deliberately not given a polity colour.
 
@@ -591,7 +592,6 @@ Landmarks that fall inside a polity's area on the political maps but sit far bey
 - **NGC 6802** at 9,031 ly — Mutual Progress Association
 - **Czernik 8** at 8,589 ly — Cygexpa, Perseus Principalities
 - **NGC 4337** at 7,873 ly — Non-Coercive Zone
-- **NGC 6755** at 7,446 ly — Keter Dominion
 
 ## 39 landmarks waiting on a catalogue
 
@@ -607,7 +607,7 @@ Blanco 1, Collinder 173, Collinder 359, Cone Nebula, Czernik 8, NGC 2244, NGC 70
 
 ## Worlds located only by constellation
 
-89 of 633 canonical worlds are given as a distance and a constellation. That fixes the distance exactly and the direction only to the width of the constellation, which at these ranges is hundreds to thousands of light years. The map draws these with a broken ring rather than a solid one, and the detail panel gives the error in light years.
+89 of 634 canonical worlds are given as a distance and a constellation. That fixes the distance exactly and the direction only to the width of the constellation, which at these ranges is hundreds to thousands of light years. The map draws these with a broken ring rather than a solid one, and the detail panel gives the error in light years.
 
 Coordinates, or a nearby named star, would turn any of these from a region into a position.
 

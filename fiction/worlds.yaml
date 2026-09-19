@@ -6394,6 +6394,44 @@ worlds:
           world'.
     note: Eta Cassiopeiae A and B, 19 ly.
 
+  - name: Enigma Cluster
+    kind: volume
+    also: [NGC 6755]
+    affiliations: [keter-dominion]
+    article: https://www.orionsarm.com/eg-article/491aecf1478f9
+    location:
+      ra_deg: 286.954
+      dec_deg: 4.267
+      distance: 4632.5 ly
+      note: >-
+        Direction and distance both from OAEMPIRES.dsc, one of the Orion's Arm
+        Celestia add-ons' location catalogues (OAAddons9, OALocationsv4;
+        extracted to sources/derived/oa_dsc_locations.tsv), where the entry is
+        named "NGC 6755;Enigma Cluster".
+
+        The distance is the setting's and not the catalogue's, which is the one
+        place on this map where the two part company over a real object. The
+        open-cluster catalogue puts NGC 6755 at 7,446 ly. This map takes the
+        Terragen frontier as 7,000, so at the catalogue's figure a Keter cluster
+        brain falls outside the reach of Terragen civilisation and the map
+        declines to colour it Keter -- the setting contradicting itself through
+        an astronomical revision it never saw. At 4,632 it is inside, and, as
+        the project owner puts it, that is much more sensible in a direction
+        where no xenoholes extend the Terragen reach.
+
+        So this is drawn where Orion's Arm puts it, and NGC 6755 goes on being
+        drawn by the cluster layer where the catalogue puts it, with no
+        fictional claim attached: it was a Keter landmark and a named one until
+        this entry replaced both. One Enigma Cluster on the map, not two. See
+        questions.md.
+    events:
+      - year_at: 7222
+        kind: settled
+    note: >-
+      "Enigma Cluster, The (NGC 6755) - A former Keter cluster brain which has
+      disappeared, leaving a mysterious network of wormholes behind." Its being
+      NGC 6755 settled half of a long-running question, the Celestia add-on
+      carrying a star called Enigma nowhere near it.
   - name: Enif Prefecture
     kind: polity_marker
     affiliations: [solar-dominion]

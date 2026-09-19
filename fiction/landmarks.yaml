@@ -31,18 +31,6 @@ landmarks:
       Carried in the cluster catalogue as Melotte 186, with Collinder 359 among
       its aliases; the alias table finds it either way.
 
-  - catalogue: NGC 6755
-    name: Enigma Cluster
-    article: https://www.orionsarm.com/eg-article/491aecf1478f9
-    events:
-      - year_at: 7222
-        kind: settled
-    note: >-
-      The Enigma Cluster is NGC 6755 — which settles half of a long-running
-      question, since the Celestia add-on carries a star called Enigma nowhere
-      near it. At 7,446 ly it lies past the frontier, so it is bound and named
-      but not polity-coloured.
-
   - catalogue: NGC 2244
     name: Rosette Cluster
     article: https://www.orionsarm.com/eg-article/47768de1cded2
