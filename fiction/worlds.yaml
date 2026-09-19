@@ -6432,6 +6432,586 @@ worlds:
       disappeared, leaving a mysterious network of wormholes behind." Its being
       NGC 6755 settled half of a long-running question, the Celestia add-on
       carrying a star called Enigma nowhere near it.
+  - name: Archosaurian Empire (Cygnus)
+    kind: polity_extent
+    affiliations: [archosaurian-empire]
+    location:
+      ra_deg: 322.5
+      dec_deg: 48.0
+      distance: 1000 ly
+      note: >-
+        From southOAEMPIRES.dsc, one of the Orion's Arm Celestia add-ons' location
+        catalogues (OAAddons9, OALocationsv4; extracted to
+        sources/derived/oa_dsc_locations.tsv). The label states a position and
+        no extent: it carries the token radius of 2 that the add-on gives every
+        empire label, so nothing here says how far the volume reaches.
+    note: >-
+      The only label the add-on writes for this polity. Named for Cygnus, where it falls, the polity's own name being
+      taken by the polity.
+  - name: Communion of Worlds (Sculptor)
+    kind: polity_extent
+    affiliations: [communion-of-worlds]
+    location:
+      ra_deg: 13.5
+      dec_deg: -38.0
+      distance: 500 ly
+      note: >-
+        From southOAEMPIRES.dsc, one of the Orion's Arm Celestia add-ons' location
+        catalogues (OAAddons9, OALocationsv4; extracted to
+        sources/derived/oa_dsc_locations.tsv). The label states a position and
+        no extent: it carries the token radius of 2 that the add-on gives every
+        empire label, so nothing here says how far the volume reaches.
+    note: >-
+      The only label the add-on writes for this polity. Named for Sculptor, where it falls, the polity's own name being
+      taken by the polity.
+  - name: Cygexpa (Cygnus, Inner Middle Regions)
+    kind: polity_extent
+    affiliations: [cygexpa]
+    location:
+      ra_deg: 301.5
+      dec_deg: 33.5
+      distance: 1200 ly
+      note: >-
+        From southOAEMPIRES.dsc, one of the Orion's Arm Celestia add-ons' location
+        catalogues (OAAddons9, OALocationsv4; extracted to
+        sources/derived/oa_dsc_locations.tsv). The label states a position and
+        no extent: it carries the token radius of 2 that the add-on gives every
+        empire label, so nothing here says how far the volume reaches.
+    note: >-
+      One of 3 labels the add-on writes for this polity, spread across its
+        volume; together they sketch an extent that its placed worlds, being
+        points, cannot. Named for Cygnus, where it falls, the polity's own name being
+      taken by the polity.
+  - name: Cygexpa (Draco)
+    kind: polity_extent
+    affiliations: [cygexpa]
+    location:
+      ra_deg: 270.0
+      dec_deg: 66.7
+      distance: 2000 ly
+      note: >-
+        From OAEMPIRES.dsc, one of the Orion's Arm Celestia add-ons' location
+        catalogues (OAAddons9, OALocationsv4; extracted to
+        sources/derived/oa_dsc_locations.tsv). The label states a position and
+        no extent: it carries the token radius of 2 that the add-on gives every
+        empire label, so nothing here says how far the volume reaches.
+    note: >-
+      One of 3 labels the add-on writes for this polity, spread across its
+        volume; together they sketch an extent that its placed worlds, being
+        points, cannot. Named for Draco, where it falls, the polity's own name being
+      taken by the polity.
+  - name: Cygexpa (Cygnus, Outer Middle Regions)
+    kind: polity_extent
+    affiliations: [cygexpa]
+    location:
+      ra_deg: 313.5
+      dec_deg: 45.5
+      distance: 2500 ly
+      note: >-
+        From OAEMPIRES.dsc, one of the Orion's Arm Celestia add-ons' location
+        catalogues (OAAddons9, OALocationsv4; extracted to
+        sources/derived/oa_dsc_locations.tsv). The label states a position and
+        no extent: it carries the token radius of 2 that the add-on gives every
+        empire label, so nothing here says how far the volume reaches.
+    note: >-
+      One of 3 labels the add-on writes for this polity, spread across its
+        volume; together they sketch an extent that its placed worlds, being
+        points, cannot. Named for Cygnus, where it falls, the polity's own name being
+      taken by the polity.
+  - name: Disarchy (Lupus)
+    kind: polity_extent
+    affiliations: [disarchy]
+    location:
+      ra_deg: 214.5
+      dec_deg: -45.5
+      distance: 3200 ly
+      note: >-
+        From OAEMPIRES.dsc, one of the Orion's Arm Celestia add-ons' location
+        catalogues (OAAddons9, OALocationsv4; extracted to
+        sources/derived/oa_dsc_locations.tsv). The label states a position and
+        no extent: it carries the token radius of 2 that the add-on gives every
+        empire label, so nothing here says how far the volume reaches.
+    note: >-
+      The only label the add-on writes for this polity. Named for Lupus, where it falls, the polity's own name being
+      taken by the polity.
+  - name: Emple-Dokcetics (Puppis)
+    kind: polity_extent
+    affiliations: [emple-dokcetics]
+    location:
+      ra_deg: 112.65
+      dec_deg: -14.6
+      distance: 3000 ly
+      note: >-
+        From OAEMPIRES.dsc, one of the Orion's Arm Celestia add-ons' location
+        catalogues (OAAddons9, OALocationsv4; extracted to
+        sources/derived/oa_dsc_locations.tsv). The label states a position and
+        no extent: it carries the token radius of 2 that the add-on gives every
+        empire label, so nothing here says how far the volume reaches.
+    note: >-
+      The only label the add-on writes for this polity. Named for Puppis, where it falls, the polity's own name being
+      taken by the polity.
+  - name: Keter Dominion (Ophiuchus)
+    kind: polity_extent
+    affiliations: [keter-dominion]
+    location:
+      ra_deg: 265.5
+      dec_deg: 5.7
+      distance: 1500 ly
+      note: >-
+        From OAEMPIRES.dsc, one of the Orion's Arm Celestia add-ons' location
+        catalogues (OAAddons9, OALocationsv4; extracted to
+        sources/derived/oa_dsc_locations.tsv). The label states a position and
+        no extent: it carries the token radius of 2 that the add-on gives every
+        empire label, so nothing here says how far the volume reaches.
+    note: >-
+      One of 2 labels the add-on writes for this polity, spread across its
+        volume; together they sketch an extent that its placed worlds, being
+        points, cannot. Named for Ophiuchus, where it falls, the polity's own name being
+      taken by the polity.
+  - name: Keter Dominion (Sagittarius)
+    kind: polity_extent
+    affiliations: [keter-dominion]
+    location:
+      ra_deg: 277.5
+      dec_deg: -19.25
+      distance: 2100 ly
+      note: >-
+        From OAEMPIRES.dsc, one of the Orion's Arm Celestia add-ons' location
+        catalogues (OAAddons9, OALocationsv4; extracted to
+        sources/derived/oa_dsc_locations.tsv). The label states a position and
+        no extent: it carries the token radius of 2 that the add-on gives every
+        empire label, so nothing here says how far the volume reaches.
+    note: >-
+      One of 2 labels the add-on writes for this polity, spread across its
+        volume; together they sketch an extent that its placed worlds, being
+        points, cannot. Named for Sagittarius, where it falls, the polity's own name being
+      taken by the polity.
+  - name: Metasoft (Orion, Inner Middle Regions)
+    kind: polity_extent
+    affiliations: [metasoft]
+    location:
+      ra_deg: 82.5
+      dec_deg: 9.9
+      distance: 1060 ly
+      note: >-
+        From OAEMPIRES.dsc, one of the Orion's Arm Celestia add-ons' location
+        catalogues (OAAddons9, OALocationsv4; extracted to
+        sources/derived/oa_dsc_locations.tsv). The label states a position and
+        no extent: it carries the token radius of 2 that the add-on gives every
+        empire label, so nothing here says how far the volume reaches.
+    note: >-
+      One of 4 labels the add-on writes for this polity, spread across its
+        volume; together they sketch an extent that its placed worlds, being
+        points, cannot. Named for Orion, where it falls, the polity's own name being
+      taken by the polity.
+  - name: Metasoft (Gemini, 2000 ly)
+    kind: polity_extent
+    affiliations: [metasoft]
+    location:
+      ra_deg: 112.5
+      dec_deg: 20.0
+      distance: 2000 ly
+      note: >-
+        From OAEMPIRES.dsc, one of the Orion's Arm Celestia add-ons' location
+        catalogues (OAAddons9, OALocationsv4; extracted to
+        sources/derived/oa_dsc_locations.tsv). The label states a position and
+        no extent: it carries the token radius of 2 that the add-on gives every
+        empire label, so nothing here says how far the volume reaches.
+    note: >-
+      One of 4 labels the add-on writes for this polity, spread across its
+        volume; together they sketch an extent that its placed worlds, being
+        points, cannot. Named for Gemini, where it falls, the polity's own name being
+      taken by the polity.
+  - name: Metasoft (Gemini, 2467 ly)
+    kind: polity_extent
+    affiliations: [metasoft]
+    location:
+      ra_deg: 92.25
+      dec_deg: 24.35
+      distance: 2467 ly
+      note: >-
+        From southOAEMPIRES.dsc, one of the Orion's Arm Celestia add-ons' location
+        catalogues (OAAddons9, OALocationsv4; extracted to
+        sources/derived/oa_dsc_locations.tsv). The label states a position and
+        no extent: it carries the token radius of 2 that the add-on gives every
+        empire label, so nothing here says how far the volume reaches.
+    note: >-
+      One of 4 labels the add-on writes for this polity, spread across its
+        volume; together they sketch an extent that its placed worlds, being
+        points, cannot. Named for Gemini, where it falls, the polity's own name being
+      taken by the polity.
+  - name: Metasoft (Orion, Outer Volumes)
+    kind: polity_extent
+    affiliations: [metasoft]
+    location:
+      ra_deg: 91.5
+      dec_deg: 14.0
+      distance: 3400 ly
+      note: >-
+        From southOAEMPIRES.dsc, one of the Orion's Arm Celestia add-ons' location
+        catalogues (OAAddons9, OALocationsv4; extracted to
+        sources/derived/oa_dsc_locations.tsv). The label states a position and
+        no extent: it carries the token radius of 2 that the add-on gives every
+        empire label, so nothing here says how far the volume reaches.
+    note: >-
+      One of 4 labels the add-on writes for this polity, spread across its
+        volume; together they sketch an extent that its placed worlds, being
+        points, cannot. Named for Orion, where it falls, the polity's own name being
+      taken by the polity.
+  - name: Mutual Progress Association (Ophiuchus)
+    kind: polity_extent
+    affiliations: [mutual-progress-association]
+    location:
+      ra_deg: 277.5
+      dec_deg: 6.5
+      distance: 1000 ly
+      note: >-
+        From southOAEMPIRES.dsc, one of the Orion's Arm Celestia add-ons' location
+        catalogues (OAAddons9, OALocationsv4; extracted to
+        sources/derived/oa_dsc_locations.tsv). The label states a position and
+        no extent: it carries the token radius of 2 that the add-on gives every
+        empire label, so nothing here says how far the volume reaches.
+    note: >-
+      One of 2 labels the add-on writes for this polity, spread across its
+        volume; together they sketch an extent that its placed worlds, being
+        points, cannot. Named for Ophiuchus, where it falls, the polity's own name being
+      taken by the polity.
+  - name: Mutual Progress Association (Capricornus)
+    kind: polity_extent
+    affiliations: [mutual-progress-association]
+    location:
+      ra_deg: 303.0
+      dec_deg: -10.5
+      distance: 1900 ly
+      note: >-
+        From southOAEMPIRES.dsc, one of the Orion's Arm Celestia add-ons' location
+        catalogues (OAAddons9, OALocationsv4; extracted to
+        sources/derived/oa_dsc_locations.tsv). The label states a position and
+        no extent: it carries the token radius of 2 that the add-on gives every
+        empire label, so nothing here says how far the volume reaches.
+    note: >-
+      One of 2 labels the add-on writes for this polity, spread across its
+        volume; together they sketch an extent that its placed worlds, being
+        points, cannot. Named for Capricornus, where it falls, the polity's own name being
+      taken by the polity.
+  - name: Negentropy Alliance (Scorpius, 1860 ly)
+    kind: polity_extent
+    affiliations: [negentropy-alliance]
+    location:
+      ra_deg: 246.0
+      dec_deg: -40.4
+      distance: 1860 ly
+      note: >-
+        From southOAEMPIRES.dsc, one of the Orion's Arm Celestia add-ons' location
+        catalogues (OAAddons9, OALocationsv4; extracted to
+        sources/derived/oa_dsc_locations.tsv). The label states a position and
+        no extent: it carries the token radius of 2 that the add-on gives every
+        empire label, so nothing here says how far the volume reaches.
+    note: >-
+      One of 2 labels the add-on writes for this polity, spread across its
+        volume; together they sketch an extent that its placed worlds, being
+        points, cannot. Named for Scorpius, where it falls, the polity's own name being
+      taken by the polity.
+  - name: Negentropy Alliance (Scorpius, 2000 ly)
+    kind: polity_extent
+    affiliations: [negentropy-alliance]
+    location:
+      ra_deg: 253.5
+      dec_deg: -45.0
+      distance: 2000 ly
+      note: >-
+        From OAEMPIRES.dsc, one of the Orion's Arm Celestia add-ons' location
+        catalogues (OAAddons9, OALocationsv4; extracted to
+        sources/derived/oa_dsc_locations.tsv). The label states a position and
+        no extent: it carries the token radius of 2 that the add-on gives every
+        empire label, so nothing here says how far the volume reaches.
+    note: >-
+      One of 2 labels the add-on writes for this polity, spread across its
+        volume; together they sketch an extent that its placed worlds, being
+        points, cannot. Named for Scorpius, where it falls, the polity's own name being
+      taken by the polity.
+  - name: NoCoZo (Vela)
+    kind: polity_extent
+    affiliations: [nocozo]
+    location:
+      ra_deg: 153.0
+      dec_deg: -51.7
+      distance: 1800 ly
+      note: >-
+        From southOAEMPIRES.dsc, one of the Orion's Arm Celestia add-ons' location
+        catalogues (OAAddons9, OALocationsv4; extracted to
+        sources/derived/oa_dsc_locations.tsv). The label states a position and
+        no extent: it carries the token radius of 2 that the add-on gives every
+        empire label, so nothing here says how far the volume reaches.
+    note: >-
+      One of 4 labels the add-on writes for this polity, spread across its
+        volume; together they sketch an extent that its placed worlds, being
+        points, cannot. Named for Vela, where it falls, the polity's own name being
+      taken by the polity.
+  - name: NoCoZo (Centaurus)
+    kind: polity_extent
+    affiliations: [nocozo]
+    location:
+      ra_deg: 178.5
+      dec_deg: -64.0
+      distance: 2000 ly
+      note: >-
+        From OAEMPIRES.dsc, one of the Orion's Arm Celestia add-ons' location
+        catalogues (OAAddons9, OALocationsv4; extracted to
+        sources/derived/oa_dsc_locations.tsv). The label states a position and
+        no extent: it carries the token radius of 2 that the add-on gives every
+        empire label, so nothing here says how far the volume reaches.
+    note: >-
+      One of 4 labels the add-on writes for this polity, spread across its
+        volume; together they sketch an extent that its placed worlds, being
+        points, cannot. Named for Centaurus, where it falls, the polity's own name being
+      taken by the polity.
+  - name: NoCoZo (Triangulum Australe)
+    kind: polity_extent
+    affiliations: [nocozo]
+    location:
+      ra_deg: 241.5
+      dec_deg: -60.5
+      distance: 2700 ly
+      note: >-
+        From southOAEMPIRES.dsc, one of the Orion's Arm Celestia add-ons' location
+        catalogues (OAAddons9, OALocationsv4; extracted to
+        sources/derived/oa_dsc_locations.tsv). The label states a position and
+        no extent: it carries the token radius of 2 that the add-on gives every
+        empire label, so nothing here says how far the volume reaches.
+    note: >-
+      One of 4 labels the add-on writes for this polity, spread across its
+        volume; together they sketch an extent that its placed worlds, being
+        points, cannot. Named for Triangulum Australe, where it falls, the polity's own name being
+      taken by the polity.
+  - name: NoCoZo (Puppis)
+    kind: polity_extent
+    affiliations: [nocozo]
+    location:
+      ra_deg: 121.5
+      dec_deg: -37.5
+      distance: 2900 ly
+      note: >-
+        From OAEMPIRES.dsc, one of the Orion's Arm Celestia add-ons' location
+        catalogues (OAAddons9, OALocationsv4; extracted to
+        sources/derived/oa_dsc_locations.tsv). The label states a position and
+        no extent: it carries the token radius of 2 that the add-on gives every
+        empire label, so nothing here says how far the volume reaches.
+    note: >-
+      One of 4 labels the add-on writes for this polity, spread across its
+        volume; together they sketch an extent that its placed worlds, being
+        points, cannot. Named for Puppis, where it falls, the polity's own name being
+      taken by the polity.
+  - name: Orion Federation (Orion)
+    kind: polity_extent
+    affiliations: [orion-federation]
+    location:
+      ra_deg: 87.0
+      dec_deg: 0.1
+      distance: 1600 ly
+      note: >-
+        From southOAEMPIRES.dsc, one of the Orion's Arm Celestia add-ons' location
+        catalogues (OAAddons9, OALocationsv4; extracted to
+        sources/derived/oa_dsc_locations.tsv). The label states a position and
+        no extent: it carries the token radius of 2 that the add-on gives every
+        empire label, so nothing here says how far the volume reaches.
+    note: >-
+      One of 2 labels the add-on writes for this polity, spread across its
+        volume; together they sketch an extent that its placed worlds, being
+        points, cannot. Named for Orion, where it falls, the polity's own name being
+      taken by the polity.
+  - name: Orion Federation (Monoceros)
+    kind: polity_extent
+    affiliations: [orion-federation]
+    location:
+      ra_deg: 102.0
+      dec_deg: 9.8
+      distance: 2600 ly
+      note: >-
+        From southOAEMPIRES.dsc, one of the Orion's Arm Celestia add-ons' location
+        catalogues (OAAddons9, OALocationsv4; extracted to
+        sources/derived/oa_dsc_locations.tsv). The label states a position and
+        no extent: it carries the token radius of 2 that the add-on gives every
+        empire label, so nothing here says how far the volume reaches.
+    note: >-
+      One of 2 labels the add-on writes for this polity, spread across its
+        volume; together they sketch an extent that its placed worlds, being
+        points, cannot. Named for Monoceros, where it falls, the polity's own name being
+      taken by the polity.
+  - name: Red Star M'pire (Ursa Major)
+    kind: polity_extent
+    affiliations: [red-star-mpire]
+    location:
+      ra_deg: 151.5
+      dec_deg: 69.0
+      distance: 3600 ly
+      note: >-
+        From OAEMPIRES.dsc, one of the Orion's Arm Celestia add-ons' location
+        catalogues (OAAddons9, OALocationsv4; extracted to
+        sources/derived/oa_dsc_locations.tsv). The label states a position and
+        no extent: it carries the token radius of 2 that the add-on gives every
+        empire label, so nothing here says how far the volume reaches.
+    note: >-
+      The only label the add-on writes for this polity. Named for Ursa Major, where it falls, the polity's own name being
+      taken by the polity.
+  - name: Sagittarius Transcultural Cooperation (Scorpius)
+    kind: polity_extent
+    affiliations: [sagittarius-transcultural-cooperation]
+    location:
+      ra_deg: 265.5
+      dec_deg: -31.0
+      distance: 3800 ly
+      note: >-
+        From OAEMPIRES.dsc, one of the Orion's Arm Celestia add-ons' location
+        catalogues (OAAddons9, OALocationsv4; extracted to
+        sources/derived/oa_dsc_locations.tsv). The label states a position and
+        no extent: it carries the token radius of 2 that the add-on gives every
+        empire label, so nothing here says how far the volume reaches.
+    note: >-
+      The only label the add-on writes for this polity. Named for Scorpius, where it falls, the polity's own name being
+      taken by the polity.
+  - name: Solar Dominion (Perseus, 600 ly)
+    kind: polity_extent
+    affiliations: [solar-dominion]
+    location:
+      ra_deg: 49.5
+      dec_deg: 49.0
+      distance: 600 ly
+      note: >-
+        From OAEMPIRES.dsc, one of the Orion's Arm Celestia add-ons' location
+        catalogues (OAAddons9, OALocationsv4; extracted to
+        sources/derived/oa_dsc_locations.tsv). The label states a position and
+        no extent: it carries the token radius of 2 that the add-on gives every
+        empire label, so nothing here says how far the volume reaches.
+    note: >-
+      One of 4 labels the add-on writes for this polity, spread across its
+        volume; together they sketch an extent that its placed worlds, being
+        points, cannot. Named for Perseus, where it falls, the polity's own name being
+      taken by the polity.
+  - name: Solar Dominion (Perseus, 1400 ly)
+    kind: polity_extent
+    affiliations: [solar-dominion]
+    location:
+      ra_deg: 40.5
+      dec_deg: 43.0
+      distance: 1400 ly
+      note: >-
+        From southOAEMPIRES.dsc, one of the Orion's Arm Celestia add-ons' location
+        catalogues (OAAddons9, OALocationsv4; extracted to
+        sources/derived/oa_dsc_locations.tsv). The label states a position and
+        no extent: it carries the token radius of 2 that the add-on gives every
+        empire label, so nothing here says how far the volume reaches.
+    note: >-
+      One of 4 labels the add-on writes for this polity, spread across its
+        volume; together they sketch an extent that its placed worlds, being
+        points, cannot. Named for Perseus, where it falls, the polity's own name being
+      taken by the polity.
+  - name: Solar Dominion (Camelopardalis)
+    kind: polity_extent
+    affiliations: [solar-dominion]
+    location:
+      ra_deg: 61.5
+      dec_deg: 60.0
+      distance: 2000 ly
+      note: >-
+        From OAEMPIRES.dsc, one of the Orion's Arm Celestia add-ons' location
+        catalogues (OAAddons9, OALocationsv4; extracted to
+        sources/derived/oa_dsc_locations.tsv). The label states a position and
+        no extent: it carries the token radius of 2 that the add-on gives every
+        empire label, so nothing here says how far the volume reaches.
+    note: >-
+      One of 4 labels the add-on writes for this polity, spread across its
+        volume; together they sketch an extent that its placed worlds, being
+        points, cannot. Named for Camelopardalis, where it falls, the polity's own name being
+      taken by the polity.
+  - name: Solar Dominion (Perseus, Outer Volumes)
+    kind: polity_extent
+    affiliations: [solar-dominion]
+    location:
+      ra_deg: 60.75
+      dec_deg: 49.0
+      distance: 3000 ly
+      note: >-
+        From OAEMPIRES.dsc, one of the Orion's Arm Celestia add-ons' location
+        catalogues (OAAddons9, OALocationsv4; extracted to
+        sources/derived/oa_dsc_locations.tsv). The label states a position and
+        no extent: it carries the token radius of 2 that the add-on gives every
+        empire label, so nothing here says how far the volume reaches.
+    note: >-
+      One of 4 labels the add-on writes for this polity, spread across its
+        volume; together they sketch an extent that its placed worlds, being
+        points, cannot. Named for Perseus, where it falls, the polity's own name being
+      taken by the polity.
+  - name: Sophic League (Puppis)
+    kind: polity_extent
+    affiliations: [sophic-league]
+    location:
+      ra_deg: 114.0
+      dec_deg: -14.4
+      distance: 1600 ly
+      note: >-
+        From southOAEMPIRES.dsc, one of the Orion's Arm Celestia add-ons' location
+        catalogues (OAAddons9, OALocationsv4; extracted to
+        sources/derived/oa_dsc_locations.tsv). The label states a position and
+        no extent: it carries the token radius of 2 that the add-on gives every
+        empire label, so nothing here says how far the volume reaches.
+    note: >-
+      One of 3 labels the add-on writes for this polity, spread across its
+        volume; together they sketch an extent that its placed worlds, being
+        points, cannot. Named for Puppis, where it falls, the polity's own name being
+      taken by the polity.
+  - name: Sophic League (Canis Major)
+    kind: polity_extent
+    affiliations: [sophic-league]
+    location:
+      ra_deg: 100.5
+      dec_deg: -21.0
+      distance: 2000 ly
+      note: >-
+        From southOAEMPIRES.dsc, one of the Orion's Arm Celestia add-ons' location
+        catalogues (OAAddons9, OALocationsv4; extracted to
+        sources/derived/oa_dsc_locations.tsv). The label states a position and
+        no extent: it carries the token radius of 2 that the add-on gives every
+        empire label, so nothing here says how far the volume reaches.
+    note: >-
+      One of 3 labels the add-on writes for this polity, spread across its
+        volume; together they sketch an extent that its placed worlds, being
+        points, cannot. Named for Canis Major, where it falls, the polity's own name being
+      taken by the polity.
+  - name: Sophic League (Hydra)
+    kind: polity_extent
+    affiliations: [sophic-league]
+    location:
+      ra_deg: 123.0
+      dec_deg: -5.7
+      distance: 2400 ly
+      note: >-
+        From OAEMPIRES.dsc, one of the Orion's Arm Celestia add-ons' location
+        catalogues (OAAddons9, OALocationsv4; extracted to
+        sources/derived/oa_dsc_locations.tsv). The label states a position and
+        no extent: it carries the token radius of 2 that the add-on gives every
+        empire label, so nothing here says how far the volume reaches.
+    note: >-
+      One of 3 labels the add-on writes for this polity, spread across its
+        volume; together they sketch an extent that its placed worlds, being
+        points, cannot. Named for Hydra, where it falls, the polity's own name being
+      taken by the polity.
+  - name: Utopia Sphere (Ara)
+    kind: polity_extent
+    affiliations: [utopia-sphere]
+    location:
+      ra_deg: 261.75
+      dec_deg: -55.3
+      distance: 700 ly
+      note: >-
+        From OAEMPIRES.dsc, one of the Orion's Arm Celestia add-ons' location
+        catalogues (OAAddons9, OALocationsv4; extracted to
+        sources/derived/oa_dsc_locations.tsv). The label states a position and
+        no extent: it carries the token radius of 2 that the add-on gives every
+        empire label, so nothing here says how far the volume reaches.
+    note: >-
+      The only label the add-on writes for this polity. Named for Ara, where it falls, the polity's own name being
+      taken by the polity.
   - name: Enif Prefecture
     kind: polity_marker
     affiliations: [solar-dominion]

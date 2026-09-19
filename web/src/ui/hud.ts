@@ -44,6 +44,16 @@ export const DEFAULT_POSTER_OPACITY = 0.85;
  * thing it switches cannot start out disagreeing.
  */
 export const DEFAULT_ONLY_OA: boolean = true;
+
+/**
+ * Whether the empire-extent labels start on.
+ *
+ * On, because they are the only thing on this map that says where a polity
+ * stops — a hundred placed Solar Dominion worlds are points, and points do not
+ * draw a border. Off is for when thirty-three wide rings among the worlds they
+ * enclose get in the way, which is the reason there is a switch at all.
+ */
+export const DEFAULT_POLITY_EXTENTS: boolean = true;
 export const DEFAULT_ASSOCIATIONS_VISIBLE: boolean = false;
 export const DEFAULT_HISTORY_PANEL_VISIBLE: boolean = false;
 export const DEFAULT_GRID_VISIBLE: boolean = true;
@@ -85,6 +95,7 @@ export interface HudCallbacks {
   onDropLinesOpacity(value: number): void;
   onOAStarsVisible(value: boolean): void;
   onOnlyOA(enabled: boolean): void;
+  onPolityExtents(enabled: boolean): void;
   onDepthOfField(strength: number): void;
   onDepthOfFieldDim(amount: number): void;
   onLabelsVisible(value: boolean): void;
@@ -352,6 +363,25 @@ export class Hud {
     });
     onlyRow.appendChild(onlyToggle);
     panel.appendChild(onlyRow);
+
+    // The empire-extent labels, which are the add-on's own and sit over worlds
+    // this map places from articles. Switchable because they are an annotation
+    // rather than evidence: turning them off loses no polity from the map,
+    // every one of them having worlds drawn anyway.
+    const extentRow = el('div', 'row');
+    extentRow.appendChild(el('span', 'label', 'Empire extents'));
+    const extentToggle = el(
+      'button',
+      `toggle${DEFAULT_POLITY_EXTENTS ? ' active' : ''}`,
+      DEFAULT_POLITY_EXTENTS ? 'on' : 'off',
+    );
+    extentToggle.addEventListener('click', () => {
+      const on = extentToggle.classList.toggle('active');
+      extentToggle.textContent = on ? 'on' : 'off';
+      this.callbacks.onPolityExtents(on);
+    });
+    extentRow.appendChild(extentToggle);
+    panel.appendChild(extentRow);
 
     // Depth of field. Not how a telescope behaves — every star is at infinity
     // and all of them are equally in focus — but the flat sky is exactly the

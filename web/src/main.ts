@@ -25,6 +25,7 @@ import {
   DEFAULT_GRID_VISIBLE,
   DEFAULT_HISTORY_PANEL_VISIBLE,
   DEFAULT_ONLY_OA,
+  DEFAULT_POLITY_EXTENTS,
   Hud,
   type JumpTarget,
 } from './ui/hud';
@@ -541,6 +542,9 @@ async function main(): Promise<void> {
         clusterField?.setOnlyOA(enabled);
         hiiField?.setOnlyOA(enabled);
       },
+      onPolityExtents: (enabled) => {
+        settledField?.setExtentsVisible(enabled);
+      },
       onOAStarsVisible: (value) => {
         if (oaStarField) oaStarField.visible = value;
         view.visible.oastar = value;
@@ -670,6 +674,7 @@ async function main(): Promise<void> {
     clusterField?.setOnlyOA(true);
     hiiField?.setOnlyOA(true);
   }
+  settledField?.setExtentsVisible(DEFAULT_POLITY_EXTENTS);
   if (historyPanel) historyPanel.visible = DEFAULT_HISTORY_PANEL_VISIBLE;
 
   viewer.addFrameCallback((dt) => {

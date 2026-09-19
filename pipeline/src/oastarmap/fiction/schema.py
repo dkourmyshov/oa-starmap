@@ -884,7 +884,7 @@ class World(BaseModel):
 
     name: str
     kind: str = "planet"
-    """planet, moon, system, megastructure, volume, polity_marker.
+    """planet, moon, system, megastructure, volume, polity_marker, polity_extent.
 
     Descriptive rather than structural, with one exception: ``polity_marker``
     changes how the thing is drawn, because it is the only kind where the mark
@@ -902,6 +902,20 @@ class World(BaseModel):
     A ``polity_marker`` may be a point or may have an extent. Most are points
     because the setting gives no size; three state one, and the field for it is
     on the location.
+
+    ``polity_extent`` is the same shape of thing with a different job, and the
+    difference is whether the polity would vanish without it. A marker is a
+    polity's only representation here: Xeon has one entry and nothing else, so
+    hiding it hides the polity. An extent label belongs to a polity whose worlds
+    are drawn anyway -- the sixteen the Celestia empire catalogues cover have
+    between five and a hundred and twenty-seven placed objects each -- and is
+    one sample of a volume rather than the whole of the evidence. Several of
+    them per polity is the normal case, and what they add is the one thing a
+    hundred points cannot say: roughly where the polity stops.
+
+    That is why only these are toggleable. Turning off a marker would lose a
+    polity; turning off the extent labels loses an annotation over places that
+    stay where they were.
     """
 
     system: str = ""

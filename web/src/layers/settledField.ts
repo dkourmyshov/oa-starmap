@@ -133,10 +133,21 @@ export const POLITY_MARKER_SIZE_SCALE = 1.9;
 
 /** The ring-size multiplier a world's kind earns it. */
 export function sizeScaleFor(kind: string | undefined): number {
-  if (kind === 'polity_marker') return POLITY_MARKER_SIZE_SCALE;
+  if (kind === 'polity_marker' || kind === 'polity_extent') return POLITY_MARKER_SIZE_SCALE;
   if (kind === 'volume') return REGION_SIZE_SCALE;
   return 1;
 }
+
+/**
+ * Kinds the reader can switch off.
+ *
+ * Only the empire-extent labels, and the test is whether the polity survives
+ * without them. A `polity_marker` is its polity's only representation — Xeon
+ * has one entry and nothing else — so hiding it hides the polity. A
+ * `polity_extent` annotates a polity whose worlds are drawn anyway, so hiding
+ * it loses an annotation and leaves the places where they were.
+ */
+export const TOGGLEABLE_KIND = 'polity_extent';
 
 /** A settled system with no polity — abandoned, blight, independent. */
 const STATUS_COLOR = new THREE.Color(0x9aa4bb);
@@ -167,9 +178,11 @@ const VERTEX_SHADER = /* glsl */ `
   attribute float aAffiliated;
   attribute float aApprox;
   attribute float aWide;
+  attribute float aExtent;
   attribute float aVague;
 
   uniform float uSize;
+  uniform float uExtentGain;
   ${DOF_PARS}
   ${EPOCH_PARS}
   ${FOCUS_PARS}
@@ -193,7 +206,12 @@ const VERTEX_SHADER = /* glsl */ `
     // A system that has not been reached yet is not drawn faintly, it is not
     // drawn. Collapsing the sprite rather than discarding in the fragment
     // shader costs nothing and keeps the whole year test in one place.
-    float epoch = epochGain();
+    // An empire-extent label the reader has switched off is not dimmed but
+    // gone, unlike the focus gain beside it. Focus subtracts to answer "where
+    // is this polity", so its context has to stay on screen; this answers
+    // "is the annotation in my way", and an annotation that is still faintly
+    // in the way has not been put away.
+    float epoch = epochGain() * mix(1.0, uExtentGain, aExtent);
     if (epoch <= 0.0) {
       gl_PointSize = 0.0;
       gl_Position = vec4(2.0, 2.0, 2.0, 1.0);
@@ -313,6 +331,8 @@ interface Ring {
   vague?: boolean;
   /** The ring-size multiplier: 1 for a place, more for a region or a marker. */
   scale?: number;
+  /** An empire-extent label, which the reader can switch off. */
+  extent?: boolean;
   /**
    * When this system enters and leaves the record, under each basis.
    *
@@ -517,6 +537,7 @@ export class SettledField {
         // The one thing the kind changes about how a place is drawn.
         // Everything else it says is descriptive, and read nowhere but a panel.
         scale: sizeScaleFor(world.kind),
+        extent: world.kind === TOGGLEABLE_KIND,
         // The host and everything it carries. Potato is dated by its own
         // article and drawn by the Bonfire System's marker, so the marker has
         // to appear when the earlier of the two does.
@@ -556,6 +577,7 @@ export class SettledField {
     const affiliated = new Float32Array(this.count);
     const approximate = new Float32Array(this.count);
     const wide = new Float32Array(this.count);
+    const extent = new Float32Array(this.count);
     const vague = new Float32Array(this.count);
     const colors = Array.from({ length: MAX_SEGMENTS }, () => new Float32Array(this.count * 3));
     const neutral = Array.from({ length: MAX_SEGMENTS }, () => new Float32Array(this.count * 3));
@@ -569,6 +591,7 @@ export class SettledField {
       affiliated[out] = shown.length ? 1 : 0;
       approximate[out] = ring.approximate ? 1 : 0;
       wide[out] = ring.scale ?? 1;
+      extent[out] = ring.extent ? 1 : 0;
       vague[out] = ring.vague ? 1 : 0;
       segments[out] = Math.max(shown.length, 1);
 
@@ -601,6 +624,7 @@ export class SettledField {
     geometry.setAttribute('aAffiliated', this.affiliatedAttribute);
     geometry.setAttribute('aApprox', new THREE.BufferAttribute(approximate, 1));
     geometry.setAttribute('aWide', new THREE.BufferAttribute(wide, 1));
+    geometry.setAttribute('aExtent', new THREE.BufferAttribute(extent, 1));
     geometry.setAttribute('aVague', new THREE.BufferAttribute(vague, 1));
     const focus = new Float32Array(this.count).fill(1);
     this.focusAttribute = new THREE.BufferAttribute(focus, 1);
@@ -645,6 +669,7 @@ export class SettledField {
     this.material = new THREE.ShaderMaterial({
       uniforms: {
         uSize: { value: DEFAULT_SIZE_PX },
+        uExtentGain: { value: 1 },
 
         ...dofUniforms(),
         ...epochUniforms(),
@@ -698,6 +723,11 @@ export class SettledField {
    *
    * A system two polities share is a member of both, and lights up for either.
    */
+  /** Show or hide the empire-extent labels. */
+  setExtentsVisible(visible: boolean): void {
+    (this.material.uniforms.uExtentGain as { value: number }).value = visible ? 1 : 0;
+  }
+
   setFocusPolity(polityId: string | null): void {
     const uniforms = this.material.uniforms as unknown as FocusUniforms;
     this.focusPolity = polityId;
