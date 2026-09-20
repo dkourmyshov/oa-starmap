@@ -612,7 +612,7 @@ The neighbourhood fits regardless: the position is 640 ly from Metasoft's neares
 The disagreement that remains is in depth: 2,022 ly against Theia_754's 2,289 is 11.7%, and against NGC_1758's 2,797 is 27.7%. The setting's figure is kept, as everywhere else on this map where the two differ.
 
 **What would settle it.** Whether Orion's Arm means all three designations or the group as the older catalogues drew it. The 2,022 ly narrows it -- Theia_754 is much the closer of the two and NGC_1758 is 775 ly out -- without closing it, since 267 ly is still a long way to be wrong about a cluster one is naming.
-Also whether Proden, at 2,200 ly with no direction, is in this cluster. 178 ly separates the two figures; if it is, the cluster hands Proden a direction it has never had.
+Not whether Proden is in this cluster, which was open here until Proden gained a constellation: it is in Gemini and this is in Taurus, so the 178 ly between their ranges was a coincidence of depth and nothing more.
 
 ## The Inner Sphere colony tables
 
@@ -682,13 +682,13 @@ Blanco 1, Collinder 173, Collinder 359, Cone Nebula, Czernik 8, NGC 2244, NGC 70
 
 ## Worlds located only by constellation
 
-85 of 681 canonical worlds are given as a distance and a constellation. That fixes the distance exactly and the direction only to the width of the constellation, which at these ranges is hundreds to thousands of light years. The map draws these with a broken ring rather than a solid one, and the detail panel gives the error in light years.
+86 of 681 canonical worlds are given as a distance and a constellation. That fixes the distance exactly and the direction only to the width of the constellation, which at these ranges is hundreds to thousands of light years. The map draws these with a broken ring rather than a solid one, and the detail panel gives the error in light years.
 
 Coordinates, or a nearby named star, would turn any of these from a region into a position.
 
-## 52 places described but not located
+## 51 places described but not located
 
-Arnon Dar, Avase, Big Bob, Crustuse, Cyrus, Dashwood, Druidworld, Elderman's Star, Evermore, Filiae Reserve, Galbydeia Torus, Garlin, and 40 more
+Arnon Dar, Avase, Big Bob, Crustuse, Cyrus, Dashwood, Druidworld, Elderman's Star, Evermore, Filiae Reserve, Galbydeia Torus, Garlin, and 39 more
 
 ## 1 designation reused in the Celestia add-on
 

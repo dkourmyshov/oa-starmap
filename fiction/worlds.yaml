@@ -9023,15 +9023,26 @@ worlds:
       Held under Metasoft because the Tendency is a faction of it and has no
       roster entry of its own, the same treatment Proden's events get.
 
-      Proden is at 2,200 ly with no direction, 178 further out than this. Near
-      enough to wonder whether it sits in the cluster, and nothing read so far
-      says it does.
+      Proden is at 2,200 ly, 178 further out than this, and was near enough in
+      range to wonder whether it sat in the cluster. It does not: its own
+      constellation is Gemini and this is in Taurus, neighbours on the sky and
+      not one place.
   - name: Proden
     kind: planet
     affiliations: [metasoft]
     article: https://www.orionsarm.com/eg-article/4703bd784536b
     location:
+      constellation: Gemini
       distance: 2200 ly
+      note: >-
+        The distance is this world's own article, "an important Metasoft world,
+        2,200 ly from Sol"; the constellation is another article, which the
+        project owner supplies and this map had not read. Together they are a
+        cone, which is all either states, and it is enough to draw.
+
+        It sits where a Metasoft world should: the add-on writes two Metasoft
+        extent labels in Gemini, at 2,000 and 2,467 ly, and this falls between
+        them.
     events:
       - year_at: 6307
         kind: settled
@@ -9054,11 +9065,20 @@ worlds:
           plausibly Metasoft's mainstream, which the article does not say; the
           war went on in the outer volumes.
     note: >-
-      One of two places the project owner names as Metasoft volumes caught up in
-      the Teleological Tendency's part of the Second Vec War; the other is the
-      Triplet Cluster, entered below and likewise undrawn.
+      One of two places the project owner names as Metasoft volumes caught up
+      in the Teleological Tendency's part of the Second Vec War; the other is
+      the Triplet Cluster.
 
-      A distance and no direction, so the article fixes how far away it is and
+      Not in that cluster, which was worth asking while this had no direction:
+      the ranges are close, 2,200 against 2,022, and the two share a war. The
+      constellation answers it. The Triplet Cluster is in Taurus and this is in
+      Gemini, so they are neighbours on the sky and not the same place.
+
+      The article also has it "connected to the Wormhole Nexus in 6700", which
+      no event kind here records -- a gate opening is not a settling, a
+      transfer or a contact -- so it is written down rather than dated.
+
+      Was a distance and no direction, so the article fixed how far away it is and
       nothing else. Recorded and not drawn.
 
   - name: Rigel
