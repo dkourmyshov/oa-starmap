@@ -1,0 +1,38 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Owl Nebula
+
+id:world-owl-nebula a oa:Place, oa:World ;
+    skos:prefLabel "Owl Nebula" ;
+    oa:kind "volume" ;
+    oa:labelsSystem false ;
+    oa:note "NGC 3587, in Ursa Major. Two distances are published, 621 pc and 870 pc; the nearer is drawn and the further is 2,838 ly, so which is right moves this by 800 ly." ;
+    oa:uncertain false .
+
+claim:location-world-owl-nebula a prov:Entity, oa:LocationClaim ;
+    oa:about id:world-owl-nebula ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg 55.0166 ;
+    oa:distance value:location-world-owl-nebula-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:rightAscensionDeg 168.6935 .
+
+value:location-world-owl-nebula-distance a oa:QuantityValue ;
+    qudt:numericValue 2025.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-owl-nebula-solar-dominion a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:world-owl-nebula ;
+    oa:canonical true ;
+    oa:polity id:polity-solar-dominion ;
+    oa:recordOrder 0 .

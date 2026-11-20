@@ -1,0 +1,65 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# Sinyavskaya
+
+id:world-sinyavskaya a oa:Place, oa:World ;
+    skos:prefLabel "Sinyavskaya" ;
+    oa:article <https://www.orionsarm.com/eg-article/478587d725792> ;
+    oa:editorialNote "---- Zoeific Biopolity --------------------------------------------------\n\nThe first roster to arrive with distances beside its catalogue numbers, and\nthe difference shows: four could be checked, two agreed to under a percent\nand two did not, and the two that did not are placed by direction instead.\nQjellto is above, held with the Utopia Sphere." ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "HD 29528, 189 ly out in Taurus, 9.6 ly from the Magal Worldrings." ;
+    oa:uncertain false .
+
+claim:location-world-sinyavskaya a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/478587d725792> ;
+    oa:about id:world-sinyavskaya ;
+    oa:canonical true ;
+    oa:catalogueFromSource true ;
+    oa:hdId 29528 ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+claim:affiliation-world-sinyavskaya-terragen-federation a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/478587d725792> ;
+    oa:about id:world-sinyavskaya ;
+    oa:canonical true ;
+    oa:polity id:polity-terragen-federation ;
+    oa:recordOrder 0 .
+
+claim:event-world-sinyavskaya-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/478587d725792> ;
+    oa:about id:world-sinyavskaya ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"Planet originally colonized by the Taurus Nexus.\" Undated; the span is the Nexus's own page (as pasted by the project owner, sources/polities/taurus-nexus.txt), from wormhole technology's replication in 2268 -- after which \"a number of other colonies such as ... Sinyavskaya (HD 29528) ... eventually joined the Taurus Nexus\" -- to the Nexus's own dissolution in 3435. This replaces the map's older 'settled 3800', which was a misreading of the sentence below about the 3800s dictatorship, not a settlement date." ;
+    oa:polity id:polity-taurus-nexus ;
+    oa:precision oa:Between ;
+    oa:recordOrder 0 ;
+    oa:untilAT 3435 ;
+    oa:yearAT 2268 .
+
+claim:event-world-sinyavskaya-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/478587d725792> ;
+    oa:about id:world-sinyavskaya ;
+    oa:canonical true ;
+    oa:eventKind oa:Independent ;
+    oa:note "\"After the fall of the Nexus Sinyavskaya became an independent world in the backwaters beyond the Hyades.\"" ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 3435 .
+
+claim:event-world-sinyavskaya-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/478587d725792> ;
+    oa:about id:world-sinyavskaya ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"In the 3800's it became notorious for the dictatorial government of the Proclag Oamnoran. Suffered severe overpopulation followed by collapse because of Receptist ideology. Eventually Sinyavskaya, now a cinder world, joined the Terragen Federation.\" Undated beyond \"eventually\", after the 3800s events named here." ;
+    oa:polity id:polity-terragen-federation ;
+    oa:precision oa:NotEarlierThan ;
+    oa:recordOrder 2 ;
+    oa:yearAT 3800 .

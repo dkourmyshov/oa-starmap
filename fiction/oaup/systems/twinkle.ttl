@@ -1,0 +1,74 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Twinkle
+
+id:world-twinkle a oa:Place, oa:World ;
+    skos:prefLabel "Twinkle" ;
+    oa:article <https://www.orionsarm.com/eg-article/4afaa8e94874a> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "HD 4391, as the colony table has it." ;
+    oa:systemName "Twinkle" ;
+    oa:uncertain false .
+
+claim:location-world-twinkle a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4afaa8e94874a> ;
+    oa:about id:world-twinkle ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "HD 4391" .
+
+claim:event-world-twinkle-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4afaa8e94874a> ;
+    oa:about id:world-twinkle ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "\"A fast Foundation dedicated transvot probeship, the Pangloss, arrived at Twinkle from Audubon in 1885 AT, and began to construct a laser receiver on the small moon of this world.\" The probeship is described as belonging to the Terranova Foundation, not named as a LinnEnt vessel in this sentence; see unplaced. A probeship of the Terranova Foundation, no polity of this file, from Audubon." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 1885 .
+
+claim:event-world-twinkle-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4afaa8e94874a> ;
+    oa:about id:world-twinkle ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"By 1910 the first uploaded personalities were arriving from Audubon, and the Pangloss downloaded these personalities into newly engenerated human bodies based on their original DNA.\" Twinkle is identified earlier in the article as one of the LinnEnt worlds where uploaded colonists were downloaded into engenerated bodies to create a colonist population." ;
+    oa:polity id:polity-linnent ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 1910 .
+
+# Twinkle
+
+id:inner-sphere-row-0600 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Twinkle" .
+
+claim:inner-sphere-inner-sphere-row-0600-6b3121faacba a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0600 ;
+    oa:article <https://www.orionsarm.com/eg-article/4afaa8e94874a> ;
+    oa:canonical true ;
+    oa:colonyName "Twinkle" ;
+    oa:luminositySol "0.94" ;
+    oa:massSol "1.22" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 599 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0600-6b3121faacba-source-distance ;
+    oa:spectralType "G3 V" ;
+    oa:starName "HD 4391" .
+
+value:inner-sphere-inner-sphere-row-0600-6b3121faacba-source-distance a oa:QuantityValue ;
+    qudt:numericValue 49.082 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

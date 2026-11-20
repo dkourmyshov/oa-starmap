@@ -1,0 +1,36 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Zennor
+
+id:world-zennor a oa:Place, oa:World ;
+    skos:prefLabel "Zennor" ;
+    oa:article <https://www.orionsarm.com/eg-article/48f949fa9c789> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "In Libra at 2,786 ly." ;
+    oa:systemName "Zennor" ;
+    oa:uncertain false .
+
+claim:location-world-zennor a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48f949fa9c789> ;
+    oa:about id:world-zennor ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -14.1408 ;
+    oa:distance value:location-world-zennor-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:note "Was Libra and a distance, which is a cone 2786 ly deep. The direction is from the Orion's Arm Celestia add-ons' location catalogues (OAAddons9, OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv), which the star importer never read because it takes only .stc files. It falls 2 degrees from the centre of Libra against that constellation's radius of 16, so it agrees with the cone it replaces, and the catalogue's own distance of 2787.72 ly agrees with the article's." ;
+    oa:rightAscensionDeg 229.4401 .
+
+value:location-world-zennor-distance a oa:QuantityValue ;
+    qudt:numericValue 2786.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

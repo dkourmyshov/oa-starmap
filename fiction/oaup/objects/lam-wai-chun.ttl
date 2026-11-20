@@ -1,0 +1,42 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# Lam Wai-Chun
+
+id:world-lam-wai-chun a oa:Place, oa:World ;
+    skos:prefLabel "Lam Wai-Chun" ;
+    oa:article <https://www.orionsarm.com/eg-article/4b69110d20b68> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "The Chi Draconis binary, 26 ly." ;
+    oa:uncertain false .
+
+claim:location-world-lam-wai-chun a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4b69110d20b68> ;
+    oa:about id:world-lam-wai-chun ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Chi Draconis" .
+
+claim:affiliation-world-lam-wai-chun-keter-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4b69110d20b68> ;
+    oa:about id:world-lam-wai-chun ;
+    oa:canonical true ;
+    oa:polity id:polity-keter-dominion ;
+    oa:recordOrder 0 .
+
+claim:event-world-lam-wai-chun-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4b69110d20b68> ;
+    oa:about id:world-lam-wai-chun ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "Joined the Keter Dominion. Not a colonisation date — the system was settled before that, and by whom is not recorded here." ;
+    oa:polity id:polity-keter-dominion ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 4450 .

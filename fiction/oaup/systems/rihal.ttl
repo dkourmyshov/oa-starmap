@@ -1,0 +1,91 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Rihal
+
+id:world-rihal a oa:Place, oa:World ;
+    skos:prefLabel "Rihal" ;
+    oa:article <https://www.orionsarm.com/eg-article/57f4e86a578dc> ;
+    oa:editorialNote "---- Refugium Federation -------------------------------------------------" ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Ross 248, 10.3 ly out in Andromeda." ;
+    oa:uncertain false .
+
+claim:location-world-rihal a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/57f4e86a578dc> ;
+    oa:about id:world-rihal ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Ross 248" .
+
+claim:affiliation-world-rihal-solsys-organization a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/57f4e86a578dc> ;
+    oa:about id:world-rihal ;
+    oa:canonical true ;
+    oa:polity id:polity-solsys-organization ;
+    oa:recordOrder 0 .
+
+claim:event-world-rihal-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/57f4e86a578dc> ;
+    oa:about id:world-rihal ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 680 .
+
+claim:event-world-rihal-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/57f4e86a578dc> ;
+    oa:about id:world-rihal ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "\"this system was one of the first contacted by the Eridanus League in 783 but declined to join\" The system declined to join the Eridanus League, so this is recorded as visited rather than transferred. Contacted by the League, 'but declined to join'." ;
+    oa:polity id:polity-eridanus-league ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 783 .
+
+claim:event-world-rihal-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/57f4e86a578dc> ;
+    oa:about id:world-rihal ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"After an economic crash in 950, the remaining colonists decided to align themselves with the new First Federation .\" 'The new First Federation', after the economic crash of 950." ;
+    oa:polity id:polity-first-federation ;
+    oa:precision oa:NotEarlierThan ;
+    oa:recordOrder 2 ;
+    oa:yearAT 950 .
+
+# Rihal
+
+id:inner-sphere-row-0016 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Rihal" .
+
+claim:inner-sphere-inner-sphere-row-0016-de72d9b739ac a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0016 ;
+    oa:article <https://www.orionsarm.com/eg-article/57f4e86a578dc> ;
+    oa:canonical true ;
+    oa:colonyName "Rihal" ;
+    oa:luminositySol "0.000106" ;
+    oa:massSol "0.07" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 15 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0016-de72d9b739ac-source-distance ;
+    oa:spectralType "M5.5 Ve" ;
+    oa:starName "Ross 248" .
+
+value:inner-sphere-inner-sphere-row-0016-de72d9b739ac-source-distance a oa:QuantityValue ;
+    qudt:numericValue 10.306 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

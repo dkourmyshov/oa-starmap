@@ -1,0 +1,32 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Paanlaansuu
+
+id:inner-sphere-row-0763 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Paanlaansuu" .
+
+claim:inner-sphere-inner-sphere-row-0763-6fadbf2046c4 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0763 ;
+    oa:canonical true ;
+    oa:colonyName "Paanlaansuu" ;
+    oa:luminositySol "3.23" ;
+    oa:massSol "." ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 762 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0763-6fadbf2046c4-source-distance ;
+    oa:spectralType "F5 IV-V" ;
+    oa:starName "74 Orionis" .
+
+value:inner-sphere-inner-sphere-row-0763-6fadbf2046c4-source-distance a oa:QuantityValue ;
+    qudt:numericValue 63.887 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

@@ -1,0 +1,25 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# Kate
+
+id:world-kate a oa:Place, oa:World ;
+    skos:prefLabel "Kate" ;
+    oa:article <https://www.orionsarm.com/eg-article/58ffb992da8cc> ;
+    oa:kind "moon" ;
+    oa:labelsSystem false ;
+    oa:note "The other moon of Petruchio. HD 62549 in Monoceros, 161 ly out." ;
+    oa:parentName "Petruchio" ;
+    oa:uncertain false .
+
+claim:location-world-kate a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/58ffb992da8cc> ;
+    oa:about id:world-kate ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "HD 62549" .

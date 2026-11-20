@@ -1,0 +1,48 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# JD 836901
+
+id:star-jd-836901 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 836901" ;
+    oa:sourceName "JD 836901" .
+
+claim:celestia-star-jd-836901-baaab9920aa8 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-836901 ;
+    oa:absoluteMagnitude 4.87 ;
+    oa:canonical true ;
+    oa:declinationDeg 26.934 ;
+    oa:distance value:celestia-star-jd-836901-baaab9920aa8-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 96.165 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceComment "G3  star for Wurm" ;
+    oa:sourceFile "oastars2-2.stc" ;
+    oa:sourceSystemName "Wurm" ;
+    oa:spectralType "G3" .
+
+value:celestia-star-jd-836901-baaab9920aa8-distance a oa:QuantityValue ;
+    qudt:numericValue 1067.86 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-star-jd-836901-metasoft a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5058816aa9afb> ;
+    oa:about id:star-jd-836901 ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft .
+
+claim:curation-star-jd-836901 a prov:Entity, oa:SystemCuration ;
+    oa:about id:star-jd-836901 ;
+    oa:article <https://www.orionsarm.com/eg-article/5058816aa9afb> ;
+    oa:editorialLabel "Wurm" ;
+    oa:hidden false ;
+    oa:uncertain false .

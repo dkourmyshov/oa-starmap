@@ -1,0 +1,108 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Hiederia
+
+id:world-hiederia a oa:Place, oa:World ;
+    skos:prefLabel "Hiederia" ;
+    oa:article <https://www.orionsarm.com/eg-article/48fb58d65ae1e> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "In the Perseus Rift, 3,618 ly." ;
+    oa:systemName "Hiederia" ;
+    oa:uncertain false .
+
+claim:location-world-hiederia a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48fb58d65ae1e> ;
+    oa:about id:world-hiederia ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:oaStarName "Hiederia" .
+
+claim:affiliation-world-hiederia-solar-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48fb58d65ae1e> ;
+    oa:about id:world-hiederia ;
+    oa:canonical true ;
+    oa:polity id:polity-solar-dominion ;
+    oa:recordOrder 0 .
+
+claim:event-world-hiederia-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48fb58d65ae1e> ;
+    oa:about id:world-hiederia ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "The Solar Dominion arrives to find the system already settled by Mydonian Evolution postneumanns, neither aligned nor hostile." ;
+    oa:polity id:polity-solar-dominion ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 8746 .
+
+claim:event-world-hiederia-002 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-hiederia ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "Arrival of the linelayer Borde's Glory XXIV at Hiederia . It is found that the system's jovian had been colonised by a high level postneumann civilization." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:sourceDescription "Encyclopaedia timeline, Age of Expansionist New Empires" ;
+    oa:yearAT 8746 .
+
+claim:event-world-hiederia-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48fb58d65ae1e> ;
+    oa:about id:world-hiederia ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "\"In 8614 a Solar Dominion exploration fleet discovered an unassuming Red Dwarf with a warm neptunian , a scattered asteroid belt , single airless rockball world, an icy failed core, and a diffuse comet halo.\"" ;
+    oa:polity id:polity-solar-dominion ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 2 ;
+    oa:yearAT 8614 .
+
+# Hiederia
+
+id:star-hiederia a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "Hiederia" ;
+    oa:sourceName "Hiederia" .
+
+claim:celestia-star-hiederia-63ea0813c8e5 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-hiederia ;
+    oa:absoluteMagnitude 8.3 ;
+    oa:canonical true ;
+    oa:declinationDeg 42.4255 ;
+    oa:distance value:celestia-star-hiederia-63ea0813c8e5-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 71.4508 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceComment "Star for system containing Redunin" ;
+    oa:sourceFile "oastars2-2.stc" ;
+    oa:sourceSystemName "Redunin" ;
+    oa:spectralType "M0V" .
+
+value:celestia-star-hiederia-63ea0813c8e5-distance a oa:QuantityValue ;
+    qudt:numericValue 3618.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-star-hiederia-solar-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48fb58d65ae1e> ;
+    oa:about id:star-hiederia ;
+    oa:canonical true ;
+    oa:polity id:polity-solar-dominion .
+
+claim:curation-star-hiederia a prov:Entity, oa:SystemCuration ;
+    oa:about id:star-hiederia ;
+    oa:article <https://www.orionsarm.com/eg-article/48fb58d65ae1e> ;
+    oa:editorialLabel "Hiederia" ;
+    oa:hidden false ;
+    oa:note "The add-on comments this \"star for system containing Redunin\", but the primary has a name of its own, so the naming rule prefers Hiederia." ;
+    oa:uncertain false .

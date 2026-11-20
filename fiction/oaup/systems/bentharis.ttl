@@ -1,0 +1,44 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Bentharis
+
+id:world-bentharis a oa:Place, oa:World ;
+    skos:prefLabel "Bentharis" ;
+    oa:article <https://www.orionsarm.com/eg-article/4771382da1fb2> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "In Scutum at 2,286 ly. Another dead alien civilisation." ;
+    oa:systemName "Bentharis" ;
+    oa:uncertain false .
+
+claim:location-world-bentharis a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4771382da1fb2> ;
+    oa:about id:world-bentharis ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:constellationName "Scutum" ;
+    oa:distance value:location-world-bentharis-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+value:location-world-bentharis-distance a oa:QuantityValue ;
+    qudt:numericValue 2286.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:event-world-bentharis-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4771382da1fb2> ;
+    oa:about id:world-bentharis ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "Reached; an extinct xenosophont civilisation found." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 3652 .

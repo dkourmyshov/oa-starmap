@@ -1,0 +1,87 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Kounzu Faashi
+
+id:world-kounzu-faashi a oa:Place, oa:World ;
+    skos:prefLabel "Kounzu Faashi" ;
+    oa:article <https://www.orionsarm.com/eg-article/62452b1f56943> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Nu Octantis A, as the colony table has it." ;
+    oa:systemName "Kounzu Faashi" ;
+    oa:uncertain false .
+
+claim:location-world-kounzu-faashi a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/62452b1f56943> ;
+    oa:about id:world-kounzu-faashi ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Nu Octantis A" .
+
+claim:event-world-kounzu-faashi-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/62452b1f56943> ;
+    oa:about id:world-kounzu-faashi ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "\"This system was first reached in 2096 AT by the autonomous exploration craft Waryu\" reached by an uncrewed autonomous exploration craft; no polity is named for it The autonomous probe Waryu; the later colonisation, 'during the Age of Expansion', is not dated." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 2096 .
+
+# Kounzu Faashi
+
+id:inner-sphere-row-0747 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Kounzu Faashi" .
+
+claim:inner-sphere-inner-sphere-row-0747-8ae2b9d45be6 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0747 ;
+    oa:article <https://www.orionsarm.com/eg-article/62452b1f56943> ;
+    oa:canonical true ;
+    oa:colonyName "Kounzu Faashi" ;
+    oa:luminositySol "17.0" ;
+    oa:massSol "1.61" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 746 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0747-8ae2b9d45be6-source-distance ;
+    oa:spectralType "K0 III" ;
+    oa:starName "Nu Octantis A" .
+
+value:inner-sphere-inner-sphere-row-0747-8ae2b9d45be6-source-distance a oa:QuantityValue ;
+    qudt:numericValue 63.310 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Kounzu Faashi
+
+id:inner-sphere-row-0748 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Kounzu Faashi" .
+
+claim:inner-sphere-inner-sphere-row-0748-c9228332ec96 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0748 ;
+    oa:article <https://www.orionsarm.com/eg-article/62452b1f56943> ;
+    oa:canonical true ;
+    oa:colonyName "Kounzu Faashi" ;
+    oa:luminositySol "." ;
+    oa:massSol "0.55" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 747 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0748-c9228332ec96-source-distance ;
+    oa:spectralType "D" ;
+    oa:starName "Nu Octantis B" .
+
+value:inner-sphere-inner-sphere-row-0748-c9228332ec96-source-distance a oa:QuantityValue ;
+    qudt:numericValue 63.310 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

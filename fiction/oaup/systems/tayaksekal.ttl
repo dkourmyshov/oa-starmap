@@ -1,0 +1,82 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Tayaksekal
+
+id:world-tayaksekal a oa:Place, oa:World ;
+    skos:prefLabel "Tayaksekal" ;
+    oa:article <https://www.orionsarm.com/eg-article/6a591b0e9ee15> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "In Sagitta at 803 ly. The system is not held; its world Zakdakha is, which is a distinction the setting draws and this file can carry." ;
+    oa:systemName "Tayaksekal" ;
+    oa:uncertain false .
+
+claim:location-world-tayaksekal a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/6a591b0e9ee15> ;
+    oa:about id:world-tayaksekal ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:constellationName "Sagitta" ;
+    oa:distance value:location-world-tayaksekal-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+value:location-world-tayaksekal-distance a oa:QuantityValue ;
+    qudt:numericValue 803.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:event-world-tayaksekal-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/6a591b0e9ee15> ;
+    oa:about id:world-tayaksekal ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "Reached." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 2990 .
+
+claim:event-world-tayaksekal-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/6a591b0e9ee15> ;
+    oa:about id:world-tayaksekal ;
+    oa:canonical true ;
+    oa:eventKind oa:Observed ;
+    oa:note "\"Zakdakha was first discovered using the Eyes of Luna in the early 3rd century AT.\" \"early 3rd century AT\" rendered as circa 210 AT; no polity is named for this remote telescope discovery. With the Eyes of Luna; the early third century, entered as 210." ;
+    oa:precision oa:Circa ;
+    oa:recordOrder 1 ;
+    oa:yearAT 210 .
+
+claim:event-world-tayaksekal-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/6a591b0e9ee15> ;
+    oa:about id:world-tayaksekal ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "\"When the first modosophont explorers reached the system in 3176, they dubbed the entity Dakha (meaning \"the glittering one\" in their constructed language), and named the planet after em.\" No polity is named for these explorers. The first modosophont explorers; a Caretakerist entity had reached it in 2990, which the entry already carries." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 2 ;
+    oa:yearAT 3176 .
+
+# Zakdakha
+
+id:world-zakdakha a oa:Place, oa:World ;
+    skos:prefLabel "Zakdakha" ;
+    oa:article <https://www.orionsarm.com/eg-article/6a591b0e9ee15> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "The world of Tayaksekal, and a Caretaker domain — the planet only, not the system around it." ;
+    oa:systemName "Tayaksekal" ;
+    oa:uncertain false .
+
+claim:affiliation-world-zakdakha-caretaker-gods a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/6a591b0e9ee15> ;
+    oa:about id:world-zakdakha ;
+    oa:canonical true ;
+    oa:polity id:polity-caretaker-gods ;
+    oa:recordOrder 0 .

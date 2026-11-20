@@ -1,0 +1,128 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Gatlida
+
+id:world-gatlida a oa:Place, oa:World ;
+    skos:prefLabel "Gatlida" ;
+    oa:article <https://www.orionsarm.com/eg-article/479546d8e9f5e> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "11.9 ly, one of the nearest systems recorded here." ;
+    oa:systemName "Gatlida" ;
+    oa:uncertain false .
+
+claim:location-world-gatlida a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/479546d8e9f5e> ;
+    oa:about id:world-gatlida ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Epsilon Indi" .
+
+claim:affiliation-world-gatlida-nocozo a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/479546d8e9f5e> ;
+    oa:about id:world-gatlida ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 0 .
+
+claim:event-world-gatlida-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/479546d8e9f5e> ;
+    oa:about id:world-gatlida ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 636 .
+
+claim:event-world-gatlida-002 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-gatlida ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "The Sure arrives at Epsilon Indi ; because of a cryonics failure only six colonists are successfully revived. These become House Stevens ." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:sourceDescription "Encyclopaedia timeline, The Sundering" ;
+    oa:yearAT 621 .
+
+claim:event-world-gatlida-003 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-gatlida ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "The Starlark arrives at Epsilon Indi ." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 2 ;
+    oa:sourceDescription "Encyclopaedia timeline, The Sundering" ;
+    oa:yearAT 764 .
+
+claim:event-world-gatlida-004 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-gatlida ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "Hindi Expansion vessel arrives at Epsilon Indi ." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 3 ;
+    oa:sourceDescription "Encyclopaedia timeline, The Sundering" ;
+    oa:yearAT 880 .
+
+claim:event-world-gatlida-005 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/479546d8e9f5e> ;
+    oa:about id:world-gatlida ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"In 815, Gatlida joined the Eridanus League\"" ;
+    oa:polity id:polity-eridanus-league ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 4 ;
+    oa:yearAT 815 .
+
+# Gatlida
+
+id:inner-sphere-row-0032 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Gatlida" .
+
+claim:inner-sphere-inner-sphere-row-0032-12f13996e263 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0032 ;
+    oa:article <https://www.orionsarm.com/eg-article/479546d8e9f5e> ;
+    oa:canonical true ;
+    oa:colonyName "Gatlida" ;
+    oa:luminositySol "0.239" ;
+    oa:massSol "0.754" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 31 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0032-12f13996e263-source-distance ;
+    oa:spectralType "K5 V" ;
+    oa:starName "Epsilon Indi A" .
+
+value:inner-sphere-inner-sphere-row-0032-12f13996e263-source-distance a oa:QuantityValue ;
+    qudt:numericValue 11.867 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Tierra del Fuego
+
+id:world-tierra-del-fuego a oa:Place, oa:World ;
+    skos:altLabel "Terra del Fuego" ;
+    skos:prefLabel "Tierra del Fuego" ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:uncertain false .
+
+claim:location-world-tierra-del-fuego a prov:Entity, oa:LocationClaim ;
+    oa:about id:world-tierra-del-fuego ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:note "Given as a colony in Epsilon Indi, on the project owner's reading. oaplanets.dsc, one of the Orion's Arm Celestia add-ons' location catalogues (OAAddons9, OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv), spells it \"Terra del Fuego\" and puts it at 11.8 ly, against Epsilon Indi's 11.867 -- so the add-on is naming this system. The spelling above is the one the real place bears and the add-on's is kept as an alternate.\nBound to the A component, which no source here states: A and B are about 1,500 AU apart and at this range that is nothing on the map. Epsilon Indi already carries the Gatlida and Praxis-Gnosis colonies, and how this stands to them is not recorded. See questions.md." ;
+    oa:starName "Epsilon Indi A" .

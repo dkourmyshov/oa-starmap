@@ -1,0 +1,46 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+
+# https://dkourmyshov.github.io/oa-starmap/id/dataset
+
+id:dataset a oa:OAUPDataset ;
+    dcterms:title "Orion's Arm Universe Project starmap data" ;
+    oa:hideCommentMatching "Star in cluster NGC 6633", "near Cenote" ;
+    oa:hideDesignationOnly true .
+
+# https://dkourmyshov.github.io/oa-starmap/id/editorial-note-collinder-173
+
+id:editorial-note-collinder-173 a oa:EditorialNote ;
+    oa:note "Shared between the Non-Coercive Zone and the Sophic League." ;
+    oa:noteKey "Collinder 173" .
+
+# https://dkourmyshov.github.io/oa-starmap/id/editorial-note-north-america-nebula
+
+id:editorial-note-north-america-nebula a oa:EditorialNote ;
+    oa:note "With Collinder 428, both known as Hosoko." ;
+    oa:noteKey "North America Nebula" .
+
+# https://dkourmyshov.github.io/oa-starmap/id/editorial-note-s138
+
+id:editorial-note-s138 a oa:EditorialNote ;
+    oa:note "On the border between Solar Dominion and Cygexpa." ;
+    oa:noteKey "S138" .
+
+# https://dkourmyshov.github.io/oa-starmap/id/editorial-note-s232
+
+id:editorial-note-s232 a oa:EditorialNote ;
+    oa:note "Shared between Metasoft and the Solar Dominion." ;
+    oa:noteKey "S232" .
+
+# https://dkourmyshov.github.io/oa-starmap/id/editorial-note-s27
+
+id:editorial-note-s27 a oa:EditorialNote ;
+    oa:note "Shared between the Mutual Progress Association and the Solar Dominion." ;
+    oa:noteKey "S27" .
+
+# https://dkourmyshov.github.io/oa-starmap/id/editorial-note-seagull-nebula
+
+id:editorial-note-seagull-nebula a oa:EditorialNote ;
+    oa:note "Read as \"Eagle Nebula\" when this list was first transcribed, which bound it to NGC 6611 in Serpens at l=17 deg — some 200 degrees away from every other Sophic landmark, all of which lie between l=216 and l=290. The Seagull (Sh2-296, l=224 deg, 1000 pc) sits between M48 and M47, matching the source map's placement." ;
+    oa:noteKey "Seagull Nebula" .

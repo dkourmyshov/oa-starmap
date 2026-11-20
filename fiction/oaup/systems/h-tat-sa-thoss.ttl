@@ -1,0 +1,107 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# JD 870135
+
+id:star-jd-870135 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 870135" ;
+    oa:sourceName "JD 870135" .
+
+claim:celestia-star-jd-870135-c8b1b0c7fee4 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-870135 ;
+    oa:absoluteMagnitude 4.2 ;
+    oa:canonical true ;
+    oa:declinationDeg 6.542 ;
+    oa:distance value:celestia-star-jd-870135-c8b1b0c7fee4-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 277.352 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceComment "Star for system containing To'ul'h" ;
+    oa:sourceFile "oastars6.stc" ;
+    oa:sourceSystemName "To'ul'h" ;
+    oa:spectralType "G2V" .
+
+value:celestia-star-jd-870135-c8b1b0c7fee4-distance a oa:QuantityValue ;
+    qudt:numericValue 1235.51 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-star-jd-870135-caretaker-gods a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5eefcc060d4c4> ;
+    oa:about id:star-jd-870135 ;
+    oa:canonical true ;
+    oa:polity id:polity-caretaker-gods .
+
+claim:curation-star-jd-870135 a prov:Entity, oa:SystemCuration ;
+    oa:about id:star-jd-870135 ;
+    oa:article <https://www.orionsarm.com/eg-article/5eefcc060d4c4> ;
+    oa:editorialLabel "H'tat'sa'thoss" ;
+    oa:hidden false ;
+    oa:note "H'tat'sa'thoss is the system, Tohul the planet, and To'ul'h the xenosophonts who live there. The add-on labels the star \"To'ul'h\", which is the species — the equivalent of calling Sol System \"Humans\". Classified with the Caretaker Gods because it is protected by one: the system is shielded so it is left alone rather than absorbed by another terragen empire. That is a statement about the system, not the clade — To'ul'h are not confined to their homeworld, and some have joined terragen civilisation." ;
+    oa:uncertain false .
+
+# Tohul
+
+id:world-tohul a oa:Place, oa:World ;
+    skos:prefLabel "Tohul" ;
+    oa:article <https://www.orionsarm.com/eg-article/5eefcc060d4c4> ;
+    oa:editorialNote "---- Communion of Worlds ------------------------------------------------\n\nDates here are colonisation years, not the year a system joined the\nCommunion — several were settled by somebody else first, and the two\nquestions have different answers." ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "The planet of the H'tat'sa'thoss system, already on the map as the Celestia add-on's JD 870135. Recorded here for the dates: the two hundred years between first visit and first contact, and the six hundred more before the system was closed, are the whole shape of this contact and are not derivable from a position. Tohul is the planet, H'tat'sa'thoss the system, To'ul'h the species." ;
+    oa:systemName "H'tat'sa'thoss" ;
+    oa:uncertain false .
+
+claim:location-world-tohul a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5eefcc060d4c4> ;
+    oa:about id:world-tohul ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:oaStarName "JD 870135" .
+
+claim:affiliation-world-tohul-caretaker-gods a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5eefcc060d4c4> ;
+    oa:about id:world-tohul ;
+    oa:canonical true ;
+    oa:polity id:polity-caretaker-gods ;
+    oa:recordOrder 0 .
+
+claim:event-world-tohul-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5eefcc060d4c4> ;
+    oa:about id:world-tohul ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "First visit by Terragens." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 3831 .
+
+claim:event-world-tohul-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5eefcc060d4c4> ;
+    oa:about id:world-tohul ;
+    oa:canonical true ;
+    oa:eventKind oa:Contact ;
+    oa:note "First contact with the To'ul'h." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 4011 .
+
+claim:event-world-tohul-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5eefcc060d4c4> ;
+    oa:about id:world-tohul ;
+    oa:canonical true ;
+    oa:eventKind oa:Stewardship ;
+    oa:note "Caretaker domain declared over the system." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 2 ;
+    oa:yearAT 4645 .

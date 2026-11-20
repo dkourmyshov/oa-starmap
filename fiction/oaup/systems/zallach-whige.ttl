@@ -1,0 +1,81 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Zallach-Whige
+
+id:world-zallach-whige a oa:Place, oa:World ;
+    skos:prefLabel "Zallach-Whige" ;
+    oa:article <https://www.orionsarm.com/eg-article/5460a5aceb49a> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Chi Eridani A, as the colony table has it." ;
+    oa:systemName "Zallach-Whige" ;
+    oa:uncertain false .
+
+claim:location-world-zallach-whige a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5460a5aceb49a> ;
+    oa:about id:world-zallach-whige ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Chi Eridani A" .
+
+claim:affiliation-world-zallach-whige-zoeific-biopolity a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5460a5aceb49a> ;
+    oa:about id:world-zallach-whige ;
+    oa:canonical true ;
+    oa:polity id:polity-zoeific-biopolity ;
+    oa:recordOrder 0 .
+
+claim:event-world-zallach-whige-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5460a5aceb49a> ;
+    oa:about id:world-zallach-whige ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"Colonised 2050 AT\" No polity is named for this original colonisation, either in the panel or the body text." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 2050 .
+
+claim:event-world-zallach-whige-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5460a5aceb49a> ;
+    oa:about id:world-zallach-whige ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"The colony in this system was stagnating until the Zoeific Biopolity constructed a McKendree Cylinder (Zallach-Whige) in 8950 AT, and encouraged House Genen to populate it.\" The system's original 2050 AT colony (moon and gas-giant bubblehabs) already existed and was 'stagnating'; this event is the Zoeific Biopolity's later construction and repopulation of the McKendree cylinder, not the system's first settlement. A second settlement of a stagnating colony, with House Genen, no polity of this file, encouraged to populate the cylinder." ;
+    oa:polity id:polity-zoeific-biopolity ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 8950 .
+
+# Zallach-Whige
+
+id:inner-sphere-row-0682 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Zallach-Whige" .
+
+claim:inner-sphere-inner-sphere-row-0682-98c9e2cd39ed a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0682 ;
+    oa:article <https://www.orionsarm.com/eg-article/5460a5aceb49a> ;
+    oa:canonical true ;
+    oa:colonyName "Zallach-Whige" ;
+    oa:luminositySol "8.82" ;
+    oa:massSol "." ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 681 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0682-98c9e2cd39ed-source-distance ;
+    oa:spectralType "G8 IV" ;
+    oa:starName "Chi Eridani A" .
+
+value:inner-sphere-inner-sphere-row-0682-98c9e2cd39ed-source-distance a oa:QuantityValue ;
+    qudt:numericValue 57.371 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

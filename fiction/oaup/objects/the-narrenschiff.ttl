@@ -1,0 +1,42 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# The Narrenschiff
+
+id:world-the-narrenschiff a oa:Place, oa:World ;
+    skos:prefLabel "The Narrenschiff" ;
+    oa:article <https://www.orionsarm.com/eg-article/534fee3bba72a> ;
+    oa:kind "habitat" ;
+    oa:labelsSystem false ;
+    oa:note "A ship that became a habitat, at Epsilon Microscopii — 169 ly out against the article's 182. The Fomalhaut Acquisition Society built the ship, which is why they are recorded here, but built is not held and the holding is marked uncertain." ;
+    oa:uncertain true .
+
+claim:location-world-the-narrenschiff a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/534fee3bba72a> ;
+    oa:about id:world-the-narrenschiff ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Epsilon Microscopii" .
+
+claim:affiliation-world-the-narrenschiff-fomalhaut-acquisition-society a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/534fee3bba72a> ;
+    oa:about id:world-the-narrenschiff ;
+    oa:canonical true ;
+    oa:polity id:polity-fomalhaut-acquisition-society ;
+    oa:recordOrder 0 .
+
+claim:event-world-the-narrenschiff-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/534fee3bba72a> ;
+    oa:about id:world-the-narrenschiff ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "Arrived." ;
+    oa:polity id:polity-fomalhaut-acquisition-society ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 2309 .

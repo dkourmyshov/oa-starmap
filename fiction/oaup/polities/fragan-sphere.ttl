@@ -1,0 +1,17 @@
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+
+# Fragan Sphere
+
+id:polity-fragan-sphere a oa:Polity ;
+    skos:prefLabel "Fragan Sphere" ;
+    oa:ambiguousName false ;
+    oa:color "#7C4DFF" ;
+    oa:editorialNote "\"3rd millennium AT autonomous Terragen interstellar civilization; many\ndetails about it and the reasons for its disappearance remain a mystery.\"" ;
+    oa:hasSource src:eg-historical-polities ;
+    oa:kind "meta-empire" ;
+    oa:polityId "fragan-sphere" ;
+    oa:recordOrder 65 ;
+    oa:uncertain false .

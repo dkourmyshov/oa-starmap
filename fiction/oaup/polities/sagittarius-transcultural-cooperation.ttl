@@ -1,0 +1,18 @@
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+
+# Sagittarius Transcultural Cooperation
+
+id:polity-sagittarius-transcultural-cooperation a oa:Polity ;
+    skos:prefLabel "Sagittarius Transcultural Cooperation" ;
+    oa:ambiguousName false ;
+    oa:color "#AB47BC" ;
+    oa:editorialNote "Encyclopaedia timeline, 4805: \"Sagittarius Sphere dissolved by an alliance of ComEmp\nempires; becomes the Sagittarius Transcultural Cooperation.\"" ;
+    oa:foundedAT 4805 ;
+    oa:hasSource src:political-maps-8000at ;
+    oa:kind "meta-empire" ;
+    oa:polityId "sagittarius-transcultural-cooperation" ;
+    oa:recordOrder 5 ;
+    oa:uncertain false .

@@ -1,0 +1,24 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# Boomerang Nebula
+
+id:world-boomerang-nebula a oa:Place, oa:World ;
+    skos:prefLabel "Boomerang Nebula" ;
+    oa:article <https://www.orionsarm.com/eg-article/491758f9ed287> ;
+    oa:kind "volume" ;
+    oa:labelsSystem false ;
+    oa:note "A real object rather than an assertion: the add-on carries it because Celestia's own catalogues do not, and this map's nebula catalogue is not loaded either. The article puts it 5,000 ly out at the edge of Terragen space and the add-on at 5,080; it is colder than the cosmic background, which is the article's own phrasing and the only figure it gives. Real astronomy is more specific and worth the aside: the Boomerang's outflow expands fast enough to cool below the microwave background, making it the coldest natural place known — about a degree above absolute zero, colder than empty space anywhere else.\nNobody holds it and nobody ever did. Cold-adapted Ghauetti tweaks from Ihikkk meant to settle it and it was too far away, and by the time Terragen expansion reached this far the nebula had stopped expanding and was no longer visible. So it is drawn where it was rather than where it is — which of everything on this map is the entry least like a place." ;
+    oa:uncertain false .
+
+claim:location-world-boomerang-nebula a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/491758f9ed287> ;
+    oa:about id:world-boomerang-nebula ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:oaStarName "The Boomerang" .

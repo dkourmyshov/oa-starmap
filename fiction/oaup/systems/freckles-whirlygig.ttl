@@ -1,0 +1,33 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Freckles / Whirlygig
+
+id:inner-sphere-row-1084 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Freckles / Whirlygig" .
+
+claim:inner-sphere-inner-sphere-row-1084-fc7b02bdf217 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-1084 ;
+    oa:article <https://www.orionsarm.com/eg-article/559bd77adb246> ;
+    oa:canonical true ;
+    oa:colonyName "Freckles / Whirlygig" ;
+    oa:luminositySol "." ;
+    oa:massSol "." ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 1083 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-1084-fc7b02bdf217-source-distance ;
+    oa:spectralType "G0 V" ;
+    oa:starName "HD 35956" .
+
+value:inner-sphere-inner-sphere-row-1084-fc7b02bdf217-source-distance a oa:QuantityValue ;
+    qudt:numericValue 96.531 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

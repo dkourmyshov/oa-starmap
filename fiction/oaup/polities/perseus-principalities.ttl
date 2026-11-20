@@ -1,0 +1,18 @@
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+
+# Perseus Principalities
+
+id:polity-perseus-principalities a oa:Polity ;
+    skos:prefLabel "Perseus Principalities" ;
+    oa:ambiguousName false ;
+    oa:color "#F06292" ;
+    oa:editorialNote "Czernik 8 is Cygexpa's too, and at 8,589 ly it is past this map's 7,000 ly\nfrontier — bound and named, but not polity-coloured, so neither claim\nshows. Cam OB1 belongs on this list as well and cannot go on it: an OB\nassociation is not in the open cluster catalogue, which is the only\ncatalogue of groups this build loads." ;
+    oa:hasSource src:eg-system-articles ;
+    oa:kind "polity" ;
+    oa:neverAdjacentWith id:polity-paradigm ;
+    oa:polityId "perseus-principalities" ;
+    oa:recordOrder 19 ;
+    oa:uncertain false .

@@ -1,0 +1,40 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# Gegton X
+
+id:world-gegton-x a oa:Place, oa:World ;
+    skos:prefLabel "Gegton X" ;
+    oa:article <https://www.orionsarm.com/eg-article/464e89acf1f48> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "In Norma at 231 ly." ;
+    oa:uncertain false .
+
+claim:location-world-gegton-x a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/464e89acf1f48> ;
+    oa:about id:world-gegton-x ;
+    oa:canonical true ;
+    oa:catalogueFromSource true ;
+    oa:hdId 146059 ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+claim:affiliation-world-gegton-x-negentropy-alliance a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/464e89acf1f48> ;
+    oa:about id:world-gegton-x ;
+    oa:canonical true ;
+    oa:polity id:polity-negentropy-alliance ;
+    oa:recordOrder 0 .
+
+claim:event-world-gegton-x-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/464e89acf1f48> ;
+    oa:about id:world-gegton-x ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 2512 .

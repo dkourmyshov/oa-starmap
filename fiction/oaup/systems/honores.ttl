@@ -1,0 +1,32 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Honores
+
+id:inner-sphere-row-0920 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Honores" .
+
+claim:inner-sphere-inner-sphere-row-0920-a81692a6439f a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0920 ;
+    oa:canonical true ;
+    oa:colonyName "Honores" ;
+    oa:luminositySol "7.8" ;
+    oa:massSol "1.6" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 919 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0920-a81692a6439f-source-distance ;
+    oa:spectralType "F1 V" ;
+    oa:starName "7 Andromedae" .
+
+value:inner-sphere-inner-sphere-row-0920-a81692a6439f-source-distance a oa:QuantityValue ;
+    qudt:numericValue 80.944 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

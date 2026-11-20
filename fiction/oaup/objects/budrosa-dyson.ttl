@@ -1,0 +1,64 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Budrosa Dyson
+
+id:world-budrosa-dyson a oa:Place, oa:World ;
+    skos:prefLabel "Budrosa Dyson" ;
+    oa:article <https://www.orionsarm.com/eg-article/46119eebd7104> ;
+    oa:kind "megastructure" ;
+    oa:labelsSystem false ;
+    oa:note "Around the star Burdosa. The article's coordinates fall in Centaurus, as it says. The article spells the structure Budrosa and the star Burdosa; both are kept as given." ;
+    oa:uncertain false .
+
+claim:location-world-budrosa-dyson a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46119eebd7104> ;
+    oa:about id:world-budrosa-dyson ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -47.8421 ;
+    oa:distance value:location-world-budrosa-dyson-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:nearName "Burdosa" ;
+    oa:rightAscensionDeg 211.413 .
+
+value:location-world-budrosa-dyson-distance a oa:QuantityValue ;
+    qudt:numericValue 1783.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-budrosa-dyson-paradigm a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46119eebd7104> ;
+    oa:about id:world-budrosa-dyson ;
+    oa:canonical true ;
+    oa:polity id:polity-paradigm ;
+    oa:recordOrder 0 .
+
+claim:event-world-budrosa-dyson-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46119eebd7104> ;
+    oa:about id:world-budrosa-dyson ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"Former Negentropy world, colonised in 5010 AT.\"" ;
+    oa:polity id:polity-negentropy-alliance ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 5010 .
+
+claim:event-world-budrosa-dyson-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46119eebd7104> ;
+    oa:about id:world-budrosa-dyson ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"Burosa was attacked by the Efficiency Maximisation Paradigm and 'optimized' in 5424 AT; almost the entire population of the system was forcibly uploaded and stored as data, while the Paradigm began a prorgam of intensive megaengineering .\" Almost the entire population forcibly uploaded; released and restored elsewhere after the Paradigm's containment." ;
+    oa:polity id:polity-paradigm ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 5424 .

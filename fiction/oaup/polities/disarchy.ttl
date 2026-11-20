@@ -1,0 +1,18 @@
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+
+# Disarchy
+
+id:polity-disarchy a oa:Polity ;
+    skos:prefLabel "Disarchy" ;
+    oa:ambiguousName false ;
+    oa:color "#8D6E63" ;
+    oa:editorialNote "Its own page, saved under sources/polities: \"had turned expansionist sometime during the 4700's and begun to\nrecruit other local powers\". A decade, entered as its first year.\nA loose confederation rather than an empire, so `affiliations: [disarchy]`\nreads as membership and not as ownership — the Velarian Confederation, the\nMensan Way and the Locality of Wolfra are affiliates, which for this\npolity is the ordinary case rather than a qualification. Elsewhere in this\nfile an affiliation is the present holder; here it is who one is with." ;
+    oa:foundedAT 4700 ;
+    oa:hasSource src:political-maps-8000at ;
+    oa:kind "meta-empire" ;
+    oa:polityId "disarchy" ;
+    oa:recordOrder 7 ;
+    oa:uncertain false .

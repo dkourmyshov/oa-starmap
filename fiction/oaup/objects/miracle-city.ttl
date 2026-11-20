@@ -1,0 +1,50 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Miracle City
+
+id:world-miracle-city a oa:Place, oa:World ;
+    skos:prefLabel "Miracle City" ;
+    oa:article <https://www.orionsarm.com/eg-article/49111e6284074> ;
+    oa:kind "megastructure" ;
+    oa:labelsSystem false ;
+    oa:note "A xenosophont megastructure, and the best-cross-referenced place here: the article gives its distance to five others — 216 ly to Skiiws'nnii, 51 to Vinculum, 84 to the Cooperative Venture, 211 to the Sparks, 78 to the nearest stargate at TYC 443-1690-1. Vinculum and the Sparks are both on this map and both check out, at 59.5 and 266 ly against the stated 51 and 211." ;
+    oa:uncertain false .
+
+claim:location-world-miracle-city a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/49111e6284074> ;
+    oa:about id:world-miracle-city ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg 5.81 ;
+    oa:distance value:location-world-miracle-city-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:rightAscensionDeg 273.75 .
+
+value:location-world-miracle-city-distance a oa:QuantityValue ;
+    qudt:numericValue 1730.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-miracle-city-sagittarius-transcultural-cooperation a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/49111e6284074> ;
+    oa:about id:world-miracle-city ;
+    oa:canonical true ;
+    oa:polity id:polity-sagittarius-transcultural-cooperation ;
+    oa:recordOrder 0 .
+
+claim:event-world-miracle-city-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/49111e6284074> ;
+    oa:about id:world-miracle-city ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 8830 .

@@ -1,0 +1,43 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Penrose Place
+
+id:world-penrose-place a oa:Place, oa:World ;
+    skos:prefLabel "Penrose Place" ;
+    oa:article <https://www.orionsarm.com/eg-article/670fe3919c608> ;
+    oa:kind "megastructure" ;
+    oa:labelsSystem false ;
+    oa:note "Built around a black hole in Centaurus at 2,210 ly, and named for the process that makes such a thing worth building: energy drawn from the hole's rotation.\nThe bearing is Refugium's, and borrowed deliberately. It was kept as a cone for a while on the argument that no source gives this world a direction and inventing one would be worse -- but a cone is a direction too, just an unstated one, and the cone drew it 684 ly from the system it was colonised from in 162 years. Nothing no-sourced about that: it is faster than light. The federation's stated extent is the source, and it is a better one than the constellation." ;
+    oa:uncertain false .
+
+claim:location-world-penrose-place a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/670fe3919c608> ;
+    oa:about id:world-penrose-place ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -43.23 ;
+    oa:derivation "The distance is the article's. The direction is Refugium's, 50 ly of which is all this world can be away from it, and that bound is the federation's own history rather than a guess.\nIts page says \"by 6000 the Refugium Federation had expanded to a sphere 100 light years in diameter, including 20 colonised systems\", which puts every member within 50 ly of the centre. Refugium was reached in 5740 and this world in 5902, so there were 162 years to cross the gap and the speed of light caps it at 162 ly regardless. At 2,210 ly those bounds are 1.3 and 4.2 degrees of sky; the smaller is recorded as the error.\nThis was a Centaurus cone until that was worked out, which drew it 684 ly from Refugium -- four times the hard limit and thirteen times the likely one, so the cone was not merely vague but impossible." ;
+    oa:directionErrorDeg 1.3 ;
+    oa:distance value:location-world-penrose-place-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:EditorialEstimate ;
+    oa:rightAscensionDeg 171.404 .
+
+value:location-world-penrose-place-distance a oa:QuantityValue ;
+    qudt:numericValue 2210.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-penrose-place-refugium-federation a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/670fe3919c608> ;
+    oa:about id:world-penrose-place ;
+    oa:canonical true ;
+    oa:polity id:polity-refugium-federation ;
+    oa:recordOrder 0 .

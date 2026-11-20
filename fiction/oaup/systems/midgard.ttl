@@ -1,0 +1,33 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Midgard
+
+id:inner-sphere-row-0785 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Midgard" .
+
+claim:inner-sphere-inner-sphere-row-0785-9992ffba1ded a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0785 ;
+    oa:article <https://www.orionsarm.com/eg-article/47b66a041f788> ;
+    oa:canonical true ;
+    oa:colonyName "Midgard" ;
+    oa:luminositySol "5.84" ;
+    oa:massSol "1.48" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 784 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0785-9992ffba1ded-source-distance ;
+    oa:spectralType "F2 V" ;
+    oa:starName "Alpha Caeli A" .
+
+value:inner-sphere-inner-sphere-row-0785-9992ffba1ded-source-distance a oa:QuantityValue ;
+    qudt:numericValue 66.478 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

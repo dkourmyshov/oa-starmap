@@ -1,0 +1,32 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Muphrid
+
+id:inner-sphere-row-0417 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Muphrid" .
+
+claim:inner-sphere-inner-sphere-row-0417-45d80d90d099 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0417 ;
+    oa:canonical true ;
+    oa:colonyName "Muphrid" ;
+    oa:luminositySol "9.493" ;
+    oa:massSol "1.5" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 416 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0417-45d80d90d099-source-distance ;
+    oa:spectralType "G0 IV" ;
+    oa:starName "Eta Boötis A" .
+
+value:inner-sphere-inner-sphere-row-0417-45d80d90d099-source-distance a oa:QuantityValue ;
+    qudt:numericValue 37.17 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

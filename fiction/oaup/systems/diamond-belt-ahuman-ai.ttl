@@ -1,0 +1,32 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# (Diamond Belt ahuman AI)
+
+id:inner-sphere-row-0072 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "(Diamond Belt ahuman AI)" .
+
+claim:inner-sphere-inner-sphere-row-0072-c0b9c41a2ce4 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0072 ;
+    oa:canonical true ;
+    oa:colonyName "(Diamond Belt ahuman AI)" ;
+    oa:luminositySol "0.0036 to 0.0053" ;
+    oa:massSol "0.2" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 71 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0072-c0b9c41a2ce4-source-distance ;
+    oa:spectralType "M3 Ve" ;
+    oa:starName "AD Leonis" .
+
+value:inner-sphere-inner-sphere-row-0072-c0b9c41a2ce4-source-distance a oa:QuantityValue ;
+    qudt:numericValue 16.194 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

@@ -1,0 +1,41 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Ndiangu Mme Anwu
+
+id:world-ndiangu-mme-anwu a oa:Place, oa:World ;
+    skos:prefLabel "Ndiangu Mme Anwu" ;
+    oa:article <https://www.orionsarm.com/eg-article/558c7c3535d87> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "The furthest thing in this file, and quoted to four decimal places — a ten-thousandth of a light year, at 7,816. Its declination is given as +35d 14' 27.6058\", which falls in Hercules; negated it falls in Scorpius, which is the constellation the article states. The sign is taken as lost rather than the constellation as wrong, since the rest of the figure is identical either way.\nIt sits beyond where the Terragen sphere otherwise reaches, and that is the point rather than a problem: the Tunh xenohole opens onto this part of Sagittarius, so the distance is a journey through a wormhole and not one across the intervening space. The Carina Rush is the same shape of thing at 2,246 ly — both are far ends made near." ;
+    oa:uncertain false .
+
+claim:location-world-ndiangu-mme-anwu a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/558c7c3535d87> ;
+    oa:about id:world-ndiangu-mme-anwu ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -35.241 ;
+    oa:distance value:location-world-ndiangu-mme-anwu-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:rightAscensionDeg 259.4793 .
+
+value:location-world-ndiangu-mme-anwu-distance a oa:QuantityValue ;
+    qudt:numericValue 7816.0376 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-ndiangu-mme-anwu-sagittarius-transcultural-cooperation a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/558c7c3535d87> ;
+    oa:about id:world-ndiangu-mme-anwu ;
+    oa:canonical true ;
+    oa:polity id:polity-sagittarius-transcultural-cooperation ;
+    oa:recordOrder 0 .

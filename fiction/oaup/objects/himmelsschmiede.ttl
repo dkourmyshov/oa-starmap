@@ -1,0 +1,42 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# Himmelsschmiede
+
+id:world-himmelsschmiede a oa:Place, oa:World ;
+    skos:prefLabel "Himmelsschmiede" ;
+    oa:article <https://www.orionsarm.com/eg-article/46709da5de6be> ;
+    oa:kind "megastructure" ;
+    oa:labelsSystem false ;
+    oa:note "Built around what the article calls a red supergiant of forty-six solar masses and eight million kilometres across, somewhere in Mutual Progress Association space. Which star is not said and no direction is given, so nothing is drawn." ;
+    oa:uncertain false .
+
+claim:affiliation-world-himmelsschmiede-mutual-progress-association a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46709da5de6be> ;
+    oa:about id:world-himmelsschmiede ;
+    oa:canonical true ;
+    oa:polity id:polity-mutual-progress-association ;
+    oa:recordOrder 0 .
+
+claim:event-world-himmelsschmiede-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46709da5de6be> ;
+    oa:about id:world-himmelsschmiede ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "Construction began." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 4736 .
+
+claim:event-world-himmelsschmiede-002 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-himmelsschmiede ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "Construction of Himmelsschmiede begins when the relativistic linelayer Matthew Fountaine Maury arrives with a nanogauge wormhole to the New Magnitogorsk hub." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:sourceDescription "Encyclopaedia timeline, The Age of Crisis" ;
+    oa:yearAT 6736 .

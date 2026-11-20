@@ -1,0 +1,93 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Yin-Yang
+
+id:world-yin-yang a oa:Place, oa:World ;
+    skos:prefLabel "Yin-Yang" ;
+    oa:article <https://www.orionsarm.com/eg-article/46e9ce6bb2787> ;
+    oa:editorialNote "---- Cygexpa ------------------------------------------------------------\n\nA dissolved empire, and the only one here recorded for what it was rather\nthan what it holds. `affiliations` is otherwise the present holder; Cygexpa\nhas no present, so these entries mark a region with a history instead — the\nplaces it left behind, where nothing has claimed them since. Qjellto is not\namong them: the Utopia Sphere and the Zoeific Biopolity hold it now, and\nnaming the empire that used to would say the wrong thing about who is there." ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "At 6.5 ly this is the third-nearest system to Sol: the only things this map's catalogue has inside it are Alpha Centauri at 4.3 and Barnard's Star at 6.0. Yin-Yang itself is in none of the catalogues loaded here, which is why the article has to say where it is by naming what it is near rather than by giving a designation anything would resolve." ;
+    oa:uncertain false .
+
+claim:location-world-yin-yang a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46e9ce6bb2787> ;
+    oa:about id:world-yin-yang ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -53.9096 ;
+    oa:derivation "Luhman 16, a pair of brown dwarfs too cool for any catalogue here. The article gives two distances rather than three — 6.503 ly from Sol and 3.559 from Alpha Centauri — and two spheres meet in a circle, not a point: a ring of possible positions 3.3 ly in radius. The constellation cuts it. Only 15.5 degrees of that circle fall in Vela, an arc 0.88 ly end to end, and this is its midpoint; the error is the half-arc." ;
+    oa:directionErrorDeg 4.0 ;
+    oa:distance value:location-world-yin-yang-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:EditorialEstimate ;
+    oa:rightAscensionDeg 162.292 .
+
+value:location-world-yin-yang-distance a oa:QuantityValue ;
+    qudt:numericValue 6.503 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-yin-yang-deeper-covenant a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46e9ce6bb2787> ;
+    oa:about id:world-yin-yang ;
+    oa:canonical true ;
+    oa:polity id:polity-deeper-covenant ;
+    oa:recordOrder 0 .
+
+# Yin-Yang
+
+id:inner-sphere-row-0006 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Yin-Yang" .
+
+claim:inner-sphere-inner-sphere-row-0006-8624a249a8bf a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0006 ;
+    oa:article <https://www.orionsarm.com/eg-article/46e9ce6bb2787> ;
+    oa:canonical true ;
+    oa:colonyName "Yin-Yang" ;
+    oa:luminositySol "0.0000219" ;
+    oa:massSol "33.5 x Jupiter" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 5 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0006-8624a249a8bf-source-distance ;
+    oa:spectralType "L7.5" ;
+    oa:starName "Luhman 16 A" .
+
+value:inner-sphere-inner-sphere-row-0006-8624a249a8bf-source-distance a oa:QuantityValue ;
+    qudt:numericValue 6.516 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Yin-Yang
+
+id:inner-sphere-row-0007 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Yin-Yang" .
+
+claim:inner-sphere-inner-sphere-row-0007-6eae38fa8432 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0007 ;
+    oa:article <https://www.orionsarm.com/eg-article/46e9ce6bb2787> ;
+    oa:canonical true ;
+    oa:colonyName "Yin-Yang" ;
+    oa:luminositySol "0.0000209" ;
+    oa:massSol "28.6 x Jupiter" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 6 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0007-6eae38fa8432-source-distance ;
+    oa:spectralType "T0.5" ;
+    oa:starName "Luhman 16 B" .
+
+value:inner-sphere-inner-sphere-row-0007-6eae38fa8432-source-distance a oa:QuantityValue ;
+    qudt:numericValue 6.516 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

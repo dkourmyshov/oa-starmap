@@ -1,0 +1,18 @@
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+
+# Crystal Star Domain
+
+id:polity-crystal-star-domain a oa:Polity ;
+    skos:prefLabel "Crystal Star Domain" ;
+    oa:ambiguousName false ;
+    oa:color "#851D62" ;
+    oa:editorialNote "Its own page, data panel: \"Founded: 4980, in the Monoceros Middle\nRegions; re-established 8400 in the Outer Volumes\", and the text:\n\"founded in 4980 AT by a fleet of seven large colony ships which departed\nfrom the Enremdea System, capital of the Orion Federation.\" The timeline\nsays 3670 instead; the page's year is taken, and the disagreement kept.\nBoth landmarks are other polities' too — the Cone Nebula is the Orion\nFederation's and the Rosette is shared by the Non-Coercive Zone and the\nTRHN. Recorded rather than contested; the rings segment." ;
+    oa:foundedAT 4980 ;
+    oa:hasSource src:eg-system-articles ;
+    oa:kind "polity" ;
+    oa:polityId "crystal-star-domain" ;
+    oa:recordOrder 34 ;
+    oa:uncertain false .

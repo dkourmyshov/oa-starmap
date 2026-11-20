@@ -1,0 +1,17 @@
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+
+# Ulysses Network
+
+id:polity-ulysses-network a oa:Polity ;
+    skos:prefLabel "Ulysses Network" ;
+    oa:ambiguousName false ;
+    oa:color "#4DB6AC" ;
+    oa:editorialNote "Below here: affiliations reached through individual system articles rather\nthan the 8000 A.T. political map, so they carry no landmarks of their own.\nTheir members are named in `oa_systems.yaml`. Colours are provisional.\n\nHow a system is classified, for the two entries that are not ordinary\npolities:\n\n  Protected by a Caretaker God -> Caretaker Gods, whatever is actually there:\n  pre-spaceflight xenosophonts, a wildlife preserve, or a pretty rock. The\n  classification follows the protection, not the contents.\n\n  Independent and active xenosophonts -> Xenosophont. Active is the load\n  bearing word: a species going about its own affairs, not a dead\n  civilisation somebody found. Amida and Bentharis hold the remains of\n  extinct xenosophont civilisations and are tagged with neither — nobody is\n  there to hold them.\n\nThe two rarely overlap, since a protected species is usually not an\nindependent actor. Where they do, both are recorded rather than one being\nmade to win. Doreen is the case: a hostile xenosophont-derived AI that the\nCaretakers both shield and shield terragens from." ;
+    oa:hasSource src:political-maps-8000at ;
+    oa:kind "meta-empire" ;
+    oa:polityId "ulysses-network" ;
+    oa:recordOrder 17 ;
+    oa:uncertain false .

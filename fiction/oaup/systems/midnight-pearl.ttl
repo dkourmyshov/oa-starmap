@@ -1,0 +1,97 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Midnight Pearl
+
+id:world-midnight-pearl a oa:Place, oa:World ;
+    skos:prefLabel "Midnight Pearl" ;
+    oa:article <https://www.orionsarm.com/eg-article/6730af643e2de> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Also UGPS J072227.51-054031.2, WISEPA J072227.27-054029.9 and GJ 11075. Procyon and Luyten's Star are 1.1 ly apart and Midnight Pearl is a few light years off both, which is what makes the three distances pin it so tightly rather than leaving it anywhere on a shell." ;
+    oa:uncertain false .
+
+claim:location-world-midnight-pearl a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/6730af643e2de> ;
+    oa:about id:world-midnight-pearl ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -5.5156 ;
+    oa:derivation "The star is UGPS 0722-05, a very cool dwarf that no catalogue here carries, so the article's three distances are the position: 13.3 ly from Sol, 3.1 from Procyon and 2.6 from Luyten's Star. Three spheres meet in at most two points, and they do — one in Monoceros and one in Gemini. The article says Monoceros, which picks it. The error is what rounding those three figures to a tenth of a light year allows: perturbing each by half of the last digit moves the answer at most 2.5 degrees." ;
+    oa:directionErrorDeg 2.5 ;
+    oa:distance value:location-world-midnight-pearl-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:EditorialEstimate ;
+    oa:rightAscensionDeg 110.4358 .
+
+value:location-world-midnight-pearl-distance a oa:QuantityValue ;
+    qudt:numericValue 13.3 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-midnight-pearl-deeper-covenant a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/6730af643e2de> ;
+    oa:about id:world-midnight-pearl ;
+    oa:canonical true ;
+    oa:polity id:polity-deeper-covenant ;
+    oa:recordOrder 0 .
+
+claim:event-world-midnight-pearl-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/6730af643e2de> ;
+    oa:about id:world-midnight-pearl ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Circa ;
+    oa:recordOrder 0 ;
+    oa:yearAT 1032 .
+
+claim:event-world-midnight-pearl-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/6730af643e2de> ;
+    oa:about id:world-midnight-pearl ;
+    oa:canonical true ;
+    oa:eventKind oa:Abandoned ;
+    oa:note "\"In 7558 AT, the light from Procyon reached UGPS 0722-05, and all of the Ako Forward Chaining inhabitants vanished.\" Automated defences kept guarding the empty system after this; see doubts regarding the S1 transapient Luel's, who claimed the region soon after but did not gain actual control until 10324 AT. When Procyon's light reached the brown dwarf, 'all of the Ako Forward Chaining inhabitants vanished'." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 7558 .
+
+claim:event-world-midnight-pearl-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/6730af643e2de> ;
+    oa:about id:world-midnight-pearl ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"Finally, in 10324 AT, a team named \"Wagun\" was able to reach Midnight Pearl's upper atmosphere and was awarded control over the entire brown dwarf system by Luel's.\" 'Wagun' is a game-show contestant team, not a polity on the roster; see unplaced. Luel's (an S1 transapient, not a listed polity) was the one awarding control. A team named Wagun, awarded control of the whole system; no polity of this file." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 2 ;
+    oa:yearAT 10324 .
+
+# Midnight Pearl
+
+id:inner-sphere-row-0047 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Midnight Pearl" .
+
+claim:inner-sphere-inner-sphere-row-0047-15ae934f7e8b a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0047 ;
+    oa:article <https://www.orionsarm.com/eg-article/6730af643e2de> ;
+    oa:canonical true ;
+    oa:colonyName "Midnight Pearl" ;
+    oa:luminositySol "9.8×10E?07" ;
+    oa:massSol "0.02" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 46 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0047-15ae934f7e8b-source-distance ;
+    oa:spectralType "T9" ;
+    oa:starName "UGPS 0722-05" .
+
+value:inner-sphere-inner-sphere-row-0047-15ae934f7e8b-source-distance a oa:QuantityValue ;
+    qudt:numericValue 13.258 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

@@ -1,0 +1,61 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Betelgeuse Volume
+
+id:world-betelgeuse-volume a oa:Place, oa:World ;
+    skos:prefLabel "Betelgeuse Volume" ;
+    oa:article <https://www.orionsarm.com/eg-article/460c3d55e345d> ;
+    oa:extent value:world-betelgeuse-volume-extent ;
+    oa:kind "volume" ;
+    oa:labelsSystem false ;
+    oa:note "75 ly in radius around Betelgeuse, and the most crowded volume recorded here: the Stellar Umma with Metasoft, Orion Federation traders, an Emple-Dokcetic colony and Pleiadian expansionists, who have no polity entry of their own. Four holders is what the ring can segment, so the first four are drawn and the fifth is only in this note." ;
+    oa:uncertain false .
+
+value:world-betelgeuse-volume-extent a oa:QuantityValue ;
+    qudt:numericValue 150.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:location-world-betelgeuse-volume a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/460c3d55e345d> ;
+    oa:about id:world-betelgeuse-volume ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Betelgeuse" .
+
+claim:affiliation-world-betelgeuse-volume-emple-dokcetics a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/460c3d55e345d> ;
+    oa:about id:world-betelgeuse-volume ;
+    oa:canonical true ;
+    oa:polity id:polity-emple-dokcetics ;
+    oa:recordOrder 3 .
+
+claim:affiliation-world-betelgeuse-volume-metasoft a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/460c3d55e345d> ;
+    oa:about id:world-betelgeuse-volume ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft ;
+    oa:recordOrder 1 .
+
+claim:affiliation-world-betelgeuse-volume-orion-federation a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/460c3d55e345d> ;
+    oa:about id:world-betelgeuse-volume ;
+    oa:canonical true ;
+    oa:polity id:polity-orion-federation ;
+    oa:recordOrder 2 .
+
+claim:affiliation-world-betelgeuse-volume-stellar-umma a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/460c3d55e345d> ;
+    oa:about id:world-betelgeuse-volume ;
+    oa:canonical true ;
+    oa:polity id:polity-stellar-umma ;
+    oa:recordOrder 0 .

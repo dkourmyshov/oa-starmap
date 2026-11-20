@@ -1,0 +1,42 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Dreamspheres
+
+id:world-dreamspheres a oa:Place, oa:World ;
+    skos:prefLabel "Dreamspheres" ;
+    oa:article <https://www.orionsarm.com/eg-article/464f22cfb75a1> ;
+    oa:kind "polity_marker" ;
+    oa:labelsSystem false ;
+    oa:note "A dual civilisation, one part of which is accepted within the Stellar Umma, which is the colour drawn. Plural in its own article's title and singular in the add-on's entry." ;
+    oa:uncertain false .
+
+claim:location-world-dreamspheres a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/464f22cfb75a1> ;
+    oa:about id:world-dreamspheres ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -41.25 ;
+    oa:distance value:location-world-dreamspheres-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:note "From oaplanets.dsc, one of the Orion's Arm Celestia add-ons' location catalogues (OAAddons9, OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv), which files it under the singular \"Dreamsphere\"." ;
+    oa:rightAscensionDeg 96.304 .
+
+value:location-world-dreamspheres-distance a oa:QuantityValue ;
+    qudt:numericValue 543.6 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-dreamspheres-stellar-umma a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/464f22cfb75a1> ;
+    oa:about id:world-dreamspheres ;
+    oa:canonical true ;
+    oa:polity id:polity-stellar-umma ;
+    oa:recordOrder 0 .

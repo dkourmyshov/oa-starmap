@@ -1,0 +1,51 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Batholithics
+
+id:world-batholithics a oa:Place, oa:World ;
+    skos:prefLabel "Batholithics" ;
+    oa:article <https://www.orionsarm.com/eg-article/4f43b87a30aae> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "The home of an extinct xenosophont species, given as 4,300 ly out near the giant 6 Geminorum. The catalogue puts that star at 5,781 ly, so it lends its direction and the article keeps its distance: the two are a third apart, which is too much to bind across." ;
+    oa:uncertain false .
+
+claim:location-world-batholithics a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4f43b87a30aae> ;
+    oa:about id:world-batholithics ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg 22.9085 ;
+    oa:distance value:location-world-batholithics-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:nearName "6 Geminorum" ;
+    oa:rightAscensionDeg 93.0796 .
+
+value:location-world-batholithics-distance a oa:QuantityValue ;
+    qudt:numericValue 4300.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-batholithics-metasoft a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4f43b87a30aae> ;
+    oa:about id:world-batholithics ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft ;
+    oa:recordOrder 0 .
+
+claim:event-world-batholithics-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4f43b87a30aae> ;
+    oa:about id:world-batholithics ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 8679 .

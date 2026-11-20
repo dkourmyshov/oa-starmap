@@ -1,0 +1,32 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Qimira
+
+id:inner-sphere-row-0282 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Qimira" .
+
+claim:inner-sphere-inner-sphere-row-0282-3ae554565e0e a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0282 ;
+    oa:canonical true ;
+    oa:colonyName "Qimira" ;
+    oa:luminositySol "0.21" ;
+    oa:massSol "0.845" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 281 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0282-3ae554565e0e-source-distance ;
+    oa:spectralType "K3 V" ;
+    oa:starName "Gliese 183" .
+
+value:inner-sphere-inner-sphere-row-0282-3ae554565e0e-source-distance a oa:QuantityValue ;
+    qudt:numericValue 28.845 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

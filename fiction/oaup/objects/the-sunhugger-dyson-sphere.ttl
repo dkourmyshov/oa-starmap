@@ -1,0 +1,42 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# The Sunhugger Dyson Sphere
+
+id:world-the-sunhugger-dyson-sphere a oa:Place, oa:World ;
+    skos:prefLabel "The Sunhugger Dyson Sphere" ;
+    oa:article <https://www.orionsarm.com/eg-article/5debff7f44c6d> ;
+    oa:kind "megastructure" ;
+    oa:labelsSystem false ;
+    oa:note "Also in M39, and located exactly as the Giant Ring is: the cluster's direction and its own distance. The two therefore draw two light years apart, which is an artefact of having one direction for both rather than anything the setting says about how close they are." ;
+    oa:uncertain false .
+
+claim:location-world-the-sunhugger-dyson-sphere a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5debff7f44c6d> ;
+    oa:about id:world-the-sunhugger-dyson-sphere ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg 48.3495 ;
+    oa:distance value:location-world-the-sunhugger-dyson-sphere-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:nearName "M39 (NGC 7092)" ;
+    oa:rightAscensionDeg 322.8301 .
+
+value:location-world-the-sunhugger-dyson-sphere-distance a oa:QuantityValue ;
+    qudt:numericValue 1012.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-the-sunhugger-dyson-sphere-archosaurian-empire a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5debff7f44c6d> ;
+    oa:about id:world-the-sunhugger-dyson-sphere ;
+    oa:canonical true ;
+    oa:polity id:polity-archosaurian-empire ;
+    oa:recordOrder 0 .

@@ -1,0 +1,17 @@
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+
+# Xenosophont
+
+id:polity-xenosophont a oa:Polity ;
+    skos:prefLabel "Xenosophont" ;
+    oa:ambiguousName false ;
+    oa:color "#BCAAA4" ;
+    oa:editorialNote "Independent, active xenosophont systems and worlds. A category rather than\na polity, and deliberately undivided for now; it may split by clade once\nthere are more members.\n\nIt does not collect every system with xenosophonts in it. H'tat'sa'thoss\nholds the To'ul'h and is classified with the Caretaker Gods alone: they are\nprotected rather than independent, which is the ordinary case.\n---- Dissolved before the setting's present -------------------------------\n\nNamed only through a world's events — settled *by*, passed *to* — never as\na present affiliation, so they hold nothing on the map's legend and draw no\nring. They are here so that an event can name them and the build can check\nthe name, and they carry a colour for the day the map is drawn at a year\nwhen they existed. Cygexpa above is the precedent, kept for its volume; these\nare kept for their dates." ;
+    oa:hasSource src:eg-system-articles ;
+    oa:kind "xenosophont" ;
+    oa:polityId "xenosophont" ;
+    oa:recordOrder 48 ;
+    oa:uncertain false .

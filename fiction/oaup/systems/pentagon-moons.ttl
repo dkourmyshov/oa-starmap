@@ -1,0 +1,79 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Pentagon Moons
+
+id:world-pentagon-moons a oa:Place, oa:World ;
+    skos:prefLabel "Pentagon Moons" ;
+    oa:article <https://www.orionsarm.com/eg-article/52e80a3a924b5> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "In the Metasoft Outer Volumes, about 2,000 ly out and located against NGC 1663 — which this map's cluster catalogue does not contain, that catalogue listing only groups confirmed as physical systems. With no direction and no constellation given, the system is recorded and not drawn." ;
+    oa:systemName "Pentagon Moons" ;
+    oa:uncertain false .
+
+claim:location-world-pentagon-moons a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/52e80a3a924b5> ;
+    oa:about id:world-pentagon-moons ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:distance value:location-world-pentagon-moons-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:nearName "NGC 1663" .
+
+value:location-world-pentagon-moons-distance a oa:QuantityValue ;
+    qudt:numericValue 2000.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-pentagon-moons-metasoft a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/52e80a3a924b5> ;
+    oa:about id:world-pentagon-moons ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft ;
+    oa:recordOrder 0 .
+
+claim:event-world-pentagon-moons-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/52e80a3a924b5> ;
+    oa:about id:world-pentagon-moons ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Circa ;
+    oa:recordOrder 0 ;
+    oa:yearAT 6000 .
+
+claim:event-world-pentagon-moons-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/52e80a3a924b5> ;
+    oa:about id:world-pentagon-moons ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"As Metasoft settled and developed surrounding systems in the early 6000's, Jovanus sought to profit by producing amat and magmatter for export... so e \"contracted\" with Metasoft for a system caretaker AI (\"Overseer\")... the popular theory (to everyone but Jovanus) is that Metasoft was responsible for convincing Jovanus to industrialize the system and all but turn it into a Metasoft protectorate.\" This is when the system panel's 'AFFILIATION: Metasoft' begins, per the body text; no more precise year is given than 'the early 6000's'. Jovanus sought to profit from Metasoft's development of the surrounding systems; the panel's affiliation is Metasoft." ;
+    oa:polity id:polity-metasoft ;
+    oa:precision oa:Circa ;
+    oa:recordOrder 1 ;
+    oa:yearAT 6000 .
+
+# Hawking's Not Here
+
+id:world-hawking-s-not-here a oa:Place, oa:World ;
+    skos:prefLabel "Hawking's Not Here" ;
+    oa:article <https://www.orionsarm.com/eg-article/52faf68bdaa6d> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "An artificial planet in the Pentagon Moons system." ;
+    oa:systemName "Pentagon Moons" ;
+    oa:uncertain false .
+
+claim:affiliation-world-hawking-s-not-here-metasoft a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/52faf68bdaa6d> ;
+    oa:about id:world-hawking-s-not-here ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft ;
+    oa:recordOrder 0 .

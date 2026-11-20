@@ -1,0 +1,239 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# Zeta1 Reticuli
+
+id:world-zeta1-reticuli a oa:Place, oa:World ;
+    skos:prefLabel "Zeta1 Reticuli" ;
+    oa:article <https://www.orionsarm.com/eg-article/486ecd3a8e1a5> ;
+    oa:editorialNote "---- the Laughter Hegemony -----------------------------------------------" ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "39.3 ly out against the article's 39.53, and the most divided system in this file: five metaempires hold parts of it, with a good deal besides answering to none of them. The ring can show four, so the Zoeific Biopolity is listed last and appears in the panel rather than on the marker. Its companion Zeta2 Reticuli is the Diamond Network's, a third of a light year away." ;
+    oa:systemName "Zeta1 Reticuli" ;
+    oa:uncertain false .
+
+claim:location-world-zeta1-reticuli a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/486ecd3a8e1a5> ;
+    oa:about id:world-zeta1-reticuli ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Zeta1 Reticuli" .
+
+claim:affiliation-world-zeta1-reticuli-communion-of-worlds a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/486ecd3a8e1a5> ;
+    oa:about id:world-zeta1-reticuli ;
+    oa:canonical true ;
+    oa:polity id:polity-communion-of-worlds ;
+    oa:recordOrder 3 .
+
+claim:affiliation-world-zeta1-reticuli-negentropy-alliance a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/486ecd3a8e1a5> ;
+    oa:about id:world-zeta1-reticuli ;
+    oa:canonical true ;
+    oa:polity id:polity-negentropy-alliance ;
+    oa:recordOrder 2 .
+
+claim:affiliation-world-zeta1-reticuli-nocozo a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/486ecd3a8e1a5> ;
+    oa:about id:world-zeta1-reticuli ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 0 .
+
+claim:affiliation-world-zeta1-reticuli-solar-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/486ecd3a8e1a5> ;
+    oa:about id:world-zeta1-reticuli ;
+    oa:canonical true ;
+    oa:polity id:polity-solar-dominion ;
+    oa:recordOrder 1 .
+
+claim:affiliation-world-zeta1-reticuli-zoeific-biopolity a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/486ecd3a8e1a5> ;
+    oa:about id:world-zeta1-reticuli ;
+    oa:canonical true ;
+    oa:polity id:polity-zoeific-biopolity ;
+    oa:recordOrder 4 .
+
+claim:event-world-zeta1-reticuli-001 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-zeta1-reticuli ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "Mayflower arrives at Atlantis (Zeta1 Reticuli II)." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:sourceDescription "Encyclopaedia timeline, Late Federation / AI Emergence" ;
+    oa:yearAT 1636 .
+
+# Atlantis
+
+id:world-atlantis a oa:Place, oa:World ;
+    skos:prefLabel "Atlantis" ;
+    oa:article <https://www.orionsarm.com/eg-article/486ec4e68c62e> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "One cell of the colony table holds three names for this system — Atlantis, Prometheus and Daedalus — belonging to three meta-empires." ;
+    oa:uncertain false .
+
+claim:location-world-atlantis a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/486ec4e68c62e> ;
+    oa:about id:world-atlantis ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Zeta1 Reticuli" .
+
+claim:affiliation-world-atlantis-nocozo a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/486ec4e68c62e> ;
+    oa:about id:world-atlantis ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 0 .
+
+claim:event-world-atlantis-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/486ec4e68c62e> ;
+    oa:about id:world-atlantis ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 1636 .
+
+claim:event-world-atlantis-002 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-atlantis ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "Mayflower arrives at Atlantis (Zeta1 Reticuli II)." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:sourceDescription "Encyclopaedia timeline, Late Federation / AI Emergence" ;
+    oa:yearAT 1636 .
+
+claim:event-world-atlantis-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/486ec4e68c62e> ;
+    oa:about id:world-atlantis ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"In 2368 Zeta 1 Reticuli I and II formally became part of the Non- Coercion Zone, but while automatically gravitating to the NoCoZo, Atlantis was far too individualistic and finely grained anarchic to really be able to gather enough capital to fund stargates.\" Matches the header's 'filed under: Non-Coercive Zone (NoCoZo)' and the panel's 'Affiliation NoCoZo'. Zeta1 Reticuli I and II together; the article adds that Atlantis was 'far too individual' to gravitate to the Zone in practice." ;
+    oa:polity id:polity-nocozo ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 2 ;
+    oa:yearAT 2368 .
+
+# Daedalus II
+
+id:world-daedalus-ii a oa:Place, oa:World ;
+    skos:prefLabel "Daedalus II" ;
+    oa:article <https://www.orionsarm.com/eg-article/48e66c1f95162> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "The third named place at Zeta-1 Reticuli, after Atlantis and Prometheus, and the third meta-empire in one system." ;
+    oa:uncertain false .
+
+claim:location-world-daedalus-ii a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48e66c1f95162> ;
+    oa:about id:world-daedalus-ii ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Zeta1 Reticuli" .
+
+claim:affiliation-world-daedalus-ii-solar-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48e66c1f95162> ;
+    oa:about id:world-daedalus-ii ;
+    oa:canonical true ;
+    oa:polity id:polity-solar-dominion ;
+    oa:recordOrder 0 .
+
+claim:event-world-daedalus-ii-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48e66c1f95162> ;
+    oa:about id:world-daedalus-ii ;
+    oa:canonical true ;
+    oa:eventKind oa:Capital ;
+    oa:note "The polity founded here." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 3674 .
+
+claim:event-world-daedalus-ii-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48e66c1f95162> ;
+    oa:about id:world-daedalus-ii ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"In 3674 when Detroit Marhenke (generally regarded as having expensive impulse control problems) murdered a competitor. To escape the PPLs and financial ruin he and his family escaped from Atlantis to Daedalus where they owned some land.\" This is the arrival that founded the colony that became the Tartarus Commonwealth (see unplaced); no roster polity is the actor here, only a fleeing family. The Marhenke family's flight after a murder; the map's older 'capital 3674' is the panel's 'Founded 3674 AT'." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 3674 .
+
+# Prometheus
+
+id:world-prometheus a oa:Place, oa:World ;
+    skos:prefLabel "Prometheus" ;
+    oa:article <https://www.orionsarm.com/eg-article/48e664f348410> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "Zeta-1 Reticuli, 39 ly. The colony table packs it into one cell with Atlantis and Daedalus, three named places of three different polities in the one system." ;
+    oa:uncertain false .
+
+claim:location-world-prometheus a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48e664f348410> ;
+    oa:about id:world-prometheus ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Zeta1 Reticuli" .
+
+claim:affiliation-world-prometheus-communion-of-worlds a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48e664f348410> ;
+    oa:about id:world-prometheus ;
+    oa:canonical true ;
+    oa:polity id:polity-communion-of-worlds ;
+    oa:recordOrder 0 .
+
+claim:event-world-prometheus-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48e664f348410> ;
+    oa:about id:world-prometheus ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 1758 .
+
+claim:event-world-prometheus-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48e664f348410> ;
+    oa:about id:world-prometheus ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "\"In 1735 AT the first vessel passed right by Zeta Reticuli without slowing down.\" A ufer/Traveller sect colony ship that failed to stop; crew and colonists believed dead or in hypersleep, so nobody stayed. The first vessel, which did not slow down." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 1735 .
+
+claim:event-world-prometheus-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48e664f348410> ;
+    oa:about id:world-prometheus ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"A third ship, the Heavenly Fellowship, employing more advanced life-support systems, arrived thirty years later with the crew alive and well.\" Year derived as 1758 + the \"thirty years later\" stated in the text, relative to the second ship's 1758 AT arrival. This may be the true first living settlement; see contradictions. The Heavenly Fellowship, 'thirty years later' than the ship of 1758 whose colonists were found dead; the panel's 'Colonized 1758' is kept beside it." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 2 ;
+    oa:yearAT 1788 .
+
+claim:event-world-prometheus-004 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48e664f348410> ;
+    oa:about id:world-prometheus ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "\"In 4234 AT the system received a visit by an S3 TRHN emissary, whom the Confederationists named \"Raphael\" and who provided them with a few clarketech trinkets, much to the envy of the Atlanteans. \"Raphael\" descended to the surface and made contact with the isolationist ai \"Gray\". Following this, \"Gray\" unexpectedly transformed part of emself (and several hundred square kilometers of the surface of Prometheus) into a series of unusual diamondoid- coated monoliths, while the majority of eir mass became a huge swarm of small ISOs ('the Rapture') that accompanied Raphael back to the TRHN.\" \"Gray\" is a local AI (originally from the Diamond Belt), not a xenosophont species, so this is not recorded as a contact event. An S3 emissary the Confederationists named Raphael." ;
+    oa:polity id:polity-technorapture-hypernation ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 3 ;
+    oa:yearAT 4234 .

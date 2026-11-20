@@ -1,0 +1,63 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Quint
+
+id:world-quint a oa:Place, oa:World ;
+    skos:prefLabel "Quint" ;
+    oa:article <https://www.orionsarm.com/eg-article/569564098a31c> ;
+    oa:editorialNote "---- Terragen Federation ------------------------------------------------\n\nGiven to us as the Terran Federation, and the same polity: FuMa came with\nthis roster and is already here as Terragen. Every entry binds to a\ncatalogue star, which makes this the best-identified roster in the file —\nand four of the eight are in Taurus, two of them 9.6 ly apart." ;
+    oa:kind "megastructure" ;
+    oa:labelsSystem false ;
+    oa:note "A matrioshka brain around the star CoRoT-3, and the cybercosm running inside it. Only loosely affiliated with the TRHN, which is drawn as ownership here for want of anything weaker to draw. CoRoT-3 is a thirteenth-magnitude star and below this map's catalogue, so the constellation carries the direction." ;
+    oa:uncertain false .
+
+claim:location-world-quint a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/569564098a31c> ;
+    oa:about id:world-quint ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:constellationName "Aquila" ;
+    oa:distance value:location-world-quint-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:nearName "CoRoT-3" .
+
+value:location-world-quint-distance a oa:QuantityValue ;
+    qudt:numericValue 2200.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-quint-technorapture-hypernation a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/569564098a31c> ;
+    oa:about id:world-quint ;
+    oa:canonical true ;
+    oa:polity id:polity-technorapture-hypernation ;
+    oa:recordOrder 0 .
+
+claim:event-world-quint-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/569564098a31c> ;
+    oa:about id:world-quint ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "Construction began." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 5089 .
+
+claim:event-world-quint-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/569564098a31c> ;
+    oa:about id:world-quint ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"TRHN aid and affiliation was accepted and in 6303at the Corot All- Say hosted a ceremony for the installation of the software black box into the matrioshka angelnet.\" The affiliation is described elsewhere as loose ('Loosely affiliated with the Technorapture Hypernation'); this is the year the affiliation was formally accepted, not a full annexation. 'TRHN aid and affiliation was accepted', with a ceremony at the Corot All-Say; the reader flagged a loose affiliation." ;
+    oa:polity id:polity-technorapture-hypernation ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 6303 .

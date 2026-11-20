@@ -1,0 +1,80 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Brin
+
+id:inner-sphere-row-1026 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Brin" .
+
+claim:inner-sphere-inner-sphere-row-1026-b2ad474475a2 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-1026 ;
+    oa:article <https://www.orionsarm.com/eg-article/48ac2be955c0b> ;
+    oa:canonical true ;
+    oa:colonyName "Brin" ;
+    oa:luminositySol "." ;
+    oa:massSol "." ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 1025 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-1026-b2ad474475a2-source-distance ;
+    oa:spectralType "F1 V" ;
+    oa:starName "42 Tauri" .
+
+value:inner-sphere-inner-sphere-row-1026-b2ad474475a2-source-distance a oa:QuantityValue ;
+    qudt:numericValue 90.771 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Brin
+
+id:world-brin a oa:Place, oa:World ;
+    skos:prefLabel "Brin" ;
+    oa:article <https://www.orionsarm.com/eg-article/48ac2be955c0b> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "42 Tauri, also Psi Tauri, 91 ly out." ;
+    oa:uncertain false .
+
+claim:location-world-brin a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48ac2be955c0b> ;
+    oa:about id:world-brin ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "42 Tauri" .
+
+claim:affiliation-world-brin-metasoft a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48ac2be955c0b> ;
+    oa:about id:world-brin ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft ;
+    oa:recordOrder 0 .
+
+claim:event-world-brin-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48ac2be955c0b> ;
+    oa:about id:world-brin ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:polity id:polity-conver-ambi ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 2980 .
+
+claim:event-world-brin-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48ac2be955c0b> ;
+    oa:about id:world-brin ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"recolonised 6400\" From the same data-panel line as the 2980 colonisation, 'Colonized: 2980 A.T recolonised 6400'. Not present in the header's already-dated list, which records only settled 2980. Silicon Generation defector vecs, per the body, in a system 'largely abandoned' after the Conver Wars; the panel gives the Silicon Generation as the present holder where the map's colony table gives Metasoft, and the article's own blurb says 'now part of the Metasoft empire', undated." ;
+    oa:polity id:polity-silicon-generation ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 6400 .

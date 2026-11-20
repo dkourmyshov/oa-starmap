@@ -1,0 +1,69 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Savannah
+
+id:world-savannah a oa:Place, oa:World ;
+    skos:prefLabel "Savannah" ;
+    oa:article <https://www.orionsarm.com/eg-article/534ba31d3b32b> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "In Monoceros at 2,958 ly. A middle-tech world under Caretaker protection, which is why the Caretakers hold it and its inhabitants do not." ;
+    oa:uncertain false .
+
+claim:location-world-savannah a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/534ba31d3b32b> ;
+    oa:about id:world-savannah ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:constellationName "Monoceros" ;
+    oa:distance value:location-world-savannah-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+value:location-world-savannah-distance a oa:QuantityValue ;
+    qudt:numericValue 2958.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-savannah-caretaker-gods a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/534ba31d3b32b> ;
+    oa:about id:world-savannah ;
+    oa:canonical true ;
+    oa:polity id:polity-caretaker-gods ;
+    oa:recordOrder 0 .
+
+claim:event-world-savannah-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/534ba31d3b32b> ;
+    oa:about id:world-savannah ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 7117 .
+
+claim:event-world-savannah-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/534ba31d3b32b> ;
+    oa:about id:world-savannah ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"6935 AT Arrival of transapient AI 'Swift'\" Swift is described as an unaffiliated 'anti-biont hyperturing' that fled the Inner Sphere during the Conver Wars, not a named polity; see doubts. The transapient AI Swift, who stayed for centuries before the colonisation mission of 7117; no polity of this file." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 6935 .
+
+claim:event-world-savannah-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/534ba31d3b32b> ;
+    oa:about id:world-savannah ;
+    oa:canonical true ;
+    oa:eventKind oa:Independent ;
+    oa:note "\"7423 AT Great Cygexpa Sell Off, de facto independence and isolation of Savannah\" The article says Cygexpa's sell off left the Jackson colony's ownership 'unclear and disputed', which the Timeline Table links to Savannah's de facto independence; it does not state Savannah was formally part of Cygexpa before this. The Great Cygexpa Sell-Off; the article does not otherwise record Cygexpa as holding the system." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 2 ;
+    oa:yearAT 7423 .

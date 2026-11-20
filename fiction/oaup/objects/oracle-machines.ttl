@@ -1,0 +1,39 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Oracle Machines
+
+id:world-oracle-machines a oa:Place, oa:World ;
+    skos:prefLabel "Oracle Machines" ;
+    oa:kind "polity_marker" ;
+    oa:labelsSystem false ;
+    oa:note "The Oracle Machines are the power the Oracle War was fought against -- \"the mainstream Diamonders reject the Oracle Machine cult\" in 10552, and in 10591 \"the Prediction Cluster is captured; the Sibyl vanishes. End of the Oracle War\". They hold thrall worlds: the Mystery Cult's forty rungs of Jke's Ladder \"began to take on the characteristics of other Oracle Machine Thrall worlds, becoming static and changeless utopias\".\nEntered in the polity roster as `oracle-machines`, coloured as a near relation of the Diamond Network, which they are an offshoot of -- the mainstream Diamonders \"reject the Oracle Machine cult\" in 10552, which is a schism rather than a meeting." ;
+    oa:uncertain false .
+
+claim:location-world-oracle-machines a prov:Entity, oa:LocationClaim ;
+    oa:about id:world-oracle-machines ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -28.0 ;
+    oa:distance value:location-world-oracle-machines-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:note "The ORACLE MACHINE TERRITORY anchor in southOAEMPIRES.dsc, one of the Orion's Arm Celestia add-ons' location catalogues (OAAddons9, OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv). The anchor states no extent: it carries the token radius the add-on gives every empire label." ;
+    oa:rightAscensionDeg 322.5 .
+
+value:location-world-oracle-machines-distance a oa:QuantityValue ;
+    qudt:numericValue 1700.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-oracle-machines-oracle-machines a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:world-oracle-machines ;
+    oa:canonical true ;
+    oa:polity id:polity-oracle-machines ;
+    oa:recordOrder 0 .

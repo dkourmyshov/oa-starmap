@@ -1,0 +1,46 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# Kiku
+
+id:world-kiku a oa:Place, oa:World ;
+    skos:altLabel "Sakura" ;
+    skos:prefLabel "Kiku" ;
+    oa:article <https://www.orionsarm.com/eg-article/521e1928abb1f> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "59 Virginis, as the colony table has it." ;
+    oa:systemName "Kiku" ;
+    oa:uncertain false .
+
+claim:location-world-kiku a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/521e1928abb1f> ;
+    oa:about id:world-kiku ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "59 Virginis" .
+
+claim:event-world-kiku-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/521e1928abb1f> ;
+    oa:about id:world-kiku ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"Reached Sakura was already inhabited by splinter factions of the Zavijavan aioids by 1500 AT .\" a breakaway aioid faction from Zavijava (per body text, \"which had migrated there from Zavijava many centuries earlier\"); not a polity on the roster" ;
+    oa:precision oa:NotLaterThan ;
+    oa:recordOrder 0 ;
+    oa:yearAT 1500 .
+
+claim:event-world-kiku-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/521e1928abb1f> ;
+    oa:about id:world-kiku ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"The first pro-human ship, the Eridan-Federation colony ship Three Stops To Goltarenqi , would not arrive until 1783.\" \"Eridan- Federation\" is not on the roster (roster has Eridanus League and First Federation, neither an exact match) The 'Eridan-Federation' ship is not placed with either the Eridanus League or the First Federation." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 1783 .

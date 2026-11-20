@@ -1,0 +1,116 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Pandya
+
+id:world-pandya a oa:Place, oa:World ;
+    skos:prefLabel "Pandya" ;
+    oa:article <https://www.orionsarm.com/eg-article/4b45da29a57d9> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Mu Cassiopeiae A, as the colony table has it." ;
+    oa:systemName "Pandya" ;
+    oa:uncertain false .
+
+claim:location-world-pandya a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4b45da29a57d9> ;
+    oa:about id:world-pandya ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Mu Cassiopeiae A" .
+
+claim:affiliation-world-pandya-solar-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4b45da29a57d9> ;
+    oa:about id:world-pandya ;
+    oa:canonical true ;
+    oa:polity id:polity-solar-dominion ;
+    oa:recordOrder 0 .
+
+claim:event-world-pandya-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4b45da29a57d9> ;
+    oa:about id:world-pandya ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"A number of rotating space habitats were constructed in the circumbinary asteroid belt soon after the Prithvi Mata arrived in 1118 AT, collectively becoming known as the Pandyan cluster.\" The Prithvi Mata was an uncrewed seedship built by Surya Interstellar Inc.; no polity is named for the settlement itself." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 1118 .
+
+claim:event-world-pandya-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4b45da29a57d9> ;
+    oa:about id:world-pandya ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "\"The colony thrived in solitude until the first crewed interstellar ships arrived in 1350 from the nearby system of Alsafi (roughly 15 light-years away at the time), bringing with them the inhabitants of Penglai and their microbes.\" The ships carried people from Penglai (a place), not a stated act of the Penglai Empire polity, so no polity is recorded. Ships from Alsafi; the Penglai article dates its own ship's arrival at Pandya to 1350." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 1350 .
+
+claim:event-world-pandya-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4b45da29a57d9> ;
+    oa:about id:world-pandya ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"Still, the treatment was a success, and the properly immunized Pandyans eventually joined the First Federation.\" After the epidemic the Penglai ship brought in 1350; the Federation's end is the later bound." ;
+    oa:polity id:polity-first-federation ;
+    oa:precision oa:Between ;
+    oa:recordOrder 2 ;
+    oa:untilAT 2099 ;
+    oa:yearAT 1350 .
+
+# Pandya
+
+id:inner-sphere-row-0198 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Pandya" .
+
+claim:inner-sphere-inner-sphere-row-0198-3c8a4c1a9ed5 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0198 ;
+    oa:article <https://www.orionsarm.com/eg-article/4b45da29a57d9> ;
+    oa:canonical true ;
+    oa:colonyName "Pandya" ;
+    oa:luminositySol "0.425" ;
+    oa:massSol "0.75" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 197 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0198-3c8a4c1a9ed5-source-distance ;
+    oa:spectralType "G5 Vb" ;
+    oa:starName "Mu Cassiopeiae A" .
+
+value:inner-sphere-inner-sphere-row-0198-3c8a4c1a9ed5-source-distance a oa:QuantityValue ;
+    qudt:numericValue 25.033 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Pandya
+
+id:inner-sphere-row-0199 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Pandya" .
+
+claim:inner-sphere-inner-sphere-row-0199-645cc87283ed a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0199 ;
+    oa:article <https://www.orionsarm.com/eg-article/4b45da29a57d9> ;
+    oa:canonical true ;
+    oa:colonyName "Pandya" ;
+    oa:luminositySol "0.00198" ;
+    oa:massSol "0.2" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 198 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0199-645cc87283ed-source-distance ;
+    oa:spectralType "M V" ;
+    oa:starName "Mu Cassiopeiae B" .
+
+value:inner-sphere-inner-sphere-row-0199-645cc87283ed-source-distance a oa:QuantityValue ;
+    qudt:numericValue 25.033 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

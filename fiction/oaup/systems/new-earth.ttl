@@ -1,0 +1,70 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# New Earth
+
+id:world-new-earth a oa:Place, oa:World ;
+    skos:prefLabel "New Earth" ;
+    oa:article <https://www.orionsarm.com/eg-article/48ec8ec7515b2> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "104 Tauri, as the colony table has it." ;
+    oa:systemName "New Earth" ;
+    oa:uncertain false .
+
+claim:location-world-new-earth a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48ec8ec7515b2> ;
+    oa:about id:world-new-earth ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "104 Tauri" .
+
+claim:affiliation-world-new-earth-terragen-federation a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48ec8ec7515b2> ;
+    oa:about id:world-new-earth ;
+    oa:canonical true ;
+    oa:polity id:polity-terragen-federation ;
+    oa:recordOrder 0 .
+
+claim:event-world-new-earth-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48ec8ec7515b2> ;
+    oa:about id:world-new-earth ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"104 Tauri (51.8 ly from Sol) was colonised in 1709 by the Tauri Development Consortium.\" The settling body, the Tauri Development Consortium, is a megacorp-sponsored consortium, not a polity on the roster. The Tauri Development Consortium, no polity of this file; the panel calls the system the Terragen Federation's capital, undated." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 1709 .
+
+# New Earth
+
+id:inner-sphere-row-0630 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "New Earth" .
+
+claim:inner-sphere-inner-sphere-row-0630-15306e9f3d3a a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0630 ;
+    oa:article <https://www.orionsarm.com/eg-article/48ec8ec7515b2> ;
+    oa:canonical true ;
+    oa:colonyName "New Earth" ;
+    oa:luminositySol "." ;
+    oa:massSol "." ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 629 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0630-15306e9f3d3a-source-distance ;
+    oa:spectralType "G4 V" ;
+    oa:starName "104 Tauri" .
+
+value:inner-sphere-inner-sphere-row-0630-15306e9f3d3a-source-distance a oa:QuantityValue ;
+    qudt:numericValue 51.915 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

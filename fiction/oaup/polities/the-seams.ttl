@@ -1,0 +1,18 @@
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+
+# The Seams
+
+id:polity-the-seams a oa:Polity ;
+    skos:prefLabel "The Seams" ;
+    oa:ambiguousName false ;
+    oa:color "#C0A71B" ;
+    oa:editorialNote "A border polity is diffuse by definition, so it can meet anything and must\nbe told apart from everything, which is why it moved once already, at 4.6\nfrom the Orion Federation. It then came out 8.2 from LinnEnt when Traction\nwas placed, and was briefly moved again — wrongly. The two never share a\nyear: LinnEnt holds nothing in the present and its six worlds are held\nthrough events, and the project owner confirms the two do not meet\nhistorically either. Declared never_adjacent below and left its own\ncolour." ;
+    oa:hasSource src:eg-system-articles ;
+    oa:kind "polity" ;
+    oa:neverAdjacentWith id:polity-linnent ;
+    oa:polityId "the-seams" ;
+    oa:recordOrder 21 ;
+    oa:uncertain false .

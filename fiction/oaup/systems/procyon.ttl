@@ -1,0 +1,153 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Procyon
+
+id:world-procyon a oa:Place, oa:World ;
+    skos:prefLabel "Procyon" ;
+    oa:article <https://www.orionsarm.com/eg-article/4703bd683b72b> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Joint Cyberian and Non-Coercive Zone after a long and strange history; neither of its present holders founded it." ;
+    oa:systemName "Procyon" ;
+    oa:uncertain false .
+
+claim:location-world-procyon a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4703bd683b72b> ;
+    oa:about id:world-procyon ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Procyon" .
+
+claim:affiliation-world-procyon-cyberian-network a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4703bd683b72b> ;
+    oa:about id:world-procyon ;
+    oa:canonical true ;
+    oa:polity id:polity-cyberian-network ;
+    oa:recordOrder 0 .
+
+claim:affiliation-world-procyon-nocozo a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4703bd683b72b> ;
+    oa:about id:world-procyon ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 1 .
+
+claim:event-world-procyon-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4703bd683b72b> ;
+    oa:about id:world-procyon ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "First colonised by the Solipsist Panvirtuality's Ako Forward Chaining. The source says \"around 500\", so the year is a rough figure rather than a date." ;
+    oa:precision oa:Circa ;
+    oa:recordOrder 0 ;
+    oa:yearAT 500 .
+
+claim:event-world-procyon-002 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-procyon ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "The arkship Jubilee arrives at Procyon ." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:sourceDescription "Encyclopaedia timeline, The Sundering" ;
+    oa:yearAT 679 .
+
+claim:event-world-procyon-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4703bd683b72b> ;
+    oa:about id:world-procyon ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"By the dawn of the second millennium the Ako Forward Chaining had formally joined the Diamond Belt, seeking allies from the growing influence of the First Federation.\" \"Diamond Belt\" is not a literal roster alias of Diamond Network, but the article's own data panel ('former member of the Diamond Belt') and topic filing ('Diamond Network') strongly suggest the same entity -- flagged for reviewer confirmation, see doubts. The Ako Forward Chaining joined the Diamond Belt, which the reader matched to the Diamond Network and this entry does not, the names differing." ;
+    oa:precision oa:Circa ;
+    oa:recordOrder 2 ;
+    oa:yearAT 1000 .
+
+claim:event-world-procyon-004 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4703bd683b72b> ;
+    oa:about id:world-procyon ;
+    oa:canonical true ;
+    oa:eventKind oa:Abandoned ;
+    oa:note "\"On 25 Faraday 7555 the Procyon Phenomenon occurred. As yet an unexplained event, the Procyon Phenomenon completely eliminated the Ako Forward Chaining from the Procyon system.\" Ends the Ako Forward Chaining's roughly 7,000-year occupation of the system; the clade is not on the roster. The Procyon Phenomenon eliminated the Ako Forward Chaining from the system." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 3 ;
+    oa:yearAT 7555 .
+
+claim:event-world-procyon-005 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4703bd683b72b> ;
+    oa:about id:world-procyon ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"The arrival of megacorporations aligned with the NoCoZo helped to stabilized the physical structure of the various megastructures in the star system. By 7567 a power sharing agreement between the Cyberian colonists and the NoCoZo megacorporations had been worked out.\" Matches the header's filing under Cyberian Network and the panel's 'Affiliation NoCoZo & Cyberian'. A joint arrangement -- see the companion nocozo entry below. Megacorporations aligned with the NoCoZo and the Cyberian Network arriving after the Phenomenon; the same sentence carries the next entry." ;
+    oa:polity id:polity-cyberian-network ;
+    oa:precision oa:NotLaterThan ;
+    oa:recordOrder 4 ;
+    oa:yearAT 7567 .
+
+claim:event-world-procyon-006 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4703bd683b72b> ;
+    oa:about id:world-procyon ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"The arrival of megacorporations aligned with the NoCoZo helped to stabilized the physical structure of the various megastructures in the star system. By 7567 a power sharing agreement between the Cyberian colonists and the NoCoZo megacorporations had been worked out.\" Companion entry to the cyberian-network transfer above; a shared power arrangement, not exclusive NoCoZo control." ;
+    oa:polity id:polity-nocozo ;
+    oa:precision oa:NotLaterThan ;
+    oa:recordOrder 5 ;
+    oa:yearAT 7567 .
+
+# Procyon
+
+id:inner-sphere-row-0025 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Procyon" .
+
+claim:inner-sphere-inner-sphere-row-0025-7bd0cb37693d a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0025 ;
+    oa:article <https://www.orionsarm.com/eg-article/4703bd683b72b> ;
+    oa:canonical true ;
+    oa:colonyName "Procyon" ;
+    oa:luminositySol "7.508" ;
+    oa:massSol "1.78" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 24 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0025-7bd0cb37693d-source-distance ;
+    oa:spectralType "F5 IV-V" ;
+    oa:starName "Alpha Canis Minoris A" .
+
+value:inner-sphere-inner-sphere-row-0025-7bd0cb37693d-source-distance a oa:QuantityValue ;
+    qudt:numericValue 11.462 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Procyon
+
+id:inner-sphere-row-0026 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Procyon" .
+
+claim:inner-sphere-inner-sphere-row-0026-1bc3953a29aa a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0026 ;
+    oa:article <https://www.orionsarm.com/eg-article/4703bd683b72b> ;
+    oa:canonical true ;
+    oa:colonyName "Procyon" ;
+    oa:luminositySol "0.000591" ;
+    oa:massSol "0.65" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 25 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0026-1bc3953a29aa-source-distance ;
+    oa:spectralType "DQZ" ;
+    oa:starName "Alpha Canis Minoris B" .
+
+value:inner-sphere-inner-sphere-row-0026-1bc3953a29aa-source-distance a oa:QuantityValue ;
+    qudt:numericValue 11.462 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

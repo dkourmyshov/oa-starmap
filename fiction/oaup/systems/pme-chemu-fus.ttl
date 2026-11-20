@@ -1,0 +1,33 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Pme chemu fus
+
+id:inner-sphere-row-0979 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Pme chemu fus" .
+
+claim:inner-sphere-inner-sphere-row-0979-d8cdf789c594 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0979 ;
+    oa:article <https://www.orionsarm.com/eg-article/492312e04cd5e> ;
+    oa:canonical true ;
+    oa:colonyName "Pme chemu fus" ;
+    oa:luminositySol "6.21" ;
+    oa:massSol "1.29" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 978 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0979-d8cdf789c594-source-distance ;
+    oa:spectralType "F2 V" ;
+    oa:starName "Mu Capricorni" .
+
+value:inner-sphere-inner-sphere-row-0979-d8cdf789c594-source-distance a oa:QuantityValue ;
+    qudt:numericValue 87.353 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

@@ -1,0 +1,73 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Nimbus
+
+id:world-nimbus a oa:Place, oa:World ;
+    skos:prefLabel "Nimbus" ;
+    oa:article <https://www.orionsarm.com/eg-article/46d4d49a72fec> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "58 Eridani, as the colony table has it." ;
+    oa:systemName "Nimbus" ;
+    oa:uncertain false .
+
+claim:location-world-nimbus a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46d4d49a72fec> ;
+    oa:about id:world-nimbus ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "58 Eridani" .
+
+claim:event-world-nimbus-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46d4d49a72fec> ;
+    oa:about id:world-nimbus ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"In 1716 it moved its headquarters to the Novoterra system where it set to terraform the planet Novoterra into a showpiece of nanotech macroengineering and integration.\" 'It' is Ubikorp, a megacorporation of the First Federation era, not a polity on the roster (see unplaced). It is not clear from the text whether Novoterra was already settled before this, or whether this is its first development. Ubikorp, a megacorporation, moving its headquarters; the article gives no earlier settlement." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 1716 .
+
+claim:event-world-nimbus-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46d4d49a72fec> ;
+    oa:about id:world-nimbus ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"When contact was restored in 2123, Novoterra - now called Nimbus - became a neutral part of the Empire.\" 'the Empire' is not identified by name with any roster polity; see unplaced. 'The Empire' is not named further in the sentence; left unplaced." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 2123 .
+
+# Nimbus
+
+id:inner-sphere-row-0492 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Nimbus" .
+
+claim:inner-sphere-inner-sphere-row-0492-37639d0d8722 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0492 ;
+    oa:article <https://www.orionsarm.com/eg-article/46d4d49a72fec> ;
+    oa:canonical true ;
+    oa:colonyName "Nimbus" ;
+    oa:luminositySol "0.992" ;
+    oa:massSol "1.053" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 491 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0492-37639d0d8722-source-distance ;
+    oa:spectralType "G2.5 IV-V" ;
+    oa:starName "58 Eridani" .
+
+value:inner-sphere-inner-sphere-row-0492-37639d0d8722-source-distance a oa:QuantityValue ;
+    qudt:numericValue 43.183 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

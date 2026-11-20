@@ -3,8 +3,8 @@
 The five hundred and seventy-odd saved articles under ``sources/systems`` are
 the richest source this map has for two things it records thinly: *when* a
 place was reached and settled, and *who held it* on the way to its present
-holder. The world file dates 354 of its 533 entries, mostly with a single year,
-and records ten changes of hands. The articles say much more — Sesharia was
+holder. The world records carry only the dates and changes of holder already
+reviewed into the graph. The articles say much more — Sesharia was
 "colonised 1102 AT by the Doran empire colony ship Zschorn", is "currently
 NoCoZo, former Doran Empire world", and its history section then arrives at the
 same star in 1133 — and the Doran Empire is a polity this map does not draw at
@@ -25,7 +25,7 @@ carries a year, every data-panel field, with the article, the place the map
 already binds it to, the events that place already has, and the polity names
 and links in the sentence — and everything in it is a verbatim substring of a
 saved page. The reader works down the worksheet and writes events into
-``worlds.yaml``, each with the article as its citation and, where the sentence
+``oaup/``, each with the article as its citation and, where the sentence
 names one, the polity that acted. The pipeline validates what is written.
 
 Only the *worksheet* is produced here, and only under ``sources/derived``,
@@ -401,7 +401,7 @@ def read_articles(folder: Path, topics: bool = False) -> tuple[list[Article], in
 
 
 def _events_by_article(places: Iterable[Place]) -> dict[str, list[str]]:
-    """What the world file already dates, keyed by article URL.
+    """What the world records already date, keyed by article URL.
 
     Shown on every row so the reader sees the gap rather than the article:
     a place with "settled 1102" already recorded needs its transfer read, not
@@ -409,7 +409,7 @@ def _events_by_article(places: Iterable[Place]) -> dict[str, list[str]]:
     """
     out: dict[str, list[str]] = {}
     for place in places:
-        if place.source != "worlds.yaml" or not place.article:
+        if place.source != "world" or not place.article:
             continue
         events = place.record.get("events") or []
         out[place.article.rstrip("/")] = [

@@ -1,0 +1,18 @@
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+
+# Mutual Progress Association
+
+id:polity-mutual-progress-association a oa:Polity ;
+    skos:prefLabel "Mutual Progress Association" ;
+    oa:ambiguousName false ;
+    oa:color "#66BB6A" ;
+    oa:editorialNote "Encyclopaedia timeline, 1967: \"Formation of Mutual Progress Association.\"" ;
+    oa:foundedAT 1967 ;
+    oa:hasSource src:political-maps-8000at ;
+    oa:kind "meta-empire" ;
+    oa:polityId "mutual-progress-association" ;
+    oa:recordOrder 4 ;
+    oa:uncertain false .

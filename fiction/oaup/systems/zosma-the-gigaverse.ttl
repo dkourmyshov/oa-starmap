@@ -1,0 +1,131 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# The Gigaverse
+
+id:world-the-gigaverse a oa:Place, oa:World ;
+    skos:prefLabel "The Gigaverse" ;
+    oa:article <https://www.orionsarm.com/eg-article/638d2ba84b2c6> ;
+    oa:kind "virchworld" ;
+    oa:labelsSystem false ;
+    oa:note "A collection of virchworlds at Zosma, Delta Leonis, 58 ly out — one of the few entries here that is a place only in the sense that the hardware hosting it is somewhere." ;
+    oa:uncertain false .
+
+claim:location-world-the-gigaverse a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/638d2ba84b2c6> ;
+    oa:about id:world-the-gigaverse ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Delta Leonis" .
+
+claim:affiliation-world-the-gigaverse-technorapture-hypernation a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/638d2ba84b2c6> ;
+    oa:about id:world-the-gigaverse ;
+    oa:canonical true ;
+    oa:polity id:polity-technorapture-hypernation ;
+    oa:recordOrder 0 .
+
+claim:event-world-the-gigaverse-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/638d2ba84b2c6> ;
+    oa:about id:world-the-gigaverse ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "First reached by isolationist AIs." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 900 .
+
+claim:event-world-the-gigaverse-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/638d2ba84b2c6> ;
+    oa:about id:world-the-gigaverse ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"a small isolationist AI colony arrived around 900 AT, likely from the red dwarf AD Leonis, a system inhabited by Diamond Belt ahuman AI and containing some planetary-surface computronium nodes of similar design\" The header records this as 'visited 900'; the colony 'made a home' on Hesperides and stayed until it departed in the 1300s, which reads as settled rather than visited -- see doubts. An isolationist AI colony, 'likely from AD Leonis', which stayed; the map's earlier 'visited 900' is this arrival." ;
+    oa:precision oa:Circa ;
+    oa:recordOrder 1 ;
+    oa:yearAT 900 .
+
+claim:event-world-the-gigaverse-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/638d2ba84b2c6> ;
+    oa:about id:world-the-gigaverse ;
+    oa:canonical true ;
+    oa:eventKind oa:Abandoned ;
+    oa:note "\"They made a home on Hesperides' cold, icy surface and sustained themselves with fusion energy, but sometime in the 1300s, they built a new ship and departed for places unknown.\" End of the c.900 AT AI colony on Hesperides; no polity is named." ;
+    oa:precision oa:Circa ;
+    oa:recordOrder 2 ;
+    oa:yearAT 1300 .
+
+claim:event-world-the-gigaverse-004 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/638d2ba84b2c6> ;
+    oa:about id:world-the-gigaverse ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"The mission arrived in the system in 1521, with an initial population of 43,000 baseline and nearbaseline humans and 5 superturing AI advisors.\" The Strength of the Lion colony ship, launched 988 AT from Solsys; no polity is named as sponsoring the mission. The Strength of the Lion mission, 43,000 humans and five superturing advisors; no polity named." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 3 ;
+    oa:yearAT 1521 .
+
+claim:event-world-the-gigaverse-005 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/638d2ba84b2c6> ;
+    oa:about id:world-the-gigaverse ;
+    oa:canonical true ;
+    oa:eventKind oa:Independent ;
+    oa:note "\"After news arrived of the dissolution of the Federation in 2099, Foremost of Kiruna declared the independent Delta Leonis Republic, a nominal cyberdemocracy with its capital in the Tundral Forest Arcology Complex near Kiruna's south pole.\" Implies the system had been part of the First Federation, but no explicit joining date is given; the First Federation's roster dissolution year (2099) matches. Foremost of Kiruna declared the Delta Leonis Republic, local; the Federation's own holding is not recorded here." ;
+    oa:precision oa:NotEarlierThan ;
+    oa:recordOrder 4 ;
+    oa:yearAT 2099 .
+
+claim:event-world-the-gigaverse-006 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/638d2ba84b2c6> ;
+    oa:about id:world-the-gigaverse ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"In 4176, the S3 Lawgiver of the Jungle, of the Zoeific Biopolity, purchased development rights over Canaveral and 52 of its moons from the few million local inhabitants.\" Concerns development rights over Canaveral and its moons specifically, not a stated transfer of the whole system -- see doubts. Development rights over Canaveral and 52 of its moons, one planet of the system." ;
+    oa:polity id:polity-zoeific-biopolity ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 5 ;
+    oa:yearAT 4176 .
+
+claim:event-world-the-gigaverse-007 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/638d2ba84b2c6> ;
+    oa:about id:world-the-gigaverse ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"By far the most momentous event in the history of Delta Leonis was in 6005, when Uncountable Qualia, a member of the Technorapture Hypernation and at the time an S3, used a combination of commercial purchases and memetic influence to attain full development rights to the central star.\" Matches the article's own filing under Technorapture Hypernation; the system is presently ruled by Uncountable Qualia of that polity. Uncountable Qualia of the Hypernation, 'by far the most momentous event' in the system's history." ;
+    oa:polity id:polity-technorapture-hypernation ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 6 ;
+    oa:yearAT 6005 .
+
+# Zosma / The Gigaverse
+
+id:inner-sphere-row-0694 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Zosma / The Gigaverse" .
+
+claim:inner-sphere-inner-sphere-row-0694-3031acb37413 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0694 ;
+    oa:article <https://www.orionsarm.com/eg-article/638d2ba84b2c6> ;
+    oa:canonical true ;
+    oa:colonyName "Zosma / The Gigaverse" ;
+    oa:luminositySol "24.973" ;
+    oa:massSol "2.061" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 693 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0694-3031acb37413-source-distance ;
+    oa:spectralType "A5 IV" ;
+    oa:starName "Delta Leonis" .
+
+value:inner-sphere-inner-sphere-row-0694-3031acb37413-source-distance a oa:QuantityValue ;
+    qudt:numericValue 58.43 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

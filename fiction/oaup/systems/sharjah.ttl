@@ -1,0 +1,32 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Sharjah
+
+id:inner-sphere-row-0555 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Sharjah" .
+
+claim:inner-sphere-inner-sphere-row-0555-6a9aeb7619d7 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0555 ;
+    oa:canonical true ;
+    oa:colonyName "Sharjah" ;
+    oa:luminositySol "." ;
+    oa:massSol "0.445" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 554 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0555-6a9aeb7619d7-source-distance ;
+    oa:spectralType "M3 V" ;
+    oa:starName "HIP 79431" .
+
+value:inner-sphere-inner-sphere-row-0555-6a9aeb7619d7-source-distance a oa:QuantityValue ;
+    qudt:numericValue 47.538 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

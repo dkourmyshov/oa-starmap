@@ -1,0 +1,51 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Paintbox Habitat
+
+id:world-paintbox-habitat a oa:Place, oa:World ;
+    skos:prefLabel "Paintbox Habitat" ;
+    oa:article <https://www.orionsarm.com/eg-article/649c80b928671> ;
+    oa:kind "habitat" ;
+    oa:labelsSystem false ;
+    oa:note "In the Babaluma system. The article's coordinates fall in Sagittarius, as it says." ;
+    oa:uncertain false .
+
+claim:location-world-paintbox-habitat a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/649c80b928671> ;
+    oa:about id:world-paintbox-habitat ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -29.2501 ;
+    oa:distance value:location-world-paintbox-habitat-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:nearName "Babaluma" ;
+    oa:rightAscensionDeg 266.6505 .
+
+value:location-world-paintbox-habitat-distance a oa:QuantityValue ;
+    qudt:numericValue 2998.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-paintbox-habitat-sagittarius-transcultural-cooperation a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/649c80b928671> ;
+    oa:about id:world-paintbox-habitat ;
+    oa:canonical true ;
+    oa:polity id:polity-sagittarius-transcultural-cooperation ;
+    oa:recordOrder 0 .
+
+claim:event-world-paintbox-habitat-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/649c80b928671> ;
+    oa:about id:world-paintbox-habitat ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 5208 .

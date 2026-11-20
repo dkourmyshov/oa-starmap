@@ -1,0 +1,56 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# The Torus World
+
+id:world-the-torus-world a oa:Place, oa:World ;
+    skos:prefLabel "The Torus World" ;
+    oa:article <https://www.orionsarm.com/eg-article/59b109574cb45> ;
+    oa:kind "megastructure" ;
+    oa:labelsSystem false ;
+    oa:note "An artificial world at HIP 86278, which the setting calls Zeta Lagani, in Ophiuchus. The catalogue gives 429 ly against the article's 510, a sixth nearer, so the star lends its direction and the article its distance." ;
+    oa:uncertain false .
+
+claim:location-world-the-torus-world a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/59b109574cb45> ;
+    oa:about id:world-the-torus-world ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -23.3894 ;
+    oa:distance value:location-world-the-torus-world-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:nearName "HIP 86278" ;
+    oa:rightAscensionDeg 264.4451 .
+
+value:location-world-the-torus-world-distance a oa:QuantityValue ;
+    qudt:numericValue 510.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:event-world-the-torus-world-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/59b109574cb45> ;
+    oa:about id:world-the-torus-world ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "The system reached." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 5781 .
+
+claim:event-world-the-torus-world-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/59b109574cb45> ;
+    oa:about id:world-the-torus-world ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "\"The Torus was isolated for some time until it was contacted in the late 7400's A.T. by ambassadors of the NoCoZo.\" Contact by NoCoZo ambassadors with the existing colony; no transfer of the system to NoCoZo is stated. Ambassadors of the NoCoZo, ending the Torus's isolation; 'the late 7400s', entered as 7450." ;
+    oa:polity id:polity-nocozo ;
+    oa:precision oa:Circa ;
+    oa:recordOrder 1 ;
+    oa:yearAT 7450 .

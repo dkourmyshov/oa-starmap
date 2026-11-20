@@ -1,0 +1,18 @@
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+
+# Doran Empire
+
+id:polity-doran-empire a oa:Polity ;
+    skos:prefLabel "Doran Empire" ;
+    oa:ambiguousName false ;
+    oa:color "#A1887F" ;
+    oa:dissolvedAT 5855 ;
+    oa:editorialNote "Cyber-tweak clade out of Solsys in 629, first colony at Gliese 877 in 929,\nthen the red and orange dwarfs of the Inner Sphere. Fragmented over the\nConsolidation wars; its last remnants entered the Terragen Federation in\n5855. Read from the Sesharia and Dorangloon articles." ;
+    oa:hasSource src:eg-system-articles ;
+    oa:kind "meta-empire" ;
+    oa:polityId "doran-empire" ;
+    oa:recordOrder 49 ;
+    oa:uncertain false .

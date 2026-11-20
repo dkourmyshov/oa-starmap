@@ -1,0 +1,45 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Solaris
+
+id:world-solaris a oa:Place, oa:World ;
+    skos:prefLabel "Solaris" ;
+    oa:article <https://www.orionsarm.com/eg-article/4eea898c42349> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "Around HD 222788 in Pegasus, which the catalogue puts at 535 ly against the article's 796 — a third nearer, so the star lends its direction and the article keeps its distance. Settled by Solarists and Genen, neither of which this file carries as a polity; independent for now, which is what an empty holder means here." ;
+    oa:uncertain false .
+
+claim:location-world-solaris a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4eea898c42349> ;
+    oa:about id:world-solaris ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg 19.1298 ;
+    oa:distance value:location-world-solaris-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:nearName "HD 222788" ;
+    oa:rightAscensionDeg 355.8946 .
+
+value:location-world-solaris-distance a oa:QuantityValue ;
+    qudt:numericValue 796.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:event-world-solaris-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4eea898c42349> ;
+    oa:about id:world-solaris ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "First colonised." ;
+    oa:precision oa:NotLaterThan ;
+    oa:recordOrder 0 ;
+    oa:yearAT 3955 .

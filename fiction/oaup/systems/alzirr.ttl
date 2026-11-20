@@ -1,0 +1,59 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# Alzirr
+
+id:world-alzirr a oa:Place, oa:World ;
+    skos:altLabel "Xi Geminorum AI-1" ;
+    skos:prefLabel "Alzirr" ;
+    oa:article <https://www.orionsarm.com/eg-article/48e8a9ebbbdb7> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Xi Geminorum, 60 ly, the F5 IV-V star Alzirr; the colony table's own name for it is \"Alzirr / Xi Geminorum AI-1\", the code name the article gives the ahuman AI civilization once resident there. By 1931 that civilization's activity had ceased -- \"no signs of activity such as waste heat or drive signatures\" -- leaving the wormhole and its megastructures for the First Federation's New Callisto observers to find and, eventually, claim. This is the wormhole network's origin point and the Taurus Nexus's first capital; the article this entry is built from is otherwise unread, and no polity is recorded here after the Nexus's 3435 dissolution." ;
+    oa:systemName "Alzirr" ;
+    oa:uncertain false .
+
+claim:location-world-alzirr a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48e8a9ebbbdb7> ;
+    oa:about id:world-alzirr ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Xi Geminorum" .
+
+claim:event-world-alzirr-001 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-alzirr ;
+    oa:canonical true ;
+    oa:eventKind oa:Observed ;
+    oa:note "\"In 1558 AT the Wide Array Exotic Radiation Telescope ... in the Solsys Oort Cloud detected unusual readings from Alzirr (Xi Geminorum) ... consistent with the existence of a wormhole in the system.\" From the Taurus Nexus's own page, as pasted by the project owner: the article this system is otherwise unread from." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:sourceDescription "sources/polities/taurus-nexus.txt" ;
+    oa:yearAT 1558 .
+
+claim:event-world-alzirr-002 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-alzirr ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "No settlement year is stated; the span is bounded by what is. \"The New Callistoans laid claim to the territory and began to prepare for a massive colonization and development initiative\" after the resident AI civilization's activity ceased in 1931, and by 2031 it was the Nexus's capital (see below), which it could not be unsettled." ;
+    oa:polity id:polity-taurus-nexus ;
+    oa:precision oa:Between ;
+    oa:recordOrder 1 ;
+    oa:sourceDescription "sources/polities/taurus-nexus.txt" ;
+    oa:untilAT 2031 ;
+    oa:yearAT 1931 .
+
+claim:event-world-alzirr-003 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-alzirr ;
+    oa:canonical true ;
+    oa:eventKind oa:Capital ;
+    oa:note "The page's own data panel: \"Capitals Xi Geminorum (2031-2450), Corona (2450-3435).\" Neither year is dated in the running prose; the government relocated to Corona in 2450 (see that entry), but nothing says Xi Geminorum left the Nexus before the Nexus's own dissolution in 3435." ;
+    oa:polity id:polity-taurus-nexus ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 2 ;
+    oa:sourceDescription "sources/polities/taurus-nexus.txt" ;
+    oa:yearAT 2031 .

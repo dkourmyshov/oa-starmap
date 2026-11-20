@@ -1,0 +1,19 @@
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+
+# Second Federation
+
+id:polity-second-federation a oa:Polity ;
+    skos:prefLabel "Second Federation" ;
+    oa:ambiguousName false ;
+    oa:color "#D2AF79" ;
+    oa:dissolvedAT 3726 ;
+    oa:editorialNote "The Solsys Organization's page \"traces its origins to the collapse of the\nSecond Federation (formally named the Federation of Sol and Affiliated\nSystems)\" in 3726.\nThe First Federation's page: Solsys \"operated under interim governments\n... until the founding of the Federation of Sol and Affiliated Systems\"\nin 2531.\n\"Former Solsys-based polity and First Federation successor state.\"" ;
+    oa:foundedAT 2531 ;
+    oa:hasSource src:eg-historical-polities ;
+    oa:kind "meta-empire" ;
+    oa:polityId "second-federation" ;
+    oa:recordOrder 70 ;
+    oa:uncertain false .

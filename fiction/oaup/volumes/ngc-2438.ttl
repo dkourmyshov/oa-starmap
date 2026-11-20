@@ -1,0 +1,38 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# NGC 2438
+
+id:world-ngc-2438 a oa:Place, oa:World ;
+    skos:prefLabel "NGC 2438" ;
+    oa:kind "volume" ;
+    oa:labelsSystem false ;
+    oa:note "NGC 2438, in Puppis, 420 +/- 40 pc." ;
+    oa:uncertain false .
+
+claim:location-world-ngc-2438 a prov:Entity, oa:LocationClaim ;
+    oa:about id:world-ngc-2438 ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -14.7356 ;
+    oa:distance value:location-world-ngc-2438-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:rightAscensionDeg 115.4596 .
+
+value:location-world-ngc-2438-distance a oa:QuantityValue ;
+    qudt:numericValue 1370.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-ngc-2438-nocozo a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:world-ngc-2438 ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 0 .

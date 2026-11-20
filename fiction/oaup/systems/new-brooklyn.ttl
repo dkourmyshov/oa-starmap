@@ -1,0 +1,44 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# New Brooklyn
+
+id:world-new-brooklyn a oa:Place, oa:World ;
+    skos:prefLabel "New Brooklyn" ;
+    oa:article <https://www.orionsarm.com/eg-article/552cf42ae3c54> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "HD 4967 in Cetus, 50 ly out against the article's 51." ;
+    oa:systemName "New Brooklyn" ;
+    oa:uncertain false .
+
+claim:location-world-new-brooklyn a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/552cf42ae3c54> ;
+    oa:about id:world-new-brooklyn ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "HD 4967" .
+
+claim:event-world-new-brooklyn-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/552cf42ae3c54> ;
+    oa:about id:world-new-brooklyn ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 1300 .
+
+claim:event-world-new-brooklyn-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/552cf42ae3c54> ;
+    oa:about id:world-new-brooklyn ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "\"This proved to be the decayed remains of a repair station built by a terrestrial hyperturing in 993 AT.\" An unnamed hyperturing, itself a Great Expulsion refugee with a faster ship, paused here to refuel and refurbish its debris shield; no polity named. A repair station of a terrestrial hyperturing, found decayed by the colonists of 1300; the builder is not named." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 993 .

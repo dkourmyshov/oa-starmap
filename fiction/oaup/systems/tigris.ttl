@@ -1,0 +1,63 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Spinel
+
+id:world-spinel a oa:Place, oa:World ;
+    skos:prefLabel "Spinel" ;
+    oa:article <https://www.orionsarm.com/eg-article/5cd1c5add2d63> ;
+    oa:editorialNote "---- Cyberian Network ---------------------------------------------------\n\nCyberia is an overlay network, and an encrypted one, so most of its\npresence is invisible and shares a system with whoever holds it openly.\nNearly every entry here is jointly held, and that is the fact about the\nNetwork rather than an untidiness in the data. What is listed is the\nhandful of systems Cyberian enough that concealment has stopped applying." ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "A planet and a megastructure both. Coordinates given as 05h 48m 50s, -14d 28' 03\" in Lepus, so the direction is exact and only the distance is asserted." ;
+    oa:systemName "Tigris" ;
+    oa:uncertain false .
+
+claim:location-world-spinel a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5cd1c5add2d63> ;
+    oa:about id:world-spinel ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -14.4675 ;
+    oa:distance value:location-world-spinel-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:rightAscensionDeg 87.2083 .
+
+value:location-world-spinel-distance a oa:QuantityValue ;
+    qudt:numericValue 1880.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-spinel-communion-of-worlds a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5cd1c5add2d63> ;
+    oa:about id:world-spinel ;
+    oa:canonical true ;
+    oa:polity id:polity-communion-of-worlds ;
+    oa:recordOrder 0 .
+
+claim:event-world-spinel-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5cd1c5add2d63> ;
+    oa:about id:world-spinel ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 5218 .
+
+claim:event-world-spinel-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5cd1c5add2d63> ;
+    oa:about id:world-spinel ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"In 5750 AT, they announced their intention to invite further members of the Communion to create a polity centered around the currently unclaimed outer gas giants.\" This is the Prism Wardens' announcement of intent to found a Communion-affiliated polity, not a plainly stated completion of the transfer; see doubts. An announced intention to found a Communion polity around the unclaimed outer system, which the reader flagged as not a completed transfer." ;
+    oa:polity id:polity-communion-of-worlds ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 5750 .

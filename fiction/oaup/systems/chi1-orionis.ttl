@@ -1,0 +1,25 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# Chi1 Orionis
+
+id:world-chi1-orionis a oa:Place, oa:World ;
+    skos:prefLabel "Chi1 Orionis" ;
+    oa:article <https://www.orionsarm.com/eg-article/49fc24660c394> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "28.3 ly out in Orion. The article also gives its distance from Tabit as 9.913 ly, and the two stars stand 9.917 ly apart in this map's catalogue — agreement to four thousandths of a light year, which is as close as anything here has come to a stated figure." ;
+    oa:systemName "Chi1 Orionis" ;
+    oa:uncertain false .
+
+claim:location-world-chi1-orionis a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/49fc24660c394> ;
+    oa:about id:world-chi1-orionis ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Chi1 Orionis" .

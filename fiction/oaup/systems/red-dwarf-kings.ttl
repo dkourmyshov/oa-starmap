@@ -1,0 +1,81 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Red Dwarf Kings
+
+id:inner-sphere-row-0020 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Red Dwarf Kings" .
+
+claim:inner-sphere-inner-sphere-row-0020-bb1420923c46 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0020 ;
+    oa:article <https://www.orionsarm.com/eg-article/47646874c1b82> ;
+    oa:canonical true ;
+    oa:colonyName "Red Dwarf Kings" ;
+    oa:luminositySol "0.000087" ;
+    oa:massSol "0.1" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 19 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0020-bb1420923c46-source-distance ;
+    oa:spectralType "M5.0-5.5 Ve" ;
+    oa:starName "EZ Aquarii A" .
+
+value:inner-sphere-inner-sphere-row-0020-bb1420923c46-source-distance a oa:QuantityValue ;
+    qudt:numericValue 11.109 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Red Dwarf Kings
+
+id:inner-sphere-row-0021 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Red Dwarf Kings" .
+
+claim:inner-sphere-inner-sphere-row-0021-f7d75320349f a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0021 ;
+    oa:article <https://www.orionsarm.com/eg-article/47646874c1b82> ;
+    oa:canonical true ;
+    oa:colonyName "Red Dwarf Kings" ;
+    oa:luminositySol "." ;
+    oa:massSol "." ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 20 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0021-f7d75320349f-source-distance ;
+    oa:spectralType "M V" ;
+    oa:starName "EZ Aquarii B" .
+
+value:inner-sphere-inner-sphere-row-0021-f7d75320349f-source-distance a oa:QuantityValue ;
+    qudt:numericValue 11.109 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Red Dwarf Kings
+
+id:inner-sphere-row-0022 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Red Dwarf Kings" .
+
+claim:inner-sphere-inner-sphere-row-0022-c74e327e9c62 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0022 ;
+    oa:article <https://www.orionsarm.com/eg-article/47646874c1b82> ;
+    oa:canonical true ;
+    oa:colonyName "Red Dwarf Kings" ;
+    oa:luminositySol "0.000034" ;
+    oa:massSol "." ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 21 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0022-c74e327e9c62-source-distance ;
+    oa:spectralType "M V" ;
+    oa:starName "EZ Aquarii C" .
+
+value:inner-sphere-inner-sphere-row-0022-c74e327e9c62-source-distance a oa:QuantityValue ;
+    qudt:numericValue 11.109 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

@@ -1,0 +1,80 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Regulus
+
+id:world-regulus a oa:Place, oa:World ;
+    skos:prefLabel "Regulus" ;
+    oa:article <https://www.orionsarm.com/eg-article/5cf90863addd8> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Alpha Leonis, 79 ly." ;
+    oa:systemName "Regulus" ;
+    oa:uncertain false .
+
+claim:location-world-regulus a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5cf90863addd8> ;
+    oa:about id:world-regulus ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Regulus" .
+
+claim:affiliation-world-regulus-sophic-league a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5cf90863addd8> ;
+    oa:about id:world-regulus ;
+    oa:canonical true ;
+    oa:polity id:polity-sophic-league ;
+    oa:recordOrder 0 .
+
+claim:event-world-regulus-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5cf90863addd8> ;
+    oa:about id:world-regulus ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 2231 .
+
+claim:event-world-regulus-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5cf90863addd8> ;
+    oa:about id:world-regulus ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"The starlifting operations continued unchecked during this period, and continued until the 6200s, removing a total of 0.4 solar masses from the star. At this point a archailect aligned with the Sophic League took control of the structure.\" Strictly, this says the archailect took control of the star-lifting structure, not explicitly the whole system; see doubts. The League took control of the star-lifting operation, which the reader flagged as not plainly the whole system; 'the 6200s', entered as 6200." ;
+    oa:polity id:polity-sophic-league ;
+    oa:precision oa:Circa ;
+    oa:recordOrder 1 ;
+    oa:yearAT 6200 .
+
+# Regulus
+
+id:inner-sphere-row-0903 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Regulus" .
+
+claim:inner-sphere-inner-sphere-row-0903-ad8a4f82f58c a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0903 ;
+    oa:article <https://www.orionsarm.com/eg-article/5cf90863addd8> ;
+    oa:canonical true ;
+    oa:colonyName "Regulus" ;
+    oa:luminositySol "141" ;
+    oa:massSol "4.4" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 902 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0903-ad8a4f82f58c-source-distance ;
+    oa:spectralType "B7 V" ;
+    oa:starName "Alpha Leonis A" .
+
+value:inner-sphere-inner-sphere-row-0903-ad8a4f82f58c-source-distance a oa:QuantityValue ;
+    qudt:numericValue 79.30 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

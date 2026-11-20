@@ -1,0 +1,19 @@
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+
+# First Federation
+
+id:polity-first-federation a oa:Polity ;
+    skos:prefLabel "First Federation" ;
+    oa:ambiguousName false ;
+    oa:color "#C0CA33" ;
+    oa:dissolvedAT 2099 ;
+    oa:editorialNote "Same page: \"By 2099 a.t., the Federation Council effectively ceased to\nexist when there were insufficient attendees to form a quorum and this is\ngenerally considered to also be the formal end for the Federation as a\nwhole.\"\nIts own page, saved under sources/polities: \"The Federation itself was founded in 933 a.t., on Piazzi Orbital\n- a relatively minor Belt habitat near Vesta - by nine Solsys polities\".\nNo dissolution year: the timeline's Federation periods end at 2100 AT,\nbut that is the end of a period, and no page read so far dates the end\nof the polity. Nothing is yet recorded as held by it, so nothing is\ndrawn as still held by it either.\nThe early interstellar polity the system articles name most often after\nthe Solar Dominion: 160 mentions, on the ships that reached places and\nthe charters that founded them before any present holder existed. Read\nfrom the New Callisto article's \"Reached\" field.\n---- Early interstellar polities, from the Historical Polities page -------\n\nEntered so that events can name them, and drawn only when one does. See the\neg-historical-polities source above; each entry's comment is that page's\ndescription and whatever the history timeline dates." ;
+    oa:foundedAT 933 ;
+    oa:hasSource src:eg-system-articles ;
+    oa:kind "meta-empire" ;
+    oa:polityId "first-federation" ;
+    oa:recordOrder 50 ;
+    oa:uncertain false .

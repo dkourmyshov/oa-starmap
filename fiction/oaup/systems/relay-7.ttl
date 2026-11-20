@@ -1,0 +1,32 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Relay 7
+
+id:inner-sphere-row-0679 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Relay 7" .
+
+claim:inner-sphere-inner-sphere-row-0679-e08090c723f0 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0679 ;
+    oa:canonical true ;
+    oa:colonyName "Relay 7" ;
+    oa:luminositySol "." ;
+    oa:massSol "." ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 678 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0679-e08090c723f0-source-distance ;
+    oa:spectralType "." ;
+    oa:starName "10 Canum Venaticorum" .
+
+value:inner-sphere-inner-sphere-row-0679-e08090c723f0-source-distance a oa:QuantityValue ;
+    qudt:numericValue 57.262 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

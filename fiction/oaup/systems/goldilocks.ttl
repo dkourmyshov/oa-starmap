@@ -1,0 +1,33 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Goldilocks
+
+id:inner-sphere-row-0703 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Goldilocks" .
+
+claim:inner-sphere-inner-sphere-row-0703-32c26290d157 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0703 ;
+    oa:article <https://www.orionsarm.com/eg-article/48fa71d44bc7a> ;
+    oa:canonical true ;
+    oa:colonyName "Goldilocks" ;
+    oa:luminositySol "2.92" ;
+    oa:massSol "0.9" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 702 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0703-32c26290d157-source-distance ;
+    oa:spectralType "G2.5-4 Va" ;
+    oa:starName "70 Virginis" .
+
+value:inner-sphere-inner-sphere-row-0703-32c26290d157-source-distance a oa:QuantityValue ;
+    qudt:numericValue 59.032 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

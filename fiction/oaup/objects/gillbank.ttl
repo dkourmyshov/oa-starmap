@@ -1,0 +1,61 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Gillbank
+
+id:world-gillbank a oa:Place, oa:World ;
+    skos:prefLabel "Gillbank" ;
+    oa:article <https://www.orionsarm.com/eg-article/464e939b35f57> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "Capital of the Disarchy, and founded a Negentropist world. Neither the year it changed hands nor the year it became a capital is given, so only the founding is dated here. The affiliation is the present holder." ;
+    oa:uncertain false .
+
+claim:location-world-gillbank a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/464e939b35f57> ;
+    oa:about id:world-gillbank ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:constellationName "Crux" ;
+    oa:distance value:location-world-gillbank-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:note "In the Crucis Corridor, read as the volume behind Crux the way the Encyclopaedia's sectors are. A corridor is more naturally a route than a sector, which is why this was left unplaced for a while; the constellation is the approximation, taken deliberately, and Crux is small enough that it costs less than most." .
+
+value:location-world-gillbank-distance a oa:QuantityValue ;
+    qudt:numericValue 2520.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-gillbank-disarchy a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/464e939b35f57> ;
+    oa:about id:world-gillbank ;
+    oa:canonical true ;
+    oa:polity id:polity-disarchy ;
+    oa:recordOrder 0 .
+
+claim:event-world-gillbank-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/464e939b35f57> ;
+    oa:about id:world-gillbank ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 6210 .
+
+claim:event-world-gillbank-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/464e939b35f57> ;
+    oa:about id:world-gillbank ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"Crucis Corridor Negentropist world subverted by the Neutral Way, declared itself the Disarchy Alliance in 6304, led by the Postscripts of Randomness, as a deliberate parody of Negentropism.\" Read as describing Gillbank's own system: previously Negentropist- aligned, it declared itself (part of) the Disarchy in 6304. A Negentropist world subverted by the Neutral Way, declaring itself the Disarchy Alliance; the Disarchy's own page has it 'turned expansionist' in the 4700s, which is the founding year the map carries." ;
+    oa:polity id:polity-disarchy ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 6304 .

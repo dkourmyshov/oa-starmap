@@ -1,0 +1,60 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Ain Soph Aur
+
+id:world-ain-soph-aur a oa:Place, oa:World ;
+    skos:prefLabel "Ain Soph Aur" ;
+    oa:article <https://www.orionsarm.com/eg-article/48ab38d970fc9> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Deneb Algedi, Delta Capricorni Aa, 38 ly. The colony table has the system as \"Deneb Algedi / Ain Soph Aur\" and gives the B component separately." ;
+    oa:systemName "Ain Soph Aur" ;
+    oa:uncertain false .
+
+claim:location-world-ain-soph-aur a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48ab38d970fc9> ;
+    oa:about id:world-ain-soph-aur ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Deneb Algedi" .
+
+claim:affiliation-world-ain-soph-aur-keter-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48ab38d970fc9> ;
+    oa:about id:world-ain-soph-aur ;
+    oa:canonical true ;
+    oa:polity id:polity-keter-dominion ;
+    oa:recordOrder 0 .
+
+# Ain Soph Aur
+
+id:inner-sphere-row-0427 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Ain Soph Aur" .
+
+claim:inner-sphere-inner-sphere-row-0427-7dbb0815d4a1 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0427 ;
+    oa:article <https://www.orionsarm.com/eg-article/48ab38d970fc9> ;
+    oa:canonical true ;
+    oa:colonyName "Ain Soph Aur" ;
+    oa:luminositySol "." ;
+    oa:massSol "." ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 426 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0427-7dbb0815d4a1-source-distance ;
+    oa:spectralType "." ;
+    oa:starName "Delta Capricorni B" .
+
+value:inner-sphere-inner-sphere-row-0427-7dbb0815d4a1-source-distance a oa:QuantityValue ;
+    qudt:numericValue 37.951 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

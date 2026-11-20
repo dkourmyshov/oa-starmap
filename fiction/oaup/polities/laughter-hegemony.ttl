@@ -1,0 +1,18 @@
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+
+# Laughter Hegemony
+
+id:polity-laughter-hegemony a oa:Polity ;
+    skos:prefLabel "Laughter Hegemony" ;
+    oa:ambiguousName false ;
+    oa:color "#C1443A" ;
+    oa:editorialNote "Encyclopaedia timeline, 9487: \"The Laughter Hegemony founded.\"\nExpansionist, and known almost entirely by nebulae rather than by stars:\ncanon names no positioned system of its own. The landmark is the cluster\nthis map's catalogue holds as NGC 6357, which carries Pismis 24 as an\nalias — so the War and Peace Nebula and the cluster inside it are one\nrecord here, and marking it marks both." ;
+    oa:foundedAT 9487 ;
+    oa:hasSource src:eg-system-articles ;
+    oa:kind "polity" ;
+    oa:polityId "laughter-hegemony" ;
+    oa:recordOrder 41 ;
+    oa:uncertain false .

@@ -1,0 +1,138 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Keid
+
+id:world-keid a oa:Place, oa:World ;
+    skos:prefLabel "Keid" ;
+    oa:article <https://www.orionsarm.com/eg-article/45e24ae0d6d07> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Omicron2 Eridani A, as the colony table has it." ;
+    oa:systemName "Keid" ;
+    oa:uncertain false .
+
+claim:location-world-keid a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/45e24ae0d6d07> ;
+    oa:about id:world-keid ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Omicron2 Eridani A" .
+
+claim:affiliation-world-keid-nocozo a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/45e24ae0d6d07> ;
+    oa:about id:world-keid ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 0 .
+
+claim:event-world-keid-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/45e24ae0d6d07> ;
+    oa:about id:world-keid ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"The first wave of colonists were refugees from the Technocalypse who arrived in 789 AT in arkships built by GAIA .\" Refugees of the Technocalypse in GAIA's arkships; a former member of the Eridanus League and NoCoZo-aligned since, both undated." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 789 .
+
+# Keid
+
+id:inner-sphere-row-0078 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Keid" .
+
+claim:inner-sphere-inner-sphere-row-0078-1fe9b47ce98d a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0078 ;
+    oa:article <https://www.orionsarm.com/eg-article/45e24ae0d6d07> ;
+    oa:canonical true ;
+    oa:colonyName "Keid" ;
+    oa:luminositySol "0.376" ;
+    oa:massSol "0.75" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 77 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0078-1fe9b47ce98d-source-distance ;
+    oa:spectralType "K1 Ve" ;
+    oa:starName "Omicron2 Eridani A" .
+
+value:inner-sphere-inner-sphere-row-0078-1fe9b47ce98d-source-distance a oa:QuantityValue ;
+    qudt:numericValue 16.340 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Twilight
+
+id:world-twilight a oa:Place, oa:World ;
+    skos:prefLabel "Twilight" ;
+    oa:article <https://www.orionsarm.com/eg-article/47a683c98fd29> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "40 Eridani A, 16 ly. The system's own article is at https://www.orionsarm.com/eg-article/45e24ae0d6d07." ;
+    oa:systemName "Keid" ;
+    oa:uncertain false .
+
+claim:location-world-twilight a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47a683c98fd29> ;
+    oa:about id:world-twilight ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Omicron2 Eridani" .
+
+claim:affiliation-world-twilight-nocozo a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47a683c98fd29> ;
+    oa:about id:world-twilight ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 0 .
+
+claim:event-world-twilight-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47a683c98fd29> ;
+    oa:about id:world-twilight ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 789 .
+
+claim:event-world-twilight-002 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-twilight ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "GAIA's refugee arks arrive at Twilight ." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:sourceDescription "Encyclopaedia timeline, The Sundering" ;
+    oa:yearAT 789 .
+
+claim:event-world-twilight-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47a683c98fd29> ;
+    oa:about id:world-twilight ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"The newly arrived colonists joined the Eridanus League in 810 AT, and together with Epsilon Eridani were the founding partners of that early interstellar empire.\" The roster records the Eridanus League as founded 770 AT, a 40-year gap from this \"founding partner\" claim; not a same-article contradiction, but see doubts. With Epsilon Eridani, 'the founding partners of that early interstellar empire'." ;
+    oa:polity id:polity-eridanus-league ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 2 ;
+    oa:yearAT 810 .
+
+claim:event-world-twilight-004 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47a683c98fd29> ;
+    oa:about id:world-twilight ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"They formally joined the NoCoZo in 5403.\" Matches the header's \"filed under: Non-Coercive Zone (NoCoZo)\"." ;
+    oa:polity id:polity-nocozo ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 3 ;
+    oa:yearAT 5403 .

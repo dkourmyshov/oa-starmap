@@ -1,0 +1,90 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Neli-Neti
+
+id:world-neli-neti a oa:Place, oa:World ;
+    skos:prefLabel "Neli-Neti" ;
+    oa:article <https://www.orionsarm.com/eg-article/5385f65c43e09> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "Placed at 698 ly in the direction of HIP 63911, rather than at the 17,120 ly the catalogue gives that star. Musca is both the constellation the system is said to be in and the one the star is in, which says the identifier is right and only its parallax is wrong — Hipparcos measures positions to milliarcseconds and measures parallaxes at kiloparsec ranges barely at all. So the direction is taken from the star and the distance from the source. Using the constellation alone would have thrown away a good direction for a cone some 86 ly wide at this range." ;
+    oa:uncertain false .
+
+claim:location-world-neli-neti a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5385f65c43e09> ;
+    oa:about id:world-neli-neti ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -65.5129 ;
+    oa:distance value:location-world-neli-neti-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:nearName "HIP 63911" ;
+    oa:rightAscensionDeg 196.4508 .
+
+value:location-world-neli-neti-distance a oa:QuantityValue ;
+    qudt:numericValue 698.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-neli-neti-nocozo a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5385f65c43e09> ;
+    oa:about id:world-neli-neti ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 0 .
+
+claim:affiliation-world-neli-neti-utopia-sphere a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5385f65c43e09> ;
+    oa:about id:world-neli-neti ;
+    oa:canonical true ;
+    oa:polity id:polity-utopia-sphere ;
+    oa:recordOrder 1 .
+
+claim:event-world-neli-neti-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5385f65c43e09> ;
+    oa:about id:world-neli-neti ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 3189 .
+
+claim:event-world-neli-neti-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5385f65c43e09> ;
+    oa:about id:world-neli-neti ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"In 5400 AT Helen joined the NoCoZo.\" Not in the header. Applies to Helen/Neli specifically; Clytemnestra/Neti separately joined the Utopia Sphere in 5541 (see next entry), so the system's two worlds carry two different polity affiliations rather than one contradicting the other. Helen, one of the twin worlds." ;
+    oa:polity id:polity-nocozo ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 5400 .
+
+claim:event-world-neli-neti-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5385f65c43e09> ;
+    oa:about id:world-neli-neti ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"Clytemnestra joined the Utopia Sphere, as an outlier world, in 5541 AT.\" Not in the header. Applies to Clytemnestra/Neti specifically; see note on the 5400 Helen/NoCoZo entry. Clytemnestra, the other, 'as an outlier world'." ;
+    oa:polity id:polity-utopia-sphere ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 2 ;
+    oa:yearAT 5541 .
+
+claim:event-world-neli-neti-004 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5385f65c43e09> ;
+    oa:about id:world-neli-neti ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"This conflict was terminated abruptly in 9545 AT when a force of Paraz provolves invaded the twin planets, equipped with Sephirotic godtech weapons, completely overwhelming all other combatants with little or no bloodshed.\" Not in the header. The Paraz and the resulting 'New Synergy' society are not on the polity roster; polity left blank rather than mapped to nocozo or utopia-sphere, which this event appears to supersede for governance purposes but does not explicitly say it replaces. Paraz provolves with Sephirotic godtech weapons; no polity of this file." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 3 ;
+    oa:yearAT 9545 .

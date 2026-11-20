@@ -1,0 +1,125 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# MyuvYin
+
+id:world-myuvyin a oa:Place, oa:World ;
+    skos:prefLabel "MyuvYin" ;
+    oa:article <https://www.orionsarm.com/eg-article/4a08dca7bbc9c> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Gliese 205, also HD 36395 and HIP 25878, in Orion. Both stated distances land: 18.59 ly from Sol against the catalogue's 18.604, and 6.283 from Keid against 6.286. The article also gives 19.02 ly at 10600 A.T., which is this star's own proper motion over eight and a half thousand years — the only place in this file where the setting moves a star rather than just placing it. The map is J2000 throughout, so the earlier figure is the one that matches." ;
+    oa:uncertain false .
+
+claim:location-world-myuvyin a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4a08dca7bbc9c> ;
+    oa:about id:world-myuvyin ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:distance value:location-world-myuvyin-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Gliese 205" .
+
+value:location-world-myuvyin-distance a oa:QuantityValue ;
+    qudt:numericValue 18.59 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-myuvyin-deeper-covenant a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4a08dca7bbc9c> ;
+    oa:about id:world-myuvyin ;
+    oa:canonical true ;
+    oa:polity id:polity-deeper-covenant ;
+    oa:recordOrder 0 .
+
+claim:event-world-myuvyin-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4a08dca7bbc9c> ;
+    oa:about id:world-myuvyin ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 809 .
+
+claim:event-world-myuvyin-002 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-myuvyin ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "MyuvYin settled by tweak bioborg clade." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:sourceDescription "Encyclopaedia timeline, The Sundering" ;
+    oa:yearAT 892 .
+
+claim:event-world-myuvyin-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4a08dca7bbc9c> ;
+    oa:about id:world-myuvyin ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"After a decade of desperate fighting, the entire system was subsumed, apart from a few ships which escaped to nearby systems to raise the alarm.\" Year is circa, derived from the attack's stated start (\"In 1201 AT a psychophager ahuman replicator swarm began to attack...\") plus \"a decade\" of fighting. The conquering group-mind, later called the MyuvYin Gestalt, is not on the roster; see unplaced. Subsumed by the psychophager swarm after a decade of fighting; the Deeper Covenant's page dates the swarm's arrival to 1201." ;
+    oa:precision oa:Circa ;
+    oa:recordOrder 2 ;
+    oa:yearAT 1211 .
+
+claim:event-world-myuvyin-004 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4a08dca7bbc9c> ;
+    oa:about id:world-myuvyin ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"At 2104 AT, Yiramm-MyuvYin empire ships claimed the clade's original system for itself only.\" \"The clade's original system\" is MyuvYin itself. \"Yiramm-MyuvYin empire\" is not on the roster; see unplaced. The Yiramm-MyuvYin empire, no polity of this file." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 3 ;
+    oa:yearAT 2104 .
+
+claim:event-world-myuvyin-005 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4a08dca7bbc9c> ;
+    oa:about id:world-myuvyin ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"In the end the two empires merged into a single Neo-MyuvYinian civilization, later subverted by the mobile Panvirt ISO 101100abaaababa in 2853 AT.\" The mobile Panvirt ISO 101100abaaababa is an individual entity, not a polity, group or company, so it was not added to unplaced. Subverted by the mobile Panvirt ISO 101100abaaababa; the reader left the Panvirtuality unnamed as the holder." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 4 ;
+    oa:yearAT 2853 .
+
+claim:event-world-myuvyin-006 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4a08dca7bbc9c> ;
+    oa:about id:world-myuvyin ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"In 3625 the system was connected to the Beamrider Network , with several local polities (who reorganised some of their habitats into beamrider stations) joining the Deeper Covenant .\" Only \"several local polities\" of the system joined, not necessarily the whole system, which the article elsewhere describes as split among many diverse, non-aligned factions. Connected to the Beamrider Network, with local polities joining the Covenant." ;
+    oa:polity id:polity-deeper-covenant ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 5 ;
+    oa:yearAT 3625 .
+
+# MyuvYin
+
+id:inner-sphere-row-0103 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "MyuvYin" .
+
+claim:inner-sphere-inner-sphere-row-0103-787b2725f94d a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0103 ;
+    oa:article <https://www.orionsarm.com/eg-article/4a08dca7bbc9c> ;
+    oa:canonical true ;
+    oa:colonyName "MyuvYin" ;
+    oa:luminositySol "0.0184" ;
+    oa:massSol "0.631" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 102 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0103-787b2725f94d-source-distance ;
+    oa:spectralType "M1.5 V" ;
+    oa:starName "Gliese 205" .
+
+value:inner-sphere-inner-sphere-row-0103-787b2725f94d-source-distance a oa:QuantityValue ;
+    qudt:numericValue 18.604 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

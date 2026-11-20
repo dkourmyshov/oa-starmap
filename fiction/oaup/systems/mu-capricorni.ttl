@@ -1,0 +1,53 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# Mu Capricorni
+
+id:world-mu-capricorni a oa:Place, oa:World ;
+    skos:prefLabel "Mu Capricorni" ;
+    oa:article <https://www.orionsarm.com/eg-article/492312e04cd5e> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "HIP 108036, HD 207958, 87 ly. The source names only the Bayer letter, and Capricornus also has a Kappa at 305 ly, so the entry is pinned to a catalogue number rather than left to a name lookup." ;
+    oa:systemName "Mu Capricorni" ;
+    oa:uncertain false .
+
+claim:location-world-mu-capricorni a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/492312e04cd5e> ;
+    oa:about id:world-mu-capricorni ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Mu Capricorni" .
+
+claim:affiliation-world-mu-capricorni-keter-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/492312e04cd5e> ;
+    oa:about id:world-mu-capricorni ;
+    oa:canonical true ;
+    oa:polity id:polity-keter-dominion ;
+    oa:recordOrder 0 .
+
+claim:event-world-mu-capricorni-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/492312e04cd5e> ;
+    oa:about id:world-mu-capricorni ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "Colonised somewhere in this six-hundred-year window." ;
+    oa:precision oa:Between ;
+    oa:recordOrder 0 ;
+    oa:untilAT 2100 ;
+    oa:yearAT 1500 .
+
+claim:event-world-mu-capricorni-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/492312e04cd5e> ;
+    oa:about id:world-mu-capricorni ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"Founded : The first colonists arrived in the Late First Federation Era , while the Yas Om arrived during the Integration , around 4280 A.T\" Only the Yas Om arrival carries an explicit year (circa 4280); the first colonists' arrival is dated only to 'the Late First Federation Era' with no number. The Yas Om are a clade, not a roster polity, so polity is left blank. The Yas Om's arrival 'during the Integration'; the first colonists' arrival 'in the Late First Federation Era' is the map's older range." ;
+    oa:precision oa:Circa ;
+    oa:recordOrder 1 ;
+    oa:yearAT 4280 .

@@ -1,0 +1,82 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# Dionysos
+
+id:world-dionysos a oa:Place, oa:World ;
+    skos:prefLabel "Dionysos" ;
+    oa:article <https://www.orionsarm.com/eg-article/48f8b18aca613> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "Psi-5 Aurigae, 54 ly. Already in the Inner Sphere colony table." ;
+    oa:uncertain false .
+
+claim:location-world-dionysos a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48f8b18aca613> ;
+    oa:about id:world-dionysos ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Psi 5 Aurigae" .
+
+claim:affiliation-world-dionysos-communion-of-worlds a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48f8b18aca613> ;
+    oa:about id:world-dionysos ;
+    oa:canonical true ;
+    oa:polity id:polity-communion-of-worlds ;
+    oa:recordOrder 0 .
+
+claim:event-world-dionysos-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48f8b18aca613> ;
+    oa:about id:world-dionysos ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 2941 .
+
+claim:event-world-dionysos-002 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-dionysos ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "Chronosians arrive at Dionysos ." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:sourceDescription "Encyclopaedia timeline, Late Federation / AI Emergence" ;
+    oa:yearAT 1980 .
+
+claim:event-world-dionysos-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48f8b18aca613> ;
+    oa:about id:world-dionysos ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"After a journey of 53 light years, and travelling at approximately 0.197 c, they arrived at Psi 5 Aurigae in 941 AT.\" The colonising body was the United Christian New Jerusalem Association (UCNJA), not on the polity roster. Conflicts with the data panel's 'Colonized: 2941 AT'; see contradictions. The panel's 'Colonized: 2941 AT' is kept beside it; the body's 941 reads as the same year with a digit transposed, and neither is resolved here." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 2 ;
+    oa:yearAT 941 .
+
+claim:event-world-dionysos-004 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48f8b18aca613> ;
+    oa:about id:world-dionysos ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "\"In 1151 AT the first Federation ship, the Interstellar Development Group exploration and terraforming vessel Morgan arrived.\" The text goes on to say a rocky inner planet was allocated to the corporation and more ships/colonists arrived over the following century, so this may amount to more than a simple visit; recorded as 'visited' to follow the wording. This may or may not be what the header's 'visited 1980' refers to; see doubts." ;
+    oa:polity id:polity-first-federation ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 3 ;
+    oa:yearAT 1151 .
+
+claim:event-world-dionysos-005 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48f8b18aca613> ;
+    oa:about id:world-dionysos ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"By the early 21st century a.t. things had settled down. Dionysos joined Communion, and in 2310 AT the first Wormhole Link was established between the Psi 5 Aurigae system and Heartland.\" Year_at is a rough placement for 'the early 21st century a.t.' (i.e. somewhere in 2001-2100 AT); no exact year is given for the joining itself, only for the later 2310 AT wormhole link (an infrastructure event, not recorded separately). 'By the early 21st century a.t. things had settled down. Dionysos joined Communion'; the century, entered as 2010." ;
+    oa:polity id:polity-communion-of-worlds ;
+    oa:precision oa:Circa ;
+    oa:recordOrder 4 ;
+    oa:yearAT 2010 .

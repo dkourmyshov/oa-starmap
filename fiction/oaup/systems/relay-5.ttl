@@ -1,0 +1,55 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Relay 5
+
+id:inner-sphere-row-0473 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Relay 5" .
+
+claim:inner-sphere-inner-sphere-row-0473-1d03b917b7fd a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0473 ;
+    oa:canonical true ;
+    oa:colonyName "Relay 5" ;
+    oa:luminositySol "1.01" ;
+    oa:massSol "0.92" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 472 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0473-1d03b917b7fd-source-distance ;
+    oa:spectralType "G5 V" ;
+    oa:starName "HD 147513 A" .
+
+value:inner-sphere-inner-sphere-row-0473-1d03b917b7fd-source-distance a oa:QuantityValue ;
+    qudt:numericValue 42.049 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Relay 5
+
+id:inner-sphere-row-0474 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Relay 5" .
+
+claim:inner-sphere-inner-sphere-row-0474-f6ad84af1cec a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0474 ;
+    oa:canonical true ;
+    oa:colonyName "Relay 5" ;
+    oa:luminositySol "0.0057" ;
+    oa:massSol "0.65" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 473 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0474-f6ad84af1cec-source-distance ;
+    oa:spectralType "DA2" ;
+    oa:starName "HD 147513 B" .
+
+value:inner-sphere-inner-sphere-row-0474-f6ad84af1cec-source-distance a oa:QuantityValue ;
+    qudt:numericValue 42.109 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

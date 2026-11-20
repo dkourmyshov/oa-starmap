@@ -1,0 +1,32 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Xami
+
+id:inner-sphere-row-0646 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Xami" .
+
+claim:inner-sphere-inner-sphere-row-0646-fa93cef6108c a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0646 ;
+    oa:canonical true ;
+    oa:colonyName "Xami" ;
+    oa:luminositySol "12.37" ;
+    oa:massSol "." ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 645 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0646-fa93cef6108c-source-distance ;
+    oa:spectralType "F0 Vp" ;
+    oa:starName "Alpha Circini A" .
+
+value:inner-sphere-inner-sphere-row-0646-fa93cef6108c-source-distance a oa:QuantityValue ;
+    qudt:numericValue 53.474 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

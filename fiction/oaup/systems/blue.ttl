@@ -1,0 +1,69 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# YTS 9267-9531885
+
+id:star-yts-9267-9531885 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "YTS 9267-9531885" ;
+    oa:sourceName "YTS 9267-9531885" .
+
+claim:celestia-star-yts-9267-9531885-a0d771e0ae7c a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-yts-9267-9531885 ;
+    oa:absoluteMagnitude 4.76 ;
+    oa:canonical true ;
+    oa:declinationDeg -62.6333 ;
+    oa:distance value:celestia-star-yts-9267-9531885-a0d771e0ae7c-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 242.5 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceComment "star for Blue" ;
+    oa:sourceFile "morefictionalstars.stc" ;
+    oa:sourceSystemName "Blue" ;
+    oa:spectralType "G2V" .
+
+value:celestia-star-yts-9267-9531885-a0d771e0ae7c-distance a oa:QuantityValue ;
+    qudt:numericValue 1280.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-star-yts-9267-9531885-the-seams a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48ac8c3a3979d> ;
+    oa:about id:star-yts-9267-9531885 ;
+    oa:canonical true ;
+    oa:polity id:polity-the-seams .
+
+claim:event-star-yts-9267-9531885-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48ac8c3a3979d> ;
+    oa:about id:star-yts-9267-9531885 ;
+    oa:canonical true ;
+    oa:eventKind oa:Stewardship ;
+    oa:note "\"Connected first to Alpha Star in 5184 AT, the planet Blue was quickly declared a protectorate by Mallard of Blue.\" The protector is the Burdikeer, the system's own transapient, not a Caretaker God of this file." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 5184 .
+
+claim:event-star-yts-9267-9531885-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48ac8c3a3979d> ;
+    oa:about id:star-yts-9267-9531885 ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"In 5839 AT a wormhole arrived from Traction and was opened shortly after. In the classic pattern of early Traction expansion, the system was first overrun by mercenaries.\" Traction is the seat of the Greyman Empire, no polity of this file; the panel's region is the Seams." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 5839 .
+
+claim:curation-star-yts-9267-9531885 a prov:Entity, oa:SystemCuration ;
+    oa:about id:star-yts-9267-9531885 ;
+    oa:article <https://www.orionsarm.com/eg-article/48ac8c3a3979d> ;
+    oa:editorialLabel "Blue" ;
+    oa:editorialNote "---- from the archives beyond OAAddons1 ---------------------------------\nTen .stc files went unread until every archive was imported rather than one." ;
+    oa:hidden false ;
+    oa:uncertain false .

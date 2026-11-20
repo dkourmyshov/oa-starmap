@@ -17,7 +17,8 @@ import sys
 from collections import defaultdict
 
 import numpy as np
-import yaml
+
+from oastarmap.fiction.store import load_store
 
 sys.path.insert(0, str(__import__('pathlib').Path(__file__).parent))
 from readods import read_sheet
@@ -89,7 +90,7 @@ for c in (inner['colonies'] if isinstance(inner, dict) else inner):
         for n in c['colony'].split(' / '):
             placed.setdefault(norm(n), ('colony', stars[c['star_index'], :3] * PC))
 
-_aliases = yaml.safe_load(open('../fiction/aliases.yaml', encoding='utf-8'))['aliases']
+_aliases = load_store().alias_file.aliases
 _resolver = _Resolver(clusters, star_names, _aliases, hii)
 _geom = {'cluster': cgeom, 'hii': hgeom}
 
@@ -108,8 +109,8 @@ def locate(text):
 
 # ---- the sheet -------------------------------------------------------------
 cells, _ = read_sheet("../sources/Orion's Arm Map.ods", 'Sheet1')
-polities = yaml.safe_load(open('../fiction/polities.yaml', encoding='utf-8'))['polities']
-label_names = {norm(p['name']) for p in polities}
+polities = load_store().fiction.polities
+label_names = {norm(p.name) for p in polities}
 extra_labels = {'innersphere', 'serpensregion', 'puppis', 'tunh', 'umma', 'noconeg',
                 'saggitariuscooperation', 'perseusrift', 'cygexba', 'emplededcetic',
                 'emplecokcetic', 'metasoft', 'outland'}

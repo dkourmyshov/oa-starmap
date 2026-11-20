@@ -1,0 +1,52 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Wurm
+
+id:world-wurm a oa:Place, oa:World ;
+    skos:prefLabel "Wurm" ;
+    oa:article <https://www.orionsarm.com/eg-article/5058816aa9afb> ;
+    oa:editorialNote "---- Red Star 'M'pire ---------------------------------------------------\n\nThe one polity here whose position is not in any article. Its own entry is\nthe only estimated location in this file, and it is marked as such on the\nmap rather than drawn like the rest; questions.md carries the derivation\nand what would replace it." ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "Had a distance and no direction, and was recorded rather than drawn until the add-on supplied one." ;
+    oa:uncertain false .
+
+claim:location-world-wurm a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5058816aa9afb> ;
+    oa:about id:world-wurm ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg 26.934 ;
+    oa:distance value:location-world-wurm-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:note "The distance is the article's. The direction is from oaplanets.dsc, one of the Orion's Arm Celestia add-ons' location catalogues (OAAddons9, OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv), which gives 1,067.9 ly against the article's 1,066 -- two light years apart at a thousand, which says the add-on's author had this article in front of them rather than that two sources agree. It falls in Gemini; the article names no constellation, so there is nothing here to check the direction against beyond its own plausibility." ;
+    oa:rightAscensionDeg 96.165 .
+
+value:location-world-wurm-distance a oa:QuantityValue ;
+    qudt:numericValue 1066.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-wurm-metasoft a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5058816aa9afb> ;
+    oa:about id:world-wurm ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft ;
+    oa:recordOrder 0 .
+
+claim:event-world-wurm-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5058816aa9afb> ;
+    oa:about id:world-wurm ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 3980 .

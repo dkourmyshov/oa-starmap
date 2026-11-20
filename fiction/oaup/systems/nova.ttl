@@ -1,0 +1,136 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Nova
+
+id:world-nova a oa:Place, oa:World ;
+    skos:prefLabel "Nova" ;
+    oa:article <https://www.orionsarm.com/eg-article/48e6233abde08> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Tau Ceti, as the colony table has it." ;
+    oa:systemName "Nova" ;
+    oa:uncertain false .
+
+claim:location-world-nova a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48e6233abde08> ;
+    oa:about id:world-nova ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Tau Ceti" .
+
+claim:affiliation-world-nova-nocozo a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48e6233abde08> ;
+    oa:about id:world-nova ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 0 .
+
+claim:event-world-nova-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48e6233abde08> ;
+    oa:about id:world-nova ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "\"Reached - Uncrewed: 438, Giordano Bruno\" Panel field; uncrewed probe named Giordano Bruno, no polity given." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 438 .
+
+claim:event-world-nova-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48e6233abde08> ;
+    oa:about id:world-nova ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"Crewed: 588, Tsiolkovsky\" Panel field; crewed ship Tsiolkovsky. The article subtitle calls Nova the 'Home system of the first successful extrasolar human colony', but no polity is named for this arrival. The subtitle calls this the first successful extrasolar human colony." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 588 .
+
+# Nova
+
+id:inner-sphere-row-0035 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Nova" .
+
+claim:inner-sphere-inner-sphere-row-0035-effcb0df1c47 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0035 ;
+    oa:article <https://www.orionsarm.com/eg-article/48e6233abde08> ;
+    oa:canonical true ;
+    oa:colonyName "Nova" ;
+    oa:luminositySol "0.559" ;
+    oa:massSol "0.783" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 34 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0035-effcb0df1c47-source-distance ;
+    oa:spectralType "G8 Vp" ;
+    oa:starName "Tau Ceti" .
+
+value:inner-sphere-inner-sphere-row-0035-effcb0df1c47-source-distance a oa:QuantityValue ;
+    qudt:numericValue 11.912 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Nova Terra
+
+id:world-nova-terra a oa:Place, oa:World ;
+    skos:prefLabel "Nova Terra" ;
+    oa:article <https://www.orionsarm.com/eg-article/48e2e21ee6d7f> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "Tau Ceti, 11.9 ly. The system's own article is at https://www.orionsarm.com/eg-article/48e6233abde08." ;
+    oa:systemName "Nova" ;
+    oa:uncertain false .
+
+claim:location-world-nova-terra a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48e2e21ee6d7f> ;
+    oa:about id:world-nova-terra ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Tau Ceti" .
+
+claim:affiliation-world-nova-terra-nocozo a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48e2e21ee6d7f> ;
+    oa:about id:world-nova-terra ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 0 .
+
+claim:event-world-nova-terra-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48e2e21ee6d7f> ;
+    oa:about id:world-nova-terra ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 588 .
+
+claim:event-world-nova-terra-002 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-nova-terra ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "The first of the Shuttles, simply called \" Red \", arrives at Tau Ceti / Nova Terra." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:sourceDescription "Encyclopaedia timeline, The Sundering" ;
+    oa:yearAT 595 .
+
+claim:event-world-nova-terra-003 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-nova-terra ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "Unity colony founded by the Atellians in a disused space station orbiting Nova Terra ." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 2 ;
+    oa:sourceDescription "Encyclopaedia timeline, The Sundering" ;
+    oa:yearAT 772 .

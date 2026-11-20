@@ -1,0 +1,68 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# FuMa
+
+id:world-fuma a oa:Place, oa:World ;
+    skos:prefLabel "FuMa" ;
+    oa:article <https://www.orionsarm.com/eg-article/5b291ca5d036f> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "Metasoft settled it and the Terragen Federation holds it now, with Metasoft polities still present — so both are drawn. Its star, TYC 1323-838-12, is below this map's catalogue, leaving the constellation." ;
+    oa:uncertain false .
+
+claim:location-world-fuma a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5b291ca5d036f> ;
+    oa:about id:world-fuma ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:constellationName "Orion" ;
+    oa:distance value:location-world-fuma-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:nearName "TYC 1323-838-12" .
+
+value:location-world-fuma-distance a oa:QuantityValue ;
+    qudt:numericValue 197.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-fuma-metasoft a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5b291ca5d036f> ;
+    oa:about id:world-fuma ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft ;
+    oa:recordOrder 1 .
+
+claim:affiliation-world-fuma-terragen-federation a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5b291ca5d036f> ;
+    oa:about id:world-fuma ;
+    oa:canonical true ;
+    oa:polity id:polity-terragen-federation ;
+    oa:recordOrder 0 .
+
+claim:event-world-fuma-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5b291ca5d036f> ;
+    oa:about id:world-fuma ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 2855 .
+
+claim:event-world-fuma-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5b291ca5d036f> ;
+    oa:about id:world-fuma ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "Passed to the Terragen Federation at some later date." ;
+    oa:polity id:polity-conver-ambi ;
+    oa:precision oa:NotEarlierThan ;
+    oa:recordOrder 1 ;
+    oa:yearAT 2855 .

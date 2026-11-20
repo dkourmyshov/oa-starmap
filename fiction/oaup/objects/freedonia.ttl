@@ -1,0 +1,70 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# Freedonia
+
+id:world-freedonia a oa:Place, oa:World ;
+    skos:prefLabel "Freedonia" ;
+    oa:article <https://www.orionsarm.com/eg-article/5f9dc012e4209> ;
+    oa:editorialNote "---- the alphabetical sweep, G-H -----------------------------------------" ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "Around S Antliae — CD-28 7373, HD 82610, SAO 177619, HIP 46810, HR 3798 — which this map's catalogue carries under its numbers but under no name, at 259 ly in Antlia. The article gives no distance of its own, so there is nothing to check the star against. Held jointly by the Sophic League and the Non-Coercive Zone." ;
+    oa:uncertain false .
+
+claim:location-world-freedonia a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5f9dc012e4209> ;
+    oa:about id:world-freedonia ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "HD 82610" .
+
+claim:affiliation-world-freedonia-nocozo a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5f9dc012e4209> ;
+    oa:about id:world-freedonia ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 1 .
+
+claim:affiliation-world-freedonia-sophic-league a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5f9dc012e4209> ;
+    oa:about id:world-freedonia ;
+    oa:canonical true ;
+    oa:polity id:polity-sophic-league ;
+    oa:recordOrder 0 .
+
+claim:event-world-freedonia-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5f9dc012e4209> ;
+    oa:about id:world-freedonia ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:polity id:polity-nocozo ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 2477 .
+
+claim:event-world-freedonia-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5f9dc012e4209> ;
+    oa:about id:world-freedonia ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"The S Antliae system was colonised in 2477 AT by a joint NoCoZo / Sophic League mission, drawn by the unusual characteristics of this double star.\" Joint colonisation by NoCoZo and the Sophic League; recorded as two entries, one per polity. A joint NoCoZo and Sophic League mission; the same sentence carries the Zone." ;
+    oa:polity id:polity-sophic-league ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 2477 .
+
+claim:event-world-freedonia-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5f9dc012e4209> ;
+    oa:about id:world-freedonia ;
+    oa:canonical true ;
+    oa:eventKind oa:Independent ;
+    oa:note "\"The joint NoCoZo/Sophic administration named this system Freedonia, but after two centuries they declared themselves independent of both empires and seceded from Sephirotic influence.\" Year computed as circa 2677 AT, two centuries after the stated 2477 colonisation; the article gives only the relative span 'two centuries', not an AT year, for the secession itself. 'After two centuries' of joint administration, entered as 2677; independent of both." ;
+    oa:precision oa:Circa ;
+    oa:recordOrder 2 ;
+    oa:yearAT 2677 .

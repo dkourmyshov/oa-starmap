@@ -4,7 +4,7 @@ Name matching is the whole difficulty. People write "NGC 0225", "ngc225" and
 "NGC_225" for the same object, refer to clusters by Messier number when the
 catalogue only carries NGC numbers, and use proper names ("Ptolemy's Cluster") that
 appear in no catalogue at all. Normalisation handles the mechanical variation;
-``fiction/aliases.yaml`` handles the rest, and is user-editable precisely because
+``fiction/oaup/`` handles the rest, and is user-editable precisely because
 that mapping is a matter of judgement rather than syntax.
 """
 

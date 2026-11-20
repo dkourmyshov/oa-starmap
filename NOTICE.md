@@ -29,13 +29,10 @@ What this repository carries from them:
 | File | What it is |
 |---|---|
 | `fiction/history.yaml` | 1,629 dated lines quoted from the Encyclopaedia Galactica's own timeline pages, with the article each line links |
-| `fiction/inner_sphere.yaml` | The Inner Sphere star and wormhole tables, transcribed |
-| `fiction/worlds.yaml` | Names, affiliations, dates and positions read off individual articles. The `note` fields are this project's own words |
-| `fiction/polities.yaml`, `landmarks.yaml`, `colonies.yaml`, `oa_systems.yaml` | Names and associations read off the political maps and the system articles |
-| `fiction/oa_stars.yaml` | Imported from the Orion's Arm Celestia add-on |
+| `fiction/oaup/` | Inner Sphere tables; names, affiliations, dates and positions from individual articles and political maps; Celestia add-on records. Public `oa:note` fields are this project's own words |
 
-Every file names its source page in its own header, and every entry that can
-cite an article does. The bulk source material — saved pages, the add-on
+The graph names its source snapshots and every entry that can cite an article
+does. The bulk source material — saved pages, the add-on
 archives — is **not** redistributed here; `sources/` is gitignored and the
 importers record the URLs so it can be fetched again.
 

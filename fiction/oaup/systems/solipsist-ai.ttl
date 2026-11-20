@@ -1,0 +1,55 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Solipsist AI
+
+id:inner-sphere-row-0423 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Solipsist AI" .
+
+claim:inner-sphere-inner-sphere-row-0423-9e53f462a74c a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0423 ;
+    oa:canonical true ;
+    oa:colonyName "Solipsist AI" ;
+    oa:luminositySol "0.016" ;
+    oa:massSol "." ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 422 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0423-9e53f462a74c-source-distance ;
+    oa:spectralType "M" ;
+    oa:starName "Gliese 842" .
+
+value:inner-sphere-inner-sphere-row-0423-9e53f462a74c-source-distance a oa:QuantityValue ;
+    qudt:numericValue 37.679 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Solipsist AI
+
+id:inner-sphere-row-0486 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Solipsist AI" .
+
+claim:inner-sphere-inner-sphere-row-0486-3c7df1e404b9 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0486 ;
+    oa:canonical true ;
+    oa:colonyName "Solipsist AI" ;
+    oa:luminositySol "." ;
+    oa:massSol "." ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 485 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0486-3c7df1e404b9-source-distance ;
+    oa:spectralType "M" ;
+    oa:starName "GJ 1267" .
+
+value:inner-sphere-inner-sphere-row-0486-3c7df1e404b9-source-distance a oa:QuantityValue ;
+    qudt:numericValue 42.825 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

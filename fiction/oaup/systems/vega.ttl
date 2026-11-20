@@ -1,0 +1,36 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# Vega
+
+id:world-vega a oa:Place, oa:World ;
+    skos:altLabel "Aksijaha" ;
+    skos:prefLabel "Vega" ;
+    oa:article <https://www.orionsarm.com/eg-article/4b6ec434691e3> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Alpha Lyrae, as the colony table has it." ;
+    oa:systemName "Vega" ;
+    oa:uncertain false .
+
+claim:location-world-vega a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4b6ec434691e3> ;
+    oa:about id:world-vega ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Alpha Lyrae" .
+
+claim:event-world-vega-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4b6ec434691e3> ;
+    oa:about id:world-vega ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"Reached : 1130, by the Vega Triumvirate\" Body text elaborates: 'the luminous star Vega was reached in 1130 by the Vega Triumvirate, which began to develop the system as a transapientech (and later godtech ) research facility.' The Vega Triumvirate is not on the roster. The Vega Triumvirate is no polity of this file." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 1130 .

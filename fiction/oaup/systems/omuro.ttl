@@ -1,0 +1,32 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Omuro
+
+id:inner-sphere-row-0184 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Omuro" .
+
+claim:inner-sphere-inner-sphere-row-0184-1759bb5801a4 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0184 ;
+    oa:canonical true ;
+    oa:colonyName "Omuro" ;
+    oa:luminositySol "0.000038" ;
+    oa:massSol "0.0737" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 183 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0184-1759bb5801a4-source-distance ;
+    oa:spectralType "L5" ;
+    oa:starName "2MASS J15074769-1627386" .
+
+value:inner-sphere-inner-sphere-row-0184-1759bb5801a4-source-distance a oa:QuantityValue ;
+    qudt:numericValue 24.118 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

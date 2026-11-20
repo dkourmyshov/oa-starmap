@@ -1,0 +1,78 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Frog's Head
+
+id:inner-sphere-row-0669 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Frog's Head" .
+
+claim:inner-sphere-inner-sphere-row-0669-10a494a62d5d a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0669 ;
+    oa:article <https://www.orionsarm.com/eg-article/46510b2b2c317> ;
+    oa:canonical true ;
+    oa:colonyName "Frog's Head" ;
+    oa:luminositySol "1.791" ;
+    oa:massSol "1.03" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 668 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0669-10a494a62d5d-source-distance ;
+    oa:spectralType "G0 Vp" ;
+    oa:starName "Iota Horologii" .
+
+value:inner-sphere-inner-sphere-row-0669-10a494a62d5d-source-distance a oa:QuantityValue ;
+    qudt:numericValue 56.611 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Frog's Head
+
+id:world-frog-s-head a oa:Place, oa:World ;
+    skos:prefLabel "Frog's Head" ;
+    oa:article <https://www.orionsarm.com/eg-article/46510b2b2c317> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "Iota Horologii, 57 ly out. Only loosely Zoeific, which is drawn as ownership for want of anything weaker to draw." ;
+    oa:uncertain false .
+
+claim:location-world-frog-s-head a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46510b2b2c317> ;
+    oa:about id:world-frog-s-head ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Iota Horologii" .
+
+claim:affiliation-world-frog-s-head-zoeific-biopolity a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46510b2b2c317> ;
+    oa:about id:world-frog-s-head ;
+    oa:canonical true ;
+    oa:polity id:polity-zoeific-biopolity ;
+    oa:recordOrder 0 .
+
+claim:event-world-frog-s-head-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46510b2b2c317> ;
+    oa:about id:world-frog-s-head ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 1611 .
+
+claim:event-world-frog-s-head-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46510b2b2c317> ;
+    oa:about id:world-frog-s-head ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "\"In 1140 a small fleet of automated Genen bioships were sent to assess the Iota system and its worlds and resources, and prepare them for the arrival of the Genetekker ark.\" The bioships belong to House Genen (later joined to the First Federation, per the preceding sentence), not explicitly the Federation itself; House Genen is not on the roster. Automated Genen bioships preparing the system for the Genetekker ark; House Genen is no polity of this file." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 1140 .

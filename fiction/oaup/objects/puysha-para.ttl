@@ -1,0 +1,13 @@
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# Puysha-Para
+
+id:world-puysha-para a oa:Place, oa:World ;
+    skos:prefLabel "Puysha-Para" ;
+    oa:editorialNote "---- the alphabetical sweep, Q-T -----------------------------------------" ;
+    oa:kind "polity_marker" ;
+    oa:labelsSystem false ;
+    oa:note "A civilisation placed only as 25 ly from Kuranaba, which this map holds without a direction of its own — 209 ly out and nothing more. A separation from something unplaced is not a position, so nothing is drawn. A direction for Kuranaba would give both." ;
+    oa:uncertain false .

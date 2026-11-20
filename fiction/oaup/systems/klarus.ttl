@@ -1,0 +1,102 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Klarus
+
+id:inner-sphere-row-0331 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Klarus" .
+
+claim:inner-sphere-inner-sphere-row-0331-bc157128dfe1 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0331 ;
+    oa:article <https://www.orionsarm.com/eg-article/46747b4a5a94e> ;
+    oa:canonical true ;
+    oa:colonyName "Klarus" ;
+    oa:luminositySol "0.589" ;
+    oa:massSol "0.81" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 330 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0331-bc157128dfe1-source-distance ;
+    oa:spectralType "G8 Ve" ;
+    oa:starName "61 Ursae Majoris" .
+
+value:inner-sphere-inner-sphere-row-0331-bc157128dfe1-source-distance a oa:QuantityValue ;
+    qudt:numericValue 31.234 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Klarus
+
+id:world-klarus a oa:Place, oa:World ;
+    skos:prefLabel "Klarus" ;
+    oa:article <https://www.orionsarm.com/eg-article/46747b4a5a94e> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "31 ly." ;
+    oa:uncertain false .
+
+claim:location-world-klarus a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46747b4a5a94e> ;
+    oa:about id:world-klarus ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "61 Ursae Majoris" .
+
+claim:affiliation-world-klarus-solar-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46747b4a5a94e> ;
+    oa:about id:world-klarus ;
+    oa:canonical true ;
+    oa:polity id:polity-solar-dominion ;
+    oa:recordOrder 0 .
+
+claim:event-world-klarus-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46747b4a5a94e> ;
+    oa:about id:world-klarus ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "Opened for colonisation." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 1512 .
+
+claim:event-world-klarus-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46747b4a5a94e> ;
+    oa:about id:world-klarus ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"The disaster occurred during the Conver Wars in 3843 AT, when the Conver Ambi broke up. The Solar Dominion took the chance and seized the majority of shares in the Corporation, using some local unrest as a pretext for declaring a state of system-wide emergency and moved in with their forces.\" The Dominion seized the majority of shares when the Conver Ambi broke up." ;
+    oa:polity id:polity-solar-dominion ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 3843 .
+
+claim:event-world-klarus-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46747b4a5a94e> ;
+    oa:about id:world-klarus ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"While the first onslaught was defeated, in 4477 the Metasoft fleet successfully penetrated the system and defeated the Dominion defenses in the bitter Second Battle of Klarus.\" 'In the end the system was lost' to Metasoft during the Version War; see the following entry for its recovery in 4478 AT." ;
+    oa:polity id:polity-metasoft ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 2 ;
+    oa:yearAT 4477 .
+
+claim:event-world-klarus-004 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46747b4a5a94e> ;
+    oa:about id:world-klarus ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"It was freed in 4478 AT in the Third and Fourth Battles of Klarus, but all wormhole links were destroyed in the Fifth Battle in 4480 AT.\" Klarus returns to Solar Dominion control after the 4477 loss to Metasoft. The wormhole destruction in 4480 AT (Fifth Battle) is infrastructure damage, not a change of holder, and is not recorded as a separate event. Freed in the Third and Fourth Battles of Klarus; all wormhole links destroyed in the Fifth, in 4480." ;
+    oa:polity id:polity-solar-dominion ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 3 ;
+    oa:yearAT 4478 .

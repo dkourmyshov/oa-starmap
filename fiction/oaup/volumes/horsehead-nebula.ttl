@@ -1,0 +1,73 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Horsehead Nebula
+
+id:world-horsehead-nebula a oa:Place, oa:World ;
+    skos:prefLabel "Horsehead Nebula" ;
+    oa:article <https://www.orionsarm.com/eg-article/4f2fbe886a8f3> ;
+    oa:kind "volume" ;
+    oa:labelsSystem false ;
+    oa:note "Barnard 33, in the Orion Molecular Cloud complex. Explored jointly with the Betelgeuse Umma. No catalogue this build loads has it — the dark nebulae are not in the Sharpless HII list — so the constellation carries the direction." ;
+    oa:uncertain false .
+
+claim:location-world-horsehead-nebula a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4f2fbe886a8f3> ;
+    oa:about id:world-horsehead-nebula ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:constellationName "Orion" ;
+    oa:distance value:location-world-horsehead-nebula-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+value:location-world-horsehead-nebula-distance a oa:QuantityValue ;
+    qudt:numericValue 1420.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-horsehead-nebula-orion-federation a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4f2fbe886a8f3> ;
+    oa:about id:world-horsehead-nebula ;
+    oa:canonical true ;
+    oa:polity id:polity-orion-federation ;
+    oa:recordOrder 0 .
+
+claim:affiliation-world-horsehead-nebula-stellar-umma a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4f2fbe886a8f3> ;
+    oa:about id:world-horsehead-nebula ;
+    oa:canonical true ;
+    oa:polity id:polity-stellar-umma ;
+    oa:recordOrder 1 .
+
+# The Lightstorm
+
+id:world-the-lightstorm a oa:Place, oa:World ;
+    skos:prefLabel "The Lightstorm" ;
+    oa:article <https://www.orionsarm.com/eg-article/483ae6b0289f5> ;
+    oa:kind "megastructure" ;
+    oa:labelsSystem false ;
+    oa:note "In the Horsehead Nebula, which is where its position comes from: the article gives it none of its own. Recorded as sitting in the nebula rather than as repeating the nebula's coordinates, so the two are one place and not two markers a hair apart." ;
+    oa:uncertain false .
+
+claim:location-world-the-lightstorm a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/483ae6b0289f5> ;
+    oa:about id:world-the-lightstorm ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:worldName "Horsehead Nebula" .
+
+claim:affiliation-world-the-lightstorm-orion-federation a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/483ae6b0289f5> ;
+    oa:about id:world-the-lightstorm ;
+    oa:canonical true ;
+    oa:polity id:polity-orion-federation ;
+    oa:recordOrder 0 .

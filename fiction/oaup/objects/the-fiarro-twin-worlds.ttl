@@ -1,0 +1,50 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# The Fiarro Twin Worlds
+
+id:world-the-fiarro-twin-worlds a oa:Place, oa:World ;
+    skos:prefLabel "The Fiarro Twin Worlds" ;
+    oa:article <https://www.orionsarm.com/eg-article/503cd400819a6> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "In Vela at 231 ly." ;
+    oa:uncertain false .
+
+claim:location-world-the-fiarro-twin-worlds a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/503cd400819a6> ;
+    oa:about id:world-the-fiarro-twin-worlds ;
+    oa:canonical true ;
+    oa:catalogueFromSource true ;
+    oa:hipparcosId 43371 ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+claim:affiliation-world-the-fiarro-twin-worlds-nocozo a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/503cd400819a6> ;
+    oa:about id:world-the-fiarro-twin-worlds ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 0 .
+
+claim:event-world-the-fiarro-twin-worlds-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/503cd400819a6> ;
+    oa:about id:world-the-fiarro-twin-worlds ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 2271 .
+
+claim:event-world-the-fiarro-twin-worlds-002 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-the-fiarro-twin-worlds ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "Fiarro twin worlds colonised." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:sourceDescription "Encyclopaedia timeline, The Age of Expansion" ;
+    oa:yearAT 2101 .

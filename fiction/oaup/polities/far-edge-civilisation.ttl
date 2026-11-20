@@ -1,0 +1,16 @@
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+
+# Far Edge Civilisation
+
+id:polity-far-edge-civilisation a oa:Polity ;
+    skos:prefLabel "Far Edge Civilisation" ;
+    oa:ambiguousName false ;
+    oa:color "#855D79" ;
+    oa:hasSource src:eg-system-articles ;
+    oa:kind "polity" ;
+    oa:polityId "far-edge-civilisation" ;
+    oa:recordOrder 35 ;
+    oa:uncertain false .

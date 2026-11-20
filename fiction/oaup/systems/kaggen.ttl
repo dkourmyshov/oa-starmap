@@ -1,0 +1,78 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Kaggen
+
+id:world-kaggen a oa:Place, oa:World ;
+    skos:prefLabel "Kaggen" ;
+    oa:article <https://www.orionsarm.com/eg-article/486fe4873cb45> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Gliese 876, 15 ly out in Aquarius." ;
+    oa:uncertain false .
+
+claim:location-world-kaggen a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/486fe4873cb45> ;
+    oa:about id:world-kaggen ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Gliese 876" .
+
+claim:affiliation-world-kaggen-diamond-network a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/486fe4873cb45> ;
+    oa:about id:world-kaggen ;
+    oa:canonical true ;
+    oa:polity id:polity-diamond-network ;
+    oa:recordOrder 0 .
+
+claim:event-world-kaggen-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/486fe4873cb45> ;
+    oa:about id:world-kaggen ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:NotLaterThan ;
+    oa:recordOrder 0 ;
+    oa:yearAT 961 .
+
+claim:event-world-kaggen-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/486fe4873cb45> ;
+    oa:about id:world-kaggen ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"1141 AT by !Kung expedition (leader !Kweiten ta//ken)\" Second half of the same combined panel field as the Three Kings entry above; the !Kung expedition is not a polity on the roster. The !Kung expedition under !Kweiten ta//ken; the Three Kings' colony of before 961 is the map's older settlement." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 1141 .
+
+# Kaggen
+
+id:inner-sphere-row-0061 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Kaggen" .
+
+claim:inner-sphere-inner-sphere-row-0061-78afeed71a2e a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0061 ;
+    oa:article <https://www.orionsarm.com/eg-article/486fe4873cb45> ;
+    oa:canonical true ;
+    oa:colonyName "Kaggen" ;
+    oa:luminositySol "0.0122" ;
+    oa:massSol "0.37" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 60 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0061-78afeed71a2e-source-distance ;
+    oa:spectralType "M3.5 V" ;
+    oa:starName "Gliese 876" .
+
+value:inner-sphere-inner-sphere-row-0061-78afeed71a2e-source-distance a oa:QuantityValue ;
+    qudt:numericValue 15.238 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

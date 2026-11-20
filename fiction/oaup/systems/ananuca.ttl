@@ -1,0 +1,32 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Añañuca
+
+id:inner-sphere-row-0317 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Añañuca" .
+
+claim:inner-sphere-inner-sphere-row-0317-f26a1e2735ea a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0317 ;
+    oa:canonical true ;
+    oa:colonyName "Añañuca" ;
+    oa:luminositySol "0.0288" ;
+    oa:massSol "0.454" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 316 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0317-f26a1e2735ea-source-distance ;
+    oa:spectralType "M1 V" ;
+    oa:starName "Gliese 367" .
+
+value:inner-sphere-inner-sphere-row-0317-f26a1e2735ea-source-distance a oa:QuantityValue ;
+    qudt:numericValue 30.719 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

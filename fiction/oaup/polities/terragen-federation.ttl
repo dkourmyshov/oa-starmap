@@ -1,0 +1,18 @@
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+
+# Terragen Federation
+
+id:polity-terragen-federation a oa:Polity ;
+    skos:prefLabel "Terragen Federation" ;
+    oa:ambiguousName false ;
+    oa:color "#5AEEDA" ;
+    oa:editorialNote "Given by the project owner from the polity's own Encyclopaedia article,\nwhich gives \"Founded 2900-3200 AT\". The earlier bound is entered, so the\ngate hides nothing the article allows; the range is the honest claim.\nWas byte-identical to the Stellar Umma.\nA completely distinct polity from the Orion Federation above, confirmed\nrather than assumed. The names are similar and the two arrived here by\ndifferent routes — Orion off the 8000 A.T. political map, Terragen from\nthe system articles — so the resemblance invites exactly the wrong merge." ;
+    oa:foundedAT 2900 ;
+    oa:hasSource src:eg-system-articles ;
+    oa:kind "polity" ;
+    oa:polityId "terragen-federation" ;
+    oa:recordOrder 31 ;
+    oa:uncertain false .

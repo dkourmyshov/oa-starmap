@@ -1,0 +1,41 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# 4 Vulpeculae
+
+id:world-4-vulpeculae a oa:Place, oa:World ;
+    skos:prefLabel "4 Vulpeculae" ;
+    oa:article <https://www.orionsarm.com/eg-article/4629822fcae28> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "One of the two stars the article names in the Coathanger, which is an asterism rather than a cluster — the shape is a line of sight and not a group. This map's cluster catalogue lists only physical systems, so the Coathanger is not in it, and the two stars bear that out: 4 Vulpeculae is at 256 ly and 5 Vulpeculae at 235, 20.6 ly apart in space while appearing side by side." ;
+    oa:uncertain false .
+
+claim:location-world-4-vulpeculae a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4629822fcae28> ;
+    oa:about id:world-4-vulpeculae ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "4 Vulpeculae" .
+
+claim:affiliation-world-4-vulpeculae-cygexpa a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4629822fcae28> ;
+    oa:about id:world-4-vulpeculae ;
+    oa:canonical true ;
+    oa:polity id:polity-cygexpa ;
+    oa:recordOrder 0 .
+
+claim:event-world-4-vulpeculae-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4629822fcae28> ;
+    oa:about id:world-4-vulpeculae ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "Became a Cygexpa tax haven during the ComEmp period." ;
+    oa:precision oa:NotEarlierThan ;
+    oa:recordOrder 0 ;
+    oa:yearAT 2010 .

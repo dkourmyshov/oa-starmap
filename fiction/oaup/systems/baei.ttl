@@ -1,0 +1,32 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Baei
+
+id:inner-sphere-row-0036 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Baei" .
+
+claim:inner-sphere-inner-sphere-row-0036-7d62587e7504 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0036 ;
+    oa:canonical true ;
+    oa:colonyName "Baei" ;
+    oa:luminositySol "." ;
+    oa:massSol "0.000072" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 35 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0036-7d62587e7504-source-distance ;
+    oa:spectralType "M5.5 V" ;
+    oa:starName "GJ 1061" .
+
+value:inner-sphere-inner-sphere-row-0036-7d62587e7504-source-distance a oa:QuantityValue ;
+    qudt:numericValue 11.984 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

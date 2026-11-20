@@ -1,0 +1,51 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Cygnus OB2-12
+
+id:world-cygnus-ob2-12 a oa:Place, oa:World ;
+    skos:prefLabel "Cygnus OB2-12" ;
+    oa:article <https://www.orionsarm.com/eg-article/4f55e7a94da54> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "A hypergiant of the Cygnus OB2 association, too reddened to appear in the catalogues this map loads, so the constellation carries the direction." ;
+    oa:uncertain false .
+
+claim:location-world-cygnus-ob2-12 a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4f55e7a94da54> ;
+    oa:about id:world-cygnus-ob2-12 ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:constellationName "Cygnus" ;
+    oa:distance value:location-world-cygnus-ob2-12-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+value:location-world-cygnus-ob2-12-distance a oa:QuantityValue ;
+    qudt:numericValue 5102.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-cygnus-ob2-12-solipsist-panvirtuality a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4f55e7a94da54> ;
+    oa:about id:world-cygnus-ob2-12 ;
+    oa:canonical true ;
+    oa:polity id:polity-solipsist-panvirtuality ;
+    oa:recordOrder 0 .
+
+claim:event-world-cygnus-ob2-12-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4f55e7a94da54> ;
+    oa:about id:world-cygnus-ob2-12 ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"by mutual agreement the provisions of the Tragadi Accords were followed, and thus C OB2-12 and others stars, including the multiple star C OB2-8, were assigned to the Solipsist empire in 9010 AT\" The article separately states the region 'has been colonised by the Solipsist Panvirtuality' with the Panvirt probes arriving before Cygexpa's, but the only dated claim is this 9010 AT treaty assignment; classified as transferred rather than settled because the sentence describes a formal territorial assignment under the Tragadi Accords. Under the Tragadi Accords; assignment rather than settlement, as the reader flagged." ;
+    oa:polity id:polity-solipsist-panvirtuality ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 9010 .

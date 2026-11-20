@@ -1,0 +1,42 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Jekaumeatrine
+
+id:world-jekaumeatrine a oa:Place, oa:World ;
+    skos:prefLabel "Jekaumeatrine" ;
+    oa:article <https://www.orionsarm.com/eg-article/4681a9870ee60> ;
+    oa:editorialNote "---- Xeon and Branton ----------------------------------------------------" ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "A brown dwarf and its system, and not the Paradigm's despite sitting half a degree from its dysons: this is the Deeper Covenant's, and headquarters of the Paradigm Containment Organisation. Being inside a volume and belonging to it are different things, and here the map can show the first while the note carries the second." ;
+    oa:uncertain false .
+
+claim:location-world-jekaumeatrine a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4681a9870ee60> ;
+    oa:about id:world-jekaumeatrine ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -47.4585 ;
+    oa:distance value:location-world-jekaumeatrine-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:rightAscensionDeg 211.8897 .
+
+value:location-world-jekaumeatrine-distance a oa:QuantityValue ;
+    qudt:numericValue 1818.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-jekaumeatrine-deeper-covenant a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4681a9870ee60> ;
+    oa:about id:world-jekaumeatrine ;
+    oa:canonical true ;
+    oa:polity id:polity-deeper-covenant ;
+    oa:recordOrder 0 .

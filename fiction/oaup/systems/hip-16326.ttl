@@ -1,0 +1,28 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# HIP 16326
+
+id:world-hip-16326 a oa:Place, oa:World ;
+    skos:prefLabel "HIP 16326" ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Also HD 21540, in Perseus at 1,224 ly, and like HIP 14179 carried under its designation for want of a name." ;
+    oa:uncertain false .
+
+claim:location-world-hip-16326 a prov:Entity, oa:LocationClaim ;
+    oa:about id:world-hip-16326 ;
+    oa:canonical true ;
+    oa:catalogueFromSource true ;
+    oa:hipparcosId 16326 ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+claim:affiliation-world-hip-16326-perseus-principalities a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:world-hip-16326 ;
+    oa:canonical true ;
+    oa:polity id:polity-perseus-principalities ;
+    oa:recordOrder 0 .

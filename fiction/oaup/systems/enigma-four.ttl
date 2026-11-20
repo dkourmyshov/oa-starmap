@@ -1,0 +1,103 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Enigma Four
+
+id:world-enigma-four a oa:Place, oa:World ;
+    skos:prefLabel "Enigma Four" ;
+    oa:article <https://www.orionsarm.com/eg-article/480d3cc3ac699> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "A hive mind of unknown origin, in Aquarius at 448 ly. Unrelated to the Enigma Cluster and to the add-on's other star called Enigma, sharing only the word; the map keeps all three apart and questions.md says why." ;
+    oa:uncertain false .
+
+claim:location-world-enigma-four a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/480d3cc3ac699> ;
+    oa:about id:world-enigma-four ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:oaStarName "nr354-4536-566" .
+
+claim:affiliation-world-enigma-four-xenosophont a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/480d3cc3ac699> ;
+    oa:about id:world-enigma-four ;
+    oa:canonical true ;
+    oa:polity id:polity-xenosophont ;
+    oa:recordOrder 0 .
+
+claim:event-world-enigma-four-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/480d3cc3ac699> ;
+    oa:about id:world-enigma-four ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "\"Enigma Four was discovered by a scout ship from a minor Deeper Covenant clade in 3346.\"" ;
+    oa:polity id:polity-deeper-covenant ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 3346 .
+
+claim:event-world-enigma-four-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/480d3cc3ac699> ;
+    oa:about id:world-enigma-four ;
+    oa:canonical true ;
+    oa:eventKind oa:Contact ;
+    oa:note "\"An attempt to contact the entity\\entities was met with success, but unfortunately the reply was impossible to understand for the pre- singularity crew.\" The resident intelligence, 'the Core', is a previously unknown hive mind not affiliated with any known polity; the roster's generic 'xenosophont' id is used here, and dated to the same 3346 expedition described in the surrounding text. The entity is the hive-mind of the Core, entered under the file's xenosophont bucket." ;
+    oa:polity id:polity-xenosophont ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 3346 .
+
+claim:event-world-enigma-four-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/480d3cc3ac699> ;
+    oa:about id:world-enigma-four ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"The relay was completed in 3580, and a research outpost was established a few years later to observe the Core.\" No polity is restated for the ship or outpost at this point in the text; the earlier 3346 scout ship was from a Deeper Covenant clade, but this later expedition's affiliation is not explicitly given. A research outpost 'a few years later' than the relay of 3580; the ship's polity is not restated." ;
+    oa:precision oa:NotEarlierThan ;
+    oa:recordOrder 2 ;
+    oa:yearAT 3580 .
+
+# nr354-4536-566
+
+id:star-nr354-4536-566 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "nr354-4536-566" ;
+    oa:sourceName "nr354-4536-566" .
+
+claim:celestia-star-nr354-4536-566-52685affcb1a a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-nr354-4536-566 ;
+    oa:canonical true ;
+    oa:declinationDeg -20.807 ;
+    oa:distance value:celestia-star-nr354-4536-566-52685affcb1a-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 337.412 ;
+    oa:sourceArchive "OAAddons4.zip" ;
+    oa:sourceFile "nr354-4536-566.stc" .
+
+value:celestia-star-nr354-4536-566-52685affcb1a-distance a oa:QuantityValue ;
+    qudt:numericValue 448.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-star-nr354-4536-566-xenosophont a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/480d3cc3ac699> ;
+    oa:about id:star-nr354-4536-566 ;
+    oa:canonical true ;
+    oa:polity id:polity-xenosophont .
+
+claim:curation-star-nr354-4536-566 a prov:Entity, oa:SystemCuration ;
+    oa:about id:star-nr354-4536-566 ;
+    oa:article <https://www.orionsarm.com/eg-article/480d3cc3ac699> ;
+    oa:editorialLabel "Enigma Four" ;
+    oa:hidden false ;
+    oa:note "A hive mind of unknown origin, in Aquarius at 448 ly. Nothing to do with the Enigma Cluster or with the add-on's other star called Enigma, despite the name; that confusion is its own entry in questions.md." ;
+    oa:uncertain false .

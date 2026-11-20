@@ -1,0 +1,38 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# NGC 246
+
+id:world-ngc-246 a oa:Place, oa:World ;
+    skos:prefLabel "NGC 246" ;
+    oa:kind "volume" ;
+    oa:labelsSystem false ;
+    oa:note "In Cetus, 3,500 +720/-850 ly. Not in the Strasbourg-ESO catalogue under that designation, so both the position and the distance are hand-sourced here rather than only the distance." ;
+    oa:uncertain false .
+
+claim:location-world-ngc-246 a prov:Entity, oa:LocationClaim ;
+    oa:about id:world-ngc-246 ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -11.8719 ;
+    oa:distance value:location-world-ngc-246-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:rightAscensionDeg 11.7639 .
+
+value:location-world-ngc-246-distance a oa:QuantityValue ;
+    qudt:numericValue 3500.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-ngc-246-solar-dominion a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:world-ngc-246 ;
+    oa:canonical true ;
+    oa:polity id:polity-solar-dominion ;
+    oa:recordOrder 0 .

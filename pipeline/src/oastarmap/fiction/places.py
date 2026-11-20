@@ -1,25 +1,9 @@
-"""Every Orion's Arm place, from every file that holds one, in one list.
+"""Entity-centric views over the authoritative OAUP knowledge graph.
 
-The places are spread over four hand-authored files plus the polity landmarks,
-and which file a place lives in is an accident of where it was first written
-down. Nothing about a place tells you which file it is in, and no file is a
-superset of another:
-
-    worlds.yaml        533 entries, 495 with an article URL
-    inner_sphere.yaml  1122 colony rows, 266 with a URL
-    oa_stars.yaml      119 add-on stars, none with a URL
-    oa_systems.yaml    28 curated labels, 26 with a URL
-
-Every analysis written against this data has had to remember to union them, and
-four times running one did not — most expensively when a survey of the article
-corpus reported 176 articles as having "no entry in the map", when the places
-were in the colony table all along and the index had been built from worlds.yaml
-alone. The colony table cannot be matched by URL at all, because it carries
-none.
-
-So the union lives here, once, and consumers take it rather than assembling
-their own. :func:`by_article` and :func:`by_name` are the two lookups every
-caller was writing by hand.
+There is one input, ``fiction/oaup/``. The logical origin labels below describe
+how evidence entered the graph; they are not filenames and never select a subset
+of the data. Queries therefore cover worlds, imported systems, colony rows and
+real-object landmarks without asking every caller to assemble a union.
 """
 
 from __future__ import annotations
@@ -30,49 +14,23 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
 
-import yaml
-
+from oastarmap.fiction.store import OAUP_DIR, load_store
 from oastarmap.paths import FICTION_DIR
 
 
 @dataclass
 class Place:
-    """One named place, and which file said so."""
+    """One place in the knowledge graph, with its resolved editorial metadata."""
 
     name: str
     source: str
-    """File it came from: worlds.yaml, inner_sphere.yaml, oa_stars.yaml, …"""
+    """Logical evidence collection: world, celestia, inner-sphere or landmark."""
 
     article: str = ""
-    """Its Encyclopaedia article, where the source records one. Often empty."""
-
     aliases: list[str] = field(default_factory=list)
-    """Other names for the same place: `also`, its system, its star."""
-
     record: dict[str, Any] = field(default_factory=dict)
-    """The entry as written, for callers that need a field this class omits."""
-
     polities: list[str] = field(default_factory=list)
-    """Who holds it, by polity id, however its own file happens to say so.
-
-    Five files, five conventions: `worlds.yaml` has a list under
-    `affiliations`, `oa_systems.yaml` a single `affiliation`, a colony row
-    keeps its holder in `colonies.yaml` under a name that has to be matched
-    back, a landmark's holder is the polity that lists it, and `oa_stars.yaml`
-    records none at all. Resolved once here so that "who does this polity
-    hold" is a question with one answer rather than five partial ones.
-    """
-
     past_polities: list[str] = field(default_factory=list)
-    """Who has held it, by polity id, from the dated events on the entry.
-
-    A polity can hold nothing today and a great deal in 3000 AT, and the map
-    draws it at those places whenever the year is set back — so for any
-    question about reach, colour or confusability, a past holding is a holding.
-    LinnEnt is the case: no present affiliation anywhere, nine worlds held
-    through events, and a first pass at this lookup reported it holding
-    nothing at all.
-    """
 
     @property
     def names(self) -> list[str]:
@@ -85,27 +43,16 @@ class Place:
         return out
 
 
-def _load(path: Path) -> Any:
-    if not path.exists():
-        return None
-    with path.open(encoding="utf-8") as handle:
-        return yaml.safe_load(handle)
+def _past_polities(events: list[Any]) -> list[str]:
+    return list(dict.fromkeys(event.polity for event in events if event.polity))
 
 
-def _colony_holders(fiction_dir: Path) -> dict[str, list[str]]:
-    """Colony name, case-folded, to the polities `colonies.yaml` gives it.
-
-    The colony table itself records no holder: the assignment lives in a
-    separate file keyed by the same column, and one row's column can name
-    several colonies of several polities. Split the same way that file
-    documents — on "/" and "&", parentheticals ignored — so a lookup by
-    either the whole column or one name in it finds the holder.
-    """
-    colonies = _load(fiction_dir / "colonies.yaml") or {}
+def _colony_holders(store: Any) -> dict[str, list[str]]:
+    """Colony name, case-folded, to its editorial polity assignments."""
     holders: dict[str, list[str]] = defaultdict(list)
-    for entry in colonies.get("colonies", []):
-        name = entry.get("colony") or ""
-        affiliations = entry.get("affiliations") or []
+    for entry in store.colony_file.colonies:
+        name = entry.colony
+        affiliations = entry.affiliations
         if not name or not affiliations:
             continue
         keys = [name, *re.split(r"[/&]", re.sub(r"\([^)]*\)", "", name))]
@@ -119,69 +66,78 @@ def _colony_holders(fiction_dir: Path) -> dict[str, list[str]]:
 
 
 def all_places(fiction_dir: Path | None = None) -> list[Place]:
-    """Every place in every file, in no particular order."""
+    """Every place in the single authoritative graph."""
     fiction_dir = fiction_dir or FICTION_DIR
+    source_path = fiction_dir / OAUP_DIR if fiction_dir.is_dir() else fiction_dir
+    store = load_store(source_path)
     places: list[Place] = []
-    colony_holders = _colony_holders(fiction_dir)
+    colony_holders = _colony_holders(store)
 
-    worlds = _load(fiction_dir / "worlds.yaml") or {}
-    for w in worlds.get("worlds", []):
-        location = w.get("location") or {}
-        aliases = [
-            *(w.get("also") or []),
-            w.get("system") or "",
-            location.get("star") or "",
-            location.get("oa_star") or "",
-        ]
-        past = []
-        for event in w.get("events") or []:
-            polity = event.get("polity")
-            if polity and polity not in past:
-                past.append(polity)
-        places.append(Place(w["name"], "worlds.yaml", w.get("article", ""),
-                            [a for a in aliases if a], w,
-                            list(w.get("affiliations") or []), past))
+    for world in store.worlds:
+        location = world.location
+        aliases = [*world.also, world.system, location.star, location.oa_star]
+        places.append(Place(
+            world.name,
+            "world",
+            world.article,
+            [alias for alias in aliases if alias],
+            world.model_dump(),
+            world.affiliations,
+            _past_polities(world.events),
+        ))
 
-    systems = _load(fiction_dir / "oa_systems.yaml") or {}
-    for e in systems.get("systems", []):
-        label = e.get("label") or e["star"]
-        held = [e["affiliation"]] if e.get("affiliation") else []
-        past = []
-        for event in e.get("events") or []:
-            polity = event.get("polity")
-            if polity and polity not in past:
-                past.append(polity)
-        places.append(Place(label, "oa_systems.yaml", e.get("article", ""),
-                            [e["star"], e.get("real") or ""], e, held, past))
+    curation = {system.star: system for system in store.oa_system_file.systems}
+    for star in store.stars:
+        curated = curation.get(star.name)
+        label = (curated.label if curated else "") or star.system or star.name
+        record = star.model_dump()
+        if curated:
+            record.update(curated.model_dump())
+        places.append(Place(
+            label,
+            "celestia",
+            curated.article if curated else "",
+            [star.name, curated.real if curated else ""],
+            record,
+            [curated.affiliation] if curated and curated.affiliation else [],
+            _past_polities(curated.events) if curated else [],
+        ))
 
-    stars = _load(fiction_dir / "oa_stars.yaml") or {}
-    for e in stars.get("stars", []):
-        places.append(Place(e.get("system") or e["name"], "oa_stars.yaml", "",
-                            [e["name"]], e))
-
-    inner = _load(fiction_dir / "inner_sphere.yaml") or {}
-    for e in inner.get("systems", []):
-        # A row with no colony name is a star the table happens to list, not a
-        # place anyone has settled — but it still names a star this map holds,
-        # so it is kept and identified by that.
-        name = e.get("colony") or e.get("star") or ""
+    for row in store.inner_sphere_file.systems:
+        name = row.colony or row.star
         if not name:
             continue
-        places.append(Place(name, "inner_sphere.yaml", e.get("article", ""),
-                            [e.get("star") or ""], e,
-                            colony_holders.get(name.strip().casefold(), [])))
+        places.append(Place(
+            name,
+            "inner-sphere",
+            row.article,
+            [row.star],
+            row.model_dump(),
+            colony_holders.get(name.strip().casefold(), []),
+        ))
 
-    polities = _load(fiction_dir / "polities.yaml") or {}
-    for p in polities.get("polities", []):
-        for landmark in p.get("landmarks") or []:
-            places.append(Place(landmark, "polities.yaml", "", [],
-                                {"polity": p["id"]}, [p["id"]]))
-
+    named = {landmark.catalogue: landmark for landmark in store.landmark_file.landmarks}
+    memberships: dict[str, list[str]] = defaultdict(list)
+    for polity in store.fiction.polities:
+        for catalogue in polity.landmarks:
+            if polity.id not in memberships[catalogue]:
+                memberships[catalogue].append(polity.id)
+    for catalogue in dict.fromkeys([*memberships, *named]):
+        landmark = named.get(catalogue)
+        places.append(Place(
+            landmark.name if landmark else catalogue,
+            "landmark",
+            landmark.article if landmark else "",
+            [catalogue] if landmark and landmark.name != catalogue else [],
+            landmark.model_dump() if landmark else {"catalogue": catalogue},
+            memberships.get(catalogue, []),
+            _past_polities(landmark.events) if landmark else [],
+        ))
     return places
 
 
 def by_article(places: list[Place] | None = None) -> dict[str, list[Place]]:
-    """Places keyed by their article URL. Only the sources that record one."""
+    """Places keyed by their article URL. Only entities that record one."""
     index: dict[str, list[Place]] = defaultdict(list)
     for place in places if places is not None else all_places():
         if place.article:
@@ -201,24 +157,7 @@ def by_name(places: list[Place] | None = None) -> dict[str, list[Place]]:
 def by_polity(
     places: list[Place] | None = None, *, when: str = "ever"
 ) -> dict[str, list[Place]]:
-    """Places keyed by the polity that holds them, across every file.
-
-    The lookup this module was missing. Twice in one sitting an analysis asked
-    "where does this polity reach" and answered it from `worlds.yaml` alone:
-    once concluding the Keter Dominion began at 1,119 ly when seven of its
-    systems are inside 90 ly in the colony table, and once that a polity had no
-    place on the map at all when it had one in `oa_systems.yaml`. Both were the
-    same mistake as the four the module header records, in a lookup nobody had
-    written down yet.
-
-    `when="ever"`, the default, counts a past holding as a holding: the map
-    draws it in history mode, so it bears on reach, colour and confusability
-    exactly as a present one does. `when="now"` narrows to present
-    affiliations. The default is the superset because the failure this lookup
-    exists to stop is always an undercount — the first version of it counted
-    only present affiliations and duly reported LinnEnt, which holds nine
-    worlds through events, as holding nothing.
-    """
+    """Places keyed by current or historical polity, across the whole graph."""
     if when not in ("ever", "now"):
         raise ValueError(f"when must be 'ever' or 'now', got {when!r}")
     index: dict[str, list[Place]] = defaultdict(list)

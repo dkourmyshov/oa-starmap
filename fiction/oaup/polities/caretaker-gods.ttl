@@ -1,0 +1,17 @@
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+
+# Caretaker Gods
+
+id:polity-caretaker-gods a oa:Polity ;
+    skos:prefLabel "Caretaker Gods" ;
+    oa:ambiguousName false ;
+    oa:color "#B39DDB" ;
+    oa:editorialNote "Where a xenosophont system is listed under this, the relationship is\nprotection rather than membership: a Caretaker God shields the system so it\nis left alone and not absorbed by some other terragen empire. H'tat'sa'thoss\nis such a case — the To'ul'h are not Caretaker Gods, they are protected by\none." ;
+    oa:hasSource src:eg-system-articles ;
+    oa:kind "polity" ;
+    oa:polityId "caretaker-gods" ;
+    oa:recordOrder 18 ;
+    oa:uncertain false .

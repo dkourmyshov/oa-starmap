@@ -1,0 +1,53 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Kepleria
+
+id:world-kepleria a oa:Place, oa:World ;
+    skos:prefLabel "Kepleria" ;
+    oa:article <https://www.orionsarm.com/eg-article/4670a60a449d5> ;
+    oa:kind "megastructure" ;
+    oa:labelsSystem false ;
+    oa:systemName "Johannes" ;
+    oa:uncertain false .
+
+claim:location-world-kepleria a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4670a60a449d5> ;
+    oa:about id:world-kepleria ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -41.8267 ;
+    oa:distance value:location-world-kepleria-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:nearName "HD 152219" ;
+    oa:note "The data panel: \"Right ascension: 16h54m08.51s, Declination: -41°49'36\", Distance from Sol: 531 ly, Constellation: Scorpius.\" Converted from sexagesimal. The primary, Johannes, is given as HD 152219 and as YTS 6465-7800-313, neither of which is in any catalogue this map carries, so the position comes from the panel's own coordinates rather than a resolved star. An earlier pass over this entry checked only the HD number and, finding no match, left the place unlocated without reading the rest of the panel." ;
+    oa:rightAscensionDeg 253.5355 .
+
+value:location-world-kepleria-distance a oa:QuantityValue ;
+    qudt:numericValue 531.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-kepleria-mutual-progress-association a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4670a60a449d5> ;
+    oa:about id:world-kepleria ;
+    oa:canonical true ;
+    oa:polity id:polity-mutual-progress-association ;
+    oa:recordOrder 0 .
+
+claim:event-world-kepleria-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4670a60a449d5> ;
+    oa:about id:world-kepleria ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "First shell begun." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 6996 .

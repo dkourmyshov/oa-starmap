@@ -1,0 +1,55 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# Gritwald
+
+id:world-gritwald a oa:Place, oa:World ;
+    skos:prefLabel "Gritwald" ;
+    oa:article <https://www.orionsarm.com/eg-article/46f96e1589912> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Held for a time by the Efficiency Maximization Paradigm. No year is given for either the capture or its end, so it stays prose rather than becoming a date on the timeline." ;
+    oa:systemName "Gritwald" ;
+    oa:uncertain false .
+
+claim:location-world-gritwald a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46f96e1589912> ;
+    oa:about id:world-gritwald ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:constellationName "Centaurus" ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:note "In the Centaurus sector, which fixes the direction and not the distance." .
+
+claim:affiliation-world-gritwald-negentropy-alliance a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46f96e1589912> ;
+    oa:about id:world-gritwald ;
+    oa:canonical true ;
+    oa:polity id:polity-negentropy-alliance ;
+    oa:recordOrder 0 .
+
+claim:event-world-gritwald-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46f96e1589912> ;
+    oa:about id:world-gritwald ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"Minor, sparsely uninhabited and resource-poor Centaurus sector Negentropist system , captured by the Paradigm in 5480 and liberated by Paradigm Containment Organization (PCO) forces 5526 .\" Clause: 'captured by the Paradigm in 5480'." ;
+    oa:polity id:polity-paradigm ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 5480 .
+
+claim:event-world-gritwald-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46f96e1589912> ;
+    oa:about id:world-gritwald ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"Minor, sparsely uninhabited and resource-poor Centaurus sector Negentropist system , captured by the Paradigm in 5480 and liberated by Paradigm Containment Organization (PCO) forces 5526 .\" Clause: 'liberated by Paradigm Containment Organization (PCO) forces 5526'. PCO is not on the roster and the sentence does not say the system rejoined the Negentropy Alliance at this date, so polity is left empty; see unplaced and doubts. Liberated by the Paradigm Containment Organization; read as the return to the Negentropy Alliance, of which the article calls Gritwald a nominal member, and which the reader flagged as not stated outright." ;
+    oa:polity id:polity-negentropy-alliance ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 5526 .

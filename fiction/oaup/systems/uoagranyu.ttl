@@ -1,0 +1,63 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Uoagranyu
+
+id:world-uoagranyu a oa:Place, oa:World ;
+    skos:prefLabel "Uoagranyu" ;
+    oa:article <https://www.orionsarm.com/eg-article/472131eb3b72b> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "HD 219134, as the colony table has it." ;
+    oa:systemName "Uoagranyu" ;
+    oa:uncertain false .
+
+claim:location-world-uoagranyu a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/472131eb3b72b> ;
+    oa:about id:world-uoagranyu ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "HD 219134" .
+
+claim:event-world-uoagranyu-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/472131eb3b72b> ;
+    oa:about id:world-uoagranyu ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"Colonised 1046, by Surya Interstellar Colonisation Inc. using seedships.\" Surya Interstellar Colonisation Inc. is not on the roster; see unplaced. Surya Interstellar Colonisation Inc., no polity of this file; the Version War conquest and the Free System's independence are undated." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 1046 .
+
+# Uoagranyu
+
+id:inner-sphere-row-0158 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Uoagranyu" .
+
+claim:inner-sphere-inner-sphere-row-0158-f321e5f431cc a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0158 ;
+    oa:article <https://www.orionsarm.com/eg-article/472131eb3b72b> ;
+    oa:canonical true ;
+    oa:colonyName "Uoagranyu" ;
+    oa:luminositySol "0.22" ;
+    oa:massSol "0.81" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 157 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0158-f321e5f431cc-source-distance ;
+    oa:spectralType "K3 V" ;
+    oa:starName "HD 219134" .
+
+value:inner-sphere-inner-sphere-row-0158-f321e5f431cc-source-distance a oa:QuantityValue ;
+    qudt:numericValue 21.336 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

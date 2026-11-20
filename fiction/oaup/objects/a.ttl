@@ -1,0 +1,50 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Å
+
+id:world-a a oa:Place, oa:World ;
+    skos:prefLabel "Å" ;
+    oa:article <https://www.orionsarm.com/eg-article/4e481edb4b523> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "A dwarf planet, and named with the single letter A-ring. The article gives galactic coordinates outright — 234.43, -131.80, 5.36 ly — which come back as 269.0 ly in Norma, exactly the distance and constellation it also states. A position known in all three dimensions without a catalogue star behind it." ;
+    oa:uncertain false .
+
+claim:location-world-a a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4e481edb4b523> ;
+    oa:about id:world-a ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -51.131 ;
+    oa:distance value:location-world-a-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:rightAscensionDeg 240.6888 .
+
+value:location-world-a-distance a oa:QuantityValue ;
+    qudt:numericValue 269.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-a-negentropy-alliance a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4e481edb4b523> ;
+    oa:about id:world-a ;
+    oa:canonical true ;
+    oa:polity id:polity-negentropy-alliance ;
+    oa:recordOrder 0 .
+
+claim:event-world-a-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4e481edb4b523> ;
+    oa:about id:world-a ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 2205 .

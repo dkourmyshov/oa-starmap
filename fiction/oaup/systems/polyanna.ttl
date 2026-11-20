@@ -1,0 +1,45 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Polyanna
+
+id:world-polyanna a oa:Place, oa:World ;
+    skos:prefLabel "Polyanna" ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:uncertain false .
+
+claim:location-world-polyanna a prov:Entity, oa:LocationClaim ;
+    oa:about id:world-polyanna ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -24.4323 ;
+    oa:derivation "Interpolated from the sheet. No article, so this and its affiliation are the whole of what is known." ;
+    oa:directionErrorDeg 20.0 ;
+    oa:distance value:location-world-polyanna-distance ;
+    oa:distanceError value:location-world-polyanna-distance-error ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:EditorialEstimate ;
+    oa:rightAscensionDeg 186.3469 .
+
+value:location-world-polyanna-distance a oa:QuantityValue ;
+    qudt:numericValue 696.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+value:location-world-polyanna-distance-error a oa:QuantityValue ;
+    qudt:numericValue 800.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-polyanna-nocozo a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:world-polyanna ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 0 .

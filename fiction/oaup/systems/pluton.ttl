@@ -1,0 +1,84 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Pluton
+
+id:world-pluton a oa:Place, oa:World ;
+    skos:prefLabel "Pluton" ;
+    oa:article <https://www.orionsarm.com/eg-article/4910ed34571fd> ;
+    oa:editorialNote "---- Silicon Generation --------------------------------------------------" ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "In Perseus, and already on the map through the Celestia add-on, which is where this position comes from. The two sources give different distances and differ by exactly a thousand light years: the add-on says 5,130.8 and the article 4,130.8. Identical but for the leading digit, which is the shape of a slipped digit rather than of two sources disagreeing. The add-on's figure is drawn because the binding is to its star; see questions.md." ;
+    oa:uncertain false .
+
+claim:location-world-pluton a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4910ed34571fd> ;
+    oa:about id:world-pluton ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:oaStarName "JD 140582223" .
+
+claim:affiliation-world-pluton-perseus-principalities a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4910ed34571fd> ;
+    oa:about id:world-pluton ;
+    oa:canonical true ;
+    oa:polity id:polity-perseus-principalities ;
+    oa:recordOrder 0 .
+
+claim:event-world-pluton-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4910ed34571fd> ;
+    oa:about id:world-pluton ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:NotLaterThan ;
+    oa:recordOrder 0 ;
+    oa:yearAT 8400 .
+
+# JD 140582223
+
+id:star-jd-140582223 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 140582223" ;
+    oa:sourceName "JD 140582223" .
+
+claim:celestia-star-jd-140582223-c9aa62eab530 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-140582223 ;
+    oa:absoluteMagnitude 3.43 ;
+    oa:canonical true ;
+    oa:declinationDeg 43.23905 ;
+    oa:distance value:celestia-star-jd-140582223-c9aa62eab530-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 51.342 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceComment "F1  star for Pluton" ;
+    oa:sourceFile "oastars2-2.stc" ;
+    oa:sourceSystemName "Pluton" ;
+    oa:spectralType "F1" .
+
+value:celestia-star-jd-140582223-c9aa62eab530-distance a oa:QuantityValue ;
+    qudt:numericValue 5130.8 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-star-jd-140582223-perseus-principalities a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4910ed34571fd> ;
+    oa:about id:star-jd-140582223 ;
+    oa:canonical true ;
+    oa:polity id:polity-perseus-principalities .
+
+claim:curation-star-jd-140582223 a prov:Entity, oa:SystemCuration ;
+    oa:about id:star-jd-140582223 ;
+    oa:article <https://www.orionsarm.com/eg-article/4910ed34571fd> ;
+    oa:editorialLabel "Pluton" ;
+    oa:hidden false ;
+    oa:uncertain false .

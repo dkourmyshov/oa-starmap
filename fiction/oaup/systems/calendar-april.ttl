@@ -1,0 +1,33 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Calendar / April
+
+id:inner-sphere-row-0190 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Calendar / April" .
+
+claim:inner-sphere-inner-sphere-row-0190-d73bae48b5ff a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0190 ;
+    oa:article <https://www.orionsarm.com/eg-article/45f753cc61e11> ;
+    oa:canonical true ;
+    oa:colonyName "Calendar / April" ;
+    oa:luminositySol "3.624" ;
+    oa:massSol "1.1" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 189 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0190-d73bae48b5ff-source-distance ;
+    oa:spectralType "G2 IV" ;
+    oa:starName "Beta Hydri" .
+
+value:inner-sphere-inner-sphere-row-0190-d73bae48b5ff-source-distance a oa:QuantityValue ;
+    qudt:numericValue 24.391 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

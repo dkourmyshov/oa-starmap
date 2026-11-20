@@ -158,7 +158,7 @@ class TestResolution:
 
 
 class TestColonyAssignments:
-    """fiction/colonies.yaml, matched through the table's colony column."""
+    """Editorial colony assignments, matched through the table's colony column."""
 
     def test_compound_cells_split(self, built):
         """ "Atlantis/Prometheus/Daedalus" is one system, three polities."""

@@ -1,0 +1,53 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# The Amalgamation
+
+id:world-the-amalgamation a oa:Place, oa:World ;
+    skos:prefLabel "The Amalgamation" ;
+    oa:article <https://www.orionsarm.com/eg-topic/45f0c580310bf> ;
+    oa:editorialNote "---- Efficiency Maximization Paradigm ------------------------------------\n\nA 250 ly sphere centred on NGC 5460, which the map already carries as this\npolity's landmark at 2,321 ly. Its three known systems are inside a degree\nof one another in Centaurus and inside 40 ly of one another in depth, which\nfor once is not an artefact of shared coordinates: each gives its own." ;
+    oa:kind "polity_marker" ;
+    oa:labelsSystem false ;
+    oa:note "Aggressive and possibly part xenosophont. The only thing said about where it is is that it was first reported near Basel 10, which is in this map's cluster catalogue at 6,781 ly in Perseus — so the cluster's position is the entry's, and it marks where the Amalgamation was noticed rather than where it is. It holds Halsokallan and Adorate elsewhere." ;
+    oa:uncertain false .
+
+claim:location-world-the-amalgamation a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-topic/45f0c580310bf> ;
+    oa:about id:world-the-amalgamation ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg 58.2944 ;
+    oa:distance value:location-world-the-amalgamation-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:nearName "Basel 10" ;
+    oa:rightAscensionDeg 34.8648 .
+
+value:location-world-the-amalgamation-distance a oa:QuantityValue ;
+    qudt:numericValue 6781.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-the-amalgamation-amalgamation a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-topic/45f0c580310bf> ;
+    oa:about id:world-the-amalgamation ;
+    oa:canonical true ;
+    oa:polity id:polity-amalgamation ;
+    oa:recordOrder 0 .
+
+claim:event-world-the-amalgamation-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-topic/45f0c580310bf> ;
+    oa:about id:world-the-amalgamation ;
+    oa:canonical true ;
+    oa:eventKind oa:Reported ;
+    oa:note "First reported, near Basel 10." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 8750 .

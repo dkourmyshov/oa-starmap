@@ -1,0 +1,17 @@
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+
+# TRHN
+
+id:polity-technorapture-hypernation a oa:Polity ;
+    skos:prefLabel "TRHN" ;
+    oa:ambiguousName false ;
+    oa:color "#9E3C43" ;
+    oa:editorialNote "The TechnoRapture HyperNation, written as the initialism because that is\nwhat the articles do; the expansion is in questions.md, for the reader\nwho asks, rather than on the legend. Moved off purple, which sat 9.0 from\nboth the Sagittarius Transcultural Cooperation and the Deeper Covenant —\ninside the floor but tight for a polity this diffuse. 16.5 now." ;
+    oa:hasSource src:eg-system-articles ;
+    oa:kind "polity" ;
+    oa:polityId "technorapture-hypernation" ;
+    oa:recordOrder 30 ;
+    oa:uncertain false .

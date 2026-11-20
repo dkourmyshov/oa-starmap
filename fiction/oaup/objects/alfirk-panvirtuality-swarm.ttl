@@ -1,0 +1,40 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Alfirk Panvirtuality Swarm
+
+id:world-alfirk-panvirtuality-swarm a oa:Place, oa:World ;
+    skos:prefLabel "Alfirk Panvirtuality Swarm" ;
+    oa:article <https://www.orionsarm.com/eg-article/4a2fa7ab128b7> ;
+    oa:kind "megastructure" ;
+    oa:labelsSystem false ;
+    oa:note "Alfirk, Beta Cephei A, at 685 ly against the article's 600 — a 14% difference, inside what this file treats as agreement, so it binds." ;
+    oa:uncertain false .
+
+claim:location-world-alfirk-panvirtuality-swarm a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4a2fa7ab128b7> ;
+    oa:about id:world-alfirk-panvirtuality-swarm ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:distance value:location-world-alfirk-panvirtuality-swarm-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Beta Cephei" .
+
+value:location-world-alfirk-panvirtuality-swarm-distance a oa:QuantityValue ;
+    qudt:numericValue 600.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-alfirk-panvirtuality-swarm-solipsist-panvirtuality a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4a2fa7ab128b7> ;
+    oa:about id:world-alfirk-panvirtuality-swarm ;
+    oa:canonical true ;
+    oa:polity id:polity-solipsist-panvirtuality ;
+    oa:recordOrder 0 .

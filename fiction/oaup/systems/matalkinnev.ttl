@@ -1,0 +1,78 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Matalkinnev
+
+id:inner-sphere-row-0337 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Matalkinnev" .
+
+claim:inner-sphere-inner-sphere-row-0337-3f8946f279ab a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0337 ;
+    oa:canonical true ;
+    oa:colonyName "Matalkinnev" ;
+    oa:luminositySol "0.022 to 0.032" ;
+    oa:massSol "0.5" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 336 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0337-3f8946f279ab-source-distance ;
+    oa:spectralType "M0 Ve" ;
+    oa:starName "AU Microscopii" .
+
+value:inner-sphere-inner-sphere-row-0337-3f8946f279ab-source-distance a oa:QuantityValue ;
+    qudt:numericValue 31.683 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Matalkinnev
+
+id:inner-sphere-row-0342 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Matalkinnev" .
+
+claim:inner-sphere-inner-sphere-row-0342-1acfe7b21c4c a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0342 ;
+    oa:canonical true ;
+    oa:colonyName "Matalkinnev" ;
+    oa:luminositySol "0.0037 to 0.015" ;
+    oa:massSol "0.45" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 341 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0342-1acfe7b21c4c-source-distance ;
+    oa:spectralType "M4.5 Ve" ;
+    oa:starName "AT Microscopii A" .
+
+value:inner-sphere-inner-sphere-row-0342-1acfe7b21c4c-source-distance a oa:QuantityValue ;
+    qudt:numericValue 31.985 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Matalkinnev
+
+id:inner-sphere-row-0343 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Matalkinnev" .
+
+claim:inner-sphere-inner-sphere-row-0343-b30341499bf5 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0343 ;
+    oa:canonical true ;
+    oa:colonyName "Matalkinnev" ;
+    oa:luminositySol "0.0036" ;
+    oa:massSol "0.41" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 342 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0343-b30341499bf5-source-distance ;
+    oa:spectralType "M4.5 Ve" ;
+    oa:starName "AT Microscopii B" .
+
+value:inner-sphere-inner-sphere-row-0343-b30341499bf5-source-distance a oa:QuantityValue ;
+    qudt:numericValue 31.985 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

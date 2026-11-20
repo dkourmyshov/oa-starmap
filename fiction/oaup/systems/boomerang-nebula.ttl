@@ -1,0 +1,42 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# The Boomerang
+
+id:star-the-boomerang a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "The Boomerang" ;
+    oa:sourceName "The Boomerang" .
+
+claim:celestia-star-the-boomerang-e311c9024d92 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-the-boomerang ;
+    oa:absoluteMagnitude -7.0 ;
+    oa:canonical true ;
+    oa:declinationDeg -54.32 ;
+    oa:distance value:celestia-star-the-boomerang-e311c9024d92-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 191.192 ;
+    oa:sourceArchive "OAAddons5.zip" ;
+    oa:sourceFile "boomerang.stc" ;
+    oa:spectralType "O" .
+
+value:celestia-star-the-boomerang-e311c9024d92-distance a oa:QuantityValue ;
+    qudt:numericValue 5080.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:curation-star-the-boomerang a prov:Entity, oa:SystemCuration ;
+    oa:about id:star-the-boomerang ;
+    oa:article <https://www.orionsarm.com/eg-article/491758f9ed287> ;
+    oa:editorialLabel "Boomerang Nebula" ;
+    oa:hidden false ;
+    oa:note "A real object the add-on carries because Celestia's own catalogues do not. The add-on puts it at 5,080 ly and the article at 5,000, at the edge of Terragen space; the article calls it colder than the cosmic background and gives no figure. Drawn as a star because that is the shape the add-on gives it, not because it is one." ;
+    oa:realObjectIdentity "The Boomerang Nebula, in Centaurus" ;
+    oa:uncertain false .

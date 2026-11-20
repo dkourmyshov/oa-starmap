@@ -1,0 +1,44 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# New Dumont
+
+id:world-new-dumont a oa:Place, oa:World ;
+    skos:prefLabel "New Dumont" ;
+    oa:article <https://www.orionsarm.com/eg-article/57b4750a0d015> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "Given as 970 ly in Lyra near Beta Lyrae, which the catalogue puts at 906 — so the star lends its direction, far tighter than the constellation, and the article keeps its distance. No holder is recorded." ;
+    oa:uncertain false .
+
+claim:location-world-new-dumont a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/57b4750a0d015> ;
+    oa:about id:world-new-dumont ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg 33.3627 ;
+    oa:distance value:location-world-new-dumont-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:nearName "Beta Lyrae" ;
+    oa:rightAscensionDeg 282.52 .
+
+value:location-world-new-dumont-distance a oa:QuantityValue ;
+    qudt:numericValue 970.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:event-world-new-dumont-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/57b4750a0d015> ;
+    oa:about id:world-new-dumont ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 3998 .

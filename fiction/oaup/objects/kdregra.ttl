@@ -1,0 +1,51 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Kdregra
+
+id:world-kdregra a oa:Place, oa:World ;
+    skos:prefLabel "Kdregra" ;
+    oa:article <https://www.orionsarm.com/eg-article/58d2fc237410c> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "HIP 102076 in Delphinus, at 360 ly against the article's 436 — an 18% gap, too wide to bind across, so the star gives the direction and the article the distance." ;
+    oa:uncertain false .
+
+claim:location-world-kdregra a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/58d2fc237410c> ;
+    oa:about id:world-kdregra ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg 18.2038 ;
+    oa:distance value:location-world-kdregra-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:nearName "HIP 102076" ;
+    oa:rightAscensionDeg 310.3005 .
+
+value:location-world-kdregra-distance a oa:QuantityValue ;
+    qudt:numericValue 436.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-kdregra-zoeific-biopolity a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/58d2fc237410c> ;
+    oa:about id:world-kdregra ;
+    oa:canonical true ;
+    oa:polity id:polity-zoeific-biopolity ;
+    oa:recordOrder 0 .
+
+claim:event-world-kdregra-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/58d2fc237410c> ;
+    oa:about id:world-kdregra ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 4166 .

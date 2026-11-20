@@ -1,0 +1,43 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+
+# https://dkourmyshov.github.io/oa-starmap/source/celestia-addons
+
+src:celestia-addons a prov:Entity, oa:SourceSnapshot ;
+    dcterms:title "Orion's Arm Celestia add-ons" ;
+    oa:locator <https://www.orionsarm.com/xcms.php?r=oa-page&page=gen_OACelestia2> ;
+    oa:note "Original .stc records and coordinates; distances are light years." ;
+    oa:terms <https://www.orionsarm.com/Terms_Copyright_and_Submissions.html> .
+
+# https://dkourmyshov.github.io/oa-starmap/source/eg-historical-polities
+
+src:eg-historical-polities a prov:Entity, oa:SourceSnapshot ;
+    dcterms:title "Historical Polities" ;
+    oa:locator <https://www.orionsarm.com/eg-topic/56b553e0b8918> ;
+    oa:note "The Encyclopaedia's own index of polities that no longer exist, most of them Old Earth nations. The interstellar ones are entered below so that a world's events can name them; a year on any of them is read off the history timeline, cited where it is set, and left unset where the timeline states none." ;
+    oa:page "Orion's Arm Encyclopaedia Galactica" .
+
+# https://dkourmyshov.github.io/oa-starmap/source/eg-system-articles
+
+src:eg-system-articles a prov:Entity, oa:SourceSnapshot ;
+    dcterms:title "Encyclopaedia Galactica system articles" ;
+    oa:locator <https://www.orionsarm.com/> ;
+    oa:note "Individual system articles, each cited per entry in `oa_systems.yaml`. Unlike the political map, these name an affiliation for one system directly, so they carry no epoch of their own and no border is implied." ;
+    oa:page "Orion's Arm Encyclopaedia Galactica" .
+
+# https://dkourmyshov.github.io/oa-starmap/source/inner-sphere-table
+
+src:inner-sphere-table a prov:Entity, oa:SourceSnapshot ;
+    dcterms:title "The Stars of the Inner Sphere" ;
+    oa:locator <https://www.orionsarm.com/eg-topic/45bcbcab90032> .
+
+# https://dkourmyshov.github.io/oa-starmap/source/political-maps-8000at
+
+src:political-maps-8000at a prov:Entity, oa:SourceSnapshot ;
+    dcterms:title "Political Maps of the Middle Regions in the year 8000 A.T." ;
+    oa:epochAT 8000 ;
+    oa:locator <https://www.orionsarm.com/eg-topic/49c787abb28fd> ;
+    oa:note "Four slices of the galaxy taken parallel to its plane, with approximate borders drawn between the polities. Its value here is that it also shows real-world landmarks falling inside each polity's volume — but a landmark inside a border on a projected slice is not a claim of presence there, as the ones lying far outside the Terragen Sphere show. Depicts 8000 A.T., some 2,600 years before the setting's present, so the volumes it draws are smaller than the current ones." ;
+    oa:page "Maps of the Terragen Sphere" .

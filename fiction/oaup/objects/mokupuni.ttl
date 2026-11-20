@@ -1,0 +1,61 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Mokupuni
+
+id:world-mokupuni a oa:Place, oa:World ;
+    skos:prefLabel "Mokupuni" ;
+    oa:article <https://www.orionsarm.com/eg-article/47b8e86a2d93c> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "The third planet of HIP 101997 in Capricornus, at 47.9 ly against the article's 46.9. Given as 1.8 ly from Eden, which is not a place this map holds." ;
+    oa:uncertain false .
+
+claim:location-world-mokupuni a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47b8e86a2d93c> ;
+    oa:about id:world-mokupuni ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:distance value:location-world-mokupuni-distance ;
+    oa:hipparcosId 101997 ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+value:location-world-mokupuni-distance a oa:QuantityValue ;
+    qudt:numericValue 46.9 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-mokupuni-diamond-network a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47b8e86a2d93c> ;
+    oa:about id:world-mokupuni ;
+    oa:canonical true ;
+    oa:polity id:polity-diamond-network ;
+    oa:recordOrder 0 .
+
+claim:event-world-mokupuni-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47b8e86a2d93c> ;
+    oa:about id:world-mokupuni ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"Mokupuni was originally a small Venus-like planet, modified by Edenist dissident AIs in the 3500's as the site for their own surreal sessile cyber-biosphere.\" \"Edenist dissident AIs\" and \"Eden\" are not on the polity roster. Edenist dissident AIs, no polity of this file." ;
+    oa:precision oa:Circa ;
+    oa:recordOrder 0 ;
+    oa:yearAT 3500 .
+
+claim:event-world-mokupuni-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47b8e86a2d93c> ;
+    oa:about id:world-mokupuni ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"after nearly a thousand years of negotiations they joined the Diamond Network in 8999, one of the few worlds in the Terragen Sphere to leave the Sephirotics in order to join another metaempire.\" 'One of the few worlds in the Terragen Sphere to leave the Sephirotics' for the Network; its earlier Sephirotic affiliation is undated." ;
+    oa:polity id:polity-diamond-network ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 8999 .

@@ -1,0 +1,125 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Resonance
+
+id:world-resonance a oa:Place, oa:World ;
+    skos:prefLabel "Resonance" ;
+    oa:article <https://www.orionsarm.com/eg-article/657c8d74d4ff6> ;
+    oa:editorialNote "---- Puppis Democracy ----------------------------------------------------" ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "TRAPPIST-1, which no catalogue this map loads carries — an ultracool dwarf far below the magnitude any of them reach. No distance is given here either, so there is nothing to place it by. Recorded and not drawn." ;
+    oa:uncertain false .
+
+claim:affiliation-world-resonance-iota-network a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/657c8d74d4ff6> ;
+    oa:about id:world-resonance ;
+    oa:canonical true ;
+    oa:polity id:polity-iota-network ;
+    oa:recordOrder 0 .
+
+claim:event-world-resonance-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/657c8d74d4ff6> ;
+    oa:about id:world-resonance ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 865 .
+
+claim:event-world-resonance-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/657c8d74d4ff6> ;
+    oa:about id:world-resonance ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "\"1220 A Federation explorer ship Songs of Worlds arrived at Resonance.\"" ;
+    oa:polity id:polity-first-federation ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 1220 .
+
+claim:event-world-resonance-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/657c8d74d4ff6> ;
+    oa:about id:world-resonance ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"1408 Resonance joined the Federation, and a Federation Representative arrived.\"" ;
+    oa:polity id:polity-first-federation ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 2 ;
+    oa:yearAT 1408 .
+
+claim:event-world-resonance-004 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/657c8d74d4ff6> ;
+    oa:about id:world-resonance ;
+    oa:canonical true ;
+    oa:eventKind oa:Independent ;
+    oa:note "\"2139 News of the dissolution of the Federation of Sophonts reached Resonance, and the FedRep returned to Solsys.\" The Federation dissolved elsewhere; Resonance is left in no polity as a result. Could alternatively be read as a 'reported' entry, since the sentence is framed as news arriving rather than the dissolution itself." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 3 ;
+    oa:yearAT 2139 .
+
+claim:event-world-resonance-005 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/657c8d74d4ff6> ;
+    oa:about id:world-resonance ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"2298 Missionaries from the Conver Ambi arrived and set up a polity on Yaudel; this became known as the Sekintorof Cyborgium.\" Missionaries who set up the Sekintorof Cyborgium on Yaudel, one world of the system." ;
+    oa:polity id:polity-conver-ambi ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 4 ;
+    oa:yearAT 2298 .
+
+claim:event-world-resonance-006 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/657c8d74d4ff6> ;
+    oa:about id:world-resonance ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"2890 A wormhole link to Lucida arrived, strengthening ties to the Taurus Nexus. The DayNight Union and the Republic of Eunna became aligned with the Taurus Nexus.\" Only the DayNight Union (Remi/Fulno) and Republic of Eunna (Shinoh/Eunna) are described joining, not explicitly the whole system. An alignment rather than a joining: the wormhole to Lucida strengthened ties, and the DayNight Union and the Republic of Eunna 'became aligned' with the Nexus." ;
+    oa:polity id:polity-taurus-nexus ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 5 ;
+    oa:yearAT 2890 .
+
+claim:event-world-resonance-007 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/657c8d74d4ff6> ;
+    oa:about id:world-resonance ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"5411 The Iota Network, based in the Lucida (Iota Piscium) system and associated transapient advisers, arrived in Resonance and peacefully took control over the system, citing the ideological tension period that followed the decline of the ComEmp as the reason.\" The Network 'arrived in Resonance and peacefully took control'." ;
+    oa:polity id:polity-iota-network ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 6 ;
+    oa:yearAT 5411 .
+
+# Resonance
+
+id:inner-sphere-row-0456 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Resonance" .
+
+claim:inner-sphere-inner-sphere-row-0456-db9cec97cb66 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0456 ;
+    oa:article <https://www.orionsarm.com/eg-article/657c8d74d4ff6> ;
+    oa:canonical true ;
+    oa:colonyName "Resonance" ;
+    oa:luminositySol "0.000522" ;
+    oa:massSol "0.089" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 455 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0456-db9cec97cb66-source-distance ;
+    oa:spectralType "M8 V" ;
+    oa:starName "TRAPPIST-1" .
+
+value:inner-sphere-inner-sphere-row-0456-db9cec97cb66-source-distance a oa:QuantityValue ;
+    qudt:numericValue 40.662 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

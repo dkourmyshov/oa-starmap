@@ -1,0 +1,74 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Mandra Quin'Si
+
+id:world-mandra-quin-si a oa:Place, oa:World ;
+    skos:prefLabel "Mandra Quin'Si" ;
+    oa:article <https://www.orionsarm.com/eg-article/4b72eb926b584> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Gliese 673, as the colony table has it." ;
+    oa:systemName "Mandra Quin'Si" ;
+    oa:uncertain false .
+
+claim:location-world-mandra-quin-si a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4b72eb926b584> ;
+    oa:about id:world-mandra-quin-si ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Gliese 673" .
+
+claim:event-world-mandra-quin-si-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4b72eb926b584> ;
+    oa:about id:world-mandra-quin-si ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"Reached 1610\" Followed by terraforming and settlement by the megacorps K4H and TakiCorb, neither on the roster; see unplaced. By the megacorporations K4H and TakiCorb, no polities of this file." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 1610 .
+
+claim:event-world-mandra-quin-si-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4b72eb926b584> ;
+    oa:about id:world-mandra-quin-si ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"In 2446 the Tsutari Ambastory , a religious confederation drawn from the habitats across the system, overthrew the Quasa'an dynasty, bringing the era of tyranny to an end.\" A revolution rather than a joining: the Ambastory overthrew the Quasa'an dynasty's Terrorlords." ;
+    oa:polity id:polity-tsutari-ambastory ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 2446 .
+
+# Mandra Quin'Si
+
+id:inner-sphere-row-0205 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Mandra Quin'Si" .
+
+claim:inner-sphere-inner-sphere-row-0205-48329f6b5a2d a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0205 ;
+    oa:article <https://www.orionsarm.com/eg-article/4b72eb926b584> ;
+    oa:canonical true ;
+    oa:colonyName "Mandra Quin'Si" ;
+    oa:luminositySol "0.103" ;
+    oa:massSol "0.679" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 204 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0205-48329f6b5a2d-source-distance ;
+    oa:spectralType "K7 V" ;
+    oa:starName "Gliese 673" .
+
+value:inner-sphere-inner-sphere-row-0205-48329f6b5a2d-source-distance a oa:QuantityValue ;
+    qudt:numericValue 25.157 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

@@ -1,0 +1,33 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Baryos
+
+id:world-baryos a oa:Place, oa:World ;
+    skos:prefLabel "Baryos" ;
+    oa:article <https://www.orionsarm.com/eg-article/4609ca397f2c4> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Out along the Carina Rush at 6,514 ly, nearly three times further than the wormhole mouth at its near end. The Rush is a route and not a direction, so the constellation carries what direction there is." ;
+    oa:uncertain false .
+
+claim:location-world-baryos a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4609ca397f2c4> ;
+    oa:about id:world-baryos ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:constellationName "Carina" ;
+    oa:distance value:location-world-baryos-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+value:location-world-baryos-distance a oa:QuantityValue ;
+    qudt:numericValue 6514.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

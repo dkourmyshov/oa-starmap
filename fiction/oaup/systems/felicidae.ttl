@@ -1,0 +1,82 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Felicidade Dyson
+
+id:world-felicidade-dyson a oa:Place, oa:World ;
+    skos:prefLabel "Felicidade Dyson" ;
+    oa:article <https://www.orionsarm.com/eg-article/49024b4de8dac> ;
+    oa:kind "megastructure" ;
+    oa:labelsSystem false ;
+    oa:note "18 Scorpii, and the catalogue agrees with the article to two decimals at 46.11 ly. Held by four meta-empires at once." ;
+    oa:systemName "Felicidae" ;
+    oa:uncertain false .
+
+claim:location-world-felicidade-dyson a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/49024b4de8dac> ;
+    oa:about id:world-felicidade-dyson ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:distance value:location-world-felicidade-dyson-distance ;
+    oa:hdId 146233 ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+value:location-world-felicidade-dyson-distance a oa:QuantityValue ;
+    qudt:numericValue 46.11 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-felicidade-dyson-cyberian-network a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/49024b4de8dac> ;
+    oa:about id:world-felicidade-dyson ;
+    oa:canonical true ;
+    oa:polity id:polity-cyberian-network ;
+    oa:recordOrder 0 .
+
+claim:affiliation-world-felicidade-dyson-mutual-progress-association a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/49024b4de8dac> ;
+    oa:about id:world-felicidade-dyson ;
+    oa:canonical true ;
+    oa:polity id:polity-mutual-progress-association ;
+    oa:recordOrder 3 .
+
+claim:affiliation-world-felicidade-dyson-negentropy-alliance a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/49024b4de8dac> ;
+    oa:about id:world-felicidade-dyson ;
+    oa:canonical true ;
+    oa:polity id:polity-negentropy-alliance ;
+    oa:recordOrder 2 .
+
+claim:affiliation-world-felicidade-dyson-zoeific-biopolity a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/49024b4de8dac> ;
+    oa:about id:world-felicidade-dyson ;
+    oa:canonical true ;
+    oa:polity id:polity-zoeific-biopolity ;
+    oa:recordOrder 1 .
+
+claim:event-world-felicidade-dyson-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/49024b4de8dac> ;
+    oa:about id:world-felicidade-dyson ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 1704 .
+
+claim:event-world-felicidade-dyson-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/49024b4de8dac> ;
+    oa:about id:world-felicidade-dyson ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"allowing them to assume control of the system when the Negentropy Alliance declared war on the MPA in 4498\" The Alliance assumed control on declaring war on the MPA." ;
+    oa:polity id:polity-negentropy-alliance ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 4498 .

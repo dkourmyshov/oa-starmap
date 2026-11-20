@@ -1,0 +1,50 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Rengood
+
+id:world-rengood a oa:Place, oa:World ;
+    skos:prefLabel "Rengood" ;
+    oa:article <https://www.orionsarm.com/eg-article/591dcfb1235e6> ;
+    oa:editorialNote "---- Keter Dominion -----------------------------------------------------\n\nTwo of Keter's places are clusters rather than worlds and live in\nlandmarks.yaml instead: Aleph Absolute is Collinder 359, and the Enigma\nCluster is NGC 6755." ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "In Aquila. The catalogue puts HD 193275 at 207 ly against the article's 195. \"Attacked and subdued by the Negentropist Fifth Fleet in 4471 AT\", a Version War action the article does not follow with a change of holder, so it is not entered as one; the readings keep it." ;
+    oa:uncertain false .
+
+claim:location-world-rengood a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/591dcfb1235e6> ;
+    oa:about id:world-rengood ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:distance value:location-world-rengood-distance ;
+    oa:hdId 193275 ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+value:location-world-rengood-distance a oa:QuantityValue ;
+    qudt:numericValue 195.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-rengood-cyberian-network a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/591dcfb1235e6> ;
+    oa:about id:world-rengood ;
+    oa:canonical true ;
+    oa:polity id:polity-cyberian-network ;
+    oa:recordOrder 0 .
+
+claim:event-world-rengood-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/591dcfb1235e6> ;
+    oa:about id:world-rengood ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 2681 .

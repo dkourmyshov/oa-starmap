@@ -1,0 +1,35 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# Ross 614
+
+id:world-ross-614 a oa:Place, oa:World ;
+    skos:prefLabel "Ross 614" ;
+    oa:article <https://www.orionsarm.com/eg-article/4ba1f99323bf1> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Ross 614 A, as the colony table has it." ;
+    oa:systemName "Ross 614" ;
+    oa:uncertain false .
+
+claim:location-world-ross-614 a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4ba1f99323bf1> ;
+    oa:about id:world-ross-614 ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Ross 614 A" .
+
+claim:event-world-ross-614-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4ba1f99323bf1> ;
+    oa:about id:world-ross-614 ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"Colonised Approximately 750 AT\" Colonised by the non-human aioids later identified as the PackRat Spores, not on the roster; see unplaced. By the PackRat Spores, no polity of this file." ;
+    oa:precision oa:Circa ;
+    oa:recordOrder 0 ;
+    oa:yearAT 750 .

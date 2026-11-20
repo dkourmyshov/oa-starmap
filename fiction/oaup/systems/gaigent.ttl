@@ -1,0 +1,35 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# Gaigent
+
+id:world-gaigent a oa:Place, oa:World ;
+    skos:prefLabel "Gaigent" ;
+    oa:article <https://www.orionsarm.com/eg-article/4e27f79396fda> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "HD 4628, as the colony table has it." ;
+    oa:systemName "Gaigent" ;
+    oa:uncertain false .
+
+claim:location-world-gaigent a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4e27f79396fda> ;
+    oa:about id:world-gaigent ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "HD 4628" .
+
+claim:event-world-gaigent-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4e27f79396fda> ;
+    oa:about id:world-gaigent ;
+    oa:canonical true ;
+    oa:eventKind oa:Observed ;
+    oa:note "\"As early as the 9th century A.T an atypical radiation signature from the system was detected.\" At the time interpreted as Diamond Belt megastructure construction, an interpretation the article does not confirm; polity left blank. Diamond Belt is not on the roster, see unplaced. The radiation signature that led to the system being noticed; the article names no observer." ;
+    oa:precision oa:NotLaterThan ;
+    oa:recordOrder 0 ;
+    oa:yearAT 900 .

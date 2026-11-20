@@ -1,0 +1,70 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Proden
+
+id:world-proden a oa:Place, oa:World ;
+    skos:prefLabel "Proden" ;
+    oa:article <https://www.orionsarm.com/eg-article/4703bd784536b> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "One of two places the project owner names as Metasoft volumes caught up in the Teleological Tendency's part of the Second Vec War; the other is the Triplet Cluster.\nNot in that cluster, which was worth asking while this had no direction: the ranges are close, 2,200 against 2,022, and the two share a war. The constellation answers it. The Triplet Cluster is in Taurus and this is in Gemini, so they are neighbours on the sky and not the same place.\nThe article also has it \"connected to the Wormhole Nexus in 6700\", which no event kind here records -- a gate opening is not a settling, a transfer or a contact -- so it is written down rather than dated.\nWas a distance and no direction, so the article fixed how far away it is and nothing else. Recorded and not drawn." ;
+    oa:uncertain false .
+
+claim:location-world-proden a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4703bd784536b> ;
+    oa:about id:world-proden ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:constellationName "Gemini" ;
+    oa:distance value:location-world-proden-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:note "The distance is this world's own article, \"an important Metasoft world, 2,200 ly from Sol\"; the constellation is another article, which the project owner supplies and this map had not read. Together they are a cone, which is all either states, and it is enough to draw.\nIt sits where a Metasoft world should: the add-on writes two Metasoft extent labels in Gemini, at 2,000 and 2,467 ly, and this falls between them." .
+
+value:location-world-proden-distance a oa:QuantityValue ;
+    qudt:numericValue 2200.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-proden-metasoft a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4703bd784536b> ;
+    oa:about id:world-proden ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft ;
+    oa:recordOrder 0 .
+
+claim:event-world-proden-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4703bd784536b> ;
+    oa:about id:world-proden ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 6307 .
+
+claim:event-world-proden-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4703bd784536b> ;
+    oa:about id:world-proden ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"This world was invaded by the Teleological Tendency in 6803, and the wormholes were subverted by that faction;\" Teleological Tendency is not on the roster; see unplaced. Recorded as transferred because control of the system's wormholes actually changed hands, not merely a battle. The Teleological Tendency, a Metasoft faction, no polity of this file." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 6803 .
+
+claim:event-world-proden-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4703bd784536b> ;
+    oa:about id:world-proden ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"the Standardists regained control of the system in 6915, but the war continued to be fought in the outer volumes (beyond the reach of the Wormhole Nexus) for at least two hundred years more.\" Standardists is not on the roster; see unplaced. The Standardists, plausibly Metasoft's mainstream, which the article does not say; the war went on in the outer volumes." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 2 ;
+    oa:yearAT 6915 .

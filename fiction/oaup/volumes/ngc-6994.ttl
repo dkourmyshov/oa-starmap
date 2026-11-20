@@ -1,0 +1,40 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# NGC 6994
+
+id:world-ngc-6994 a oa:Place, oa:World ;
+    skos:altLabel "Prediction Cluster" ;
+    skos:prefLabel "NGC 6994" ;
+    oa:kind "volume" ;
+    oa:labelsSystem false ;
+    oa:note "Where the Oracle War ended: \"10591 - The Prediction Cluster is captured; the Sibyl vanishes. End of the Oracle War.\"" ;
+    oa:uncertain false .
+
+claim:location-world-ngc-6994 a prov:Entity, oa:LocationClaim ;
+    oa:about id:world-ngc-6994 ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -12.633 ;
+    oa:distance value:location-world-ngc-6994-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:note "Given as NGC 6994 by OAEMPIRES.dsc's southern companion, one of the Orion's Arm Celestia add-ons' location catalogues (OAAddons9, OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv). Placed from the add-on's own figures rather than from a catalogue, because NGC 6994 is not in the open-cluster catalogue this map builds its clusters from, while NGC 6755 beside it is -- so there is nothing here to bind to. See questions.md." ;
+    oa:rightAscensionDeg 314.729 .
+
+value:location-world-ngc-6994-distance a oa:QuantityValue ;
+    qudt:numericValue 2021.2 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-ngc-6994-oracle-machines a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:world-ngc-6994 ;
+    oa:canonical true ;
+    oa:polity id:polity-oracle-machines ;
+    oa:recordOrder 0 .

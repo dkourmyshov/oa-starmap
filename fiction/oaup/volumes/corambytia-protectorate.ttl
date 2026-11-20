@@ -1,0 +1,68 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Corambytia Protectorate
+
+id:world-corambytia-protectorate a oa:Place, oa:World ;
+    skos:prefLabel "Corambytia Protectorate" ;
+    oa:article <https://www.orionsarm.com/eg-article/46412ddb422d6> ;
+    oa:extent value:world-corambytia-protectorate-extent ;
+    oa:kind "polity_marker" ;
+    oa:labelsSystem false ;
+    oa:note "A volume, not a point. Antlia's enclosing radius is 13 degrees, so at this distance the direction is uncertain by about 350 ly — more than the protectorate's own 290 ly diameter. The sphere drawn for it is the right size in the wrong place, and the uncertainty circle is the honest part." ;
+    oa:uncertain false .
+
+value:world-corambytia-protectorate-extent a oa:QuantityValue ;
+    qudt:numericValue 290.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:location-world-corambytia-protectorate a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46412ddb422d6> ;
+    oa:about id:world-corambytia-protectorate ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -39.512 ;
+    oa:distance value:location-world-corambytia-protectorate-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:note "Was Antlia and a distance. The direction is the entry oaloc4.dsc spells \"Coryambytia Protectorate\", one of the Orion's Arm Celestia add-ons' location catalogues (OAAddons9, OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv), and it falls in Antlia by the IAU boundaries, agreeing with the article. The add-on's 1,592 ly against the article's 1,500 is 6%, and the article's is kept." ;
+    oa:rightAscensionDeg 165.021 .
+
+value:location-world-corambytia-protectorate-distance a oa:QuantityValue ;
+    qudt:numericValue 1500.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-corambytia-protectorate-caretaker-gods a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46412ddb422d6> ;
+    oa:about id:world-corambytia-protectorate ;
+    oa:canonical true ;
+    oa:polity id:polity-caretaker-gods ;
+    oa:recordOrder 0 .
+
+claim:event-world-corambytia-protectorate-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46412ddb422d6> ;
+    oa:about id:world-corambytia-protectorate ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "First colonised by a Non-Coercive Zone house." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 4678 .
+
+claim:event-world-corambytia-protectorate-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46412ddb422d6> ;
+    oa:about id:world-corambytia-protectorate ;
+    oa:canonical true ;
+    oa:eventKind oa:Stewardship ;
+    oa:note "The Caretaker God revealed emself, a year after the house arrived." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 4679 .

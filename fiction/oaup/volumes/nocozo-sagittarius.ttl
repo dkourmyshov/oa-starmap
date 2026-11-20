@@ -1,0 +1,39 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# NoCoZo (Sagittarius)
+
+id:world-nocozo-sagittarius a oa:Place, oa:World ;
+    skos:prefLabel "NoCoZo (Sagittarius)" ;
+    oa:kind "polity_extent" ;
+    oa:labelsSystem false ;
+    oa:note "Named for Sagittarius, where it falls, after the four from the empire catalogues -- Vela, Centaurus, Triangulum Australe and Puppis." ;
+    oa:uncertain false .
+
+claim:location-world-nocozo-sagittarius a prov:Entity, oa:LocationClaim ;
+    oa:about id:world-nocozo-sagittarius ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -34.8 ;
+    oa:distance value:location-world-nocozo-sagittarius-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:note "Labelled SAGITTARIUS NOCOZO in oalocations3.dsc, one of the Orion's Arm Celestia add-ons' location catalogues (OAAddons9, OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv). The fifth label the add-ons write for the Non-Coercive Zone and the only one outside the two empire catalogues, which is why it was not found with the other four." ;
+    oa:rightAscensionDeg 277.5 .
+
+value:location-world-nocozo-sagittarius-distance a oa:QuantityValue ;
+    qudt:numericValue 2240.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-nocozo-sagittarius-nocozo a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:world-nocozo-sagittarius ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 0 .

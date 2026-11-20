@@ -1,0 +1,66 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# The Mensan Way
+
+id:world-the-mensan-way a oa:Place, oa:World ;
+    skos:altLabel "Mensa Federation" ;
+    skos:prefLabel "The Mensan Way" ;
+    oa:article <https://www.orionsarm.com/eg-article/63388e9642e8c> ;
+    oa:extent value:world-the-mensan-way-extent ;
+    oa:kind "polity_marker" ;
+    oa:labelsSystem false ;
+    oa:note "168 systems across 96 ly, and an affiliate of the Disarchy, which is a loose confederation rather than an empire. The sheet labels it \"Mensa Federation\", which is taken to be this." ;
+    oa:uncertain false .
+
+value:world-the-mensan-way-extent a oa:QuantityValue ;
+    qudt:numericValue 96.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:location-world-the-mensan-way a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/63388e9642e8c> ;
+    oa:about id:world-the-mensan-way ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -62.8136 ;
+    oa:derivation "The direction is interpolated from the transcription of Anders Sandberg's maps; the distance is the article's own. It gives 2,838 to 2,946 ly, and this is the midpoint — so the radius is good to about 50 ly where the direction is good to nothing like that, and the distance error here reflects the article rather than the sheet.\nThe two agree remarkably: the sheet put this at 2,886 ly with an 800 ly uncertainty, and the article's midpoint is 2,892. Six light years apart is the closest the sheet has come to anything, and it is luck rather than precision — but it is the sort of luck that only happens when a method is working." ;
+    oa:directionErrorDeg 30.0 ;
+    oa:distance value:location-world-the-mensan-way-distance ;
+    oa:distanceError value:location-world-the-mensan-way-distance-error ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:EditorialEstimate ;
+    oa:rightAscensionDeg 196.9083 .
+
+value:location-world-the-mensan-way-distance a oa:QuantityValue ;
+    qudt:numericValue 2892.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+value:location-world-the-mensan-way-distance-error a oa:QuantityValue ;
+    qudt:numericValue 100.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-the-mensan-way-disarchy a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/63388e9642e8c> ;
+    oa:about id:world-the-mensan-way ;
+    oa:canonical true ;
+    oa:polity id:polity-disarchy ;
+    oa:recordOrder 0 .
+
+claim:event-world-the-mensan-way-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/63388e9642e8c> ;
+    oa:about id:world-the-mensan-way ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "Founded." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 6797 .

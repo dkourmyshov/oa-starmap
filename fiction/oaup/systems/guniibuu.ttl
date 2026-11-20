@@ -1,0 +1,55 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Guniibuu
+
+id:inner-sphere-row-0121 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Guniibuu" .
+
+claim:inner-sphere-inner-sphere-row-0121-469aa7f03f18 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0121 ;
+    oa:canonical true ;
+    oa:colonyName "Guniibuu" ;
+    oa:luminositySol "0.291" ;
+    oa:massSol "0.77" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 120 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0121-469aa7f03f18-source-distance ;
+    oa:spectralType "K1 Ve" ;
+    oa:starName "36 Ophiuchi A" .
+
+value:inner-sphere-inner-sphere-row-0121-469aa7f03f18-source-distance a oa:QuantityValue ;
+    qudt:numericValue 19.399 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Guniibuu
+
+id:inner-sphere-row-0122 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Guniibuu" .
+
+claim:inner-sphere-inner-sphere-row-0122-209a3a426c84 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0122 ;
+    oa:canonical true ;
+    oa:colonyName "Guniibuu" ;
+    oa:luminositySol "0.28" ;
+    oa:massSol "0.76" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 121 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0122-209a3a426c84-source-distance ;
+    oa:spectralType "K1 Ve" ;
+    oa:starName "36 Ophiuchi B" .
+
+value:inner-sphere-inner-sphere-row-0122-209a3a426c84-source-distance a oa:QuantityValue ;
+    qudt:numericValue 19.399 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

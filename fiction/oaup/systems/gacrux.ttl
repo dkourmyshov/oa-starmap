@@ -1,0 +1,97 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Gacrux
+
+id:world-gacrux a oa:Place, oa:World ;
+    skos:prefLabel "Gacrux" ;
+    oa:article <https://www.orionsarm.com/eg-article/58737c8c90cd6> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "An animin presence. The local civilisation is loosely associated with the Non-Coercive Zone and closely with the Disarchy, so both are recorded." ;
+    oa:systemName "Gacrux" ;
+    oa:uncertain false .
+
+claim:location-world-gacrux a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/58737c8c90cd6> ;
+    oa:about id:world-gacrux ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Gamma Crucis" .
+
+claim:affiliation-world-gacrux-disarchy a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/58737c8c90cd6> ;
+    oa:about id:world-gacrux ;
+    oa:canonical true ;
+    oa:polity id:polity-disarchy ;
+    oa:recordOrder 1 .
+
+claim:affiliation-world-gacrux-nocozo a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/58737c8c90cd6> ;
+    oa:about id:world-gacrux ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 0 .
+
+claim:event-world-gacrux-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/58737c8c90cd6> ;
+    oa:about id:world-gacrux ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "Reached." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 1738 .
+
+claim:event-world-gacrux-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/58737c8c90cd6> ;
+    oa:about id:world-gacrux ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "\"A K4H exploration-class vessel arrived in 2310, and found that the probeship AI had apparently transcended into a S:1 animin entity, which did not respond directly to their efforts to establish contact.\" K4H reads as a vessel-class designation, not a named polity; no holder recorded. A K4H exploration vessel, finding the probe's AI transcended into the Breather." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 2310 .
+
+claim:event-world-gacrux-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/58737c8c90cd6> ;
+    oa:about id:world-gacrux ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"After a period of assessment, and because the Breather entity did not impede their investigations in any way, the torus was declared safe for colonisation in 2340.\" No settling polity is named for this colonisation. The torus declared safe for colonisation; no polity named." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 2 ;
+    oa:yearAT 2340 .
+
+# Gacrux
+
+id:inner-sphere-row-1003 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Gacrux" .
+
+claim:inner-sphere-inner-sphere-row-1003-6013f1fa95aa a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-1003 ;
+    oa:article <https://www.orionsarm.com/eg-article/58737c8c90cd6> ;
+    oa:canonical true ;
+    oa:colonyName "Gacrux" ;
+    oa:luminositySol "140" ;
+    oa:massSol "3" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 1002 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-1003-6013f1fa95aa-source-distance ;
+    oa:spectralType "M3.5 III" ;
+    oa:starName "Gamma Crucis" .
+
+value:inner-sphere-inner-sphere-row-1003-6013f1fa95aa-source-distance a oa:QuantityValue ;
+    qudt:numericValue 88.56 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

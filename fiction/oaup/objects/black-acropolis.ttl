@@ -1,0 +1,82 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Black Acropolis
+
+id:world-black-acropolis a oa:Place, oa:World ;
+    skos:prefLabel "Black Acropolis" ;
+    oa:article <https://www.orionsarm.com/eg-article/48000db9a9c2f> ;
+    oa:editorialNote "---- Solsys Organization -------------------------------------------------\n\nThe nearest roster in the file: three systems inside 11 ly. Sol itself is\nalready here as Earth." ;
+    oa:kind "megastructure" ;
+    oa:labelsSystem false ;
+    oa:note "A dyson swarm of xenosophont origin, in Ophiuchus at 1,530 ly — near the Serpens Reach without being of it: 124 ly from the Sparks, 268 from Vinculum, 312 from Miracle City. Nobody terragen built it, so the affiliation records what made it rather than who holds it." ;
+    oa:uncertain false .
+
+claim:location-world-black-acropolis a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48000db9a9c2f> ;
+    oa:about id:world-black-acropolis ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg 9.8 ;
+    oa:distance value:location-world-black-acropolis-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:rightAscensionDeg 281.25 .
+
+value:location-world-black-acropolis-distance a oa:QuantityValue ;
+    qudt:numericValue 1530.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-black-acropolis-xenosophont a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48000db9a9c2f> ;
+    oa:about id:world-black-acropolis ;
+    oa:canonical true ;
+    oa:polity id:polity-xenosophont ;
+    oa:recordOrder 0 .
+
+claim:event-world-black-acropolis-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48000db9a9c2f> ;
+    oa:about id:world-black-acropolis ;
+    oa:canonical true ;
+    oa:eventKind oa:Contact ;
+    oa:note "Reached by Terragens." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 4701 .
+
+claim:event-world-black-acropolis-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48000db9a9c2f> ;
+    oa:about id:world-black-acropolis ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"4701 AT - A clade of heterodox dolphin colonists from Hwii arrive at the Black Acropolis habitats, fleeing the rigidity and conservatism of Okeanism.\" Header records this year under kind 'contact', but this sentence describes Terragen dolphin colonists arriving and settling, not contact with the Ultimates; see the 4723 entry. Dolphin colonists from Hwii; the map's older 'contact 4701' is this arrival, and the article dates the contact with the Ultimates to 4723.\nHwii's own article dates their departure: \"In 2301 the visionary dolph Strange Diver led an exodus far across space to the Black Acropolis, where they formed the hybrid Gerkletoss culture with humans and the xenosophont Ultimates.\" The two dates look like a contradiction and are not one. This map places Hwii on its catalogue star and the Black Acropolis from its article, 1,533 ly apart; 2301 to 4701 is 2,400 years, so the crossing runs at 0.64 c. Departure and arrival, and a relativistic ship between them." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 4701 .
+
+claim:event-world-black-acropolis-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48000db9a9c2f> ;
+    oa:about id:world-black-acropolis ;
+    oa:canonical true ;
+    oa:eventKind oa:Contact ;
+    oa:note "\"4723 - They are joined by an expedition of Space Adapted Humans. The Dolphins and SAH contact the Ultimates.\" This is the article's actual first-contact date with the Ultimates (a resident xenosophont species); it differs from the header's 'contact 4701'." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 2 ;
+    oa:yearAT 4723 .
+
+claim:event-world-black-acropolis-004 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48000db9a9c2f> ;
+    oa:about id:world-black-acropolis ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"After several decades of conflict between each other and with the Ultimates, they formed the hybrid Gerkletoss civilisation in the 4900s.\" Local hybrid civilisation (dolphins, humans, Ultimates), not on the roster. It is unclear whether this is the same polity as the separately-mentioned 'Gerkletoss system' (see doubts). The hybrid Gerkletoss civilisation of dolphins, humans and Ultimates, local." ;
+    oa:precision oa:Circa ;
+    oa:recordOrder 3 ;
+    oa:yearAT 4900 .

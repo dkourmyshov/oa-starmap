@@ -1,0 +1,145 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Ao Lai
+
+id:world-ao-lai a oa:Place, oa:World ;
+    skos:prefLabel "Ao Lai" ;
+    oa:article <https://www.orionsarm.com/eg-article/4871520aab6c2> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "The system takes in both components of Gamma Leporis, 29 ly out. Bound to B because that is the one the add-on carries — the real star catalogue here has only A — so the marker sits on the companion while the system is both. Held by the Primate Provolution Institute: small, independent, and not one of the empires. The add-on's own file for this system names three Earth-like worlds around B — Hope, Faith and Charity — which is finer than this map goes." ;
+    oa:uncertain false .
+
+claim:location-world-ao-lai a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4871520aab6c2> ;
+    oa:about id:world-ao-lai ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:oaStarName "Gamma Leporis B:13 Lep B:HD 38392" .
+
+claim:affiliation-world-ao-lai-primate-provolution-institute a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4871520aab6c2> ;
+    oa:about id:world-ao-lai ;
+    oa:canonical true ;
+    oa:polity id:polity-primate-provolution-institute ;
+    oa:recordOrder 0 .
+
+claim:event-world-ao-lai-001 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-ao-lai ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "Exodus Beneficents arrive at Gamma Leporis and begin extensive development in both systems." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:sourceDescription "Encyclopaedia timeline, The Early Federation Age" ;
+    oa:yearAT 933 .
+
+claim:event-world-ao-lai-002 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-ao-lai ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "First Federation ship arrives at Gamma Leporis ." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:sourceDescription "Encyclopaedia timeline, The Early Federation Age" ;
+    oa:yearAT 1166 .
+
+claim:event-world-ao-lai-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4871520aab6c2> ;
+    oa:about id:world-ao-lai ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"Ao Lai was first settled by the famous Exodus Beneficents in 868 AT.\" Beneficence/Exodus Beneficents not on roster; see unplaced. This date contradicts the article's own timeline, which gives 933 AT for the same arrival (see contradictions). The article's own timeline has the Exodus Beneficents arriving in 933, which the map already carries as a visit; both are kept." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 2 ;
+    oa:yearAT 868 .
+
+claim:event-world-ao-lai-004 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4871520aab6c2> ;
+    oa:about id:world-ao-lai ;
+    oa:canonical true ;
+    oa:eventKind oa:Abandoned ;
+    oa:note "\"development continued apace until their spectacular and near- miraculous technorapture (or, as some hardened sceptics have it, hoax and mass murder) in 2052 AT.\" The technorapture is described as the wholesale departure of the Beneficents; whether this counts as 'everyone left' is left to the reviewer. The Beneficents' technorapture, 'or, as some hardened sceptics have it, hoax and mass murder'." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 3 ;
+    oa:yearAT 2052 .
+
+claim:event-world-ao-lai-005 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4871520aab6c2> ;
+    oa:about id:world-ao-lai ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"2252 AT: New Beneficence re-colonizes vacant systems at Gamma Leporis\" New Beneficence not on roster; see unplaced. Body text names the leader: 'Many regard \"year zero\" of the system's history to have begun with the arrival of Ukarima Lovejoy's small band of New Beneficence believers in 2252 AT'. The New Beneficence, no polity of this file." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 4 ;
+    oa:yearAT 2252 .
+
+claim:event-world-ao-lai-006 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4871520aab6c2> ;
+    oa:about id:world-ao-lai ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"2271 AT: IPP leases space at Gamma Leporis B from the New Beneficence; commences planet-building\" Institute for Primate Provolution (IPP) not on roster; see unplaced. The Institute for Primate Provolution leasing space at Gamma Leporis B and commencing planet-building." ;
+    oa:polity id:polity-primate-provolution-institute ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 5 ;
+    oa:yearAT 2271 .
+
+claim:event-world-ao-lai-007 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4871520aab6c2> ;
+    oa:about id:world-ao-lai ;
+    oa:canonical true ;
+    oa:eventKind oa:Capital ;
+    oa:note "\"7040 AT: Migration of IPP headquarters to holdings at Gamma Leporis (later named Ao Lai)\" IPP not on roster; see unplaced. Matches 'IPP headquarters since 7040' in the government box. The Institute's headquarters migrating to its holdings here, later named Ao Lai." ;
+    oa:polity id:polity-primate-provolution-institute ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 6 ;
+    oa:yearAT 7040 .
+
+# Gamma Leporis B:13 Lep B:HD 38392
+
+id:star-gamma-leporis-b-13-lep-b-hd-38392 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "Gamma Leporis B:13 Lep B:HD 38392" ;
+    oa:sourceName "Gamma Leporis B:13 Lep B:HD 38392" .
+
+claim:celestia-star-gamma-leporis-b-13-lep-b-hd-38392-438c703a3470 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-gamma-leporis-b-13-lep-b-hd-38392 ;
+    oa:canonical true ;
+    oa:declinationDeg -22.42175 ;
+    oa:distance value:celestia-star-gamma-leporis-b-13-lep-b-hd-38392-438c703a3470-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 86.1105 ;
+    oa:sourceArchive "OAAddons5.zip" ;
+    oa:sourceFile "gammaleporisb.stc" ;
+    oa:spectralType "K5V" .
+
+value:celestia-star-gamma-leporis-b-13-lep-b-hd-38392-438c703a3470-distance a oa:QuantityValue ;
+    qudt:numericValue 29.25527 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-star-gamma-leporis-b-13-lep-b-hd-38392-primate-provolution-institute a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4871520aab6c2> ;
+    oa:about id:star-gamma-leporis-b-13-lep-b-hd-38392 ;
+    oa:canonical true ;
+    oa:polity id:polity-primate-provolution-institute .
+
+claim:curation-star-gamma-leporis-b-13-lep-b-hd-38392 a prov:Entity, oa:SystemCuration ;
+    oa:about id:star-gamma-leporis-b-13-lep-b-hd-38392 ;
+    oa:article <https://www.orionsarm.com/eg-article/4871520aab6c2> ;
+    oa:editorialLabel "Ao Lai" ;
+    oa:hidden false ;
+    oa:note "The Ao Lai system takes in both components of Gamma Leporis. The add-on carries B because the real star catalogue this map draws from has only A. The .stc entry gives no comment and no affiliation, and neither does the system's .ssc file; the holder is from the article." ;
+    oa:realObjectIdentity "Gamma Leporis B, also 13 Leporis B and HD 38392" ;
+    oa:uncertain false .

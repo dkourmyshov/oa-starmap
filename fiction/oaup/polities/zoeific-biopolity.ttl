@@ -1,0 +1,18 @@
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+
+# Zoeific Biopolity
+
+id:polity-zoeific-biopolity a oa:Polity ;
+    skos:prefLabel "Zoeific Biopolity" ;
+    oa:ambiguousName false ;
+    oa:color "#AED581" ;
+    oa:editorialNote "Its own page, saved under sources/polities: \"In 1874 a.t., a beautiful posthuman biont avatar called Zoe\nappeared in Hibbert Orbital, Cis-Jove\" and took over the Association of\nall Life, which \"by the Age of Establishment (2600 to 3200 AT)\" was \"now\ncalled the Zoeific Biopolity\". The page gives no founding year as such;\nZoe's appearance is taken as the defining moment, on the project owner's\nreading, and the timeline has the same line at 1874." ;
+    oa:foundedAT 1874 ;
+    oa:hasSource src:eg-system-articles ;
+    oa:kind "meta-empire" ;
+    oa:polityId "zoeific-biopolity" ;
+    oa:recordOrder 20 ;
+    oa:uncertain false .

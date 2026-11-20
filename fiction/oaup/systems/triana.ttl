@@ -1,0 +1,66 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Triana
+
+id:world-triana a oa:Place, oa:World ;
+    skos:prefLabel "Triana" ;
+    oa:article <https://www.orionsarm.com/eg-article/47a6854131a39> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "In Piscis Austrinus at 762 ly." ;
+    oa:systemName "Triana" ;
+    oa:uncertain false .
+
+claim:location-world-triana a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47a6854131a39> ;
+    oa:about id:world-triana ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:constellationName "Piscis Austrinus" ;
+    oa:distance value:location-world-triana-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+value:location-world-triana-distance a oa:QuantityValue ;
+    qudt:numericValue 762.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:event-world-triana-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47a6854131a39> ;
+    oa:about id:world-triana ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "Reached." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 3219 .
+
+claim:event-world-triana-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47a6854131a39> ;
+    oa:about id:world-triana ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "\"Reached: 3219 AT\"" ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 3219 .
+
+# Tytalus
+
+id:world-tytalus a oa:Place, oa:World ;
+    skos:prefLabel "Tytalus" ;
+    oa:article <https://www.orionsarm.com/eg-article/47a6854131a39> ;
+    oa:editorialNote "---- the alphabetical sweep, U-Z -----------------------------------------" ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "The world of Triana." ;
+    oa:systemName "Triana" ;
+    oa:uncertain false .

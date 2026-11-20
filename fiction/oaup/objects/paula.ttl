@@ -1,0 +1,62 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Paula
+
+id:world-paula a oa:Place, oa:World ;
+    skos:prefLabel "Paula" ;
+    oa:article <https://www.orionsarm.com/eg-article/47bcf69611bd9> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "Home of the Paulans, and the one xenosophont species here protected by an ordinary empire instead of a Caretaker God. Given as 2,107 ly out near 9 Geminorum; that star is at 5,966 ly, so only its direction is used." ;
+    oa:uncertain false .
+
+claim:location-world-paula a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47bcf69611bd9> ;
+    oa:about id:world-paula ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg 23.7409 ;
+    oa:distance value:location-world-paula-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:nearName "9 Geminorum" ;
+    oa:rightAscensionDeg 94.2446 .
+
+value:location-world-paula-distance a oa:QuantityValue ;
+    qudt:numericValue 2107.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-paula-metasoft a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47bcf69611bd9> ;
+    oa:about id:world-paula ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft ;
+    oa:recordOrder 0 .
+
+claim:event-world-paula-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47bcf69611bd9> ;
+    oa:about id:world-paula ;
+    oa:canonical true ;
+    oa:eventKind oa:Contact ;
+    oa:note "The Paulans found." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 5809 .
+
+claim:event-world-paula-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47bcf69611bd9> ;
+    oa:about id:world-paula ;
+    oa:canonical true ;
+    oa:eventKind oa:Stewardship ;
+    oa:note "Taken under Metasoft's protection rather than a Caretaker God's." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 5809 .

@@ -1,0 +1,33 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Helvetios
+
+id:inner-sphere-row-0615 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Helvetios" .
+
+claim:inner-sphere-inner-sphere-row-0615-bc22af63fc20 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0615 ;
+    oa:article <https://www.orionsarm.com/eg-article/48fa6d92aedba> ;
+    oa:canonical true ;
+    oa:colonyName "Helvetios" ;
+    oa:luminositySol "1.33" ;
+    oa:massSol "1.1" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 614 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0615-bc22af63fc20-source-distance ;
+    oa:spectralType "G2 IV" ;
+    oa:starName "51 Pegasi" .
+
+value:inner-sphere-inner-sphere-row-0615-bc22af63fc20-source-distance a oa:QuantityValue ;
+    qudt:numericValue 50.642 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

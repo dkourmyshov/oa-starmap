@@ -1,0 +1,40 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# Whirlygig
+
+id:world-whirlygig a oa:Place, oa:World ;
+    skos:prefLabel "Whirlygig" ;
+    oa:article <https://www.orionsarm.com/eg-article/559bd77adb246> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "Its star is Freckles, HD 35956, 97 ly out in Orion; the colony table carries the pair as \"Freckles / Whirlygig\"." ;
+    oa:uncertain false .
+
+claim:location-world-whirlygig a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/559bd77adb246> ;
+    oa:about id:world-whirlygig ;
+    oa:canonical true ;
+    oa:catalogueFromSource true ;
+    oa:hdId 35956 ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+claim:affiliation-world-whirlygig-terragen-federation a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/559bd77adb246> ;
+    oa:about id:world-whirlygig ;
+    oa:canonical true ;
+    oa:polity id:polity-terragen-federation ;
+    oa:recordOrder 0 .
+
+claim:event-world-whirlygig-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/559bd77adb246> ;
+    oa:about id:world-whirlygig ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 3315 .

@@ -1,0 +1,89 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Praxis-Gnosis
+
+id:world-praxis-gnosis a oa:Place, oa:World ;
+    skos:prefLabel "Praxis-Gnosis" ;
+    oa:article <https://www.orionsarm.com/eg-article/4703bc2ea1fdc> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Epsilon Indi B, one of a pair of brown dwarfs orbiting Epsilon Indi far out. Bound to the primary, which is what the catalogue carries and what the map draws a system at. Both stated distances agree to a hundredth: 11.87 ly from Sol against 11.867, and 14.07 from Ran against 14.107. The archived Wormhole Gazetteer names a Tesseract, and the Celestia add-on built from it puts Tesseract at Epsilon Indi — this system. Tesseract has no article of its own and is named in Halcyon's, which makes it the Deeper Covenant's, as Praxis-Gnosis is. Likely another name for what is already here rather than a fourth thing at this star, so no separate marker is drawn for it. See questions.md." ;
+    oa:uncertain false .
+
+claim:location-world-praxis-gnosis a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4703bc2ea1fdc> ;
+    oa:about id:world-praxis-gnosis ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:distance value:location-world-praxis-gnosis-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Epsilon Indi" .
+
+value:location-world-praxis-gnosis-distance a oa:QuantityValue ;
+    qudt:numericValue 11.87 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-praxis-gnosis-deeper-covenant a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4703bc2ea1fdc> ;
+    oa:about id:world-praxis-gnosis ;
+    oa:canonical true ;
+    oa:polity id:polity-deeper-covenant ;
+    oa:recordOrder 0 .
+
+# Praxis-Gnosis
+
+id:inner-sphere-row-0033 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Praxis-Gnosis" .
+
+claim:inner-sphere-inner-sphere-row-0033-1232cd1b6a0f a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0033 ;
+    oa:article <https://www.orionsarm.com/eg-article/4703bc2ea1fdc> ;
+    oa:canonical true ;
+    oa:colonyName "Praxis-Gnosis" ;
+    oa:luminositySol "0.000020" ;
+    oa:massSol "69.1 x Jupiter" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 32 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0033-1232cd1b6a0f-source-distance ;
+    oa:spectralType "T1 V" ;
+    oa:starName "Epsilon Indi Ba" .
+
+value:inner-sphere-inner-sphere-row-0033-1232cd1b6a0f-source-distance a oa:QuantityValue ;
+    qudt:numericValue 11.867 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Praxis-Gnosis
+
+id:inner-sphere-row-0034 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Praxis-Gnosis" .
+
+claim:inner-sphere-inner-sphere-row-0034-23e29adf876a a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0034 ;
+    oa:article <https://www.orionsarm.com/eg-article/4703bc2ea1fdc> ;
+    oa:canonical true ;
+    oa:colonyName "Praxis-Gnosis" ;
+    oa:luminositySol "0.000006" ;
+    oa:massSol "49.3 x Jupiter" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 33 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0034-23e29adf876a-source-distance ;
+    oa:spectralType "T6 V" ;
+    oa:starName "Epsilon Indi Bb" .
+
+value:inner-sphere-inner-sphere-row-0034-23e29adf876a-source-distance a oa:QuantityValue ;
+    qudt:numericValue 11.867 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

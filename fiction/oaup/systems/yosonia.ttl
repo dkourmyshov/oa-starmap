@@ -1,0 +1,74 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Yosonia
+
+id:world-yosonia a oa:Place, oa:World ;
+    skos:prefLabel "Yosonia" ;
+    oa:article <https://www.orionsarm.com/eg-article/5bbccbeb9ecb3> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "HD 180161, as the colony table has it." ;
+    oa:systemName "Yosonia" ;
+    oa:uncertain false .
+
+claim:location-world-yosonia a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5bbccbeb9ecb3> ;
+    oa:about id:world-yosonia ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "HD 180161" .
+
+claim:event-world-yosonia-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5bbccbeb9ecb3> ;
+    oa:about id:world-yosonia ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"Colony founded in 2508 AT by the Hippocratic Clade ethnicity from Euphrosyne .\" The Hippocratic Clade is not on the roster; see unplaced. The Hippocratic Clade, no polity of this file; 'later capital and spiritual centre of the Yoson Confederacy', undated here." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 2508 .
+
+claim:event-world-yosonia-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5bbccbeb9ecb3> ;
+    oa:about id:world-yosonia ;
+    oa:canonical true ;
+    oa:eventKind oa:Capital ;
+    oa:note "\"Later capital and spiritual centre of the Yoson Confederacy.\" Undated; the year is the Confederacy's founding as this file has it, twelve years after the colony's own. The Confederacy's end (3941) closes the holding." ;
+    oa:polity id:polity-yoson-confederacy ;
+    oa:precision oa:NotEarlierThan ;
+    oa:recordOrder 1 ;
+    oa:yearAT 2520 .
+
+# Yosonia
+
+id:inner-sphere-row-0779 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Yosonia" .
+
+claim:inner-sphere-inner-sphere-row-0779-cd9209d311ff a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0779 ;
+    oa:article <https://www.orionsarm.com/eg-article/5bbccbeb9ecb3> ;
+    oa:canonical true ;
+    oa:colonyName "Yosonia" ;
+    oa:luminositySol "0.53" ;
+    oa:massSol "." ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 778 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0779-cd9209d311ff-source-distance ;
+    oa:spectralType "G8 V" ;
+    oa:starName "HD 180161" .
+
+value:inner-sphere-inner-sphere-row-0779-cd9209d311ff-source-distance a oa:QuantityValue ;
+    qudt:numericValue 65.933 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

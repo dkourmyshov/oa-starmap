@@ -1,0 +1,31 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# Raman's World
+
+id:world-raman-s-world a oa:Place, oa:World ;
+    skos:prefLabel "Raman's World" ;
+    oa:article <https://www.orionsarm.com/eg-article/475f41a256504> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "454 ly. No dates." ;
+    oa:uncertain false .
+
+claim:location-world-raman-s-world a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/475f41a256504> ;
+    oa:about id:world-raman-s-world ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Omega 2 Cygni" .
+
+claim:affiliation-world-raman-s-world-solar-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/475f41a256504> ;
+    oa:about id:world-raman-s-world ;
+    oa:canonical true ;
+    oa:polity id:polity-solar-dominion ;
+    oa:recordOrder 0 .

@@ -1,0 +1,51 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# Yangko
+
+id:world-yangko a oa:Place, oa:World ;
+    skos:prefLabel "Yangko" ;
+    oa:article <https://www.orionsarm.com/eg-article/532b2e15251be> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "HD 284842, 394 ly out in Taurus, and the furthest of this roster." ;
+    oa:uncertain false .
+
+claim:location-world-yangko a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/532b2e15251be> ;
+    oa:about id:world-yangko ;
+    oa:canonical true ;
+    oa:catalogueFromSource true ;
+    oa:hdId 284842 ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+claim:affiliation-world-yangko-terragen-federation a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/532b2e15251be> ;
+    oa:about id:world-yangko ;
+    oa:canonical true ;
+    oa:polity id:polity-terragen-federation ;
+    oa:recordOrder 0 .
+
+claim:event-world-yangko-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/532b2e15251be> ;
+    oa:about id:world-yangko ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 2957 .
+
+claim:event-world-yangko-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/532b2e15251be> ;
+    oa:about id:world-yangko ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"this conservatism attracted the 'Dao, who became members of that empire in 3509.\" 'That empire' refers to the Terragen Federation, named in the immediately preceding sentence as the faction that gained territory in this volume." ;
+    oa:polity id:polity-terragen-federation ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 3509 .

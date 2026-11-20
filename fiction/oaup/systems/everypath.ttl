@@ -1,0 +1,41 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Everypath
+
+id:world-everypath a oa:Place, oa:World ;
+    skos:prefLabel "Everypath" ;
+    oa:article <https://www.orionsarm.com/eg-article/479bbbd65a070> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:uncertain false .
+
+claim:location-world-everypath a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/479bbbd65a070> ;
+    oa:about id:world-everypath ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg 1.7283 ;
+    oa:distance value:location-world-everypath-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:note "From the Celestia wormhole-nexus add-on (S. Ball, 2016, under https://celestiaproject.space/forum/viewtopic.php?f=23&t=17436). The article is a stub and states no position, so nothing from the Encyclopaedia bears on this; the figure replaces an interpolation from the transcription of Anders Sandberg's maps, which put it at 1,364 ly with a 20-degree direction error and an 800 ly distance error. Three sources now disagree about how far out it is — 369 ly here, 1,364 from the map transcription, and 617 for HIP 96378, the star the add-on's own coordinates land on exactly — and none of them is the Encyclopaedia. Not bound to that star, so the disagreement stays visible rather than being settled by silently taking one figure. See questions.md." ;
+    oa:rightAscensionDeg 293.9317 .
+
+value:location-world-everypath-distance a oa:QuantityValue ;
+    qudt:numericValue 369.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-everypath-keter-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/479bbbd65a070> ;
+    oa:about id:world-everypath ;
+    oa:canonical true ;
+    oa:polity id:polity-keter-dominion ;
+    oa:recordOrder 0 .

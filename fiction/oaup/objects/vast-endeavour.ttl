@@ -1,0 +1,41 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Vast Endeavour
+
+id:world-vast-endeavour a oa:Place, oa:World ;
+    skos:prefLabel "Vast Endeavour" ;
+    oa:article <https://www.orionsarm.com/eg-article/474e32264c8a1> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "The star is TYC 8627-2183-1, from a catalogue this map does not carry." ;
+    oa:uncertain false .
+
+claim:location-world-vast-endeavour a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/474e32264c8a1> ;
+    oa:about id:world-vast-endeavour ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:constellationName "Carina" ;
+    oa:distance value:location-world-vast-endeavour-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:note "Kept as a cone. Both sources name the same primary, TYC 8627-2183-1, so the identification is agreed, and the add-on's direction does fall inside Carina — 17 degrees from its centre against a radius of 24.7. But the add-on puts the system at 1,708 ly where the article says 1,149, and a position asserted for an object 559 ly further out is not obviously the right direction for this one. Taking the direction and keeping the article's distance is the other option and is not taken here. See questions.md." .
+
+value:location-world-vast-endeavour-distance a oa:QuantityValue ;
+    qudt:numericValue 1149.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-vast-endeavour-nocozo a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/474e32264c8a1> ;
+    oa:about id:world-vast-endeavour ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 0 .

@@ -1,0 +1,33 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Tjetvir
+
+id:inner-sphere-row-0441 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Tjetvir" .
+
+claim:inner-sphere-inner-sphere-row-0441-41d95c1ea110 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0441 ;
+    oa:article <https://www.orionsarm.com/eg-article/57e3d5f53ed33> ;
+    oa:canonical true ;
+    oa:colonyName "Tjetvir" ;
+    oa:luminositySol "1.02" ;
+    oa:massSol "1" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 440 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0441-41d95c1ea110-source-distance ;
+    oa:spectralType "G1 V" ;
+    oa:starName "Zeta2 Reticuli" .
+
+value:inner-sphere-inner-sphere-row-0441-41d95c1ea110-source-distance a oa:QuantityValue ;
+    qudt:numericValue 39.267 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

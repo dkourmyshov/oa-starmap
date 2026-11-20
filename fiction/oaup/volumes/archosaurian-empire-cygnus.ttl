@@ -1,0 +1,39 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Archosaurian Empire (Cygnus)
+
+id:world-archosaurian-empire-cygnus a oa:Place, oa:World ;
+    skos:prefLabel "Archosaurian Empire (Cygnus)" ;
+    oa:kind "polity_extent" ;
+    oa:labelsSystem false ;
+    oa:note "The only label the add-on writes for this polity. Named for Cygnus, where it falls, the polity's own name being taken by the polity." ;
+    oa:uncertain false .
+
+claim:location-world-archosaurian-empire-cygnus a prov:Entity, oa:LocationClaim ;
+    oa:about id:world-archosaurian-empire-cygnus ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg 48.0 ;
+    oa:distance value:location-world-archosaurian-empire-cygnus-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:note "From southOAEMPIRES.dsc, one of the Orion's Arm Celestia add-ons' location catalogues (OAAddons9, OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv). The label states a position and no extent: it carries the token radius of 2 that the add-on gives every empire label, so nothing here says how far the volume reaches." ;
+    oa:rightAscensionDeg 322.5 .
+
+value:location-world-archosaurian-empire-cygnus-distance a oa:QuantityValue ;
+    qudt:numericValue 1000.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-archosaurian-empire-cygnus-archosaurian-empire a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:world-archosaurian-empire-cygnus ;
+    oa:canonical true ;
+    oa:polity id:polity-archosaurian-empire ;
+    oa:recordOrder 0 .

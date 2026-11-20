@@ -1,0 +1,41 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Cygnus X-1
+
+id:world-cygnus-x-1 a oa:Place, oa:World ;
+    skos:prefLabel "Cygnus X-1" ;
+    oa:article <https://www.orionsarm.com/eg-article/4e49e20545cdd> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "The black hole and its blue supergiant companion, beyond the Terragen sphere at 5,984 ly. The catalogue puts the star at 7,347 ly, a fifth further, so the star lends its direction and the article its distance. The Muuh, the Meistersingers and the Wayfarers are all believed present, which is why the holding is marked uncertain: believed is what the source says, and none of the three is confirmed to hold it." ;
+    oa:uncertain true .
+
+claim:location-world-cygnus-x-1 a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4e49e20545cdd> ;
+    oa:about id:world-cygnus-x-1 ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg 35.2016 ;
+    oa:distance value:location-world-cygnus-x-1-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:rightAscensionDeg 299.5903 .
+
+value:location-world-cygnus-x-1-distance a oa:QuantityValue ;
+    qudt:numericValue 5984.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-cygnus-x-1-xenosophont a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4e49e20545cdd> ;
+    oa:about id:world-cygnus-x-1 ;
+    oa:canonical true ;
+    oa:polity id:polity-xenosophont ;
+    oa:recordOrder 0 .

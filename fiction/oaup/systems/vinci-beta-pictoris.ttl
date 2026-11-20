@@ -1,0 +1,33 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Vinci / Beta Pictoris
+
+id:inner-sphere-row-0768 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Vinci / Beta Pictoris" .
+
+claim:inner-sphere-inner-sphere-row-0768-233d047b1598 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0768 ;
+    oa:article <https://www.orionsarm.com/eg-article/5de8fb490b641> ;
+    oa:canonical true ;
+    oa:colonyName "Vinci / Beta Pictoris" ;
+    oa:luminositySol "9.337" ;
+    oa:massSol "1.6" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 767 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0768-233d047b1598-source-distance ;
+    oa:spectralType "A5 V" ;
+    oa:starName "Beta Pictoris" .
+
+value:inner-sphere-inner-sphere-row-0768-233d047b1598-source-distance a oa:QuantityValue ;
+    qudt:numericValue 64.039 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

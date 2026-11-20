@@ -1,0 +1,207 @@
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# https://dkourmyshov.github.io/oa-starmap/id/alias-alpha-persei-cluster
+
+id:alias-alpha-persei-cluster a oa:IdentityAlias ;
+    skos:altLabel "Alpha Persei Cluster" ;
+    oa:catalogueDesignation "Melotte 20" .
+
+# https://dkourmyshov.github.io/oa-starmap/id/alias-butterfly-cluster
+
+id:alias-butterfly-cluster a oa:IdentityAlias ;
+    skos:altLabel "Butterfly Cluster" ;
+    oa:catalogueDesignation "NGC 6405" .
+
+# https://dkourmyshov.github.io/oa-starmap/id/alias-california-nebula
+
+id:alias-california-nebula a oa:IdentityAlias ;
+    skos:altLabel "California Nebula" ;
+    oa:catalogueDesignation "S220" .
+
+# https://dkourmyshov.github.io/oa-starmap/id/alias-cat-eye-nebula
+
+id:alias-cat-eye-nebula a oa:IdentityAlias ;
+    skos:altLabel "Cat Eye Nebula" ;
+    oa:catalogueDesignation "NGC 6543" .
+
+# https://dkourmyshov.github.io/oa-starmap/id/alias-christmas-tree-cluster
+
+id:alias-christmas-tree-cluster a oa:IdentityAlias ;
+    skos:altLabel "Christmas Tree Cluster" ;
+    oa:catalogueDesignation "NGC 2264" .
+
+# https://dkourmyshov.github.io/oa-starmap/id/alias-cone-nebula
+
+id:alias-cone-nebula a oa:IdentityAlias ;
+    skos:altLabel "Cone Nebula" ;
+    oa:catalogueDesignation "NGC 2264" .
+
+# https://dkourmyshov.github.io/oa-starmap/id/alias-dumbbell-nebula
+
+id:alias-dumbbell-nebula a oa:IdentityAlias ;
+    skos:altLabel "Dumbbell Nebula" ;
+    oa:catalogueDesignation "NGC 6853" .
+
+# https://dkourmyshov.github.io/oa-starmap/id/alias-eskimo-nebula
+
+id:alias-eskimo-nebula a oa:IdentityAlias ;
+    skos:altLabel "Eskimo Nebula" ;
+    oa:catalogueDesignation "NGC 2392" .
+
+# https://dkourmyshov.github.io/oa-starmap/id/alias-floating-star-nebula
+
+id:alias-floating-star-nebula a oa:IdentityAlias ;
+    skos:altLabel "Floating Star Nebula" ;
+    oa:catalogueDesignation "IC 405" .
+
+# https://dkourmyshov.github.io/oa-starmap/id/alias-helix-nebula
+
+id:alias-helix-nebula a oa:IdentityAlias ;
+    skos:altLabel "Helix Nebula" ;
+    oa:catalogueDesignation "NGC 7293" .
+
+# https://dkourmyshov.github.io/oa-starmap/id/alias-hubble-variable-nebula
+
+id:alias-hubble-variable-nebula a oa:IdentityAlias ;
+    skos:altLabel "Hubble Variable Nebula" ;
+    oa:catalogueDesignation "NGC 2261" .
+
+# https://dkourmyshov.github.io/oa-starmap/id/alias-ic-417
+
+id:alias-ic-417 a oa:IdentityAlias ;
+    skos:altLabel "IC 417" ;
+    oa:catalogueDesignation "S234" .
+
+# https://dkourmyshov.github.io/oa-starmap/id/alias-jupiter-nebula
+
+id:alias-jupiter-nebula a oa:IdentityAlias ;
+    skos:altLabel "Jupiter Nebula" ;
+    oa:catalogueDesignation "NGC 3242" .
+
+# https://dkourmyshov.github.io/oa-starmap/id/alias-lambda-ori-nebula
+
+id:alias-lambda-ori-nebula a oa:IdentityAlias ;
+    skos:altLabel "Lambda Ori Nebula" ;
+    oa:catalogueDesignation "Collinder 69" .
+
+# https://dkourmyshov.github.io/oa-starmap/id/alias-m23
+
+id:alias-m23 a oa:IdentityAlias ;
+    skos:altLabel "M23" ;
+    oa:catalogueDesignation "NGC 6494" .
+
+# https://dkourmyshov.github.io/oa-starmap/id/alias-m25
+
+id:alias-m25 a oa:IdentityAlias ;
+    skos:altLabel "M25" ;
+    oa:catalogueDesignation "IC 4725" .
+
+# https://dkourmyshov.github.io/oa-starmap/id/alias-m34
+
+id:alias-m34 a oa:IdentityAlias ;
+    skos:altLabel "M34" ;
+    oa:catalogueDesignation "NGC 1039" .
+
+# https://dkourmyshov.github.io/oa-starmap/id/alias-m35
+
+id:alias-m35 a oa:IdentityAlias ;
+    skos:altLabel "M35" ;
+    oa:catalogueDesignation "NGC 2168" .
+
+# https://dkourmyshov.github.io/oa-starmap/id/alias-m39
+
+id:alias-m39 a oa:IdentityAlias ;
+    skos:altLabel "M39" ;
+    oa:catalogueDesignation "NGC 7092" .
+
+# https://dkourmyshov.github.io/oa-starmap/id/alias-m41
+
+id:alias-m41 a oa:IdentityAlias ;
+    skos:altLabel "M41" ;
+    oa:catalogueDesignation "NGC 2287" .
+
+# https://dkourmyshov.github.io/oa-starmap/id/alias-m47
+
+id:alias-m47 a oa:IdentityAlias ;
+    skos:altLabel "M47" ;
+    oa:catalogueDesignation "NGC 2422" .
+
+# https://dkourmyshov.github.io/oa-starmap/id/alias-m48
+
+id:alias-m48 a oa:IdentityAlias ;
+    skos:altLabel "M48" ;
+    oa:catalogueDesignation "NGC 2548" .
+
+# https://dkourmyshov.github.io/oa-starmap/id/alias-m50
+
+id:alias-m50 a oa:IdentityAlias ;
+    skos:altLabel "M50" ;
+    oa:catalogueDesignation "NGC 2323" .
+
+# https://dkourmyshov.github.io/oa-starmap/id/alias-m67
+
+id:alias-m67 a oa:IdentityAlias ;
+    skos:altLabel "M67" ;
+    oa:catalogueDesignation "NGC 2682" .
+
+# https://dkourmyshov.github.io/oa-starmap/id/alias-m78
+
+id:alias-m78 a oa:IdentityAlias ;
+    skos:altLabel "M78" ;
+    oa:catalogueDesignation "NGC 2068" .
+
+# https://dkourmyshov.github.io/oa-starmap/id/alias-monkey-nebula
+
+id:alias-monkey-nebula a oa:IdentityAlias ;
+    skos:altLabel "Monkey Nebula" ;
+    oa:catalogueDesignation "NGC 2175" .
+
+# https://dkourmyshov.github.io/oa-starmap/id/alias-north-america-nebula
+
+id:alias-north-america-nebula a oa:IdentityAlias ;
+    skos:altLabel "North America Nebula" ;
+    oa:catalogueDesignation "S117" .
+
+# https://dkourmyshov.github.io/oa-starmap/id/alias-omicron-velorum-cluster
+
+id:alias-omicron-velorum-cluster a oa:IdentityAlias ;
+    skos:altLabel "Omicron Velorum Cluster" ;
+    oa:catalogueDesignation "IC 2391" .
+
+# https://dkourmyshov.github.io/oa-starmap/id/alias-owl-nebula
+
+id:alias-owl-nebula a oa:IdentityAlias ;
+    skos:altLabel "Owl Nebula" ;
+    oa:catalogueDesignation "NGC 3587" .
+
+# https://dkourmyshov.github.io/oa-starmap/id/alias-pleiades
+
+id:alias-pleiades a oa:IdentityAlias ;
+    skos:altLabel "Pleiades" ;
+    oa:catalogueDesignation "Melotte 22" .
+
+# https://dkourmyshov.github.io/oa-starmap/id/alias-praesepe
+
+id:alias-praesepe a oa:IdentityAlias ;
+    skos:altLabel "Praesepe" ;
+    oa:catalogueDesignation "NGC 2632" .
+
+# https://dkourmyshov.github.io/oa-starmap/id/alias-ptolemy-s-cluster
+
+id:alias-ptolemy-s-cluster a oa:IdentityAlias ;
+    skos:altLabel "Ptolemy's Cluster" ;
+    oa:catalogueDesignation "NGC 6475" .
+
+# https://dkourmyshov.github.io/oa-starmap/id/alias-seagull-nebula
+
+id:alias-seagull-nebula a oa:IdentityAlias ;
+    skos:altLabel "Seagull Nebula" ;
+    oa:catalogueDesignation "S296" .
+
+# https://dkourmyshov.github.io/oa-starmap/id/alias-theta-carinae-cluster
+
+id:alias-theta-carinae-cluster a oa:IdentityAlias ;
+    skos:altLabel "Theta Carinae Cluster" ;
+    oa:catalogueDesignation "IC 2602" .

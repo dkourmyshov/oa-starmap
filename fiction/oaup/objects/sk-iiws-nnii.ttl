@@ -1,0 +1,53 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Sk'iiws'nnii
+
+id:world-sk-iiws-nnii a oa:Place, oa:World ;
+    skos:prefLabel "Sk'iiws'nnii" ;
+    oa:article <https://www.orionsarm.com/eg-article/49112098c57a7> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "Local space here is dominated by the Sparks, 50 ly off, and a dark cloud called the Tatter. Most civilisations nearby descend from or were shaped by the Gerkletoss." ;
+    oa:uncertain false .
+
+claim:location-world-sk-iiws-nnii a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/49112098c57a7> ;
+    oa:about id:world-sk-iiws-nnii ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg 5.7865 ;
+    oa:derivation "The article gives no coordinates but five things that amount to them: galactic longitude 36 degrees, about 1,600 ly from Sol, 50 ly from the Sparks, 132 from the Black Acropolis and — from Miracle City's own article — 216 ly from there. Longitude and distance alone leave a circle; the three hops close it. Fitting latitude and distance to all three gives l 36.00, b +6.74, 1,554 ly, which returns 49.7 ly to the Sparks against a stated 50, 217.4 to Miracle City against 216, and 136.7 to the Black Acropolis against 132. Three independent checks agreeing within a few light years is what makes this a position rather than a guess; the distance comes out 3% under the stated 1,600, which is inside what \"approximately\" allows." ;
+    oa:directionErrorDeg 1.5 ;
+    oa:distance value:location-world-sk-iiws-nnii-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:EditorialEstimate ;
+    oa:rightAscensionDeg 278.2349 .
+
+value:location-world-sk-iiws-nnii-distance a oa:QuantityValue ;
+    qudt:numericValue 1554.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-sk-iiws-nnii-sagittarius-transcultural-cooperation a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/49112098c57a7> ;
+    oa:about id:world-sk-iiws-nnii ;
+    oa:canonical true ;
+    oa:polity id:polity-sagittarius-transcultural-cooperation ;
+    oa:recordOrder 0 .
+
+claim:event-world-sk-iiws-nnii-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/49112098c57a7> ;
+    oa:about id:world-sk-iiws-nnii ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"8693 - Human and dolphin refuges from the Gerkletoss rebellion/transcendence arrive in the system and begin to terraform Skiiws'nnii and exploit the resources of the system.\" the refugees came from the Gerkletoss culture, which is not on the roster" ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 8693 .

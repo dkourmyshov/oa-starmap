@@ -1,0 +1,70 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Tengri
+
+id:world-tengri a oa:Place, oa:World ;
+    skos:prefLabel "Tengri" ;
+    oa:article <https://www.orionsarm.com/eg-article/5ef2688c6eb4d> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Kepler-9, in Lyra at 2,090 ly — a star known for its planets and too faint for the catalogues here, so the constellation carries the direction." ;
+    oa:systemName "Tengri" ;
+    oa:uncertain false .
+
+claim:location-world-tengri a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5ef2688c6eb4d> ;
+    oa:about id:world-tengri ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:constellationName "Lyra" ;
+    oa:distance value:location-world-tengri-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+value:location-world-tengri-distance a oa:QuantityValue ;
+    qudt:numericValue 2090.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-tengri-cygexpa a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5ef2688c6eb4d> ;
+    oa:about id:world-tengri ;
+    oa:canonical true ;
+    oa:polity id:polity-cygexpa ;
+    oa:recordOrder 0 .
+
+claim:affiliation-world-tengri-solipsist-panvirtuality a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5ef2688c6eb4d> ;
+    oa:about id:world-tengri ;
+    oa:canonical true ;
+    oa:polity id:polity-solipsist-panvirtuality ;
+    oa:recordOrder 1 .
+
+claim:event-world-tengri-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5ef2688c6eb4d> ;
+    oa:about id:world-tengri ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"This system had previously been claimed by the Panvirtuality in 5999, but all transmissions had ceased two hundred years later.\" Text says \"claimed\", not \"settled\"; the Panvirts are later found to have retreated into the gas giant Maral, so a resident presence is implied but not stated outright for 5999." ;
+    oa:polity id:polity-solipsist-panvirtuality ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 5999 .
+
+claim:event-world-tengri-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5ef2688c6eb4d> ;
+    oa:about id:world-tengri ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"Colonised 6511 AT\" Colonised by United Stars, 'a subsidiary of the Cygnus Expansion Association (Cygexpa)', which the body of the article calls 'explored' rather than colonised in the same year. The Panvirtuality's earlier claim went silent two hundred years after 5999." ;
+    oa:polity id:polity-cygexpa ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 6511 .

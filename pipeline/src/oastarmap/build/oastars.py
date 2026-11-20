@@ -1,4 +1,4 @@
-"""Build the Orion's Arm star dataset from ``fiction/oa_stars.yaml``.
+"""Build the Orion's Arm star dataset from ``fiction/oaup/``.
 
 These are stars the setting asserts but the sky does not have: the suns of named
 OA systems, and the populations OA gives to real clusters. They cannot be bound
@@ -8,9 +8,9 @@ than from an observation. That makes them the one place where the map draws
 something unmeasured, so they are kept in their own dataset, rendered
 differently, and separately toggleable.
 
-The source file is tracked and hand-editable; it is produced once by
-``oastarmap import-oastars`` from the Celestia add-on and is not re-read from
-the archive at build time. See :mod:`oastarmap.importers.celestia`.
+The source claims live in the tracked, hand-editable RDF graph. They are
+updated by ``oastarmap import-oastars``; the archive is not read at build time.
+See :mod:`oastarmap.importers.celestia`.
 
 **Trap:** the imported ``distance_ly`` is light years, as Celestia's ``.stc``
 format declares. Reading it as parsecs would push everything out by 3.26x while
@@ -31,16 +31,10 @@ from typing import Any
 
 import astropy.units as u
 import numpy as np
-import yaml
 
 from oastarmap.build.writer import CI_UNKNOWN, write_array, write_json
-from oastarmap.fiction.schema import (
-    FictionFile,
-    OAStarEntry,
-    OAStarFile,
-    OASystem,
-    OASystemFile,
-)
+from oastarmap.fiction.schema import OAStarEntry, OASystem, OASystemFile
+from oastarmap.fiction.store import OAUP_DIR, load_store
 from oastarmap.paths import DATA_OUT_DIR, FICTION_DIR
 from oastarmap.transform.frame import (
     GALACTIC_AXES,
@@ -50,9 +44,7 @@ from oastarmap.transform.frame import (
 )
 from oastarmap.transform.photometry import parse_spectral_class, spectral_type_to_bv
 
-STARS_FILE = "oa_stars.yaml"
-SYSTEMS_FILE = "oa_systems.yaml"
-POLITIES_FILE = "polities.yaml"
+STARS_FILE = OAUP_DIR
 
 SOURCE_URL = "http://www.orionsarm.com/fm_store/OAAddons1.zip"
 SOURCE_PAGE = "https://www.orionsarm.com/xcms.php?r=oa-page&page=gen_OACelestia2"
@@ -110,27 +102,9 @@ DESIGNATION_ONLY = re.compile(r"^(JD|HIP|HD|GJ|GL|TYC|YTS|NR)[\s-]*[\d\s-]+$", r
 
 
 def _stars_with_worlds(fiction_dir: Path) -> set[str]:
-    """Add-on stars some world in the file is bound to.
-
-    Read from worlds.yaml rather than from the built dataset because this build
-    runs before that one. Only the `oa_star` field is wanted, so a failure to
-    parse is not fatal here -- the worlds build will raise on it in its turn,
-    with a better message than this function could give.
-    """
-    path = fiction_dir / "worlds.yaml"
-    if not path.exists():
-        return set()
-    try:
-        raw = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
-    except yaml.YAMLError:
-        return set()
-    bound: set[str] = set()
-    for world in raw.get("worlds") or ():
-        location = (world or {}).get("location") or {}
-        star = location.get("oa_star") or world.get("oa_star")
-        if star:
-            bound.add(str(star))
-    return bound
+    """Add-on stars some world in the authoritative graph is bound to."""
+    store = load_store(fiction_dir / OAUP_DIR)
+    return {world.location.oa_star for world in store.worlds if world.location.oa_star}
 
 
 def _place(
@@ -146,7 +120,7 @@ def _place(
     if unmatched:
         # Curation keyed to a designation the import no longer contains is
         # silent data loss: the label and affiliation simply never appear.
-        raise ValueError(f"oa_systems.yaml curates stars absent from oa_stars.yaml: {unmatched}")
+        raise ValueError(f"curation names stars absent from the Celestia claims: {unmatched}")
 
     kept: list[OAStarEntry] = []
     for entry in entries:
@@ -248,15 +222,16 @@ def build_oastars(stars_path: Path | None = None, out_dir: Path | None = None) -
     out_dir.mkdir(parents=True, exist_ok=True)
 
     stats = OAStarStats()
-    curation = OASystemFile.load(stars_path.with_name(SYSTEMS_FILE))
+    store = load_store(stars_path)
+    curation = store.oa_system_file
     records = _place(
-        OAStarFile.load(stars_path).stars, curation, stats, _stars_with_worlds(stars_path.parent)
+        store.stars, curation, stats, _stars_with_worlds(stars_path.parent)
     )
 
-    known = {p.id for p in FictionFile.load(stars_path.with_name(POLITIES_FILE)).polities}
+    known = {p.id for p in store.fiction.polities}
     unknown = sorted({r["affiliation"] for r in records if r["affiliation"]} - known)
     if unknown:
-        raise ValueError(f"oa_systems.yaml cites unknown affiliations: {unknown}")
+        raise ValueError(f"oaup/ cites unknown affiliations: {unknown}")
 
     n = len(records)
 
@@ -320,7 +295,7 @@ def build_oastars(stars_path: Path | None = None, out_dir: Path | None = None) -
         },
         "files": files,
         "selection": {
-            "rule": "every star in fiction/oa_stars.yaml",
+            "rule": "every star in fiction/oaup/",
             "note": (
                 "Most positions are asserted by the fiction, not observed, but "
                 "not every entry is invented: Geminga, Arkab Prior B, EG 471 and "
@@ -342,7 +317,7 @@ def build_oastars(stars_path: Path | None = None, out_dir: Path | None = None) -
             "description": (
                 "Stars from the Orion's Arm Celestia add-on: the suns of named OA "
                 "systems, plus populations the setting gives to real clusters. "
-                "Imported once into fiction/oa_stars.yaml, which is the tracked "
+                "Imported once into fiction/oaup/, which is the tracked "
                 "source of record; the archive is not read at build time."
             ),
             "citation": f"{SOURCE_TITLE}. {SOURCE_PAGE}",

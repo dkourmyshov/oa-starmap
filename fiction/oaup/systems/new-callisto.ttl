@@ -1,0 +1,90 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# New Callisto
+
+id:world-new-callisto a oa:Place, oa:World ;
+    skos:prefLabel "New Callisto" ;
+    oa:article <https://www.orionsarm.com/eg-article/690b52618bf5a> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "The article gives three distances — 60.663 ly from Sol, 8.761 from Alzirr and 3.790 from Paanlaansuu — and they intersect at one point, 0.19 ly from Gl 230. The catalogue then agrees to three decimals on the distance from Sol and to 0.004 ly on Paanlaansuu, so this is that star rather than merely a place near it." ;
+    oa:uncertain false .
+
+claim:location-world-new-callisto a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/690b52618bf5a> ;
+    oa:about id:world-new-callisto ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Gl 230" .
+
+claim:affiliation-world-new-callisto-utopia-sphere a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/690b52618bf5a> ;
+    oa:about id:world-new-callisto ;
+    oa:canonical true ;
+    oa:polity id:polity-utopia-sphere ;
+    oa:recordOrder 0 .
+
+claim:event-world-new-callisto-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/690b52618bf5a> ;
+    oa:about id:world-new-callisto ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "\"Reached: 1770 AT by the Madda'j, a Jovian/First Federation colony ship.\"" ;
+    oa:polity id:polity-first-federation ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 1770 .
+
+claim:event-world-new-callisto-002 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-new-callisto ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "Instruments at New Callisto , the nearest large hu-inhabited polity, cease to detect information-rich signals from the Xi Geminorum AI - 1 Civilization; the AIs are never heard from again. After hastily running through a number of simula..." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:sourceDescription "Encyclopaedia timeline, Late Federation / AI Emergence" ;
+    oa:yearAT 1931 .
+
+claim:event-world-new-callisto-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/690b52618bf5a> ;
+    oa:about id:world-new-callisto ;
+    oa:canonical true ;
+    oa:eventKind oa:Capital ;
+    oa:note "\"The world has been the official capital of the polity since its inception in 4447, wielding considerable political and cultural clout in the otherwise legislatively loose Confederation.\" Refers to the Ayysis Confederation (not on the roster); Unnar is its capital, within the New Callisto system's Ayysis Range. Capital of the Ayysis Confederation from its inception, no polity of this file." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 2 ;
+    oa:yearAT 4447 .
+
+# New Callisto
+
+id:inner-sphere-row-0732 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "New Callisto" .
+
+claim:inner-sphere-inner-sphere-row-0732-c19fc5b40ea8 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0732 ;
+    oa:article <https://www.orionsarm.com/eg-article/690b52618bf5a> ;
+    oa:canonical true ;
+    oa:colonyName "New Callisto" ;
+    oa:luminositySol "0.813" ;
+    oa:massSol "0.954" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 731 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0732-c19fc5b40ea8-source-distance ;
+    oa:spectralType "G5 V" ;
+    oa:starName "Gliese 230" .
+
+value:inner-sphere-inner-sphere-row-0732-c19fc5b40ea8-source-distance a oa:QuantityValue ;
+    qudt:numericValue 60.663 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

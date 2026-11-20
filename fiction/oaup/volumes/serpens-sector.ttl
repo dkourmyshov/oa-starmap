@@ -1,0 +1,33 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Serpens Sector
+
+id:world-serpens-sector a oa:Place, oa:World ;
+    skos:prefLabel "Serpens Sector" ;
+    oa:kind "volume" ;
+    oa:labelsSystem false ;
+    oa:note "Recorded with no holder. The Encyclopaedia's phrase \"the Serpens Sector worlds such as Sk'iiws'nnii and Miracle City\" is the only mention this map holds, and both of those sit by the Serpens Region's position rather than this one, so attributing the Region's holders to this entry would be guessing." ;
+    oa:uncertain false .
+
+claim:location-world-serpens-sector a prov:Entity, oa:LocationClaim ;
+    oa:about id:world-serpens-sector ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -14.917 ;
+    oa:distance value:location-world-serpens-sector-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:note "From oalocationsx.dsc, one of the Orion's Arm Celestia add-ons' location catalogues (OAAddons9, OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv). The add-on carries this and a Serpens Region as two entries with different positions -- 21 degrees apart on the sky and 1,500 ly apart in depth -- so they are drawn as two objects. Whether the setting means two things by them is open; see questions.md." ;
+    oa:rightAscensionDeg 260.01 .
+
+value:location-world-serpens-sector-distance a oa:QuantityValue ;
+    qudt:numericValue 3159.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

@@ -1,0 +1,44 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Vela Supernova Remnant
+
+id:world-vela-supernova-remnant a oa:Place, oa:World ;
+    skos:prefLabel "Vela Supernova Remnant" ;
+    oa:extent value:world-vela-supernova-remnant-extent ;
+    oa:kind "volume" ;
+    oa:labelsSystem false ;
+    oa:note "G263.9-03.3 in Green's catalogue of galactic supernova remnants, which gives its position and its 255 arcminutes across but no distance. At the measured 287 +19/-17 pc that angular size is 69 ly, so this is drawn as a volume rather than a point — the only remnant on the map with an extent." ;
+    oa:uncertain false .
+
+value:world-vela-supernova-remnant-extent a oa:QuantityValue ;
+    qudt:numericValue 69.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:location-world-vela-supernova-remnant a prov:Entity, oa:LocationClaim ;
+    oa:about id:world-vela-supernova-remnant ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -45.8333 ;
+    oa:distance value:location-world-vela-supernova-remnant-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:rightAscensionDeg 128.5 .
+
+value:location-world-vela-supernova-remnant-distance a oa:QuantityValue ;
+    qudt:numericValue 936.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-vela-supernova-remnant-vela a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:world-vela-supernova-remnant ;
+    oa:canonical true ;
+    oa:polity id:polity-vela ;
+    oa:recordOrder 0 .

@@ -1,0 +1,19 @@
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+
+# Taurus Nexus
+
+id:polity-taurus-nexus a oa:Polity ;
+    skos:prefLabel "Taurus Nexus" ;
+    oa:ambiguousName false ;
+    oa:color "#C5CAE9" ;
+    oa:dissolvedAT 3435 ;
+    oa:editorialNote "\"Early interstellar power that developed around an abandoned wormhole nexus\nin the area of space toward the constellation Taurus.\" Its own page, as\npasted by the project owner (sources/polities/taurus-nexus.txt): data\npanel \"Capitals Xi Geminorum (2031-2450), Corona (2450-3435)\" and \"Key\nDates ... Dissolution (3435)\", the latter also in the running prose: \"In\n3435 the last vestige of the Taurus Nexus Cooperative Forum was finally\ndissolved.\" The founding year is the earlier capital's, there being no\nfirmer moment the page names as the government's start; \"Detection\n(1558)\" and \"Exploration and Initial Settlement (1950-2250)\" both\nprecede any government existing to found." ;
+    oa:foundedAT 2031 ;
+    oa:hasSource src:eg-historical-polities ;
+    oa:kind "meta-empire" ;
+    oa:polityId "taurus-nexus" ;
+    oa:recordOrder 54 ;
+    oa:uncertain false .

@@ -1,0 +1,33 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Urachlgarid / Former ISO construction site for Rachel
+
+id:inner-sphere-row-0031 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Urachlgarid / Former ISO construction site for Rachel" .
+
+claim:inner-sphere-inner-sphere-row-0031-62db44d14fea a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0031 ;
+    oa:article <https://www.orionsarm.com/eg-topic/45cbca2e75287> ;
+    oa:canonical true ;
+    oa:colonyName "Urachlgarid / Former ISO construction site for Rachel" ;
+    oa:luminositySol "0.000014" ;
+    oa:massSol "0.0408" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 30 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0031-62db44d14fea-source-distance ;
+    oa:spectralType "M6.5 Ve" ;
+    oa:starName "DX Cancri" .
+
+value:inner-sphere-inner-sphere-row-0031-62db44d14fea-source-distance a oa:QuantityValue ;
+    qudt:numericValue 11.680 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

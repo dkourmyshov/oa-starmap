@@ -1,0 +1,46 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Velarian Confederation
+
+id:world-velarian-confederation a oa:Place, oa:World ;
+    skos:prefLabel "Velarian Confederation" ;
+    oa:kind "polity_marker" ;
+    oa:labelsSystem false ;
+    oa:note "A polity this map has no entry for — the sheet writes only \"Velarian Confed\" — and an affiliate of the Disarchy, which is a loose confederation rather than an empire, so membership is what the affiliation means here." ;
+    oa:uncertain false .
+
+claim:location-world-velarian-confederation a prov:Entity, oa:LocationClaim ;
+    oa:about id:world-velarian-confederation ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -68.2656 ;
+    oa:derivation "Interpolated from the transcription of Anders Sandberg's maps, and extrapolated beyond the anchors around it. No article gives a position." ;
+    oa:directionErrorDeg 30.0 ;
+    oa:distance value:location-world-velarian-confederation-distance ;
+    oa:distanceError value:location-world-velarian-confederation-distance-error ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:EditorialEstimate ;
+    oa:rightAscensionDeg 155.847 .
+
+value:location-world-velarian-confederation-distance a oa:QuantityValue ;
+    qudt:numericValue 2631.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+value:location-world-velarian-confederation-distance-error a oa:QuantityValue ;
+    qudt:numericValue 1200.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-velarian-confederation-disarchy a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:world-velarian-confederation ;
+    oa:canonical true ;
+    oa:polity id:polity-disarchy ;
+    oa:recordOrder 0 .

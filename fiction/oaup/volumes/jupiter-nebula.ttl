@@ -1,0 +1,38 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Jupiter Nebula
+
+id:world-jupiter-nebula a oa:Place, oa:World ;
+    skos:prefLabel "Jupiter Nebula" ;
+    oa:kind "volume" ;
+    oa:labelsSystem false ;
+    oa:note "NGC 3242, the Ghost of Jupiter, in Hydra at 4,800 +/- 500 ly. The identification is this project's reading of the landmark name rather than something a source states." ;
+    oa:uncertain false .
+
+claim:location-world-jupiter-nebula a prov:Entity, oa:LocationClaim ;
+    oa:about id:world-jupiter-nebula ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -18.6439 ;
+    oa:distance value:location-world-jupiter-nebula-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:rightAscensionDeg 156.1913 .
+
+value:location-world-jupiter-nebula-distance a oa:QuantityValue ;
+    qudt:numericValue 4800.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-jupiter-nebula-nocozo a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:world-jupiter-nebula ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 0 .

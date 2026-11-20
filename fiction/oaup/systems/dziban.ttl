@@ -1,0 +1,32 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Dziban
+
+id:inner-sphere-row-0855 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Dziban" .
+
+claim:inner-sphere-inner-sphere-row-0855-bb36dd17431f a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0855 ;
+    oa:canonical true ;
+    oa:colonyName "Dziban" ;
+    oa:luminositySol "6.17" ;
+    oa:massSol "1.38" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 854 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0855-bb36dd17431f-source-distance ;
+    oa:spectralType "F5 IV-V" ;
+    oa:starName "Psi1 Draconis A" .
+
+value:inner-sphere-inner-sphere-row-0855-bb36dd17431f-source-distance a oa:QuantityValue ;
+    qudt:numericValue 74.211 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

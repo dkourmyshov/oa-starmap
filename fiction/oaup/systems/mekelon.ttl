@@ -1,0 +1,48 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Mekelon
+
+id:world-mekelon a oa:Place, oa:World ;
+    skos:prefLabel "Mekelon" ;
+    oa:article <https://www.orionsarm.com/eg-article/47aa87a3ab283> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:uncertain false .
+
+claim:location-world-mekelon a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47aa87a3ab283> ;
+    oa:about id:world-mekelon ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -42.7385 ;
+    oa:derivation "Interpolated from the sheet. The nearest of these, which makes the eight-hundred light year uncertainty larger than the distance itself — so this one says little more than the direction and the polity." ;
+    oa:directionErrorDeg 20.0 ;
+    oa:distance value:location-world-mekelon-distance ;
+    oa:distanceError value:location-world-mekelon-distance-error ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:EditorialEstimate ;
+    oa:rightAscensionDeg 338.0106 .
+
+value:location-world-mekelon-distance a oa:QuantityValue ;
+    qudt:numericValue 499.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+value:location-world-mekelon-distance-error a oa:QuantityValue ;
+    qudt:numericValue 800.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-mekelon-nocozo a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47aa87a3ab283> ;
+    oa:about id:world-mekelon ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 0 .

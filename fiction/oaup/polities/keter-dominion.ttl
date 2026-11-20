@@ -1,0 +1,18 @@
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+
+# Keter Dominion
+
+id:polity-keter-dominion a oa:Polity ;
+    skos:prefLabel "Keter Dominion" ;
+    oa:ambiguousName false ;
+    oa:color "#F8E5BC" ;
+    oa:editorialNote "Its own page, saved under sources/polities, dates the churches to the\n1200-1500s, the first colony fleet to Ain Soph Aur to 1788 (arriving\n1936), Keter \"already completely controlling\" the Congregation by 2220,\nand the Congregation's disbanding into Keter in 2680 — and names no\nfounding year for the Dominion. The timeline's 2388 below stands.\nEncyclopaedia timeline, 2388: \"The Congregation of Information Light emigrates from the\nsolar system to a remote system named Ain Soph Aur, setting up the structure\nof the Keter Dominion as it is today.\" Keterism is older — the timeline has\na Keterist mind designer in 2109 — so a colony an article calls Keterist\nbefore 2388 is entered as such on its own event, which this year does not\ngate.\nSeparated from the Solar Dominion, which sat 8.1 away and now sits 16.7.\nHue had only 2.5 degrees of room between Solar above and The Seams below,\nso the separation is in lightness and chroma instead: a pale gold against\na saturated yellow. Lightened again after the first attempt still read as\nthe same colour in the rings, where low alpha compresses chroma but leaves\nlightness intact." ;
+    oa:foundedAT 2388 ;
+    oa:hasSource src:political-maps-8000at ;
+    oa:kind "meta-empire" ;
+    oa:polityId "keter-dominion" ;
+    oa:recordOrder 3 ;
+    oa:uncertain false .

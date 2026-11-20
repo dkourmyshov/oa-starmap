@@ -1,0 +1,32 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Sysactria
+
+id:inner-sphere-row-0046 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Sysactria" .
+
+claim:inner-sphere-inner-sphere-row-0046-d30c88a89b86 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0046 ;
+    oa:canonical true ;
+    oa:colonyName "Sysactria" ;
+    oa:luminositySol "1.57E-06" ;
+    oa:massSol "0.113" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 45 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0046-d30c88a89b86-source-distance ;
+    oa:spectralType "M8.5 V" ;
+    oa:starName "DENIS J1048-3956" .
+
+value:inner-sphere-inner-sphere-row-0046-d30c88a89b86-source-distance a oa:QuantityValue ;
+    qudt:numericValue 13.193 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

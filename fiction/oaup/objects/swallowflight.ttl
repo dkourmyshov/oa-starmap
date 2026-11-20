@@ -1,0 +1,52 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Swallowflight
+
+id:world-swallowflight a oa:Place, oa:World ;
+    skos:prefLabel "Swallowflight" ;
+    oa:article <https://www.orionsarm.com/eg-article/478c15c58c022> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "Near the Vela supernova remnant, which this map has at 936 ly against this world's stated 880 — close enough that the remnant's direction and the article's distance describe one place rather than two." ;
+    oa:uncertain false .
+
+claim:location-world-swallowflight a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/478c15c58c022> ;
+    oa:about id:world-swallowflight ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -45.8333 ;
+    oa:distance value:location-world-swallowflight-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:nearName "Vela Supernova Remnant" ;
+    oa:rightAscensionDeg 128.5 .
+
+value:location-world-swallowflight-distance a oa:QuantityValue ;
+    qudt:numericValue 880.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-swallowflight-vela a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/478c15c58c022> ;
+    oa:about id:world-swallowflight ;
+    oa:canonical true ;
+    oa:polity id:polity-vela ;
+    oa:recordOrder 0 .
+
+claim:event-world-swallowflight-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/478c15c58c022> ;
+    oa:about id:world-swallowflight ;
+    oa:canonical true ;
+    oa:eventKind oa:Capital ;
+    oa:note "Capital of the Vela Immunity." ;
+    oa:precision oa:NotLaterThan ;
+    oa:recordOrder 0 ;
+    oa:yearAT 8100 .

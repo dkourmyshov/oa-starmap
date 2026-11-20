@@ -1,7 +1,7 @@
 """Import Orion's Arm stars from the project's Celestia add-on.
 
 Runs by hand, not as part of the build: it reads ``sources/OAAddons1.zip`` and
-writes ``fiction/oa_stars.yaml``, which is tracked. The build then reads only
+writes ``fiction/oaup/``, which is tracked. The build then reads only
 that file.
 
 The earlier arrangement re-parsed the archive on every build, following the
@@ -19,6 +19,9 @@ import re
 import zipfile
 from pathlib import Path
 from typing import Any
+
+from oastarmap.fiction.schema import OAStarEntry
+from oastarmap.fiction.store import OAUPStore
 
 # `[Modify] [catalogue-number] "Name"  # optional comment`
 _HEADER = re.compile(
@@ -177,77 +180,12 @@ def read_archives(directory: Path) -> list[dict[str, Any]]:
     return stars
 
 
-HEADER = """\
-# Orion's Arm stars, imported from the project's Celestia add-ons.
-#
-#   Source:  Orion's Arm Celestia add-on, every archive in sources/
-#   Page:    https://www.orionsarm.com/xcms.php?r=oa-page&page=gen_OACelestia2
-#   Terms:   https://www.orionsarm.com/Terms_Copyright_and_Submissions.html
-#
-# `archive` records which one each star came from. Reading only OAAddons1 left
-# ten .stc files unread, among them the one stating Huan Gao's own position.
-#
-# These are stars the setting asserts but the sky does not have: the suns of
-# named OA systems, and the populations OA gives to real clusters. Their
-# positions come from the fiction, not from an observation.
-#
-# `distance_ly` is light years, as Celestia's .stc format declares. It is named
-# for its unit because reading it as parsecs would move every star 3.26x further
-# out while still looking plausible.
-#
-# `system` is what the add-on's comment says the star is for, and is the name the
-# map labels it with. It is extracted from `comment` on import, and may be
-# corrected by hand where the source knows a system by a name its comment does
-# not use.
-#
-# Regenerate with `uv run oastarmap import-oastars`, which rewrites this file
-# from the archive. Re-importing discards hand edits, so review the diff.
-"""
-
-
-def write_yaml(stars: list[dict[str, Any]], dest: Path) -> int:
-    """Write the imported stars as YAML, with provenance in the file itself.
-
-    Hand-rolled rather than ``yaml.dump`` so the header comments survive and the
-    field order stays stable — the file is meant to be read and diffed.
-    """
-
-    def scalar(value: Any) -> str:
-        if value is None:
-            return "null"
-        if isinstance(value, float):
-            # repr() is the shortest string that round-trips back to the same
-            # float, so parsing "290.6596" and writing it here gives "290.6596".
-            # A %g format loses digits: it turned that into 290.66.
-            return repr(value)
-        text = str(value)
-        return '""' if not text else "'" + text.replace("'", "''") + "'"
-
-    lines = [HEADER, "stars:"]
-    for star in stars:
-        lines.append(f"  - name: {scalar(star['name'])}")
-        for field in (
-            "ra_deg",
-            "dec_deg",
-            "distance_ly",
-            "spectral_type",
-            "abs_mag",
-            "system",
-            "comment",
-            "source_file",
-            "archive",
-        ):
-            lines.append(f"    {field}: {scalar(star.get(field))}")
-
-    dest.parent.mkdir(parents=True, exist_ok=True)
-    dest.write_text("\n".join(lines) + "\n", encoding="utf-8")
-    return len(stars)
-
-
 def import_oastars(source: Path, dest: Path) -> int:
-    """Read the add-on and write the tracked star file. Returns the count.
-
-    Takes a directory of archives, or a single archive for the older behaviour.
-    """
-    stars = read_archives(source) if source.is_dir() else read_archive(source)
-    return write_yaml(stars, dest)
+    """Update Celestia claims in the graph, preserving curation and old evidence."""
+    records = read_archives(source) if source.is_dir() else read_archive(source)
+    stars = [OAStarEntry.model_validate(record) for record in records]
+    store = OAUPStore.load(dest)
+    count = store.replace_celestia(stars)
+    store.validate()
+    store.save()
+    return count

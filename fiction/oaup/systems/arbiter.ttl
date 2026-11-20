@@ -1,0 +1,49 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Arbiter
+
+id:world-arbiter a oa:Place, oa:World ;
+    skos:prefLabel "Arbiter" ;
+    oa:article <https://www.orionsarm.com/eg-article/45f7565e5d005> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "The centre of the Alignment Movement, which has an article where this system has only a stub: https://www.orionsarm.com/eg-article/45ece780eb89c" ;
+    oa:uncertain false .
+
+claim:location-world-arbiter a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/45f7565e5d005> ;
+    oa:about id:world-arbiter ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg 15.6984 ;
+    oa:derivation "Interpolated from the transcription of Anders Sandberg's maps, fitted from the anchors nearest this cell rather than by one transform over the whole sheet, whose rows and columns are unevenly spaced. It falls inside the anchors used, which is the better case. No article gives a position for it." ;
+    oa:directionErrorDeg 20.0 ;
+    oa:distance value:location-world-arbiter-distance ;
+    oa:distanceError value:location-world-arbiter-distance-error ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:EditorialEstimate ;
+    oa:rightAscensionDeg 265.1916 .
+
+value:location-world-arbiter-distance a oa:QuantityValue ;
+    qudt:numericValue 1119.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+value:location-world-arbiter-distance-error a oa:QuantityValue ;
+    qudt:numericValue 800.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-arbiter-keter-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/45f7565e5d005> ;
+    oa:about id:world-arbiter ;
+    oa:canonical true ;
+    oa:polity id:polity-keter-dominion ;
+    oa:recordOrder 0 .

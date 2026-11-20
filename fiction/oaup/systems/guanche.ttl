@@ -1,0 +1,86 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Guanche
+
+id:world-guanche a oa:Place, oa:World ;
+    skos:prefLabel "Guanche" ;
+    oa:article <https://www.orionsarm.com/eg-article/48f7fcd30db8c> ;
+    oa:editorialNote "---- Emple-Dokcetics ----------------------------------------------------\n\nTwo entries, and the second is not a place anyone built. The Emple-Dokcetics\nalready hold five clusters here off the political maps; what they did not\nhave was where they came from, or what happened at M50 in 7981." ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "2,899 ly out, on a position the Celestia add-on asserts rather than one any catalogue measures." ;
+    oa:uncertain false .
+
+claim:location-world-guanche a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48f7fcd30db8c> ;
+    oa:about id:world-guanche ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:oaStarName "JD 76601" .
+
+claim:affiliation-world-guanche-cygexpa a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48f7fcd30db8c> ;
+    oa:about id:world-guanche ;
+    oa:canonical true ;
+    oa:polity id:polity-cygexpa ;
+    oa:recordOrder 0 .
+
+claim:event-world-guanche-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48f7fcd30db8c> ;
+    oa:about id:world-guanche ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"More important still was the conquest of the material world, which allowed Guanche to progress to the microtech level and to tame atomic power in sixty years, which also allowed them to send the distress signal which attracted the Archosaur empireship Mirzallika and brought Guanche into the sphere of influence of the new regional superpower.\" No single sentence gives this event's year. It is derived by adding the stated 'sixty years' to the 'circa 8800 AT' mark given two paragraphs earlier for the chalcolithic power struggle; treat 8860 as an approximation built from the text's own numbers, not a stated year. Also unclear whether 'the new regional superpower' is definitely the Archosaurian Empire, or only the ship's crew/allegiance. The year is arithmetic on the article's 'circa 8800' and its sixty years, and the reader flagged it as such." ;
+    oa:polity id:polity-archosaurian-empire ;
+    oa:precision oa:Circa ;
+    oa:recordOrder 0 ;
+    oa:yearAT 8860 .
+
+# JD 76601
+
+id:star-jd-76601 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 76601" ;
+    oa:sourceName "JD 76601" .
+
+claim:celestia-star-jd-76601-a93238267bb5 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-76601 ;
+    oa:absoluteMagnitude 4.1 ;
+    oa:canonical true ;
+    oa:declinationDeg 43.5641 ;
+    oa:distance value:celestia-star-jd-76601-a93238267bb5-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 298.2012 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceComment "Star for system containing Guanche" ;
+    oa:sourceFile "oastars2.stc" ;
+    oa:sourceSystemName "Guanche" ;
+    oa:spectralType "G2V" .
+
+value:celestia-star-jd-76601-a93238267bb5-distance a oa:QuantityValue ;
+    qudt:numericValue 2899.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-star-jd-76601-cygexpa a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48f7fcd30db8c> ;
+    oa:about id:star-jd-76601 ;
+    oa:canonical true ;
+    oa:polity id:polity-cygexpa .
+
+claim:curation-star-jd-76601 a prov:Entity, oa:SystemCuration ;
+    oa:about id:star-jd-76601 ;
+    oa:article <https://www.orionsarm.com/eg-article/48f7fcd30db8c> ;
+    oa:editorialLabel "Guanche" ;
+    oa:hidden false ;
+    oa:uncertain false .

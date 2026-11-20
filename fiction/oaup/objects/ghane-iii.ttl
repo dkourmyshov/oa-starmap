@@ -1,0 +1,51 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# Ghane III
+
+id:world-ghane-iii a oa:Place, oa:World ;
+    skos:prefLabel "Ghane III" ;
+    oa:article <https://www.orionsarm.com/eg-article/464e916b35f9d> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "In Andromeda at 163 ly." ;
+    oa:uncertain false .
+
+claim:location-world-ghane-iii a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/464e916b35f9d> ;
+    oa:about id:world-ghane-iii ;
+    oa:canonical true ;
+    oa:catalogueFromSource true ;
+    oa:hipparcosId 11923 ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+claim:affiliation-world-ghane-iii-solar-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/464e916b35f9d> ;
+    oa:about id:world-ghane-iii ;
+    oa:canonical true ;
+    oa:polity id:polity-solar-dominion ;
+    oa:recordOrder 0 .
+
+claim:event-world-ghane-iii-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/464e916b35f9d> ;
+    oa:about id:world-ghane-iii ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Between ;
+    oa:recordOrder 0 ;
+    oa:untilAT 2700 ;
+    oa:yearAT 2400 .
+
+claim:event-world-ghane-iii-002 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-ghane-iii ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "The Solarian scout probe Opening the Endless Light 5 arrives in the Ghane III system, ending the locals' long isolation and allowing Solarist missionaries and relief organisations to help the Hyl Op ." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:sourceDescription "Encyclopaedia timeline, Age of Establishment" ;
+    oa:yearAT 2805 .

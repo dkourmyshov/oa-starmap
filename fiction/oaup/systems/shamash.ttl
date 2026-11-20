@@ -1,0 +1,182 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Shamash
+
+id:world-shamash a oa:Place, oa:World ;
+    skos:prefLabel "Shamash" ;
+    oa:article <https://www.orionsarm.com/eg-article/49121fa0347e1> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Xi Boötis, 22 ly. Shamash is the A component and Ishtar the B; the catalogue carries the pair as one entry." ;
+    oa:systemName "Shamash" ;
+    oa:uncertain false .
+
+claim:location-world-shamash a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/49121fa0347e1> ;
+    oa:about id:world-shamash ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Xi Bootis" .
+
+claim:affiliation-world-shamash-solar-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/49121fa0347e1> ;
+    oa:about id:world-shamash ;
+    oa:canonical true ;
+    oa:polity id:polity-solar-dominion ;
+    oa:recordOrder 0 .
+
+claim:event-world-shamash-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/49121fa0347e1> ;
+    oa:about id:world-shamash ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "Reached." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 1349 .
+
+claim:event-world-shamash-002 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-shamash ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "Shamash (Xi Bootis A III)colonised by Hearp Rangers." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:sourceDescription "Encyclopaedia timeline, Middle Federation / Megacorps" ;
+    oa:yearAT 1349 .
+
+claim:event-world-shamash-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/49121fa0347e1> ;
+    oa:about id:world-shamash ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"In 2348 Shamash formally joined the Solar Dominion.\" New against the header, which records only visited/settled 1349." ;
+    oa:polity id:polity-solar-dominion ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 2 ;
+    oa:yearAT 2348 .
+
+claim:event-world-shamash-004 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/49121fa0347e1> ;
+    oa:about id:world-shamash ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"When the Taurus Nexus break-up occurred in 3263 Locos was annexed by the Dominion.\" New against the header. Locos is a continent of Shamash previously leased to the Taurus Nexus; its annexation is recorded as a transferred event rather than treated as a mere sub- settlement, since it is a stated change of holder. Locos, a world of the system, at the Taurus Nexus break-up." ;
+    oa:polity id:polity-solar-dominion ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 3 ;
+    oa:yearAT 3263 .
+
+# Shamash
+
+id:inner-sphere-row-0161 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Shamash" .
+
+claim:inner-sphere-inner-sphere-row-0161-f81a5e86c5bd a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0161 ;
+    oa:article <https://www.orionsarm.com/eg-article/49121fa0347e1> ;
+    oa:canonical true ;
+    oa:colonyName "Shamash" ;
+    oa:luminositySol "0.589" ;
+    oa:massSol "0.90" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 160 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0161-f81a5e86c5bd-source-distance ;
+    oa:spectralType "G8 V" ;
+    oa:starName "Xi Boötis A" .
+
+value:inner-sphere-inner-sphere-row-0161-f81a5e86c5bd-source-distance a oa:QuantityValue ;
+    qudt:numericValue 22.027 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Shamash
+
+id:inner-sphere-row-0162 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Shamash" .
+
+claim:inner-sphere-inner-sphere-row-0162-72e1e25a2c4d a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0162 ;
+    oa:article <https://www.orionsarm.com/eg-article/49121fa0347e1> ;
+    oa:canonical true ;
+    oa:colonyName "Shamash" ;
+    oa:luminositySol "0.120" ;
+    oa:massSol "0.66" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 161 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0162-72e1e25a2c4d-source-distance ;
+    oa:spectralType "K4 V" ;
+    oa:starName "Xi Boötis B" .
+
+value:inner-sphere-inner-sphere-row-0162-72e1e25a2c4d-source-distance a oa:QuantityValue ;
+    qudt:numericValue 22.027 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Xi Boötis B I
+
+id:world-xi-bootis-b-i a oa:Place, oa:World ;
+    skos:prefLabel "Xi Boötis B I" ;
+    oa:article <https://www.orionsarm.com/eg-article/46f1e74d34205> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "A world of Ishtar, the B component of the Shamash system." ;
+    oa:systemName "Shamash" ;
+    oa:uncertain false .
+
+claim:location-world-xi-bootis-b-i a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46f1e74d34205> ;
+    oa:about id:world-xi-bootis-b-i ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Xi Bootis" .
+
+claim:affiliation-world-xi-bootis-b-i-solar-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46f1e74d34205> ;
+    oa:about id:world-xi-bootis-b-i ;
+    oa:canonical true ;
+    oa:polity id:polity-solar-dominion ;
+    oa:recordOrder 0 .
+
+claim:event-world-xi-bootis-b-i-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46f1e74d34205> ;
+    oa:about id:world-xi-bootis-b-i ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"In 6222 a Nimbus colony was set up on Xi Bootis B I, but it persisted only for 400 years before dissipating.\" Colony endured about 400 years before dissipating; no explicit end year is given, so none was recorded. By Nimbus, no polity of this file; the colony 'persisted only for 400 years', its end not dated outright." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 6222 .
+
+# Xil
+
+id:world-xil a oa:Place, oa:World ;
+    skos:prefLabel "Xil" ;
+    oa:article <https://www.orionsarm.com/eg-article/46f1e7a6acc51> ;
+    oa:kind "habitat" ;
+    oa:labelsSystem false ;
+    oa:note "A habitat complex at the Lagrange points of the Xi Bootis binary, 22 ly out — close enough to Sol that its own two suns are what define the place." ;
+    oa:uncertain false .
+
+claim:location-world-xil a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46f1e7a6acc51> ;
+    oa:about id:world-xil ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Xi Bootis" .

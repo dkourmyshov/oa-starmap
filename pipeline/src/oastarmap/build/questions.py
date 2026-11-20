@@ -22,7 +22,8 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Any
 
-from oastarmap.fiction.schema import FictionFile, Question, QuestionFile
+from oastarmap.fiction.schema import Question, QuestionFile
+from oastarmap.fiction.store import OAUP_DIR, load_store
 from oastarmap.paths import FICTION_DIR
 
 QUESTIONS_FILE = "questions.yaml"
@@ -78,7 +79,7 @@ def _derived_sections(datasets: dict[str, Any]) -> list[str]:
     # Polity display names. The datasets carry slugs, which are an implementation
     # detail — a reader should see "Keter Dominion", not "keter-dominion".
     polity_name = {
-        p.id: p.name for p in FictionFile.load(FICTION_DIR / "polities.yaml").polities
+        p.id: p.name for p in load_store(FICTION_DIR / OAUP_DIR).fiction.polities
     }
 
     inner = datasets.get("inner_sphere")

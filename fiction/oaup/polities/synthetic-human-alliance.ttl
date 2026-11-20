@@ -1,0 +1,16 @@
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+
+# Synthetic/Human Alliance
+
+id:polity-synthetic-human-alliance a oa:Polity ;
+    skos:prefLabel "Synthetic/Human Alliance" ;
+    oa:ambiguousName false ;
+    oa:color "#1D4A85" ;
+    oa:hasSource src:eg-system-articles ;
+    oa:kind "polity" ;
+    oa:polityId "synthetic-human-alliance" ;
+    oa:recordOrder 38 ;
+    oa:uncertain false .

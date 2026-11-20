@@ -1,0 +1,51 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Junna
+
+id:world-junna a oa:Place, oa:World ;
+    skos:prefLabel "Junna" ;
+    oa:article <https://www.orionsarm.com/eg-article/4682fdf9a6442> ;
+    oa:kind "moon" ;
+    oa:labelsSystem false ;
+    oa:note "A moon of a gas giant in the Begum system." ;
+    oa:parentName "Begum" ;
+    oa:systemName "Begum" ;
+    oa:uncertain false .
+
+claim:location-world-junna a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4682fdf9a6442> ;
+    oa:about id:world-junna ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:constellationName "Sagittarius" ;
+    oa:distance value:location-world-junna-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+value:location-world-junna-distance a oa:QuantityValue ;
+    qudt:numericValue 680.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-junna-negentropy-alliance a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4682fdf9a6442> ;
+    oa:about id:world-junna ;
+    oa:canonical true ;
+    oa:polity id:polity-negentropy-alliance ;
+    oa:recordOrder 0 .
+
+claim:event-world-junna-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4682fdf9a6442> ;
+    oa:about id:world-junna ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 2938 .

@@ -1,0 +1,76 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Pelion and Ossa
+
+id:world-pelion-and-ossa a oa:Place, oa:World ;
+    skos:prefLabel "Pelion and Ossa" ;
+    oa:article <https://www.orionsarm.com/eg-article/4f5b581f9fa71> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "Two planets that collided, and are now one object." ;
+    oa:uncertain false .
+
+claim:location-world-pelion-and-ossa a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4f5b581f9fa71> ;
+    oa:about id:world-pelion-and-ossa ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:constellationName "Pyxis" ;
+    oa:distance value:location-world-pelion-and-ossa-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+value:location-world-pelion-and-ossa-distance a oa:QuantityValue ;
+    qudt:numericValue 3705.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-pelion-and-ossa-nocozo a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4f5b581f9fa71> ;
+    oa:about id:world-pelion-and-ossa ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 0 .
+
+claim:affiliation-world-pelion-and-ossa-sophic-league a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4f5b581f9fa71> ;
+    oa:about id:world-pelion-and-ossa ;
+    oa:canonical true ;
+    oa:polity id:polity-sophic-league ;
+    oa:recordOrder 1 .
+
+claim:event-world-pelion-and-ossa-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4f5b581f9fa71> ;
+    oa:about id:world-pelion-and-ossa ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 7988 .
+
+claim:event-world-pelion-and-ossa-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4f5b581f9fa71> ;
+    oa:about id:world-pelion-and-ossa ;
+    oa:canonical true ;
+    oa:eventKind oa:Observed ;
+    oa:note "\"One such system, JD 440454221, was detected in Pyxis at long range in the third millennium AT, long before the first explorer class craft reached the vicinity.\" \"third millennium AT\" spans roughly 2001-3000; year_at is the start of that millennium. 'The third millennium AT', entered as 2000." ;
+    oa:precision oa:Circa ;
+    oa:recordOrder 1 ;
+    oa:yearAT 2000 .
+
+claim:event-world-pelion-and-ossa-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4f5b581f9fa71> ;
+    oa:about id:world-pelion-and-ossa ;
+    oa:canonical true ;
+    oa:eventKind oa:Abandoned ;
+    oa:note "\"Two small terrestrial worlds which collided in 9526 AT\" The planetary collision physically destroys both worlds, ending any habitation. See doubts for an earlier, undated evacuation (\"the two doomed planets were deserted\") that preceded a later wave of death- seeker visitors before this final impact. The two worlds collided, ending the colony; an earlier evacuation is undated." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 2 ;
+    oa:yearAT 9526 .

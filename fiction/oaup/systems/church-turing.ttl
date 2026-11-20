@@ -1,0 +1,51 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Church-Turing
+
+id:world-church-turing a oa:Place, oa:World ;
+    skos:prefLabel "Church-Turing" ;
+    oa:article <https://www.orionsarm.com/eg-article/4626d7ad72fe8> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "The best-specified position in this file. The article gives right ascension, declination, distance, constellation and galactic coordinates at once, and they agree: converting its 02h44m56.23s, +26d14'05.7\" at 102 ly returns -78.27, 40.85, -51.08, which is the article's own xyz to every digit it prints. The star, TYC 1772-592-1, is below the Tycho-2 catalogue cut this map draws from, so the direction is used rather than a binding." ;
+    oa:uncertain false .
+
+claim:location-world-church-turing a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4626d7ad72fe8> ;
+    oa:about id:world-church-turing ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg 26.2349 ;
+    oa:distance value:location-world-church-turing-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:nearName "TYC 1772-592-1" ;
+    oa:rightAscensionDeg 41.2343 .
+
+value:location-world-church-turing-distance a oa:QuantityValue ;
+    qudt:numericValue 102.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-church-turing-metasoft a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4626d7ad72fe8> ;
+    oa:about id:world-church-turing ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft ;
+    oa:recordOrder 0 .
+
+claim:event-world-church-turing-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4626d7ad72fe8> ;
+    oa:about id:world-church-turing ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 2460 .

@@ -1,0 +1,53 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Portal
+
+id:world-portal a oa:Place, oa:World ;
+    skos:prefLabel "Portal" ;
+    oa:article <https://www.orionsarm.com/eg-article/4902d86199c4d> ;
+    oa:editorialNote "---- Far Edge Civilisation -----------------------------------------------" ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Named as HIP 28864 in Monoceros at 1,720 ly, where the catalogue puts that star at 2,141 — a quarter out, too far to bind across, so the star gives the direction and the article the distance." ;
+    oa:uncertain false .
+
+claim:location-world-portal a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4902d86199c4d> ;
+    oa:about id:world-portal ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -6.0542 ;
+    oa:distance value:location-world-portal-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:nearName "HIP 28864" ;
+    oa:rightAscensionDeg 91.4145 .
+
+value:location-world-portal-distance a oa:QuantityValue ;
+    qudt:numericValue 1720.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-portal-crystal-star-domain a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4902d86199c4d> ;
+    oa:about id:world-portal ;
+    oa:canonical true ;
+    oa:polity id:polity-crystal-star-domain ;
+    oa:recordOrder 0 .
+
+claim:event-world-portal-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4902d86199c4d> ;
+    oa:about id:world-portal ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "Departed for from Enremdea." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 4980 .

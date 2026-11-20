@@ -1,0 +1,33 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Alula Australis / Fons Luminis
+
+id:inner-sphere-row-0265 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Alula Australis / Fons Luminis" .
+
+claim:inner-sphere-inner-sphere-row-0265-3acf011ae14a a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0265 ;
+    oa:article <https://www.orionsarm.com/eg-article/4900d8c15efa3> ;
+    oa:canonical true ;
+    oa:colonyName "Alula Australis / Fons Luminis" ;
+    oa:luminositySol "1.1" ;
+    oa:massSol "1.05" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 264 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0265-3acf011ae14a-source-distance ;
+    oa:spectralType "Re F8.5-G0 Ve" ;
+    oa:starName "Xi Ursae Majoris Aa" .
+
+value:inner-sphere-inner-sphere-row-0265-3acf011ae14a-source-distance a oa:QuantityValue ;
+    qudt:numericValue 28.489 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

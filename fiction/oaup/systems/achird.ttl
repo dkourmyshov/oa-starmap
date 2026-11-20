@@ -1,0 +1,57 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Achird
+
+id:inner-sphere-row-0117 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Achird" .
+
+claim:inner-sphere-inner-sphere-row-0117-bf255d4ec14c a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0117 ;
+    oa:article <https://www.orionsarm.com/eg-article/48ff5ef2ed040> ;
+    oa:canonical true ;
+    oa:colonyName "Achird" ;
+    oa:luminositySol "1.287" ;
+    oa:massSol "1.1" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 116 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0117-bf255d4ec14c-source-distance ;
+    oa:spectralType "G3 V" ;
+    oa:starName "Eta Cassiopeiae A" .
+
+value:inner-sphere-inner-sphere-row-0117-bf255d4ec14c-source-distance a oa:QuantityValue ;
+    qudt:numericValue 19.318 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Achird
+
+id:inner-sphere-row-0118 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Achird" .
+
+claim:inner-sphere-inner-sphere-row-0118-ef22b2748106 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0118 ;
+    oa:article <https://www.orionsarm.com/eg-article/48ff5ef2ed040> ;
+    oa:canonical true ;
+    oa:colonyName "Achird" ;
+    oa:luminositySol "0.0306" ;
+    oa:massSol "0.52" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 117 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0118-ef22b2748106-source-distance ;
+    oa:spectralType "K7 Vn" ;
+    oa:starName "Eta Cassiopeiae B" .
+
+value:inner-sphere-inner-sphere-row-0118-ef22b2748106-source-distance a oa:QuantityValue ;
+    qudt:numericValue 19.318 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

@@ -1,0 +1,63 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Barnard's Star
+
+id:world-barnard-s-star a oa:Place, oa:World ;
+    skos:prefLabel "Barnard's Star" ;
+    oa:article <https://www.orionsarm.com/eg-article/4609c8d6cadb4> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Gliese 699, as the colony table has it." ;
+    oa:systemName "Barnard's Star" ;
+    oa:uncertain false .
+
+claim:location-world-barnard-s-star a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4609c8d6cadb4> ;
+    oa:about id:world-barnard-s-star ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Gliese 699" .
+
+claim:event-world-barnard-s-star-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4609c8d6cadb4> ;
+    oa:about id:world-barnard-s-star ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"Barnard's Star was one of the first systems to be reached by refugee ships after the Great Expulsion, when the Skylark of Valeron arrived there in 761 AT.\" Refugees of the Great Expulsion; the article names no polity, then or since, its later holders being local factions." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 761 .
+
+# Barnard's Star
+
+id:inner-sphere-row-0005 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Barnard's Star" .
+
+claim:inner-sphere-inner-sphere-row-0005-c89a4ca82024 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0005 ;
+    oa:article <https://www.orionsarm.com/eg-article/4609c8d6cadb4> ;
+    oa:canonical true ;
+    oa:colonyName "Barnard's Star" ;
+    oa:luminositySol "0.000441" ;
+    oa:massSol "0.158" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 4 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0005-c89a4ca82024-source-distance ;
+    oa:spectralType "M3.8 Ve" ;
+    oa:starName "Gliese 699" .
+
+value:inner-sphere-inner-sphere-row-0005-c89a4ca82024-source-distance a oa:QuantityValue ;
+    qudt:numericValue 5.963 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

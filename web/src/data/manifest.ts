@@ -199,7 +199,7 @@ export interface OAStarsDataset {
 
 export interface OAStarName {
   name: string;
-  /** Curated display name, from fiction/oa_systems.yaml. */
+  /** Curated display name, from the system curation in fiction/oaup/. */
   label: string;
   comment: string;
   spectral_type: string;

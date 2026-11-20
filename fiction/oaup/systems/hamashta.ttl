@@ -1,0 +1,105 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Hamashta
+
+id:world-hamashta a oa:Place, oa:World ;
+    skos:prefLabel "Hamashta" ;
+    oa:article <https://www.orionsarm.com/eg-article/57f4f02853c69> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "p Eridani A, as the colony table has it." ;
+    oa:systemName "Hamashta" ;
+    oa:uncertain false .
+
+claim:location-world-hamashta a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/57f4f02853c69> ;
+    oa:about id:world-hamashta ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "p Eridani A" .
+
+claim:affiliation-world-hamashta-nocozo a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/57f4f02853c69> ;
+    oa:about id:world-hamashta ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 0 .
+
+claim:event-world-hamashta-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/57f4f02853c69> ;
+    oa:about id:world-hamashta ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"They reached p Eridani in 820 AT, constructed several rotating space habitats and colonised a number of small planetoids.\" The refugees were from the 'Great Expulsion from Earth', not a group on the roster; no polity is named for them at the time of settlement. Refugees, before the League existed; the article names no polity." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 820 .
+
+claim:event-world-hamashta-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/57f4f02853c69> ;
+    oa:about id:world-hamashta ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"Hamashta joined the Eridanus League in 846 AT, and sent system control ships to Eunchong to help suppress a rebellion in 1440.\" Joined the NoCoZo 'on the breakup of the League', undated." ;
+    oa:polity id:polity-eridanus-league ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 846 .
+
+# Hamashta
+
+id:inner-sphere-row-0231 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Hamashta" .
+
+claim:inner-sphere-inner-sphere-row-0231-777831f2578b a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0231 ;
+    oa:article <https://www.orionsarm.com/eg-article/57f4f02853c69> ;
+    oa:canonical true ;
+    oa:colonyName "Hamashta" ;
+    oa:luminositySol "0.35" ;
+    oa:massSol "0.78" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 230 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0231-777831f2578b-source-distance ;
+    oa:spectralType "K2 V" ;
+    oa:starName "p Eridani A" .
+
+value:inner-sphere-inner-sphere-row-0231-777831f2578b-source-distance a oa:QuantityValue ;
+    qudt:numericValue 26.733 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Hamashta
+
+id:inner-sphere-row-0232 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Hamashta" .
+
+claim:inner-sphere-inner-sphere-row-0232-d2ea76650c9a a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0232 ;
+    oa:article <https://www.orionsarm.com/eg-article/57f4f02853c69> ;
+    oa:canonical true ;
+    oa:colonyName "Hamashta" ;
+    oa:luminositySol "0.31" ;
+    oa:massSol "0.77" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 231 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0232-d2ea76650c9a-source-distance ;
+    oa:spectralType "K3 V" ;
+    oa:starName "p Eridani B" .
+
+value:inner-sphere-inner-sphere-row-0232-d2ea76650c9a-source-distance a oa:QuantityValue ;
+    qudt:numericValue 26.733 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

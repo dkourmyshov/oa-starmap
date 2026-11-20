@@ -1,0 +1,74 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Metropolis Ring City
+
+id:world-metropolis-ring-city a oa:Place, oa:World ;
+    skos:prefLabel "Metropolis Ring City" ;
+    oa:article <https://www.orionsarm.com/eg-article/4902f1f2c7f73> ;
+    oa:kind "megastructure" ;
+    oa:labelsSystem false ;
+    oa:parentName "Ho Jong Star" ;
+    oa:uncertain false .
+
+claim:location-world-metropolis-ring-city a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4902f1f2c7f73> ;
+    oa:about id:world-metropolis-ring-city ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -18.3 ;
+    oa:distance value:location-world-metropolis-ring-city-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:rightAscensionDeg 277.75 .
+
+value:location-world-metropolis-ring-city-distance a oa:QuantityValue ;
+    qudt:numericValue 659.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-metropolis-ring-city-mutual-progress-association a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4902f1f2c7f73> ;
+    oa:about id:world-metropolis-ring-city ;
+    oa:canonical true ;
+    oa:polity id:polity-mutual-progress-association ;
+    oa:recordOrder 0 .
+
+claim:event-world-metropolis-ring-city-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4902f1f2c7f73> ;
+    oa:about id:world-metropolis-ring-city ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "Begun early in the ComEmp period." ;
+    oa:precision oa:Between ;
+    oa:recordOrder 0 ;
+    oa:untilAT 5200 ;
+    oa:yearAT 4650 .
+
+claim:event-world-metropolis-ring-city-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4902f1f2c7f73> ;
+    oa:about id:world-metropolis-ring-city ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "Completed." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 5345 .
+
+claim:event-world-metropolis-ring-city-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4902f1f2c7f73> ;
+    oa:about id:world-metropolis-ring-city ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"Founded: construction began 4785 AT , completed 5345\" The header already records settled 4650-5200, which matches neither the 4785 start nor the 5345 completion date given here; flagged for review. The map's older 'settled 4650' has no support in the article." ;
+    oa:polity id:polity-mutual-progress-association ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 2 ;
+    oa:untilAT 5345 ;
+    oa:yearAT 4785 .

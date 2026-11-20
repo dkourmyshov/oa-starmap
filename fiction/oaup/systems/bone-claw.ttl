@@ -1,0 +1,63 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Bone-Claw
+
+id:world-bone-claw a oa:Place, oa:World ;
+    skos:prefLabel "Bone-Claw" ;
+    oa:article <https://www.orionsarm.com/eg-article/59b11b8fe7dfd> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Eta Cephei, as the colony table has it." ;
+    oa:systemName "Bone-Claw" ;
+    oa:uncertain false .
+
+claim:location-world-bone-claw a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/59b11b8fe7dfd> ;
+    oa:about id:world-bone-claw ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Eta Cephei" .
+
+claim:event-world-bone-claw-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/59b11b8fe7dfd> ;
+    oa:about id:world-bone-claw ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"Colonised 1550\" Sapient Hyenas from the First Federation who, the article says, sought independence from it; no holder is named." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 1550 .
+
+# Bone-Claw
+
+id:inner-sphere-row-0544 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Bone-Claw" .
+
+claim:inner-sphere-inner-sphere-row-0544-8a76b8fb12c3 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0544 ;
+    oa:article <https://www.orionsarm.com/eg-article/59b11b8fe7dfd> ;
+    oa:canonical true ;
+    oa:colonyName "Bone-Claw" ;
+    oa:luminositySol "7.621" ;
+    oa:massSol "." ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 543 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0544-8a76b8fb12c3-source-distance ;
+    oa:spectralType "K0 IVe" ;
+    oa:starName "Eta Cephei" .
+
+value:inner-sphere-inner-sphere-row-0544-8a76b8fb12c3-source-distance a oa:QuantityValue ;
+    qudt:numericValue 46.863 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

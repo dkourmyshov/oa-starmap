@@ -1,0 +1,64 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Yarkk
+
+id:world-yarkk a oa:Place, oa:World ;
+    skos:prefLabel "Yarkk" ;
+    oa:article <https://www.orionsarm.com/eg-article/55114779e0902> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Gliese 833, as the colony table has it." ;
+    oa:systemName "Yarkk" ;
+    oa:uncertain false .
+
+claim:location-world-yarkk a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/55114779e0902> ;
+    oa:about id:world-yarkk ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Gliese 833" .
+
+claim:event-world-yarkk-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/55114779e0902> ;
+    oa:about id:world-yarkk ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"Goodworld/Yarkk was first colonised by Linnaeus Enterprises in 1976 AT, using engenerator technology.\" Linnaeus Enterprises is identified elsewhere in the same article (Related Articles: 'LinnEnt (Linnaeus Enterprises)') as LinnEnt, the roster polity." ;
+    oa:polity id:polity-linnent ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 1976 .
+
+# Yarkk
+
+id:inner-sphere-row-0578 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Yarkk" .
+
+claim:inner-sphere-inner-sphere-row-0578-515361418f7c a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0578 ;
+    oa:article <https://www.orionsarm.com/eg-article/55114779e0902> ;
+    oa:canonical true ;
+    oa:colonyName "Yarkk" ;
+    oa:luminositySol "0.255" ;
+    oa:massSol "." ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 577 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0578-515361418f7c-source-distance ;
+    oa:spectralType "K1 V" ;
+    oa:starName "Gliese 833" .
+
+value:inner-sphere-inner-sphere-row-0578-515361418f7c-source-distance a oa:QuantityValue ;
+    qudt:numericValue 48.319 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

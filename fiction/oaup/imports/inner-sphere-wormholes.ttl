@@ -1,0 +1,3657 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0001-203b405e985a
+
+claim:wormhole-0001-203b405e985a a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "N/A" ;
+    oa:nearbyUnconnected "." ;
+    oa:note "The Root of the Wormhole Nexus" ;
+    oa:recordOrder 0 ;
+    oa:starName "Alpha Lyrae" ;
+    oa:systemName "Aksijaha" ;
+    oa:wormholeName "N/A" .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0002-43c28d055503
+
+claim:wormhole-0002-43c28d055503 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "Part of the original Vega Nexus" ;
+    oa:recordOrder 1 ;
+    oa:starName "Mu Herculis" ;
+    oa:systemName "Zhenruj" ;
+    oa:wormholeName "Chorus of Lights and Winds" .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0003-8eb55d14daa9
+
+claim:wormhole-0003-8eb55d14daa9 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 2 ;
+    oa:starName "HD 166620" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0004-c9d903a703f9
+
+claim:wormhole-0004-c9d903a703f9 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "2,400" ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 3 ;
+    oa:starName "Sigma Draconis" ;
+    oa:systemName "Alsafi" ;
+    oa:wormholeName "Jade Gate" .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0005-49241a0e8d5e
+
+claim:wormhole-0005-49241a0e8d5e a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "Perpetua" ;
+    oa:note "Part of the original Vega Nexus" ;
+    oa:recordOrder 4 ;
+    oa:starName "Alpha Aquilae" ;
+    oa:systemName "Altair" ;
+    oa:wormholeName "Annual Bridge of Birds" .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0006-938a6aea4dc0
+
+claim:wormhole-0006-938a6aea4dc0 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "5,900" ;
+    oa:nearbyUnconnected "Chun" ;
+    oa:note "Part of the original Vega Nexus" ;
+    oa:recordOrder 5 ;
+    oa:starName "Chi Draconis" ;
+    oa:systemName "(Lam Wai-Chun)" ;
+    oa:wormholeName "Well of Infinity" .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0007-417edba3cf1d
+
+claim:wormhole-0007-417edba3cf1d a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "Mandra Quin Si" ;
+    oa:note "." ;
+    oa:recordOrder 6 ;
+    oa:starName "70 Ophiuchi" ;
+    oa:systemName "(Barawatten)" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0008-9f33c3a68f57
+
+claim:wormhole-0008-9f33c3a68f57 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "Part of the original Vega Nexus" ;
+    oa:recordOrder 7 ;
+    oa:starName "Zeta Herculis" ;
+    oa:systemName "Hyedemmaup" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0009-419cb524bc71
+
+claim:wormhole-0009-419cb524bc71 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "2,200" ;
+    oa:nearbyUnconnected "Unon-Duuz, Rihal, Jinvanco, Howling Sky, Sindhu" ;
+    oa:note "." ;
+    oa:recordOrder 8 ;
+    oa:starName "61 Cygni" ;
+    oa:systemName "Piazzi-Bessel" ;
+    oa:wormholeName "Triumvirate's Gift" .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0010-24f7e6af0856
+
+claim:wormhole-0010-24f7e6af0856 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 9 ;
+    oa:starName "Xi Boötis" ;
+    oa:systemName "Shamash" ;
+    oa:wormholeName "Instant or what?" .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0011-12371e41ddc3
+
+claim:wormhole-0011-12371e41ddc3 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 10 ;
+    oa:starName "Gliese 688" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0012-cab8d8b057a4
+
+claim:wormhole-0012-cab8d8b057a4 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "Uoagranyu, Pandya" ;
+    oa:note "." ;
+    oa:recordOrder 11 ;
+    oa:starName "Eta Cassiopeiae" ;
+    oa:systemName "Achird" ;
+    oa:wormholeName "The Parents of Invention" .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0013-3ac79cfa0f35
+
+claim:wormhole-0013-3ac79cfa0f35 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "Bellon, Exenthar" ;
+    oa:note "." ;
+    oa:recordOrder 12 ;
+    oa:starName "Gliese 738" ;
+    oa:systemName "Harmony and Amity" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0014-3f841a080daf
+
+claim:wormhole-0014-3f841a080daf a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 13 ;
+    oa:starName "HD 122064" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0015-33b70fd92576
+
+claim:wormhole-0015-33b70fd92576 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 14 ;
+    oa:starName "72 Herculis" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0016-76b55f3a6217
+
+claim:wormhole-0016-76b55f3a6217 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "Orinoco" ;
+    oa:note "." ;
+    oa:recordOrder 15 ;
+    oa:starName "Gamma Serpentis" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0017-dcdb18c3877a
+
+claim:wormhole-0017-dcdb18c3877a a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "Gliese 653" ;
+    oa:note "." ;
+    oa:recordOrder 16 ;
+    oa:starName "12 Ophiuchi" ;
+    oa:systemName "(Peta Dromanis)" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0018-180584c419dc
+
+claim:wormhole-0018-180584c419dc a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "3,000" ;
+    oa:nearbyUnconnected "Barnard's Star, Akela, Rajand" ;
+    oa:note "." ;
+    oa:recordOrder 17 ;
+    oa:starName "Sol" ;
+    oa:systemName "Solsys" ;
+    oa:wormholeName "Einstein Gate" .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0019-c8109d748da5
+
+claim:wormhole-0019-c8109d748da5 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "Yall-Ull, V1054 Ophiuchi" ;
+    oa:note "." ;
+    oa:recordOrder 18 ;
+    oa:starName "36 Ophiuchi" ;
+    oa:systemName "Guniibuu" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0020-767b45222a70
+
+claim:wormhole-0020-767b45222a70 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "Gliese 675, 19 Draconis" ;
+    oa:note "." ;
+    oa:recordOrder 19 ;
+    oa:starName "26 Draconis" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0021-10df15e3e9f0
+
+claim:wormhole-0021-10df15e3e9f0 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "Yin-Yang, Sonthaya" ;
+    oa:note "." ;
+    oa:recordOrder 20 ;
+    oa:starName "Alpha Centauri" ;
+    oa:systemName "Cenaurinume" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0022-9e83b53e8878
+
+claim:wormhole-0022-9e83b53e8878 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 21 ;
+    oa:starName "99 Herculis" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0023-447a03f28414
+
+claim:wormhole-0023-447a03f28414 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 22 ;
+    oa:starName "Groombridge 1618" ;
+    oa:systemName "Resshuna" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0024-663f2fc6d575
+
+claim:wormhole-0024-663f2fc6d575 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 23 ;
+    oa:starName "Gliese 909" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0025-b1e1166461d5
+
+claim:wormhole-0025-b1e1166461d5 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 24 ;
+    oa:starName "44 Boötis" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0026-60a2d2096606
+
+claim:wormhole-0026-60a2d2096606 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 25 ;
+    oa:starName "Eta Cephei" ;
+    oa:systemName "Bone-Claw" ;
+    oa:wormholeName "Spike" .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0027-9f67d8540863
+
+claim:wormhole-0027-9f67d8540863 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 26 ;
+    oa:starName "Iota Pegasi" ;
+    oa:systemName "Yosunoh" ;
+    oa:wormholeName "Iridescent Kaleidoscope" .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0028-0832d9b64c30
+
+claim:wormhole-0028-0832d9b64c30 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 27 ;
+    oa:starName "Gliese 783" ;
+    oa:systemName "Chakri-Rama" ;
+    oa:wormholeName "And Once Again We Vote" .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0029-22aae1bd9061
+
+claim:wormhole-0029-22aae1bd9061 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "Tincture" ;
+    oa:note "." ;
+    oa:recordOrder 28 ;
+    oa:starName "Gliese 570" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0030-21b39376b280
+
+claim:wormhole-0030-21b39376b280 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 29 ;
+    oa:starName "Beta Aquilae" ;
+    oa:systemName "Alshain" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0031-49312f7eb7a9
+
+claim:wormhole-0031-49312f7eb7a9 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 30 ;
+    oa:starName "Alpha Ophiuchi" ;
+    oa:systemName "Rasalhague / Forest of Life" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0032-f2bbcb5fc722
+
+claim:wormhole-0032-f2bbcb5fc722 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 31 ;
+    oa:starName "DE Boötis" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0033-85ba2dd77b45
+
+claim:wormhole-0033-85ba2dd77b45 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "Gliese 778" ;
+    oa:note "." ;
+    oa:recordOrder 32 ;
+    oa:starName "Gliese 777" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0034-ec763a8c8d93
+
+claim:wormhole-0034-ec763a8c8d93 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "Eunchong, Serganet" ;
+    oa:note "." ;
+    oa:recordOrder 33 ;
+    oa:starName "Epsilon Indi" ;
+    oa:systemName "Gatlida" ;
+    oa:wormholeName "No More Diorama" .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0035-35d822892104
+
+claim:wormhole-0035-35d822892104 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 34 ;
+    oa:starName "Beta Comae Berenices" ;
+    oa:systemName "Chloris" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0036-2ed8e3c9b6bd
+
+claim:wormhole-0036-2ed8e3c9b6bd a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 35 ;
+    oa:starName "HD 10780" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0037-20ff0689440f
+
+claim:wormhole-0037-20ff0689440f a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "Matalkinnev" ;
+    oa:note "." ;
+    oa:recordOrder 36 ;
+    oa:starName "Gliese 785" ;
+    oa:systemName "Eden" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0038-6ab054e1ec60
+
+claim:wormhole-0038-6ab054e1ec60 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 37 ;
+    oa:starName "Alpha Cephei" ;
+    oa:systemName "Alderamin" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0039-695ae446575d
+
+claim:wormhole-0039-695ae446575d a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "4,400" ;
+    oa:nearbyUnconnected "YZ Ceti, Kaggen, The Violets" ;
+    oa:note "." ;
+    oa:recordOrder 38 ;
+    oa:starName "Tau Ceti" ;
+    oa:systemName "Nova" ;
+    oa:wormholeName "Hawking Bridge" .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0040-a43ec1283ca1
+
+claim:wormhole-0040-a43ec1283ca1 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "3,800" ;
+    oa:nearbyUnconnected "GJ 1061, Teegarden's Star" ;
+    oa:note "Side branch node accessible via Nova" ;
+    oa:recordOrder 39 ;
+    oa:starName "Epsilon Eridani" ;
+    oa:systemName "Ran" ;
+    oa:wormholeName "Vast Horizon" .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0041-944c5ac7c852
+
+claim:wormhole-0041-944c5ac7c852 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 40 ;
+    oa:starName "Gliese 726" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0042-1b50572f2362
+
+claim:wormhole-0042-1b50572f2362 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "Gliese 619, Gliese 611" ;
+    oa:note "." ;
+    oa:recordOrder 41 ;
+    oa:starName "Chi Herculis" ;
+    oa:systemName "Balthazar" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0043-d353da032704
+
+claim:wormhole-0043-d353da032704 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "Procyon, Luyten's Star, Midnight Pearl, Kapteyn's Star, Urachlgarid" ;
+    oa:note "." ;
+    oa:recordOrder 42 ;
+    oa:starName "Alpha Canis Majoris" ;
+    oa:systemName "Sirius" ;
+    oa:wormholeName "Sothis Bridge" .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0044-b3ec8e685eda
+
+claim:wormhole-0044-b3ec8e685eda a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "31 Aquilae" ;
+    oa:note "." ;
+    oa:recordOrder 43 ;
+    oa:starName "Delta Aquilae" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0045-e2e5e31a3660
+
+claim:wormhole-0045-e2e5e31a3660 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 44 ;
+    oa:starName "Gamma Cephei" ;
+    oa:systemName "Errai" ;
+    oa:wormholeName "The Better Way to Travel" .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0046-292d4430b7ae
+
+claim:wormhole-0046-292d4430b7ae a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "Arcturus" ;
+    oa:note "." ;
+    oa:recordOrder 45 ;
+    oa:starName "Eta Boötis" ;
+    oa:systemName "Muphrid" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0047-6180f7f2c283
+
+claim:wormhole-0047-6180f7f2c283 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "Gliese 556" ;
+    oa:note "." ;
+    oa:recordOrder 46 ;
+    oa:starName "Theta Boötis" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0048-33a76f353273
+
+claim:wormhole-0048-33a76f353273 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 47 ;
+    oa:starName "96 G. Piscium" ;
+    oa:systemName "Gaigent / The World of Forking Paths" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0049-eb2b683e1dff
+
+claim:wormhole-0049-eb2b683e1dff a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 48 ;
+    oa:starName "107 Piscium" ;
+    oa:systemName "Aztlan" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0050-ed8d4d9fc1ef
+
+claim:wormhole-0050-ed8d4d9fc1ef a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "TW Piscis Austrini" ;
+    oa:note "." ;
+    oa:recordOrder 49 ;
+    oa:starName "Alpha Piscis Austrini" ;
+    oa:systemName "Fomalhaut" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0051-4c7c9952c10d
+
+claim:wormhole-0051-4c7c9952c10d a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "Gliese 693" ;
+    oa:note "." ;
+    oa:recordOrder 50 ;
+    oa:starName "Delta Pavonis" ;
+    oa:systemName "Aristotle" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0052-73754e1a3f32
+
+claim:wormhole-0052-73754e1a3f32 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "Klarus, Argelander's Star" ;
+    oa:note "." ;
+    oa:recordOrder 51 ;
+    oa:starName "Xi Ursae Majoris" ;
+    oa:systemName "Fons Luminis" ;
+    oa:wormholeName "Brilliance Gateway" .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0053-5f939b23afa4
+
+claim:wormhole-0053-5f939b23afa4 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "Side branch node accessible via Fons Luminis" ;
+    oa:recordOrder 52 ;
+    oa:starName "Beta Canum Venaticorum" ;
+    oa:systemName "Chara" ;
+    oa:wormholeName "Illustrious One Leads the Way" .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0054-1752f19b9be7
+
+claim:wormhole-0054-1752f19b9be7 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "Side branch node accessible via Fons Luminis" ;
+    oa:recordOrder 53 ;
+    oa:starName "Beta Leonis" ;
+    oa:systemName "Denebola" ;
+    oa:wormholeName "Ennai of the Fivesun Dawn" .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0055-f6ed2497371b
+
+claim:wormhole-0055-f6ed2497371b a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 54 ;
+    oa:starName "Theta Cygni" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0056-39f4d1ca2c35
+
+claim:wormhole-0056-39f4d1ca2c35 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 55 ;
+    oa:starName "Gliese 505" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0057-3884652da22a
+
+claim:wormhole-0057-3884652da22a a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "HD 156985, HD 153525" ;
+    oa:note "." ;
+    oa:recordOrder 56 ;
+    oa:starName "HD 154345" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0058-d2f08870222d
+
+claim:wormhole-0058-d2f08870222d a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "Gliese 781" ;
+    oa:note "." ;
+    oa:recordOrder 57 ;
+    oa:starName "HD 184467" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0059-b62f21f3fa96
+
+claim:wormhole-0059-b62f21f3fa96 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "Gliese 716" ;
+    oa:note "." ;
+    oa:recordOrder 58 ;
+    oa:starName "Gliese 722" ;
+    oa:systemName "Ecotopia" ;
+    oa:wormholeName "Go With the Flow" .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0060-183b36dbc67e
+
+claim:wormhole-0060-183b36dbc67e a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 59 ;
+    oa:starName "41 G. Arae" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0061-be07e0a2ad0d
+
+claim:wormhole-0061-be07e0a2ad0d a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 60 ;
+    oa:starName "HD 193664" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0062-ba73c247c83d
+
+claim:wormhole-0062-ba73c247c83d a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "HD 190067" ;
+    oa:note "." ;
+    oa:recordOrder 61 ;
+    oa:starName "15 Sagittae" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0063-4f0b5f1237bc
+
+claim:wormhole-0063-4f0b5f1237bc a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 62 ;
+    oa:starName "Gliese 528" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0064-ec8d51046ecf
+
+claim:wormhole-0064-ec8d51046ecf a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 63 ;
+    oa:starName "14 Herculis" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0065-6d8779091ea2
+
+claim:wormhole-0065-6d8779091ea2 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "Germyn" ;
+    oa:note "." ;
+    oa:recordOrder 64 ;
+    oa:starName "Rho Coronae Borealis" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0066-917570a72163
+
+claim:wormhole-0066-917570a72163 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "HD 166" ;
+    oa:note "." ;
+    oa:recordOrder 65 ;
+    oa:starName "85 Pegasi" ;
+    oa:systemName "Mynti" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0067-0a05916f69f3
+
+claim:wormhole-0067-0a05916f69f3 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "1,600" ;
+    oa:nearbyUnconnected "Yiramm, MyuvYin, Ithiplumo, Chaihua" ;
+    oa:note "." ;
+    oa:recordOrder 66 ;
+    oa:starName "40 Eridani" ;
+    oa:systemName "Keid" ;
+    oa:wormholeName "Two Sides of the Same Walkway" .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0068-298b562588bb
+
+claim:wormhole-0068-298b562588bb a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 67 ;
+    oa:starName "Delta Capricorni" ;
+    oa:systemName "Ain Soph Aur" ;
+    oa:wormholeName "Transfinity" .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0069-9e5fd734c38f
+
+claim:wormhole-0069-9e5fd734c38f a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "Gliese 796" ;
+    oa:note "Side branch node accessible via Ain Soph Aur" ;
+    oa:recordOrder 68 ;
+    oa:starName "Psi Capricorni" ;
+    oa:systemName "(Barboro)" ;
+    oa:wormholeName "Bright Door" .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0070-9c077af73f47
+
+claim:wormhole-0070-9c077af73f47 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "Side branch node accessible via Ain Soph Aur" ;
+    oa:recordOrder 69 ;
+    oa:starName "Gliese 868" ;
+    oa:systemName "(Branswerg)" ;
+    oa:wormholeName "Enlightened Self-Interest" .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0071-d828448bd89e
+
+claim:wormhole-0071-d828448bd89e a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 70 ;
+    oa:starName "61 Virginis" ;
+    oa:systemName "Othelia" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0072-27a4274f533f
+
+claim:wormhole-0072-27a4274f533f a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 71 ;
+    oa:starName "Gliese 678" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0073-7dc0cb710222
+
+claim:wormhole-0073-7dc0cb710222 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 72 ;
+    oa:starName "18 Scorpii" ;
+    oa:systemName "Felicidade" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0074-de8ce0950289
+
+claim:wormhole-0074-de8ce0950289 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 73 ;
+    oa:starName "HD 190771" ;
+    oa:systemName "Cythera" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0075-c53ea915bfbb
+
+claim:wormhole-0075-c53ea915bfbb a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 74 ;
+    oa:starName "Psi Serpentis" ;
+    oa:systemName "(Daffy)" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0076-df253370762b
+
+claim:wormhole-0076-df253370762b a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 75 ;
+    oa:starName "Gliese 105" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0077-09866e753df5
+
+claim:wormhole-0077-09866e753df5 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "Iota Persei" ;
+    oa:note "." ;
+    oa:recordOrder 76 ;
+    oa:starName "Theta Persei" ;
+    oa:systemName "Bourgatov" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0078-0aaad338be66
+
+claim:wormhole-0078-0aaad338be66 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 77 ;
+    oa:starName "Gliese 824" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0079-b450c54022ff
+
+claim:wormhole-0079-b450c54022ff a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 78 ;
+    oa:starName "110 Herculis" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0080-48e358e8b739
+
+claim:wormhole-0080-48e358e8b739 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 79 ;
+    oa:starName "Sigma Boötis" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0081-24b8098542d8
+
+claim:wormhole-0081-24b8098542d8 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 80 ;
+    oa:starName "Gliese 420" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0082-b0a9eb9847ff
+
+claim:wormhole-0082-b0a9eb9847ff a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 81 ;
+    oa:starName "Gliese 483" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0083-c9abf35ada59
+
+claim:wormhole-0083-c9abf35ada59 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 82 ;
+    oa:starName "Gliese 641" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0084-98087398d631
+
+claim:wormhole-0084-98087398d631 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 83 ;
+    oa:starName "Delta Trianguli" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0085-26275f3709fd
+
+claim:wormhole-0085-26275f3709fd a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 84 ;
+    oa:starName "Gliese 770" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0086-63840fa72b72
+
+claim:wormhole-0086-63840fa72b72 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "1,700" ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 85 ;
+    oa:starName "36 Ursae Majoris" ;
+    oa:systemName "New Mars" ;
+    oa:wormholeName "The Remembrance of That Old Dream in Magenta" .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0087-39a7083e392b
+
+claim:wormhole-0087-39a7083e392b a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 86 ;
+    oa:starName "Eta Coronae Borealis" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0088-7369fcbbdb51
+
+claim:wormhole-0088-7369fcbbdb51 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "Mardit" ;
+    oa:note "." ;
+    oa:recordOrder 87 ;
+    oa:starName "82 G. Eridani" ;
+    oa:systemName "(Terranova)" ;
+    oa:wormholeName "Twelve Mirrors Hall" .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0089-4144d1f87e82
+
+claim:wormhole-0089-4144d1f87e82 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 88 ;
+    oa:starName "HD 189733" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0090-dacbfe099d49
+
+claim:wormhole-0090-dacbfe099d49 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 89 ;
+    oa:starName "HD 200560" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0091-d1145c705785
+
+claim:wormhole-0091-d1145c705785 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 90 ;
+    oa:starName "51 Pegasi" ;
+    oa:systemName "Helvetios" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0092-34507f77c811
+
+claim:wormhole-0092-34507f77c811 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 91 ;
+    oa:starName "HD 180161" ;
+    oa:systemName "Yosonia" ;
+    oa:wormholeName "Infinite Perfection" .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0093-e7061042ca9b
+
+claim:wormhole-0093-e7061042ca9b a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 92 ;
+    oa:starName "Gliese 229" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0094-28da4a160453
+
+claim:wormhole-0094-28da4a160453 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 93 ;
+    oa:starName "39 Serpentis" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0095-bc33e0ee27a6
+
+claim:wormhole-0095-bc33e0ee27a6 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "Dorangloon, Sesharia" ;
+    oa:note "." ;
+    oa:recordOrder 94 ;
+    oa:starName "Beta Hydri" ;
+    oa:systemName "Calendar / April" ;
+    oa:wormholeName "Only Connect!" .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0096-a707f3b5a3b4
+
+claim:wormhole-0096-a707f3b5a3b4 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "HD 10307" ;
+    oa:note "." ;
+    oa:recordOrder 95 ;
+    oa:starName "Upsilon Andromedae" ;
+    oa:systemName "Titawin" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0097-d3b50d6977cd
+
+claim:wormhole-0097-d3b50d6977cd a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 96 ;
+    oa:starName "Omicron Aquilae" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0098-730fdbc70d98
+
+claim:wormhole-0098-730fdbc70d98 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "HD 154417" ;
+    oa:note "." ;
+    oa:recordOrder 97 ;
+    oa:starName "HD 157347" ;
+    oa:systemName "Relay 0" ;
+    oa:wormholeName "Eightfold Path" .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0099-d5ef8391acaf
+
+claim:wormhole-0099-d5ef8391acaf a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "Gliese 710, Gliese 715" ;
+    oa:note "." ;
+    oa:recordOrder 98 ;
+    oa:starName "Eta Serpentis" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0100-2e460107529f
+
+claim:wormhole-0100-2e460107529f a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "58 Ophiuchi" ;
+    oa:note "." ;
+    oa:recordOrder 99 ;
+    oa:starName "Xi Ophiuchi" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0101-648a07e9d972
+
+claim:wormhole-0101-648a07e9d972 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "5,000" ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 100 ;
+    oa:starName "Zeta Serpentis" ;
+    oa:systemName "Oikoumene" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0102-09683c6e89a2
+
+claim:wormhole-0102-09683c6e89a2 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 101 ;
+    oa:starName "Beta Ophiuchi" ;
+    oa:systemName "Cebalrai" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0103-9bc559b55ee3
+
+claim:wormhole-0103-9bc559b55ee3 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 102 ;
+    oa:starName "72 Ophiuchi" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0104-3557c4abfd19
+
+claim:wormhole-0104-3557c4abfd19 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "5,500" ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 103 ;
+    oa:starName "Xi Scorpii" ;
+    oa:systemName "Kiyoshi" ;
+    oa:wormholeName "Akiyoshidai" .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0105-8935669ea0a0
+
+claim:wormhole-0105-8935669ea0a0 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 104 ;
+    oa:starName "Omega Sagittarii" ;
+    oa:systemName "Terebellum" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0106-714117eec243
+
+claim:wormhole-0106-714117eec243 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 105 ;
+    oa:starName "Lambda Sagittarii" ;
+    oa:systemName "Kaus Borealis" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0107-d6f05951f2d3
+
+claim:wormhole-0107-d6f05951f2d3 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 106 ;
+    oa:starName "51 Aquilae" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0108-26b624afc9f6
+
+claim:wormhole-0108-26b624afc9f6 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 107 ;
+    oa:starName "Xi2 Capricorni" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0109-9bb6f0c3ef3b
+
+claim:wormhole-0109-9bb6f0c3ef3b a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 108 ;
+    oa:starName "Gliese 749" ;
+    oa:systemName "Gumala" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0110-060c5f9b1192
+
+claim:wormhole-0110-060c5f9b1192 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 109 ;
+    oa:starName "HD 144585" ;
+    oa:systemName "Karol Ring" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0111-652e614dfc80
+
+claim:wormhole-0111-652e614dfc80 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "Ixeway" ;
+    oa:note "." ;
+    oa:recordOrder 110 ;
+    oa:starName "Zeta Sagittarii" ;
+    oa:systemName "Ascella" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0112-d73c5fc87c84
+
+claim:wormhole-0112-d73c5fc87c84 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 111 ;
+    oa:starName "Gamma Ophiuchi" ;
+    oa:systemName "Bake-eo" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0113-18cf858bd223
+
+claim:wormhole-0113-18cf858bd223 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 112 ;
+    oa:starName "42 Aquilae" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0114-f6b77b3162ba
+
+claim:wormhole-0114-f6b77b3162ba a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 113 ;
+    oa:starName "Alpha2 Capricorni" ;
+    oa:systemName "Algedi" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0115-ca294133ab04
+
+claim:wormhole-0115-ca294133ab04 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 114 ;
+    oa:starName "." ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0116-a4511070c883
+
+claim:wormhole-0116-a4511070c883 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "HD 186858, Qjellto" ;
+    oa:note "." ;
+    oa:recordOrder 115 ;
+    oa:starName "17 Cygni" ;
+    oa:systemName "Relay 1" ;
+    oa:wormholeName "Lifeline" .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0117-51f2036e0d78
+
+claim:wormhole-0117-51f2036e0d78 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 116 ;
+    oa:starName "HD 184385" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0118-187de8bc170c
+
+claim:wormhole-0118-187de8bc170c a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 117 ;
+    oa:starName "Gliese 746" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0119-2ba727802fe8
+
+claim:wormhole-0119-2ba727802fe8 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 118 ;
+    oa:starName "Gliese 797" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0120-eca9448e5770
+
+claim:wormhole-0120-eca9448e5770 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 119 ;
+    oa:starName "HD 190470" ;
+    oa:systemName "Cog" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0121-f75aa953ce6d
+
+claim:wormhole-0121-f75aa953ce6d a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 120 ;
+    oa:starName "Epsilon Cygni" ;
+    oa:systemName "Aljanah" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0122-9c3e8ecfa360
+
+claim:wormhole-0122-9c3e8ecfa360 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 121 ;
+    oa:starName "Delta Herculis" ;
+    oa:systemName "Sarin" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0123-7cdf79f661a0
+
+claim:wormhole-0123-7cdf79f661a0 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "Gliese 840" ;
+    oa:note "." ;
+    oa:recordOrder 122 ;
+    oa:starName "Mu Cygni" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0124-b59d1ddbb7f3
+
+claim:wormhole-0124-b59d1ddbb7f3 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 123 ;
+    oa:starName "Zeta Aquilae" ;
+    oa:systemName "Okab" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0125-ca294133ab04
+
+claim:wormhole-0125-ca294133ab04 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 124 ;
+    oa:starName "." ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0126-d72d2275e517
+
+claim:wormhole-0126-d72d2275e517 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 125 ;
+    oa:starName "HD 211472" ;
+    oa:systemName "Relay 2" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0127-75317ad0cb9c
+
+claim:wormhole-0127-75317ad0cb9c a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "1,700" ;
+    oa:nearbyUnconnected "HD 221354" ;
+    oa:note "." ;
+    oa:recordOrder 126 ;
+    oa:starName "Beta Cassiopeiae" ;
+    oa:systemName "Caph" ;
+    oa:wormholeName "When All Falls..." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0128-43622b608c7d
+
+claim:wormhole-0128-43622b608c7d a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 127 ;
+    oa:starName "16 Cygni" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0129-262f9ace4690
+
+claim:wormhole-0129-262f9ace4690 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 128 ;
+    oa:starName "Tau Cygni" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0130-51a99fc842a8
+
+claim:wormhole-0130-51a99fc842a8 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 129 ;
+    oa:starName "36 Draconis" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0131-1809d691e4b1
+
+claim:wormhole-0131-1809d691e4b1 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 130 ;
+    oa:starName "Psi1 Draconis" ;
+    oa:systemName "Dziban" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0132-ae2190478af4
+
+claim:wormhole-0132-ae2190478af4 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 131 ;
+    oa:starName "Omega Draconis" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0133-a0728155f9db
+
+claim:wormhole-0133-a0728155f9db a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 132 ;
+    oa:starName "HD 216448" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0134-13fb5e9bf355
+
+claim:wormhole-0134-13fb5e9bf355 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 133 ;
+    oa:starName "Epsilon Cephei" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0135-82d2acc9dfd9
+
+claim:wormhole-0135-82d2acc9dfd9 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 134 ;
+    oa:starName "59 Draconis" ;
+    oa:systemName "Paz" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0136-891093a08f3e
+
+claim:wormhole-0136-891093a08f3e a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "Stellio" ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 135 ;
+    oa:starName "Alpha Lacertae" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0137-ca294133ab04
+
+claim:wormhole-0137-ca294133ab04 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 136 ;
+    oa:starName "." ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0138-e33b8b72a0a0
+
+claim:wormhole-0138-e33b8b72a0a0 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "Helios" ;
+    oa:note "." ;
+    oa:recordOrder 137 ;
+    oa:starName "Alpha Aurigae" ;
+    oa:systemName "Capella" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0139-8765a6fbbf85
+
+claim:wormhole-0139-8765a6fbbf85 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "Gliese 310" ;
+    oa:note "." ;
+    oa:recordOrder 138 ;
+    oa:starName "Pi1 Ursae Majoris" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0140-f01fad785701
+
+claim:wormhole-0140-f01fad785701 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "Theta Ursae Majoris, 10 Ursae Majoris" ;
+    oa:note "." ;
+    oa:recordOrder 139 ;
+    oa:starName "Iota Ursae Majoris" ;
+    oa:systemName "Talitha" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0141-bd3fbbf55270
+
+claim:wormhole-0141-bd3fbbf55270 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "Nathan, Anahita" ;
+    oa:note "." ;
+    oa:recordOrder 140 ;
+    oa:starName "Psi5 Aurigae" ;
+    oa:systemName "Eros" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0142-17c9a2341e24
+
+claim:wormhole-0142-17c9a2341e24 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 141 ;
+    oa:starName "Alpha Geminorum" ;
+    oa:systemName "Turing" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0143-fcc1be3570ae
+
+claim:wormhole-0143-fcc1be3570ae a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 142 ;
+    oa:starName "15 Leonis Minoris" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0144-22573381b1c2
+
+claim:wormhole-0144-22573381b1c2 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 143 ;
+    oa:starName "39 Tauri" ;
+    oa:systemName "Niu Mynti" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0145-e46a8e1a7451
+
+claim:wormhole-0145-e46a8e1a7451 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 144 ;
+    oa:starName "104 Tauri" ;
+    oa:systemName "New Earth" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0146-03fa905c36c7
+
+claim:wormhole-0146-03fa905c36c7 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "Gliese 262" ;
+    oa:note "." ;
+    oa:recordOrder 145 ;
+    oa:starName "Rho Geminorum" ;
+    oa:systemName "Col Conver" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0147-25156a1d0622
+
+claim:wormhole-0147-25156a1d0622 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "Side branch node accessible via Col Conver" ;
+    oa:recordOrder 146 ;
+    oa:starName "37 Geminorum" ;
+    oa:systemName "Conver Ky" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0148-854a55ce88a2
+
+claim:wormhole-0148-854a55ce88a2 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "Side branch node accessible via Col Conver" ;
+    oa:recordOrder 147 ;
+    oa:starName "Delta Geminorum" ;
+    oa:systemName "Wasat" ;
+    oa:wormholeName "Dolcesos" .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0149-38d83bb2341c
+
+claim:wormhole-0149-38d83bb2341c a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "HD 51866" ;
+    oa:note "." ;
+    oa:recordOrder 148 ;
+    oa:starName "22 Lyncis" ;
+    oa:systemName "Gorgos" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0150-cd2618978f34
+
+claim:wormhole-0150-cd2618978f34 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 149 ;
+    oa:starName "DX Lyncis" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0151-37f14dd32708
+
+claim:wormhole-0151-37f14dd32708 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 150 ;
+    oa:starName "Alpha Tauri" ;
+    oa:systemName "Aldebaran" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0152-dfe61cf97fe9
+
+claim:wormhole-0152-dfe61cf97fe9 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 151 ;
+    oa:starName "71 Orionis" ;
+    oa:systemName "New Duibbiyat" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0153-38df9f4c8378
+
+claim:wormhole-0153-38df9f4c8378 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 152 ;
+    oa:starName "Beta Aurigae" ;
+    oa:systemName "Menkalinan" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0154-1d78ec80ceb9
+
+claim:wormhole-0154-1d78ec80ceb9 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 153 ;
+    oa:starName "HD 20367" ;
+    oa:systemName "Dayum" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0155-43b9afddd8d6
+
+claim:wormhole-0155-43b9afddd8d6 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 154 ;
+    oa:starName "Beta Persei" ;
+    oa:systemName "Algol" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0156-ad51e61f1717
+
+claim:wormhole-0156-ad51e61f1717 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 155 ;
+    oa:starName "Psi Tauri" ;
+    oa:systemName "Brin" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0157-ca294133ab04
+
+claim:wormhole-0157-ca294133ab04 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 156 ;
+    oa:starName "." ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0158-4ceecee75f04
+
+claim:wormhole-0158-4ceecee75f04 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 157 ;
+    oa:starName "Gliese 250" ;
+    oa:systemName "Relay 4" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0159-5fb14019a949
+
+claim:wormhole-0159-5fb14019a949 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 158 ;
+    oa:starName "11 Leonis Minoris" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0160-530757de5b81
+
+claim:wormhole-0160-530757de5b81 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "Qimira, Photonsurge" ;
+    oa:note "." ;
+    oa:recordOrder 159 ;
+    oa:starName "Pi3 Orionis" ;
+    oa:systemName "Tabit" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0161-04b5320f58f9
+
+claim:wormhole-0161-04b5320f58f9 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 160 ;
+    oa:starName "Chi1 Orionis" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0162-c86db0c4f977
+
+claim:wormhole-0162-c86db0c4f977 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 161 ;
+    oa:starName "Beta Virginis" ;
+    oa:systemName "Zavijava" ;
+    oa:wormholeName "Island Gate" .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0163-b4f3345389ea
+
+claim:wormhole-0163-b4f3345389ea a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "Gliese 454" ;
+    oa:note "." ;
+    oa:recordOrder 162 ;
+    oa:starName "Gamma Virginis" ;
+    oa:systemName "Porrima" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0164-7ec8065c856b
+
+claim:wormhole-0164-7ec8065c856b a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "HIP 38956" ;
+    oa:note "." ;
+    oa:recordOrder 163 ;
+    oa:starName "Beta Geminorum" ;
+    oa:systemName "Pollux" ;
+    oa:wormholeName "The Hatchway" .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0165-637e0e86aae3
+
+claim:wormhole-0165-637e0e86aae3 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "Benes" ;
+    oa:note "." ;
+    oa:recordOrder 164 ;
+    oa:starName "Delta Eridani" ;
+    oa:systemName "Rana" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0166-b7ff7830bf08
+
+claim:wormhole-0166-b7ff7830bf08 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 165 ;
+    oa:starName "Gamma Leporis" ;
+    oa:systemName "Aolai" ;
+    oa:wormholeName "Watchword" .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0167-056e07b31281
+
+claim:wormhole-0167-056e07b31281 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 166 ;
+    oa:starName "55 Cancri" ;
+    oa:systemName "Copernicus" ;
+    oa:wormholeName "Here We Go Again" .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0168-c8288853e6d1
+
+claim:wormhole-0168-c8288853e6d1 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 167 ;
+    oa:starName "Alpha Mensae" ;
+    oa:systemName "Merrion" ;
+    oa:wormholeName "Rush Hour" .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0169-0383e792abbd
+
+claim:wormhole-0169-0383e792abbd a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "Side branch node accessible via Merrion" ;
+    oa:recordOrder 168 ;
+    oa:starName "Zeta Reticuli" ;
+    oa:systemName "Atlantis" ;
+    oa:wormholeName "Mutual Benefit" .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0170-cf973375d228
+
+claim:wormhole-0170-cf973375d228 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 169 ;
+    oa:starName "20 Leonis Minoris" ;
+    oa:systemName "Halcyon" ;
+    oa:wormholeName "Gate Halcyon" .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0171-a39717658b18
+
+claim:wormhole-0171-a39717658b18 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 170 ;
+    oa:starName "Zeta Doradus" ;
+    oa:systemName "Frei" ;
+    oa:wormholeName "Little Ray of Sunshine #53" .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0172-6e253412ee9f
+
+claim:wormhole-0172-6e253412ee9f a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 171 ;
+    oa:starName "HD 69830" ;
+    oa:systemName "New Taylor" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0173-4b81e3f19dcc
+
+claim:wormhole-0173-4b81e3f19dcc a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 172 ;
+    oa:starName "58 Eridani" ;
+    oa:systemName "Nimbus" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0174-12e075cbe1ce
+
+claim:wormhole-0174-12e075cbe1ce a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 173 ;
+    oa:starName "AB Doradus" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0175-d29e1713d08f
+
+claim:wormhole-0175-d29e1713d08f a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 174 ;
+    oa:starName "Chi Cancri" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0176-6d3b356ec585
+
+claim:wormhole-0176-6d3b356ec585 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 175 ;
+    oa:starName "Eta Leporis" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0177-7dfeff613808
+
+claim:wormhole-0177-7dfeff613808 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "1,000" ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 176 ;
+    oa:starName "171 G. Puppis" ;
+    oa:systemName "Tirinit / Liaris Rosette" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0178-c9ccec7f06db
+
+claim:wormhole-0178-c9ccec7f06db a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 177 ;
+    oa:starName "9 Puppis" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0179-4322b646af77
+
+claim:wormhole-0179-4322b646af77 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "Links to the Taurus Nexus" ;
+    oa:recordOrder 178 ;
+    oa:starName "Xi Geminorum" ;
+    oa:systemName "Alzirr" ;
+    oa:wormholeName "Gateway to Taurus Nexus" .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0180-b6aa51107ccc
+
+claim:wormhole-0180-b6aa51107ccc a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 179 ;
+    oa:starName "Pi1 Cancri" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0181-42ac612eceec
+
+claim:wormhole-0181-42ac612eceec a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "New Callisto (comm-gauge)" ;
+    oa:note "." ;
+    oa:recordOrder 180 ;
+    oa:starName "74 Orionis" ;
+    oa:systemName "Paanlaansuu" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0182-a680dcc8ccc0
+
+claim:wormhole-0182-a680dcc8ccc0 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 181 ;
+    oa:starName "Epsilon Reticuli" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0183-16b092ccd62c
+
+claim:wormhole-0183-16b092ccd62c a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 182 ;
+    oa:starName "212 G. Puppis" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0184-2944cebd1d5a
+
+claim:wormhole-0184-2944cebd1d5a a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 183 ;
+    oa:starName "Beta Pictoris" ;
+    oa:systemName "Vinci / Beta Pictoris" ;
+    oa:wormholeName "Motif or Delusion?" .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0185-79ff51933a60
+
+claim:wormhole-0185-79ff51933a60 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 184 ;
+    oa:starName "Alpha Caeli" ;
+    oa:systemName "Midgard" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0186-0f1978c15dfb
+
+claim:wormhole-0186-0f1978c15dfb a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 185 ;
+    oa:starName "Alpha Leonis" ;
+    oa:systemName "Regulus" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0187-e7090cd198ba
+
+claim:wormhole-0187-e7090cd198ba a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "Mu2 Cancri" ;
+    oa:note "." ;
+    oa:recordOrder 186 ;
+    oa:starName "Zeta Cancri" ;
+    oa:systemName "Tegmine" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0188-ca294133ab04
+
+claim:wormhole-0188-ca294133ab04 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 187 ;
+    oa:starName "." ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0189-86eed5d7f8e0
+
+claim:wormhole-0189-86eed5d7f8e0 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 188 ;
+    oa:starName "HD 147513" ;
+    oa:systemName "Relay 5" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0190-ea4531a458f1
+
+claim:wormhole-0190-ea4531a458f1 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "Mfunu" ;
+    oa:note "." ;
+    oa:recordOrder 189 ;
+    oa:starName "Beta Trianguli Australis" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0191-21158fa8bb15
+
+claim:wormhole-0191-21158fa8bb15 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 190 ;
+    oa:starName "Nu2 Lupi" ;
+    oa:systemName "NewRoot" ;
+    oa:wormholeName "The First Step" .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0192-7a5d66327fea
+
+claim:wormhole-0192-7a5d66327fea a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "Alighieri" ;
+    oa:note "." ;
+    oa:recordOrder 191 ;
+    oa:starName "Mu Arae" ;
+    oa:systemName "Cervantes" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0193-fc57d4d49bbb
+
+claim:wormhole-0193-fc57d4d49bbb a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "SZ Crateris" ;
+    oa:note "." ;
+    oa:recordOrder 192 ;
+    oa:starName "Alpha Corvi" ;
+    oa:systemName "Alchiba" ;
+    oa:wormholeName "Lullaby of Cosmos" .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0194-14e7697b9fd9
+
+claim:wormhole-0194-14e7697b9fd9 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 193 ;
+    oa:starName "g Lupi" ;
+    oa:systemName "Monostheria" ;
+    oa:wormholeName "Two Way Street" .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0195-899174681212
+
+claim:wormhole-0195-899174681212 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 194 ;
+    oa:starName "Epsilon Scorpii" ;
+    oa:systemName "Larawag" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0196-7ef193773a18
+
+claim:wormhole-0196-7ef193773a18 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 195 ;
+    oa:starName "Iota Pavonis" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0197-fc31618f4bc0
+
+claim:wormhole-0197-fc31618f4bc0 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 196 ;
+    oa:starName "Eta Corvi" ;
+    oa:systemName "Zuoxia" ;
+    oa:wormholeName "Full of Night Skies" .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0198-3d347b51f37c
+
+claim:wormhole-0198-3d347b51f37c a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 197 ;
+    oa:starName "1 Centauri" ;
+    oa:systemName "The Seat of Judgement" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0199-79dc1fd2d985
+
+claim:wormhole-0199-79dc1fd2d985 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 198 ;
+    oa:starName "Lambda Arae" ;
+    oa:systemName "Ceres Mater" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0200-abb1d3214192
+
+claim:wormhole-0200-abb1d3214192 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 199 ;
+    oa:starName "Alpha Librae" ;
+    oa:systemName "Zubenelgenubi" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0201-30b5eae70b42
+
+claim:wormhole-0201-30b5eae70b42 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 200 ;
+    oa:starName "Eta Scorpii" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0202-5383f762feb2
+
+claim:wormhole-0202-5383f762feb2 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 201 ;
+    oa:starName "Nu Octantis" ;
+    oa:systemName "Kounzu Faashi" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0203-5bc6fae8ba52
+
+claim:wormhole-0203-5bc6fae8ba52 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 202 ;
+    oa:starName "Pi Mensae" ;
+    oa:systemName "Alpamis" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0204-f434d806aa63
+
+claim:wormhole-0204-f434d806aa63 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 203 ;
+    oa:starName "Alpha Chamaeleontis" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0205-6dbef08c0fbc
+
+claim:wormhole-0205-6dbef08c0fbc a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 204 ;
+    oa:starName "HD 114853" ;
+    oa:systemName "Rufus" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0206-6294c0ba38f1
+
+claim:wormhole-0206-6294c0ba38f1 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 205 ;
+    oa:starName "Delta Corvi" ;
+    oa:systemName "Algorab" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0207-ca294133ab04
+
+claim:wormhole-0207-ca294133ab04 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 206 ;
+    oa:starName "." ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0208-bdfbd39a5dc5
+
+claim:wormhole-0208-bdfbd39a5dc5 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 207 ;
+    oa:starName "45 Boötis" ;
+    oa:systemName "Relay 6" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0209-37316b9790a3
+
+claim:wormhole-0209-37316b9790a3 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 208 ;
+    oa:starName "Tau Boötis" ;
+    oa:systemName "Vaishali" ;
+    oa:wormholeName "Valtezshu's Mystery Door" .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0210-77a258146cab
+
+claim:wormhole-0210-77a258146cab a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 209 ;
+    oa:starName "Sigma Coronae Borealis" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0211-d33fda660f40
+
+claim:wormhole-0211-d33fda660f40 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "70 Virginis" ;
+    oa:note "." ;
+    oa:recordOrder 210 ;
+    oa:starName "59 Virginis" ;
+    oa:systemName "Kiku" ;
+    oa:wormholeName "Passing Chatters and Giggles" .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0212-b39ce4464677
+
+claim:wormhole-0212-b39ce4464677 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "V382 Serpentis, Unukalhai" ;
+    oa:note "." ;
+    oa:recordOrder 211 ;
+    oa:starName "Epsilon Serpentis" ;
+    oa:systemName "Panvirtuality 1" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0213-556ec498415f
+
+claim:wormhole-0213-556ec498415f a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 212 ;
+    oa:starName "Alpha Coronae Borealis" ;
+    oa:systemName "Alphecca" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0214-099562cf0e2a
+
+claim:wormhole-0214-099562cf0e2a a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "HD 151613" ;
+    oa:note "." ;
+    oa:recordOrder 213 ;
+    oa:starName "Mu Draconis" ;
+    oa:systemName "Alrakis" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0215-77f267fe1a8a
+
+claim:wormhole-0215-77f267fe1a8a a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 214 ;
+    oa:starName "Iota Virginis" ;
+    oa:systemName "Syrma" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0216-dd31e703a107
+
+claim:wormhole-0216-dd31e703a107 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 215 ;
+    oa:starName "Gamma Boötis" ;
+    oa:systemName "Seginus" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0217-4548a5493a46
+
+claim:wormhole-0217-4548a5493a46 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 216 ;
+    oa:starName "Zeta Virginis" ;
+    oa:systemName "Heze" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0218-a2fefa238383
+
+claim:wormhole-0218-a2fefa238383 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 217 ;
+    oa:starName "Nu Draconis" ;
+    oa:systemName "Kuma" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0219-ca294133ab04
+
+claim:wormhole-0219-ca294133ab04 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 218 ;
+    oa:starName "." ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0220-0ac9b2a8da80
+
+claim:wormhole-0220-0ac9b2a8da80 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 219 ;
+    oa:starName "10 Canum Venaticorum" ;
+    oa:systemName "Relay 7" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0221-2a06fd291a7a
+
+claim:wormhole-0221-2a06fd291a7a a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 220 ;
+    oa:starName "47 Ursae Majoris" ;
+    oa:systemName "Chalawan" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0222-7f18d7502771
+
+claim:wormhole-0222-7f18d7502771 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 221 ;
+    oa:starName "LW Comae Berenices" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0223-47a01412a8f1
+
+claim:wormhole-0223-47a01412a8f1 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 222 ;
+    oa:starName "Alpha Comae Berenices" ;
+    oa:systemName "Diadem" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0224-043cce0f47b7
+
+claim:wormhole-0224-043cce0f47b7 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 223 ;
+    oa:starName "Delta Leonis" ;
+    oa:systemName "Zosma / The Gigaverse" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0225-685face6c2a3
+
+claim:wormhole-0225-685face6c2a3 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "HD 108954" ;
+    oa:note "." ;
+    oa:recordOrder 224 ;
+    oa:starName "NP Ursae Majoris" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0226-b0d2557aa52c
+
+claim:wormhole-0226-b0d2557aa52c a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 225 ;
+    oa:starName "Eta Draconis" ;
+    oa:systemName "Athebyne" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0227-2cbc6f22f9b0
+
+claim:wormhole-0227-2cbc6f22f9b0 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 226 ;
+    oa:starName "Delta Ursae Majoris" ;
+    oa:systemName "Megrez" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0228-ebc82a22b5e6
+
+claim:wormhole-0228-ebc82a22b5e6 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "78 Ursae Majoris, NO Ursae Majoris" ;
+    oa:note "." ;
+    oa:recordOrder 227 ;
+    oa:starName "Epsilon Ursae Majoris" ;
+    oa:systemName "Alioth" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0229-e9ffff958fef
+
+claim:wormhole-0229-e9ffff958fef a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "Alcor" ;
+    oa:note "." ;
+    oa:recordOrder 228 ;
+    oa:starName "Zeta Ursae Majoris" ;
+    oa:systemName "Mizar" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0230-28d4f55ac20a
+
+claim:wormhole-0230-28d4f55ac20a a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 229 ;
+    oa:starName "Beta Ursae Majoris" ;
+    oa:systemName "Merak" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0231-f6d8283cb5e6
+
+claim:wormhole-0231-f6d8283cb5e6 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 230 ;
+    oa:starName "Gamma Ursae Majoris" ;
+    oa:systemName "Phecda" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0232-7c18944c9233
+
+claim:wormhole-0232-7c18944c9233 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 231 ;
+    oa:starName "Alpha Canum Venaticorum" ;
+    oa:systemName "Abydos" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0233-ca294133ab04
+
+claim:wormhole-0233-ca294133ab04 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 232 ;
+    oa:starName "." ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0234-21a8deac7605
+
+claim:wormhole-0234-21a8deac7605 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 233 ;
+    oa:starName "Gliese 819" ;
+    oa:systemName "Relay 8" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0235-5893bb12abd6
+
+claim:wormhole-0235-5893bb12abd6 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 234 ;
+    oa:starName "Gamma Pavonis" ;
+    oa:systemName "Oromasdes" ;
+    oa:wormholeName "That's The Way It Is" .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0236-2b8f31b4b945
+
+claim:wormhole-0236-2b8f31b4b945 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 235 ;
+    oa:starName "HN Pegasi" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0237-816f6ad714a6
+
+claim:wormhole-0237-816f6ad714a6 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 236 ;
+    oa:starName "Delta Equulei" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0238-ff907c6fd3be
+
+claim:wormhole-0238-ff907c6fd3be a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 237 ;
+    oa:starName "HD 222237" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0239-2d2ec455b8dc
+
+claim:wormhole-0239-2d2ec455b8dc a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 238 ;
+    oa:starName "HD 211415" ;
+    oa:systemName "Audubon" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0240-a51ff6b5f76d
+
+claim:wormhole-0240-a51ff6b5f76d a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "Gliese 833" ;
+    oa:note "." ;
+    oa:recordOrder 239 ;
+    oa:starName "HD 207129" ;
+    oa:systemName "Bolobo" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0241-1b7a93836028
+
+claim:wormhole-0241-1b7a93836028 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 240 ;
+    oa:starName "53 Aquarii" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0242-3546966d4669
+
+claim:wormhole-0242-3546966d4669 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 241 ;
+    oa:starName "HR 8734" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0243-dfc4e4f652ed
+
+claim:wormhole-0243-dfc4e4f652ed a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 242 ;
+    oa:starName "GJ 4291" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0244-befbd693222f
+
+claim:wormhole-0244-befbd693222f a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 243 ;
+    oa:starName "Upsilon Aquarii" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0245-43bae7a5ebae
+
+claim:wormhole-0245-43bae7a5ebae a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 244 ;
+    oa:starName "Theta Pegasi" ;
+    oa:systemName "Biham" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0246-d8ca4fd61488
+
+claim:wormhole-0246-d8ca4fd61488 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 245 ;
+    oa:starName "Mu Capricorni" ;
+    oa:systemName "Pme Chemu Fus" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0247-354e7da0c719
+
+claim:wormhole-0247-354e7da0c719 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 246 ;
+    oa:starName "GJ 2001" ;
+    oa:systemName "Hammerstein" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0248-ff10f0cbbfaf
+
+claim:wormhole-0248-ff10f0cbbfaf a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 247 ;
+    oa:starName "37 Capricorni" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0249-ec149bcd6f8e
+
+claim:wormhole-0249-ec149bcd6f8e a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 248 ;
+    oa:starName "Gamma Tucanae" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0250-a2b5a0239567
+
+claim:wormhole-0250-a2b5a0239567 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 249 ;
+    oa:starName "Rho Capricorni" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0251-c0d51619e255
+
+claim:wormhole-0251-c0d51619e255 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "Ankaa" ;
+    oa:note "." ;
+    oa:recordOrder 250 ;
+    oa:starName "Kappa Phoenicis" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0252-56d308b55b59
+
+claim:wormhole-0252-56d308b55b59 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 251 ;
+    oa:starName "Gliese 13" ;
+    oa:systemName "Nadia" ;
+    oa:wormholeName "Zoloti Gate" .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0253-ca294133ab04
+
+claim:wormhole-0253-ca294133ab04 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 252 ;
+    oa:starName "." ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0254-45408c4ce209
+
+claim:wormhole-0254-45408c4ce209 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 253 ;
+    oa:starName "54 Piscium" ;
+    oa:systemName "Relay 9" ;
+    oa:wormholeName "Outward Bound" .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0255-ca67d6d325de
+
+claim:wormhole-0255-ca67d6d325de a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "2,500" ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 254 ;
+    oa:starName "Iota Piscium" ;
+    oa:systemName "Lucida" ;
+    oa:wormholeName "Colors of the Universe" .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0256-b49bbb4915cc
+
+claim:wormhole-0256-b49bbb4915cc a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "1,600" ;
+    oa:nearbyUnconnected "." ;
+    oa:note "Side branch node accessible via Lucida" ;
+    oa:recordOrder 255 ;
+    oa:starName "TRAPPIST-1" ;
+    oa:systemName "Resonance" ;
+    oa:wormholeName "A Short Walk" .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0257-5c9c6967e965
+
+claim:wormhole-0257-5c9c6967e965 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "2,100" ;
+    oa:nearbyUnconnected "Hwii" ;
+    oa:note "." ;
+    oa:recordOrder 256 ;
+    oa:starName "p Eridani" ;
+    oa:systemName "Hamashta" ;
+    oa:wormholeName "Yaten" .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0258-69f1bdfdea73
+
+claim:wormhole-0258-69f1bdfdea73 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 257 ;
+    oa:starName "Xi Pegasi" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0259-c0eec2762259
+
+claim:wormhole-0259-c0eec2762259 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 258 ;
+    oa:starName "Kappa1 Ceti" ;
+    oa:systemName "Lux" ;
+    oa:wormholeName "Bi1hihos4" .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0260-e224bb4c3d16
+
+claim:wormhole-0260-e224bb4c3d16 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 259 ;
+    oa:starName "Gliese 95" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0261-809413e1b2a1
+
+claim:wormhole-0261-809413e1b2a1 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 260 ;
+    oa:starName "Phi2 Ceti" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0262-6ab93aa24189
+
+claim:wormhole-0262-6ab93aa24189 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "Gliese 25" ;
+    oa:note "." ;
+    oa:recordOrder 261 ;
+    oa:starName "Gliese 40" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0263-7848818752a8
+
+claim:wormhole-0263-7848818752a8 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 262 ;
+    oa:starName "10 Tauri" ;
+    oa:systemName "Makintairas" ;
+    oa:wormholeName "Mutual Memories" .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0264-4afc18365d57
+
+claim:wormhole-0264-4afc18365d57 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 263 ;
+    oa:starName "Beta Arietis" ;
+    oa:systemName "Sheratan" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0265-f295ef64a253
+
+claim:wormhole-0265-f295ef64a253 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 264 ;
+    oa:starName "Tau1 Eridani" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0266-61ddca05badb
+
+claim:wormhole-0266-61ddca05badb a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 265 ;
+    oa:starName "Alpha Trianguli" ;
+    oa:systemName "Mothallah" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0267-bf544c6de7bd
+
+claim:wormhole-0267-bf544c6de7bd a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 266 ;
+    oa:starName "Alpha Fornacis" ;
+    oa:systemName "Dalim" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0268-1090943b6d66
+
+claim:wormhole-0268-1090943b6d66 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "Gliese 32" ;
+    oa:note "." ;
+    oa:recordOrder 267 ;
+    oa:starName "Nu Phoenicis" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0269-6740380abf8e
+
+claim:wormhole-0269-6740380abf8e a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 268 ;
+    oa:starName "Alpha Arietis" ;
+    oa:systemName "Hamal" ;
+    oa:wormholeName "Added Value" .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0270-ef9b4b4d6c91
+
+claim:wormhole-0270-ef9b4b4d6c91 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 269 ;
+    oa:starName "Gliese 36" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0271-4b8e34e105c5
+
+claim:wormhole-0271-4b8e34e105c5 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 270 ;
+    oa:starName "9 Ceti" ;
+    oa:systemName "Sacredtree" ;
+    oa:wormholeName "Olive Branch" .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0272-f2f6b1a484c3
+
+claim:wormhole-0272-f2f6b1a484c3 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "HD 10647" ;
+    oa:note "." ;
+    oa:recordOrder 271 ;
+    oa:starName "Chi Eridani" ;
+    oa:systemName "Zallach-Whige" ;
+    oa:wormholeName "Between You and Me" .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0273-1d2ddd69f94b
+
+claim:wormhole-0273-1d2ddd69f94b a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 272 ;
+    oa:starName "Gliese 59" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0274-6403d8aaf2bd
+
+claim:wormhole-0274-6403d8aaf2bd a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 273 ;
+    oa:starName "Iota Horologii" ;
+    oa:systemName "Frog's Head" ;
+    oa:wormholeName "Dream of Translation" .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0275-4d0405f638c0
+
+claim:wormhole-0275-4d0405f638c0 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 274 ;
+    oa:starName "84 Ceti" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0276-2ef6c7297022
+
+claim:wormhole-0276-2ef6c7297022 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "Gliese 135" ;
+    oa:note "." ;
+    oa:recordOrder 275 ;
+    oa:starName "94 Ceti" ;
+    oa:systemName "Landau" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0277-e7bdcfebd556
+
+claim:wormhole-0277-e7bdcfebd556 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 276 ;
+    oa:starName "Alpha Andromedae" ;
+    oa:systemName "Alpheratz" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0278-e50fcc1a3342
+
+claim:wormhole-0278-e50fcc1a3342 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 277 ;
+    oa:starName "Gamma Ceti" ;
+    oa:systemName "Kaffaljidhma" ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0279-c9967243cff0
+
+claim:wormhole-0279-c9967243cff0 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 278 ;
+    oa:starName "Mu Ceti" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0280-e8d642881c90
+
+claim:wormhole-0280-e8d642881c90 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 279 ;
+    oa:starName "BB Sculptoris" ;
+    oa:systemName "." ;
+    oa:wormholeName "." .
+
+# https://dkourmyshov.github.io/oa-starmap/claim/wormhole-0281-ca294133ab04
+
+claim:wormhole-0281-ca294133ab04 a prov:Entity, oa:WormholeClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:canonical true ;
+    oa:gaugeMetres "." ;
+    oa:nearbyUnconnected "." ;
+    oa:note "." ;
+    oa:recordOrder 280 ;
+    oa:starName "." ;
+    oa:systemName "." ;
+    oa:wormholeName "." .

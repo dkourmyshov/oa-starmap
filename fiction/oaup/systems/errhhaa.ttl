@@ -1,0 +1,49 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Hhrraiirah
+
+id:world-hhrraiirah a oa:Place, oa:World ;
+    skos:prefLabel "Hhrraiirah" ;
+    oa:article <https://www.orionsarm.com/eg-article/467092568689e> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:systemName "Errhhaa" ;
+    oa:uncertain false .
+
+claim:location-world-hhrraiirah a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/467092568689e> ;
+    oa:about id:world-hhrraiirah ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:constellationName "Puppis" ;
+    oa:distance value:location-world-hhrraiirah-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+value:location-world-hhrraiirah-distance a oa:QuantityValue ;
+    qudt:numericValue 1981.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-hhrraiirah-sophic-league a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/467092568689e> ;
+    oa:about id:world-hhrraiirah ;
+    oa:canonical true ;
+    oa:polity id:polity-sophic-league ;
+    oa:recordOrder 0 .
+
+claim:event-world-hhrraiirah-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/467092568689e> ;
+    oa:about id:world-hhrraiirah ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 5533 .

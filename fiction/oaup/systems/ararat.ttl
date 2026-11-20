@@ -1,0 +1,42 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# Ararat
+
+id:world-ararat a oa:Place, oa:World ;
+    skos:prefLabel "Ararat" ;
+    oa:article <https://www.orionsarm.com/eg-article/45f7561809fd> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "Athos is the primary. In Puppis at 183 ly." ;
+    oa:parentName "Athos" ;
+    oa:systemName "Ararat" ;
+    oa:uncertain false .
+
+claim:location-world-ararat a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/45f7561809fd> ;
+    oa:about id:world-ararat ;
+    oa:canonical true ;
+    oa:catalogueFromSource true ;
+    oa:hdId 66740 ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+claim:affiliation-world-ararat-sophic-league a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/45f7561809fd> ;
+    oa:about id:world-ararat ;
+    oa:canonical true ;
+    oa:polity id:polity-sophic-league ;
+    oa:recordOrder 0 .
+
+claim:event-world-ararat-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/45f7561809fd> ;
+    oa:about id:world-ararat ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 2642 .

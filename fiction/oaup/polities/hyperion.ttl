@@ -1,0 +1,17 @@
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+
+# Hyperion
+
+id:polity-hyperion a oa:Polity ;
+    skos:prefLabel "Hyperion" ;
+    oa:ambiguousName false ;
+    oa:color "#8C9EFF" ;
+    oa:editorialNote "\"One of the earliest transapients, eventually controlling a megacorporation\nand later founding its own small short-lived empire on the edge of Terragen\nspace.\" Timeline, 3414: \"Hyperion and eir polity, the Marabi Patha Harmony,\nbreak away from the Solar Dominion.\"" ;
+    oa:hasSource src:eg-historical-polities ;
+    oa:kind "meta-empire" ;
+    oa:polityId "hyperion" ;
+    oa:recordOrder 61 ;
+    oa:uncertain false .

@@ -1,0 +1,48 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Cygexpa (Cygnus, Inner Middle Regions)
+
+id:world-cygexpa-cygnus-inner-middle-regions a oa:Place, oa:World ;
+    skos:prefLabel "Cygexpa (Cygnus, Inner Middle Regions)" ;
+    oa:kind "polity_extent" ;
+    oa:labelsSystem false ;
+    oa:note "One of 3 labels the add-on writes for this polity, spread across its\n  volume; together they sketch an extent that its placed worlds, being\n  points, cannot. Named for Cygnus, where it falls, the polity's own name being\ntaken by the polity." ;
+    oa:uncertain false .
+
+claim:location-world-cygexpa-cygnus-inner-middle-regions a prov:Entity, oa:LocationClaim ;
+    oa:about id:world-cygexpa-cygnus-inner-middle-regions ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg 33.5 ;
+    oa:distance value:location-world-cygexpa-cygnus-inner-middle-regions-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:note "From southOAEMPIRES.dsc, one of the Orion's Arm Celestia add-ons' location catalogues (OAAddons9, OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv). The label states a position and no extent: it carries the token radius of 2 that the add-on gives every empire label, so nothing here says how far the volume reaches." ;
+    oa:rightAscensionDeg 301.5 .
+
+value:location-world-cygexpa-cygnus-inner-middle-regions-distance a oa:QuantityValue ;
+    qudt:numericValue 1200.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-cygexpa-cygnus-inner-middle-regions-cygexpa a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:world-cygexpa-cygnus-inner-middle-regions ;
+    oa:canonical true ;
+    oa:polity id:polity-cygexpa ;
+    oa:recordOrder 0 .
+
+claim:event-world-cygexpa-cygnus-inner-middle-regions-001 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-cygexpa-cygnus-inner-middle-regions ;
+    oa:canonical true ;
+    oa:eventKind oa:Abandoned ;
+    oa:note "\"The Cygexpa Sale. With no warning Lohengrin disbands the Cygexpa empire.\" The label says Cygexpa is hereabouts, which stops being true in 7247, so the label stops here. Without this it drew on the contemporary map for an empire six hundred years disbanded." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 7247 .

@@ -1,0 +1,17 @@
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+
+# Oracle Machines
+
+id:polity-oracle-machines a oa:Polity ;
+    skos:prefLabel "Oracle Machines" ;
+    oa:ambiguousName false ;
+    oa:color "#1596CB" ;
+    oa:hasSource src:eg-system-articles ;
+    oa:kind "polity" ;
+    oa:note "The power the Oracle War was fought against, and an offshoot of the Diamond Network -- in 10552 \"the Diamond Nexus is closed throughout the Terragen Sphere; the mainstream Diamonders reject the Oracle Machine cult\", which is a schism. Coloured as a near relation for that reason: the Diamond Network is the closest polity to it on the map at dE 9.3, which is as close as the palette allows two that could be seen together." ;
+    oa:polityId "oracle-machines" ;
+    oa:recordOrder 0 ;
+    oa:uncertain false .

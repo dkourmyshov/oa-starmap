@@ -1,0 +1,17 @@
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+
+# Varadic Hegemony
+
+id:polity-varadic-hegemony a oa:Polity ;
+    skos:prefLabel "Varadic Hegemony" ;
+    oa:ambiguousName false ;
+    oa:color "#BA68C8" ;
+    oa:editorialNote "\"Expansionist Late Consolidation and early Integration vec-dominated polity\nwhich broke off from the Arantan Empire\", dissolved by Dominion governors\nwithin three centuries of the Cygnus Wars. No year stated." ;
+    oa:hasSource src:eg-historical-polities ;
+    oa:kind "meta-empire" ;
+    oa:polityId "varadic-hegemony" ;
+    oa:recordOrder 64 ;
+    oa:uncertain false .

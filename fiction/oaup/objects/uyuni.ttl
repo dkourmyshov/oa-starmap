@@ -1,0 +1,45 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Uyuni
+
+id:world-uyuni a oa:Place, oa:World ;
+    skos:prefLabel "Uyuni" ;
+    oa:article <https://www.orionsarm.com/eg-article/508b48d94e043> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "Near NGC 6520 in Sagittarius at 4,920 ly, where the catalogue puts the cluster at 5,571 — an eighth further, close enough that the two describe one place." ;
+    oa:uncertain false .
+
+claim:location-world-uyuni a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/508b48d94e043> ;
+    oa:about id:world-uyuni ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -27.8855 ;
+    oa:distance value:location-world-uyuni-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:nearName "NGC 6520" ;
+    oa:rightAscensionDeg 270.8574 .
+
+value:location-world-uyuni-distance a oa:QuantityValue ;
+    qudt:numericValue 4920.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:event-world-uyuni-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/508b48d94e043> ;
+    oa:about id:world-uyuni ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:polity id:polity-sagittarius-transcultural-cooperation ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 6318 .

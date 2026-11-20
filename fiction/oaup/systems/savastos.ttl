@@ -1,0 +1,61 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Macrystis
+
+id:world-macrystis a oa:Place, oa:World ;
+    skos:prefLabel "Macrystis" ;
+    oa:article <https://www.orionsarm.com/eg-article/4edf88339f50b> ;
+    oa:kind "moon" ;
+    oa:labelsSystem false ;
+    oa:note "The one entry here with an exact direction and an asserted distance. The article gives 03h 25m 16.26s, +60d 29' 01.4\", which is HIP 15941 to four decimal places — but that star is at 3,300 ly and Savastos is given as 2,050 ly, so the system lies along the same line of sight rather than at the star. Macrystis is a moon of the gas giant Lontis. The Savastos system has an article of its own at https://www.orionsarm.com/eg-article/65c7fed774dbf." ;
+    oa:parentName "Lontis" ;
+    oa:systemName "Savastos" ;
+    oa:uncertain false .
+
+claim:location-world-macrystis a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4edf88339f50b> ;
+    oa:about id:world-macrystis ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg 60.4837 ;
+    oa:distance value:location-world-macrystis-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:nearName "HIP 15941 / HD 20898" ;
+    oa:rightAscensionDeg 51.3178 .
+
+value:location-world-macrystis-distance a oa:QuantityValue ;
+    qudt:numericValue 2050.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-macrystis-caretaker-gods a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4edf88339f50b> ;
+    oa:about id:world-macrystis ;
+    oa:canonical true ;
+    oa:polity id:polity-caretaker-gods ;
+    oa:recordOrder 0 .
+
+claim:affiliation-world-macrystis-solar-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4edf88339f50b> ;
+    oa:about id:world-macrystis ;
+    oa:canonical true ;
+    oa:polity id:polity-solar-dominion ;
+    oa:recordOrder 1 .
+
+claim:event-world-macrystis-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4edf88339f50b> ;
+    oa:about id:world-macrystis ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "Reached by the Solar Dominion." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 5393 .

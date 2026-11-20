@@ -1,0 +1,32 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Ascella
+
+id:inner-sphere-row-0995 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Ascella" .
+
+claim:inner-sphere-inner-sphere-row-0995-bbd1ac4b9dff a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0995 ;
+    oa:canonical true ;
+    oa:colonyName "Ascella" ;
+    oa:luminositySol "2.2" ;
+    oa:massSol "." ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 994 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0995-bbd1ac4b9dff-source-distance ;
+    oa:spectralType "A2 V-III" ;
+    oa:starName "Zeta Sagittarii A" .
+
+value:inner-sphere-inner-sphere-row-0995-bbd1ac4b9dff-source-distance a oa:QuantityValue ;
+    qudt:numericValue 88.20 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

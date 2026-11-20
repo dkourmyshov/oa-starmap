@@ -16,27 +16,29 @@ from oastarmap.build.fiction import build_fiction, format_report
 from oastarmap.build.hii import build_hii
 from oastarmap.build.history import HISTORY_FILE, build_history
 from oastarmap.build.history import format_report as format_history_report
-from oastarmap.build.inner_sphere import INNER_SPHERE_FILE, build_inner_sphere
+from oastarmap.build.inner_sphere import build_inner_sphere
 from oastarmap.build.inner_sphere import format_report as format_inner_report
-from oastarmap.build.oastars import SOURCE_URL, STARS_FILE, build_oastars
+from oastarmap.build.oastars import SOURCE_URL, build_oastars
 from oastarmap.build.posters import build_posters
 from oastarmap.build.posters import describe as describe_posters
 from oastarmap.build.questions import build_questions
-from oastarmap.fetch.base import sha256
 from oastarmap.build.questions import format_report as format_questions_report
 from oastarmap.build.stars import build_stars
-from oastarmap.build.worlds import WORLDS_FILE, build_worlds
+from oastarmap.build.worlds import build_worlds
 from oastarmap.build.worlds import format_report as format_worlds_report
 from oastarmap.build.writer import write_json
 from oastarmap.fetch import fetch_source
 from oastarmap.fetch.associations import SOURCES as ASSOCIATION_SOURCES
+from oastarmap.fetch.base import sha256
 from oastarmap.fetch.clusters import SOURCES as CLUSTER_SOURCES
 from oastarmap.fetch.hii import SOURCES as HII_SOURCES
 from oastarmap.fetch.hyg import SOURCES as HYG_SOURCES
 from oastarmap.fiction.find import find
+from oastarmap.fiction.store import OAUP_DIR, load_store
 from oastarmap.importers.celestia import import_oastars
 from oastarmap.importers.constellations import import_constellations
 from oastarmap.importers.history import import_history
+from oastarmap.importers.inner_sphere import import_inner_sphere
 from oastarmap.importers.systems import (
     parse_article,
     prose as article_prose,
@@ -46,7 +48,6 @@ from oastarmap.importers.systems import (
     worksheet_rows,
     write_worksheet,
 )
-from oastarmap.importers.inner_sphere import import_inner_sphere
 from oastarmap.paths import DATA_OUT_DIR, FICTION_DIR, RAW_DIR, SOURCES_DIR, ensure_dirs
 from oastarmap.transform.frame import PC_TO_LY
 
@@ -75,10 +76,10 @@ def cmd_import_oastars(args: argparse.Namespace) -> int:
         print(f"Download it from {SOURCE_URL}", file=sys.stderr)
         return 1
 
-    dest = FICTION_DIR / STARS_FILE
+    dest = FICTION_DIR / OAUP_DIR
     count = import_oastars(args.archive, dest)
     print(f"  imported {count} stars into {dest}")
-    print("  review the diff before committing — this overwrites hand edits")
+    print("  old claims and editorial curation are preserved; review the diff")
     return 0
 
 
@@ -89,11 +90,11 @@ def cmd_import_inner_sphere(args: argparse.Namespace) -> int:
         print("Save https://www.orionsarm.com/eg-topic/45bcbcab90032 there", file=sys.stderr)
         return 1
 
-    dest = FICTION_DIR / "inner_sphere.yaml"
+    dest = FICTION_DIR / OAUP_DIR
     counts = import_inner_sphere(args.page, dest)
     print(f"  imported {counts['systems']} systems and {counts['wormholes']} wormhole rows")
     print(f"  into {dest}")
-    print("  review the diff before committing — this overwrites hand edits")
+    print("  old claims and editorial assignments are preserved; review the diff")
     return 0
 
 
@@ -183,12 +184,34 @@ def cmd_extract_systems(args: argparse.Namespace) -> int:
           f"{summary['articles_off_the_map']} are not; "
           f"{summary['dated_but_map_undated']} on the map carry a year the map does not")
     print(f"  into {dest}")
-    print("  the worksheet is untracked: what is read out of it goes into fiction/worlds.yaml")
+    print("  the worksheet is untracked: reviewed claims go into fiction/oaup/")
+    return 0
+
+
+def cmd_validate(args: argparse.Namespace) -> int:
+    del args
+    store = load_store(fresh=True)
+    store.validate()
+    print(
+        f"  valid: {len(store.worlds)} worlds, {len(store.stars)} Celestia stars, "
+        f"{len(store.inner_sphere_file.systems)} Inner Sphere rows, "
+        f"{len(store.fiction.polities)} polities, {len(store.graph)} triples"
+    )
+    return 0
+
+
+def cmd_format(args: argparse.Namespace) -> int:
+    del args
+    store = load_store(fresh=True)
+    store.validate()
+    store.save()
+    print(f"  formatted {len(set(store.file_of.values()))} Turtle files in {store.path}")
     return 0
 
 
 def cmd_build(args: argparse.Namespace) -> int:
     ensure_dirs()
+    load_store().validate()
 
     missing = [s for s in ALL_SOURCES if not s.path.exists()]
     if missing:
@@ -210,35 +233,21 @@ def cmd_build(args: argparse.Namespace) -> int:
     if associations:
         datasets["associations"] = associations
 
-    # Read from the tracked import, never from the archive, so a clean clone
-    # builds this layer like any other.
-    stars_file = FICTION_DIR / STARS_FILE
-    if stars_file.exists():
-        datasets["oastars"] = build_oastars(stars_file)
-    else:
-        print(f"  oastars    skipped — {stars_file} not present; run `oastarmap import-oastars`")
-
-    # After the star dataset, whose published output it resolves against, and
-    # after the manifest's constellation table exists.
-    inner_file = FICTION_DIR / INNER_SPHERE_FILE
-    if inner_file.exists():
-        datasets["inner_sphere"] = build_inner_sphere(
-            inner_file,
-            constellation_values=datasets["stars"]["layout"]["constellations"]["values"],
-        )
-
-    # After the star build, whose name index it resolves against, and after the
-    # add-on stars, whose designations it binds to.
-    worlds_file = FICTION_DIR / WORLDS_FILE
-    if worlds_file.exists():
-        datasets["worlds"] = build_worlds(
-            worlds_file,
-            constellation_values=datasets["stars"]["layout"]["constellations"]["values"],
-        )
+    # The tracked RDF graph, never the source archives, supplies every OA layer.
+    source_file = FICTION_DIR / OAUP_DIR
+    datasets["oastars"] = build_oastars(source_file)
+    datasets["inner_sphere"] = build_inner_sphere(
+        source_file,
+        constellation_values=datasets["stars"]["layout"]["constellations"]["values"],
+    )
+    datasets["worlds"] = build_worlds(
+        source_file,
+        constellation_values=datasets["stars"]["layout"]["constellations"]["values"],
+    )
 
     datasets["fiction"] = build_fiction()
 
-    # After every file that holds a place, because it binds the Encyclopaedia's
+    # After every graph-derived place dataset, because it binds the Encyclopaedia's
     # timeline to them by article id and can only match what has been written.
     history = build_history()
     if history:
@@ -378,7 +387,7 @@ def main(argv: list[str] | None = None) -> int:
 
     p_import = sub.add_parser(
         "import-oastars",
-        help="re-import fiction/oa_stars.yaml from the Celestia add-on archives",
+        help="update Celestia claims in fiction/oaup/",
     )
     p_import.add_argument(
         "--archive",
@@ -390,7 +399,7 @@ def main(argv: list[str] | None = None) -> int:
 
     p_inner = sub.add_parser(
         "import-inner-sphere",
-        help="re-import fiction/inner_sphere.yaml from the saved EG page",
+        help="update Inner Sphere claims in fiction/oaup/",
     )
     p_inner.add_argument(
         "--page",
@@ -452,6 +461,14 @@ def main(argv: list[str] | None = None) -> int:
         help="re-tabulate fiction/constellations.yaml from the IAU boundaries",
     )
     p_con.set_defaults(func=cmd_import_constellations)
+
+    p_validate = sub.add_parser("validate", help="validate fiction/oaup/ with SHACL")
+    p_validate.set_defaults(func=cmd_validate)
+
+    p_format = sub.add_parser(
+        "format", help="normalise the entity-grouped Turtle files in fiction/oaup/"
+    )
+    p_format.set_defaults(func=cmd_format)
 
     p_build = sub.add_parser("build", help="emit renderer datasets into web/public/data/")
     p_build.add_argument("--print-manifest", action="store_true")

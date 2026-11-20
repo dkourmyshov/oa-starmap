@@ -1,0 +1,35 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# New Sol
+
+id:world-new-sol a oa:Place, oa:World ;
+    skos:prefLabel "New Sol" ;
+    oa:article <https://www.orionsarm.com/eg-article/4a27163b7497d> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Near Medius, which is HIP 93229 in Corona Australis at 280 ly, and near is the whole of what is said — no separation and no bearing — so this takes Medius's position and the two markers fall together." ;
+    oa:uncertain false .
+
+claim:location-world-new-sol a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4a27163b7497d> ;
+    oa:about id:world-new-sol ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -44.1381 ;
+    oa:distance value:location-world-new-sol-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:nearName "Medius" ;
+    oa:rightAscensionDeg 284.8553 .
+
+value:location-world-new-sol-distance a oa:QuantityValue ;
+    qudt:numericValue 280.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

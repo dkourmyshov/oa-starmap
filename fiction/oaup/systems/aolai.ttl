@@ -1,0 +1,57 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Aolai
+
+id:inner-sphere-row-0287 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Aolai" .
+
+claim:inner-sphere-inner-sphere-row-0287-2d3952bdf96c a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0287 ;
+    oa:article <https://www.orionsarm.com/eg-article/4871520aab6c2> ;
+    oa:canonical true ;
+    oa:colonyName "Aolai" ;
+    oa:luminositySol "0.247" ;
+    oa:massSol "0.63" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 286 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0287-2d3952bdf96c-source-distance ;
+    oa:spectralType "K2 V" ;
+    oa:starName "AK Leporis" .
+
+value:inner-sphere-inner-sphere-row-0287-2d3952bdf96c-source-distance a oa:QuantityValue ;
+    qudt:numericValue 29.000 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Aolai
+
+id:inner-sphere-row-0290 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Aolai" .
+
+claim:inner-sphere-inner-sphere-row-0290-214d4a696c2f a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0290 ;
+    oa:article <https://www.orionsarm.com/eg-article/4871520aab6c2> ;
+    oa:canonical true ;
+    oa:colonyName "Aolai" ;
+    oa:luminositySol "2.568" ;
+    oa:massSol "1.2" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 289 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0290-214d4a696c2f-source-distance ;
+    oa:spectralType "F6 V" ;
+    oa:starName "Gamma Leporis" .
+
+value:inner-sphere-inner-sphere-row-0290-214d4a696c2f-source-distance a oa:QuantityValue ;
+    qudt:numericValue 29.044 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

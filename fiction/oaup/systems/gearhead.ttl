@@ -1,0 +1,44 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# Gearhead
+
+id:world-gearhead a oa:Place, oa:World ;
+    skos:prefLabel "Gearhead" ;
+    oa:article <https://www.orionsarm.com/eg-article/5beb16f072050> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "51 Ophiuchi, 410 ly out, and the catalogue agrees with the article to a tenth of a light year. Home to an independent vec culture that began in the Diamond Network and has since come round to the Sephirotics; no holder is recorded, because independent is what the article calls it." ;
+    oa:systemName "Gearhead" ;
+    oa:uncertain false .
+
+claim:location-world-gearhead a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5beb16f072050> ;
+    oa:about id:world-gearhead ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "51 Ophiuchi" .
+
+claim:event-world-gearhead-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5beb16f072050> ;
+    oa:about id:world-gearhead ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 2730 .
+
+claim:event-world-gearhead-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5beb16f072050> ;
+    oa:about id:world-gearhead ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"they were the first to arrive (in 2733AT) thanks to their peak velocity of 0.8c\" This is the arrival of the Gearhead forerunners at 51 Ophiuchi, immediately followed by the founding of REoC; it conflicts with the panel's 2730AT colonisation date. The Republican Engine of Creation's ship, first to arrive; the panel's 'Colonized 2730AT' is kept beside it." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 2733 .

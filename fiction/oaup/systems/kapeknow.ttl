@@ -1,0 +1,40 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# KapekNow
+
+id:world-kapeknow a oa:Place, oa:World ;
+    skos:prefLabel "KapekNow" ;
+    oa:article <https://www.orionsarm.com/eg-article/466e0f4fb75a8> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:uncertain false .
+
+claim:location-world-kapeknow a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/466e0f4fb75a8> ;
+    oa:about id:world-kapeknow ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:constellationName "Aquila" ;
+    oa:distance value:location-world-kapeknow-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:note "Kept as a cone. The Celestia add-on gives a direction for KapekNow, but it lies 115 degrees from the centre of Aquila against that constellation's radius of 19.2 — not a refinement of this cone but the opposite side of the sky, and 813 ly against the article's 723. Nothing here can say which is meant. See questions.md." .
+
+value:location-world-kapeknow-distance a oa:QuantityValue ;
+    qudt:numericValue 723.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-kapeknow-metasoft a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/466e0f4fb75a8> ;
+    oa:about id:world-kapeknow ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft ;
+    oa:recordOrder 0 .

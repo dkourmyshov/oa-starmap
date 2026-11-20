@@ -1,0 +1,60 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Xeon
+
+id:world-xeon a oa:Place, oa:World ;
+    skos:prefLabel "Xeon" ;
+    oa:article <https://www.orionsarm.com/eg-article/4611935cb9c74> ;
+    oa:editorialNote "---- Diamond Network -----------------------------------------------------" ;
+    oa:kind "polity_marker" ;
+    oa:labelsSystem false ;
+    oa:note "Given as the Perseus Quadrant of the Outer Cassiopeia Sector, which is a direction and no distance. The distance above is inferred from Branton instead, where the blight began before moving \"several hundred light years to rimward\"; the derivation and its error bars are on the position. This entry is the Xeon polity's only member, and the reason the legend counted one for it while the map drew nothing." ;
+    oa:uncertain false .
+
+claim:location-world-xeon a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4611935cb9c74> ;
+    oa:about id:world-xeon ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg 61.929 ;
+    oa:derivation "Worked out from Branton, where the blight began, and the article's own account of where it went: it \"abandoned this world to establish a minor empire several hundred light years to rimward\". Branton sits at galactic (-1849, 2739, -15) ly; four hundred light years rimward of it, which is to say that much further from the galactic centre, is 3,544 ly from Sol and 5.4 degrees from Branton on the sky. That point is in Cassiopeia, agreeing with the article's \"Perseus Quadrant of the Outer Cassiopeia Sector\", which is the only direction it gives.\nThe errors say how little this is worth. \"Several hundred\" is read as four hundred and could be two or eight, which is the 400 ly; and \"rimward\" is a direction in the galaxy rather than a bearing, which is most of the 15 degrees. What the estimate buys is that the Xeon polity's one marker is somewhere rather than nowhere, and it is marked as ours rather than the setting's." ;
+    oa:directionErrorDeg 15.0 ;
+    oa:distance value:location-world-xeon-distance ;
+    oa:distanceError value:location-world-xeon-distance-error ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:EditorialEstimate ;
+    oa:rightAscensionDeg 26.675 .
+
+value:location-world-xeon-distance a oa:QuantityValue ;
+    qudt:numericValue 3544.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+value:location-world-xeon-distance-error a oa:QuantityValue ;
+    qudt:numericValue 400.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-xeon-xeon a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4611935cb9c74> ;
+    oa:about id:world-xeon ;
+    oa:canonical true ;
+    oa:polity id:polity-xeon ;
+    oa:recordOrder 0 .
+
+claim:event-world-xeon-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4611935cb9c74> ;
+    oa:about id:world-xeon ;
+    oa:canonical true ;
+    oa:eventKind oa:Reported ;
+    oa:note "First known to the Sephirotics." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 9210 .

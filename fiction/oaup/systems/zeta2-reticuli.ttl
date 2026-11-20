@@ -1,0 +1,41 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# Zeta2 Reticuli
+
+id:world-zeta2-reticuli a oa:Place, oa:World ;
+    skos:prefLabel "Zeta2 Reticuli" ;
+    oa:article <https://www.orionsarm.com/eg-article/57e3d5f53ed33> ;
+    oa:editorialNote "---- Solipsist Panvirtuality ---------------------------------------------" ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "39 ly out in Reticulum, and spelled without the hyphen because the article is: it is titled \"Zeta2 Reticuli\"." ;
+    oa:uncertain false .
+
+claim:location-world-zeta2-reticuli a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/57e3d5f53ed33> ;
+    oa:about id:world-zeta2-reticuli ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Zeta2 Reticuli" .
+
+claim:affiliation-world-zeta2-reticuli-diamond-network a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/57e3d5f53ed33> ;
+    oa:about id:world-zeta2-reticuli ;
+    oa:canonical true ;
+    oa:polity id:polity-diamond-network ;
+    oa:recordOrder 0 .
+
+claim:event-world-zeta2-reticuli-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/57e3d5f53ed33> ;
+    oa:about id:world-zeta2-reticuli ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 1250 .

@@ -1,0 +1,57 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# Steelcliff
+
+id:world-steelcliff a oa:Place, oa:World ;
+    skos:prefLabel "Steelcliff" ;
+    oa:article <https://www.orionsarm.com/eg-article/478986428e74a> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "A xenosophont world of sorts, inside Negentropy volumes and under no Caretaker God's custodianship — which is what separates it from H'tat'sa'thoss, where the protection is the whole point. Recorded under both, since neither alone says what it is." ;
+    oa:uncertain false .
+
+claim:location-world-steelcliff a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/478986428e74a> ;
+    oa:about id:world-steelcliff ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:note "3,246 ly from Sol, with no direction given." .
+
+claim:affiliation-world-steelcliff-negentropy-alliance a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/478986428e74a> ;
+    oa:about id:world-steelcliff ;
+    oa:canonical true ;
+    oa:polity id:polity-negentropy-alliance ;
+    oa:recordOrder 0 .
+
+claim:affiliation-world-steelcliff-xenosophont a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/478986428e74a> ;
+    oa:about id:world-steelcliff ;
+    oa:canonical true ;
+    oa:polity id:polity-xenosophont ;
+    oa:recordOrder 1 .
+
+claim:event-world-steelcliff-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/478986428e74a> ;
+    oa:about id:world-steelcliff ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 7852 .
+
+claim:event-world-steelcliff-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/478986428e74a> ;
+    oa:about id:world-steelcliff ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "\"Reached 7852 AT\" Header records this as 'settled 7852'; the article describes only reaching/discovering a native BioGeoComputing world, with no Terragen colonisation stated, so 'visited' is used here rather than 'settled'. The world holds a native alien mind, and the article has it reached, not colonised; the map's older 'settled 7852' is this sentence read as a settlement." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 7852 .

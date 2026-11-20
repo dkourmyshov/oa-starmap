@@ -53,21 +53,19 @@ def _matches(needle: str, *values: object) -> bool:
 
 def _describe(place: Place) -> str:
     record = place.record
-    if place.source == "worlds.yaml":
+    if place.source == "world":
         loc = record.get("location") or {}
         where = ", ".join(f"{k}={v}" for k, v in loc.items() if k != "estimated") or "unplaced"
         held = ",".join(record.get("affiliations") or []) or "independent"
         return f"{record.get('kind', '?')}, {held}; {where}"
-    if place.source == "oa_systems.yaml":
+    if place.source == "celestia":
         held = record.get("affiliation") or "independent"
         hidden = ", hidden" if record.get("hidden") else ""
-        return f"star={record.get('star')}, {held}{hidden}"
-    if place.source == "oa_stars.yaml":
-        return f"{record.get('name')}, {record.get('distance_ly', '?')} ly"
-    if place.source == "inner_sphere.yaml":
+        return f"star={record.get('name')}, {held}{hidden}"
+    if place.source == "inner-sphere":
         return f"star={record.get('star')}, {record.get('distance_ly', '?')} ly"
-    if place.source == "polities.yaml":
-        return f"landmark of {record.get('polity')}"
+    if place.source == "landmark":
+        return f"catalogue={record.get('catalogue')}"
     return ""
 
 
@@ -87,7 +85,7 @@ def find(needle: str, fiction_dir: Path | None = None, data_dir: Path | None = N
     ]
 
     # Resolved landmark bindings. A landmark is authored under one name and
-    # matched under another — Zeta Tauri in polities.yaml, Tianguan in the
+    # matched under another — Zeta Tauri in the OAUP graph, Tianguan in the
     # catalogue — so searching either file alone finds one half of the pair and
     # not the fact that they are the same object.
     built = data_dir / "fiction.json"

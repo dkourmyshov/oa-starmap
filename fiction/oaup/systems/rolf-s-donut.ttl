@@ -1,0 +1,33 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Rolf's Donut
+
+id:inner-sphere-row-0606 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Rolf's Donut" .
+
+claim:inner-sphere-inner-sphere-row-0606-040dafe591d5 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0606 ;
+    oa:article <https://www.orionsarm.com/eg-article/48473da1cd9bc> ;
+    oa:canonical true ;
+    oa:colonyName "Rolf's Donut" ;
+    oa:luminositySol "0.0048" ;
+    oa:massSol "." ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 605 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0606-040dafe591d5-source-distance ;
+    oa:spectralType "M2.5 Ve" ;
+    oa:starName "GJ 2128" .
+
+value:inner-sphere-inner-sphere-row-0606-040dafe591d5-source-distance a oa:QuantityValue ;
+    qudt:numericValue 49.317 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

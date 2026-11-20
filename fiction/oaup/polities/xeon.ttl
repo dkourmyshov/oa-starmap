@@ -1,0 +1,18 @@
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+
+# Xeon
+
+id:polity-xeon a oa:Polity ;
+    skos:prefLabel "Xeon" ;
+    oa:ambiguousName false ;
+    oa:color "#556070" ;
+    oa:editorialNote "Its own page, saved under sources/polities: \"In any case the Xeon are not known before 9210.\" A bound, entered\nas the year given; the colony of Branton they are thought to derive from\nvanished in 8995.\nAhuman, and known by where it was noticed rather than where it is: the\nPerseus Quadrant of the Outer Cassiopeia Sector, a direction with no\ndistance. Its one entry in worlds.yaml is a volume that draws nothing." ;
+    oa:foundedAT 9210 ;
+    oa:hasSource src:eg-system-articles ;
+    oa:kind "polity" ;
+    oa:polityId "xeon" ;
+    oa:recordOrder 39 ;
+    oa:uncertain false .

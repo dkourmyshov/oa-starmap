@@ -5,7 +5,7 @@ give this map, how they are laid out for reading, and what a reading writes.
 
 ## What the articles hold that the map does not
 
-The map records dated history in `fiction/worlds.yaml`: 533 places, 354 of them
+The map records dated history in `fiction/oaup/`: 533 places, 354 of them
 with at least one event, 437 events in all, ten of which are a change of hands.
 Affiliation is recorded once per place and is always the *present* holder, at
 the setting's 10600-odd AT.
@@ -32,7 +32,7 @@ holdings had nowhere to appear. Ranked by how often the system articles write
 the name: Solar Dominion 196, **First Federation 160**, Utopia Sphere 129,
 Sophic League 122, **Conver Ambi 90**, Terragen Federation 89, Negentropy
 Alliance 86, Non-Coercive Zone 85, **Taurus Nexus 82**, **Eridanus League 76**.
-The bold ones are not in `polities.yaml`; the First Federation is the second
+The bold ones are not in `oaup/`; the First Federation is the second
 most-named polity in the whole corpus.
 
 ## Why a program does not read them
@@ -81,11 +81,11 @@ rearrangement of somebody else's text. What the reader writes is tracked.
 
 ## What a reading writes
 
-Events into `fiction/worlds.yaml`, in the existing `events` schema, with one
+Events into `fiction/oaup/`, in the existing `events` schema, with one
 addition: an event may carry a `polity`, the id of the polity it is about.
 `settled` by it, `transferred` to it, `abandoned` by it, `capital` of it. That
 is how a place's past holders are recorded; `affiliations` stays the present
-ones. The build refuses an id that is not in `polities.yaml`, so a dissolved
+ones. The build refuses an id that is not in `oaup/`, so a dissolved
 polity named on an event has to be entered there, with a colour, the way
 Cygexpa already is. It holds nothing on the legend and draws no ring; it exists
 so that the event can name it and so that a map drawn at a year when it
@@ -128,7 +128,7 @@ rule, in `holdersAt`:
    colony, and the map shows it. That is where a proto-Keterist colony goes —
    on its own event, not on a rule.
 
-Both years are cited in `polities.yaml` beside each one, from the history
+Both years are cited in `oaup/` beside each one, from the history
 timeline where it dates them and otherwise from the polity's own article as
 given by the project owner: the Solar Dominion 2217, Metasoft 2344 (the vec
 polity's independence; the Version Tree itself is instituted in 2582), the
@@ -232,7 +232,7 @@ verbatim quote each, holders named without a year, names it could not place,
 contradictions as pairs of quotes, doubts. The reviewer checks the candidates
 against the schema and roster (`review_candidates.py`, in the session
 scratchpad; worth moving into the pipeline if the pass continues) and writes
-the accepted ones into `worlds.yaml`.
+the accepted ones into `oaup/`.
 
 The trial, 2026-09-05: three Sonnet readers, two articles each, from the
 first tranche. Every file valid; every entry quoted; precision followed the

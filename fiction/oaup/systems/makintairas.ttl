@@ -1,0 +1,68 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Makintairas
+
+id:world-makintairas a oa:Place, oa:World ;
+    skos:prefLabel "Makintairas" ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "10 Tauri, 45 ly out. From the colony table; no article of its own. The colony table's present affiliation, Metasoft, is undated for when that succeeded the Nexus." ;
+    oa:uncertain false .
+
+claim:location-world-makintairas a prov:Entity, oa:LocationClaim ;
+    oa:about id:world-makintairas ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "10 Tauri" .
+
+claim:affiliation-world-makintairas-metasoft a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:world-makintairas ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft ;
+    oa:recordOrder 0 .
+
+claim:event-world-makintairas-001 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-makintairas ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "No article of its own. The Taurus Nexus's own page, as pasted by the project owner: \"over the following centuries a number of other colonies such as Makintairas (10 Tauri) ... eventually joined the Taurus Nexus\", after wormhole technology's replication in 2268; the span runs to the Nexus's own dissolution in 3435. The Benes article independently has Makintairas as a live wormhole hub in 2657: \"the wormhole link between Makintairas and Rana.\"" ;
+    oa:polity id:polity-taurus-nexus ;
+    oa:precision oa:Between ;
+    oa:recordOrder 0 ;
+    oa:sourceDescription "sources/polities/taurus-nexus.txt" ;
+    oa:untilAT 3435 ;
+    oa:yearAT 2268 .
+
+# Makintairas
+
+id:inner-sphere-row-0519 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Makintairas" .
+
+claim:inner-sphere-inner-sphere-row-0519-877a5336e80d a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0519 ;
+    oa:article <https://www.orionsarm.com/eg-article/46afce0686870> ;
+    oa:canonical true ;
+    oa:colonyName "Makintairas" ;
+    oa:luminositySol "3.042" ;
+    oa:massSol "1.139" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 518 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0519-877a5336e80d-source-distance ;
+    oa:spectralType "F8 V" ;
+    oa:starName "10 Tauri" .
+
+value:inner-sphere-inner-sphere-row-0519-877a5336e80d-source-distance a oa:QuantityValue ;
+    qudt:numericValue 45.54 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

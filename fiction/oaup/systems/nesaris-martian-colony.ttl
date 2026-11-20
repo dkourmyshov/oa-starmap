@@ -1,0 +1,32 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Nesaris (Martian colony)
+
+id:inner-sphere-row-0015 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Nesaris (Martian colony)" .
+
+claim:inner-sphere-inner-sphere-row-0015-e2f4537426af a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0015 ;
+    oa:canonical true ;
+    oa:colonyName "Nesaris (Martian colony)" ;
+    oa:luminositySol "0.000306 to 0.00101" ;
+    oa:massSol "0.1" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 14 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0015-e2f4537426af-source-distance ;
+    oa:spectralType "M3.5 V" ;
+    oa:starName "Ross 154" .
+
+value:inner-sphere-inner-sphere-row-0015-e2f4537426af-source-distance a oa:QuantityValue ;
+    qudt:numericValue 9.706 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

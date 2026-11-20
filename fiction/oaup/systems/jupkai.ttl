@@ -1,0 +1,36 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Jupkai
+
+id:world-jupkai a oa:Place, oa:World ;
+    skos:prefLabel "Jupkai" ;
+    oa:article <https://www.orionsarm.com/eg-article/48fa522b098a9> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "In Carina at 6,459 ly, and the remains of an extinct xenosophont civilisation. No holder is recorded: there is nobody left to hold it." ;
+    oa:systemName "Jupkai" ;
+    oa:uncertain false .
+
+claim:location-world-jupkai a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48fa522b098a9> ;
+    oa:about id:world-jupkai ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -61.912 ;
+    oa:distance value:location-world-jupkai-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:note "Was Carina and a distance. The direction is \"Alpha Jupkai\" in oaloc4.dsc, one of the Orion's Arm Celestia add-ons' location catalogues (OAAddons9, OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv), which falls in Carina by the IAU boundaries as the article says. The add-on's 6,105 ly against the article's 6,459 is 5.5%, and the article's is kept." ;
+    oa:rightAscensionDeg 164.685 .
+
+value:location-world-jupkai-distance a oa:QuantityValue ;
+    qudt:numericValue 6459.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

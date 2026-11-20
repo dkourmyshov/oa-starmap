@@ -1,0 +1,163 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Mizar
+
+id:world-mizar a oa:Place, oa:World ;
+    skos:prefLabel "Mizar" ;
+    oa:article <https://www.orionsarm.com/eg-article/4c1cb2ca8f150> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "81 ly. Alcor lies half a light year off and is held by others entirely — the two share an article and nothing else." ;
+    oa:systemName "Mizar" ;
+    oa:uncertain false .
+
+claim:location-world-mizar a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4c1cb2ca8f150> ;
+    oa:about id:world-mizar ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Mizar" .
+
+claim:affiliation-world-mizar-solar-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4c1cb2ca8f150> ;
+    oa:about id:world-mizar ;
+    oa:canonical true ;
+    oa:polity id:polity-solar-dominion ;
+    oa:recordOrder 0 .
+
+claim:event-world-mizar-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4c1cb2ca8f150> ;
+    oa:about id:world-mizar ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "First reached." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 2097 .
+
+claim:event-world-mizar-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4c1cb2ca8f150> ;
+    oa:about id:world-mizar ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"A Truth-Santaya Networks colony ship arrived at Mizar in 2097 a.t. from Hesperia (later Fons Luminis).\" Truth-Santaya Networks is no polity of this file." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 2097 .
+
+claim:event-world-mizar-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4c1cb2ca8f150> ;
+    oa:about id:world-mizar ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"Leonardo and most of the habitat bands joined the Solar Dominion in 2530, and a number of Dominion transapients of the Divine Order arrived during this period.\"" ;
+    oa:polity id:polity-solar-dominion ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 2 ;
+    oa:yearAT 2530 .
+
+# Mizar
+
+id:inner-sphere-row-0921 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Mizar" .
+
+claim:inner-sphere-inner-sphere-row-0921-b3fab171694b a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0921 ;
+    oa:article <https://www.orionsarm.com/eg-article/4c1cb2ca8f150> ;
+    oa:canonical true ;
+    oa:colonyName "Mizar" ;
+    oa:luminositySol "2.5" ;
+    oa:massSol "." ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 920 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0921-b3fab171694b-source-distance ;
+    oa:spectralType "A1-2 Vp" ;
+    oa:starName "Zeta Ursae Majoris Aa" .
+
+value:inner-sphere-inner-sphere-row-0921-b3fab171694b-source-distance a oa:QuantityValue ;
+    qudt:numericValue 81.107 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Mizar
+
+id:inner-sphere-row-0922 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Mizar" .
+
+claim:inner-sphere-inner-sphere-row-0922-5435493c1f5d a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0922 ;
+    oa:article <https://www.orionsarm.com/eg-article/4c1cb2ca8f150> ;
+    oa:canonical true ;
+    oa:colonyName "Mizar" ;
+    oa:luminositySol "2.5" ;
+    oa:massSol "." ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 921 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0922-5435493c1f5d-source-distance ;
+    oa:spectralType "A1-2 V" ;
+    oa:starName "Zeta Ursae Majoris Ab" .
+
+value:inner-sphere-inner-sphere-row-0922-5435493c1f5d-source-distance a oa:QuantityValue ;
+    qudt:numericValue 81.107 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Mizar
+
+id:inner-sphere-row-0923 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Mizar" .
+
+claim:inner-sphere-inner-sphere-row-0923-b5fc538334db a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0923 ;
+    oa:article <https://www.orionsarm.com/eg-article/4c1cb2ca8f150> ;
+    oa:canonical true ;
+    oa:colonyName "Mizar" ;
+    oa:luminositySol "1.6" ;
+    oa:massSol "." ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 922 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0923-b5fc538334db-source-distance ;
+    oa:spectralType "A5-7 Vm" ;
+    oa:starName "Zeta Ursae Majoris Ba" .
+
+value:inner-sphere-inner-sphere-row-0923-b5fc538334db-source-distance a oa:QuantityValue ;
+    qudt:numericValue 81.107 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Mizar
+
+id:inner-sphere-row-0924 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Mizar" .
+
+claim:inner-sphere-inner-sphere-row-0924-0603c04affa9 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0924 ;
+    oa:article <https://www.orionsarm.com/eg-article/4c1cb2ca8f150> ;
+    oa:canonical true ;
+    oa:colonyName "Mizar" ;
+    oa:luminositySol "1.6" ;
+    oa:massSol "." ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 923 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0924-0603c04affa9-source-distance ;
+    oa:spectralType "A5-7 Vm" ;
+    oa:starName "Zeta Ursae Majoris Bb" .
+
+value:inner-sphere-inner-sphere-row-0924-0603c04affa9-source-distance a oa:QuantityValue ;
+    qudt:numericValue 81.107 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

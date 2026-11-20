@@ -1,0 +1,71 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# Normidic Machinophyle Supercluster
+
+id:world-normidic-machinophyle-supercluster a oa:Place, oa:World ;
+    skos:prefLabel "Normidic Machinophyle Supercluster" ;
+    oa:article <https://www.orionsarm.com/eg-article/46dcc986d994d> ;
+    oa:editorialNote "---- the Transcend -------------------------------------------------------" ;
+    oa:kind "polity_marker" ;
+    oa:labelsSystem false ;
+    oa:note "Around YTS 2190 751 6, in what the Encyclopaedia calls the Norma Outer Sector — a designation of Orion's Arm's own that the Celestia add-on does not carry, so there is nothing to bind to. The constellation is recorded and no distance is given, so nothing is drawn." ;
+    oa:uncertain false .
+
+claim:location-world-normidic-machinophyle-supercluster a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46dcc986d994d> ;
+    oa:about id:world-normidic-machinophyle-supercluster ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:constellationName "Norma" ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+claim:affiliation-world-normidic-machinophyle-supercluster-solipsist-panvirtuality a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46dcc986d994d> ;
+    oa:about id:world-normidic-machinophyle-supercluster ;
+    oa:canonical true ;
+    oa:polity id:polity-solipsist-panvirtuality ;
+    oa:recordOrder 0 .
+
+claim:event-world-normidic-machinophyle-supercluster-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46dcc986d994d> ;
+    oa:about id:world-normidic-machinophyle-supercluster ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "Reached by relativistic von Neumann machines." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 3716 .
+
+claim:event-world-normidic-machinophyle-supercluster-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46dcc986d994d> ;
+    oa:about id:world-normidic-machinophyle-supercluster ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Circa ;
+    oa:recordOrder 1 ;
+    oa:yearAT 4950 .
+
+claim:event-world-normidic-machinophyle-supercluster-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46dcc986d994d> ;
+    oa:about id:world-normidic-machinophyle-supercluster ;
+    oa:canonical true ;
+    oa:eventKind oa:Capital ;
+    oa:note "A large empire by this date, overlapping Negentropist, Keterist and Cooperation space." ;
+    oa:precision oa:NotLaterThan ;
+    oa:recordOrder 2 ;
+    oa:yearAT 5500 .
+
+claim:event-world-normidic-machinophyle-supercluster-004 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-normidic-machinophyle-supercluster ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "Volume around YTS 2190 751 6 [Norma Sector] settled by relativistic von neuman machines [see Normidic Machinophyle Supercluster ]." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 3 ;
+    oa:sourceDescription "Encyclopaedia timeline, Age of Consolidation" ;
+    oa:yearAT 3716 .

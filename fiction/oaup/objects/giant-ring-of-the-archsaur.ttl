@@ -1,0 +1,73 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Giant Ring of the ArchSaur
+
+id:world-giant-ring-of-the-archsaur a oa:Place, oa:World ;
+    skos:prefLabel "Giant Ring of the ArchSaur" ;
+    oa:article <https://www.orionsarm.com/eg-article/5f25d0ba9c60c> ;
+    oa:kind "megastructure" ;
+    oa:labelsSystem false ;
+    oa:note "In M39, which the catalogue puts at 965 ly against the article's 1,010 — agreeing to 5%. The cluster's centre supplies the direction; where in a 160 ly radius the ring actually sits is not given." ;
+    oa:uncertain false .
+
+claim:location-world-giant-ring-of-the-archsaur a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5f25d0ba9c60c> ;
+    oa:about id:world-giant-ring-of-the-archsaur ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg 48.3495 ;
+    oa:distance value:location-world-giant-ring-of-the-archsaur-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:nearName "M39 (NGC 7092)" ;
+    oa:rightAscensionDeg 322.8301 .
+
+value:location-world-giant-ring-of-the-archsaur-distance a oa:QuantityValue ;
+    qudt:numericValue 1010.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-giant-ring-of-the-archsaur-archosaurian-empire a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5f25d0ba9c60c> ;
+    oa:about id:world-giant-ring-of-the-archsaur ;
+    oa:canonical true ;
+    oa:polity id:polity-archosaurian-empire ;
+    oa:recordOrder 0 .
+
+claim:event-world-giant-ring-of-the-archsaur-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5f25d0ba9c60c> ;
+    oa:about id:world-giant-ring-of-the-archsaur ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "First arrived." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 5400 .
+
+claim:event-world-giant-ring-of-the-archsaur-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5f25d0ba9c60c> ;
+    oa:about id:world-giant-ring-of-the-archsaur ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"First probes arrived around 5400AT and a group of first toposophic AIs with solipsist tendencies claimed the system, established a presence around the superjovian planet and slowly began transforming some of its moons to computronium structures.\" The AIs (later called the Deep Dreamers) claimed the system and established a presence, which reads as more than a visit; header only records 'visited 5400'. No polity: the AIs are not named as a roster entity at this point. First-toposophic AIs 'with solipsist tendencies' claiming the system, no polity of this file." ;
+    oa:precision oa:Circa ;
+    oa:recordOrder 1 ;
+    oa:yearAT 5400 .
+
+claim:event-world-giant-ring-of-the-archsaur-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5f25d0ba9c60c> ;
+    oa:about id:world-giant-ring-of-the-archsaur ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"Things changed abruptly after the Archaipelago attacks of 8400AT. After the ArchSaur archailect subsumed UrchinStar, she sent out a task force that apparently was able to memetically subvert or subsume the Dreamers without firing a single shot. In the aftermath of these events, the ArchSaur consolidated control over the system and began installing starlifting equipment around the two stars and started disassembling the superjovian planet for building more starlifting systems and computronium structures.\" New event, not in header: the system passes from the independent Deep Dreamers to the Archosaurian Empire (the ArchSaur) some time after the 8400 AT Archaipelago attacks; exact year of the takeover itself is not given. After the Archaipelago attacks of 8400 and the ArchSaur's subsumption of UrchinStar; the exact year is not stated." ;
+    oa:polity id:polity-archosaurian-empire ;
+    oa:precision oa:NotEarlierThan ;
+    oa:recordOrder 2 ;
+    oa:yearAT 8400 .

@@ -1,0 +1,53 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Sacred Heart
+
+id:world-sacred-heart a oa:Place, oa:World ;
+    skos:prefLabel "Sacred Heart" ;
+    oa:article <https://www.orionsarm.com/eg-article/4911a49ba4b44> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:uncertain false .
+
+claim:location-world-sacred-heart a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4911a49ba4b44> ;
+    oa:about id:world-sacred-heart ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg 19.6647 ;
+    oa:distance value:location-world-sacred-heart-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:nearName "Praesepe (NGC 2632)" ;
+    oa:note "In Praesepe, which is a distance as well as a direction. This was left unplaced for a while on the grounds that the article gives no figure and the cluster's would be an assertion — but \"in Praesepe\" is the article's own claim, and a cluster is 104 ly across rather than unbounded, so taking its position states nothing the source did not. Cancer alone would have been eleven degrees." ;
+    oa:rightAscensionDeg 130.0846 .
+
+value:location-world-sacred-heart-distance a oa:QuantityValue ;
+    qudt:numericValue 598.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-sacred-heart-sophic-league a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4911a49ba4b44> ;
+    oa:about id:world-sacred-heart ;
+    oa:canonical true ;
+    oa:polity id:polity-sophic-league ;
+    oa:recordOrder 0 .
+
+claim:event-world-sacred-heart-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4911a49ba4b44> ;
+    oa:about id:world-sacred-heart ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "Became part of the League." ;
+    oa:polity id:polity-sophic-league ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 3234 .

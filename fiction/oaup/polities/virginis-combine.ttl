@@ -1,0 +1,19 @@
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+
+# Virginis Combine
+
+id:polity-virginis-combine a oa:Polity ;
+    skos:prefLabel "Virginis Combine" ;
+    oa:ambiguousName false ;
+    oa:color "#BBDEFB" ;
+    oa:dissolvedAT 2512 ;
+    oa:editorialNote "Its own page, as given by the project owner (sources/polities): \"In\n1590 AT a number of technorat clades in the Beta Virginis system founded\nthe Virginis Combine colonisation group\"; first ships in 1625; outposts\non the nearby red dwarfs, the M'Buto Confederacy and Denebola; \"taken\nover by the Conver Ambi following the Denebola Incident, and was\neventually broken up between Metasoft and the Solar Dominion, while\nPacifica eventually joined the Utopia Sphere.\"\nThe Arcadia article: \"In 2512 the Virginis Combine also dissolved, and\nit was effectively absorbed by the Conver Ambi\"; the Pacifica article:\n\"by 2512 the Combine and the Conver Ambi announced a merger\". Arcadia\nalso says \"when the Combine dissolved in 3932\", once; the earlier year\nis entered.\n\"An early interstellar empire, influential during the late Federation and\nearly Expansion periods.\" Timeline, 1590: \"A number of Technorat habitats\nform the Virginis Combine [Beta Virginis].\"" ;
+    oa:foundedAT 1590 ;
+    oa:hasSource src:eg-historical-polities ;
+    oa:kind "meta-empire" ;
+    oa:polityId "virginis-combine" ;
+    oa:recordOrder 57 ;
+    oa:uncertain false .

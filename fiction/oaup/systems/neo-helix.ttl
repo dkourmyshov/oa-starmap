@@ -1,0 +1,35 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# Neo-Helix
+
+id:world-neo-helix a oa:Place, oa:World ;
+    skos:prefLabel "Neo-Helix" ;
+    oa:article <https://www.orionsarm.com/eg-article/46cf87ac11567> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "36 Ophiuchi C, as the colony table has it." ;
+    oa:systemName "Neo-Helix" ;
+    oa:uncertain false .
+
+claim:location-world-neo-helix a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46cf87ac11567> ;
+    oa:about id:world-neo-helix ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "36 Ophiuchi C" .
+
+claim:event-world-neo-helix-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46cf87ac11567> ;
+    oa:about id:world-neo-helix ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"Colonised: 1191 AT\" No settling polity or group is named at this line; \"Clan Yall from House Genen\" is credited elsewhere with designing the ecosystem, but the text does not tie that credit to this date. The Zoeific Biopolity assumed its management after the Age of Crisis, undated." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 1191 .

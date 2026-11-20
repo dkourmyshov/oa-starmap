@@ -1,0 +1,42 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# TrueModel
+
+id:world-truemodel a oa:Place, oa:World ;
+    skos:prefLabel "TrueModel" ;
+    oa:article <https://www.orionsarm.com/eg-article/464ba71b5823e> ;
+    oa:kind "polity_marker" ;
+    oa:labelsSystem false ;
+    oa:note "Of the Negentropy Alliance, though it is the Disarchy's article that describes it." ;
+    oa:uncertain false .
+
+claim:location-world-truemodel a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/464ba71b5823e> ;
+    oa:about id:world-truemodel ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -56.6 ;
+    oa:distance value:location-world-truemodel-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:note "Was an interpolation from the transcription of Anders Sandberg's maps, at 3014 ly with a wide error. The position is now from the Orion's Arm Celestia add-ons' location catalogues (OAAddons9, OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv), which the star importer never read because it takes only .stc files. The add-on catalogues are the preferred source for a volume of this kind whatever the two happen to agree on: the Anders map is known to be unreliable about where an individual system or world sits, and only somewhat better about polities. That they fall 5 degrees apart here is a comfort rather than an argument — the same interpolation was 41 degrees and a factor of seven out for Aries Vector, and one agreement does not make a method." ;
+    oa:rightAscensionDeg 216.75 .
+
+value:location-world-truemodel-distance a oa:QuantityValue ;
+    qudt:numericValue 3300.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-truemodel-negentropy-alliance a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/464ba71b5823e> ;
+    oa:about id:world-truemodel ;
+    oa:canonical true ;
+    oa:polity id:polity-negentropy-alliance ;
+    oa:recordOrder 0 .

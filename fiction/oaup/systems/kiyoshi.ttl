@@ -1,0 +1,129 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Kiyoshi
+
+id:inner-sphere-row-1023 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Kiyoshi" .
+
+claim:inner-sphere-inner-sphere-row-1023-673ffff75672 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-1023 ;
+    oa:article <https://www.orionsarm.com/eg-article/4902dd900dbc5> ;
+    oa:canonical true ;
+    oa:colonyName "Kiyoshi" ;
+    oa:luminositySol "8.3" ;
+    oa:massSol "1.1" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 1022 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-1023-673ffff75672-source-distance ;
+    oa:spectralType "F5-6 V-IV" ;
+    oa:starName "Xi Scorpii A" .
+
+value:inner-sphere-inner-sphere-row-1023-673ffff75672-source-distance a oa:QuantityValue ;
+    qudt:numericValue 90.305 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Kiyoshi
+
+id:inner-sphere-row-1024 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Kiyoshi" .
+
+claim:inner-sphere-inner-sphere-row-1024-f859a78fb3c1 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-1024 ;
+    oa:article <https://www.orionsarm.com/eg-article/4902dd900dbc5> ;
+    oa:canonical true ;
+    oa:colonyName "Kiyoshi" ;
+    oa:luminositySol "6.3" ;
+    oa:massSol "1.1" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 1023 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-1024-f859a78fb3c1-source-distance ;
+    oa:spectralType "F5-6 V-IV" ;
+    oa:starName "Xi Scorpii B" .
+
+value:inner-sphere-inner-sphere-row-1024-f859a78fb3c1-source-distance a oa:QuantityValue ;
+    qudt:numericValue 90.305 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Kiyoshi
+
+id:inner-sphere-row-1028 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Kiyoshi" .
+
+claim:inner-sphere-inner-sphere-row-1028-12fa5a1598b4 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-1028 ;
+    oa:article <https://www.orionsarm.com/eg-article/4902dd900dbc5> ;
+    oa:canonical true ;
+    oa:colonyName "Kiyoshi" ;
+    oa:luminositySol "0.71" ;
+    oa:massSol "1" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 1027 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-1028-12fa5a1598b4-source-distance ;
+    oa:spectralType "G8 V" ;
+    oa:starName "Xi Scorpii D" .
+
+value:inner-sphere-inner-sphere-row-1028-12fa5a1598b4-source-distance a oa:QuantityValue ;
+    qudt:numericValue 90.877 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Kiyoshi
+
+id:inner-sphere-row-1029 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Kiyoshi" .
+
+claim:inner-sphere-inner-sphere-row-1029-f177c0790284 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-1029 ;
+    oa:article <https://www.orionsarm.com/eg-article/4902dd900dbc5> ;
+    oa:canonical true ;
+    oa:colonyName "Kiyoshi" ;
+    oa:luminositySol "0.43" ;
+    oa:massSol "0.9" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 1028 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-1029-f177c0790284-source-distance ;
+    oa:spectralType "K2 V" ;
+    oa:starName "Xi Scorpii E" .
+
+value:inner-sphere-inner-sphere-row-1029-f177c0790284-source-distance a oa:QuantityValue ;
+    qudt:numericValue 90.923 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Kiyoshi
+
+id:inner-sphere-row-1030 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Kiyoshi" .
+
+claim:inner-sphere-inner-sphere-row-1030-a5f0583c1d83 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-1030 ;
+    oa:article <https://www.orionsarm.com/eg-article/4902dd900dbc5> ;
+    oa:canonical true ;
+    oa:colonyName "Kiyoshi" ;
+    oa:luminositySol "0.8" ;
+    oa:massSol "1" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 1029 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-1030-a5f0583c1d83-source-distance ;
+    oa:spectralType "G8 V" ;
+    oa:starName "Xi Scorpii C" .
+
+value:inner-sphere-inner-sphere-row-1030-a5f0583c1d83-source-distance a oa:QuantityValue ;
+    qudt:numericValue 90.971 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

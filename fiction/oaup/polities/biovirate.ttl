@@ -1,0 +1,18 @@
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+
+# Biovirate
+
+id:polity-biovirate a oa:Polity ;
+    skos:prefLabel "Biovirate" ;
+    oa:ambiguousName false ;
+    oa:color "#DD3CA4" ;
+    oa:dissolvedAT 6210 ;
+    oa:editorialNote "Not on the Historical Polities page; named by the project owner as one\nof the important ones. Encyclopaedia timeline, 5920: \"Under Morral Kuprin\nJerr, the Biovirate begins design and manufacture of organic autowars\";\n6009: \"Pereira (the Biovirate capital) falls to the Keterists\"; 6210:\n\"Gannet II, the last isolated Biovirate stronghold, surrenders to\nKeterist advance forces without a struggle - end of the Biovirate\nempire.\" No founding year is stated." ;
+    oa:hasSource src:eg-system-articles ;
+    oa:kind "meta-empire" ;
+    oa:polityId "biovirate" ;
+    oa:recordOrder 72 ;
+    oa:uncertain false .

@@ -1,0 +1,49 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Zarauztar
+
+id:world-zarauztar a oa:Place, oa:World ;
+    skos:prefLabel "Zarauztar" ;
+    oa:article <https://www.orionsarm.com/eg-article/46e73d558b681> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "Given as 484 ly from the Regor supernova." ;
+    oa:uncertain false .
+
+claim:location-world-zarauztar a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46e73d558b681> ;
+    oa:about id:world-zarauztar ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:constellationName "Vela" ;
+    oa:distance value:location-world-zarauztar-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+value:location-world-zarauztar-distance a oa:QuantityValue ;
+    qudt:numericValue 1531.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-zarauztar-nocozo a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46e73d558b681> ;
+    oa:about id:world-zarauztar ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 0 .
+
+claim:event-world-zarauztar-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46e73d558b681> ;
+    oa:about id:world-zarauztar ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 4815 .

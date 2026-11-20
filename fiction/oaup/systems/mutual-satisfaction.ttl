@@ -1,0 +1,40 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Mutual Satisfaction
+
+id:world-mutual-satisfaction a oa:Place, oa:World ;
+    skos:prefLabel "Mutual Satisfaction" ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Once of the Non-Coercive Zone and independent now — an enclave inside NoCoZo space rather than part of it, so no affiliation is recorded. The sheet drew it in the Zone's colour, which is where it is and not whose it is." ;
+    oa:uncertain false .
+
+claim:location-world-mutual-satisfaction a prov:Entity, oa:LocationClaim ;
+    oa:about id:world-mutual-satisfaction ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -61.0954 ;
+    oa:derivation "Interpolated from the transcription of Anders Sandberg's maps, and extrapolated beyond the anchors around it, hence the wider error. No article gives a position, or anything else." ;
+    oa:directionErrorDeg 30.0 ;
+    oa:distance value:location-world-mutual-satisfaction-distance ;
+    oa:distanceError value:location-world-mutual-satisfaction-distance-error ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:EditorialEstimate ;
+    oa:rightAscensionDeg 163.9237 .
+
+value:location-world-mutual-satisfaction-distance a oa:QuantityValue ;
+    qudt:numericValue 2731.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+value:location-world-mutual-satisfaction-distance-error a oa:QuantityValue ;
+    qudt:numericValue 1200.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

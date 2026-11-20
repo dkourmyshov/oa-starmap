@@ -1,0 +1,33 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# The Organic Ascension Alliance
+
+id:inner-sphere-row-0262 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "The Organic Ascension Alliance" .
+
+claim:inner-sphere-inner-sphere-row-0262-122e6295062e a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0262 ;
+    oa:article <https://www.orionsarm.com/eg-article/49fc14acd42b5> ;
+    oa:canonical true ;
+    oa:colonyName "The Organic Ascension Alliance" ;
+    oa:luminositySol "1.1" ;
+    oa:massSol "1" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 261 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0262-122e6295062e-source-distance ;
+    oa:spectralType "G0 V" ;
+    oa:starName "Chi1 Orionis A" .
+
+value:inner-sphere-inner-sphere-row-0262-122e6295062e-source-distance a oa:QuantityValue ;
+    qudt:numericValue 28.374 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

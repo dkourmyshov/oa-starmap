@@ -1,0 +1,48 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# Kappa Cassiopeiae
+
+id:world-kappa-cassiopeiae a oa:Place, oa:World ;
+    skos:prefLabel "Kappa Cassiopeiae" ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "3,064 ly out — the furthest of this polity's named systems." ;
+    oa:uncertain false .
+
+claim:location-world-kappa-cassiopeiae a prov:Entity, oa:LocationClaim ;
+    oa:about id:world-kappa-cassiopeiae ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Kappa Cassiopeiae" .
+
+claim:affiliation-world-kappa-cassiopeiae-solipsist-panvirtuality a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:world-kappa-cassiopeiae ;
+    oa:canonical true ;
+    oa:polity id:polity-solipsist-panvirtuality ;
+    oa:recordOrder 0 .
+
+claim:event-world-kappa-cassiopeiae-001 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-kappa-cassiopeiae ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "The secretive Solipsist Panvirtual cluster ak##~#~ arrives at Kappa Cassiopeiae ." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:sourceDescription "Encyclopaedia timeline, The Age of Crisis" ;
+    oa:yearAT 7002 .
+
+claim:event-world-kappa-cassiopeiae-002 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-kappa-cassiopeiae ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "A Negentropist Institute Probe of Information Conservation (the \" Dewey Decimal \") arrives at the Kappa Cassiopeiae Oort cloud and is informed about the Mucoid Empire ." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:sourceDescription "Encyclopaedia timeline, Current Era" ;
+    oa:yearAT 10344 .

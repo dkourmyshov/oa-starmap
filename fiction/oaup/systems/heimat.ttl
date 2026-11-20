@@ -1,0 +1,60 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# JD 3227227
+
+id:star-jd-3227227 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 3227227" ;
+    oa:sourceName "JD 3227227" .
+
+claim:celestia-star-jd-3227227-0beaec351711 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-3227227 ;
+    oa:absoluteMagnitude 4.77 ;
+    oa:canonical true ;
+    oa:declinationDeg 18.862 ;
+    oa:distance value:celestia-star-jd-3227227-0beaec351711-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 107.3145 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceComment "star for Heimat" ;
+    oa:sourceFile "morefictionalstars.stc" ;
+    oa:sourceSystemName "Heimat" ;
+    oa:spectralType "G2V" .
+
+value:celestia-star-jd-3227227-0beaec351711-distance a oa:QuantityValue ;
+    qudt:numericValue 1770.1 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-star-jd-3227227-metasoft a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48fc9bfb6b8ff> ;
+    oa:about id:star-jd-3227227 ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft .
+
+claim:event-star-jd-3227227-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48fc9bfb6b8ff> ;
+    oa:about id:star-jd-3227227 ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"Heimat is a large world, with 38% land cover, which was reached in 4950 AT.\" Heimat, one of the Metasoft Baseline Reserves the article describes; 'reached', and the article does not say whether a population was found or founded." ;
+    oa:polity id:polity-metasoft ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 4950 .
+
+claim:curation-star-jd-3227227 a prov:Entity, oa:SystemCuration ;
+    oa:about id:star-jd-3227227 ;
+    oa:article <https://www.orionsarm.com/eg-article/48fc9bfb6b8ff> ;
+    oa:editorialLabel "Heimat" ;
+    oa:hidden false ;
+    oa:note "The only Baseline Preserve named there without a page of its own." ;
+    oa:uncertain false .

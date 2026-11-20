@@ -1,0 +1,45 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# Upali
+
+id:world-upali a oa:Place, oa:World ;
+    skos:prefLabel "Upali" ;
+    oa:article <https://www.orionsarm.com/eg-article/4648f119470cc> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "HIP 60206 in Coma Berenices, 275 ly out against the article's 239.65 — a seventh further, which binds. The article also puts it near Melotte 111, and the catalogue has that cluster at 278 ly, so binding to the star supports the claim better than the article's own distance does." ;
+    oa:systemName "Upali" ;
+    oa:uncertain false .
+
+claim:location-world-upali a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4648f119470cc> ;
+    oa:about id:world-upali ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "HIP 60206" .
+
+claim:event-world-upali-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4648f119470cc> ;
+    oa:about id:world-upali ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "Reached." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 2608 .
+
+claim:event-world-upali-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4648f119470cc> ;
+    oa:about id:world-upali ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"In 2608 AT, the Wanderer's Yearning arrived at the outskirts of the Upali System.\" The header records this as \"visited 2608\", but the article goes on to describe a full colony landing (\"It was Year One on the world of Jannah\"), not a mere visit; flagged as a kind mismatch, not a year contradiction. The Wanderer's Yearning; the map's older 'visited 2608' is this arrival." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 2608 .

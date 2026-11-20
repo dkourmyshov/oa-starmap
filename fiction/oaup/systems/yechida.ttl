@@ -1,0 +1,65 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Yechida
+
+id:world-yechida a oa:Place, oa:World ;
+    skos:prefLabel "Yechida" ;
+    oa:article <https://www.orionsarm.com/eg-article/47768efc05bb3> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "In Hydra at 892 ly. The star's name is the setting's own and matches nothing in the catalogues here." ;
+    oa:systemName "Yechida" ;
+    oa:uncertain false .
+
+claim:location-world-yechida a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47768efc05bb3> ;
+    oa:about id:world-yechida ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:constellationName "Hydra" ;
+    oa:distance value:location-world-yechida-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+value:location-world-yechida-distance a oa:QuantityValue ;
+    qudt:numericValue 892.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:event-world-yechida-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47768efc05bb3> ;
+    oa:about id:world-yechida ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "\"Reached 3421 AT\" Panel field; body text says explorers first reached Ruach some years before the supercritical biosphere was discovered, no polity given." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 3421 .
+
+claim:event-world-yechida-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47768efc05bb3> ;
+    oa:about id:world-yechida ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"The Mirrored Owls arrived in the Ruach system in 3822, and are believed to be descended from the ancient Genetekker society that once thrived among the moons of Jupiter, although this is somewhat controversial.\" The Mirrored Owls are a clade, not a roster polity; see unplaced. The Mirrored Owls, a clade, no polity of this file." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 3822 .
+
+# Ruach
+
+id:world-ruach a oa:Place, oa:World ;
+    skos:prefLabel "Ruach" ;
+    oa:article <https://www.orionsarm.com/eg-article/47768efc05bb3> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "The world of Yechida." ;
+    oa:systemName "Yechida" ;
+    oa:uncertain false .

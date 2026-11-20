@@ -1,0 +1,43 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Terragen Federation
+
+id:world-terragen-federation a oa:Place, oa:World ;
+    skos:altLabel "Terran Federation" ;
+    skos:prefLabel "Terragen Federation" ;
+    oa:article <https://www.orionsarm.com/eg-topic/45ce4e17cd0c6> ;
+    oa:kind "polity_extent" ;
+    oa:labelsSystem false ;
+    oa:note "Sixty light years out is the early Federation's own scale rather than a claim about the polity at its greatest extent. Recorded as an extent label rather than as the polity's marker, which is the same call as the thirty-three from the empire catalogues and rests on the same test: the Federation holds twenty places here and six of them are drawn, all of them Inner Sphere colonies, so switching this label off costs an annotation and not the polity.\nThat count is worth the words. Read off worlds.yaml alone the Federation has nothing placed at all, which is what made this a marker to begin with; its worlds are colonies on real stars, in another file." ;
+    oa:uncertain false .
+
+claim:location-world-terragen-federation a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-topic/45ce4e17cd0c6> ;
+    oa:about id:world-terragen-federation ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg 13.0 ;
+    oa:distance value:location-world-terragen-federation-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:note "From TaurusNexus.dsc, one of the Orion's Arm Celestia add-ons' location catalogues (OAAddons9, OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv), where it is labelled TERRAN FEDERATION -- the Encyclopaedia's own name for it is the Terragen Federation, and the add-on's is recorded above as an alternate rather than followed." ;
+    oa:rightAscensionDeg 73.5 .
+
+value:location-world-terragen-federation-distance a oa:QuantityValue ;
+    qudt:numericValue 60.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-terragen-federation-terragen-federation a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-topic/45ce4e17cd0c6> ;
+    oa:about id:world-terragen-federation ;
+    oa:canonical true ;
+    oa:polity id:polity-terragen-federation ;
+    oa:recordOrder 0 .

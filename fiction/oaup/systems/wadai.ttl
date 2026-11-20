@@ -1,0 +1,120 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# EG 471
+
+id:star-eg-471 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "EG 471" ;
+    oa:sourceName "EG 471" .
+
+claim:celestia-star-eg-471-f14d2097d58c a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-eg-471 ;
+    oa:absoluteMagnitude 14.81 ;
+    oa:canonical true ;
+    oa:declinationDeg -14.408 ;
+    oa:distance value:celestia-star-eg-471-f14d2097d58c-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 37.5625 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceFile "oastars2-2.stc" ;
+    oa:spectralType "DA2" .
+
+value:celestia-star-eg-471-f14d2097d58c-distance a oa:QuantityValue ;
+    qudt:numericValue 50.521 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-star-eg-471-sophic-league a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4910e5c60edcc> ;
+    oa:about id:star-eg-471 ;
+    oa:canonical true ;
+    oa:polity id:polity-sophic-league .
+
+claim:curation-star-eg-471 a prov:Entity, oa:SystemCuration ;
+    oa:about id:star-eg-471 ;
+    oa:article <https://www.orionsarm.com/eg-article/4910e5c60edcc> ;
+    oa:editorialLabel "Wadai" ;
+    oa:hidden false ;
+    oa:note "In both source sets: the Celestia add-on as EG 471, and the Inner Sphere table as WD 0230-144 at 54.4 ly. The table's row does not resolve, because no WD or GJ 3162 designation appears in HYG — a white dwarf of absolute magnitude 14.8 is below Hipparcos and outside the Bright Star Catalogue. So the add-on's 50.5 ly is the only position we have for it, and it is a measurement rather than an assertion." ;
+    oa:realObjectIdentity "GJ 3162, the white dwarf WD 0230-144" ;
+    oa:uncertain false .
+
+# Wadai
+
+id:inner-sphere-row-0652 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Wadai" .
+
+claim:inner-sphere-inner-sphere-row-0652-97f15acc477c a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0652 ;
+    oa:article <https://www.orionsarm.com/eg-article/4910e5c60edcc> ;
+    oa:canonical true ;
+    oa:colonyName "Wadai" ;
+    oa:luminositySol "0.000104" ;
+    oa:massSol "0.65" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 651 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0652-97f15acc477c-source-distance ;
+    oa:spectralType "DC9" ;
+    oa:starName "WD 0230-144" .
+
+value:inner-sphere-inner-sphere-row-0652-97f15acc477c-source-distance a oa:QuantityValue ;
+    qudt:numericValue 54.373 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Wadai
+
+id:world-wadai a oa:Place, oa:World ;
+    skos:altLabel "Ouaddai" ;
+    skos:prefLabel "Wadai" ;
+    oa:article <https://www.orionsarm.com/eg-article/4910e5c60edcc> ;
+    oa:editorialNote "---- Utopia Sphere ------------------------------------------------------\n\nThe one roster whose worlds mostly share a landmark: Beta Arae, a luminous\norange star in Ara, against which Cephalotopia, Eutopia, Huan Gao, Megasov,\nOro Mistral and Tannhauser are all quoted at 390-720 ly in the same\nconstellation. The catalogue puts Beta Arae at 715 ly while the\nEncyclopaedia's own figures imply about 615; see questions.md, which also\nasks about Topia." ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "The white dwarf EGGR 471, also GJ 3162 and WD 0230-144. Below Hipparcos and outside the Bright Star Catalogue, so the Celestia add-on's position is the only one this map has for it." ;
+    oa:uncertain false .
+
+claim:location-world-wadai a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4910e5c60edcc> ;
+    oa:about id:world-wadai ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:oaStarName "EG 471" .
+
+claim:affiliation-world-wadai-sophic-league a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4910e5c60edcc> ;
+    oa:about id:world-wadai ;
+    oa:canonical true ;
+    oa:polity id:polity-sophic-league ;
+    oa:recordOrder 0 .
+
+claim:event-world-wadai-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4910e5c60edcc> ;
+    oa:about id:world-wadai ;
+    oa:canonical true ;
+    oa:eventKind oa:Observed ;
+    oa:note "The colony ship Amideen launched, on a journey of 262 years." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 1419 .
+
+claim:event-world-wadai-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4910e5c60edcc> ;
+    oa:about id:world-wadai ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "Reached, by the colonists aboard the Amideen." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 1681 .

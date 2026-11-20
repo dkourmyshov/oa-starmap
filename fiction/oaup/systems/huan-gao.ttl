@@ -1,0 +1,73 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Huan Gao
+
+id:world-huan-gao a oa:Place, oa:World ;
+    skos:prefLabel "Huan Gao" ;
+    oa:article <https://www.orionsarm.com/eg-article/4ce526a25575d> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "The Celestia add-on states this system's own position, which is better than the map's earlier guess at it — Beta Arae's direction borrowed at the article's 634 ly, 1.3 degrees away. It also settles something else. The article puts Huan Gao 19 ly from Beta Arae, and given this position that holds only if Beta Arae is about 635 ly out; at the catalogue's 715 the separation would be 82 ly. Two Orion's Arm sources now agree on a figure the catalogue does not." ;
+    oa:uncertain false .
+
+claim:location-world-huan-gao a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4ce526a25575d> ;
+    oa:about id:world-huan-gao ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:oaStarName "Huan Gao" .
+
+claim:affiliation-world-huan-gao-utopia-sphere a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4ce526a25575d> ;
+    oa:about id:world-huan-gao ;
+    oa:canonical true ;
+    oa:polity id:polity-utopia-sphere ;
+    oa:recordOrder 0 .
+
+# Huan Gao
+
+id:star-huan-gao a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "Huan Gao" ;
+    oa:sourceName "Huan Gao" .
+
+claim:celestia-star-huan-gao-13c6b96d6cd9 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-huan-gao ;
+    oa:absoluteMagnitude 4.65 ;
+    oa:canonical true ;
+    oa:declinationDeg -54.331 ;
+    oa:distance value:celestia-star-huan-gao-13c6b96d6cd9-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 260.5567 ;
+    oa:sourceArchive "OAAddons12.zip" ;
+    oa:sourceFile "somefictionalstars.stc" ;
+    oa:spectralType "G2V" .
+
+value:celestia-star-huan-gao-13c6b96d6cd9-distance a oa:QuantityValue ;
+    qudt:numericValue 634.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-star-huan-gao-utopia-sphere a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4ce526a25575d> ;
+    oa:about id:star-huan-gao ;
+    oa:canonical true ;
+    oa:polity id:polity-utopia-sphere .
+
+claim:curation-star-huan-gao a prov:Entity, oa:SystemCuration ;
+    oa:about id:star-huan-gao ;
+    oa:article <https://www.orionsarm.com/eg-article/4ce526a25575d> ;
+    oa:editorialLabel "Huan Gao" ;
+    oa:hidden false ;
+    oa:note "The add-on states this system's own position, which the map had been approximating by borrowing Beta Arae's direction. The two are 1.3 degrees apart, and the add-on's is the one to keep — see questions.md, where it also settles a second argument about how far away Beta Arae is." ;
+    oa:uncertain false .

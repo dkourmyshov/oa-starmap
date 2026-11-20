@@ -1,0 +1,74 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Apogee Maximal
+
+id:world-apogee-maximal a oa:Place, oa:World ;
+    skos:prefLabel "Apogee Maximal" ;
+    oa:article <https://www.orionsarm.com/eg-article/45f75376867f8> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "A lone brown dwarf about 1,120 ly straight up out of the galactic plane, which is a direction rather than a constellation — it works out to Coma Berenices, where the north galactic pole lies. Almost everything else in this file sits within a few degrees of the plane." ;
+    oa:uncertain false .
+
+claim:location-world-apogee-maximal a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/45f75376867f8> ;
+    oa:about id:world-apogee-maximal ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg 27.1283 ;
+    oa:distance value:location-world-apogee-maximal-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:rightAscensionDeg 192.8595 .
+
+value:location-world-apogee-maximal-distance a oa:QuantityValue ;
+    qudt:numericValue 1120.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:event-world-apogee-maximal-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/45f75376867f8> ;
+    oa:about id:world-apogee-maximal ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "Reached." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 6402 .
+
+claim:event-world-apogee-maximal-002 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-apogee-maximal ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "Probe arrives at Apogee Maximal , and deploy several self-replicating fusion units in the Apogeean atmosphere." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:sourceDescription "Encyclopaedia timeline, Age of Separate Empires" ;
+    oa:yearAT 6402 .
+
+claim:event-world-apogee-maximal-003 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-apogee-maximal ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "Colonists arrive at Apogee Maximal ." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 2 ;
+    oa:sourceDescription "Encyclopaedia timeline, Age of Separate Empires" ;
+    oa:yearAT 6610 .
+
+claim:event-world-apogee-maximal-004 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-apogee-maximal ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "A small (10 meter) wormhole is set up in the Apogee Maximal system and visitors from the rest of the Known Worlds begin to arrive." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 3 ;
+    oa:sourceDescription "Encyclopaedia timeline, The Age of Crisis" ;
+    oa:yearAT 6756 .

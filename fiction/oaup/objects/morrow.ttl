@@ -1,0 +1,85 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Griqua
+
+id:world-griqua a oa:Place, oa:World ;
+    skos:prefLabel "Griqua" ;
+    oa:article <https://www.orionsarm.com/eg-article/4a02ec19dfd93> ;
+    oa:kind "habitat" ;
+    oa:labelsSystem false ;
+    oa:note "The other habitat of the pair, sharing HD 100607 with Morrow." ;
+    oa:uncertain false .
+
+claim:location-world-griqua a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4a02ec19dfd93> ;
+    oa:about id:world-griqua ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:worldName "Morrow" .
+
+claim:event-world-griqua-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4a02ec19dfd93> ;
+    oa:about id:world-griqua ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "Reached." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 2220 .
+
+# Morrow
+
+id:world-morrow a oa:Place, oa:World ;
+    skos:prefLabel "Morrow" ;
+    oa:article <https://www.orionsarm.com/eg-article/4a02ec19dfd93> ;
+    oa:kind "habitat" ;
+    oa:labelsSystem false ;
+    oa:note "One of a pair of habitats at HD 100607 in Centaurus. The catalogue puts that star at 140 ly against the article's 191, a quarter nearer, so the star lends its direction and the article its distance." ;
+    oa:uncertain false .
+
+claim:location-world-morrow a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4a02ec19dfd93> ;
+    oa:about id:world-morrow ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -46.9741 ;
+    oa:distance value:location-world-morrow-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:nearName "HD 100607" ;
+    oa:rightAscensionDeg 173.5956 .
+
+value:location-world-morrow-distance a oa:QuantityValue ;
+    qudt:numericValue 191.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:event-world-morrow-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4a02ec19dfd93> ;
+    oa:about id:world-morrow ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "Reached." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 2220 .
+
+claim:event-world-morrow-002 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-morrow ;
+    oa:canonical true ;
+    oa:eventKind oa:Abandoned ;
+    oa:note "Morrow is depopulated by geneticaly modified plagues." ;
+    oa:precision oa:Between ;
+    oa:recordOrder 1 ;
+    oa:sourceDescription "Encyclopaedia timeline, Age of Consolidation" ;
+    oa:untilAT 3543 ;
+    oa:yearAT 3541 .

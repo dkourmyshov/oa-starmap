@@ -1,0 +1,44 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Esperis
+
+id:world-esperis a oa:Place, oa:World ;
+    skos:prefLabel "Esperis" ;
+    oa:article <https://www.orionsarm.com/eg-article/690261e1768ca> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "From coordinates the article prints, which fall in Andromeda as it also states, at 2,101 ly." ;
+    oa:systemName "Esperis" ;
+    oa:uncertain false .
+
+claim:location-world-esperis a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/690261e1768ca> ;
+    oa:about id:world-esperis ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg 50.6833 ;
+    oa:distance value:location-world-esperis-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:rightAscensionDeg 349.0958 .
+
+value:location-world-esperis-distance a oa:QuantityValue ;
+    qudt:numericValue 2101.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:event-world-esperis-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/690261e1768ca> ;
+    oa:about id:world-esperis ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 5143 .

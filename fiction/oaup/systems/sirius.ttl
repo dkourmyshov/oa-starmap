@@ -1,0 +1,124 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Sirius
+
+id:world-sirius a oa:Place, oa:World ;
+    skos:prefLabel "Sirius" ;
+    oa:article <https://www.orionsarm.com/eg-article/48acb62323e17> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "8.6 ly out. The Organization holds the Twelve Solaria habitat cluster here and not the system at large, which the ring cannot distinguish from holding the system." ;
+    oa:systemName "Sirius" ;
+    oa:uncertain false .
+
+claim:location-world-sirius a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48acb62323e17> ;
+    oa:about id:world-sirius ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Sirius" .
+
+claim:affiliation-world-sirius-solsys-organization a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48acb62323e17> ;
+    oa:about id:world-sirius ;
+    oa:canonical true ;
+    oa:polity id:polity-solsys-organization ;
+    oa:recordOrder 0 .
+
+claim:event-world-sirius-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48acb62323e17> ;
+    oa:about id:world-sirius ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 415 .
+
+claim:event-world-sirius-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48acb62323e17> ;
+    oa:about id:world-sirius ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"The first colonists departed Solsys in 655 AT in the Sopdet, a GAIA ark, and arrived 698 AT\" First modosophont colonists; no roster polity is named as sponsor. In the Sopdet, a GAIA ark; no polity named." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 698 .
+
+claim:event-world-sirius-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48acb62323e17> ;
+    oa:about id:world-sirius ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"With the departure of the clade the Sirius system became a Solar Organisation Protectorate Territory.\" This sentence carries no year of its own; it directly follows the Sirius Dynamics clade's 4115 departure (previous sentence), so precision is approximated as not_earlier_than 4115. After the Sirius Dynamics clade relocated to the Keter Dominion in 4115." ;
+    oa:polity id:polity-solsys-organization ;
+    oa:precision oa:NotEarlierThan ;
+    oa:recordOrder 2 ;
+    oa:yearAT 4115 .
+
+claim:event-world-sirius-004 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48acb62323e17> ;
+    oa:about id:world-sirius ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"A new wave of immigration, consisting mostly of virtual sophonts known as the Noëa (pl. Noëadrim), began to arrive in the eighth millenium, and established a new hegemony known as the Sirian Heirarchy.\" 'Eighth millennium' is approximated as not later than 7000 AT, since the following sentence states the Sirian Hierarchy 'Since 7000... have begun' the starlifting project, implying they were already the system's governance by then. Sirian Hierarchy is not on the roster. The Noëa, virtual sophonts, and the Sirian Hierarchy the reader names as the new holder, no polity of this file; 'the eighth millennium', entered as 7000." ;
+    oa:precision oa:NotLaterThan ;
+    oa:recordOrder 3 ;
+    oa:yearAT 7000 .
+
+# Sirius
+
+id:inner-sphere-row-0011 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Sirius" .
+
+claim:inner-sphere-inner-sphere-row-0011-67d3c56aac23 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0011 ;
+    oa:article <https://www.orionsarm.com/eg-article/48acb62323e17> ;
+    oa:canonical true ;
+    oa:colonyName "Sirius" ;
+    oa:luminositySol "25.748" ;
+    oa:massSol "2.063" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 10 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0011-67d3c56aac23-source-distance ;
+    oa:spectralType "A1 V" ;
+    oa:starName "Alpha Canis Majoris A" .
+
+value:inner-sphere-inner-sphere-row-0011-67d3c56aac23-source-distance a oa:QuantityValue ;
+    qudt:numericValue 8.601 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Sirius
+
+id:inner-sphere-row-0012 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Sirius" .
+
+claim:inner-sphere-inner-sphere-row-0012-6350fe6bad70 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0012 ;
+    oa:article <https://www.orionsarm.com/eg-article/48acb62323e17> ;
+    oa:canonical true ;
+    oa:colonyName "Sirius" ;
+    oa:luminositySol "0.025" ;
+    oa:massSol "1.018" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 11 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0012-6350fe6bad70-source-distance ;
+    oa:spectralType "DA2" ;
+    oa:starName "Alpha Canis Majoris B" .
+
+value:inner-sphere-inner-sphere-row-0012-6350fe6bad70-source-distance a oa:QuantityValue ;
+    qudt:numericValue 8.601 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

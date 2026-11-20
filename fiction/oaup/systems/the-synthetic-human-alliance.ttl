@@ -1,0 +1,50 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# The Synthetic/Human Alliance
+
+id:world-the-synthetic-human-alliance a oa:Place, oa:World ;
+    skos:prefLabel "The Synthetic/Human Alliance" ;
+    oa:article <https://www.orionsarm.com/eg-article/4887ee7944aff> ;
+    oa:editorialNote "---- independent, or holder unrecorded -----------------------------------" ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "GJ 3655 A and B, a pair in Crater, at 46.8 ly against the article's 46.5. The polity is named for what it is rather than where, and this is the one place recorded for it." ;
+    oa:uncertain false .
+
+claim:location-world-the-synthetic-human-alliance a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4887ee7944aff> ;
+    oa:about id:world-the-synthetic-human-alliance ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:distance value:location-world-the-synthetic-human-alliance-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "GJ 3655" .
+
+value:location-world-the-synthetic-human-alliance-distance a oa:QuantityValue ;
+    qudt:numericValue 46.5 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-the-synthetic-human-alliance-synthetic-human-alliance a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4887ee7944aff> ;
+    oa:about id:world-the-synthetic-human-alliance ;
+    oa:canonical true ;
+    oa:polity id:polity-synthetic-human-alliance ;
+    oa:recordOrder 0 .
+
+claim:event-world-the-synthetic-human-alliance-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4887ee7944aff> ;
+    oa:about id:world-the-synthetic-human-alliance ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:NotEarlierThan ;
+    oa:recordOrder 0 ;
+    oa:yearAT 1497 .

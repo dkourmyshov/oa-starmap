@@ -1,0 +1,69 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Enterprise
+
+id:world-enterprise a oa:Place, oa:World ;
+    skos:prefLabel "Enterprise" ;
+    oa:article <https://www.orionsarm.com/eg-article/475d75d9d7b20> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Originally a Solar Dominion protectorate and latterly of the Zoeific Biopolity, which is the present holder this file records. The transcription of Anders Sandberg's maps disagrees twice over: it draws this at about 200 ly and in the Non-Coercive Zone's colour, where the article gives 594 ly and neither polity. The article wins on both." ;
+    oa:systemName "Enterprise" ;
+    oa:uncertain false .
+
+claim:location-world-enterprise a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/475d75d9d7b20> ;
+    oa:about id:world-enterprise ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:constellationName "Andromeda" ;
+    oa:distance value:location-world-enterprise-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+value:location-world-enterprise-distance a oa:QuantityValue ;
+    qudt:numericValue 594.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-enterprise-zoeific-biopolity a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/475d75d9d7b20> ;
+    oa:about id:world-enterprise ;
+    oa:canonical true ;
+    oa:polity id:polity-zoeific-biopolity ;
+    oa:recordOrder 0 .
+
+claim:event-world-enterprise-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/475d75d9d7b20> ;
+    oa:about id:world-enterprise ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 2933 .
+
+# Outland
+
+id:world-outland a oa:Place, oa:World ;
+    skos:prefLabel "Outland" ;
+    oa:article <https://www.orionsarm.com/eg-article/475d75d9d7b20> ;
+    oa:editorialNote "---- ahuman, unaligned, and the rest ------------------------------------" ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "The world of the Enterprise system, in Andromeda at 594 ly." ;
+    oa:systemName "Enterprise" ;
+    oa:uncertain false .
+
+claim:affiliation-world-outland-zoeific-biopolity a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/475d75d9d7b20> ;
+    oa:about id:world-outland ;
+    oa:canonical true ;
+    oa:polity id:polity-zoeific-biopolity ;
+    oa:recordOrder 0 .

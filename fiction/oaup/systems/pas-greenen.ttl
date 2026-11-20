@@ -1,0 +1,56 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Pas Greenen
+
+id:world-pas-greenen a oa:Place, oa:World ;
+    skos:altLabel "Pnas Greenen" ;
+    skos:prefLabel "Pas Greenen" ;
+    oa:article <https://www.orionsarm.com/eg-article/46fc49502ccb2> ;
+    oa:editorialNote "---- found by re-reading the sheet ---------------------------------------" ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "In Monoceros at 4,890 ly, which the article gives — so this is placed properly rather than estimated, and the sheet's contribution was only to confirm the direction: its interpolated position landed in Monoceros too, at 3,502 ly.\nThe colonisation date is not settled. Its own article says 9001 and another source describes events there in 7233, which cannot both be a first settlement. The earlier is recorded in questions.md rather than here, since a date that is wrong by seventeen hundred years is worth asking about rather than averaging." ;
+    oa:uncertain false .
+
+claim:location-world-pas-greenen a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46fc49502ccb2> ;
+    oa:about id:world-pas-greenen ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:constellationName "Monoceros" ;
+    oa:distance value:location-world-pas-greenen-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+value:location-world-pas-greenen-distance a oa:QuantityValue ;
+    qudt:numericValue 4890.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:event-world-pas-greenen-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46fc49502ccb2> ;
+    oa:about id:world-pas-greenen ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:polity id:polity-orion-federation ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 9001 .
+
+claim:event-world-pas-greenen-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46fc49502ccb2> ;
+    oa:about id:world-pas-greenen ;
+    oa:canonical true ;
+    oa:eventKind oa:Capital ;
+    oa:note "\"The Equalizer movement emerged on Pas Greenen in 7233 AT, mostly in an attempt to regulate intelligence augmentation technology (IA).\" Recorded as 'capital' since Pas Greenen is where the Equalizer Civilization's ruling Planetary Directorate emerged and was seated, though the article never uses the word 'capital' of this world itself. The Equalizer movement's emergence here, read by the reader as its seat." ;
+    oa:polity id:polity-equalizer-civilization ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 7233 .

@@ -1,0 +1,135 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Zhenruj
+
+id:world-zhenruj a oa:Place, oa:World ;
+    skos:prefLabel "Zhenruj" ;
+    oa:article <https://www.orionsarm.com/eg-article/47b8f8403fa65> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Mu Herculis Aa, as the colony table has it." ;
+    oa:systemName "Zhenruj" ;
+    oa:uncertain false .
+
+claim:location-world-zhenruj a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47b8f8403fa65> ;
+    oa:about id:world-zhenruj ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Mu Herculis Aa" .
+
+claim:event-world-zhenruj-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47b8f8403fa65> ;
+    oa:about id:world-zhenruj ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "\"Reached 1264\" panel gives 'Reached', not 'Colonised'; no polity is named 'Reached', which the reader flagged against the resident population the article describes; the Orion Federation's holding is undated." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 1264 .
+
+# Zhenruj
+
+id:inner-sphere-row-0238 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Zhenruj" .
+
+claim:inner-sphere-inner-sphere-row-0238-1e87c00c104e a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0238 ;
+    oa:article <https://www.orionsarm.com/eg-article/47b8f8403fa65> ;
+    oa:canonical true ;
+    oa:colonyName "Zhenruj" ;
+    oa:luminositySol "2.557" ;
+    oa:massSol "1.11" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 237 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0238-1e87c00c104e-source-distance ;
+    oa:spectralType "G5 IV" ;
+    oa:starName "Mu Herculis Aa" .
+
+value:inner-sphere-inner-sphere-row-0238-1e87c00c104e-source-distance a oa:QuantityValue ;
+    qudt:numericValue 27.197 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Zhenruj
+
+id:inner-sphere-row-0239 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Zhenruj" .
+
+claim:inner-sphere-inner-sphere-row-0239-66829374b1d3 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0239 ;
+    oa:article <https://www.orionsarm.com/eg-article/47b8f8403fa65> ;
+    oa:canonical true ;
+    oa:colonyName "Zhenruj" ;
+    oa:luminositySol "." ;
+    oa:massSol "0.2214" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 238 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0239-66829374b1d3-source-distance ;
+    oa:spectralType "M4 V" ;
+    oa:starName "Mu Herculis Ab" .
+
+value:inner-sphere-inner-sphere-row-0239-66829374b1d3-source-distance a oa:QuantityValue ;
+    qudt:numericValue 27.197 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Zhenruj
+
+id:inner-sphere-row-0240 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Zhenruj" .
+
+claim:inner-sphere-inner-sphere-row-0240-0f062b028eab a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0240 ;
+    oa:article <https://www.orionsarm.com/eg-article/47b8f8403fa65> ;
+    oa:canonical true ;
+    oa:colonyName "Zhenruj" ;
+    oa:luminositySol "0.0202" ;
+    oa:massSol "0.44" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 239 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0240-0f062b028eab-source-distance ;
+    oa:spectralType "M3 V" ;
+    oa:starName "Mu Herculis B" .
+
+value:inner-sphere-inner-sphere-row-0240-0f062b028eab-source-distance a oa:QuantityValue ;
+    qudt:numericValue 27.197 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Zhenruj
+
+id:inner-sphere-row-0241 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Zhenruj" .
+
+claim:inner-sphere-inner-sphere-row-0241-8fa71cfe47f6 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0241 ;
+    oa:article <https://www.orionsarm.com/eg-article/47b8f8403fa65> ;
+    oa:canonical true ;
+    oa:colonyName "Zhenruj" ;
+    oa:luminositySol "0.0062" ;
+    oa:massSol "0.39" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 240 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0241-8fa71cfe47f6-source-distance ;
+    oa:spectralType "M4 V" ;
+    oa:starName "Mu Herculis C" .
+
+value:inner-sphere-inner-sphere-row-0241-8fa71cfe47f6-source-distance a oa:QuantityValue ;
+    qudt:numericValue 27.197 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

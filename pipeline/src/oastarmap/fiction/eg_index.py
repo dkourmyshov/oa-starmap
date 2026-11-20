@@ -166,7 +166,7 @@ def build_index(out_path: Path | None = None) -> dict[str, object]:
         "# Hand edits will be overwritten: rebuild with `oastarmap eg-index`.",
         "#",
         "# This is a roster and not a source of positions. It says what exists and",
-        "# where to read about it, which is what tells `worlds.yaml` how much of the",
+        "# where to read about it, which is what tells `oaup/` how much of the",
         "# setting it is still missing. `description` and `mentions` are the",
         "# Encyclopaedia's own words and links, copied and not interpreted.",
         "#",

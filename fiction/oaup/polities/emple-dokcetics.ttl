@@ -1,0 +1,18 @@
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+
+# Emple-Dokcetics
+
+id:polity-emple-dokcetics a oa:Polity ;
+    skos:prefLabel "Emple-Dokcetics" ;
+    oa:ambiguousName false ;
+    oa:color "#7E57C2" ;
+    oa:editorialNote "Its own page, saved under sources/polities: \"while the process of synthesis took over a century, 7541 is\nusually denoted as the founding\"." ;
+    oa:foundedAT 7541 ;
+    oa:hasSource src:political-maps-8000at ;
+    oa:kind "meta-empire" ;
+    oa:polityId "emple-dokcetics" ;
+    oa:recordOrder 11 ;
+    oa:uncertain false .

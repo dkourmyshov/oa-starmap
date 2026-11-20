@@ -1,0 +1,19 @@
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+
+# Efficiency Maximization Paradigm
+
+id:polity-paradigm a oa:Polity ;
+    skos:prefLabel "Efficiency Maximization Paradigm" ;
+    oa:ambiguousName false ;
+    oa:color "#EC407A" ;
+    oa:editorialNote "Its own page, saved under sources/polities: data panel \"Founded: Before 5285 AT (early Fragmentation era)\".\nA bound rather than a year, entered as the year given.\nUser flagged the polity attribution here as uncertain." ;
+    oa:foundedAT 5285 ;
+    oa:hasSource src:political-maps-8000at ;
+    oa:kind "meta-empire" ;
+    oa:neverAdjacentWith id:polity-perseus-principalities ;
+    oa:polityId "paradigm" ;
+    oa:recordOrder 8 ;
+    oa:uncertain true .

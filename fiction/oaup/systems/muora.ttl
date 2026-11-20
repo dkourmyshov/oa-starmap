@@ -1,0 +1,42 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Muora
+
+id:world-muora a oa:Place, oa:World ;
+    skos:prefLabel "Muora" ;
+    oa:article <https://www.orionsarm.com/eg-article/662bb410d01f7> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "A supernova. The article names WR 111 — also HD 165763, HIP 88856 and YTS 334-010-01 — and puts it at 5,320 ly, where the catalogue has that star at 4,505: a 15% gap, too wide to bind across. The article's own coordinates supply the direction and land in Sagittarius as it says." ;
+    oa:uncertain false .
+
+claim:location-world-muora a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/662bb410d01f7> ;
+    oa:about id:world-muora ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -21.2531 ;
+    oa:distance value:location-world-muora-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:nearName "WR 111" ;
+    oa:rightAscensionDeg 272.1167 .
+
+value:location-world-muora-distance a oa:QuantityValue ;
+    qudt:numericValue 5320.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-muora-sagittarius-transcultural-cooperation a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/662bb410d01f7> ;
+    oa:about id:world-muora ;
+    oa:canonical true ;
+    oa:polity id:polity-sagittarius-transcultural-cooperation ;
+    oa:recordOrder 0 .

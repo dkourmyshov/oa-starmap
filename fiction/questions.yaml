@@ -894,7 +894,7 @@ questions:
       four times further out. The Keter Dominion accommodates either — it runs
       from 16.7 ly at Barawatten to 3,100 at World Garden — so the empire's own
       geography does not decide it, and an earlier argument here that it did was
-      wrong, having been made from `worlds.yaml` alone while seven Keter systems
+      wrong, having been made from the world records alone while seven Keter systems
       sat in the colony table.
     map_does: >-
       Uses the add-on's stated coordinates and distance, on the project owner's
@@ -992,7 +992,7 @@ questions:
     severity: question
     summary: Twenty location files across five archives were never read, because the importer takes only star catalogues; they hold 160 named places.
     detail: >-
-      `oa_stars.yaml` is built by an importer that opens each add-on archive and
+      The Celestia claims in `oaup/` are maintained by an importer that opens each add-on archive and
       reads every `.stc` file in it. The add-ons also ship `.dsc` files — deep
       sky catalogues — and those have never been opened. There are twenty of
       them across five archives, thirteen in OAAddons9's OALocationsv4 folder
@@ -1358,7 +1358,7 @@ questions:
 
       The lesson is about method rather than about the add-on: each of the four
       was found by searching one index, and each was already in a different
-      one -- landmarks.yaml twice, a `hazard` entry once, a constellation cone
+      one -- landmark claims twice, a `hazard` entry once, a constellation cone
       once.
     would_settle: >-
       Whether the add-on's author placed these labels from the same reading of
@@ -1488,7 +1488,7 @@ questions:
       catalogued object and takes the catalogue's position entire -- the schema
       has no distance field, deliberately -- so the setting's figure could not
       be recorded on one. The Enigma Cluster is therefore an entry in
-      worlds.yaml, and NGC 6755 has been withdrawn both from the landmark table
+      the world entities in `oaup/`, and NGC 6755 has been withdrawn both from the landmark table
       and from the Keter Dominion's landmark list, so that the cluster is drawn
       once and not twice.
 

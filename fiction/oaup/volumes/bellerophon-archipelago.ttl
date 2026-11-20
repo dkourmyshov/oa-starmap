@@ -1,0 +1,83 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Bellerophon Archipelago
+
+id:world-bellerophon-archipelago a oa:Place, oa:World ;
+    skos:prefLabel "Bellerophon Archipelago" ;
+    oa:article <https://www.orionsarm.com/eg-article/46f87b317d5d3> ;
+    oa:editorialNote "---- Sophic League -------------------------------------------------------\n\nA cluster of these sit in Puppis within a few hundred light years of one\nanother — Ararat, Kelarc, New Taylor, Liaris Rosette, Satyaloka — which is\nthe closest thing to a contiguous volume any roster here has produced." ;
+    oa:kind "volume" ;
+    oa:labelsSystem false ;
+    oa:note "Three systems in a line, one of them Walloo. Given as in the further Enif Prefecture, and Enif is in Pegasus at 690 ly — so the constellation is inferred from the prefecture's centre rather than stated, and the two sit at much the same range." ;
+    oa:systemName "Walloo" ;
+    oa:uncertain false .
+
+claim:location-world-bellerophon-archipelago a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46f87b317d5d3> ;
+    oa:about id:world-bellerophon-archipelago ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:constellationName "Pegasus" ;
+    oa:distance value:location-world-bellerophon-archipelago-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+value:location-world-bellerophon-archipelago-distance a oa:QuantityValue ;
+    qudt:numericValue 721.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-bellerophon-archipelago-solar-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46f87b317d5d3> ;
+    oa:about id:world-bellerophon-archipelago ;
+    oa:canonical true ;
+    oa:polity id:polity-solar-dominion ;
+    oa:recordOrder 0 .
+
+claim:event-world-bellerophon-archipelago-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46f87b317d5d3> ;
+    oa:about id:world-bellerophon-archipelago ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 4207 .
+
+claim:event-world-bellerophon-archipelago-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46f87b317d5d3> ;
+    oa:about id:world-bellerophon-archipelago ;
+    oa:canonical true ;
+    oa:eventKind oa:Abandoned ;
+    oa:note "\"lost when both legs of the wormhole link to Enif were detonated by Metasoft infiltration in 4578 during the Version War\" The article's own word is 'abandoning' (of the archipelago, treated as lost by the Dominion). Fit to 'abandoned' is imperfect: Idina's population centres were sterilised outright, but colonists on Walloo itself survived in diminished numbers, and Jabez's Shabtis also survived. Flagged for review. Both legs of the wormhole to Enif detonated by Metasoft infiltration; the archipelago 'lost'." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 4578 .
+
+claim:event-world-bellerophon-archipelago-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46f87b317d5d3> ;
+    oa:about id:world-bellerophon-archipelago ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "\"This dead system was discovered by a Dominion relativist ship in 4893, and led to the abandoning of the archipelago as lost for two thousand years.\" Refers to Idina, the first system of the archipelago, found sterilised. A Dominion relativist ship finding Idina dead, after which the archipelago was written off for two thousand years." ;
+    oa:polity id:polity-solar-dominion ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 2 ;
+    oa:yearAT 4893 .
+
+claim:event-world-bellerophon-archipelago-004 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46f87b317d5d3> ;
+    oa:about id:world-bellerophon-archipelago ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "\"After contact with the Covenanters in 8970 the population was diluted and lost through emigration until the eleventh millennium when a limited disaster site tourism trade has developed.\" Refers to Walloo itself, the third and last surviving colony of the archipelago. Contact with the Covenanters at Walloo." ;
+    oa:polity id:polity-deeper-covenant ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 3 ;
+    oa:yearAT 8970 .

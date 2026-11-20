@@ -1,0 +1,32 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# New Poseidon
+
+id:world-new-poseidon a oa:Place, oa:World ;
+    skos:prefLabel "New Poseidon" ;
+    oa:article <https://www.orionsarm.com/eg-article/46d4d043b4e9c> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:parentName "Trident Star" ;
+    oa:systemName "Sharp Point" ;
+    oa:uncertain false .
+
+claim:location-world-new-poseidon a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46d4d043b4e9c> ;
+    oa:about id:world-new-poseidon ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:note "2,971 ly from Sol and no direction given, which is a shell rather than a place. The primary is the Trident Star, in the Sharp Point system." .
+
+claim:affiliation-world-new-poseidon-negentropy-alliance a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46d4d043b4e9c> ;
+    oa:about id:world-new-poseidon ;
+    oa:canonical true ;
+    oa:polity id:polity-negentropy-alliance ;
+    oa:recordOrder 0 .

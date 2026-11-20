@@ -1,0 +1,129 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Chloris
+
+id:world-chloris a oa:Place, oa:World ;
+    skos:prefLabel "Chloris" ;
+    oa:article <https://www.orionsarm.com/eg-article/501568274a6f9> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Beta Comae Berenices, 30 ly out." ;
+    oa:systemName "Chloris" ;
+    oa:uncertain false .
+
+claim:location-world-chloris a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/501568274a6f9> ;
+    oa:about id:world-chloris ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Beta Comae Berenices" .
+
+claim:affiliation-world-chloris-zoeific-biopolity a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/501568274a6f9> ;
+    oa:about id:world-chloris ;
+    oa:canonical true ;
+    oa:polity id:polity-zoeific-biopolity ;
+    oa:recordOrder 0 .
+
+# Arcadia
+
+id:world-arcadia a oa:Place, oa:World ;
+    skos:prefLabel "Arcadia" ;
+    oa:article <https://www.orionsarm.com/eg-article/48531afcd93d4> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "One of the few places here whose travel time can be checked: 30 ly in 290 years is a tenth of lightspeed, which is a slowboat and reads as one." ;
+    oa:systemName "Chloris" ;
+    oa:uncertain false .
+
+claim:location-world-arcadia a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48531afcd93d4> ;
+    oa:about id:world-arcadia ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Beta Comae Berenices" .
+
+claim:affiliation-world-arcadia-zoeific-biopolity a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48531afcd93d4> ;
+    oa:about id:world-arcadia ;
+    oa:canonical true ;
+    oa:polity id:polity-zoeific-biopolity ;
+    oa:recordOrder 0 .
+
+claim:event-world-arcadia-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48531afcd93d4> ;
+    oa:about id:world-arcadia ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "Arrived, having launched in 518 for a 290-year crossing." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 808 .
+
+claim:event-world-arcadia-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48531afcd93d4> ;
+    oa:about id:world-arcadia ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "The first domed habitats." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 812 .
+
+claim:event-world-arcadia-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48531afcd93d4> ;
+    oa:about id:world-arcadia ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"when (in 964) they finally received a message from the old Solar System, inviting them to join the Federation of Sophonts. The colonists, now more than 4000 strong, sent a reply back in the affirmative, but even before their message could reach its destination they were contacted (in 972) by an approaching vessel coming from the direction of the Solar System.\" 'Federation of Sophonts' is the roster's alternate name for the First Federation before 2099. This concerns the Arcadian colonists' own affiliation, not the other worlds of the Chloris system. Invited by message from the old Solar System; the colonists 'now more than 4000 strong' accepted." ;
+    oa:polity id:polity-first-federation ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 2 ;
+    oa:yearAT 964 .
+
+claim:event-world-arcadia-004 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48531afcd93d4> ;
+    oa:about id:world-arcadia ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"Arcadian biotechnology, philosophy and lifestyle was found to be thoroughly compatible with Zoeific doctrine, and the Council of Hives joined the Biopolity in 3231.\" The Council of Hives is Arcadia's own governing body. Matches the article's filing under Zoeific Biopolity." ;
+    oa:polity id:polity-zoeific-biopolity ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 3 ;
+    oa:yearAT 3231 .
+
+# Chloris
+
+id:inner-sphere-row-0306 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Chloris" .
+
+claim:inner-sphere-inner-sphere-row-0306-f4ed576d0e88 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0306 ;
+    oa:article <https://www.orionsarm.com/eg-article/501568274a6f9> ;
+    oa:canonical true ;
+    oa:colonyName "Chloris" ;
+    oa:luminositySol "1.521" ;
+    oa:massSol "1.15" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 305 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0306-f4ed576d0e88-source-distance ;
+    oa:spectralType "G0 V" ;
+    oa:starName "Beta Comae Berenices" .
+
+value:inner-sphere-inner-sphere-row-0306-f4ed576d0e88-source-distance a oa:QuantityValue ;
+    qudt:numericValue 29.998 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

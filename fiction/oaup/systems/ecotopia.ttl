@@ -1,0 +1,59 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Ecotopia
+
+id:world-ecotopia a oa:Place, oa:World ;
+    skos:prefLabel "Ecotopia" ;
+    oa:article <https://www.orionsarm.com/eg-article/48fca9d97f6c5> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Gliese 722 and HD 172051 are one star, 42 ly out in Sagittarius; the article gives both and they agree." ;
+    oa:uncertain false .
+
+claim:location-world-ecotopia a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48fca9d97f6c5> ;
+    oa:about id:world-ecotopia ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Gliese 722" .
+
+claim:affiliation-world-ecotopia-zoeific-biopolity a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48fca9d97f6c5> ;
+    oa:about id:world-ecotopia ;
+    oa:canonical true ;
+    oa:polity id:polity-zoeific-biopolity ;
+    oa:recordOrder 0 .
+
+# Ecotopia
+
+id:inner-sphere-row-0479 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Ecotopia" .
+
+claim:inner-sphere-inner-sphere-row-0479-659e994670c2 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0479 ;
+    oa:article <https://www.orionsarm.com/eg-article/48fca9d97f6c5> ;
+    oa:canonical true ;
+    oa:colonyName "Ecotopia" ;
+    oa:luminositySol "0.67" ;
+    oa:massSol "1" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 478 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0479-659e994670c2-source-distance ;
+    oa:spectralType "G6 V" ;
+    oa:starName "Gliese 722" .
+
+value:inner-sphere-inner-sphere-row-0479-659e994670c2-source-distance a oa:QuantityValue ;
+    qudt:numericValue 42.501 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

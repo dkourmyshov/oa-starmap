@@ -1,0 +1,32 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Diphda
+
+id:inner-sphere-row-1082 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Diphda" .
+
+claim:inner-sphere-inner-sphere-row-1082-9ef36bc9dfa1 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-1082 ;
+    oa:canonical true ;
+    oa:colonyName "Diphda" ;
+    oa:luminositySol "115" ;
+    oa:massSol "3" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 1081 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-1082-9ef36bc9dfa1-source-distance ;
+    oa:spectralType "K0 III" ;
+    oa:starName "Beta Ceti" .
+
+value:inner-sphere-inner-sphere-row-1082-9ef36bc9dfa1-source-distance a oa:QuantityValue ;
+    qudt:numericValue 96.32 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

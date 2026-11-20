@@ -1,0 +1,32 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Retmon
+
+id:inner-sphere-row-0104 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Retmon" .
+
+claim:inner-sphere-inner-sphere-row-0104-027dad4c1010 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0104 ;
+    oa:canonical true ;
+    oa:colonyName "Retmon" ;
+    oa:luminositySol "." ;
+    oa:massSol "." ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 103 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0104-027dad4c1010-source-distance ;
+    oa:spectralType "T8" ;
+    oa:starName "2MASS J04151954-0935066" .
+
+value:inner-sphere-inner-sphere-row-0104-027dad4c1010-source-distance a oa:QuantityValue ;
+    qudt:numericValue 18.708 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

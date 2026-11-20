@@ -1,0 +1,33 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Gaigent / The World of Forking Paths
+
+id:inner-sphere-row-0185 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Gaigent / The World of Forking Paths" .
+
+claim:inner-sphere-inner-sphere-row-0185-ad5a07666193 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0185 ;
+    oa:article <https://www.orionsarm.com/eg-article/4e27f79396fda> ;
+    oa:canonical true ;
+    oa:colonyName "Gaigent / The World of Forking Paths" ;
+    oa:luminositySol "0.245" ;
+    oa:massSol "0.83" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 184 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0185-ad5a07666193-source-distance ;
+    oa:spectralType "K2 V" ;
+    oa:starName "HD 4628" .
+
+value:inner-sphere-inner-sphere-row-0185-ad5a07666193-source-distance a oa:QuantityValue ;
+    qudt:numericValue 24.250 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

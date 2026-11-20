@@ -1,0 +1,73 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# The Remnant
+
+id:world-the-remnant a oa:Place, oa:World ;
+    skos:prefLabel "The Remnant" ;
+    oa:article <https://www.orionsarm.com/eg-article/5a0d7670250f6> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "HD 205739, since named Samaya, 303 ly out in Piscis Austrinus — the same constellation as Fomalhaut but not especially near it, 17 degrees away on the sky and 279 ly away in fact." ;
+    oa:uncertain false .
+
+claim:location-world-the-remnant a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5a0d7670250f6> ;
+    oa:about id:world-the-remnant ;
+    oa:canonical true ;
+    oa:catalogueFromSource true ;
+    oa:hdId 205739 ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+claim:affiliation-world-the-remnant-fomalhaut-acquisition-society a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5a0d7670250f6> ;
+    oa:about id:world-the-remnant ;
+    oa:canonical true ;
+    oa:polity id:polity-fomalhaut-acquisition-society ;
+    oa:recordOrder 0 .
+
+claim:event-world-the-remnant-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5a0d7670250f6> ;
+    oa:about id:world-the-remnant ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "Rediscovered by a Society ship." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 3383 .
+
+claim:event-world-the-remnant-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5a0d7670250f6> ;
+    oa:about id:world-the-remnant ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"Colonized Formerly: Undocumented Terragen colony (2650-3150? a.t)\" The panel marks the end year with a question mark, i.e. uncertain. No polity is named for this early, undocumented colony. The panel's 'Undocumented Terragen colony (2650-3150? a.t)', with its own question mark." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:untilAT 3150 ;
+    oa:yearAT 2650 .
+
+claim:event-world-the-remnant-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5a0d7670250f6> ;
+    oa:about id:world-the-remnant ;
+    oa:canonical true ;
+    oa:eventKind oa:Abandoned ;
+    oa:note "\"Colonized Formerly: Undocumented Terragen colony (2650-3150? a.t)\" Same panel line as the settlement entry above; the end year itself carries a '?' in the source, and the body confirms the colony 'failed' and was wiped out ('Stut ... openly admits to cleansing all biont life from the system'). The end of the panel's range, likewise questioned." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 2 ;
+    oa:yearAT 3150 .
+
+claim:event-world-the-remnant-004 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5a0d7670250f6> ;
+    oa:about id:world-the-remnant ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"This system was rediscovered by the Fomac Acquisitor ship Inevitably Successful Under all Circumstances in 3383 a.t , and it has since been placed under Fomalhaut stewardship.\" New against the header, which records only 'visited 3383'. 'Placed under Fomalhaut stewardship' reads as the system coming under the Fomalhaut Acquisition Society's protection from the same year. Rediscovered by a Fomac Acquisitor ship and placed under Fomalhaut stewardship; the map's older 'visited 3383' is this arrival." ;
+    oa:polity id:polity-fomalhaut-acquisition-society ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 3 ;
+    oa:yearAT 3383 .

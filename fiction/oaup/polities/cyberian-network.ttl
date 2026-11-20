@@ -1,0 +1,17 @@
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+
+# Cyberian Network
+
+id:polity-cyberian-network a oa:Polity ;
+    skos:prefLabel "Cyberian Network" ;
+    oa:ambiguousName false ;
+    oa:color "#64B5F6" ;
+    oa:editorialNote "Its own page, data panel: \"Founded: Varies according to the account;\nfrom 1400 - 3400 a.t.\" Left unset: a two-thousand-year range gates\nnothing honestly." ;
+    oa:hasSource src:eg-system-articles ;
+    oa:kind "polity" ;
+    oa:polityId "cyberian-network" ;
+    oa:recordOrder 23 ;
+    oa:uncertain false .

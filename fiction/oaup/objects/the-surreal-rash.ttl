@@ -1,0 +1,42 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# The Surreal Rash
+
+id:world-the-surreal-rash a oa:Place, oa:World ;
+    skos:prefLabel "The Surreal Rash" ;
+    oa:article <https://www.orionsarm.com/eg-article/48114afa516df> ;
+    oa:kind "polity_marker" ;
+    oa:labelsSystem false ;
+    oa:note "A former Mutual Progress Association volume left apparently deserted after a transformation nobody has explained, so the polity colour records who held it rather than who is there." ;
+    oa:uncertain false .
+
+claim:location-world-the-surreal-rash a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48114afa516df> ;
+    oa:about id:world-the-surreal-rash ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -19.5 ;
+    oa:distance value:location-world-the-surreal-rash-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:note "Was interpolated from the transcription of Anders Sandberg's maps, at 271.985, -14.396 and 2,111 ly, with twenty degrees and 800 ly of stated error. The position is now the SURREAL RASH anchor in southOAEMPIRES.dsc, one of the Orion's Arm Celestia add-ons' location catalogues (OAAddons9, OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv), which is the preferred source for a volume of this kind: the sheet is unreliable about where an individual system sits and only somewhat better about a polity. The two fall 6.1 degrees apart and agree on distance to 2%, 2,150 ly against 2,111 -- a correction of direction rather than a different object. See questions.md." ;
+    oa:rightAscensionDeg 268.5 .
+
+value:location-world-the-surreal-rash-distance a oa:QuantityValue ;
+    qudt:numericValue 2150.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-the-surreal-rash-mutual-progress-association a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48114afa516df> ;
+    oa:about id:world-the-surreal-rash ;
+    oa:canonical true ;
+    oa:polity id:polity-mutual-progress-association ;
+    oa:recordOrder 0 .

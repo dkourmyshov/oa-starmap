@@ -1,0 +1,39 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# The Triplet Cluster
+
+id:world-the-triplet-cluster a oa:Place, oa:World ;
+    skos:prefLabel "The Triplet Cluster" ;
+    oa:kind "volume" ;
+    oa:labelsSystem false ;
+    oa:note "A Metasoft volume, and with Proden one of the places caught up in the Teleological Tendency's part of the Second Vec War. The timeline has it at 6850: \"Second Vec War - Seven new archai have been created in the Triplet Cluster since the start of the conflict by the Teleological Tendency.\"\nHeld under Metasoft because the Tendency is a faction of it and has no roster entry of its own, the same treatment Proden's events get.\nProden is at 2,200 ly, 178 further out than this, and was near enough in range to wonder whether it sat in the cluster. It does not: its own constellation is Gemini and this is in Taurus, neighbours on the sky and not one place." ;
+    oa:uncertain false .
+
+claim:location-world-the-triplet-cluster a prov:Entity, oa:LocationClaim ;
+    oa:about id:world-the-triplet-cluster ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg 23.677 ;
+    oa:distance value:location-world-the-triplet-cluster-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:note "The distance is the setting's, from the project owner. The direction is this map's cluster catalogue, and it is usable despite the identification being unsettled -- which is the point worth recording.\nThe identification offered is NGC 1746, 1750 and 1758, with a question mark, and the catalogue holds two rows for those three designations rather than three. NGC_1758 carries NGC 1746 and NGC 1758 among its aliases, at 76.175, 23.813 and 2,797 ly; Theia_754 carries NGC 1746 and NGC 1750, at 75.972, 23.677 and 2,289 ly. Both sit in Taurus and both answer to Collinder 57 and Melotte 28. That is the standing NGC 1746 question, whether the thing is a cluster or an asterism of stars at different ranges, and this map does not settle it.\nIt does not have to. The two rows are 0.230 degrees apart, which at 2,022 ly is 8.1 light years of transverse distance -- so whichever of them the setting means, and whether or not they are one object, the bearing is the same to within eight light years. The dispute is about depth, and the depth is stated. Theia_754's bearing is used, it being the nearer row and the better match for the stated distance.\nThe remaining gap is in range and is not small: 2,022 ly against Theia_754's 2,289 is 11.7%, and against NGC_1758's 2,797 is 27.7%. The setting's figure is kept and the catalogue's is not, as everywhere else here. See questions.md." ;
+    oa:rightAscensionDeg 75.972 .
+
+value:location-world-the-triplet-cluster-distance a oa:QuantityValue ;
+    qudt:numericValue 2022.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-the-triplet-cluster-metasoft a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:world-the-triplet-cluster ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft ;
+    oa:recordOrder 0 .

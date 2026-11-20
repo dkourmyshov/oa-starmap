@@ -1,0 +1,52 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Restored Ambi Limis
+
+id:world-restored-ambi-limis a oa:Place, oa:World ;
+    skos:prefLabel "Restored Ambi Limis" ;
+    oa:article <https://www.orionsarm.com/eg-article/45f0cb71d22de> ;
+    oa:kind "polity_marker" ;
+    oa:labelsSystem false ;
+    oa:note "Drawn in the sheet's colour for the minor, neutral and unaligned, so no polity is recorded. The roster does carry `ambi-limis`, but that is the old polity of the Conver Ambi's era and this was founded in 7971, four thousand years after it; the two are a tradition rather than one thing, and nothing read so far says the restored polity claims the old one's identity. So the marker is a marker and stays uncoloured." ;
+    oa:uncertain false .
+
+claim:location-world-restored-ambi-limis a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/45f0cb71d22de> ;
+    oa:about id:world-restored-ambi-limis ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg 42.7662 ;
+    oa:derivation "The direction is interpolated from the transcription of Anders Sandberg's maps; the distance is the article's, which gives 4,127 to 4,139 ly and is quoted here at the midpoint. The sheet had put it at 1,632 — two and a half times nearer — which is the largest disagreement between the two sources yet found, and the reason the distance error here is fifty light years rather than eight hundred." ;
+    oa:directionErrorDeg 20.0 ;
+    oa:distance value:location-world-restored-ambi-limis-distance ;
+    oa:distanceError value:location-world-restored-ambi-limis-distance-error ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:EditorialEstimate ;
+    oa:rightAscensionDeg 80.7504 .
+
+value:location-world-restored-ambi-limis-distance a oa:QuantityValue ;
+    qudt:numericValue 4133.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+value:location-world-restored-ambi-limis-distance-error a oa:QuantityValue ;
+    qudt:numericValue 50.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:event-world-restored-ambi-limis-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/45f0cb71d22de> ;
+    oa:about id:world-restored-ambi-limis ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "Founded." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 7971 .

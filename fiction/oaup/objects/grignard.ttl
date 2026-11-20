@@ -1,0 +1,45 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Grignard
+
+id:world-grignard a oa:Place, oa:World ;
+    skos:prefLabel "Grignard" ;
+    oa:article <https://www.orionsarm.com/eg-article/4cfd1ab04285b> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "Near NGC 2430 in Puppis, at 2,120 ly, which is the cluster's own distance to the light year. Near is as close as the article comes: how far from the cluster, and in which direction, it does not say, so this takes the cluster's position and does not pretend to an offset. The Transcend's outpost is within the cluster and is drawn at the same coordinates for the same reason. Settled out of the Adhara Trade Treaty volume eight centuries before the treaty itself formed, which the dates say plainly and this file does not reconcile. Grignard itself belongs to nobody." ;
+    oa:uncertain false .
+
+claim:location-world-grignard a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4cfd1ab04285b> ;
+    oa:about id:world-grignard ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -16.2958 ;
+    oa:distance value:location-world-grignard-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:nearName "NGC 2430" ;
+    oa:rightAscensionDeg 114.9208 .
+
+value:location-world-grignard-distance a oa:QuantityValue ;
+    qudt:numericValue 2120.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:event-world-grignard-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4cfd1ab04285b> ;
+    oa:about id:world-grignard ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "Settled from the Adhara Trade Treaty volume." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 5309 .

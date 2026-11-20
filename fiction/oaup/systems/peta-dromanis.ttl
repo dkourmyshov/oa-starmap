@@ -1,0 +1,63 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Peta Dromanis
+
+id:world-peta-dromanis a oa:Place, oa:World ;
+    skos:prefLabel "Peta Dromanis" ;
+    oa:article <https://www.orionsarm.com/eg-article/47bf81960a439> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "12 Ophiuchi, as the colony table has it." ;
+    oa:systemName "Peta Dromanis" ;
+    oa:uncertain false .
+
+claim:location-world-peta-dromanis a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47bf81960a439> ;
+    oa:about id:world-peta-dromanis ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "12 Ophiuchi" .
+
+claim:event-world-peta-dromanis-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47bf81960a439> ;
+    oa:about id:world-peta-dromanis ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"Colonised 2278 AT\" The article calls the system non-aligned." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 2278 .
+
+# Peta Dromanis
+
+id:inner-sphere-row-0348 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Peta Dromanis" .
+
+claim:inner-sphere-inner-sphere-row-0348-18357c6e954d a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0348 ;
+    oa:article <https://www.orionsarm.com/eg-article/47bf81960a439> ;
+    oa:canonical true ;
+    oa:colonyName "Peta Dromanis" ;
+    oa:luminositySol "0.412" ;
+    oa:massSol "0.9" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 347 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0348-18357c6e954d-source-distance ;
+    oa:spectralType "K0 Ve" ;
+    oa:starName "12 Ophiuchi" .
+
+value:inner-sphere-inner-sphere-row-0348-18357c6e954d-source-distance a oa:QuantityValue ;
+    qudt:numericValue 32.270 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

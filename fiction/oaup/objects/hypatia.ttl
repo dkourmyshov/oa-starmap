@@ -1,0 +1,34 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# Hypatia
+
+id:world-hypatia a oa:Place, oa:World ;
+    skos:prefLabel "Hypatia" ;
+    oa:article <https://www.orionsarm.com/eg-article/54202a57b26c2> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "HD 129777 in Circinus, which the catalogue puts at 210 ly against the article's 193 — nine percent, close enough to bind to the star." ;
+    oa:uncertain false .
+
+claim:location-world-hypatia a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/54202a57b26c2> ;
+    oa:about id:world-hypatia ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "HD 129777" .
+
+claim:event-world-hypatia-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/54202a57b26c2> ;
+    oa:about id:world-hypatia ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "Arrived." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 1819 .

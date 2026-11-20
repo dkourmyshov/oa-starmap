@@ -1,0 +1,42 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Garden of Paradise Cluster
+
+id:world-garden-of-paradise-cluster a oa:Place, oa:World ;
+    skos:prefLabel "Garden of Paradise Cluster" ;
+    oa:article <https://www.orionsarm.com/eg-article/4b8feb3387407> ;
+    oa:kind "volume" ;
+    oa:labelsSystem false ;
+    oa:note "\"A dozen human-habitable worlds in Puppis (today called the Garden of Paradise Cluster), apparently terraformed by a long-vanished alien species\" -- discovered in 2642, and one of the three things the Sophic League's own article credits with making the League a major power rather than a minor one." ;
+    oa:uncertain false .
+
+claim:location-world-garden-of-paradise-cluster a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4b8feb3387407> ;
+    oa:about id:world-garden-of-paradise-cluster ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -24.3 ;
+    oa:distance value:location-world-garden-of-paradise-cluster-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:note "The direction is from oalocs3.dsc, one of the Orion's Arm Celestia add-ons' location catalogues (OAAddons9, OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv), and is Rho Puppis to three decimal places -- which is the star the Encyclopaedia names the cluster by: \"Ararat is located on the edge of the Garden of Paradise Cluster (Rho Puppis)\".\nThe distance is not the add-on's. It gives 70 ly, which is Rho Puppis's own distance and not the cluster's: the add-on's author took the star from the article and its range from the catalogue. Orobon, a world of this cluster, is given as \"Distance from Sol: 214 ly. Constellation: Puppis - in the so-called Garden of Paradise Cluster\", and 214 is used here. Kuranaba, which this map places independently at 209 ly, agrees; at 70 the cluster would be inside the Inner Sphere. See questions.md." ;
+    oa:rightAscensionDeg 121.74 .
+
+value:location-world-garden-of-paradise-cluster-distance a oa:QuantityValue ;
+    qudt:numericValue 214.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-garden-of-paradise-cluster-sophic-league a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4b8feb3387407> ;
+    oa:about id:world-garden-of-paradise-cluster ;
+    oa:canonical true ;
+    oa:polity id:polity-sophic-league ;
+    oa:recordOrder 0 .

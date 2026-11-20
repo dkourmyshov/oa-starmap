@@ -1,0 +1,75 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Tincture
+
+id:world-tincture a oa:Place, oa:World ;
+    skos:prefLabel "Tincture" ;
+    oa:article <https://www.orionsarm.com/eg-article/49134c3c6b106> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Gliese 581, as the colony table has it." ;
+    oa:systemName "Tincture" ;
+    oa:uncertain false .
+
+claim:location-world-tincture a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/49134c3c6b106> ;
+    oa:about id:world-tincture ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Gliese 581" .
+
+claim:event-world-tincture-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/49134c3c6b106> ;
+    oa:about id:world-tincture ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "\"Reached 1099AT by the First Federation-affiliated Nirav Assembly\" The reaching party is the Nirav Assembly, described as 'First Federation-affiliated' rather than as the Federation itself. The Nirav Assembly, First Federation-affiliated, is no polity of this file." ;
+    oa:polity id:polity-first-federation ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 1099 .
+
+claim:event-world-tincture-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/49134c3c6b106> ;
+    oa:about id:world-tincture ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"Gliese 581 was settled in the Early First Federation, in 1187 AT, by the Nirav Assembly.\" As with the 1099 AT reaching, the actual settling body named is the Nirav Assembly, not the First Federation itself, though the sentence places it 'in the Early First Federation'." ;
+    oa:polity id:polity-first-federation ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 1187 .
+
+# Tincture
+
+id:inner-sphere-row-0147 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Tincture" .
+
+claim:inner-sphere-inner-sphere-row-0147-6ca0d080433f a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0147 ;
+    oa:article <https://www.orionsarm.com/eg-article/49134c3c6b106> ;
+    oa:canonical true ;
+    oa:colonyName "Tincture" ;
+    oa:luminositySol "0.002" ;
+    oa:massSol "." ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 146 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0147-6ca0d080433f-source-distance ;
+    oa:spectralType "M2.5 V" ;
+    oa:starName "Gliese 581" .
+
+value:inner-sphere-inner-sphere-row-0147-6ca0d080433f-source-distance a oa:QuantityValue ;
+    qudt:numericValue 20.549 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

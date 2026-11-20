@@ -1,0 +1,50 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Vangelis
+
+id:world-vangelis a oa:Place, oa:World ;
+    skos:prefLabel "Vangelis" ;
+    oa:article <https://www.orionsarm.com/eg-article/474e2b879d1ac> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "WASP-18, in Phoenix. Bound by catalogue rather than by the coordinates the article gives, because the two agree exactly: 01h 37m 25.03s, -45d 40' 40.4\" is HD 10069 to four decimal places, and the catalogue's 400 ly sits against the article's 404." ;
+    oa:systemName "Vangelis" ;
+    oa:uncertain false .
+
+claim:location-world-vangelis a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/474e2b879d1ac> ;
+    oa:about id:world-vangelis ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:distance value:location-world-vangelis-distance ;
+    oa:hdId 10069 ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+value:location-world-vangelis-distance a oa:QuantityValue ;
+    qudt:numericValue 404.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-vangelis-communion-of-worlds a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/474e2b879d1ac> ;
+    oa:about id:world-vangelis ;
+    oa:canonical true ;
+    oa:polity id:polity-communion-of-worlds ;
+    oa:recordOrder 0 .
+
+claim:event-world-vangelis-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/474e2b879d1ac> ;
+    oa:about id:world-vangelis ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 3224 .

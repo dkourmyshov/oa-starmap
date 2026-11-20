@@ -1,0 +1,84 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Harmonic-Resonance
+
+id:world-harmonic-resonance a oa:Place, oa:World ;
+    skos:prefLabel "Harmonic-Resonance" ;
+    oa:article <https://www.orionsarm.com/eg-article/466c8fefdbfc5> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:systemName "Harmonic-Resonance" ;
+    oa:uncertain false .
+
+claim:location-world-harmonic-resonance a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/466c8fefdbfc5> ;
+    oa:about id:world-harmonic-resonance ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:oaStarName "JD 10013" .
+
+claim:affiliation-world-harmonic-resonance-sophic-league a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/466c8fefdbfc5> ;
+    oa:about id:world-harmonic-resonance ;
+    oa:canonical true ;
+    oa:polity id:polity-sophic-league ;
+    oa:recordOrder 0 .
+
+claim:event-world-harmonic-resonance-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/466c8fefdbfc5> ;
+    oa:about id:world-harmonic-resonance ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "Terraformed." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 2805 .
+
+# JD 10013
+
+id:star-jd-10013 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 10013" ;
+    oa:sourceName "JD 10013" .
+
+claim:celestia-star-jd-10013-c0004257bdc4 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-10013 ;
+    oa:absoluteMagnitude 4.75 ;
+    oa:canonical true ;
+    oa:declinationDeg -7.998 ;
+    oa:distance value:celestia-star-jd-10013-c0004257bdc4-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 133.35 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceComment "Star for Harmonic Resonance" ;
+    oa:sourceFile "oastars2-2.stc" ;
+    oa:sourceSystemName "Harmonic Resonance" ;
+    oa:spectralType "G2V" .
+
+value:celestia-star-jd-10013-c0004257bdc4-distance a oa:QuantityValue ;
+    qudt:numericValue 767.98 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-star-jd-10013-sophic-league a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/466c8fefdbfc5> ;
+    oa:about id:star-jd-10013 ;
+    oa:canonical true ;
+    oa:polity id:polity-sophic-league .
+
+claim:curation-star-jd-10013 a prov:Entity, oa:SystemCuration ;
+    oa:about id:star-jd-10013 ;
+    oa:article <https://www.orionsarm.com/eg-article/466c8fefdbfc5> ;
+    oa:editorialLabel "Harmonic-Resonance" ;
+    oa:hidden false ;
+    oa:uncertain false .

@@ -211,15 +211,15 @@ def test_the_worksheet_joins_each_article_to_the_map_and_what_it_already_dates()
     places = [
         Place(
             "Sesharia",
-            "worlds.yaml",
+            "world",
             article.url,
             record={"events": [{"kind": "settled", "year_at": 1102, "polity": "doran-empire"}]},
         ),
-        Place("Sesharia", "inner_sphere.yaml", article.url),
+        Place("Sesharia", "inner-sphere", article.url),
     ]
     rows = worksheet_rows([article], places)
     assert rows and all(r["place"] == "Sesharia" for r in rows)
-    assert rows[0]["file"] == "worlds.yaml; inner_sphere.yaml"
+    assert rows[0]["file"] == "world; inner-sphere"
     assert rows[0]["has"] == "settled 1102 (doran-empire)"
     assert rows[0]["held_by"] == "Non-Coercive Zone (NoCoZo)"
 
@@ -232,7 +232,7 @@ def test_the_summary_counts_the_gap_the_reader_is_working_down():
     """The number that matters is articles the map has but has not dated."""
     article = parse_article(SESHARIA)
     assert article is not None
-    undated = [Place("Sesharia", "worlds.yaml", article.url, record={"events": []})]
+    undated = [Place("Sesharia", "world", article.url, record={"events": []})]
     summary = summarise([article], worksheet_rows([article], undated), skipped=1, places=undated)
     assert summary["articles"] == 1
     assert summary["skipped_topics"] == 1
@@ -256,8 +256,8 @@ def test_the_worksheet_puts_the_articles_with_the_most_to_give_first():
     nowhere = parse_article(page("ccc", "Nowhere", "Settled in 2400 AT. Abandoned 2500 AT. Reached 2000 AT."))
     assert undated and dated and nowhere
     places = [
-        Place("Undated", "worlds.yaml", undated.url, record={"events": []}),
-        Place("Dated", "worlds.yaml", dated.url, record={"events": [{"kind": "settled", "year_at": 2200}]}),
+        Place("Undated", "world", undated.url, record={"events": []}),
+        Place("Dated", "world", dated.url, record={"events": [{"kind": "settled", "year_at": 2200}]}),
     ]
     # Given in the wrong order on purpose; the file order is by id, which is a hash.
     rows = worksheet_rows([nowhere, dated, undated], places)

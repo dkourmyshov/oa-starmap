@@ -1,0 +1,39 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# NGC 2395
+
+id:world-ngc-2395 a oa:Place, oa:World ;
+    skos:prefLabel "NGC 2395" ;
+    oa:editorialNote "---- interpolated from the transcription of Anders Sandberg's maps --------\n\nThe sheet fixes a cell, not a position. Checking it against places we hold\nputs it six to nine hundred light years out — Gegton X, which its article\nsets at 231 ly, is drawn at 820 — so every entry here carries a distance\nerror as well as a direction error, and the map dots their rings rather\nthan dashing them. A dash says the radius is known and the angle is not;\nthese are neither.\n\nNone of these has a position in any article. The sheet is the only source\nthere is for where they are, and for several it is the only source that\nthey are anywhere." ;
+    oa:kind "volume" ;
+    oa:labelsSystem false ;
+    oa:note "An open cluster in Gemini at 512 pc, absent from the Gaia-verified catalogue this map builds from. First given to us as 0.071 kpc, which would have put it at 232 ly and among the nearest clusters in the sky; the figure here is the corrected 512 pc." ;
+    oa:uncertain false .
+
+claim:location-world-ngc-2395 a prov:Entity, oa:LocationClaim ;
+    oa:about id:world-ngc-2395 ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg 13.5525 ;
+    oa:distance value:location-world-ngc-2395-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:rightAscensionDeg 112.175 .
+
+value:location-world-ngc-2395-distance a oa:QuantityValue ;
+    qudt:numericValue 1670.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-ngc-2395-sophic-league a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:world-ngc-2395 ;
+    oa:canonical true ;
+    oa:polity id:polity-sophic-league ;
+    oa:recordOrder 0 .

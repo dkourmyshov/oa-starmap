@@ -1,0 +1,144 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Wasat
+
+id:world-wasat a oa:Place, oa:World ;
+    skos:prefLabel "Wasat" ;
+    oa:article <https://www.orionsarm.com/eg-article/4bb5d6c578611> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Delta Geminorum Aa, as the colony table has it." ;
+    oa:systemName "Wasat" ;
+    oa:uncertain false .
+
+claim:location-world-wasat a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4bb5d6c578611> ;
+    oa:about id:world-wasat ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Delta Geminorum Aa" .
+
+claim:event-world-wasat-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4bb5d6c578611> ;
+    oa:about id:world-wasat ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"Tianzun was reached by the First Federation in 1920 by colonists aboard the Visible Excitement.\" Aligned with the TCP, 'which means it soon became part of the Conver Ambi', undated." ;
+    oa:polity id:polity-first-federation ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 1920 .
+
+claim:event-world-wasat-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4bb5d6c578611> ;
+    oa:about id:world-wasat ;
+    oa:canonical true ;
+    oa:eventKind oa:Capital ;
+    oa:note "\"In 1848, Wasat became home of the House Conver Limis, specialists of the colonization of AquaCytherean planets (also known as PelaCytherian wprlds).\" House Conver Limis is a dynasty/faction, not a roster polity; see unplaced. A later sentence calls the Apex Carbuncle habitat 'the symbolic capital of the Conver Limis', supporting the capital classification. House Conver Limis, a dynasty, no polity of this file; the year precedes the article's own 'first reached' of 1920, and both are kept as written." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 1848 .
+
+claim:event-world-wasat-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4bb5d6c578611> ;
+    oa:about id:world-wasat ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"The system was first reached in 1920 by the Visible Excitement, a First Federation colony mission aligned with the TCP, which means it soon became part of the Conver Ambi, a theocratic empire based on the neighboring system Conver Ky (37 Geminorum).\" The year is the Ambi's establishment on the timeline." ;
+    oa:polity id:polity-conver-ambi ;
+    oa:precision oa:NotEarlierThan ;
+    oa:recordOrder 2 ;
+    oa:yearAT 1984 .
+
+claim:event-world-wasat-004 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-wasat ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"In the aftermath of the war, Wasat, the important wormhole hub Conver Ky, and several other core Conver systems became part of the Solar Dominion.\" The year is the peace accords' on the timeline. The colony table gives the system no present affiliation, and nothing saved says it left the Dominion." ;
+    oa:polity id:polity-solar-dominion ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 3 ;
+    oa:sourceDescription "Encyclopaedia timeline, 3943" ;
+    oa:yearAT 3943 .
+
+# Wasat
+
+id:inner-sphere-row-0729 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Wasat" .
+
+claim:inner-sphere-inner-sphere-row-0729-99976f774b10 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0729 ;
+    oa:article <https://www.orionsarm.com/eg-article/4bb5d6c578611> ;
+    oa:canonical true ;
+    oa:colonyName "Wasat" ;
+    oa:luminositySol "10.146" ;
+    oa:massSol "1.57" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 728 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0729-99976f774b10-source-distance ;
+    oa:spectralType "F0 IV" ;
+    oa:starName "Delta Geminorum Aa" .
+
+value:inner-sphere-inner-sphere-row-0729-99976f774b10-source-distance a oa:QuantityValue ;
+    qudt:numericValue 60.659 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Wasat
+
+id:inner-sphere-row-0730 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Wasat" .
+
+claim:inner-sphere-inner-sphere-row-0730-6bb552a6cd19 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0730 ;
+    oa:article <https://www.orionsarm.com/eg-article/4bb5d6c578611> ;
+    oa:canonical true ;
+    oa:colonyName "Wasat" ;
+    oa:luminositySol "." ;
+    oa:massSol "." ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 729 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0730-6bb552a6cd19-source-distance ;
+    oa:spectralType "M4 V" ;
+    oa:starName "Delta Geminorum Ab" .
+
+value:inner-sphere-inner-sphere-row-0730-6bb552a6cd19-source-distance a oa:QuantityValue ;
+    qudt:numericValue 60.659 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Wasat
+
+id:inner-sphere-row-0731 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Wasat" .
+
+claim:inner-sphere-inner-sphere-row-0731-1aab0b95bc89 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0731 ;
+    oa:article <https://www.orionsarm.com/eg-article/4bb5d6c578611> ;
+    oa:canonical true ;
+    oa:colonyName "Wasat" ;
+    oa:luminositySol "0.155" ;
+    oa:massSol "0.623" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 730 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0731-1aab0b95bc89-source-distance ;
+    oa:spectralType "K3 V" ;
+    oa:starName "Delta Geminorum B" .
+
+value:inner-sphere-inner-sphere-row-0731-1aab0b95bc89-source-distance a oa:QuantityValue ;
+    qudt:numericValue 60.659 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

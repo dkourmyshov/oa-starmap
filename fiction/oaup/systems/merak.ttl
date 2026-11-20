@@ -1,0 +1,32 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Merak
+
+id:inner-sphere-row-0947 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Merak" .
+
+claim:inner-sphere-inner-sphere-row-0947-a956137f238e a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0947 ;
+    oa:canonical true ;
+    oa:colonyName "Merak" ;
+    oa:luminositySol "63.015" ;
+    oa:massSol "2.7" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 946 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0947-a956137f238e-source-distance ;
+    oa:spectralType "A1 IVps" ;
+    oa:starName "Beta Ursae Majoris" .
+
+value:inner-sphere-inner-sphere-row-0947-a956137f238e-source-distance a oa:QuantityValue ;
+    qudt:numericValue 84.490 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

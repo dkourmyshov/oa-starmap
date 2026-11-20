@@ -1,0 +1,75 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Alexandria
+
+id:world-alexandria a oa:Place, oa:World ;
+    skos:prefLabel "Alexandria" ;
+    oa:article <https://www.orionsarm.com/eg-article/45e7873ca8b42> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "Given as near HD 162909 and Ptolemy's Cluster, so the direction is that star's and the distance the article's. The star itself is at 658 ly, which puts Alexandria further along the same line of sight rather than beside it." ;
+    oa:systemName "Tichy 44" ;
+    oa:uncertain false .
+
+claim:location-world-alexandria a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/45e7873ca8b42> ;
+    oa:about id:world-alexandria ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -32.115 ;
+    oa:distance value:location-world-alexandria-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:nearName "HD 162909" ;
+    oa:rightAscensionDeg 268.702 .
+
+value:location-world-alexandria-distance a oa:QuantityValue ;
+    qudt:numericValue 801.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-alexandria-negentropy-alliance a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/45e7873ca8b42> ;
+    oa:about id:world-alexandria ;
+    oa:canonical true ;
+    oa:polity id:polity-negentropy-alliance ;
+    oa:recordOrder 0 .
+
+claim:event-world-alexandria-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/45e7873ca8b42> ;
+    oa:about id:world-alexandria ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"Alexandria, originally named Tichy 44-III, was first visited and colonized by the Soft Cathedrals.\" Undated; \"Over the span of a century they created an ecosystem\" before the lease of 3123." ;
+    oa:polity id:polity-soft-cathedral ;
+    oa:precision oa:NotLaterThan ;
+    oa:recordOrder 0 ;
+    oa:yearAT 3123 .
+
+claim:event-world-alexandria-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/45e7873ca8b42> ;
+    oa:about id:world-alexandria ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"In 3123 they made a complex system lease deal with the Negentropy Alliance , giving them the development rights to the system in exchange for among other things a major wormhole infrastructure development effort linking NGC 6475 with the Inner Sphere, settlement rights on some of the polar atolls and of course lease on the Tichy biosphere .\" The header already records settled 3123; the article frames this year as a lease deal transferring development rights from the Soft Cathedrals to the Negentropy Alliance, not as the original settlement (which is undated - see holder_undated). Recorded as transferred rather than settled; see doubts. Development rights under a system lease; the map's older 'settled 3123' is this deal." ;
+    oa:polity id:polity-negentropy-alliance ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 3123 .
+
+claim:event-world-alexandria-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/45e7873ca8b42> ;
+    oa:about id:world-alexandria ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"Tichy was recolonised and renamed Alexandria by the Aratron Archivists in 5022.\" New against the header, which records only settled 3123. The Aratron Archivists are not on the roster; see unplaced. The system had by this point become a largely forgotten nanohazard following the 4540 attack, so this reads as a recolonisation rather than a first settlement. The Aratron Archivists, no polity of this file, after the attack of 4540." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 2 ;
+    oa:yearAT 5022 .

@@ -1,0 +1,87 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Tabit
+
+id:world-tabit a oa:Place, oa:World ;
+    skos:altLabel "Daedalus I" ;
+    skos:prefLabel "Tabit" ;
+    oa:article <https://www.orionsarm.com/eg-article/48e6722138bbb> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Pi3 Orionis, 26 ly; Daedalus I is the world. \"During the age of AI Emergence\" it \"became part of the Conver Ambi\", and after the Conver Wars \"a joint protectorate\" of the Solar Dominion and Metasoft, neither dated by the article. The colony table marks it blight." ;
+    oa:systemName "Tabit" ;
+    oa:uncertain false .
+
+claim:location-world-tabit a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48e6722138bbb> ;
+    oa:about id:world-tabit ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Pi3 Orionis" .
+
+claim:event-world-tabit-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48e6722138bbb> ;
+    oa:about id:world-tabit ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "Data panel: \"The Turing arrived in 869 AT, followed by the Bintang Harapan 1 in 893 AT.\" The first carried the Heterosemiotics, the second the Indonesian expedition; neither a polity of this file." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 869 .
+
+claim:event-world-tabit-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48e6722138bbb> ;
+    oa:about id:world-tabit ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"In 1461 the true situation on Daedalus became known ... The Federation was appalled, and immediately sent out an investigative task force\", and \"over the next 300 years the Federation ... managed to gradually break the deadlock between the different tribes\". Read as the Federation taking the system in hand; the article does not call it an annexation." ;
+    oa:polity id:polity-first-federation ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 1461 .
+
+claim:event-world-tabit-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48e6722138bbb> ;
+    oa:about id:world-tabit ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"During the age of AI Emergence, the by now largely corporate run Daedalus soon became part of the Conver Ambi.\" The era is the timeline's 1500 to 2100; the Ambi's establishment (1984) is the earlier bound. \"In 5580 AT the Institute of Eschatology officially declared the Pi 3 system as being infected by a qlippothic AI entity\", which changes no holder here." ;
+    oa:polity id:polity-conver-ambi ;
+    oa:precision oa:Between ;
+    oa:recordOrder 2 ;
+    oa:untilAT 2100 ;
+    oa:yearAT 1984 .
+
+# Tabit
+
+id:inner-sphere-row-0218 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Tabit" .
+
+claim:inner-sphere-inner-sphere-row-0218-59a65bbd4cbe a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0218 ;
+    oa:article <https://www.orionsarm.com/eg-article/48e6722138bbb> ;
+    oa:canonical true ;
+    oa:colonyName "Tabit" ;
+    oa:luminositySol "2.98" ;
+    oa:massSol "1.3" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 217 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0218-59a65bbd4cbe-source-distance ;
+    oa:spectralType "F6 V" ;
+    oa:starName "Pi3 Orionis" .
+
+value:inner-sphere-inner-sphere-row-0218-59a65bbd4cbe-source-distance a oa:QuantityValue ;
+    qudt:numericValue 26.172 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

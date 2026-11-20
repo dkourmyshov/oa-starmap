@@ -1,0 +1,32 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Orchid
+
+id:world-orchid a oa:Place, oa:World ;
+    skos:prefLabel "Orchid" ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:uncertain false .
+
+claim:location-world-orchid a prov:Entity, oa:LocationClaim ;
+    oa:about id:world-orchid ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg 54.75 ;
+    oa:distance value:location-world-orchid-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:note "The add-on swapped this system with Relay 005, and the position here is the one it gave that. Both are reached from Jarre, which is likely how the two came to be exchanged. The archived Wormhole Gazetteer (https://www.orionsarm.com/eg-article/4e297b0884b1a) notes the route to Orchid, Calypso, as going \"To Perseus Arm\" and the route to Relay 005, Revolutions, as going \"To Inner Sphere\"; these coordinates are at galactic longitude 140 and 2,870 ly out, which is down the Perseus Arm, and the ones the add-on put on Orchid are Epsilon Indi at 11.8 ly, which is not. The coordinates are the add-on's (https://celestiaproject.space/forum/viewtopic.php?f=23&t=17436), the correction the gazetteer's and the project owner's. No polity is recorded and no article names it." ;
+    oa:rightAscensionDeg 50.0 .
+
+value:location-world-orchid-distance a oa:QuantityValue ;
+    qudt:numericValue 2870.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

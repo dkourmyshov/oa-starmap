@@ -1,0 +1,63 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Caph
+
+id:world-caph a oa:Place, oa:World ;
+    skos:prefLabel "Caph" ;
+    oa:article <https://www.orionsarm.com/eg-article/4625899c756f8> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Beta Cassiopeiae, as the colony table has it." ;
+    oa:systemName "Caph" ;
+    oa:uncertain false .
+
+claim:location-world-caph a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4625899c756f8> ;
+    oa:about id:world-caph ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Beta Cassiopeiae" .
+
+claim:event-world-caph-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4625899c756f8> ;
+    oa:about id:world-caph ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"Beta Cassiopeiae, known as Caph, 54.7 light-years from Sol, was colonized in 1532 AT using seed ships and parental vecs, and a successful vec-biont hybrid civilization developed there, nominally aligned with the Solar Dominion .\" The sentence gives the colonization date, but the 'nominally aligned with the Solar Dominion' clause is not clearly dated to 1532 itself; recorded separately below under holder_undated. Seed ships and parental vecs, on the pattern of the Federation programme the article implies but does not state; nominally Solarist since, undated." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 1532 .
+
+# Caph
+
+id:inner-sphere-row-0653 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Caph" .
+
+claim:inner-sphere-inner-sphere-row-0653-91294764c502 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0653 ;
+    oa:article <https://www.orionsarm.com/eg-article/4625899c756f8> ;
+    oa:canonical true ;
+    oa:colonyName "Caph" ;
+    oa:luminositySol "27.3" ;
+    oa:massSol "1.91" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 652 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0653-91294764c502-source-distance ;
+    oa:spectralType "F2 III" ;
+    oa:starName "Beta Cassiopeiae" .
+
+value:inner-sphere-inner-sphere-row-0653-91294764c502-source-distance a oa:QuantityValue ;
+    qudt:numericValue 54.74 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

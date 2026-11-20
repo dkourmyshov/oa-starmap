@@ -1,0 +1,100 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Dorangloon
+
+id:world-dorangloon a oa:Place, oa:World ;
+    skos:prefLabel "Dorangloon" ;
+    oa:article <https://www.orionsarm.com/eg-article/464d0eddc8718> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Gliese 877, in Octans at 28 ly, and reached in 929 — the earliest date on either roster it appears in. It came here twice, once with the Solar Dominion and once with the Terragen Federation, from the one article; both are drawn rather than one being chosen." ;
+    oa:systemName "Dorangloon" ;
+    oa:uncertain false .
+
+claim:location-world-dorangloon a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/464d0eddc8718> ;
+    oa:about id:world-dorangloon ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Gliese 877" .
+
+claim:affiliation-world-dorangloon-solar-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/464d0eddc8718> ;
+    oa:about id:world-dorangloon ;
+    oa:canonical true ;
+    oa:polity id:polity-solar-dominion ;
+    oa:recordOrder 0 .
+
+claim:affiliation-world-dorangloon-terragen-federation a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/464d0eddc8718> ;
+    oa:about id:world-dorangloon ;
+    oa:canonical true ;
+    oa:polity id:polity-terragen-federation ;
+    oa:recordOrder 1 .
+
+claim:event-world-dorangloon-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/464d0eddc8718> ;
+    oa:about id:world-dorangloon ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"Colonised in 929 AT by the Doran clade, in the Gathol, a ship of their own construction.\" The Doran Empire's first world; the Sesharia article calls it Dorannok." ;
+    oa:polity id:polity-doran-empire ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 929 .
+
+claim:event-world-dorangloon-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/464d0eddc8718> ;
+    oa:about id:world-dorangloon ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"Joined the Solar Dominion in 3890.\"" ;
+    oa:polity id:polity-solar-dominion ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 3890 .
+
+claim:event-world-dorangloon-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48f94f1a7f8db> ;
+    oa:about id:world-dorangloon ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "From the Sesharia article: \"The last remnants [of the Doran Empire] including Dorannok (GL 877) entered the Terragen Federation in 5855.\"" ;
+    oa:polity id:polity-terragen-federation ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 2 ;
+    oa:yearAT 5855 .
+
+# Dorangloon
+
+id:inner-sphere-row-0259 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Dorangloon" .
+
+claim:inner-sphere-inner-sphere-row-0259-4b1d1ddf426c a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0259 ;
+    oa:article <https://www.orionsarm.com/eg-article/464d0eddc8718> ;
+    oa:canonical true ;
+    oa:colonyName "Dorangloon" ;
+    oa:luminositySol "0.0044" ;
+    oa:massSol "." ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 258 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0259-4b1d1ddf426c-source-distance ;
+    oa:spectralType "M3 V" ;
+    oa:starName "Gliese 877" .
+
+value:inner-sphere-inner-sphere-row-0259-4b1d1ddf426c-source-distance a oa:QuantityValue ;
+    qudt:numericValue 28.041 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

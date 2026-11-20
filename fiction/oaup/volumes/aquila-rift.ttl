@@ -1,0 +1,44 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Aquila Rift
+
+id:world-aquila-rift a oa:Place, oa:World ;
+    skos:prefLabel "Aquila Rift" ;
+    oa:extent value:world-aquila-rift-extent ;
+    oa:kind "volume" ;
+    oa:labelsSystem false ;
+    oa:note "The dark lane along the Milky Way in Aquila, and the least certain distance on this map: 225 to 500 pc, which is 734 to 1,631 ly — the far estimate is more than twice the near one. The midpoint is drawn and the range is this note, because there is no figure to prefer. At that midpoint its 20 by 10 degrees is 311 ly across, which makes it the second largest volume here after the Gehenna front; at either end of the range that size changes with it." ;
+    oa:uncertain false .
+
+value:world-aquila-rift-extent a oa:QuantityValue ;
+    qudt:numericValue 311.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:location-world-aquila-rift a prov:Entity, oa:LocationClaim ;
+    oa:about id:world-aquila-rift ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg 1.0 ;
+    oa:distance value:location-world-aquila-rift-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:rightAscensionDeg 286.75 .
+
+value:location-world-aquila-rift-distance a oa:QuantityValue ;
+    qudt:numericValue 1182.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-aquila-rift-cygexpa a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:world-aquila-rift ;
+    oa:canonical true ;
+    oa:polity id:polity-cygexpa ;
+    oa:recordOrder 0 .

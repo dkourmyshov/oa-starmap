@@ -1,0 +1,39 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Amalgamation (Perseus)
+
+id:world-amalgamation-perseus a oa:Place, oa:World ;
+    skos:prefLabel "Amalgamation (Perseus)" ;
+    oa:kind "polity_extent" ;
+    oa:labelsSystem false ;
+    oa:note "Drawn as a second mark rather than folded into the first, on the project owner's call: two positions along one bearing say how deep the polity runs, which one point cannot. Both fall in Perseus, so the constellation does not distinguish them and this one carries it in its name while the marker keeps the polity's own." ;
+    oa:uncertain false .
+
+claim:location-world-amalgamation-perseus a prov:Entity, oa:LocationClaim ;
+    oa:about id:world-amalgamation-perseus ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg 58.314 ;
+    oa:distance value:location-world-amalgamation-perseus-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:note "From oaloc4.dsc, one of the Orion's Arm Celestia add-ons' location catalogues (OAAddons9, OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv). It falls 0.09 degrees from this map's own marker for the Amalgamation and 346 ly nearer, so the two agree on bearing to within a tenth of a degree and differ 5% in depth." ;
+    oa:rightAscensionDeg 34.693 .
+
+value:location-world-amalgamation-perseus-distance a oa:QuantityValue ;
+    qudt:numericValue 6435.5 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-amalgamation-perseus-amalgamation a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:world-amalgamation-perseus ;
+    oa:canonical true ;
+    oa:polity id:polity-amalgamation ;
+    oa:recordOrder 0 .

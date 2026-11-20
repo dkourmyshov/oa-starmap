@@ -1,0 +1,69 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Duxed
+
+id:world-duxed a oa:Place, oa:World ;
+    skos:prefLabel "Duxed" ;
+    oa:article <https://www.orionsarm.com/eg-article/5f01de4e81446> ;
+    oa:kind "moon" ;
+    oa:labelsSystem false ;
+    oa:note "Duxed is a moon of the gas giant Pacol, in the Piaget system." ;
+    oa:parentName "Pacol" ;
+    oa:systemName "Piaget" ;
+    oa:uncertain false .
+
+claim:location-world-duxed a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5f01de4e81446> ;
+    oa:about id:world-duxed ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:constellationName "Carina" ;
+    oa:distance value:location-world-duxed-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+value:location-world-duxed-distance a oa:QuantityValue ;
+    qudt:numericValue 639.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-duxed-caretaker-gods a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5f01de4e81446> ;
+    oa:about id:world-duxed ;
+    oa:canonical true ;
+    oa:polity id:polity-caretaker-gods ;
+    oa:recordOrder 0 .
+
+claim:affiliation-world-duxed-nocozo a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5f01de4e81446> ;
+    oa:about id:world-duxed ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 1 .
+
+claim:event-world-duxed-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5f01de4e81446> ;
+    oa:about id:world-duxed ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "First successful attempt at colonisation." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 1813 .
+
+claim:event-world-duxed-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5f01de4e81446> ;
+    oa:about id:world-duxed ;
+    oa:canonical true ;
+    oa:eventKind oa:Stewardship ;
+    oa:note "Arrival of the Caretaker God, eleven centuries after the colony." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 2917 .

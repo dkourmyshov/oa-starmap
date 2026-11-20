@@ -1,0 +1,91 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Anaximander
+
+id:world-anaximander a oa:Place, oa:World ;
+    skos:prefLabel "Anaximander" ;
+    oa:article <https://www.orionsarm.com/eg-article/5f0b365e3a328> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "A Caretaker Gods protectorate out along the Carina Rush, whose near end is 2,246 ly away at Oh-F-Star-4 — so this is far beyond where the Terragen sphere otherwise reaches, and got there through a wormhole rather than across the intervening space." ;
+    oa:systemName "Anaximander" ;
+    oa:uncertain false .
+
+claim:location-world-anaximander a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5f0b365e3a328> ;
+    oa:about id:world-anaximander ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -57.95 ;
+    oa:distance value:location-world-anaximander-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:note "Was Carina and a distance, which is a cone. The direction is the entry oalocs3.dsc calls \"Kemmerer\", one of the Orion's Arm Celestia add-ons' location catalogues (OAAddons9, OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv) -- a misspelling of Kammerer, which is this system's world and shares its article, so the add-on is placing the system under the name of the thing in it.\nIt falls in Carina by the IAU boundaries, agreeing with the article. Its distance does not: it gives 4,101 ly against the article's 3,667, which is 12% and too much to reconcile, so the article's is kept and the add-on supplies direction only. See questions.md." ;
+    oa:rightAscensionDeg 129.716 .
+
+value:location-world-anaximander-distance a oa:QuantityValue ;
+    qudt:numericValue 3667.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-anaximander-caretaker-gods a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5f0b365e3a328> ;
+    oa:about id:world-anaximander ;
+    oa:canonical true ;
+    oa:polity id:polity-caretaker-gods ;
+    oa:recordOrder 0 .
+
+claim:event-world-anaximander-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5f0b365e3a328> ;
+    oa:about id:world-anaximander ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "\"First Reached 7882 AT\" No polity or actor is named for this reaching; recorded with an empty polity. The panel names no actor." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 7882 .
+
+claim:event-world-anaximander-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5f0b365e3a328> ;
+    oa:about id:world-anaximander ;
+    oa:canonical true ;
+    oa:eventKind oa:Stewardship ;
+    oa:note "\"Kammerer became a Caretaker Protectorate in 10000 AT\"" ;
+    oa:polity id:polity-caretaker-gods ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 10000 .
+
+# Kammerer
+
+id:world-kammerer a oa:Place, oa:World ;
+    skos:prefLabel "Kammerer" ;
+    oa:article <https://www.orionsarm.com/eg-article/5f0b365e3a328> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "The world of Anaximander, and a xenosophont biome — which is why the Caretaker Gods hold it.\nDrawn where Anaximander is, which it had not been: naming the system in `system:` does not place a world, and this one carried no location of its own, so it was recorded and drawn nowhere. The add-on has a \"Kemmerer\" and it is not a separate object -- it is this system, under this world's name misspelt, and it is applied there." ;
+    oa:systemName "Anaximander" ;
+    oa:uncertain false .
+
+claim:location-world-kammerer a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5f0b365e3a328> ;
+    oa:about id:world-kammerer ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:worldName "Anaximander" .
+
+claim:affiliation-world-kammerer-caretaker-gods a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5f0b365e3a328> ;
+    oa:about id:world-kammerer ;
+    oa:canonical true ;
+    oa:polity id:polity-caretaker-gods ;
+    oa:recordOrder 0 .

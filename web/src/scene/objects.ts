@@ -474,7 +474,7 @@ export class ObjectIndex {
    * An empire-extent label, which the reader can switch off.
    *
    * Kept per object rather than read off the layer, because the layer is
-   * `world` for these as for everything else in worlds.yaml — hiding the
+   * `world` for these as for every other world entity — hiding the
    * whole world layer to hide thirty-four annotations would take six hundred
    * places with it.
    */

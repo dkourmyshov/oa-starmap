@@ -1,0 +1,103 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Nadia
+
+id:world-nadia a oa:Place, oa:World ;
+    skos:prefLabel "Nadia" ;
+    oa:article <https://www.orionsarm.com/eg-article/4ce67a562037c> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Teplo is the primary. Also given as HD 1273 A and HIP 1349 A." ;
+    oa:parentName "Teplo" ;
+    oa:systemName "Nadia" ;
+    oa:uncertain false .
+
+claim:location-world-nadia a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4ce67a562037c> ;
+    oa:about id:world-nadia ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Gliese 13" .
+
+claim:affiliation-world-nadia-nocozo a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4ce67a562037c> ;
+    oa:about id:world-nadia ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 0 .
+
+claim:event-world-nadia-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4ce67a562037c> ;
+    oa:about id:world-nadia ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:polity id:polity-linnent ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 1845 .
+
+claim:event-world-nadia-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4ce67a562037c> ;
+    oa:about id:world-nadia ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "\"During the 1600s AT, Linnaeus Enterprises (LinnEnt) , then a subsidiary of the Terranova Foundation megacorp , dispatched von Neumann -enabled settlement craft to establish initial infrastructure and build the system's first engenerators .\" Robotic precursor infrastructure-building phase, preceding the 1845 AT arrival of modosophont colonists. \"The 1600s AT\" has no more precise year given. Von Neumann-enabled settlement craft, ahead of the engenerated colonists of 1845." ;
+    oa:polity id:polity-linnent ;
+    oa:precision oa:Circa ;
+    oa:recordOrder 1 ;
+    oa:yearAT 1600 .
+
+claim:event-world-nadia-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4ce67a562037c> ;
+    oa:about id:world-nadia ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"This however changed by the 2400s AT. LinnEnt increasingly acted as a multi-system polity and began exercising increasing control over the system's burgeoning population attempting to regulate lightway and beamrider network traffic. Nevertheless, Thoughtful Benefactor ultimately established control over the system and made it a part of the LinnEnt's empire.\" It is unclear whether this describes a genuine change of holder or a tightening of control over a system already LinnEnt's since 1845; flagged in doubts. 'LinnEnt increasingly acted as a multi-system polity and began exercising increasing control'; the reader flagged this as tightened administration rather than a new holder." ;
+    oa:polity id:polity-linnent ;
+    oa:precision oa:Circa ;
+    oa:recordOrder 2 ;
+    oa:yearAT 2400 .
+
+claim:event-world-nadia-004 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4ce67a562037c> ;
+    oa:about id:world-nadia ;
+    oa:canonical true ;
+    oa:eventKind oa:Independent ;
+    oa:note "\"In 3932, Thoughtful Benefactor abruptly ceased operating on LinnEnt's behalf and left the system.\" Marks the end of the \"LinnEnt Era (1845-3932 AT)\"; the resulting Scramble left the system fragmented among competing factions, with no single successor polity named. Thoughtful Benefactor, LinnEnt's agent, 'abruptly ceased operating on LinnEnt's behalf and left the system'; the LinnEnt era the article names runs 1845 to 3932." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 3 ;
+    oa:yearAT 3932 .
+
+# Nadia
+
+id:inner-sphere-row-1074 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Nadia" .
+
+claim:inner-sphere-inner-sphere-row-1074-9661fb910a4c a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-1074 ;
+    oa:article <https://www.orionsarm.com/eg-article/4ce67a562037c> ;
+    oa:canonical true ;
+    oa:colonyName "Nadia" ;
+    oa:luminositySol "0.804" ;
+    oa:massSol "." ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 1073 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-1074-9661fb910a4c-source-distance ;
+    oa:spectralType "G5 V" ;
+    oa:starName "Gliese 13" .
+
+value:inner-sphere-inner-sphere-row-1074-9661fb910a4c-source-distance a oa:QuantityValue ;
+    qudt:numericValue 95.886 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

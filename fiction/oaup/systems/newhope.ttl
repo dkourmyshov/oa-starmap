@@ -1,0 +1,67 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# Newhope
+
+id:world-newhope a oa:Place, oa:World ;
+    skos:prefLabel "Newhope" ;
+    oa:article <https://www.orionsarm.com/eg-article/490b210f5bc0b> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "HIP 76282 in Serpens, 113 ly out against the article's 120. The coordinates the article prints are the star's own to the arcsecond." ;
+    oa:systemName "Newhope" ;
+    oa:uncertain false .
+
+claim:location-world-newhope a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/490b210f5bc0b> ;
+    oa:about id:world-newhope ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "HIP 76282" .
+
+claim:event-world-newhope-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/490b210f5bc0b> ;
+    oa:about id:world-newhope ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "Arrived." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 3429 .
+
+claim:event-world-newhope-002 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-newhope ;
+    oa:canonical true ;
+    oa:eventKind oa:Abandoned ;
+    oa:note "Hip 99265 , Newhope system abandoned." ;
+    oa:polity id:polity-mutual-progress-association ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:sourceDescription "Encyclopaedia timeline, Age of Establishment" ;
+    oa:yearAT 3157 .
+
+claim:event-world-newhope-003 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-newhope ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "The nearbaseline human colony ship, the Freedom's Light, crewed by followers of the utopian nearbaseline human Marus Midas Chuny, arrive at Hip 99265, with 980 colonists in stasis, and rename the system Newhope ." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 2 ;
+    oa:sourceDescription "Encyclopaedia timeline, Age of Consolidation" ;
+    oa:yearAT 3429 .
+
+claim:event-world-newhope-004 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/490b210f5bc0b> ;
+    oa:about id:world-newhope ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "\"Colonized: Reached in 2415 by autonomous probe\" Not in the header. The panel labels this 'Colonized', but its own wording ('Reached... by autonomous probe') describes a probe visit rather than a stay, and the system was subsequently abandoned (3157) and only settled by people much later (3429); recorded as visited to match the literal wording, flagged for the reviewer. The MPA Neumann bpRW-1011000110, which established the system's infrastructure; the MPA's mining swarms abandoned it in 3157." ;
+    oa:polity id:polity-mutual-progress-association ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 3 ;
+    oa:yearAT 2415 .

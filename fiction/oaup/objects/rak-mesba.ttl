@@ -1,0 +1,64 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Rak Mesba
+
+id:world-rak-mesba a oa:Place, oa:World ;
+    skos:prefLabel "Rak Mesba" ;
+    oa:article <https://www.orionsarm.com/eg-article/4d029739425da> ;
+    oa:kind "megastructure" ;
+    oa:labelsSystem false ;
+    oa:note "A xenosophont megastructure at 6,318 ly, from coordinates the article prints to four decimal places. Xenosophont make is not xenosophont holding, and the article names no one living there, so no holder is recorded." ;
+    oa:uncertain false .
+
+claim:location-world-rak-mesba a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4d029739425da> ;
+    oa:about id:world-rak-mesba ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -63.5333 ;
+    oa:distance value:location-world-rak-mesba-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:rightAscensionDeg 174.676 .
+
+value:location-world-rak-mesba-distance a oa:QuantityValue ;
+    qudt:numericValue 6318.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:event-world-rak-mesba-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4d029739425da> ;
+    oa:about id:world-rak-mesba ;
+    oa:canonical true ;
+    oa:eventKind oa:Observed ;
+    oa:note "Noticed as anomalous, six thousand years before anyone got there." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 1322 .
+
+claim:event-world-rak-mesba-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4d029739425da> ;
+    oa:about id:world-rak-mesba ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "Reached." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 9083 .
+
+claim:event-world-rak-mesba-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4d029739425da> ;
+    oa:about id:world-rak-mesba ;
+    oa:canonical true ;
+    oa:eventKind oa:Reported ;
+    oa:note "\"Following the receipt at Hutan Baru of Salleh's initial report in 9513, a great deal of interest in mounting follow-up expeditions to Rak Mesba has been generated, mostly among various corporations and institutes.\" The 9083 AT visit's findings were not received back at Hutan Baru until 9513 AT." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 2 ;
+    oa:yearAT 9513 .

@@ -1,0 +1,39 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Negentropy Alliance (Scorpius, 2000 ly)
+
+id:world-negentropy-alliance-scorpius-2000-ly a oa:Place, oa:World ;
+    skos:prefLabel "Negentropy Alliance (Scorpius, 2000 ly)" ;
+    oa:kind "polity_extent" ;
+    oa:labelsSystem false ;
+    oa:note "One of 2 labels the add-on writes for this polity, spread across its\n  volume; together they sketch an extent that its placed worlds, being\n  points, cannot. Named for Scorpius, where it falls, the polity's own name being\ntaken by the polity." ;
+    oa:uncertain false .
+
+claim:location-world-negentropy-alliance-scorpius-2000-ly a prov:Entity, oa:LocationClaim ;
+    oa:about id:world-negentropy-alliance-scorpius-2000-ly ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -45.0 ;
+    oa:distance value:location-world-negentropy-alliance-scorpius-2000-ly-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:note "From OAEMPIRES.dsc, one of the Orion's Arm Celestia add-ons' location catalogues (OAAddons9, OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv). The label states a position and no extent: it carries the token radius of 2 that the add-on gives every empire label, so nothing here says how far the volume reaches." ;
+    oa:rightAscensionDeg 253.5 .
+
+value:location-world-negentropy-alliance-scorpius-2000-ly-distance a oa:QuantityValue ;
+    qudt:numericValue 2000.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-negentropy-alliance-scorpius-2000-ly-negentropy-alliance a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:world-negentropy-alliance-scorpius-2000-ly ;
+    oa:canonical true ;
+    oa:polity id:polity-negentropy-alliance ;
+    oa:recordOrder 0 .

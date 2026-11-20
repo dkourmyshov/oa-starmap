@@ -1,0 +1,80 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Norton
+
+id:world-norton a oa:Place, oa:World ;
+    skos:prefLabel "Norton" ;
+    oa:article <https://www.orionsarm.com/eg-article/49106ed3cb09b> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Near NGC 6885 in Vulpecula at 1,954 ly. That designation is one of astronomy's tangled ones: this map's catalogue attaches the name to a deep Gaia grouping at 5,040 ly, while carrying NGC 6882 as a separate cluster at 1,544 ly — and the two sit a fifth of a degree apart on the sky. So the direction is agreed by everything there and only the distance is in dispute, with the article's figure falling between the catalogue's two." ;
+    oa:systemName "Norton" ;
+    oa:uncertain false .
+
+claim:location-world-norton a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/49106ed3cb09b> ;
+    oa:about id:world-norton ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg 26.5407 ;
+    oa:distance value:location-world-norton-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:nearName "NGC 6885" ;
+    oa:rightAscensionDeg 302.9039 .
+
+value:location-world-norton-distance a oa:QuantityValue ;
+    qudt:numericValue 1954.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-norton-cygexpa a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/49106ed3cb09b> ;
+    oa:about id:world-norton ;
+    oa:canonical true ;
+    oa:polity id:polity-cygexpa ;
+    oa:recordOrder 0 .
+
+claim:event-world-norton-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/49106ed3cb09b> ;
+    oa:about id:world-norton ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 5502 .
+
+claim:event-world-norton-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/49106ed3cb09b> ;
+    oa:about id:world-norton ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"It was colonised in 5502 AT by a colonisation fleet from Criw-Ta, a Cygexpa client world .\" Colonists from Criw-Ta, 'a Cygexpa client world'; the article does not name Cygexpa as the holder." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 5502 .
+
+# Orwell
+
+id:world-orwell a oa:Place, oa:World ;
+    skos:prefLabel "Orwell" ;
+    oa:article <https://www.orionsarm.com/eg-article/49106ed3cb09b> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "The world of Norton." ;
+    oa:systemName "Norton" ;
+    oa:uncertain false .
+
+claim:affiliation-world-orwell-cygexpa a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/49106ed3cb09b> ;
+    oa:about id:world-orwell ;
+    oa:canonical true ;
+    oa:polity id:polity-cygexpa ;
+    oa:recordOrder 0 .

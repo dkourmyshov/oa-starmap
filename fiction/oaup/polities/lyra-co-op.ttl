@@ -1,0 +1,17 @@
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+
+# Lyra Co-op
+
+id:polity-lyra-co-op a oa:Polity ;
+    skos:prefLabel "Lyra Co-op" ;
+    oa:ambiguousName false ;
+    oa:color "#DCE775" ;
+    oa:editorialNote "\"Late Federation to Age of Expansion democratic polity which collapsed due\nto an outbreak of the Sophoncy Virus.\"" ;
+    oa:hasSource src:eg-historical-polities ;
+    oa:kind "meta-empire" ;
+    oa:polityId "lyra-co-op" ;
+    oa:recordOrder 67 ;
+    oa:uncertain false .

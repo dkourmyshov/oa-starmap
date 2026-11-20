@@ -1,0 +1,55 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Mfunu
+
+id:inner-sphere-row-0443 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Mfunu" .
+
+claim:inner-sphere-inner-sphere-row-0443-669c104b8b86 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0443 ;
+    oa:canonical true ;
+    oa:colonyName "Mfunu" ;
+    oa:luminositySol "." ;
+    oa:massSol "1.12" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 442 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0443-669c104b8b86-source-distance ;
+    oa:spectralType "F9 V" ;
+    oa:starName "Zeta Trianguli Australis A" .
+
+value:inner-sphere-inner-sphere-row-0443-669c104b8b86-source-distance a oa:QuantityValue ;
+    qudt:numericValue 39.358 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Mfunu
+
+id:inner-sphere-row-0444 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Mfunu" .
+
+claim:inner-sphere-inner-sphere-row-0444-3c6a98d9fa11 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0444 ;
+    oa:canonical true ;
+    oa:colonyName "Mfunu" ;
+    oa:luminositySol "." ;
+    oa:massSol "0.40" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 443 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0444-3c6a98d9fa11-source-distance ;
+    oa:spectralType "." ;
+    oa:starName "Zeta Trianguli Australis B" .
+
+value:inner-sphere-inner-sphere-row-0444-3c6a98d9fa11-source-distance a oa:QuantityValue ;
+    qudt:numericValue 39.358 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

@@ -1,0 +1,39 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Keter Dominion (Ophiuchus)
+
+id:world-keter-dominion-ophiuchus a oa:Place, oa:World ;
+    skos:prefLabel "Keter Dominion (Ophiuchus)" ;
+    oa:kind "polity_extent" ;
+    oa:labelsSystem false ;
+    oa:note "One of 2 labels the add-on writes for this polity, spread across its\n  volume; together they sketch an extent that its placed worlds, being\n  points, cannot. Named for Ophiuchus, where it falls, the polity's own name being\ntaken by the polity." ;
+    oa:uncertain false .
+
+claim:location-world-keter-dominion-ophiuchus a prov:Entity, oa:LocationClaim ;
+    oa:about id:world-keter-dominion-ophiuchus ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg 5.7 ;
+    oa:distance value:location-world-keter-dominion-ophiuchus-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:note "From OAEMPIRES.dsc, one of the Orion's Arm Celestia add-ons' location catalogues (OAAddons9, OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv). The label states a position and no extent: it carries the token radius of 2 that the add-on gives every empire label, so nothing here says how far the volume reaches." ;
+    oa:rightAscensionDeg 265.5 .
+
+value:location-world-keter-dominion-ophiuchus-distance a oa:QuantityValue ;
+    qudt:numericValue 1500.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-keter-dominion-ophiuchus-keter-dominion a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:world-keter-dominion-ophiuchus ;
+    oa:canonical true ;
+    oa:polity id:polity-keter-dominion ;
+    oa:recordOrder 0 .

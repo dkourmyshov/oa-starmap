@@ -1,0 +1,80 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Orinoco
+
+id:world-orinoco a oa:Place, oa:World ;
+    skos:prefLabel "Orinoco" ;
+    oa:article <https://www.orionsarm.com/eg-article/4910613da24b9> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Lambda Serpentis, 39 ly." ;
+    oa:systemName "Orinoco" ;
+    oa:uncertain false .
+
+claim:location-world-orinoco a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4910613da24b9> ;
+    oa:about id:world-orinoco ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Lambda Serpentis" .
+
+claim:affiliation-world-orinoco-cyberian-network a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4910613da24b9> ;
+    oa:about id:world-orinoco ;
+    oa:canonical true ;
+    oa:polity id:polity-cyberian-network ;
+    oa:recordOrder 0 .
+
+claim:event-world-orinoco-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4910613da24b9> ;
+    oa:about id:world-orinoco ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "Reached." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 2103 .
+
+claim:event-world-orinoco-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4910613da24b9> ;
+    oa:about id:world-orinoco ;
+    oa:canonical true ;
+    oa:eventKind oa:Independent ;
+    oa:note "\"In the Glorious Defenestration of 2223, OGA was overthrown and the planet became at least on paper democratic and independent.\" OGA (Orinoco Government Associates), the overthrown local government, is a TakiCorb subsidiary, not a roster polity; the planet is described as becoming independent of it, joining no listed polity at this point. The Glorious Defenestration, overthrowing the OGA and TakiCorb, no polities of this file." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 2223 .
+
+# Orinoco
+
+id:inner-sphere-row-0438 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Orinoco" .
+
+claim:inner-sphere-inner-sphere-row-0438-00630681c1ca a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0438 ;
+    oa:article <https://www.orionsarm.com/eg-article/4910613da24b9> ;
+    oa:canonical true ;
+    oa:colonyName "Orinoco" ;
+    oa:luminositySol "2.049" ;
+    oa:massSol "." ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 437 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0438-00630681c1ca-source-distance ;
+    oa:spectralType "G0V" ;
+    oa:starName "Lambda Serpentis" .
+
+value:inner-sphere-inner-sphere-row-0438-00630681c1ca-source-distance a oa:QuantityValue ;
+    qudt:numericValue 38.864 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

@@ -1,0 +1,18 @@
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+
+# Eridanus League
+
+id:polity-eridanus-league a oa:Polity ;
+    skos:prefLabel "Eridanus League" ;
+    oa:ambiguousName false ;
+    oa:color "#CFD8DC" ;
+    oa:editorialNote "\"Terragens' first interstellar polity, informally aligned with the First\nFederation.\" Timeline, 770: \"River of Stars Charter proclaimed at Epsilon\nEridani IID; leads to the foundation of the Eridanus League.\" The Sesharia\narticle has it fragmenting into the NoCoZo and the Solar Dominion, undated." ;
+    oa:foundedAT 770 ;
+    oa:hasSource src:eg-historical-polities ;
+    oa:kind "meta-empire" ;
+    oa:polityId "eridanus-league" ;
+    oa:recordOrder 51 ;
+    oa:uncertain false .

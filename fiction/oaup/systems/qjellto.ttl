@@ -1,0 +1,33 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Qjellto
+
+id:inner-sphere-row-0800 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Qjellto" .
+
+claim:inner-sphere-inner-sphere-row-0800-ac7587e21297 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0800 ;
+    oa:article <https://www.orionsarm.com/eg-article/46de1625d2357> ;
+    oa:canonical true ;
+    oa:colonyName "Qjellto" ;
+    oa:luminositySol "." ;
+    oa:massSol "." ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 799 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0800-ac7587e21297-source-distance ;
+    oa:spectralType "K5 V" ;
+    oa:starName "HD 332518" .
+
+value:inner-sphere-inner-sphere-row-0800-ac7587e21297-source-distance a oa:QuantityValue ;
+    qudt:numericValue 68.220 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

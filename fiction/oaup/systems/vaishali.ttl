@@ -1,0 +1,87 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Vaishali
+
+id:world-vaishali a oa:Place, oa:World ;
+    skos:prefLabel "Vaishali" ;
+    oa:article <https://www.orionsarm.com/eg-article/48fa76119f471> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Tau Boötis A, as the colony table has it." ;
+    oa:systemName "Vaishali" ;
+    oa:uncertain false .
+
+claim:location-world-vaishali a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48fa76119f471> ;
+    oa:about id:world-vaishali ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Tau Boötis A" .
+
+claim:event-world-vaishali-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48fa76119f471> ;
+    oa:about id:world-vaishali ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "\"Reached 1993\" The planet's other name, Millennium, is said to come from the arrival date of the first colonists, which the article does not give." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 1993 .
+
+# Vaishali
+
+id:inner-sphere-row-0625 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Vaishali" .
+
+claim:inner-sphere-inner-sphere-row-0625-f70a2d521f70 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0625 ;
+    oa:article <https://www.orionsarm.com/eg-article/48fa76119f471> ;
+    oa:canonical true ;
+    oa:colonyName "Vaishali" ;
+    oa:luminositySol "3.02" ;
+    oa:massSol "1.35" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 624 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0625-f70a2d521f70-source-distance ;
+    oa:spectralType "F7 V" ;
+    oa:starName "Tau Boötis A" .
+
+value:inner-sphere-inner-sphere-row-0625-f70a2d521f70-source-distance a oa:QuantityValue ;
+    qudt:numericValue 50.925 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Vaishali
+
+id:inner-sphere-row-0626 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Vaishali" .
+
+claim:inner-sphere-inner-sphere-row-0626-52c661531714 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0626 ;
+    oa:article <https://www.orionsarm.com/eg-article/48fa76119f471> ;
+    oa:canonical true ;
+    oa:colonyName "Vaishali" ;
+    oa:luminositySol "0.034" ;
+    oa:massSol "0.49" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 625 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0626-52c661531714-source-distance ;
+    oa:spectralType "M2 V" ;
+    oa:starName "Tau Boötis B" .
+
+value:inner-sphere-inner-sphere-row-0626-52c661531714-source-distance a oa:QuantityValue ;
+    qudt:numericValue 50.925 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

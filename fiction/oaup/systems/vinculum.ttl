@@ -1,0 +1,52 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Vinculum
+
+id:world-vinculum a oa:Place, oa:World ;
+    skos:prefLabel "Vinculum" ;
+    oa:article <https://www.orionsarm.com/eg-article/47a28ae42789b> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "A K2 star of 95 Sols, also TYC 444-2457-1 and HD 169007 — which is not in this map's catalogue, so the article's own coordinates place it." ;
+    oa:uncertain false .
+
+claim:location-world-vinculum a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47a28ae42789b> ;
+    oa:about id:world-vinculum ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg 6.5204 ;
+    oa:distance value:location-world-vinculum-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:nearName "HD 169007" ;
+    oa:rightAscensionDeg 275.595 .
+
+value:location-world-vinculum-distance a oa:QuantityValue ;
+    qudt:numericValue 1725.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-vinculum-sagittarius-transcultural-cooperation a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47a28ae42789b> ;
+    oa:about id:world-vinculum ;
+    oa:canonical true ;
+    oa:polity id:polity-sagittarius-transcultural-cooperation ;
+    oa:recordOrder 0 .
+
+claim:event-world-vinculum-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47a28ae42789b> ;
+    oa:about id:world-vinculum ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"Colonised 6419at\" The Clouds, a foghood civilisation, give the date and 'no hint of the origin or nature of their founders'." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 6419 .

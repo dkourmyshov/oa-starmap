@@ -12,8 +12,7 @@ from __future__ import annotations
 import pytest
 
 from oastarmap.fiction.color import distance
-from oastarmap.fiction.schema import FictionFile
-from oastarmap.paths import FICTION_DIR
+from oastarmap.fiction.store import load_store
 
 #: Below this two colours are the same colour to look at.
 #:
@@ -26,7 +25,7 @@ INDISTINGUISHABLE = 2.3
 
 @pytest.fixture(scope="module")
 def polities() -> list:
-    return FictionFile.load(FICTION_DIR / "polities.yaml").polities
+    return load_store().fiction.polities
 
 
 def test_no_two_polities_share_a_colour(polities: list) -> None:
@@ -128,7 +127,7 @@ def test_polities_that_share_space_are_told_apart() -> None:
     colours = {p["id"]: p["color"] for p in fiction["polities"]}
     held = {pid: np.array(v) for pid, v in points.items()}
 
-    source = FictionFile.load(FICTION_DIR / "polities.yaml")
+    source = load_store().fiction
     apart = {frozenset(pair) for pair in source.never_adjacent}
 
     def typical_separation(a, b) -> float:

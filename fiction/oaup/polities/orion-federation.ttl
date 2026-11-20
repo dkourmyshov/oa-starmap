@@ -1,0 +1,18 @@
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+
+# Orion Federation
+
+id:polity-orion-federation a oa:Polity ;
+    skos:prefLabel "Orion Federation" ;
+    oa:ambiguousName false ;
+    oa:color "#FFA726" ;
+    oa:editorialNote "Its own page, saved under sources/polities: colonies \"established in the 4400's\"; \"in the 4600's more and\nmore Enremdeans attempted the Eden AI symbiosis solution, with a\nsurprisingly benign AI calling itself Orion emerging\"; established\n\"politically and diplomatically\" on contact with the Wormhole Nexus in\n5200. The decade the Federation's AI emerged is taken, as its first year." ;
+    oa:foundedAT 4600 ;
+    oa:hasSource src:political-maps-8000at ;
+    oa:kind "meta-empire" ;
+    oa:polityId "orion-federation" ;
+    oa:recordOrder 14 ;
+    oa:uncertain false .

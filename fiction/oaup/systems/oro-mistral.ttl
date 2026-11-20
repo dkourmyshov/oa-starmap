@@ -1,0 +1,50 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Oro Mistral
+
+id:world-oro-mistral a oa:Place, oa:World ;
+    skos:prefLabel "Oro Mistral" ;
+    oa:article <https://www.orionsarm.com/eg-article/491063be8c97d> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "The system of the star Ahag. The constellation is not stated and is taken from the rest of the Utopia Sphere's core." ;
+    oa:uncertain false .
+
+claim:location-world-oro-mistral a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/491063be8c97d> ;
+    oa:about id:world-oro-mistral ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:constellationName "Ara" ;
+    oa:distance value:location-world-oro-mistral-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+value:location-world-oro-mistral-distance a oa:QuantityValue ;
+    qudt:numericValue 390.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-oro-mistral-utopia-sphere a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/491063be8c97d> ;
+    oa:about id:world-oro-mistral ;
+    oa:canonical true ;
+    oa:polity id:polity-utopia-sphere ;
+    oa:recordOrder 0 .
+
+claim:event-world-oro-mistral-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/491063be8c97d> ;
+    oa:about id:world-oro-mistral ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"Colonization ships first arrived at the system in 2540 a.t.\" No polity is named for the colonization ships; the system's Utopia Sphere affiliation is given only in the undated panel field (see holder_undated)." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 2540 .

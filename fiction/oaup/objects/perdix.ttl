@@ -1,0 +1,33 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# Perdix
+
+id:world-perdix a oa:Place, oa:World ;
+    skos:prefLabel "Perdix" ;
+    oa:article <https://www.orionsarm.com/eg-article/4ac0ad22a9c89> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "HIP 30050 in Dorado, 288 ly out against the article's 259." ;
+    oa:uncertain false .
+
+claim:location-world-perdix a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4ac0ad22a9c89> ;
+    oa:about id:world-perdix ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "HIP 30050" .
+
+claim:event-world-perdix-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4ac0ad22a9c89> ;
+    oa:about id:world-perdix ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 3010 .

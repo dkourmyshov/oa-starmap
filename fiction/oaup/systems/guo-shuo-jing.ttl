@@ -1,0 +1,33 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Guo-Shuo Jing
+
+id:inner-sphere-row-0195 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Guo-Shuo Jing" .
+
+claim:inner-sphere-inner-sphere-row-0195-9a77bc7f5844 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0195 ;
+    oa:article <https://www.orionsarm.com/eg-article/46f96ef0bcd62> ;
+    oa:canonical true ;
+    oa:colonyName "Guo-Shuo Jing" ;
+    oa:luminositySol "0.00019" ;
+    oa:massSol "." ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 194 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0195-9a77bc7f5844-source-distance ;
+    oa:spectralType "M4.5 V" ;
+    oa:starName "GJ 4053" .
+
+value:inner-sphere-inner-sphere-row-0195-9a77bc7f5844-source-distance a oa:QuantityValue ;
+    qudt:numericValue 24.925 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

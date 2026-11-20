@@ -1,0 +1,41 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Kaumbrey
+
+id:world-kaumbrey a oa:Place, oa:World ;
+    skos:prefLabel "Kaumbrey" ;
+    oa:article <https://www.orionsarm.com/eg-article/466f440bc601a> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "Capital of the Olumbi region. Given as near D 80090, a designation this map does not carry, so the position rests on the constellation." ;
+    oa:systemName "Euterbia" ;
+    oa:uncertain false .
+
+claim:location-world-kaumbrey a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/466f440bc601a> ;
+    oa:about id:world-kaumbrey ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:constellationName "Vela" ;
+    oa:distance value:location-world-kaumbrey-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+value:location-world-kaumbrey-distance a oa:QuantityValue ;
+    qudt:numericValue 1598.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-kaumbrey-nocozo a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/466f440bc601a> ;
+    oa:about id:world-kaumbrey ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 0 .

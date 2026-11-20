@@ -1,0 +1,116 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Unon-Duuz
+
+id:world-unon-duuz a oa:Place, oa:World ;
+    skos:prefLabel "Unon-Duuz" ;
+    oa:article <https://www.orionsarm.com/eg-article/57699df2f2118> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "A triple: GJ 1245 A, B and C, 15 ly out in Cygnus. Bound to the primary, the map going no finer than a system." ;
+    oa:uncertain false .
+
+claim:location-world-unon-duuz a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/57699df2f2118> ;
+    oa:about id:world-unon-duuz ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "GJ 1245 A" .
+
+claim:affiliation-world-unon-duuz-terragen-federation a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/57699df2f2118> ;
+    oa:about id:world-unon-duuz ;
+    oa:canonical true ;
+    oa:polity id:polity-terragen-federation ;
+    oa:recordOrder 0 .
+
+claim:event-world-unon-duuz-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/57699df2f2118> ;
+    oa:about id:world-unon-duuz ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 1203 .
+
+# Unon-Duuz
+
+id:inner-sphere-row-0062 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Unon-Duuz" .
+
+claim:inner-sphere-inner-sphere-row-0062-5255a568ed46 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0062 ;
+    oa:article <https://www.orionsarm.com/eg-article/57699df2f2118> ;
+    oa:canonical true ;
+    oa:colonyName "Unon-Duuz" ;
+    oa:luminositySol "0.000084" ;
+    oa:massSol "0.11" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 61 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0062-5255a568ed46-source-distance ;
+    oa:spectralType "M5.5 Ve" ;
+    oa:starName "GJ 1245 A" .
+
+value:inner-sphere-inner-sphere-row-0062-5255a568ed46-source-distance a oa:QuantityValue ;
+    qudt:numericValue 15.303 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Unon-Duuz
+
+id:inner-sphere-row-0063 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Unon-Duuz" .
+
+claim:inner-sphere-inner-sphere-row-0063-5deccf3dea68 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0063 ;
+    oa:article <https://www.orionsarm.com/eg-article/57699df2f2118> ;
+    oa:canonical true ;
+    oa:colonyName "Unon-Duuz" ;
+    oa:luminositySol "0.000048" ;
+    oa:massSol "0.1" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 62 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0063-5deccf3dea68-source-distance ;
+    oa:spectralType "M6 V" ;
+    oa:starName "GJ 1245 B" .
+
+value:inner-sphere-inner-sphere-row-0063-5deccf3dea68-source-distance a oa:QuantityValue ;
+    qudt:numericValue 15.303 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Unon-Duuz
+
+id:inner-sphere-row-0064 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Unon-Duuz" .
+
+claim:inner-sphere-inner-sphere-row-0064-b067e74ad7e0 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0064 ;
+    oa:article <https://www.orionsarm.com/eg-article/57699df2f2118> ;
+    oa:canonical true ;
+    oa:colonyName "Unon-Duuz" ;
+    oa:luminositySol "0.074" ;
+    oa:massSol "." ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 63 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0064-b067e74ad7e0-source-distance ;
+    oa:spectralType "M V" ;
+    oa:starName "GJ 1245 C" .
+
+value:inner-sphere-inner-sphere-row-0064-b067e74ad7e0-source-distance a oa:QuantityValue ;
+    qudt:numericValue 15.303 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

@@ -1,0 +1,92 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# Taln
+
+id:world-taln a oa:Place, oa:World ;
+    skos:prefLabel "Taln" ;
+    oa:article <https://www.orionsarm.com/eg-article/57f2790443640> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "The article gives 134 ly; the catalogue puts HD 27836 at 156 ly, a 17 per cent difference of the size that separates a pre-Gaia parallax from a modern one. Bound anyway, and the catalogue distance is the one drawn." ;
+    oa:uncertain false .
+
+claim:location-world-taln a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/57f2790443640> ;
+    oa:about id:world-taln ;
+    oa:canonical true ;
+    oa:catalogueFromSource true ;
+    oa:hdId 27836 ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+claim:affiliation-world-taln-caretaker-gods a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/57f2790443640> ;
+    oa:about id:world-taln ;
+    oa:canonical true ;
+    oa:polity id:polity-caretaker-gods ;
+    oa:recordOrder 0 .
+
+claim:event-world-taln-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/57f2790443640> ;
+    oa:about id:world-taln ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "Settled by the Sephirotics. Already connected to the ahuman Terragen-origin Taurus Nexus at the time, so somebody had been there before — no date for that." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 2143 .
+
+claim:event-world-taln-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/57f2790443640> ;
+    oa:about id:world-taln ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "\"The planet Taln was discovered in 2143A.T. by the Royal Exploration Craft Red Penny as it explored the Taurus Nexus.\" The header records 'settled 2143', but this sentence describes only the discovery and orbital examination of the planet by a scout ship; the article dates actual colonisation to 2187 (see below) -- flagged under contradictions and doubts. The article treats 2143 as the discovery; the map's older 'settled 2143' is kept beside it, and the colony missions begin in 2187." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 2143 .
+
+claim:event-world-taln-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/57f2790443640> ;
+    oa:about id:world-taln ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"The first colony missions began in 2187A.T. The Rhesus Imperium, Compliant Garmenia and the Wards of the Nightwatchman (WotN) quickly transported over ten thousand colonists to the surface along with neumans, autofabs and other industrial equipment.\" None of the three founding nations are on the roster; see unplaced. This appears to be the article's true first-colonisation date, versus the header's settled 2143. The Rhesus Imperium, Compliant Garmenia and the Wards of the Nightwatchman, none a polity of this file; the Taurus Nexus's holding is undated." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 2 ;
+    oa:yearAT 2187 .
+
+claim:event-world-taln-004 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/57f2790443640> ;
+    oa:about id:world-taln ;
+    oa:canonical true ;
+    oa:eventKind oa:Stewardship ;
+    oa:note "\"In 3301A.T. any chance was taken away from them. The several hundred approaching ships announced that the system was now under Caretaker God control and that access was prohibited indefinitely... An agreement was made among the powers of the region to recognise total control of Taln by the Caretakers, who promptly declared the system a protectorate.\" Matches the article's filing under Caretaker Gods." ;
+    oa:polity id:polity-caretaker-gods ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 3 ;
+    oa:yearAT 3301 .
+
+claim:event-world-taln-005 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/57f2790443640> ;
+    oa:about id:world-taln ;
+    oa:canonical true ;
+    oa:eventKind oa:Reported ;
+    oa:note "\"In 3457A.T. the craft arrived in orbit of a NoCoZo gas giant. It transmitted a message into the orbital band to the heart of the SoSoCo enclave stating: \"The Talnians were/are well, they are simply no longer of Taln\".\" Reports that the surviving Talnian population had already been removed from the planet, apparently around the time of the 3301 AT Caretaker takeover; the real date of removal is not stated -- see doubts. The message revealing that the population had been removed." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 4 ;
+    oa:yearAT 3457 .
+
+claim:event-world-taln-006 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/57f2790443640> ;
+    oa:about id:world-taln ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"Despite this the Legate received more than enough applications and in 7009A.T. the first 100,000 immigrants arrived.\" Resettlement of Taln City after the population was removed c. 3301-3457 AT. No single polity is named as sponsor; the Legate is described as 'an Avatar of all the systems ruling entities'. Resettlement under the Legate." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 5 ;
+    oa:yearAT 7009 .

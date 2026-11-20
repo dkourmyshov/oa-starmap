@@ -1,0 +1,80 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# Qjellto
+
+id:world-qjellto a oa:Place, oa:World ;
+    skos:prefLabel "Qjellto" ;
+    oa:article <https://www.orionsarm.com/eg-article/46de1625d2357> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "The panel's \"Former Cygexpa world.\" is undated and not entered as a holding; it fell somewhere before the Utopia Sphere enclave of 4896. Divided rather than shared: the Utopia Sphere holds the Hrek worldhouse and the Zoeific Biopolity everywhere else." ;
+    oa:uncertain false .
+
+claim:location-world-qjellto a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46de1625d2357> ;
+    oa:about id:world-qjellto ;
+    oa:canonical true ;
+    oa:catalogueFromSource true ;
+    oa:hdId 332518 ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+claim:affiliation-world-qjellto-utopia-sphere a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46de1625d2357> ;
+    oa:about id:world-qjellto ;
+    oa:canonical true ;
+    oa:polity id:polity-utopia-sphere ;
+    oa:recordOrder 0 .
+
+claim:affiliation-world-qjellto-zoeific-biopolity a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46de1625d2357> ;
+    oa:about id:world-qjellto ;
+    oa:canonical true ;
+    oa:polity id:polity-zoeific-biopolity ;
+    oa:recordOrder 1 .
+
+claim:event-world-qjellto-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46de1625d2357> ;
+    oa:about id:world-qjellto ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "Paraterraformed." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 2100 .
+
+claim:event-world-qjellto-002 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-qjellto ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "Qjellto settled by retroists and low-tech peripathetics." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:sourceDescription "Encyclopaedia timeline, The Age of Expansion" ;
+    oa:yearAT 2344 .
+
+claim:event-world-qjellto-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46de1625d2357> ;
+    oa:about id:world-qjellto ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"The aphasics congregated on the Hrek worldhouse, which in 4896 AT became a Utopia Sphere enclave run by the archailect Nameless One.\" The Hrek worldhouse became a Utopia Sphere enclave under the archailect Nameless One; the map's older 'settled 2344' has no sentence in the article." ;
+    oa:polity id:polity-utopia-sphere ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 2 ;
+    oa:yearAT 4896 .
+
+claim:event-world-qjellto-004 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46de1625d2357> ;
+    oa:about id:world-qjellto ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"The Qjellto society elsewhere developed into a fairly typical multiurban Inner Sphere society, eventually joining the Zoeific Biopolity in 9405 AT.\" The rest of Qjellto's society, 'eventually'." ;
+    oa:polity id:polity-zoeific-biopolity ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 3 ;
+    oa:yearAT 9405 .

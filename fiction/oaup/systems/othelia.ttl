@@ -1,0 +1,143 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Othelia
+
+id:world-othelia a oa:Place, oa:World ;
+    skos:prefLabel "Othelia" ;
+    oa:article <https://www.orionsarm.com/eg-article/48ecbe842ac6d> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "61 Virginis, 28 ly. Eostremonath is the planet, Othelia the system; Eostre governs the planet as a Caretaker God, with the Utopia Sphere, the Mutual Progress Association, the Solar Dominion, the NoCoZo and the Negentropy Alliance named as the largest presences in the system, undated." ;
+    oa:systemName "Othelia" ;
+    oa:uncertain false .
+
+claim:location-world-othelia a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48ecbe842ac6d> ;
+    oa:about id:world-othelia ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "61 Virginis" .
+
+claim:affiliation-world-othelia-caretaker-gods a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48ecbe842ac6d> ;
+    oa:about id:world-othelia ;
+    oa:canonical true ;
+    oa:polity id:polity-caretaker-gods ;
+    oa:recordOrder 0 .
+
+claim:event-world-othelia-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48ecbe842ac6d> ;
+    oa:about id:world-othelia ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "\"569 - The 61 Virginis probes, since named the Virginis Effort, arrives within the target system.\"" ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 569 .
+
+claim:event-world-othelia-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48ecbe842ac6d> ;
+    oa:about id:world-othelia ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "\"Humans first arrived within the 61 Virginis system in the year 890 a.t.\" — and stayed in hibernation until 928." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 890 .
+
+claim:event-world-othelia-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48ecbe842ac6d> ;
+    oa:about id:world-othelia ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"In 928 a.t. the first wave of colonists were awakened and settled, and aided in their lives by Eostre.\" Led by Eostre and the Children of Dawn, neither a polity of this file." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 2 ;
+    oa:yearAT 928 .
+
+claim:event-world-othelia-004 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48ecbe842ac6d> ;
+    oa:about id:world-othelia ;
+    oa:canonical true ;
+    oa:eventKind oa:Abandoned ;
+    oa:note "\"The disease spread throughout the entire population, and by 1263 a.t. the last human died.\"" ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 3 ;
+    oa:yearAT 1263 .
+
+claim:event-world-othelia-005 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48ecbe842ac6d> ;
+    oa:about id:world-othelia ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"In 1324 a.t., during the Middle Federation Era, the megacorporation Heliopause Transcendency colonization vessel Cyrus Blake arrived within the system.\"" ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 4 ;
+    oa:yearAT 1324 .
+
+claim:event-world-othelia-006 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48ecbe842ac6d> ;
+    oa:about id:world-othelia ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"In 2215 a.t. the Non Coercive Zone was established, which incorporated, among many corporations, Jupiter Transystems\" — whose claim on the system the Zone thereby took over. The article's 2215 for the Zone's establishment is a third year beside the Zone's own page (1598) and the timeline (1498)." ;
+    oa:polity id:polity-nocozo ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 5 ;
+    oa:yearAT 2215 .
+
+claim:event-world-othelia-007 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48ecbe842ac6d> ;
+    oa:about id:world-othelia ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "\"It took until 2240 a.t. for the first NoCoZo ship to arrive in the Othelia System.\" The same article has \"the First Federation made contact with her\" a few years after 2240, which the Federation's own end in 2099 makes hard to read; both are kept as written." ;
+    oa:polity id:polity-nocozo ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 6 ;
+    oa:yearAT 2240 .
+
+claim:event-world-othelia-008 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48ecbe842ac6d> ;
+    oa:about id:world-othelia ;
+    oa:canonical true ;
+    oa:eventKind oa:Stewardship ;
+    oa:note "\"In 3039 at Eostre entered into the Compact of Eden. Recognized as a Caretaker God, she was granted the support of other such AI's.\"" ;
+    oa:polity id:polity-caretaker-gods ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 7 ;
+    oa:yearAT 3039 .
+
+# Othelia
+
+id:inner-sphere-row-0253 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Othelia" .
+
+claim:inner-sphere-inner-sphere-row-0253-71bf0759a1b8 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0253 ;
+    oa:article <https://www.orionsarm.com/eg-article/48ecbe842ac6d> ;
+    oa:canonical true ;
+    oa:colonyName "Othelia" ;
+    oa:luminositySol "0.805" ;
+    oa:massSol "0.96" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 252 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0253-71bf0759a1b8-source-distance ;
+    oa:spectralType "G6 V" ;
+    oa:starName "61 Virginis" .
+
+value:inner-sphere-inner-sphere-row-0253-71bf0759a1b8-source-distance a oa:QuantityValue ;
+    qudt:numericValue 27.836 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

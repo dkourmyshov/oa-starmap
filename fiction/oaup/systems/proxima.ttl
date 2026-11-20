@@ -1,0 +1,33 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Proxima
+
+id:inner-sphere-row-0002 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Proxima" .
+
+claim:inner-sphere-inner-sphere-row-0002-439ba4934f43 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0002 ;
+    oa:article <https://www.orionsarm.com/eg-article/4ce52fdf5e9de> ;
+    oa:canonical true ;
+    oa:colonyName "Proxima" ;
+    oa:luminositySol "0.001834" ;
+    oa:massSol "0.1221" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 1 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0002-439ba4934f43-source-distance ;
+    oa:spectralType "M5.5 Ve" ;
+    oa:starName "Alpha Centauri C" .
+
+value:inner-sphere-inner-sphere-row-0002-439ba4934f43-source-distance a oa:QuantityValue ;
+    qudt:numericValue 4.246 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

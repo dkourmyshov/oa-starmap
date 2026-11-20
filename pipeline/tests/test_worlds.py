@@ -16,7 +16,8 @@ import pytest
 from astropy.coordinates import ICRS, CartesianRepresentation, Galactic, get_constellation
 
 from oastarmap.build.worlds import approximate_extent_ly
-from oastarmap.fiction.schema import ConstellationFile, WorldFile, parse_distance
+from oastarmap.fiction.schema import ConstellationFile, World, parse_distance
+from oastarmap.fiction.store import load_store
 from oastarmap.paths import FICTION_DIR
 from oastarmap.transform.frame import PC_TO_LY, STORAGE_UNIT, icrs_to_galactic_xyz
 
@@ -114,7 +115,7 @@ def test_every_world_lands_in_the_constellation_it_names() -> None:
     swapped RA and Dec, or a light-year read as a parsec all show up as the
     wrong name coming back.
     """
-    worlds = WorldFile.load(FICTION_DIR / "worlds.yaml").worlds
+    worlds = load_store().worlds
     table = ConstellationFile.load(FICTION_DIR / "constellations.yaml").by_name()
 
     checked = 0
@@ -147,6 +148,23 @@ def test_every_world_lands_in_the_constellation_it_names() -> None:
     assert checked >= 5, "expected several constellation-located worlds to check"
 
 
+def graph_with_world(tmp_path: Path, world: World) -> Path:
+    """Copy the real graph and add one invalid or misbound world."""
+    import shutil
+
+    from oastarmap.fiction.store import OAUPStore
+
+    path = tmp_path / "oaup"
+    shutil.copytree(FICTION_DIR / "oaup", path)
+    store = OAUPStore.load(path)
+    store.add_world(world)
+    store.save()
+    (tmp_path / "constellations.yaml").write_text(
+        (FICTION_DIR / "constellations.yaml").read_text(encoding="utf-8"), encoding="utf-8"
+    )
+    return path
+
+
 def test_distance_literals_must_carry_a_unit() -> None:
     assert parse_distance("805 ly").to_value(u.lyr) == pytest.approx(805.0)
     assert parse_distance("250 pc").to_value(u.pc) == pytest.approx(250.0)
@@ -171,7 +189,7 @@ def test_direction_error_grows_with_distance() -> None:
 
 
 def test_exact_positions_claim_no_error() -> None:
-    worlds = WorldFile.load(FICTION_DIR / "worlds.yaml").worlds
+    worlds = load_store().worlds
     by_name = {w.name: w for w in worlds}
     # Macrystis is the one world given real coordinates rather than a region.
     assert by_name["Macrystis"].location.method == "direction"
@@ -249,7 +267,7 @@ def test_only_estimates_carry_an_authored_error() -> None:
     authored figure is allowed in exactly one case, and if a stated position
     ever acquires one, something has started hedging a source's own number.
     """
-    worlds = WorldFile.load(FICTION_DIR / "worlds.yaml").worlds
+    worlds = load_store().worlds
 
     for world in worlds:
         if world.location.direction_error_deg is not None:
@@ -334,7 +352,7 @@ def test_affiliation_is_the_present_holder() -> None:
     that rule an entry would silently record whichever owner was transcribed
     first.
     """
-    worlds = {w.name: w for w in WorldFile.load(FICTION_DIR / "worlds.yaml").worlds}
+    worlds = {w.name: w for w in load_store().worlds}
     kalii = worlds["Kalii"]
     assert kalii.affiliations == ["nocozo"]
     assert [(e.year_at, e.kind) for e in kalii.events] == [
@@ -360,16 +378,14 @@ def test_a_world_can_be_held_by_several_polities() -> None:
     has shared systems, and picking whichever partner was transcribed first
     would look exactly like a fact.
     """
-    worlds = {w.name: w for w in WorldFile.load(FICTION_DIR / "worlds.yaml").worlds}
+    worlds = {w.name: w for w in load_store().worlds}
     assert worlds["Anomie"].affiliations == ["communion-of-worlds", "sophic-league"]
 
 
 def test_every_affiliation_names_a_known_polity() -> None:
     """A typo here would silently drop a world's colour rather than failing."""
-    from oastarmap.fiction.schema import FictionFile
-
-    known = {p.id for p in FictionFile.load(FICTION_DIR / "polities.yaml").polities}
-    for world in WorldFile.load(FICTION_DIR / "worlds.yaml").worlds:
+    known = {p.id for p in load_store().fiction.polities}
+    for world in load_store().worlds:
         for affiliation in world.affiliations:
             assert affiliation in known, f"{world.name} cites unknown polity {affiliation!r}"
 
@@ -474,25 +490,17 @@ def test_a_world_can_share_another_world_s_position() -> None:
         assert potato[key] == bonfire[key], f"{key} did not follow the host"
 
 
-def test_a_shared_position_must_name_a_world_that_has_one() -> None:
+def test_a_shared_position_must_name_a_world_that_has_one(tmp_path) -> None:
     from oastarmap.build.worlds import build_worlds
+    from oastarmap.fiction.schema import World, WorldLocation
 
-    source = FICTION_DIR / "worlds.yaml"
-    text = source.read_text(encoding="utf-8")
-    broken = text + (
-        "\n  - name: Nowhere Habitat\n"
-        "    kind: habitat\n"
-        "    affiliations: []\n"
-        "    location:\n"
-        "      world: A System That Does Not Exist\n"
-    )
-    scratch = source.with_name("worlds.broken.yaml")
-    scratch.write_text(broken, encoding="utf-8")
-    try:
-        with pytest.raises(ValueError, match="which is not in this file"):
-            build_worlds(scratch)
-    finally:
-        scratch.unlink()
+    scratch = graph_with_world(tmp_path, World(
+        name="Nowhere Habitat",
+        kind="habitat",
+        location=WorldLocation(world="A System That Does Not Exist"),
+    ))
+    with pytest.raises(ValueError, match="not in the knowledge graph"):
+        build_worlds(scratch)
 
 
 def test_an_ending_is_not_a_presence_date() -> None:
@@ -528,31 +536,13 @@ def test_a_stated_distance_catches_a_wrong_star(tmp_path) -> None:
     Serpentis at 75. Only the distance says so.
     """
     from oastarmap.build.worlds import build_worlds
+    from oastarmap.fiction.schema import World, WorldLocation
 
-    source = FICTION_DIR / "worlds.yaml"
-    broken = source.read_text(encoding="utf-8") + (
-        "\n  - name: Wrong Star Test\n"
-        "    kind: planet\n"
-        "    affiliations: []\n"
-        "    location:\n"
-        "      hd: 175869\n"
-        "      distance: 75.7 ly\n"
-    )
-    # Built outside the repository. This used to write into fiction/ beside the
-    # real file, because build_worlds resolves its siblings with `with_name`
-    # and needs them there — but an interrupted run then left half a megabyte
-    # of stray YAML in the working tree, where a concurrent `git status` caught
-    # it and raised a false alarm about a file nobody had created. Copying the
-    # four siblings it reads costs little and keeps the repository clean.
-    scratch = tmp_path / "worlds.yaml"
-    scratch.write_text(broken, encoding="utf-8")
-    for sibling in ("polities.yaml", "oa_stars.yaml", "oa_systems.yaml",
-                    "constellations.yaml"):
-        source_sibling = FICTION_DIR / sibling
-        if source_sibling.exists():
-            (tmp_path / sibling).write_text(
-                source_sibling.read_text(encoding="utf-8"), encoding="utf-8"
-            )
+    scratch = graph_with_world(tmp_path, World(
+        name="Wrong Star Test",
+        kind="planet",
+        location=WorldLocation(hd=175869, distance="75.7 ly"),
+    ))
     with pytest.raises(ValueError, match="it is a different star"):
         build_worlds(scratch)
 
@@ -585,12 +575,12 @@ def test_a_known_distance_conflict_is_named_rather_than_silenced() -> None:
 
     Acknowledging the one case keeps the check live for the other eighty-two.
     """
-    worlds = {w.name: w for w in WorldFile.load(FICTION_DIR / "worlds.yaml").worlds}
+    worlds = {w.name: w for w in load_store().worlds}
     assert worlds["Third Def8"].location.distance_conflict is True
 
     conflicting = [
         w.name
-        for w in WorldFile.load(FICTION_DIR / "worlds.yaml").worlds
+        for w in load_store().worlds
         if w.location.distance_conflict
     ]
     assert conflicting == ["Third Def8"], (
@@ -626,7 +616,7 @@ def test_every_star_binding_is_supported() -> None:
     """No entry may rest on a number alone, now or later."""
     unsupported = [
         world.name
-        for world in WorldFile.load(FICTION_DIR / "worlds.yaml").worlds
+        for world in load_store().worlds
         if (world.location.hip is not None or world.location.hd is not None)
         and not (
             world.location.star
@@ -640,28 +630,13 @@ def test_every_star_binding_is_supported() -> None:
 def test_a_name_and_a_number_must_agree(tmp_path) -> None:
     """Giving both is allowed and is the strongest form — if they match."""
     from oastarmap.build.worlds import build_worlds
+    from oastarmap.fiction.schema import World, WorldLocation
 
-    source = FICTION_DIR / "worlds.yaml"
-    broken = source.read_text(encoding="utf-8") + (
-        "\n  - name: Disagreeing Pair Test\n"
-        "    kind: planet\n"
-        "    affiliations: []\n"
-        "    location:\n"
-        "      star: Zeta Serpentis\n"
-        "      distance: 1019 ly\n"
-    )
-    # Built outside the repository, for the reason given above: the try/finally
-    # this replaced cleaned up after itself, but only if the process lived long
-    # enough to run it, and a `git status` during the run still saw the file.
-    scratch = tmp_path / "worlds.yaml"
-    scratch.write_text(broken, encoding="utf-8")
-    for sibling in ("polities.yaml", "oa_stars.yaml", "oa_systems.yaml",
-                    "constellations.yaml"):
-        source_sibling = FICTION_DIR / sibling
-        if source_sibling.exists():
-            (tmp_path / sibling).write_text(
-                source_sibling.read_text(encoding="utf-8"), encoding="utf-8"
-            )
+    scratch = graph_with_world(tmp_path, World(
+        name="Disagreeing Pair Test",
+        kind="planet",
+        location=WorldLocation(star="Zeta Serpentis", distance="1019 ly"),
+    ))
     with pytest.raises(ValueError, match="it is a different star"):
         build_worlds(scratch)
 
@@ -688,7 +663,7 @@ def test_a_missing_constellation_table_is_an_error_not_a_silent_gap() -> None:
             shutil.copy(DATA_OUT_DIR / name, empty / name)
         # No manifest.json, and no values passed.
         with pytest.raises(ValueError, match="no constellation table"):
-            build_worlds(FICTION_DIR / "worlds.yaml", out_dir=empty)
+            build_worlds(FICTION_DIR / "oaup/", out_dir=empty)
 
 
 def test_observing_is_not_visiting() -> None:

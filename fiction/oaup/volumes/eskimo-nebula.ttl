@@ -1,0 +1,38 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Eskimo Nebula
+
+id:world-eskimo-nebula a oa:Place, oa:World ;
+    skos:prefLabel "Eskimo Nebula" ;
+    oa:kind "volume" ;
+    oa:labelsSystem false ;
+    oa:note "NGC 2392, in Gemini. The Encyclopaedia puts it at 3,833 ly and published measurement at 6,520 +/- 560 — a 41% disagreement, and the setting's own figure is the one drawn. That is the opposite of this file's usual rule, and deliberately: for a real star the catalogue is a measurement and the article is a quotation of one, but a planetary nebula's distance is uncertain enough that the Encyclopaedia's choice among the published values is as good as any, and it is the value the rest of its geography is built against." ;
+    oa:uncertain false .
+
+claim:location-world-eskimo-nebula a prov:Entity, oa:LocationClaim ;
+    oa:about id:world-eskimo-nebula ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg 20.9102 ;
+    oa:distance value:location-world-eskimo-nebula-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:rightAscensionDeg 112.2945 .
+
+value:location-world-eskimo-nebula-distance a oa:QuantityValue ;
+    qudt:numericValue 3833.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-eskimo-nebula-metasoft a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:world-eskimo-nebula ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft ;
+    oa:recordOrder 0 .

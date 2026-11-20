@@ -2,6 +2,8 @@
 import io, os, sys, glob
 import yaml
 
+from oastarmap.fiction.store import load_store
+
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 DERIVED = os.path.join(ROOT, "sources", "derived")
 KINDS = {"observed", "visited", "settled", "contact", "capital", "stewardship",
@@ -13,7 +15,7 @@ for line in io.open(os.path.join(DERIVED, "polities-roster.txt"), encoding="utf-
     pid, name, *_ = [x.strip() for x in line.split("|")]
     roster[pid] = name
 
-worlds = yaml.safe_load(io.open(os.path.join(ROOT, "fiction", "worlds.yaml"), encoding="utf-8"))["worlds"]
+worlds = [world.model_dump() for world in load_store().worlds]
 by_article = {}
 for w in worlds:
     if w.get("article"):
@@ -35,7 +37,7 @@ for path in files:
             print(f"    map: {w['name']} affiliations={w.get('affiliations')} events="
                   + "; ".join(f"{e['kind']} {e['year_at']}" + (f" ({e['polity']})" if e.get('polity') else "") for e in w.get("events", [])))
     else:
-        print("    map: no worlds.yaml entry (colony row or unbound)")
+        print("    map: no world entity (colony row or unbound)")
     for i, e in enumerate(data.get("events") or []):
         kind = e.get("kind"); prec = e.get("precision", "exact"); pol = e.get("polity") or ""
         if kind not in KINDS: problems.append(f"event {i}: bad kind {kind!r}")

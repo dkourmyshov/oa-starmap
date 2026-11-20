@@ -1,0 +1,32 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Photonsurge / Photonchip Kingdom (ahuman)
+
+id:inner-sphere-row-0108 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Photonsurge / Photonchip Kingdom (ahuman)" .
+
+claim:inner-sphere-inner-sphere-row-0108-7deecf3d598e a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0108 ;
+    oa:canonical true ;
+    oa:colonyName "Photonsurge / Photonchip Kingdom (ahuman)" ;
+    oa:luminositySol "0.00069" ;
+    oa:massSol "0.35" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 107 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0108-7deecf3d598e-source-distance ;
+    oa:spectralType "M4 V" ;
+    oa:starName "Gliese 213" .
+
+value:inner-sphere-inner-sphere-row-0108-7deecf3d598e-source-distance a oa:QuantityValue ;
+    qudt:numericValue 18.888 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

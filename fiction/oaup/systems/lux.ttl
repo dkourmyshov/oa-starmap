@@ -1,0 +1,63 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Lux
+
+id:world-lux a oa:Place, oa:World ;
+    skos:prefLabel "Lux" ;
+    oa:article <https://www.orionsarm.com/eg-article/468d9486eaa11> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Kappa1 Ceti, as the colony table has it." ;
+    oa:systemName "Lux" ;
+    oa:uncertain false .
+
+claim:location-world-lux a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/468d9486eaa11> ;
+    oa:about id:world-lux ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Kappa1 Ceti" .
+
+claim:event-world-lux-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/468d9486eaa11> ;
+    oa:about id:world-lux ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"Reached 1503, by Parthene colonists\" Body text corroborates: 'the sites of early Terragen habitation in this system, primarily in form of habitats established by Parthene colonists that arrived in 1503'. The Parthene colonists are not a polity on the roster. Parthene colonists, no polity of this file; mainly aligned since with the MPA, the Solar Dominion and the Fomalhaut Acquisition Society, undated." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 1503 .
+
+# Lux
+
+id:inner-sphere-row-0311 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Lux" .
+
+claim:inner-sphere-inner-sphere-row-0311-09e7e323b5ec a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0311 ;
+    oa:article <https://www.orionsarm.com/eg-article/468d9486eaa11> ;
+    oa:canonical true ;
+    oa:colonyName "Lux" ;
+    oa:luminositySol "0.851" ;
+    oa:massSol "1" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 310 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0311-09e7e323b5ec-source-distance ;
+    oa:spectralType "G5 Ve" ;
+    oa:starName "Kappa1 Ceti" .
+
+value:inner-sphere-inner-sphere-row-0311-09e7e323b5ec-source-distance a oa:QuantityValue ;
+    qudt:numericValue 30.255 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

@@ -1,0 +1,106 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Alcor
+
+id:world-alcor a oa:Place, oa:World ;
+    skos:prefLabel "Alcor" ;
+    oa:article <https://www.orionsarm.com/eg-article/4c1cb2ca8f150> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "An ahuman colony, already settled when Mizar was reached in 2097, and affiliated with the Solipsist Panvirtuality. Recorded separately from Mizar because the two are different holders at the same place: 81.1 ly against 81.7, which is nothing at this scale." ;
+    oa:systemName "Alcor" ;
+    oa:uncertain false .
+
+claim:location-world-alcor a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4c1cb2ca8f150> ;
+    oa:about id:world-alcor ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Alcor" .
+
+claim:affiliation-world-alcor-solipsist-panvirtuality a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4c1cb2ca8f150> ;
+    oa:about id:world-alcor ;
+    oa:canonical true ;
+    oa:polity id:polity-solipsist-panvirtuality ;
+    oa:recordOrder 0 .
+
+claim:event-world-alcor-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4c1cb2ca8f150> ;
+    oa:about id:world-alcor ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "\"In 3645 a Panvirt linelayer arrived in the Alcor System, and after some (apparently ritualized) combat proceeded to open a wormhole from there to the Solipsist wormhole nexus.\"" ;
+    oa:polity id:polity-solipsist-panvirtuality ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 3645 .
+
+claim:event-world-alcor-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4c1cb2ca8f150> ;
+    oa:about id:world-alcor ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"Although no official conformation has come out of Alcor concerning this event, it must be assumed that this system is now a part of, or at least affiliated with, the Solipsist Panvirtuality.\" The article's own hedge: no official confirmation has come out of Alcor." ;
+    oa:polity id:polity-solipsist-panvirtuality ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 3645 .
+
+# Alcor
+
+id:inner-sphere-row-0914 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Alcor" .
+
+claim:inner-sphere-inner-sphere-row-0914-8364022e2829 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0914 ;
+    oa:article <https://www.orionsarm.com/eg-article/4c1cb2ca8f150> ;
+    oa:canonical true ;
+    oa:colonyName "Alcor" ;
+    oa:luminositySol "13.4" ;
+    oa:massSol "1.6" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 913 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0914-8364022e2829-source-distance ;
+    oa:spectralType "A5 V" ;
+    oa:starName "80 Ursae Majoris A" .
+
+value:inner-sphere-inner-sphere-row-0914-8364022e2829-source-distance a oa:QuantityValue ;
+    qudt:numericValue 80.602 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Alcor
+
+id:inner-sphere-row-0915 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Alcor" .
+
+claim:inner-sphere-inner-sphere-row-0915-405bb849bdbd a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0915 ;
+    oa:article <https://www.orionsarm.com/eg-article/4c1cb2ca8f150> ;
+    oa:canonical true ;
+    oa:colonyName "Alcor" ;
+    oa:luminositySol "." ;
+    oa:massSol "." ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 914 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0915-405bb849bdbd-source-distance ;
+    oa:spectralType "M3-4" ;
+    oa:starName "80 Ursae Majoris B" .
+
+value:inner-sphere-inner-sphere-row-0915-405bb849bdbd-source-distance a oa:QuantityValue ;
+    qudt:numericValue 80.602 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

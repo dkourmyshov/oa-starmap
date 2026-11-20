@@ -1,0 +1,50 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Third Def8
+
+id:world-third-def8 a oa:Place, oa:World ;
+    skos:prefLabel "Third Def8" ;
+    oa:article <https://www.orionsarm.com/eg-article/47a28b116776e> ;
+    oa:kind "moon" ;
+    oa:labelsSystem false ;
+    oa:note "A moon of the gas giant Def8. Bound on the HD number, which is unambiguous, but the distance does not fit: HD 6235 is at 346 ly and the figure recorded with this world is 35 ly, a factor of ten apart. Every other Communion world in Sculptor sits between 300 and 400 ly. The discrepancy is unresolved." ;
+    oa:parentName "Def8" ;
+    oa:uncertain false .
+
+claim:location-world-third-def8 a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47a28b116776e> ;
+    oa:about id:world-third-def8 ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:distance value:location-world-third-def8-distance ;
+    oa:hdId 6235 ;
+    oa:knownDistanceConflict true ;
+    oa:method oa:DirectTranscription .
+
+value:location-world-third-def8-distance a oa:QuantityValue ;
+    qudt:numericValue 35.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-third-def8-communion-of-worlds a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47a28b116776e> ;
+    oa:about id:world-third-def8 ;
+    oa:canonical true ;
+    oa:polity id:polity-communion-of-worlds ;
+    oa:recordOrder 0 .
+
+claim:event-world-third-def8-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47a28b116776e> ;
+    oa:about id:world-third-def8 ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 2431 .

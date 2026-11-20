@@ -1,0 +1,55 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Relay 1
+
+id:inner-sphere-row-0802 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Relay 1" .
+
+claim:inner-sphere-inner-sphere-row-0802-307919499c76 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0802 ;
+    oa:canonical true ;
+    oa:colonyName "Relay 1" ;
+    oa:luminositySol "3.779" ;
+    oa:massSol "." ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 801 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0802-307919499c76-source-distance ;
+    oa:spectralType "F5 IV-V" ;
+    oa:starName "17 Cygni A" .
+
+value:inner-sphere-inner-sphere-row-0802-307919499c76-source-distance a oa:QuantityValue ;
+    qudt:numericValue 68.446 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Relay 1
+
+id:inner-sphere-row-0803 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Relay 1" .
+
+claim:inner-sphere-inner-sphere-row-0803-573de88765b1 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0803 ;
+    oa:canonical true ;
+    oa:colonyName "Relay 1" ;
+    oa:luminositySol "0.14" ;
+    oa:massSol "." ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 802 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0803-573de88765b1-source-distance ;
+    oa:spectralType "K6 V" ;
+    oa:starName "17 Cygni B" .
+
+value:inner-sphere-inner-sphere-row-0803-573de88765b1-source-distance a oa:QuantityValue ;
+    qudt:numericValue 68.446 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

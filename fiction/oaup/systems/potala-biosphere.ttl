@@ -1,0 +1,46 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Potala Biosphere
+
+id:world-potala-biosphere a oa:Place, oa:World ;
+    skos:prefLabel "Potala Biosphere" ;
+    oa:editorialNote "---- the rest of the sheet -----------------------------------------------\n\nFifteen more places whose only source is the transcription of Anders\nSandberg's maps. Same terms as the eight above: the position is interpolated\nbetween the anchors nearest each cell, the ring is dotted because neither\nthe radius nor the direction is known, and the error is what checking the\nmethod against places we already hold actually gave.\n\nThose drawn beyond the anchors surrounding them carry 1,200 ly rather than\n800 — an extrapolation is a weaker claim than an interpolation and should\nnot be recorded as the same one. Several have no polity because the sheet\ngives them none: its grey is for the minor, neutral and unaligned, and an\nempty field is what that means." ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:uncertain false .
+
+claim:location-world-potala-biosphere a prov:Entity, oa:LocationClaim ;
+    oa:about id:world-potala-biosphere ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -16.3212 ;
+    oa:derivation "Interpolated from the sheet. No article, so this and its affiliation are the whole of what is known." ;
+    oa:directionErrorDeg 20.0 ;
+    oa:distance value:location-world-potala-biosphere-distance ;
+    oa:distanceError value:location-world-potala-biosphere-distance-error ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:EditorialEstimate ;
+    oa:rightAscensionDeg 122.4488 .
+
+value:location-world-potala-biosphere-distance a oa:QuantityValue ;
+    qudt:numericValue 657.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+value:location-world-potala-biosphere-distance-error a oa:QuantityValue ;
+    qudt:numericValue 800.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-potala-biosphere-sophic-league a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:world-potala-biosphere ;
+    oa:canonical true ;
+    oa:polity id:polity-sophic-league ;
+    oa:recordOrder 0 .

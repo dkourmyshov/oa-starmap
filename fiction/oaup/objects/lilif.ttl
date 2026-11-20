@@ -1,0 +1,24 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# Lilif
+
+id:world-lilif a oa:Place, oa:World ;
+    skos:prefLabel "Lilif" ;
+    oa:article <https://www.orionsarm.com/eg-article/4887ee7944aff> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "Gliese-Jahreiss 3655 A and B, 46.8 ly out against the article's 46.5 — a binary faint enough that the Gliese-Jahreiss number is the only name any catalogue here carries for it." ;
+    oa:uncertain false .
+
+claim:location-world-lilif a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4887ee7944aff> ;
+    oa:about id:world-lilif ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "GJ 3655" .

@@ -1,0 +1,69 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Arcturus
+
+id:world-arcturus a oa:Place, oa:World ;
+    skos:prefLabel "Arcturus" ;
+    oa:article <https://www.orionsarm.com/eg-article/45f973105f71c> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Alpha Boötis, 37 ly. Also in the Inner Sphere colony table." ;
+    oa:systemName "Arcturus" ;
+    oa:uncertain false .
+
+claim:location-world-arcturus a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/45f973105f71c> ;
+    oa:about id:world-arcturus ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Arcturus" .
+
+claim:affiliation-world-arcturus-cyberian-network a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/45f973105f71c> ;
+    oa:about id:world-arcturus ;
+    oa:canonical true ;
+    oa:polity id:polity-cyberian-network ;
+    oa:recordOrder 0 .
+
+claim:event-world-arcturus-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/45f973105f71c> ;
+    oa:about id:world-arcturus ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 1427 .
+
+# Arcturus
+
+id:inner-sphere-row-0414 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Arcturus" .
+
+claim:inner-sphere-inner-sphere-row-0414-06dde565748e a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0414 ;
+    oa:article <https://www.orionsarm.com/eg-article/45f973105f71c> ;
+    oa:canonical true ;
+    oa:colonyName "Arcturus" ;
+    oa:luminositySol "115.6" ;
+    oa:massSol "3.4" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 413 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0414-06dde565748e-source-distance ;
+    oa:spectralType "K1.5 III" ;
+    oa:starName "Alpha Boötis" .
+
+value:inner-sphere-inner-sphere-row-0414-06dde565748e-source-distance a oa:QuantityValue ;
+    qudt:numericValue 36.717 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

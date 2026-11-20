@@ -1,0 +1,34 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# Adhara Trade Treaty
+
+id:world-adhara-trade-treaty a oa:Place, oa:World ;
+    skos:prefLabel "Adhara Trade Treaty" ;
+    oa:article <https://www.orionsarm.com/eg-topic/45e38eecd1efc> ;
+    oa:kind "polity_marker" ;
+    oa:labelsSystem false ;
+    oa:note "Centred on Epsilon Canis Majoris, 405 ly out, which the catalogue and the article agree on to within a light year. No extent is given, so this marks the centre and claims no volume." ;
+    oa:uncertain false .
+
+claim:location-world-adhara-trade-treaty a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-topic/45e38eecd1efc> ;
+    oa:about id:world-adhara-trade-treaty ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Adhara" .
+
+claim:event-world-adhara-trade-treaty-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-topic/45e38eecd1efc> ;
+    oa:about id:world-adhara-trade-treaty ;
+    oa:canonical true ;
+    oa:eventKind oa:Capital ;
+    oa:note "Formed, centred on Adhara." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 6120 .

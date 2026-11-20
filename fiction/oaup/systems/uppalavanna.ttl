@@ -1,0 +1,51 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Uppalavanna Complex
+
+id:world-uppalavanna-complex a oa:Place, oa:World ;
+    skos:prefLabel "Uppalavanna Complex" ;
+    oa:article <https://www.orionsarm.com/eg-article/5eb6bd9f69c02> ;
+    oa:kind "megastructure" ;
+    oa:labelsSystem false ;
+    oa:note "In Aquila. The catalogue puts HIP 96353 at 1,315 ly against the article's 1,378." ;
+    oa:systemName "Uppalavanna" ;
+    oa:uncertain false .
+
+claim:location-world-uppalavanna-complex a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5eb6bd9f69c02> ;
+    oa:about id:world-uppalavanna-complex ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:distance value:location-world-uppalavanna-complex-distance ;
+    oa:hipparcosId 96353 ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+value:location-world-uppalavanna-complex-distance a oa:QuantityValue ;
+    qudt:numericValue 1378.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-uppalavanna-complex-keter-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5eb6bd9f69c02> ;
+    oa:about id:world-uppalavanna-complex ;
+    oa:canonical true ;
+    oa:polity id:polity-keter-dominion ;
+    oa:recordOrder 0 .
+
+claim:event-world-uppalavanna-complex-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5eb6bd9f69c02> ;
+    oa:about id:world-uppalavanna-complex ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:polity id:polity-keter-dominion ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 4722 .

@@ -1,0 +1,50 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Harbringer Dyson
+
+id:world-harbringer-dyson a oa:Place, oa:World ;
+    skos:prefLabel "Harbringer Dyson" ;
+    oa:article <https://www.orionsarm.com/eg-article/46674b9181a4f> ;
+    oa:kind "megastructure" ;
+    oa:labelsSystem false ;
+    oa:note "HD 193080 in Sagitta. The article's 363 ly and the catalogue's 360 agree to better than a percent, which is as close as this file gets." ;
+    oa:uncertain false .
+
+claim:location-world-harbringer-dyson a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46674b9181a4f> ;
+    oa:about id:world-harbringer-dyson ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:distance value:location-world-harbringer-dyson-distance ;
+    oa:hdId 193080 ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+value:location-world-harbringer-dyson-distance a oa:QuantityValue ;
+    qudt:numericValue 363.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-harbringer-dyson-zoeific-biopolity a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46674b9181a4f> ;
+    oa:about id:world-harbringer-dyson ;
+    oa:canonical true ;
+    oa:polity id:polity-zoeific-biopolity ;
+    oa:recordOrder 0 .
+
+claim:event-world-harbringer-dyson-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46674b9181a4f> ;
+    oa:about id:world-harbringer-dyson ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "Construction began." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 3300 .

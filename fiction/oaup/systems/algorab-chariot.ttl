@@ -1,0 +1,33 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Algorab / Chariot
+
+id:inner-sphere-row-0962 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Algorab / Chariot" .
+
+claim:inner-sphere-inner-sphere-row-0962-86a038f392ee a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0962 ;
+    oa:article <https://www.orionsarm.com/eg-article/49261d374b919> ;
+    oa:canonical true ;
+    oa:colonyName "Algorab / Chariot" ;
+    oa:luminositySol "2.5" ;
+    oa:massSol "." ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 961 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0962-86a038f392ee-source-distance ;
+    oa:spectralType "B9.5-A0 V" ;
+    oa:starName "Delta Corvi A" .
+
+value:inner-sphere-inner-sphere-row-0962-86a038f392ee-source-distance a oa:QuantityValue ;
+    qudt:numericValue 85.695 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

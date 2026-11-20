@@ -1,0 +1,52 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# Hammerstein
+
+id:world-hammerstein a oa:Place, oa:World ;
+    skos:prefLabel "Hammerstein" ;
+    oa:article <https://www.orionsarm.com/eg-article/4ce67be2dba24> ;
+    oa:kind "moon" ;
+    oa:labelsSystem false ;
+    oa:note "A moon of a gas giant, at HD 870 in Tucana, 67 ly. Also given as GJ 2001." ;
+    oa:uncertain false .
+
+claim:location-world-hammerstein a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4ce67be2dba24> ;
+    oa:about id:world-hammerstein ;
+    oa:canonical true ;
+    oa:catalogueFromSource true ;
+    oa:hipparcosId 1031 ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+claim:affiliation-world-hammerstein-nocozo a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4ce67be2dba24> ;
+    oa:about id:world-hammerstein ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 0 .
+
+claim:event-world-hammerstein-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4ce67be2dba24> ;
+    oa:about id:world-hammerstein ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:polity id:polity-linnent ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 2180 .
+
+claim:event-world-hammerstein-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4ce67be2dba24> ;
+    oa:about id:world-hammerstein ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"Hammerstein joined the NoCoZo in 3410, and adopted a form of government known as Futarchy; this system is found on a number of NoCoZO Worlds, and integrates well with the predominantly libertarian philosophy of that empire.\" New event, not in header. And adopted Futarchy." ;
+    oa:polity id:polity-nocozo ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 3410 .

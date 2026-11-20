@@ -1,0 +1,61 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# New Magnitogorsk
+
+id:world-new-magnitogorsk a oa:Place, oa:World ;
+    skos:prefLabel "New Magnitogorsk" ;
+    oa:article <https://www.orionsarm.com/eg-article/58126824e1ea1> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "A K2V star Orion's Arm numbers JD 109771067, in Sagittarius. The source also gives galactic coordinates, and they corroborate: converting the right ascension, declination and distance reproduces the stated 2033.11, 292.82, 191.56 ly to two decimals." ;
+    oa:uncertain false .
+
+claim:location-world-new-magnitogorsk a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/58126824e1ea1> ;
+    oa:about id:world-new-magnitogorsk ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -19.1752777 ;
+    oa:distance value:location-world-new-magnitogorsk-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:nearName "JD 109771067" ;
+    oa:rightAscensionDeg 266.08333 .
+
+value:location-world-new-magnitogorsk-distance a oa:QuantityValue ;
+    qudt:numericValue 2063.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-new-magnitogorsk-mutual-progress-association a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/58126824e1ea1> ;
+    oa:about id:world-new-magnitogorsk ;
+    oa:canonical true ;
+    oa:polity id:polity-mutual-progress-association ;
+    oa:recordOrder 0 .
+
+claim:event-world-new-magnitogorsk-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/58126824e1ea1> ;
+    oa:about id:world-new-magnitogorsk ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 6109 .
+
+claim:event-world-new-magnitogorsk-002 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-new-magnitogorsk ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "Construction of Himmelsschmiede begins when the relativistic linelayer Matthew Fountaine Maury arrives with a nanogauge wormhole to the New Magnitogorsk hub." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:sourceDescription "Encyclopaedia timeline, The Age of Crisis" ;
+    oa:yearAT 6736 .

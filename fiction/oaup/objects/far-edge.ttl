@@ -1,0 +1,41 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Far Edge
+
+id:world-far-edge a oa:Place, oa:World ;
+    skos:prefLabel "Far Edge" ;
+    oa:article <https://www.orionsarm.com/eg-article/48bc8685b8223> ;
+    oa:editorialNote "---- Iota Network --------------------------------------------------------" ;
+    oa:kind "polity_marker" ;
+    oa:labelsSystem false ;
+    oa:note "An egg-shaped cluster of 42 inhabited systems near HD 14875 in Triangulum. The article's 535 ly and the catalogue's 527 agree to 1.6%, so this binds to the star the cluster is reckoned from. Its own extent is not given, so no volume is drawn — only the point it is named against." ;
+    oa:uncertain false .
+
+claim:location-world-far-edge a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48bc8685b8223> ;
+    oa:about id:world-far-edge ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:distance value:location-world-far-edge-distance ;
+    oa:hdId 14875 ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+value:location-world-far-edge-distance a oa:QuantityValue ;
+    qudt:numericValue 535.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-far-edge-far-edge-civilisation a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48bc8685b8223> ;
+    oa:about id:world-far-edge ;
+    oa:canonical true ;
+    oa:polity id:polity-far-edge-civilisation ;
+    oa:recordOrder 0 .

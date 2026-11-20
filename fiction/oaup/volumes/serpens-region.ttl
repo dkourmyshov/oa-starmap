@@ -1,0 +1,49 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Serpens Region
+
+id:world-serpens-region a oa:Place, oa:World ;
+    skos:prefLabel "Serpens Region" ;
+    oa:article <https://www.orionsarm.com/eg-article/47843e18da23b> ;
+    oa:kind "volume" ;
+    oa:labelsSystem false ;
+    oa:note "A region of space rather than a polity, and recorded as one, held between the Mutual Progress Association and the Sagittarius Transcultural Cooperation. Gilboa Reach \"is the most important gateway between the STC and the Serpens Sector worlds such as Sk'iiws'nnii and Miracle City\", and a colony elsewhere \"was isolated for 3300 years because of the turmoil in the Serpens Region\".\nNote that the sentence corroborating this entry says *Sector*, and the add-on carries a Serpens Sector as a separate object 21 degrees and 1,500 ly away. Both are drawn, because the add-on locates them differently and nothing here says they are one thing. See questions.md." ;
+    oa:uncertain false .
+
+claim:location-world-serpens-region a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47843e18da23b> ;
+    oa:about id:world-serpens-region ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg 5.5 ;
+    oa:distance value:location-world-serpens-region-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:note "The SERPENS REGION anchor in southOAEMPIRES.dsc, one of the Orion's Arm Celestia add-ons' location catalogues (OAAddons9, OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv). It falls 3.7 degrees from Miracle City, which this map places independently at 1,730 ly, an 8% difference in range -- and Miracle City is one of the two worlds the Encyclopaedia names as being in this region, so the anchor and the article agree without either having been read against the other." ;
+    oa:rightAscensionDeg 277.5 .
+
+value:location-world-serpens-region-distance a oa:QuantityValue ;
+    qudt:numericValue 1600.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-serpens-region-mutual-progress-association a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47843e18da23b> ;
+    oa:about id:world-serpens-region ;
+    oa:canonical true ;
+    oa:polity id:polity-mutual-progress-association ;
+    oa:recordOrder 0 .
+
+claim:affiliation-world-serpens-region-sagittarius-transcultural-cooperation a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47843e18da23b> ;
+    oa:about id:world-serpens-region ;
+    oa:canonical true ;
+    oa:polity id:polity-sagittarius-transcultural-cooperation ;
+    oa:recordOrder 1 .

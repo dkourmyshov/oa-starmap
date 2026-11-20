@@ -1,19 +1,23 @@
-"""Write accepted candidate events into fiction/worlds.yaml, keeping the file's layout.
+"""Add reviewed candidate events to fiction/oaup/.
 
-usage: merge_candidates.py <id> --keep 0,2,5 [--polity 2=nocozo] [--kind 3=visited]
-                           [--precision 1=circa] [--name "Bone-Claw"] [--affiliations a,b]
+Usage: merge_candidates.py <id> --keep 0,2,5 [--polity 2=nocozo]
+                           [--kind 3=visited] [--precision 1=circa]
+                           [--name "Bone-Claw"] [--affiliations a,b]
                            [--note-extra 2="..."] [--dry]
-
-Indices are the event positions shown by review_candidates.py (0-based, in file order).
-Text is spliced into the YAML rather than round-tripped through a parser, so the
-file's comments and folded notes stay exactly as they are.
 """
-import io, os, re, sys, textwrap, argparse
+
+import argparse
+import os
+import re
+import sys
+
 import yaml
+
+from oastarmap.fiction.schema import World, WorldEvent, WorldLocation
+from oastarmap.fiction.store import load_store
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 DERIVED = os.path.join(ROOT, "sources", "derived")
-WORLDS = os.path.join(ROOT, "fiction", "worlds.yaml")
 BASE = "https://www.orionsarm.com/eg-article/"
 
 ap = argparse.ArgumentParser()
@@ -27,123 +31,111 @@ ap.add_argument("--name")
 ap.add_argument("--affiliations")
 ap.add_argument("--entry-note", default="")
 ap.add_argument("--dry", action="store_true")
-ap.add_argument("--force", action="store_true", help="append even where the entry has the same year and kind")
+ap.add_argument("--force", action="store_true")
 args = ap.parse_args()
+
 
 def overrides(items):
     out = {}
     for item in items:
-        k, _, v = item.partition("=")
-        out[int(k)] = v
+        key, _, value = item.partition("=")
+        out[int(key)] = value
     return out
 
-cand = yaml.safe_load(io.open(os.path.join(DERIVED, "candidates", args.ident + ".yaml"), encoding="utf-8"))
-events = cand.get("events") or []
-keep = [int(x) for x in args.keep.split(",") if x.strip() != ""]
-pol_over, kind_over, prec_over, extra = overrides(args.polity), overrides(args.kind), overrides(args.precision), overrides(args.note_extra)
 
-def fold(text, indent):
-    """A folded YAML scalar: `>-` then wrapped lines at the indent."""
-    lines = textwrap.wrap(" ".join(text.split()), width=78 - indent)
-    pad = " " * indent
-    return ">-\n" + "\n".join(pad + line for line in lines)
-
-def event_block(i):
-    e = events[i]
-    kind = kind_over.get(i, e["kind"])
-    pol = pol_over.get(i, e.get("polity") or "")
-    prec = prec_over.get(i, e.get("precision") or "exact")
-    quote = " ".join((e.get("quote") or "").split())
-    note = f'"{quote}"'
-    if e.get("note"):
-        note += " " + " ".join(e["note"].split())
-    if i in extra:
-        note += " " + extra[i]
-    out = [f"      - year_at: {e['year_at']}"]
-    if e.get("until_at"):
-        out.append(f"        until_at: {e['until_at']}")
-    out.append(f"        kind: {kind}")
-    if pol:
-        out.append(f"        polity: {pol}")
-    if prec != "exact":
-        out.append(f"        precision: {prec}")
-    out.append("        note: " + fold(note, 10))
-    return "\n".join(out) + "\n"
-
-blocks = "".join(event_block(i) for i in keep)
+pol_over, kind_over, prec_over, extra = (
+    overrides(args.polity), overrides(args.kind), overrides(args.precision),
+    overrides(args.note_extra),
+)
+with open(
+    os.path.join(DERIVED, "candidates", args.ident + ".yaml"), encoding="utf-8"
+) as handle:
+    candidate = yaml.safe_load(handle)
+keep = [int(value) for value in args.keep.split(",") if value.strip()]
 url = BASE + args.ident
-s = io.open(WORLDS, encoding="utf-8").read()
 
-m = re.search(r"\n  - name: ([^\n]*)\n(?:(?!\n  - name: )[\s\S])*?article: " + re.escape(url) + r"\n", s)
-if m:
-    # existing entry: find its span
-    start = m.start() + 1
-    nxt = s.find("\n  - name: ", start + 5)
-    sect = s.find("\n  # ----", start + 5)
-    end = min(x for x in (nxt, sect, len(s)) if x > 0)
-    entry = s[start:end]
-    # An event the entry already carries with the same year and kind is not
-    # appended again: the second tranche re-reads dated entries, and the panel's
-    # "Colonised 1102" is the settlement the map already has.
-    have = set(re.findall(r"- year_at: (\d+)\n(?:        [a-z_]+: [^\n]*\n)*?        kind: (\w+)", entry))
-    kept = []
-    for i in keep:
-        key = (str(events[i]["year_at"]), kind_over.get(i, events[i]["kind"]))
-        if key in have and not getattr(args, "force", False):
-            print(f"skipped {key[1]} {key[0]}: already on the entry")
-        else:
-            kept.append(i)
-    keep = kept
-    blocks = "".join(event_block(i) for i in keep)
-    if not keep:
-        print(f"nothing new for {m.group(1)}")
-        sys.exit(0)
-    if "\n    events:\n" in entry:
-        # append after the last event: the events block ends at the next line
-        # that starts a top-level key of the entry (four spaces, then a word).
-        # Appending at the entry's end put Evermore's new event inside its
-        # location block, which followed the events.
-        ev_at = entry.find("\n    events:\n") + 1
-        after = re.search(r"\n    [a-z_]+:", entry[ev_at + len("    events:\n"):])
-        insert_at = ev_at + len("    events:\n") + after.start() + 1 if after else len(entry.rstrip("\n")) + 1
-        new_entry = entry[:insert_at] + blocks + entry[insert_at:]
-    else:
-        note_at = entry.find("\n    note:")
-        insert_at = note_at + 1 if note_at > 0 else len(entry.rstrip("\n")) + 1
-        new_entry = entry[:insert_at] + "    events:\n" + blocks + entry[insert_at:]
-    s = s[:start] + new_entry + s[end:]
-    print(f"appended {len(keep)} events to {m.group(1)}")
-else:
-    inner = yaml.safe_load(io.open(os.path.join(ROOT, "fiction", "inner_sphere.yaml"), encoding="utf-8"))
-    rows = [r for r in inner["systems"] if isinstance(r, dict) and (r.get("article") or "").rstrip("/") == url]
-    if not rows:
-        sys.exit(f"no worlds.yaml entry and no colony row for {url}; give --name and add the location by hand")
-    row = rows[0]
-    colonies = yaml.safe_load(io.open(os.path.join(ROOT, "fiction", "colonies.yaml"), encoding="utf-8"))["colonies"]
-    name = args.name or re.split(r"[/(]", row["colony"])[0].strip()
-    if ("\n  - name: " + name + "\n") in s:
-        sys.exit(f"an entry named {name!r} already exists without this article; fold by hand")
-    aff = args.affiliations.split(",") if args.affiliations is not None else next(
-        (c.get("affiliations", []) for c in colonies if c["colony"] == row["colony"]), [])
-    aff_text = "[" + ", ".join(aff) + "]"
-    entry_note = args.entry_note or f"{row['star']}, as the colony table has it."
-    new_entry = (
-        f"  - name: {name}\n"
-        f"    kind: system\n"
-        f"    system: {name}\n"
-        f"    affiliations: {aff_text}\n"
-        f"    article: {url}\n"
-        f"    location:\n"
-        f"      star: {row['star']}\n"
-        f"    events:\n" + blocks +
-        f"    note: " + fold(entry_note, 6) + "\n\n"
+
+def reviewed_event(index):
+    source = candidate["events"][index]
+    quote = " ".join((source.get("quote") or "").split())
+    note = f'"{quote}"'
+    if source.get("note"):
+        note += " " + " ".join(source["note"].split())
+    if index in extra:
+        note += " " + extra[index]
+    return WorldEvent(
+        year_at=source["year_at"],
+        until_at=source.get("until_at"),
+        kind=kind_over.get(index, source["kind"]),
+        polity=pol_over.get(index, source.get("polity") or ""),
+        precision=prec_over.get(index, source.get("precision") or "exact"),
+        note=note,
     )
-    anchor = "  - name: Huanghua\n    kind: system\n"
-    assert s.count(anchor) == 1
-    s = s.replace(anchor, new_entry + anchor, 1)
-    print(f"new entry {name} at {row['star']} with {len(keep)} events, affiliations {aff_text}")
+
+
+store = load_store(fresh=True)
+existing = next((world for world in store.worlds if world.article.rstrip("/") == url), None)
+if existing is not None:
+    have = {(event.year_at, event.kind) for event in existing.events}
+    selected = []
+    for index in keep:
+        event = reviewed_event(index)
+        if (event.year_at, event.kind) in have and not args.force:
+            print(f"skipped {event.kind} {event.year_at}: already on the entity")
+        else:
+            selected.append(event)
+    if not selected:
+        print(f"nothing new for {existing.name}")
+        sys.exit(0)
+    for event in selected:
+        print(f"  {event.kind} {event.year_at} {event.polity}".rstrip())
+    if not args.dry:
+        entity = store.world_iris[existing.name]
+        for offset, event in enumerate(selected):
+            store.add_event(entity, event, len(existing.events) + offset, existing.article)
+    action = f"append {len(selected)} events to {existing.name}"
+else:
+    rows = [
+        row for row in store.inner_sphere_file.systems
+        if row.article.rstrip("/") == url
+    ]
+    if not rows:
+        sys.exit(f"no world entity and no colony row for {url}; give --name and add a location")
+    row = rows[0]
+    name = args.name or re.split(r"[/(]", row.colony)[0].strip()
+    if name in store.world_iris:
+        sys.exit(f"an entity named {name!r} already exists without this article")
+    if args.affiliations is not None:
+        affiliations = args.affiliations.split(",")
+    else:
+        affiliations = next(
+            (
+                assignment.affiliations
+                for assignment in store.colony_file.colonies
+                if assignment.colony == row.colony
+            ),
+            [],
+        )
+    events = [reviewed_event(index) for index in keep]
+    world = World(
+        name=name,
+        kind="system",
+        system=name,
+        affiliations=affiliations,
+        article=url,
+        location=WorldLocation(star=row.star),
+        events=events,
+        note=args.entry_note or f"{row.star}, as the colony table has it.",
+    )
+    for event in events:
+        print(f"  {event.kind} {event.year_at} {event.polity}".rstrip())
+    if not args.dry:
+        store.add_world(world)
+    action = f"new entity {name} at {row.star} with {len(events)} events"
 
 if args.dry:
-    print(blocks)
+    print(f"dry run: {action}")
 else:
-    io.open(WORLDS, "w", encoding="utf-8", newline="\n").write(s)
+    store.validate()
+    store.save()
+    print(action)

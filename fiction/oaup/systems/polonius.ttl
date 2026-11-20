@@ -1,0 +1,70 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Polonius
+
+id:world-polonius a oa:Place, oa:World ;
+    skos:prefLabel "Polonius" ;
+    oa:article <https://www.orionsarm.com/eg-article/4703b72a58bfd> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Formerly of the Refugium Federation and Non-Coercive Zone now, which is the present holder this file records." ;
+    oa:uncertain false .
+
+claim:location-world-polonius a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4703b72a58bfd> ;
+    oa:about id:world-polonius ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -50.4838 ;
+    oa:derivation "Interpolated from the transcription of Anders Sandberg's maps, and extrapolated rather than interpolated — the cell sits beyond the anchors around it, hence the wider error. The article gives no position." ;
+    oa:directionErrorDeg 30.0 ;
+    oa:distance value:location-world-polonius-distance ;
+    oa:distanceError value:location-world-polonius-distance-error ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:EditorialEstimate ;
+    oa:rightAscensionDeg 172.8822 .
+
+value:location-world-polonius-distance a oa:QuantityValue ;
+    qudt:numericValue 2377.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+value:location-world-polonius-distance-error a oa:QuantityValue ;
+    qudt:numericValue 1200.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-polonius-nocozo a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4703b72a58bfd> ;
+    oa:about id:world-polonius ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 0 .
+
+claim:event-world-polonius-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4703b72a58bfd> ;
+    oa:about id:world-polonius ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:polity id:polity-refugium-federation ;
+    oa:precision oa:NotLaterThan ;
+    oa:recordOrder 0 ;
+    oa:yearAT 6436 .
+
+claim:event-world-polonius-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4703b72a58bfd> ;
+    oa:about id:world-polonius ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"Schism war ends in the fracturing of the Refugium Federation. The radicals accept help from the Andian Mission and join the NoCoZo, while the orthodox worlds choose to remain isolated.\" Polonius's own membership in this transfer is given in the following, undated sentence: 'Polonius is among the radical Refugium worlds that has become aligned with the NoCoZo, and is now a major local capital and wormhole nexus in its own right.' No separate year is given for Polonius specifically; 7340 is taken from the Schism War's dated end. The Schism War's end; the radicals joined the Zone with the Andian Mission's help." ;
+    oa:polity id:polity-nocozo ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 7340 .

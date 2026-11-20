@@ -1,0 +1,57 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Packrat sporehome
+
+id:inner-sphere-row-0048 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Packrat sporehome" .
+
+claim:inner-sphere-inner-sphere-row-0048-34d1fce35fdc a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0048 ;
+    oa:article <https://www.orionsarm.com/eg-article/4ba1f99323bf1> ;
+    oa:canonical true ;
+    oa:colonyName "Packrat sporehome" ;
+    oa:luminositySol "0.000294 to 0.000614" ;
+    oa:massSol "0.14" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 47 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0048-34d1fce35fdc-source-distance ;
+    oa:spectralType "M4.5 Ve" ;
+    oa:starName "Ross 614 A" .
+
+value:inner-sphere-inner-sphere-row-0048-34d1fce35fdc-source-distance a oa:QuantityValue ;
+    qudt:numericValue 13.424 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Packrat sporehome
+
+id:inner-sphere-row-0049 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Packrat sporehome" .
+
+claim:inner-sphere-inner-sphere-row-0049-bfcb79879a7e a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0049 ;
+    oa:article <https://www.orionsarm.com/eg-article/4ba1f99323bf1> ;
+    oa:canonical true ;
+    oa:colonyName "Packrat sporehome" ;
+    oa:luminositySol "0.0000215" ;
+    oa:massSol "0.08" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 48 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0049-bfcb79879a7e-source-distance ;
+    oa:spectralType "M7 Ve" ;
+    oa:starName "Ross 614 B" .
+
+value:inner-sphere-inner-sphere-row-0049-bfcb79879a7e-source-distance a oa:QuantityValue ;
+    qudt:numericValue 13.424 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

@@ -1,0 +1,109 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Pen-y-Ghent
+
+id:world-pen-y-ghent a oa:Place, oa:World ;
+    skos:prefLabel "Pen-y-Ghent" ;
+    oa:article <https://www.orionsarm.com/eg-article/48f745215d5c7> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "In Scorpius, 790 ly. Already on the map through the Celestia add-on." ;
+    oa:systemName "Pen-y-Ghent" ;
+    oa:uncertain false .
+
+claim:location-world-pen-y-ghent a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48f745215d5c7> ;
+    oa:about id:world-pen-y-ghent ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:oaStarName "Pen-y-Ghent" .
+
+claim:affiliation-world-pen-y-ghent-mutual-progress-association a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48f745215d5c7> ;
+    oa:about id:world-pen-y-ghent ;
+    oa:canonical true ;
+    oa:polity id:polity-mutual-progress-association ;
+    oa:recordOrder 0 .
+
+# Pen-y-Ghent
+
+id:star-pen-y-ghent a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "Pen-y-Ghent" ;
+    oa:sourceName "Pen-y-Ghent" .
+
+claim:celestia-star-pen-y-ghent-444f914a0f0f a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-pen-y-ghent ;
+    oa:absoluteMagnitude 4.08 ;
+    oa:canonical true ;
+    oa:declinationDeg -40.5155 ;
+    oa:distance value:celestia-star-pen-y-ghent-444f914a0f0f-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 262.35 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceFile "oastars4.stc" ;
+    oa:spectralType "F1v" .
+
+value:celestia-star-pen-y-ghent-444f914a0f0f-distance a oa:QuantityValue ;
+    qudt:numericValue 789.86 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-star-pen-y-ghent-mutual-progress-association a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48f74e750e04f> ;
+    oa:about id:star-pen-y-ghent ;
+    oa:canonical true ;
+    oa:polity id:polity-mutual-progress-association .
+
+claim:curation-star-pen-y-ghent a prov:Entity, oa:SystemCuration ;
+    oa:about id:star-pen-y-ghent ;
+    oa:article <https://www.orionsarm.com/eg-article/48f74e750e04f> ;
+    oa:editorialLabel "Pen-y-Ghent" ;
+    oa:hidden false ;
+    oa:uncertain false .
+
+# Ribblehead
+
+id:world-ribblehead a oa:Place, oa:World ;
+    skos:prefLabel "Ribblehead" ;
+    oa:article <https://www.orionsarm.com/eg-article/48f745215d5c7> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:systemName "Pen-y-Ghent" ;
+    oa:uncertain false .
+
+claim:location-world-ribblehead a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48f745215d5c7> ;
+    oa:about id:world-ribblehead ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:oaStarName "Pen-y-Ghent" .
+
+claim:affiliation-world-ribblehead-mutual-progress-association a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48f745215d5c7> ;
+    oa:about id:world-ribblehead ;
+    oa:canonical true ;
+    oa:polity id:polity-mutual-progress-association ;
+    oa:recordOrder 0 .
+
+claim:event-world-ribblehead-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48f745215d5c7> ;
+    oa:about id:world-ribblehead ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "Already involved in conflict by this year, so settled at some point before it. No colonisation date is given." ;
+    oa:precision oa:NotLaterThan ;
+    oa:recordOrder 0 ;
+    oa:yearAT 3499 .

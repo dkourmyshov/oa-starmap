@@ -1,0 +1,51 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Tien-schu
+
+id:world-tien-schu a oa:Place, oa:World ;
+    skos:prefLabel "Tien-schu" ;
+    oa:article <https://www.orionsarm.com/eg-article/5ca3842fc414b> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "The article gives a star, coordinates, a constellation and a distance, and three of the four agree exactly: its right ascension and declination are HIP 112841's to twenty arcseconds, in Lacerta as stated. Only the distance parts company — 744 ly against the catalogue's 537 — so the coordinates place it and the binding is left off." ;
+    oa:uncertain false .
+
+claim:location-world-tien-schu a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5ca3842fc414b> ;
+    oa:about id:world-tien-schu ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg 44.6816 ;
+    oa:distance value:location-world-tien-schu-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:nearName "HIP 112841" ;
+    oa:rightAscensionDeg 342.7802 .
+
+value:location-world-tien-schu-distance a oa:QuantityValue ;
+    qudt:numericValue 744.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-tien-schu-zoeific-biopolity a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5ca3842fc414b> ;
+    oa:about id:world-tien-schu ;
+    oa:canonical true ;
+    oa:polity id:polity-zoeific-biopolity ;
+    oa:recordOrder 0 .
+
+claim:event-world-tien-schu-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5ca3842fc414b> ;
+    oa:about id:world-tien-schu ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 3691 .

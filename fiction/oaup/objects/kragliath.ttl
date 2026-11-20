@@ -1,0 +1,44 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Kragliath
+
+id:world-kragliath a oa:Place, oa:World ;
+    skos:prefLabel "Kragliath" ;
+    oa:article <https://www.orionsarm.com/eg-article/467482ff7cc49> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "Around HIP 107631 in Cygnus, which the catalogue puts at 711 ly against the article's 536 — a third further, so the star lends its direction and the article keeps its distance." ;
+    oa:uncertain false .
+
+claim:location-world-kragliath a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/467482ff7cc49> ;
+    oa:about id:world-kragliath ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg 40.5258 ;
+    oa:distance value:location-world-kragliath-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:nearName "HIP 107631" ;
+    oa:rightAscensionDeg 327.0158 .
+
+value:location-world-kragliath-distance a oa:QuantityValue ;
+    qudt:numericValue 536.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:event-world-kragliath-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/467482ff7cc49> ;
+    oa:about id:world-kragliath ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 3209 .

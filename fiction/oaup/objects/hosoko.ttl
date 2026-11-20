@@ -1,0 +1,45 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Hosoko
+
+id:world-hosoko a oa:Place, oa:World ;
+    skos:prefLabel "Hosoko" ;
+    oa:kind "polity_marker" ;
+    oa:labelsSystem false ;
+    oa:uncertain false .
+
+claim:location-world-hosoko a prov:Entity, oa:LocationClaim ;
+    oa:about id:world-hosoko ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg 39.9957 ;
+    oa:derivation "Interpolated from the sheet, which is the only source here that places it and very nearly the only one that mentions it — the Hosoko Posthegemonic Management Network has no article of its own. A subset of the post-Cygexpa volumes, drawn on the sheet in a colour of its own." ;
+    oa:directionErrorDeg 20.0 ;
+    oa:distance value:location-world-hosoko-distance ;
+    oa:distanceError value:location-world-hosoko-distance-error ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:EditorialEstimate ;
+    oa:rightAscensionDeg 311.8664 .
+
+value:location-world-hosoko-distance a oa:QuantityValue ;
+    qudt:numericValue 1651.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+value:location-world-hosoko-distance-error a oa:QuantityValue ;
+    qudt:numericValue 800.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-hosoko-cygexpa a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:world-hosoko ;
+    oa:canonical true ;
+    oa:polity id:polity-cygexpa ;
+    oa:recordOrder 0 .

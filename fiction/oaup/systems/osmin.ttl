@@ -1,0 +1,62 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Purcell
+
+id:world-purcell a oa:Place, oa:World ;
+    skos:prefLabel "Purcell" ;
+    oa:article <https://www.orionsarm.com/eg-article/60d0eac6b3df1> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "Osmin is TYC 6305-2141-1, a G1V star of 0.85 solar masses and 0.55 solar luminosities. The Tycho catalogue is not one this map carries, so the position falls back to the constellation, which at 121 ly is a far tighter constraint than the same method gives further out." ;
+    oa:systemName "Osmin" ;
+    oa:uncertain false .
+
+claim:location-world-purcell a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/60d0eac6b3df1> ;
+    oa:about id:world-purcell ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:constellationName "Sagittarius" ;
+    oa:distance value:location-world-purcell-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+value:location-world-purcell-distance a oa:QuantityValue ;
+    qudt:numericValue 121.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-purcell-mutual-progress-association a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/60d0eac6b3df1> ;
+    oa:about id:world-purcell ;
+    oa:canonical true ;
+    oa:polity id:polity-mutual-progress-association ;
+    oa:recordOrder 0 .
+
+claim:event-world-purcell-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/60d0eac6b3df1> ;
+    oa:about id:world-purcell ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "First reached." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 2188 .
+
+claim:event-world-purcell-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/60d0eac6b3df1> ;
+    oa:about id:world-purcell ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"Negentropist forces occupied the planetary system, and commandeered many of the planetoids in the local belt for logistical resources.\" New event, not in header. This follows directly from the Negentropist attack of 4498 AT described in the previous sentence; no separate year is given for when occupation itself began. The occupation is described as continuing under 'a remnant Revisionist occupation force until the end of the War' after the main fleet left in 4512, with no year given for the war's end or for a return to prior status. An occupation in the Version War; the MPA's holding before and after is undated." ;
+    oa:polity id:polity-negentropy-alliance ;
+    oa:precision oa:NotEarlierThan ;
+    oa:recordOrder 1 ;
+    oa:yearAT 4498 .

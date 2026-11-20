@@ -1,0 +1,47 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Geminga
+
+id:star-geminga a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "Geminga" ;
+    oa:sourceName "Geminga" .
+
+claim:celestia-star-geminga-769499505595 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-geminga ;
+    oa:absoluteMagnitude 11.0 ;
+    oa:canonical true ;
+    oa:declinationDeg 17.7703 ;
+    oa:distance value:celestia-star-geminga-769499505595-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 98.47563 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceFile "geminga.stc" ;
+    oa:spectralType "Q" .
+
+value:celestia-star-geminga-769499505595-distance a oa:QuantityValue ;
+    qudt:numericValue 552.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-star-geminga-metasoft a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/464e8a1ed988a> ;
+    oa:about id:star-geminga ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft .
+
+claim:curation-star-geminga a prov:Entity, oa:SystemCuration ;
+    oa:about id:star-geminga ;
+    oa:article <https://www.orionsarm.com/eg-article/464e8a1ed988a> ;
+    oa:editorialLabel "Geminga" ;
+    oa:hidden false ;
+    oa:realObjectIdentity "Geminga, the pulsar PSR J0633+1746" ;
+    oa:uncertain false .

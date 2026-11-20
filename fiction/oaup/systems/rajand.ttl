@@ -1,0 +1,81 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Rajand
+
+id:world-rajand a oa:Place, oa:World ;
+    skos:prefLabel "Rajand" ;
+    oa:article <https://www.orionsarm.com/eg-article/46789378a3d4e> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Lalande 21185, as the colony table has it." ;
+    oa:systemName "Rajand" ;
+    oa:uncertain false .
+
+claim:location-world-rajand a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46789378a3d4e> ;
+    oa:about id:world-rajand ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Lalande 21185" .
+
+claim:affiliation-world-rajand-zoeific-biopolity a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46789378a3d4e> ;
+    oa:about id:world-rajand ;
+    oa:canonical true ;
+    oa:polity id:polity-zoeific-biopolity ;
+    oa:recordOrder 0 .
+
+claim:event-world-rajand-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46789378a3d4e> ;
+    oa:about id:world-rajand ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"It only arrived at its destination in 721 AT .\" This is the Genetekkers' crewed colony ship (the Erwin Chargaff), launched from Agamemnon in 568; Genetekkers are not on the roster. A Gengineer Republic probe was launched towards it in 405; the Genetekkers who arrived in 721 are no polity of this file." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 721 .
+
+claim:event-world-rajand-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46789378a3d4e> ;
+    oa:about id:world-rajand ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"Ultimately the survivors chose to join the Federation of Sophonts instead, and the system control ship, after assisting with minimum restoration of system infrastructure, amicably departed.\" \"Federation of Sophonts\" is a roster also-name for the First Federation. No year is stated for the join itself; 1013 is carried over from the control ship's arrival in the same episode (\"a League system control ship finally arrived in 1013\"). The year is the adjacent sentence's; the article does not date the joining itself." ;
+    oa:polity id:polity-first-federation ;
+    oa:precision oa:NotEarlierThan ;
+    oa:recordOrder 1 ;
+    oa:yearAT 1013 .
+
+# Rajand
+
+id:inner-sphere-row-0010 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Rajand" .
+
+claim:inner-sphere-inner-sphere-row-0010-07b147a40cae a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0010 ;
+    oa:article <https://www.orionsarm.com/eg-article/46789378a3d4e> ;
+    oa:canonical true ;
+    oa:colonyName "Rajand" ;
+    oa:luminositySol "0.00568" ;
+    oa:massSol "0.403" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 9 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0010-07b147a40cae-source-distance ;
+    oa:spectralType "M2 Vn" ;
+    oa:starName "Lalande 21185" .
+
+value:inner-sphere-inner-sphere-row-0010-07b147a40cae-source-distance a oa:QuantityValue ;
+    qudt:numericValue 8.304 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

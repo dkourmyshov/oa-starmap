@@ -1,0 +1,48 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Tawattaran
+
+id:world-tawattaran a oa:Place, oa:World ;
+    skos:prefLabel "Tawattaran" ;
+    oa:article <https://www.orionsarm.com/eg-article/46d4cf7d003f8> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "Shared with the Utopia Sphere. No dates." ;
+    oa:systemName "Ngeedon" ;
+    oa:uncertain false .
+
+claim:location-world-tawattaran a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46d4cf7d003f8> ;
+    oa:about id:world-tawattaran ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:constellationName "Telescopium" ;
+    oa:distance value:location-world-tawattaran-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+value:location-world-tawattaran-distance a oa:QuantityValue ;
+    qudt:numericValue 1098.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-tawattaran-mutual-progress-association a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46d4cf7d003f8> ;
+    oa:about id:world-tawattaran ;
+    oa:canonical true ;
+    oa:polity id:polity-mutual-progress-association ;
+    oa:recordOrder 0 .
+
+claim:affiliation-world-tawattaran-utopia-sphere a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46d4cf7d003f8> ;
+    oa:about id:world-tawattaran ;
+    oa:canonical true ;
+    oa:polity id:polity-utopia-sphere ;
+    oa:recordOrder 1 .

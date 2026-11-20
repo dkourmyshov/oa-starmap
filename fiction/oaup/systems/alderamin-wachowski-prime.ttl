@@ -1,0 +1,33 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Alderamin / Wachowski Prime
+
+id:inner-sphere-row-0599 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Alderamin / Wachowski Prime" .
+
+claim:inner-sphere-inner-sphere-row-0599-d07d421db6ad a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0599 ;
+    oa:article <https://www.orionsarm.com/eg-article/46f876d71e252> ;
+    oa:canonical true ;
+    oa:colonyName "Alderamin / Wachowski Prime" ;
+    oa:luminositySol "20.4" ;
+    oa:massSol "1.9" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 598 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0599-d07d421db6ad-source-distance ;
+    oa:spectralType "A7 IV-V" ;
+    oa:starName "Alpha Cephei" .
+
+value:inner-sphere-inner-sphere-row-0599-d07d421db6ad-source-distance a oa:QuantityValue ;
+    qudt:numericValue 49.05 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

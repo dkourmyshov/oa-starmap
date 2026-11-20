@@ -1,0 +1,155 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Arkab Prior B
+
+id:world-arkab-prior-b a oa:Place, oa:World ;
+    skos:prefLabel "Arkab Prior B" ;
+    oa:article <https://www.orionsarm.com/eg-article/48f4bc90174b8> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Beta-1 Sagittarii B. Arkab Prior is one wide binary, its components some 3,290 AU apart — a twentieth of a light year, which is nothing at this map's scale. So B is bound to the same catalogue star as A rather than to the add-on's separate entry for it, which sits about eleven light years away: that gap is the two sources disagreeing on the system's distance, not the components being far apart." ;
+    oa:systemName "Arkab Prior B" ;
+    oa:uncertain false .
+
+claim:location-world-arkab-prior-b a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48f4bc90174b8> ;
+    oa:about id:world-arkab-prior-b ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:distance value:location-world-arkab-prior-b-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Arkab Prior" .
+
+value:location-world-arkab-prior-b-distance a oa:QuantityValue ;
+    qudt:numericValue 389.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-arkab-prior-b-mutual-progress-association a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48f4bc90174b8> ;
+    oa:about id:world-arkab-prior-b ;
+    oa:canonical true ;
+    oa:polity id:polity-mutual-progress-association ;
+    oa:recordOrder 0 .
+
+claim:event-world-arkab-prior-b-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48f4bc90174b8> ;
+    oa:about id:world-arkab-prior-b ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:polity id:polity-mutual-progress-association ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 4311 .
+
+claim:event-world-arkab-prior-b-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48f4bc90174b8> ;
+    oa:about id:world-arkab-prior-b ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:polity id:polity-negentropy-alliance ;
+    oa:precision oa:NotEarlierThan ;
+    oa:recordOrder 1 ;
+    oa:yearAT 4520 .
+
+claim:event-world-arkab-prior-b-003 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-arkab-prior-b ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"The territory was returned to the MPA\" after the Version War, which the timeline's period ends in 4650; the article gives no year. \"During the Version War Arkab Prior B was occupied by Negentropist forces from 4520 onwards; the territory was returned to the MPA after hostilities ceased.\" A wartime occupation rather than an annexation, formalised return to the MPA has no year given in the text ('after hostilities ceased'); see doubts. An occupation during the Version War; 'the territory was returned to the MPA' after it, undated." ;
+    oa:polity id:polity-mutual-progress-association ;
+    oa:precision oa:NotEarlierThan ;
+    oa:recordOrder 2 ;
+    oa:sourceDescription "Encyclopaedia timeline, for the year" ;
+    oa:yearAT 4650 .
+
+# Arkab Prior B
+
+id:star-arkab-prior-b a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "Arkab Prior B" ;
+    oa:sourceName "Arkab Prior B" .
+
+claim:celestia-star-arkab-prior-b-d66cf5ccbd58 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-arkab-prior-b ;
+    oa:absoluteMagnitude 1.4 ;
+    oa:canonical true ;
+    oa:declinationDeg -44.45887 ;
+    oa:distance value:celestia-star-arkab-prior-b-d66cf5ccbd58-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 290.6596 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceFile "oastars2-2.stc" ;
+    oa:spectralType "A5V" .
+
+value:celestia-star-arkab-prior-b-d66cf5ccbd58-distance a oa:QuantityValue ;
+    qudt:numericValue 378.335 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-star-arkab-prior-b-mutual-progress-association a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48f4bc90174b8> ;
+    oa:about id:star-arkab-prior-b ;
+    oa:canonical true ;
+    oa:polity id:polity-mutual-progress-association .
+
+claim:curation-star-arkab-prior-b a prov:Entity, oa:SystemCuration ;
+    oa:about id:star-arkab-prior-b ;
+    oa:article <https://www.orionsarm.com/eg-article/48f4bc90174b8> ;
+    oa:editorialLabel "Arkab Prior B" ;
+    oa:hidden false ;
+    oa:note "Arkab Prior is a wide binary and its components lie some 3,290 AU apart — a twentieth of a light year. The add-on places this one at 378 ly and the catalogue places the primary at 389, so the two markers stand about eleven light years apart on the map: two hundred times the real separation, and entirely an artefact of the two sources disagreeing about the system's distance rather than about the pair. The worlds of both components are bound to the catalogue star, so the fiction sits in one place even where the markers do not." ;
+    oa:realObjectIdentity "Beta-1 Sagittarii B, the companion of HIP 95241" ;
+    oa:uncertain false .
+
+# Arkab Prior Necklace
+
+id:world-arkab-prior-necklace a oa:Place, oa:World ;
+    skos:prefLabel "Arkab Prior Necklace" ;
+    oa:article <https://www.orionsarm.com/eg-article/48f4bc90174b8> ;
+    oa:kind "megastructure" ;
+    oa:labelsSystem false ;
+    oa:note "The add-on declares this as though it were a star, on Arkab Prior B's exact position — but it is a megastructure, so it belongs to the system and the system belongs to a real catalogue star. Bound there with B and A, rather than to the add-on's own entry, which sits eleven light years off because the two sources disagree about how far away Arkab Prior is." ;
+    oa:systemName "Arkab Prior B" ;
+    oa:uncertain false .
+
+claim:location-world-arkab-prior-necklace a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48f4bc90174b8> ;
+    oa:about id:world-arkab-prior-necklace ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:distance value:location-world-arkab-prior-necklace-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Arkab Prior" .
+
+value:location-world-arkab-prior-necklace-distance a oa:QuantityValue ;
+    qudt:numericValue 389.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-arkab-prior-necklace-mutual-progress-association a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48f4bc90174b8> ;
+    oa:about id:world-arkab-prior-necklace ;
+    oa:canonical true ;
+    oa:polity id:polity-mutual-progress-association ;
+    oa:recordOrder 0 .
+
+claim:event-world-arkab-prior-necklace-001 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-arkab-prior-necklace ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "Arkab Prior A + B colonised; Arkab Prior A is allocated to the Negentropy Alliance, Arkab Prior B to the MPA." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:sourceDescription "Encyclopaedia timeline, The Integration" ;
+    oa:yearAT 4311 .

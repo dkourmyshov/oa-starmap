@@ -1,0 +1,65 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Realm of the Deeper Covenant
+
+id:world-realm-of-the-deeper-covenant a oa:Place, oa:World ;
+    skos:prefLabel "Realm of the Deeper Covenant" ;
+    oa:article <https://www.orionsarm.com/eg-article/4aaed32f4b1e3> ;
+    oa:editorialNote "---- the alphabetical sweep, J-N -----------------------------------------" ;
+    oa:kind "polity_marker" ;
+    oa:labelsSystem false ;
+    oa:note "A major Deeper Covenant cluster about 750 ly rimward of Sol, and one of the largest centres of Deeper civilisation anywhere. Hightower is its primary world." ;
+    oa:uncertain false .
+
+claim:location-world-realm-of-the-deeper-covenant a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4aaed32f4b1e3> ;
+    oa:about id:world-realm-of-the-deeper-covenant ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg 41.0893 ;
+    oa:derivation "The distance is the article's: about 750 ly, rimward. The direction is not, and comes from three things agreeing. Hyxuyum lies 110 ly from the Realm and is in Auriga at 820 ly; with 70 ly of that separation spent on the difference in radius, at most 85 ly is left across the sky, which puts the Realm within six and a half degrees of Hyxuyum. Auriga's own centre is used as that direction, and it sits at galactic longitude 171 — nine degrees off the anticentre, which is what rimward means. So the constellation and the article's one word of direction point the same way. The error quoted is Auriga's width, since that and not the six degrees is what dominates." ;
+    oa:directionErrorDeg 20.0 ;
+    oa:distance value:location-world-realm-of-the-deeper-covenant-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:EditorialEstimate ;
+    oa:rightAscensionDeg 89.0897 .
+
+value:location-world-realm-of-the-deeper-covenant-distance a oa:QuantityValue ;
+    qudt:numericValue 750.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-realm-of-the-deeper-covenant-deeper-covenant a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4aaed32f4b1e3> ;
+    oa:about id:world-realm-of-the-deeper-covenant ;
+    oa:canonical true ;
+    oa:polity id:polity-deeper-covenant ;
+    oa:recordOrder 0 .
+
+claim:event-world-realm-of-the-deeper-covenant-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4aaed32f4b1e3> ;
+    oa:about id:world-realm-of-the-deeper-covenant ;
+    oa:canonical true ;
+    oa:eventKind oa:Capital ;
+    oa:note "One of the largest centres of Deeper civilisation." ;
+    oa:precision oa:NotLaterThan ;
+    oa:recordOrder 0 ;
+    oa:yearAT 10600 .
+
+claim:event-world-realm-of-the-deeper-covenant-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4aaed32f4b1e3> ;
+    oa:about id:world-realm-of-the-deeper-covenant ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "\"First discovered by a Deeper survey swarm in 4715 AT, the area of space that would eventually become the Realm contained some twenty- four brown dwarf and jovian class worlds all within a single cubic light-year volume.\" A Deeper survey swarm's discovery; the Covenant's colonisation, and the map's older 'capital 10600', are undated in the article." ;
+    oa:polity id:polity-deeper-covenant ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 4715 .

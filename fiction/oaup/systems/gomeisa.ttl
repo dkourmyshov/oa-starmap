@@ -1,0 +1,72 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# Gomeisa
+
+id:world-gomeisa a oa:Place, oa:World ;
+    skos:prefLabel "Gomeisa" ;
+    oa:article <https://www.orionsarm.com/eg-article/59b0537bbfe08> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Beta Canis Minoris, 161 ly out. Recorded under both holders because that is what the article makes of it: an important interface between Metasoft and the Sophic League next door, rather than a possession of either." ;
+    oa:systemName "Gomeisa" ;
+    oa:uncertain false .
+
+claim:location-world-gomeisa a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/59b0537bbfe08> ;
+    oa:about id:world-gomeisa ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Gomeisa" .
+
+claim:affiliation-world-gomeisa-metasoft a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/59b0537bbfe08> ;
+    oa:about id:world-gomeisa ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft ;
+    oa:recordOrder 0 .
+
+claim:affiliation-world-gomeisa-sophic-league a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/59b0537bbfe08> ;
+    oa:about id:world-gomeisa ;
+    oa:canonical true ;
+    oa:polity id:polity-sophic-league ;
+    oa:recordOrder 1 .
+
+claim:event-world-gomeisa-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/59b0537bbfe08> ;
+    oa:about id:world-gomeisa ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"Gomeisa was colonised by the Conver Ambi in 2734 AT.\"" ;
+    oa:polity id:polity-conver-ambi ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 2734 .
+
+claim:event-world-gomeisa-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/59b0537bbfe08> ;
+    oa:about id:world-gomeisa ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"Eventually in 9444AT Beta Canis Minoris became joint property of the two empires, and an increasingly diverse population of vecs, mystics, cyborgs, alphas and betas now fill the bubblehabs of Polheim and the now fully-completed shellworld of Amundsen.\" Joint with Sophic League, see the paired entry below. Not mentioned in the header, which only lists settled 2734. 'Joint property of the two empires'; the same sentence carries the Sophic League." ;
+    oa:polity id:polity-metasoft ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 9444 .
+
+claim:event-world-gomeisa-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/59b0537bbfe08> ;
+    oa:about id:world-gomeisa ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"Eventually in 9444AT Beta Canis Minoris became joint property of the two empires, and an increasingly diverse population of vecs, mystics, cyborgs, alphas and betas now fill the bubblehabs of Polheim and the now fully-completed shellworld of Amundsen.\" Joint with Metasoft, see the paired entry above. Not mentioned in the header, which only lists settled 2734." ;
+    oa:polity id:polity-sophic-league ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 2 ;
+    oa:yearAT 9444 .

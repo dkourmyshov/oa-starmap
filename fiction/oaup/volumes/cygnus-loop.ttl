@@ -1,0 +1,40 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Cygnus Loop
+
+id:world-cygnus-loop a oa:Place, oa:World ;
+    skos:prefLabel "Cygnus Loop" ;
+    oa:article <https://www.orionsarm.com/eg-article/4648f934c38f8> ;
+    oa:kind "volume" ;
+    oa:labelsSystem false ;
+    oa:note "A supernova remnant. This map loads no remnant catalogue, so unlike the clusters and nebulae it cannot be bound to a real object — the constellation carries the direction and the article the distance, which at 1,470 ly makes the direction good to a few hundred light years." ;
+    oa:uncertain false .
+
+claim:location-world-cygnus-loop a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4648f934c38f8> ;
+    oa:about id:world-cygnus-loop ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:constellationName "Cygnus" ;
+    oa:distance value:location-world-cygnus-loop-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+value:location-world-cygnus-loop-distance a oa:QuantityValue ;
+    qudt:numericValue 1470.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-cygnus-loop-cygexpa a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4648f934c38f8> ;
+    oa:about id:world-cygnus-loop ;
+    oa:canonical true ;
+    oa:polity id:polity-cygexpa ;
+    oa:recordOrder 0 .

@@ -1,0 +1,31 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# HIP 77858
+
+id:world-hip-77858 a oa:Place, oa:World ;
+    skos:prefLabel "HIP 77858" ;
+    oa:article <https://www.orionsarm.com/eg-article/5e9b5712e4df2> ;
+    oa:kind "megastructure" ;
+    oa:labelsSystem false ;
+    oa:note "The second Blue Star Dyson cited, in Scorpius at 448 ly. The setting gives it no name of its own, so it carries its catalogue designation." ;
+    oa:uncertain false .
+
+claim:location-world-hip-77858 a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5e9b5712e4df2> ;
+    oa:about id:world-hip-77858 ;
+    oa:canonical true ;
+    oa:catalogueFromSource true ;
+    oa:hipparcosId 77858 ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+claim:affiliation-world-hip-77858-mutual-progress-association a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5e9b5712e4df2> ;
+    oa:about id:world-hip-77858 ;
+    oa:canonical true ;
+    oa:polity id:polity-mutual-progress-association ;
+    oa:recordOrder 0 .

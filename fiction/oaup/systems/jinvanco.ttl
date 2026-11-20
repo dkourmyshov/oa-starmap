@@ -1,0 +1,97 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Jinvanco
+
+id:world-jinvanco a oa:Place, oa:World ;
+    skos:prefLabel "Jinvanco" ;
+    oa:article <https://www.orionsarm.com/eg-article/5e25af2c2b373> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Struve 2398 A, as the colony table has it." ;
+    oa:systemName "Jinvanco" ;
+    oa:uncertain false .
+
+claim:location-world-jinvanco a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5e25af2c2b373> ;
+    oa:about id:world-jinvanco ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Struve 2398 A" .
+
+claim:event-world-jinvanco-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5e25af2c2b373> ;
+    oa:about id:world-jinvanco ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"Decelerating around Jinvanco B, named Rubasho or \"Ruby\", the Advance first settled around the second of the red dwarf's two ice giants.\" year computed from 'The joint venture left Jovian orbit in 472 AT aboard the Advance' plus 'Awakened from stasis 165 years later' (472+165=637); no single sentence states 637 AT directly. The colonists were a joint venture of Genetekkers (Gengineer Republic) and tweaks from the Martian Union, neither on the roster (see unplaced). The year is not stated: the Advance left in 472 and the article gives a transit of 165 years. The settlers were of the Gengineer Republic, no polity of this file." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 637 .
+
+claim:event-world-jinvanco-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5e25af2c2b373> ;
+    oa:about id:world-jinvanco ;
+    oa:canonical true ;
+    oa:eventKind oa:Independent ;
+    oa:note "\"The dissolution of the Gengineer Republic in 784 AT, proved to be the breaking point for the JCA. Without even the pretext of a higher headquarters to answer to, the half dozen JCA factions became independent actors.\" the Gengineer Republic and the Jinvanco Colonial Administration (JCA) are not on the roster (see unplaced) The Jinvanco Colonial Authority's break from the Gengineer Republic, which is no polity of this file." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 784 .
+
+# Jinvanco
+
+id:inner-sphere-row-0027 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Jinvanco" .
+
+claim:inner-sphere-inner-sphere-row-0027-7de7c3b42695 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0027 ;
+    oa:article <https://www.orionsarm.com/eg-article/5e25af2c2b373> ;
+    oa:canonical true ;
+    oa:colonyName "Jinvanco" ;
+    oa:luminositySol "0.016" ;
+    oa:massSol "0.334" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 26 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0027-7de7c3b42695-source-distance ;
+    oa:spectralType "M3 V" ;
+    oa:starName "Struve 2398 A" .
+
+value:inner-sphere-inner-sphere-row-0027-7de7c3b42695-source-distance a oa:QuantityValue ;
+    qudt:numericValue 11.491 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Jinvanco
+
+id:inner-sphere-row-0028 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Jinvanco" .
+
+claim:inner-sphere-inner-sphere-row-0028-cf2fef5f3ec1 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0028 ;
+    oa:article <https://www.orionsarm.com/eg-article/5e25af2c2b373> ;
+    oa:canonical true ;
+    oa:colonyName "Jinvanco" ;
+    oa:luminositySol "0.008406" ;
+    oa:massSol "0.248" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 27 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0028-cf2fef5f3ec1-source-distance ;
+    oa:spectralType "M3.5 V" ;
+    oa:starName "Struve 2398 B" .
+
+value:inner-sphere-inner-sphere-row-0028-cf2fef5f3ec1-source-distance a oa:QuantityValue ;
+    qudt:numericValue 11.491 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

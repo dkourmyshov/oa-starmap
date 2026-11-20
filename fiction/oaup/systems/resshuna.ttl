@@ -1,0 +1,33 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Resshuna
+
+id:inner-sphere-row-0069 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Resshuna" .
+
+claim:inner-sphere-inner-sphere-row-0069-cebb60df86f9 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0069 ;
+    oa:article <https://www.orionsarm.com/eg-article/64cc708f305ee> ;
+    oa:canonical true ;
+    oa:colonyName "Resshuna" ;
+    oa:luminositySol "0.0473" ;
+    oa:massSol "0.67" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 68 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0069-cebb60df86f9-source-distance ;
+    oa:spectralType "K7 Vn" ;
+    oa:starName "Groombridge 1618" .
+
+value:inner-sphere-inner-sphere-row-0069-cebb60df86f9-source-distance a oa:QuantityValue ;
+    qudt:numericValue 15.886 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

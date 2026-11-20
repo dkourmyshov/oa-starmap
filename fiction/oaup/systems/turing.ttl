@@ -1,0 +1,174 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Turing
+
+id:world-turing a oa:Place, oa:World ;
+    skos:prefLabel "Turing" ;
+    oa:article <https://www.orionsarm.com/eg-article/49125f5d1c049> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Castor, 51 ly out, and named as Turing in the colony table too." ;
+    oa:uncertain false .
+
+claim:location-world-turing a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/49125f5d1c049> ;
+    oa:about id:world-turing ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Castor" .
+
+claim:affiliation-world-turing-technorapture-hypernation a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/49125f5d1c049> ;
+    oa:about id:world-turing ;
+    oa:canonical true ;
+    oa:polity id:polity-technorapture-hypernation ;
+    oa:recordOrder 0 .
+
+claim:event-world-turing-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/49125f5d1c049> ;
+    oa:about id:world-turing ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 2211 .
+
+claim:event-world-turing-002 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-turing ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "The Turing arrives at Pi3 Orionis . The Heterosemiotics name the fourth planet Daedalus." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:sourceDescription "Encyclopaedia timeline, The Sundering" ;
+    oa:yearAT 854 .
+
+# Turing
+
+id:inner-sphere-row-0602 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Turing" .
+
+claim:inner-sphere-inner-sphere-row-0602-493a50e4b31b a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0602 ;
+    oa:article <https://www.orionsarm.com/eg-article/49125f5d1c049> ;
+    oa:canonical true ;
+    oa:colonyName "Turing" ;
+    oa:luminositySol "0.026" ;
+    oa:massSol "0.63" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 601 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0602-493a50e4b31b-source-distance ;
+    oa:spectralType "M0.5 Ve" ;
+    oa:starName "Alpha Geminorum Ca" .
+
+value:inner-sphere-inner-sphere-row-0602-493a50e4b31b-source-distance a oa:QuantityValue ;
+    qudt:numericValue 49.186 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Turing
+
+id:inner-sphere-row-0603 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Turing" .
+
+claim:inner-sphere-inner-sphere-row-0603-f9b58c2c4033 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0603 ;
+    oa:article <https://www.orionsarm.com/eg-article/49125f5d1c049> ;
+    oa:canonical true ;
+    oa:colonyName "Turing" ;
+    oa:luminositySol "0.026" ;
+    oa:massSol "0.57" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 602 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0603-f9b58c2c4033-source-distance ;
+    oa:spectralType "M0.5 Ve" ;
+    oa:starName "Alpha Geminorum Cb" .
+
+value:inner-sphere-inner-sphere-row-0603-f9b58c2c4033-source-distance a oa:QuantityValue ;
+    qudt:numericValue 49.186 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Turing
+
+id:inner-sphere-row-0619 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Turing" .
+
+claim:inner-sphere-inner-sphere-row-0619-dd8fd9dcc827 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0619 ;
+    oa:article <https://www.orionsarm.com/eg-article/49125f5d1c049> ;
+    oa:canonical true ;
+    oa:colonyName "Turing" ;
+    oa:luminositySol "." ;
+    oa:massSol "." ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 618 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0619-dd8fd9dcc827-source-distance ;
+    oa:spectralType "." ;
+    oa:starName "Alpha Geminorum Ab" .
+
+value:inner-sphere-inner-sphere-row-0619-dd8fd9dcc827-source-distance a oa:QuantityValue ;
+    qudt:numericValue 50.87 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Turing
+
+id:inner-sphere-row-0620 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Turing" .
+
+claim:inner-sphere-inner-sphere-row-0620-496b8e11fa78 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0620 ;
+    oa:article <https://www.orionsarm.com/eg-article/49125f5d1c049> ;
+    oa:canonical true ;
+    oa:colonyName "Turing" ;
+    oa:luminositySol "7.9" ;
+    oa:massSol "1.7" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 619 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0620-496b8e11fa78-source-distance ;
+    oa:spectralType "A2 Vm" ;
+    oa:starName "Alpha Geminorum Ba" .
+
+value:inner-sphere-inner-sphere-row-0620-496b8e11fa78-source-distance a oa:QuantityValue ;
+    qudt:numericValue 50.87 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Turing
+
+id:inner-sphere-row-0621 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Turing" .
+
+claim:inner-sphere-inner-sphere-row-0621-9d2c9c7f8668 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0621 ;
+    oa:article <https://www.orionsarm.com/eg-article/49125f5d1c049> ;
+    oa:canonical true ;
+    oa:colonyName "Turing" ;
+    oa:luminositySol "." ;
+    oa:massSol "." ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 620 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0621-9d2c9c7f8668-source-distance ;
+    oa:spectralType "." ;
+    oa:starName "Alpha Geminorum Bb" .
+
+value:inner-sphere-inner-sphere-row-0621-9d2c9c7f8668-source-distance a oa:QuantityValue ;
+    qudt:numericValue 50.87 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

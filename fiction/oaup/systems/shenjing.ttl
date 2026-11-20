@@ -1,0 +1,194 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# Shenjing
+
+id:world-shenjing a oa:Place, oa:World ;
+    skos:prefLabel "Shenjing" ;
+    oa:article <https://www.orionsarm.com/eg-article/4b996bd9cc16c> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Sigma Draconis, 19 ly, and the most crowded system recorded here: Sophic, Zoeific and Keterist orientations are common alongside the non-aligned, and every major Sephirotic empire except the Caretaker Gods holds something. Its worlds divide further than this map goes — Zhuque is cosmopolitan, Xuanwu is Keter's with Deeper Covenant communities in orbit, Baihu is mainly Zoeific and Sophic, and the Lagrange nodes of each are claimed separately again. Only the three commonest are drawn." ;
+    oa:systemName "Shenjing" ;
+    oa:uncertain false .
+
+claim:location-world-shenjing a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4b996bd9cc16c> ;
+    oa:about id:world-shenjing ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Sigma Draconis" .
+
+claim:affiliation-world-shenjing-keter-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4b996bd9cc16c> ;
+    oa:about id:world-shenjing ;
+    oa:canonical true ;
+    oa:polity id:polity-keter-dominion ;
+    oa:recordOrder 2 .
+
+claim:affiliation-world-shenjing-sophic-league a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4b996bd9cc16c> ;
+    oa:about id:world-shenjing ;
+    oa:canonical true ;
+    oa:polity id:polity-sophic-league ;
+    oa:recordOrder 0 .
+
+claim:affiliation-world-shenjing-zoeific-biopolity a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4b996bd9cc16c> ;
+    oa:about id:world-shenjing ;
+    oa:canonical true ;
+    oa:polity id:polity-zoeific-biopolity ;
+    oa:recordOrder 1 .
+
+# Penglai
+
+id:world-penglai a oa:Place, oa:World ;
+    skos:prefLabel "Penglai" ;
+    oa:article <https://www.orionsarm.com/eg-article/48e89a9239865> ;
+    oa:kind "moon" ;
+    oa:labelsSystem false ;
+    oa:note "A moon of the gas dwarf Qinglong, in the Shenjing system. Mostly Sophic League, with Zoeific, Solarist, Fomalhaut and Metasoft presences in orbit." ;
+    oa:parentName "Qinglong" ;
+    oa:systemName "Shenjing" ;
+    oa:uncertain false .
+
+claim:location-world-penglai a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48e89a9239865> ;
+    oa:about id:world-penglai ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Sigma Draconis" .
+
+claim:affiliation-world-penglai-sophic-league a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48e89a9239865> ;
+    oa:about id:world-penglai ;
+    oa:canonical true ;
+    oa:polity id:polity-sophic-league ;
+    oa:recordOrder 0 .
+
+claim:event-world-penglai-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48e89a9239865> ;
+    oa:about id:world-penglai ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 678 .
+
+claim:event-world-penglai-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48e89a9239865> ;
+    oa:about id:world-penglai ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "The Hsien revolt of 1205: \"In the following centuries, under Hsien leadership, the Penglai planetsiders, the belters, and jovianists merged in a solar-system wide empire.\" The article dates the revolt and not the empire, so this is the earliest it can be. The Empire's own article calls it the Penglai Evolution and has it \"part of the NoCoZo treaty in 1676\"." ;
+    oa:polity id:polity-penglai-empire ;
+    oa:precision oa:NotEarlierThan ;
+    oa:recordOrder 1 ;
+    oa:yearAT 1205 .
+
+claim:event-world-penglai-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48e8a5fb37a9a> ;
+    oa:about id:world-penglai ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "The Shi War of 2220-2251 ended the Hsien Evolution: \"the Reborn Penglaiese Empire came to rule the Sigma Draconis system. Formally independent, it quickly became a totally dependent part of the Conver Ambi.\" Drawn as the Ambi's, since that is what the article says it was, whatever it was formally." ;
+    oa:polity id:polity-conver-ambi ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 2 ;
+    oa:yearAT 2251 .
+
+claim:event-world-penglai-004 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-penglai ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"The Second Consolidation War ended with the destruction of the Conver Ambi empire, and the Sigma Draconis system came under Metasoft protection.\" The article gives no year; the timeline divides the Conver Ambi in 3943." ;
+    oa:polity id:polity-metasoft ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 3 ;
+    oa:sourceDescription "Encyclopaedia timeline, for the year" ;
+    oa:yearAT 3943 .
+
+claim:event-world-penglai-005 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-penglai ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"After the Version War Penglai was re-assigned to the Sophic League as part of the war settlement.\" The timeline's Version War period ends in 4650." ;
+    oa:polity id:polity-sophic-league ;
+    oa:precision oa:NotEarlierThan ;
+    oa:recordOrder 4 ;
+    oa:sourceDescription "Encyclopaedia timeline, for the year" ;
+    oa:yearAT 4650 .
+
+claim:event-world-penglai-006 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-penglai ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "The lead Heavenly Palaces colony ship arrive at Sigma Draconis , the others at ten year intervals." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 5 ;
+    oa:sourceDescription "Encyclopaedia timeline, The Sundering" ;
+    oa:yearAT 609 .
+
+claim:event-world-penglai-007 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-penglai ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "Penglai ship arrives at Pandya and infects local population with pathogens to which they have no immunity." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 6 ;
+    oa:sourceDescription "Encyclopaedia timeline, Middle Federation / Megacorps" ;
+    oa:yearAT 1350 .
+
+claim:event-world-penglai-008 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48e89a9239865> ;
+    oa:about id:world-penglai ;
+    oa:canonical true ;
+    oa:eventKind oa:Independent ;
+    oa:note "\"Riding on the wave of popular support and independence following their unilateral declaration of independence, Jian Hsin (or Jian-tze as he now liked to style himself), leader of the new PCA, made the former districts of Hao Chen, Daonin, Tsi Leng and Hsu Hsi into sovereign nations, and they were formally recognized by the PCA.\" Independence was declared from the founding corporations (Heavenly Palaces Incorporated and partners), not from a roster polity, so no prior holder is named. Jian Hsin's unilateral declaration of independence from the Heavenly Palaces company; the Jian Dynasty is local." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 7 ;
+    oa:yearAT 715 .
+
+# Qinglong
+
+id:world-qinglong a oa:Place, oa:World ;
+    skos:prefLabel "Qinglong" ;
+    oa:article <https://www.orionsarm.com/eg-article/464f1e545d058> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "A neptunian of Shenjing, at Sigma Draconis. Penglai is its moon, and has named it as parent since before this entry existed." ;
+    oa:systemName "Shenjing" ;
+    oa:uncertain false .
+
+claim:location-world-qinglong a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/464f1e545d058> ;
+    oa:about id:world-qinglong ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Sigma Draconis" .
+
+claim:affiliation-world-qinglong-sophic-league a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/464f1e545d058> ;
+    oa:about id:world-qinglong ;
+    oa:canonical true ;
+    oa:polity id:polity-sophic-league ;
+    oa:recordOrder 0 .
+
+claim:event-world-qinglong-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/464f1e545d058> ;
+    oa:about id:world-qinglong ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"This world was inhabited by Mirrored Owl symbiotic swarm-nets, including the entity known as Advection of Pure Drylines during the 4000's AT.\" Inhabiting group is a clade of symbiotic swarm-nets, not a roster polity. The gas dwarf of the Shenjing system, inhabited by the Mirrored Owls' swarm-nets; no polity of this file." ;
+    oa:precision oa:Circa ;
+    oa:recordOrder 0 ;
+    oa:yearAT 4000 .

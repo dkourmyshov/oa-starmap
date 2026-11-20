@@ -1,0 +1,98 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# M'Buto
+
+id:world-m-buto a oa:Place, oa:World ;
+    skos:altLabel "M'Buto Confederacy" ;
+    skos:prefLabel "M'Buto" ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Gliese 454, 42 ly out. Named in the colony table and held jointly with the Non-Coercive Zone; the Encyclopaedia gives it no article of its own. The Combine's page puts the M'Buto Confederacy at BD -9 3413, 10.7 ly from Beta Virginis." ;
+    oa:uncertain false .
+
+claim:location-world-m-buto a prov:Entity, oa:LocationClaim ;
+    oa:about id:world-m-buto ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Gliese 454" .
+
+claim:affiliation-world-m-buto-metasoft a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:world-m-buto ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft ;
+    oa:recordOrder 0 .
+
+claim:affiliation-world-m-buto-nocozo a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:world-m-buto ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 1 .
+
+claim:event-world-m-buto-001 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-m-buto ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"After some years of increasingly close links, the M'Buto Confederacy joins the Virginis Combine.\" The Combine's own page: the Confederacy, \"a loose solar system alliance of diverse habitats, clades, corporations, and Houses, was easily subverted and annexed by the combine.\"" ;
+    oa:polity id:polity-virginis-combine ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:sourceDescription "Encyclopaedia timeline, Late Federation / AI Emergence" ;
+    oa:yearAT 1816 .
+
+# M'buto
+
+id:inner-sphere-row-0467 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "M'buto" .
+
+claim:inner-sphere-inner-sphere-row-0467-3a915178cb0b a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0467 ;
+    oa:article <https://www.orionsarm.com/eg-article/47e1bf76c9e19> ;
+    oa:canonical true ;
+    oa:colonyName "M'buto" ;
+    oa:luminositySol "." ;
+    oa:massSol "0.98" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 466 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0467-3a915178cb0b-source-distance ;
+    oa:spectralType "G8 IV" ;
+    oa:starName "HD 104304 A" .
+
+value:inner-sphere-inner-sphere-row-0467-3a915178cb0b-source-distance a oa:QuantityValue ;
+    qudt:numericValue 41.636 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# M'buto
+
+id:inner-sphere-row-0468 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "M'buto" .
+
+claim:inner-sphere-inner-sphere-row-0468-d3da4f897c0c a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0468 ;
+    oa:article <https://www.orionsarm.com/eg-article/47e1bf76c9e19> ;
+    oa:canonical true ;
+    oa:colonyName "M'buto" ;
+    oa:luminositySol "." ;
+    oa:massSol "0.21" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 467 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0468-d3da4f897c0c-source-distance ;
+    oa:spectralType "M4 V" ;
+    oa:starName "HD 104304 B" .
+
+value:inner-sphere-inner-sphere-row-0468-d3da4f897c0c-source-distance a oa:QuantityValue ;
+    qudt:numericValue 41.636 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

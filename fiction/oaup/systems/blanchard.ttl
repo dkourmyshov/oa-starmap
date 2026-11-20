@@ -1,0 +1,74 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Blanchard
+
+id:world-blanchard a oa:Place, oa:World ;
+    skos:prefLabel "Blanchard" ;
+    oa:article <https://www.orionsarm.com/eg-article/5762be458989f> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Beta Caeli, as the colony table has it." ;
+    oa:systemName "Blanchard" ;
+    oa:uncertain false .
+
+claim:location-world-blanchard a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5762be458989f> ;
+    oa:about id:world-blanchard ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Beta Caeli" .
+
+claim:event-world-blanchard-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5762be458989f> ;
+    oa:about id:world-blanchard ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"Beta Caeli was reached in 1522 A.T. by the Undyoist colony ship Qian Kun .\" Undyoists are a religious/cultural group, not a polity on the roster" ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 1522 .
+
+claim:event-world-blanchard-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5762be458989f> ;
+    oa:about id:world-blanchard ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "\"In 3879 the Blanchard Tape voted to invite the NoCoZo to send a representative transapient to give them assistance and guidance; they expected to get a single First Singularity visitor, but instead several dozen transapients arrived, including in due course a S:2 Higher transapient .\" recorded as visited rather than transferred because the article later states Blanchard never formally joined the NoCoZo A representative transapient invited, not a joining: the article says Blanchard never formally joined the Zone." ;
+    oa:polity id:polity-nocozo ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 3879 .
+
+# Blanchard
+
+id:inner-sphere-row-1059 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Blanchard" .
+
+claim:inner-sphere-inner-sphere-row-1059-9b80fb705a4f a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-1059 ;
+    oa:article <https://www.orionsarm.com/eg-article/5762be458989f> ;
+    oa:canonical true ;
+    oa:colonyName "Blanchard" ;
+    oa:luminositySol "." ;
+    oa:massSol "1.32" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 1058 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-1059-9b80fb705a4f-source-distance ;
+    oa:spectralType "F3 IV" ;
+    oa:starName "Beta Caeli" .
+
+value:inner-sphere-inner-sphere-row-1059-9b80fb705a4f-source-distance a oa:QuantityValue ;
+    qudt:numericValue 94.241 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

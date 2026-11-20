@@ -1,0 +1,44 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# Fata Morgana
+
+id:world-fata-morgana a oa:Place, oa:World ;
+    skos:prefLabel "Fata Morgana" ;
+    oa:article <https://www.orionsarm.com/eg-article/47b8e39c9718c> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "Iota Ursae Majoris, whose primary is Talitha; the colony table gives the system as \"Talitha / Mithras / Fata Morgana\". No colonisation date." ;
+    oa:systemName "Talitha" ;
+    oa:uncertain false .
+
+claim:location-world-fata-morgana a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47b8e39c9718c> ;
+    oa:about id:world-fata-morgana ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Iota Ursae Majoris" .
+
+claim:affiliation-world-fata-morgana-cyberian-network a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47b8e39c9718c> ;
+    oa:about id:world-fata-morgana ;
+    oa:canonical true ;
+    oa:polity id:polity-cyberian-network ;
+    oa:recordOrder 0 .
+
+claim:event-world-fata-morgana-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47b8e39c9718c> ;
+    oa:about id:world-fata-morgana ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "Infiltrated and taken over from the Solar Dominion over thirty-four years. An infiltration rather than an event, which is why it carries an end year." ;
+    oa:polity id:polity-cyberian-network ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:untilAT 4530 ;
+    oa:yearAT 4496 .

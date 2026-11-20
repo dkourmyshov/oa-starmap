@@ -1,0 +1,28 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# Ratay's World
+
+id:world-ratay-s-world a oa:Place, oa:World ;
+    skos:prefLabel "Ratay's World" ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "No article of its own." ;
+    oa:uncertain false .
+
+claim:location-world-ratay-s-world a prov:Entity, oa:LocationClaim ;
+    oa:about id:world-ratay-s-world ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:note "In the outer Crucis Corridor." .
+
+claim:affiliation-world-ratay-s-world-negentropy-alliance a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:world-ratay-s-world ;
+    oa:canonical true ;
+    oa:polity id:polity-negentropy-alliance ;
+    oa:recordOrder 0 .

@@ -1,0 +1,107 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Oikoumene
+
+id:inner-sphere-row-0862 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Oikoumene" .
+
+claim:inner-sphere-inner-sphere-row-0862-d8c61be1ffd4 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0862 ;
+    oa:article <https://www.orionsarm.com/eg-article/490b34ec41bb6> ;
+    oa:canonical true ;
+    oa:colonyName "Oikoumene" ;
+    oa:luminositySol "6.65" ;
+    oa:massSol "." ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 861 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0862-d8c61be1ffd4-source-distance ;
+    oa:spectralType "F3 V" ;
+    oa:starName "Zeta Serpentis" .
+
+value:inner-sphere-inner-sphere-row-0862-d8c61be1ffd4-source-distance a oa:QuantityValue ;
+    qudt:numericValue 75.009 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Oikoumene Dyson
+
+id:world-oikoumene-dyson a oa:Place, oa:World ;
+    skos:prefLabel "Oikoumene Dyson" ;
+    oa:article <https://www.orionsarm.com/eg-article/490b34ec41bb6> ;
+    oa:kind "megastructure" ;
+    oa:labelsSystem false ;
+    oa:note "Zeta Serpentis, 75 ly — an Inner Sphere system." ;
+    oa:systemName "Oikoumene" ;
+    oa:uncertain false .
+
+claim:location-world-oikoumene-dyson a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/490b34ec41bb6> ;
+    oa:about id:world-oikoumene-dyson ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:distance value:location-world-oikoumene-dyson-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Zeta Serpentis" .
+
+value:location-world-oikoumene-dyson-distance a oa:QuantityValue ;
+    qudt:numericValue 75.7 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-oikoumene-dyson-mutual-progress-association a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/490b34ec41bb6> ;
+    oa:about id:world-oikoumene-dyson ;
+    oa:canonical true ;
+    oa:polity id:polity-mutual-progress-association ;
+    oa:recordOrder 0 .
+
+claim:event-world-oikoumene-dyson-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/490b34ec41bb6> ;
+    oa:about id:world-oikoumene-dyson ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "Reached, only to find an ahuman colony already established there. A first visit that was not a first arrival." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 1521 .
+
+claim:event-world-oikoumene-dyson-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/490b34ec41bb6> ;
+    oa:about id:world-oikoumene-dyson ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"The K4H decided to dig in on the outer belt, as well as appropriate some frozen kuiper bodies and an inner rockball.\" Same year and continuous narrative as the \"reached\" clause above, but this clause describes staying rather than merely arriving; the header records this year only as visited. See contradictions. The K4H development project, finding a Diamond Belt colony already there; the map's older 'visited 1521' is this arrival." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 1521 .
+
+claim:event-world-oikoumene-dyson-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/490b34ec41bb6> ;
+    oa:about id:world-oikoumene-dyson ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"Diamond Belt neumann colony thought to have been established c. 1470s - 1480s\" Panel gives a two-decade approximate range, \"c. 1470s - 1480s\"; year_at is the earlier bound only. The panel's own estimate for the Diamond Belt neumann colony the K4H found in 1521." ;
+    oa:precision oa:Circa ;
+    oa:recordOrder 2 ;
+    oa:yearAT 1470 .
+
+claim:event-world-oikoumene-dyson-004 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/490b34ec41bb6> ;
+    oa:about id:world-oikoumene-dyson ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "\"In 3194 a third toposophic MPA artificer ISO, fascinated by the vast project, made contact with the distributed intelligence of the dyson, and was able to establish communication channels and protocol and information exchanges between Oikoumene and Djed.\" The sentence attributes this contact to an MPA-affiliated artificer. Whether this is the point Oikoumene formally became MPA-affiliated (per the panel's current \"Affiliation: MPA\") is not stated and is not inferred here. A third-toposophic MPA artificer ISO making contact with the dyson's distributed intelligence." ;
+    oa:polity id:polity-mutual-progress-association ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 3 ;
+    oa:yearAT 3194 .

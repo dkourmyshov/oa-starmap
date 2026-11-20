@@ -24,7 +24,7 @@ import numpy as np
 from oastarmap.build.worlds import PRESENCE_KINDS, certain_by
 from oastarmap.build.writer import write_array, write_json
 from oastarmap.fiction.resolve import Binding, ResolutionReport, Resolver
-from oastarmap.fiction.schema import AliasFile, FictionFile, LandmarkFile
+from oastarmap.fiction.store import OAUP_DIR, load_store
 from oastarmap.paths import DATA_OUT_DIR, FICTION_DIR
 from oastarmap.transform.frame import PC_TO_LY
 
@@ -160,7 +160,7 @@ def _placement_outliers(
 def _derived_years(events: Any) -> dict[str, int | None]:
     """When a landmark first appears, when it was settled, and when it ended.
 
-    The same three questions the world file answers, computed by the same rule,
+    The same three questions the world records answer, computed by the same rule,
     because a cluster the setting colonised is a place with a history and the
     historical view has to date it the same way it dates a planet.
     """
@@ -310,8 +310,9 @@ def build_fiction(
     fiction_dir = fiction_dir or FICTION_DIR
     out_dir = out_dir or DATA_OUT_DIR
 
-    fiction = FictionFile.load(fiction_dir / "polities.yaml")
-    aliases = AliasFile.load(fiction_dir / "aliases.yaml").aliases
+    store = load_store(fiction_dir / OAUP_DIR)
+    fiction = store.fiction
+    aliases = store.alias_file.aliases
 
     cluster_names_path = out_dir / "clusters.names.json"
     if not cluster_names_path.exists():
@@ -390,11 +391,11 @@ def build_fiction(
     # Orion's Arm names for real objects. Resolved through the same table as a
     # landmark, so the file can write the designation the way a person would.
     landmark_names: list[dict[str, Any]] = []
-    for entry in LandmarkFile.load(FICTION_DIR / "landmarks.yaml").landmarks:
+    for entry in store.landmark_file.landmarks:
         found = resolver.resolve(entry.catalogue, [])
         if found.index is None:
             raise ValueError(
-                f"landmarks.yaml names {entry.catalogue!r}, which matches no catalogued object"
+                f"landmark claim for {entry.catalogue!r}, which matches no catalogued object"
             )
         landmark_names.append(
             {

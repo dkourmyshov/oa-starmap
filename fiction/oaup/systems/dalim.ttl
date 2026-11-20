@@ -1,0 +1,32 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Dalim
+
+id:inner-sphere-row-0520 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Dalim" .
+
+claim:inner-sphere-inner-sphere-row-0520-3cceeeb8b543 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0520 ;
+    oa:canonical true ;
+    oa:colonyName "Dalim" ;
+    oa:luminositySol "4.563" ;
+    oa:massSol "1.5" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 519 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0520-3cceeeb8b543-source-distance ;
+    oa:spectralType "F7 IV" ;
+    oa:starName "Alpha Fornacis A" .
+
+value:inner-sphere-inner-sphere-row-0520-3cceeeb8b543-source-distance a oa:QuantityValue ;
+    qudt:numericValue 45.659 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

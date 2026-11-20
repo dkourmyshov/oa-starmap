@@ -1,0 +1,52 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Bambata
+
+id:world-bambata a oa:Place, oa:World ;
+    skos:prefLabel "Bambata" ;
+    oa:article <https://www.orionsarm.com/eg-article/4683127661e72> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "Where the Lirantiq began, and the Emple-Dokcetics out of them in 6100. Given as near M41 in Canis Major at 2,200 ly; the catalogue puts M41 at 2,332, so the cluster lends its direction — far tighter than Canis Major, which is fourteen degrees wide — and the article keeps its distance." ;
+    oa:uncertain false .
+
+claim:location-world-bambata a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4683127661e72> ;
+    oa:about id:world-bambata ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -20.7033 ;
+    oa:distance value:location-world-bambata-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:nearName "M41 (NGC 2287)" ;
+    oa:rightAscensionDeg 101.4946 .
+
+value:location-world-bambata-distance a oa:QuantityValue ;
+    qudt:numericValue 2200.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-bambata-emple-dokcetics a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4683127661e72> ;
+    oa:about id:world-bambata ;
+    oa:canonical true ;
+    oa:polity id:polity-emple-dokcetics ;
+    oa:recordOrder 0 .
+
+claim:event-world-bambata-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4683127661e72> ;
+    oa:about id:world-bambata ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "The Emple-Dokcetics civilisation founded." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 6100 .

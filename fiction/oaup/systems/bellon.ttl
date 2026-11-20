@@ -1,0 +1,55 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Bellon
+
+id:inner-sphere-row-0623 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Bellon" .
+
+claim:inner-sphere-inner-sphere-row-0623-388734fd04d6 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0623 ;
+    oa:canonical true ;
+    oa:colonyName "Bellon" ;
+    oa:luminositySol "." ;
+    oa:massSol "0.93" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 622 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0623-388734fd04d6-source-distance ;
+    oa:spectralType "K0 V" ;
+    oa:starName "Gliese 758 A" .
+
+value:inner-sphere-inner-sphere-row-0623-388734fd04d6-source-distance a oa:QuantityValue ;
+    qudt:numericValue 50.906 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Bellon
+
+id:inner-sphere-row-0624 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Bellon" .
+
+claim:inner-sphere-inner-sphere-row-0624-85bbee082e37 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0624 ;
+    oa:canonical true ;
+    oa:colonyName "Bellon" ;
+    oa:luminositySol "." ;
+    oa:massSol "36xJupiter" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 623 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0624-85bbee082e37-source-distance ;
+    oa:spectralType "T" ;
+    oa:starName "Gliese 758 B" .
+
+value:inner-sphere-inner-sphere-row-0624-85bbee082e37-source-distance a oa:QuantityValue ;
+    qudt:numericValue 50.906 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

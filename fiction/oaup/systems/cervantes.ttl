@@ -1,0 +1,85 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Cervantes
+
+id:world-cervantes a oa:Place, oa:World ;
+    skos:prefLabel "Cervantes" ;
+    oa:article <https://www.orionsarm.com/eg-article/4bb9e51204f88> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Mu Arae, as the colony table has it." ;
+    oa:systemName "Cervantes" ;
+    oa:uncertain false .
+
+claim:location-world-cervantes a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4bb9e51204f88> ;
+    oa:about id:world-cervantes ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Mu Arae" .
+
+claim:event-world-cervantes-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4bb9e51204f88> ;
+    oa:about id:world-cervantes ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"Launched in 714 AT, the ship arrived in 1080 AT with fifteen hundred colonists in cryosleep.\" the colonists were Southern African groups exiled after the Great Expulsion, granted a ship (the Zuma) by GAIA; no roster polity is named as holder" ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 1080 .
+
+claim:event-world-cervantes-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4bb9e51204f88> ;
+    oa:about id:world-cervantes ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "\"When Federation ships arrived in 1343, the colonies had developed in two separate directions.\"" ;
+    oa:polity id:polity-first-federation ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 1343 .
+
+claim:event-world-cervantes-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4bb9e51204f88> ;
+    oa:about id:world-cervantes ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"Only the eclipse of the Authenticist memeticity in this system in 6550 allowed the return of hi-tech meditech and uploading to this world. Aldennia came once more under the protection of the Utopia Sphere, while the Mandelans aligned themselves more with the Negentropists; another influence was the nearby colony of Dante, which had close ties to the Cervantes system by beamrider.\" 'once more' implies this restores an earlier Utopia Sphere protection (see the undated holder_undated entry below); the clause stating the protection's return does not itself repeat the 6550 date, which comes from the preceding sentence about the Authenticist eclipse Aldennia is the world; the year is that of the eclipse of the Authenticist memeticity that the article says allowed it." ;
+    oa:polity id:polity-utopia-sphere ;
+    oa:precision oa:NotEarlierThan ;
+    oa:recordOrder 2 ;
+    oa:yearAT 6550 .
+
+# Cervantes
+
+id:inner-sphere-row-0622 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Cervantes" .
+
+claim:inner-sphere-inner-sphere-row-0622-cb1c04d16b4c a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0622 ;
+    oa:article <https://www.orionsarm.com/eg-article/4bb9e51204f88> ;
+    oa:canonical true ;
+    oa:colonyName "Cervantes" ;
+    oa:luminositySol "1.81" ;
+    oa:massSol "1.08" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 621 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0622-cb1c04d16b4c-source-distance ;
+    oa:spectralType "G5 V" ;
+    oa:starName "Mu Arae" .
+
+value:inner-sphere-inner-sphere-row-0622-cb1c04d16b4c-source-distance a oa:QuantityValue ;
+    qudt:numericValue 50.894 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

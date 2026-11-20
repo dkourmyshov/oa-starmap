@@ -1,0 +1,48 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Big Tor
+
+id:world-big-tor a oa:Place, oa:World ;
+    skos:prefLabel "Big Tor" ;
+    oa:article <https://www.orionsarm.com/eg-article/460d8dd747055> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "HD 50123 in Canis Major, a B6IVe+A pair of 171 solar luminosities. The catalogue puts it at 634 ly against the article's 650, which is ordinary agreement. Also held by the Free Sophic, which has no entry in the polity list." ;
+    oa:systemName "Big Tor" ;
+    oa:uncertain false .
+
+claim:location-world-big-tor a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/460d8dd747055> ;
+    oa:about id:world-big-tor ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:distance value:location-world-big-tor-distance ;
+    oa:hipparcosId 32810 ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+value:location-world-big-tor-distance a oa:QuantityValue ;
+    qudt:numericValue 649.7 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-big-tor-nocozo a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/460d8dd747055> ;
+    oa:about id:world-big-tor ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 1 .
+
+claim:affiliation-world-big-tor-sophic-league a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/460d8dd747055> ;
+    oa:about id:world-big-tor ;
+    oa:canonical true ;
+    oa:polity id:polity-sophic-league ;
+    oa:recordOrder 0 .

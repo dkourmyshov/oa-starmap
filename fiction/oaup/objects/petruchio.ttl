@@ -1,0 +1,24 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# Petruchio
+
+id:world-petruchio a oa:Place, oa:World ;
+    skos:prefLabel "Petruchio" ;
+    oa:article <https://www.orionsarm.com/eg-article/58ffb992da8cc> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "A neptunian of HD 62549 in Monoceros, 161 ly out against the article's 152. The galactic coordinates the article gives — -108.65, -103.39, 24.72 — return that star's own direction to a thousandth of a degree, so the identification is not in doubt even where the distances differ." ;
+    oa:uncertain false .
+
+claim:location-world-petruchio a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/58ffb992da8cc> ;
+    oa:about id:world-petruchio ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "HD 62549" .

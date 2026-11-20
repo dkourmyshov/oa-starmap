@@ -1,0 +1,38 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Cat's Eye Nebula
+
+id:world-cat-s-eye-nebula a oa:Place, oa:World ;
+    skos:prefLabel "Cat's Eye Nebula" ;
+    oa:kind "volume" ;
+    oa:labelsSystem false ;
+    oa:note "NGC 6543, in Draco. Position from the Strasbourg-ESO planetary nebula catalogue, distance 3,300 +/- 900 ly from published measurement — a 27% uncertainty, which is ordinary for a planetary nebula and worse than anything else drawn here." ;
+    oa:uncertain false .
+
+claim:location-world-cat-s-eye-nebula a prov:Entity, oa:LocationClaim ;
+    oa:about id:world-cat-s-eye-nebula ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg 66.633 ;
+    oa:distance value:location-world-cat-s-eye-nebula-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:rightAscensionDeg 269.639 .
+
+value:location-world-cat-s-eye-nebula-distance a oa:QuantityValue ;
+    qudt:numericValue 3300.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-cat-s-eye-nebula-cygexpa a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:world-cat-s-eye-nebula ;
+    oa:canonical true ;
+    oa:polity id:polity-cygexpa ;
+    oa:recordOrder 0 .

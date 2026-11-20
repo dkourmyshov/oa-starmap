@@ -1,0 +1,57 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Lilif
+
+id:inner-sphere-row-0540 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Lilif" .
+
+claim:inner-sphere-inner-sphere-row-0540-046749cc192b a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0540 ;
+    oa:article <https://www.orionsarm.com/eg-article/4887f0f5a6c57> ;
+    oa:canonical true ;
+    oa:colonyName "Lilif" ;
+    oa:luminositySol "0.0000025" ;
+    oa:massSol "0.09" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 539 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0540-046749cc192b-source-distance ;
+    oa:spectralType "M8 V" ;
+    oa:starName "GJ 3655 A" .
+
+value:inner-sphere-inner-sphere-row-0540-046749cc192b-source-distance a oa:QuantityValue ;
+    qudt:numericValue 46.814 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Lilif
+
+id:inner-sphere-row-0541 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Lilif" .
+
+claim:inner-sphere-inner-sphere-row-0541-c7c045394297 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0541 ;
+    oa:article <https://www.orionsarm.com/eg-article/4887f0f5a6c57> ;
+    oa:canonical true ;
+    oa:colonyName "Lilif" ;
+    oa:luminositySol "." ;
+    oa:massSol "70 x Jupiter" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 540 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0541-c7c045394297-source-distance ;
+    oa:spectralType "L7" ;
+    oa:starName "GJ 3655 B" .
+
+value:inner-sphere-inner-sphere-row-0541-c7c045394297-source-distance a oa:QuantityValue ;
+    qudt:numericValue 46.814 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

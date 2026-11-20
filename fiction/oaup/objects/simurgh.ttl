@@ -1,0 +1,54 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Simurgh
+
+id:world-simurgh a oa:Place, oa:World ;
+    skos:prefLabel "Simurgh" ;
+    oa:article <https://www.orionsarm.com/eg-article/4eea8e230eb7c> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "In Circinus at 3,084 ly. Watched by the Negentropy Alliance rather than held by it, so the field is empty and the note carries the relationship." ;
+    oa:uncertain false .
+
+claim:location-world-simurgh a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4eea8e230eb7c> ;
+    oa:about id:world-simurgh ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:constellationName "Circinus" ;
+    oa:distance value:location-world-simurgh-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+value:location-world-simurgh-distance a oa:QuantityValue ;
+    qudt:numericValue 3084.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:event-world-simurgh-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4eea8e230eb7c> ;
+    oa:about id:world-simurgh ;
+    oa:canonical true ;
+    oa:eventKind oa:Observed ;
+    oa:note "Surveyed by Negentropist xenologists." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 7309 .
+
+claim:event-world-simurgh-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4eea8e230eb7c> ;
+    oa:about id:world-simurgh ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "\"This world has been under continuous observation since 7309 when a team of Negentropist xenologists reached the system.\" Matches the header's already-recorded observed 7309, though 'reached the system' describes physical arrival rather than remote observation. Negentropist xenologists, under whose observation the world has been since; the panel's 'Survey Commenced 7309' is the map's older entry." ;
+    oa:polity id:polity-negentropy-alliance ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 7309 .

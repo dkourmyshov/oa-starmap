@@ -1,0 +1,85 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Beyniou
+
+id:world-beyniou a oa:Place, oa:World ;
+    skos:prefLabel "Beyniou" ;
+    oa:article <https://www.orionsarm.com/eg-article/490b3010a681a> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "In Musca at 7,122 ly, and among the furthest things this file holds. The star's name is the setting's own and matches nothing in the catalogues here, so the constellation carries the direction." ;
+    oa:systemName "Beyniou" ;
+    oa:uncertain false .
+
+claim:location-world-beyniou a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/490b3010a681a> ;
+    oa:about id:world-beyniou ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:constellationName "Musca" ;
+    oa:distance value:location-world-beyniou-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+value:location-world-beyniou-distance a oa:QuantityValue ;
+    qudt:numericValue 7122.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:event-world-beyniou-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/490b3010a681a> ;
+    oa:about id:world-beyniou ;
+    oa:canonical true ;
+    oa:eventKind oa:Observed ;
+    oa:note "Known from this year, long before anyone went." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 1198 .
+
+claim:event-world-beyniou-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/490b3010a681a> ;
+    oa:about id:world-beyniou ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "Reached." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 9462 .
+
+# Oceanus Ultimata
+
+id:world-oceanus-ultimata a oa:Place, oa:World ;
+    skos:prefLabel "Oceanus Ultimata" ;
+    oa:article <https://www.orionsarm.com/eg-article/490b3010a681a> ;
+    oa:kind "megastructure" ;
+    oa:labelsSystem true ;
+    oa:note "A megastructure at Beyniou, most probably of xenosophont make. Probably is the article's own hedge, and origin is not possession, so no holder is recorded and the xenosophont tag is not used. The Non-Coercive Zone, the Mutual Progress Association, the Zoeific Biopolity and the Chthonids are all present here, as the project owner reads it, but presence is not affiliation and none of them holds the place, so the entry stays unaffiliated rather than colouring it four ways.\nIt labels the system rather than Beyniou doing so: the megastructure is what this system is known for, and a marker reading \"Beyniou\" would hide the name a reader is looking for." ;
+    oa:systemName "Beyniou" ;
+    oa:uncertain false .
+
+claim:location-world-oceanus-ultimata a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/490b3010a681a> ;
+    oa:about id:world-oceanus-ultimata ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:note "Drawn where Beyniou is, the system it is a megastructure of, which it shares an article with — that article putting Beyniou in Musca at 7,122 ly. The Celestia location catalogues carry an Oceanus Ultimata too, at 5,171 ly and 23 degrees from the centre of Musca against a radius of 8.8, so they disagree with the article on both direction and distance and are not followed. See questions.md." ;
+    oa:worldName "Beyniou" .
+
+claim:event-world-oceanus-ultimata-001 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-oceanus-ultimata ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "80Star Wormhole Authority's expensive explorer linelayer probe reaches the Oceanus Ultimata system." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:sourceDescription "Encyclopaedia timeline, Age of Expansionist New Empires" ;
+    oa:yearAT 8162 .

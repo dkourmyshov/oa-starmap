@@ -1,0 +1,52 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# Big Ben's World
+
+id:world-big-ben-s-world a oa:Place, oa:World ;
+    skos:prefLabel "Big Ben's World" ;
+    oa:article <https://www.orionsarm.com/eg-article/57b4613e13a25> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "In Cepheus at 2,758 ly. Early in the 3900s Big Ben Janson, then a minor Non-Coercive Zone transapient, made a clade of tweaks to settle the world — but that is the project beginning, not anyone arriving, and the arrival is not dated. The bound recorded here is eir ascension in 8200, which the colony comfortably precedes." ;
+    oa:systemName "Big Ben's World" ;
+    oa:uncertain false .
+
+claim:location-world-big-ben-s-world a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/57b4613e13a25> ;
+    oa:about id:world-big-ben-s-world ;
+    oa:canonical true ;
+    oa:catalogueFromSource true ;
+    oa:hdId 217086 ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+claim:affiliation-world-big-ben-s-world-nocozo a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/57b4613e13a25> ;
+    oa:about id:world-big-ben-s-world ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 0 .
+
+claim:event-world-big-ben-s-world-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/57b4613e13a25> ;
+    oa:about id:world-big-ben-s-world ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "Settled by this year, when Big Ben Janson ascended." ;
+    oa:precision oa:NotLaterThan ;
+    oa:recordOrder 0 ;
+    oa:yearAT 8200 .
+
+claim:event-world-big-ben-s-world-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/57b4613e13a25> ;
+    oa:about id:world-big-ben-s-world ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"Early in the 3900s A.T., Big Ben Janson, a minor transapient of the Non-Coersive Zone , created a clade of tweaks with which to colonize a world e was establishing around HD 217086.\" Big Ben Janson is described as a transapient 'of the Non-Coercive Zone', not as acting for it; the panel calls the system only 'loosely aligned with the NoCoZo', so no polity is recorded on this entry. Big Ben Janson, a minor transapient of the Zone, creating a clade to colonise the world; the map's older 'settled 8200' is the year of the founder's ascension and departure." ;
+    oa:precision oa:Circa ;
+    oa:recordOrder 1 ;
+    oa:yearAT 3900 .

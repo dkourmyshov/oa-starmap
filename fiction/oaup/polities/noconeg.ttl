@@ -1,0 +1,17 @@
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+
+# NoCoNeg
+
+id:polity-noconeg a oa:Polity ;
+    skos:prefLabel "NoCoNeg" ;
+    oa:ambiguousName false ;
+    oa:color "#12A3BB" ;
+    oa:hasSource src:eg-system-articles ;
+    oa:kind "polity" ;
+    oa:note "A meme-set rather than a territory: the hybrid of Non-Coercive and Negentropist thought that Krantor is held by, \"Negentropy by law and Non-Coercive by spirit\". Coloured as a variation on the Negentropy Alliance, which is its nearest neighbour on the map at dE 9.9.\nEntered when the add-on's NOCONEG region gave it a second object. Krantor sat under the Negentropy Alliance until then, for want of anywhere else." ;
+    oa:polityId "noconeg" ;
+    oa:recordOrder 1 ;
+    oa:uncertain false .

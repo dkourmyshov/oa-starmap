@@ -1,0 +1,63 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Heartland
+
+id:world-heartland a oa:Place, oa:World ;
+    skos:prefLabel "Heartland" ;
+    oa:article <https://www.orionsarm.com/eg-article/466c941c50d22> ;
+    oa:kind "megastructure" ;
+    oa:labelsSystem false ;
+    oa:note "In deep space rather than in a system: its nearest star is HIP 2863, 1.3 ly away. The direction is that star's and the distance is the article's, and the two corroborate each other — HIP 2863 is itself at 334 ly." ;
+    oa:uncertain false .
+
+claim:location-world-heartland a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/466c941c50d22> ;
+    oa:about id:world-heartland ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -38.2941 ;
+    oa:distance value:location-world-heartland-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:nearName "HIP 2863" ;
+    oa:rightAscensionDeg 9.0732 .
+
+value:location-world-heartland-distance a oa:QuantityValue ;
+    qudt:numericValue 334.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-heartland-communion-of-worlds a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/466c941c50d22> ;
+    oa:about id:world-heartland ;
+    oa:canonical true ;
+    oa:polity id:polity-communion-of-worlds ;
+    oa:recordOrder 0 .
+
+claim:event-world-heartland-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/466c941c50d22> ;
+    oa:about id:world-heartland ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "Founded." ;
+    oa:polity id:polity-communion-of-worlds ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 4312 .
+
+claim:event-world-heartland-002 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-heartland ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "Heartland colonised by empaths ." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:sourceDescription "Encyclopaedia timeline, The Age of Expansion" ;
+    oa:yearAT 2292 .

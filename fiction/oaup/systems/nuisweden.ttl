@@ -1,0 +1,33 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Nuisweden
+
+id:inner-sphere-row-1018 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Nuisweden" .
+
+claim:inner-sphere-inner-sphere-row-1018-024e47f16e58 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-1018 ;
+    oa:article <https://www.orionsarm.com/eg-article/46de0d988ddc8> ;
+    oa:canonical true ;
+    oa:colonyName "Nuisweden" ;
+    oa:luminositySol "3.6" ;
+    oa:massSol "1.35" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 1017 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-1018-024e47f16e58-source-distance ;
+    oa:spectralType "F6 V" ;
+    oa:starName "B Carinae A" .
+
+value:inner-sphere-inner-sphere-row-1018-024e47f16e58-source-distance a oa:QuantityValue ;
+    qudt:numericValue 89.981 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

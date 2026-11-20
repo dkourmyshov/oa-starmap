@@ -1,0 +1,75 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Deucalion
+
+id:world-deucalion a oa:Place, oa:World ;
+    skos:prefLabel "Deucalion" ;
+    oa:article <https://www.orionsarm.com/eg-article/48f4fe1ed9f27> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "HD 2071, as the colony table has it." ;
+    oa:systemName "Deucalion" ;
+    oa:uncertain false .
+
+claim:location-world-deucalion a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48f4fe1ed9f27> ;
+    oa:about id:world-deucalion ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "HD 2071" .
+
+claim:event-world-deucalion-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48f4fe1ed9f27> ;
+    oa:about id:world-deucalion ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"Colonised 2603AT\" data-panel figure; the body text describes only a probe reaching the system in 2603 AT, with colonists arriving roughly six centuries later (see contradictions) The body has only an automated probe of the Phoenix Sector Terraformation Corporation, a LinnEnt venture, in 2603, with colonists some six centuries later; both readings are kept." ;
+    oa:polity id:polity-linnent ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 2603 .
+
+claim:event-world-deucalion-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48f4fe1ed9f27> ;
+    oa:about id:world-deucalion ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "\"HD 2071 was first explored in 2603 a.t. by an automated probe belonging to the Phoenix Sector Terraformation Corporation ; these probes were sent out from Audobon system in Grus as part of the Linnent Empire.\" acting agent was the Phoenix Sector Terraformation Corporation (not on the roster), operating as part of the Linnent Empire" ;
+    oa:polity id:polity-linnent ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 2603 .
+
+# Deucalion
+
+id:inner-sphere-row-1042 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Deucalion" .
+
+claim:inner-sphere-inner-sphere-row-1042-6ff528e42005 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-1042 ;
+    oa:article <https://www.orionsarm.com/eg-article/48f4fe1ed9f27> ;
+    oa:canonical true ;
+    oa:colonyName "Deucalion" ;
+    oa:luminositySol "0.8" ;
+    oa:massSol "." ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 1041 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-1042-6ff528e42005-source-distance ;
+    oa:spectralType "G8/G5" ;
+    oa:starName "HD 2071" .
+
+value:inner-sphere-inner-sphere-row-1042-6ff528e42005-source-distance a oa:QuantityValue ;
+    qudt:numericValue 92.495 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

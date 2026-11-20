@@ -1,0 +1,91 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Chalawan
+
+id:world-chalawan a oa:Place, oa:World ;
+    skos:prefLabel "Chalawan" ;
+    oa:article <https://www.orionsarm.com/eg-article/45e77b7ad49fc> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "45 ly. Chalawan is the star's own recognised name, not only the setting's." ;
+    oa:systemName "Chalawan" ;
+    oa:uncertain false .
+
+claim:location-world-chalawan a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/45e77b7ad49fc> ;
+    oa:about id:world-chalawan ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "47 Ursae Majoris" .
+
+claim:affiliation-world-chalawan-solar-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/45e77b7ad49fc> ;
+    oa:about id:world-chalawan ;
+    oa:canonical true ;
+    oa:polity id:polity-solar-dominion ;
+    oa:recordOrder 0 .
+
+claim:event-world-chalawan-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/45e77b7ad49fc> ;
+    oa:about id:world-chalawan ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "Reached." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 1977 .
+
+claim:event-world-chalawan-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/45e77b7ad49fc> ;
+    oa:about id:world-chalawan ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"Reached 1977 AT\" Header records this as 'visited 1977'; classified here as settled because the body says the Akirates 'arrived' and the system 'was home of' them (see the body entry below). The Akirates, a heterodox offshoot of the Stevens clade, who made it home; the map's older 'visited 1977' is this arrival." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 1977 .
+
+claim:event-world-chalawan-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/45e77b7ad49fc> ;
+    oa:about id:world-chalawan ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"The system joined the Solar Dominion in 2866 AT.\"" ;
+    oa:polity id:polity-solar-dominion ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 2 ;
+    oa:yearAT 2866 .
+
+# Chalawan
+
+id:inner-sphere-row-0516 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Chalawan" .
+
+claim:inner-sphere-inner-sphere-row-0516-a8c31da5b4fb a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0516 ;
+    oa:article <https://www.orionsarm.com/eg-article/45e77b7ad49fc> ;
+    oa:canonical true ;
+    oa:colonyName "Chalawan" ;
+    oa:luminositySol "1.679" ;
+    oa:massSol "1.15" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 515 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0516-a8c31da5b4fb-source-distance ;
+    oa:spectralType "G0 V" ;
+    oa:starName "47 Ursae Majoris" .
+
+value:inner-sphere-inner-sphere-row-0516-a8c31da5b4fb-source-distance a oa:QuantityValue ;
+    qudt:numericValue 45.295 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

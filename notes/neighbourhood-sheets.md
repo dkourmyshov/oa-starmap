@@ -111,7 +111,7 @@ that reads as sourced once it is on screen.
 
 The honest route is to import each date with `source:` naming this workbook and
 verify against the article the map already stores for that system in
-`inner_sphere.yaml`, promoting the source line as each is checked. Thirty-eight
+`oaup/`, promoting the source line as each is checked. Thirty-eight
 articles is an afternoon, not a project. (`oastarmap fetch` currently dies on
 this machine with `ImportError: Using SOCKS proxy, but the 'socksio' package is
 not installed`, because `ALL_PROXY=socks5h://127.0.0.1:10808`; `uv add
@@ -144,7 +144,7 @@ What the rows say, grouped:
 This is the sheet most in keeping with what the map already does. The detail
 panel has a warning line (`note-warn`) and prints a citation under every object;
 a line reading *"Disproven: the Ribas et al. (2018) planet — see ADS"* under
-Barnard's Star is one field in `worlds.yaml` and one line in `ui/detail.ts`, and
+Barnard's Star is one field in `oaup/` and one line in `ui/detail.ts`, and
 it says something no other map of this setting says. It is also the cheapest of
 the three to do: 24 rows, each already carrying its own source link.
 
@@ -309,7 +309,7 @@ rows and 909 of them reach the built map.** Of the 213 that do not:
 
 Many of the 51 are second components of systems whose primary does resolve, so
 the colony still appears. Counting one verdict per colony cell and allowing
-`worlds.yaml` to rescue a name the colony layer lost, **24 named colonies are on
+`oaup/` to rescue a name the colony layer lost, **24 named colonies are on
 the map nowhere at all** — nearest first:
 
 Patala · Urachlgarid · Home of Andromeda Kids · Less Dim Twins · Sysactria ·

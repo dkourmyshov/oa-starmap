@@ -1,0 +1,18 @@
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+
+# Utopia Sphere
+
+id:polity-utopia-sphere a oa:Polity ;
+    skos:prefLabel "Utopia Sphere" ;
+    oa:ambiguousName false ;
+    oa:color "#F48FB1" ;
+    oa:editorialNote "Given by the project owner from the polity's own Encyclopaedia article, as the\ncolonisation of Beta Arae, taken as the first Utopia system proper. Hard to\ndate: Chesed was already active at Ceres Mater in the 1900s, and that\ncommunity reads as Keterist-proto-Utopian — the case for an event naming\nthe polity outright, which this year does not gate." ;
+    oa:foundedAT 2975 ;
+    oa:hasSource src:eg-system-articles ;
+    oa:kind "meta-empire" ;
+    oa:polityId "utopia-sphere" ;
+    oa:recordOrder 32 ;
+    oa:uncertain false .

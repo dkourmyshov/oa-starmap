@@ -1,0 +1,32 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Batsu
+
+id:inner-sphere-row-0587 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Batsu" .
+
+claim:inner-sphere-inner-sphere-row-0587-370fe6b52850 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0587 ;
+    oa:canonical true ;
+    oa:colonyName "Batsu" ;
+    oa:luminositySol "." ;
+    oa:massSol "." ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 586 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0587-370fe6b52850-source-distance ;
+    oa:spectralType "M5" ;
+    oa:starName "LHS 3844" .
+
+value:inner-sphere-inner-sphere-row-0587-370fe6b52850-source-distance a oa:QuantityValue ;
+    qudt:numericValue 48.526 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

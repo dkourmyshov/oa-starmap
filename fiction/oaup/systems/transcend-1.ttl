@@ -1,0 +1,42 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Transcend 1
+
+id:world-transcend-1 a oa:Place, oa:World ;
+    skos:prefLabel "Transcend 1" ;
+    oa:article <https://www.orionsarm.com/eg-topic/45cfd475c5b95> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "NGC 2451A in Puppis, at 620 ly. The Transcend numbers its members rather than naming them." ;
+    oa:uncertain false .
+
+claim:location-world-transcend-1 a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-topic/45cfd475c5b95> ;
+    oa:about id:world-transcend-1 ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -38.2407 ;
+    oa:distance value:location-world-transcend-1-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:nearName "NGC 2451A" ;
+    oa:rightAscensionDeg 115.9709 .
+
+value:location-world-transcend-1-distance a oa:QuantityValue ;
+    qudt:numericValue 620.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-transcend-1-the-transcend a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-topic/45cfd475c5b95> ;
+    oa:about id:world-transcend-1 ;
+    oa:canonical true ;
+    oa:polity id:polity-the-transcend ;
+    oa:recordOrder 0 .

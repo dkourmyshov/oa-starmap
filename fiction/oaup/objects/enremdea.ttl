@@ -1,0 +1,62 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Enremdea
+
+id:world-enremdea a oa:Place, oa:World ;
+    skos:prefLabel "Enremdea" ;
+    oa:article <https://www.orionsarm.com/eg-article/47953c5148ba9> ;
+    oa:kind "moon" ;
+    oa:labelsSystem false ;
+    oa:note "A moon of a gas giant, given as GH4343 Monocerotis VII — a designation no catalogue here carries, leaving the constellation." ;
+    oa:uncertain false .
+
+claim:location-world-enremdea a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47953c5148ba9> ;
+    oa:about id:world-enremdea ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -6.987 ;
+    oa:distance value:location-world-enremdea-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:note "Was Monoceros and a distance, which is a cone 1608 ly deep. The direction is from the Orion's Arm Celestia add-ons' location catalogues (OAAddons9, OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv), which the star importer never read because it takes only .stc files. It falls 14 degrees from the centre of Monoceros against that constellation's radius of 19, so it agrees with the cone it replaces, and the catalogue's own distance of 1608 ly agrees with the article's." ;
+    oa:rightAscensionDeg 91.74 .
+
+value:location-world-enremdea-distance a oa:QuantityValue ;
+    qudt:numericValue 1608.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-enremdea-orion-federation a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47953c5148ba9> ;
+    oa:about id:world-enremdea ;
+    oa:canonical true ;
+    oa:polity id:polity-orion-federation ;
+    oa:recordOrder 0 .
+
+claim:event-world-enremdea-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47953c5148ba9> ;
+    oa:about id:world-enremdea ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 4603 .
+
+claim:event-world-enremdea-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47953c5148ba9> ;
+    oa:about id:world-enremdea ;
+    oa:canonical true ;
+    oa:eventKind oa:Capital ;
+    oa:note "\"Enremdea became the capital of the Orion Federation in 5106, when Orion ascended to S:4 level, after disassembling the innermost planet to create a godswarm.\"" ;
+    oa:polity id:polity-orion-federation ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 5106 .

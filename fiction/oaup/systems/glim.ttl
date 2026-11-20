@@ -1,0 +1,80 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Glim
+
+id:world-glim a oa:Place, oa:World ;
+    skos:prefLabel "Glim" ;
+    oa:article <https://www.orionsarm.com/eg-article/4ce43b81bb70d> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "HD 223889, an M0 dwarf at 33 ly, as the colony table has it. The present affiliation is the table's; the article says only what it left." ;
+    oa:uncertain false .
+
+claim:location-world-glim a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4ce43b81bb70d> ;
+    oa:about id:world-glim ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "HD 223889" .
+
+claim:affiliation-world-glim-terragen-federation a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4ce43b81bb70d> ;
+    oa:about id:world-glim ;
+    oa:canonical true ;
+    oa:polity id:polity-terragen-federation ;
+    oa:recordOrder 0 .
+
+claim:event-world-glim-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4ce43b81bb70d> ;
+    oa:about id:world-glim ;
+    oa:canonical true ;
+    oa:eventKind oa:Independent ;
+    oa:note "\"The system was a founding member of the Doran Empire, but later seceded in 2638.\" The article names no one it passed to, and gives no date for its settlement." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 2638 .
+
+claim:event-world-glim-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4ce43b81bb70d> ;
+    oa:about id:world-glim ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"Reached : 1711 by colonists from Dorangloon\" Dorangloon is a place, not a polity on the roster, and the body only says the first colonists were 'Dorans, from Dorranok'; no polity is confirmed for the settlement itself, per the no-inference rule. Colonists from Dorangloon, the Doran homeworld; the article calls the system a founding member of the Doran Empire, which is the holder entered." ;
+    oa:polity id:polity-doran-empire ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 1711 .
+
+# Glim
+
+id:inner-sphere-row-0364 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Glim" .
+
+claim:inner-sphere-inner-sphere-row-0364-78fc14f6c76b a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0364 ;
+    oa:article <https://www.orionsarm.com/eg-article/4ce43b81bb70d> ;
+    oa:canonical true ;
+    oa:colonyName "Glim" ;
+    oa:luminositySol "." ;
+    oa:massSol "." ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 363 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0364-78fc14f6c76b-source-distance ;
+    oa:spectralType "M0 V" ;
+    oa:starName "HD 223889" .
+
+value:inner-sphere-inner-sphere-row-0364-78fc14f6c76b-source-distance a oa:QuantityValue ;
+    qudt:numericValue 32.995 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

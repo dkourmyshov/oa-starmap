@@ -1,0 +1,65 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Traction
+
+id:world-traction a oa:Place, oa:World ;
+    skos:altLabel "Crossroad 134" ;
+    skos:prefLabel "Traction" ;
+    oa:article <https://www.orionsarm.com/eg-article/48aca6f9717da> ;
+    oa:editorialNote "---- Disarchy ------------------------------------------------------------\n---- Sagittarius Transcultural Cooperation -------------------------------\n\nThe one roster where most places are located against a cluster rather than\na constellation, which is a better direction by an order of magnitude: NGC\n6383 is arcminutes across where Scorpius is tens of degrees." ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "The Seams, in the NoCoZo, around a K3 primary with a white dwarf and a brown dwarf in trinary orbit. Nothing in the Encyclopaedia, the eighteen Celestia archives or the Inner Sphere table locates it; the nineteenth add-on does, and is cited on the position above." ;
+    oa:uncertain false .
+
+claim:location-world-traction a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48aca6f9717da> ;
+    oa:about id:world-traction ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -38.6142 ;
+    oa:distance value:location-world-traction-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:note "From the Celestia wormhole-nexus add-on (S. Ball, 2016, under https://celestiaproject.space/forum/viewtopic.php?f=23&t=17436), which is not one of the eighteen official archives. It carries this system as \"Crossroad 134: YTS 5072-5871740: Traction\", and the article's own panel gives the same two designations — \"SYSTEM: Crossroad 134\", \"PRIMARY: YTS 5072-5871740\" — so the identification is the article's and only the position is the add-on's. No Encyclopaedia source states a distance." ;
+    oa:rightAscensionDeg 280.2708 .
+
+value:location-world-traction-distance a oa:QuantityValue ;
+    qudt:numericValue 899.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-traction-the-seams a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48aca6f9717da> ;
+    oa:about id:world-traction ;
+    oa:canonical true ;
+    oa:polity id:polity-the-seams ;
+    oa:recordOrder 0 .
+
+claim:event-world-traction-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48aca6f9717da> ;
+    oa:about id:world-traction ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"before its inclusion in the Seams in 4654\"" ;
+    oa:polity id:polity-the-seams ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 4654 .
+
+claim:event-world-traction-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48aca6f9717da> ;
+    oa:about id:world-traction ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"In early 6158, the forces of Greyman swept out across the Traction territories and declared that a new age of peace and prosperity was at hand.\" The Greyman Empire, of Greyman Incorporated, is no polity of this file; the panel's affiliation is \"The Seams; The Greyman Empire\"." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 6158 .

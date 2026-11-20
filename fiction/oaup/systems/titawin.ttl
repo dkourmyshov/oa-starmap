@@ -1,0 +1,73 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Titawin
+
+id:world-titawin a oa:Place, oa:World ;
+    skos:prefLabel "Titawin" ;
+    oa:article <https://www.orionsarm.com/eg-article/67d5cb928a1bf> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Upsilon Andromedae, 44 ly: the Xenological Garden, a system of some three dozen named worlds each with its own small history, held by no polity of this file. The colony table marks it special." ;
+    oa:systemName "Titawin" ;
+    oa:uncertain false .
+
+claim:location-world-titawin a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/67d5cb928a1bf> ;
+    oa:about id:world-titawin ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Upsilon Andromedae A" .
+
+claim:event-world-titawin-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/67d5cb928a1bf> ;
+    oa:about id:world-titawin ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"Titawin was first colonised in 1340AT by a group of Gaian Whales.\"" ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 1340 .
+
+claim:event-world-titawin-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/67d5cb928a1bf> ;
+    oa:about id:world-titawin ;
+    oa:canonical true ;
+    oa:eventKind oa:Contact ;
+    oa:note "\"Following first contact in 8862\" — with the Menexenes, a xenosophont species of the gas giant's metallic hydrogen layer." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 8862 .
+
+# Titawin
+
+id:inner-sphere-row-0497 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Titawin" .
+
+claim:inner-sphere-inner-sphere-row-0497-686bb7191fc3 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0497 ;
+    oa:article <https://www.orionsarm.com/eg-article/67d5cb928a1bf> ;
+    oa:canonical true ;
+    oa:colonyName "Titawin" ;
+    oa:luminositySol "3.65" ;
+    oa:massSol "1.2" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 496 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0497-686bb7191fc3-source-distance ;
+    oa:spectralType "F8 V" ;
+    oa:starName "Upsilon Andromedae A" .
+
+value:inner-sphere-inner-sphere-row-0497-686bb7191fc3-source-distance a oa:QuantityValue ;
+    qudt:numericValue 43.960 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

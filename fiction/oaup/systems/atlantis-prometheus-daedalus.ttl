@@ -1,0 +1,33 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Atlantis/Prometheus/Daedalus
+
+id:inner-sphere-row-0442 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Atlantis/Prometheus/Daedalus" .
+
+claim:inner-sphere-inner-sphere-row-0442-031a91616dc2 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0442 ;
+    oa:article <https://www.orionsarm.com/eg-article/486ec4e68c62e> ;
+    oa:canonical true ;
+    oa:colonyName "Atlantis/Prometheus/Daedalus" ;
+    oa:luminositySol "0.786" ;
+    oa:massSol "0.9" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 441 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0442-031a91616dc2-source-distance ;
+    oa:spectralType "G2 V" ;
+    oa:starName "Zeta1 Reticuli" .
+
+value:inner-sphere-inner-sphere-row-0442-031a91616dc2-source-distance a oa:QuantityValue ;
+    qudt:numericValue 39.285 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

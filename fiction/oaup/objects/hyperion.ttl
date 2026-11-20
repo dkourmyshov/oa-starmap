@@ -1,0 +1,48 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Hyperion
+
+id:world-hyperion a oa:Place, oa:World ;
+    skos:prefLabel "Hyperion" ;
+    oa:article <https://www.orionsarm.com/eg-article/46805c9b24e09> ;
+    oa:kind "polity_marker" ;
+    oa:labelsSystem false ;
+    oa:uncertain false .
+
+claim:location-world-hyperion a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46805c9b24e09> ;
+    oa:about id:world-hyperion ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg 49.2473 ;
+    oa:derivation "Interpolated from the sheet. A rebellious Solar corporation rather than a Dominion holding -- which the ring could not distinguish from one while this was a system coloured for the Solar Dominion, and now does: it is the corporation's own marker, in the corporation's own colour, which the polity roster has carried all along." ;
+    oa:directionErrorDeg 20.0 ;
+    oa:distance value:location-world-hyperion-distance ;
+    oa:distanceError value:location-world-hyperion-distance-error ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:EditorialEstimate ;
+    oa:rightAscensionDeg 72.3787 .
+
+value:location-world-hyperion-distance a oa:QuantityValue ;
+    qudt:numericValue 2050.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+value:location-world-hyperion-distance-error a oa:QuantityValue ;
+    qudt:numericValue 800.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-hyperion-hyperion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46805c9b24e09> ;
+    oa:about id:world-hyperion ;
+    oa:canonical true ;
+    oa:polity id:polity-hyperion ;
+    oa:recordOrder 0 .

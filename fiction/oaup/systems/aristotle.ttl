@@ -1,0 +1,92 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Aristotle
+
+id:inner-sphere-row-0133 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Aristotle" .
+
+claim:inner-sphere-inner-sphere-row-0133-84b1545b6a5f a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0133 ;
+    oa:article <https://www.orionsarm.com/eg-article/4ed5b7fa7fe22> ;
+    oa:canonical true ;
+    oa:colonyName "Aristotle" ;
+    oa:luminositySol "01.231" ;
+    oa:massSol "0.98" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 132 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0133-84b1545b6a5f-source-distance ;
+    oa:spectralType "G8 V" ;
+    oa:starName "Delta Pavonis" .
+
+value:inner-sphere-inner-sphere-row-0133-84b1545b6a5f-source-distance a oa:QuantityValue ;
+    qudt:numericValue 19.893 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Darwin
+
+id:world-darwin a oa:Place, oa:World ;
+    skos:prefLabel "Darwin" ;
+    oa:article <https://www.orionsarm.com/eg-article/48f4a40a5df0a> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "Aristotle is Orion's Arm's name for the star itself, not a second world — it is Delta Pavonis, 19.9 ly, one of the nearest systems here. Named as the system by the usual rule: where the primary has a name of its own, that is what the system is called. The catalogue designations stay on the star's panel. The system's own article is at https://www.orionsarm.com/eg-article/4ed5b7fa7fe22." ;
+    oa:parentName "Aristotle" ;
+    oa:systemName "Aristotle" ;
+    oa:uncertain false .
+
+claim:location-world-darwin a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48f4a40a5df0a> ;
+    oa:about id:world-darwin ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Delta Pavonis" .
+
+claim:affiliation-world-darwin-caretaker-gods a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48f4a40a5df0a> ;
+    oa:about id:world-darwin ;
+    oa:canonical true ;
+    oa:polity id:polity-caretaker-gods ;
+    oa:recordOrder 0 .
+
+claim:event-world-darwin-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48f4a40a5df0a> ;
+    oa:about id:world-darwin ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 691 .
+
+claim:event-world-darwin-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48f4a40a5df0a> ;
+    oa:about id:world-darwin ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "\"In 483 a transmission from the Carl Sagan reported back to Earth.\" The neumann probe Carl Sagan surveying Delta Pavonis and reporting the discovery of Darwin's biosphere; launched earlier in 291 AT (see doubts). The Carl Sagan probe's transmission, received on Earth in 483; its arrival was earlier." ;
+    oa:precision oa:NotLaterThan ;
+    oa:recordOrder 1 ;
+    oa:yearAT 483 .
+
+claim:event-world-darwin-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48f4a40a5df0a> ;
+    oa:about id:world-darwin ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "\"The arrival of the Federation of Sophonts in the 11th and early 12th centuries seemed at first to usher in a new age of prosperity and learning.\" \"Federation of Sophonts\" is a listed alternative name for the First Federation. \"11th and early 12th centuries\" approximated here as 1000-1130 AT; no explicit year given. The sentence describes arrival/influence, not a stated transfer of the system's holder. 'The 11th and early 12th centuries', entered as the span." ;
+    oa:polity id:polity-first-federation ;
+    oa:precision oa:Between ;
+    oa:recordOrder 2 ;
+    oa:untilAT 1130 ;
+    oa:yearAT 1000 .

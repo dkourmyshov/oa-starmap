@@ -1,0 +1,33 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Wega
+
+id:inner-sphere-row-0983 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Wega" .
+
+claim:inner-sphere-inner-sphere-row-0983-9258e184d75a a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0983 ;
+    oa:article <https://www.orionsarm.com/eg-article/48ff291dd2dfc> ;
+    oa:canonical true ;
+    oa:colonyName "Wega" ;
+    oa:luminositySol "1.92" ;
+    oa:massSol "." ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 982 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0983-9258e184d75a-source-distance ;
+    oa:spectralType "G5 IV" ;
+    oa:starName "HD 108309" .
+
+value:inner-sphere-inner-sphere-row-0983-9258e184d75a-source-distance a oa:QuantityValue ;
+    qudt:numericValue 87.627 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

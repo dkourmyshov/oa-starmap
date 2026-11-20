@@ -1,0 +1,74 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Nathan
+
+id:world-nathan a oa:Place, oa:World ;
+    skos:prefLabel "Nathan" ;
+    oa:article <https://www.orionsarm.com/eg-article/4ed124d17ba7a> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "HD 55575, as the colony table has it." ;
+    oa:systemName "Nathan" ;
+    oa:uncertain false .
+
+claim:location-world-nathan a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4ed124d17ba7a> ;
+    oa:about id:world-nathan ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "HD 55575" .
+
+claim:event-world-nathan-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4ed124d17ba7a> ;
+    oa:about id:world-nathan ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"Colonised in 1490 by First Federation venturers the Kontore League.\" The Kontore League, First Federation venturers, no polity of this file." ;
+    oa:polity id:polity-first-federation ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 1490 .
+
+claim:event-world-nathan-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4ed124d17ba7a> ;
+    oa:about id:world-nathan ;
+    oa:canonical true ;
+    oa:eventKind oa:Independent ;
+    oa:note "\"However the First Federation was rapidly losing power and becoming irrelevant; in 2145 AT the FedRep withdrew from this system\" The sentence describes the First Federation's local representative (FedRep) withdrawing as the Federation declined, not an explicit secession by the system; classified as independent for lack of a better fit, flagged for review. The Federation's representative withdrew; read as the end of its holding, which the article does not call a secession." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 2145 .
+
+# Nathan
+
+id:inner-sphere-row-0656 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Nathan" .
+
+claim:inner-sphere-inner-sphere-row-0656-fba8570f4112 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0656 ;
+    oa:article <https://www.orionsarm.com/eg-article/4ed124d17ba7a> ;
+    oa:canonical true ;
+    oa:colonyName "Nathan" ;
+    oa:luminositySol "1.49" ;
+    oa:massSol "." ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 655 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0656-fba8570f4112-source-distance ;
+    oa:spectralType "G0 V" ;
+    oa:starName "HD 55575" .
+
+value:inner-sphere-inner-sphere-row-0656-fba8570f4112-source-distance a oa:QuantityValue ;
+    qudt:numericValue 54.963 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

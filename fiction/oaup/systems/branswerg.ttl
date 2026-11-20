@@ -1,0 +1,60 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Branswerg
+
+id:inner-sphere-row-0494 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Branswerg" .
+
+claim:inner-sphere-inner-sphere-row-0494-28c50ed5342a a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0494 ;
+    oa:article <https://www.orionsarm.com/eg-article/46119315a3ccf> ;
+    oa:canonical true ;
+    oa:colonyName "Branswerg" ;
+    oa:luminositySol "." ;
+    oa:massSol "0.12" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 493 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0494-28c50ed5342a-source-distance ;
+    oa:spectralType "K4.5 Vk" ;
+    oa:starName "Gliese 868" .
+
+value:inner-sphere-inner-sphere-row-0494-28c50ed5342a-source-distance a oa:QuantityValue ;
+    qudt:numericValue 43.300 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Branswerg
+
+id:world-branswerg a oa:Place, oa:World ;
+    skos:prefLabel "Branswerg" ;
+    oa:article <https://www.orionsarm.com/eg-article/46119315a3ccf> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "Gliese 868, 43 ly. The name is both the planet's and the star's. No dates." ;
+    oa:systemName "Branswerg" ;
+    oa:uncertain false .
+
+claim:location-world-branswerg a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46119315a3ccf> ;
+    oa:about id:world-branswerg ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Gliese 868" .
+
+claim:affiliation-world-branswerg-keter-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46119315a3ccf> ;
+    oa:about id:world-branswerg ;
+    oa:canonical true ;
+    oa:polity id:polity-keter-dominion ;
+    oa:recordOrder 0 .

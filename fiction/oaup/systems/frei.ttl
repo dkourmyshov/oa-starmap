@@ -1,0 +1,80 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Frei
+
+id:world-frei a oa:Place, oa:World ;
+    skos:prefLabel "Frei" ;
+    oa:article <https://www.orionsarm.com/eg-article/465109370a058> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Zeta Doradus A, 38 ly. Already on the map through the Inner Sphere colony table, which is the likeliest source of any position for it drawn earlier." ;
+    oa:systemName "Frei" ;
+    oa:uncertain false .
+
+claim:location-world-frei a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/465109370a058> ;
+    oa:about id:world-frei ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Zeta Doradus" .
+
+claim:affiliation-world-frei-nocozo a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/465109370a058> ;
+    oa:about id:world-frei ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 0 .
+
+claim:event-world-frei-001 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-frei ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "The two AIs Botryophoros and Polygethes emigrate from the Dionysian Erotocracy during its breakup. They arrive at Frei , and began seeding the rings of the planet with their \"starseeds\"." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:sourceDescription "Encyclopaedia timeline, Age of Consolidation" ;
+    oa:yearAT 3344 .
+
+claim:event-world-frei-002 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-frei ;
+    oa:canonical true ;
+    oa:eventKind oa:Abandoned ;
+    oa:note "The entire system of Frei has now been successfully subverted: the last technetes abandoned Thomaso and moved into the Makrania Orwoods ." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:sourceDescription "Encyclopaedia timeline, Age of Consolidation" ;
+    oa:yearAT 3600 .
+
+# Frei
+
+id:inner-sphere-row-0430 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Frei" .
+
+claim:inner-sphere-inner-sphere-row-0430-cd33a77188f4 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0430 ;
+    oa:article <https://www.orionsarm.com/eg-article/465109370a058> ;
+    oa:canonical true ;
+    oa:colonyName "Frei" ;
+    oa:luminositySol "1.550" ;
+    oa:massSol "1.07" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 429 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0430-cd33a77188f4-source-distance ;
+    oa:spectralType "F9 V" ;
+    oa:starName "Zeta Doradus A" .
+
+value:inner-sphere-inner-sphere-row-0430-cd33a77188f4-source-distance a oa:QuantityValue ;
+    qudt:numericValue 38.137 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

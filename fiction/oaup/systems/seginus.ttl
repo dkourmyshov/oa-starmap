@@ -1,0 +1,32 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Seginus
+
+id:inner-sphere-row-0964 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Seginus" .
+
+claim:inner-sphere-inner-sphere-row-0964-d329784284c1 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0964 ;
+    oa:canonical true ;
+    oa:colonyName "Seginus" ;
+    oa:luminositySol "33.4" ;
+    oa:massSol "2.10" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 963 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0964-d329784284c1-source-distance ;
+    oa:spectralType "A7 III" ;
+    oa:starName "Gamma Boötis" .
+
+value:inner-sphere-inner-sphere-row-0964-d329784284c1-source-distance a oa:QuantityValue ;
+    qudt:numericValue 86.029 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

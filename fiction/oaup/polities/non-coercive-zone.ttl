@@ -1,0 +1,18 @@
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+
+# Non-Coercive Zone
+
+id:polity-nocozo a oa:Polity ;
+    skos:prefLabel "Non-Coercive Zone" ;
+    oa:ambiguousName false ;
+    oa:color "#FF7043" ;
+    oa:editorialNote "Its own page, saved under sources/polities: \"Since its founding in\n1598AT, various independent habitats, worlds, cybercosms, and star\nsystems have aligned themselves with the NoCoZo.\" The timeline has \"the\nformation of the Non Coercive Zone\" a century earlier, at 1498, and a\n\"Non-Coercion Zone Treaty of 159x\" in 1656's line; and the Othelia\narticle has \"in 2215 a.t. the Non Coercive Zone was established\". The\npage's year is taken, as the page is the Zone's own account." ;
+    oa:foundedAT 1598 ;
+    oa:hasSource src:political-maps-8000at ;
+    oa:kind "meta-empire" ;
+    oa:polityId "nocozo" ;
+    oa:recordOrder 9 ;
+    oa:uncertain false .

@@ -1,0 +1,42 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Soft Ones Volume
+
+id:world-soft-ones-volume a oa:Place, oa:World ;
+    skos:prefLabel "Soft Ones Volume" ;
+    oa:article <https://www.orionsarm.com/eg-topic/45c5247899c85> ;
+    oa:kind "volume" ;
+    oa:labelsSystem false ;
+    oa:note "The Soft Ones' volume, recorded as a region for the same reason as the Muuh's: the article is the species', and whether they are a polity in the Terragen sense is not something this map knows." ;
+    oa:uncertain false .
+
+claim:location-world-soft-ones-volume a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-topic/45c5247899c85> ;
+    oa:about id:world-soft-ones-volume ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg 30.05 ;
+    oa:distance value:location-world-soft-ones-volume-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:note "From oalocs3.dsc, one of the Orion's Arm Celestia add-ons' location catalogues (OAAddons9, OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv). It sits 14 degrees from the Muuh Volume at the same stated 6,100 ly, which is the add-on filing the two xenosophont volumes at one range rather than two measurements agreeing." ;
+    oa:rightAscensionDeg 85.65 .
+
+value:location-world-soft-ones-volume-distance a oa:QuantityValue ;
+    qudt:numericValue 6100.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-soft-ones-volume-xenosophont a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-topic/45c5247899c85> ;
+    oa:about id:world-soft-ones-volume ;
+    oa:canonical true ;
+    oa:polity id:polity-xenosophont ;
+    oa:recordOrder 0 .

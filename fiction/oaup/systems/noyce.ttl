@@ -1,0 +1,60 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Noyce
+
+id:world-noyce a oa:Place, oa:World ;
+    skos:prefLabel "Noyce" ;
+    oa:article <https://www.orionsarm.com/eg-article/46dcc5b188fa3> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "In Vela at 87 ly. The star is given as Hokon's Third Purchase, probably a former name. No colonisation date, beyond its being before the Version War." ;
+    oa:systemName "Noyce" ;
+    oa:uncertain false .
+
+claim:location-world-noyce a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46dcc5b188fa3> ;
+    oa:about id:world-noyce ;
+    oa:canonical true ;
+    oa:catalogueFromSource true ;
+    oa:hipparcosId 42601 ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+claim:affiliation-world-noyce-nocozo a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46dcc5b188fa3> ;
+    oa:about id:world-noyce ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 0 .
+
+# Noyce
+
+id:inner-sphere-row-0975 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Noyce" .
+
+claim:inner-sphere-inner-sphere-row-0975-36636db3e3f0 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0975 ;
+    oa:article <https://www.orionsarm.com/eg-article/46dcc5b188fa3> ;
+    oa:canonical true ;
+    oa:colonyName "Noyce" ;
+    oa:luminositySol "0.039" ;
+    oa:massSol "." ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 974 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0975-36636db3e3f0-source-distance ;
+    oa:spectralType "M1 V" ;
+    oa:starName "GJ 2071" .
+
+value:inner-sphere-inner-sphere-row-0975-36636db3e3f0-source-distance a oa:QuantityValue ;
+    qudt:numericValue 87.108 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

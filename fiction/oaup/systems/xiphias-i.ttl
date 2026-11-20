@@ -1,0 +1,32 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# Xiphias I
+
+id:world-xiphias-i a oa:Place, oa:World ;
+    skos:prefLabel "Xiphias I" ;
+    oa:article <https://www.orionsarm.com/eg-article/47a67cbee769f> ;
+    oa:editorialNote "---- the Serpens Reach, on the MPA and Cooperation border -----------------\n\nFour places within 60 ly of one another, and the only cluster of entries in\nthis file whose separations the sources state and this map can check. From\nMiracle City the article gives 51 ly to Vinculum; converting both articles'\nown coordinates gives 59.5, which is agreement at the precision they are\nquoted to." ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "HIP 87740, also HD 163334, in Ophiuchus at 1,687 ly — the article places it in the Serpens sector, which is a region rather than the constellation and reaches this far.\n\"World in the Serpens sector inhabited by a decadent and evolutionarily static heteromorph tweak clade, the Old Fogeys, who are served by turingrade vecs. The Old Fogeys are likely left from one of the Inner Sphere systems during the Age of Expansion, but records that might confirm this have been lost.\"\"" ;
+    oa:uncertain false .
+
+claim:location-world-xiphias-i a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47a67cbee769f> ;
+    oa:about id:world-xiphias-i ;
+    oa:canonical true ;
+    oa:catalogueFromSource true ;
+    oa:hipparcosId 87740 ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+claim:affiliation-world-xiphias-i-sagittarius-transcultural-cooperation a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47a67cbee769f> ;
+    oa:about id:world-xiphias-i ;
+    oa:canonical true ;
+    oa:polity id:polity-sagittarius-transcultural-cooperation ;
+    oa:recordOrder 0 .

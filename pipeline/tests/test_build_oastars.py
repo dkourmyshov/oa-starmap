@@ -24,6 +24,7 @@ from oastarmap.build.oastars import (
     build_oastars,
 )
 from oastarmap.fiction.schema import OAStarFile
+from oastarmap.fiction.store import load_store
 from oastarmap.importers.celestia import parse_stc, system_name
 from oastarmap.paths import DATA_OUT_DIR, FICTION_DIR
 from oastarmap.transform.photometry import spectral_type_to_bv
@@ -313,28 +314,18 @@ class TestInBodyComments:
 class TestTrackedImport:
     """The star file is tracked, so the build must not need the archive."""
 
-    def test_the_source_file_is_tracked(self):
-        import subprocess
+    def test_the_source_graph_is_present(self):
+        assert STARS.name == "oaup"
+        assert STARS.exists(), "a clean clone needs the authoritative RDF graph"
 
-        listed = subprocess.run(
-            ["git", "ls-files", "fiction/oa_stars.yaml"],
-            capture_output=True,
-            text=True,
-            cwd=STARS.parents[1],
-            check=False,
-        ).stdout.strip()
-        assert listed == "fiction/oa_stars.yaml", (
-            "fiction/oa_stars.yaml is not tracked; a clean clone could not build "
-            "the Orion's Arm star layer"
-        )
-
-    def test_the_file_carries_its_provenance(self):
+    def test_the_graph_carries_its_provenance(self):
         """Attribution travels with the data, not only in the pipeline."""
-        header = STARS.read_text(encoding="utf-8")[:2000]
-        assert "OAAddons1" in header
-        assert "orionsarm.com" in header
-        assert "Terms_Copyright" in header
-        assert "light years" in header
+        store = load_store(STARS)
+        assert any(star.archive == "OAAddons1.zip" for star in store.stars)
+        text = store.graph.serialize(format="turtle")
+        assert "orionsarm.com" in text
+        assert "Terms_Copyright" in text
+        assert "light years" in text
 
     def test_import_round_trips_the_archive_exactly(self):
         """A %g format silently turned RA 290.6596 into 290.66."""
@@ -347,7 +338,7 @@ class TestTrackedImport:
         if not archive.exists():
             pytest.skip("archive not present; it is downloaded by hand")
 
-        imported = {(s.name, s.source_file): s for s in OAStarFile.load(STARS).stars}
+        imported = {(s.name, s.source_file): s for s in load_store(STARS).stars}
         checked = 0
         with zipfile.ZipFile(archive) as handle:
             for record in read_archive(archive):
@@ -369,7 +360,7 @@ class TestTrackedImport:
 
 
 class TestCuration:
-    """fiction/oa_systems.yaml is hand-authored and never overwritten by import."""
+    """Editorial curation is separate from, and survives, source imports."""
 
     def test_every_assignment_lands(self, built):
         curated = {e["label"]: e for e in built["names"] if e["affiliation"]}
@@ -424,7 +415,7 @@ class TestCuration:
         sitting on Arkab Prior B's exact position.
 
         A duplicate across files is not one of these, and hiding is the wrong
-        tool for it. worlds.yaml carries Niuearth bound to JD 836902; hiding
+        tool for it. the world graph carries Niuearth bound to JD 836902; hiding
         that star did not merge the pair, it deleted the world, because a world
         bound to an add-on star is drawn as that star. The binding alone dedupes
         them — the world's name wins the label — so nothing needs hiding.
@@ -484,14 +475,12 @@ class TestCuration:
             {"stars": [{"name": "A", "ra_deg": 1, "dec_deg": 2, "distance_ly": 10}]}
         )
         curation = OASystemFile.model_validate({"systems": [{"star": "B", "label": "B"}]})
-        with pytest.raises(ValueError, match=r"absent from oa_stars\.yaml"):
+        with pytest.raises(ValueError, match="absent from the Celestia claims"):
             _place(stars.stars, curation, OAStarStats())
 
     def test_every_cited_affiliation_exists(self, built):
         """A typo in an affiliation id would silently drop the colour."""
-        from oastarmap.fiction.schema import FictionFile
-
-        known = {p.id for p in FictionFile.load(STARS.with_name("polities.yaml")).polities}
+        known = {p.id for p in load_store(STARS).fiction.polities}
         used = {e["affiliation"] for e in built["names"] if e["affiliation"]}
         assert used <= known
         assert {"caretaker-gods", "xenosophont", "stellar-umma"} <= used

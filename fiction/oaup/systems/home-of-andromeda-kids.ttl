@@ -1,0 +1,33 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Home of Andromeda Kids
+
+id:inner-sphere-row-0040 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Home of Andromeda Kids" .
+
+claim:inner-sphere-inner-sphere-row-0040-ed57032244dc a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0040 ;
+    oa:article <https://www.orionsarm.com/eg-article/45f48517ef839> ;
+    oa:canonical true ;
+    oa:colonyName "Home of Andromeda Kids" ;
+    oa:luminositySol "0.00383" ;
+    oa:massSol "0.281" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 39 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0040-ed57032244dc-source-distance ;
+    oa:spectralType "M0 V" ;
+    oa:starName "Kapteyn's Star" .
+
+value:inner-sphere-inner-sphere-row-0040-ed57032244dc-source-distance a oa:QuantityValue ;
+    qudt:numericValue 12.831 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

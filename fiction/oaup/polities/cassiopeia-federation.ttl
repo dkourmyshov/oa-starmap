@@ -1,0 +1,17 @@
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+
+# Cassiopeia Federation
+
+id:polity-cassiopeia-federation a oa:Polity ;
+    skos:prefLabel "Cassiopeia Federation" ;
+    oa:ambiguousName false ;
+    oa:color "#D7CCC8" ;
+    oa:editorialNote "\"A client state within the NeoCygexpa Regnum\" that collapsed into anomie in\nthe late ComEmp period; timeline, 6299: \"The Cassiopeia Federation Anomie.\"" ;
+    oa:hasSource src:eg-historical-polities ;
+    oa:kind "meta-empire" ;
+    oa:polityId "cassiopeia-federation" ;
+    oa:recordOrder 62 ;
+    oa:uncertain false .

@@ -1,0 +1,42 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Megasov
+
+id:world-megasov a oa:Place, oa:World ;
+    skos:prefLabel "Megasov" ;
+    oa:article <https://www.orionsarm.com/eg-article/4902ed956c7a6> ;
+    oa:kind "megastructure" ;
+    oa:labelsSystem false ;
+    oa:note "A megastructure around Durran's Star, the system's primary, in what the article calls the Arae Sector." ;
+    oa:uncertain false .
+
+claim:location-world-megasov a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4902ed956c7a6> ;
+    oa:about id:world-megasov ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -55.85 ;
+    oa:distance value:location-world-megasov-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:note "Was Ara and a distance, which is a cone 709 ly deep. The archived Wormhole Gazetteer (https://www.orionsarm.com/eg-article/4e297b0884b1a) names MegaSov, and the Celestia add-on built from it (https://celestiaproject.space/forum/viewtopic.php?f=23&t=17436) gives these coordinates at exactly the 709 ly the article states, calling the primary Durran's Star as the article does. The direction falls four degrees from the centre of Ara, so it agrees with the constellation it replaces, and its gate partner Uvanth IV is 24 degrees off, so the direction is not borrowed from the link." ;
+    oa:rightAscensionDeg 264.5 .
+
+value:location-world-megasov-distance a oa:QuantityValue ;
+    qudt:numericValue 709.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-megasov-utopia-sphere a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4902ed956c7a6> ;
+    oa:about id:world-megasov ;
+    oa:canonical true ;
+    oa:polity id:polity-utopia-sphere ;
+    oa:recordOrder 0 .

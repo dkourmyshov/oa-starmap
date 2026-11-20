@@ -1,0 +1,78 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Tyrion
+
+id:world-tyrion a oa:Place, oa:World ;
+    skos:prefLabel "Tyrion" ;
+    oa:article <https://www.orionsarm.com/eg-article/55784e51e87b3> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "In Puppis at 214 ly, within what the setting calls the Garden of Paradise Cluster — a region of its own naming that matches no catalogue here. Sophic, as most of that cluster is." ;
+    oa:systemName "Tyrion" ;
+    oa:uncertain false .
+
+claim:location-world-tyrion a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/55784e51e87b3> ;
+    oa:about id:world-tyrion ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:constellationName "Puppis" ;
+    oa:distance value:location-world-tyrion-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+value:location-world-tyrion-distance a oa:QuantityValue ;
+    qudt:numericValue 214.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-tyrion-sophic-league a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/55784e51e87b3> ;
+    oa:about id:world-tyrion ;
+    oa:canonical true ;
+    oa:polity id:polity-sophic-league ;
+    oa:recordOrder 0 .
+
+claim:event-world-tyrion-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/55784e51e87b3> ;
+    oa:about id:world-tyrion ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 2877 .
+
+claim:event-world-tyrion-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/55784e51e87b3> ;
+    oa:about id:world-tyrion ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"Colonised: 2877 AT\" no polity is named alongside this panel figure The panel names no settler; the Sophic League's holding is undated." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 2877 .
+
+# Orobon
+
+id:world-orobon a oa:Place, oa:World ;
+    skos:prefLabel "Orobon" ;
+    oa:article <https://www.orionsarm.com/eg-article/55784e51e87b3> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "The world of Tyrion." ;
+    oa:systemName "Tyrion" ;
+    oa:uncertain false .
+
+claim:affiliation-world-orobon-sophic-league a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/55784e51e87b3> ;
+    oa:about id:world-orobon ;
+    oa:canonical true ;
+    oa:polity id:polity-sophic-league ;
+    oa:recordOrder 0 .

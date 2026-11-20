@@ -1,0 +1,53 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# The Magal Worldrings
+
+id:world-the-magal-worldrings a oa:Place, oa:World ;
+    skos:prefLabel "The Magal Worldrings" ;
+    oa:article <https://www.orionsarm.com/eg-article/5491bacd3b4f8> ;
+    oa:kind "megastructure" ;
+    oa:labelsSystem false ;
+    oa:note "HIP 21091, 192 ly out in Taurus, and 9.6 ly from Sinyavskaya — the two nearest Federation places recorded here, and near enough that anything built at one is a naked-eye object from the other." ;
+    oa:uncertain false .
+
+claim:location-world-the-magal-worldrings a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5491bacd3b4f8> ;
+    oa:about id:world-the-magal-worldrings ;
+    oa:canonical true ;
+    oa:catalogueFromSource true ;
+    oa:hipparcosId 21091 ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+claim:affiliation-world-the-magal-worldrings-terragen-federation a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5491bacd3b4f8> ;
+    oa:about id:world-the-magal-worldrings ;
+    oa:canonical true ;
+    oa:polity id:polity-terragen-federation ;
+    oa:recordOrder 0 .
+
+claim:event-world-the-magal-worldrings-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5491bacd3b4f8> ;
+    oa:about id:world-the-magal-worldrings ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"Magal was colonised in 2522 AT by the Taurus Nexus, but became part of the Terragen Federation following the First Consolidation War.\"" ;
+    oa:polity id:polity-taurus-nexus ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 2522 .
+
+claim:event-world-the-magal-worldrings-002 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-the-magal-worldrings ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"But became part of the Terragen Federation following the First Consolidation War.\" Undated in Magal's own article; the Taurus Nexus's own page (as pasted by the project owner) dates the war's start: \"In 3263 the 'Inner Sector' attempted to break free in order to become part of the NoCoZo, leading to the First Consolidation War.\" How long the war ran is not stated." ;
+    oa:polity id:polity-terragen-federation ;
+    oa:precision oa:NotEarlierThan ;
+    oa:recordOrder 1 ;
+    oa:sourceDescription "sources/polities/taurus-nexus.txt" ;
+    oa:yearAT 3263 .

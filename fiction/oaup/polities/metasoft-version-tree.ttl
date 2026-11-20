@@ -1,0 +1,18 @@
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+
+# Metasoft Version Tree
+
+id:polity-metasoft a oa:Polity ;
+    skos:prefLabel "Metasoft Version Tree" ;
+    oa:ambiguousName false ;
+    oa:color "#75CC32" ;
+    oa:editorialNote "Encyclopaedia timeline, 2344: \"Metasoft vec ships spread beyond human\ncontrol ... The Metasoft biont management has no choice but to hand over\nthe reins of power to its AI\" — the independence of the vec polity from\nMetasoft Interstellar's management. The Version Tree itself is later:\ntimeline, 2582, \"Metasoft institutes the Version Tree system of standards.\"\nThe corporation is older still, from the 2100s, per its article.\nIts nearest neighbour was not the MPA but the Zoeific Biopolity, 4.2 away\nand within half a degree of the same hue. Now 10.3 from both.\nFrom the Encyclopaedia's own list of this volume's landmarks, which\ngives a distance for each. Most of that list was already above, which\nis a check on the political maps rather than an addition to them; these\nare the ones it added, and all but NGC 1662 are stars." ;
+    oa:foundedAT 2344 ;
+    oa:hasSource src:political-maps-8000at ;
+    oa:kind "meta-empire" ;
+    oa:polityId "metasoft" ;
+    oa:recordOrder 15 ;
+    oa:uncertain false .

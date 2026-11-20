@@ -1,0 +1,42 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Cocac
+
+id:world-cocac a oa:Place, oa:World ;
+    skos:prefLabel "Cocac" ;
+    oa:article <https://www.orionsarm.com/eg-article/462982a7dbf91> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "Given as 4,133 ly and 200 ly from NGC 6530, near the outer mouth of the Tunh wormhole. The cluster is at 4,010 ly, so 123 of that 200 is along the line of sight and the rest is across it — consistent, and the cluster's direction is what places this." ;
+    oa:uncertain false .
+
+claim:location-world-cocac a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/462982a7dbf91> ;
+    oa:about id:world-cocac ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -24.3707 ;
+    oa:distance value:location-world-cocac-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:nearName "NGC 6530" ;
+    oa:rightAscensionDeg 271.1022 .
+
+value:location-world-cocac-distance a oa:QuantityValue ;
+    qudt:numericValue 4133.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-cocac-sagittarius-transcultural-cooperation a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/462982a7dbf91> ;
+    oa:about id:world-cocac ;
+    oa:canonical true ;
+    oa:polity id:polity-sagittarius-transcultural-cooperation ;
+    oa:recordOrder 0 .

@@ -1,0 +1,106 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Relief
+
+id:world-relief a oa:Place, oa:World ;
+    skos:prefLabel "Relief" ;
+    oa:article <https://www.orionsarm.com/eg-article/4910f56025f46> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:systemName "Relief" ;
+    oa:uncertain false .
+
+claim:location-world-relief a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4910f56025f46> ;
+    oa:about id:world-relief ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:constellationName "Carina" ;
+    oa:distance value:location-world-relief-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+value:location-world-relief-distance a oa:QuantityValue ;
+    qudt:numericValue 5009.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-relief-nocozo a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4910f56025f46> ;
+    oa:about id:world-relief ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 0 .
+
+claim:event-world-relief-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4910f56025f46> ;
+    oa:about id:world-relief ;
+    oa:canonical true ;
+    oa:eventKind oa:Reported ;
+    oa:note "Announced publicly." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 9279 .
+
+# Bizarro World
+
+id:world-bizarro-world a oa:Place, oa:World ;
+    skos:prefLabel "Bizarro World" ;
+    oa:article <https://www.orionsarm.com/eg-article/567bf6e68730c> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "An artificial planetoid of antimatter, in deep space a twentieth of a light year from Relief — the same point at this scale." ;
+    oa:uncertain false .
+
+claim:location-world-bizarro-world a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/567bf6e68730c> ;
+    oa:about id:world-bizarro-world ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:worldName "Relief" .
+
+claim:affiliation-world-bizarro-world-nocozo a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/567bf6e68730c> ;
+    oa:about id:world-bizarro-world ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 0 .
+
+claim:event-world-bizarro-world-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/567bf6e68730c> ;
+    oa:about id:world-bizarro-world ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "The idea proposed." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 9337 .
+
+claim:event-world-bizarro-world-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/567bf6e68730c> ;
+    oa:about id:world-bizarro-world ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "Funded." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 9341 .
+
+claim:event-world-bizarro-world-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/567bf6e68730c> ;
+    oa:about id:world-bizarro-world ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "\"The world was completed in 9625AT and opened to the first tourists in 9627.\" No polity is named as reaching the world; the Bizarro World Corporation (unplaced) built and operates it. This may be a better fit than 9337/9341 for a first-arrival event; see doubts. The map's 'settled 9337' and '9341' are the proposal and the funding of the world; its completion in 9625 and opening in 9627 are the first arrivals." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 2 ;
+    oa:yearAT 9627 .

@@ -1,0 +1,54 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Focal Point
+
+id:world-focal-point a oa:Place, oa:World ;
+    skos:prefLabel "Focal Point" ;
+    oa:article <https://www.orionsarm.com/eg-article/464e6c641ffc7> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "On the edge of M39, the cluster NGC 7092 in Cygnus, at 1,048 ly against the cluster's catalogued 965 — an eight percent difference, and being on the edge of a cluster rather than in it accounts for some of that. The cluster lends the direction and the article the distance. Depopulated since, by no date this map has." ;
+    oa:uncertain false .
+
+claim:location-world-focal-point a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/464e6c641ffc7> ;
+    oa:about id:world-focal-point ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg 48.3495 ;
+    oa:distance value:location-world-focal-point-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:nearName "NGC 7092" ;
+    oa:rightAscensionDeg 322.8301 .
+
+value:location-world-focal-point-distance a oa:QuantityValue ;
+    qudt:numericValue 1048.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:event-world-focal-point-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/464e6c641ffc7> ;
+    oa:about id:world-focal-point ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 6400 .
+
+claim:event-world-focal-point-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/464e6c641ffc7> ;
+    oa:about id:world-focal-point ;
+    oa:canonical true ;
+    oa:eventKind oa:Abandoned ;
+    oa:note "\"Depopulated 7400\" New event, not in header. Corroborated by the body's 'The destruction of this colony during the so-called Abaddon Catastrophe raised new fears and concerns...', which does not itself restate the year." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 7400 .

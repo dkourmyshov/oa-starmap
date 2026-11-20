@@ -1,0 +1,38 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Helix Nebula
+
+id:world-helix-nebula a oa:Place, oa:World ;
+    skos:prefLabel "Helix Nebula" ;
+    oa:kind "volume" ;
+    oa:labelsSystem false ;
+    oa:note "NGC 7293, in Aquarius, at 200 +/- 1 pc — the nearest of these by a long way, and the most precisely measured: half a percent, where the Cat's Eye is 27%." ;
+    oa:uncertain false .
+
+claim:location-world-helix-nebula a prov:Entity, oa:LocationClaim ;
+    oa:about id:world-helix-nebula ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -20.8374 ;
+    oa:distance value:location-world-helix-nebula-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:rightAscensionDeg 337.4115 .
+
+value:location-world-helix-nebula-distance a oa:QuantityValue ;
+    qudt:numericValue 650.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-helix-nebula-nocozo a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:world-helix-nebula ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 0 .

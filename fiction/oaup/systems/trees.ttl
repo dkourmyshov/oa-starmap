@@ -1,0 +1,33 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Trees
+
+id:world-trees a oa:Place, oa:World ;
+    skos:prefLabel "Trees" ;
+    oa:article <https://www.orionsarm.com/eg-article/491277421c9f8> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:uncertain false .
+
+claim:location-world-trees a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/491277421c9f8> ;
+    oa:about id:world-trees ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:distance value:location-world-trees-distance ;
+    oa:hipparcosId 31540 ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:note "HD 47186 in Canis Major, which the catalogue puts at 121.9 ly, the figure the article gives. The archived Wormhole Gazetteer names a Trees too and the add-on built from it places that one at HD 3823, 81.4 ly — a different star, entered separately below. See questions.md." .
+
+value:location-world-trees-distance a oa:QuantityValue ;
+    qudt:numericValue 121.9 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

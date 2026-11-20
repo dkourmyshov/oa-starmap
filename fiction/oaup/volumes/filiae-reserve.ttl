@@ -1,0 +1,29 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# Filiae Reserve
+
+id:world-filiae-reserve a oa:Place, oa:World ;
+    skos:altLabel "The Reserve" ;
+    skos:prefLabel "Filiae Reserve" ;
+    oa:kind "volume" ;
+    oa:labelsSystem false ;
+    oa:note "\"Volume of space centered around a group of stars apparently involved in an old transcendent civilisation... It has numerous terraformed planets teeming with life, but is aggressively protected by both local nanosystems and several Caretaker Gods. What lies inside is unknown.\"\nHeld by the Caretaker Gods on that last sentence, which is the only holder the article names. Probably the label Steve Bowers' maps carry as \"The Reserve\", which is recorded as an alternate name." ;
+    oa:uncertain false .
+
+claim:location-world-filiae-reserve a prov:Entity, oa:LocationClaim ;
+    oa:about id:world-filiae-reserve ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:note "Three vertices and no distance, none of the three resolvable here. The article gives \"a rough tetrahedron from the red dwarf YTS 594-456111, the sun-like star Filiae and the wisp of dark cloud locally called the Mouthpiece\" — YTS is a designation this map's catalogues do not carry, and neither Filiae nor the Mouthpiece appears in any of them or in the add-ons. So it is recorded and drawn nowhere.\nWhat is known is the neighbourhood: it is listed among the Serpens Region's places, whose members this map does place between 1,530 and 1,730 ly. A distance for any one vertex would put it there." .
+
+claim:affiliation-world-filiae-reserve-caretaker-gods a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:world-filiae-reserve ;
+    oa:canonical true ;
+    oa:polity id:polity-caretaker-gods ;
+    oa:recordOrder 0 .

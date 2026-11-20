@@ -1,0 +1,49 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Pismis 24-1
+
+id:world-pismis-24-1 a oa:Place, oa:World ;
+    skos:prefLabel "Pismis 24-1" ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "A triple star in Pismis 24, the cluster embedded in the War and Peace Nebula, in Scorpius. This map's cluster catalogue holds the cluster and the nebula as one record under the name NGC 6357, with Pismis 24 as an alias, and that record supplies the direction.\nThe distance is the Encyclopaedia's own 6,503 ly, and it is the largest of four figures for this region: the cluster catalogue gives 5,454, one published account 5,500, and another 5,871 give or take 457. The Encyclopaedia's lies 176 ly beyond the top of that last range, so it does not quite fall inside any of them, but it is close enough to be the same object seen through a different measurement rather than a different place." ;
+    oa:systemName "Pismis 24-1" ;
+    oa:uncertain false .
+
+claim:location-world-pismis-24-1 a prov:Entity, oa:LocationClaim ;
+    oa:about id:world-pismis-24-1 ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -34.2026 ;
+    oa:distance value:location-world-pismis-24-1-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:nearName "Pismis 24" ;
+    oa:rightAscensionDeg 261.1825 .
+
+value:location-world-pismis-24-1-distance a oa:QuantityValue ;
+    qudt:numericValue 6503.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-pismis-24-1-laughter-hegemony a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:world-pismis-24-1 ;
+    oa:canonical true ;
+    oa:polity id:polity-laughter-hegemony ;
+    oa:recordOrder 0 .
+
+claim:event-world-pismis-24-1-001 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-pismis-24-1 ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "Reached." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 9880 .

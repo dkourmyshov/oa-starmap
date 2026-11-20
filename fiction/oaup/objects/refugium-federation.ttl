@@ -1,0 +1,39 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Refugium Federation
+
+id:world-refugium-federation a oa:Place, oa:World ;
+    skos:prefLabel "Refugium Federation" ;
+    oa:kind "polity_marker" ;
+    oa:labelsSystem false ;
+    oa:note "Drawn on top of Refugium and Penrose Place, which is where a marker for a polity 100 ly across with twenty colonised systems belongs. It was for a while drawn 684 ly from both, when they were Centaurus cones and this was the only stated direction in the federation's record; that gap is gone, and it was never a fact about the setting. The add-on names it an empire where the Encyclopaedia files it under Minor Polities as a federation, which is the part still open; see questions.md." ;
+    oa:uncertain false .
+
+claim:location-world-refugium-federation a prov:Entity, oa:LocationClaim ;
+    oa:about id:world-refugium-federation ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -43.3 ;
+    oa:distance value:location-world-refugium-federation-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:note "The REFUGIUM EMPIRE anchor in OAEMPIRES.dsc, one of the Orion's Arm Celestia add-ons' location catalogues (OAAddons9, OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv). It falls 0.159 degrees from NGC 3680, which is the cluster the federation's own page gives Refugium's bearing towards, so the anchor is the add-on's author reading that sentence rather than an independent placement." ;
+    oa:rightAscensionDeg 171.6 .
+
+value:location-world-refugium-federation-distance a oa:QuantityValue ;
+    qudt:numericValue 2204.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-refugium-federation-refugium-federation a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:world-refugium-federation ;
+    oa:canonical true ;
+    oa:polity id:polity-refugium-federation ;
+    oa:recordOrder 0 .

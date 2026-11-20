@@ -1,0 +1,32 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Alchiba
+
+id:inner-sphere-row-0598 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Alchiba" .
+
+claim:inner-sphere-inner-sphere-row-0598-4ff6eed02da7 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0598 ;
+    oa:canonical true ;
+    oa:colonyName "Alchiba" ;
+    oa:luminositySol "4.68" ;
+    oa:massSol "1.5" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 597 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0598-4ff6eed02da7-source-distance ;
+    oa:spectralType "F0 IV-V" ;
+    oa:starName "Alpha Corvi A" .
+
+value:inner-sphere-inner-sphere-row-0598-4ff6eed02da7-source-distance a oa:QuantityValue ;
+    qudt:numericValue 48.848 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

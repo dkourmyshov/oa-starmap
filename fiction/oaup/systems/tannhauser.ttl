@@ -1,0 +1,50 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Tannhauser
+
+id:world-tannhauser a oa:Place, oa:World ;
+    skos:altLabel "Minnesang" ;
+    skos:prefLabel "Tannhauser" ;
+    oa:article <https://www.orionsarm.com/eg-article/47a13d7c77388> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "The article names both Tannhauser and Minnesang and gives one distance. Whether that is one system under two names or two systems near each other is asked in questions.md; drawn as one place until it is answered, since splitting it would mean inventing a separation." ;
+    oa:uncertain false .
+
+claim:location-world-tannhauser a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47a13d7c77388> ;
+    oa:about id:world-tannhauser ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:constellationName "Ara" ;
+    oa:distance value:location-world-tannhauser-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+value:location-world-tannhauser-distance a oa:QuantityValue ;
+    qudt:numericValue 685.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-tannhauser-utopia-sphere a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47a13d7c77388> ;
+    oa:about id:world-tannhauser ;
+    oa:canonical true ;
+    oa:polity id:polity-utopia-sphere ;
+    oa:recordOrder 0 .
+
+claim:event-world-tannhauser-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47a13d7c77388> ;
+    oa:about id:world-tannhauser ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 3218 .

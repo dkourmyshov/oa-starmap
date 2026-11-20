@@ -1,0 +1,78 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Yosunoh
+
+id:world-yosunoh a oa:Place, oa:World ;
+    skos:prefLabel "Yosunoh" ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Iota Pegasi, 39 ly out." ;
+    oa:uncertain false .
+
+claim:location-world-yosunoh a prov:Entity, oa:LocationClaim ;
+    oa:about id:world-yosunoh ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Iota Pegasi" .
+
+claim:affiliation-world-yosunoh-iota-network a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:world-yosunoh ;
+    oa:canonical true ;
+    oa:polity id:polity-iota-network ;
+    oa:recordOrder 0 .
+
+# Yosunoh
+
+id:inner-sphere-row-0436 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Yosunoh" .
+
+claim:inner-sphere-inner-sphere-row-0436-5ffc512291ec a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0436 ;
+    oa:canonical true ;
+    oa:colonyName "Yosunoh" ;
+    oa:luminositySol "3.917" ;
+    oa:massSol "1.324" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 435 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0436-5ffc512291ec-source-distance ;
+    oa:spectralType "F5 V" ;
+    oa:starName "Iota Pegasi Aa" .
+
+value:inner-sphere-inner-sphere-row-0436-5ffc512291ec-source-distance a oa:QuantityValue ;
+    qudt:numericValue 38.826 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Yosunoh
+
+id:inner-sphere-row-0437 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Yosunoh" .
+
+claim:inner-sphere-inner-sphere-row-0437-f23cbd0ddac1 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0437 ;
+    oa:canonical true ;
+    oa:colonyName "Yosunoh" ;
+    oa:luminositySol "0.313" ;
+    oa:massSol "0.825" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 436 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0437-f23cbd0ddac1-source-distance ;
+    oa:spectralType "G8 V" ;
+    oa:starName "Iota Pegasi Ab" .
+
+value:inner-sphere-inner-sphere-row-0437-f23cbd0ddac1-source-distance a oa:QuantityValue ;
+    qudt:numericValue 38.826 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

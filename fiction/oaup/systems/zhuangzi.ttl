@@ -1,0 +1,83 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Cableville
+
+id:world-cableville a oa:Place, oa:World ;
+    skos:prefLabel "Cableville" ;
+    oa:article <https://www.orionsarm.com/eg-article/48ac37b0e82ba> ;
+    oa:kind "megastructure" ;
+    oa:labelsSystem false ;
+    oa:note "Zhuangzi is the primary. No catalogue identifier is given for it." ;
+    oa:systemName "Zhuangzi" ;
+    oa:uncertain false .
+
+claim:location-world-cableville a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48ac37b0e82ba> ;
+    oa:about id:world-cableville ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -32.25 ;
+    oa:distance value:location-world-cableville-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:note "Was a constellation and a distance, which is a cone 1,543 ly deep. The Celestia wormhole-nexus add-on, published at https://celestiaproject.space/forum/viewtopic.php?f=23&t=17436 gives an exact direction for it, and names the primary \"YTS 23375-458-5\" at 1543 ly — both of which the article's own panel states too, as \"Designation of Primary YTS 23375-458-5\" and \"Distance from Sol 1543 ly\". The direction is the add-on's alone; everything else agrees." ;
+    oa:rightAscensionDeg 265.25 .
+
+value:location-world-cableville-distance a oa:QuantityValue ;
+    qudt:numericValue 1543.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-cableville-mutual-progress-association a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48ac37b0e82ba> ;
+    oa:about id:world-cableville ;
+    oa:canonical true ;
+    oa:polity id:polity-mutual-progress-association ;
+    oa:recordOrder 0 .
+
+claim:event-world-cableville-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48ac37b0e82ba> ;
+    oa:about id:world-cableville ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "Founded." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 4710 .
+
+claim:event-world-cableville-002 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-cableville ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "MPA relativist ship arrives at Cableville ." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:sourceDescription "Encyclopaedia timeline, The ComEmp Period" ;
+    oa:yearAT 5136 .
+
+claim:event-world-cableville-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48ac37b0e82ba> ;
+    oa:about id:world-cableville ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"In 5405, following several decades of negotiation, the system was purchased by the S2 transapient HolyDeveloper, who renamed the system Cableville and initiated an ambitious plan to upgrade the system and turn it into a major economic centre and hotspot for tourists and landscape designers.\" HolyDeveloper is an individual transapient, not a roster polity. A consortium of transapients, in HolyDeveloper's absence." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 2 ;
+    oa:yearAT 5405 .
+
+claim:event-world-cableville-004 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48ac37b0e82ba> ;
+    oa:about id:world-cableville ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"In HolyDeveloper's absence, a consortium of transapients seized the system.\" No exact year is given for the seizure itself; it is placed immediately after the preceding sentence, dated 5990, describing HolyDeveloper's disappearance. The consortium is unnamed and not on the roster. Dancing Stars, a NoCoZo megacorporation of S2 transapients, not the Zone itself; the panel's MPA and Utopia Sphere affiliation is undated." ;
+    oa:precision oa:NotEarlierThan ;
+    oa:recordOrder 3 ;
+    oa:yearAT 5990 .

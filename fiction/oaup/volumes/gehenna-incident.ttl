@@ -1,0 +1,51 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Gehenna Incident
+
+id:world-gehenna-incident a oa:Place, oa:World ;
+    skos:altLabel "Verifex Nebula" ;
+    skos:prefLabel "Gehenna Incident" ;
+    oa:article <https://www.orionsarm.com/eg-article/464e89d70a038> ;
+    oa:editorialNote "---- Archosaurian Empire ------------------------------------------------\n\nCentred on M39, which the map already carried as Cygexpa's. Two of the three\nplaces here are inside that cluster and the article gives only the cluster\nfor both, so they take its direction and their own distances — two light\nyears apart on a map where the cluster is 320 ly across. Owen is entered\nabove under the Utopia Sphere, honorary in this empire rather than held by\nit, so it is not drawn in these colours." ;
+    oa:extent value:world-gehenna-incident-extent ;
+    oa:kind "hazard" ;
+    oa:labelsSystem false ;
+    oa:note "Not a settlement but a front. A megascale metric engineering project of the archailect Verifex, attempted in the M50 cluster in 7981 and catastrophic: the blast released two hundred times the ionising radiation of a Type II supernova and some fifty times that again at longer wavelengths. The Hellfire expansion has spread from M50 ever since at the only speed light travels — 10601 less 7981 is 2620 years, and 2620 ly is exactly the radius the setting gives it now. That figure is the elapsed time, so it is not a measurement to check but a clock to read, and it goes stale the moment the setting's present moves.\nThe article puts M50 at 3,030 ly and the catalogue at 3,120, agreeing to 3%; the cluster lends the direction and the article keeps the distance, as elsewhere here. Drawn 5,240 ly across, far the largest thing on this map, and centred 3,030 ly out — so its near edge stands about 410 ly from Sol. This is not a distant catastrophe but one whose leading edge is inside thoroughly settled space. The Emple-Dokcetics supply shielding against it, and parts of the swept volume have been resettled behind the front.\nNo date is recorded as an event: 7981 is neither a visit nor a settlement nor an abandonment, and this file has no kind for a disaster. The year is here in prose instead, where it is doing more work than usual — the radius above is derived from it.\nIts `kind` is `hazard` rather than `volume`, which is the difference between the Corambytia Protectorate and this: one is a territory and the other is something spreading through territory. The map draws the two differently on that word alone." ;
+    oa:uncertain false .
+
+value:world-gehenna-incident-extent a oa:QuantityValue ;
+    qudt:numericValue 5240.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:location-world-gehenna-incident a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/464e89d70a038> ;
+    oa:about id:world-gehenna-incident ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -8.3547 ;
+    oa:distance value:location-world-gehenna-incident-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:nearName "M50 (NGC 2323)" ;
+    oa:note "OAEMPIRES.dsc carries a VERIFEX NEBULA at 105.675, -8.383 and 3,028.5 ly -- the same object under the name of the being whose experiment caused it, 0.04 degrees and one and a half light years from this position, which were arrived at separately. Recorded as an alternate name rather than as a second object." ;
+    oa:rightAscensionDeg 105.7046 .
+
+value:location-world-gehenna-incident-distance a oa:QuantityValue ;
+    qudt:numericValue 3030.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-gehenna-incident-emple-dokcetics a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/464e89d70a038> ;
+    oa:about id:world-gehenna-incident ;
+    oa:canonical true ;
+    oa:polity id:polity-emple-dokcetics ;
+    oa:recordOrder 0 .

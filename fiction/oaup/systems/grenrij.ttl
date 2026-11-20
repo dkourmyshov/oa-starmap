@@ -1,0 +1,64 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Grenrij
+
+id:world-grenrij a oa:Place, oa:World ;
+    skos:prefLabel "Grenrij" ;
+    oa:article <https://www.orionsarm.com/eg-article/65b6c059ea3b1> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "CW Leonis, a carbon star wrapped in enough of its own soot that none of the catalogues here carry it, so the constellation holds the direction while the article's distance holds to a thousandth of a light year." ;
+    oa:systemName "Grenrij" ;
+    oa:uncertain false .
+
+claim:location-world-grenrij a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/65b6c059ea3b1> ;
+    oa:about id:world-grenrij ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:constellationName "Leo" ;
+    oa:distance value:location-world-grenrij-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+value:location-world-grenrij-distance a oa:QuantityValue ;
+    qudt:numericValue 433.788 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:event-world-grenrij-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/65b6c059ea3b1> ;
+    oa:about id:world-grenrij ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "Arrived." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 2698 .
+
+claim:event-world-grenrij-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/65b6c059ea3b1> ;
+    oa:about id:world-grenrij ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "\"The first of these autonomous probes arrived in the vicinity of Grenrij in 2698 AT, and were able to take the first close-up photos of the star's surroundings, as well as its planets, and map additional small bodies in greater detail.\" The header already records 'settled 2698'; this sentence describes only autonomous probes arriving, with no colonists. Compare the 3100 AT entry below — see contradictions. Autonomous probes; the map's older 'settled 2698' is this arrival." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 2698 .
+
+claim:event-world-grenrij-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/65b6c059ea3b1> ;
+    oa:about id:world-grenrij ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"Several more probe missions of various affiliations and designs arrived at the star system soon after, some of which were capable of constructing engenerator stations, among other rudimentary infrastructures within the system, to permit virtual sophont migration as well as prepare the system for the first crewed colony missions which would not arrive until 3100 AT.\" New against the header, which records only 'settled 2698' for the probe arrival. This is the article's own date for the first crewed colony mission. The first crewed colony missions, after engenerator stations were built." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 2 ;
+    oa:yearAT 3100 .

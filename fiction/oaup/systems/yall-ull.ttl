@@ -1,0 +1,122 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Yall-Ull
+
+id:world-yall-ull a oa:Place, oa:World ;
+    skos:prefLabel "Yall-Ull" ;
+    oa:article <https://www.orionsarm.com/eg-article/4fbac899f11d0> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Gliese 667 A, as the colony table has it." ;
+    oa:systemName "Yall-Ull" ;
+    oa:uncertain false .
+
+claim:location-world-yall-ull a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4fbac899f11d0> ;
+    oa:about id:world-yall-ull ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Gliese 667 A" .
+
+claim:event-world-yall-ull-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4fbac899f11d0> ;
+    oa:about id:world-yall-ull ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "\"By the time the probe reached the system two centuries later Solsys was in the nadir of a Dark Age, and the data sent back by the probe was never received.\" Probe launched in 505 AT ('An unmanned interstellar probe was launched in 505 AT to explore this system.'); arrival year computed as roughly two centuries after launch. No sending polity is named for the probe. Launched in 505; its data was never received, Solsys being in a Dark Age." ;
+    oa:precision oa:Circa ;
+    oa:recordOrder 0 ;
+    oa:yearAT 705 .
+
+claim:event-world-yall-ull-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4fbac899f11d0> ;
+    oa:about id:world-yall-ull ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"The system was colonized by the First Federation in 1109 AT.\" Colony mission fronted by Clan Yall, a close ally of House Genen; neither Clan Yall nor House Genen is on the roster." ;
+    oa:polity id:polity-first-federation ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 1109 .
+
+# Yall-Ull
+
+id:inner-sphere-row-0181 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Yall-Ull" .
+
+claim:inner-sphere-inner-sphere-row-0181-d086818ba273 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0181 ;
+    oa:article <https://www.orionsarm.com/eg-article/4fbac899f11d0> ;
+    oa:canonical true ;
+    oa:colonyName "Yall-Ull" ;
+    oa:luminositySol "0.254" ;
+    oa:massSol "0.73" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 180 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0181-d086818ba273-source-distance ;
+    oa:spectralType "K3 V" ;
+    oa:starName "Gliese 667 A" .
+
+value:inner-sphere-inner-sphere-row-0181-d086818ba273-source-distance a oa:QuantityValue ;
+    qudt:numericValue 23.632 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Yall-Ull
+
+id:inner-sphere-row-0182 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Yall-Ull" .
+
+claim:inner-sphere-inner-sphere-row-0182-57766be9ebbe a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0182 ;
+    oa:article <https://www.orionsarm.com/eg-article/4fbac899f11d0> ;
+    oa:canonical true ;
+    oa:colonyName "Yall-Ull" ;
+    oa:luminositySol "0.181" ;
+    oa:massSol "0.69" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 181 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0182-57766be9ebbe-source-distance ;
+    oa:spectralType "K5 V" ;
+    oa:starName "Gliese 667 B" .
+
+value:inner-sphere-inner-sphere-row-0182-57766be9ebbe-source-distance a oa:QuantityValue ;
+    qudt:numericValue 23.632 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Yall-Ull
+
+id:inner-sphere-row-0183 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Yall-Ull" .
+
+claim:inner-sphere-inner-sphere-row-0183-ac8e0c42a3a2 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0183 ;
+    oa:article <https://www.orionsarm.com/eg-article/4fbac899f11d0> ;
+    oa:canonical true ;
+    oa:colonyName "Yall-Ull" ;
+    oa:luminositySol "0.017" ;
+    oa:massSol "0.33" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 182 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0183-ac8e0c42a3a2-source-distance ;
+    oa:spectralType "M1.5 V" ;
+    oa:starName "Gliese 667 C" .
+
+value:inner-sphere-inner-sphere-row-0183-ac8e0c42a3a2-source-distance a oa:QuantityValue ;
+    qudt:numericValue 23.632 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

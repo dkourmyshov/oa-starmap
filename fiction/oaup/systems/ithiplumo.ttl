@@ -1,0 +1,86 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Ithiplumo
+
+id:world-ithiplumo a oa:Place, oa:World ;
+    skos:prefLabel "Ithiplumo" ;
+    oa:article <https://www.orionsarm.com/eg-article/462424233115a> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "GJ 3379, as the colony table names the star; the catalogue here carries no star by that designation, so the entry has its dates and no position." ;
+    oa:systemName "Ithiplumo" ;
+    oa:uncertain false .
+
+claim:event-world-ithiplumo-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/462424233115a> ;
+    oa:about id:world-ithiplumo ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"Reached: Approximately 500 AT by ahumans.\" The panel field is literally labelled 'Reached', but the body text describes a manufacturing programme starting around fifty years later and the article calls this an 'Abandoned Diamond Belt aioid colony', so this was classed as settled rather than visited. Ahumans are not a polity on the roster. Ahumans, no polity of this file." ;
+    oa:precision oa:Circa ;
+    oa:recordOrder 0 ;
+    oa:yearAT 500 .
+
+claim:event-world-ithiplumo-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/462424233115a> ;
+    oa:about id:world-ithiplumo ;
+    oa:canonical true ;
+    oa:eventKind oa:Abandoned ;
+    oa:note "\"Structures of unknown function were constructed, but these had been abandoned long before First Federation explorers reached this system over seven hundred years later.\" 1027 AT is derived from the colony ship's 327 AT departure plus the stated 'over seven hundred years later' when First Federation explorers reached the system; the abandonment is stated to have happened before that. The year is arithmetic: the ahumans' departure of 327 plus the 'over seven hundred years' the article gives." ;
+    oa:precision oa:NotLaterThan ;
+    oa:recordOrder 1 ;
+    oa:yearAT 1027 .
+
+claim:event-world-ithiplumo-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/462424233115a> ;
+    oa:about id:world-ithiplumo ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "\"Structures of unknown function were constructed, but these had been abandoned long before First Federation explorers reached this system over seven hundred years later.\" 1027 AT is derived from the colony ship's 327 AT departure plus the stated 'over seven hundred years later' when First Federation explorers reached the system. The same sentence; the Federation explorers' arrival, likewise computed." ;
+    oa:polity id:polity-first-federation ;
+    oa:precision oa:NotEarlierThan ;
+    oa:recordOrder 2 ;
+    oa:yearAT 1027 .
+
+claim:event-world-ithiplumo-004 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/462424233115a> ;
+    oa:about id:world-ithiplumo ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"Resettled in 1235 AT by colonists aboard the Federation colony ship Whiddhar Korskumma.\"" ;
+    oa:polity id:polity-first-federation ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 3 ;
+    oa:yearAT 1235 .
+
+# Ithiplumo
+
+id:inner-sphere-row-0088 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Ithiplumo" .
+
+claim:inner-sphere-inner-sphere-row-0088-31ee0fa1bb41 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0088 ;
+    oa:article <https://www.orionsarm.com/eg-article/462424233115a> ;
+    oa:canonical true ;
+    oa:colonyName "Ithiplumo" ;
+    oa:luminositySol "0.008630" ;
+    oa:massSol "0.237" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 87 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0088-31ee0fa1bb41-source-distance ;
+    oa:spectralType "M3.5 Ve" ;
+    oa:starName "GJ 3379" .
+
+value:inner-sphere-inner-sphere-row-0088-31ee0fa1bb41-source-distance a oa:QuantityValue ;
+    qudt:numericValue 16.986 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

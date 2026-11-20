@@ -1,0 +1,17 @@
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+
+# The Transcend
+
+id:polity-the-transcend a oa:Polity ;
+    skos:prefLabel "The Transcend" ;
+    oa:ambiguousName false ;
+    oa:color "#C78E6D" ;
+    oa:editorialNote "Its members are numbered rather than named — Transcend 1 is NGC 2451A,\nTranscend 7 is NGC 6802 — so the polity's landmarks are the clusters\nthemselves. NGC 6802 is not on this list: the catalogue puts it at 9,031\nly and the article at 3,641, so it is a world entry taking the article's\ndistance rather than a landmark taking the catalogue's." ;
+    oa:hasSource src:eg-system-articles ;
+    oa:kind "polity" ;
+    oa:polityId "the-transcend" ;
+    oa:recordOrder 43 ;
+    oa:uncertain false .

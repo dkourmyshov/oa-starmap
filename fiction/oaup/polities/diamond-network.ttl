@@ -1,0 +1,17 @@
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+
+# Diamond Network
+
+id:polity-diamond-network a oa:Polity ;
+    skos:prefLabel "Diamond Network" ;
+    oa:ambiguousName false ;
+    oa:color "#2A8BE9" ;
+    oa:editorialNote "Was byte-identical to Cygexpa." ;
+    oa:hasSource src:eg-system-articles ;
+    oa:kind "polity" ;
+    oa:polityId "diamond-network" ;
+    oa:recordOrder 25 ;
+    oa:uncertain false .

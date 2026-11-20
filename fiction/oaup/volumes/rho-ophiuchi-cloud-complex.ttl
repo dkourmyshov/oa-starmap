@@ -1,0 +1,44 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Rho Ophiuchi Cloud Complex
+
+id:world-rho-ophiuchi-cloud-complex a oa:Place, oa:World ;
+    skos:prefLabel "Rho Ophiuchi Cloud Complex" ;
+    oa:extent value:world-rho-ophiuchi-cloud-complex-extent ;
+    oa:kind "volume" ;
+    oa:labelsSystem false ;
+    oa:note "A molecular cloud in Ophiuchus at 140 pc, and one of the nearest star-forming regions there is. Its 4.5 by 6.5 degrees on the sky work out to about 44 ly across at that distance, so it is drawn as the volume it is. Position, distance and angular size are all hand-sourced: no cloud catalogue is loaded here." ;
+    oa:uncertain false .
+
+value:world-rho-ophiuchi-cloud-complex-extent a oa:QuantityValue ;
+    qudt:numericValue 44.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:location-world-rho-ophiuchi-cloud-complex a prov:Entity, oa:LocationClaim ;
+    oa:about id:world-rho-ophiuchi-cloud-complex ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -24.5417 ;
+    oa:distance value:location-world-rho-ophiuchi-cloud-complex-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:rightAscensionDeg 247.025 .
+
+value:location-world-rho-ophiuchi-cloud-complex-distance a oa:QuantityValue ;
+    qudt:numericValue 460.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-rho-ophiuchi-cloud-complex-mutual-progress-association a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:world-rho-ophiuchi-cloud-complex ;
+    oa:canonical true ;
+    oa:polity id:polity-mutual-progress-association ;
+    oa:recordOrder 0 .

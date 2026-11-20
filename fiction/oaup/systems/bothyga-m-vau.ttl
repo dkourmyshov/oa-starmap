@@ -1,0 +1,36 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# Bothyga M'Vau
+
+id:world-bothyga-m-vau a oa:Place, oa:World ;
+    skos:prefLabel "Bothyga M'Vau" ;
+    oa:article <https://www.orionsarm.com/eg-article/46100d8d49764> ;
+    oa:editorialNote "---- the alphabetical sweep, C-F -----------------------------------------" ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "HD 10783 in Pisces, which this map's catalogue puts at 552 ly against the article's 576 — close enough to bind to the star itself." ;
+    oa:systemName "Bothyga M'Vau" ;
+    oa:uncertain false .
+
+claim:location-world-bothyga-m-vau a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46100d8d49764> ;
+    oa:about id:world-bothyga-m-vau ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "HD 10783" .
+
+claim:event-world-bothyga-m-vau-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46100d8d49764> ;
+    oa:about id:world-bothyga-m-vau ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "Seeded." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 4840 .

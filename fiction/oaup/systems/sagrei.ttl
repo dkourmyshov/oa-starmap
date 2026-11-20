@@ -1,0 +1,35 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# World of Meditating Idols
+
+id:world-world-of-meditating-idols a oa:Place, oa:World ;
+    skos:prefLabel "World of Meditating Idols" ;
+    oa:article <https://www.orionsarm.com/eg-article/47aa8331028d9> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "HD 117207 in Centaurus, 105 ly out against the article's 107. The system is named Sagrei; the world is named for what was found on it." ;
+    oa:systemName "Sagrei" ;
+    oa:uncertain false .
+
+claim:location-world-world-of-meditating-idols a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47aa8331028d9> ;
+    oa:about id:world-world-of-meditating-idols ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "HD 117207" .
+
+claim:event-world-world-of-meditating-idols-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47aa8331028d9> ;
+    oa:about id:world-world-of-meditating-idols ;
+    oa:canonical true ;
+    oa:eventKind oa:Observed ;
+    oa:note "Surveyed." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 1915 .

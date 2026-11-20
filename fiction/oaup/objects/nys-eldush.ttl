@@ -1,0 +1,75 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Nys-eldush
+
+id:world-nys-eldush a oa:Place, oa:World ;
+    skos:prefLabel "Nys-eldush" ;
+    oa:article <https://www.orionsarm.com/eg-article/4c8f69db1baf9> ;
+    oa:editorialNote "---- the alphabetical sweep, O-P -----------------------------------------" ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "In Cancer at 1,712 ly. The article gives no date for the colony itself. What it gives is 6299, by which time contact with the original settlers had dwindled away — so they were there before that, and how long before is not said." ;
+    oa:uncertain false .
+
+claim:location-world-nys-eldush a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4c8f69db1baf9> ;
+    oa:about id:world-nys-eldush ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:constellationName "Cancer" ;
+    oa:distance value:location-world-nys-eldush-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+value:location-world-nys-eldush-distance a oa:QuantityValue ;
+    qudt:numericValue 1712.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:event-world-nys-eldush-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4c8f69db1baf9> ;
+    oa:about id:world-nys-eldush ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "Settled by this year, when contact with the colonists had faded to nothing." ;
+    oa:precision oa:NotLaterThan ;
+    oa:recordOrder 0 ;
+    oa:yearAT 6299 .
+
+claim:event-world-nys-eldush-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4c8f69db1baf9> ;
+    oa:about id:world-nys-eldush ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "\"In 6810 an interstellar trading ship of the Spacefarer's Union visited the system and found the planet deserted.\" Spacefarer's Union is not on the roster (see unplaced)." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 6810 .
+
+claim:event-world-nys-eldush-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4c8f69db1baf9> ;
+    oa:about id:world-nys-eldush ;
+    oa:canonical true ;
+    oa:eventKind oa:Abandoned ;
+    oa:note "\"In 6810 an interstellar trading ship of the Spacefarer's Union visited the system and found the planet deserted.\" The ship found the planet already deserted on arrival in 6810; the colony's actual end is undated, sometime after contact with the outside had dried up by 6299 (see doubts) and before this 6810 visit. Found deserted by the Spacefarer's Union ship of 6810; the map's older 'settled 6299' has no sentence in the article, whose 6299 is when contact dried up." ;
+    oa:precision oa:NotLaterThan ;
+    oa:recordOrder 2 ;
+    oa:yearAT 6810 .
+
+claim:event-world-nys-eldush-004 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4c8f69db1baf9> ;
+    oa:about id:world-nys-eldush ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "\"However the arrival of a Metasoft emissary fleet in 7197 prevented the massacre of the last remaining Horrors.\" \"The Version Tree\" a sentence later refers to the same fleet; Metasoft Version Tree is the roster's metasoft polity. An emissary fleet, which 'prevented the massacre of the last remaining Horrors'." ;
+    oa:polity id:polity-metasoft ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 3 ;
+    oa:yearAT 7197 .

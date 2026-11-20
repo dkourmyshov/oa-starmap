@@ -1,0 +1,88 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Akela
+
+id:world-akela a oa:Place, oa:World ;
+    skos:prefLabel "Akela" ;
+    oa:article <https://www.orionsarm.com/eg-article/470033894c883> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Wolf 359, 7.9 ly out in Leo." ;
+    oa:uncertain false .
+
+claim:location-world-akela a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/470033894c883> ;
+    oa:about id:world-akela ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Wolf 359" .
+
+claim:affiliation-world-akela-solsys-organization a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/470033894c883> ;
+    oa:about id:world-akela ;
+    oa:canonical true ;
+    oa:polity id:polity-solsys-organization ;
+    oa:recordOrder 0 .
+
+claim:event-world-akela-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/470033894c883> ;
+    oa:about id:world-akela ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 450 .
+
+claim:event-world-akela-002 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-akela ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "'.....' sporeship arrives at Wolf 359 and spreads from there." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:sourceDescription "Encyclopaedia timeline, The Early Federation Age" ;
+    oa:yearAT 1150 .
+
+claim:event-world-akela-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/470033894c883> ;
+    oa:about id:world-akela ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "\"A beamrider mission arrived in 730 AT and began construction of a boostbeam station soon afterwards.\" Not in the header's already- dated list (which has visited 450 and visited 1150, not 730). This appears to be the same arrival as 'the first Beamrider Network explorers' below; Beamrider Network is not on the roster, so no polity is recorded (see unplaced). A beamrider mission, building a boostbeam station; the map's older 'visited 1150' has no sentence in the article." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 2 ;
+    oa:yearAT 730 .
+
+# Akela
+
+id:inner-sphere-row-0009 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Akela" .
+
+claim:inner-sphere-inner-sphere-row-0009-2c78b149db9d a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0009 ;
+    oa:article <https://www.orionsarm.com/eg-article/470033894c883> ;
+    oa:canonical true ;
+    oa:colonyName "Akela" ;
+    oa:luminositySol "0.0000207" ;
+    oa:massSol "0.093" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 8 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0009-2c78b149db9d-source-distance ;
+    oa:spectralType "M6 Ve" ;
+    oa:starName "Wolf 359" .
+
+value:inner-sphere-inner-sphere-row-0009-2c78b149db9d-source-distance a oa:QuantityValue ;
+    qudt:numericValue 7.856 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

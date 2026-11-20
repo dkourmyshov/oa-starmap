@@ -1,0 +1,53 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Avensis
+
+id:world-avensis a oa:Place, oa:World ;
+    skos:prefLabel "Avensis" ;
+    oa:article <https://www.orionsarm.com/eg-article/4e813a626e07b> ;
+    oa:editorialNote "---- the Tunh Xenohole ---------------------------------------------------" ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "The Cooperative Venture's main planet. The Venture is not a polity and is recorded as none: its own entry calls it \"an interstellar cooperation between the Serpens Region civilisations in mainly archaeology, trying to understand some relics from lost alien civilisations, especially the Dawn Hunters and the Black Acropolis\", with sidelines in transfer protocols, conflict resolution and geography. An organisation across the region's worlds rather than a holder of them, so nothing here is coloured for it." ;
+    oa:uncertain false .
+
+claim:location-world-avensis a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4e813a626e07b> ;
+    oa:about id:world-avensis ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg 5.8096 ;
+    oa:derivation "1,655 ly from Sol and about 158 from Sk'iiws'nnii, which is two constraints and leaves a circle. The third is an assumption rather than a statement: Miracle City lists 84 ly to \"the Cooperative Venture\", and Avensis is its main planet, so the figure is read as being to here. On that reading three spheres meet in two points, 2.5 degrees apart, both in Ophiuchus and both satisfying all three distances exactly. This is their midpoint and the error covers both. If the 84 ly is to the Venture's nearest edge rather than its capital, the position moves but not far.\nChecked since against a source that did not feed the working: oalocationsx.dsc writes a \"Cooperative Venture\" label at 276.0, 5.7 and 1,661 ly, which falls 1.94 degrees from this position -- inside the two-degree error stated above -- and 0.4% off its distance. Two independent routes to one point is as much confirmation as a derived position on this map has ever had." ;
+    oa:directionErrorDeg 2.0 ;
+    oa:distance value:location-world-avensis-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:EditorialEstimate ;
+    oa:rightAscensionDeg 274.0535 .
+
+value:location-world-avensis-distance a oa:QuantityValue ;
+    qudt:numericValue 1655.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-avensis-sagittarius-transcultural-cooperation a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4e813a626e07b> ;
+    oa:about id:world-avensis ;
+    oa:canonical true ;
+    oa:polity id:polity-sagittarius-transcultural-cooperation ;
+    oa:recordOrder 0 .
+
+claim:event-world-avensis-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4e813a626e07b> ;
+    oa:about id:world-avensis ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 7609 .

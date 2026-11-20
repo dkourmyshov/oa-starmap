@@ -1,0 +1,18 @@
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+
+# Solsys Organization
+
+id:polity-solsys-organization a oa:Polity ;
+    skos:prefLabel "Solsys Organization" ;
+    oa:ambiguousName false ;
+    oa:color "#FFBD9F" ;
+    oa:editorialNote "Its own page, saved under sources/polities: \"traces its origins to the collapse of the Second Federation\" in\n3726, \"joined by 5 other S2-ruled polities as well as 31 polities\" by 3729.\nWas 3.0 from the Solar Dominion, which it interpenetrates: both are in\nand around Sol, so the two were the one pair on this map that genuinely\ncould not be told apart. Now 30.3." ;
+    oa:foundedAT 3726 ;
+    oa:hasSource src:eg-system-articles ;
+    oa:kind "polity" ;
+    oa:polityId "solsys-organization" ;
+    oa:recordOrder 29 ;
+    oa:uncertain false .

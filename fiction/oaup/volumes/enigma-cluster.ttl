@@ -1,0 +1,52 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Enigma Cluster
+
+id:world-enigma-cluster a oa:Place, oa:World ;
+    skos:altLabel "NGC 6755" ;
+    skos:prefLabel "Enigma Cluster" ;
+    oa:article <https://www.orionsarm.com/eg-article/491aecf1478f9> ;
+    oa:kind "volume" ;
+    oa:labelsSystem false ;
+    oa:note "\"Enigma Cluster, The (NGC 6755) - A former Keter cluster brain which has disappeared, leaving a mysterious network of wormholes behind.\" Its being NGC 6755 settled half of a long-running question, the Celestia add-on carrying a star called Enigma nowhere near it." ;
+    oa:uncertain false .
+
+claim:location-world-enigma-cluster a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/491aecf1478f9> ;
+    oa:about id:world-enigma-cluster ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg 4.267 ;
+    oa:distance value:location-world-enigma-cluster-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:note "Direction and distance both from OAEMPIRES.dsc, one of the Orion's Arm Celestia add-ons' location catalogues (OAAddons9, OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv), where the entry is named \"NGC 6755;Enigma Cluster\".\nThe distance is the setting's and not the catalogue's, which is the one place on this map where the two part company over a real object. The open-cluster catalogue puts NGC 6755 at 7,446 ly. This map takes the Terragen frontier as 7,000, so at the catalogue's figure a Keter cluster brain falls outside the reach of Terragen civilisation and the map declines to colour it Keter -- the setting contradicting itself through an astronomical revision it never saw. At 4,632 it is inside, and, as the project owner puts it, that is much more sensible in a direction where no xenoholes extend the Terragen reach.\nSo this is drawn where Orion's Arm puts it, and NGC 6755 goes on being drawn by the cluster layer where the catalogue puts it, with no fictional claim attached: it was a Keter landmark and a named one until this entry replaced both. One Enigma Cluster on the map, not two. See questions.md." ;
+    oa:rightAscensionDeg 286.954 .
+
+value:location-world-enigma-cluster-distance a oa:QuantityValue ;
+    qudt:numericValue 4632.5 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-enigma-cluster-keter-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/491aecf1478f9> ;
+    oa:about id:world-enigma-cluster ;
+    oa:canonical true ;
+    oa:polity id:polity-keter-dominion ;
+    oa:recordOrder 0 .
+
+claim:event-world-enigma-cluster-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/491aecf1478f9> ;
+    oa:about id:world-enigma-cluster ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 7222 .

@@ -1,0 +1,33 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Mynti
+
+id:inner-sphere-row-0451 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Mynti" .
+
+claim:inner-sphere-inner-sphere-row-0451-895b8c276588 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0451 ;
+    oa:article <https://www.orionsarm.com/eg-article/47bb88a4bb959> ;
+    oa:canonical true ;
+    oa:colonyName "Mynti" ;
+    oa:luminositySol "0.61" ;
+    oa:massSol "0.88" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 450 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0451-895b8c276588-source-distance ;
+    oa:spectralType "G5 Vb" ;
+    oa:starName "85 Pegasi A" .
+
+value:inner-sphere-inner-sphere-row-0451-895b8c276588-source-distance a oa:QuantityValue ;
+    qudt:numericValue 40.177 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

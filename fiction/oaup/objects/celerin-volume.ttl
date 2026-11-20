@@ -1,0 +1,42 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Celerin Volume
+
+id:world-celerin-volume a oa:Place, oa:World ;
+    skos:prefLabel "Celerin Volume" ;
+    oa:article <https://www.orionsarm.com/eg-article/46131b51c1171> ;
+    oa:kind "polity_marker" ;
+    oa:labelsSystem false ;
+    oa:note "Independent, and recorded with no affiliation because that is what it is." ;
+    oa:uncertain false .
+
+claim:location-world-celerin-volume a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46131b51c1171> ;
+    oa:about id:world-celerin-volume ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg 47.1473 ;
+    oa:derivation "Interpolated from the transcription of Anders Sandberg's maps, and extrapolated beyond the anchors around it, hence the wider error. The article gives no position." ;
+    oa:directionErrorDeg 30.0 ;
+    oa:distance value:location-world-celerin-volume-distance ;
+    oa:distanceError value:location-world-celerin-volume-distance-error ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:EditorialEstimate ;
+    oa:rightAscensionDeg 73.1691 .
+
+value:location-world-celerin-volume-distance a oa:QuantityValue ;
+    qudt:numericValue 3017.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+value:location-world-celerin-volume-distance-error a oa:QuantityValue ;
+    qudt:numericValue 1200.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

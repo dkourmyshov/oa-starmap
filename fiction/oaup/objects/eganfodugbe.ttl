@@ -1,0 +1,56 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Eganfodugbe
+
+id:world-eganfodugbe a oa:Place, oa:World ;
+    skos:prefLabel "Eganfodugbe" ;
+    oa:article <https://www.orionsarm.com/eg-article/591f26a73b0e1> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "Galactic coordinates given outright — -140, 215, -60 ly — which come to 264 ly in Cassiopeia. Reached a second time in 2640, the article's word being that it was re-reached rather than found." ;
+    oa:uncertain false .
+
+claim:location-world-eganfodugbe a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/591f26a73b0e1> ;
+    oa:about id:world-eganfodugbe ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg 49.7089 ;
+    oa:distance value:location-world-eganfodugbe-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:rightAscensionDeg 13.0684 .
+
+value:location-world-eganfodugbe-distance a oa:QuantityValue ;
+    qudt:numericValue 264.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:event-world-eganfodugbe-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/591f26a73b0e1> ;
+    oa:about id:world-eganfodugbe ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "Reached again." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 2640 .
+
+claim:event-world-eganfodugbe-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/591f26a73b0e1> ;
+    oa:about id:world-eganfodugbe ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "\"Eganfodugbe was the target of a long-range autonomous probe sent in the Early Federation.\" The era is the timeline's 900 to 1200." ;
+    oa:polity id:polity-first-federation ;
+    oa:precision oa:Between ;
+    oa:recordOrder 1 ;
+    oa:untilAT 1200 ;
+    oa:yearAT 900 .

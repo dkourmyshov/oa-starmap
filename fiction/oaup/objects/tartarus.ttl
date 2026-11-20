@@ -1,0 +1,35 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Tartarus
+
+id:world-tartarus a oa:Place, oa:World ;
+    skos:prefLabel "Tartarus" ;
+    oa:article <https://www.orionsarm.com/eg-article/58b565d601a8e> ;
+    oa:editorialNote "---- nebulae and a remnant, placed by hand -------------------------------\n\nThese are polity landmarks that no catalogue this build loads can bind:\nplanetary nebulae and a supernova remnant. The catalogues for them exist and\ncarry positions — the Strasbourg-ESO planetary nebula catalogue and Green's\nremnants — but neither carries a distance, which is the one thing this map\ncannot do without. So the positions are from those catalogues and the\ndistances are hand-sourced, one object at a time.\n\nThey stay on their polities' landmark lists as well. When a distance\ncatalogue is loaded they will bind there properly and these entries should\ngo; until then a landmark that cannot bind draws nothing at all, and these\ndo. Each is the Cygnus Loop's arrangement, which was the first of them." ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "The most thoroughly specified position in this file, and the only one that checks itself. The article gives right ascension, declination, a distance and galactic coordinates of 421.62, 786.44, 345.83 — and converting the first three returns the last three to within a hundredth of a light year, with Lyra coming back either way. A K5 dwarf of a third Sol's luminosity. No holder is recorded." ;
+    oa:uncertain false .
+
+claim:location-world-tartarus a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/58b565d601a8e> ;
+    oa:about id:world-tartarus ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg 34.4353 ;
+    oa:distance value:location-world-tartarus-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:rightAscensionDeg 274.7517 .
+
+value:location-world-tartarus-distance a oa:QuantityValue ;
+    qudt:numericValue 957.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

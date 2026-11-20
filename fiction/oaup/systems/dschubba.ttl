@@ -1,0 +1,88 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Dschubba
+
+id:world-dschubba a oa:Place, oa:World ;
+    skos:prefLabel "Dschubba" ;
+    oa:article <https://www.orionsarm.com/eg-article/486ea9fa62cdb> ;
+    oa:editorialNote "---- Deeper Covenant ----------------------------------------------------\n\nA close-in roster, and the best-measured one here: four of its six places\nare inside 20 ly, and every stated distance that could be checked agreed\nwith the catalogue to a tenth of a percent. Two of them are brown dwarfs no\ncatalogue this map loads carries at all, and both are still located — the\narticles give distances to stars that are here, which is a position written\ndown the long way." ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Delta Scorpii, held by the Triumvirate — a joint body of the Negentropy Alliance, the Mutual Progress Association and the Fomalhaut Acquisition Society, described at https://www.orionsarm.com/eg-article/47a67e21db6fd. All three are drawn rather than one colour for the Triumvirate itself, so the ring shows what it is made of. The add-on places the star at 402 ly and the catalogue at 491, an 18% disagreement that the add-on's position is used across." ;
+    oa:uncertain false .
+
+claim:location-world-dschubba a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/486ea9fa62cdb> ;
+    oa:about id:world-dschubba ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:oaStarName "Dschubba/HD 143275/7 Sco/SAO 184014" .
+
+claim:affiliation-world-dschubba-fomalhaut-acquisition-society a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/486ea9fa62cdb> ;
+    oa:about id:world-dschubba ;
+    oa:canonical true ;
+    oa:polity id:polity-fomalhaut-acquisition-society ;
+    oa:recordOrder 2 .
+
+claim:affiliation-world-dschubba-mutual-progress-association a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/486ea9fa62cdb> ;
+    oa:about id:world-dschubba ;
+    oa:canonical true ;
+    oa:polity id:polity-mutual-progress-association ;
+    oa:recordOrder 1 .
+
+claim:affiliation-world-dschubba-negentropy-alliance a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/486ea9fa62cdb> ;
+    oa:about id:world-dschubba ;
+    oa:canonical true ;
+    oa:polity id:polity-negentropy-alliance ;
+    oa:recordOrder 0 .
+
+# Dschubba/HD 143275/7 Sco/SAO 184014
+
+id:star-dschubba-hd-143275-7-sco-sao-184014 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "Dschubba/HD 143275/7 Sco/SAO 184014" ;
+    oa:sourceName "Dschubba/HD 143275/7 Sco/SAO 184014" .
+
+claim:celestia-star-dschubba-hd-143275-7-sco-sao-184014-5bf414c650d9 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-dschubba-hd-143275-7-sco-sao-184014 ;
+    oa:canonical true ;
+    oa:declinationDeg -22.621666 ;
+    oa:distance value:celestia-star-dschubba-hd-143275-7-sco-sao-184014-5bf414c650d9-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 240.083333 ;
+    oa:sourceArchive "OAAddons8.zip" ;
+    oa:sourceFile "dschubba.stc" ;
+    oa:spectralType "BoIV" .
+
+value:celestia-star-dschubba-hd-143275-7-sco-sao-184014-5bf414c650d9-distance a oa:QuantityValue ;
+    qudt:numericValue 401.68 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-star-dschubba-hd-143275-7-sco-sao-184014-negentropy-alliance a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/486ea9fa62cdb> ;
+    oa:about id:star-dschubba-hd-143275-7-sco-sao-184014 ;
+    oa:canonical true ;
+    oa:polity id:polity-negentropy-alliance .
+
+claim:curation-star-dschubba-hd-143275-7-sco-sao-184014 a prov:Entity, oa:SystemCuration ;
+    oa:about id:star-dschubba-hd-143275-7-sco-sao-184014 ;
+    oa:article <https://www.orionsarm.com/eg-article/486ea9fa62cdb> ;
+    oa:editorialLabel "Dschubba" ;
+    oa:hidden false ;
+    oa:note "Held by the Triumvirate, a joint body of the Negentropy Alliance, the Mutual Progress Association and the Fomalhaut Acquisition Society; all three are recorded on the world entry so the ring shows the composition. The add-on places it at 402 ly against the catalogue's 491, an 18% gap." ;
+    oa:realObjectIdentity "Dschubba, Delta Scorpii, also HD 143275 and 7 Scorpii" ;
+    oa:uncertain false .

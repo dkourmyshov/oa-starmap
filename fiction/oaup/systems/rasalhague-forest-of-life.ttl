@@ -1,0 +1,33 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Rasalhague / Forest of Life
+
+id:inner-sphere-row-0590 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Rasalhague / Forest of Life" .
+
+claim:inner-sphere-inner-sphere-row-0590-e26179d2397b a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0590 ;
+    oa:article <https://www.orionsarm.com/eg-article/6443338339432> ;
+    oa:canonical true ;
+    oa:colonyName "Rasalhague / Forest of Life" ;
+    oa:luminositySol "26.3" ;
+    oa:massSol "2.4" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 589 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0590-e26179d2397b-source-distance ;
+    oa:spectralType "A5 III" ;
+    oa:starName "Alpha Ophiuchi A" .
+
+value:inner-sphere-inner-sphere-row-0590-e26179d2397b-source-distance a oa:QuantityValue ;
+    qudt:numericValue 48.59 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

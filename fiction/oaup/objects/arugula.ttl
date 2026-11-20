@@ -1,0 +1,44 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Arugula
+
+id:world-arugula a oa:Place, oa:World ;
+    skos:prefLabel "Arugula" ;
+    oa:article <https://www.orionsarm.com/eg-article/57ea997933d9b> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "Galactic coordinates given outright — 2051, 4017, -166 ly — which return 4,513 ly in Vulpecula, the distance and constellation the article also states. Seeded from Hosoko, which this map places only by interpolation, so the seed is better located than its source." ;
+    oa:uncertain false .
+
+claim:location-world-arugula a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/57ea997933d9b> ;
+    oa:about id:world-arugula ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg 25.3529 ;
+    oa:distance value:location-world-arugula-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:rightAscensionDeg 299.6274 .
+
+value:location-world-arugula-distance a oa:QuantityValue ;
+    qudt:numericValue 4513.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:event-world-arugula-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/57ea997933d9b> ;
+    oa:about id:world-arugula ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "Seeded from Hosoko." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 10202 .

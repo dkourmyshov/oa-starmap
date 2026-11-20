@@ -1,0 +1,33 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Panvirtuality 1
+
+id:inner-sphere-row-0835 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Panvirtuality 1" .
+
+claim:inner-sphere-inner-sphere-row-0835-256664973bef a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0835 ;
+    oa:article <https://www.orionsarm.com/eg-article/47bcedf820d3c> ;
+    oa:canonical true ;
+    oa:colonyName "Panvirtuality 1" ;
+    oa:luminositySol "13.3" ;
+    oa:massSol "2" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 834 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0835-256664973bef-source-distance ;
+    oa:spectralType "A2 Vm" ;
+    oa:starName "Epsilon Serpentis" .
+
+value:inner-sphere-inner-sphere-row-0835-256664973bef-source-distance a oa:QuantityValue ;
+    qudt:numericValue 71.953 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

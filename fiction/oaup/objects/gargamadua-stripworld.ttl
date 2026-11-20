@@ -1,0 +1,52 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# Gargamadua Stripworld
+
+id:world-gargamadua-stripworld a oa:Place, oa:World ;
+    skos:prefLabel "Gargamadua Stripworld" ;
+    oa:article <https://www.orionsarm.com/eg-article/564de72a02e9a> ;
+    oa:kind "megastructure" ;
+    oa:labelsSystem false ;
+    oa:note "Wrapped around the planet Mungo. HD 154519 is in Ophiuchus at 356 ly." ;
+    oa:parentName "Mungo" ;
+    oa:uncertain false .
+
+claim:location-world-gargamadua-stripworld a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/564de72a02e9a> ;
+    oa:about id:world-gargamadua-stripworld ;
+    oa:canonical true ;
+    oa:catalogueFromSource true ;
+    oa:hdId 154519 ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+claim:affiliation-world-gargamadua-stripworld-mutual-progress-association a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/564de72a02e9a> ;
+    oa:about id:world-gargamadua-stripworld ;
+    oa:canonical true ;
+    oa:polity id:polity-mutual-progress-association ;
+    oa:recordOrder 0 .
+
+claim:event-world-gargamadua-stripworld-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/564de72a02e9a> ;
+    oa:about id:world-gargamadua-stripworld ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 2702 .
+
+claim:event-world-gargamadua-stripworld-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/564de72a02e9a> ;
+    oa:about id:world-gargamadua-stripworld ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"when they became part of the Mutual Progress Alliance in 3007 they began to consider a number of more unusual projects\" Article says \"Mutual Progress Alliance\"; the roster's matching polity is the Mutual Progress Association (MPA), which the panel's \"Allegiance: MPA\" and the roster's own alias both support as the same body. Flagged for the reviewer. 'Mutual Progress Alliance' as the article spells it." ;
+    oa:polity id:polity-mutual-progress-association ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 3007 .

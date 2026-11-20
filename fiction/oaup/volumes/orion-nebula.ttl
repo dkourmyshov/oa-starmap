@@ -1,0 +1,41 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Orion Nebula
+
+id:world-orion-nebula a oa:Place, oa:World ;
+    skos:prefLabel "Orion Nebula" ;
+    oa:article <https://www.orionsarm.com/eg-article/475d6e3f3b712> ;
+    oa:kind "volume" ;
+    oa:labelsSystem false ;
+    oa:uncertain false .
+
+claim:location-world-orion-nebula a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/475d6e3f3b712> ;
+    oa:about id:world-orion-nebula ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -5.485 ;
+    oa:distance value:location-world-orion-nebula-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:note "Both from oalocations.dsc, one of the Orion's Arm Celestia add-ons' location catalogues (OAAddons9, OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv). The direction is the nebula's own, and agrees with the article's Orion.\nThe distance is the add-on's because this map has no other: the nebula is in none of the catalogues this build loads, and the article gives no figure. It is a 2007 add-on quoting the astronomy of its day, so it is the weakest number on this entry and the one to replace first. See questions.md." ;
+    oa:rightAscensionDeg 83.74 .
+
+value:location-world-orion-nebula-distance a oa:QuantityValue ;
+    qudt:numericValue 1177.5 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-orion-nebula-orion-federation a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/475d6e3f3b712> ;
+    oa:about id:world-orion-nebula ;
+    oa:canonical true ;
+    oa:polity id:polity-orion-federation ;
+    oa:recordOrder 0 .

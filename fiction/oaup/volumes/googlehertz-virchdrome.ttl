@@ -1,0 +1,59 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Googlehertz Virchdrome
+
+id:world-googlehertz-virchdrome a oa:Place, oa:World ;
+    skos:prefLabel "Googlehertz Virchdrome" ;
+    oa:article <https://www.orionsarm.com/eg-article/46f96a821bb69> ;
+    oa:extent value:world-googlehertz-virchdrome-extent ;
+    oa:kind "volume" ;
+    oa:labelsSystem false ;
+    oa:note "Several thousand processing megastructures in and around the Southern Coalsack — the dark nebula in Crux, southern to distinguish it from the Northern Coalsack in Cygnus. So this is a volume and not a point: the nebula is at 12h 50m, -62d 30' and 180 pc, which is 587 ly, and 30 to 35 ly in radius, and the complex is drawn across the whole of it. In and around is the article's phrase, so 65 ly across is the nebula's own figure and may understate the reach of the thing built in it." ;
+    oa:uncertain false .
+
+value:world-googlehertz-virchdrome-extent a oa:QuantityValue ;
+    qudt:numericValue 65.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:location-world-googlehertz-virchdrome a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46f96a821bb69> ;
+    oa:about id:world-googlehertz-virchdrome ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -62.5 ;
+    oa:distance value:location-world-googlehertz-virchdrome-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:nearName "Southern Coalsack" ;
+    oa:rightAscensionDeg 192.5 .
+
+value:location-world-googlehertz-virchdrome-distance a oa:QuantityValue ;
+    qudt:numericValue 587.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-googlehertz-virchdrome-solipsist-panvirtuality a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46f96a821bb69> ;
+    oa:about id:world-googlehertz-virchdrome ;
+    oa:canonical true ;
+    oa:polity id:polity-solipsist-panvirtuality ;
+    oa:recordOrder 0 .
+
+claim:event-world-googlehertz-virchdrome-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46f96a821bb69> ;
+    oa:about id:world-googlehertz-virchdrome ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:polity id:polity-solipsist-panvirtuality ;
+    oa:precision oa:Between ;
+    oa:recordOrder 0 ;
+    oa:untilAT 4899 ;
+    oa:yearAT 4800 .

@@ -1,0 +1,95 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# Rajasekar
+
+id:world-rajasekar a oa:Place, oa:World ;
+    skos:prefLabel "Rajasekar" ;
+    oa:article <https://www.orionsarm.com/eg-article/4910f10364835> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "Tau-1 Gruis, also CD-49 13988, 108.0 ly out against the article's 108.58. Three holders, which the article gives together rather than in sequence." ;
+    oa:uncertain false .
+
+claim:location-world-rajasekar a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4910f10364835> ;
+    oa:about id:world-rajasekar ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Tau1 Gruis" .
+
+claim:affiliation-world-rajasekar-mutual-progress-association a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4910f10364835> ;
+    oa:about id:world-rajasekar ;
+    oa:canonical true ;
+    oa:polity id:polity-mutual-progress-association ;
+    oa:recordOrder 2 .
+
+claim:affiliation-world-rajasekar-sophic-league a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4910f10364835> ;
+    oa:about id:world-rajasekar ;
+    oa:canonical true ;
+    oa:polity id:polity-sophic-league ;
+    oa:recordOrder 1 .
+
+claim:affiliation-world-rajasekar-stellar-umma a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4910f10364835> ;
+    oa:about id:world-rajasekar ;
+    oa:canonical true ;
+    oa:polity id:polity-stellar-umma ;
+    oa:recordOrder 0 .
+
+claim:event-world-rajasekar-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4910f10364835> ;
+    oa:about id:world-rajasekar ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 1748 .
+
+claim:event-world-rajasekar-002 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-rajasekar ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "Stellar Umma research vessel al Geber arrives and makes contact with Rajasekar civilisation." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:sourceDescription "Encyclopaedia timeline, The Age of Expansion" ;
+    oa:yearAT 2534 .
+
+claim:event-world-rajasekar-003 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-rajasekar ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "Rajasekar is colonised by a Sophic tweak adaptation calling themselves the New Rajasekarians." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 2 ;
+    oa:sourceDescription "Encyclopaedia timeline, Age of Separate Empires" ;
+    oa:yearAT 6450 .
+
+claim:event-world-rajasekar-004 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4910f10364835> ;
+    oa:about id:world-rajasekar ;
+    oa:canonical true ;
+    oa:eventKind oa:Abandoned ;
+    oa:note "\"Just ten years after the first outbreak the culture had collapsed to the point where it could no longer maintain the necessary nanotech and information infrastructure, and it died out.\" Year is computed as 4182 AT (the viral outbreak, 'In 4182 AT ... a viral infection ... attacked the Pikuu-Pik-3') plus the sentence's own 'ten years after'; no explicit AT number is given for the collapse itself, so this should be checked by the reviewer. 'Ten years after the first outbreak' of 4182; the culture the Stellar Umma had found in 2534." ;
+    oa:precision oa:Circa ;
+    oa:recordOrder 3 ;
+    oa:yearAT 4192 .
+
+claim:event-world-rajasekar-005 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4910f10364835> ;
+    oa:about id:world-rajasekar ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"Currently Rajasekar is a member of the Mutual Progress Association after the 7833 AT coup by the Requiemists against the until then ruling Spranger Party.\" The sentence ties current MPA membership to the 7833 AT coup, but does not explicitly say MPA membership began at that date rather than at some later point; flagged for reviewer confirmation. After the Requiemists' coup against the Spranger Party; the reader flagged the link between the coup and the joining as the article's, not stated." ;
+    oa:polity id:polity-mutual-progress-association ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 4 ;
+    oa:yearAT 7833 .

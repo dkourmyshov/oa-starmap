@@ -1,0 +1,118 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Landau
+
+id:world-landau a oa:Place, oa:World ;
+    skos:prefLabel "Landau" ;
+    oa:article <https://www.orionsarm.com/eg-article/467897cabc3d3> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "94 Ceti, 75 ly out." ;
+    oa:uncertain false .
+
+claim:location-world-landau a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/467897cabc3d3> ;
+    oa:about id:world-landau ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "94 Ceti" .
+
+claim:affiliation-world-landau-metasoft a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/467897cabc3d3> ;
+    oa:about id:world-landau ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft ;
+    oa:recordOrder 0 .
+
+claim:event-world-landau-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/467897cabc3d3> ;
+    oa:about id:world-landau ;
+    oa:canonical true ;
+    oa:eventKind oa:Capital ;
+    oa:note "\"Landau was a modosophont-level capital of the Metasoft until 4556, when the system was attacked in the Version War. The role was then reassigned to NewRoot.\" The map's older 'settled 4556' was this sentence read as a settlement; the article gives no settlement year." ;
+    oa:polity id:polity-metasoft ;
+    oa:precision oa:NotLaterThan ;
+    oa:recordOrder 0 ;
+    oa:yearAT 4556 .
+
+# Landau
+
+id:inner-sphere-row-0859 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Landau" .
+
+claim:inner-sphere-inner-sphere-row-0859-eddc1406af5b a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0859 ;
+    oa:article <https://www.orionsarm.com/eg-article/467897cabc3d3> ;
+    oa:canonical true ;
+    oa:colonyName "Landau" ;
+    oa:luminositySol "4.13" ;
+    oa:massSol "1.3" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 858 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0859-eddc1406af5b-source-distance ;
+    oa:spectralType "F8 V" ;
+    oa:starName "94 Ceti A" .
+
+value:inner-sphere-inner-sphere-row-0859-eddc1406af5b-source-distance a oa:QuantityValue ;
+    qudt:numericValue 74.631 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Landau
+
+id:inner-sphere-row-0860 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Landau" .
+
+claim:inner-sphere-inner-sphere-row-0860-f63589dd039d a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0860 ;
+    oa:article <https://www.orionsarm.com/eg-article/467897cabc3d3> ;
+    oa:canonical true ;
+    oa:colonyName "Landau" ;
+    oa:luminositySol "0.011" ;
+    oa:massSol "0.53" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 859 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0860-f63589dd039d-source-distance ;
+    oa:spectralType "M3 V" ;
+    oa:starName "94 Ceti B" .
+
+value:inner-sphere-inner-sphere-row-0860-f63589dd039d-source-distance a oa:QuantityValue ;
+    qudt:numericValue 74.631 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Landau
+
+id:inner-sphere-row-0861 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Landau" .
+
+claim:inner-sphere-inner-sphere-row-0861-5108931c9142 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0861 ;
+    oa:article <https://www.orionsarm.com/eg-article/467897cabc3d3> ;
+    oa:canonical true ;
+    oa:colonyName "Landau" ;
+    oa:luminositySol "." ;
+    oa:massSol "." ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 860 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0861-5108931c9142-source-distance ;
+    oa:spectralType "M V" ;
+    oa:starName "94 Ceti C" .
+
+value:inner-sphere-inner-sphere-row-0861-5108931c9142-source-distance a oa:QuantityValue ;
+    qudt:numericValue 74.631 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

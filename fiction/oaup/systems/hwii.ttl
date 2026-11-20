@@ -1,0 +1,80 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Hwii
+
+id:world-hwii a oa:Place, oa:World ;
+    skos:prefLabel "Hwii" ;
+    oa:article <https://www.orionsarm.com/eg-article/4675ea6d92bd9> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Zeta Tucanae, as the colony table has it." ;
+    oa:systemName "Hwii" ;
+    oa:uncertain false .
+
+claim:location-world-hwii a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4675ea6d92bd9> ;
+    oa:about id:world-hwii ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Zeta Tucanae" .
+
+claim:affiliation-world-hwii-sophic-league a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4675ea6d92bd9> ;
+    oa:about id:world-hwii ;
+    oa:canonical true ;
+    oa:polity id:polity-sophic-league ;
+    oa:recordOrder 0 .
+
+claim:event-world-hwii-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4675ea6d92bd9> ;
+    oa:about id:world-hwii ;
+    oa:canonical true ;
+    oa:eventKind oa:Abandoned ;
+    oa:note "\"Enhanced Dolphin interests settled Hwii in 1432 after the original Nanotech Window colonists had been found extinct.\" The earlier Nanotech Window colony had ended by 1432, when Dolphin settlers found it extinct; the actual end date is not given. The Nanotech Window colony, found extinct; its own dates are not given." ;
+    oa:precision oa:NotLaterThan ;
+    oa:recordOrder 0 ;
+    oa:yearAT 1432 .
+
+claim:event-world-hwii-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4675ea6d92bd9> ;
+    oa:about id:world-hwii ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"Enhanced Dolphin interests settled Hwii in 1432 after the original Nanotech Window colonists had been found extinct.\" Settling group named as \"Enhanced Dolphin interests\", not a roster polity. Enhanced Dolphin interests, no polity of this file." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 1432 .
+
+# Hwii
+
+id:inner-sphere-row-0260 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Hwii" .
+
+claim:inner-sphere-inner-sphere-row-0260-9d31d6ae1a37 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0260 ;
+    oa:article <https://www.orionsarm.com/eg-article/4675ea6d92bd9> ;
+    oa:canonical true ;
+    oa:colonyName "Hwii" ;
+    oa:luminositySol "1.312" ;
+    oa:massSol "0.98" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 259 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0260-9d31d6ae1a37-source-distance ;
+    oa:spectralType "F9 V" ;
+    oa:starName "Zeta Tucanae" .
+
+value:inner-sphere-inner-sphere-row-0260-9d31d6ae1a37-source-distance a oa:QuantityValue ;
+    qudt:numericValue 28.073 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

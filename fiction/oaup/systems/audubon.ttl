@@ -1,0 +1,124 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Audubon
+
+id:inner-sphere-row-0522 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Audubon" .
+
+claim:inner-sphere-inner-sphere-row-0522-554895200992 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0522 ;
+    oa:article <https://www.orionsarm.com/eg-article/45eac09bed094> ;
+    oa:canonical true ;
+    oa:colonyName "Audubon" ;
+    oa:luminositySol "1.127" ;
+    oa:massSol "." ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 521 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0522-554895200992-source-distance ;
+    oa:spectralType "G0 V" ;
+    oa:starName "HD 211415 A" .
+
+value:inner-sphere-inner-sphere-row-0522-554895200992-source-distance a oa:QuantityValue ;
+    qudt:numericValue 45.877 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Audubon
+
+id:inner-sphere-row-0523 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Audubon" .
+
+claim:inner-sphere-inner-sphere-row-0523-3724087ff873 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0523 ;
+    oa:article <https://www.orionsarm.com/eg-article/45eac09bed094> ;
+    oa:canonical true ;
+    oa:colonyName "Audubon" ;
+    oa:luminositySol "0.0177" ;
+    oa:massSol "." ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 522 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0523-3724087ff873-source-distance ;
+    oa:spectralType "M V" ;
+    oa:starName "HD 211415 B" .
+
+value:inner-sphere-inner-sphere-row-0523-3724087ff873-source-distance a oa:QuantityValue ;
+    qudt:numericValue 45.877 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Audubon
+
+id:world-audubon a oa:Place, oa:World ;
+    skos:prefLabel "Audubon" ;
+    oa:article <https://www.orionsarm.com/eg-article/45eac09bed094> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "Given as HR 8501A. The Bright Star numbers are not carried here, but the colony table resolves the same system to HD 211415 at 46 ly." ;
+    oa:systemName "Audubon" ;
+    oa:uncertain false .
+
+claim:location-world-audubon a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/45eac09bed094> ;
+    oa:about id:world-audubon ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "HD 211415" .
+
+claim:affiliation-world-audubon-nocozo a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/45eac09bed094> ;
+    oa:about id:world-audubon ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 0 .
+
+claim:event-world-audubon-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/45eac09bed094> ;
+    oa:about id:world-audubon ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 1564 .
+
+claim:event-world-audubon-002 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-audubon ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "The autonomous probeship Karel Tchapek arrives at HR 8501 (Audubon System) ." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:sourceDescription "Encyclopaedia timeline, Middle Federation / Megacorps" ;
+    oa:yearAT 1392 .
+
+claim:event-world-audubon-003 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-audubon ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "The Copy Crew arrive at Audubon , the first humans ever to be transmitted over an interstellar distance (nine light years) by engenerator ." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 2 ;
+    oa:sourceDescription "Encyclopaedia timeline, Late Federation / AI Emergence" ;
+    oa:yearAT 1564 .
+
+claim:event-world-audubon-004 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/45eac09bed094> ;
+    oa:about id:world-audubon ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"Both inner system AIs finally entered an accord with the rival Linnent company transapient, O'Brien , in 7109 after the formal absorption of all 4 remaining Linnent Engenerator colonies into the NoCoZo.\" The accord itself is dated exactly to 7109; the 'formal absorption' it followed is not separately dated, only stated to have preceded it. An accord between the system's AIs and the LinnEnt transapient O'Brien; the reader read it as the Zone's absorption of the system, and the map's older 'visited 1392' has no sentence in the article." ;
+    oa:polity id:polity-nocozo ;
+    oa:precision oa:NotLaterThan ;
+    oa:recordOrder 3 ;
+    oa:yearAT 7109 .

@@ -1,0 +1,32 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Patala
+
+id:inner-sphere-row-0008 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Patala" .
+
+claim:inner-sphere-inner-sphere-row-0008-af649c82e3b0 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0008 ;
+    oa:canonical true ;
+    oa:colonyName "Patala" ;
+    oa:luminositySol "." ;
+    oa:massSol "3-10 x Jupiter" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 7 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0008-af649c82e3b0-source-distance ;
+    oa:spectralType "Y4" ;
+    oa:starName "WISE 0855-0714" .
+
+value:inner-sphere-inner-sphere-row-0008-af649c82e3b0-source-distance a oa:QuantityValue ;
+    qudt:numericValue 7.26 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

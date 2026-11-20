@@ -1,0 +1,118 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# The Violets
+
+id:world-the-violets a oa:Place, oa:World ;
+    skos:prefLabel "The Violets" ;
+    oa:article <https://www.orionsarm.com/eg-article/671fbea784d7c> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "BL and UV Ceti, a pair of flare stars also catalogued as Gliese 65, GJ 65, L 726-8 and PLX 343.1. In no catalogue this map loads — they are faint enough to fall below every one of them — so the constellation carries the direction, which at 8.8 ly is a very small error in absolute terms." ;
+    oa:uncertain false .
+
+claim:location-world-the-violets a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/671fbea784d7c> ;
+    oa:about id:world-the-violets ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:constellationName "Cetus" ;
+    oa:distance value:location-world-the-violets-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+value:location-world-the-violets-distance a oa:QuantityValue ;
+    qudt:numericValue 8.77 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-the-violets-diamond-network a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/671fbea784d7c> ;
+    oa:about id:world-the-violets ;
+    oa:canonical true ;
+    oa:polity id:polity-diamond-network ;
+    oa:recordOrder 0 .
+
+claim:event-world-the-violets-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/671fbea784d7c> ;
+    oa:about id:world-the-violets ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 465 .
+
+claim:event-world-the-violets-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/671fbea784d7c> ;
+    oa:about id:world-the-violets ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"This mission, crewed by an ahuman group, reached the system in 465, five years before the Solipsist League ship.\" Header records this as 'visited 465'; the prose goes on to describe this ahuman group taking BL Ceti and building an industrial base there, which reads closer to 'settled'. The ahuman group is never given a proper name, so no polity is recorded. An ahuman group's mission, 'five years before the Solipsist League ship'; the map's older 'visited 465' is this arrival." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 465 .
+
+claim:event-world-the-violets-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/671fbea784d7c> ;
+    oa:about id:world-the-violets ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"By the beginning of 520, the entirety of the ahuman civilization had already retreated into the depths of the planets as the solipsists reigned in space.\" The Solipsist League is not on the roster, so polity is left empty; see unplaced. The solipsists of the Solipsist League, no polity of this file, 'reigned in space' while the ahumans withdrew into the planets." ;
+    oa:precision oa:NotLaterThan ;
+    oa:recordOrder 2 ;
+    oa:yearAT 520 .
+
+# The Violets
+
+id:inner-sphere-row-0013 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "The Violets" .
+
+claim:inner-sphere-inner-sphere-row-0013-5b24811acc0b a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0013 ;
+    oa:article <https://www.orionsarm.com/eg-article/671fbea784d7c> ;
+    oa:canonical true ;
+    oa:colonyName "The Violets" ;
+    oa:luminositySol "0.0000498 to 0.00378" ;
+    oa:massSol "0.1" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 12 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0013-5b24811acc0b-source-distance ;
+    oa:spectralType "M6 Ve" ;
+    oa:starName "UV Ceti" .
+
+value:inner-sphere-inner-sphere-row-0013-5b24811acc0b-source-distance a oa:QuantityValue ;
+    qudt:numericValue 8.724 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# The Violets
+
+id:inner-sphere-row-0014 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "The Violets" .
+
+claim:inner-sphere-inner-sphere-row-0014-4f7911a8f3fb a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0014 ;
+    oa:article <https://www.orionsarm.com/eg-article/671fbea784d7c> ;
+    oa:canonical true ;
+    oa:colonyName "The Violets" ;
+    oa:luminositySol "0.0000561" ;
+    oa:massSol "0.12" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 13 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0014-4f7911a8f3fb-source-distance ;
+    oa:spectralType "M5.5 Ve" ;
+    oa:starName "BL Ceti" .
+
+value:inner-sphere-inner-sphere-row-0014-4f7911a8f3fb-source-distance a oa:QuantityValue ;
+    qudt:numericValue 8.870 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

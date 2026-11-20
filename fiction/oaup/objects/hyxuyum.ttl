@@ -1,0 +1,42 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Hyxuyum
+
+id:world-hyxuyum a oa:Place, oa:World ;
+    skos:prefLabel "Hyxuyum" ;
+    oa:article <https://www.orionsarm.com/eg-article/56a687306fd47> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "A rogue planet in deep space — no star of its own — carrying a Hider colony, in Auriga at 820 ly. It is what gives the Realm of the Deeper Covenant a direction: the Realm lies 110 ly from here, and had nothing but the word rimward to place it by." ;
+    oa:uncertain false .
+
+claim:location-world-hyxuyum a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/56a687306fd47> ;
+    oa:about id:world-hyxuyum ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:constellationName "Auriga" ;
+    oa:distance value:location-world-hyxuyum-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+value:location-world-hyxuyum-distance a oa:QuantityValue ;
+    qudt:numericValue 820.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:event-world-hyxuyum-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/56a687306fd47> ;
+    oa:about id:world-hyxuyum ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Circa ;
+    oa:recordOrder 0 ;
+    oa:yearAT 3877 .

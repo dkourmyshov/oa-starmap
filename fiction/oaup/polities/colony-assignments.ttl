@@ -1,0 +1,1555 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0001
+
+id:colony-assignment-0001 a oa:ColonyAssignment ;
+    oa:colonyName "Rachel/New Gaia" ;
+    oa:note "Two names for the one system, as the table has it." .
+
+claim:affiliation-colony-assignment-0001-caretaker-gods a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0001 ;
+    oa:canonical true ;
+    oa:polity id:polity-caretaker-gods ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0002
+
+id:colony-assignment-0002 a oa:ColonyAssignment ;
+    oa:colonyName "Othelia" ;
+    oa:note "With some Non-Coercive Zone presence." .
+
+claim:affiliation-colony-assignment-0002-caretaker-gods a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0002 ;
+    oa:canonical true ;
+    oa:polity id:polity-caretaker-gods ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0003
+
+id:colony-assignment-0003 a oa:ColonyAssignment ;
+    oa:colonyName "Forest of Life" .
+
+claim:affiliation-colony-assignment-0003-caretaker-gods a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0003 ;
+    oa:canonical true ;
+    oa:polity id:polity-caretaker-gods ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0004
+
+id:colony-assignment-0004 a oa:ColonyAssignment ;
+    oa:colonyName "Prometheus" .
+
+claim:affiliation-colony-assignment-0004-communion-of-worlds a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0004 ;
+    oa:canonical true ;
+    oa:polity id:polity-communion-of-worlds ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0005
+
+id:colony-assignment-0005 a oa:ColonyAssignment ;
+    oa:colonyName "Dionysos" .
+
+claim:affiliation-colony-assignment-0005-communion-of-worlds a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0005 ;
+    oa:canonical true ;
+    oa:polity id:polity-communion-of-worlds ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0006
+
+id:colony-assignment-0006 a oa:ColonyAssignment ;
+    oa:colonyName "Goldilocks" ;
+    oa:note "Not the Solar Dominion's Goldilocks ISO." .
+
+claim:affiliation-colony-assignment-0006-communion-of-worlds a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0006 ;
+    oa:canonical true ;
+    oa:polity id:polity-communion-of-worlds ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0007
+
+id:colony-assignment-0007 a oa:ColonyAssignment ;
+    oa:colonyName "Procyon" .
+
+claim:affiliation-colony-assignment-0007-cyberian-network a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0007 ;
+    oa:canonical true ;
+    oa:polity id:polity-cyberian-network ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0008
+
+id:colony-assignment-0008 a oa:ColonyAssignment ;
+    oa:colonyName "Arcturus" .
+
+claim:affiliation-colony-assignment-0008-cyberian-network a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0008 ;
+    oa:canonical true ;
+    oa:polity id:polity-cyberian-network ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0009
+
+id:colony-assignment-0009 a oa:ColonyAssignment ;
+    oa:colonyName "Orinoco" .
+
+claim:affiliation-colony-assignment-0009-cyberian-network a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0009 ;
+    oa:canonical true ;
+    oa:polity id:polity-cyberian-network ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0010
+
+id:colony-assignment-0010 a oa:ColonyAssignment ;
+    oa:colonyName "Mithras" .
+
+claim:affiliation-colony-assignment-0010-cyberian-network a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0010 ;
+    oa:canonical true ;
+    oa:polity id:polity-cyberian-network ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0011
+
+id:colony-assignment-0011 a oa:ColonyAssignment ;
+    oa:colonyName "Yin-Yang" .
+
+claim:affiliation-colony-assignment-0011-deeper-covenant a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0011 ;
+    oa:canonical true ;
+    oa:polity id:polity-deeper-covenant ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0012
+
+id:colony-assignment-0012 a oa:ColonyAssignment ;
+    oa:colonyName "Praxis-Gnosis" .
+
+claim:affiliation-colony-assignment-0012-deeper-covenant a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0012 ;
+    oa:canonical true ;
+    oa:polity id:polity-deeper-covenant ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0013
+
+id:colony-assignment-0013 a oa:ColonyAssignment ;
+    oa:colonyName "Midnight Pearl" .
+
+claim:affiliation-colony-assignment-0013-deeper-covenant a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0013 ;
+    oa:canonical true ;
+    oa:polity id:polity-deeper-covenant ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0014
+
+id:colony-assignment-0014 a oa:ColonyAssignment ;
+    oa:colonyName "MyuvYin" .
+
+claim:affiliation-colony-assignment-0014-deeper-covenant a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0014 ;
+    oa:canonical true ;
+    oa:polity id:polity-deeper-covenant ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0015
+
+id:colony-assignment-0015 a oa:ColonyAssignment ;
+    oa:colonyName "The Violets" .
+
+claim:affiliation-colony-assignment-0015-diamond-network a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0015 ;
+    oa:canonical true ;
+    oa:polity id:polity-diamond-network ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0016
+
+id:colony-assignment-0016 a oa:ColonyAssignment ;
+    oa:colonyName "Red Dwarf Kings" .
+
+claim:affiliation-colony-assignment-0016-diamond-network a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0016 ;
+    oa:canonical true ;
+    oa:polity id:polity-diamond-network ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0017
+
+id:colony-assignment-0017 a oa:ColonyAssignment ;
+    oa:colonyName "Luyten" .
+
+claim:affiliation-colony-assignment-0017-diamond-network a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0017 ;
+    oa:canonical true ;
+    oa:polity id:polity-diamond-network ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0018
+
+id:colony-assignment-0018 a oa:ColonyAssignment ;
+    oa:colonyName "Kaggen" .
+
+claim:affiliation-colony-assignment-0018-diamond-network a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0018 ;
+    oa:canonical true ;
+    oa:polity id:polity-diamond-network ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0019
+
+id:colony-assignment-0019 a oa:ColonyAssignment ;
+    oa:colonyName "Altair" .
+
+claim:affiliation-colony-assignment-0019-diamond-network a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0019 ;
+    oa:canonical true ;
+    oa:polity id:polity-diamond-network ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0020
+
+id:colony-assignment-0020 a oa:ColonyAssignment ;
+    oa:colonyName "Tjetvir" .
+
+claim:affiliation-colony-assignment-0020-diamond-network a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0020 ;
+    oa:canonical true ;
+    oa:polity id:polity-diamond-network ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0021
+
+id:colony-assignment-0021 a oa:ColonyAssignment ;
+    oa:colonyName "Mokupuni" .
+
+claim:affiliation-colony-assignment-0021-diamond-network a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0021 ;
+    oa:canonical true ;
+    oa:polity id:polity-diamond-network ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0022
+
+id:colony-assignment-0022 a oa:ColonyAssignment ;
+    oa:colonyName "Wachowski Prime" .
+
+claim:affiliation-colony-assignment-0022-diamond-network a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0022 ;
+    oa:canonical true ;
+    oa:polity id:polity-diamond-network ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0023
+
+id:colony-assignment-0023 a oa:ColonyAssignment ;
+    oa:colonyName "Fomalhaut" .
+
+claim:affiliation-colony-assignment-0023-fomalhaut-acquisition-society a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0023 ;
+    oa:canonical true ;
+    oa:polity id:polity-fomalhaut-acquisition-society ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0024
+
+id:colony-assignment-0024 a oa:ColonyAssignment ;
+    oa:colonyName "Barawatten" .
+
+claim:affiliation-colony-assignment-0024-keter-dominion a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0024 ;
+    oa:canonical true ;
+    oa:polity id:polity-keter-dominion ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0025
+
+id:colony-assignment-0025 a oa:ColonyAssignment ;
+    oa:colonyName "Lam Wai-Chun" .
+
+claim:affiliation-colony-assignment-0025-keter-dominion a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0025 ;
+    oa:canonical true ;
+    oa:polity id:polity-keter-dominion ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0026
+
+id:colony-assignment-0026 a oa:ColonyAssignment ;
+    oa:colonyName "Ain Soph Aur" .
+
+claim:affiliation-colony-assignment-0026-keter-dominion a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0026 ;
+    oa:canonical true ;
+    oa:polity id:polity-keter-dominion ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0027
+
+id:colony-assignment-0027 a oa:ColonyAssignment ;
+    oa:colonyName "Branswerg" .
+
+claim:affiliation-colony-assignment-0027-keter-dominion a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0027 ;
+    oa:canonical true ;
+    oa:polity id:polity-keter-dominion ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0028
+
+id:colony-assignment-0028 a oa:ColonyAssignment ;
+    oa:colonyName "Barboro" .
+
+claim:affiliation-colony-assignment-0028-keter-dominion a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0028 ;
+    oa:canonical true ;
+    oa:polity id:polity-keter-dominion ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0029
+
+id:colony-assignment-0029 a oa:ColonyAssignment ;
+    oa:colonyName "Ceres Mater" ;
+    oa:note "Also the birthplace of Utopia." .
+
+claim:affiliation-colony-assignment-0029-keter-dominion a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0029 ;
+    oa:canonical true ;
+    oa:polity id:polity-keter-dominion ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0030
+
+id:colony-assignment-0030 a oa:ColonyAssignment ;
+    oa:colonyName "Pme chemu fus" .
+
+claim:affiliation-colony-assignment-0030-keter-dominion a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0030 ;
+    oa:canonical true ;
+    oa:polity id:polity-keter-dominion ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0031
+
+id:colony-assignment-0031 a oa:ColonyAssignment ;
+    oa:colonyName "M'Buto" ;
+    oa:note "Joint." .
+
+claim:affiliation-colony-assignment-0031-metasoft a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0031 ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft ;
+    oa:recordOrder 0 .
+
+claim:affiliation-colony-assignment-0031-nocozo a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0031 ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 1 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0032
+
+id:colony-assignment-0032 a oa:ColonyAssignment ;
+    oa:colonyName "NewRoot" .
+
+claim:affiliation-colony-assignment-0032-metasoft a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0032 ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0033
+
+id:colony-assignment-0033 a oa:ColonyAssignment ;
+    oa:colonyName "Monostheria" .
+
+claim:affiliation-colony-assignment-0033-metasoft a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0033 ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0034
+
+id:colony-assignment-0034 a oa:ColonyAssignment ;
+    oa:colonyName "Anahita" .
+
+claim:affiliation-colony-assignment-0034-metasoft a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0034 ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0035
+
+id:colony-assignment-0035 a oa:ColonyAssignment ;
+    oa:colonyName "Beta Pictoris" .
+
+claim:affiliation-colony-assignment-0035-metasoft a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0035 ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0036
+
+id:colony-assignment-0036 a oa:ColonyAssignment ;
+    oa:colonyName "Hamal" ;
+    oa:note "Joint." .
+
+claim:affiliation-colony-assignment-0036-metasoft a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0036 ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft ;
+    oa:recordOrder 0 .
+
+claim:affiliation-colony-assignment-0036-nocozo a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0036 ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 1 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0037
+
+id:colony-assignment-0037 a oa:ColonyAssignment ;
+    oa:colonyName "Landau" .
+
+claim:affiliation-colony-assignment-0037-metasoft a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0037 ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0038
+
+id:colony-assignment-0038 a oa:ColonyAssignment ;
+    oa:colonyName "Brin" .
+
+claim:affiliation-colony-assignment-0038-metasoft a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0038 ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0039
+
+id:colony-assignment-0039 a oa:ColonyAssignment ;
+    oa:colonyName "Byrdis & Ka Yvanti" .
+
+claim:affiliation-colony-assignment-0039-mutual-progress-association a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0039 ;
+    oa:canonical true ;
+    oa:polity id:polity-mutual-progress-association ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0040
+
+id:colony-assignment-0040 a oa:ColonyAssignment ;
+    oa:colonyName "Halcyon" .
+
+claim:affiliation-colony-assignment-0040-mutual-progress-association a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0040 ;
+    oa:canonical true ;
+    oa:polity id:polity-mutual-progress-association ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0041
+
+id:colony-assignment-0041 a oa:ColonyAssignment ;
+    oa:colonyName "Rolf's Donut" .
+
+claim:affiliation-colony-assignment-0041-mutual-progress-association a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0041 ;
+    oa:canonical true ;
+    oa:polity id:polity-mutual-progress-association ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0042
+
+id:colony-assignment-0042 a oa:ColonyAssignment ;
+    oa:colonyName "Ridgewell" .
+
+claim:affiliation-colony-assignment-0042-mutual-progress-association a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0042 ;
+    oa:canonical true ;
+    oa:polity id:polity-mutual-progress-association ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0043
+
+id:colony-assignment-0043 a oa:ColonyAssignment ;
+    oa:colonyName "Oikoumene" .
+
+claim:affiliation-colony-assignment-0043-mutual-progress-association a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0043 ;
+    oa:canonical true ;
+    oa:polity id:polity-mutual-progress-association ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0044
+
+id:colony-assignment-0044 a oa:ColonyAssignment ;
+    oa:colonyName "Karol Ring" .
+
+claim:affiliation-colony-assignment-0044-mutual-progress-association a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0044 ;
+    oa:canonical true ;
+    oa:polity id:polity-mutual-progress-association ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0045
+
+id:colony-assignment-0045 a oa:ColonyAssignment ;
+    oa:colonyName "Kiyoshi" .
+
+claim:affiliation-colony-assignment-0045-mutual-progress-association a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0045 ;
+    oa:canonical true ;
+    oa:polity id:polity-mutual-progress-association ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0046
+
+id:colony-assignment-0046 a oa:ColonyAssignment ;
+    oa:colonyName "Ixeway" .
+
+claim:affiliation-colony-assignment-0046-mutual-progress-association a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0046 ;
+    oa:canonical true ;
+    oa:polity id:polity-mutual-progress-association ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0047
+
+id:colony-assignment-0047 a oa:ColonyAssignment ;
+    oa:colonyName "Daffy" .
+
+claim:affiliation-colony-assignment-0047-negentropy-alliance a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0047 ;
+    oa:canonical true ;
+    oa:polity id:polity-negentropy-alliance ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0048
+
+id:colony-assignment-0048 a oa:ColonyAssignment ;
+    oa:colonyName "The Seat of Judgement" .
+
+claim:affiliation-colony-assignment-0048-negentropy-alliance a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0048 ;
+    oa:canonical true ;
+    oa:polity id:polity-negentropy-alliance ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0049
+
+id:colony-assignment-0049 a oa:ColonyAssignment ;
+    oa:colonyName "Gatlida" .
+
+claim:affiliation-colony-assignment-0049-nocozo a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0049 ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0050
+
+id:colony-assignment-0050 a oa:ColonyAssignment ;
+    oa:colonyName "Nova" .
+
+claim:affiliation-colony-assignment-0050-nocozo a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0050 ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0051
+
+id:colony-assignment-0051 a oa:ColonyAssignment ;
+    oa:colonyName "Keid" ;
+    oa:note "The planet Twilight." .
+
+claim:affiliation-colony-assignment-0051-nocozo a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0051 ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0052
+
+id:colony-assignment-0052 a oa:ColonyAssignment ;
+    oa:colonyName "Terranova" .
+
+claim:affiliation-colony-assignment-0052-nocozo a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0052 ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0053
+
+id:colony-assignment-0053 a oa:ColonyAssignment ;
+    oa:colonyName "Hamashta" .
+
+claim:affiliation-colony-assignment-0053-nocozo a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0053 ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0054
+
+id:colony-assignment-0054 a oa:ColonyAssignment ;
+    oa:colonyName "Sesharia" .
+
+claim:affiliation-colony-assignment-0054-nocozo a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0054 ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0055
+
+id:colony-assignment-0055 a oa:ColonyAssignment ;
+    oa:colonyName "Zarathustra" .
+
+claim:affiliation-colony-assignment-0055-nocozo a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0055 ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0056
+
+id:colony-assignment-0056 a oa:ColonyAssignment ;
+    oa:colonyName "Lombardo" .
+
+claim:affiliation-colony-assignment-0056-nocozo a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0056 ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0057
+
+id:colony-assignment-0057 a oa:ColonyAssignment ;
+    oa:colonyName "Merrion" .
+
+claim:affiliation-colony-assignment-0057-nocozo a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0057 ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0058
+
+id:colony-assignment-0058 a oa:ColonyAssignment ;
+    oa:colonyName "Frei" .
+
+claim:affiliation-colony-assignment-0058-nocozo a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0058 ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0059
+
+id:colony-assignment-0059 a oa:ColonyAssignment ;
+    oa:colonyName "Atlantis" .
+
+claim:affiliation-colony-assignment-0059-nocozo a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0059 ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0060
+
+id:colony-assignment-0060 a oa:ColonyAssignment ;
+    oa:colonyName "New Mars" .
+
+claim:affiliation-colony-assignment-0060-nocozo a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0060 ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0061
+
+id:colony-assignment-0061 a oa:ColonyAssignment ;
+    oa:colonyName "Audubon" .
+
+claim:affiliation-colony-assignment-0061-nocozo a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0061 ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0062
+
+id:colony-assignment-0062 a oa:ColonyAssignment ;
+    oa:colonyName "Bolobo" .
+
+claim:affiliation-colony-assignment-0062-nocozo a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0062 ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0063
+
+id:colony-assignment-0063 a oa:ColonyAssignment ;
+    oa:colonyName "Nike" ;
+    oa:note "The table calls it 'Nike (Bolobo Colony)'." .
+
+claim:affiliation-colony-assignment-0063-nocozo a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0063 ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0064
+
+id:colony-assignment-0064 a oa:ColonyAssignment ;
+    oa:colonyName "Alpamis" .
+
+claim:affiliation-colony-assignment-0064-nocozo a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0064 ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0065
+
+id:colony-assignment-0065 a oa:ColonyAssignment ;
+    oa:colonyName "Hammerstein" .
+
+claim:affiliation-colony-assignment-0065-nocozo a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0065 ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0066
+
+id:colony-assignment-0066 a oa:ColonyAssignment ;
+    oa:colonyName "Rufus" .
+
+claim:affiliation-colony-assignment-0066-nocozo a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0066 ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0067
+
+id:colony-assignment-0067 a oa:ColonyAssignment ;
+    oa:colonyName "Noyce" .
+
+claim:affiliation-colony-assignment-0067-nocozo a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0067 ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0068
+
+id:colony-assignment-0068 a oa:ColonyAssignment ;
+    oa:colonyName "Wega" .
+
+claim:affiliation-colony-assignment-0068-nocozo a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0068 ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0069
+
+id:colony-assignment-0069 a oa:ColonyAssignment ;
+    oa:colonyName "Gacrux" ;
+    oa:note "Loosely; close links with the Disarchy." .
+
+claim:affiliation-colony-assignment-0069-nocozo a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0069 ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0070
+
+id:colony-assignment-0070 a oa:ColonyAssignment ;
+    oa:colonyName "Nadia" .
+
+claim:affiliation-colony-assignment-0070-nocozo a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0070 ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0071
+
+id:colony-assignment-0071 a oa:ColonyAssignment ;
+    oa:colonyName "Cog" .
+
+claim:affiliation-colony-assignment-0071-silicon-generation a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0071 ;
+    oa:canonical true ;
+    oa:polity id:polity-silicon-generation ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0072
+
+id:colony-assignment-0072 a oa:ColonyAssignment ;
+    oa:colonyName "Shamash" .
+
+claim:affiliation-colony-assignment-0072-solar-dominion a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0072 ;
+    oa:canonical true ;
+    oa:polity id:polity-solar-dominion ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0073
+
+id:colony-assignment-0073 a oa:ColonyAssignment ;
+    skos:altLabel "Guo-Shuo Jing" ;
+    oa:colonyName "Guo-Shou Jing" ;
+    oa:note "Nominally. The table spells it 'Guo-Shuo Jing'; the astronomer is Guo Shoujing, so the source appears to have transposed the vowels." .
+
+claim:affiliation-colony-assignment-0073-solar-dominion a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0073 ;
+    oa:canonical true ;
+    oa:polity id:polity-solar-dominion ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0074
+
+id:colony-assignment-0074 a oa:ColonyAssignment ;
+    oa:colonyName "Pandya" .
+
+claim:affiliation-colony-assignment-0074-solar-dominion a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0074 ;
+    oa:canonical true ;
+    oa:polity id:polity-solar-dominion ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0075
+
+id:colony-assignment-0075 a oa:ColonyAssignment ;
+    oa:colonyName "Fons Luminis" .
+
+claim:affiliation-colony-assignment-0075-solar-dominion a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0075 ;
+    oa:canonical true ;
+    oa:polity id:polity-solar-dominion ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0076
+
+id:colony-assignment-0076 a oa:ColonyAssignment ;
+    oa:colonyName "Eden" .
+
+claim:affiliation-colony-assignment-0076-solar-dominion a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0076 ;
+    oa:canonical true ;
+    oa:polity id:polity-solar-dominion ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0077
+
+id:colony-assignment-0077 a oa:ColonyAssignment ;
+    oa:colonyName "Klarus" .
+
+claim:affiliation-colony-assignment-0077-solar-dominion a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0077 ;
+    oa:canonical true ;
+    oa:polity id:polity-solar-dominion ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0078
+
+id:colony-assignment-0078 a oa:ColonyAssignment ;
+    oa:colonyName "Porrima" .
+
+claim:affiliation-colony-assignment-0078-solar-dominion a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0078 ;
+    oa:canonical true ;
+    oa:polity id:polity-solar-dominion ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0079
+
+id:colony-assignment-0079 a oa:ColonyAssignment ;
+    oa:colonyName "Daedalus" .
+
+claim:affiliation-colony-assignment-0079-solar-dominion a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0079 ;
+    oa:canonical true ;
+    oa:polity id:polity-solar-dominion ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0080
+
+id:colony-assignment-0080 a oa:ColonyAssignment ;
+    oa:colonyName "Goldilocks ISO" ;
+    oa:note "Not the Communion of Worlds' Goldilocks." .
+
+claim:affiliation-colony-assignment-0080-solar-dominion a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0080 ;
+    oa:canonical true ;
+    oa:polity id:polity-solar-dominion ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0081
+
+id:colony-assignment-0081 a oa:ColonyAssignment ;
+    oa:colonyName "Chalawan" .
+
+claim:affiliation-colony-assignment-0081-solar-dominion a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0081 ;
+    oa:canonical true ;
+    oa:polity id:polity-solar-dominion ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0082
+
+id:colony-assignment-0082 a oa:ColonyAssignment ;
+    oa:colonyName "Dante" .
+
+claim:affiliation-colony-assignment-0082-solar-dominion a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0082 ;
+    oa:canonical true ;
+    oa:polity id:polity-solar-dominion ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0083
+
+id:colony-assignment-0083 a oa:ColonyAssignment ;
+    oa:colonyName "Mizar" .
+
+claim:affiliation-colony-assignment-0083-solar-dominion a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0083 ;
+    oa:canonical true ;
+    oa:polity id:polity-solar-dominion ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0084
+
+id:colony-assignment-0084 a oa:ColonyAssignment ;
+    oa:colonyName "Abydos" .
+
+claim:affiliation-colony-assignment-0084-solar-dominion a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0084 ;
+    oa:canonical true ;
+    oa:polity id:polity-solar-dominion ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0085
+
+id:colony-assignment-0085 a oa:ColonyAssignment ;
+    oa:colonyName "The World of Forking Paths" ;
+    oa:note "Loosely." .
+
+claim:affiliation-colony-assignment-0085-solipsist-panvirtuality a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0085 ;
+    oa:canonical true ;
+    oa:polity id:polity-solipsist-panvirtuality ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0086
+
+id:colony-assignment-0086 a oa:ColonyAssignment ;
+    oa:colonyName "Panvirtuality 1" .
+
+claim:affiliation-colony-assignment-0086-solipsist-panvirtuality a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0086 ;
+    oa:canonical true ;
+    oa:polity id:polity-solipsist-panvirtuality ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0087
+
+id:colony-assignment-0087 a oa:ColonyAssignment ;
+    oa:colonyName "Alcor" .
+
+claim:affiliation-colony-assignment-0087-solipsist-panvirtuality a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0087 ;
+    oa:canonical true ;
+    oa:polity id:polity-solipsist-panvirtuality ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0088
+
+id:colony-assignment-0088 a oa:ColonyAssignment ;
+    oa:colonyName "Solsys" ;
+    oa:note "Shared with the Caretaker God GAIA." .
+
+claim:affiliation-colony-assignment-0088-solsys-organization a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0088 ;
+    oa:canonical true ;
+    oa:polity id:polity-solsys-organization ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0089
+
+id:colony-assignment-0089 a oa:ColonyAssignment ;
+    oa:colonyName "Akela" .
+
+claim:affiliation-colony-assignment-0089-solsys-organization a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0089 ;
+    oa:canonical true ;
+    oa:polity id:polity-solsys-organization ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0090
+
+id:colony-assignment-0090 a oa:ColonyAssignment ;
+    oa:colonyName "Sirius" .
+
+claim:affiliation-colony-assignment-0090-solsys-organization a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0090 ;
+    oa:canonical true ;
+    oa:polity id:polity-solsys-organization ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0091
+
+id:colony-assignment-0091 a oa:ColonyAssignment ;
+    oa:colonyName "Rihal" .
+
+claim:affiliation-colony-assignment-0091-solsys-organization a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0091 ;
+    oa:canonical true ;
+    oa:polity id:polity-solsys-organization ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0092
+
+id:colony-assignment-0092 a oa:ColonyAssignment ;
+    oa:colonyName "Proxima" .
+
+claim:affiliation-colony-assignment-0092-sophic-league a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0092 ;
+    oa:canonical true ;
+    oa:polity id:polity-sophic-league ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0093
+
+id:colony-assignment-0093 a oa:ColonyAssignment ;
+    oa:colonyName "Alsafi" ;
+    oa:note "Especially the planet Penglai." .
+
+claim:affiliation-colony-assignment-0093-sophic-league a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0093 ;
+    oa:canonical true ;
+    oa:polity id:polity-sophic-league ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0094
+
+id:colony-assignment-0094 a oa:ColonyAssignment ;
+    oa:colonyName "Hwii" ;
+    oa:note "Lukewarm." .
+
+claim:affiliation-colony-assignment-0094-sophic-league a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0094 ;
+    oa:canonical true ;
+    oa:polity id:polity-sophic-league ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0095
+
+id:colony-assignment-0095 a oa:ColonyAssignment ;
+    oa:colonyName "New Taylor" .
+
+claim:affiliation-colony-assignment-0095-sophic-league a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0095 ;
+    oa:canonical true ;
+    oa:polity id:polity-sophic-league ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0096
+
+id:colony-assignment-0096 a oa:ColonyAssignment ;
+    oa:colonyName "Errai" ;
+    oa:note "Joint." .
+
+claim:affiliation-colony-assignment-0096-sophic-league a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0096 ;
+    oa:canonical true ;
+    oa:polity id:polity-sophic-league ;
+    oa:recordOrder 0 .
+
+claim:affiliation-colony-assignment-0096-utopia-sphere a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0096 ;
+    oa:canonical true ;
+    oa:polity id:polity-utopia-sphere ;
+    oa:recordOrder 1 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0097
+
+id:colony-assignment-0097 a oa:ColonyAssignment ;
+    oa:colonyName "Liaris Rosette" .
+
+claim:affiliation-colony-assignment-0097-sophic-league a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0097 ;
+    oa:canonical true ;
+    oa:polity id:polity-sophic-league ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0098
+
+id:colony-assignment-0098 a oa:ColonyAssignment ;
+    oa:colonyName "Wadai" ;
+    oa:note "Also in the Celestia add-on, as EG 471." .
+
+claim:affiliation-colony-assignment-0098-sophic-league a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0098 ;
+    oa:canonical true ;
+    oa:polity id:polity-sophic-league ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0099
+
+id:colony-assignment-0099 a oa:ColonyAssignment ;
+    oa:colonyName "Regulus" .
+
+claim:affiliation-colony-assignment-0099-sophic-league a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0099 ;
+    oa:canonical true ;
+    oa:polity id:polity-sophic-league ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0100
+
+id:colony-assignment-0100 a oa:ColonyAssignment ;
+    oa:colonyName "Turing" .
+
+claim:affiliation-colony-assignment-0100-technorapture-hypernation a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0100 ;
+    oa:canonical true ;
+    oa:polity id:polity-technorapture-hypernation ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0101
+
+id:colony-assignment-0101 a oa:ColonyAssignment ;
+    oa:colonyName "The Gigaverse" .
+
+claim:affiliation-colony-assignment-0101-technorapture-hypernation a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0101 ;
+    oa:canonical true ;
+    oa:polity id:polity-technorapture-hypernation ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0102
+
+id:colony-assignment-0102 a oa:ColonyAssignment ;
+    oa:colonyName "Unon-Duuz" .
+
+claim:affiliation-colony-assignment-0102-terragen-federation a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0102 ;
+    oa:canonical true ;
+    oa:polity id:polity-terragen-federation ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0103
+
+id:colony-assignment-0103 a oa:ColonyAssignment ;
+    oa:colonyName "Dorangloon" .
+
+claim:affiliation-colony-assignment-0103-terragen-federation a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0103 ;
+    oa:canonical true ;
+    oa:polity id:polity-terragen-federation ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0104
+
+id:colony-assignment-0104 a oa:ColonyAssignment ;
+    oa:colonyName "Glim" .
+
+claim:affiliation-colony-assignment-0104-terragen-federation a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0104 ;
+    oa:canonical true ;
+    oa:polity id:polity-terragen-federation ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0105
+
+id:colony-assignment-0105 a oa:ColonyAssignment ;
+    oa:colonyName "New Earth" .
+
+claim:affiliation-colony-assignment-0105-terragen-federation a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0105 ;
+    oa:canonical true ;
+    oa:polity id:polity-terragen-federation ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0106
+
+id:colony-assignment-0106 a oa:ColonyAssignment ;
+    oa:colonyName "New Duibbiyat" .
+
+claim:affiliation-colony-assignment-0106-terragen-federation a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0106 ;
+    oa:canonical true ;
+    oa:polity id:polity-terragen-federation ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0107
+
+id:colony-assignment-0107 a oa:ColonyAssignment ;
+    oa:colonyName "Whirlygig" .
+
+claim:affiliation-colony-assignment-0107-terragen-federation a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0107 ;
+    oa:canonical true ;
+    oa:polity id:polity-terragen-federation ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0108
+
+id:colony-assignment-0108 a oa:ColonyAssignment ;
+    oa:colonyName "Zavijava" .
+
+claim:affiliation-colony-assignment-0108-utopia-sphere a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0108 ;
+    oa:canonical true ;
+    oa:polity id:polity-utopia-sphere ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0109
+
+id:colony-assignment-0109 a oa:ColonyAssignment ;
+    oa:colonyName "Schaiffer's World" .
+
+claim:affiliation-colony-assignment-0109-utopia-sphere a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0109 ;
+    oa:canonical true ;
+    oa:polity id:polity-utopia-sphere ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0110
+
+id:colony-assignment-0110 a oa:ColonyAssignment ;
+    oa:colonyName "New Callisto" .
+
+claim:affiliation-colony-assignment-0110-utopia-sphere a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0110 ;
+    oa:canonical true ;
+    oa:polity id:polity-utopia-sphere ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0111
+
+id:colony-assignment-0111 a oa:ColonyAssignment ;
+    oa:colonyName "Rajand" .
+
+claim:affiliation-colony-assignment-0111-zoeific-biopolity a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0111 ;
+    oa:canonical true ;
+    oa:polity id:polity-zoeific-biopolity ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0112
+
+id:colony-assignment-0112 a oa:ColonyAssignment ;
+    oa:colonyName "Eunchong" ;
+    oa:note "Majority but not all." .
+
+claim:affiliation-colony-assignment-0112-zoeific-biopolity a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0112 ;
+    oa:canonical true ;
+    oa:polity id:polity-zoeific-biopolity ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0113
+
+id:colony-assignment-0113 a oa:ColonyAssignment ;
+    oa:colonyName "Neo-Helix" .
+
+claim:affiliation-colony-assignment-0113-zoeific-biopolity a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0113 ;
+    oa:canonical true ;
+    oa:polity id:polity-zoeific-biopolity ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0114
+
+id:colony-assignment-0114 a oa:ColonyAssignment ;
+    oa:colonyName "Chloris" .
+
+claim:affiliation-colony-assignment-0114-zoeific-biopolity a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0114 ;
+    oa:canonical true ;
+    oa:polity id:polity-zoeific-biopolity ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0115
+
+id:colony-assignment-0115 a oa:ColonyAssignment ;
+    oa:colonyName "Ecotopia" .
+
+claim:affiliation-colony-assignment-0115-zoeific-biopolity a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0115 ;
+    oa:canonical true ;
+    oa:polity id:polity-zoeific-biopolity ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0116
+
+id:colony-assignment-0116 a oa:ColonyAssignment ;
+    oa:colonyName "Frog's Head" ;
+    oa:note "Loosely." .
+
+claim:affiliation-colony-assignment-0116-zoeific-biopolity a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0116 ;
+    oa:canonical true ;
+    oa:polity id:polity-zoeific-biopolity ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0117
+
+id:colony-assignment-0117 a oa:ColonyAssignment ;
+    oa:colonyName "Zallach-Whige" .
+
+claim:affiliation-colony-assignment-0117-zoeific-biopolity a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0117 ;
+    oa:canonical true ;
+    oa:polity id:polity-zoeific-biopolity ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0118
+
+id:colony-assignment-0118 a oa:ColonyAssignment ;
+    oa:colonyName "Qjellto" ;
+    oa:note "With a Utopia Sphere enclave." .
+
+claim:affiliation-colony-assignment-0118-zoeific-biopolity a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0118 ;
+    oa:canonical true ;
+    oa:polity id:polity-zoeific-biopolity ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0119
+
+id:colony-assignment-0119 a oa:ColonyAssignment ;
+    oa:colonyName "Sacredtree" .
+
+claim:affiliation-colony-assignment-0119-zoeific-biopolity a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0119 ;
+    oa:canonical true ;
+    oa:polity id:polity-zoeific-biopolity ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0120
+
+id:colony-assignment-0120 a oa:ColonyAssignment ;
+    oa:colonyName "Cenauri" ;
+    oa:status "special" .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0121
+
+id:colony-assignment-0121 a oa:ColonyAssignment ;
+    oa:colonyName "Barnard's Star" ;
+    oa:status "special" .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0122
+
+id:colony-assignment-0122 a oa:ColonyAssignment ;
+    oa:colonyName "Ran" ;
+    oa:status "special" .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0123
+
+id:colony-assignment-0123 a oa:ColonyAssignment ;
+    oa:colonyName "Tiwa" ;
+    oa:status "special" .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0124
+
+id:colony-assignment-0124 a oa:ColonyAssignment ;
+    oa:colonyName "Piazzi & Bessel" ;
+    oa:note "Two colonies, listed together by the source." ;
+    oa:status "special" .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0125
+
+id:colony-assignment-0125 a oa:ColonyAssignment ;
+    oa:colonyName "Jinvanco" ;
+    oa:status "special" .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0126
+
+id:colony-assignment-0126 a oa:ColonyAssignment ;
+    oa:colonyName "Howling Sky" ;
+    oa:status "special" .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0127
+
+id:colony-assignment-0127 a oa:ColonyAssignment ;
+    oa:colonyName "Packrat sporehome" ;
+    oa:status "special" .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0128
+
+id:colony-assignment-0128 a oa:ColonyAssignment ;
+    oa:colonyName "Resshuna" ;
+    oa:status "special" .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0129
+
+id:colony-assignment-0129 a oa:ColonyAssignment ;
+    oa:colonyName "The Organic Ascension Alliance" ;
+    oa:status "special" .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0130
+
+id:colony-assignment-0130 a oa:ColonyAssignment ;
+    oa:colonyName "Aolai" ;
+    oa:status "special" .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0131
+
+id:colony-assignment-0131 a oa:ColonyAssignment ;
+    oa:colonyName "Lux" ;
+    oa:status "special" .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0132
+
+id:colony-assignment-0132 a oa:ColonyAssignment ;
+    oa:colonyName "Benes" ;
+    oa:status "special" .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0133
+
+id:colony-assignment-0133 a oa:ColonyAssignment ;
+    oa:colonyName "Resonance" ;
+    oa:status "special" .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0134
+
+id:colony-assignment-0134 a oa:ColonyAssignment ;
+    oa:colonyName "Copernicus" ;
+    oa:status "special" .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0135
+
+id:colony-assignment-0135 a oa:ColonyAssignment ;
+    oa:colonyName "Capella" ;
+    oa:status "special" .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0136
+
+id:colony-assignment-0136 a oa:ColonyAssignment ;
+    oa:colonyName "Nimbus" ;
+    oa:status "special" .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0137
+
+id:colony-assignment-0137 a oa:ColonyAssignment ;
+    oa:colonyName "Titawin" ;
+    oa:status "special" .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0138
+
+id:colony-assignment-0138 a oa:ColonyAssignment ;
+    oa:colonyName "Lucida" ;
+    oa:note "Capital of the academic Iota Network, which now has a polity entry — it was recorded as `special` while it had none." .
+
+claim:affiliation-colony-assignment-0138-iota-network a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:colony-assignment-0138 ;
+    oa:canonical true ;
+    oa:polity id:polity-iota-network ;
+    oa:recordOrder 0 .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0139
+
+id:colony-assignment-0139 a oa:ColonyAssignment ;
+    oa:colonyName "Felicidade" ;
+    oa:status "special" .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0140
+
+id:colony-assignment-0140 a oa:ColonyAssignment ;
+    oa:colonyName "Lilif" ;
+    oa:status "special" .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0141
+
+id:colony-assignment-0141 a oa:ColonyAssignment ;
+    oa:colonyName "Aldebaran" ;
+    oa:status "special" .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0142
+
+id:colony-assignment-0142 a oa:ColonyAssignment ;
+    oa:colonyName "Algol" ;
+    oa:status "special" .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0143
+
+id:colony-assignment-0143 a oa:ColonyAssignment ;
+    oa:colonyName "Ithiplumo" ;
+    oa:status "abandoned" .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0144
+
+id:colony-assignment-0144 a oa:ColonyAssignment ;
+    skos:altLabel "Dustbuilder Colony" ;
+    oa:colonyName "Dustbuilders" ;
+    oa:note "The table calls it 'Dustbuilder Colony'." ;
+    oa:status "abandoned" .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0145
+
+id:colony-assignment-0145 a oa:ColonyAssignment ;
+    oa:colonyName "Iota Persei" ;
+    oa:note "A star name; the table's colony for it is 'Iota Belt'." ;
+    oa:status "abandoned" .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0146
+
+id:colony-assignment-0146 a oa:ColonyAssignment ;
+    oa:colonyName "Denebola" ;
+    oa:status "abandoned" .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0147
+
+id:colony-assignment-0147 a oa:ColonyAssignment ;
+    oa:colonyName "Mynti" ;
+    oa:status "abandoned" .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0148
+
+id:colony-assignment-0148 a oa:ColonyAssignment ;
+    oa:colonyName "Makintairas" ;
+    oa:status "abandoned" .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0149
+
+id:colony-assignment-0149 a oa:ColonyAssignment ;
+    oa:colonyName "Caph" ;
+    oa:status "abandoned" .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0150
+
+id:colony-assignment-0150 a oa:ColonyAssignment ;
+    oa:colonyName "Conver Ky" ;
+    oa:status "abandoned" .
+
+# https://dkourmyshov.github.io/oa-starmap/id/colony-assignment-0151
+
+id:colony-assignment-0151 a oa:ColonyAssignment ;
+    oa:colonyName "Tabit" ;
+    oa:status "blight" .

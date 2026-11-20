@@ -1,0 +1,67 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Gammergan
+
+id:world-gammergan a oa:Place, oa:World ;
+    skos:prefLabel "Gammergan" ;
+    oa:article <https://www.orionsarm.com/eg-article/464d338cc6026> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "On the border, and held by both." ;
+    oa:uncertain false .
+
+claim:location-world-gammergan a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/464d338cc6026> ;
+    oa:about id:world-gammergan ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg 5.801 ;
+    oa:distance value:location-world-gammergan-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:rightAscensionDeg 265.9513 .
+
+value:location-world-gammergan-distance a oa:QuantityValue ;
+    qudt:numericValue 1702.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-gammergan-mutual-progress-association a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/464d338cc6026> ;
+    oa:about id:world-gammergan ;
+    oa:canonical true ;
+    oa:polity id:polity-mutual-progress-association ;
+    oa:recordOrder 0 .
+
+claim:affiliation-world-gammergan-sagittarius-transcultural-cooperation a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/464d338cc6026> ;
+    oa:about id:world-gammergan ;
+    oa:canonical true ;
+    oa:polity id:polity-sagittarius-transcultural-cooperation ;
+    oa:recordOrder 1 .
+
+claim:event-world-gammergan-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/464d338cc6026> ;
+    oa:about id:world-gammergan ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 5107 .
+
+claim:event-world-gammergan-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/464d338cc6026> ;
+    oa:about id:world-gammergan ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "\"contact was re-established in 9885 when the Skiiws'nnii ship Namor entered the system.\" Skiiws'nnii is a species/clade, not a roster polity; see unplaced. The Skiiws'nnii ship Namor re-establishing contact; contact had been lost in 6580." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 9885 .

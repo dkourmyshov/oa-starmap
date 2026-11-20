@@ -1,0 +1,55 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Less Dim Twins
+
+id:inner-sphere-row-0042 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Less Dim Twins" .
+
+claim:inner-sphere-inner-sphere-row-0042-86e676099adf a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0042 ;
+    oa:canonical true ;
+    oa:colonyName "Less Dim Twins" ;
+    oa:luminositySol "0.0004" ;
+    oa:massSol "0.07" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 41 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0042-86e676099adf-source-distance ;
+    oa:spectralType "M8.5 V" ;
+    oa:starName "SCR 1845-6357 A" .
+
+value:inner-sphere-inner-sphere-row-0042-86e676099adf-source-distance a oa:QuantityValue ;
+    qudt:numericValue 13.050 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Less Dim Twins
+
+id:inner-sphere-row-0043 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Less Dim Twins" .
+
+claim:inner-sphere-inner-sphere-row-0043-9f145b896a07 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0043 ;
+    oa:canonical true ;
+    oa:colonyName "Less Dim Twins" ;
+    oa:luminositySol "." ;
+    oa:massSol "0.04" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 42 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0043-9f145b896a07-source-distance ;
+    oa:spectralType "T6" ;
+    oa:starName "SCR 1845-6357 B" .
+
+value:inner-sphere-inner-sphere-row-0043-9f145b896a07-source-distance a oa:QuantityValue ;
+    qudt:numericValue 13.050 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

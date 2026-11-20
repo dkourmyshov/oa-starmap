@@ -1,0 +1,38 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Dumbbell Nebula
+
+id:world-dumbbell-nebula a oa:Place, oa:World ;
+    skos:prefLabel "Dumbbell Nebula" ;
+    oa:kind "volume" ;
+    oa:labelsSystem false ;
+    oa:note "NGC 6853, in Vulpecula, at 389 pc. One of the better-measured planetary nebulae and the nearest thing in this group after the Helix." ;
+    oa:uncertain false .
+
+claim:location-world-dumbbell-nebula a prov:Entity, oa:LocationClaim ;
+    oa:about id:world-dumbbell-nebula ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg 22.7168 ;
+    oa:distance value:location-world-dumbbell-nebula-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:rightAscensionDeg 299.9006 .
+
+value:location-world-dumbbell-nebula-distance a oa:QuantityValue ;
+    qudt:numericValue 1269.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-dumbbell-nebula-cygexpa a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:world-dumbbell-nebula ;
+    oa:canonical true ;
+    oa:polity id:polity-cygexpa ;
+    oa:recordOrder 0 .

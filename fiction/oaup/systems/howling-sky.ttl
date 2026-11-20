@@ -1,0 +1,98 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Howling Sky
+
+id:world-howling-sky a oa:Place, oa:World ;
+    skos:prefLabel "Howling Sky" ;
+    oa:article <https://www.orionsarm.com/eg-article/66ed91e548374> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Groombridge 34 A, as the colony table has it." ;
+    oa:systemName "Howling Sky" ;
+    oa:uncertain false .
+
+claim:location-world-howling-sky a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/66ed91e548374> ;
+    oa:about id:world-howling-sky ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Groombridge 34 A" .
+
+claim:event-world-howling-sky-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/66ed91e548374> ;
+    oa:about id:world-howling-sky ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"First Colonised 1120 AT\"" ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 1120 .
+
+claim:event-world-howling-sky-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/66ed91e548374> ;
+    oa:about id:world-howling-sky ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"The system joined the short-lived Second Federation in 3086 and that organisation managed to establish treaties providing for limited coexistence and trade between the various factions, establishing Lightways connections and re-establishing the Beamrider Network station which had been closed during the Vechon conflict.\"" ;
+    oa:polity id:polity-second-federation ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 3086 .
+
+# Howling Sky
+
+id:inner-sphere-row-0029 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Howling Sky" .
+
+claim:inner-sphere-inner-sphere-row-0029-6fec3e5e256b a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0029 ;
+    oa:article <https://www.orionsarm.com/eg-article/66ed91e548374> ;
+    oa:canonical true ;
+    oa:colonyName "Howling Sky" ;
+    oa:luminositySol "0.00644" ;
+    oa:massSol "0.414" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 28 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0029-6fec3e5e256b-source-distance ;
+    oa:spectralType "M1.5 Vn" ;
+    oa:starName "Groombridge 34 A" .
+
+value:inner-sphere-inner-sphere-row-0029-6fec3e5e256b-source-distance a oa:QuantityValue ;
+    qudt:numericValue 11.619 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Howling Sky
+
+id:inner-sphere-row-0030 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Howling Sky" .
+
+claim:inner-sphere-inner-sphere-row-0030-d0e876d681b5 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0030 ;
+    oa:article <https://www.orionsarm.com/eg-article/66ed91e548374> ;
+    oa:canonical true ;
+    oa:colonyName "Howling Sky" ;
+    oa:luminositySol "0.000418" ;
+    oa:massSol "0.08" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 29 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0030-d0e876d681b5-source-distance ;
+    oa:spectralType "M3.5 Vn" ;
+    oa:starName "Groombridge 34 B" .
+
+value:inner-sphere-inner-sphere-row-0030-d0e876d681b5-source-distance a oa:QuantityValue ;
+    qudt:numericValue 11.619 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

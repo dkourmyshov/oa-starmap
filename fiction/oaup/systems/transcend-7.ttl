@@ -1,0 +1,54 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Transcend 7
+
+id:world-transcend-7 a oa:Place, oa:World ;
+    skos:prefLabel "Transcend 7" ;
+    oa:article <https://www.orionsarm.com/eg-article/4e26e0f62441a> ;
+    oa:editorialNote "---- the alphabetical sweep, A-B -----------------------------------------\n\nPlaces the Systems & Worlds index carries that no empire page links to.\nSeveral give galactic XYZ outright, which is the first time this file has\nhad coordinates in the frame it stores; each was converted back and checked\nagainst the distance and constellation the same article states, and all\nthree agree to a tenth of a light year." ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "NGC 6802, and the largest catalogue disagreement this file has recorded: the article says 3,641 ly and the cluster catalogue 9,031, two and a half times further. The cluster lends its direction and the article its distance. NGC 6802 was independently one of the anchors the transcription of Anders Sandberg's maps could not predict, which is a second source doubting the same number." ;
+    oa:uncertain false .
+
+claim:location-world-transcend-7 a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4e26e0f62441a> ;
+    oa:about id:world-transcend-7 ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg 20.2583 ;
+    oa:distance value:location-world-transcend-7-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:nearName "NGC 6802" ;
+    oa:rightAscensionDeg 292.6464 .
+
+value:location-world-transcend-7-distance a oa:QuantityValue ;
+    qudt:numericValue 3641.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-transcend-7-the-transcend a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4e26e0f62441a> ;
+    oa:about id:world-transcend-7 ;
+    oa:canonical true ;
+    oa:polity id:polity-the-transcend ;
+    oa:recordOrder 0 .
+
+claim:event-world-transcend-7-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4e26e0f62441a> ;
+    oa:about id:world-transcend-7 ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"Transcend archailect exploration and construction swarms arrived in the system 8155AT centuries before any other exploration team.\" 'Arrived', which the reader flagged; the panel's parent empire is the Transcend." ;
+    oa:polity id:polity-the-transcend ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 8155 .

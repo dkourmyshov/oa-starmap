@@ -1,0 +1,95 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Enigma
+
+id:star-enigma a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "Enigma" ;
+    oa:sourceName "Enigma" .
+
+claim:celestia-star-enigma-31ff11141f5d a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-enigma ;
+    oa:absoluteMagnitude 5.08 ;
+    oa:canonical true ;
+    oa:declinationDeg -37.5155 ;
+    oa:distance value:celestia-star-enigma-31ff11141f5d-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 81.7007 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceFile "oastars4.stc" ;
+    oa:spectralType "G0v" .
+
+value:celestia-star-enigma-31ff11141f5d-distance a oa:QuantityValue ;
+    qudt:numericValue 4597.86 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:curation-star-enigma a prov:Entity, oa:SystemCuration ;
+    oa:about id:star-enigma ;
+    oa:article <https://www.orionsarm.com/eg-article/491aecf1478f9> ;
+    oa:editorialLabel "Enigma" ;
+    oa:hidden false ;
+    oa:note "Left unassigned. The Enigma Cluster is NGC 6755, but the add-on places this star at l=242 b=-32, 1410 pc — in Columba, 3478 pc from NGC 6755 and roughly opposite it on the sky. No star in the add-on comes within 1549 pc of that cluster. Either this is a different object or its coordinates are wrong, and a Keter Dominion assignment would rest on the contradiction." ;
+    oa:uncertain false .
+
+# Stanislaw
+
+id:world-stanislaw a oa:Place, oa:World ;
+    skos:prefLabel "Stanislaw" ;
+    oa:article <https://www.orionsarm.com/eg-article/491222f681eed> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "Located by constellation despite the add-on carrying a star called Enigma, because the two do not agree. The add-on puts it in Columba at 4,598 ly — RA 81.7, Dec -37.5 — and the article says Canis Major, whose nearest edge is some fifteen degrees away. Columba is not a boundary case for Canis Major. The add-on's distance is adopted since the article gives none, but its direction is not, and the entry is marked uncertain. Two other positions for Enigma are in play: the Enigma Cluster is canonically NGC 6755, which is 3,478 pc from the add-on's star and roughly opposite it on the sky. Three sources, three directions." ;
+    oa:systemName "Enigma" ;
+    oa:uncertain true .
+
+claim:location-world-stanislaw a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/491222f681eed> ;
+    oa:about id:world-stanislaw ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:constellationName "Canis Major" ;
+    oa:distance value:location-world-stanislaw-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:note "Kept as a cone. The Celestia location catalogues give a direction at exactly the 4,598 ly the article states — but it lies 24 degrees from the centre of Canis Major against a radius of 14, so it is not in the constellation the article names. The matching distance does not redeem a direction in the wrong part of the sky. See questions.md." .
+
+value:location-world-stanislaw-distance a oa:QuantityValue ;
+    qudt:numericValue 4598.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-stanislaw-caretaker-gods a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/491222f681eed> ;
+    oa:about id:world-stanislaw ;
+    oa:canonical true ;
+    oa:polity id:polity-caretaker-gods ;
+    oa:recordOrder 0 .
+
+claim:event-world-stanislaw-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/491222f681eed> ;
+    oa:about id:world-stanislaw ;
+    oa:canonical true ;
+    oa:eventKind oa:Reported ;
+    oa:note "First public reports of the discovery. The discovery itself was earlier — probably in the 9700s — so this is the date the setting records rather than the date it happened." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 9920 .
+
+claim:event-world-stanislaw-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/491222f681eed> ;
+    oa:about id:world-stanislaw ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "\"Reached 9921\" Data panel field; body says the planet was found before public reports appeared, by a relativistic Faber/Tavi expedition (Faber and Tavi are clades, not roster polities). The panel's year; the body has the first reports reaching the wormhole network 'in the late 9920s'." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 9921 .

@@ -1,0 +1,51 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Gilboa Reach
+
+id:world-gilboa-reach a oa:Place, oa:World ;
+    skos:prefLabel "Gilboa Reach" ;
+    oa:article <https://www.orionsarm.com/eg-article/464e931fbc3f0> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "An STC outpost and stargate plexus at the edge of the Serpens sector, a large L5 orbital swarm about the terraformed world Gilboa. It falls 7.2 degrees from the add-on's Serpens Region anchor -- and its own article is what names \"the Serpens Sector worlds such as Sk'iiws'nnii and Miracle City\", the sentence the Region and Sector question turns on." ;
+    oa:uncertain false .
+
+claim:location-world-gilboa-reach a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/464e931fbc3f0> ;
+    oa:about id:world-gilboa-reach ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -1.449472 ;
+    oa:distance value:location-world-gilboa-reach-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:note "All three from the article, which states \"Distance from Sol 1606 LY, Constellation: Serpens, RA: 18h21m48.44s, Dec: -01d26'58.1\\\"\" -- so this is a stated position and not a cone.\nIt was recorded as a distance alone, on the reasoning that Serpens is the one constellation this map will not place anything by: it is in two pieces and its centre of area falls in Ophiuchus between them, so a world put at that centre would be drawn in the wrong constellation. All true, and beside the point, because the article gives coordinates and the constellation was never needed. They convert to 275.451833, -1.449472, which the IAU boundaries put in Serpens.\nThe primary is TYC 5098-195-1, from a catalogue this map does not carry, so the position is taken as stated rather than bound to a star." ;
+    oa:rightAscensionDeg 275.451833 .
+
+value:location-world-gilboa-reach-distance a oa:QuantityValue ;
+    qudt:numericValue 1606.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-gilboa-reach-sagittarius-transcultural-cooperation a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/464e931fbc3f0> ;
+    oa:about id:world-gilboa-reach ;
+    oa:canonical true ;
+    oa:polity id:polity-sagittarius-transcultural-cooperation ;
+    oa:recordOrder 0 .
+
+claim:event-world-gilboa-reach-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/464e931fbc3f0> ;
+    oa:about id:world-gilboa-reach ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 5189 .

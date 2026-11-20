@@ -1,0 +1,112 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Oromasdes / Zarathustra
+
+id:inner-sphere-row-0309 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Oromasdes / Zarathustra" .
+
+claim:inner-sphere-inner-sphere-row-0309-788d3770201e a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0309 ;
+    oa:article <https://www.orionsarm.com/eg-article/46e73c1b0794b> ;
+    oa:canonical true ;
+    oa:colonyName "Oromasdes / Zarathustra" ;
+    oa:luminositySol "1.526" ;
+    oa:massSol "0.8" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 308 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0309-788d3770201e-source-distance ;
+    oa:spectralType "F8 V" ;
+    oa:starName "Gamma Pavonis" .
+
+value:inner-sphere-inner-sphere-row-0309-788d3770201e-source-distance a oa:QuantityValue ;
+    qudt:numericValue 30.197 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Zarathustra
+
+id:world-zarathustra a oa:Place, oa:World ;
+    skos:prefLabel "Zarathustra" ;
+    oa:article <https://www.orionsarm.com/eg-article/46e73c1b0794b> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "The colony table gives the system as \"Oromasdes / Zarathustra\"." ;
+    oa:uncertain false .
+
+claim:location-world-zarathustra a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46e73c1b0794b> ;
+    oa:about id:world-zarathustra ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Gamma Pavonis" .
+
+claim:affiliation-world-zarathustra-nocozo a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46e73c1b0794b> ;
+    oa:about id:world-zarathustra ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 0 .
+
+claim:event-world-zarathustra-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46e73c1b0794b> ;
+    oa:about id:world-zarathustra ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "Not stated outright but computed from the expedition's departure and the length of its flight, so it carries that uncertainty." ;
+    oa:precision oa:Circa ;
+    oa:recordOrder 0 ;
+    oa:yearAT 838 .
+
+claim:event-world-zarathustra-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46e73c1b0794b> ;
+    oa:about id:world-zarathustra ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "\"In 1312 a First Federation exploration group sponsored by Jupiter Transsystems arrived in system.\" Sponsored by Jupiter Transsystems, a megacorp not on the roster (see unplaced)." ;
+    oa:polity id:polity-first-federation ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 1312 .
+
+claim:event-world-zarathustra-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46e73c1b0794b> ;
+    oa:about id:world-zarathustra ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"Signalling back, they began to set up a new colony to exploit the system.\" This corporate exploitation colony is attributed to Jupiter Transsystems (unplaced), not the First Federation directly, and is distinct from the original 838 AT Nedyne colony. A second colony, by Jupiter Transsystems, lost to the first colony's descendants in 1358; the original colony of 838 continued." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 2 ;
+    oa:yearAT 1312 .
+
+claim:event-world-zarathustra-004 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46e73c1b0794b> ;
+    oa:about id:world-zarathustra ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "\"Zarathustra remained isolated for almost 400 years until a NoCoZo trade expedition arrived.\" Year computed as circa 400 years after the 1500 AT JT retreat ('almost 400 years' - so slightly earlier than exactly 1900). 'Almost 400 years' of isolation before a NoCoZo trade expedition; entered as 1900." ;
+    oa:polity id:polity-nocozo ;
+    oa:precision oa:Circa ;
+    oa:recordOrder 3 ;
+    oa:yearAT 1900 .
+
+claim:event-world-zarathustra-005 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46e73c1b0794b> ;
+    oa:about id:world-zarathustra ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"In 1965 Zarathustra formally joined the NoCoZo, and has since then (individually) been one of the most radical anti-coercive members.\" Not mentioned in the header, which only lists settled 838." ;
+    oa:polity id:polity-nocozo ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 4 ;
+    oa:yearAT 1965 .

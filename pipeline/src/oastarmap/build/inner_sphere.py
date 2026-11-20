@@ -30,14 +30,12 @@ import numpy as np
 
 from oastarmap.build.writer import write_json
 from oastarmap.fiction.resolve import normalise
-from oastarmap.fiction.schema import ColonyFile, FictionFile, InnerSphereFile
 from oastarmap.fiction.starnames import StarResolver, is_absent_catalogue, verify_distance
+from oastarmap.fiction.store import OAUP_DIR, load_store
 from oastarmap.paths import DATA_OUT_DIR, FICTION_DIR
 from oastarmap.transform.frame import PC_TO_LY
 
-INNER_SPHERE_FILE = "inner_sphere.yaml"
-COLONIES_FILE = "colonies.yaml"
-POLITIES_FILE = "polities.yaml"
+INNER_SPHERE_FILE = OAUP_DIR
 
 _SPLIT_NAMES = re.compile(r"\s*[/&]\s*")
 _PARENTHETICAL = re.compile(r"\s*\([^)]*\)")
@@ -216,15 +214,16 @@ def build_inner_sphere(
     )
 
     stats = InnerSphereStats()
-    source = InnerSphereFile.load(source_path)
+    store = load_store(source_path)
+    source = store.inner_sphere_file
 
-    assignments = ColonyFile.load(source_path.with_name(COLONIES_FILE))
-    known_polities = {p.id for p in FictionFile.load(source_path.with_name(POLITIES_FILE)).polities}
+    assignments = store.colony_file
+    known_polities = {p.id for p in store.fiction.polities}
     unknown = sorted(
         {a for entry in assignments.colonies for a in entry.affiliations} - known_polities
     )
     if unknown:
-        raise ValueError(f"colonies.yaml cites unknown affiliations: {unknown}")
+        raise ValueError(f"oaup/ cites unknown affiliations: {unknown}")
 
     # Index the assignments by every form of their colony name, so a name given
     # as one component of a compound cell still finds its row.
@@ -376,7 +375,7 @@ def build_inner_sphere(
         "wormholes": {
             "count": len(source.wormholes),
             "note": (
-                "Imported and tracked in fiction/inner_sphere.yaml, but not yet "
+                "Imported and tracked in fiction/oaup/, but not yet "
                 "built: links between systems are a different kind of object from "
                 "anything the renderer currently draws."
             ),

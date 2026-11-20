@@ -1,0 +1,63 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# Alpha Centauri
+
+id:world-alpha-centauri a oa:Place, oa:World ;
+    skos:prefLabel "Alpha Centauri" ;
+    oa:article <https://www.orionsarm.com/eg-article/487146f744c8e> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Alpha Centauri A, as the colony table has it." ;
+    oa:systemName "Alpha Centauri" ;
+    oa:uncertain false .
+
+claim:location-world-alpha-centauri a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/487146f744c8e> ;
+    oa:about id:world-alpha-centauri ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Alpha Centauri A" .
+
+claim:event-world-alpha-centauri-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/487146f744c8e> ;
+    oa:about id:world-alpha-centauri ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "\"the worlds of Alpha Centauri A+B were named by the exploration team which mapped them in 206 a.t\" The exploration/naming team's affiliation is not stated here." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 206 .
+
+claim:event-world-alpha-centauri-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/487146f744c8e> ;
+    oa:about id:world-alpha-centauri ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"Colonized: 283 a.t.\" This figure sits under \"Polity Name: Cenaurinume Coalition\" in the panel; Cenaurinume Coalition is not on the polity roster. Under the Cenaurinume Coalition, no polity of this file; the Von Neumann probes' later declaration of independence is undated." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 283 .
+
+# Nessus
+
+id:world-nessus a oa:Place, oa:World ;
+    skos:prefLabel "Nessus" ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "Entered from the add-on, which is the only source this map holds that names it. The system's colony is recorded separately as Cenauri." ;
+    oa:uncertain false .
+
+claim:location-world-nessus a prov:Entity, oa:LocationClaim ;
+    oa:about id:world-nessus ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:note "A planet of Alpha Centauri, on the project owner's reading. oaplanets.dsc, one of the Orion's Arm Celestia add-ons' location catalogues (OAAddons9, OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv), puts it at 219.902, -60.834 and 4.4 ly, which is Alpha Centauri AB's position and range rather than Proxima's.\nBound to the A component because a planet needs one star and no source here names which; A and B are some 23 AU apart, so at 4.3 ly the choice moves nothing on the map and the note is the honest part." ;
+    oa:starName "Alpha Centauri A" .

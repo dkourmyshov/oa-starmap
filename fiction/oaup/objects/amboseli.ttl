@@ -1,0 +1,45 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Amboseli
+
+id:world-amboseli a oa:Place, oa:World ;
+    skos:prefLabel "Amboseli" ;
+    oa:article <https://www.orionsarm.com/eg-article/4fba54934c663> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "Given as near NGC 559 in Cassiopeia at 4,089 ly. The cluster is in this map's catalogue at 9,042 ly, more than twice as far, so the cluster lends its direction and the article keeps its distance. Settled from the Ulysses Network but not recorded as belonging to it, so no holder is entered." ;
+    oa:uncertain false .
+
+claim:location-world-amboseli a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4fba54934c663> ;
+    oa:about id:world-amboseli ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg 63.3043 ;
+    oa:distance value:location-world-amboseli-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:nearName "NGC 559" ;
+    oa:rightAscensionDeg 22.3889 .
+
+value:location-world-amboseli-distance a oa:QuantityValue ;
+    qudt:numericValue 4089.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:event-world-amboseli-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4fba54934c663> ;
+    oa:about id:world-amboseli ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "Settled by colonists out of the Ulysses Network." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 8515 .

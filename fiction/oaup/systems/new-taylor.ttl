@@ -1,0 +1,80 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# New Taylor
+
+id:inner-sphere-row-0462 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "New Taylor" .
+
+claim:inner-sphere-inner-sphere-row-0462-84d17ea33135 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0462 ;
+    oa:article <https://www.orionsarm.com/eg-article/46d4d166cfc6d> ;
+    oa:canonical true ;
+    oa:colonyName "New Taylor" ;
+    oa:luminositySol "0.557" ;
+    oa:massSol "0.85" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 461 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0462-84d17ea33135-source-distance ;
+    oa:spectralType "G7.5 V" ;
+    oa:starName "HD 69830" .
+
+value:inner-sphere-inner-sphere-row-0462-84d17ea33135-source-distance a oa:QuantityValue ;
+    qudt:numericValue 41.028 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# New Taylor
+
+id:world-new-taylor a oa:Place, oa:World ;
+    skos:prefLabel "New Taylor" ;
+    oa:article <https://www.orionsarm.com/eg-article/46d4d166cfc6d> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "HD 69830, in Puppis at 41 ly." ;
+    oa:systemName "New Taylor" ;
+    oa:uncertain false .
+
+claim:location-world-new-taylor a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46d4d166cfc6d> ;
+    oa:about id:world-new-taylor ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Gliese 302" .
+
+claim:affiliation-world-new-taylor-sophic-league a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46d4d166cfc6d> ;
+    oa:about id:world-new-taylor ;
+    oa:canonical true ;
+    oa:polity id:polity-sophic-league ;
+    oa:recordOrder 0 .
+
+claim:event-world-new-taylor-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46d4d166cfc6d> ;
+    oa:about id:world-new-taylor ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:NotLaterThan ;
+    oa:recordOrder 0 ;
+    oa:yearAT 2314 .
+
+claim:event-world-new-taylor-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46d4d166cfc6d> ;
+    oa:about id:world-new-taylor ;
+    oa:canonical true ;
+    oa:eventKind oa:Capital ;
+    oa:note "\"Though the least populated of the three capital systems, New Taylor is by far the oldest, being where the Mutual Aggression Deterrence Accord was signed to form the Sophic League in 2314.\" The header records this as 'settled 2314', but the article gives no separate arrival/colonisation sentence -- the only dated claim is the signing of the Accord that founded the Sophic League here, making New Taylor a founding capital world. Recorded as kind capital rather than settled; flagging for the reviewer. This also conflicts with the roster's founding year for sophic-league (2345). Where the Mutual Aggression Deterrence Accord was signed, 'the oldest' of the League's three capital systems; the League's own page dates its forming to 2345, which the map carries, and the map's older 'settled 2314' is this signing." ;
+    oa:polity id:polity-sophic-league ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 2314 .

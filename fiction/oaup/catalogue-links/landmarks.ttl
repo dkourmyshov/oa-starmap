@@ -1,0 +1,2584 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+
+# 119 Tauri
+
+id:landmark-119-tauri a oa:Landmark, oa:Place ;
+    skos:prefLabel "119 Tauri" ;
+    oa:catalogueDesignation "119 Tauri" .
+
+claim:affiliation-landmark-119-tauri-metasoft a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-119-tauri ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft ;
+    oa:recordOrder 34 .
+
+# 139 Tauri
+
+id:landmark-139-tauri a oa:Landmark, oa:Place ;
+    skos:prefLabel "139 Tauri" ;
+    oa:catalogueDesignation "139 Tauri" .
+
+claim:affiliation-landmark-139-tauri-metasoft a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-139-tauri ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft ;
+    oa:recordOrder 33 .
+
+# Aldebaran
+
+id:landmark-aldebaran a oa:Landmark, oa:Place ;
+    skos:prefLabel "Aldebaran" ;
+    oa:catalogueDesignation "Aldebaran" .
+
+claim:affiliation-landmark-aldebaran-metasoft a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-aldebaran ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft ;
+    oa:recordOrder 29 .
+
+# Aleph Absolute
+
+id:landmark-collinder-359 a oa:Landmark, oa:Place ;
+    skos:altLabel "Collinder 359" ;
+    skos:prefLabel "Aleph Absolute" ;
+    oa:article <https://www.orionsarm.com/eg-article/45e78575a15a5> ;
+    oa:catalogueDesignation "Collinder 359" ;
+    oa:hasFictionalName true ;
+    oa:note "Carried in the cluster catalogue as Melotte 186, with Collinder 359 among its aliases; the alias table finds it either way." ;
+    oa:recordOrder 1 .
+
+claim:affiliation-landmark-collinder-359-keter-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-collinder-359 ;
+    oa:canonical true ;
+    oa:polity id:polity-keter-dominion ;
+    oa:recordOrder 9 .
+
+claim:affiliation-landmark-collinder-359-mutual-progress-association a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-collinder-359 ;
+    oa:canonical true ;
+    oa:polity id:polity-mutual-progress-association ;
+    oa:recordOrder 12 .
+
+claim:event-landmark-collinder-359-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/45e78575a15a5> ;
+    oa:about id:landmark-collinder-359 ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Circa ;
+    oa:recordOrder 0 ;
+    oa:yearAT 3000 .
+
+# Alpha Persei Cluster
+
+id:landmark-alpha-persei-cluster a oa:Landmark, oa:Place ;
+    skos:prefLabel "Alpha Persei Cluster" ;
+    oa:catalogueDesignation "Alpha Persei Cluster" .
+
+claim:affiliation-landmark-alpha-persei-cluster-solar-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-alpha-persei-cluster ;
+    oa:canonical true ;
+    oa:polity id:polity-solar-dominion ;
+    oa:recordOrder 16 .
+
+# Aquila Rift
+
+id:landmark-aquila-rift a oa:Landmark, oa:Place ;
+    skos:prefLabel "Aquila Rift" ;
+    oa:catalogueDesignation "Aquila Rift" .
+
+claim:affiliation-landmark-aquila-rift-cygexpa a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-aquila-rift ;
+    oa:canonical true ;
+    oa:polity id:polity-cygexpa ;
+    oa:recordOrder 9 .
+
+# Archaipelago
+
+id:landmark-ngc-7092 a oa:Landmark, oa:Place ;
+    skos:altLabel "NGC 7092" ;
+    skos:prefLabel "Archaipelago" ;
+    oa:article <https://www.orionsarm.com/eg-article/48f8103be50fb> ;
+    oa:catalogueDesignation "NGC 7092" ;
+    oa:hasFictionalName true ;
+    oa:note "M39, at 965 ly in Cygnus, and the Archosaurian Empire's. Cygexpa has it on the political maps and dissolved; the Archosaurians are who is there now, so both are recorded and the ring is drawn halved. The catalogue carries it as Theia_517, a Gaia-era name for the same group, with NGC 7092 among its aliases." ;
+    oa:recordOrder 5 .
+
+claim:affiliation-landmark-ngc-7092-archosaurian-empire a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:eg-system-articles ;
+    oa:about id:landmark-ngc-7092 ;
+    oa:canonical true ;
+    oa:polity id:polity-archosaurian-empire ;
+    oa:recordOrder 0 .
+
+claim:affiliation-landmark-ngc-7092-cygexpa a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-7092 ;
+    oa:canonical true ;
+    oa:polity id:polity-cygexpa ;
+    oa:recordOrder 10 .
+
+claim:event-landmark-ngc-7092-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48f8103be50fb> ;
+    oa:about id:landmark-ngc-7092 ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:NotLaterThan ;
+    oa:recordOrder 0 ;
+    oa:yearAT 4454 .
+
+# Basel 11
+
+id:landmark-basel-11 a oa:Landmark, oa:Place ;
+    skos:prefLabel "Basel 11" ;
+    oa:catalogueDesignation "Basel 11" .
+
+claim:affiliation-landmark-basel-11-metasoft a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-basel-11 ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft ;
+    oa:recordOrder 16 .
+
+# Basel 5
+
+id:landmark-basel-5 a oa:Landmark, oa:Place ;
+    skos:prefLabel "Basel 5" ;
+    oa:catalogueDesignation "Basel 5" .
+
+claim:affiliation-landmark-basel-5-sagittarius-transcultural-cooperation a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-basel-5 ;
+    oa:canonical true ;
+    oa:polity id:polity-sagittarius-transcultural-cooperation ;
+    oa:recordOrder 3 .
+
+# Berkeley 42
+
+id:landmark-berkeley-42 a oa:Landmark, oa:Place ;
+    skos:prefLabel "Berkeley 42" ;
+    oa:catalogueDesignation "Berkeley 42" .
+
+claim:affiliation-landmark-berkeley-42-keter-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-berkeley-42 ;
+    oa:canonical true ;
+    oa:polity id:polity-keter-dominion ;
+    oa:recordOrder 5 .
+
+# Berkeley 82
+
+id:landmark-berkeley-82 a oa:Landmark, oa:Place ;
+    skos:prefLabel "Berkeley 82" ;
+    oa:catalogueDesignation "Berkeley 82" .
+
+claim:affiliation-landmark-berkeley-82-mutual-progress-association a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-berkeley-82 ;
+    oa:canonical true ;
+    oa:polity id:polity-mutual-progress-association ;
+    oa:recordOrder 4 .
+
+# Blenke Cluster
+
+id:landmark-blanco-1 a oa:Landmark, oa:Place ;
+    skos:altLabel "Blanco 1" ;
+    skos:prefLabel "Blenke Cluster" ;
+    oa:article <https://www.orionsarm.com/eg-article/460e7b5d61e04> ;
+    oa:catalogueDesignation "Blanco 1" ;
+    oa:hasFictionalName true ;
+    oa:note "Held by the Communion of Worlds in its own article and by the Non-Coercive Zone on the political maps. Both are recorded; see questions.md." ;
+    oa:recordOrder 0 .
+
+claim:affiliation-landmark-blanco-1-communion-of-worlds a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-blanco-1 ;
+    oa:canonical true ;
+    oa:polity id:polity-communion-of-worlds ;
+    oa:recordOrder 1 .
+
+claim:affiliation-landmark-blanco-1-nocozo a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-blanco-1 ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 2 .
+
+# Bochum 14
+
+id:landmark-bochum-14 a oa:Landmark, oa:Place ;
+    skos:prefLabel "Bochum 14" ;
+    oa:catalogueDesignation "Bochum 14" .
+
+claim:affiliation-landmark-bochum-14-sagittarius-transcultural-cooperation a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-bochum-14 ;
+    oa:canonical true ;
+    oa:polity id:polity-sagittarius-transcultural-cooperation ;
+    oa:recordOrder 1 .
+
+# Bochum 4
+
+id:landmark-bochum-4 a oa:Landmark, oa:Place ;
+    skos:prefLabel "Bochum 4" ;
+    oa:catalogueDesignation "Bochum 4" .
+
+claim:affiliation-landmark-bochum-4-nocozo a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-bochum-4 ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 9 .
+
+# Butterfly Cluster
+
+id:landmark-butterfly-cluster a oa:Landmark, oa:Place ;
+    skos:prefLabel "Butterfly Cluster" ;
+    oa:catalogueDesignation "Butterfly Cluster" .
+
+claim:affiliation-landmark-butterfly-cluster-keter-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-butterfly-cluster ;
+    oa:canonical true ;
+    oa:polity id:polity-keter-dominion ;
+    oa:recordOrder 4 .
+
+# California Nebula
+
+id:landmark-california-nebula a oa:Landmark, oa:Place ;
+    skos:prefLabel "California Nebula" ;
+    oa:catalogueDesignation "California Nebula" .
+
+claim:affiliation-landmark-california-nebula-solar-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-california-nebula ;
+    oa:canonical true ;
+    oa:polity id:polity-solar-dominion ;
+    oa:recordOrder 3 .
+
+# Cat Eye Nebula
+
+id:landmark-cat-eye-nebula a oa:Landmark, oa:Place ;
+    skos:prefLabel "Cat Eye Nebula" ;
+    oa:catalogueDesignation "Cat Eye Nebula" .
+
+claim:affiliation-landmark-cat-eye-nebula-cygexpa a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-cat-eye-nebula ;
+    oa:canonical true ;
+    oa:polity id:polity-cygexpa ;
+    oa:recordOrder 18 .
+
+# Cat's Paw Nebula
+
+id:landmark-ngc-6357 a oa:Landmark, oa:Place ;
+    skos:altLabel "NGC 6357" ;
+    skos:prefLabel "Cat's Paw Nebula" ;
+    oa:catalogueDesignation "NGC 6357" ;
+    oa:hasFictionalName true ;
+    oa:note "The Laughter Hegemony's one landmark, and already bound through the polity's own roster entry; this gives it the name rather than the designation. It was briefly also a world entry, placed from the nebula's published coordinates at 4,370 ly, which is not what the cluster catalogue says of NGC 6357 -- see questions.md." ;
+    oa:recordOrder 7 .
+
+claim:affiliation-landmark-ngc-6357-laughter-hegemony a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:eg-system-articles ;
+    oa:about id:landmark-ngc-6357 ;
+    oa:canonical true ;
+    oa:polity id:polity-laughter-hegemony ;
+    oa:recordOrder 0 .
+
+# Christmas Tree Cluster
+
+id:landmark-christmas-tree-cluster a oa:Landmark, oa:Place ;
+    skos:prefLabel "Christmas Tree Cluster" ;
+    oa:catalogueDesignation "Christmas Tree Cluster" .
+
+claim:affiliation-landmark-christmas-tree-cluster-metasoft a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-christmas-tree-cluster ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft ;
+    oa:recordOrder 10 .
+
+# Collinder 121
+
+id:landmark-collinder-121 a oa:Landmark, oa:Place ;
+    skos:prefLabel "Collinder 121" ;
+    oa:catalogueDesignation "Collinder 121" .
+
+claim:affiliation-landmark-collinder-121-sophic-league a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-collinder-121 ;
+    oa:canonical true ;
+    oa:polity id:polity-sophic-league ;
+    oa:recordOrder 5 .
+
+# Collinder 132
+
+id:landmark-collinder-132 a oa:Landmark, oa:Place ;
+    skos:prefLabel "Collinder 132" ;
+    oa:catalogueDesignation "Collinder 132" .
+
+claim:affiliation-landmark-collinder-132-sophic-league a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-collinder-132 ;
+    oa:canonical true ;
+    oa:polity id:polity-sophic-league ;
+    oa:recordOrder 1 .
+
+# Collinder 135
+
+id:landmark-collinder-135 a oa:Landmark, oa:Place ;
+    skos:prefLabel "Collinder 135" ;
+    oa:catalogueDesignation "Collinder 135" .
+
+claim:affiliation-landmark-collinder-135-sophic-league a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-collinder-135 ;
+    oa:canonical true ;
+    oa:polity id:polity-sophic-league ;
+    oa:recordOrder 14 .
+
+# Collinder 140
+
+id:landmark-collinder-140 a oa:Landmark, oa:Place ;
+    skos:prefLabel "Collinder 140" ;
+    oa:catalogueDesignation "Collinder 140" .
+
+claim:affiliation-landmark-collinder-140-sophic-league a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-collinder-140 ;
+    oa:canonical true ;
+    oa:polity id:polity-sophic-league ;
+    oa:recordOrder 15 .
+
+# Collinder 173
+
+id:landmark-collinder-173 a oa:Landmark, oa:Place ;
+    skos:prefLabel "Collinder 173" ;
+    oa:catalogueDesignation "Collinder 173" .
+
+claim:affiliation-landmark-collinder-173-nocozo a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-collinder-173 ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 13 .
+
+claim:affiliation-landmark-collinder-173-sophic-league a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-collinder-173 ;
+    oa:canonical true ;
+    oa:polity id:polity-sophic-league ;
+    oa:recordOrder 0 .
+
+# Collinder 394
+
+id:landmark-collinder-394 a oa:Landmark, oa:Place ;
+    skos:prefLabel "Collinder 394" ;
+    oa:catalogueDesignation "Collinder 394" .
+
+claim:affiliation-landmark-collinder-394-mutual-progress-association a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-collinder-394 ;
+    oa:canonical true ;
+    oa:polity id:polity-mutual-progress-association ;
+    oa:recordOrder 2 .
+
+# Collinder 399
+
+id:landmark-collinder-399 a oa:Landmark, oa:Place ;
+    skos:prefLabel "Collinder 399" ;
+    oa:catalogueDesignation "Collinder 399" .
+
+claim:affiliation-landmark-collinder-399-mutual-progress-association a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-collinder-399 ;
+    oa:canonical true ;
+    oa:polity id:polity-mutual-progress-association ;
+    oa:recordOrder 13 .
+
+# Collinder 428
+
+id:landmark-collinder-428 a oa:Landmark, oa:Place ;
+    skos:prefLabel "Collinder 428" ;
+    oa:catalogueDesignation "Collinder 428" .
+
+claim:affiliation-landmark-collinder-428-cygexpa a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-collinder-428 ;
+    oa:canonical true ;
+    oa:polity id:polity-cygexpa ;
+    oa:recordOrder 12 .
+
+# Collinder 463
+
+id:landmark-collinder-463 a oa:Landmark, oa:Place ;
+    skos:prefLabel "Collinder 463" ;
+    oa:catalogueDesignation "Collinder 463" .
+
+claim:affiliation-landmark-collinder-463-solar-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-collinder-463 ;
+    oa:canonical true ;
+    oa:polity id:polity-solar-dominion ;
+    oa:recordOrder 9 .
+
+# Collinder 69
+
+id:landmark-collinder-69 a oa:Landmark, oa:Place ;
+    skos:prefLabel "Collinder 69" ;
+    oa:catalogueDesignation "Collinder 69" .
+
+claim:affiliation-landmark-collinder-69-orion-federation a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-collinder-69 ;
+    oa:canonical true ;
+    oa:polity id:polity-orion-federation ;
+    oa:recordOrder 2 .
+
+# Collinder 70
+
+id:landmark-collinder-70 a oa:Landmark, oa:Place ;
+    skos:prefLabel "Collinder 70" ;
+    oa:catalogueDesignation "Collinder 70" .
+
+claim:affiliation-landmark-collinder-70-orion-federation a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-collinder-70 ;
+    oa:canonical true ;
+    oa:polity id:polity-orion-federation ;
+    oa:recordOrder 3 .
+
+# Collinder 96
+
+id:landmark-collinder-96 a oa:Landmark, oa:Place ;
+    skos:prefLabel "Collinder 96" ;
+    oa:catalogueDesignation "Collinder 96" .
+
+claim:affiliation-landmark-collinder-96-metasoft a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-collinder-96 ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft ;
+    oa:recordOrder 6 .
+
+# Collinder 97
+
+id:landmark-collinder-97 a oa:Landmark, oa:Place ;
+    skos:prefLabel "Collinder 97" ;
+    oa:catalogueDesignation "Collinder 97" .
+
+claim:affiliation-landmark-collinder-97-metasoft a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-collinder-97 ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft ;
+    oa:recordOrder 15 .
+
+# Cone Nebula
+
+id:landmark-cone-nebula a oa:Landmark, oa:Place ;
+    skos:prefLabel "Cone Nebula" ;
+    oa:catalogueDesignation "Cone Nebula" .
+
+claim:affiliation-landmark-cone-nebula-crystal-star-domain a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:eg-system-articles ;
+    oa:about id:landmark-cone-nebula ;
+    oa:canonical true ;
+    oa:polity id:polity-crystal-star-domain ;
+    oa:recordOrder 0 .
+
+claim:affiliation-landmark-cone-nebula-orion-federation a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-cone-nebula ;
+    oa:canonical true ;
+    oa:polity id:polity-orion-federation ;
+    oa:recordOrder 4 .
+
+# Czernik 8
+
+id:landmark-czernik-8 a oa:Landmark, oa:Place ;
+    skos:prefLabel "Czernik 8" ;
+    oa:catalogueDesignation "Czernik 8" .
+
+claim:affiliation-landmark-czernik-8-cygexpa a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-czernik-8 ;
+    oa:canonical true ;
+    oa:polity id:polity-cygexpa ;
+    oa:recordOrder 17 .
+
+claim:affiliation-landmark-czernik-8-perseus-principalities a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:eg-system-articles ;
+    oa:about id:landmark-czernik-8 ;
+    oa:canonical true ;
+    oa:polity id:polity-perseus-principalities ;
+    oa:recordOrder 0 .
+
+# Danyello M'lund Cluster
+
+id:landmark-ngc-6882 a oa:Landmark, oa:Place ;
+    skos:altLabel "NGC 6882" ;
+    skos:prefLabel "Danyello M'lund Cluster" ;
+    oa:article <https://www.orionsarm.com/eg-article/462d5a3507929> ;
+    oa:catalogueDesignation "NGC 6882" ;
+    oa:hasFictionalName true ;
+    oa:note "Cygexpa's, and left behind when Cygexpa dissolved. At 1,544 ly in Vulpecula. Its neighbour NGC 6885 is on Cygexpa's landmark list too, and the two have been confused with each other since Herschel — see questions.md, because this catalogue's NGC 6885 is a different object again." ;
+    oa:recordOrder 4 .
+
+claim:affiliation-landmark-ngc-6882-cygexpa a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-6882 ;
+    oa:canonical true ;
+    oa:polity id:polity-cygexpa ;
+    oa:recordOrder 21 .
+
+claim:event-landmark-ngc-6882-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/462d5a3507929> ;
+    oa:about id:landmark-ngc-6882 ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "Colonised during the 3100s." ;
+    oa:precision oa:Circa ;
+    oa:recordOrder 0 ;
+    oa:yearAT 3150 .
+
+# Dumbbell Nebula
+
+id:landmark-dumbbell-nebula a oa:Landmark, oa:Place ;
+    skos:prefLabel "Dumbbell Nebula" ;
+    oa:catalogueDesignation "Dumbbell Nebula" .
+
+claim:affiliation-landmark-dumbbell-nebula-cygexpa a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-dumbbell-nebula ;
+    oa:canonical true ;
+    oa:polity id:polity-cygexpa ;
+    oa:recordOrder 11 .
+
+# Epsilon Aurigae
+
+id:landmark-epsilon-aurigae a oa:Landmark, oa:Place ;
+    skos:prefLabel "Epsilon Aurigae" ;
+    oa:catalogueDesignation "Epsilon Aurigae" .
+
+claim:affiliation-landmark-epsilon-aurigae-metasoft a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-epsilon-aurigae ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft ;
+    oa:recordOrder 35 .
+
+# Epsilon Geminorum
+
+id:landmark-epsilon-geminorum a oa:Landmark, oa:Place ;
+    skos:prefLabel "Epsilon Geminorum" ;
+    oa:catalogueDesignation "Epsilon Geminorum" .
+
+claim:affiliation-landmark-epsilon-geminorum-metasoft a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-epsilon-geminorum ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft ;
+    oa:recordOrder 32 .
+
+# Eskimo Nebula
+
+id:landmark-eskimo-nebula a oa:Landmark, oa:Place ;
+    skos:prefLabel "Eskimo Nebula" ;
+    oa:catalogueDesignation "Eskimo Nebula" .
+
+claim:affiliation-landmark-eskimo-nebula-metasoft a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-eskimo-nebula ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft ;
+    oa:recordOrder 22 .
+
+# Floating Star Nebula
+
+id:landmark-floating-star-nebula a oa:Landmark, oa:Place ;
+    skos:prefLabel "Floating Star Nebula" ;
+    oa:catalogueDesignation "Floating Star Nebula" .
+
+claim:affiliation-landmark-floating-star-nebula-metasoft a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-floating-star-nebula ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft ;
+    oa:recordOrder 17 .
+
+# G64.3+5.7
+
+id:landmark-g64-3-5-7 a oa:Landmark, oa:Place ;
+    skos:prefLabel "G64.3+5.7" ;
+    oa:catalogueDesignation "G64.3+5.7" .
+
+claim:affiliation-landmark-g64-3-5-7-keter-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-g64-3-5-7 ;
+    oa:canonical true ;
+    oa:polity id:polity-keter-dominion ;
+    oa:recordOrder 7 .
+
+# Gamma Cas
+
+id:landmark-gamma-cas a oa:Landmark, oa:Place ;
+    skos:prefLabel "Gamma Cas" ;
+    oa:catalogueDesignation "Gamma Cas" .
+
+claim:affiliation-landmark-gamma-cas-solar-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-gamma-cas ;
+    oa:canonical true ;
+    oa:polity id:polity-solar-dominion ;
+    oa:recordOrder 17 .
+
+# Geminga
+
+id:landmark-geminga a oa:Landmark, oa:Place ;
+    skos:prefLabel "Geminga" ;
+    oa:catalogueDesignation "Geminga" .
+
+claim:affiliation-landmark-geminga-solar-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-geminga ;
+    oa:canonical true ;
+    oa:polity id:polity-solar-dominion ;
+    oa:recordOrder 8 .
+
+# Helix Nebula
+
+id:landmark-helix-nebula a oa:Landmark, oa:Place ;
+    skos:prefLabel "Helix Nebula" ;
+    oa:catalogueDesignation "Helix Nebula" .
+
+claim:affiliation-landmark-helix-nebula-nocozo a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-helix-nebula ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 3 .
+
+# Hogg 14
+
+id:landmark-hogg-14 a oa:Landmark, oa:Place ;
+    skos:prefLabel "Hogg 14" ;
+    oa:catalogueDesignation "Hogg 14" .
+
+claim:affiliation-landmark-hogg-14-nocozo a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-hogg-14 ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 7 .
+
+# Hogg 18
+
+id:landmark-hogg-18 a oa:Landmark, oa:Place ;
+    skos:prefLabel "Hogg 18" ;
+    oa:catalogueDesignation "Hogg 18" .
+
+claim:affiliation-landmark-hogg-18-disarchy a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-hogg-18 ;
+    oa:canonical true ;
+    oa:polity id:polity-disarchy ;
+    oa:recordOrder 1 .
+
+# Hubble Variable Nebula
+
+id:landmark-hubble-variable-nebula a oa:Landmark, oa:Place ;
+    skos:prefLabel "Hubble Variable Nebula" ;
+    oa:catalogueDesignation "Hubble Variable Nebula" .
+
+claim:affiliation-landmark-hubble-variable-nebula-metasoft a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-hubble-variable-nebula ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft ;
+    oa:recordOrder 12 .
+
+# Hyades
+
+id:landmark-melotte-25 a oa:Landmark, oa:Place ;
+    skos:altLabel "Melotte 25" ;
+    skos:prefLabel "Hyades" ;
+    oa:article <https://www.orionsarm.com/eg-article/4675eb1f8688f> ;
+    oa:catalogueDesignation "Melotte 25" ;
+    oa:hasFictionalName true ;
+    oa:note "The Hyades sector, and one of the earliest places anyone went — at 154 ly it was within reach long before most of this map." ;
+    oa:recordOrder 3 .
+
+claim:affiliation-landmark-melotte-25-metasoft a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-melotte-25 ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft ;
+    oa:recordOrder 27 .
+
+claim:event-landmark-melotte-25-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4675eb1f8688f> ;
+    oa:about id:landmark-melotte-25 ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "First reached by ahumans." ;
+    oa:precision oa:Circa ;
+    oa:recordOrder 0 ;
+    oa:yearAT 700 .
+
+# IC 0361
+
+id:landmark-ic-0361 a oa:Landmark, oa:Place ;
+    skos:prefLabel "IC 0361" ;
+    oa:catalogueDesignation "IC 0361" .
+
+claim:affiliation-landmark-ic-0361-solar-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ic-0361 ;
+    oa:canonical true ;
+    oa:polity id:polity-solar-dominion ;
+    oa:recordOrder 6 .
+
+# IC 1805
+
+id:landmark-ic-1805 a oa:Landmark, oa:Place ;
+    skos:prefLabel "IC 1805" ;
+    oa:catalogueDesignation "IC 1805" .
+
+claim:affiliation-landmark-ic-1805-solar-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ic-1805 ;
+    oa:canonical true ;
+    oa:polity id:polity-solar-dominion ;
+    oa:recordOrder 12 .
+
+# IC 1848
+
+id:landmark-ic-1848 a oa:Landmark, oa:Place ;
+    skos:prefLabel "IC 1848" ;
+    oa:catalogueDesignation "IC 1848" .
+
+claim:affiliation-landmark-ic-1848-solar-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ic-1848 ;
+    oa:canonical true ;
+    oa:polity id:polity-solar-dominion ;
+    oa:recordOrder 11 .
+
+# IC 405
+
+id:landmark-ic-405 a oa:Landmark, oa:Place ;
+    skos:prefLabel "IC 405" ;
+    oa:catalogueDesignation "IC 405" .
+
+claim:affiliation-landmark-ic-405-metasoft a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ic-405 ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft ;
+    oa:recordOrder 18 .
+
+# IC 417
+
+id:landmark-ic-417 a oa:Landmark, oa:Place ;
+    skos:prefLabel "IC 417" ;
+    oa:catalogueDesignation "IC 417" .
+
+claim:affiliation-landmark-ic-417-solar-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ic-417 ;
+    oa:canonical true ;
+    oa:polity id:polity-solar-dominion ;
+    oa:recordOrder 20 .
+
+# IC 4651
+
+id:landmark-ic-4651 a oa:Landmark, oa:Place ;
+    skos:prefLabel "IC 4651" ;
+    oa:catalogueDesignation "IC 4651" .
+
+claim:affiliation-landmark-ic-4651-sagittarius-transcultural-cooperation a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ic-4651 ;
+    oa:canonical true ;
+    oa:polity id:polity-sagittarius-transcultural-cooperation ;
+    oa:recordOrder 0 .
+
+# IC 4665
+
+id:landmark-ic-4665 a oa:Landmark, oa:Place ;
+    skos:prefLabel "IC 4665" ;
+    oa:catalogueDesignation "IC 4665" .
+
+claim:affiliation-landmark-ic-4665-keter-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ic-4665 ;
+    oa:canonical true ;
+    oa:polity id:polity-keter-dominion ;
+    oa:recordOrder 6 .
+
+# Iskudarian 1
+
+id:landmark-iskudarian-1 a oa:Landmark, oa:Place ;
+    skos:prefLabel "Iskudarian 1" ;
+    oa:catalogueDesignation "Iskudarian 1" .
+
+claim:affiliation-landmark-iskudarian-1-solar-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-iskudarian-1 ;
+    oa:canonical true ;
+    oa:polity id:polity-solar-dominion ;
+    oa:recordOrder 29 .
+
+# Jupiter Nebula
+
+id:landmark-jupiter-nebula a oa:Landmark, oa:Place ;
+    skos:prefLabel "Jupiter Nebula" ;
+    oa:catalogueDesignation "Jupiter Nebula" .
+
+claim:affiliation-landmark-jupiter-nebula-nocozo a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-jupiter-nebula ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 16 .
+
+# Lambda Ori Nebula
+
+id:landmark-lambda-ori-nebula a oa:Landmark, oa:Place ;
+    skos:prefLabel "Lambda Ori Nebula" ;
+    oa:catalogueDesignation "Lambda Ori Nebula" .
+
+claim:affiliation-landmark-lambda-ori-nebula-metasoft a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-lambda-ori-nebula ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft ;
+    oa:recordOrder 13 .
+
+# LU Geminorum
+
+id:landmark-lu-geminorum a oa:Landmark, oa:Place ;
+    skos:prefLabel "LU Geminorum" ;
+    oa:catalogueDesignation "LU Geminorum" .
+
+claim:affiliation-landmark-lu-geminorum-metasoft a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-lu-geminorum ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft ;
+    oa:recordOrder 31 .
+
+# Lynga 2
+
+id:landmark-lynga-2 a oa:Landmark, oa:Place ;
+    skos:prefLabel "Lynga 2" ;
+    oa:catalogueDesignation "Lynga 2" .
+
+claim:affiliation-landmark-lynga-2-disarchy a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-lynga-2 ;
+    oa:canonical true ;
+    oa:polity id:polity-disarchy ;
+    oa:recordOrder 0 .
+
+# Lynga 7
+
+id:landmark-lynga-7 a oa:Landmark, oa:Place ;
+    skos:prefLabel "Lynga 7" ;
+    oa:catalogueDesignation "Lynga 7" .
+
+claim:affiliation-landmark-lynga-7-negentropy-alliance a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-lynga-7 ;
+    oa:canonical true ;
+    oa:polity id:polity-negentropy-alliance ;
+    oa:recordOrder 6 .
+
+# M23
+
+id:landmark-m23 a oa:Landmark, oa:Place ;
+    skos:prefLabel "M23" ;
+    oa:catalogueDesignation "M23" .
+
+claim:affiliation-landmark-m23-mutual-progress-association a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-m23 ;
+    oa:canonical true ;
+    oa:polity id:polity-mutual-progress-association ;
+    oa:recordOrder 7 .
+
+# M25
+
+id:landmark-m25 a oa:Landmark, oa:Place ;
+    skos:prefLabel "M25" ;
+    oa:catalogueDesignation "M25" .
+
+claim:affiliation-landmark-m25-keter-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-m25 ;
+    oa:canonical true ;
+    oa:polity id:polity-keter-dominion ;
+    oa:recordOrder 2 .
+
+# M34
+
+id:landmark-m34 a oa:Landmark, oa:Place ;
+    skos:prefLabel "M34" ;
+    oa:catalogueDesignation "M34" .
+
+claim:affiliation-landmark-m34-solar-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-m34 ;
+    oa:canonical true ;
+    oa:polity id:polity-solar-dominion ;
+    oa:recordOrder 2 .
+
+# M35
+
+id:landmark-m35 a oa:Landmark, oa:Place ;
+    skos:prefLabel "M35" ;
+    oa:catalogueDesignation "M35" .
+
+claim:affiliation-landmark-m35-metasoft a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-m35 ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft ;
+    oa:recordOrder 8 .
+
+# M39
+
+id:landmark-m39 a oa:Landmark, oa:Place ;
+    skos:prefLabel "M39" ;
+    oa:catalogueDesignation "M39" .
+
+claim:affiliation-landmark-m39-solar-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-m39 ;
+    oa:canonical true ;
+    oa:polity id:polity-solar-dominion ;
+    oa:recordOrder 18 .
+
+# M41
+
+id:landmark-m41 a oa:Landmark, oa:Place ;
+    skos:prefLabel "M41" ;
+    oa:catalogueDesignation "M41" .
+
+claim:affiliation-landmark-m41-sophic-league a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-m41 ;
+    oa:canonical true ;
+    oa:polity id:polity-sophic-league ;
+    oa:recordOrder 6 .
+
+# M47
+
+id:landmark-m47 a oa:Landmark, oa:Place ;
+    skos:prefLabel "M47" ;
+    oa:catalogueDesignation "M47" .
+
+claim:affiliation-landmark-m47-sophic-league a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-m47 ;
+    oa:canonical true ;
+    oa:polity id:polity-sophic-league ;
+    oa:recordOrder 8 .
+
+# M48
+
+id:landmark-m48 a oa:Landmark, oa:Place ;
+    skos:prefLabel "M48" ;
+    oa:catalogueDesignation "M48" .
+
+claim:affiliation-landmark-m48-sophic-league a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-m48 ;
+    oa:canonical true ;
+    oa:polity id:polity-sophic-league ;
+    oa:recordOrder 17 .
+
+# M50
+
+id:landmark-m50 a oa:Landmark, oa:Place ;
+    skos:prefLabel "M50" ;
+    oa:catalogueDesignation "M50" .
+
+claim:affiliation-landmark-m50-emple-dokcetics a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-m50 ;
+    oa:canonical true ;
+    oa:polity id:polity-emple-dokcetics ;
+    oa:recordOrder 2 .
+
+# M67
+
+id:landmark-m67 a oa:Landmark, oa:Place ;
+    skos:prefLabel "M67" ;
+    oa:catalogueDesignation "M67" .
+
+claim:affiliation-landmark-m67-sophic-league a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-m67 ;
+    oa:canonical true ;
+    oa:polity id:polity-sophic-league ;
+    oa:recordOrder 18 .
+
+# M78
+
+id:landmark-m78 a oa:Landmark, oa:Place ;
+    skos:prefLabel "M78" ;
+    oa:catalogueDesignation "M78" .
+
+claim:affiliation-landmark-m78-orion-federation a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-m78 ;
+    oa:canonical true ;
+    oa:polity id:polity-orion-federation ;
+    oa:recordOrder 1 .
+
+# Markarian 6
+
+id:landmark-markarian-6 a oa:Landmark, oa:Place ;
+    skos:prefLabel "Markarian 6" ;
+    oa:catalogueDesignation "Markarian 6" .
+
+claim:affiliation-landmark-markarian-6-solar-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-markarian-6 ;
+    oa:canonical true ;
+    oa:polity id:polity-solar-dominion ;
+    oa:recordOrder 7 .
+
+# Melotte 111
+
+id:landmark-melotte-111 a oa:Landmark, oa:Place ;
+    skos:prefLabel "Melotte 111" ;
+    oa:catalogueDesignation "Melotte 111" .
+
+claim:affiliation-landmark-melotte-111-metasoft a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-melotte-111 ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft ;
+    oa:recordOrder 25 .
+
+# Monkey Nebula
+
+id:landmark-monkey-nebula a oa:Landmark, oa:Place ;
+    skos:prefLabel "Monkey Nebula" ;
+    oa:catalogueDesignation "Monkey Nebula" .
+
+claim:affiliation-landmark-monkey-nebula-metasoft a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-monkey-nebula ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft ;
+    oa:recordOrder 9 .
+
+# NGC 0189
+
+id:landmark-ngc-0189 a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 0189" ;
+    oa:catalogueDesignation "NGC 0189" .
+
+claim:affiliation-landmark-ngc-0189-cygexpa a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-0189 ;
+    oa:canonical true ;
+    oa:polity id:polity-cygexpa ;
+    oa:recordOrder 16 .
+
+# NGC 0225
+
+id:landmark-ngc-0225 a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 0225" ;
+    oa:catalogueDesignation "NGC 0225" .
+
+claim:affiliation-landmark-ngc-0225-cygexpa a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-0225 ;
+    oa:canonical true ;
+    oa:polity id:polity-cygexpa ;
+    oa:recordOrder 15 .
+
+# NGC 0752
+
+id:landmark-ngc-0752 a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 0752" ;
+    oa:catalogueDesignation "NGC 0752" .
+
+claim:affiliation-landmark-ngc-0752-solar-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-0752 ;
+    oa:canonical true ;
+    oa:polity id:polity-solar-dominion ;
+    oa:recordOrder 1 .
+
+# NGC 1027
+
+id:landmark-ngc-1027 a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 1027" ;
+    oa:catalogueDesignation "NGC 1027" .
+
+claim:affiliation-landmark-ngc-1027-solar-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-1027 ;
+    oa:canonical true ;
+    oa:polity id:polity-solar-dominion ;
+    oa:recordOrder 10 .
+
+# NGC 1342
+
+id:landmark-ngc-1342 a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 1342" ;
+    oa:catalogueDesignation "NGC 1342" .
+
+claim:affiliation-landmark-ngc-1342-solar-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-1342 ;
+    oa:canonical true ;
+    oa:polity id:polity-solar-dominion ;
+    oa:recordOrder 4 .
+
+# NGC 1444
+
+id:landmark-ngc-1444 a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 1444" ;
+    oa:catalogueDesignation "NGC 1444" .
+
+claim:affiliation-landmark-ngc-1444-solar-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-1444 ;
+    oa:canonical true ;
+    oa:polity id:polity-solar-dominion ;
+    oa:recordOrder 25 .
+
+# NGC 1498
+
+id:landmark-ngc-1498 a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 1498" ;
+    oa:catalogueDesignation "NGC 1498" .
+
+claim:affiliation-landmark-ngc-1498-solar-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-1498 ;
+    oa:canonical true ;
+    oa:polity id:polity-solar-dominion ;
+    oa:recordOrder 26 .
+
+# NGC 1502
+
+id:landmark-ngc-1502 a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 1502" ;
+    oa:catalogueDesignation "NGC 1502" .
+
+claim:affiliation-landmark-ngc-1502-solar-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-1502 ;
+    oa:canonical true ;
+    oa:polity id:polity-solar-dominion ;
+    oa:recordOrder 32 .
+
+# NGC 1513
+
+id:landmark-ngc-1513 a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 1513" ;
+    oa:catalogueDesignation "NGC 1513" .
+
+claim:affiliation-landmark-ngc-1513-solar-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-1513 ;
+    oa:canonical true ;
+    oa:polity id:polity-solar-dominion ;
+    oa:recordOrder 21 .
+
+# NGC 1528
+
+id:landmark-ngc-1528 a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 1528" ;
+    oa:catalogueDesignation "NGC 1528" .
+
+claim:affiliation-landmark-ngc-1528-solar-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-1528 ;
+    oa:canonical true ;
+    oa:polity id:polity-solar-dominion ;
+    oa:recordOrder 22 .
+
+# NGC 1545
+
+id:landmark-ngc-1545 a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 1545" ;
+    oa:catalogueDesignation "NGC 1545" .
+
+claim:affiliation-landmark-ngc-1545-solar-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-1545 ;
+    oa:canonical true ;
+    oa:polity id:polity-solar-dominion ;
+    oa:recordOrder 23 .
+
+# NGC 1579
+
+id:landmark-ngc-1579 a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 1579" ;
+    oa:catalogueDesignation "NGC 1579" .
+
+claim:affiliation-landmark-ngc-1579-solar-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-1579 ;
+    oa:canonical true ;
+    oa:polity id:polity-solar-dominion ;
+    oa:recordOrder 5 .
+
+# NGC 1647
+
+id:landmark-ngc-1647 a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 1647" ;
+    oa:catalogueDesignation "NGC 1647" .
+
+claim:affiliation-landmark-ngc-1647-metasoft a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-1647 ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft ;
+    oa:recordOrder 1 .
+
+# NGC 1662
+
+id:landmark-ngc-1662 a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 1662" ;
+    oa:catalogueDesignation "NGC 1662" .
+
+claim:affiliation-landmark-ngc-1662-metasoft a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-1662 ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft ;
+    oa:recordOrder 36 .
+
+# NGC 1746
+
+id:landmark-ngc-1746 a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 1746" ;
+    oa:catalogueDesignation "NGC 1746" .
+
+claim:affiliation-landmark-ngc-1746-metasoft a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-1746 ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft ;
+    oa:recordOrder 0 .
+
+# NGC 1750
+
+id:landmark-ngc-1750 a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 1750" ;
+    oa:catalogueDesignation "NGC 1750" .
+
+claim:affiliation-landmark-ngc-1750-metasoft a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-1750 ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft ;
+    oa:recordOrder 2 .
+
+# NGC 1758
+
+id:landmark-ngc-1758 a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 1758" ;
+    oa:catalogueDesignation "NGC 1758" .
+
+claim:affiliation-landmark-ngc-1758-metasoft a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-1758 ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft ;
+    oa:recordOrder 3 .
+
+# NGC 1901
+
+id:landmark-ngc-1901 a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 1901" ;
+    oa:catalogueDesignation "NGC 1901" .
+
+claim:affiliation-landmark-ngc-1901-sophic-league a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-1901 ;
+    oa:canonical true ;
+    oa:polity id:polity-sophic-league ;
+    oa:recordOrder 3 .
+
+# NGC 2112
+
+id:landmark-ngc-2112 a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 2112" ;
+    oa:catalogueDesignation "NGC 2112" .
+
+claim:affiliation-landmark-ngc-2112-metasoft a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-2112 ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft ;
+    oa:recordOrder 5 .
+
+# NGC 2126
+
+id:landmark-ngc-2126 a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 2126" ;
+    oa:catalogueDesignation "NGC 2126" .
+
+claim:affiliation-landmark-ngc-2126-ulysses-network a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-2126 ;
+    oa:canonical true ;
+    oa:polity id:polity-ulysses-network ;
+    oa:recordOrder 0 .
+
+# NGC 2169
+
+id:landmark-ngc-2169 a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 2169" ;
+    oa:catalogueDesignation "NGC 2169" .
+
+claim:affiliation-landmark-ngc-2169-metasoft a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-2169 ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft ;
+    oa:recordOrder 4 .
+
+# NGC 2215
+
+id:landmark-ngc-2215 a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 2215" ;
+    oa:catalogueDesignation "NGC 2215" .
+
+claim:affiliation-landmark-ngc-2215-metasoft a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-2215 ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft ;
+    oa:recordOrder 7 .
+
+# NGC 2232
+
+id:landmark-ngc-2232 a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 2232" ;
+    oa:catalogueDesignation "NGC 2232" .
+
+claim:affiliation-landmark-ngc-2232-metasoft a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-2232 ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft ;
+    oa:recordOrder 14 .
+
+# NGC 2281
+
+id:landmark-ngc-2281 a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 2281" ;
+    oa:catalogueDesignation "NGC 2281" .
+
+claim:affiliation-landmark-ngc-2281-metasoft a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-2281 ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft ;
+    oa:recordOrder 26 .
+
+# NGC 2301
+
+id:landmark-ngc-2301 a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 2301" ;
+    oa:catalogueDesignation "NGC 2301" .
+
+claim:affiliation-landmark-ngc-2301-emple-dokcetics a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-2301 ;
+    oa:canonical true ;
+    oa:polity id:polity-emple-dokcetics ;
+    oa:recordOrder 4 .
+
+# NGC 2343
+
+id:landmark-ngc-2343 a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 2343" ;
+    oa:catalogueDesignation "NGC 2343" .
+
+claim:affiliation-landmark-ngc-2343-emple-dokcetics a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-2343 ;
+    oa:canonical true ;
+    oa:polity id:polity-emple-dokcetics ;
+    oa:recordOrder 3 .
+
+# NGC 2353
+
+id:landmark-ngc-2353 a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 2353" ;
+    oa:catalogueDesignation "NGC 2353" .
+
+claim:affiliation-landmark-ngc-2353-emple-dokcetics a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-2353 ;
+    oa:canonical true ;
+    oa:polity id:polity-emple-dokcetics ;
+    oa:recordOrder 0 .
+
+# NGC 2374
+
+id:landmark-ngc-2374 a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 2374" ;
+    oa:catalogueDesignation "NGC 2374" .
+
+claim:affiliation-landmark-ngc-2374-emple-dokcetics a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-2374 ;
+    oa:canonical true ;
+    oa:polity id:polity-emple-dokcetics ;
+    oa:recordOrder 1 .
+
+# NGC 2395
+
+id:landmark-ngc-2395 a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 2395" ;
+    oa:catalogueDesignation "NGC 2395" .
+
+claim:affiliation-landmark-ngc-2395-sophic-league a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-2395 ;
+    oa:canonical true ;
+    oa:polity id:polity-sophic-league ;
+    oa:recordOrder 20 .
+
+# NGC 2422
+
+id:landmark-ngc-2422 a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 2422" ;
+    oa:catalogueDesignation "NGC 2422" .
+
+claim:affiliation-landmark-ngc-2422-sophic-league a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-2422 ;
+    oa:canonical true ;
+    oa:polity id:polity-sophic-league ;
+    oa:recordOrder 7 .
+
+# NGC 2423
+
+id:landmark-ngc-2423 a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 2423" ;
+    oa:catalogueDesignation "NGC 2423" .
+
+claim:affiliation-landmark-ngc-2423-sophic-league a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-2423 ;
+    oa:canonical true ;
+    oa:polity id:polity-sophic-league ;
+    oa:recordOrder 10 .
+
+# NGC 2438
+
+id:landmark-ngc-2438 a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 2438" ;
+    oa:catalogueDesignation "NGC 2438" .
+
+claim:affiliation-landmark-ngc-2438-nocozo a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-2438 ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 18 .
+
+# NGC 2451
+
+id:landmark-ngc-2451 a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 2451" ;
+    oa:catalogueDesignation "NGC 2451" .
+
+claim:affiliation-landmark-ngc-2451-sophic-league a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-2451 ;
+    oa:canonical true ;
+    oa:polity id:polity-sophic-league ;
+    oa:recordOrder 13 .
+
+# NGC 2451A
+
+id:landmark-ngc-2451a a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 2451A" ;
+    oa:catalogueDesignation "NGC 2451A" .
+
+claim:affiliation-landmark-ngc-2451a-the-transcend a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:eg-system-articles ;
+    oa:about id:landmark-ngc-2451a ;
+    oa:canonical true ;
+    oa:polity id:polity-the-transcend ;
+    oa:recordOrder 0 .
+
+# NGC 246
+
+id:landmark-ngc-246 a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 246" ;
+    oa:catalogueDesignation "NGC 246" .
+
+claim:affiliation-landmark-ngc-246-solar-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-246 ;
+    oa:canonical true ;
+    oa:polity id:polity-solar-dominion ;
+    oa:recordOrder 0 .
+
+# NGC 2516
+
+id:landmark-ngc-2516 a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 2516" ;
+    oa:catalogueDesignation "NGC 2516" .
+
+claim:affiliation-landmark-ngc-2516-sophic-league a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-2516 ;
+    oa:canonical true ;
+    oa:polity id:polity-sophic-league ;
+    oa:recordOrder 2 .
+
+# NGC 2527
+
+id:landmark-ngc-2527 a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 2527" ;
+    oa:catalogueDesignation "NGC 2527" .
+
+claim:affiliation-landmark-ngc-2527-sophic-league a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-2527 ;
+    oa:canonical true ;
+    oa:polity id:polity-sophic-league ;
+    oa:recordOrder 9 .
+
+# NGC 2546
+
+id:landmark-ngc-2546 a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 2546" ;
+    oa:catalogueDesignation "NGC 2546" .
+
+claim:affiliation-landmark-ngc-2546-nocozo a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-2546 ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 14 .
+
+# NGC 2547
+
+id:landmark-ngc-2547 a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 2547" ;
+    oa:catalogueDesignation "NGC 2547" .
+
+claim:affiliation-landmark-ngc-2547-sophic-league a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-2547 ;
+    oa:canonical true ;
+    oa:polity id:polity-sophic-league ;
+    oa:recordOrder 4 .
+
+# NGC 2548
+
+id:landmark-ngc-2548 a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 2548" ;
+    oa:catalogueDesignation "NGC 2548" .
+
+claim:affiliation-landmark-ngc-2548-sophic-league a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-2548 ;
+    oa:canonical true ;
+    oa:polity id:polity-sophic-league ;
+    oa:recordOrder 19 .
+
+# NGC 3228
+
+id:landmark-ngc-3228 a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 3228" ;
+    oa:catalogueDesignation "NGC 3228" .
+
+claim:affiliation-landmark-ngc-3228-nocozo a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-3228 ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 6 .
+
+# NGC 3532
+
+id:landmark-ngc-3532 a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 3532" ;
+    oa:catalogueDesignation "NGC 3532" .
+
+claim:affiliation-landmark-ngc-3532-nocozo a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-3532 ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 5 .
+
+# NGC 3680
+
+id:landmark-ngc-3680 a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 3680" ;
+    oa:catalogueDesignation "NGC 3680" .
+
+claim:affiliation-landmark-ngc-3680-nocozo a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-3680 ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 15 .
+
+# NGC 4337
+
+id:landmark-ngc-4337 a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 4337" ;
+    oa:catalogueDesignation "NGC 4337" .
+
+claim:affiliation-landmark-ngc-4337-nocozo a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-4337 ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 4 .
+
+# NGC 4625
+
+id:landmark-ngc-4625 a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 4625" ;
+    oa:catalogueDesignation "NGC 4625" .
+
+claim:affiliation-landmark-ngc-4625-sagittarius-transcultural-cooperation a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-4625 ;
+    oa:canonical true ;
+    oa:polity id:polity-sagittarius-transcultural-cooperation ;
+    oa:recordOrder 4 .
+
+# NGC 5460
+
+id:landmark-ngc-5460 a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 5460" ;
+    oa:catalogueDesignation "NGC 5460" .
+
+claim:affiliation-landmark-ngc-5460-paradigm a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-5460 ;
+    oa:canonical true ;
+    oa:polity id:polity-paradigm ;
+    oa:recordOrder 0 .
+
+# NGC 559
+
+id:landmark-ngc-559 a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 559" ;
+    oa:catalogueDesignation "NGC 559" .
+
+claim:affiliation-landmark-ngc-559-solar-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-559 ;
+    oa:canonical true ;
+    oa:polity id:polity-solar-dominion ;
+    oa:recordOrder 15 .
+
+# NGC 5662
+
+id:landmark-ngc-5662 a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 5662" ;
+    oa:catalogueDesignation "NGC 5662" .
+
+claim:affiliation-landmark-ngc-5662-negentropy-alliance a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-5662 ;
+    oa:canonical true ;
+    oa:polity id:polity-negentropy-alliance ;
+    oa:recordOrder 2 .
+
+# NGC 5822
+
+id:landmark-ngc-5822 a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 5822" ;
+    oa:catalogueDesignation "NGC 5822" .
+
+claim:affiliation-landmark-ngc-5822-negentropy-alliance a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-5822 ;
+    oa:canonical true ;
+    oa:polity id:polity-negentropy-alliance ;
+    oa:recordOrder 8 .
+
+# NGC 5823
+
+id:landmark-ngc-5823 a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 5823" ;
+    oa:catalogueDesignation "NGC 5823" .
+
+claim:affiliation-landmark-ngc-5823-negentropy-alliance a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-5823 ;
+    oa:canonical true ;
+    oa:polity id:polity-negentropy-alliance ;
+    oa:recordOrder 1 .
+
+# NGC 6025
+
+id:landmark-ngc-6025 a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 6025" ;
+    oa:catalogueDesignation "NGC 6025" .
+
+claim:affiliation-landmark-ngc-6025-nocozo a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-6025 ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 0 .
+
+# NGC 6087
+
+id:landmark-ngc-6087 a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 6087" ;
+    oa:catalogueDesignation "NGC 6087" .
+
+claim:affiliation-landmark-ngc-6087-nocozo a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-6087 ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 1 .
+
+# NGC 6124
+
+id:landmark-ngc-6124 a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 6124" ;
+    oa:catalogueDesignation "NGC 6124" .
+
+claim:affiliation-landmark-ngc-6124-negentropy-alliance a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-6124 ;
+    oa:canonical true ;
+    oa:polity id:polity-negentropy-alliance ;
+    oa:recordOrder 0 .
+
+# NGC 6134
+
+id:landmark-ngc-6134 a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 6134" ;
+    oa:catalogueDesignation "NGC 6134" .
+
+claim:affiliation-landmark-ngc-6134-negentropy-alliance a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-6134 ;
+    oa:canonical true ;
+    oa:polity id:polity-negentropy-alliance ;
+    oa:recordOrder 5 .
+
+# NGC 6178
+
+id:landmark-ngc-6178 a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 6178" ;
+    oa:catalogueDesignation "NGC 6178" .
+
+claim:affiliation-landmark-ngc-6178-negentropy-alliance a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-6178 ;
+    oa:canonical true ;
+    oa:polity id:polity-negentropy-alliance ;
+    oa:recordOrder 4 .
+
+# NGC 6250
+
+id:landmark-ngc-6250 a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 6250" ;
+    oa:catalogueDesignation "NGC 6250" .
+
+claim:affiliation-landmark-ngc-6250-negentropy-alliance a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-6250 ;
+    oa:canonical true ;
+    oa:polity id:polity-negentropy-alliance ;
+    oa:recordOrder 7 .
+
+# NGC 6281
+
+id:landmark-ngc-6281 a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 6281" ;
+    oa:catalogueDesignation "NGC 6281" .
+
+claim:affiliation-landmark-ngc-6281-mutual-progress-association a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-6281 ;
+    oa:canonical true ;
+    oa:polity id:polity-mutual-progress-association ;
+    oa:recordOrder 9 .
+
+# NGC 6416
+
+id:landmark-ngc-6416 a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 6416" ;
+    oa:catalogueDesignation "NGC 6416" .
+
+claim:affiliation-landmark-ngc-6416-sagittarius-transcultural-cooperation a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-6416 ;
+    oa:canonical true ;
+    oa:polity id:polity-sagittarius-transcultural-cooperation ;
+    oa:recordOrder 5 .
+
+# NGC 6494
+
+id:landmark-ngc-6494 a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 6494" ;
+    oa:catalogueDesignation "NGC 6494" .
+
+claim:affiliation-landmark-ngc-6494-mutual-progress-association a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-6494 ;
+    oa:canonical true ;
+    oa:polity id:polity-mutual-progress-association ;
+    oa:recordOrder 8 .
+
+# NGC 6589
+
+id:landmark-ngc-6589 a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 6589" ;
+    oa:catalogueDesignation "NGC 6589" .
+
+claim:affiliation-landmark-ngc-6589-keter-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-6589 ;
+    oa:canonical true ;
+    oa:polity id:polity-keter-dominion ;
+    oa:recordOrder 3 .
+
+# NGC 6633
+
+id:landmark-ngc-6633 a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 6633" ;
+    oa:catalogueDesignation "NGC 6633" .
+
+claim:affiliation-landmark-ngc-6633-mutual-progress-association a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-6633 ;
+    oa:canonical true ;
+    oa:polity id:polity-mutual-progress-association ;
+    oa:recordOrder 6 .
+
+# NGC 6709
+
+id:landmark-ngc-6709 a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 6709" ;
+    oa:catalogueDesignation "NGC 6709" .
+
+claim:affiliation-landmark-ngc-6709-keter-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-6709 ;
+    oa:canonical true ;
+    oa:polity id:polity-keter-dominion ;
+    oa:recordOrder 8 .
+
+# NGC 6716
+
+id:landmark-ngc-6716 a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 6716" ;
+    oa:catalogueDesignation "NGC 6716" .
+
+claim:affiliation-landmark-ngc-6716-mutual-progress-association a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-6716 ;
+    oa:canonical true ;
+    oa:polity id:polity-mutual-progress-association ;
+    oa:recordOrder 1 .
+
+# NGC 6802
+
+id:landmark-ngc-6802 a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 6802" ;
+    oa:catalogueDesignation "NGC 6802" .
+
+claim:affiliation-landmark-ngc-6802-mutual-progress-association a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-6802 ;
+    oa:canonical true ;
+    oa:polity id:polity-mutual-progress-association ;
+    oa:recordOrder 3 .
+
+# NGC 6885
+
+id:landmark-ngc-6885 a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 6885" ;
+    oa:catalogueDesignation "NGC 6885" .
+
+claim:affiliation-landmark-ngc-6885-cygexpa a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-6885 ;
+    oa:canonical true ;
+    oa:polity id:polity-cygexpa ;
+    oa:recordOrder 13 .
+
+# NGC 6994
+
+id:landmark-ngc-6994 a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 6994" ;
+    oa:catalogueDesignation "NGC 6994" .
+
+claim:affiliation-landmark-ngc-6994-mutual-progress-association a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-6994 ;
+    oa:canonical true ;
+    oa:polity id:polity-mutual-progress-association ;
+    oa:recordOrder 0 .
+
+# NGC 6996
+
+id:landmark-ngc-6996 a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 6996" ;
+    oa:catalogueDesignation "NGC 6996" .
+
+claim:affiliation-landmark-ngc-6996-cygexpa a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-6996 ;
+    oa:canonical true ;
+    oa:polity id:polity-cygexpa ;
+    oa:recordOrder 14 .
+
+# NGC 7160
+
+id:landmark-ngc-7160 a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 7160" ;
+    oa:catalogueDesignation "NGC 7160" .
+
+claim:affiliation-landmark-ngc-7160-cygexpa a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-7160 ;
+    oa:canonical true ;
+    oa:polity id:polity-cygexpa ;
+    oa:recordOrder 19 .
+
+# NGC 7762
+
+id:landmark-ngc-7762 a oa:Landmark, oa:Place ;
+    skos:prefLabel "NGC 7762" ;
+    oa:catalogueDesignation "NGC 7762" .
+
+claim:affiliation-landmark-ngc-7762-cygexpa a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-7762 ;
+    oa:canonical true ;
+    oa:polity id:polity-cygexpa ;
+    oa:recordOrder 20 .
+
+# North America Nebula
+
+id:landmark-north-america-nebula a oa:Landmark, oa:Place ;
+    skos:prefLabel "North America Nebula" ;
+    oa:catalogueDesignation "North America Nebula" .
+
+claim:affiliation-landmark-north-america-nebula-cygexpa a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-north-america-nebula ;
+    oa:canonical true ;
+    oa:polity id:polity-cygexpa ;
+    oa:recordOrder 6 .
+
+# Omicron Velorum Cluster
+
+id:landmark-omicron-velorum-cluster a oa:Landmark, oa:Place ;
+    skos:prefLabel "Omicron Velorum Cluster" ;
+    oa:catalogueDesignation "Omicron Velorum Cluster" .
+
+claim:affiliation-landmark-omicron-velorum-cluster-sophic-league a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-omicron-velorum-cluster ;
+    oa:canonical true ;
+    oa:polity id:polity-sophic-league ;
+    oa:recordOrder 12 .
+
+# Owl Nebula
+
+id:landmark-owl-nebula a oa:Landmark, oa:Place ;
+    skos:prefLabel "Owl Nebula" ;
+    oa:catalogueDesignation "Owl Nebula" .
+
+claim:affiliation-landmark-owl-nebula-solar-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-owl-nebula ;
+    oa:canonical true ;
+    oa:polity id:polity-solar-dominion ;
+    oa:recordOrder 28 .
+
+# Pismis 4
+
+id:landmark-pismis-4 a oa:Landmark, oa:Place ;
+    skos:prefLabel "Pismis 4" ;
+    oa:catalogueDesignation "Pismis 4" .
+
+claim:affiliation-landmark-pismis-4-nocozo a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-pismis-4 ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 12 .
+
+# Pismis 5
+
+id:landmark-pismis-5 a oa:Landmark, oa:Place ;
+    skos:prefLabel "Pismis 5" ;
+    oa:catalogueDesignation "Pismis 5" .
+
+claim:affiliation-landmark-pismis-5-nocozo a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-pismis-5 ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 8 .
+
+# Pleiades
+
+id:landmark-pleiades a oa:Landmark, oa:Place ;
+    skos:prefLabel "Pleiades" ;
+    oa:catalogueDesignation "Pleiades" .
+
+claim:affiliation-landmark-pleiades-metasoft a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-pleiades ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft ;
+    oa:recordOrder 21 .
+
+# Praesepe
+
+id:landmark-praesepe a oa:Landmark, oa:Place ;
+    skos:prefLabel "Praesepe" ;
+    oa:catalogueDesignation "Praesepe" .
+
+claim:affiliation-landmark-praesepe-metasoft a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-praesepe ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft ;
+    oa:recordOrder 23 .
+
+# Ptolemy's Cluster
+
+id:landmark-ptolemy-s-cluster a oa:Landmark, oa:Place ;
+    skos:prefLabel "Ptolemy's Cluster" ;
+    oa:catalogueDesignation "Ptolemy's Cluster" .
+
+claim:affiliation-landmark-ptolemy-s-cluster-keter-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ptolemy-s-cluster ;
+    oa:canonical true ;
+    oa:polity id:polity-keter-dominion ;
+    oa:recordOrder 0 .
+
+# Rho Ophiuchi Complex
+
+id:landmark-rho-ophiuchi-complex a oa:Landmark, oa:Place ;
+    skos:prefLabel "Rho Ophiuchi Complex" ;
+    oa:catalogueDesignation "Rho Ophiuchi Complex" .
+
+claim:affiliation-landmark-rho-ophiuchi-complex-mutual-progress-association a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-rho-ophiuchi-complex ;
+    oa:canonical true ;
+    oa:polity id:polity-mutual-progress-association ;
+    oa:recordOrder 10 .
+
+# Rosette Cluster
+
+id:landmark-ngc-2244 a oa:Landmark, oa:Place ;
+    skos:altLabel "NGC 2244" ;
+    skos:prefLabel "Rosette Cluster" ;
+    oa:article <https://www.orionsarm.com/eg-article/47768de1cded2> ;
+    oa:catalogueDesignation "NGC 2244" ;
+    oa:hasFictionalName true ;
+    oa:note "Held jointly by the Non-Coercive Zone and the TechnoRapture HyperNation, so the cluster ring is drawn halved between them." ;
+    oa:recordOrder 2 .
+
+claim:affiliation-landmark-ngc-2244-crystal-star-domain a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:eg-system-articles ;
+    oa:about id:landmark-ngc-2244 ;
+    oa:canonical true ;
+    oa:polity id:polity-crystal-star-domain ;
+    oa:recordOrder 1 .
+
+claim:affiliation-landmark-ngc-2244-nocozo a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ngc-2244 ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 19 .
+
+claim:affiliation-landmark-ngc-2244-technorapture-hypernation a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:eg-system-articles ;
+    oa:about id:landmark-ngc-2244 ;
+    oa:canonical true ;
+    oa:polity id:polity-technorapture-hypernation ;
+    oa:recordOrder 0 .
+
+# Roslund 5
+
+id:landmark-roslund-5 a oa:Landmark, oa:Place ;
+    skos:prefLabel "Roslund 5" ;
+    oa:catalogueDesignation "Roslund 5" .
+
+claim:affiliation-landmark-roslund-5-cygexpa a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-roslund-5 ;
+    oa:canonical true ;
+    oa:polity id:polity-cygexpa ;
+    oa:recordOrder 8 .
+
+# Ruprecht 108
+
+id:landmark-ruprecht-108 a oa:Landmark, oa:Place ;
+    skos:prefLabel "Ruprecht 108" ;
+    oa:catalogueDesignation "Ruprecht 108" .
+
+claim:affiliation-landmark-ruprecht-108-negentropy-alliance a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ruprecht-108 ;
+    oa:canonical true ;
+    oa:polity id:polity-negentropy-alliance ;
+    oa:recordOrder 3 .
+
+# Ruprecht 46
+
+id:landmark-ruprecht-46 a oa:Landmark, oa:Place ;
+    skos:prefLabel "Ruprecht 46" ;
+    oa:catalogueDesignation "Ruprecht 46" .
+
+claim:affiliation-landmark-ruprecht-46-nocozo a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ruprecht-46 ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 17 .
+
+# Ruprecht 98
+
+id:landmark-ruprecht-98 a oa:Landmark, oa:Place ;
+    skos:prefLabel "Ruprecht 98" ;
+    oa:catalogueDesignation "Ruprecht 98" .
+
+claim:affiliation-landmark-ruprecht-98-nocozo a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ruprecht-98 ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 10 .
+
+# S119
+
+id:landmark-s119 a oa:Landmark, oa:Place ;
+    skos:prefLabel "S119" ;
+    oa:catalogueDesignation "S119" .
+
+claim:affiliation-landmark-s119-cygexpa a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-s119 ;
+    oa:canonical true ;
+    oa:polity id:polity-cygexpa ;
+    oa:recordOrder 1 .
+
+# S126
+
+id:landmark-s126 a oa:Landmark, oa:Place ;
+    skos:prefLabel "S126" ;
+    oa:catalogueDesignation "S126" .
+
+claim:affiliation-landmark-s126-cygexpa a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-s126 ;
+    oa:canonical true ;
+    oa:polity id:polity-cygexpa ;
+    oa:recordOrder 0 .
+
+# S129
+
+id:landmark-s129 a oa:Landmark, oa:Place ;
+    skos:prefLabel "S129" ;
+    oa:catalogueDesignation "S129" .
+
+claim:affiliation-landmark-s129-cygexpa a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-s129 ;
+    oa:canonical true ;
+    oa:polity id:polity-cygexpa ;
+    oa:recordOrder 7 .
+
+# S138
+
+id:landmark-s138 a oa:Landmark, oa:Place ;
+    skos:prefLabel "S138" ;
+    oa:catalogueDesignation "S138" .
+
+claim:affiliation-landmark-s138-solar-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-s138 ;
+    oa:canonical true ;
+    oa:polity id:polity-solar-dominion ;
+    oa:recordOrder 31 .
+
+# S155
+
+id:landmark-s155 a oa:Landmark, oa:Place ;
+    skos:prefLabel "S155" ;
+    oa:catalogueDesignation "S155" .
+
+claim:affiliation-landmark-s155-cygexpa a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-s155 ;
+    oa:canonical true ;
+    oa:polity id:polity-cygexpa ;
+    oa:recordOrder 3 .
+
+# S171
+
+id:landmark-s171 a oa:Landmark, oa:Place ;
+    skos:prefLabel "S171" ;
+    oa:catalogueDesignation "S171" .
+
+claim:affiliation-landmark-s171-cygexpa a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-s171 ;
+    oa:canonical true ;
+    oa:polity id:polity-cygexpa ;
+    oa:recordOrder 4 .
+
+# S202
+
+id:landmark-s202 a oa:Landmark, oa:Place ;
+    skos:prefLabel "S202" ;
+    oa:catalogueDesignation "S202" .
+
+claim:affiliation-landmark-s202-solar-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-s202 ;
+    oa:canonical true ;
+    oa:polity id:polity-solar-dominion ;
+    oa:recordOrder 13 .
+
+# S205
+
+id:landmark-s205 a oa:Landmark, oa:Place ;
+    skos:prefLabel "S205" ;
+    oa:catalogueDesignation "S205" .
+
+claim:affiliation-landmark-s205-solar-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-s205 ;
+    oa:canonical true ;
+    oa:polity id:polity-solar-dominion ;
+    oa:recordOrder 14 .
+
+# S232
+
+id:landmark-s232 a oa:Landmark, oa:Place ;
+    skos:prefLabel "S232" ;
+    oa:catalogueDesignation "S232" .
+
+claim:affiliation-landmark-s232-metasoft a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-s232 ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft ;
+    oa:recordOrder 11 .
+
+claim:affiliation-landmark-s232-solar-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-s232 ;
+    oa:canonical true ;
+    oa:polity id:polity-solar-dominion ;
+    oa:recordOrder 33 .
+
+# S238
+
+id:landmark-s238 a oa:Landmark, oa:Place ;
+    skos:prefLabel "S238" ;
+    oa:catalogueDesignation "S238" .
+
+claim:affiliation-landmark-s238-metasoft a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-s238 ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft ;
+    oa:recordOrder 19 .
+
+# S239
+
+id:landmark-s239 a oa:Landmark, oa:Place ;
+    skos:prefLabel "S239" ;
+    oa:catalogueDesignation "S239" .
+
+claim:affiliation-landmark-s239-metasoft a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-s239 ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft ;
+    oa:recordOrder 20 .
+
+# S245
+
+id:landmark-s245 a oa:Landmark, oa:Place ;
+    skos:prefLabel "S245" ;
+    oa:catalogueDesignation "S245" .
+
+claim:affiliation-landmark-s245-communion-of-worlds a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-s245 ;
+    oa:canonical true ;
+    oa:polity id:polity-communion-of-worlds ;
+    oa:recordOrder 0 .
+
+# S263
+
+id:landmark-s263 a oa:Landmark, oa:Place ;
+    skos:prefLabel "S263" ;
+    oa:catalogueDesignation "S263" .
+
+claim:affiliation-landmark-s263-orion-federation a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-s263 ;
+    oa:canonical true ;
+    oa:polity id:polity-orion-federation ;
+    oa:recordOrder 0 .
+
+# S27
+
+id:landmark-s27 a oa:Landmark, oa:Place ;
+    skos:prefLabel "S27" ;
+    oa:catalogueDesignation "S27" .
+
+claim:affiliation-landmark-s27-mutual-progress-association a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-s27 ;
+    oa:canonical true ;
+    oa:polity id:polity-mutual-progress-association ;
+    oa:recordOrder 11 .
+
+claim:affiliation-landmark-s27-solar-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-s27 ;
+    oa:canonical true ;
+    oa:polity id:polity-solar-dominion ;
+    oa:recordOrder 27 .
+
+# S31
+
+id:landmark-s31 a oa:Landmark, oa:Place ;
+    skos:prefLabel "S31" ;
+    oa:catalogueDesignation "S31" .
+
+claim:affiliation-landmark-s31-sagittarius-transcultural-cooperation a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-s31 ;
+    oa:canonical true ;
+    oa:polity id:polity-sagittarius-transcultural-cooperation ;
+    oa:recordOrder 2 .
+
+# S67
+
+id:landmark-s67 a oa:Landmark, oa:Place ;
+    skos:prefLabel "S67" ;
+    oa:catalogueDesignation "S67" .
+
+claim:affiliation-landmark-s67-keter-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-s67 ;
+    oa:canonical true ;
+    oa:polity id:polity-keter-dominion ;
+    oa:recordOrder 1 .
+
+# Seagull Nebula
+
+id:landmark-seagull-nebula a oa:Landmark, oa:Place ;
+    skos:prefLabel "Seagull Nebula" ;
+    oa:catalogueDesignation "Seagull Nebula" .
+
+claim:affiliation-landmark-seagull-nebula-sophic-league a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-seagull-nebula ;
+    oa:canonical true ;
+    oa:polity id:polity-sophic-league ;
+    oa:recordOrder 16 .
+
+# Stephenson 1
+
+id:landmark-stephenson-1 a oa:Landmark, oa:Place ;
+    skos:prefLabel "Stephenson 1" ;
+    oa:catalogueDesignation "Stephenson 1" .
+
+claim:affiliation-landmark-stephenson-1-solar-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-stephenson-1 ;
+    oa:canonical true ;
+    oa:polity id:polity-solar-dominion ;
+    oa:recordOrder 30 .
+
+# Stock 2
+
+id:landmark-stock-2 a oa:Landmark, oa:Place ;
+    skos:prefLabel "Stock 2" ;
+    oa:catalogueDesignation "Stock 2" .
+
+claim:affiliation-landmark-stock-2-solar-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-stock-2 ;
+    oa:canonical true ;
+    oa:polity id:polity-solar-dominion ;
+    oa:recordOrder 19 .
+
+# Stock 7
+
+id:landmark-stock-7 a oa:Landmark, oa:Place ;
+    skos:prefLabel "Stock 7" ;
+    oa:catalogueDesignation "Stock 7" .
+
+claim:affiliation-landmark-stock-7-solar-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-stock-7 ;
+    oa:canonical true ;
+    oa:polity id:polity-solar-dominion ;
+    oa:recordOrder 24 .
+
+# The Sparks
+
+id:landmark-ic-4756 a oa:Landmark, oa:Place ;
+    skos:altLabel "IC 4756" ;
+    skos:prefLabel "The Sparks" ;
+    oa:article <https://www.orionsarm.com/eg-article/526a929ed7007> ;
+    oa:catalogueDesignation "IC 4756" ;
+    oa:hasFictionalName true ;
+    oa:note "The open cluster that dominates local space in the Serpens Reach, at 1,522 ly. Sk'iiws'nnii is 50 ly from it and the Black Acropolis 124, and it is one of the three fixed points that placed Sk'iiws'nnii at all. No holder is recorded: the Reach is a Mutual Progress Association and Sagittarius Transcultural Cooperation border and nothing says the cluster itself is either one's." ;
+    oa:recordOrder 6 .
+
+claim:affiliation-landmark-ic-4756-mutual-progress-association a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-ic-4756 ;
+    oa:canonical true ;
+    oa:polity id:polity-mutual-progress-association ;
+    oa:recordOrder 5 .
+
+# Theta Carinae Cluster
+
+id:landmark-theta-carinae-cluster a oa:Landmark, oa:Place ;
+    skos:prefLabel "Theta Carinae Cluster" ;
+    oa:catalogueDesignation "Theta Carinae Cluster" .
+
+claim:affiliation-landmark-theta-carinae-cluster-sophic-league a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-theta-carinae-cluster ;
+    oa:canonical true ;
+    oa:polity id:polity-sophic-league ;
+    oa:recordOrder 11 .
+
+# Trumpler 37
+
+id:landmark-trumpler-37 a oa:Landmark, oa:Place ;
+    skos:prefLabel "Trumpler 37" ;
+    oa:catalogueDesignation "Trumpler 37" .
+
+claim:affiliation-landmark-trumpler-37-cygexpa a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-trumpler-37 ;
+    oa:canonical true ;
+    oa:polity id:polity-cygexpa ;
+    oa:recordOrder 2 .
+
+# Turner 1
+
+id:landmark-turner-1 a oa:Landmark, oa:Place ;
+    skos:prefLabel "Turner 1" ;
+    oa:catalogueDesignation "Turner 1" .
+
+claim:affiliation-landmark-turner-1-cygexpa a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-turner-1 ;
+    oa:canonical true ;
+    oa:polity id:polity-cygexpa ;
+    oa:recordOrder 5 .
+
+# Upgren 1
+
+id:landmark-upgren-1 a oa:Landmark, oa:Place ;
+    skos:prefLabel "Upgren 1" ;
+    oa:catalogueDesignation "Upgren 1" .
+
+claim:affiliation-landmark-upgren-1-metasoft a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-upgren-1 ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft ;
+    oa:recordOrder 24 .
+
+# vdB-Hagen 99
+
+id:landmark-vdb-hagen-99 a oa:Landmark, oa:Place ;
+    skos:prefLabel "vdB-Hagen 99" ;
+    oa:catalogueDesignation "vdB-Hagen 99" .
+
+claim:affiliation-landmark-vdb-hagen-99-nocozo a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-vdb-hagen-99 ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 11 .
+
+# Vela Supernova Remnant
+
+id:landmark-vela-supernova-remnant a oa:Landmark, oa:Place ;
+    skos:prefLabel "Vela Supernova Remnant" ;
+    oa:catalogueDesignation "Vela Supernova Remnant" .
+
+claim:affiliation-landmark-vela-supernova-remnant-vela a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-vela-supernova-remnant ;
+    oa:canonical true ;
+    oa:polity id:polity-vela ;
+    oa:recordOrder 0 .
+
+# YY Geminorum
+
+id:landmark-yy-geminorum a oa:Landmark, oa:Place ;
+    skos:prefLabel "YY Geminorum" ;
+    oa:catalogueDesignation "YY Geminorum" .
+
+claim:affiliation-landmark-yy-geminorum-metasoft a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-yy-geminorum ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft ;
+    oa:recordOrder 28 .
+
+# Zeta Tauri
+
+id:landmark-zeta-tauri a oa:Landmark, oa:Place ;
+    skos:prefLabel "Zeta Tauri" ;
+    oa:catalogueDesignation "Zeta Tauri" .
+
+claim:affiliation-landmark-zeta-tauri-metasoft a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource src:political-maps-8000at ;
+    oa:about id:landmark-zeta-tauri ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft ;
+    oa:recordOrder 30 .

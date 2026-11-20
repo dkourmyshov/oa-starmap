@@ -1,0 +1,60 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Ixeway
+
+id:world-ixeway a oa:Place, oa:World ;
+    skos:prefLabel "Ixeway" ;
+    oa:article <https://www.orionsarm.com/eg-article/46677b508686e> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "In Sagittarius at 92 ly. No dates." ;
+    oa:systemName "Ixeway" ;
+    oa:uncertain false .
+
+claim:location-world-ixeway a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46677b508686e> ;
+    oa:about id:world-ixeway ;
+    oa:canonical true ;
+    oa:catalogueFromSource true ;
+    oa:hipparcosId 94595 ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+claim:affiliation-world-ixeway-mutual-progress-association a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46677b508686e> ;
+    oa:about id:world-ixeway ;
+    oa:canonical true ;
+    oa:polity id:polity-mutual-progress-association ;
+    oa:recordOrder 0 .
+
+# Ixeway
+
+id:inner-sphere-row-1041 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Ixeway" .
+
+claim:inner-sphere-inner-sphere-row-1041-1111d959c710 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-1041 ;
+    oa:article <https://www.orionsarm.com/eg-article/46677b508686e> ;
+    oa:canonical true ;
+    oa:colonyName "Ixeway" ;
+    oa:luminositySol "0.0666" ;
+    oa:massSol "0.584" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 1040 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-1041-1111d959c710-source-distance ;
+    oa:spectralType "M0.5 Vk" ;
+    oa:starName "HIP 94595" .
+
+value:inner-sphere-inner-sphere-row-1041-1111d959c710-source-distance a oa:QuantityValue ;
+    qudt:numericValue 92.023 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

@@ -1,0 +1,41 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Sand
+
+id:world-sand a oa:Place, oa:World ;
+    skos:prefLabel "Sand" ;
+    oa:article <https://www.orionsarm.com/eg-article/49120c5060646> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:parentName "Neo Rah" ;
+    oa:systemName "Sand" ;
+    oa:uncertain false .
+
+claim:location-world-sand a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/49120c5060646> ;
+    oa:about id:world-sand ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:constellationName "Gemini" ;
+    oa:distance value:location-world-sand-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+value:location-world-sand-distance a oa:QuantityValue ;
+    qudt:numericValue 1120.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-sand-caretaker-gods a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/49120c5060646> ;
+    oa:about id:world-sand ;
+    oa:canonical true ;
+    oa:polity id:polity-caretaker-gods ;
+    oa:recordOrder 0 .

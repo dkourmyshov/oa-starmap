@@ -1,0 +1,76 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Kaana
+
+id:world-kaana a oa:Place, oa:World ;
+    skos:prefLabel "Kaana" ;
+    oa:article <https://www.orionsarm.com/eg-article/666acac0358cd> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "A black hole — Gaia BH3, in Aquila. Placed by its coordinates rather than bound to a catalogue star, because it is not a star and is not in any catalogue this map carries: Gaia found it long after the sources here were compiled." ;
+    oa:systemName "Kaana" ;
+    oa:uncertain false .
+
+claim:location-world-kaana a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/666acac0358cd> ;
+    oa:about id:world-kaana ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg 14.9317 ;
+    oa:distance value:location-world-kaana-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:nearName "Gaia BH3 / LS II 14 13" ;
+    oa:rightAscensionDeg 294.828 .
+
+value:location-world-kaana-distance a oa:QuantityValue ;
+    qudt:numericValue 1930.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-kaana-keter-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/666acac0358cd> ;
+    oa:about id:world-kaana ;
+    oa:canonical true ;
+    oa:polity id:polity-keter-dominion ;
+    oa:recordOrder 0 .
+
+claim:event-world-kaana-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/666acac0358cd> ;
+    oa:about id:world-kaana ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "First reached." ;
+    oa:polity id:polity-biovirate ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 5510 .
+
+claim:event-world-kaana-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/666acac0358cd> ;
+    oa:about id:world-kaana ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "\"Kaana was a prime objective for exploration and colonisation, and a joint Biovirate / Cygexpa mission reached there in 5510 AT.\" Joint mission named with Biovirate; recorded as two entries, one per named polity. A joint Biovirate and Cygexpa mission; the entry's older 'visited 5510' now carries the Biovirate." ;
+    oa:polity id:polity-cygexpa ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 5510 .
+
+claim:event-world-kaana-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/666acac0358cd> ;
+    oa:about id:world-kaana ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"Although the Kaana system saw no fighting, a Keter Dominion ISO arrived in 6030 to assume control over the system.\" A Keter Dominion ISO 'to assume control over the system', without fighting." ;
+    oa:polity id:polity-keter-dominion ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 2 ;
+    oa:yearAT 6030 .

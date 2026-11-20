@@ -1,0 +1,63 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Xdim
+
+id:world-xdim a oa:Place, oa:World ;
+    skos:prefLabel "Xdim" ;
+    oa:article <https://www.orionsarm.com/eg-article/46f1daaa9d1d4> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "GJ 1105, as the colony table has it." ;
+    oa:systemName "Xdim" ;
+    oa:uncertain false .
+
+claim:location-world-xdim a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46f1daaa9d1d4> ;
+    oa:about id:world-xdim ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "GJ 1105" .
+
+claim:event-world-xdim-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46f1daaa9d1d4> ;
+    oa:about id:world-xdim ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"Xdim was colonized in the 5500's by Xdim Euhabi, a corporation-sect maintaining the computronium habitats of uploaded bionts.\" Xdim Euhabi, a corporation-sect, no polity of this file." ;
+    oa:precision oa:Circa ;
+    oa:recordOrder 0 ;
+    oa:yearAT 5500 .
+
+# Xdim
+
+id:inner-sphere-row-0283 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Xdim" .
+
+claim:inner-sphere-inner-sphere-row-0283-09cf9337bcab a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0283 ;
+    oa:article <https://www.orionsarm.com/eg-article/46f1daaa9d1d4> ;
+    oa:canonical true ;
+    oa:colonyName "Xdim" ;
+    oa:luminositySol "." ;
+    oa:massSol "." ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 282 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0283-09cf9337bcab-source-distance ;
+    oa:spectralType "M3.5 Ve" ;
+    oa:starName "GJ 1105" .
+
+value:inner-sphere-inner-sphere-row-0283-09cf9337bcab-source-distance a oa:QuantityValue ;
+    qudt:numericValue 28.865 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

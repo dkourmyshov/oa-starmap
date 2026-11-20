@@ -1,0 +1,40 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Aries Vector
+
+id:world-aries-vector a oa:Place, oa:World ;
+    skos:prefLabel "Aries Vector" ;
+    oa:article <https://www.orionsarm.com/eg-article/45f97a9777d95> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:uncertain false .
+
+claim:location-world-aries-vector a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/45f97a9777d95> ;
+    oa:about id:world-aries-vector ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:distance value:location-world-aries-vector-distance ;
+    oa:hipparcosId 13209 ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:note "41 Arietis, also Bharani, which the catalogue puts at 165.65 ly — the figure the Celestia wormhole-nexus add-on gives for this system to four decimal places, the add-on having built on the archived Wormhole Gazetteer that names it. Two things commend it over what it replaces, an interpolation from the transcription of Anders Sandberg's maps that had this system at 1,119 ly and 41 degrees away. The identification is to a real star rather than to coordinates, so it is not one of the add-on's invented positions, and its gate partner, New Root, lies 90 degrees off, so the direction is not borrowed from the link either.\nA third argument is weaker than it first looked and is recorded as such. The project owner's copy of an older picture map shows Aries Vector beside the Blueshift Archipelago, and this position puts the two 45 ly apart where the interpolation puts them 960 — but both of those figures are computed from add-on positions, the Blueshift Archipelago's included, and no other source places that system at all. So the picture map corroborates the relation and not the position: it agrees with the add-on without needing an extra assumption, and agrees with the interpolation only if the Blueshift Archipelago is also a thousand light years further out than anything says. That is a reason to prefer this reading, not proof of it. The article is a stub and names no star. Twelve other entries still rest on the interpolation; see questions.md." .
+
+value:location-world-aries-vector-distance a oa:QuantityValue ;
+    qudt:numericValue 165.7 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-aries-vector-metasoft a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/45f97a9777d95> ;
+    oa:about id:world-aries-vector ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft ;
+    oa:recordOrder 0 .

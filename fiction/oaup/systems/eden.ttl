@@ -1,0 +1,69 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Eden
+
+id:inner-sphere-row-0276 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Eden" .
+
+claim:inner-sphere-inner-sphere-row-0276-47a6c79bc71b a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0276 ;
+    oa:article <https://www.orionsarm.com/eg-article/48ff744e2daf7> ;
+    oa:canonical true ;
+    oa:colonyName "Eden" ;
+    oa:luminositySol "0.345" ;
+    oa:massSol "0.87" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 275 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0276-47a6c79bc71b-source-distance ;
+    oa:spectralType "K0 V" ;
+    oa:starName "HD 192310" .
+
+value:inner-sphere-inner-sphere-row-0276-47a6c79bc71b-source-distance a oa:QuantityValue ;
+    qudt:numericValue 28.739 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Eden
+
+id:world-eden a oa:Place, oa:World ;
+    skos:prefLabel "Eden" ;
+    oa:article <https://www.orionsarm.com/eg-article/48ff744e2daf7> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "In Capricornus at 29 ly." ;
+    oa:systemName "Eden" ;
+    oa:uncertain false .
+
+claim:location-world-eden a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48ff744e2daf7> ;
+    oa:about id:world-eden ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Gliese 785" .
+
+claim:affiliation-world-eden-solar-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48ff744e2daf7> ;
+    oa:about id:world-eden ;
+    oa:canonical true ;
+    oa:polity id:polity-solar-dominion ;
+    oa:recordOrder 0 .
+
+claim:event-world-eden-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48ff744e2daf7> ;
+    oa:about id:world-eden ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 1209 .

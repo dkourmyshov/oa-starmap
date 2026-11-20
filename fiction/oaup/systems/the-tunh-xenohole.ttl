@@ -1,0 +1,73 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# The Tunh Xenohole
+
+id:world-the-tunh-xenohole a oa:Place, oa:World ;
+    skos:prefLabel "The Tunh Xenohole" ;
+    oa:article <https://www.orionsarm.com/eg-article/491418776bb70> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "A T1 brown dwarf, Neb 34786, with the planet Gatto and a wormhole mouth 601 AU out — 7.8 km across in the current era. Its far mouth is 3,309 ly from Sol in Sagittarius, which this map has no way to draw: a wormhole is two places and one object, and nothing here joins them. The near mouth is what is drawn, and the coordinates fall in Scorpius as the article says." ;
+    oa:uncertain false .
+
+claim:location-world-the-tunh-xenohole a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/491418776bb70> ;
+    oa:about id:world-the-tunh-xenohole ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -39.56 ;
+    oa:distance value:location-world-the-tunh-xenohole-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:nearName "Neb 34786" ;
+    oa:rightAscensionDeg 253.1595 .
+
+value:location-world-the-tunh-xenohole-distance a oa:QuantityValue ;
+    qudt:numericValue 1237.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-the-tunh-xenohole-sagittarius-transcultural-cooperation a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/491418776bb70> ;
+    oa:about id:world-the-tunh-xenohole ;
+    oa:canonical true ;
+    oa:polity id:polity-sagittarius-transcultural-cooperation ;
+    oa:recordOrder 0 .
+
+claim:event-world-the-tunh-xenohole-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/491418776bb70> ;
+    oa:about id:world-the-tunh-xenohole ;
+    oa:canonical true ;
+    oa:eventKind oa:Observed ;
+    oa:note "An artificial structure found in the system by the Lagrange Defenders." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 3965 .
+
+claim:event-world-the-tunh-xenohole-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/491418776bb70> ;
+    oa:about id:world-the-tunh-xenohole ;
+    oa:canonical true ;
+    oa:eventKind oa:Contact ;
+    oa:note "\"In 4094 it was discovered that the Tunnler wormhole in fact housed a powerful xenotech AI, which was still active, though largely dormant.\" Judgement call: treats the dormant Tunnler wormhole AI as the resident xenosophont contacted; the discoverers (Lagrange, Tunh Logika) are not on the roster. Flagged in doubts. The Tunnler wormhole's dormant xenotech AI." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 4094 .
+
+claim:event-world-the-tunh-xenohole-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/491418776bb70> ;
+    oa:about id:world-the-tunh-xenohole ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"Tunh Logika survived just barely, and when the Sagittarius Transcultural Cooperation was created this system was a founding member.\" The sentence does not itself give a numeral; the year 4805 is the Sagittarius Transcultural Cooperation's founding year from the roster, taken as the implied date of 'when the Sagittarius Transcultural Cooperation was created'. Flagged in doubts. A founding member of the Cooperation; the year is the Cooperation's founding from the timeline, the article giving none." ;
+    oa:polity id:polity-sagittarius-transcultural-cooperation ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 2 ;
+    oa:yearAT 4805 .

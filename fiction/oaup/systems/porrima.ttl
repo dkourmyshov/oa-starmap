@@ -1,0 +1,105 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Porrima
+
+id:world-porrima a oa:Place, oa:World ;
+    skos:prefLabel "Porrima" ;
+    oa:article <https://www.orionsarm.com/eg-article/4703b95b8c03b> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "39 ly." ;
+    oa:systemName "Porrima" ;
+    oa:uncertain false .
+
+claim:location-world-porrima a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4703b95b8c03b> ;
+    oa:about id:world-porrima ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Gamma Virginis" .
+
+claim:affiliation-world-porrima-solar-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4703b95b8c03b> ;
+    oa:about id:world-porrima ;
+    oa:canonical true ;
+    oa:polity id:polity-solar-dominion ;
+    oa:recordOrder 0 .
+
+claim:event-world-porrima-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4703b95b8c03b> ;
+    oa:about id:world-porrima ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "A derelict alien starship found here — the first dated event the system has, and evidence of somebody's presence rather than of the Dominion's." ;
+    oa:polity id:polity-virginis-combine ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 1752 .
+
+claim:event-world-porrima-002 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-porrima ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "The 61 Virginis probes of the Virginis Effort arrive within their target system. Separating from the mother hull, the Virgo probe is placed within an orbit that takes it within 0.32 AU of the star, and out to 0.75 AU. The Spica probe ran..." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:sourceDescription "Encyclopaedia timeline, The Sundering" ;
+    oa:yearAT 597 .
+
+# Porrima
+
+id:inner-sphere-row-0439 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Porrima" .
+
+claim:inner-sphere-inner-sphere-row-0439-ca4c93da3c40 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0439 ;
+    oa:article <https://www.orionsarm.com/eg-article/4703b95b8c03b> ;
+    oa:canonical true ;
+    oa:colonyName "Porrima" ;
+    oa:luminositySol "." ;
+    oa:massSol "." ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 438 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0439-ca4c93da3c40-source-distance ;
+    oa:spectralType "A0" ;
+    oa:starName "Gamma Virginis A" .
+
+value:inner-sphere-inner-sphere-row-0439-ca4c93da3c40-source-distance a oa:QuantityValue ;
+    qudt:numericValue 39.205 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Porrima
+
+id:inner-sphere-row-0440 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Porrima" .
+
+claim:inner-sphere-inner-sphere-row-0440-e512453d5841 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0440 ;
+    oa:article <https://www.orionsarm.com/eg-article/4703b95b8c03b> ;
+    oa:canonical true ;
+    oa:colonyName "Porrima" ;
+    oa:luminositySol "." ;
+    oa:massSol "." ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 439 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0440-e512453d5841-source-distance ;
+    oa:spectralType "A0" ;
+    oa:starName "Gamma Virginis B" .
+
+value:inner-sphere-inner-sphere-row-0440-e512453d5841-source-distance a oa:QuantityValue ;
+    qudt:numericValue 39.205 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

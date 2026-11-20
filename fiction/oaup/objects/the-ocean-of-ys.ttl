@@ -1,0 +1,60 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# The Ocean of Ys
+
+id:world-the-ocean-of-ys a oa:Place, oa:World ;
+    skos:prefLabel "The Ocean of Ys" ;
+    oa:article <https://www.orionsarm.com/eg-article/591f39b037a27> ;
+    oa:kind "megastructure" ;
+    oa:labelsSystem false ;
+    oa:note "HD 181144 in Sagitta, the article's 119 ly against the catalogue's 118." ;
+    oa:uncertain false .
+
+claim:location-world-the-ocean-of-ys a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/591f39b037a27> ;
+    oa:about id:world-the-ocean-of-ys ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:distance value:location-world-the-ocean-of-ys-distance ;
+    oa:hdId 181144 ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+value:location-world-the-ocean-of-ys-distance a oa:QuantityValue ;
+    qudt:numericValue 119.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-the-ocean-of-ys-zoeific-biopolity a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/591f39b037a27> ;
+    oa:about id:world-the-ocean-of-ys ;
+    oa:canonical true ;
+    oa:polity id:polity-zoeific-biopolity ;
+    oa:recordOrder 0 .
+
+claim:event-world-the-ocean-of-ys-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/591f39b037a27> ;
+    oa:about id:world-the-ocean-of-ys ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 3500 .
+
+claim:event-world-the-ocean-of-ys-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/591f39b037a27> ;
+    oa:about id:world-the-ocean-of-ys ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"The next big change came in 5453, when, after a period of negotiation with the current inhabitants, a siblinghood of young Amphisapien colonists from the Zoeific Biopolity arrived in system.\" Not in the header. A second wave of colonists, explicitly said to be 'from the Zoeific Biopolity', who stayed and founded a lasting new culture ('For the next centuries a new culture blossomed'); recorded as settled rather than visited on that basis. Consistent with the data panel's undated 'Allegiance Zoefic Biopolity'. Amphisapien colonists from the Biopolity, after negotiation with the inhabitants; the earlier colonists of 3500 were Madi from the Deeper Covenant." ;
+    oa:polity id:polity-zoeific-biopolity ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 5453 .

@@ -1,0 +1,82 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# New Gaia
+
+id:inner-sphere-row-0461 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "New Gaia" .
+
+claim:inner-sphere-inner-sphere-row-0461-c0ece93dc0c3 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0461 ;
+    oa:article <https://www.orionsarm.com/eg-article/48f7d26295d0f> ;
+    oa:canonical true ;
+    oa:colonyName "New Gaia" ;
+    oa:luminositySol "." ;
+    oa:massSol "1.83" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 460 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0461-c0ece93dc0c3-source-distance ;
+    oa:spectralType "G2 IV-V" ;
+    oa:starName "Lambda Aurigae" .
+
+value:inner-sphere-inner-sphere-row-0461-c0ece93dc0c3-source-distance a oa:QuantityValue ;
+    qudt:numericValue 40.973 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# New Gaia
+
+id:world-new-gaia a oa:Place, oa:World ;
+    skos:altLabel "Rachel" ;
+    skos:prefLabel "New Gaia" ;
+    oa:article <https://www.orionsarm.com/eg-article/48f7d26295d0f> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "Lambda Aurigae, 41 ly, already on the map through the Inner Sphere colony table — which gives the system as \"Rachel/New Gaia\", two names for the one place. This entry adds the date rather than a position." ;
+    oa:systemName "New Gaia" ;
+    oa:uncertain false .
+
+claim:location-world-new-gaia a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48f7d26295d0f> ;
+    oa:about id:world-new-gaia ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Lambda Aurigae" .
+
+claim:affiliation-world-new-gaia-caretaker-gods a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48f7d26295d0f> ;
+    oa:about id:world-new-gaia ;
+    oa:canonical true ;
+    oa:polity id:polity-caretaker-gods ;
+    oa:recordOrder 0 .
+
+claim:event-world-new-gaia-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48f7d26295d0f> ;
+    oa:about id:world-new-gaia ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"The colony ships Root and Seed were launched in 1245 AT, arriving at Lambda Aurigae IV in 1365 AT.\" The Green Alliance, no polity of this file; megacorporations followed from 1425." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 1365 .
+
+claim:event-world-new-gaia-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48f7d26295d0f> ;
+    oa:about id:world-new-gaia ;
+    oa:canonical true ;
+    oa:eventKind oa:Stewardship ;
+    oa:note "\"In 1687 AT an object of unknown nature entered the system.\" The object was the protectorate ISO grown in secret by the Caretaker Rachel, on the article's later account, and the panel's allegiance is \"Caretaker God (under the hyperturing Rachel)\"." ;
+    oa:polity id:polity-caretaker-gods ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 1687 .

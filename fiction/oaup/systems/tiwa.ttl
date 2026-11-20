@@ -1,0 +1,74 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Tiwa
+
+id:world-tiwa a oa:Place, oa:World ;
+    skos:prefLabel "Tiwa" ;
+    oa:article <https://www.orionsarm.com/eg-article/5d4c19c9442f1> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Ross 128, as the colony table has it." ;
+    oa:systemName "Tiwa" ;
+    oa:uncertain false .
+
+claim:location-world-tiwa a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5d4c19c9442f1> ;
+    oa:about id:world-tiwa ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Ross 128" .
+
+claim:event-world-tiwa-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5d4c19c9442f1> ;
+    oa:about id:world-tiwa ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"The Mingkwan arrived at Ross 128 in 617 AT, and set about creating its new civilization.\" the Mingkwan was a Southeast Asian autonomous probe mission, not tied to any roster polity The first of four ships; the Karl Schroeder in 642, GAIA's arkship Nanyang in 737 and the Utnapishtim-6 in 1224 followed." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 617 .
+
+claim:event-world-tiwa-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5d4c19c9442f1> ;
+    oa:about id:world-tiwa ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"In 1313, the Tiwa system became a member of the Eridanus League , joining just as the League was becoming increasingly disunited.\"" ;
+    oa:polity id:polity-eridanus-league ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 1313 .
+
+# Tiwa
+
+id:inner-sphere-row-0019 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Tiwa" .
+
+claim:inner-sphere-inner-sphere-row-0019-86fb141733e1 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0019 ;
+    oa:article <https://www.orionsarm.com/eg-article/5d4c19c9442f1> ;
+    oa:canonical true ;
+    oa:colonyName "Tiwa" ;
+    oa:luminositySol "0.000231 to 0.000365" ;
+    oa:massSol "0.1" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 18 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0019-86fb141733e1-source-distance ;
+    oa:spectralType "M4 Vn" ;
+    oa:starName "Ross 128" .
+
+value:inner-sphere-inner-sphere-row-0019-86fb141733e1-source-distance a oa:QuantityValue ;
+    qudt:numericValue 11.007 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

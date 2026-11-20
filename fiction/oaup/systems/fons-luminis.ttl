@@ -1,0 +1,142 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Fons Luminis
+
+id:world-fons-luminis a oa:Place, oa:World ;
+    skos:altLabel "Hersperia" ;
+    skos:prefLabel "Fons Luminis" ;
+    oa:article <https://www.orionsarm.com/eg-article/4900d8c15efa3> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Five stars, 34 ly. Originally called Hersperia. The catalogue carries the primary under its own name, Alula Australis." ;
+    oa:systemName "Fons Luminis" ;
+    oa:uncertain false .
+
+claim:location-world-fons-luminis a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4900d8c15efa3> ;
+    oa:about id:world-fons-luminis ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Xi Ursae Majoris" .
+
+claim:affiliation-world-fons-luminis-solar-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4900d8c15efa3> ;
+    oa:about id:world-fons-luminis ;
+    oa:canonical true ;
+    oa:polity id:polity-solar-dominion ;
+    oa:recordOrder 0 .
+
+claim:event-world-fons-luminis-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4900d8c15efa3> ;
+    oa:about id:world-fons-luminis ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 1204 .
+
+# Fons Luminis
+
+id:inner-sphere-row-0266 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Fons Luminis" .
+
+claim:inner-sphere-inner-sphere-row-0266-878d87cd302d a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0266 ;
+    oa:article <https://www.orionsarm.com/eg-article/4900d8c15efa3> ;
+    oa:canonical true ;
+    oa:colonyName "Fons Luminis" ;
+    oa:luminositySol "0.01" ;
+    oa:massSol "0.4" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 265 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0266-878d87cd302d-source-distance ;
+    oa:spectralType "M3 V" ;
+    oa:starName "Xi Ursae Majoris Ab" .
+
+value:inner-sphere-inner-sphere-row-0266-878d87cd302d-source-distance a oa:QuantityValue ;
+    qudt:numericValue 28.489 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Fons Luminis
+
+id:inner-sphere-row-0267 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Fons Luminis" .
+
+claim:inner-sphere-inner-sphere-row-0267-98c3a29c4185 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0267 ;
+    oa:article <https://www.orionsarm.com/eg-article/4900d8c15efa3> ;
+    oa:canonical true ;
+    oa:colonyName "Fons Luminis" ;
+    oa:luminositySol "0.67" ;
+    oa:massSol "0.9" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 266 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0267-98c3a29c4185-source-distance ;
+    oa:spectralType "G0-5 Ve" ;
+    oa:starName "Xi Ursae Majoris Ba" .
+
+value:inner-sphere-inner-sphere-row-0267-98c3a29c4185-source-distance a oa:QuantityValue ;
+    qudt:numericValue 28.489 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Fons Luminis
+
+id:inner-sphere-row-0268 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Fons Luminis" .
+
+claim:inner-sphere-inner-sphere-row-0268-ca8ad5d1c847 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0268 ;
+    oa:article <https://www.orionsarm.com/eg-article/4900d8c15efa3> ;
+    oa:canonical true ;
+    oa:colonyName "Fons Luminis" ;
+    oa:luminositySol "." ;
+    oa:massSol "." ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 267 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0268-ca8ad5d1c847-source-distance ;
+    oa:spectralType "D" ;
+    oa:starName "Xi Ursae Majoris Bb" .
+
+value:inner-sphere-inner-sphere-row-0268-ca8ad5d1c847-source-distance a oa:QuantityValue ;
+    qudt:numericValue 28.489 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Fons Luminis
+
+id:inner-sphere-row-0269 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Fons Luminis" .
+
+claim:inner-sphere-inner-sphere-row-0269-24d95f6f3bfc a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0269 ;
+    oa:article <https://www.orionsarm.com/eg-article/4900d8c15efa3> ;
+    oa:canonical true ;
+    oa:colonyName "Fons Luminis" ;
+    oa:luminositySol "." ;
+    oa:massSol "37xJupiter" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 268 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0269-24d95f6f3bfc-source-distance ;
+    oa:spectralType "(brown dwarf)" ;
+    oa:starName "Xi Ursae Majoris C" .
+
+value:inner-sphere-inner-sphere-row-0269-24d95f6f3bfc-source-distance a oa:QuantityValue ;
+    qudt:numericValue 28.489 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

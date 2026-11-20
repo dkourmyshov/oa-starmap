@@ -1,0 +1,18 @@
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+
+# Communion of Worlds
+
+id:polity-communion-of-worlds a oa:Polity ;
+    skos:prefLabel "Communion of Worlds" ;
+    oa:ambiguousName false ;
+    oa:color "#F8BBD0" ;
+    oa:editorialNote "Its own page: the Communion's founding text was \"released in 2292, it\nmarks the founding date of the Communion of Worlds (though due to\nlightspeed delays other colonies only subscribed to it over the\nfollowing decades).\" The timeline puts the empaths' migration that \"set\nup the Communion\" at 1989; the page's year is taken.\nBlanco 1 is also a Non-Coercive Zone landmark, and stays one. The article\non the Blenke Cluster puts it in the Communion; the political maps put it\nin the NoCoZo. Both are recorded rather than one being chosen, because\nmeta-empires interpenetrate and a cluster 850 ly across can hold presences\nfrom two of them without contradiction. See questions.md." ;
+    oa:foundedAT 2292 ;
+    oa:hasSource src:political-maps-8000at ;
+    oa:kind "meta-empire" ;
+    oa:polityId "communion-of-worlds" ;
+    oa:recordOrder 13 ;
+    oa:uncertain false .

@@ -1,0 +1,43 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Mykropht
+
+id:world-mykropht a oa:Place, oa:World ;
+    skos:prefLabel "Mykropht" ;
+    oa:article <https://www.orionsarm.com/eg-article/47bb880ac5b8c> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "A pair: Mykropht A is an ordinary star and Mykropht B the neutron star RX J1856.5-3754, which is in none of the catalogues this map loads — they hold stars by their light, and this one is seen mostly in X-rays. The constellation carries the direction." ;
+    oa:systemName "Mykropht" ;
+    oa:uncertain false .
+
+claim:location-world-mykropht a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47bb880ac5b8c> ;
+    oa:about id:world-mykropht ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:constellationName "Corona Australis" ;
+    oa:distance value:location-world-mykropht-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+value:location-world-mykropht-distance a oa:QuantityValue ;
+    qudt:numericValue 412.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:event-world-mykropht-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47bb880ac5b8c> ;
+    oa:about id:world-mykropht ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 3019 .

@@ -1,0 +1,33 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# Ahadi
+
+id:world-ahadi a oa:Place, oa:World ;
+    skos:prefLabel "Ahadi" ;
+    oa:article <https://www.orionsarm.com/eg-article/4703c44b2ccb2> ;
+    oa:editorialNote "---- the Synthetic/Human Alliance ----------------------------------------" ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Pi Puppis, 566 ly out. The Puppis Democracy's sole principal member." ;
+    oa:uncertain false .
+
+claim:location-world-ahadi a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4703c44b2ccb2> ;
+    oa:about id:world-ahadi ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:note "oalocs3.dsc, one of the Orion's Arm Celestia add-ons' location catalogues (OAAddons9, OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv), writes a \"Puppis Democracy\" label 0.01 degrees from this star's bearing -- so the add-on puts the polity here too, which agrees with the Encyclopaedia's \"emerges near the red giant Pi Puppis\". It gives 1,092 ly where this map's catalogue gives 566 for the star. That is one astronomy against another, an older distance for a real star, and the catalogue's stands; see questions.md under the add-on distances." ;
+    oa:starName "Pi Puppis" .
+
+claim:affiliation-world-ahadi-puppis-democracy a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4703c44b2ccb2> ;
+    oa:about id:world-ahadi ;
+    oa:canonical true ;
+    oa:polity id:polity-puppis-democracy ;
+    oa:recordOrder 0 .

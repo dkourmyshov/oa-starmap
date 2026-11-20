@@ -1,0 +1,51 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# Gordelpus
+
+id:world-gordelpus a oa:Place, oa:World ;
+    skos:prefLabel "Gordelpus" ;
+    oa:article <https://www.orionsarm.com/eg-article/46f96acd05bb3> ;
+    oa:kind "megastructure" ;
+    oa:labelsSystem false ;
+    oa:uncertain false .
+
+claim:location-world-gordelpus a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46f96acd05bb3> ;
+    oa:about id:world-gordelpus ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:note "The article gives no position." .
+
+claim:affiliation-world-gordelpus-mutual-progress-association a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46f96acd05bb3> ;
+    oa:about id:world-gordelpus ;
+    oa:canonical true ;
+    oa:polity id:polity-mutual-progress-association ;
+    oa:recordOrder 0 .
+
+claim:event-world-gordelpus-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46f96acd05bb3> ;
+    oa:about id:world-gordelpus ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"Central MPA system, colonized by the Kathelian Confederacy in the 2700's.\" The Confederacy is an MPA polity, per the timeline." ;
+    oa:polity id:polity-mutual-progress-association ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 2700 .
+
+claim:event-world-gordelpus-002 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-gordelpus ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"The new STC-aligned Erniac government came into conflict with pro- Negentropic and pro-Keterist influences, weakening the political market and allowing the Sonato system to buy the polityship in 6433.\" New against the header, which records only 'settled 2700' and 'settled 2790'. 'The Sonato system' is not a roster polity (see unplaced), so polity is left blank. To the Sonato system, no polity of this file, after the STC-aligned Erniac government's conflicts." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:sourceDescription "Encyclopaedia timeline, Age of Establishment" ;
+    oa:yearAT 2790 .

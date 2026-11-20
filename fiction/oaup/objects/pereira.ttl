@@ -1,0 +1,118 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Pereira
+
+id:world-pereira a oa:Place, oa:World ;
+    skos:prefLabel "Pereira" ;
+    oa:article <https://www.orionsarm.com/eg-article/47bf772c4ab92> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "Galactic coordinates given outright — 995, 1016, -180 ly — which return 1,433 ly in Aquila, the distance and constellation the article also states. Three holders are recorded because three are named, but the article gives a share to none of them: a good part of the world answers to nobody, and this file has no way to draw that." ;
+    oa:uncertain false .
+
+claim:location-world-pereira a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47bf772c4ab92> ;
+    oa:about id:world-pereira ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg 7.8365 ;
+    oa:distance value:location-world-pereira-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:rightAscensionDeg 295.1543 .
+
+value:location-world-pereira-distance a oa:QuantityValue ;
+    qudt:numericValue 1433.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-pereira-keter-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47bf772c4ab92> ;
+    oa:about id:world-pereira ;
+    oa:canonical true ;
+    oa:polity id:polity-keter-dominion ;
+    oa:recordOrder 0 .
+
+claim:affiliation-world-pereira-mutual-progress-association a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47bf772c4ab92> ;
+    oa:about id:world-pereira ;
+    oa:canonical true ;
+    oa:polity id:polity-mutual-progress-association ;
+    oa:recordOrder 1 .
+
+claim:affiliation-world-pereira-zoeific-biopolity a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47bf772c4ab92> ;
+    oa:about id:world-pereira ;
+    oa:canonical true ;
+    oa:polity id:polity-zoeific-biopolity ;
+    oa:recordOrder 2 .
+
+claim:event-world-pereira-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47bf772c4ab92> ;
+    oa:about id:world-pereira ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"Colonised: 4307 AT.\" \"Cygnus Sector, Middle Regions system colonised by a long-range seedship mission in 4307.\" The timeline agrees. No settling group is named." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 4307 .
+
+claim:event-world-pereira-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47bf772c4ab92> ;
+    oa:about id:world-pereira ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "No polity holds newly settled Pereira; entered so the map does not default to the present coalition (see the 10600 note below) for the three centuries before the Biovirate. Follows the same \"held by nobody\" pattern as that entry's own 10600 event." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 4307 .
+
+claim:event-world-pereira-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47bf772c4ab92> ;
+    oa:about id:world-pereira ;
+    oa:canonical true ;
+    oa:eventKind oa:Capital ;
+    oa:note "\"Too far from the Inner Sphere to become involved in the Version War, this world became the capital of the Biovirate, a major anthropist empire, in the centuries following that conflict.\" The span runs from the Version War period's close (4650, the timeline's era) to the capital's fall; the Biovirate is first named on the timeline in 5715. Between them, 4544: \"In the outer volumes, Pereira suffers a massive hypereconomic and social breakdown, causing the death of 2 billion inhabitants.\"" ;
+    oa:polity id:polity-biovirate ;
+    oa:precision oa:Between ;
+    oa:recordOrder 2 ;
+    oa:untilAT 6009 ;
+    oa:yearAT 4650 .
+
+claim:event-world-pereira-004 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-pereira ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"Pereira (the Biovirate capital) falls to the Keterists.\" The article: \"Pereira was conquered by the Keter Dominion following the Keterist-Biovirate war\"." ;
+    oa:polity id:polity-keter-dominion ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 3 ;
+    oa:sourceDescription "Encyclopaedia timeline, 6009" ;
+    oa:yearAT 6009 .
+
+claim:event-world-pereira-005 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-pereira ;
+    oa:canonical true ;
+    oa:eventKind oa:Abandoned ;
+    oa:note "\"Pereira attacked and destroyed (along with the Keterist defences) by a squadron of highly evolved biowars.\" The article: \"then attacked and sterilised by rogue bio-Autowars.\"" ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 4 ;
+    oa:sourceDescription "Encyclopaedia timeline, 6251" ;
+    oa:yearAT 6251 .
+
+claim:event-world-pereira-006 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47bf772c4ab92> ;
+    oa:about id:world-pereira ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "Once the Biovirate's capital; now divided, with much of it unaligned: \"at present nominally administered by a coalition of Keterist, MPA, Zoeific, and non-aligned transapients\", undated." ;
+    oa:precision oa:NotLaterThan ;
+    oa:recordOrder 5 ;
+    oa:yearAT 10600 .

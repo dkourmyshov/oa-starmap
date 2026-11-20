@@ -1,0 +1,95 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Huanghua
+
+id:world-huanghua a oa:Place, oa:World ;
+    skos:prefLabel "Huanghua" ;
+    oa:article <https://www.orionsarm.com/eg-article/4978914e5eb57> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Gliese 793, an M3 dwarf at 26 ly, as the colony table has it. Liu Huanghua is the world, Sulphur Blossom the colony; the table records no present affiliation and the article names none." ;
+    oa:systemName "Huanghua" ;
+    oa:uncertain false .
+
+claim:location-world-huanghua a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4978914e5eb57> ;
+    oa:about id:world-huanghua ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Gliese 793" .
+
+claim:event-world-huanghua-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4978914e5eb57> ;
+    oa:about id:world-huanghua ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"The vessel left the Solar System in 665 AT, and arrived in 920.\"" ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 920 .
+
+claim:event-world-huanghua-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4978914e5eb57> ;
+    oa:about id:world-huanghua ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"In 971 an invitation to join the First Federation arrived from Vesta, and after exchanging messages with Penglai, Liu Huanghua joined the Federation in 986.\"" ;
+    oa:polity id:polity-first-federation ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 986 .
+
+claim:event-world-huanghua-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4978914e5eb57> ;
+    oa:about id:world-huanghua ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"In 1683 the Penglai Evolution movement reached Sulphur Blossom, causing the ruling Federation faction to collapse.\" The Empire's own article: the AC+65 6955 colony Sulphur Blossom merged with SecureSpace, which \"did not worry the Penglai Hsien\"." ;
+    oa:polity id:polity-penglai-empire ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 2 ;
+    oa:yearAT 1683 .
+
+claim:event-world-huanghua-004 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4978914e5eb57> ;
+    oa:about id:world-huanghua ;
+    oa:canonical true ;
+    oa:eventKind oa:Independent ;
+    oa:note "\"By 2000 the world broke away from both the Penglai Empire and the SecureSpace interstellar hegemony.\"" ;
+    oa:precision oa:NotLaterThan ;
+    oa:recordOrder 3 ;
+    oa:yearAT 2000 .
+
+# Huanghua
+
+id:inner-sphere-row-0224 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Huanghua" .
+
+claim:inner-sphere-inner-sphere-row-0224-4f43ceea8fe4 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0224 ;
+    oa:article <https://www.orionsarm.com/eg-article/4978914e5eb57> ;
+    oa:canonical true ;
+    oa:colonyName "Huanghua" ;
+    oa:luminositySol "0.00335" ;
+    oa:massSol "." ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 223 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0224-4f43ceea8fe4-source-distance ;
+    oa:spectralType "M3 V" ;
+    oa:starName "Gliese 793" .
+
+value:inner-sphere-inner-sphere-row-0224-4f43ceea8fe4-source-distance a oa:QuantityValue ;
+    qudt:numericValue 26.376 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

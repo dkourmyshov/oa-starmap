@@ -1,0 +1,59 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Olumbi
+
+id:world-olumbi a oa:Place, oa:World ;
+    skos:prefLabel "Olumbi" ;
+    oa:article <https://www.orionsarm.com/eg-article/4758ad8fe1752> ;
+    oa:kind "polity_marker" ;
+    oa:labelsSystem false ;
+    oa:uncertain false .
+
+claim:location-world-olumbi a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4758ad8fe1752> ;
+    oa:about id:world-olumbi ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -41.9996 ;
+    oa:derivation "Interpolated from the transcription of Anders Sandberg's maps, which is the only source that puts a number on this. The article constrains it better and this map cannot yet use the constraint: a rimward part of the middle Non-Coercive Zone, bordering the Sophic League, lying between the Vela Nebula and Pismis 4 — the latter on the map at 2,220 ly, the former in no catalogue loaded here. Two named objects and a betweenness would place it the way Sk'iiws'nnii was placed, once the nebula is available. Kaumbrey is its capital." ;
+    oa:directionErrorDeg 20.0 ;
+    oa:distance value:location-world-olumbi-distance ;
+    oa:distanceError value:location-world-olumbi-distance-error ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:EditorialEstimate ;
+    oa:rightAscensionDeg 126.9532 .
+
+value:location-world-olumbi-distance a oa:QuantityValue ;
+    qudt:numericValue 1766.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+value:location-world-olumbi-distance-error a oa:QuantityValue ;
+    qudt:numericValue 800.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-olumbi-nocozo a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4758ad8fe1752> ;
+    oa:about id:world-olumbi ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 0 .
+
+claim:event-world-olumbi-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4758ad8fe1752> ;
+    oa:about id:world-olumbi ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "Colonised in the late Consolidation Age." ;
+    oa:precision oa:Between ;
+    oa:recordOrder 0 ;
+    oa:untilAT 3800 ;
+    oa:yearAT 3200 .

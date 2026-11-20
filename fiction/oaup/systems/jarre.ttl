@@ -1,0 +1,75 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Jarre
+
+id:world-jarre a oa:Place, oa:World ;
+    skos:prefLabel "Jarre" ;
+    oa:article <https://www.orionsarm.com/eg-article/4902515f791e9> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "In Perseus at 4,962 ly, out past most of what this file holds." ;
+    oa:systemName "Jarre" ;
+    oa:uncertain false .
+
+claim:location-world-jarre a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4902515f791e9> ;
+    oa:about id:world-jarre ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:constellationName "Perseus" ;
+    oa:distance value:location-world-jarre-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+value:location-world-jarre-distance a oa:QuantityValue ;
+    qudt:numericValue 4962.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:event-world-jarre-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4902515f791e9> ;
+    oa:about id:world-jarre ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"Terragen analysts have agreed that the colonists arrived around 8300 A.T\"; \"their civilisation therefore began sometime around 8600 AT, founded as a lo-tech society.\" The arrival is the settlement; the founders erased their own origin, so no polity is named." ;
+    oa:precision oa:Circa ;
+    oa:recordOrder 0 ;
+    oa:yearAT 8300 .
+
+claim:event-world-jarre-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4902515f791e9> ;
+    oa:about id:world-jarre ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "Vecs who \"appear to have been ... associated with the Metasoft Version Tree\" \"landed in Spaeth's capital city around 9499 A.T.\" and left; the same visit is dated 9599 elsewhere in the article, and the Metasoft identification is the article's own hedge." ;
+    oa:polity id:polity-metasoft ;
+    oa:precision oa:Circa ;
+    oa:recordOrder 1 ;
+    oa:yearAT 9499 .
+
+# Equinoxe
+
+id:world-equinoxe a oa:Place, oa:World ;
+    skos:prefLabel "Equinoxe" ;
+    oa:article <https://www.orionsarm.com/eg-article/4902515f791e9> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "The world of Jarre, third of its four planets, and drawn where the system entry it shares an article with is drawn. The Celestia wormhole-nexus add-on also carries a \"Jarre\", but at 3,065 ly towards Cassiopeia, where the article puts the system at 4,962 ly in Perseus; the article is followed and the add-on's star is taken to be something else." ;
+    oa:systemName "Jarre" ;
+    oa:uncertain false .
+
+claim:location-world-equinoxe a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4902515f791e9> ;
+    oa:about id:world-equinoxe ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:worldName "Jarre" .

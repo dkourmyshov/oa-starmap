@@ -1,0 +1,62 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# Evermore
+
+id:world-evermore a oa:Place, oa:World ;
+    skos:prefLabel "Evermore" ;
+    oa:article <https://www.orionsarm.com/eg-article/48fbc25f56967> ;
+    oa:kind "megastructure" ;
+    oa:labelsSystem false ;
+    oa:note "A blend of the Caretaker Gods with the Negentropy Alliance and the NoCoZo." ;
+    oa:systemName "Altus Lucror" ;
+    oa:uncertain false .
+
+claim:location-world-evermore a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48fbc25f56967> ;
+    oa:about id:world-evermore ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:note "Not located. The article places it \"at the edge of the Disarchy\", and the Disarchy is itself given by landmarks rather than coordinates: a volume stretching outward from Lynga 2 toward Feinstein 1 and the SN 1006 nebula, with incursions Solward. Lynga 2 and Feinstein 1 are both in the open cluster catalogue, so the axis could be drawn; the remnant of SN 1006 is not, and \"the edge\" is not a point in any case." .
+
+claim:affiliation-world-evermore-caretaker-gods a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48fbc25f56967> ;
+    oa:about id:world-evermore ;
+    oa:canonical true ;
+    oa:polity id:polity-caretaker-gods ;
+    oa:recordOrder 0 .
+
+claim:event-world-evermore-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48fbc25f56967> ;
+    oa:about id:world-evermore ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "Acquisition of the uninhabited Altus Lucror planetary system by a Caretaker-like archailect entity." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 4772 .
+
+claim:event-world-evermore-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48fbc25f56967> ;
+    oa:about id:world-evermore ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "Development actually begins." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 4773 .
+
+claim:event-world-evermore-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48fbc25f56967> ;
+    oa:about id:world-evermore ;
+    oa:canonical true ;
+    oa:eventKind oa:Independent ;
+    oa:note "\"In 6648 The Twelve, through a series of contract buyouts, seceded from the NoCoZo and claimed political neutrality.\" Not in the header. Implies Evermore/Altus Lucror had been part of the NoCoZo before this date, though no join date is given anywhere in the article. The Twelve seceded from the NoCoZo by contract buyouts; the Zone's holding before that is undated here." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 2 ;
+    oa:yearAT 6648 .

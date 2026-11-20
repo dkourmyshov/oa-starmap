@@ -1,0 +1,44 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Tangaroa
+
+id:world-tangaroa a oa:Place, oa:World ;
+    skos:prefLabel "Tangaroa" ;
+    oa:article <https://www.orionsarm.com/eg-article/508b403b279a0> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "Given as near HD 186569 at 2,870 ly, and the catalogue puts that star at 1,400 — half as far, the widest disagreement in this sweep. Near may mean near on the sky rather than near in space; either way the star can only lend its direction here, and the article keeps the distance.\nHeld by the Ocean Fleet, which has no polity entry here, so the world stands as independent until it is settled whether the Fleet answers to the Zoeific Biopolity or to nobody. Its other known place, Panthalassa, is on this map from the Celestia add-on and is Zoeific: five degrees away on the sky and 2,012 ly nearer, so the two are neighbours in direction only." ;
+    oa:uncertain false .
+
+claim:location-world-tangaroa a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/508b403b279a0> ;
+    oa:about id:world-tangaroa ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg 18.5886 ;
+    oa:distance value:location-world-tangaroa-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:nearName "HD 186569" ;
+    oa:rightAscensionDeg 296.1315 .
+
+value:location-world-tangaroa-distance a oa:QuantityValue ;
+    qudt:numericValue 2870.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:event-world-tangaroa-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/508b403b279a0> ;
+    oa:about id:world-tangaroa ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 7493 .

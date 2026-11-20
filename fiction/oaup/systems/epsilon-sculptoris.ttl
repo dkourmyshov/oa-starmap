@@ -1,0 +1,35 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# Epsilon Sculptoris
+
+id:world-epsilon-sculptoris a oa:Place, oa:World ;
+    skos:prefLabel "Epsilon Sculptoris" ;
+    oa:article <https://www.orionsarm.com/eg-article/4f8e348520fa7> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "91.5 ly out against the article's 89.5. Catalogued in Sculptor and named for it, but the article has it in Fornax — proper motion carries it over the boundary between the epoch the catalogue uses and the setting's own." ;
+    oa:systemName "Epsilon Sculptoris" ;
+    oa:uncertain false .
+
+claim:location-world-epsilon-sculptoris a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4f8e348520fa7> ;
+    oa:about id:world-epsilon-sculptoris ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Epsilon Sculptoris" .
+
+claim:event-world-epsilon-sculptoris-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4f8e348520fa7> ;
+    oa:about id:world-epsilon-sculptoris ;
+    oa:canonical true ;
+    oa:eventKind oa:Observed ;
+    oa:note "The first alien artefact ever found." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 1460 .

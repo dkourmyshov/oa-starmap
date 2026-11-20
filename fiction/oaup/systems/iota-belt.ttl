@@ -1,0 +1,33 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Iota Belt
+
+id:inner-sphere-row-0379 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Iota Belt" .
+
+claim:inner-sphere-inner-sphere-row-0379-6236ef5e4343 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0379 ;
+    oa:article <https://www.orionsarm.com/eg-article/46661cf5952e9> ;
+    oa:canonical true ;
+    oa:colonyName "Iota Belt" ;
+    oa:luminositySol "2.321" ;
+    oa:massSol "1.29" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 378 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0379-6236ef5e4343-source-distance ;
+    oa:spectralType "G0 V" ;
+    oa:starName "Iota Persei" .
+
+value:inner-sphere-inner-sphere-row-0379-6236ef5e4343-source-distance a oa:QuantityValue ;
+    qudt:numericValue 34.499 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

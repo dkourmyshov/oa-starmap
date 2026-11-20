@@ -1,0 +1,32 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Ighlawu
+
+id:inner-sphere-row-0076 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Ighlawu" .
+
+claim:inner-sphere-inner-sphere-row-0076-420cd3359a30 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0076 ;
+    oa:canonical true ;
+    oa:colonyName "Ighlawu" ;
+    oa:luminositySol "." ;
+    oa:massSol "." ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 75 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0076-420cd3359a30-source-distance ;
+    oa:spectralType "T7.5" ;
+    oa:starName "WISE J0521+1025" .
+
+value:inner-sphere-inner-sphere-row-0076-420cd3359a30-source-distance a oa:QuantityValue ;
+    qudt:numericValue 16.3 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

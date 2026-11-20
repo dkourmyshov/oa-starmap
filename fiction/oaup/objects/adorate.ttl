@@ -1,0 +1,52 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Adorate
+
+id:world-adorate a oa:Place, oa:World ;
+    skos:prefLabel "Adorate" ;
+    oa:article <https://www.orionsarm.com/eg-article/45e4e60b2bec2> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "In Perseus, from coordinates. Formerly Sophic League; the affiliation is the present holder." ;
+    oa:uncertain false .
+
+claim:location-world-adorate a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/45e4e60b2bec2> ;
+    oa:about id:world-adorate ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg 58.2917 ;
+    oa:distance value:location-world-adorate-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:rightAscensionDeg 34.6875 .
+
+value:location-world-adorate-distance a oa:QuantityValue ;
+    qudt:numericValue 5980.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-adorate-amalgamation a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/45e4e60b2bec2> ;
+    oa:about id:world-adorate ;
+    oa:canonical true ;
+    oa:polity id:polity-amalgamation ;
+    oa:recordOrder 0 .
+
+claim:event-world-adorate-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/45e4e60b2bec2> ;
+    oa:about id:world-adorate ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "Fell to the Amalgamation, a year after Halsokallan." ;
+    oa:polity id:polity-amalgamation ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 8761 .

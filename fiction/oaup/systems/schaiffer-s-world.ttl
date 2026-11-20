@@ -1,0 +1,33 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Schaiffer's World
+
+id:inner-sphere-row-0684 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Schaiffer's World" .
+
+claim:inner-sphere-inner-sphere-row-0684-7241e8284654 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0684 ;
+    oa:article <https://www.orionsarm.com/eg-article/4782f7e4b314a> ;
+    oa:canonical true ;
+    oa:colonyName "Schaiffer's World" ;
+    oa:luminositySol "0.07" ;
+    oa:massSol "." ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 683 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0684-7241e8284654-source-distance ;
+    oa:spectralType "K4" ;
+    oa:starName "Gliese 830" .
+
+value:inner-sphere-inner-sphere-row-0684-7241e8284654-source-distance a oa:QuantityValue ;
+    qudt:numericValue 57.802 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

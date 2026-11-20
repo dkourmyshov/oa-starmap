@@ -1,0 +1,101 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Hamal
+
+id:world-hamal a oa:Place, oa:World ;
+    skos:prefLabel "Hamal" ;
+    oa:article <https://www.orionsarm.com/eg-article/464dd7be05218> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Alpha Arietis, and the colony table already records both holders. The article's 65.81 ly is the catalogue's figure to two decimals; its 8.386 ly to Sheratan comes out at 8.324 here, which is a later parallax moving Sheratan rather than any doubt about which stars these are. Gatewai is a world of this system." ;
+    oa:systemName "Hamal" ;
+    oa:uncertain false .
+
+claim:location-world-hamal a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/464dd7be05218> ;
+    oa:about id:world-hamal ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Alpha Arietis" .
+
+claim:affiliation-world-hamal-metasoft a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/464dd7be05218> ;
+    oa:about id:world-hamal ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft ;
+    oa:recordOrder 0 .
+
+claim:affiliation-world-hamal-nocozo a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/464dd7be05218> ;
+    oa:about id:world-hamal ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 1 .
+
+# Gatewai
+
+id:world-gatewai a oa:Place, oa:World ;
+    skos:prefLabel "Gatewai" ;
+    oa:article <https://www.orionsarm.com/eg-article/464dd7be05218> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "A world of the Hamal system, entered above under both its holders." ;
+    oa:systemName "Hamal" ;
+    oa:uncertain false .
+
+claim:location-world-gatewai a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/464dd7be05218> ;
+    oa:about id:world-gatewai ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Alpha Arietis" .
+
+claim:affiliation-world-gatewai-metasoft a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/464dd7be05218> ;
+    oa:about id:world-gatewai ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft ;
+    oa:recordOrder 0 .
+
+claim:affiliation-world-gatewai-nocozo a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/464dd7be05218> ;
+    oa:about id:world-gatewai ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 1 .
+
+# Hamal
+
+id:inner-sphere-row-0778 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Hamal" .
+
+claim:inner-sphere-inner-sphere-row-0778-656620dd2692 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0778 ;
+    oa:article <https://www.orionsarm.com/eg-article/464dd7be05218> ;
+    oa:canonical true ;
+    oa:colonyName "Hamal" ;
+    oa:luminositySol "77.36" ;
+    oa:massSol "1.65" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 777 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0778-656620dd2692-source-distance ;
+    oa:spectralType "K2 III" ;
+    oa:starName "Alpha Arietis" .
+
+value:inner-sphere-inner-sphere-row-0778-656620dd2692-source-distance a oa:QuantityValue ;
+    qudt:numericValue 65.81 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

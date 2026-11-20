@@ -1,0 +1,41 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# St. Xye
+
+id:world-st-xye a oa:Place, oa:World ;
+    skos:prefLabel "St. Xye" ;
+    oa:article <https://www.orionsarm.com/eg-article/47897b8e2ccb2> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "No dates." ;
+    oa:uncertain false .
+
+claim:location-world-st-xye a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47897b8e2ccb2> ;
+    oa:about id:world-st-xye ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:constellationName "Norma" ;
+    oa:distance value:location-world-st-xye-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:note "Left as a cone. The Celestia add-on gives a direction for this system at exactly the 623 ly the article states, which is what recommended the same upgrade for MegaSov and Hightower — but that direction is in Ara, 8.7 degrees from its centre, and 18 degrees from the centre of Norma, whose cone has a radius of 10.5. It is not in the constellation the article gives.\nWhat probably happened is visible in the pair. St Xye's gate partner is Baenf, 8.8 degrees away in the add-on, and Baenf's position is the well-founded one: its article places it in the \"Utopia Outer Arae\" and the add-on puts it 2.7 degrees from Ara's centre. So the anchored end of this link is Baenf, and St Xye looks to have been set down beside it — which carried it out of Norma and into Ara. See questions.md." .
+
+value:location-world-st-xye-distance a oa:QuantityValue ;
+    qudt:numericValue 623.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-st-xye-negentropy-alliance a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47897b8e2ccb2> ;
+    oa:about id:world-st-xye ;
+    oa:canonical true ;
+    oa:polity id:polity-negentropy-alliance ;
+    oa:recordOrder 0 .

@@ -1,4 +1,4 @@
-"""Build the canonical Orion's Arm worlds from ``fiction/worlds.yaml``.
+"""Build the canonical Orion's Arm worlds from ``fiction/oaup/``.
 
 The interesting part is that these positions are not all the same kind of thing.
 The setting locates places the way an observer would — a distance and a
@@ -31,20 +31,13 @@ import numpy as np
 
 from oastarmap.build.writer import write_json
 from oastarmap.fiction.resolve import fold_diacritics
-from oastarmap.fiction.schema import (
-    ConstellationFile,
-    FictionFile,
-    OAStarFile,
-    OASystemFile,
-    World,
-    WorldFile,
-    parse_distance,
-)
+from oastarmap.fiction.schema import ConstellationFile, World, parse_distance
 from oastarmap.fiction.starnames import StarResolver
+from oastarmap.fiction.store import OAUP_DIR, load_store
 from oastarmap.paths import DATA_OUT_DIR, FICTION_DIR
 from oastarmap.transform.frame import PC_TO_LY, STORAGE_UNIT, icrs_to_galactic_xyz
 
-WORLDS_FILE = "worlds.yaml"
+WORLDS_FILE = OAUP_DIR
 CONSTELLATIONS_FILE = "constellations.yaml"
 
 SOURCE_TITLE = "Orion's Arm Encyclopaedia Galactica"
@@ -254,33 +247,28 @@ def build_worlds(
     resolver, by_hip, by_hd = _load_star_lookup(out_dir, constellation_values)
     star_positions = np.fromfile(out_dir / "stars.bin", dtype="<f4").reshape(-1, 5)
 
-    source = WorldFile.load(worlds_path)
+    store = load_store(worlds_path)
+    source = store.world_file
     constellations = ConstellationFile.load(
         worlds_path.with_name(CONSTELLATIONS_FILE)
     ).by_name()
 
-    known_polities = {
-        p.id for p in FictionFile.load(worlds_path.with_name("polities.yaml")).polities
-    }
+    known_polities = {p.id for p in store.fiction.polities}
     unknown = sorted({a for w in source.worlds for a in w.affiliations} - known_polities)
     if unknown:
-        raise ValueError(f"worlds.yaml cites unknown affiliations: {unknown}")
+        raise ValueError(f"oaup/ cites unknown affiliations: {unknown}")
     # An event's polity is a claim about the past, and a dissolved polity is
     # still entered in the polity file, so the same check applies.
     unknown = sorted(
         {e.polity for w in source.worlds for e in w.events if e.polity} - known_polities
     )
     if unknown:
-        raise ValueError(f"worlds.yaml events name unknown polities: {unknown}")
+        raise ValueError(f"oaup/ events name unknown polities: {unknown}")
 
     # Add-on designations, so an `oa_star` binding fails loudly rather than
     # silently placing nothing.
-    oa_names: set[str] = set()
-    oa_path = worlds_path.with_name("oa_stars.yaml")
-    if oa_path.exists():
-        oa_names = {entry.name for entry in OAStarFile.load(oa_path).stars}
-        curation = OASystemFile.load(worlds_path.with_name("oa_systems.yaml"))
-        oa_names |= {system.star for system in curation.systems}
+    oa_names = {entry.name for entry in store.stars}
+    oa_names |= {system.star for system in store.oa_system_file.systems}
 
     stats = WorldStats()
     records: list[dict[str, Any]] = []
@@ -441,7 +429,7 @@ def build_worlds(
         if host is None:
             raise ValueError(
                 f"world {record['name']!r} sits in {record['in_world']!r}, "
-                "which is not in this file"
+                "which is not in the knowledge graph"
             )
         if host["x"] is None:
             raise ValueError(

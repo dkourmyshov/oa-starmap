@@ -1,0 +1,174 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Copernicus
+
+id:world-copernicus a oa:Place, oa:World ;
+    skos:prefLabel "Copernicus" ;
+    oa:article <https://www.orionsarm.com/eg-article/486ebb201f514> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "55 Cancri, 41 ly out in Cancer. The Copernicus article is at https://www.orionsarm.com/eg-article/45e24d79c0d8b, read for the events. Affiliated to the Terragen Federation, which is the holder recorded, though the article gives it close ties to the Sophic League, Metasoft and the Solar Dominion besides." ;
+    oa:systemName "Copernicus" ;
+    oa:uncertain false .
+
+claim:location-world-copernicus a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/486ebb201f514> ;
+    oa:about id:world-copernicus ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "55 Cancri" .
+
+claim:affiliation-world-copernicus-terragen-federation a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/486ebb201f514> ;
+    oa:about id:world-copernicus ;
+    oa:canonical true ;
+    oa:polity id:polity-terragen-federation ;
+    oa:recordOrder 0 .
+
+claim:event-world-copernicus-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/486ebb201f514> ;
+    oa:about id:world-copernicus ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "\"Reached: 809 AT, by subsophont probe Philip K. Dick.\"" ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 809 .
+
+claim:event-world-copernicus-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/486ebb201f514> ;
+    oa:about id:world-copernicus ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"First crewed colonization mission in 1421 by the Kontore League.\" Kontore League is not on the roster (see unplaced) The Kontore League is no polity of this file." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 1421 .
+
+claim:event-world-copernicus-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/486ebb201f514> ;
+    oa:about id:world-copernicus ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"Riga joined the Solar Dominion in 5500, and Danzig formed close ties with the Terragen Federation.\" Riga is one world of the system; the panel has Danzig with ties to the Terragen Federation and Mazda affiliated to the Sophic League, undated." ;
+    oa:polity id:polity-solar-dominion ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 2 ;
+    oa:yearAT 5500 .
+
+claim:event-world-copernicus-004 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/486ebb201f514> ;
+    oa:about id:world-copernicus ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"In 2058 the Conver Ambi arrived and set up an embassy/colony on Danzig, in the continent of Wendlant.\" Founded within the already- settled system; recorded because it names a new roster polity establishing a colony, later becoming (undated) 'the dominant force in this system'. An embassy and colony on Danzig, in the continent of Wendlant, one world of the system." ;
+    oa:polity id:polity-conver-ambi ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 3 ;
+    oa:yearAT 2058 .
+
+claim:event-world-copernicus-005 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/486ebb201f514> ;
+    oa:about id:world-copernicus ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"At this time the Amity population were becoming increasingly attracted by the spiritual ethos of the Sophic League, and joined them in 6887.\" Amity is a local faction on Mazda (unplaced), within the Copernicus system. The Amity population, one world of the system, drawn to the League's spiritual ethos." ;
+    oa:polity id:polity-sophic-league ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 4 ;
+    oa:yearAT 6887 .
+
+# Copernicus
+
+id:inner-sphere-row-0463 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Copernicus" .
+
+claim:inner-sphere-inner-sphere-row-0463-7848c3cba34b a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0463 ;
+    oa:article <https://www.orionsarm.com/eg-article/45e24d79c0d8b> ;
+    oa:canonical true ;
+    oa:colonyName "Copernicus" ;
+    oa:luminositySol "0.640" ;
+    oa:massSol "0.96" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 462 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0463-7848c3cba34b-source-distance ;
+    oa:spectralType "K0 IV-V" ;
+    oa:starName "Rho1 Cancri A" .
+
+value:inner-sphere-inner-sphere-row-0463-7848c3cba34b-source-distance a oa:QuantityValue ;
+    qudt:numericValue 41.053 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Copernicus
+
+id:inner-sphere-row-0464 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Copernicus" .
+
+claim:inner-sphere-inner-sphere-row-0464-dac809c6a7fb a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0464 ;
+    oa:article <https://www.orionsarm.com/eg-article/45e24d79c0d8b> ;
+    oa:canonical true ;
+    oa:colonyName "Copernicus" ;
+    oa:luminositySol "0.007336" ;
+    oa:massSol "0.255" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 463 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0464-dac809c6a7fb-source-distance ;
+    oa:spectralType "M4 V" ;
+    oa:starName "Rho1 Cancri B" .
+
+value:inner-sphere-inner-sphere-row-0464-dac809c6a7fb-source-distance a oa:QuantityValue ;
+    qudt:numericValue 41.053 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Danzig
+
+id:world-danzig a oa:Place, oa:World ;
+    skos:prefLabel "Danzig" ;
+    oa:article <https://www.orionsarm.com/eg-article/486ebb201f514> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "The world of Copernicus, and bound to the same star that entry is, which it shares an article with. The Celestia wormhole-nexus add-on names 55 Cancri as Danzig independently." ;
+    oa:systemName "Copernicus" ;
+    oa:uncertain false .
+
+claim:location-world-danzig a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/486ebb201f514> ;
+    oa:about id:world-danzig ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "55 Cancri" .
+
+claim:affiliation-world-danzig-terragen-federation a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/486ebb201f514> ;
+    oa:about id:world-danzig ;
+    oa:canonical true ;
+    oa:polity id:polity-terragen-federation ;
+    oa:recordOrder 0 .
+
+claim:event-world-danzig-001 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-danzig ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "The First Federation Kontore League colony ship Hanse arrives at Danzig ." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:sourceDescription "Encyclopaedia timeline, Middle Federation / Megacorps" ;
+    oa:yearAT 1421 .

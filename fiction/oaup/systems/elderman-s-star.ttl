@@ -1,0 +1,27 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# Elderman's Star
+
+id:world-elderman-s-star a oa:Place, oa:World ;
+    skos:prefLabel "Elderman's Star" ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:uncertain false .
+
+claim:location-world-elderman-s-star a prov:Entity, oa:LocationClaim ;
+    oa:about id:world-elderman-s-star ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:note "No position given, and no article found." .
+
+claim:affiliation-world-elderman-s-star-communion-of-worlds a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:world-elderman-s-star ;
+    oa:canonical true ;
+    oa:polity id:polity-communion-of-worlds ;
+    oa:recordOrder 0 .

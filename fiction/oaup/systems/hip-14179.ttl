@@ -1,0 +1,28 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# HIP 14179
+
+id:world-hip-14179 a oa:Place, oa:World ;
+    skos:prefLabel "HIP 14179" ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Also HD 18788, in Perseus at 1,357 ly. Named only by its catalogue number, which is what the roster gives it — the Encyclopaedia has no article and no name for it that reached this map." ;
+    oa:uncertain false .
+
+claim:location-world-hip-14179 a prov:Entity, oa:LocationClaim ;
+    oa:about id:world-hip-14179 ;
+    oa:canonical true ;
+    oa:catalogueFromSource true ;
+    oa:hipparcosId 14179 ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+claim:affiliation-world-hip-14179-perseus-principalities a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:world-hip-14179 ;
+    oa:canonical true ;
+    oa:polity id:polity-perseus-principalities ;
+    oa:recordOrder 0 .

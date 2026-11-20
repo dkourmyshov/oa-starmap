@@ -1,0 +1,17 @@
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+
+# Penglai Empire
+
+id:polity-penglai-empire a oa:Polity ;
+    skos:prefLabel "Penglai Empire" ;
+    oa:ambiguousName false ;
+    oa:color "#EF968F" ;
+    oa:editorialNote "A salmon, chosen away from every green: the first choice was a lime that\nread as the Zoeific Biopolity's in a ring at low alpha.\nIts own article, https://www.orionsarm.com/eg-article/48e8a5fb37a9a:\n\"developed from the Hsien revolution\"; \"the term 'the Penglaiese Empire'\nis a misnomer, since it was never an unified political group. It was\ngenerally called the 'Penglai Evolution' during its ascendancy\"; \"became\npart of the NoCoZo treaty in 1676\"; \"the formal end of the Penglaiese\nEvolution came in the Shi War 2220-2251\", after which \"the Reborn\nPenglaiese Empire came to rule the Sigma Draconis system. Formally\nindependent, it quickly became a totally dependent part of the Conver\nAmbi\", and \"eventually dissolved into independent worlds\", undated. So no\nfounding or dissolution year is set: the Evolution's end is 2251, but\nthe article keeps the name in use after it.\n\"Early superbright-tweak empire, based around Penglai.\"" ;
+    oa:hasSource src:eg-historical-polities ;
+    oa:kind "meta-empire" ;
+    oa:polityId "penglai-empire" ;
+    oa:recordOrder 69 ;
+    oa:uncertain false .

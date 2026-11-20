@@ -1,0 +1,105 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# 61 Cygni
+
+id:world-61-cygni a oa:Place, oa:World ;
+    skos:prefLabel "61 Cygni" ;
+    oa:article <https://www.orionsarm.com/eg-article/57ab8a3c4959c> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "A nearby binary of two orange dwarfs, 11.4 ly out in Cygnus, settled early enough to be one of the first systems colonised outside Solsys." ;
+    oa:systemName "61 Cygni" ;
+    oa:uncertain false .
+
+claim:location-world-61-cygni a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/57ab8a3c4959c> ;
+    oa:about id:world-61-cygni ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "61 Cygni" .
+
+claim:event-world-61-cygni-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/57ab8a3c4959c> ;
+    oa:about id:world-61-cygni ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 370 .
+
+claim:event-world-61-cygni-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/57ab8a3c4959c> ;
+    oa:about id:world-61-cygni ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "\"Colonized 370AT (arrival of first robotic probe)\" Header already records this as 'settled 370'; the clause itself describes only a robotic probe, which this brief classifies as visited rather than settled. The panel's own gloss on its 'Colonized 370AT': the first robotic probe; the map's older settled 370 is kept beside it." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 370 .
+
+claim:event-world-61-cygni-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/57ab8a3c4959c> ;
+    oa:about id:world-61-cygni ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"597AT (arrival of first colonists)\" The first colonists; the body has the flights arriving 'in the late Fifth and early Sixth century'." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 2 ;
+    oa:yearAT 597 .
+
+claim:event-world-61-cygni-004 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/57ab8a3c4959c> ;
+    oa:about id:world-61-cygni ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "\"61 Cygni's sporadic contact with various habitats in SolSys meant it was quickly contacted by the First Federation in 945 AT.\" The Consortium declined the Federation's invitation to join; no transfer occurred." ;
+    oa:polity id:polity-first-federation ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 3 ;
+    oa:yearAT 945 .
+
+claim:event-world-61-cygni-005 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/57ab8a3c4959c> ;
+    oa:about id:world-61-cygni ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"ETA's system governance operations were consolidated into the not- for-profit Cygnus Development Corporation (CDC).\" Same year the ETA Consortium was formally liquidated; CDC is not a roster polity. The ETA Consortium's governance consolidated into the Cygnus Development Corporation; neither a polity of this file." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 4 ;
+    oa:yearAT 2114 .
+
+# Trip
+
+id:world-trip a oa:Place, oa:World ;
+    skos:prefLabel "Trip" ;
+    oa:article <https://www.orionsarm.com/eg-article/47a67ce4bf7a5> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "A world of 61 Cygni, and bound to that star, as the system entry beside it already was. It sat unplaced only because the system was named in the `system` field, which groups, and never in the location." ;
+    oa:systemName "61 Cygni" ;
+    oa:uncertain false .
+
+claim:location-world-trip a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47a67ce4bf7a5> ;
+    oa:about id:world-trip ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "61 Cygni" .
+
+claim:event-world-trip-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47a67ce4bf7a5> ;
+    oa:about id:world-trip ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"Colonised 597 AT\" The article names no polity; the system was governed by the ETA Consortium and then, in the 2000s, the Cygnus Development Corporation, and never joined the First Federation." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 597 .

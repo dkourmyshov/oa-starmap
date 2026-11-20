@@ -1,0 +1,91 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Refugium
+
+id:world-refugium a oa:Place, oa:World ;
+    skos:prefLabel "Refugium" ;
+    oa:article <https://www.orionsarm.com/eg-article/476ec0a831af6> ;
+    oa:editorialNote "---- Crystal Star Domain -------------------------------------------------\n\nIts two nebulae are in polities.yaml, both shared with earlier claimants." ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:uncertain false .
+
+claim:location-world-refugium a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/476ec0a831af6> ;
+    oa:about id:world-refugium ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -43.23 ;
+    oa:distance value:location-world-refugium-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:note "The Encyclopaedia gives the direction itself, which this entry spent a while not knowing. The Refugium Federation's own page has it: \"In 5740 the first colony ships reached Refugium, an easily terraformable terrestrial world approximately 2200 lightyears from Sol towards NGC 3680.\" So the direction is NGC 3680's, resolved through this map's own cluster catalogue at 171.404, -43.230; the distance is the article's 2,205, which the federation page's \"approximately 2200\" agrees with.\nNGC 3680 itself is 3,335 ly out, so \"towards\" is a bearing and not a neighbourhood -- Refugium sits a thousand light years in front of the cluster it is lined up with.\nThe add-on's REFUGIUM EMPIRE anchor, which this entry briefly took its direction from, falls 0.159 degrees from NGC 3680. That is not a second source agreeing: it is the add-on's author reading the same sentence and pointing at the same cluster. Recorded because it was nearly mistaken for corroboration." ;
+    oa:rightAscensionDeg 171.404 .
+
+value:location-world-refugium-distance a oa:QuantityValue ;
+    qudt:numericValue 2205.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-refugium-refugium-federation a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/476ec0a831af6> ;
+    oa:about id:world-refugium ;
+    oa:canonical true ;
+    oa:polity id:polity-refugium-federation ;
+    oa:recordOrder 0 .
+
+claim:event-world-refugium-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/476ec0a831af6> ;
+    oa:about id:world-refugium ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 5740 .
+
+claim:event-world-refugium-002 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-refugium ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "The first relativistic colony ships of the Semperist Survival Fleet reached Refugium , an easily terraformable terrestrial world approximately 2200 lightyears from Sol." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:sourceDescription "Encyclopaedia timeline, Age of Re-Evaluation" ;
+    oa:yearAT 5740 .
+
+claim:event-world-refugium-003 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-refugium ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "Salaam colonised by the Refugium Federation." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 2 ;
+    oa:sourceDescription "Encyclopaedia timeline, Age of Separate Empires" ;
+    oa:yearAT 5989 .
+
+claim:event-world-refugium-004 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-refugium ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "The Refugium Federation has expanded to a 100 lightyear sphere, including 20 colonised systems. Contacts are by tightbeam laser, and most inhabitants believed that by now the rest of mankind would have destroyed itself or transformed int..." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 3 ;
+    oa:sourceDescription "Encyclopaedia timeline, Age of Separate Empires" ;
+    oa:yearAT 6000 .
+
+claim:event-world-refugium-005 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-refugium ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "A contact fleet launched from Polonius (see Refugium Federation ) reaches a nearby world, and diplomatic contact begins. The aliens turn out to be Kestnerists. The Kestnerists give the Semperists the news that humankind has survived. The..." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 4 ;
+    oa:sourceDescription "Encyclopaedia timeline, The Age of Crisis" ;
+    oa:yearAT 6916 .

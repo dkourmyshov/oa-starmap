@@ -1,0 +1,74 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Ran
+
+id:world-ran a oa:Place, oa:World ;
+    skos:prefLabel "Ran" ;
+    oa:article <https://www.orionsarm.com/eg-article/4795465645a82> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Epsilon Eridani, 10.5 ly, as the colony table has it; Ran is the system, and the article calls it the birthplace of the Eridanus League. Since the 59th century its polities have been overseen by the Ran Combine, which is local." ;
+    oa:systemName "Ran" ;
+    oa:uncertain false .
+
+claim:location-world-ran a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4795465645a82> ;
+    oa:about id:world-ran ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Epsilon Eridani" .
+
+claim:event-world-ran-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4795465645a82> ;
+    oa:about id:world-ran ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"Reached 595 AT by the Kelkemesh, a Gengineer Republic starship\" The first arrival, followed by the Mayari from the Cislunar Alliance in 603 and the Cinnabar from the Martian Union in 607; the article calls Ran one of the first systems settled by Terragens. The Gengineer Republic, the Cislunar Alliance and the Martian Union are Solsys polities of the Interplanetary Age, none of this file." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 595 .
+
+claim:event-world-ran-002 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-ran ;
+    oa:canonical true ;
+    oa:eventKind oa:Capital ;
+    oa:note "\"River of Stars Charter proclaimed at Epsilon Eridani IID; leads to the foundation of the Eridanus League.\" The article itself says only \"Birthplace of the Eridanus League\", undated." ;
+    oa:polity id:polity-eridanus-league ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:sourceDescription "Encyclopaedia timeline, The Sundering" ;
+    oa:yearAT 770 .
+
+# Ran
+
+id:inner-sphere-row-0017 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Ran" .
+
+claim:inner-sphere-inner-sphere-row-0017-f2a5e88a0a5f a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0017 ;
+    oa:article <https://www.orionsarm.com/eg-article/4795465645a82> ;
+    oa:canonical true ;
+    oa:colonyName "Ran" ;
+    oa:luminositySol "0.381" ;
+    oa:massSol "0.781" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 16 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0017-f2a5e88a0a5f-source-distance ;
+    oa:spectralType "K2 V" ;
+    oa:starName "Epsilon Eridani" .
+
+value:inner-sphere-inner-sphere-row-0017-f2a5e88a0a5f-source-distance a oa:QuantityValue ;
+    qudt:numericValue 10.502 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

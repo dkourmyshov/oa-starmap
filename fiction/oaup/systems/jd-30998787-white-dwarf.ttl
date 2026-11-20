@@ -1,0 +1,33 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# JD 30998787 White Dwarf
+
+id:star-jd-30998787-white-dwarf a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 30998787 White Dwarf" ;
+    oa:sourceName "JD 30998787 White Dwarf" .
+
+claim:celestia-star-jd-30998787-white-dwarf-96963bded150 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-30998787-white-dwarf ;
+    oa:absoluteMagnitude 15.09 ;
+    oa:canonical true ;
+    oa:declinationDeg -15.09 ;
+    oa:distance value:celestia-star-jd-30998787-white-dwarf-96963bded150-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 38.223 ;
+    oa:sourceArchive "OAAddons11.zip" ;
+    oa:sourceFile "oastardwarf.stc" ;
+    oa:spectralType "DA2" .
+
+value:celestia-star-jd-30998787-white-dwarf-96963bded150-distance a oa:QuantityValue ;
+    qudt:numericValue 201.87 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

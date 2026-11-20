@@ -1,0 +1,18 @@
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+
+# Soft Cathedral
+
+id:polity-soft-cathedral a oa:Polity ;
+    skos:prefLabel "Soft Cathedral" ;
+    oa:ambiguousName false ;
+    oa:color "#FFCA28" ;
+    oa:dissolvedAT 4521 ;
+    oa:editorialNote "\"Major historical bioist empire/house.\" Timeline, 4521: \"Soft Cathedrals\ndestroyed by the Sagittarius Sphere when they infect the Cathedral core\nsystems with conversion weapons.\"" ;
+    oa:hasSource src:eg-historical-polities ;
+    oa:kind "meta-empire" ;
+    oa:polityId "soft-cathedral" ;
+    oa:recordOrder 56 ;
+    oa:uncertain false .

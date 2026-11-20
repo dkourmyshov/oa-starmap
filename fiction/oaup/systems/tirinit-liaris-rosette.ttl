@@ -1,0 +1,33 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Tirinit / Liaris Rosette
+
+id:inner-sphere-row-0612 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Tirinit / Liaris Rosette" .
+
+claim:inner-sphere-inner-sphere-row-0612-a506cd7f9d32 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0612 ;
+    oa:article <https://www.orionsarm.com/eg-article/47768a8d082e7> ;
+    oa:canonical true ;
+    oa:colonyName "Tirinit / Liaris Rosette" ;
+    oa:luminositySol "1.42" ;
+    oa:massSol "." ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 611 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0612-a506cd7f9d32-source-distance ;
+    oa:spectralType "F9 V" ;
+    oa:starName "171 G. Puppis" .
+
+value:inner-sphere-inner-sphere-row-0612-a506cd7f9d32-source-distance a oa:QuantityValue ;
+    qudt:numericValue 49.830 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

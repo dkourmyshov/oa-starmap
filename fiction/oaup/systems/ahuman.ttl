@@ -1,0 +1,78 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# (Ahuman)
+
+id:inner-sphere-row-0509 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "(Ahuman)" .
+
+claim:inner-sphere-inner-sphere-row-0509-950e9a7eea79 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0509 ;
+    oa:canonical true ;
+    oa:colonyName "(Ahuman)" ;
+    oa:luminositySol "0.02" ;
+    oa:massSol "." ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 508 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0509-950e9a7eea79-source-distance ;
+    oa:spectralType "M0 V" ;
+    oa:starName "Gliese 471" .
+
+value:inner-sphere-inner-sphere-row-0509-950e9a7eea79-source-distance a oa:QuantityValue ;
+    qudt:numericValue 44.744 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# (Ahuman)
+
+id:inner-sphere-row-0514 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "(Ahuman)" .
+
+claim:inner-sphere-inner-sphere-row-0514-483924d8c011 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0514 ;
+    oa:canonical true ;
+    oa:colonyName "(Ahuman)" ;
+    oa:luminositySol "." ;
+    oa:massSol "." ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 513 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0514-483924d8c011-source-distance ;
+    oa:spectralType "M4 V" ;
+    oa:starName "Gliese 469 A" .
+
+value:inner-sphere-inner-sphere-row-0514-483924d8c011-source-distance a oa:QuantityValue ;
+    qudt:numericValue 45.132 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# (Ahuman)
+
+id:inner-sphere-row-0515 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "(Ahuman)" .
+
+claim:inner-sphere-inner-sphere-row-0515-c4b277e16cfd a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0515 ;
+    oa:canonical true ;
+    oa:colonyName "(Ahuman)" ;
+    oa:luminositySol "." ;
+    oa:massSol "." ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 514 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0515-c4b277e16cfd-source-distance ;
+    oa:spectralType "." ;
+    oa:starName "Gliese 469 B" .
+
+value:inner-sphere-inner-sphere-row-0515-c4b277e16cfd-source-distance a oa:QuantityValue ;
+    qudt:numericValue 45.132 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

@@ -1,0 +1,57 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Sesharia
+
+id:inner-sphere-row-0235 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Sesharia" .
+
+claim:inner-sphere-inner-sphere-row-0235-843657fd9faf a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0235 ;
+    oa:article <https://www.orionsarm.com/eg-article/48f94f1a7f8db> ;
+    oa:canonical true ;
+    oa:colonyName "Sesharia" ;
+    oa:luminositySol "0.038" ;
+    oa:massSol "0.432" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 234 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0235-843657fd9faf-source-distance ;
+    oa:spectralType "M2 V" ;
+    oa:starName "Gliese 54 A" .
+
+value:inner-sphere-inner-sphere-row-0235-843657fd9faf-source-distance a oa:QuantityValue ;
+    qudt:numericValue 26.855 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Sesharia
+
+id:inner-sphere-row-0236 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Sesharia" .
+
+claim:inner-sphere-inner-sphere-row-0236-703028650bcb a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0236 ;
+    oa:article <https://www.orionsarm.com/eg-article/48f94f1a7f8db> ;
+    oa:canonical true ;
+    oa:colonyName "Sesharia" ;
+    oa:luminositySol "0.014" ;
+    oa:massSol "0.301" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 235 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0236-703028650bcb-source-distance ;
+    oa:spectralType "M3.5 V" ;
+    oa:starName "Gliese 54 B" .
+
+value:inner-sphere-inner-sphere-row-0236-703028650bcb-source-distance a oa:QuantityValue ;
+    qudt:numericValue 26.855 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

@@ -1,0 +1,40 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Nivline
+
+id:world-nivline a oa:Place, oa:World ;
+    skos:prefLabel "Nivline" ;
+    oa:article <https://www.orionsarm.com/eg-article/468065756bab2> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:systemName "Nivline" ;
+    oa:uncertain false .
+
+claim:location-world-nivline a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/468065756bab2> ;
+    oa:about id:world-nivline ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:constellationName "Puppis" ;
+    oa:distance value:location-world-nivline-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+value:location-world-nivline-distance a oa:QuantityValue ;
+    qudt:numericValue 723.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-nivline-nocozo a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/468065756bab2> ;
+    oa:about id:world-nivline ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 0 .

@@ -1,0 +1,63 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# Yoruba
+
+id:world-yoruba a oa:Place, oa:World ;
+    skos:prefLabel "Yoruba" ;
+    oa:article <https://www.orionsarm.com/eg-article/534feb8182fb1> ;
+    oa:editorialNote "---- Metasoft Version Tree ----------------------------------------------\n\nThe widest spread of any roster here: 42 Tauri at 91 ly and Modular Future\nat 5,771, with the older colonies near Sol and the deep ones in Taurus,\nOrion and Gemini behind the clusters Metasoft already holds. Two places are\nrecorded without a position, because the source locates them against an\nobject the cluster catalogue does not contain; see questions.md." ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "HD 216008, 169 ly out in Grus." ;
+    oa:uncertain false .
+
+claim:location-world-yoruba a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/534feb8182fb1> ;
+    oa:about id:world-yoruba ;
+    oa:canonical true ;
+    oa:catalogueFromSource true ;
+    oa:hdId 216008 ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+claim:affiliation-world-yoruba-fomalhaut-acquisition-society a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/534feb8182fb1> ;
+    oa:about id:world-yoruba ;
+    oa:canonical true ;
+    oa:polity id:polity-fomalhaut-acquisition-society ;
+    oa:recordOrder 0 .
+
+claim:event-world-yoruba-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/534feb8182fb1> ;
+    oa:about id:world-yoruba ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "Reached by ahumans." ;
+    oa:precision oa:Circa ;
+    oa:recordOrder 0 ;
+    oa:yearAT 1800 .
+
+claim:event-world-yoruba-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/534feb8182fb1> ;
+    oa:about id:world-yoruba ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"In 2307 an Expansion Age colony ship arrived in the system, carrying nearbaseline humans from Luna, Mars and the asteroid belt, many of whom claimed West African ancestry.\" New against the header, which records only 'settled 1800'. This is the system's first human colony. Nearbaseline humans from Luna, Mars and the Belt; the rogue ahuman AI of 1800 is the map's older settlement." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 2307 .
+
+claim:event-world-yoruba-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/534feb8182fb1> ;
+    oa:about id:world-yoruba ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"in 3055 a FAS acquisitor/trader mission obtained a decryption key from the still-active diamond belt system of JD 778-0919-1 which could unlock the mysteries inside the computronium structures; for a thousand years the Curators of the FAS explored the strange datascapes contained within; during this time Yoruba formally became a member of the relatively modest Fomalhaut empire.\" New against the header. The text dates the decryption mission to 3055 but says only 'during this time' (the following thousand years) for formal FAS membership, so the membership year is not pinned down more precisely than 'not earlier than 3055'. A FAS acquisitor mission, after obtaining a decryption key from the diamond belt system." ;
+    oa:polity id:polity-fomalhaut-acquisition-society ;
+    oa:precision oa:NotEarlierThan ;
+    oa:recordOrder 2 ;
+    oa:yearAT 3055 .

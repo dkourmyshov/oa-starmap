@@ -1,0 +1,85 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Benes
+
+id:world-benes a oa:Place, oa:World ;
+    skos:prefLabel "Benes" ;
+    oa:article <https://www.orionsarm.com/eg-article/460c3a58c388a> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "HD 17925, as the colony table has it." ;
+    oa:systemName "Benes" ;
+    oa:uncertain false .
+
+claim:location-world-benes a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/460c3a58c388a> ;
+    oa:about id:world-benes ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "HD 17925" .
+
+claim:event-world-benes-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/460c3a58c388a> ;
+    oa:about id:world-benes ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"Reached : 1699\" The body's account of the Lagrange Defenders' survey and sale of the system carries no year of its own; this panel figure is presumed to be that event but the text does not say so." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 1699 .
+
+claim:event-world-benes-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/460c3a58c388a> ;
+    oa:about id:world-benes ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"In 1749 AT , the Council elected to join the Eridanus League , giving them access to a wealth of information that resulted in both local renaissances and rashes of ideological conflicts, although the Council successfully prevented these conflicts from escalating and causing widespread damage.\"" ;
+    oa:polity id:polity-eridanus-league ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 1749 .
+
+claim:event-world-benes-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/460c3a58c388a> ;
+    oa:about id:world-benes ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"The system joined the Taurus Nexus at the first opportunity, taking advantage of the wormhole link between Makintairas and Rana that was first opened in 2657.\" The sentence dates the wormhole's opening, not the join itself, but ties the join to it as \"the first opportunity\". The year is the wormhole's opening, at the first opportunity after which the system joined." ;
+    oa:polity id:polity-taurus-nexus ;
+    oa:precision oa:NotEarlierThan ;
+    oa:recordOrder 2 ;
+    oa:yearAT 2657 .
+
+# Benes
+
+id:inner-sphere-row-0371 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Benes" .
+
+claim:inner-sphere-inner-sphere-row-0371-eef9a57268c5 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0371 ;
+    oa:article <https://www.orionsarm.com/eg-article/460c3a58c388a> ;
+    oa:canonical true ;
+    oa:colonyName "Benes" ;
+    oa:luminositySol "0.409" ;
+    oa:massSol "0.899" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 370 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0371-eef9a57268c5-source-distance ;
+    oa:spectralType "K1 V" ;
+    oa:starName "HD 17925" .
+
+value:inner-sphere-inner-sphere-row-0371-eef9a57268c5-source-distance a oa:QuantityValue ;
+    qudt:numericValue 33.792 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

@@ -1,0 +1,18 @@
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+
+# Equalizer Civilization
+
+id:polity-equalizer-civilization a oa:Polity ;
+    skos:prefLabel "Equalizer Civilization" ;
+    oa:ambiguousName false ;
+    oa:color "#B388FF" ;
+    oa:dissolvedAT 7900 ;
+    oa:editorialNote "\"An infamous highly expansive human empire that attempted to implement true\nequality among all humans.\" Timeline, circa 7900: \"Collapse of the\nEqualizer Civilization, after its having wiped out most humans in the\nvolume.\" A circa year, entered as the year given." ;
+    oa:hasSource src:eg-historical-polities ;
+    oa:kind "meta-empire" ;
+    oa:polityId "equalizer-civilization" ;
+    oa:recordOrder 59 ;
+    oa:uncertain false .

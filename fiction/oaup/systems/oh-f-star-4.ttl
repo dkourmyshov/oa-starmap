@@ -1,0 +1,60 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Oh-F-Star-4
+
+id:world-oh-f-star-4 a oa:Place, oa:World ;
+    skos:prefLabel "Oh-F-Star-4" ;
+    oa:article <https://www.orionsarm.com/eg-article/4758a9926c452> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "The near end of an alien wormhole, and the capital of the Carina Rush — which is the volume the wormhole opened and not this system, so the marker keeps the star's own name. In Carina at 2,246 ly and within a twentieth of a degree of the galactic plane, the flattest thing in this file. The add-on's designation carries a trailing hyphen that the name does not.\nNo holder is recorded. This entry carried the Non-Coercive Zone for a while on no authority at all — the add-on's file gives a position and nothing else, and nothing said whose the Rush is. An empty field is the honest answer until something says otherwise." ;
+    oa:uncertain false .
+
+claim:location-world-oh-f-star-4 a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4758a9926c452> ;
+    oa:about id:world-oh-f-star-4 ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:oaStarName "Oh-F-Star-4-" .
+
+# Oh-F-Star-4-
+
+id:star-oh-f-star-4 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "Oh-F-Star-4-" ;
+    oa:sourceName "Oh-F-Star-4-" .
+
+claim:celestia-star-oh-f-star-4-b5d26f7f00c7 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-oh-f-star-4 ;
+    oa:absoluteMagnitude 1.2 ;
+    oa:canonical true ;
+    oa:declinationDeg -58.478 ;
+    oa:distance value:celestia-star-oh-f-star-4-b5d26f7f00c7-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 159.4083 ;
+    oa:sourceArchive "OAAddons8.zip" ;
+    oa:sourceFile "oHF4star.stc" ;
+    oa:spectralType "F4V" .
+
+value:celestia-star-oh-f-star-4-b5d26f7f00c7-distance a oa:QuantityValue ;
+    qudt:numericValue 2246.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:curation-star-oh-f-star-4 a prov:Entity, oa:SystemCuration ;
+    oa:about id:star-oh-f-star-4 ;
+    oa:article <https://www.orionsarm.com/eg-article/4758a9926c452> ;
+    oa:editorialLabel "Oh-F-Star-4" ;
+    oa:hidden false ;
+    oa:note "The near end of an alien wormhole, and the capital of the Carina Rush. Labelled for the star and not for the Rush, which is the large volume the wormhole opened rather than this one system. The add-on's designation ends in a hyphen the name does not; the label drops it. No affiliation: this entry claimed the Non-Coercive Zone for a while with nothing behind it." ;
+    oa:uncertain false .

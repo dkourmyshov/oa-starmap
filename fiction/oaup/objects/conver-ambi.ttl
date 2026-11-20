@@ -1,0 +1,58 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Conver Ambi
+
+id:world-conver-ambi a oa:Place, oa:World ;
+    skos:prefLabel "Conver Ambi" ;
+    oa:kind "polity_marker" ;
+    oa:labelsSystem false ;
+    oa:note "A marker for a polity that no longer exists at the setting's present, in the roster from 1984 to 3943 AT. Its one placed member, Conver Ky, is drawn as the Solar Dominion's today and as Conver Ambi's in history mode; this mark stands for the polity itself at any year." ;
+    oa:uncertain false .
+
+claim:location-world-conver-ambi a prov:Entity, oa:LocationClaim ;
+    oa:about id:world-conver-ambi ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg 17.0 ;
+    oa:distance value:location-world-conver-ambi-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:note "From TaurusNexus.dsc, one of the Orion's Arm Celestia add-ons' location catalogues (OAAddons9, OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv), the only source this map holds that gives the polity a position. It falls in Gemini, 10.2 degrees on the sky and 26 ly in space from Conver Ky, the polity's capital, which this map places on its catalogue star at 56.8 ly -- a marker sitting a few tens of light years from the capital of a polity that was a few tens of light years across, which is where it should sit." ;
+    oa:rightAscensionDeg 97.5 .
+
+value:location-world-conver-ambi-distance a oa:QuantityValue ;
+    qudt:numericValue 80.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-conver-ambi-conver-ambi a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:world-conver-ambi ;
+    oa:canonical true ;
+    oa:polity id:polity-conver-ambi ;
+    oa:recordOrder 0 .
+
+claim:event-world-conver-ambi-001 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-conver-ambi ;
+    oa:canonical true ;
+    oa:eventKind oa:Reported ;
+    oa:note "The polity's own founding, from the timeline: \"Birnam Ecotech joins the Transtellar Cooperative Pact, resulting in the establishment of the Conver Ambi.\" Recorded as `reported` for the same reason Xeon's and the Amalgamation's markers are -- nothing was settled here, a polity came into being and this mark is it." ;
+    oa:polity id:polity-conver-ambi ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 1984 .
+
+claim:event-world-conver-ambi-002 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-conver-ambi ;
+    oa:canonical true ;
+    oa:eventKind oa:Abandoned ;
+    oa:note "\"In the peace accords that ended the Conver Wars, the Conver Ambi is divided into three parts\" -- the core to the Solar Dominion, the Periphery to Metasoft. `abandoned` is the only kind that ends an entry, and what ended here is the polity rather than a colony, which is what this marker stands for.\nWithout these two the entry had no dates at all, so it drew on the contemporary map, where a polity dissolved in 3943 has no business, and failed to draw in its own centuries, where it belongs. An undated entry is shown whenever undated entries are, which for a marker of something that demonstrably ended is the wrong answer twice." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 3943 .

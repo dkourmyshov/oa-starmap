@@ -1,0 +1,32 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Orkaria
+
+id:inner-sphere-row-0563 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Orkaria" .
+
+claim:inner-sphere-inner-sphere-row-0563-043dbae82927 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0563 ;
+    oa:canonical true ;
+    oa:colonyName "Orkaria" ;
+    oa:luminositySol "." ;
+    oa:massSol "." ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 562 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0563-043dbae82927-source-distance ;
+    oa:spectralType "M4.5 V" ;
+    oa:starName "GJ 1214" .
+
+value:inner-sphere-inner-sphere-row-0563-043dbae82927-source-distance a oa:QuantityValue ;
+    qudt:numericValue 47.754 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

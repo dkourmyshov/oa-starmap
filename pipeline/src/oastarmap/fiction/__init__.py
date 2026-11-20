@@ -1,11 +1,19 @@
 """The Orion's Arm fictional layer.
 
-Fictional content references real objects rather than duplicating their
-coordinates, so improvements to the astronomical data propagate automatically and
-a single object can carry both its catalogue identity and its OA identity.
+``oaup/`` is the sole source of truth. Fictional objects reference real
+catalogue objects rather than duplicating their coordinates, and source claims
+retain provenance independently of the generated map data.
 """
 
 from oastarmap.fiction.resolve import ResolutionReport, Resolver
 from oastarmap.fiction.schema import FictionFile, Polity
+from oastarmap.fiction.store import OAUPStore, load_store
 
-__all__ = ["FictionFile", "Polity", "ResolutionReport", "Resolver"]
+__all__ = [
+    "FictionFile",
+    "OAUPStore",
+    "Polity",
+    "ResolutionReport",
+    "Resolver",
+    "load_store",
+]

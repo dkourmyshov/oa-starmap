@@ -1,0 +1,85 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Morpheo A
+
+id:world-morpheo-a a oa:Place, oa:World ;
+    skos:prefLabel "Morpheo A" ;
+    oa:article <https://www.orionsarm.com/eg-article/47bcf7d1a1549> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Named for its star rather than its world, because the world was called Paz — a name this file already uses for a system in Draco — and because the Efficiency Maximization Paradigm has since taken the planet apart. In the Centaurus sector near NGC 5460 at 1,990 ly, which sits it among the Paradigm's other holdings: Budrosa at 1,783, Nirio at 1,800, Jekaumeatrine at 1,818." ;
+    oa:systemName "Morpheo A" ;
+    oa:uncertain false .
+
+claim:location-world-morpheo-a a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47bcf7d1a1549> ;
+    oa:about id:world-morpheo-a ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -48.2988 ;
+    oa:distance value:location-world-morpheo-a-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:nearName "NGC 5460" ;
+    oa:rightAscensionDeg 211.8148 .
+
+value:location-world-morpheo-a-distance a oa:QuantityValue ;
+    qudt:numericValue 1990.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-morpheo-a-paradigm a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47bcf7d1a1549> ;
+    oa:about id:world-morpheo-a ;
+    oa:canonical true ;
+    oa:polity id:polity-paradigm ;
+    oa:recordOrder 0 .
+
+claim:event-world-morpheo-a-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47bcf7d1a1549> ;
+    oa:about id:world-morpheo-a ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 5650 .
+
+claim:event-world-morpheo-a-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47bcf7d1a1549> ;
+    oa:about id:world-morpheo-a ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"Claimed for the Negentropist empire by the linelayer Columbus 5 in 5840.\" By the linelayer Columbus 5." ;
+    oa:polity id:polity-negentropy-alliance ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 5840 .
+
+claim:event-world-morpheo-a-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47bcf7d1a1549> ;
+    oa:about id:world-morpheo-a ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"Taken over by the Efficiency Maximization Paradigm . This planet and its moon were optimized and dismantled before 7430.\" No exact year is given for the takeover itself; it is bounded by the 'before 7430' dismantlement that followed it. The planet and its moon 'optimized and dismantled before 7430'; the same sentence carries the abandonment." ;
+    oa:polity id:polity-paradigm ;
+    oa:precision oa:NotLaterThan ;
+    oa:recordOrder 2 ;
+    oa:yearAT 7430 .
+
+claim:event-world-morpheo-a-004 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47bcf7d1a1549> ;
+    oa:about id:world-morpheo-a ;
+    oa:canonical true ;
+    oa:eventKind oa:Abandoned ;
+    oa:note "\"This planet and its moon were optimized and dismantled before 7430.\"" ;
+    oa:polity id:polity-paradigm ;
+    oa:precision oa:NotLaterThan ;
+    oa:recordOrder 3 ;
+    oa:yearAT 7430 .

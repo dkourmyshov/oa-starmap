@@ -1,0 +1,90 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# The Bonfire System
+
+id:world-the-bonfire-system a oa:Place, oa:World ;
+    skos:prefLabel "The Bonfire System" ;
+    oa:article <https://www.orionsarm.com/eg-article/5a69ca7eef167> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "In Scutum, from coordinates given to a hundredth of a second of arc." ;
+    oa:systemName "The Bonfire System" ;
+    oa:uncertain false .
+
+claim:location-world-the-bonfire-system a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5a69ca7eef167> ;
+    oa:about id:world-the-bonfire-system ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -9.774167 ;
+    oa:distance value:location-world-the-bonfire-system-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:rightAscensionDeg 282.74375 .
+
+value:location-world-the-bonfire-system-distance a oa:QuantityValue ;
+    qudt:numericValue 1381.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-the-bonfire-system-mutual-progress-association a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5a69ca7eef167> ;
+    oa:about id:world-the-bonfire-system ;
+    oa:canonical true ;
+    oa:polity id:polity-mutual-progress-association ;
+    oa:recordOrder 0 .
+
+claim:event-world-the-bonfire-system-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5a69ca7eef167> ;
+    oa:about id:world-the-bonfire-system ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "Developed." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 7833 .
+
+# Potato
+
+id:world-potato a oa:Place, oa:World ;
+    skos:prefLabel "Potato" ;
+    oa:article <https://www.orionsarm.com/eg-article/5beadcd4bc9d1> ;
+    oa:kind "habitat" ;
+    oa:labelsSystem false ;
+    oa:note "An asteroid habitat in the Bonfire System, sharing its position." ;
+    oa:systemName "The Bonfire System" ;
+    oa:uncertain false .
+
+claim:location-world-potato a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5beadcd4bc9d1> ;
+    oa:about id:world-potato ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:worldName "The Bonfire System" .
+
+claim:affiliation-world-potato-mutual-progress-association a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5beadcd4bc9d1> ;
+    oa:about id:world-potato ;
+    oa:canonical true ;
+    oa:polity id:polity-mutual-progress-association ;
+    oa:recordOrder 0 .
+
+claim:event-world-potato-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5beadcd4bc9d1> ;
+    oa:about id:world-potato ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"Colonized 8933 AT\" Data panel also lists 'Polity Mutual Progress Association' for Potato." ;
+    oa:polity id:polity-mutual-progress-association ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 8933 .

@@ -1,0 +1,61 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Caerwactod
+
+id:world-caerwactod a oa:Place, oa:World ;
+    skos:prefLabel "Caerwactod" ;
+    oa:article <https://www.orionsarm.com/eg-article/668e06e2bdb02> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "A partial Dyson sphere." ;
+    oa:systemName "Caerwactod" ;
+    oa:uncertain false .
+
+claim:location-world-caerwactod a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/668e06e2bdb02> ;
+    oa:about id:world-caerwactod ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:constellationName "Cassiopeia" ;
+    oa:distance value:location-world-caerwactod-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+value:location-world-caerwactod-distance a oa:QuantityValue ;
+    qudt:numericValue 3200.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-caerwactod-communion-of-worlds a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/668e06e2bdb02> ;
+    oa:about id:world-caerwactod ;
+    oa:canonical true ;
+    oa:polity id:polity-communion-of-worlds ;
+    oa:recordOrder 0 .
+
+claim:event-world-caerwactod-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/668e06e2bdb02> ;
+    oa:about id:world-caerwactod ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 6700 .
+
+claim:event-world-caerwactod-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/668e06e2bdb02> ;
+    oa:about id:world-caerwactod ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"After several skirmishes and further uncertainty, the Nabla Biowars appealed to the Communion's mediator guilds (with whom they'd had previous experience). Subsequently, several Communion mediators and bridge minds travelled to Caerwactod.\" No exact year is given for the Communion's arrival as mediator; it falls between the 6800 AT Nabla Biowars arrival and the 'By 7000, a complex syncretic culture had emerged' note, so not_later_than 7000 is used here. Matches the panel's 'Allegiance: Communion of Worlds' and the header's 'filed under: Communion of Worlds'. The Nabla Biowars appealed to the Communion's mediator guilds; no exact year is given." ;
+    oa:polity id:polity-communion-of-worlds ;
+    oa:precision oa:NotLaterThan ;
+    oa:recordOrder 1 ;
+    oa:yearAT 7000 .

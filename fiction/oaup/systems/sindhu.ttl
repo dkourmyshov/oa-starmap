@@ -1,0 +1,32 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Sindhu
+
+id:inner-sphere-row-0081 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Sindhu" .
+
+claim:inner-sphere-inner-sphere-row-0081-00f082f9e206 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0081 ;
+    oa:canonical true ;
+    oa:colonyName "Sindhu" ;
+    oa:luminositySol "0.0017 to 0.046" ;
+    oa:massSol "0.35" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 80 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0081-00f082f9e206-source-distance ;
+    oa:spectralType "M5.5 Ve" ;
+    oa:starName "EV Lacertae" .
+
+value:inner-sphere-inner-sphere-row-0081-00f082f9e206-source-distance a oa:QuantityValue ;
+    qudt:numericValue 16.476 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

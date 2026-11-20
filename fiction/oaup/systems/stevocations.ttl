@@ -1,0 +1,100 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Stevocations
+
+id:world-stevocations a oa:Place, oa:World ;
+    skos:prefLabel "Stevocations" ;
+    oa:article <https://www.orionsarm.com/eg-article/5eebb1dbf3f29> ;
+    oa:editorialNote "---- from the wider Celestia add-on -------------------------------------\n\nPlaces the map had no position for until every archive was read rather than\nthe first. Each is bound to an add-on star, so the position is asserted by\nthe setting rather than measured — which is what `oa_star` records." ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "The system of the star Steve. Zoeific with Caretaker elements, so both are drawn. No identifier is given, leaving the constellation to carry the direction." ;
+    oa:uncertain false .
+
+claim:location-world-stevocations a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5eebb1dbf3f29> ;
+    oa:about id:world-stevocations ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:constellationName "Lyra" ;
+    oa:distance value:location-world-stevocations-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+value:location-world-stevocations-distance a oa:QuantityValue ;
+    qudt:numericValue 981.31 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-stevocations-caretaker-gods a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5eebb1dbf3f29> ;
+    oa:about id:world-stevocations ;
+    oa:canonical true ;
+    oa:polity id:polity-caretaker-gods ;
+    oa:recordOrder 1 .
+
+claim:affiliation-world-stevocations-zoeific-biopolity a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5eebb1dbf3f29> ;
+    oa:about id:world-stevocations ;
+    oa:canonical true ;
+    oa:polity id:polity-zoeific-biopolity ;
+    oa:recordOrder 0 .
+
+claim:event-world-stevocations-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5eebb1dbf3f29> ;
+    oa:about id:world-stevocations ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 3680 .
+
+claim:event-world-stevocations-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5eebb1dbf3f29> ;
+    oa:about id:world-stevocations ;
+    oa:canonical true ;
+    oa:eventKind oa:Stewardship ;
+    oa:note "\"Stevocations was first reached by the Caretaker God Opikealeeve in 3680 AT to investigate and protect the biosphere of Rovoa.\" The map header records this as 'visited 3680'; the text frames it as a Caretaker God taking the system under protection, which fits 'stewardship' per the brief's kind table. Flagged for reviewer judgement rather than resolved. The Caretaker God Opikealeeve, 'to investigate and protect the biosphere of Rovoa'; the map's older 'visited 3680' is this arrival." ;
+    oa:polity id:polity-caretaker-gods ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 3680 .
+
+claim:event-world-stevocations-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5eebb1dbf3f29> ;
+    oa:about id:world-stevocations ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"Colonised 3780 AT\" Panel line reads 'Allegiance Zoeific Biopolity Colonised 3780 AT' as scraped; the allegiance is recorded separately under holder_undated since colonisation was by Cygexpa per the body text (see contradictions), and Zoeific Biopolity affiliation is stated elsewhere to begin only after Cygexpa's 7247 dissolution. The panel's year; the body has the colonists arriving in 3810." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 2 ;
+    oa:yearAT 3780 .
+
+claim:event-world-stevocations-004 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5eebb1dbf3f29> ;
+    oa:about id:world-stevocations ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"In 3810 AT, a group of colonists from the Cygnus Expansion arrived with the intent of developing as much of the system as they could.\" Colonists from the Cygnus Expansion." ;
+    oa:polity id:polity-cygexpa ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 3 ;
+    oa:yearAT 3810 .
+
+claim:event-world-stevocations-005 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5eebb1dbf3f29> ;
+    oa:about id:world-stevocations ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"Since Cygexpa was dissolved in 7247, this system has become an informal member of the Zoeific Biopolity.\" Described as an 'informal' membership. 'An informal member' since Cygexpa's dissolution." ;
+    oa:polity id:polity-zoeific-biopolity ;
+    oa:precision oa:NotEarlierThan ;
+    oa:recordOrder 4 ;
+    oa:yearAT 7247 .

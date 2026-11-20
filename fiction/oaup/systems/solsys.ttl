@@ -1,0 +1,33 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Solsys
+
+id:inner-sphere-row-0001 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Solsys" .
+
+claim:inner-sphere-inner-sphere-row-0001-1cbcf8550d9c a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0001 ;
+    oa:article <https://www.orionsarm.com/eg-article/48f915a959b12> ;
+    oa:canonical true ;
+    oa:colonyName "Solsys" ;
+    oa:luminositySol "1" ;
+    oa:massSol "1" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 0 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0001-1cbcf8550d9c-source-distance ;
+    oa:spectralType "G2 V" ;
+    oa:starName "Sol" .
+
+value:inner-sphere-inner-sphere-row-0001-1cbcf8550d9c-source-distance a oa:QuantityValue ;
+    qudt:numericValue 0.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

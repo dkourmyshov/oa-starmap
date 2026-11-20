@@ -1,0 +1,33 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Albireo Plexus
+
+id:world-albireo-plexus a oa:Place, oa:World ;
+    skos:prefLabel "Albireo Plexus" ;
+    oa:article <https://www.orionsarm.com/eg-article/45e77f147567f> ;
+    oa:extent value:world-albireo-plexus-extent ;
+    oa:kind "volume" ;
+    oa:labelsSystem false ;
+    oa:note "A sector rather than a polity: half a million cubic light years around Albireo, holding systems affiliated to the Solar Dominion and the Mutual Progress Association among others, but where most of the polities owe only nominal allegiance or none at all. The article gives the volume and not a radius, so the extent here is what half a million cubic light years comes to as a sphere — 98 ly across. That the region is a sphere is the assumption; the volume is the source's." ;
+    oa:uncertain false .
+
+value:world-albireo-plexus-extent a oa:QuantityValue ;
+    qudt:numericValue 98.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:location-world-albireo-plexus a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/45e77f147567f> ;
+    oa:about id:world-albireo-plexus ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Albireo" .

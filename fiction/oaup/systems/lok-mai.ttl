@@ -1,0 +1,97 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Lok Mai
+
+id:world-lok-mai a oa:Place, oa:World ;
+    skos:prefLabel "Lok Mai" ;
+    oa:article <https://www.orionsarm.com/eg-article/491700c65734d> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Gliese 783 A, as the colony table has it." ;
+    oa:systemName "Lok Mai" ;
+    oa:uncertain false .
+
+claim:location-world-lok-mai a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/491700c65734d> ;
+    oa:about id:world-lok-mai ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Gliese 783 A" .
+
+claim:event-world-lok-mai-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/491700c65734d> ;
+    oa:about id:world-lok-mai ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"Chakri was first colonised by a mission from Ross 128b. The colony ship Nanyang departed Sonthaya in 1185 AT and arrived at GL 783 in 1317 AT.\" Departure from Sonthaya was 1185 AT; the settlement date recorded is the 1317 AT arrival. No overarching polity is named for the Ross 128b mission itself. Before the colonists arrived a First Federation probe was already terraforming the largest planet; the system never became a full Federation member." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 1317 .
+
+claim:event-world-lok-mai-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/491700c65734d> ;
+    oa:about id:world-lok-mai ;
+    oa:canonical true ;
+    oa:eventKind oa:Independent ;
+    oa:note "\"In 2679 AT, the Lok Mai Confederation declared itself to be permanently neutral.\" The Lok Mai Confederation, established in 1706, is local." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 2679 .
+
+# Lok Mai
+
+id:inner-sphere-row-0128 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Lok Mai" .
+
+claim:inner-sphere-inner-sphere-row-0128-94903a390fe8 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0128 ;
+    oa:article <https://www.orionsarm.com/eg-article/491700c65734d> ;
+    oa:canonical true ;
+    oa:colonyName "Lok Mai" ;
+    oa:luminositySol "0.238" ;
+    oa:massSol "0.676" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 127 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0128-94903a390fe8-source-distance ;
+    oa:spectralType "K2.5 V" ;
+    oa:starName "Gliese 783 A" .
+
+value:inner-sphere-inner-sphere-row-0128-94903a390fe8-source-distance a oa:QuantityValue ;
+    qudt:numericValue 19.621 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Lok Mai
+
+id:inner-sphere-row-0129 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Lok Mai" .
+
+claim:inner-sphere-inner-sphere-row-0129-58a4a80ac207 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0129 ;
+    oa:article <https://www.orionsarm.com/eg-article/491700c65734d> ;
+    oa:canonical true ;
+    oa:colonyName "Lok Mai" ;
+    oa:luminositySol "0.000801" ;
+    oa:massSol "0.35" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 128 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0129-58a4a80ac207-source-distance ;
+    oa:spectralType "M4 V" ;
+    oa:starName "Gliese 783 B" .
+
+value:inner-sphere-inner-sphere-row-0129-58a4a80ac207-source-distance a oa:QuantityValue ;
+    qudt:numericValue 19.621 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

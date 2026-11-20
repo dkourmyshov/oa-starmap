@@ -1,0 +1,32 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Kulou
+
+id:inner-sphere-row-0692 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Kulou" .
+
+claim:inner-sphere-inner-sphere-row-0692-8713105789ca a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0692 ;
+    oa:canonical true ;
+    oa:colonyName "Kulou" ;
+    oa:luminositySol "22.91" ;
+    oa:massSol "2.03" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 691 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0692-8713105789ca-source-distance ;
+    oa:spectralType "A2 V" ;
+    oa:starName "Iota Centauri" .
+
+value:inner-sphere-inner-sphere-row-0692-8713105789ca-source-distance a oa:QuantityValue ;
+    qudt:numericValue 58.183 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

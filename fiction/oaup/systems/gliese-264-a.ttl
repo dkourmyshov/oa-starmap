@@ -1,0 +1,32 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Gliese 264 A
+
+id:inner-sphere-row-0664 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Gliese 264 A" .
+
+claim:inner-sphere-inner-sphere-row-0664-fc0e208933b9 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0664 ;
+    oa:canonical true ;
+    oa:colonyName "Gliese 264 A" ;
+    oa:luminositySol "0.17" ;
+    oa:massSol "0.71" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 663 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0664-fc0e208933b9-source-distance ;
+    oa:spectralType "K6 V" ;
+    oa:starName "HD 53680 A" .
+
+value:inner-sphere-inner-sphere-row-0664-fc0e208933b9-source-distance a oa:QuantityValue ;
+    qudt:numericValue 56.434 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

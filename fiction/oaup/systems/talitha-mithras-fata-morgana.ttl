@@ -1,0 +1,33 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Talitha / Mithras / Fata Morgana
+
+id:inner-sphere-row-0567 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Talitha / Mithras / Fata Morgana" .
+
+claim:inner-sphere-inner-sphere-row-0567-620fe24467bc a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0567 ;
+    oa:article <https://www.orionsarm.com/eg-article/47b8e39c9718c> ;
+    oa:canonical true ;
+    oa:colonyName "Talitha / Mithras / Fata Morgana" ;
+    oa:luminositySol "9.87" ;
+    oa:massSol "1.7" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 566 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0567-620fe24467bc-source-distance ;
+    oa:spectralType "F0 IV-V" ;
+    oa:starName "Iota Ursae Majoris Aa" .
+
+value:inner-sphere-inner-sphere-row-0567-620fe24467bc-source-distance a oa:QuantityValue ;
+    qudt:numericValue 47.963 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

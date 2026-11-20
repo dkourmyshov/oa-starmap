@@ -1,0 +1,43 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# Kiyoshi
+
+id:world-kiyoshi a oa:Place, oa:World ;
+    skos:prefLabel "Kiyoshi" ;
+    oa:article <https://www.orionsarm.com/eg-article/4902dd900dbc5> ;
+    oa:kind "megastructure" ;
+    oa:labelsSystem false ;
+    oa:note "A cluster of megastructures at Xi Scorpii, 79 ly. Bound by HD number: the star has no Hipparcos entry." ;
+    oa:uncertain false .
+
+claim:location-world-kiyoshi a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4902dd900dbc5> ;
+    oa:about id:world-kiyoshi ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Xi Scorpii" .
+
+claim:affiliation-world-kiyoshi-mutual-progress-association a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4902dd900dbc5> ;
+    oa:about id:world-kiyoshi ;
+    oa:canonical true ;
+    oa:polity id:polity-mutual-progress-association ;
+    oa:recordOrder 0 .
+
+claim:event-world-kiyoshi-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4902dd900dbc5> ;
+    oa:about id:world-kiyoshi ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"When the MPA was founded in the third millennium AT, Kiyoshi was one of the first systems to join.\" Third millennium AT taken as 2001-3000; the roster gives the MPA's founding year as 1967, which falls in the second millennium AT, so this sentence appears to conflict with that founding year. The article places the MPA's founding in the third millennium; the timeline has its formation in 1967, and the map's founding year follows the timeline." ;
+    oa:polity id:polity-mutual-progress-association ;
+    oa:precision oa:Between ;
+    oa:recordOrder 0 ;
+    oa:untilAT 3000 ;
+    oa:yearAT 2001 .

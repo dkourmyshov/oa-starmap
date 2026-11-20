@@ -1,0 +1,94 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# New Mars
+
+id:world-new-mars a oa:Place, oa:World ;
+    skos:prefLabel "New Mars" ;
+    oa:article <https://www.orionsarm.com/eg-article/46d4cdaf470c9> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "42 ly. The A and B components both." ;
+    oa:systemName "New Mars" ;
+    oa:uncertain false .
+
+claim:location-world-new-mars a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46d4cdaf470c9> ;
+    oa:about id:world-new-mars ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "36 Ursae Majoris" .
+
+claim:affiliation-world-new-mars-nocozo a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46d4cdaf470c9> ;
+    oa:about id:world-new-mars ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 0 .
+
+claim:event-world-new-mars-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46d4cdaf470c9> ;
+    oa:about id:world-new-mars ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "Reached." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 1333 .
+
+# New Mars
+
+id:inner-sphere-row-0477 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "New Mars" .
+
+claim:inner-sphere-inner-sphere-row-0477-13e0e6981091 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0477 ;
+    oa:article <https://www.orionsarm.com/eg-article/46d4cdaf470c9> ;
+    oa:canonical true ;
+    oa:colonyName "New Mars" ;
+    oa:luminositySol "1.605" ;
+    oa:massSol "1.121" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 476 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0477-13e0e6981091-source-distance ;
+    oa:spectralType "F8 V" ;
+    oa:starName "36 Ursae Majoris A" .
+
+value:inner-sphere-inner-sphere-row-0477-13e0e6981091-source-distance a oa:QuantityValue ;
+    qudt:numericValue 42.222 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# New Mars
+
+id:inner-sphere-row-0478 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "New Mars" .
+
+claim:inner-sphere-inner-sphere-row-0478-7a9eb732e827 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0478 ;
+    oa:article <https://www.orionsarm.com/eg-article/46d4cdaf470c9> ;
+    oa:canonical true ;
+    oa:colonyName "New Mars" ;
+    oa:luminositySol "." ;
+    oa:massSol "." ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 477 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0478-7a9eb732e827-source-distance ;
+    oa:spectralType "K7 Ve" ;
+    oa:starName "36 Ursae Majoris B" .
+
+value:inner-sphere-inner-sphere-row-0478-7a9eb732e827-source-distance a oa:QuantityValue ;
+    qudt:numericValue 42.222 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

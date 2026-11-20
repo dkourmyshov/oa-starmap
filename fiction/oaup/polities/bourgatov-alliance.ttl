@@ -1,0 +1,19 @@
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+
+# Bourgatov Alliance
+
+id:polity-bourgatov-alliance a oa:Polity ;
+    skos:prefLabel "Bourgatov Alliance" ;
+    oa:ambiguousName false ;
+    oa:color "#663323" ;
+    oa:dissolvedAT 4490 ;
+    oa:editorialNote "Not on the Historical Polities page. Its own page, as pasted by the\nproject owner (sources/polities/bourgatov-alliance.txt): the clan\n\"relocate[d] their headquarters to the newly terraformed Theta Persei\nIII\" during the 2000's AT, and by 4490 the system's population had\ncollapsed from 34 billion to 490 million -- see the Bourgatov entry.\nThe Alliance's other worlds \"were all absorbed by various empires\"\nafterward, undated; the Bourgatov capital's fall is taken as the\nAlliance's own end, there being nothing saved that names a later one.\nLinnEnt is a First Federation era commercial empire holding nothing in the\npresent; the Seams is a NoCoZo border region. They do not meet in any year,\nper the project owner, so the 8.2 between their colours is a measurement of\ntwo polities that are never on screen together." ;
+    oa:foundedAT 2000 ;
+    oa:hasSource src:eg-historical-polities ;
+    oa:kind "meta-empire" ;
+    oa:polityId "bourgatov-alliance" ;
+    oa:recordOrder 73 ;
+    oa:uncertain false .

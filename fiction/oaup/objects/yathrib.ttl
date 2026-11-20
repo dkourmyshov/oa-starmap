@@ -1,0 +1,51 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Yathrib
+
+id:world-yathrib a oa:Place, oa:World ;
+    skos:prefLabel "Yathrib" ;
+    oa:article <https://www.orionsarm.com/eg-article/46e9d21661e71> ;
+    oa:editorialNote "---- Orion Federation ----------------------------------------------------" ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "HD 74868, a close binary, at 119.1 ly against the article's 119 — the closest agreement in this file. The catalogue puts it in Vela." ;
+    oa:uncertain false .
+
+claim:location-world-yathrib a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46e9d21661e71> ;
+    oa:about id:world-yathrib ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:distance value:location-world-yathrib-distance ;
+    oa:hdId 74868 ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+value:location-world-yathrib-distance a oa:QuantityValue ;
+    qudt:numericValue 119.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-yathrib-stellar-umma a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46e9d21661e71> ;
+    oa:about id:world-yathrib ;
+    oa:canonical true ;
+    oa:polity id:polity-stellar-umma ;
+    oa:recordOrder 0 .
+
+claim:event-world-yathrib-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/46e9d21661e71> ;
+    oa:about id:world-yathrib ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:polity id:polity-stellar-umma ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 1650 .

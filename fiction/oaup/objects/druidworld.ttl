@@ -1,0 +1,30 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# Druidworld
+
+id:world-druidworld a oa:Place, oa:World ;
+    skos:prefLabel "Druidworld" ;
+    oa:article <https://www.orionsarm.com/eg-article/48ff6392ccc7e> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:uncertain false .
+
+claim:location-world-druidworld a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48ff6392ccc7e> ;
+    oa:about id:world-druidworld ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:note "In the Non-Coercive Zone's Middle Regions volume." .
+
+claim:affiliation-world-druidworld-nocozo a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48ff6392ccc7e> ;
+    oa:about id:world-druidworld ;
+    oa:canonical true ;
+    oa:polity id:polity-nocozo ;
+    oa:recordOrder 0 .

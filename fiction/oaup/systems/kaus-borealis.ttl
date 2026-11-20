@@ -1,0 +1,32 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Kaus Borealis
+
+id:inner-sphere-row-0868 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Kaus Borealis" .
+
+claim:inner-sphere-inner-sphere-row-0868-05d4dc100e4a a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0868 ;
+    oa:canonical true ;
+    oa:colonyName "Kaus Borealis" ;
+    oa:luminositySol "36.3" ;
+    oa:massSol "2.3" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 867 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0868-05d4dc100e4a-source-distance ;
+    oa:spectralType "K1 III b" ;
+    oa:starName "Lambda Sagittarii" .
+
+value:inner-sphere-inner-sphere-row-0868-05d4dc100e4a-source-distance a oa:QuantityValue ;
+    qudt:numericValue 75.992 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

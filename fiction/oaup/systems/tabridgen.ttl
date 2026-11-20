@@ -1,0 +1,51 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Tabridgen
+
+id:world-tabridgen a oa:Place, oa:World ;
+    skos:prefLabel "Tabridgen" ;
+    oa:article <https://www.orionsarm.com/eg-article/491232472b626> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "In the Byran Plexus, rimward of the Federation, and given as 2,870 ly from Sol and 180 from M50. M50 lends its direction; at the catalogue's 3,120 ly for the cluster that leaves 250 ly between them along the line of sight, near enough to the stated 180 to be the same claim." ;
+    oa:uncertain false .
+
+claim:location-world-tabridgen a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/491232472b626> ;
+    oa:about id:world-tabridgen ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -8.3547 ;
+    oa:distance value:location-world-tabridgen-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:nearName "M50 (NGC 2323)" ;
+    oa:rightAscensionDeg 105.7046 .
+
+value:location-world-tabridgen-distance a oa:QuantityValue ;
+    qudt:numericValue 2870.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-tabridgen-orion-federation a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/491232472b626> ;
+    oa:about id:world-tabridgen ;
+    oa:canonical true ;
+    oa:polity id:polity-orion-federation ;
+    oa:recordOrder 0 .
+
+claim:event-world-tabridgen-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/491232472b626> ;
+    oa:about id:world-tabridgen ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 6859 .

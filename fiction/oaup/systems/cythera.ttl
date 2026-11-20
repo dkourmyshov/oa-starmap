@@ -1,0 +1,63 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Cythera
+
+id:world-cythera a oa:Place, oa:World ;
+    skos:prefLabel "Cythera" ;
+    oa:article <https://www.orionsarm.com/eg-article/4648fef23d4e6> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "HD 190771, as the colony table has it." ;
+    oa:systemName "Cythera" ;
+    oa:uncertain false .
+
+claim:location-world-cythera a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4648fef23d4e6> ;
+    oa:about id:world-cythera ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "HD 190771" .
+
+claim:event-world-cythera-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4648fef23d4e6> ;
+    oa:about id:world-cythera ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"Colonised by the Ypperbach clade in 1958 AT.\" Holder is a clade (the Ypperbach, who became the Cythera clade), not a polity on the roster. The Ypperbach clade, no polity of this file; the panel's allegiance is independent." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 1958 .
+
+# Cythera
+
+id:inner-sphere-row-0739 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Cythera" .
+
+claim:inner-sphere-inner-sphere-row-0739-2a87ab8206e1 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0739 ;
+    oa:article <https://www.orionsarm.com/eg-article/4648fef23d4e6> ;
+    oa:canonical true ;
+    oa:colonyName "Cythera" ;
+    oa:luminositySol "1.03" ;
+    oa:massSol "." ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 738 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0739-2a87ab8206e1-source-distance ;
+    oa:spectralType "G5 IV" ;
+    oa:starName "HD 190771" .
+
+value:inner-sphere-inner-sphere-row-0739-2a87ab8206e1-source-distance a oa:QuantityValue ;
+    qudt:numericValue 62.086 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

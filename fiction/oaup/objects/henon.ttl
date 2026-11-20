@@ -1,0 +1,62 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Henon
+
+id:world-henon a oa:Place, oa:World ;
+    skos:prefLabel "Henon" ;
+    oa:article <https://www.orionsarm.com/eg-article/4e49b435a8bd4> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "Given as 70 ly from HIP 10541 and 4,240 ly from Sol. Those cannot both hold here: the catalogue puts that star at 7,887 ly, nearly twice as far, so a world 70 ly from it would be nowhere near 4,240. The star lends its direction in Perseus and the article keeps its distance from Sol, which is the figure the setting is actually built on." ;
+    oa:uncertain false .
+
+claim:location-world-henon a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4e49b435a8bd4> ;
+    oa:about id:world-henon ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg 55.9963 ;
+    oa:distance value:location-world-henon-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:nearName "HIP 10541" ;
+    oa:rightAscensionDeg 33.9414 .
+
+value:location-world-henon-distance a oa:QuantityValue ;
+    qudt:numericValue 4240.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-henon-solar-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4e49b435a8bd4> ;
+    oa:about id:world-henon ;
+    oa:canonical true ;
+    oa:polity id:polity-solar-dominion ;
+    oa:recordOrder 0 .
+
+claim:event-world-henon-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4e49b435a8bd4> ;
+    oa:about id:world-henon ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "Settled from the fringes of the Solar Dominion." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 8697 .
+
+claim:event-world-henon-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4e49b435a8bd4> ;
+    oa:about id:world-henon ;
+    oa:canonical true ;
+    oa:eventKind oa:Abandoned ;
+    oa:note "\"In 9149 the Henonian culture started the construction of a well- defended Matrioshka Brain around HIP 10541, and almost every clade and entity belonging to that culture migrated to the new substrate. Only a very few sophonts remained on the old world, all belonging to a single clade.\" Population did not fall to zero -- 'a very few sophonts' of one clade remained -- so this is a near-total depopulation rather than a clean abandonment; flagged for review. A few sophonts stayed; the Czenik Fleet's later colonisation is undated." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 9149 .

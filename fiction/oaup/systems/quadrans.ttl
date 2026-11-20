@@ -1,0 +1,32 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Quadrans
+
+id:inner-sphere-row-0458 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Quadrans" .
+
+claim:inner-sphere-inner-sphere-row-0458-7d8ef7ebe4b2 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0458 ;
+    oa:canonical true ;
+    oa:colonyName "Quadrans" ;
+    oa:luminositySol "1.19" ;
+    oa:massSol "1.04" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 457 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0458-7d8ef7ebe4b2-source-distance ;
+    oa:spectralType "G0 Vn" ;
+    oa:starName "44 Boötis A" .
+
+value:inner-sphere-inner-sphere-row-0458-7d8ef7ebe4b2-source-distance a oa:QuantityValue ;
+    qudt:numericValue 40.80 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

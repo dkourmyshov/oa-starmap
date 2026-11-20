@@ -1,0 +1,235 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Zavijava
+
+id:world-zavijava a oa:Place, oa:World ;
+    skos:prefLabel "Zavijava" ;
+    oa:article <https://www.orionsarm.com/eg-article/4871893629b5e> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Beta Virginis, 36 ly." ;
+    oa:systemName "Zavijava" ;
+    oa:uncertain false .
+
+claim:location-world-zavijava a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4871893629b5e> ;
+    oa:about id:world-zavijava ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Beta Virginis" .
+
+claim:affiliation-world-zavijava-utopia-sphere a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4871893629b5e> ;
+    oa:about id:world-zavijava ;
+    oa:canonical true ;
+    oa:polity id:polity-utopia-sphere ;
+    oa:recordOrder 0 .
+
+claim:event-world-zavijava-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4871893629b5e> ;
+    oa:about id:world-zavijava ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"Colonized: 868 A.T.\" No system-wide holder; the article names protectorates and affiliations world by world, undated." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 868 .
+
+claim:event-world-zavijava-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48735da987f1b> ;
+    oa:about id:world-zavijava ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "The Pacifica article: \"By 1068 fully four-fifths of the technorats had officially seceded\" from the New America administration to the Federation, \"and whilst they never actually formed a single technarch-style orbital league, each habitat was a local Federation member.\" The habitats, not the planet's surface, which stayed with the orbital regime until 1541." ;
+    oa:polity id:polity-first-federation ;
+    oa:precision oa:NotLaterThan ;
+    oa:recordOrder 1 ;
+    oa:yearAT 1068 .
+
+claim:event-world-zavijava-003 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-zavijava ;
+    oa:canonical true ;
+    oa:eventKind oa:Capital ;
+    oa:note "\"A number of Technorat habitats form the Virginis Combine [Beta Virginis].\" The Combine formed here; its own page is not among the saved articles, and the Zavijava article says only that most of the system's worlds \"are member states of the Virginis Combine\"." ;
+    oa:polity id:polity-virginis-combine ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 2 ;
+    oa:sourceDescription "Encyclopaedia timeline, Late Federation / AI Emergence" ;
+    oa:yearAT 1590 .
+
+claim:event-world-zavijava-004 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48735da987f1b> ;
+    oa:about id:world-zavijava ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "The Pacifica article: \"by 2512 the Combine and the Conver Ambi announced a merger.\" The Arcadia article has both \"In 2512 the Virginis Combine also dissolved, and it was effectively absorbed by the Conver Ambi\" and, later, \"when the Combine dissolved in 3932\"; the earlier year is entered and the later kept here. Pacifica itself \"joined the Utopia Sphere\" in the Age of Consolidation, undated." ;
+    oa:polity id:polity-conver-ambi ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 3 ;
+    oa:yearAT 2512 .
+
+# Pacifica
+
+id:world-pacifica a oa:Place, oa:World ;
+    skos:prefLabel "Pacifica" ;
+    oa:article <https://www.orionsarm.com/eg-article/48735da987f1b> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:systemName "Zavijava" ;
+    oa:uncertain false .
+
+claim:location-world-pacifica a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48735da987f1b> ;
+    oa:about id:world-pacifica ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Beta Virginis" .
+
+claim:affiliation-world-pacifica-utopia-sphere a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48735da987f1b> ;
+    oa:about id:world-pacifica ;
+    oa:canonical true ;
+    oa:polity id:polity-utopia-sphere ;
+    oa:recordOrder 0 .
+
+claim:event-world-pacifica-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48735da987f1b> ;
+    oa:about id:world-pacifica ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "Reached by a Solipsist AI." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 815 .
+
+claim:event-world-pacifica-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48735da987f1b> ;
+    oa:about id:world-pacifica ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "Reached by humans." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 868 .
+
+claim:event-world-pacifica-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48735da987f1b> ;
+    oa:about id:world-pacifica ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"Colonized 868 a.t.\" The body text has the New World arriving in 856, the panel and the timeline 868; the timeline's year is entered." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 2 ;
+    oa:yearAT 868 .
+
+claim:event-world-pacifica-004 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48735da987f1b> ;
+    oa:about id:world-pacifica ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"878 - first colony established on the surface, small orbitals established\" First colony (Liberty) on New America's surface, distinct from the system-arrival events above." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 3 ;
+    oa:yearAT 878 .
+
+claim:event-world-pacifica-005 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48735da987f1b> ;
+    oa:about id:world-pacifica ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "\"1156 - arrival of the Federation robot Survey Vessel Magellan\"" ;
+    oa:polity id:polity-first-federation ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 4 ;
+    oa:yearAT 1156 .
+
+claim:event-world-pacifica-006 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48735da987f1b> ;
+    oa:about id:world-pacifica ;
+    oa:canonical true ;
+    oa:eventKind oa:Independent ;
+    oa:note "\"1541 - Equatorial clades capture Liberty, declare independence. NA orbital counterattack leads to the so-called Pacifica War; the NuyorkMainstream finally defeated by technorat ai intrusion programs and goo attacks. New America renamed Pacifica. Mainstream administration exiled to some small orbitals around the outer planets.\" New America's prior mainstream administration was not itself a roster polity, so no 'from' polity is recorded." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 5 ;
+    oa:yearAT 1541 .
+
+claim:event-world-pacifica-007 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48735da987f1b> ;
+    oa:about id:world-pacifica ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"1590 - A number of Technorat habitats form the Virginan Combine\" Matches the roster's founding year (1590) for the Virginis Combine. The Combine's own page (sources/polities): the technorat habitats founded it in 1590 and \"Pacifica and its orbitals joined the colonisation effort soon after\" the first ships of 1625." ;
+    oa:polity id:polity-virginis-combine ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 6 ;
+    oa:yearAT 1590 .
+
+claim:event-world-pacifica-008 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48735da987f1b> ;
+    oa:about id:world-pacifica ;
+    oa:canonical true ;
+    oa:eventKind oa:Stewardship ;
+    oa:note "\"by the 2500s if became clear that some Utopia Sphere entity had colonised the sea and taken the role of planetary protector.\" Sic: the article reads 'if' for 'it'. The protector is the Great Whale ISO, attributed here only to 'a Utopia Sphere entity', not explicitly to the roster's Caretaker Gods. This precedes the Utopia Sphere's founding year on the map (2975, Beta Arae); the article's 'Utopia Sphere entity' is entered as the proto-affiliation the founding year does not gate." ;
+    oa:polity id:polity-utopia-sphere ;
+    oa:precision oa:NotLaterThan ;
+    oa:recordOrder 7 ;
+    oa:yearAT 2500 .
+
+claim:event-world-pacifica-009 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48735da987f1b> ;
+    oa:about id:world-pacifica ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"by 2512 the Combine and the Conver Ambi announced a merger.\" Merger of the wider Virginis Combine into Conver Ambi. The article says Pacifica itself instead joined the Utopia Sphere while 'the rest of the system' aligned with the Conver Ambi. Pacifica went with the Combine into the Conver Ambi; its own accession to the Utopia Sphere came later, 'During the Age of Consolidation' (see the next event)." ;
+    oa:polity id:polity-conver-ambi ;
+    oa:precision oa:NotLaterThan ;
+    oa:recordOrder 8 ;
+    oa:yearAT 2512 .
+
+claim:event-world-pacifica-010 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48735da987f1b> ;
+    oa:about id:world-pacifica ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"During the Age of Consolidation the world joined the Utopia Sphere, where it was and still remains one of the most open of the Utopia Sphere worlds. The rest of the system remained independent, or aligned with the Conver Ambi.\" The era's span is the timeline's (3200 to 3800 AT). The 2200s brought only \"diplomatic connections with the NoCoZo and Utopia sphere\", and the timeline's \"2217 - Pacifica begins making overtures to the Utopia Sphere ai clusters at Beta Arae\" precedes Beta Arae's colonisation as the map dates it." ;
+    oa:polity id:polity-utopia-sphere ;
+    oa:precision oa:Between ;
+    oa:recordOrder 9 ;
+    oa:untilAT 3800 ;
+    oa:yearAT 3200 .
+
+# Zavijava
+
+id:inner-sphere-row-0402 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Zavijava" .
+
+claim:inner-sphere-inner-sphere-row-0402-2bf38dedf6fd a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0402 ;
+    oa:article <https://www.orionsarm.com/eg-article/4871893629b5e> ;
+    oa:canonical true ;
+    oa:colonyName "Zavijava" ;
+    oa:luminositySol "3.792" ;
+    oa:massSol "1.25" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 401 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0402-2bf38dedf6fd-source-distance ;
+    oa:spectralType "F9 V" ;
+    oa:starName "Beta Virginis" .
+
+value:inner-sphere-inner-sphere-row-0402-2bf38dedf6fd-source-distance a oa:QuantityValue ;
+    qudt:numericValue 35.883 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

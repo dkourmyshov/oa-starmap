@@ -1,0 +1,32 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Noon Pearl
+
+id:inner-sphere-row-0051 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Noon Pearl" .
+
+claim:inner-sphere-inner-sphere-row-0051-42855bb44084 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0051 ;
+    oa:canonical true ;
+    oa:colonyName "Noon Pearl" ;
+    oa:luminositySol "." ;
+    oa:massSol "0.000182" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 50 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0051-42855bb44084-source-distance ;
+    oa:spectralType "DZ8" ;
+    oa:starName "Van Maanen 2" .
+
+value:inner-sphere-inner-sphere-row-0051-42855bb44084-source-distance a oa:QuantityValue ;
+    qudt:numericValue 14.072 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

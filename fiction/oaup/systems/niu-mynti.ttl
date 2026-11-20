@@ -1,0 +1,63 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Niu Mynti
+
+id:world-niu-mynti a oa:Place, oa:World ;
+    skos:prefLabel "Niu Mynti" ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "39 Tauri, 55 ly out. No article of its own." ;
+    oa:systemName "Niu Mynti" ;
+    oa:uncertain false .
+
+claim:location-world-niu-mynti a prov:Entity, oa:LocationClaim ;
+    oa:about id:world-niu-mynti ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "39 Tauri" .
+
+claim:event-world-niu-mynti-001 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-niu-mynti ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "No article of its own. The Taurus Nexus's own page, as pasted by the project owner: \"over the following centuries a number of other colonies such as Makintairas (10 Tauri), Niu Mynti (39 Tauri) ... eventually joined the Taurus Nexus\", after wormhole technology's replication in 2268; the span runs to the Nexus's own dissolution in 3435." ;
+    oa:polity id:polity-taurus-nexus ;
+    oa:precision oa:Between ;
+    oa:recordOrder 0 ;
+    oa:sourceDescription "sources/polities/taurus-nexus.txt" ;
+    oa:untilAT 3435 ;
+    oa:yearAT 2268 .
+
+# Niu Mynti
+
+id:inner-sphere-row-0654 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Niu Mynti" .
+
+claim:inner-sphere-inner-sphere-row-0654-18dcfe83200d a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0654 ;
+    oa:article <https://www.orionsarm.com/eg-article/46d62f25952e7> ;
+    oa:canonical true ;
+    oa:colonyName "Niu Mynti" ;
+    oa:luminositySol "1.06" ;
+    oa:massSol "." ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 653 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0654-18dcfe83200d-source-distance ;
+    oa:spectralType "G5 V" ;
+    oa:starName "39 Tauri" .
+
+value:inner-sphere-inner-sphere-row-0654-18dcfe83200d-source-distance a oa:QuantityValue ;
+    qudt:numericValue 54.841 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

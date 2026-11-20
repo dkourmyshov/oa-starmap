@@ -1,0 +1,144 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Corona
+
+id:world-corona a oa:Place, oa:World ;
+    skos:prefLabel "Corona" ;
+    oa:article <https://www.orionsarm.com/eg-article/48e8b382428f5> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "Lucida is the capital of the academic Iota Network, \"technically an independent system and thus not in the Sephirotics\", and drawn as the Network's, as the colony table already had it. The system's own article is at https://www.orionsarm.com/eg-article/5c758943a42b2. The Bourgatov Alliance's own page, as pasted by the project owner (sources/polities/bourgatov-alliance.txt): after Bourgatov's collapse of 4490, \"of the Bourgatov clan, only a handful of relativistic journeyers survived. They later congregated on Corona during the ComEmp period where they remain in cryonic suspension to this day\" -- not a change of Corona's own holder, and not entered as an event." ;
+    oa:systemName "Lucida" ;
+    oa:uncertain false .
+
+claim:location-world-corona a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48e8b382428f5> ;
+    oa:about id:world-corona ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Iota Piscium" .
+
+claim:affiliation-world-corona-iota-network a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48e8b382428f5> ;
+    oa:about id:world-corona ;
+    oa:canonical true ;
+    oa:polity id:polity-iota-network ;
+    oa:recordOrder 0 .
+
+claim:event-world-corona-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48e8b382428f5> ;
+    oa:about id:world-corona ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"When Jupiter Transystems arrived at Iota Piscium in 1465, they claimed the entire system.\" The article's own periods: 1465-1497 pre-terraformation, 1497-1829 terraformation, 1829-2450 the Corona Republic, which is local and not a polity entered here." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 1465 .
+
+claim:event-world-corona-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48e8b382428f5> ;
+    oa:about id:world-corona ;
+    oa:canonical true ;
+    oa:eventKind oa:Capital ;
+    oa:note "\"The government of the Taurus Nexus eventually relocated from Xi Geminorum to Corona in 2450, supplanted the Corona Republic, and established itself in a large orbital habitat at Corona-Sonata L4.\"" ;
+    oa:polity id:polity-taurus-nexus ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 2450 .
+
+claim:event-world-corona-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48e8b382428f5> ;
+    oa:about id:world-corona ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"Corona quietly joined the NoCoZo in 3435, bringing few other inner Taurus Nexus worlds and systems with it.\"" ;
+    oa:polity id:polity-nocozo ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 2 ;
+    oa:yearAT 3435 .
+
+claim:event-world-corona-004 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48e8b382428f5> ;
+    oa:about id:world-corona ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"In 4492, during the Version War, a fleet from the Solar Dominion arrived at Iota.\" The article's periods have the Solar Dominion from 4492 to 4606." ;
+    oa:polity id:polity-solar-dominion ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 3 ;
+    oa:yearAT 4492 .
+
+claim:event-world-corona-005 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48e8b382428f5> ;
+    oa:about id:world-corona ;
+    oa:canonical true ;
+    oa:eventKind oa:Independent ;
+    oa:note "\"The revolt was swift and bloodless, and shortly after the Solar Dominion granted the system independence\" — \"the planet's independence in 4606\"." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 4 ;
+    oa:yearAT 4606 .
+
+claim:event-world-corona-006 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/48e8b382428f5> ;
+    oa:about id:world-corona ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"Starting from 4609, three years after independence, an S4 entity which called emself the Iota Scholar ... contacted the system.\" The Network is the Scholar's, and the article dates the contact rather than the Network; \"finally became an Iota Network world, independent from the major empires\" is not dated. Neutral seat of the Commonwealth of Empires from 4830 to 4870, which is not a polity entered here." ;
+    oa:polity id:polity-iota-network ;
+    oa:precision oa:NotEarlierThan ;
+    oa:recordOrder 5 ;
+    oa:yearAT 4609 .
+
+# Lucida
+
+id:inner-sphere-row-0508 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Lucida" .
+
+claim:inner-sphere-inner-sphere-row-0508-515cc83593a5 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0508 ;
+    oa:article <https://www.orionsarm.com/eg-article/5c758943a42b2> ;
+    oa:canonical true ;
+    oa:colonyName "Lucida" ;
+    oa:luminositySol "." ;
+    oa:massSol "." ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 507 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0508-515cc83593a5-source-distance ;
+    oa:spectralType "F7 V" ;
+    oa:starName "Iota Piscium" .
+
+value:inner-sphere-inner-sphere-row-0508-515cc83593a5-source-distance a oa:QuantityValue ;
+    qudt:numericValue 44.534 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# New Eureka
+
+id:world-new-eureka a oa:Place, oa:World ;
+    skos:prefLabel "New Eureka" ;
+    oa:article <https://www.orionsarm.com/eg-article/5c801d92b3de5> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "A dwarf planet of the same system as Corona — the article calls the star Iota-Corona, which is Iota Piscium, 45 ly out." ;
+    oa:systemName "Lucida" ;
+    oa:uncertain false .
+
+claim:location-world-new-eureka a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5c801d92b3de5> ;
+    oa:about id:world-new-eureka ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Iota Piscium" .

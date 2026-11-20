@@ -18,6 +18,9 @@ import re
 from pathlib import Path
 from typing import Any
 
+from oastarmap.fiction.schema import InnerSphereSystem, InnerSphereWormhole
+from oastarmap.fiction.store import OAUPStore
+
 _ROW = re.compile(r"<tr.*?</tr>", re.S | re.I)
 _CELL = re.compile(r"<t[dh][^>]*>(.*?)</t[dh]>", re.S | re.I)
 _TAG = re.compile(r"<[^>]+>")
@@ -105,53 +108,15 @@ def parse(text: str) -> dict[str, list[dict[str, Any]]]:
     return {"systems": systems, "wormholes": wormholes}
 
 
-HEADER = """\
-# The Inner Sphere, imported from the Encyclopaedia Galactica.
-#
-#   Source: The Stars of the Inner Sphere
-#   Page:   https://www.orionsarm.com/eg-topic/45bcbcab90032
-#   Terms:  https://www.orionsarm.com/Terms_Copyright_and_Submissions.html
-#
-# `systems` gives every star within 100 light years its Orion's Arm colony name.
-# `star` is the real designation and is resolved against the star catalogue at
-# build time; `distance_ly` is the source's own figure and is used to check that
-# the resolution landed on the right star rather than a plausible wrong one.
-#
-# `wormholes` is the nexus table: which systems are linked, the gauge of the
-# link, and which nearby stars are notably *not* connected.
-#
-# Regenerate with `uv run oastarmap import-inner-sphere`, which rewrites this
-# file from the saved page. Re-importing discards hand edits, so review the diff.
-"""
-
-
-def _scalar(value: Any) -> str:
-    text = str(value)
-    return '""' if not text else "'" + text.replace("'", "''") + "'"
-
-
-def write_yaml(parsed: dict[str, list[dict[str, Any]]], dest: Path) -> dict[str, int]:
-    """Write both tables as YAML, with provenance in the file itself."""
-    lines = [HEADER, "systems:"]
-    for entry in parsed["systems"]:
-        lines.append(f"  - star: {_scalar(entry['star'])}")
-        for field in ("distance_ly", "colony", "article", "spectral_type", "mass_sol",
-                      "luminosity_sol"):
-            lines.append(f"    {field}: {_scalar(entry[field])}")
-
-    lines.append("")
-    lines.append("wormholes:")
-    for entry in parsed["wormholes"]:
-        lines.append(f"  - star: {_scalar(entry['star'])}")
-        for field in ("system", "wormhole", "gauge_m", "nearby_unconnected", "notes"):
-            lines.append(f"    {field}: {_scalar(entry[field])}")
-
-    dest.parent.mkdir(parents=True, exist_ok=True)
-    dest.write_text("\n".join(lines) + "\n", encoding="utf-8")
-    return {"systems": len(parsed["systems"]), "wormholes": len(parsed["wormholes"])}
-
-
 def import_inner_sphere(page_path: Path, dest: Path) -> dict[str, int]:
-    """Read the saved page and write the tracked file. Returns row counts."""
+    """Update table claims in the graph, preserving assignments and old evidence."""
     text = page_path.read_text(encoding="utf-8", errors="replace")
-    return write_yaml(parse(text), dest)
+    parsed = parse(text)
+    store = OAUPStore.load(dest)
+    counts = store.replace_inner_sphere(
+        [InnerSphereSystem.model_validate(row) for row in parsed["systems"]],
+        [InnerSphereWormhole.model_validate(row) for row in parsed["wormholes"]],
+    )
+    store.validate()
+    store.save()
+    return counts

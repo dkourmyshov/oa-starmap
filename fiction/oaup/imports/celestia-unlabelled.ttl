@@ -1,0 +1,2291 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Arkab Prior Necklace
+
+id:star-arkab-prior-necklace a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "Arkab Prior Necklace" ;
+    oa:sourceName "Arkab Prior Necklace" .
+
+claim:celestia-star-arkab-prior-necklace-4c1894374fd9 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-arkab-prior-necklace ;
+    oa:canonical true ;
+    oa:declinationDeg -44.45887 ;
+    oa:distance value:celestia-star-arkab-prior-necklace-4c1894374fd9-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 290.6596 ;
+    oa:sourceArchive "OAAddons11.zip" ;
+    oa:sourceFile "abishopring.stc" .
+
+value:celestia-star-arkab-prior-necklace-4c1894374fd9-distance a oa:QuantityValue ;
+    qudt:numericValue 378.335 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-star-arkab-prior-necklace-mutual-progress-association a prov:Entity, oa:AffiliationClaim ;
+    oa:about id:star-arkab-prior-necklace ;
+    oa:canonical true ;
+    oa:polity id:polity-mutual-progress-association .
+
+claim:curation-star-arkab-prior-necklace a prov:Entity, oa:SystemCuration ;
+    oa:about id:star-arkab-prior-necklace ;
+    oa:editorialLabel "Arkab Prior Necklace" ;
+    oa:hidden true ;
+    oa:note "A megastructure of Arkab Prior B, declared in the add-on as though it were a star of its own and sharing that entry's position exactly. Hidden here because it is not a sun; it is recorded in worlds.yaml instead, bound with the rest of the system to the real catalogue star, which is where a structure orbiting a real object belongs." ;
+    oa:uncertain false .
+
+# HD 169959
+
+id:star-hd-169959 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "HD 169959" ;
+    oa:sourceName "HD 169959" .
+
+claim:celestia-star-hd-169959-72db7ae87558 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-hd-169959 ;
+    oa:absoluteMagnitude 0.92 ;
+    oa:canonical true ;
+    oa:declinationDeg 6.4226 ;
+    oa:distance value:celestia-star-hd-169959-72db7ae87558-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 276.7065 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceComment "Star in cluster NGC 6633" ;
+    oa:sourceFile "oastars6.stc" ;
+    oa:spectralType "A0II" .
+
+value:celestia-star-hd-169959-72db7ae87558-distance a oa:QuantityValue ;
+    qudt:numericValue 1226.3 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# HD 170094
+
+id:star-hd-170094 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "HD 170094" ;
+    oa:sourceName "HD 170094" .
+
+claim:celestia-star-hd-170094-f2c448f3d9a7 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-hd-170094 ;
+    oa:absoluteMagnitude 0.8 ;
+    oa:canonical true ;
+    oa:declinationDeg 6.58 ;
+    oa:distance value:celestia-star-hd-170094-f2c448f3d9a7-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 276.87 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceComment "Star in cluster NGC 6633" ;
+    oa:sourceFile "oastars6.stc" ;
+    oa:spectralType "A2V" .
+
+value:celestia-star-hd-170094-f2c448f3d9a7-distance a oa:QuantityValue ;
+    qudt:numericValue 1224.791 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 169137
+
+id:star-jd-169137 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 169137" ;
+    oa:sourceName "JD 169137" .
+
+claim:celestia-star-jd-169137-77cb8d8aa7ba a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-169137 ;
+    oa:absoluteMagnitude 4.42 ;
+    oa:canonical true ;
+    oa:declinationDeg 6.55122 ;
+    oa:distance value:celestia-star-jd-169137-77cb8d8aa7ba-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 276.5418 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceComment "Star in cluster NGC 6633" ;
+    oa:sourceFile "oastars6.stc" ;
+    oa:spectralType "K2V" .
+
+value:celestia-star-jd-169137-77cb8d8aa7ba-distance a oa:QuantityValue ;
+    qudt:numericValue 1224.97 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 169362
+
+id:star-jd-169362 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 169362" ;
+    oa:sourceName "JD 169362" .
+
+claim:celestia-star-jd-169362-92bf9c8b1075 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-169362 ;
+    oa:absoluteMagnitude 2.9 ;
+    oa:canonical true ;
+    oa:declinationDeg 6.8304 ;
+    oa:distance value:celestia-star-jd-169362-92bf9c8b1075-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 275.995 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceComment "Star in cluster NGC 6633" ;
+    oa:sourceFile "oastars6.stc" ;
+    oa:spectralType "A2V" .
+
+value:celestia-star-jd-169362-92bf9c8b1075-distance a oa:QuantityValue ;
+    qudt:numericValue 1226.89 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 169512
+
+id:star-jd-169512 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 169512" ;
+    oa:sourceName "JD 169512" .
+
+claim:celestia-star-jd-169512-1d44eb32cf3e a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-169512 ;
+    oa:absoluteMagnitude 0.1 ;
+    oa:canonical true ;
+    oa:declinationDeg 7.23125 ;
+    oa:distance value:celestia-star-jd-169512-1d44eb32cf3e-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 276.1885 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceComment "Star in cluster NGC 6633" ;
+    oa:sourceFile "oastars6.stc" ;
+    oa:spectralType "B2IV" .
+
+value:celestia-star-jd-169512-1d44eb32cf3e-distance a oa:QuantityValue ;
+    qudt:numericValue 1223.807 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 169577
+
+id:star-jd-169577 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 169577" ;
+    oa:sourceName "JD 169577" .
+
+claim:celestia-star-jd-169577-f280794d1bac a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-169577 ;
+    oa:absoluteMagnitude 3.42 ;
+    oa:canonical true ;
+    oa:declinationDeg 5.9985 ;
+    oa:distance value:celestia-star-jd-169577-f280794d1bac-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 276.276 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceComment "Star in cluster NGC 6633" ;
+    oa:sourceFile "oastars6.stc" ;
+    oa:spectralType "F2V" .
+
+value:celestia-star-jd-169577-f280794d1bac-distance a oa:QuantityValue ;
+    qudt:numericValue 1225.2 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 169597
+
+id:star-jd-169597 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 169597" ;
+    oa:sourceName "JD 169597" .
+
+claim:celestia-star-jd-169597-c672829e3d2a a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-169597 ;
+    oa:absoluteMagnitude 2.9 ;
+    oa:canonical true ;
+    oa:declinationDeg 7.119 ;
+    oa:distance value:celestia-star-jd-169597-c672829e3d2a-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 276.275 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceComment "Star in cluster NGC 6633" ;
+    oa:sourceFile "oastars6.stc" ;
+    oa:spectralType "A2V" .
+
+value:celestia-star-jd-169597-c672829e3d2a-distance a oa:QuantityValue ;
+    qudt:numericValue 1224.13 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 169629
+
+id:star-jd-169629 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 169629" ;
+    oa:sourceName "JD 169629" .
+
+claim:celestia-star-jd-169629-faccf9dec753 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-169629 ;
+    oa:absoluteMagnitude 2.8 ;
+    oa:canonical true ;
+    oa:declinationDeg 6.194 ;
+    oa:distance value:celestia-star-jd-169629-faccf9dec753-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 276.3406 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceComment "Star in cluster NGC 6633" ;
+    oa:sourceFile "oastars6.stc" ;
+    oa:spectralType "A2V" .
+
+value:celestia-star-jd-169629-faccf9dec753-distance a oa:QuantityValue ;
+    qudt:numericValue 1226.816 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 169721
+
+id:star-jd-169721 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 169721" ;
+    oa:sourceName "JD 169721" .
+
+claim:celestia-star-jd-169721-4e3040e5b7c5 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-169721 ;
+    oa:absoluteMagnitude 3.3 ;
+    oa:canonical true ;
+    oa:declinationDeg 6.541 ;
+    oa:distance value:celestia-star-jd-169721-4e3040e5b7c5-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 276.459 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceComment "Star in cluster NGC 6633" ;
+    oa:sourceFile "oastars6.stc" ;
+    oa:spectralType "F5V" .
+
+value:celestia-star-jd-169721-4e3040e5b7c5-distance a oa:QuantityValue ;
+    qudt:numericValue 1225.61 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 169842
+
+id:star-jd-169842 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 169842" ;
+    oa:sourceName "JD 169842" .
+
+claim:celestia-star-jd-169842-b444f5359837 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-169842 ;
+    oa:absoluteMagnitude 2.81 ;
+    oa:canonical true ;
+    oa:declinationDeg 6.857 ;
+    oa:distance value:celestia-star-jd-169842-b444f5359837-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 276.5929 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceComment "Star in cluster NGC 6633" ;
+    oa:sourceFile "oastars6.stc" ;
+    oa:spectralType "A5V" .
+
+value:celestia-star-jd-169842-b444f5359837-distance a oa:QuantityValue ;
+    qudt:numericValue 1227.01 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 169912
+
+id:star-jd-169912 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 169912" ;
+    oa:sourceName "JD 169912" .
+
+claim:celestia-star-jd-169912-d199e5cd3cee a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-169912 ;
+    oa:absoluteMagnitude 2.9 ;
+    oa:canonical true ;
+    oa:declinationDeg 6.541 ;
+    oa:distance value:celestia-star-jd-169912-d199e5cd3cee-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 276.658 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceComment "Star in cluster NGC 6633" ;
+    oa:sourceFile "oastars6.stc" ;
+    oa:spectralType "A2IV" .
+
+value:celestia-star-jd-169912-d199e5cd3cee-distance a oa:QuantityValue ;
+    qudt:numericValue 1225.61 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 169958
+
+id:star-jd-169958 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 169958" ;
+    oa:sourceName "JD 169958" .
+
+claim:celestia-star-jd-169958-be11744c6a15 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-169958 ;
+    oa:absoluteMagnitude 2.0 ;
+    oa:canonical true ;
+    oa:declinationDeg 6.4844 ;
+    oa:distance value:celestia-star-jd-169958-be11744c6a15-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 276.7254 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceComment "Star in cluster NGC 6633" ;
+    oa:sourceFile "oastars6.stc" ;
+    oa:spectralType "K5V" .
+
+value:celestia-star-jd-169958-be11744c6a15-distance a oa:QuantityValue ;
+    qudt:numericValue 1222.6 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 170031
+
+id:star-jd-170031 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 170031" ;
+    oa:sourceName "JD 170031" .
+
+claim:celestia-star-jd-170031-42c1ab2fd6c0 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-170031 ;
+    oa:absoluteMagnitude 2.0 ;
+    oa:canonical true ;
+    oa:declinationDeg 6.417 ;
+    oa:distance value:celestia-star-jd-170031-42c1ab2fd6c0-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 276.751 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceComment "Star in cluster NGC 6633" ;
+    oa:sourceFile "oastars6.stc" ;
+    oa:spectralType "K5V" .
+
+value:celestia-star-jd-170031-42c1ab2fd6c0-distance a oa:QuantityValue ;
+    qudt:numericValue 1223.5 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 170053
+
+id:star-jd-170053 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 170053" ;
+    oa:sourceName "JD 170053" .
+
+claim:celestia-star-jd-170053-b413b19a23ec a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-170053 ;
+    oa:absoluteMagnitude 1.8 ;
+    oa:canonical true ;
+    oa:declinationDeg 7.005 ;
+    oa:distance value:celestia-star-jd-170053-b413b19a23ec-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 276.75 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceComment "Star in cluster NGC 6633" ;
+    oa:sourceFile "oastars6.stc" ;
+    oa:spectralType "K2V" .
+
+value:celestia-star-jd-170053-b413b19a23ec-distance a oa:QuantityValue ;
+    qudt:numericValue 1225.21 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 170054
+
+id:star-jd-170054 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 170054" ;
+    oa:sourceName "JD 170054" .
+
+claim:celestia-star-jd-170054-662ef2f630c4 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-170054 ;
+    oa:absoluteMagnitude -0.01 ;
+    oa:canonical true ;
+    oa:declinationDeg 6.5186 ;
+    oa:distance value:celestia-star-jd-170054-662ef2f630c4-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 276.81 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceComment "Star in cluster NGC 6633" ;
+    oa:sourceFile "oastars6.stc" ;
+    oa:spectralType "B6IV" .
+
+value:celestia-star-jd-170054-662ef2f630c4-distance a oa:QuantityValue ;
+    qudt:numericValue 1227.871 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 170079
+
+id:star-jd-170079 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 170079" ;
+    oa:sourceName "JD 170079" .
+
+claim:celestia-star-jd-170079-77e1ba602f96 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-170079 ;
+    oa:absoluteMagnitude 2.9 ;
+    oa:canonical true ;
+    oa:declinationDeg 6.143 ;
+    oa:distance value:celestia-star-jd-170079-77e1ba602f96-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 276.85 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceComment "Star in cluster NGC 6633" ;
+    oa:sourceFile "oastars6.stc" ;
+    oa:spectralType "A5V" .
+
+value:celestia-star-jd-170079-77e1ba602f96-distance a oa:QuantityValue ;
+    qudt:numericValue 1228.01 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 170119
+
+id:star-jd-170119 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 170119" ;
+    oa:sourceName "JD 170119" .
+
+claim:celestia-star-jd-170119-5b0cf180f306 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-170119 ;
+    oa:absoluteMagnitude 4.42 ;
+    oa:canonical true ;
+    oa:declinationDeg 6.468 ;
+    oa:distance value:celestia-star-jd-170119-5b0cf180f306-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 277.1625 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceComment "Star in cluster NGC 6633" ;
+    oa:sourceFile "oastars6.stc" ;
+    oa:spectralType "G4V" .
+
+value:celestia-star-jd-170119-5b0cf180f306-distance a oa:QuantityValue ;
+    qudt:numericValue 1225.9 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 170133
+
+id:star-jd-170133 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 170133" ;
+    oa:sourceName "JD 170133" .
+
+claim:celestia-star-jd-170133-defb2d245b64 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-170133 ;
+    oa:absoluteMagnitude 5.8 ;
+    oa:canonical true ;
+    oa:declinationDeg 6.502 ;
+    oa:distance value:celestia-star-jd-170133-defb2d245b64-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 276.452 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceComment "Star in cluster NGC 6633" ;
+    oa:sourceFile "oastars6.stc" ;
+    oa:spectralType "K2V" .
+
+value:celestia-star-jd-170133-defb2d245b64-distance a oa:QuantityValue ;
+    qudt:numericValue 1224.21 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 170136
+
+id:star-jd-170136 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 170136" ;
+    oa:sourceName "JD 170136" .
+
+claim:celestia-star-jd-170136-830fc624bcb5 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-170136 ;
+    oa:absoluteMagnitude 4.9 ;
+    oa:canonical true ;
+    oa:declinationDeg 6.481 ;
+    oa:distance value:celestia-star-jd-170136-830fc624bcb5-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 276.7151 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceComment "Star in cluster NGC 6633" ;
+    oa:sourceFile "oastars6.stc" ;
+    oa:spectralType "G2V" .
+
+value:celestia-star-jd-170136-830fc624bcb5-distance a oa:QuantityValue ;
+    qudt:numericValue 1225.721 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 170158
+
+id:star-jd-170158 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 170158" ;
+    oa:sourceName "JD 170158" .
+
+claim:celestia-star-jd-170158-e0b5b5850c1d a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-170158 ;
+    oa:absoluteMagnitude 4.42 ;
+    oa:canonical true ;
+    oa:declinationDeg 6.456 ;
+    oa:distance value:celestia-star-jd-170158-e0b5b5850c1d-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 276.948 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceComment "Star in cluster NGC 6633" ;
+    oa:sourceFile "oastars6.stc" ;
+    oa:spectralType "G8V" .
+
+value:celestia-star-jd-170158-e0b5b5850c1d-distance a oa:QuantityValue ;
+    qudt:numericValue 1224.2 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 170174
+
+id:star-jd-170174 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 170174" ;
+    oa:sourceName "JD 170174" .
+
+claim:celestia-star-jd-170174-f03b2938934a a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-170174 ;
+    oa:absoluteMagnitude 3.9 ;
+    oa:canonical true ;
+    oa:declinationDeg 5.76 ;
+    oa:distance value:celestia-star-jd-170174-f03b2938934a-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 276.978 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceComment "Star in cluster NGC 6633" ;
+    oa:sourceFile "oastars6.stc" ;
+    oa:spectralType "A2V" .
+
+value:celestia-star-jd-170174-f03b2938934a-distance a oa:QuantityValue ;
+    qudt:numericValue 1223.329 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 170200
+
+id:star-jd-170200 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 170200" ;
+    oa:sourceName "JD 170200" .
+
+claim:celestia-star-jd-170200-44aa060206f7 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-170200 ;
+    oa:absoluteMagnitude 1.8 ;
+    oa:canonical true ;
+    oa:declinationDeg 6.194 ;
+    oa:distance value:celestia-star-jd-170200-44aa060206f7-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 276.995 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceComment "Star in cluster NGC 6633" ;
+    oa:sourceFile "oastars6.stc" ;
+    oa:spectralType "A5II" .
+
+value:celestia-star-jd-170200-44aa060206f7-distance a oa:QuantityValue ;
+    qudt:numericValue 1224.81 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 170291
+
+id:star-jd-170291 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 170291" ;
+    oa:sourceName "JD 170291" .
+
+claim:celestia-star-jd-170291-c4be4f8c4ec9 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-170291 ;
+    oa:absoluteMagnitude 1.8 ;
+    oa:canonical true ;
+    oa:declinationDeg 6.47 ;
+    oa:distance value:celestia-star-jd-170291-c4be4f8c4ec9-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 277.272 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceComment "Star in cluster NGC 6633" ;
+    oa:sourceFile "oastars6.stc" ;
+    oa:spectralType "F5V" .
+
+value:celestia-star-jd-170291-c4be4f8c4ec9-distance a oa:QuantityValue ;
+    qudt:numericValue 1224.21 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 170292
+
+id:star-jd-170292 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 170292" ;
+    oa:sourceName "JD 170292" .
+
+claim:celestia-star-jd-170292-d51f6262bc25 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-170292 ;
+    oa:absoluteMagnitude 1.2 ;
+    oa:canonical true ;
+    oa:declinationDeg 6.708 ;
+    oa:distance value:celestia-star-jd-170292-d51f6262bc25-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 277.096 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceComment "Star in cluster NGC 6633" ;
+    oa:sourceFile "oastars6.stc" ;
+    oa:spectralType "K2V" .
+
+value:celestia-star-jd-170292-d51f6262bc25-distance a oa:QuantityValue ;
+    qudt:numericValue 1226.421 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 170293
+
+id:star-jd-170293 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 170293" ;
+    oa:sourceName "JD 170293" .
+
+claim:celestia-star-jd-170293-147dd8daebb0 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-170293 ;
+    oa:absoluteMagnitude 2.9 ;
+    oa:canonical true ;
+    oa:declinationDeg 6.4139 ;
+    oa:distance value:celestia-star-jd-170293-147dd8daebb0-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 277.096 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceComment "Star in cluster NGC 6633" ;
+    oa:sourceFile "oastars6.stc" ;
+    oa:spectralType "A5V" .
+
+value:celestia-star-jd-170293-147dd8daebb0-distance a oa:QuantityValue ;
+    qudt:numericValue 1227.13 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 170346
+
+id:star-jd-170346 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 170346" ;
+    oa:sourceName "JD 170346" .
+
+claim:celestia-star-jd-170346-bf7026787c57 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-170346 ;
+    oa:absoluteMagnitude 2.8 ;
+    oa:canonical true ;
+    oa:declinationDeg 6.7896 ;
+    oa:distance value:celestia-star-jd-170346-bf7026787c57-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 277.0918 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceComment "Star in cluster NGC 6633" ;
+    oa:sourceFile "oastars6.stc" ;
+    oa:spectralType "A2V" .
+
+value:celestia-star-jd-170346-bf7026787c57-distance a oa:QuantityValue ;
+    qudt:numericValue 1224.28 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 170472
+
+id:star-jd-170472 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 170472" ;
+    oa:sourceName "JD 170472" .
+
+claim:celestia-star-jd-170472-3406c5b5d05b a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-170472 ;
+    oa:absoluteMagnitude 2.8 ;
+    oa:canonical true ;
+    oa:declinationDeg 6.8514 ;
+    oa:distance value:celestia-star-jd-170472-3406c5b5d05b-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 277.3325 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceComment "Star in cluster NGC 6633" ;
+    oa:sourceFile "oastars6.stc" ;
+    oa:spectralType "A2V" .
+
+value:celestia-star-jd-170472-3406c5b5d05b-distance a oa:QuantityValue ;
+    qudt:numericValue 1225.971 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 170512
+
+id:star-jd-170512 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 170512" ;
+    oa:sourceName "JD 170512" .
+
+claim:celestia-star-jd-170512-e79967087de1 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-170512 ;
+    oa:absoluteMagnitude 3.9 ;
+    oa:canonical true ;
+    oa:declinationDeg 7.359 ;
+    oa:distance value:celestia-star-jd-170512-e79967087de1-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 277.365 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceComment "Star in cluster NGC 6633" ;
+    oa:sourceFile "oastars6.stc" ;
+    oa:spectralType "G8V" .
+
+value:celestia-star-jd-170512-e79967087de1-distance a oa:QuantityValue ;
+    qudt:numericValue 1225.03 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 170563
+
+id:star-jd-170563 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 170563" ;
+    oa:sourceName "JD 170563" .
+
+claim:celestia-star-jd-170563-40897636626d a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-170563 ;
+    oa:absoluteMagnitude 2.9 ;
+    oa:canonical true ;
+    oa:declinationDeg 6.763 ;
+    oa:distance value:celestia-star-jd-170563-40897636626d-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 277.454 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceComment "Star in cluster NGC 6633" ;
+    oa:sourceFile "oastars6.stc" ;
+    oa:spectralType "A2V" .
+
+value:celestia-star-jd-170563-40897636626d-distance a oa:QuantityValue ;
+    qudt:numericValue 1224.98 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 170881
+
+id:star-jd-170881 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 170881" ;
+    oa:sourceName "JD 170881" .
+
+claim:celestia-star-jd-170881-0f862e45e598 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-170881 ;
+    oa:absoluteMagnitude 0.9 ;
+    oa:canonical true ;
+    oa:declinationDeg 6.489 ;
+    oa:distance value:celestia-star-jd-170881-0f862e45e598-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 277.86 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceComment "Star in cluster NGC 6633" ;
+    oa:sourceFile "oastars6.stc" ;
+    oa:spectralType "B2V" .
+
+value:celestia-star-jd-170881-0f862e45e598-distance a oa:QuantityValue ;
+    qudt:numericValue 1224.07 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 171135
+
+id:star-jd-171135 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 171135" ;
+    oa:sourceName "JD 171135" .
+
+claim:celestia-star-jd-171135-2cd3a02cfda8 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-171135 ;
+    oa:absoluteMagnitude 2.6 ;
+    oa:canonical true ;
+    oa:declinationDeg 6.5321 ;
+    oa:distance value:celestia-star-jd-171135-2cd3a02cfda8-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 276.9125 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceComment "Star in cluster NGC 6633" ;
+    oa:sourceFile "oastars6.stc" ;
+    oa:spectralType "A4IV" .
+
+value:celestia-star-jd-171135-2cd3a02cfda8-distance a oa:QuantityValue ;
+    qudt:numericValue 1223.807 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 179958
+
+id:star-jd-179958 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 179958" ;
+    oa:sourceName "JD 179958" .
+
+claim:celestia-star-jd-179958-3ddf43c97a38 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-179958 ;
+    oa:absoluteMagnitude 4.9 ;
+    oa:canonical true ;
+    oa:declinationDeg 6.47 ;
+    oa:distance value:celestia-star-jd-179958-3ddf43c97a38-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 276.74 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceComment "Star in cluster NGC 6633" ;
+    oa:sourceFile "oastars6.stc" ;
+    oa:spectralType "K2V" .
+
+value:celestia-star-jd-179958-3ddf43c97a38-distance a oa:QuantityValue ;
+    qudt:numericValue 1222.4 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 180123
+
+id:star-jd-180123 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 180123" ;
+    oa:sourceName "JD 180123" .
+
+claim:celestia-star-jd-180123-723eeb7a3df3 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-180123 ;
+    oa:absoluteMagnitude 5.8 ;
+    oa:canonical true ;
+    oa:declinationDeg 6.502 ;
+    oa:distance value:celestia-star-jd-180123-723eeb7a3df3-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 276.5327 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceComment "Star in cluster NGC 6633" ;
+    oa:sourceFile "oastars6.stc" ;
+    oa:spectralType "K2V" .
+
+value:celestia-star-jd-180123-723eeb7a3df3-distance a oa:QuantityValue ;
+    qudt:numericValue 1224.631 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 180124
+
+id:star-jd-180124 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 180124" ;
+    oa:sourceName "JD 180124" .
+
+claim:celestia-star-jd-180124-3977cada0405 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-180124 ;
+    oa:absoluteMagnitude 5.7 ;
+    oa:canonical true ;
+    oa:declinationDeg 6.502 ;
+    oa:distance value:celestia-star-jd-180124-3977cada0405-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 277.127 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceComment "Star in cluster NGC 6633" ;
+    oa:sourceFile "oastars6.stc" ;
+    oa:spectralType "K2V" .
+
+value:celestia-star-jd-180124-3977cada0405-distance a oa:QuantityValue ;
+    qudt:numericValue 1226.41 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 180126
+
+id:star-jd-180126 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 180126" ;
+    oa:sourceName "JD 180126" .
+
+claim:celestia-star-jd-180126-64b3420ea616 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-180126 ;
+    oa:absoluteMagnitude 4.3 ;
+    oa:canonical true ;
+    oa:declinationDeg 6.5981 ;
+    oa:distance value:celestia-star-jd-180126-64b3420ea616-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 276.641 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceComment "Star in cluster NGC 6633" ;
+    oa:sourceFile "oastars6.stc" ;
+    oa:spectralType "G2V" .
+
+value:celestia-star-jd-180126-64b3420ea616-distance a oa:QuantityValue ;
+    qudt:numericValue 1223.12 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 180128
+
+id:star-jd-180128 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 180128" ;
+    oa:sourceName "JD 180128" .
+
+claim:celestia-star-jd-180128-018b6859e597 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-180128 ;
+    oa:absoluteMagnitude 4.3 ;
+    oa:canonical true ;
+    oa:declinationDeg 6.431 ;
+    oa:distance value:celestia-star-jd-180128-018b6859e597-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 276.981 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceComment "Star in cluster NGC 6633" ;
+    oa:sourceFile "oastars6.stc" ;
+    oa:spectralType "G2V" .
+
+value:celestia-star-jd-180128-018b6859e597-distance a oa:QuantityValue ;
+    qudt:numericValue 1226.12 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 180133
+
+id:star-jd-180133 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 180133" ;
+    oa:sourceName "JD 180133" .
+
+claim:celestia-star-jd-180133-095be369821d a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-180133 ;
+    oa:absoluteMagnitude 5.7 ;
+    oa:canonical true ;
+    oa:declinationDeg 6.602 ;
+    oa:distance value:celestia-star-jd-180133-095be369821d-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 276.327 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceComment "Star in cluster NGC 6633" ;
+    oa:sourceFile "oastars6.stc" ;
+    oa:spectralType "K2V" .
+
+value:celestia-star-jd-180133-095be369821d-distance a oa:QuantityValue ;
+    qudt:numericValue 1225.31 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 180134
+
+id:star-jd-180134 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 180134" ;
+    oa:sourceName "JD 180134" .
+
+claim:celestia-star-jd-180134-e65230f4667c a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-180134 ;
+    oa:absoluteMagnitude 5.7 ;
+    oa:canonical true ;
+    oa:declinationDeg 6.402 ;
+    oa:distance value:celestia-star-jd-180134-e65230f4667c-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 276.127 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceComment "Star in cluster NGC 6633" ;
+    oa:sourceFile "oastars6.stc" ;
+    oa:spectralType "K2V" .
+
+value:celestia-star-jd-180134-e65230f4667c-distance a oa:QuantityValue ;
+    qudt:numericValue 1226.41 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 180136
+
+id:star-jd-180136 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 180136" ;
+    oa:sourceName "JD 180136" .
+
+claim:celestia-star-jd-180136-46d027026293 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-180136 ;
+    oa:absoluteMagnitude 4.7 ;
+    oa:canonical true ;
+    oa:declinationDeg 6.581 ;
+    oa:distance value:celestia-star-jd-180136-46d027026293-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 276.041 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceComment "Star in cluster NGC 6633" ;
+    oa:sourceFile "oastars6.stc" ;
+    oa:spectralType "G2V" .
+
+value:celestia-star-jd-180136-46d027026293-distance a oa:QuantityValue ;
+    qudt:numericValue 1225.12 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 180138
+
+id:star-jd-180138 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 180138" ;
+    oa:sourceName "JD 180138" .
+
+claim:celestia-star-jd-180138-53f47b087b6e a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-180138 ;
+    oa:absoluteMagnitude 4.1 ;
+    oa:canonical true ;
+    oa:declinationDeg 6.581 ;
+    oa:distance value:celestia-star-jd-180138-53f47b087b6e-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 276.5471 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceComment "Star in cluster NGC 6633" ;
+    oa:sourceFile "oastars6.stc" ;
+    oa:spectralType "G2V" .
+
+value:celestia-star-jd-180138-53f47b087b6e-distance a oa:QuantityValue ;
+    qudt:numericValue 1224.912 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 189127
+
+id:star-jd-189127 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 189127" ;
+    oa:sourceName "JD 189127" .
+
+claim:celestia-star-jd-189127-cf8435d0d48e a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-189127 ;
+    oa:absoluteMagnitude 4.82 ;
+    oa:canonical true ;
+    oa:declinationDeg 6.4582 ;
+    oa:distance value:celestia-star-jd-189127-cf8435d0d48e-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 276.308 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceComment "Star in cluster NGC 6633" ;
+    oa:sourceFile "oastars6.stc" ;
+    oa:spectralType "K2V" .
+
+value:celestia-star-jd-189127-cf8435d0d48e-distance a oa:QuantityValue ;
+    qudt:numericValue 1225.721 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 189129
+
+id:star-jd-189129 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 189129" ;
+    oa:sourceName "JD 189129" .
+
+claim:celestia-star-jd-189129-ba88f4f7d851 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-189129 ;
+    oa:absoluteMagnitude 4.52 ;
+    oa:canonical true ;
+    oa:declinationDeg 6.5482 ;
+    oa:distance value:celestia-star-jd-189129-ba88f4f7d851-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 277.228 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceComment "Star in cluster NGC 6633" ;
+    oa:sourceFile "oastars6.stc" ;
+    oa:spectralType "K2V" .
+
+value:celestia-star-jd-189129-ba88f4f7d851-distance a oa:QuantityValue ;
+    qudt:numericValue 1223.921 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 189137
+
+id:star-jd-189137 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 189137" ;
+    oa:sourceName "JD 189137" .
+
+claim:celestia-star-jd-189137-e47f3d87e213 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-189137 ;
+    oa:absoluteMagnitude 4.42 ;
+    oa:canonical true ;
+    oa:declinationDeg 6.582 ;
+    oa:distance value:celestia-star-jd-189137-e47f3d87e213-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 276.9338 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceComment "Star in cluster NGC 6633" ;
+    oa:sourceFile "oastars6.stc" ;
+    oa:spectralType "K2V" .
+
+value:celestia-star-jd-189137-e47f3d87e213-distance a oa:QuantityValue ;
+    qudt:numericValue 1224.121 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 189139
+
+id:star-jd-189139 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 189139" ;
+    oa:sourceName "JD 189139" .
+
+claim:celestia-star-jd-189139-c4e555831f79 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-189139 ;
+    oa:absoluteMagnitude 4.92 ;
+    oa:canonical true ;
+    oa:declinationDeg 6.2482 ;
+    oa:distance value:celestia-star-jd-189139-c4e555831f79-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 277.298 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceComment "Star in cluster NGC 6633" ;
+    oa:sourceFile "oastars6.stc" ;
+    oa:spectralType "K2V" .
+
+value:celestia-star-jd-189139-c4e555831f79-distance a oa:QuantityValue ;
+    qudt:numericValue 1225.721 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 189952
+
+id:star-jd-189952 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 189952" ;
+    oa:sourceName "JD 189952" .
+
+claim:celestia-star-jd-189952-8ee8630516a3 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-189952 ;
+    oa:absoluteMagnitude 5.2 ;
+    oa:canonical true ;
+    oa:declinationDeg 6.51 ;
+    oa:distance value:celestia-star-jd-189952-8ee8630516a3-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 276.63 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceComment "Star in cluster NGC 6633" ;
+    oa:sourceFile "oastars6.stc" ;
+    oa:spectralType "K5V" .
+
+value:celestia-star-jd-189952-8ee8630516a3-distance a oa:QuantityValue ;
+    qudt:numericValue 1222.64 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 189961
+
+id:star-jd-189961 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 189961" ;
+    oa:sourceName "JD 189961" .
+
+claim:celestia-star-jd-189961-1c9f2113f204 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-189961 ;
+    oa:absoluteMagnitude 4.2 ;
+    oa:canonical true ;
+    oa:declinationDeg 6.494 ;
+    oa:distance value:celestia-star-jd-189961-1c9f2113f204-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 276.91 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceComment "Star in cluster NGC 6633" ;
+    oa:sourceFile "oastars6.stc" ;
+    oa:spectralType "G3V" .
+
+value:celestia-star-jd-189961-1c9f2113f204-distance a oa:QuantityValue ;
+    qudt:numericValue 1223.38 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 189962
+
+id:star-jd-189962 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 189962" ;
+    oa:sourceName "JD 189962" .
+
+claim:celestia-star-jd-189962-f4298397798d a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-189962 ;
+    oa:absoluteMagnitude 5.0 ;
+    oa:canonical true ;
+    oa:declinationDeg 6.481 ;
+    oa:distance value:celestia-star-jd-189962-f4298397798d-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 276.73 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceComment "Star in cluster NGC 6633" ;
+    oa:sourceFile "oastars6.stc" ;
+    oa:spectralType "K5V" .
+
+value:celestia-star-jd-189962-f4298397798d-distance a oa:QuantityValue ;
+    qudt:numericValue 1222.62 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 189970
+
+id:star-jd-189970 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 189970" ;
+    oa:sourceName "JD 189970" .
+
+claim:celestia-star-jd-189970-87821d0c67fa a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-189970 ;
+    oa:absoluteMagnitude 4.89 ;
+    oa:canonical true ;
+    oa:declinationDeg 6.439 ;
+    oa:distance value:celestia-star-jd-189970-87821d0c67fa-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 276.728 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceComment "Star in cluster NGC 6633" ;
+    oa:sourceFile "oastars6.stc" ;
+    oa:spectralType "G2V" .
+
+value:celestia-star-jd-189970-87821d0c67fa-distance a oa:QuantityValue ;
+    qudt:numericValue 1222.58 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 189971
+
+id:star-jd-189971 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 189971" ;
+    oa:sourceName "JD 189971" .
+
+claim:celestia-star-jd-189971-9f43dca7aa30 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-189971 ;
+    oa:absoluteMagnitude 4.7 ;
+    oa:canonical true ;
+    oa:declinationDeg 6.544 ;
+    oa:distance value:celestia-star-jd-189971-9f43dca7aa30-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 276.71 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceComment "Star in cluster NGC 6633" ;
+    oa:sourceFile "oastars6.stc" ;
+    oa:spectralType "G3V" .
+
+value:celestia-star-jd-189971-9f43dca7aa30-distance a oa:QuantityValue ;
+    qudt:numericValue 1222.3 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 518718
+
+id:star-jd-518718 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 518718" ;
+    oa:sourceName "JD 518718" .
+
+claim:celestia-star-jd-518718-d4d9cff3c13c a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-518718 ;
+    oa:absoluteMagnitude 4.65 ;
+    oa:canonical true ;
+    oa:declinationDeg -38.66 ;
+    oa:distance value:celestia-star-jd-518718-d4d9cff3c13c-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 276.85 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceFile "alottafictionalstars.stc" ;
+    oa:spectralType "G2V" .
+
+value:celestia-star-jd-518718-d4d9cff3c13c-distance a oa:QuantityValue ;
+    qudt:numericValue 2615.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 518722
+
+id:star-jd-518722 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 518722" ;
+    oa:sourceName "JD 518722" .
+
+claim:celestia-star-jd-518722-339fde5690b4 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-518722 ;
+    oa:absoluteMagnitude 4.65 ;
+    oa:canonical true ;
+    oa:declinationDeg 78.87 ;
+    oa:distance value:celestia-star-jd-518722-339fde5690b4-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 277.14 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceFile "alottafictionalstars.stc" ;
+    oa:spectralType "G2V" .
+
+value:celestia-star-jd-518722-339fde5690b4-distance a oa:QuantityValue ;
+    qudt:numericValue 2622.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 518731
+
+id:star-jd-518731 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 518731" ;
+    oa:sourceName "JD 518731" .
+
+claim:celestia-star-jd-518731-f14ab2c2378a a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-518731 ;
+    oa:absoluteMagnitude 4.85 ;
+    oa:canonical true ;
+    oa:declinationDeg -31.82 ;
+    oa:distance value:celestia-star-jd-518731-f14ab2c2378a-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 95.22 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceFile "alottafictionalstars.stc" ;
+    oa:spectralType "G2V" .
+
+value:celestia-star-jd-518731-f14ab2c2378a-distance a oa:QuantityValue ;
+    qudt:numericValue 2577.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 518734
+
+id:star-jd-518734 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 518734" ;
+    oa:sourceName "JD 518734" .
+
+claim:celestia-star-jd-518734-1d4cf3650373 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-518734 ;
+    oa:absoluteMagnitude 4.29 ;
+    oa:canonical true ;
+    oa:declinationDeg 38.11 ;
+    oa:distance value:celestia-star-jd-518734-1d4cf3650373-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 322.1 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceFile "alottafictionalstars.stc" ;
+    oa:spectralType "G2V" .
+
+value:celestia-star-jd-518734-1d4cf3650373-distance a oa:QuantityValue ;
+    qudt:numericValue 2412.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 518736
+
+id:star-jd-518736 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 518736" ;
+    oa:sourceName "JD 518736" .
+
+claim:celestia-star-jd-518736-3c7bc7648a65 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-518736 ;
+    oa:absoluteMagnitude 4.75 ;
+    oa:canonical true ;
+    oa:declinationDeg 20.28 ;
+    oa:distance value:celestia-star-jd-518736-3c7bc7648a65-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 114.77 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceFile "alottafictionalstars.stc" ;
+    oa:spectralType "G2V" .
+
+value:celestia-star-jd-518736-3c7bc7648a65-distance a oa:QuantityValue ;
+    qudt:numericValue 2042.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 518771
+
+id:star-jd-518771 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 518771" ;
+    oa:sourceName "JD 518771" .
+
+claim:celestia-star-jd-518771-9b35e3b2aa69 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-518771 ;
+    oa:absoluteMagnitude 4.65 ;
+    oa:canonical true ;
+    oa:declinationDeg 44.2 ;
+    oa:distance value:celestia-star-jd-518771-9b35e3b2aa69-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 125.98 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceFile "oastars7.stc" ;
+    oa:spectralType "G2V" .
+
+value:celestia-star-jd-518771-9b35e3b2aa69-distance a oa:QuantityValue ;
+    qudt:numericValue 578.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 518774
+
+id:star-jd-518774 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 518774" ;
+    oa:sourceName "JD 518774" .
+
+claim:celestia-star-jd-518774-d51feac33a5e a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-518774 ;
+    oa:absoluteMagnitude 4.65 ;
+    oa:canonical true ;
+    oa:declinationDeg 28.48 ;
+    oa:distance value:celestia-star-jd-518774-d51feac33a5e-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 131.11 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceFile "alottafictionalstars.stc" ;
+    oa:spectralType "G2V" .
+
+value:celestia-star-jd-518774-d51feac33a5e-distance a oa:QuantityValue ;
+    qudt:numericValue 1219.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 518775
+
+id:star-jd-518775 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 518775" ;
+    oa:sourceName "JD 518775" .
+
+claim:celestia-star-jd-518775-e41b147cccff a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-518775 ;
+    oa:absoluteMagnitude 4.78 ;
+    oa:canonical true ;
+    oa:declinationDeg 51.08 ;
+    oa:distance value:celestia-star-jd-518775-e41b147cccff-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 115.05 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceFile "alottafictionalstars.stc" ;
+    oa:spectralType "G2V" .
+
+value:celestia-star-jd-518775-e41b147cccff-distance a oa:QuantityValue ;
+    qudt:numericValue 1713.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 518776
+
+id:star-jd-518776 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 518776" ;
+    oa:sourceName "JD 518776" .
+
+claim:celestia-star-jd-518776-fc054b46face a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-518776 ;
+    oa:absoluteMagnitude 4.72 ;
+    oa:canonical true ;
+    oa:declinationDeg -18.08 ;
+    oa:distance value:celestia-star-jd-518776-fc054b46face-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 71.29 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceFile "alottafictionalstars.stc" ;
+    oa:spectralType "G2V" .
+
+value:celestia-star-jd-518776-fc054b46face-distance a oa:QuantityValue ;
+    qudt:numericValue 1622.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 518777
+
+id:star-jd-518777 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 518777" ;
+    oa:sourceName "JD 518777" .
+
+claim:celestia-star-jd-518777-5777367cede0 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-518777 ;
+    oa:absoluteMagnitude 4.85 ;
+    oa:canonical true ;
+    oa:declinationDeg -53.2 ;
+    oa:distance value:celestia-star-jd-518777-5777367cede0-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 95.02 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceFile "alottafictionalstars.stc" ;
+    oa:spectralType "G2V" .
+
+value:celestia-star-jd-518777-5777367cede0-distance a oa:QuantityValue ;
+    qudt:numericValue 1766.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 518778
+
+id:star-jd-518778 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 518778" ;
+    oa:sourceName "JD 518778" .
+
+claim:celestia-star-jd-518778-464f96c5c1cb a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-518778 ;
+    oa:absoluteMagnitude 4.95 ;
+    oa:canonical true ;
+    oa:declinationDeg -48.48 ;
+    oa:distance value:celestia-star-jd-518778-464f96c5c1cb-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 231.41 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceFile "alottafictionalstars.stc" ;
+    oa:spectralType "G2V" .
+
+value:celestia-star-jd-518778-464f96c5c1cb-distance a oa:QuantityValue ;
+    qudt:numericValue 2119.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 518779
+
+id:star-jd-518779 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 518779" ;
+    oa:sourceName "JD 518779" .
+
+claim:celestia-star-jd-518779-ab12587ec3e1 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-518779 ;
+    oa:absoluteMagnitude 4.85 ;
+    oa:canonical true ;
+    oa:declinationDeg 49.18 ;
+    oa:distance value:celestia-star-jd-518779-ab12587ec3e1-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 225.35 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceFile "alottafictionalstars.stc" ;
+    oa:spectralType "G2V" .
+
+value:celestia-star-jd-518779-ab12587ec3e1-distance a oa:QuantityValue ;
+    qudt:numericValue 2113.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 518780
+
+id:star-jd-518780 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 518780" ;
+    oa:sourceName "JD 518780" .
+
+claim:celestia-star-jd-518780-4132672fb194 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-518780 ;
+    oa:absoluteMagnitude 4.65 ;
+    oa:canonical true ;
+    oa:declinationDeg -17.28 ;
+    oa:distance value:celestia-star-jd-518780-4132672fb194-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 271.15 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceFile "alottafictionalstars.stc" ;
+    oa:spectralType "G2V" .
+
+value:celestia-star-jd-518780-4132672fb194-distance a oa:QuantityValue ;
+    qudt:numericValue 2615.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 518781
+
+id:star-jd-518781 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 518781" ;
+    oa:sourceName "JD 518781" .
+
+claim:celestia-star-jd-518781-ae4ead6e005d a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-518781 ;
+    oa:absoluteMagnitude 4.65 ;
+    oa:canonical true ;
+    oa:declinationDeg -53.43 ;
+    oa:distance value:celestia-star-jd-518781-ae4ead6e005d-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 291.15 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceFile "alottafictionalstars.stc" ;
+    oa:spectralType "G2V" .
+
+value:celestia-star-jd-518781-ae4ead6e005d-distance a oa:QuantityValue ;
+    qudt:numericValue 2871.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 518782
+
+id:star-jd-518782 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 518782" ;
+    oa:sourceName "JD 518782" .
+
+claim:celestia-star-jd-518782-3e7364fb2380 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-518782 ;
+    oa:absoluteMagnitude 4.65 ;
+    oa:canonical true ;
+    oa:declinationDeg -58.12 ;
+    oa:distance value:celestia-star-jd-518782-3e7364fb2380-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 211.67 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceFile "alottafictionalstars.stc" ;
+    oa:spectralType "G2V" .
+
+value:celestia-star-jd-518782-3e7364fb2380-distance a oa:QuantityValue ;
+    qudt:numericValue 2319.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 518783
+
+id:star-jd-518783 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 518783" ;
+    oa:sourceName "JD 518783" .
+
+claim:celestia-star-jd-518783-cd20ebf3dee0 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-518783 ;
+    oa:absoluteMagnitude 4.65 ;
+    oa:canonical true ;
+    oa:declinationDeg -21.76 ;
+    oa:distance value:celestia-star-jd-518783-cd20ebf3dee0-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 15.05 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceFile "alottafictionalstars.stc" ;
+    oa:spectralType "G2V" .
+
+value:celestia-star-jd-518783-cd20ebf3dee0-distance a oa:QuantityValue ;
+    qudt:numericValue 2713.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 518784
+
+id:star-jd-518784 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 518784" ;
+    oa:sourceName "JD 518784" .
+
+claim:celestia-star-jd-518784-cc639c3ca6e7 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-518784 ;
+    oa:absoluteMagnitude 4.65 ;
+    oa:canonical true ;
+    oa:declinationDeg 8.08 ;
+    oa:distance value:celestia-star-jd-518784-cc639c3ca6e7-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 311.99 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceFile "alottafictionalstars.stc" ;
+    oa:spectralType "G2V" .
+
+value:celestia-star-jd-518784-cc639c3ca6e7-distance a oa:QuantityValue ;
+    qudt:numericValue 2612.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 518785
+
+id:star-jd-518785 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 518785" ;
+    oa:sourceName "JD 518785" .
+
+claim:celestia-star-jd-518785-71acd277269e a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-518785 ;
+    oa:absoluteMagnitude 4.65 ;
+    oa:canonical true ;
+    oa:declinationDeg 33.72 ;
+    oa:distance value:celestia-star-jd-518785-71acd277269e-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 295.87 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceFile "alottafictionalstars.stc" ;
+    oa:spectralType "G2V" .
+
+value:celestia-star-jd-518785-71acd277269e-distance a oa:QuantityValue ;
+    qudt:numericValue 2526.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 518786
+
+id:star-jd-518786 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 518786" ;
+    oa:sourceName "JD 518786" .
+
+claim:celestia-star-jd-518786-87ebc770f70b a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-518786 ;
+    oa:absoluteMagnitude 4.65 ;
+    oa:canonical true ;
+    oa:declinationDeg -28.88 ;
+    oa:distance value:celestia-star-jd-518786-87ebc770f70b-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 211.71 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceFile "alottafictionalstars.stc" ;
+    oa:spectralType "G2V" .
+
+value:celestia-star-jd-518786-87ebc770f70b-distance a oa:QuantityValue ;
+    qudt:numericValue 2919.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 518787
+
+id:star-jd-518787 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 518787" ;
+    oa:sourceName "JD 518787" .
+
+claim:celestia-star-jd-518787-ec1d74276741 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-518787 ;
+    oa:absoluteMagnitude 4.65 ;
+    oa:canonical true ;
+    oa:declinationDeg -28.23 ;
+    oa:distance value:celestia-star-jd-518787-ec1d74276741-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 74.43 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceFile "alottafictionalstars.stc" ;
+    oa:spectralType "G2V" .
+
+value:celestia-star-jd-518787-ec1d74276741-distance a oa:QuantityValue ;
+    qudt:numericValue 2513.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 518789
+
+id:star-jd-518789 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 518789" ;
+    oa:sourceName "JD 518789" .
+
+claim:celestia-star-jd-518789-1cecb7703d42 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-518789 ;
+    oa:absoluteMagnitude 4.65 ;
+    oa:canonical true ;
+    oa:declinationDeg -11.39 ;
+    oa:distance value:celestia-star-jd-518789-1cecb7703d42-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 5.75 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceFile "alottafictionalstars.stc" ;
+    oa:spectralType "G2V" .
+
+value:celestia-star-jd-518789-1cecb7703d42-distance a oa:QuantityValue ;
+    qudt:numericValue 2180.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 518790
+
+id:star-jd-518790 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 518790" ;
+    oa:sourceName "JD 518790" .
+
+claim:celestia-star-jd-518790-0d01c6dea673 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-518790 ;
+    oa:absoluteMagnitude 4.75 ;
+    oa:canonical true ;
+    oa:declinationDeg -78.18 ;
+    oa:distance value:celestia-star-jd-518790-0d01c6dea673-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 231.08 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceFile "alottafictionalstars.stc" ;
+    oa:spectralType "G2V" .
+
+value:celestia-star-jd-518790-0d01c6dea673-distance a oa:QuantityValue ;
+    qudt:numericValue 2299.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 518791
+
+id:star-jd-518791 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 518791" ;
+    oa:sourceName "JD 518791" .
+
+claim:celestia-star-jd-518791-6a48b7fdebbb a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-518791 ;
+    oa:absoluteMagnitude 4.65 ;
+    oa:canonical true ;
+    oa:declinationDeg -21.33 ;
+    oa:distance value:celestia-star-jd-518791-6a48b7fdebbb-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 19.85 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceFile "alottafictionalstars.stc" ;
+    oa:spectralType "G2V" .
+
+value:celestia-star-jd-518791-6a48b7fdebbb-distance a oa:QuantityValue ;
+    qudt:numericValue 2013.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 518791
+
+id:star-jd-518791-02a14c45 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 518791" ;
+    oa:sourceName "JD 518791" .
+
+claim:celestia-star-jd-518791-02a14c45-161c48f9a7a7 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-518791-02a14c45 ;
+    oa:absoluteMagnitude 4.65 ;
+    oa:canonical true ;
+    oa:declinationDeg 48.08 ;
+    oa:distance value:celestia-star-jd-518791-02a14c45-161c48f9a7a7-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 155.55 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceFile "oastars7.stc" ;
+    oa:spectralType "G2V" .
+
+value:celestia-star-jd-518791-02a14c45-161c48f9a7a7-distance a oa:QuantityValue ;
+    qudt:numericValue 513.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 518793
+
+id:star-jd-518793 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 518793" ;
+    oa:sourceName "JD 518793" .
+
+claim:celestia-star-jd-518793-eb653762b6d5 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-518793 ;
+    oa:absoluteMagnitude 4.65 ;
+    oa:canonical true ;
+    oa:declinationDeg 13.7 ;
+    oa:distance value:celestia-star-jd-518793-eb653762b6d5-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 191.42 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceFile "alottafictionalstars.stc" ;
+    oa:spectralType "G2V" .
+
+value:celestia-star-jd-518793-eb653762b6d5-distance a oa:QuantityValue ;
+    qudt:numericValue 1326.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 518794
+
+id:star-jd-518794 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 518794" ;
+    oa:sourceName "JD 518794" .
+
+claim:celestia-star-jd-518794-41f248da8a44 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-518794 ;
+    oa:absoluteMagnitude 4.77 ;
+    oa:canonical true ;
+    oa:declinationDeg 8.78 ;
+    oa:distance value:celestia-star-jd-518794-41f248da8a44-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 39.51 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceFile "alottafictionalstars.stc" ;
+    oa:spectralType "G2V" .
+
+value:celestia-star-jd-518794-41f248da8a44-distance a oa:QuantityValue ;
+    qudt:numericValue 1099.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 518795
+
+id:star-jd-518795 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 518795" ;
+    oa:sourceName "JD 518795" .
+
+claim:celestia-star-jd-518795-74af6f3ba07a a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-518795 ;
+    oa:absoluteMagnitude 4.86 ;
+    oa:canonical true ;
+    oa:declinationDeg -29.48 ;
+    oa:distance value:celestia-star-jd-518795-74af6f3ba07a-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 305.35 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceFile "alottafictionalstars.stc" ;
+    oa:spectralType "G2V" .
+
+value:celestia-star-jd-518795-74af6f3ba07a-distance a oa:QuantityValue ;
+    qudt:numericValue 1813.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 518796
+
+id:star-jd-518796 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 518796" ;
+    oa:sourceName "JD 518796" .
+
+claim:celestia-star-jd-518796-c8e4f92ac7f4 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-518796 ;
+    oa:absoluteMagnitude 4.59 ;
+    oa:canonical true ;
+    oa:declinationDeg 31.55 ;
+    oa:distance value:celestia-star-jd-518796-c8e4f92ac7f4-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 111.82 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceFile "alottafictionalstars.stc" ;
+    oa:spectralType "G2V" .
+
+value:celestia-star-jd-518796-c8e4f92ac7f4-distance a oa:QuantityValue ;
+    qudt:numericValue 1915.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 518797
+
+id:star-jd-518797 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 518797" ;
+    oa:sourceName "JD 518797" .
+
+claim:celestia-star-jd-518797-b3bb15ee3634 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-518797 ;
+    oa:absoluteMagnitude 4.76 ;
+    oa:canonical true ;
+    oa:declinationDeg 3.43 ;
+    oa:distance value:celestia-star-jd-518797-b3bb15ee3634-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 97.66 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceFile "alottafictionalstars.stc" ;
+    oa:spectralType "G2V" .
+
+value:celestia-star-jd-518797-b3bb15ee3634-distance a oa:QuantityValue ;
+    qudt:numericValue 1771.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 518798
+
+id:star-jd-518798 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 518798" ;
+    oa:sourceName "JD 518798" .
+
+claim:celestia-star-jd-518798-5e69452fdbe3 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-518798 ;
+    oa:absoluteMagnitude 4.99 ;
+    oa:canonical true ;
+    oa:declinationDeg 28.23 ;
+    oa:distance value:celestia-star-jd-518798-5e69452fdbe3-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 317.22 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceFile "alottafictionalstars.stc" ;
+    oa:spectralType "G2V" .
+
+value:celestia-star-jd-518798-5e69452fdbe3-distance a oa:QuantityValue ;
+    qudt:numericValue 2789.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 518799
+
+id:star-jd-518799 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 518799" ;
+    oa:sourceName "JD 518799" .
+
+claim:celestia-star-jd-518799-7c92037c2c17 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-518799 ;
+    oa:absoluteMagnitude 4.65 ;
+    oa:canonical true ;
+    oa:declinationDeg 31.66 ;
+    oa:distance value:celestia-star-jd-518799-7c92037c2c17-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 152.05 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceFile "alottafictionalstars.stc" ;
+    oa:spectralType "G2V" .
+
+value:celestia-star-jd-518799-7c92037c2c17-distance a oa:QuantityValue ;
+    qudt:numericValue 2412.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 788901101
+
+id:star-jd-788901101 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 788901101" ;
+    oa:sourceName "JD 788901101" .
+
+claim:celestia-star-jd-788901101-e4cb36360a84 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-788901101 ;
+    oa:absoluteMagnitude 4.99 ;
+    oa:canonical true ;
+    oa:declinationDeg -35.265 ;
+    oa:distance value:celestia-star-jd-788901101-e4cb36360a84-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 123.754 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceFile "aoia.stc" ;
+    oa:spectralType "G8" .
+
+value:celestia-star-jd-788901101-e4cb36360a84-distance a oa:QuantityValue ;
+    qudt:numericValue 2100.51 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 890135
+
+id:star-jd-890135 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 890135" ;
+    oa:sourceName "JD 890135" .
+
+claim:celestia-star-jd-890135-7f26730a8824 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-890135 ;
+    oa:absoluteMagnitude 4.2 ;
+    oa:canonical true ;
+    oa:declinationDeg 6.442 ;
+    oa:distance value:celestia-star-jd-890135-7f26730a8824-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 277.13 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceComment "Star in cluster NGC 6633" ;
+    oa:sourceFile "oastars6.stc" ;
+    oa:spectralType "G2V" .
+
+value:celestia-star-jd-890135-7f26730a8824-distance a oa:QuantityValue ;
+    qudt:numericValue 1230.51 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 890136
+
+id:star-jd-890136 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 890136" ;
+    oa:sourceName "JD 890136" .
+
+claim:celestia-star-jd-890136-299b2175514d a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-890136 ;
+    oa:absoluteMagnitude 4.8 ;
+    oa:canonical true ;
+    oa:declinationDeg 6.42 ;
+    oa:distance value:celestia-star-jd-890136-299b2175514d-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 277.043 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceComment "Star in cluster NGC 6633" ;
+    oa:sourceFile "oastars6.stc" ;
+    oa:spectralType "G2V" .
+
+value:celestia-star-jd-890136-299b2175514d-distance a oa:QuantityValue ;
+    qudt:numericValue 1229.2 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# JD 890137
+
+id:star-jd-890137 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "JD 890137" ;
+    oa:sourceName "JD 890137" .
+
+claim:celestia-star-jd-890137-1029585dccb9 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-jd-890137 ;
+    oa:absoluteMagnitude 4.7 ;
+    oa:canonical true ;
+    oa:declinationDeg 6.49 ;
+    oa:distance value:celestia-star-jd-890137-1029585dccb9-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 277.11 ;
+    oa:sourceArchive "OAAddons1.zip" ;
+    oa:sourceComment "Star in cluster NGC 6633" ;
+    oa:sourceFile "oastars6.stc" ;
+    oa:spectralType "G2V" .
+
+value:celestia-star-jd-890137-1029585dccb9-distance a oa:QuantityValue ;
+    qudt:numericValue 1228.1 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Proxima Centauri2
+
+id:star-proxima-centauri2 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "Proxima Centauri2" ;
+    oa:sourceName "Proxima Centauri2" .
+
+claim:celestia-star-proxima-centauri2-d7c70eab808c a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-proxima-centauri2 ;
+    oa:canonical true ;
+    oa:declinationDeg -62.679444 ;
+    oa:distance value:celestia-star-proxima-centauri2-d7c70eab808c-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 217.429167 ;
+    oa:sourceArchive "OAAddons8.zip" ;
+    oa:sourceFile "nearstars.stc" ;
+    oa:spectralType "M5.5V" .
+
+value:celestia-star-proxima-centauri2-d7c70eab808c-distance a oa:QuantityValue ;
+    qudt:numericValue 4.221 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:curation-star-proxima-centauri2 a prov:Entity, oa:SystemCuration ;
+    oa:about id:star-proxima-centauri2 ;
+    oa:editorialLabel "Proxima Centauri" ;
+    oa:hidden true ;
+    oa:note "The add-on redeclares Proxima at 4.2 ly, where the catalogue already has it. Hidden so the nearest star to Sol is not drawn twice." ;
+    oa:realObjectIdentity "Proxima Centauri, already in the real star catalogue" ;
+    oa:uncertain false .
+
+# YTS 233-091-0101
+
+id:star-yts-233-091-0101 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "YTS 233-091-0101" ;
+    oa:sourceName "YTS 233-091-0101" .
+
+claim:celestia-star-yts-233-091-0101-2c97fc37aa15 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-yts-233-091-0101 ;
+    oa:absoluteMagnitude 9.77 ;
+    oa:canonical true ;
+    oa:declinationDeg 64.21 ;
+    oa:distance value:celestia-star-yts-233-091-0101-2c97fc37aa15-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 65.721 ;
+    oa:sourceArchive "Cenote.zip" ;
+    oa:sourceComment "Star near Cenote with planets" ;
+    oa:sourceFile "astarsaroundCenote.stc" ;
+    oa:spectralType "MV" .
+
+value:celestia-star-yts-233-091-0101-2c97fc37aa15-distance a oa:QuantityValue ;
+    qudt:numericValue 3068.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# YTS 233-091-0102
+
+id:star-yts-233-091-0102 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "YTS 233-091-0102" ;
+    oa:sourceName "YTS 233-091-0102" .
+
+claim:celestia-star-yts-233-091-0102-4a81d80b3092 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-yts-233-091-0102 ;
+    oa:absoluteMagnitude 10.79 ;
+    oa:canonical true ;
+    oa:declinationDeg 64.17 ;
+    oa:distance value:celestia-star-yts-233-091-0102-4a81d80b3092-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 65.7125 ;
+    oa:sourceArchive "Cenote.zip" ;
+    oa:sourceComment "star near Cenote with planets" ;
+    oa:sourceFile "astarsaroundCenote.stc" ;
+    oa:spectralType "MV" .
+
+value:celestia-star-yts-233-091-0102-4a81d80b3092-distance a oa:QuantityValue ;
+    qudt:numericValue 3079.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# YTS 233-091-0991
+
+id:star-yts-233-091-0991 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "YTS 233-091-0991" ;
+    oa:sourceName "YTS 233-091-0991" .
+
+claim:celestia-star-yts-233-091-0991-4adde62e427a a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-yts-233-091-0991 ;
+    oa:absoluteMagnitude 6.2 ;
+    oa:canonical true ;
+    oa:declinationDeg 64.27 ;
+    oa:distance value:celestia-star-yts-233-091-0991-4adde62e427a-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 65.709 ;
+    oa:sourceArchive "Cenote.zip" ;
+    oa:sourceComment "star near Cenote with planets" ;
+    oa:sourceFile "astarsaroundCenote.stc" ;
+    oa:spectralType "KV" .
+
+value:celestia-star-yts-233-091-0991-4adde62e427a-distance a oa:QuantityValue ;
+    qudt:numericValue 3071.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# YTS 233-091-0992
+
+id:star-yts-233-091-0992 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "YTS 233-091-0992" ;
+    oa:sourceName "YTS 233-091-0992" .
+
+claim:celestia-star-yts-233-091-0992-606d21f87623 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-yts-233-091-0992 ;
+    oa:absoluteMagnitude 6.877 ;
+    oa:canonical true ;
+    oa:declinationDeg 65.1 ;
+    oa:distance value:celestia-star-yts-233-091-0992-606d21f87623-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 65.725 ;
+    oa:sourceArchive "Cenote.zip" ;
+    oa:sourceComment "Star near Cenote with planets" ;
+    oa:sourceFile "astarsaroundCenote.stc" ;
+    oa:spectralType "KV" .
+
+value:celestia-star-yts-233-091-0992-606d21f87623-distance a oa:QuantityValue ;
+    qudt:numericValue 3078.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# YTS 233-091-0997
+
+id:star-yts-233-091-0997 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "YTS 233-091-0997" ;
+    oa:sourceName "YTS 233-091-0997" .
+
+claim:celestia-star-yts-233-091-0997-44242268ea42 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-yts-233-091-0997 ;
+    oa:absoluteMagnitude 4.77 ;
+    oa:canonical true ;
+    oa:declinationDeg 64.2 ;
+    oa:distance value:celestia-star-yts-233-091-0997-44242268ea42-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 65.717 ;
+    oa:sourceArchive "Cenote.zip" ;
+    oa:sourceComment "Star near Cenote with planets" ;
+    oa:sourceFile "astarsaroundCenote.stc" ;
+    oa:spectralType "G2V" .
+
+value:celestia-star-yts-233-091-0997-44242268ea42-distance a oa:QuantityValue ;
+    qudt:numericValue 3070.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# YTS 23375-458-5
+
+id:star-yts-23375-458-5 a oa:CelestiaStar, oa:Place, oa:Star ;
+    skos:prefLabel "YTS 23375-458-5" ;
+    oa:sourceName "YTS 23375-458-5" .
+
+claim:celestia-star-yts-23375-458-5-12a6bbccbe60 a prov:Entity, oa:CelestiaLocationClaim, oa:LocationClaim ;
+    prov:hadPrimarySource src:celestia-addons ;
+    oa:about id:star-yts-23375-458-5 ;
+    oa:absoluteMagnitude 4.0 ;
+    oa:canonical true ;
+    oa:declinationDeg -42.887 ;
+    oa:distance value:celestia-star-yts-23375-458-5-12a6bbccbe60-distance ;
+    oa:method oa:ImportedValue ;
+    oa:rightAscensionDeg 297.96 ;
+    oa:sourceArchive "OAAddons12.zip" ;
+    oa:sourceFile "somefictionalstars.stc" ;
+    oa:spectralType "K0" .
+
+value:celestia-star-yts-23375-458-5-12a6bbccbe60-distance a oa:QuantityValue ;
+    qudt:numericValue 610.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

@@ -1,0 +1,17 @@
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+
+# Stellar Umma
+
+id:polity-stellar-umma a oa:Polity ;
+    skos:prefLabel "Stellar Umma" ;
+    oa:ambiguousName false ;
+    oa:color "#337B8B" ;
+    oa:editorialNote "Only one of its systems is recorded, so its extent cannot be measured and\nit is held to the same bar as a diffuse polity. It was 3.1 from the\nNegentropy Alliance.\nReally two, the Umma of the Core and the Umma of the Shell, recorded as one\nuntil the distinction matters here." ;
+    oa:hasSource src:eg-system-articles ;
+    oa:kind "polity" ;
+    oa:polityId "stellar-umma" ;
+    oa:recordOrder 22 ;
+    oa:uncertain false .

@@ -1,0 +1,41 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Fredholm
+
+id:world-fredholm a oa:Place, oa:World ;
+    skos:prefLabel "Fredholm" ;
+    oa:article <https://www.orionsarm.com/eg-article/4650f71e6bad5> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:uncertain false .
+
+claim:location-world-fredholm a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4650f71e6bad5> ;
+    oa:about id:world-fredholm ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -5.4158 ;
+    oa:distance value:location-world-fredholm-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:note "From the Celestia wormhole-nexus add-on (S. Ball, 2016, under https://celestiaproject.space/forum/viewtopic.php?f=23&t=17436). The article is a stub and states no position, so nothing from the Encyclopaedia bears on this; the figure replaces an interpolation from the transcription of Anders Sandberg's maps, which put it at 1,525 ly with a 20-degree direction error and an 800 ly distance error. Three sources now disagree about how far out it is — 154 ly here, 1,525 from the map transcription, and 144 or 1,053 depending on which of two stars the add-on meant — and none of them is the Encyclopaedia. Its coordinates fall on HIP 95066, 26 Aquilae at 144 ly, and the add-on writes \"26 Aquilae\" in the name, but the catalogue number beside it, HIP 107144, is 26 Aquarii at 1,053 ly. Not bound to either star for that reason. See questions.md." ;
+    oa:rightAscensionDeg 290.1371 .
+
+value:location-world-fredholm-distance a oa:QuantityValue ;
+    qudt:numericValue 154.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-fredholm-keter-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4650f71e6bad5> ;
+    oa:about id:world-fredholm ;
+    oa:canonical true ;
+    oa:polity id:polity-keter-dominion ;
+    oa:recordOrder 0 .

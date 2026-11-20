@@ -1,0 +1,54 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# Bullseye
+
+id:world-bullseye a oa:Place, oa:World ;
+    skos:prefLabel "Bullseye" ;
+    oa:article <https://www.orionsarm.com/eg-article/4922e9afcd478> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "In Andromeda at 92 ly. Formerly of the Solar Dominion and independent now, with strong ties to the Zoeific Biopolity — ties rather than membership, so no affiliation is recorded and the ring is drawn neutral." ;
+    oa:uncertain false .
+
+claim:location-world-bullseye a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4922e9afcd478> ;
+    oa:about id:world-bullseye ;
+    oa:canonical true ;
+    oa:catalogueFromSource true ;
+    oa:hipparcosId 117492 ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+claim:event-world-bullseye-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4922e9afcd478> ;
+    oa:about id:world-bullseye ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "Reached." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 1790 .
+
+claim:event-world-bullseye-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4922e9afcd478> ;
+    oa:about id:world-bullseye ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"The colony ship Shakti arrived there in 1790 a.t. and named the planet for the huge rotating storm located at the subsolar point in the planet's thick atmosphere.\" The map header records this as 'visited 1790'; a 'colony ship' arriving and the population remaining (see 'the population of colonists... were then joined by an influx' post-2706) reads as 'settled' rather than a mere visit. Flagged for reviewer judgement rather than resolved. No polity is attributed: Solar Dominion is not founded until 2217, after this date. The colony ship Shakti; the map's older 'visited 1790' is this arrival." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 1790 .
+
+claim:event-world-bullseye-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4922e9afcd478> ;
+    oa:about id:world-bullseye ;
+    oa:canonical true ;
+    oa:eventKind oa:Independent ;
+    oa:note "\"A separatist movement, possibly backed by the Solipsist Panvirtuality, led to secession from the Solar Dominion in 5880, but the political situation in this world deteriorated, with wars between various factions.\" Secession from the Solar Dominion, whose holding the article dates nowhere; the Version War's seizures and liberations are undated too." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 2 ;
+    oa:yearAT 5880 .

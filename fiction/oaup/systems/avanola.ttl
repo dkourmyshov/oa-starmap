@@ -1,0 +1,118 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Avanola
+
+id:world-avanola a oa:Place, oa:World ;
+    skos:prefLabel "Avanola" ;
+    oa:article <https://www.orionsarm.com/eg-article/5f9b29c09ab97> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "In Antlia at 705 ly, from coordinates the article prints to arcseconds. The date is a century rather than a year, and is stored as the century." ;
+    oa:systemName "Avanola" ;
+    oa:uncertain false .
+
+claim:location-world-avanola a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5f9b29c09ab97> ;
+    oa:about id:world-avanola ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -28.8933 ;
+    oa:distance value:location-world-avanola-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:rightAscensionDeg 143.7356 .
+
+value:location-world-avanola-distance a oa:QuantityValue ;
+    qudt:numericValue 705.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:event-world-avanola-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5f9b29c09ab97> ;
+    oa:about id:world-avanola ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "Reached in the thirty-eighth century." ;
+    oa:precision oa:Between ;
+    oa:recordOrder 0 ;
+    oa:untilAT 3800 ;
+    oa:yearAT 3701 .
+
+claim:event-world-avanola-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5f9b29c09ab97> ;
+    oa:about id:world-avanola ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"The first wave of settlers arrived in 3837 AT , at the start of the Integration.\" The settling coalition is described only as 'a loose coalition of first singularity transapients... not closely aligned with any particular Sephirotic empire', so no polity is named." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 3837 .
+
+claim:event-world-avanola-003 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5f9b29c09ab97> ;
+    oa:about id:world-avanola ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"in 4490 a Negentropy Alliance fleet entered the system and attacked Avenue Station, causing devastaion... the coalition capitulated without further destruction.\" Section heading gives the span as 'The Occupational Period - 4490 to 4922 AT', matching until_at. An occupation: the fleet attacked Avenue Station and the coalition capitulated; the Alliance held it until 4922." ;
+    oa:polity id:polity-negentropy-alliance ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 2 ;
+    oa:untilAT 4922 ;
+    oa:yearAT 4490 .
+
+claim:event-world-avanola-004 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5f9b29c09ab97> ;
+    oa:about id:world-avanola ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"Regardless, Xacou rapidly took control of the system.\" Xacou (later the Xacounian Empire) is an individual transapient, not a roster polity; see unplaced. Xacou's empire, no polity of this file." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 3 ;
+    oa:yearAT 4922 .
+
+claim:event-world-avanola-005 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5f9b29c09ab97> ;
+    oa:about id:world-avanola ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"After the war Avanola was governed by a Zendart occupation force, and suffered a period of stagnation.\" Zendart Dominion is not a roster polity; see unplaced. Marks the end of the Xacounian War (5165-5398). A Zendart occupation force; the Zendart Dominion is no polity of this file." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 4 ;
+    oa:yearAT 5398 .
+
+claim:event-world-avanola-006 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5f9b29c09ab97> ;
+    oa:about id:world-avanola ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"The Gentry now held Avanola along with all nearby systems.\" The capture of Avanola happened at an unstated point during the Zendart Dominion Civil War (5610s-5787 AT); the Gentry Coalition/Gentry Polity/Gentry Hardline Polity is not a roster polity, see unplaced. The Gentry, no polity of this file." ;
+    oa:precision oa:NotLaterThan ;
+    oa:recordOrder 5 ;
+    oa:yearAT 5787 .
+
+claim:event-world-avanola-007 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5f9b29c09ab97> ;
+    oa:about id:world-avanola ;
+    oa:canonical true ;
+    oa:eventKind oa:Transferred ;
+    oa:note "\"Enefevee's seraiph fleet absorbed Avanola into eir new growing empire and rearranged the fundamental logistics of the system.\" Enefevee is an individual archailect, not a roster polity; see unplaced. Enefevee's empire, no polity of this file." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 6 ;
+    oa:yearAT 7245 .
+
+claim:event-world-avanola-008 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5f9b29c09ab97> ;
+    oa:about id:world-avanola ;
+    oa:canonical true ;
+    oa:eventKind oa:Independent ;
+    oa:note "\"The bulk of the survivors consolidated themselves into localized regions, first forming a single entity called the Avanola Federation in 7388.\" Local modosophont self-governance after the Virch Purge; Enefevee's continued nominal status over the system is unclear from the text, see doubts. The Avanola Federation, local, formed by the survivors." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 7 ;
+    oa:yearAT 7388 .

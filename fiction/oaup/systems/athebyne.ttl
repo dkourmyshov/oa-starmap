@@ -1,0 +1,32 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Athebyne
+
+id:inner-sphere-row-1032 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Athebyne" .
+
+claim:inner-sphere-inner-sphere-row-1032-8295fbb3085d a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-1032 ;
+    oa:canonical true ;
+    oa:colonyName "Athebyne" ;
+    oa:luminositySol "50.5" ;
+    oa:massSol "2.5" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 1031 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-1032-8295fbb3085d-source-distance ;
+    oa:spectralType "G8 III" ;
+    oa:starName "Eta Draconis A" .
+
+value:inner-sphere-inner-sphere-row-1032-8295fbb3085d-source-distance a oa:QuantityValue ;
+    qudt:numericValue 91.319 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

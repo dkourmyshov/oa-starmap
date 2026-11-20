@@ -1,0 +1,56 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Euripedes Mey
+
+id:world-euripedes-mey a oa:Place, oa:World ;
+    skos:prefLabel "Euripedes Mey" ;
+    oa:article <https://www.orionsarm.com/eg-article/4799653855bdd> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "In Hydra at 2,550 ly, and held jointly — a Sophic League and Caretaker Gods stewardship, which is why both are recorded." ;
+    oa:uncertain false .
+
+claim:location-world-euripedes-mey a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4799653855bdd> ;
+    oa:about id:world-euripedes-mey ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:constellationName "Hydra" ;
+    oa:distance value:location-world-euripedes-mey-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+value:location-world-euripedes-mey-distance a oa:QuantityValue ;
+    qudt:numericValue 2550.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-euripedes-mey-caretaker-gods a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4799653855bdd> ;
+    oa:about id:world-euripedes-mey ;
+    oa:canonical true ;
+    oa:polity id:polity-caretaker-gods ;
+    oa:recordOrder 1 .
+
+claim:affiliation-world-euripedes-mey-sophic-league a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4799653855bdd> ;
+    oa:about id:world-euripedes-mey ;
+    oa:canonical true ;
+    oa:polity id:polity-sophic-league ;
+    oa:recordOrder 0 .
+
+claim:event-world-euripedes-mey-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4799653855bdd> ;
+    oa:about id:world-euripedes-mey ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 6407 .

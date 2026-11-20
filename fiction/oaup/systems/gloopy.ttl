@@ -1,0 +1,117 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Gloopy
+
+id:world-gloopy a oa:Place, oa:World ;
+    skos:prefLabel "Gloopy" ;
+    oa:article <https://www.orionsarm.com/eg-article/47b8ef792becf> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "HD 139664 in Lupus. The article's own right ascension and declination fall 0.75 ly from the catalogue star at the distance it gives, which is as close as a position quoted to arcseconds and a distance quoted to two figures can come." ;
+    oa:systemName "Gloopy" ;
+    oa:uncertain false .
+
+claim:location-world-gloopy a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47b8ef792becf> ;
+    oa:about id:world-gloopy ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:distance value:location-world-gloopy-distance ;
+    oa:hdId 139664 ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+value:location-world-gloopy-distance a oa:QuantityValue ;
+    qudt:numericValue 56.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-gloopy-metasoft a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47b8ef792becf> ;
+    oa:about id:world-gloopy ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft ;
+    oa:recordOrder 0 .
+
+claim:event-world-gloopy-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47b8ef792becf> ;
+    oa:about id:world-gloopy ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"Monostheria was colonised by Metasoft in 2210 AT.\" Before the vec polity's independence of 2344, so by the corporation: a source naming the holder outright, which the founding year does not gate." ;
+    oa:polity id:polity-metasoft ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 2210 .
+
+# Monostheria
+
+id:world-monostheria a oa:Place, oa:World ;
+    skos:prefLabel "Monostheria" ;
+    oa:article <https://www.orionsarm.com/eg-article/47b8ef792becf> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "A gas giant of Gloopy." ;
+    oa:systemName "Gloopy" ;
+    oa:uncertain false .
+
+claim:location-world-monostheria a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47b8ef792becf> ;
+    oa:about id:world-monostheria ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:distance value:location-world-monostheria-distance ;
+    oa:hdId 139664 ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+value:location-world-monostheria-distance a oa:QuantityValue ;
+    qudt:numericValue 56.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-monostheria-metasoft a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47b8ef792becf> ;
+    oa:about id:world-monostheria ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft ;
+    oa:recordOrder 0 .
+
+# The Basket
+
+id:world-the-basket a oa:Place, oa:World ;
+    skos:prefLabel "The Basket" ;
+    oa:article <https://www.orionsarm.com/eg-article/47b8ef792becf> ;
+    oa:kind "megastructure" ;
+    oa:labelsSystem false ;
+    oa:systemName "Gloopy" ;
+    oa:uncertain false .
+
+claim:location-world-the-basket a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47b8ef792becf> ;
+    oa:about id:world-the-basket ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:distance value:location-world-the-basket-distance ;
+    oa:hdId 139664 ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+value:location-world-the-basket-distance a oa:QuantityValue ;
+    qudt:numericValue 56.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-the-basket-metasoft a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47b8ef792becf> ;
+    oa:about id:world-the-basket ;
+    oa:canonical true ;
+    oa:polity id:polity-metasoft ;
+    oa:recordOrder 0 .

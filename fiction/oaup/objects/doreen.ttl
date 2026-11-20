@@ -1,0 +1,57 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Doreen
+
+id:world-doreen a oa:Place, oa:World ;
+    skos:prefLabel "Doreen" ;
+    oa:article <https://www.orionsarm.com/eg-article/4801367969609> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "A xenosophont world under Caretaker stewardship, around the G6V star Afri. The sheet drew it inside the Keter Dominion's colour and at 2,577 ly; the article gives Scorpius and 3,528, so the article places it and the sheet's polity is dropped. Its interpolated direction did land in Scorpius, which is the half the sheet got right." ;
+    oa:uncertain false .
+
+claim:location-world-doreen a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4801367969609> ;
+    oa:about id:world-doreen ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:constellationName "Scorpius" ;
+    oa:distance value:location-world-doreen-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+value:location-world-doreen-distance a oa:QuantityValue ;
+    qudt:numericValue 3528.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-doreen-caretaker-gods a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4801367969609> ;
+    oa:about id:world-doreen ;
+    oa:canonical true ;
+    oa:polity id:polity-caretaker-gods ;
+    oa:recordOrder 1 .
+
+claim:affiliation-world-doreen-xenosophont a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4801367969609> ;
+    oa:about id:world-doreen ;
+    oa:canonical true ;
+    oa:polity id:polity-xenosophont ;
+    oa:recordOrder 0 .
+
+claim:event-world-doreen-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4801367969609> ;
+    oa:about id:world-doreen ;
+    oa:canonical true ;
+    oa:eventKind oa:Contact ;
+    oa:note "Reached, and first studied by Sagittarius Cooperation scientists." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 7980 .

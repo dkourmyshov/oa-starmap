@@ -1,0 +1,32 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Maru
+
+id:inner-sphere-row-0743 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Maru" .
+
+claim:inner-sphere-inner-sphere-row-0743-2055fb0e7012 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0743 ;
+    oa:canonical true ;
+    oa:colonyName "Maru" ;
+    oa:luminositySol "0.015" ;
+    oa:massSol "0.562" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 742 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0743-2055fb0e7012-source-distance ;
+    oa:spectralType "DQ4.2" ;
+    oa:starName "WD 0806-661 A" .
+
+value:inner-sphere-inner-sphere-row-0743-2055fb0e7012-source-distance a oa:QuantityValue ;
+    qudt:numericValue 62.726 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

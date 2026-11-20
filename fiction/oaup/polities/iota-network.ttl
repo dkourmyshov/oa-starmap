@@ -1,0 +1,17 @@
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+
+# Iota Network
+
+id:polity-iota-network a oa:Polity ;
+    skos:prefLabel "Iota Network" ;
+    oa:ambiguousName false ;
+    oa:color "#85511D" ;
+    oa:editorialNote "An academic network rather than an empire. It has been on the map without\nan entry since Lucida arrived: that world was recorded as `special`,\nholder unstated, because the Network had nowhere to point. It does now." ;
+    oa:hasSource src:eg-system-articles ;
+    oa:kind "polity" ;
+    oa:polityId "iota-network" ;
+    oa:recordOrder 36 ;
+    oa:uncertain false .

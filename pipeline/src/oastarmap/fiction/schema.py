@@ -95,6 +95,9 @@ class Polity(BaseModel):
     back to the present holders.
     """
 
+    note: str = ""
+    """Editorial context for this polity, preserved in the knowledge graph."""
+
     kind: str = "meta-empire"
     """What this entry actually is.
 
@@ -135,7 +138,7 @@ class Polity(BaseModel):
 
 
 class FictionFile(BaseModel):
-    """The top level of ``fiction/polities.yaml``."""
+    """A validated view of records in ``fiction/oaup/``."""
 
     polities: list[Polity]
     sources: dict[str, Source] = Field(default_factory=dict)
@@ -186,12 +189,6 @@ class FictionFile(BaseModel):
                 )
         return self
 
-    @classmethod
-    def load(cls, path: Path) -> FictionFile:
-        raw: Any = yaml.safe_load(path.read_text(encoding="utf-8"))
-        if not isinstance(raw, dict):
-            raise ValueError(f"{path} must contain a mapping at the top level")
-        return cls.model_validate(raw)
 
 
 class OAStarEntry(BaseModel):
@@ -210,6 +207,7 @@ class OAStarEntry(BaseModel):
     system: str = ""
     comment: str = ""
     source_file: str = ""
+    archive: str = ""
 
     @field_validator("distance_ly")
     @classmethod
@@ -220,23 +218,17 @@ class OAStarEntry(BaseModel):
 
 
 class OAStarFile(BaseModel):
-    """The top level of ``fiction/oa_stars.yaml``."""
+    """A validated view of records in ``fiction/oaup/``."""
 
     stars: list[OAStarEntry] = Field(default_factory=list)
 
-    @classmethod
-    def load(cls, path: Path) -> OAStarFile:
-        raw: Any = yaml.safe_load(path.read_text(encoding="utf-8"))
-        if not isinstance(raw, dict):
-            raise ValueError(f"{path} must contain a mapping at the top level")
-        return cls.model_validate(raw)
 
 
 class OASystem(BaseModel):
     """Hand-authored curation of one imported Orion's Arm star."""
 
     star: str
-    """The add-on's own designation, matching a ``name`` in ``oa_stars.yaml``."""
+    """The add-on's own designation, matching a ``name`` in ``oaup/``."""
 
     label: str = ""
     """What to call it on the map.
@@ -276,6 +268,7 @@ class OASystem(BaseModel):
 
     article: str = ""
     note: str = ""
+    events: list[WorldEvent] = Field(default_factory=list)
 
     @field_validator("article")
     @classmethod
@@ -286,7 +279,7 @@ class OASystem(BaseModel):
 
 
 class OASystemFile(BaseModel):
-    """The top level of ``fiction/oa_systems.yaml``."""
+    """A validated view of records in ``fiction/oaup/``."""
 
     systems: list[OASystem] = Field(default_factory=list)
 
@@ -322,14 +315,6 @@ class OASystemFile(BaseModel):
             seen.add(system.star)
         return self
 
-    @classmethod
-    def load(cls, path: Path) -> OASystemFile:
-        if not path.exists():
-            return cls()
-        raw: Any = yaml.safe_load(path.read_text(encoding="utf-8"))
-        if not isinstance(raw, dict):
-            raise ValueError(f"{path} must contain a mapping at the top level")
-        return cls.model_validate(raw)
 
 
 class InnerSphereSystem(BaseModel):
@@ -372,19 +357,11 @@ class InnerSphereWormhole(BaseModel):
 
 
 class InnerSphereFile(BaseModel):
-    """The top level of ``fiction/inner_sphere.yaml``."""
+    """A validated view of records in ``fiction/oaup/``."""
 
     systems: list[InnerSphereSystem] = Field(default_factory=list)
     wormholes: list[InnerSphereWormhole] = Field(default_factory=list)
 
-    @classmethod
-    def load(cls, path: Path) -> InnerSphereFile:
-        if not path.exists():
-            return cls()
-        raw: Any = yaml.safe_load(path.read_text(encoding="utf-8"))
-        if not isinstance(raw, dict):
-            raise ValueError(f"{path} must contain a mapping at the top level")
-        return cls.model_validate(raw)
 
 
 COLONY_STATUSES = frozenset({"", "special", "abandoned", "blight"})
@@ -394,7 +371,7 @@ class ColonyAssignment(BaseModel):
     """One Inner Sphere colony and what it belongs to."""
 
     colony: str
-    """Matched against the colony column of ``inner_sphere.yaml``."""
+    """Matched against the colony column of ``oaup/``."""
 
     affiliations: list[str] = Field(default_factory=list)
     """Polity ids. More than one is a genuine shared presence, not a mistake."""
@@ -422,7 +399,7 @@ class ColonyAssignment(BaseModel):
 
 
 class ColonyFile(BaseModel):
-    """The top level of ``fiction/colonies.yaml``."""
+    """A validated view of records in ``fiction/oaup/``."""
 
     colonies: list[ColonyAssignment] = Field(default_factory=list)
 
@@ -435,29 +412,13 @@ class ColonyFile(BaseModel):
             seen.add(entry.colony)
         return self
 
-    @classmethod
-    def load(cls, path: Path) -> ColonyFile:
-        if not path.exists():
-            return cls()
-        raw: Any = yaml.safe_load(path.read_text(encoding="utf-8"))
-        if not isinstance(raw, dict):
-            raise ValueError(f"{path} must contain a mapping at the top level")
-        return cls.model_validate(raw)
 
 
 class AliasFile(BaseModel):
-    """The top level of ``fiction/aliases.yaml``."""
+    """A validated view of records in ``fiction/oaup/``."""
 
     aliases: dict[str, str] = Field(default_factory=dict)
 
-    @classmethod
-    def load(cls, path: Path) -> AliasFile:
-        if not path.exists():
-            return cls()
-        raw: Any = yaml.safe_load(path.read_text(encoding="utf-8"))
-        if not isinstance(raw, dict):
-            raise ValueError(f"{path} must contain a mapping at the top level")
-        return cls.model_validate(raw)
 
 
 class Constellation(BaseModel):
@@ -579,10 +540,10 @@ class WorldLocation(BaseModel):
     """
 
     oa_star: str = ""
-    """An entry of ``oa_stars.yaml``, by the add-on's own designation."""
+    """An entry of ``oaup/``, by the add-on's own designation."""
 
     world: str = ""
-    """Another world in this file, by name, whose position this one shares.
+    """Another world in the graph, by name, whose position this one shares.
 
     For something inside a system the map places from coordinates rather than
     from a catalogue star: Potato is an asteroid habitat in the Bonfire System,
@@ -894,6 +855,9 @@ class WorldEvent(BaseModel):
         return value
 
 
+OASystem.model_rebuild()
+
+
 class World(BaseModel):
     """A canonical Orion's Arm place, and where the setting puts it."""
 
@@ -999,7 +963,7 @@ class World(BaseModel):
 
 
 class WorldFile(BaseModel):
-    """The top level of ``fiction/worlds.yaml``."""
+    """A validated view of records in ``fiction/oaup/``."""
 
     worlds: list[World] = Field(default_factory=list)
 
@@ -1012,14 +976,6 @@ class WorldFile(BaseModel):
             seen.add(world.name)
         return self
 
-    @classmethod
-    def load(cls, path: Path) -> WorldFile:
-        if not path.exists():
-            return cls()
-        raw: Any = yaml.safe_load(path.read_text(encoding="utf-8"))
-        if not isinstance(raw, dict):
-            raise ValueError(f"{path} must contain a mapping at the top level")
-        return cls.model_validate(raw)
 
 
 QUESTION_STATUS = frozenset({"open", "settled"})
@@ -1109,7 +1065,7 @@ class Landmark(BaseModel):
 
 
 class LandmarkFile(BaseModel):
-    """The top level of ``fiction/landmarks.yaml``."""
+    """A validated view of records in ``fiction/oaup/``."""
 
     landmarks: list[Landmark] = Field(default_factory=list)
 
@@ -1122,14 +1078,6 @@ class LandmarkFile(BaseModel):
             seen.add(landmark.catalogue)
         return self
 
-    @classmethod
-    def load(cls, path: Path) -> LandmarkFile:
-        if not path.exists():
-            return cls()
-        raw: Any = yaml.safe_load(path.read_text(encoding="utf-8"))
-        if not isinstance(raw, dict):
-            raise ValueError(f"{path} must contain a mapping at the top level")
-        return cls.model_validate(raw)
 
 
 HISTORY_KINDS = frozenset({"era", "period"})

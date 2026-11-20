@@ -1,0 +1,35 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Akasha
+
+id:world-akasha a oa:Place, oa:World ;
+    skos:prefLabel "Akasha" ;
+    oa:article <https://www.orionsarm.com/eg-article/45e77b18819de> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Entered from a mini-article, with no polity recorded because none is named." ;
+    oa:uncertain false .
+
+claim:location-world-akasha a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/45e77b18819de> ;
+    oa:about id:world-akasha ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg 22.85 ;
+    oa:distance value:location-world-akasha-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:note "From oaloc4.dsc, one of the Orion's Arm Celestia add-ons' location catalogues (OAAddons9, OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv), which is the only source this map holds that places it. It falls in Taurus." ;
+    oa:rightAscensionDeg 55.98 .
+
+value:location-world-akasha-distance a oa:QuantityValue ;
+    qudt:numericValue 451.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

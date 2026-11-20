@@ -1,0 +1,68 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Barboro
+
+id:inner-sphere-row-0562 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Barboro" .
+
+claim:inner-sphere-inner-sphere-row-0562-d6de9f59fa5c a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0562 ;
+    oa:article <https://www.orionsarm.com/eg-article/4609c83fbc355> ;
+    oa:canonical true ;
+    oa:colonyName "Barboro" ;
+    oa:luminositySol "." ;
+    oa:massSol "." ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 561 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0562-d6de9f59fa5c-source-distance ;
+    oa:spectralType "F5" ;
+    oa:starName "Psi Capricorni" .
+
+value:inner-sphere-inner-sphere-row-0562-d6de9f59fa5c-source-distance a oa:QuantityValue ;
+    qudt:numericValue 47.728 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Barboro
+
+id:world-barboro a oa:Place, oa:World ;
+    skos:prefLabel "Barboro" ;
+    oa:article <https://www.orionsarm.com/eg-article/4609c83fbc355> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "Psi Capricorni, 48 ly. Recorded as a planet, but the source does not make clear whether Barboro names the planet, the star, the system, or all three; the binding is to the star either way." ;
+    oa:uncertain false .
+
+claim:location-world-barboro a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4609c83fbc355> ;
+    oa:about id:world-barboro ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Psi Capricorni" .
+
+claim:affiliation-world-barboro-keter-dominion a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4609c83fbc355> ;
+    oa:about id:world-barboro ;
+    oa:canonical true ;
+    oa:polity id:polity-keter-dominion ;
+    oa:recordOrder 0 .
+
+claim:event-world-barboro-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4609c83fbc355> ;
+    oa:about id:world-barboro ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 2245 .

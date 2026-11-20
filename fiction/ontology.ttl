@@ -1,0 +1,160 @@
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://dkourmyshov.github.io/oa-starmap/vocab> a owl:Ontology ;
+    dcterms:title "OA Starmap vocabulary"@en ;
+    dcterms:description "Stable identities, source claims and editorial decisions for the Orion's Arm starmap."@en .
+
+# Entities and evidence are distinct. A source claim is not made true by being
+# recorded; oa:canonical marks the claims selected for the current map release.
+
+oa:OAUPDataset a rdfs:Class ; rdfs:label "OAUP dataset"@en .
+oa:Place a rdfs:Class ; rdfs:label "Place"@en .
+oa:World a rdfs:Class ; rdfs:subClassOf oa:Place ; rdfs:label "Fictional world or place"@en .
+oa:Star a rdfs:Class ; rdfs:subClassOf oa:Place ; rdfs:label "Star"@en .
+oa:StarSystem a rdfs:Class ; rdfs:subClassOf oa:Place ; rdfs:label "Star system"@en .
+oa:CelestiaStar a rdfs:Class ; rdfs:subClassOf oa:Star ; rdfs:label "Celestia star record"@en .
+oa:InnerSphereSystem a rdfs:Class ; rdfs:subClassOf oa:StarSystem ; rdfs:label "Inner Sphere system record"@en .
+oa:Landmark a rdfs:Class ; rdfs:subClassOf oa:Place ; rdfs:label "Catalogued landmark"@en .
+oa:Polity a rdfs:Class ; rdfs:label "Polity or xenosophont category"@en .
+oa:ColonyAssignment a rdfs:Class ; rdfs:label "Editorial colony assignment"@en .
+oa:IdentityAlias a rdfs:Class ; rdfs:label "Catalogue identity alias"@en .
+oa:EditorialNote a rdfs:Class ; rdfs:label "Editorial note"@en .
+oa:QuantityValue a rdfs:Class ; rdfs:label "Quantity value"@en .
+
+oa:Claim a rdfs:Class ; rdfs:subClassOf prov:Entity ; rdfs:label "Claim"@en .
+oa:LocationClaim a rdfs:Class ; rdfs:subClassOf oa:Claim ; rdfs:label "Location claim"@en .
+oa:CelestiaLocationClaim a rdfs:Class ; rdfs:subClassOf oa:LocationClaim ; rdfs:label "Imported Celestia location claim"@en .
+oa:InnerSphereClaim a rdfs:Class ; rdfs:subClassOf oa:Claim ; rdfs:label "Inner Sphere table claim"@en .
+oa:WormholeClaim a rdfs:Class ; rdfs:subClassOf oa:Claim ; rdfs:label "Wormhole table claim"@en .
+oa:EventClaim a rdfs:Class ; rdfs:subClassOf oa:Claim ; rdfs:label "Historical event claim"@en .
+oa:AffiliationClaim a rdfs:Class ; rdfs:subClassOf oa:Claim ; rdfs:label "Affiliation claim"@en .
+oa:SystemCuration a rdfs:Class ; rdfs:subClassOf prov:Entity ; rdfs:label "System editorial curation"@en .
+oa:SourceSnapshot a rdfs:Class ; rdfs:subClassOf prov:Entity ; rdfs:label "Source snapshot"@en .
+oa:Conflict a rdfs:Class ; rdfs:label "Conflict between claims"@en .
+oa:EditorialDecision a rdfs:Class ; rdfs:subClassOf prov:Activity ; rdfs:label "Editorial decision"@en .
+
+oa:about a rdf:Property ; rdfs:label "about"@en .
+oa:canonical a rdf:Property ; rdfs:domain oa:Claim ; rdfs:range xsd:boolean ; rdfs:label "selected for the canonical view"@en .
+oa:recordOrder a rdf:Property ; rdfs:range xsd:integer ; rdfs:label "source record order"@en .
+oa:kind a rdf:Property ; rdfs:range xsd:string ; rdfs:label "object or polity kind"@en .
+oa:systemName a rdf:Property ; rdfs:range xsd:string ; rdfs:label "system name as written"@en .
+oa:parentName a rdf:Property ; rdfs:range xsd:string ; rdfs:label "orbital parent name as written"@en .
+oa:labelsSystem a rdf:Property ; rdfs:range xsd:boolean ; rdfs:label "world supplies the system label"@en .
+oa:uncertain a rdf:Property ; rdfs:range xsd:boolean ; rdfs:label "editorially uncertain"@en .
+oa:article a rdf:Property ; rdfs:range prov:Entity ; rdfs:label "Encyclopaedia article"@en .
+oa:note a rdf:Property ; rdfs:range xsd:string ; rdfs:label "public or source note"@en .
+oa:editorialNote a rdf:Property ; rdfs:range xsd:string ; rdfs:label "editorial working note"@en .
+oa:noteKey a rdf:Property ; rdfs:range xsd:string ; rdfs:label "note key"@en .
+oa:extent a rdf:Property ; rdfs:range oa:QuantityValue ; rdfs:label "diameter or extent"@en .
+
+oa:method a rdf:Property ; rdfs:domain oa:Claim ; rdfs:label "extraction or derivation method"@en .
+oa:lexicalPrecision a rdf:Property ; rdfs:label "precision of the source representation"@en .
+oa:hipparcosId a rdf:Property ; rdfs:range xsd:integer ; rdfs:label "Hipparcos identifier"@en .
+oa:hdId a rdf:Property ; rdfs:range xsd:integer ; rdfs:label "Henry Draper identifier"@en .
+oa:starName a rdf:Property ; rdfs:range xsd:string ; rdfs:label "star designation as written"@en .
+oa:catalogueFromSource a rdf:Property ; rdfs:range xsd:boolean ; rdfs:label "catalogue number stated by source"@en .
+oa:oaStarName a rdf:Property ; rdfs:range xsd:string ; rdfs:label "Celestia star designation"@en .
+oa:worldName a rdf:Property ; rdfs:range xsd:string ; rdfs:label "host world name"@en .
+oa:rightAscensionDeg a rdf:Property ; rdfs:range xsd:decimal ; rdfs:label "ICRS right ascension in degrees"@en .
+oa:declinationDeg a rdf:Property ; rdfs:range xsd:decimal ; rdfs:label "ICRS declination in degrees"@en .
+oa:constellationName a rdf:Property ; rdfs:range xsd:string ; rdfs:label "constellation direction"@en .
+oa:distance a rdf:Property ; rdfs:range oa:QuantityValue ; rdfs:label "distance from Sol"@en .
+oa:distanceError a rdf:Property ; rdfs:range oa:QuantityValue ; rdfs:label "distance uncertainty"@en .
+oa:sourceDistance a rdf:Property ; rdfs:range oa:QuantityValue ; rdfs:label "distance printed by a source"@en .
+oa:sourceDistanceText a rdf:Property ; rdfs:range xsd:string ; rdfs:label "non-numeric source distance"@en .
+oa:directionErrorDeg a rdf:Property ; rdfs:range xsd:decimal ; rdfs:label "direction uncertainty in degrees"@en .
+oa:nearName a rdf:Property ; rdfs:range xsd:string ; rdfs:label "nearby named object"@en .
+oa:derivation a rdf:Property ; rdfs:range xsd:string ; rdfs:label "derivation explanation"@en .
+oa:knownDistanceConflict a rdf:Property ; rdfs:range xsd:boolean ; rdfs:label "acknowledged distance conflict"@en .
+
+oa:eventKind a rdf:Property ; rdfs:domain oa:EventClaim ; rdfs:label "event kind"@en .
+oa:yearAT a rdf:Property ; rdfs:range xsd:integer ; rdfs:label "year After Tranquility"@en .
+oa:untilAT a rdf:Property ; rdfs:range xsd:integer ; rdfs:label "end or upper year After Tranquility"@en .
+oa:precision a rdf:Property ; rdfs:label "temporal precision"@en .
+oa:polity a rdf:Property ; rdfs:range oa:Polity ; rdfs:label "polity"@en .
+oa:sourceDescription a rdf:Property ; rdfs:range xsd:string ; rdfs:label "source description without a snapshot IRI"@en .
+
+oa:sourceName a rdf:Property ; rdfs:range xsd:string ; rdfs:label "designation in the source"@en .
+oa:sourceSystemName a rdf:Property ; rdfs:range xsd:string ; rdfs:label "system name in the source"@en .
+oa:sourceComment a rdf:Property ; rdfs:range xsd:string ; rdfs:label "source comment"@en .
+oa:sourceFile a rdf:Property ; rdfs:range xsd:string ; rdfs:label "source filename"@en .
+oa:sourceArchive a rdf:Property ; rdfs:range xsd:string ; rdfs:label "source archive"@en .
+oa:spectralType a rdf:Property ; rdfs:range xsd:string ; rdfs:label "spectral type as written"@en .
+oa:absoluteMagnitude a rdf:Property ; rdfs:range xsd:decimal ; rdfs:label "absolute magnitude"@en .
+oa:colonyName a rdf:Property ; rdfs:range xsd:string ; rdfs:label "colony name as written"@en .
+oa:massSol a rdf:Property ; rdfs:range xsd:string ; rdfs:label "mass in solar units as written"@en .
+oa:luminositySol a rdf:Property ; rdfs:range xsd:string ; rdfs:label "luminosity in solar units as written"@en .
+oa:wormholeName a rdf:Property ; rdfs:range xsd:string ; rdfs:label "wormhole designation"@en .
+oa:gaugeMetres a rdf:Property ; rdfs:range xsd:string ; rdfs:label "wormhole gauge in metres as written"@en .
+oa:nearbyUnconnected a rdf:Property ; rdfs:range xsd:string ; rdfs:label "nearby unconnected systems"@en .
+oa:status a rdf:Property ; rdfs:range xsd:string ; rdfs:label "colony or conflict status"@en .
+
+oa:editorialLabel a rdf:Property ; rdfs:range xsd:string ; rdfs:label "editorial display label"@en .
+oa:realObjectIdentity a rdf:Property ; rdfs:range xsd:string ; rdfs:label "identified real object"@en .
+oa:hidden a rdf:Property ; rdfs:range xsd:boolean ; rdfs:label "hidden as a duplicate or filler record"@en .
+oa:hideCommentMatching a rdf:Property ; rdfs:range xsd:string ; rdfs:label "source comment exclusion rule"@en .
+oa:hideDesignationOnly a rdf:Property ; rdfs:range xsd:boolean ; rdfs:label "hide designation-only filler records"@en .
+oa:catalogueDesignation a rdf:Property ; rdfs:range xsd:string ; rdfs:label "real catalogue designation"@en .
+oa:hasFictionalName a rdf:Property ; rdfs:range xsd:boolean ; rdfs:label "has a separately authored setting name"@en .
+oa:confirmedPlacement a rdf:Property ; rdfs:range xsd:boolean ; rdfs:label "surprising placement confirmed"@en .
+
+oa:polityId a rdf:Property ; rdfs:range xsd:string ; rdfs:label "stable polity identifier"@en .
+oa:color a rdf:Property ; rdfs:range xsd:string ; rdfs:label "display colour"@en .
+oa:ambiguousName a rdf:Property ; rdfs:range xsd:boolean ; rdfs:label "name is unsafe for prose matching"@en .
+oa:foundedAT a rdf:Property ; rdfs:range xsd:integer ; rdfs:label "founding year After Tranquility"@en .
+oa:dissolvedAT a rdf:Property ; rdfs:range xsd:integer ; rdfs:label "dissolution year After Tranquility"@en .
+oa:hasSource a rdf:Property ; rdfs:range oa:SourceSnapshot ; rdfs:label "source snapshot"@en .
+oa:neverAdjacentWith a rdf:Property ; rdfs:domain oa:Polity ; rdfs:range oa:Polity ; a owl:SymmetricProperty ; rdfs:label "known non-adjacent polity"@en .
+
+oa:locator a rdf:Property ; rdfs:range xsd:anyURI ; rdfs:label "source locator"@en .
+oa:page a rdf:Property ; rdfs:range xsd:string ; rdfs:label "containing page"@en .
+oa:terms a rdf:Property ; rdfs:range xsd:anyURI ; rdfs:label "source terms"@en .
+oa:epochAT a rdf:Property ; rdfs:range xsd:integer ; rdfs:label "setting epoch depicted by source"@en .
+oa:property a rdf:Property ; rdfs:domain oa:Conflict ; rdfs:label "property in conflict"@en .
+oa:involves a rdf:Property ; rdfs:domain oa:Conflict ; rdfs:range oa:Claim ; rdfs:label "involves claim"@en .
+oa:resolves a rdf:Property ; rdfs:domain oa:EditorialDecision ; rdfs:range oa:Conflict ; rdfs:label "resolves conflict"@en .
+oa:selectedClaim a rdf:Property ; rdfs:domain oa:EditorialDecision ; rdfs:range oa:Claim ; rdfs:label "selected claim"@en .
+oa:basedOnDecision a rdf:Property ; rdfs:range oa:EditorialDecision ; rdfs:label "based on editorial decision"@en .
+oa:rationale a rdf:Property ; rdfs:domain oa:EditorialDecision ; rdfs:range xsd:string ; rdfs:label "editorial rationale"@en .
+
+oa:DirectTranscription a oa:Method ; rdfs:label "direct transcription"@en .
+oa:ImportedValue a oa:Method ; rdfs:label "imported value"@en .
+oa:InterpretedStatement a oa:Method ; rdfs:label "interpreted statement"@en .
+oa:DigitizedFromMap a oa:Method ; rdfs:label "digitised from map"@en .
+oa:CalculatedValue a oa:Method ; rdfs:label "calculated value"@en .
+oa:EditorialEstimate a oa:Method ; rdfs:label "editorial estimate"@en .
+oa:Method a rdfs:Class ; rdfs:label "Claim method"@en .
+oa:ExactAsPrinted a oa:LexicalPrecision ; rdfs:label "exact as printed"@en .
+oa:Rounded a oa:LexicalPrecision ; rdfs:label "rounded"@en .
+oa:Approximate a oa:LexicalPrecision ; rdfs:label "approximate"@en .
+oa:Range a oa:LexicalPrecision ; rdfs:label "range"@en .
+oa:Qualitative a oa:LexicalPrecision ; rdfs:label "qualitative"@en .
+oa:Unknown a oa:LexicalPrecision ; rdfs:label "unknown"@en .
+oa:LexicalPrecision a rdfs:Class ; rdfs:label "Lexical precision"@en .
+
+oa:Observed a oa:EventKind ; rdfs:label "observed"@en .
+oa:Visited a oa:EventKind ; rdfs:label "visited"@en .
+oa:Settled a oa:EventKind ; rdfs:label "settled"@en .
+oa:Contact a oa:EventKind ; rdfs:label "contact"@en .
+oa:Capital a oa:EventKind ; rdfs:label "capital"@en .
+oa:Stewardship a oa:EventKind ; rdfs:label "stewardship"@en .
+oa:Transferred a oa:EventKind ; rdfs:label "transferred"@en .
+oa:Independent a oa:EventKind ; rdfs:label "independent"@en .
+oa:Reported a oa:EventKind ; rdfs:label "reported"@en .
+oa:Abandoned a oa:EventKind ; rdfs:label "abandoned"@en .
+oa:EventKind a rdfs:Class ; rdfs:label "Event kind"@en .
+
+oa:Exact a oa:TemporalPrecision ; rdfs:label "exact"@en .
+oa:Circa a oa:TemporalPrecision ; rdfs:label "circa"@en .
+oa:NotLaterThan a oa:TemporalPrecision ; rdfs:label "not later than"@en .
+oa:NotEarlierThan a oa:TemporalPrecision ; rdfs:label "not earlier than"@en .
+oa:Between a oa:TemporalPrecision ; rdfs:label "between"@en .
+oa:TemporalPrecision a rdfs:Class ; rdfs:label "Temporal precision"@en .

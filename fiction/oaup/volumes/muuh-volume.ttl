@@ -1,0 +1,42 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Muuh Volume
+
+id:world-muuh-volume a oa:Place, oa:World ;
+    skos:prefLabel "Muuh Volume" ;
+    oa:article <https://www.orionsarm.com/eg-topic/45bd5c0041e98> ;
+    oa:kind "volume" ;
+    oa:labelsSystem false ;
+    oa:note "The Muuh's own volume, and recorded as a region rather than as a polity marker: the article is the species' and nothing in it says the Muuh are organised as a polity in the Terragen sense, which is a claim this map should not make on their behalf.\nMuuhome lies in another direction entirely and that is not an objection -- it is an exclave of the main volume rather than its centre." ;
+    oa:uncertain false .
+
+claim:location-world-muuh-volume a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-topic/45bd5c0041e98> ;
+    oa:about id:world-muuh-volume ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg 37.839 ;
+    oa:distance value:location-world-muuh-volume-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:note "From oalocs3.dsc, one of the Orion's Arm Celestia add-ons' location catalogues (OAAddons9, OALocationsv4; extracted to sources/derived/oa_dsc_locations.tsv)." ;
+    oa:rightAscensionDeg 67.625 .
+
+value:location-world-muuh-volume-distance a oa:QuantityValue ;
+    qudt:numericValue 6100.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-muuh-volume-xenosophont a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-topic/45bd5c0041e98> ;
+    oa:about id:world-muuh-volume ;
+    oa:canonical true ;
+    oa:polity id:polity-xenosophont ;
+    oa:recordOrder 0 .

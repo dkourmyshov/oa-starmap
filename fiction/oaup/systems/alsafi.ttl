@@ -1,0 +1,33 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Alsafi
+
+id:inner-sphere-row-0107 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Alsafi" .
+
+claim:inner-sphere-inner-sphere-row-0107-8bc139d66900 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0107 ;
+    oa:article <https://www.orionsarm.com/eg-article/4b996bd9cc16c> ;
+    oa:canonical true ;
+    oa:colonyName "Alsafi" ;
+    oa:luminositySol "0.450" ;
+    oa:massSol "0.85" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 106 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0107-8bc139d66900-source-distance ;
+    oa:spectralType "K0 V" ;
+    oa:starName "Sigma Draconis" .
+
+value:inner-sphere-inner-sphere-row-0107-8bc139d66900-source-distance a oa:QuantityValue ;
+    qudt:numericValue 18.799 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

@@ -1,0 +1,73 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Syrma
+
+id:world-syrma a oa:Place, oa:World ;
+    skos:prefLabel "Syrma" ;
+    oa:article <https://www.orionsarm.com/eg-article/5659fecda383f> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Iota Virginis, as the colony table has it." ;
+    oa:systemName "Syrma" ;
+    oa:uncertain false .
+
+claim:location-world-syrma a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5659fecda383f> ;
+    oa:about id:world-syrma ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Iota Virginis" .
+
+claim:event-world-syrma-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5659fecda383f> ;
+    oa:about id:world-syrma ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:note "\"Several explorer class dataships carrying AI arrived in 1902 to assess the system and create environments for the colonists that were already en route.\" No polity is named as sending these dataships." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 1902 .
+
+claim:event-world-syrma-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/5659fecda383f> ;
+    oa:about id:world-syrma ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"Syrma was colonized in 1970 AT by a fleet of colony ships launched from Gliese 588 during the late Federation era.\" 'during the late Federation era' dates the event but does not state that the First Federation itself sent or claimed the colony ships; see doubts. From Gliese 588, 'during the late Federation era'; the article does not say the Federation settled it." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 1970 .
+
+# Syrma
+
+id:inner-sphere-row-0834 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Syrma" .
+
+claim:inner-sphere-inner-sphere-row-0834-4147c194888c a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0834 ;
+    oa:article <https://www.orionsarm.com/eg-article/5659fecda383f> ;
+    oa:canonical true ;
+    oa:colonyName "Syrma" ;
+    oa:luminositySol "9.394" ;
+    oa:massSol "1.5" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 833 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0834-4147c194888c-source-distance ;
+    oa:spectralType "F7 IV-V" ;
+    oa:starName "Iota Virginis" .
+
+value:inner-sphere-inner-sphere-row-0834-4147c194888c-source-distance a oa:QuantityValue ;
+    qudt:numericValue 71.838 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

@@ -1,6 +1,6 @@
 """Bind the Encyclopaedia's history to the places on the map.
 
-The world file already dates settlement, which is enough to draw the Terragen
+The world event claims already date settlement, enough to draw the Terragen
 Sphere growing: at any year, the places whose first recorded event has happened.
 What settlement dates cannot say is which places a century was *about*. Nothing
 in a list of founding years distinguishes the system where a war ended from the
@@ -8,8 +8,8 @@ one that was merely colonised the same decade.
 
 The Encyclopaedia's own timeline says it, one line at a time, and says it in the
 only form that survives being machine-read: a hyperlink. So this step matches
-every timeline link against the four files that hold places — worlds, the Inner
-Sphere colony table, the Celestia add-on's systems, and the landmarks — on the
+every timeline link against the single OAUP graph — worlds, Inner Sphere
+colonies, Celestia systems and landmarks — on the
 article id, and writes out which places each period names.
 
 Matching is on the id and never on the name. "Nova Terra" is a place, a habitat
@@ -32,7 +32,8 @@ from pathlib import Path
 from typing import Any
 
 from oastarmap.build.writer import write_json
-from oastarmap.fiction.schema import FictionFile, HistoryFile, LandmarkFile, Polity
+from oastarmap.fiction.schema import HistoryFile, Polity
+from oastarmap.fiction.store import OAUP_DIR, load_store
 from oastarmap.paths import DATA_OUT_DIR, FICTION_DIR
 
 HISTORY_FILE = "history.yaml"
@@ -64,10 +65,10 @@ def _polity_patterns(fiction_dir: Path) -> list[tuple[Polity, re.Pattern[str]]]:
     xenosophont bucket, which is a category this project uses and not the name
     of anybody the timeline could mention.
     """
-    path = fiction_dir / "polities.yaml"
+    path = fiction_dir / OAUP_DIR
     if not path.exists():
         return []
-    fiction = FictionFile.load(path)
+    fiction = load_store(path).fiction
     out: list[tuple[Polity, re.Pattern[str]]] = []
     for polity in fiction.polities:
         if polity.ambiguous_name or polity.kind == "xenosophont":
@@ -109,12 +110,12 @@ def _polities_named(
 def _index(data_dir: Path) -> dict[str, dict[str, Any]]:
     """Every mapped place that cites an article, keyed by that article's id.
 
-    Read from the build's own output rather than from the source YAML, for the
+    Read from the build's own output rather than from the source graph, for the
     same reason the fiction step reads it: the renderer consumes these files,
     and a history entry pointing at a world the world build dropped would be a
     reference to something not on the map.
 
-    Where two files hold the same article the first writer wins, in the order
+    Where two datasets hold the same article the first writer wins, in the order
     worlds, colonies, add-on systems, landmarks. That order is deliberate: a
     world is the richest record of a place and the one the renderer can locate
     by every route, and the others are progressively thinner descriptions of
@@ -169,7 +170,7 @@ def _index(data_dir: Path) -> dict[str, dict[str, Any]]:
                 },
             )
 
-    for landmark in LandmarkFile.load(FICTION_DIR / "landmarks.yaml").landmarks:
+    for landmark in load_store(FICTION_DIR / OAUP_DIR).landmark_file.landmarks:
         claim(
             article_id(landmark.article),
             {

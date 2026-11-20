@@ -1,0 +1,51 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Rosmion
+
+id:world-rosmion a oa:Place, oa:World ;
+    skos:prefLabel "Rosmion" ;
+    oa:article <https://www.orionsarm.com/eg-article/56d43cd536647> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "Also near NGC 6383, and placed the same way as Laurel and Hardy — so the two draw 132 ly apart along one line of sight, which is what having a single direction for both amounts to rather than a statement about them." ;
+    oa:uncertain false .
+
+claim:location-world-rosmion a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/56d43cd536647> ;
+    oa:about id:world-rosmion ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -32.5772 ;
+    oa:distance value:location-world-rosmion-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:nearName "NGC 6383" ;
+    oa:rightAscensionDeg 263.6729 .
+
+value:location-world-rosmion-distance a oa:QuantityValue ;
+    qudt:numericValue 3342.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-rosmion-sagittarius-transcultural-cooperation a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/56d43cd536647> ;
+    oa:about id:world-rosmion ;
+    oa:canonical true ;
+    oa:polity id:polity-sagittarius-transcultural-cooperation ;
+    oa:recordOrder 0 .
+
+claim:event-world-rosmion-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/56d43cd536647> ;
+    oa:about id:world-rosmion ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 5001 .

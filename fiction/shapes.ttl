@@ -1,0 +1,126 @@
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Cross-record rules (one canonical location, valid references, event intervals)
+# are checked by OAUPStore.refresh() and the Pydantic domain models. Keeping those
+# custom checks outside SPARQL makes validation practical for the whole graph.
+
+oa:PlaceShape a sh:NodeShape ;
+    sh:targetClass oa:Place ;
+    sh:property [
+        sh:path skos:prefLabel ; sh:minCount 1 ; sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "A place needs exactly one preferred label."
+    ] .
+
+oa:WorldShape a sh:NodeShape ;
+    sh:targetClass oa:World ;
+    sh:property [
+        sh:path oa:kind ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string
+    ] .
+
+oa:LocationClaimShape a sh:NodeShape ;
+    sh:targetClass oa:LocationClaim ;
+    sh:property [ sh:path oa:about ; sh:minCount 1 ; sh:maxCount 1 ] ;
+    sh:property [ sh:path oa:canonical ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:boolean ] ;
+    sh:property [ sh:path oa:method ; sh:minCount 1 ; sh:maxCount 1 ] ;
+    sh:property [ sh:path oa:rightAscensionDeg ; sh:maxCount 1 ; sh:datatype xsd:decimal ] ;
+    sh:property [ sh:path oa:declinationDeg ; sh:maxCount 1 ; sh:datatype xsd:decimal ] ;
+    sh:property [ sh:path oa:distance ; sh:maxCount 1 ; sh:class oa:QuantityValue ] ;
+    sh:property [ sh:path oa:distanceError ; sh:maxCount 1 ; sh:class oa:QuantityValue ] .
+
+oa:QuantityValueShape a sh:NodeShape ;
+    sh:targetClass oa:QuantityValue ;
+    sh:property [
+        sh:path qudt:numericValue ; sh:minCount 1 ; sh:maxCount 1 ;
+        sh:datatype xsd:decimal
+    ] ;
+    sh:property [
+        sh:path qudt:unit ; sh:minCount 1 ; sh:maxCount 1 ;
+        sh:in (unit:LY unit:PC unit:KPC)
+    ] ;
+    sh:property [ sh:path oa:lexicalPrecision ; sh:minCount 1 ; sh:maxCount 1 ] .
+
+oa:EventClaimShape a sh:NodeShape ;
+    sh:targetClass oa:EventClaim ;
+    sh:property [ sh:path oa:about ; sh:minCount 1 ; sh:maxCount 1 ] ;
+    sh:property [ sh:path oa:canonical ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:boolean ] ;
+    sh:property [ sh:path oa:eventKind ; sh:minCount 1 ; sh:maxCount 1 ; sh:in (oa:Observed oa:Visited oa:Settled oa:Contact oa:Capital oa:Stewardship oa:Transferred oa:Independent oa:Reported oa:Abandoned) ] ;
+    sh:property [ sh:path oa:yearAT ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:integer ] ;
+    sh:property [ sh:path oa:untilAT ; sh:maxCount 1 ; sh:datatype xsd:integer ] ;
+    sh:property [ sh:path oa:precision ; sh:minCount 1 ; sh:maxCount 1 ; sh:in (oa:Exact oa:Circa oa:NotLaterThan oa:NotEarlierThan oa:Between) ] ;
+    sh:property [ sh:path oa:polity ; sh:maxCount 1 ; sh:class oa:Polity ] .
+
+oa:AffiliationClaimShape a sh:NodeShape ;
+    sh:targetClass oa:AffiliationClaim ;
+    sh:property [ sh:path oa:about ; sh:minCount 1 ; sh:maxCount 1 ] ;
+    sh:property [ sh:path oa:polity ; sh:minCount 1 ; sh:maxCount 1 ; sh:class oa:Polity ] ;
+    sh:property [ sh:path oa:canonical ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:boolean ] .
+
+oa:PolityShape a sh:NodeShape ;
+    sh:targetClass oa:Polity ;
+    sh:property [
+        sh:path oa:polityId ; sh:minCount 1 ; sh:maxCount 1 ;
+        sh:pattern "^[a-z0-9]+(-[a-z0-9]+)*$"
+    ] ;
+    sh:property [ sh:path skos:prefLabel ; sh:minCount 1 ; sh:maxCount 1 ] ;
+    sh:property [
+        sh:path oa:color ; sh:minCount 1 ; sh:maxCount 1 ;
+        sh:pattern "^#[0-9a-fA-F]{6}$"
+    ] ;
+    sh:property [ sh:path oa:hasSource ; sh:minCount 1 ; sh:maxCount 1 ; sh:class oa:SourceSnapshot ] .
+
+oa:SourceSnapshotShape a sh:NodeShape ;
+    sh:targetClass oa:SourceSnapshot ;
+    sh:property [ sh:path dcterms:title ; sh:minCount 1 ; sh:maxCount 1 ] ;
+    sh:property [ sh:path oa:locator ; sh:minCount 1 ; sh:maxCount 1 ; sh:nodeKind sh:IRI ] .
+
+oa:CelestiaStarShape a sh:NodeShape ;
+    sh:targetClass oa:CelestiaStar ;
+    sh:property [ sh:path oa:sourceName ; sh:minCount 1 ; sh:maxCount 1 ] .
+
+oa:CelestiaClaimShape a sh:NodeShape ;
+    sh:targetClass oa:CelestiaLocationClaim ;
+    sh:property [ sh:path oa:rightAscensionDeg ; sh:minCount 1 ; sh:maxCount 1 ] ;
+    sh:property [ sh:path oa:declinationDeg ; sh:minCount 1 ; sh:maxCount 1 ] ;
+    sh:property [ sh:path oa:distance ; sh:minCount 1 ; sh:maxCount 1 ] ;
+    sh:property [ sh:path prov:hadPrimarySource ; sh:minCount 1 ; sh:nodeKind sh:IRI ] .
+
+oa:InnerSphereClaimShape a sh:NodeShape ;
+    sh:targetClass oa:InnerSphereClaim ;
+    sh:property [ sh:path oa:about ; sh:minCount 1 ; sh:maxCount 1 ] ;
+    sh:property [ sh:path oa:canonical ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:boolean ] ;
+    sh:property [ sh:path oa:starName ; sh:minCount 1 ; sh:maxCount 1 ] ;
+    sh:property [ sh:path oa:recordOrder ; sh:minCount 1 ; sh:maxCount 1 ] ;
+    sh:property [ sh:path prov:hadPrimarySource ; sh:minCount 1 ; sh:nodeKind sh:IRI ] .
+
+oa:SystemCurationShape a sh:NodeShape ;
+    sh:targetClass oa:SystemCuration ;
+    sh:property [ sh:path oa:about ; sh:minCount 1 ; sh:maxCount 1 ; sh:class oa:CelestiaStar ] ;
+    sh:property [ sh:path oa:article ; sh:maxCount 1 ; sh:nodeKind sh:IRI ] .
+
+oa:ColonyAssignmentShape a sh:NodeShape ;
+    sh:targetClass oa:ColonyAssignment ;
+    sh:property [ sh:path oa:colonyName ; sh:minCount 1 ; sh:maxCount 1 ] ;
+    sh:property [ sh:path oa:status ; sh:maxCount 1 ; sh:in ("" "special" "abandoned" "blight") ] .
+
+oa:IdentityAliasShape a sh:NodeShape ;
+    sh:targetClass oa:IdentityAlias ;
+    sh:property [ sh:path skos:altLabel ; sh:minCount 1 ; sh:maxCount 1 ] ;
+    sh:property [ sh:path oa:catalogueDesignation ; sh:minCount 1 ; sh:maxCount 1 ] .
+
+oa:ConflictShape a sh:NodeShape ;
+    sh:targetClass oa:Conflict ;
+    sh:property [ sh:path oa:involves ; sh:minCount 2 ; sh:nodeKind sh:IRI ] ;
+    sh:property [ sh:path oa:status ; sh:minCount 1 ; sh:maxCount 1 ] .
+
+oa:EditorialDecisionShape a sh:NodeShape ;
+    sh:targetClass oa:EditorialDecision ;
+    sh:property [ sh:path oa:resolves ; sh:minCount 1 ; sh:maxCount 1 ; sh:class oa:Conflict ] ;
+    sh:property [ sh:path oa:rationale ; sh:minCount 1 ; sh:maxCount 1 ] .

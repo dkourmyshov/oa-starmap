@@ -1,0 +1,32 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Deltoton
+
+id:inner-sphere-row-0395 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Deltoton" .
+
+claim:inner-sphere-inner-sphere-row-0395-a69e1e89dabc a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0395 ;
+    oa:canonical true ;
+    oa:colonyName "Deltoton" ;
+    oa:luminositySol "1.1" ;
+    oa:massSol "1.09" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 394 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0395-a69e1e89dabc-source-distance ;
+    oa:spectralType "G0.5 V" ;
+    oa:starName "Delta Trianguli A" .
+
+value:inner-sphere-inner-sphere-row-0395-a69e1e89dabc-source-distance a oa:QuantityValue ;
+    qudt:numericValue 35.587 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

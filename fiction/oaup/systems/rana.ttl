@@ -1,0 +1,73 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Rana
+
+id:world-rana a oa:Place, oa:World ;
+    skos:prefLabel "Rana" ;
+    oa:article <https://www.orionsarm.com/eg-article/460d8ebaea985> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Delta Eridani, as the colony table has it." ;
+    oa:systemName "Rana" ;
+    oa:uncertain false .
+
+claim:location-world-rana a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/460d8ebaea985> ;
+    oa:about id:world-rana ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Delta Eridani" .
+
+claim:event-world-rana-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/460d8ebaea985> ;
+    oa:about id:world-rana ;
+    oa:canonical true ;
+    oa:eventKind oa:Observed ;
+    oa:note "\"as planetary systems were mapped in the mid 1st century AT several were discovered. One of the earliest double planets discovered was Bill and Bull, named by the research team from Uppsala Astronomical Observatory that discovered them around Delta Eridani (Rana).\" Uppsala Astronomical Observatory, the discoverer, is not on the roster." ;
+    oa:precision oa:Circa ;
+    oa:recordOrder 0 ;
+    oa:yearAT 50 .
+
+claim:event-world-rana-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/460d8ebaea985> ;
+    oa:about id:world-rana ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"When the Eridanus League was on its height, a number of NoCoZo- aligned Eridanius-native corps settled the nearby Rana system in 1699.\" The settlers are described as NoCoZo-aligned corporations native to Eridanus League territory, not as the NoCoZo or the Eridanus League itself, so polity was left empty; see doubts. The settlers were NoCoZo-aligned corporations native to the Eridanus League, on the article's account; neither is named as the holder." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 1699 .
+
+# Rana
+
+id:inner-sphere-row-0298 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Rana" .
+
+claim:inner-sphere-inner-sphere-row-0298-2c6147ff884d a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0298 ;
+    oa:article <https://www.orionsarm.com/eg-article/460d8ebaea985> ;
+    oa:canonical true ;
+    oa:colonyName "Rana" ;
+    oa:luminositySol "2.764" ;
+    oa:massSol "1.2" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 297 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0298-2c6147ff884d-source-distance ;
+    oa:spectralType "K0 Ive" ;
+    oa:starName "Delta Eridani" .
+
+value:inner-sphere-inner-sphere-row-0298-2c6147ff884d-source-distance a oa:QuantityValue ;
+    qudt:numericValue 29.644 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

@@ -1,0 +1,51 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Paz
+
+id:world-paz a oa:Place, oa:World ;
+    skos:prefLabel "Paz" ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "59 Draconis, 89 ly out. No article of its own, and not the Paz of the Efficiency Maximization Paradigm, which is a different world entirely and is recorded here as Morpheo A." ;
+    oa:systemName "Paz" ;
+    oa:uncertain false .
+
+claim:location-world-paz a prov:Entity, oa:LocationClaim ;
+    oa:about id:world-paz ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "59 Draconis" .
+
+# Paz
+
+id:inner-sphere-row-1010 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Paz" .
+
+claim:inner-sphere-inner-sphere-row-1010-99a0c653f749 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-1010 ;
+    oa:article <https://www.orionsarm.com/eg-article/47bcf79c18ad4> ;
+    oa:canonical true ;
+    oa:colonyName "Paz" ;
+    oa:luminositySol "5.73" ;
+    oa:massSol "1.5" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 1009 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-1010-99a0c653f749-source-distance ;
+    oa:spectralType "F2 V" ;
+    oa:starName "59 Draconis" .
+
+value:inner-sphere-inner-sphere-row-1010-99a0c653f749-source-distance a oa:QuantityValue ;
+    qudt:numericValue 89.269 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

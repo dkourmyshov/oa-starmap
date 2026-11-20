@@ -1,0 +1,17 @@
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+
+# Ambi Limis
+
+id:polity-ambi-limis a oa:Polity ;
+    skos:prefLabel "Ambi Limis" ;
+    oa:ambiguousName false ;
+    oa:color "#B2EBF2" ;
+    oa:editorialNote "\"Historic polity, successor to the Conver Ambi.\" The timeline names the\nConver Limis as a party to the Conver Wars from 3842, so it predates the\ndivision of 3943; no founding or ending year is stated." ;
+    oa:hasSource src:eg-historical-polities ;
+    oa:kind "meta-empire" ;
+    oa:polityId "ambi-limis" ;
+    oa:recordOrder 53 ;
+    oa:uncertain false .

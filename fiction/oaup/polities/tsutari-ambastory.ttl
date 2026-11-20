@@ -1,0 +1,17 @@
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+
+# Tsutari Ambastory
+
+id:polity-tsutari-ambastory a oa:Polity ;
+    skos:prefLabel "Tsutari Ambastory" ;
+    oa:ambiguousName false ;
+    oa:color "#E1BEE7" ;
+    oa:editorialNote "\"Religious confederation of baseline hu worlds responsible for ending the\nreign of the Terrorlords of Mandra Quin'Si in 2446.\" Timeline, 2446: the\nBattle of the Fringe. In being by then; no founding year stated." ;
+    oa:hasSource src:eg-historical-polities ;
+    oa:kind "meta-empire" ;
+    oa:polityId "tsutari-ambastory" ;
+    oa:recordOrder 60 ;
+    oa:uncertain false .

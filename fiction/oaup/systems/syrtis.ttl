@@ -1,0 +1,43 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Syrtis
+
+id:world-syrtis a oa:Place, oa:World ;
+    skos:altLabel "Syris" ;
+    skos:prefLabel "Syrtis" ;
+    oa:article <https://www.orionsarm.com/eg-article/478c1984d5402> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Very loosely aligned with the radical Keterists, and recorded as independent — an alignment that loose is not a holder, and the sheet draws it in its colour for the unaligned." ;
+    oa:uncertain false .
+
+claim:location-world-syrtis a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/478c1984d5402> ;
+    oa:about id:world-syrtis ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg 21.2797 ;
+    oa:derivation "The direction is interpolated from the transcription of Anders Sandberg's maps, which writes the name \"Syris\"; the distance is the article's 1,170 ly against the sheet's 844." ;
+    oa:directionErrorDeg 20.0 ;
+    oa:distance value:location-world-syrtis-distance ;
+    oa:distanceError value:location-world-syrtis-distance-error ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:EditorialEstimate ;
+    oa:rightAscensionDeg 285.779 .
+
+value:location-world-syrtis-distance a oa:QuantityValue ;
+    qudt:numericValue 1170.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+value:location-world-syrtis-distance-error a oa:QuantityValue ;
+    qudt:numericValue 200.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

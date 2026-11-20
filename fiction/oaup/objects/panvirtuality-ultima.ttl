@@ -1,0 +1,31 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# Panvirtuality Ultima
+
+id:world-panvirtuality-ultima a oa:Place, oa:World ;
+    skos:prefLabel "Panvirtuality Ultima" ;
+    oa:article <https://www.orionsarm.com/eg-article/47bcee4c91d79> ;
+    oa:kind "megastructure" ;
+    oa:labelsSystem false ;
+    oa:note "Zeta Ophiuchi, 440 ly out against the article's 480 — a runaway O-class star ploughing a bow shock through the interstellar medium, and an odd place to build." ;
+    oa:uncertain false .
+
+claim:location-world-panvirtuality-ultima a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47bcee4c91d79> ;
+    oa:about id:world-panvirtuality-ultima ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Zeta Ophiuchi" .
+
+claim:affiliation-world-panvirtuality-ultima-solipsist-panvirtuality a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/47bcee4c91d79> ;
+    oa:about id:world-panvirtuality-ultima ;
+    oa:canonical true ;
+    oa:polity id:polity-solipsist-panvirtuality ;
+    oa:recordOrder 0 .

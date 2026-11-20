@@ -1,0 +1,41 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# NGC 2430
+
+id:world-ngc-2430 a oa:Place, oa:World ;
+    skos:prefLabel "NGC 2430" ;
+    oa:article <https://www.orionsarm.com/eg-article/4cfd1ab04285b> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "An outpost of the Transcend, within the cluster, in Puppis. The cluster is in none of the catalogues this map loads, so its coordinates come from outside them — 07h 39m 41s, -16d 17' 45\", 650 pc. That is 2,120 ly, the figure Grignard's article gives to the light year, so the Encyclopaedia and the cluster are working from one estimate rather than two.\nGrignard is drawn at the same coordinates and is not in the same place: the outpost is within the cluster and Grignard is near it. How far and in which direction is not recorded, so the two markers coincide here rather than being pushed apart by a separation this map would have to invent." ;
+    oa:uncertain false .
+
+claim:location-world-ngc-2430 a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4cfd1ab04285b> ;
+    oa:about id:world-ngc-2430 ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -16.2958 ;
+    oa:distance value:location-world-ngc-2430-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:rightAscensionDeg 114.9208 .
+
+value:location-world-ngc-2430-distance a oa:QuantityValue ;
+    qudt:numericValue 2120.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:affiliation-world-ngc-2430-the-transcend a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4cfd1ab04285b> ;
+    oa:about id:world-ngc-2430 ;
+    oa:canonical true ;
+    oa:polity id:polity-the-transcend ;
+    oa:recordOrder 0 .

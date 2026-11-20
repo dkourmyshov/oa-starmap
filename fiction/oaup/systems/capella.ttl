@@ -1,0 +1,145 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Capella
+
+id:world-capella a oa:Place, oa:World ;
+    skos:prefLabel "Capella" ;
+    oa:article <https://www.orionsarm.com/eg-article/4603222d0037f> ;
+    oa:kind "system" ;
+    oa:labelsSystem false ;
+    oa:note "Alpha Aurigae Aa, as the colony table has it." ;
+    oa:systemName "Capella" ;
+    oa:uncertain false .
+
+claim:location-world-capella a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4603222d0037f> ;
+    oa:about id:world-capella ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "Alpha Aurigae Aa" .
+
+claim:event-world-capella-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4603222d0037f> ;
+    oa:about id:world-capella ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "\"Colonised: 1287 AT\"" ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 1287 .
+
+claim:event-world-capella-002 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4603222d0037f> ;
+    oa:about id:world-capella ;
+    oa:canonical true ;
+    oa:eventKind oa:Capital ;
+    oa:note "\"Capella became the capital of an important regional polity in the wake of the ComEmp break-up in 5350 AT .\" The 'regional polity' is not named in this sentence; the Related Articles list links to a separate 'Capellan Federation' article, which is not on the roster and not textually confirmed as this polity. The polity is the Capellan Federation, named only in a related-articles link; no polity of this file." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:yearAT 5350 .
+
+# Capella
+
+id:inner-sphere-row-0482 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Capella" .
+
+claim:inner-sphere-inner-sphere-row-0482-d0dcd1228de0 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0482 ;
+    oa:article <https://www.orionsarm.com/eg-article/4603222d0037f> ;
+    oa:canonical true ;
+    oa:colonyName "Capella" ;
+    oa:luminositySol "78.7" ;
+    oa:massSol "2.5687" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 481 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0482-d0dcd1228de0-source-distance ;
+    oa:spectralType "K0 III" ;
+    oa:starName "Alpha Aurigae Aa" .
+
+value:inner-sphere-inner-sphere-row-0482-d0dcd1228de0-source-distance a oa:QuantityValue ;
+    qudt:numericValue 42.80 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Capella
+
+id:inner-sphere-row-0483 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Capella" .
+
+claim:inner-sphere-inner-sphere-row-0483-5fefdab0a876 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0483 ;
+    oa:article <https://www.orionsarm.com/eg-article/4603222d0037f> ;
+    oa:canonical true ;
+    oa:colonyName "Capella" ;
+    oa:luminositySol "72.7" ;
+    oa:massSol "2.4828" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 482 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0483-5fefdab0a876-source-distance ;
+    oa:spectralType "G1 III" ;
+    oa:starName "Alpha Aurigae Ab" .
+
+value:inner-sphere-inner-sphere-row-0483-5fefdab0a876-source-distance a oa:QuantityValue ;
+    qudt:numericValue 42.80 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Capella
+
+id:inner-sphere-row-0495 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Capella" .
+
+claim:inner-sphere-inner-sphere-row-0495-dfe61440cbad a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0495 ;
+    oa:article <https://www.orionsarm.com/eg-article/4603222d0037f> ;
+    oa:canonical true ;
+    oa:colonyName "Capella" ;
+    oa:luminositySol "." ;
+    oa:massSol "0.53" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 494 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0495-dfe61440cbad-source-distance ;
+    oa:spectralType "M4" ;
+    oa:starName "Alpha Aurigae L" .
+
+value:inner-sphere-inner-sphere-row-0495-dfe61440cbad-source-distance a oa:QuantityValue ;
+    qudt:numericValue 43.381 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Capella
+
+id:inner-sphere-row-0496 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Capella" .
+
+claim:inner-sphere-inner-sphere-row-0496-ae565c5d0d8d a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0496 ;
+    oa:article <https://www.orionsarm.com/eg-article/4603222d0037f> ;
+    oa:canonical true ;
+    oa:colonyName "Capella" ;
+    oa:luminositySol "0.05" ;
+    oa:massSol "0.57" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 495 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0496-ae565c5d0d8d-source-distance ;
+    oa:spectralType "M2.5 V" ;
+    oa:starName "Alpha Aurigae H" .
+
+value:inner-sphere-inner-sphere-row-0496-ae565c5d0d8d-source-distance a oa:QuantityValue ;
+    qudt:numericValue 43.515 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .

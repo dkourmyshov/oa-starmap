@@ -1,0 +1,52 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Blefuscu
+
+id:world-blefuscu a oa:Place, oa:World ;
+    skos:prefLabel "Blefuscu" ;
+    oa:article <https://www.orionsarm.com/eg-article/4e49327008e0e> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "In Pyxis at 2,105 ly. The article gives 2,101 ly for epoch 2000 as well; the difference is the star's own motion over four thousand years, and the later figure is the one used." ;
+    oa:uncertain false .
+
+claim:location-world-blefuscu a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4e49327008e0e> ;
+    oa:about id:world-blefuscu ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:constellationName "Pyxis" ;
+    oa:distance value:location-world-blefuscu-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription .
+
+value:location-world-blefuscu-distance a oa:QuantityValue ;
+    qudt:numericValue 2105.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:event-world-blefuscu-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4e49327008e0e> ;
+    oa:about id:world-blefuscu ;
+    oa:canonical true ;
+    oa:eventKind oa:Visited ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 6110 .
+
+claim:event-world-blefuscu-002 a prov:Entity, oa:EventClaim ;
+    oa:about id:world-blefuscu ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "Blefuscu colonised by a Nisse colony ship." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 1 ;
+    oa:sourceDescription "Encyclopaedia timeline, Age of Separate Empires" ;
+    oa:yearAT 6110 .

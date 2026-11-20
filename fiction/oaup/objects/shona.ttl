@@ -1,0 +1,44 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Shona
+
+id:world-shona a oa:Place, oa:World ;
+    skos:prefLabel "Shona" ;
+    oa:article <https://www.orionsarm.com/eg-article/4cd00caab2853> ;
+    oa:kind "planet" ;
+    oa:labelsSystem false ;
+    oa:note "Near IC 4715 in Sagittarius at 6,293 ly. The article gives the position twice and the two disagree: its right ascension and declination fall in Sagittarius, where it also says the world is and where IC 4715 is, while its galactic coordinates — 4207, 4443, -1470 — fall thirty degrees away in Aquila. Both return the same distance, so it is the direction alone that is in dispute, and the two the article states in words are taken over the one it states in numbers." ;
+    oa:uncertain false .
+
+claim:location-world-shona a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4cd00caab2853> ;
+    oa:about id:world-shona ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:declinationDeg -18.0862 ;
+    oa:distance value:location-world-shona-distance ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:rightAscensionDeg 276.6103 .
+
+value:location-world-shona-distance a oa:QuantityValue ;
+    qudt:numericValue 6293.0 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+claim:event-world-shona-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/4cd00caab2853> ;
+    oa:about id:world-shona ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:note "Reached." ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 9428 .

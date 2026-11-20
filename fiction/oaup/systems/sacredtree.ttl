@@ -1,0 +1,68 @@
+@prefix claim: <https://dkourmyshov.github.io/oa-starmap/claim/> .
+@prefix id: <https://dkourmyshov.github.io/oa-starmap/id/> .
+@prefix oa: <https://dkourmyshov.github.io/oa-starmap/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix src: <https://dkourmyshov.github.io/oa-starmap/source/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix value: <https://dkourmyshov.github.io/oa-starmap/value/> .
+
+# Sacredtree
+
+id:inner-sphere-row-0819 a oa:InnerSphereSystem, oa:Place, oa:StarSystem ;
+    skos:prefLabel "Sacredtree" .
+
+claim:inner-sphere-inner-sphere-row-0819-6083692a6d11 a prov:Entity, oa:InnerSphereClaim ;
+    prov:hadPrimarySource src:inner-sphere-table ;
+    oa:about id:inner-sphere-row-0819 ;
+    oa:article <https://www.orionsarm.com/eg-article/53060cb28fd91> ;
+    oa:canonical true ;
+    oa:colonyName "Sacredtree" ;
+    oa:luminositySol "1.01" ;
+    oa:massSol "1" ;
+    oa:method oa:DirectTranscription ;
+    oa:recordOrder 818 ;
+    oa:sourceDistance value:inner-sphere-inner-sphere-row-0819-6083692a6d11-source-distance ;
+    oa:spectralType "G2 V" ;
+    oa:starName "9 Ceti" .
+
+value:inner-sphere-inner-sphere-row-0819-6083692a6d11-source-distance a oa:QuantityValue ;
+    qudt:numericValue 69.581 ;
+    qudt:unit unit:LY ;
+    oa:lexicalPrecision oa:ExactAsPrinted .
+
+# Sacredtree
+
+id:world-sacredtree a oa:Place, oa:World ;
+    skos:prefLabel "Sacredtree" ;
+    oa:article <https://www.orionsarm.com/eg-article/53060cb28fd91> ;
+    oa:kind "megastructure" ;
+    oa:labelsSystem false ;
+    oa:note "An orwood — a biological megastructure — at 9 Ceti, 70 ly out." ;
+    oa:uncertain false .
+
+claim:location-world-sacredtree a prov:Entity, oa:LocationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/53060cb28fd91> ;
+    oa:about id:world-sacredtree ;
+    oa:canonical true ;
+    oa:catalogueFromSource false ;
+    oa:knownDistanceConflict false ;
+    oa:method oa:DirectTranscription ;
+    oa:starName "9 Ceti" .
+
+claim:affiliation-world-sacredtree-zoeific-biopolity a prov:Entity, oa:AffiliationClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/53060cb28fd91> ;
+    oa:about id:world-sacredtree ;
+    oa:canonical true ;
+    oa:polity id:polity-zoeific-biopolity ;
+    oa:recordOrder 0 .
+
+claim:event-world-sacredtree-001 a prov:Entity, oa:EventClaim ;
+    prov:hadPrimarySource <https://www.orionsarm.com/eg-article/53060cb28fd91> ;
+    oa:about id:world-sacredtree ;
+    oa:canonical true ;
+    oa:eventKind oa:Settled ;
+    oa:precision oa:Exact ;
+    oa:recordOrder 0 ;
+    oa:yearAT 2802 .
