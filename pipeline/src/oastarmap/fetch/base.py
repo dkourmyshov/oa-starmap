@@ -5,6 +5,7 @@ from __future__ import annotations
 import gzip
 import hashlib
 import shutil
+import sys
 from collections.abc import Iterator
 from dataclasses import dataclass
 from pathlib import Path
@@ -26,6 +27,7 @@ class CatalogSource:
         filename: Name to store it under.
         description: Human-readable provenance, surfaced in build metadata.
         citation: How to credit this catalogue.
+        fallback_urls: Mirrors to try, in order, if the primary request fails.
     """
 
     key: str
@@ -33,6 +35,7 @@ class CatalogSource:
     filename: str
     description: str
     citation: str
+    fallback_urls: tuple[str, ...] = ()
 
     @property
     def path(self) -> Path:
@@ -52,14 +55,26 @@ def fetch_source(source: CatalogSource, *, force: bool = False) -> Path:
         return dest
 
     tmp = dest.with_suffix(dest.suffix + ".part")
-    with httpx.stream("GET", source.url, follow_redirects=True, timeout=120.0) as response:
-        response.raise_for_status()
-        with tmp.open("wb") as fh:
-            for chunk in response.iter_bytes(_CHUNK):
-                fh.write(chunk)
+    errors: list[httpx.HTTPError] = []
+    for url in (source.url, *source.fallback_urls):
+        try:
+            with httpx.stream("GET", url, follow_redirects=True, timeout=120.0) as response:
+                response.raise_for_status()
+                with tmp.open("wb") as fh:
+                    for chunk in response.iter_bytes(_CHUNK):
+                        fh.write(chunk)
+        except httpx.HTTPError as error:
+            errors.append(error)
+            tmp.unlink(missing_ok=True)
+            print(f"  {source.key:<10} request failed: {error}", file=sys.stderr)
+            continue
+        if url != source.url:
+            print(f"  {source.key:<10} using mirror {url}", file=sys.stderr)
+        tmp.replace(dest)
+        return dest
 
-    tmp.replace(dest)
-    return dest
+    urls = ", ".join((source.url, *source.fallback_urls))
+    raise RuntimeError(f"all download URLs failed for {source.key}: {urls}") from errors[-1]
 
 
 def sha256(path: Path) -> str:

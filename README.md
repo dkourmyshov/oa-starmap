@@ -155,8 +155,9 @@ cd pipeline && uv run oastarmap fetch && uv run oastarmap build
 cd ../web && npm ci && npm run dev
 ```
 
-`fetch` pulls ~17 MB of catalogues from VizieR; `build` writes ~18 MB of binaries
-into `web/public/data/`. Neither directory is tracked. Nothing in either step
+`fetch` pulls ~17 MB of catalogues from VizieR; the cluster catalogue falls back
+to the Harvard VizieR mirror if the CDS endpoint fails. `build` writes ~18 MB
+of binaries into `web/public/data/`. Neither directory is tracked. Nothing in either step
 needs `sources/`, which is why a clean clone can build the whole map: the
 importers read the Orion's Arm material, and what they *write* is tracked.
 

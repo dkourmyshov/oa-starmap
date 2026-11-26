@@ -35,11 +35,14 @@ COLUMNS = [
 ]
 
 _VIZIER = "https://vizier.cds.unistra.fr/viz-bin/asu-tsv"
+_VIZIER_HARVARD = "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv"
 _SOURCE = "J/A%2BA/673/A114/clusters"
+_QUERY = f"?-source={_SOURCE}&-out.max=unlimited&-out={','.join(COLUMNS)}"
 
 HUNT_REFFERT_2023 = CatalogSource(
     key="clusters",
-    url=f"{_VIZIER}?-source={_SOURCE}&-out.max=unlimited&-out={','.join(COLUMNS)}",
+    url=f"{_VIZIER}{_QUERY}",
+    fallback_urls=(f"{_VIZIER_HARVARD}{_QUERY}",),
     filename="hunt_reffert_2023_clusters.tsv",
     description=(
         "Hunt & Reffert (2023), 'Improving the open cluster census II: an all-sky "
