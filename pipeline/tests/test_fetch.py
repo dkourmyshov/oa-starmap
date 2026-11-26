@@ -7,7 +7,10 @@ from contextlib import contextmanager
 import httpx
 import pytest
 
+from oastarmap.fetch.associations import SOURCES as ASSOCIATION_SOURCES
 from oastarmap.fetch.base import CatalogSource, fetch_source
+from oastarmap.fetch.clusters import SOURCES as CLUSTER_SOURCES
+from oastarmap.fetch.hii import SOURCES as HII_SOURCES
 
 
 def source() -> CatalogSource:
@@ -71,3 +74,12 @@ def test_reports_all_urls_when_every_request_fails(monkeypatch, tmp_path):
     assert "https://mirror.invalid/catalogue" in str(error.value)
     assert not dest.exists()
     assert not dest.with_suffix(".tsv.part").exists()
+
+
+@pytest.mark.parametrize(
+    "catalogue",
+    [*CLUSTER_SOURCES, *HII_SOURCES, *ASSOCIATION_SOURCES],
+)
+def test_every_vizier_source_has_the_harvard_mirror(catalogue):
+    assert catalogue.fallback_urls
+    assert any("vizier.cfa.harvard.edu" in url for url in catalogue.fallback_urls)

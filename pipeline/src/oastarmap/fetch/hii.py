@@ -20,7 +20,7 @@ exists; see ``build/hii.py``.
 
 from __future__ import annotations
 
-from oastarmap.fetch.base import CatalogSource
+from oastarmap.fetch.base import CatalogSource, with_vizier_mirror
 
 _VIZIER = "https://vizier.cds.unistra.fr/viz-bin/asu-tsv"
 
@@ -29,7 +29,7 @@ def _url(source: str, columns: list[str]) -> str:
     return f"{_VIZIER}?-source={source}&-out.max=unlimited&-out={','.join(columns)}"
 
 
-SHARPLESS_1959 = CatalogSource(
+SHARPLESS_1959 = with_vizier_mirror(CatalogSource(
     key="hii",
     url=_url("VII/20/catalog", ["Sh2", "GLon", "GLat", "Diam", "Form", "Struct", "Bright"]),
     filename="sharpless_1959.tsv",
@@ -39,9 +39,9 @@ SHARPLESS_1959 = CatalogSource(
         "No distances — see Russeil (2003)."
     ),
     citation="Sharpless S., 1959, ApJS 4, 257. VizieR VII/20.",
-)
+))
 
-RUSSEIL_2003_MEMBERS = CatalogSource(
+RUSSEIL_2003_MEMBERS = with_vizier_mirror(CatalogSource(
     key="hii",
     url=_url("J/A%2BA/397/133/table1", ["Name", "HaName", "CONames"]),
     filename="russeil_2003_members.tsv",
@@ -50,9 +50,9 @@ RUSSEIL_2003_MEMBERS = CatalogSource(
         "which is what maps a Sharpless number onto a complex with a distance."
     ),
     citation="Russeil D., 2003, A&A 397, 133. VizieR J/A+A/397/133.",
-)
+))
 
-RUSSEIL_2003_COMPLEXES = CatalogSource(
+RUSSEIL_2003_COMPLEXES = with_vizier_mirror(CatalogSource(
     key="hii",
     url=_url(
         "J/A%2BA/397/133/table3",
@@ -64,6 +64,6 @@ RUSSEIL_2003_COMPLEXES = CatalogSource(
         "stellar distances and their asymmetric uncertainties."
     ),
     citation="Russeil D., 2003, A&A 397, 133. VizieR J/A+A/397/133.",
-)
+))
 
 SOURCES = [SHARPLESS_1959, RUSSEIL_2003_MEMBERS, RUSSEIL_2003_COMPLEXES]

@@ -7,7 +7,7 @@ import hashlib
 import shutil
 import sys
 from collections.abc import Iterator
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from pathlib import Path
 
 import httpx
@@ -40,6 +40,18 @@ class CatalogSource:
     @property
     def path(self) -> Path:
         return RAW_DIR / self.key / self.filename
+
+
+def with_vizier_mirror(source: CatalogSource) -> CatalogSource:
+    """Add the Harvard mirror to a CDS-hosted VizieR source."""
+    primary = "https://vizier.cds.unistra.fr/"
+    mirror = "https://vizier.cfa.harvard.edu/"
+    if not source.url.startswith(primary):
+        raise ValueError(f"not a CDS VizieR URL: {source.url}")
+    return replace(
+        source,
+        fallback_urls=(*source.fallback_urls, source.url.replace(primary, mirror, 1)),
+    )
 
 
 def fetch_source(source: CatalogSource, *, force: bool = False) -> Path:

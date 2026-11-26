@@ -32,7 +32,7 @@ looks exactly like an OB association layer that has run out of associations.
 
 from __future__ import annotations
 
-from oastarmap.fetch.base import CatalogSource
+from oastarmap.fetch.base import CatalogSource, with_vizier_mirror
 
 _VIZIER = "https://vizier.cds.unistra.fr/viz-bin/asu-tsv"
 
@@ -59,7 +59,7 @@ COLUMNS = [
     "AV",
 ]
 
-QUINTANA_2026 = CatalogSource(
+QUINTANA_2026 = with_vizier_mirror(CatalogSource(
     key="associations",
     url=(
         f"{_VIZIER}?-source=J/MNRAS/549/G853/table1"
@@ -73,6 +73,6 @@ QUINTANA_2026 = CatalogSource(
         "axis — the shape, not just the place."
     ),
     citation="Quintana A.L. et al., 2026, MNRAS 549, 853. VizieR J/MNRAS/549/G853.",
-)
+))
 
 SOURCES = [QUINTANA_2026]
